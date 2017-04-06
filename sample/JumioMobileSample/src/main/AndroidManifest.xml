@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.jumio.sample"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:installLocation="auto"
+          android:versionCode="1"
+          android:versionName="1.0">
+
+	<uses-sdk
+		android:minSdkVersion="16"
+		android:targetSdkVersion="23"/>
+
+	<supports-screens
+		android:anyDensity="true"
+		android:largeScreens="true"
+		android:normalScreens="true"
+		android:resizeable="true"
+		android:smallScreens="true"
+		android:xlargeScreens="true"/>
+
+	<!-- optional start -->
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> <!-- optional end -->
+
+	<application
+		android:allowBackup="false"
+		android:icon="@drawable/ic_launcher"
+		android:label="@string/app_name">
+		<activity
+			android:name=".MainActivity"
+			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+			android:label="@string/app_name"
+			android:theme="@style/AppTheme">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+
+		<!-- SDK Activities start -->
+		<activity
+			android:name="com.jumio.bam.BamActivity"
+			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+			android:hardwareAccelerated="true"
+			android:theme="@style/Theme.Bam"/>
+		<activity
+			android:name="com.jumio.nv.NetverifyActivity"
+			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+			android:hardwareAccelerated="true"
+			android:theme="@style/Theme.Netverify"
+			android:windowSoftInputMode="adjustResize"/>
+		<activity
+			android:name="com.jumio.md.MultiDocumentActivity"
+			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+			android:hardwareAccelerated="true"
+			android:theme="@style/Theme.MultiDocument"
+			android:windowSoftInputMode="adjustResize"/>
+	</application>
+
+</manifest>
