@@ -63,26 +63,26 @@ If you are using ePassport scanning, following lines are needed:
 
 |Dependency        | Mandatory           | Description       |
 | ---------------------------- |:-------------:|:-----------------|
-| com.jumio.android:core:2.5.0@aar                   | x | Jumio Core library|
-| com.jumio.android:nv:2.5.0@aar                     | x | Netverify library |
-|com.android.support:appcompat-v7:25.1.0             | x | Android native library|
-|com.android.support:support-v4:25.1.0               | x | Android native library|
-|com.android.support:design:25.0.0                   |   | Android native library|
-|com.jumio.android:javadoc:2.5.0                     |   | Jumio SDK Javadoc|
-|com.jumio.android:nv-barcode:2.5.0@aar              |   | US / CAN Barcode Scanning|
-|com.google.android.gms:play-services-vision:9.6.1   |   | US / CAN Barcode Scanning alternative (reduced size)|
-|com.jumio.android:nv-mrz:2.5.0@aar             		 |   | MRZ scanning|
-|com.jumio.android:nv-nfc:2.5.0@aar              		 |   | ePassport Scanning|
+| com.jumio.android:core:2.6.0@aar                   | x | Jumio Core library|
+| com.jumio.android:nv:2.6.0@aar                     | x | Netverify library |
+|com.android.support:appcompat-v7:25.3.0             | x | Android native library|
+|com.android.support:support-v4:25.3.0               | x | Android native library|
+|com.android.support:design:25.3.0                   |   | Android native library|
+|com.jumio.android:javadoc:2.6.0                     |   | Jumio SDK Javadoc|
+|com.jumio.android:nv-barcode:2.6.0@aar              |   | US / CAN Barcode Scanning|
+|com.google.android.gms:play-services-vision:10.0.1   |   | US / CAN Barcode Scanning alternative (reduced size)|
+|com.jumio.android:nv-mrz:2.6.0@aar             		 |   | MRZ scanning|
+|com.jumio.android:nv-nfc:2.6.0@aar              		 |   | ePassport Scanning|
 |com.madgag.spongycastle:prov:1.54.0.0             	 |   | ePassport Scanning|
 |net.sf.scuba:scuba-sc-android:0.0.10             	 |   | ePassport Scanning|
-|com.jumio.android:nv-ocr:2.5.0@aar             		 |   | Template Matcher|
+|com.jumio.android:nv-ocr:2.6.0@aar             		 |   | Template Matcher|
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
 __Note:__ If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-compile "com.jumio.android:bam:2.5.0@aar"
+compile "com.jumio.android:bam:2.6.0@aar"
 ```
 
 Applications implementing the SDK shall not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.

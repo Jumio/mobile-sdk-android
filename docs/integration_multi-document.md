@@ -41,11 +41,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       |
 | ---------------------------- |:-------------:|:-----------------|
-| com.jumio.android:core:2.5.0@aar                   | x | Jumio Core library|
-| com.jumio.android:md:2.5.0@aar                     | x | Multi Document library |
-|com.android.support:appcompat-v7:25.1.0             | x | Android native library|
-|com.android.support:support-v4:25.1.0               | x | Android native library|
-|com.jumio.android:javadoc:2.5.0                     |   | Jumio SDK Javadoc|
+| com.jumio.android:core:2.6.0@aar                   | x | Jumio Core library|
+| com.jumio.android:md:2.6.0@aar                     | x | Multi Document library |
+|com.android.support:appcompat-v7:25.3.0             | x | Android native library|
+|com.android.support:support-v4:25.3.0               | x | Android native library|
+|com.jumio.android:javadoc:2.6.0                     |   | Jumio SDK Javadoc|
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
