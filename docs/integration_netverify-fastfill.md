@@ -17,9 +17,6 @@ Netverify Mobile SDK offers scanning and authentication of governmental issued I
 ## Release notes
 For changes in the technical area, please read our [transition guide](transition-guide_netverify-fastfill.md).
 
-#### Fixes
-* Fixed problems with capturing on some devices
-
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
 

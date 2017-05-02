@@ -10,7 +10,7 @@
 
 Applies to all products.
 
-* Changed provider for SDK frameworks, sample code and documentation to Github
+* Fixed problems with capturing on some devices
 
 # Basic Setup
 
