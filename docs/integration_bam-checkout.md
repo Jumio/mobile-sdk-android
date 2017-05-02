@@ -1,7 +1,7 @@
 ![BAM Checkout](images/bam_checkout.png)
 
 # BAM Checkout Mobile SDK for Android
-BAM Checkout is a powerful, cutting-edge solution to extract data from your customer´s credit card and / or ID in your mobile application within seconds, including home address. It fits perfectly, and fully automates, every checkout flow to avoid manual input at all which leads to an increased conversion rate .
+BAM Checkout is a powerful, cutting-edge solution to extract data from your customer´s credit card and/or ID in your mobile application within seconds, including home address. It fits perfectly, and fully automates, every checkout flow to avoid manual input at all which leads to an increased conversion rate .
 
 ## Table of Content
 
@@ -17,9 +17,6 @@ BAM Checkout is a powerful, cutting-edge solution to extract data from your cust
 
 ## Release notes
 For changes in the technical area, please read our [transition guide](transition-guide_bam-checkout.md).
-
-#### Changes
-* BIN range list updated
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Bam-Checkout.
@@ -44,11 +41,11 @@ If you want to use offline scanning for BAM Checkout (Credit card scanning), ple
 
 |Dependency        | Mandatory           | Description       |
 | :---------------------------- |:-------------:|:-----------------|
-|com.jumio.android:core:2.6.0@aar                    | x | Jumio Core library|
-|com.jumio.android:bam:2.6.0@aar                     | x | BAM Checkout library |
-|com.android.support:appcompat-v7:25.3.0             | x | Android native library|
-|com.android.support:support-v4:25.3.0               | x | Android native library|
-|com.jumio.android:javadoc:2.6.0                     |   | Jumio SDK Javadoc|
+|com.jumio.android:core:2.6.1@aar                    | x | Jumio Core library|
+|com.jumio.android:bam:2.6.1@aar                     | x | BAM Checkout library |
+|com.android.support:appcompat-v7:25.3.1             | x | Android native library|
+|com.android.support:support-v4:25.3.1               | x | Android native library|
+|com.jumio.android:javadoc:2.6.1                     |   | Jumio SDK Javadoc|
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 

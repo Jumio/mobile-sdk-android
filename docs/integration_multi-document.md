@@ -1,7 +1,7 @@
 ![Multi Document](images/multi_document.png)
 
 # Netverify Multi Document Mobile SDK for Android
-Netverify Multi Document Mobile is a powerful solution to enable capturing various types (Utility Bill, Bank statement and many others) of your customer's documents in your mobile application within seconds, also supporting data extraction from US social security cards, UK Utility Bills and French Bank Statements.
+Netverify Multi Document Mobile is a powerful solution to enable capturing various types (Utility Bill, Bank statement and many others) of your customer's documents in your mobile application within seconds, also supporting data extraction from Utility Bills and Bank Statements from US, UK, France and Canada, as well as US Social Security Cards.
 
 ## Table of Content
 
@@ -15,9 +15,6 @@ Netverify Multi Document Mobile is a powerful solution to enable capturing vario
 
 ## Release notes
 For changes in the technical area, please read our [transition guide](transition-guide_multi-document.md).
-
-#### Additions
-* Device root check functionality
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for MultiDocument.
@@ -41,11 +38,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       |
 | ---------------------------- |:-------------:|:-----------------|
-| com.jumio.android:core:2.6.0@aar                   | x | Jumio Core library|
-| com.jumio.android:md:2.6.0@aar                     | x | Multi Document library |
-|com.android.support:appcompat-v7:25.3.0             | x | Android native library|
-|com.android.support:support-v4:25.3.0               | x | Android native library|
-|com.jumio.android:javadoc:2.6.0                     |   | Jumio SDK Javadoc|
+| com.jumio.android:core:2.6.1@aar                   | x | Jumio Core library|
+| com.jumio.android:md:2.6.1@aar                     | x | Multi Document library |
+|com.android.support:appcompat-v7:25.3.1             | x | Android native library|
+|com.android.support:support-v4:25.3.1               | x | Android native library|
+|com.jumio.android:javadoc:2.6.1                     |   | Jumio SDK Javadoc|
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 

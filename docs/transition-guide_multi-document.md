@@ -2,6 +2,9 @@
 
 # Transition guide for Netverify Multi Document Mobile
 
+## 2.6.1
+No backward incompatible changes.
+
 ## 2.6.0
 #### Changes in SDK Api
 * Add MultiDocumentSDK method `isRooted(Context)` for device root-check before starting the SDK

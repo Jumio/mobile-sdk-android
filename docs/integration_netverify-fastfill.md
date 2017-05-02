@@ -17,17 +17,8 @@ Netverify Mobile SDK offers scanning and authentication of governmental issued I
 ## Release notes
 For changes in the technical area, please read our [transition guide](transition-guide_netverify-fastfill.md).
 
-#### Additions
-* Active Authentication for ePassports
-* New Error Code 290 in case a transaction is already finished
-* Device root check functionality
-
-#### Changes
-* Improved guidance / help during document scanning
-* Minor UI/UX changes
-
 #### Fixes
-* Miscellaneous bugfixes
+* Fixed problems with capturing on some devices
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -63,26 +54,26 @@ If you are using ePassport scanning, following lines are needed:
 
 |Dependency        | Mandatory           | Description       |
 | ---------------------------- |:-------------:|:-----------------|
-| com.jumio.android:core:2.6.0@aar                   | x | Jumio Core library|
-| com.jumio.android:nv:2.6.0@aar                     | x | Netverify library |
-|com.android.support:appcompat-v7:25.3.0             | x | Android native library|
-|com.android.support:support-v4:25.3.0               | x | Android native library|
-|com.android.support:design:25.3.0                   |   | Android native library|
-|com.jumio.android:javadoc:2.6.0                     |   | Jumio SDK Javadoc|
-|com.jumio.android:nv-barcode:2.6.0@aar              |   | US / CAN Barcode Scanning|
+| com.jumio.android:core:2.6.1@aar                   | x | Jumio Core library|
+| com.jumio.android:nv:2.6.1@aar                     | x | Netverify library |
+|com.android.support:appcompat-v7:25.3.1             | x | Android native library|
+|com.android.support:support-v4:25.3.1               | x | Android native library|
+|com.android.support:design:25.3.1                   |   | Android native library|
+|com.jumio.android:javadoc:2.6.1                     |   | Jumio SDK Javadoc|
+|com.jumio.android:nv-barcode:2.6.1@aar              |   | US / CAN Barcode Scanning|
 |com.google.android.gms:play-services-vision:10.0.1   |   | US / CAN Barcode Scanning alternative (reduced size)|
-|com.jumio.android:nv-mrz:2.6.0@aar             		 |   | MRZ scanning|
-|com.jumio.android:nv-nfc:2.6.0@aar              		 |   | ePassport Scanning|
+|com.jumio.android:nv-mrz:2.6.1@aar             		 |   | MRZ scanning|
+|com.jumio.android:nv-nfc:2.6.1@aar              		 |   | ePassport Scanning|
 |com.madgag.spongycastle:prov:1.54.0.0             	 |   | ePassport Scanning|
 |net.sf.scuba:scuba-sc-android:0.0.10             	 |   | ePassport Scanning|
-|com.jumio.android:nv-ocr:2.6.0@aar             		 |   | Template Matcher|
+|com.jumio.android:nv-ocr:2.6.1@aar             		 |   | Template Matcher|
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
 __Note:__ If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-compile "com.jumio.android:bam:2.6.0@aar"
+compile "com.jumio.android:bam:2.6.1@aar"
 ```
 
 Applications implementing the SDK shall not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.
@@ -130,7 +121,7 @@ netverifySDK.setRequireFaceMatch(true);
 
 ### Preselection
 
-You can specify issuing country  ([ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code), ID type/s and/or document variant to skip their selection during the scanning process.<br />
+You can specify issuing country  ([ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code), ID type(s) and/or document variant to skip their selection during the scanning process.<br />
 __Note:__ Fastfill does not support paper IDs, except German ID cards.
 ```
 netverifySDK.setPreselectedCountry("AUT");
@@ -160,7 +151,6 @@ __Note:__ The customer ID should not contain sensitive data like PII (Personally
 ```
 netverifySDK.setCustomerId("CUSTOMERID");
 ```
-
 You can also set an additional information parameter (max. 255 characters).
 
 __Note:__ The additional information should not contain sensitive data like PII (Personally Identifiable Information) or account login.
@@ -193,7 +183,7 @@ netverifySDK.getDebugID();
 
 ### Miscellaneous
 
-In case Fastfill is used (requireVerification=NO), data extraction can be limited to be done on device only by enabling `setDataExtractionOnMobileOnly`
+In case Fastfill is used (requireVerification=NO), data extraction can be limited to be executed on device only by enabling `setDataExtractionOnMobileOnly`
 ```
 netverifySDK.setDataExtractionOnMobileOnly(true);
 ```

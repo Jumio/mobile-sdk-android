@@ -101,7 +101,7 @@ With accessibility support, visually impaired users can now enable __TalkBack__ 
 # Support
 
 ## Previous version
-The previous release version 2.5.0 of the Jumio Mobile SDK is supported until 2017-07-06.
+The previous release version 2.6.0 of the Jumio Mobile SDK is supported until 2017-08-02.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

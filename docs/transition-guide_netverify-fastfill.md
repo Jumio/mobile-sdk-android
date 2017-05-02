@@ -2,6 +2,9 @@
 
 # Transition guide for Fastfill & Netverify Mobile
 
+## 2.6.1
+No backward incompatible changes.
+
 ## 2.6.0
 
 #### Changes in SDK Api
