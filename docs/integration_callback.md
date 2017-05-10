@@ -42,7 +42,7 @@ __Note:__ Mandatory parameters are highlighted bold.
 |__transactionDate__   |   |Timestamp of the scan creation in the format YYYY-MM-DDThh:mm:ss.SSSZ |
 |__callbackDate__   |   |Timestamp of the callback creation in the format YYYY-MM-DDThh:mm:ss.SSSZ |
 |idType   |   |Possible types:<br/>•	PASSPORT<br/>•	DRIVING_LICENSE<br/>•	ID_CARD |
-|idSubtype   |255  |Possible subtypes if idType = ID_CARD<br/>•	NATIONAL_ID<br/>•	CONSULAR_ID<br/>•	ELECTORAL_ID<br/>•	RESIDENT_PERMIT_ID<br/>•	TAX_ID (only supported for PHL)<br/>•	STUDENT_ID (only supported for POL)<br/>•	MILITARY_ID (only supported for GRC)<br/>•	OTHER_ID<br/>•	VISA (only supported for USA)<br/>•	UNKNOWN<br/><br/>Possible subtypes if idType = DRIVING_LICENSE<br/>•	LEARNING_DRIVING_LICENSE (only supported for GBR, IRL, BEL and CAN)<br/><br/>Possible subtypes if idType = PASSPORT<br/>•	E_PASSPORT (only for mobile) |
+|idSubtype   |255  |Possible subtypes if idType = ID_CARD<br/>•	NATIONAL_ID<br/>•	CONSULAR_ID<br/>•	ELECTORAL_ID<br/>•	RESIDENT_PERMIT_ID<br/>•	TAX_ID (only supported for PHL)<br/>•	STUDENT_ID (only supported for POL)<br/>•	PASSPORT_CARD_ID (only supported for IRL, RUS and USA)<br/>•	MILITARY_ID (only supported for GRC)<br/>•	OTHER_ID<br/>•	VISA (only supported for USA)<br/>•	UNKNOWN<br/><br/>Possible subtypes if idType = DRIVING_LICENSE<br/>•	LEARNING_DRIVING_LICENSE (only supported for GBR, IRL, BEL and CAN)<br/><br/>Possible subtypes if idType = PASSPORT<br/>•	E_PASSPORT (only for mobile) |
 |idCountry   |3  |Possible countries:<br/>•	[ISO 3166-1 alpha-3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code<br/>•	XKX (Kosovo)|
 |rejectReason   |   |Reject reason as JSON object if verificationStatus = DENIED_FRAUD or ERROR_NOT_READABLE_ID, see tables below  |
 |idFaceMatch   |   |Face match percentage 0-100 if verificationStatus = APPROVED_VERIFIED (`*2`) |
@@ -171,7 +171,7 @@ __Note:__ Mandatory parameters are highlighted bold.
 |__customerId__       				| String  |255 |ID of the customer|
 |additionalInformation        | String  |255 |Additional information|
 |merchantReportingCriteria    | String  |255 |Your reporting criteria for each scan|
-|clientIp       					    | String  |15  |IP address of the client if provided for the Netverify Multi Document API |
+|clientIp       					    | String  |100  |IP address of the client if provided for the Netverify Multi Document API |
 
 |Parameter "document"      | Type    | Max. length|  Description|
 |:-------------------------|:--------|:----------:|:------------|
