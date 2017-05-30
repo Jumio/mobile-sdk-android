@@ -190,8 +190,41 @@ __Note:__ Mandatory parameters are highlighted bold.
 |ssn     							| String  |255 |Social security number if readable|
 |signatureAvailable  | String  |   |"true" if signature available, otherwise "false"|
 |accountNumber|String|28|Bank account number of the customer from a bank statement|
-|firstName     				| String  |255 |First name if readable|
-|lastName							| String  |255 |Last name if readable |
+|issueDate     				| String  |  |Issue date in the format YYYY-MM-DD|
+|address							| JSON object  |  |Address as JSON object in raw format if status = EXTRACTED, see table below |
+
+#### Raw address format
+
+|Parameter "address"      | Max. length|  Description|
+|:---------------|:----------:|:------------|
+|line1 |100 |Line item 1 |
+|line2 |100 |Line item 2 |
+|line3 |100 |Line item 3 |
+|line4 |100 |Line item 4 |
+|line5 |100 |Line item 5 |
+|countryCode |3|Possible countries of residence: <br />•	[ISO 3166-1 alpha-3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)<br />•	XKX (Kosovo)|
+|postalCode |15 |Postal code|
+|city |64 |City |
+|subdivision |50 |Name of subdivision |
+
+#### Supported documents for data extraction
+
+|Country      | Type | Extracted data |
+|:---------------|:----------|:------------|
+|AUS |UB |name, issueDate, address, dueDate |
+|AUS |BS |name, issueDate, address, accountNumber |
+|AUS |CCS |name, issueDate, address, cardNumberLastFourDigits |
+|CAN |UB |name, issueDate, address, dueDate |
+|CAN |BS |name, issueDate, address, accountNumber |
+|CAN |CCS |name, issueDate, address, cardNumberLastFourDigits |
+|FRA |BS |name, issueDate, address, accountNumber |
+|GBR |UB |name, issueDate, address, dueDate |
+|GBR |BS |name, issueDate, address, accountNumber |
+|GBR |CCS |name, issueDate, address, cardNumberLastFourDigits |
+|USA |UB |name, issueDate, address, dueDate |
+|USA |BS |name, issueDate, address, accountNumber |
+|USA |CCS |name, issueDate, address, cardNumberLastFourDigits |
+|USA |SSC |firstName, lastName, ssn, signatureAvailable  |
 
 ### Sample callbacks
 
@@ -238,7 +271,7 @@ Provide a URL which meets the following constraints:
 
 Whitelist the following IP addresses for callbacks, and use these to verify that the callback originated from Jumio:
 
-* US data center: 50.57.26.248, 50.57.26.249, 69.20.24.138, 162.242.200.222, 184.106.91.66, 184.106.91.67, 104.130.61.196, 146.20.77.156. </br>
+* US data center: 184.106.91.66, 184.106.91.67, 104.130.61.196, 146.20.77.156. </br>
 You can look up the IP addresses with the host name "callback.jumio.com".
 * EU data center: 162.13.228.132, 162.13.228.134, 162.13.229.103, 162.13.229.104. <br/>
 You can look up the IP addresses with the host name "callback.lon.jumio.com".
