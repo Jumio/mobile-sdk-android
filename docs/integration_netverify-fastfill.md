@@ -21,7 +21,7 @@ For changes in the technical area, please read our [transition guide](transition
 * Advanced Liveness Detection
 * NFC support for specific Identity Documents
 * Added mechanism to avoid capturing of front as back side
-* Full Fastfill offline functionality 
+* Full Fastfill offline functionality
 
 #### Changes
 * Minor UI/UX changes
@@ -197,7 +197,8 @@ netverifySDK.getDebugID();
 
 ### Offline scanning
 
-If you want to use Fastfill in offline mode you can find your Offline token in your Jumio merchant backend on the "Settings" page under "API credentials".
+If you want to use Fastfill in offline mode please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com.
+Once they have enabled this feature for your account, you can find your offline token in your Jumio merchant backend on the "Settings" page under "API credentials".
 
 ```
 netverifySDK.create(rootActivity, YOUROFFLINETOKEN, COUNTRYCODE)
