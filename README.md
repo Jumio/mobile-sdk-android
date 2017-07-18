@@ -10,7 +10,13 @@
 
 Applies to all products.
 
-* Fixed problems with capturing on some devices
+#### Additions
+* Cross-Platform Support - Cordova
+* Major camera and focus improvements 
+* Display specific error codes to users 
+
+#### Fixes
+* Overall stability improvements
 
 # Basic Setup
 
@@ -94,14 +100,14 @@ All label texts and button titles in the SDK can be changed and localized by add
 With accessibility support, visually impaired users can now enable __TalkBack__ or change the __font size__ on their device. The accessibility-strings that are used by TalkBack contain *accessibility_* in their key and can be also modified in the `strings.xml`.
 
 # Get started
-- [Integration Netverify & Fastfill](docs/integration_netverify-fastfill.md)
-- [Integration Netverify Multi Document](docs/integration_multi-document.md)
-- [Integration BAM Checkout](docs/integration_bam-checkout.md)
+- [Integration Netverify & Fastfill SDK](docs/integration_netverify-fastfill.md)
+- [Integration Document Verification SDK](docs/integration_document-verification.md)
+- [Integration BAM Checkout SDK](docs/integration_bam-checkout.md)
 
 # Support
 
 ## Previous version
-The previous release version 2.6.0 of the Jumio Mobile SDK is supported until 2017-08-02.
+The previous release version 2.7.0 of the Jumio Mobile SDK is supported until 2017-08-02.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

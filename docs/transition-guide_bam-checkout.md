@@ -1,6 +1,9 @@
 ![BAM Checkout](images/bam_checkout.png)
 
-# Transition guide for BAM Checkout Mobile
+# Transition guide for BAM Checkout SDK
+
+## 2.7.0
+* Removed SDK method `setAdyenPublicKey(String)` along removing all adyen functionality.
 
 ## 2.6.1
 No backward incompatible changes.

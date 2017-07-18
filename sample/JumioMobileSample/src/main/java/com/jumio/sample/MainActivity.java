@@ -103,9 +103,9 @@ public class MainActivity extends AppCompatActivity {
 			if (netverifyFragment != null) {
 				netverifyFragment.onActivityResult(requestCode, resultCode, intent);
 			}
-//			Fragment multiDocFragment = mSectionsPagerAdapter.getItem(1);
-//			if (multiDocFragment != null) {
-//				multiDocFragment.onActivityResult(requestCode, resultCode, intent);
+//			Fragment documentVerificationFragment = mSectionsPagerAdapter.getItem(1);
+//			if (documentVerificationFragment != null) {
+//				documentVerificationFragment.onActivityResult(requestCode, resultCode, intent);
 //			}
 		} else if (requestCode == BamSDK.REQUEST_CODE) {
 			Fragment bamFragment = mSectionsPagerAdapter.getItem(2);
@@ -146,12 +146,12 @@ public class MainActivity extends AppCompatActivity {
 					nvFragment.setArguments(bundle);
 					return nvFragment;
 				case 1:
-					MultiDocumentFragment multiDocFragment = new MultiDocumentFragment();
-					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_multidoc)));
+					DocumentVerificationFragment documentVerificationFragment = new DocumentVerificationFragment();
+					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_documentverification)));
 					bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
 					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
-					multiDocFragment.setArguments(bundle);
-					return multiDocFragment;
+					documentVerificationFragment.setArguments(bundle);
+					return documentVerificationFragment;
 				case 2:
 					BamFragment bamFragment = new BamFragment();
 					bundle.putString(KEY_SWITCH_ONE_TEXT, getResources().getString(R.string.bam_expiry_required));
@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
 				case 0:
 					return getResources().getString(R.string.section_netverify);
 				case 1:
-					return getResources().getString(R.string.section_multidoc);
+					return getResources().getString(R.string.section_documentverification);
 				case 2:
 					return getResources().getString(R.string.section_bamcheckout);
 				case 3:

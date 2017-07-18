@@ -1,7 +1,7 @@
 ![Fastfill & Netverify](images/netverify.png)
 
-# Integration of Fastfill & Netverify SDK
-Netverify Mobile SDK offers scanning and authentication of governmental issued IDs.
+# Fastfill & Netverify SDK for Android
+Netverify & Fastfill SDK offers scanning and authentication of governmental issued IDs.
 
 ## Table of Content
 
@@ -16,6 +16,18 @@ Netverify Mobile SDK offers scanning and authentication of governmental issued I
 
 ## Release notes
 For changes in the technical area, please read our [transition guide](transition-guide_netverify-fastfill.md).
+
+#### Additions
+* Advanced Liveness Detection
+* NFC support for specific Identity Documents
+* Added mechanism to avoid capturing of front as back side
+* Full Fastfill offline functionality 
+
+#### Changes
+* Minor UI/UX changes
+
+#### Fixes
+* Miscellaneous bugfixes
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -32,7 +44,7 @@ Using the SDK requires an activity declaration in your `AndroidManifest.xml`.
 
 You can specify your own theme (see chapter [Customization](#customization)). The orientation can be sensor based or locked with the attribute `android:screenOrientation`.
 
-If you are using ePassport scanning, following lines are needed:
+If you are using eMRTD scanning, following lines are needed:
 
 ```
 -keep class net.sf.scuba.smartcards.IsoDepCardService {*;}
@@ -47,30 +59,35 @@ If you are using ePassport scanning, following lines are needed:
 -dontwarn org.spongycastle.**
 ```
 
+If you want to use offline scanning for Fastfill please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com.
+
 ## Dependencies
+
+If an optional module is __not linked__, the __scan method is not available__ but the library size is reduced.
 
 |Dependency        | Mandatory           | Description       |
 | ---------------------------- |:-------------:|:-----------------|
-| com.jumio.android:core:2.6.1@aar                   | x | Jumio Core library|
-| com.jumio.android:nv:2.6.1@aar                     | x | Netverify library |
+| com.jumio.android:core:2.7.0@aar                   | x | Jumio Core library|
+| com.jumio.android:nv:2.7.0@aar                     | x | Netverify library |
 |com.android.support:appcompat-v7:25.3.1             | x | Android native library|
 |com.android.support:support-v4:25.3.1               | x | Android native library|
+|com.google.android.gms:play-services-vision:10.2.1  | x | Barcode Scanning |
 |com.android.support:design:25.3.1                   |   | Android native library|
-|com.jumio.android:javadoc:2.6.1                     |   | Jumio SDK Javadoc|
-|com.jumio.android:nv-barcode:2.6.1@aar              |   | US / CAN Barcode Scanning|
-|com.google.android.gms:play-services-vision:10.0.1   |   | US / CAN Barcode Scanning alternative (reduced size)|
-|com.jumio.android:nv-mrz:2.6.1@aar             		 |   | MRZ scanning|
-|com.jumio.android:nv-nfc:2.6.1@aar              		 |   | ePassport Scanning|
-|com.madgag.spongycastle:prov:1.54.0.0             	 |   | ePassport Scanning|
-|net.sf.scuba:scuba-sc-android:0.0.10             	 |   | ePassport Scanning|
-|com.jumio.android:nv-ocr:2.6.1@aar             		 |   | Template Matcher|
+|com.jumio.android:javadoc:2.7.0                     |   | Jumio SDK Javadoc|
+|com.jumio.android:nv-barcode:2.7.0@aar              |   | US / CAN Barcode Scanning|
+|com.jumio.android:nv-barcode-vision:2.7.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) |
+|com.jumio.android:nv-mrz:2.7.0@aar             		 |   | MRZ scanning|
+|com.jumio.android:nv-nfc:2.7.0@aar              		 |   | eMRTD Scanning|
+|com.madgag.spongycastle:prov:1.54.0.0             	 |   | eMRTD Scanning|
+|net.sf.scuba:scuba-sc-android:0.0.10             	 |   | eMRTD Scanning|
+|com.jumio.android:nv-ocr:2.7.0@aar             		 |   | Template Matcher|
+|com.jumio.android:nv-liveness:2.7.0@aar 						 |   | Face-Livenss library|
 
-If an optional module is not linked, the scan method is not available but the library size is reduced.
 
 __Note:__ If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-compile "com.jumio.android:bam:2.6.1@aar"
+compile "com.jumio.android:bam:2.7.0@aar"
 ```
 
 Applications implementing the SDK shall not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.
@@ -104,14 +121,14 @@ __Note:__ Log into your Jumio merchant backend, and you can find your merchant A
 
 By default, the SDK is used in Fastfill mode which means it is limited to data extraction only. No verification of the ID is performed.
 
-Enable ID verification to receive a verification status and verified data positions (see [Callback for Netverify](server-related_multi-document.md)). A callback URL can be specified for individual transactions (constraints see chapter [Callback URL](integration_callback.md)). Ensure that your merchant account is allowed to use this feature.
+Enable ID verification to receive a verification status and verified data positions (see [Callback for Netverify](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-for-netverify)). A callback URL can be specified for individual transactions (constraints see chapter [Callback URL](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-url)). Ensure that your merchant account is allowed to use this feature.
 
 __Note:__ Not possible for accounts configured as Fastfill only.
 ```
 netverifySDK.setRequireVerification(true);
 netverifySDK.setCallbackUrl("YOURCALLBACKURL");
 ```
-You can enable face match during the ID verification for a specific transaction (in case it is enabled for your account).
+You can enable face match during the ID verification for a specific transaction (if it is enabled for your account).
 ```
 netverifySDK.setRequireFaceMatch(true);
 ```
@@ -155,13 +172,13 @@ __Note:__ The additional information should not contain sensitive data like PII 
 netverifySDK.setAdditionalInformation("ADDITIONALINFORMATION");
 ```
 
-### ePassport
+### eMRTD
 
-Use `setEnableEpassport` to read the NFC chip of an ePassport.
+Use `setEnableEMRTD` to read the NFC chip of an eMRTD.
 ```
-netverifySDK.setEnableEpassport (true);
+netverifySDK.setEnableEMRTD (true);
 ```
-__Note:__ Not available for Fastfill as it is a Netverify feature. to setEnableEpassport
+__Note:__ Not available for Fastfill as it is a Netverify feature.
 
 ### Analytics Service
 
@@ -178,6 +195,28 @@ You receive a list of the current DebugSessionID by using getDebugID. This metho
 netverifySDK.getDebugID();
 ```
 
+### Offline scanning
+
+If you want to use Fastfill in offline mode you can find your Offline token in your Jumio merchant backend on the "Settings" page under "API credentials".
+
+```
+netverifySDK.create(rootActivity, YOUROFFLINETOKEN, COUNTRYCODE)
+```
+
+Possible countries: [ISO 3166-1 alpha-3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code
+
+Use the nv-barcode-vision library instead of the play-services-vision libary and add the following meta-data tags to your `AndroidManifest.xml`:
+
+```
+<meta-data
+			android:name="com.google.android.gms.version"
+			android:value="@integer/google_play_services_version" />
+<meta-data
+			android:name="com.google.android.gms.vision.DEPENDENCIES"
+			android:value="barcode, face"
+			tools:replace="android:value"/>
+```
+
 ### Miscellaneous
 
 In case Fastfill is used (requireVerification=NO), data extraction can be limited to be executed on device only by enabling `setDataExtractionOnMobileOnly`
@@ -188,11 +227,6 @@ netverifySDK.setDataExtractionOnMobileOnly(true);
 Use `setCameraPosition` to configure the default camera (front or back).
 ```
 netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
-```
-
-Use the following method to disable the help screen before scanning:
-```
-netverifySDK.setShowHelpBeforeScan(false);
 ```
 
 ## Customization
@@ -284,7 +318,7 @@ Class **_NetverifyDocumentData:_**
 |optionalData2|	String|	50	|Optional field of MRZ line 2|
 |placeOfBirth|	String|	255	|Place of Birth	|
 |extractionMethod|	NVExtractionMethod| |Extraction method used during scanning (MRZ, OCR, BARCODE, BARCODE_OCR or NONE) |
-|ePassportStatus|	EPassportStatus	| |	Verification status of an ePassport scan VERIFIED (ePassport scanned and authenticated), DENIED (ePassport scanned and not authenticated) or NOT_AVAILABLE (no NFC on device or ePassport feature disabled), NOT_PERFORMED (NFC disabled on device)|
+|emrtdStatus|	EMRTDStatus	| |	Verification status of an eMRTD scan VERIFIED (eMRTD scanned and authenticated), DENIED (eMRTD scanned and not authenticated) or NOT_AVAILABLE (no NFC on device or eMRTD feature disabled), NOT_PERFORMED (NFC disabled on device)|
 
 Class **_NetverifyMrzData_**
 
@@ -316,7 +350,7 @@ Class **_Error codes_**
 
 ## Callback
 
-To get information about callbacks, Netverify Retrieval API, Netverify Delete API and Global Netverify settings and more, please read our [page with server related information](integration_callback.md).
+To get information about callbacks, Netverify Retrieval API, Netverify Delete API and Global Netverify settings and more, please read our [page with server related information](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md).
 
 ## Copyright
 

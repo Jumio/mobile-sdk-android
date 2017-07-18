@@ -1,6 +1,11 @@
 ![Fastfill & Netverify](images/netverify.png)
 
-# Transition guide for Fastfill & Netverify Mobile
+# Transition guide for Netverify & Fastfill SDK
+
+## 2.7.0
+* New Dependency `com.jumio.android:nv-liveness:2.7.0@aar` was added for face-liveness functionality.
+* Dependency `com.google.android.gms:play-services-vision` is now mandatory required because of added functionality.
+* Change SDK method `setEnableEpassport(boolean)` to `setEnableEMRTD(boolean)` beacause of to the support for NFC ID documents.
 
 ## 2.6.1
 No backward incompatible changes.
@@ -8,7 +13,7 @@ No backward incompatible changes.
 ## 2.6.0
 
 #### Changes in SDK Api
-* Removed SDK method `showHelpBeforeScan(boolean)` because the collapsed help view is now constantly visible during scanning.
+* Removed SDK method `setShowHelpBeforeScan(boolean)` because the collapsed help view is now constantly visible during scanning.
 * Add NetverifySDK method `isRooted(Context)` for device root-check before starting the SDK
 
 #### Changes in localizable strings

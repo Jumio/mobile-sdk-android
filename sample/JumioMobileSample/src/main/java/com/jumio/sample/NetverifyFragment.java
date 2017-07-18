@@ -62,7 +62,7 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 			// NetverifySDK.getSDKVersion();
 
 			// Call the method isSupportedPlatform to check if the device is supported.
-			// netverifySDK.isSupportedPlatform();
+			// NetverifySDK.isSupportedPlatform(getActivity());
 
 			// Applications implementing the SDK shall not run on rooted devices. Use either the below
 			// method or a self-devised check to prevent usage of SDK scanning functionality on rooted
@@ -75,6 +75,14 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 			// of your activity. If your merchant account is created in the EU data center, use
 			// JumioDataCenter.EU instead.
 			netverifySDK = NetverifySDK.create(getActivity(), apiToken, apiSecret, JumioDataCenter.US);
+
+			// Use the following method to create an instance of the SDK, using offline fastfill scanning.
+			// try {
+			//     netverifySDK = NetverifySDK.create(getActivity(), "YOUROFFLINETOKEN", "YOURPREFFEREDCOUNTRY");
+			// } catch (SDKExpiredException e) {
+			//    e.printStackTrace();
+			//    Toast.makeText(getActivity().getApplicationContext(), "The offline SDK is expired", Toast.LENGTH_LONG).show();
+			// }
 
 			// Enable ID verification to receive a verification status and verified data positions (see Callback chapter).
 			// Note: Not possible for accounts configured as Fastfill only.
@@ -105,10 +113,10 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 			// netverifySDK.setCallbackUrl("YOURCALLBACKURL");
 
 			// You can enable face match during the ID verification for a specific transaction.
-			// netverifySDK.setRequireFaceMatch(switchFaceMatch.isChecked());
+			netverifySDK.setRequireFaceMatch(switchFaceMatch.isChecked());
 
-			// Use the following method to disable ePassport scanning.
-			// netverifySDK.setEnableEpassport(false);
+			// Use the following method to disable eMRTD scanning.
+			// netverifySDK.setEnableEMRTD(false);
 
 			// Use the following method to set the default camera position.
 			// netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);

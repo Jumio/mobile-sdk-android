@@ -65,7 +65,7 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 			// BamSDK.getSDKVersion();
 
 			// Call the method isSupportedPlatform to check if the device is supported
-			// BamSDK.isSupportedPlatform();
+			// BamSDK.isSupportedPlatform(getActivity());
 
 			// Applications implementing the SDK shall not run on rooted devices. Use either the below
 			// method or a self-devised check to prevent usage of SDK scanning functionality on rooted
@@ -126,10 +126,6 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 
 			// Automatically enable flash when scan is started.
 			// bamSDK.setEnableFlashOnScanStart(true);
-
-			// Use the following method to provide the Adyen Public Key. This activates the generation
-			// of an encrypted Adyen payment data object.
-			// bamSDK.setAdyenPublicKey("YOUR ADYEN PUBLIC KEY");
 
 			// You can add custom fields to the confirmation page (keyboard entry or predefined values).
 			// bamSDK.addCustomField("zipCodeId", getString(R.string.zip_code), InputType.TYPE_CLASS_NUMBER, "[0-9]{5,}");

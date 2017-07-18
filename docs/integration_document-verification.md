@@ -1,7 +1,7 @@
-![Multi Document](images/multi_document.png)
+![Document Verification](images/document_verification.png)
 
-# Netverify Multi Document Mobile SDK for Android
-Netverify Multi Document Mobile is a powerful solution to enable capturing various types (Utility Bill, Bank statement and many others) of your customer's documents in your mobile application within seconds, also supporting data extraction from Utility Bills and Bank Statements from US, UK, France and Canada, as well as US Social Security Cards.
+# Document Verification SDK for Android
+Document Verification SDK is a powerful solution to enable scanning various types (Utility Bill, Bank statement and many others) of your customer's documents in your mobile application within seconds, also supporting data extraction from Utility Bills and Bank Statements from US, UK, France and Canada, as well as US Social Security Cards.
 
 ## Table of Content
 
@@ -14,18 +14,22 @@ Netverify Multi Document Mobile is a powerful solution to enable capturing vario
 - [Callback](#callback)
 
 ## Release notes
-For changes in the technical area, please read our [transition guide](transition-guide_multi-document.md).
+For changes in the technical area, please read our [transition guide](transition-guide_document_verification.md).
+
+#### Changes
+* Renamed SDK from Multi Document to Document Verification
+* Minor UI/UX changes
 
 ## Setup
-The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for MultiDocument.
+The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
 
 Using the SDK requires an activity declaration in your AndroidManifest.xml.
 
 ```
 <activity
-	android:theme="@style/Theme.MultiDocument"
+  android:name="com.jumio.dv.DocumentVerificationActivity"
+	android:theme="@style/Theme.DocumentVerification"
 	android:hardwareAccelerated="true"
-	android:name="com.jumio.bam.BamActivity"
 	android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"/>
 ```
 
@@ -38,22 +42,22 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       |
 | ---------------------------- |:-------------:|:-----------------|
-| com.jumio.android:core:2.6.1@aar                   | x | Jumio Core library|
-| com.jumio.android:md:2.6.1@aar                     | x | Multi Document library |
-|com.android.support:appcompat-v7:25.3.1             | x | Android native library|
-|com.android.support:support-v4:25.3.1               | x | Android native library|
-|com.jumio.android:javadoc:2.6.1                     |   | Jumio SDK Javadoc|
+| com.jumio.android:core:2.7.0@aar                    | x | Jumio Core library|
+| com.jumio.android:dv:2.7.0@aar                      | x | Document Verification library |
+| com.android.support:appcompat-v7:25.3.1             | x | Android native library|
+| com.android.support:support-v4:25.3.1               | x | Android native library|
+| com.jumio.android:javadoc:2.7.0                     |   | Jumio SDK Javadoc|
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
 Applications implementing the SDK shall not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.
 ```
-MultiDocumentSDK.isRooted(Context context);
+DocumentVerificationSDK.isRooted(Context context);
 ```
 
 Call the method `isSupportedPlatform` to check if the device is supported.
 ```
-MultiDoucmentSDK.isSupportedPlatform();
+DocumentVerificationSDK.isSupportedPlatform();
 ```
 
 Check the Android Studio sample projects to learn the most common use.
@@ -65,7 +69,7 @@ To create an instance for the SDK, perform the following call as soon as your ac
 private static String YOURAPITOKEN = ""; 
 private static String YOURAPISECRET = "";
 
-MultiDocumentSDK netverifySDK = MultiDocumentSDK.create(yourActivity, YOURAPITOKEN, YOURAPISECRET, JumioDataCenter.US);
+DocumentVerificationSDK documentVerificationSDK = DocumentVerificationSDK.create(yourActivity, YOURAPITOKEN, YOURAPISECRET, JumioDataCenter.US);
 ```
 Make sure that your merchant API token and API secret are correct, specify an instance
 of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). If your merchant account is in the EU data center, use `JumioDataCenter.EU` instead.
@@ -77,7 +81,7 @@ __Note:__ Log into your Jumio merchant backend, and you can find your merchant A
 ### Document type
 Use `setType` to pass the document type.
 ```
-multiDocumentSDK.setType("DOCUMENTTYPE");
+documentVerificationSDK.setType("DOCUMENTTYPE");
 ```
 
 Possible types:
@@ -110,75 +114,70 @@ Possible types:
 *  CUSTOM (Custom document type)
 
 #### Custom Document Type
-Use the following method to pass your custom document code. Maintain your custom document code within your Jumio merchant backend under "Settings" - "Multi Documents" - "Custom".
+Use the following method to pass your custom document code. Maintain your custom document code within your Jumio merchant backend under "Settings" - "Multi Document" - "Custom".
 ```
-multiDocumentSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");
+documentVerificationSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");
 ```
 
 ### Country
 The country needs to be in format [ISO-3166-1 alpha 3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) or XKX for Kosovo.
 ```
-multiDocumentSDK.setCountry("USA");
+documentVerificationSDK.setCountry("USA");
 ```
 
 ### Transaction identifiers
 
 Use the following property to identify the scan in your reports (max. 100 characters).
 ```
-multiDocumentSDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
+documentVerificationSDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
 ```
 
 A callback URL can be specified for individual transactions constraints see chapter [Callback URL](#callback-url)). This setting overrides your Jumio merchant settings.
 ```
-multiDocumentSDK.setCallbackUrl("YOURCALLBACKURL");
+documentVerificationSDK.setCallbackUrl("YOURCALLBACKURL");
 ```
 
 You can also set an additional information parameter (max. 255 characters).
 
 __Note:__ The additional information should not contain sensitive data like PII (Personally Identifiable Information) or account login.
 ```
-multiDocumentSDK.setAdditionalInformation("ADDITIONALINFORMATION");
+documentVerificationSDK.setAdditionalInformation("ADDITIONALINFORMATION");
 ```
 
 
 ### Miscellaneous
 Use the following property to identify the scan in your reports (max. 100 characters).
 ```
-multiDocumentSDK.setMerchantScanReference("YOURSCANREFERENCE");
+documentVerificationSDK.setMerchantScanReference("YOURSCANREFERENCE");
 ```
 
 You can also set a customer identifier (max. 100 characters).
 ```
-multiDocumentSDK.setCustomerId("CUSTOMERID");
+documentVerificationSDK.setCustomerId("CUSTOMERID");
 ```
 
 __Note:__ The customer ID and merchant scan reference should not contain sensitive data like PII (Personally Identifiable Information) or account login.
 
 Use setCameraPosition to configure the default camera (front or back).
 ```
-multiDocumentSDK.setCameraPosition(JumioCameraPosition.FRONT);
-```
-
-Use the following method to disable the help screen before scanning:
-```
-multiDocumentSDK.setShowHelpBeforeScan(false);
+documentVerificationSDK.setCameraPosition(JumioCameraPosition.FRONT);
 ```
 
 Use setDocumentName to override the document label on Help screen.
 ```
-multiDocumentSDK.setDocumentName(“YOURDOCNAME”);
+documentVerificationSDK.setDocumentName(“YOURDOCNAME”);
 ```
 
 ## Customization
 
 ### Customizing look and feel
-The SDK can be customized to fit your application’s look and feel by specifying `Theme.MultiDocument` as a parent style of your own theme. Click on the element `Theme.MultiDocument` in the manifest while holding Ctrl and Android Studio will display the available items.
+The SDK can be customized to fit your application’s look and feel by specifying `Theme.DocumentVerification` as a parent style of your own theme. Click on the element `Theme.DocumentVerification` in the manifest while holding Ctrl and Android Studio will display the available items.
 
 ### Customizing theme at runtime
 
 To customize the theme at runtime, overwrite the theme that is used for Netverify in the manifest by adding the line of code below. Use the resource id of a customized theme that uses `Theme.Netverify` as parent.
 ```
-multiDocumentSDK.setCustomTheme(CUSTOMTHEME);
+documentVerificationSDK.setCustomTheme(CUSTOMTHEME);
 ```
 
 ## SDK Workflow
@@ -187,28 +186,28 @@ multiDocumentSDK.setCustomTheme(CUSTOMTHEME);
 
 To show the SDK, call the respective method below within your activity or fragment.
 
-Activity: `MultiDocumentSDK.start();` <br/>
-Fragment: `startActivityForResult(multiDocumentSDK.getIntent(),MultiDocumentSDK.REQUEST_CODE);`
+Activity: `DocumentVerificationSDK.start();` <br/>
+Fragment: `startActivityForResult(documentVerificationSDK.getIntent(),DocumentVerificationSDK.REQUEST_CODE);`
 
-__Note:__ The default request code is 200. To use another code, override the public static variable `MultiDocumentSDK.REQUEST_CODE` before displaying the SDK.
+__Note:__ The default request code is 200. To use another code, override the public static variable `DocumentVerificationSDK.REQUEST_CODE` before displaying the SDK.
 
 ### Retrieving information
 
-Implement the standard `onActivityResult` method in your activity or fragment for successful scans (`Activity.RESULT_OK`) and user cancellation notifications (`Activity.RESULT_CANCELED`). Call `multiDocumentSDK.destroy()` once you received the result.
+Implement the standard `onActivityResult` method in your activity or fragment for successful scans (`Activity.RESULT_OK`) and user cancellation notifications (`Activity.RESULT_CANCELED`). Call `documentVerificationSDK.destroy()` once you received the result.
 
 ```
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	if (requestCode == MultiDocumentSDK.REQUEST_CODE) {
+	if (requestCode == DocumentVerificationSDK.REQUEST_CODE) {
 		if (resultCode == Activity.RESULT_OK) {
 			// OBTAIN PARAMETERS HERE
 			// YOURCODE
 		} else if (resultCode == Activity.RESULT_CANCELED) {
-			// String scanReference = data.getStringExtra(MultiDocumentSDK.EXTRA_SCAN_REFERENCE);
-			// int errorCode = data.getIntExtra(MultiDocumentSDK.EXTRA_ERROR_CODE, 0);
-			// String errorMessage = data.getStringExtra(MultiDocumentSDK.EXTRA_ERROR_MESSAGE);
+			// String scanReference = data.getStringExtra(DocumentVerificationSDK.EXTRA_SCAN_REFERENCE);
+			// int errorCode = data.getIntExtra(DocumentVerificationSDK.EXTRA_ERROR_CODE, 0);
+			// String errorMessage = data.getStringExtra(DocumentVerificationSDK.EXTRA_ERROR_MESSAGE);
 			// YOURCODE
 		}
-		// multiDocumentSDK.destroy();
+		// documentVerificationSDK.destroy();
 	}
 }
 ```
@@ -225,7 +224,7 @@ Class **_Error codes_**:
 |280| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
 
 ## Callback
-To get information about callbacks, Netverify Retrieval API, Netverify Delete API and Global Netverify settings and more, please read our [page with server related information](integration_callback.md).
+To get information about callbacks, Netverify Retrieval API, Netverify Delete API and Global Netverify settings and more, please read our [page with server related information](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md).
 
 ## Copyright
 

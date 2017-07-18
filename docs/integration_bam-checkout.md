@@ -1,7 +1,7 @@
 ![BAM Checkout](images/bam_checkout.png)
 
-# BAM Checkout Mobile SDK for Android
-BAM Checkout is a powerful, cutting-edge solution to extract data from your customer´s credit card and/or ID in your mobile application within seconds, including home address. It fits perfectly, and fully automates, every checkout flow to avoid manual input at all which leads to an increased conversion rate .
+# BAM Checkout SDK for Android
+BAM Checkout SDK is a powerful, cutting-edge solution to extract data from your customer´s credit card and/or ID in your mobile application within seconds, including home address. It fits perfectly, and fully automates, every checkout flow to avoid manual input at all which leads to an increased conversion rate .
 
 ## Table of Content
 
@@ -17,6 +17,12 @@ BAM Checkout is a powerful, cutting-edge solution to extract data from your cust
 
 ## Release notes
 For changes in the technical area, please read our [transition guide](transition-guide_bam-checkout.md).
+
+#### Changes
+* Removed Adyen functionality
+
+#### Fixes
+* Miscellaneous bugfixes
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Bam-Checkout.
@@ -41,11 +47,11 @@ If you want to use offline scanning for BAM Checkout (Credit card scanning), ple
 
 |Dependency        | Mandatory           | Description       |
 | :---------------------------- |:-------------:|:-----------------|
-|com.jumio.android:core:2.6.1@aar                    | x | Jumio Core library|
-|com.jumio.android:bam:2.6.1@aar                     | x | BAM Checkout library |
+|com.jumio.android:core:2.7.0@aar                    | x | Jumio Core library|
+|com.jumio.android:bam:2.7.0@aar                     | x | BAM Checkout library |
 |com.android.support:appcompat-v7:25.3.1             | x | Android native library|
 |com.android.support:support-v4:25.3.1               | x | Android native library|
-|com.jumio.android:javadoc:2.6.1                     |   | Jumio SDK Javadoc|
+|com.jumio.android:javadoc:2.7.0                     |   | Jumio SDK Javadoc|
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -138,14 +144,6 @@ You can add custom fields to "Additional info" view (text input field or selecti
 bamSDK.addCustomField("zipCodeId", getString(R.string.zip_code), InputType.TYPE_CLASS_NUMBER, "[0-9]{5,}");
 
 bamSDK.addCustomField("stateId", getString(R.string.state), states, false, getString(R.string.state_reset_value));
-```
-
-### Adyen encryption
-Use the following method to support the Adyen client-side-encryption. To successfully create an encrypted data object, enable expiry date, CVC and card holder name.
-
-__Note:__ Transmission of the encrypted object to the Adyen payment gateway is not part of the SDK.
-```
-bamSDK.setAdyenPublicKey("ADYENPUBLICKEY");
 ```
 
 The SDK is valid until the expiration date is reached. If the Android Certificate Fingerprint does not match with the token anymore or if the token itself is set to an invalid value a `PlatformNotSupportedException` will be thrown.
@@ -296,7 +294,6 @@ Class **_BamCardInformation_**
 | cardAccountNumber  		| char[] | 8 | Account number if enabled, available and readable|
 | cardSortCodeValid  		| boolean |  | True if sort code valid, otherwise false|
 | cardAccountNumberValid| boolean |  | True if account number code valid, otherwise false|
-| encryptedAdyenString  | char[] |  | Encrypted ADYEN string						|
 
 | Method        			| Parameter type | Return type |Description               |
 | --------------------|:-------|:-------|:-------------|

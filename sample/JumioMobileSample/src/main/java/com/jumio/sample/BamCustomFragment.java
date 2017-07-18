@@ -2,6 +2,8 @@ package com.jumio.sample;
 
 import android.app.*;
 import android.content.*;
+import android.content.res.Configuration;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.*;
 import android.support.v4.app.Fragment;
@@ -12,6 +14,7 @@ import android.widget.*;
 import com.jumio.MobileSDK;
 import com.jumio.bam.*;
 import com.jumio.bam.custom.*;
+import com.jumio.commons.utils.ScreenUtil;
 import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
 
@@ -72,10 +75,7 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 				//can cause two SDK instances to be created, which will result in undefined (and
 				//most likely incorrect) behaviour. A suitable place for the re-instantiation of the SDK
 				//would be onCreate().
-				customScanPresenter.stopScan();
-				customScanPresenter.clearSDK();
-				bamCustomContainer.setVisibility(View.GONE);
-				startBamCustom.setVisibility(View.VISIBLE);
+				stopBamCustomScan();
 			}
 		});
 
@@ -107,21 +107,58 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 		return rootView;
 	}
 
+	private void stopBamCustomScan() {
+		if (customScanPresenter != null) {
+			customScanPresenter.stopScan();
+			customScanPresenter.clearSDK();
+			customScanPresenter = null;
+		}
+		if (bamCustomContainer != null) {
+			bamCustomContainer.setVisibility(View.GONE);
+		}
+		if (startBamCustom != null) {
+			startBamCustom.setVisibility(View.VISIBLE);
+		}
+	}
+
 	@Override
 	public void onPause() {
 		if (customScanPresenter != null)
 			customScanPresenter.onActivityPause();
+		stopBamCustomScan();
 		super.onPause();
 	}
 
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if (customScanPresenter != null)
+			customScanPresenter.clearSDK();
+
+		if(bamSDK != null) {
+			bamSDK.destroy();
+			bamSDK = null;
+		}
+	}
+
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+
+		boolean isPortrait = newConfig.orientation == Configuration.ORIENTATION_PORTRAIT;
+		FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(isPortrait ? FrameLayout.LayoutParams.MATCH_PARENT : FrameLayout.LayoutParams.WRAP_CONTENT, isPortrait ? FrameLayout.LayoutParams.WRAP_CONTENT : ScreenUtil.dpToPx(getActivity(), 300));
+		customScanView.setLayoutParams(params);
+	}
+
 	private void startBamCustomScan() {
-		initializeBamSDK();
-		if (bamSDK == null)
-			return;
 		try {
 			startBamCustom.setVisibility(View.GONE);
-			customScanPresenter = bamSDK.start(this, customScanView);
 			bamCustomContainer.setVisibility(View.VISIBLE);
+			initializeBamSDK();
+			if (bamSDK == null)
+				return;
+			customScanPresenter = bamSDK.start(this, customScanView);
 		} catch (IllegalArgumentException e) {
 			Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 		}
@@ -134,7 +171,7 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 			// BamSDK.getSDKVersion();
 
 			// Call the method isSupportedPlatform to check if the device is supported
-			// BamSDK.isSupportedPlatform();
+			// BamSDK.isSupportedPlatform(getActivity());
 
 			// Applications implementing the SDK shall not run on rooted devices. Use either the below
 			// method or a self-devised check to prevent usage of SDK scanning functionality on rooted
@@ -196,10 +233,6 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 			// Automatically enable flash when scan is started.
 			// bamSDK.setEnableFlashOnScanStart(true);
 
-			// Use the following method to provide the Adyen Public Key. This activates the generation
-			// of an encrypted Adyen payment data object.
-			// bamSDK.setAdyenPublicKey("YOUR ADYEN PUBLIC KEY");
-
 			// You can add custom fields to the confirmation page (keyboard entry or predefined values).
 			// bamSDK.addCustomField("zipCodeId", getString(R.string.zip_code), InputType.TYPE_CLASS_NUMBER, "[0-9]{5,}");
 			// ArrayList<String> states = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.state_selection_values)));
@@ -236,6 +269,14 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 				bamSDK.destroy();
 				bamSDK = null;
 			}
+		}
+	}
+
+	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		super.setUserVisibleHint(isVisibleToUser);
+		if (!isVisibleToUser) {
+			stopBamCustomScan();
 		}
 	}
 
