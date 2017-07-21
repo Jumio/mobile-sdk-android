@@ -21,6 +21,8 @@
 
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
+-keep class com.samsung.** { *; }
+-keep class com.samsung.**$* { *; }
 
 -keep class net.sf.scuba.smartcards.IsoDepCardService {*;}
 -keep class org.jmrtd.** { *; }
@@ -32,3 +34,4 @@
 -dontwarn org.codehaus.**
 -dontwarn org.ejbca.**
 -dontwarn org.spongycastle.**
+-dontwarn com.samsung.**
