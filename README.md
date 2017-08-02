@@ -12,8 +12,8 @@ Applies to all products.
 
 #### Additions
 * Cross-Platform Support - Cordova
-* Major camera and focus improvements 
-* Display specific error codes to users 
+* Major camera and focus improvements
+* Display specific error codes to users
 
 #### Fixes
 * Overall stability improvements
@@ -49,6 +49,9 @@ If you are using Proguard, add the following lines in its configuration.
 ```
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
+-keep class com.samsung.** { *; }
+-keep class com.samsung.**$* { *; }
+-dontwarn com.samsung.**
 ```
 
 ## Integration

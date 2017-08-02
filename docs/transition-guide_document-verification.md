@@ -4,6 +4,12 @@
 
 ## 2.7.0
 * Removed SDK method `setShowHelpBeforeScan(boolean)` because the collapsed help view is now constantly visible during scanning.
+* Additional Proguard rules for the Samsung Camera SDK have to be added:
+```
+-keep class com.samsung.** { *; }
+-keep class com.samsung.**$* { *; }
+-dontwarn com.samsung.**
+```
 
 ## 2.6.1
 No backward incompatible changes.

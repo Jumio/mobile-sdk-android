@@ -4,6 +4,12 @@
 
 ## 2.7.0
 * Removed SDK method `setAdyenPublicKey(String)` along removing all adyen functionality.
+* Additional Proguard rules for the Samsung Camera SDK have to be added:
+```
+-keep class com.samsung.** { *; }
+-keep class com.samsung.**$* { *; }
+-dontwarn com.samsung.**
+```
 
 ## 2.6.1
 No backward incompatible changes.
