@@ -17,13 +17,8 @@ Netverify & Fastfill SDK offers scanning and authentication of governmental issu
 ## Release notes
 For changes in the technical area, please read our [transition guide](transition-guide_netverify-fastfill.md).
 
-#### Additions
-* Advanced Liveness Detection
-* NFC support for specific Identity Documents
-* Added mechanism to avoid capturing of front as back side
-* Full Fastfill offline functionality
-
 #### Changes
+* Stability improvements
 * Minor UI/UX changes
 
 #### Fixes
@@ -67,34 +62,27 @@ If an optional module is __not linked__, the __scan method is not available__ bu
 
 |Dependency        | Mandatory           | Description       |
 | ---------------------------- |:-------------:|:-----------------|
-| com.jumio.android:core:2.7.0@aar                   | x | Jumio Core library|
-| com.jumio.android:nv:2.7.0@aar                     | x | Netverify library |
+| com.jumio.android:core:2.8.0@aar                   | x | Jumio Core library|
+| com.jumio.android:nv:2.8.0@aar                     | x | Netverify library |
 |com.android.support:appcompat-v7:25.3.1             | x | Android native library|
 |com.android.support:support-v4:25.3.1               | x | Android native library|
-|com.google.android.gms:play-services-vision:10.2.1  | x | Barcode Scanning |
+|com.google.android.gms:play-services-vision:11.0.0  | x | Barcode Scanning |
+|com.jumio.android:nv-liveness:2.8.0@aar 		| x | Face-Liveness library|
 |com.android.support:design:25.3.1                   |   | Android native library|
-|com.jumio.android:javadoc:2.7.0                     |   | Jumio SDK Javadoc|
-|com.jumio.android:nv-barcode:2.7.0@aar              |   | US / CAN Barcode Scanning|
-|com.jumio.android:nv-barcode-vision:2.7.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) |
-|com.jumio.android:nv-mrz:2.7.0@aar             		 |   | MRZ scanning|
-|com.jumio.android:nv-nfc:2.7.0@aar              		 |   | eMRTD Scanning|
-|com.madgag.spongycastle:prov:1.54.0.0             	 |   | eMRTD Scanning|
-|net.sf.scuba:scuba-sc-android:0.0.10             	 |   | eMRTD Scanning|
-|com.jumio.android:nv-ocr:2.7.0@aar             		 |   | Template Matcher|
-|com.jumio.android:nv-liveness:2.7.0@aar 						 |   | Face-Livenss library|
+|com.jumio.android:javadoc:2.8.0                     |   | Jumio SDK Javadoc|
+|com.jumio.android:nv-barcode:2.8.0@aar              |   | US / CAN Barcode Scanning|
+|com.jumio.android:nv-barcode-vision:2.8.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) |
+|com.jumio.android:nv-mrz:2.8.0@aar             		 |   | MRZ scanning|
+|com.jumio.android:nv-nfc:2.8.0@aar              		 |   | eMRTD Scanning|
+|com.madgag.spongycastle:prov:1.56.0.0             	 |   | eMRTD Scanning|
+|net.sf.scuba:scuba-sc-android:0.0.12             	 |   | eMRTD Scanning|
+|com.jumio.android:nv-ocr:2.8.0@aar             		 |   | Template Matcher|
 
-__Note:__ If the dependencies `com.jumio.android:nv-liveness` and `com.jumio.android:nv-barcode-vision` are both used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues (see [Sample app Manifest](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/AndroidManifest.xml)):
-```
-<meta-data
-			android:name="com.google.android.gms.vision.DEPENDENCIES"
-			android:value="barcode, face"
-			tools:replace="android:value"/>
-```
 
 __Note:__ If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-compile "com.jumio.android:bam:2.7.0@aar"
+compile "com.jumio.android:bam:2.8.0@aar"
 ```
 
 Applications implementing the SDK shall not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.
@@ -204,12 +192,13 @@ netverifySDK.getDebugID();
 
 ### Offline scanning
 
-If you want to use Fastfill in offline mode please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com.
-Once they have enabled this feature for your account, you can find your offline token in your Jumio merchant backend on the "Settings" page under "API credentials".
+If you want to use Fastfill in offline mode please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com. Once they have enabled this feature for your account, you can find your offline token in your Jumio merchant backend on the "Settings" page under "API credentials".
 
 ```
 netverifySDK.create(rootActivity, YOUROFFLINETOKEN, COUNTRYCODE)
 ```
+
+__Note:__ COUNTRYCODE is an optional parameter and can also be passed as `null`. In this case no country is preselected in the SDK.
 
 Possible countries: [ISO 3166-1 alpha-3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code
 
@@ -273,7 +262,7 @@ netverifySDK.initiate(new NetverifyInitiateCallback() {
 ```
 To show the SDK, call the respective method below within your activity or fragment.
 
-Activity: `netverifySDK.start();`
+Activity: `netverifySDK.start();` <br/>
 Fragment: `startActivityForResult(netverifySDK.getIntent(), NetverifySDK.REQUEST_CODE);`
 
 __Note:__ The default request code is 200. To use another code, override the public static variable `NetverifySDK.REQUEST_CODE` before displaying the SDK.
@@ -295,7 +284,11 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			// String errorMessage = data.getStringExtra(NetverifySDK.EXTRA_ERROR_MESSAGE);
 			// YOURCODE
 		}
-		// netverifySDK.destroy();
+		// CLEANUP THE SDK AFTER RECEIVING THE RESULT
+		// if (netverifySDK != null) {
+		// 	netverifySDK.destroy();
+		// 	netverifySDK = null;
+		// }
 	}
 }
 ```

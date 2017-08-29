@@ -14,7 +14,7 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "2.7.0"
+	SDK_VERSION = "2.8.0"
 }
 
 dependencies {
@@ -37,11 +37,11 @@ dependencies {
 	compile "com.android.support:design:25.3.1"
 
 	//only for nv-nfc
-	compile "com.madgag.spongycastle:prov:1.54.0.0"
+	compile "com.madgag.spongycastle:prov:1.56.0.0"
 	compile "net.sf.scuba:scuba-sc-android:0.0.12"
 
 	//only for nv-barcode-vision
-	compile "com.google.android.gms:play-services-vision:10.2.6"
+	compile "com.google.android.gms:play-services-vision:11.0.0"
 
 	compile fileTree(dir: 'libs', include: '*.jar')
 }

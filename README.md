@@ -11,9 +11,8 @@
 Applies to all products.
 
 #### Additions
-* Cross-Platform Support - Cordova
-* Major camera and focus improvements
-* Display specific error codes to users
+* Cross-Platform Support - React Native
+* Cordova - added Demo application 
 
 #### Fixes
 * Overall stability improvements
@@ -49,9 +48,6 @@ If you are using Proguard, add the following lines in its configuration.
 ```
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
--keep class com.samsung.** { *; }
--keep class com.samsung.**$* { *; }
--dontwarn com.samsung.**
 ```
 
 ## Integration
@@ -110,7 +106,7 @@ With accessibility support, visually impaired users can now enable __TalkBack__ 
 # Support
 
 ## Previous version
-The previous release version 2.7.0 of the Jumio Mobile SDK is supported until 2017-08-02.
+The previous release version 2.7.0 of the Jumio Mobile SDK is supported until 2017-11-29.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

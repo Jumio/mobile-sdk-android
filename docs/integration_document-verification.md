@@ -16,9 +16,8 @@ Document Verification SDK is a powerful solution to enable scanning various type
 ## Release notes
 For changes in the technical area, please read our [transition guide](transition-guide_document_verification.md).
 
-#### Changes
-* Renamed SDK from Multi Document to Document Verification
-* Minor UI/UX changes
+#### Fixes
+* Miscellaneous bugfixes
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -42,11 +41,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       |
 | ---------------------------- |:-------------:|:-----------------|
-| com.jumio.android:core:2.7.0@aar                    | x | Jumio Core library|
-| com.jumio.android:dv:2.7.0@aar                      | x | Document Verification library |
+| com.jumio.android:core:2.8.0@aar                    | x | Jumio Core library|
+| com.jumio.android:dv:2.8.0@aar                      | x | Document Verification library |
 | com.android.support:appcompat-v7:25.3.1             | x | Android native library|
 | com.android.support:support-v4:25.3.1               | x | Android native library|
-| com.jumio.android:javadoc:2.7.0                     |   | Jumio SDK Javadoc|
+| com.jumio.android:javadoc:2.8.0                     |   | Jumio SDK Javadoc|
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -189,7 +188,7 @@ To show the SDK, call the respective method below within your activity or fragme
 Activity: `DocumentVerificationSDK.start();` <br/>
 Fragment: `startActivityForResult(documentVerificationSDK.getIntent(),DocumentVerificationSDK.REQUEST_CODE);`
 
-__Note:__ The default request code is 200. To use another code, override the public static variable `DocumentVerificationSDK.REQUEST_CODE` before displaying the SDK.
+__Note:__ The default request code is 300. To use another code, override the public static variable `DocumentVerificationSDK.REQUEST_CODE` before displaying the SDK.
 
 ### Retrieving information
 
@@ -207,7 +206,11 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			// String errorMessage = data.getStringExtra(DocumentVerificationSDK.EXTRA_ERROR_MESSAGE);
 			// YOURCODE
 		}
-		// documentVerificationSDK.destroy();
+        // CLEANUP THE SDK AFTER RECEIVING THE RESULT
+        // if (documentVerificationSDK != null) {
+        // 	documentVerificationSDK.destroy();
+        // 	documentVerificationSDK = null;
+        // }
 	}
 }
 ```

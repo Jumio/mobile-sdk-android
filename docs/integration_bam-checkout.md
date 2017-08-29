@@ -18,9 +18,6 @@ BAM Checkout SDK is a powerful, cutting-edge solution to extract data from your 
 ## Release notes
 For changes in the technical area, please read our [transition guide](transition-guide_bam-checkout.md).
 
-#### Changes
-* Removed Adyen functionality
-
 #### Fixes
 * Miscellaneous bugfixes
 
@@ -47,11 +44,11 @@ If you want to use offline scanning for BAM Checkout (Credit card scanning), ple
 
 |Dependency        | Mandatory           | Description       |
 | :---------------------------- |:-------------:|:-----------------|
-|com.jumio.android:core:2.7.0@aar                    | x | Jumio Core library|
-|com.jumio.android:bam:2.7.0@aar                     | x | BAM Checkout library |
+|com.jumio.android:core:2.8.0@aar                    | x | Jumio Core library|
+|com.jumio.android:bam:2.8.0@aar                     | x | BAM Checkout library |
 |com.android.support:appcompat-v7:25.3.1             | x | Android native library|
 |com.android.support:support-v4:25.3.1               | x | Android native library|
-|com.jumio.android:javadoc:2.7.0                     |   | Jumio SDK Javadoc|
+|com.jumio.android:javadoc:2.8.0                     |   | Jumio SDK Javadoc|
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -167,7 +164,7 @@ netverifySDK.setCustomTheme(CUSTOMTHEME);
 
 To show the SDK, call the respective method below within your activity or fragment.
 
-Activity: `bamSDK.start();`
+Activity: `bamSDK.start();` <br/>
 Fragment: `startActivityForResult(bamSDK.getIntent(), BamSDK.REQUEST_CODE);`
 
 __Note:__ The default request code is 100. To use another code, override the public static variable `BamSDK.REQUEST_CODE` before displaying the SDK.
@@ -198,7 +195,11 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			// String errorMessage = data.getStringExtra(BamSDK.EXTRA_ERROR_MESSAGE);
 			// YOURCODE
 		}
-		// bamSDK.destroy();
+		// CLEANUP THE SDK AFTER RECEIVING THE RESULT
+		// if (bamSDK != null) {
+		// 	bamSDK.destroy();
+		// 	bamSDK = null;
+		// }
 	}
 }
 ```

@@ -18,8 +18,8 @@
 	<ScrollView
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:layout_alignParentTop="true"
 		android:layout_alignParentBottom="true"
+		android:layout_below="@+id/btnStart"
 		android:orientation="vertical">
 
 		<RelativeLayout
