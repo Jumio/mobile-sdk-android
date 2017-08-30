@@ -9,6 +9,20 @@
 * New Dependency `com.jumio.android:nv-liveness:2.7.0@aar` was added for face-liveness functionality.
 * Dependency `com.google.android.gms:play-services-vision` is now mandatory required because of added functionality.
 * Change SDK method `setEnableEpassport(boolean)` to `setEnableEMRTD(boolean)` beacause of to the support for NFC ID documents.
+* If the dependencies `com.jumio.android:nv-liveness` and `com.jumio.android:nv-barcode-vision` are both used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues.
+```
+<meta-data
+			android:name="com.google.android.gms.vision.DEPENDENCIES"
+			android:value="barcode, face"
+			tools:replace="android:value"/>
+```
+
+* Additional Proguard rules for the Samsung Camera SDK have to be added:
+```
+-keep class com.samsung.** { *; }
+-keep class com.samsung.**$* { *; }
+-dontwarn com.samsung.**
+```
 
 ## 2.6.1
 No backward incompatible changes.

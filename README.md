@@ -12,7 +12,7 @@ Applies to all products.
 
 #### Additions
 * Cross-Platform Support - React Native
-* Cordova - added Demo application 
+* Cordova - added Demo application
 
 #### Fixes
 * Overall stability improvements
@@ -48,6 +48,9 @@ If you are using Proguard, add the following lines in its configuration.
 ```
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
+-keep class com.samsung.** { *; }
+-keep class com.samsung.**$* { *; }
+-dontwarn com.samsung.**
 ```
 
 ## Integration

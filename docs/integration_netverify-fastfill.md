@@ -78,6 +78,13 @@ If an optional module is __not linked__, the __scan method is not available__ bu
 |net.sf.scuba:scuba-sc-android:0.0.12             	 |   | eMRTD Scanning|
 |com.jumio.android:nv-ocr:2.8.0@aar             		 |   | Template Matcher|
 
+__Note:__ If the dependencies `com.jumio.android:nv-liveness` and `com.jumio.android:nv-barcode-vision` are both used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues (see [Sample app Manifest](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/AndroidManifest.xml)):
+```
+<meta-data
+			android:name="com.google.android.gms.vision.DEPENDENCIES"
+			android:value="barcode, face"
+			tools:replace="android:value"/>
+```
 
 __Note:__ If you use Netverify and BAM Checkout in your app, add the following dependency:
 
