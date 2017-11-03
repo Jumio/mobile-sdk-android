@@ -16,7 +16,7 @@ BAM Checkout SDK is a powerful, cutting-edge solution to extract data from your 
 - [Two-factor Authentication](#two-factor-authentication)
 
 ## Release notes
-For changes in the technical area, please read our [transition guide](transition-guide_bam-checkout.md).
+For technical changes, please read our [transition guide](transition-guide_bam-checkout.md).
 
 #### Fixes
 * Miscellaneous bugfixes
@@ -42,13 +42,13 @@ If you want to use offline scanning for BAM Checkout (Credit card scanning), ple
 
 ### Dependencies
 
-|Dependency        | Mandatory           | Description       |
-| :---------------------------- |:-------------:|:-----------------|
-|com.jumio.android:core:2.8.0@aar                    | x | Jumio Core library|
-|com.jumio.android:bam:2.8.0@aar                     | x | BAM Checkout library |
-|com.android.support:appcompat-v7:25.3.1             | x | Android native library|
-|com.android.support:support-v4:25.3.1               | x | Android native library|
-|com.jumio.android:javadoc:2.8.0                     |   | Jumio SDK Javadoc|
+|Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
+| :---------------------------- |:-------------:|:-----------------|:------------:|
+|com.jumio.android:core:2.9.0@aar                    | x | Jumio Core library|			| 3.34 MB |
+|com.jumio.android:bam:2.9.0@aar                     | x | BAM Checkout library |		| 2.02 MB |
+|com.android.support:appcompat-v7:26.1.0             | x | Android native library|  | - |
+|com.android.support:support-v4:26.1.0               | x | Android native library|  | - |
+|com.jumio.android:javadoc:2.9.0                     |   | Jumio SDK Javadoc|				| - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 

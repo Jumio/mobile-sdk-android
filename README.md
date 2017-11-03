@@ -10,12 +10,11 @@
 
 Applies to all products.
 
-#### Additions
-* Cross-Platform Support - React Native
-* Cordova - added Demo application
+#### Announcement
+* This is the last SDK version which supports Android 4.1 (API level 16). The next version will require Android 4.4 (API level 19) or later
 
 #### Fixes
-* Overall stability improvements
+* Overall stability improvements and bug fixes
 
 # Basic Setup
 
@@ -34,7 +33,7 @@ The following permissions are optional:
 <uses-feature android:name="android.hardware.camera" android:required="false"/>
 ```
 
-**Note:** On devices running Android Marshmallow (6.0) you need to acquire `android.permissions.CAMERA` dynamically before initializing the SDK.
+**Note:** On devices running Android Marshmallow (6.0) and above, you need to acquire `android.permissions.CAMERA` dynamically before initializing the SDK.
 
 Use `getRequiredPermissions` to get a list of all required permissions.
 
@@ -51,16 +50,18 @@ If you are using Proguard, add the following lines in its configuration.
 -keep class com.samsung.** { *; }
 -keep class com.samsung.**$* { *; }
 -dontwarn com.samsung.**
+-keep class com.microblink.** { *; }
+-keep class com.microblink.**$* { *; }
+-dontwarn com.microblink.**
 ```
 
 ## Integration
-Use the SDK in your application by including the Maven repository with the following `build.gradle` configuration in Android Studio:
+Use the SDK in your application by including the Maven repositories with the following `build.gradle` configuration in Android Studio:
 
 ```
 repositories {
-	maven {
-		url 'http://mobile-sdk.jumio.com'
-	}
+	maven { url 'https://maven.google.com/' }
+	maven { url 'http://mobile-sdk.jumio.com' }
 }
 ```
 
@@ -109,7 +110,7 @@ With accessibility support, visually impaired users can now enable __TalkBack__ 
 # Support
 
 ## Previous version
-The previous release version 2.7.0 of the Jumio Mobile SDK is supported until 2017-11-29.
+The previous release version 2.8.0 of the Jumio Mobile SDK is supported until 2018-02-03.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

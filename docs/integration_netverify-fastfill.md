@@ -17,12 +17,15 @@ Netverify & Fastfill SDK offers scanning and authentication of governmental issu
 ## Release notes
 For changes in the technical area, please read our [transition guide](transition-guide_netverify-fastfill.md).
 
+#### Additions
+* Legal hints for specific countries
+
 #### Changes
-* Stability improvements
-* Minor UI/UX changes
+* Redesign of document type and country selection
+* Improved face caputure process
 
 #### Fixes
-* Miscellaneous bugfixes
+* Bug fixes and stability improvements
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -52,33 +55,40 @@ If you are using eMRTD scanning, following lines are needed:
 -dontwarn org.codehaus.**
 -dontwarn org.ejbca.**
 -dontwarn org.spongycastle.**
+-dontwarn org.jmrtd.PassportService
+-dontwarn net.sf.scuba.**
 ```
 
-If you want to use offline scanning for Fastfill please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com.
+If you want to use offline scanning for Fastfill please contact your Jumio Customer Success Manager.
 
 ## Dependencies
 
 If an optional module is __not linked__, the __scan method is not available__ but the library size is reduced.
+The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify and BAM included is currently __18.43 MB__.
 
-|Dependency        | Mandatory           | Description       |
-| ---------------------------- |:-------------:|:-----------------|
-| com.jumio.android:core:2.8.0@aar                   | x | Jumio Core library|
-| com.jumio.android:nv:2.8.0@aar                     | x | Netverify library |
-|com.android.support:appcompat-v7:25.3.1             | x | Android native library|
-|com.android.support:support-v4:25.3.1               | x | Android native library|
-|com.google.android.gms:play-services-vision:11.0.0  | x | Barcode Scanning |
-|com.jumio.android:nv-liveness:2.8.0@aar 		| x | Face-Liveness library|
-|com.android.support:design:25.3.1                   |   | Android native library|
-|com.jumio.android:javadoc:2.8.0                     |   | Jumio SDK Javadoc|
-|com.jumio.android:nv-barcode:2.8.0@aar              |   | US / CAN Barcode Scanning|
-|com.jumio.android:nv-barcode-vision:2.8.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) |
-|com.jumio.android:nv-mrz:2.8.0@aar             		 |   | MRZ scanning|
-|com.jumio.android:nv-nfc:2.8.0@aar              		 |   | eMRTD Scanning|
-|com.madgag.spongycastle:prov:1.56.0.0             	 |   | eMRTD Scanning|
-|net.sf.scuba:scuba-sc-android:0.0.12             	 |   | eMRTD Scanning|
-|com.jumio.android:nv-ocr:2.8.0@aar             		 |   | Template Matcher|
+|Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
+| ---------------------------- |:-------------:|:-----------------|:---------:|
+| com.jumio.android:core:2.9.0@aar                   | x | Jumio Core library		| 3.34 MB |
+| com.jumio.android:nv:2.9.0@aar                     | x | Netverify library 		| 481.44 KB |
+|com.android.support:appcompat-v7:26.1.0             | x | Android native library	| - |
+|com.android.support:support-v4:26.1.0               | x | Android native library	| - |
+|com.android.support:cardview-v7:26.1.0              | x | Android cardview library (Netverify only)	| - |
+|com.google.android.gms:play-services-vision:11.4.0  | x | Barcode Scanning 			| - |
+|com.jumio.android:nv-liveness:2.9.0@aar 		         | x | Face-Liveness library	| 4.32 MB |
+|com.android.support:design:26.1.0                   |   | Android native library	| - |
+|com.jumio.android:javadoc:2.9.0                     |   | Jumio SDK Javadoc			| - |
+|com.jumio.android:nv-barcode:2.9.0@aar              |   | US / CAN Barcode Scanning | 3.44 MB |
+|com.jumio.android:nv-barcode-vision:2.9.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) | 30.31 KB |
+|com.jumio.android:nv-mrz:2.9.0@aar             		 |   | MRZ scanning 					| 2.15 MB |
+|com.jumio.android:nv-nfc:2.9.0@aar              		 |   | eMRTD Scanning 				| 837.64 KB |
+|com.madgag.spongycastle:prov:1.58.0.0             	 |   | eMRTD Scanning 				| - |
+|net.sf.scuba:scuba-sc-android:0.0.12             	 |   | eMRTD Scanning 				| - |
+|com.jumio.android:nv-ocr:2.9.0@aar             		 |   | Template Matcher 			| 820.13 KB |
 
-__Note:__ If the dependencies `com.jumio.android:nv-liveness` and `com.jumio.android:nv-barcode-vision` are both used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues (see [Sample app Manifest](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/AndroidManifest.xml)):
+### Google Mobile Vision
+
+#### Dependency conflicts
+If the dependencies `com.jumio.android:nv-liveness` and `com.jumio.android:nv-barcode-vision` are both used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues (see [AndroidManifest.xml](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/AndroidManifest.xml) in Sample app):
 ```
 <meta-data
 			android:name="com.google.android.gms.vision.DEPENDENCIES"
@@ -86,18 +96,45 @@ __Note:__ If the dependencies `com.jumio.android:nv-liveness` and `com.jumio.and
 			tools:replace="android:value"/>
 ```
 
-__Note:__ If you use Netverify and BAM Checkout in your app, add the following dependency:
+#### Operationality
+If the Google Mobile Vision API is not operational on a device, the face workflow in Netverify can not be started!
+In this case, the SDK will skip the face workflow despite `NetverifySDK.requireFaceMatch(true)` being set.
+The operationality of the Google Mobile Vision API can be checked with the following SDK method (see [NetverifyFragment](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/NetverifyFragment.java)  in Sample app):
+```
+GoogleVisionStatus NetverifySDK.isMobileVisionOperational(Activity activity, int requestCode);
+```
+This method returns an enum `GoogleVisionStatus` which can have the following 3 values:
+* __OPERATIONAL__: API is up-to-date and can be used
+* __NOT_OPERATIONAL__: API is not available
+* __DIALOG_PENDING__: API is available but an user-resolvable error occured. The system dialog for the resolvable error is displayed (see [Google API reference](https://developers.google.com/android/reference/com/google/android/gms/common/GoogleApiAvailability))
+
+In case of __DIALOG_PENDING__, the `requestCode` provided in the method above can used to react to the result of the dialog in the method `onActivityResult()` as follows (see [MainActivity](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/MainActivity.java)  in Sample app)):
+```
+@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == NetverifyFragment.GOOGLE_VISION_REQUEST_CODE) {
+			// Handle the system dialog result - try to initialize the SDK again if the error was resolved
+		}
+	}
+```
+
+### Others
+
+#### Netverify usage with BAM
+If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-compile "com.jumio.android:bam:2.8.0@aar"
+compile "com.jumio.android:bam:2.9.0@aar"
 ```
 
+#### Root detection
 Applications implementing the SDK shall not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.
 ```
 NetverifySDK.isRooted(Context context);
 ```
 
-Call the method `isSupportedPlatform` to check if the device is supported.
+#### Device supported check
+Call the method `isSupportedPlatform` to check if the device platform is supported by the SDK.
 
 ```
 NetverifySDK.isSupportedPlatform();

@@ -9,7 +9,7 @@ import android.view.*;
 import android.widget.*;
 
 import com.jumio.core.enums.JumioDataCenter;
-import com.jumio.core.exceptions.PlatformNotSupportedException;
+import com.jumio.core.exceptions.*;
 import com.jumio.nv.*;
 
 /**
@@ -18,6 +18,7 @@ import com.jumio.nv.*;
 public class NetverifyFragment extends Fragment implements View.OnClickListener {
 	private final static String TAG = "JumioSDK_Netverify";
 	private static final int PERMISSION_REQUEST_CODE_NETVERIFY = 303;
+	public static final int GOOGLE_VISION_REQUEST_CODE = 1000;
 
 	private String apiToken = null;
 	private String apiSecret = null;
@@ -53,7 +54,16 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 		//Since the NetverifySDK is a singleton internally, a new instance is not
 		//created here.
 		initializeNetverifySDK();
-		((MainActivity) getActivity()).checkPermissionsAndStart(netverifySDK, PERMISSION_REQUEST_CODE_NETVERIFY);
+
+		if (((MainActivity) getActivity()).checkPermissions(PERMISSION_REQUEST_CODE_NETVERIFY)) {
+			try {
+				if (netverifySDK != null) {
+					startActivityForResult(netverifySDK.getIntent(), NetverifySDK.REQUEST_CODE);
+				}
+			} catch (MissingPermissionException e) {
+				Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+			}
+		}
 	}
 
 	private void initializeNetverifySDK() {
@@ -62,7 +72,18 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 			// NetverifySDK.getSDKVersion();
 
 			// Call the method isSupportedPlatform to check if the device is supported.
-			// NetverifySDK.isSupportedPlatform(getActivity());
+			if (!NetverifySDK.isSupportedPlatform(getActivity()))
+				Log.w(TAG, "Device not supported");
+
+			// Check if the Google Vision API is available and operational. This is required by the face match step.
+			// If the Google Vision API is not available or operational, the face match step will be skipped.
+			//
+			// OPERATIONAL API is uptodate and can be used
+			// NOT_OPERATIONAL API is not available
+			// DIALOG_PENDING API is available but an user resolvable error occured. The errordialog is displayed
+			NetverifySDK.GoogleVisionStatus googleVisionStatus = NetverifySDK.isMobileVisionOperational(getActivity(), GOOGLE_VISION_REQUEST_CODE);
+			if(googleVisionStatus != NetverifySDK.GoogleVisionStatus.OPERATIONAL)
+				throw new PlatformNotSupportedException("Google Vision not operational at the moment!");
 
 			// Applications implementing the SDK shall not run on rooted devices. Use either the below
 			// method or a self-devised check to prevent usage of SDK scanning functionality on rooted
@@ -78,7 +99,7 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 
 			// Use the following method to create an instance of the SDK, using offline fastfill scanning.
 			// try {
-			//     netverifySDK = NetverifySDK.create(getActivity(), "YOUROFFLINETOKEN", "YOURPREFFEREDCOUNTRY");
+			//     netverifySDK = NetverifySDK.create(getActivity(), "YOUROFFLINETOKEN", "YOURPREFERREDCOUNTRY");
 			// } catch (SDKExpiredException e) {
 			//    e.printStackTrace();
 			//    Toast.makeText(getActivity().getApplicationContext(), "The offline SDK is expired", Toast.LENGTH_LONG).show();
@@ -145,8 +166,9 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 //			 });
 
 		} catch (PlatformNotSupportedException e) {
-			e.printStackTrace();
-			Toast.makeText(getActivity().getApplicationContext(), "This platform is not supported", Toast.LENGTH_LONG).show();
+			Log.e(TAG, "Error in initializeNetverifySDK: ", e);
+			Toast.makeText(getActivity().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+			netverifySDK = null;
 		}
 	}
 

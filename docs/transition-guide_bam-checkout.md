@@ -2,6 +2,9 @@
 
 # Transition guide for BAM Checkout SDK
 
+## 2.9.0
+No backward incompatible changes.
+
 ## 2.8.0
 No backward incompatible changes.
 

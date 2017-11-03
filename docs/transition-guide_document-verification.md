@@ -2,6 +2,9 @@
 
 # Transition guide for Document Verification SDK
 
+## 2.9.0
+No backward incompatible changes.
+
 ## 2.8.0
 No backward incompatible changes.
 
@@ -13,7 +16,7 @@ No backward incompatible changes.
  -keep class com.samsung.**$* { *; }
  -dontwarn com.samsung.**
  ```
- 
+
 ## 2.6.1
 No backward incompatible changes.
 

@@ -1,12 +1,10 @@
 package com.jumio.sample;
 
-import android.app.*;
-import android.content.*;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.res.Configuration;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.*;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.*;
 import android.widget.*;
@@ -136,7 +134,7 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 		if (customScanPresenter != null)
 			customScanPresenter.clearSDK();
 
-		if(bamSDK != null) {
+		if (bamSDK != null) {
 			bamSDK.destroy();
 			bamSDK = null;
 		}
@@ -170,8 +168,9 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 			// You can get the current SDK version using the method below.
 			// BamSDK.getSDKVersion();
 
-			// Call the method isSupportedPlatform to check if the device is supported
-			// BamSDK.isSupportedPlatform(getActivity());
+			// Call the method isSupportedPlatform to check if the device is supported.
+			if (!BamSDK.isSupportedPlatform(getActivity()))
+				Log.w(TAG, "Device not supported");
 
 			// Applications implementing the SDK shall not run on rooted devices. Use either the below
 			// method or a self-devised check to prevent usage of SDK scanning functionality on rooted
@@ -248,31 +247,6 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 	}
 
 	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == BamSDK.REQUEST_CODE) {
-			if (data == null)
-				return;
-			ArrayList<String> scanAttempts = data.getStringArrayListExtra(BamSDK.EXTRA_SCAN_ATTEMPTS);
-
-			if (resultCode == Activity.RESULT_OK) {
-				BamCardInformation cardInformation = data.getParcelableExtra(BamSDK.EXTRA_CARD_INFORMATION);
-
-				cardInformation.clear();
-			} else if (resultCode == Activity.RESULT_CANCELED) {
-				String errorMessage = data.getStringExtra(BamSDK.EXTRA_ERROR_MESSAGE);
-				int errorCode = data.getIntExtra(BamSDK.EXTRA_ERROR_CODE, 0);
-			}
-
-			//At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that
-			//internal resources can be freed.
-			if (bamSDK != null) {
-				bamSDK.destroy();
-				bamSDK = null;
-			}
-		}
-	}
-
-	@Override
 	public void setUserVisibleHint(boolean isVisibleToUser) {
 		super.setUserVisibleHint(isVisibleToUser);
 		if (!isVisibleToUser) {
@@ -331,5 +305,12 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 	public void onBamExtractionFinished(BamCardInformation bamCardInformation, ArrayList<String> scanAttempts) {
 		Log.d("BamCustomScan", "extraction finished");
 		bamCardInformation.clear();
+
+//		//At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that
+//		//internal resources can be freed.
+		if (bamSDK != null) {
+			bamSDK.destroy();
+			bamSDK = null;
+		}
 	}
 }

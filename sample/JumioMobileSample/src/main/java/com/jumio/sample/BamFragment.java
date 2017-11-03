@@ -10,7 +10,7 @@ import android.widget.*;
 
 import com.jumio.bam.*;
 import com.jumio.core.enums.JumioDataCenter;
-import com.jumio.core.exceptions.PlatformNotSupportedException;
+import com.jumio.core.exceptions.*;
 
 import java.util.ArrayList;
 
@@ -55,8 +55,19 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 	public void onClick(View view) {
 		//Since the BamSDK is a singleton internally, a new instance is not
 		//created here.
+		if (bamSDK != null)
+			bamSDK.clearCustomFields();
 		initializeBamSDK();
-		((MainActivity) getActivity()).checkPermissionsAndStart(bamSDK, PERMISSION_REQUEST_CODE_BAM);
+
+		if (((MainActivity) getActivity()).checkPermissions(PERMISSION_REQUEST_CODE_BAM)) {
+			try {
+				if (bamSDK != null) {
+					startActivityForResult(bamSDK.getIntent(), BamSDK.REQUEST_CODE);
+				}
+			} catch (MissingPermissionException e) {
+				Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+			}
+		}
 	}
 
 	private void initializeBamSDK() {
@@ -64,8 +75,9 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 			// You can get the current SDK version using the method below.
 			// BamSDK.getSDKVersion();
 
-			// Call the method isSupportedPlatform to check if the device is supported
-			// BamSDK.isSupportedPlatform(getActivity());
+			// Call the method isSupportedPlatform to check if the device is supported.
+			if (!BamSDK.isSupportedPlatform(getActivity()))
+				Log.w(TAG, "Device not supported");
 
 			// Applications implementing the SDK shall not run on rooted devices. Use either the below
 			// method or a self-devised check to prevent usage of SDK scanning functionality on rooted

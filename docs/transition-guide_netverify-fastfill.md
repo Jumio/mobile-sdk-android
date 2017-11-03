@@ -2,6 +2,30 @@
 
 # Transition guide for Netverify & Fastfill SDK
 
+## 2.9.0
+
+#### Changes in SDK code
+* New cardview dependency was added `com.android.support:cardview-v7:26.1.0` for the screen redesign. This dependency is mandatory for Netverify
+* Multidex is now mandatory, follow the steps Android Developers guide https://developer.android.com/studio/build/multidex.html#mdex-gradle to enable it if necessary in your app.
+* Additional Proguard rules for the updated Barcode Scanner have to be added:
+```
+-keep class com.microblink.** { *; }
+-keep class com.microblink.**$* { *; }
+-dontwarn com.microblink.**
+```
+* SDK method for checking the Google Mobile Vision API operationality was added (see method documentation in [NetverifyFragment](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/NetverifyFragment.java) in the Sample app))
+```
+GoogleVisionStatus NetverifySDK.isMobileVisionOperational(Activity activity, int requestCode);
+```
+The usage is explained in the Netverify guide [sub-chapter operationality](integration_netverify-fastfill.md#operationality)
+
+#### Changes in localizable strings
+Multiple additions and changes in regards to the new selection screen.
+
+#### Changes in Customization
+Additions and changes in regards to the new selection screen (see XML output in [Surface Tool](https://jumio.github.io/surface-android/)).
+Attributes added for replacing the previous selection screen: `netverify_scanOptionsItemHeaderBackground`, `netverify_scanOptionsItemForeground` and `netverify_scanOptionsItemBackground`.
+
 ## 2.8.0
 * Dependency `com.jumio.android:nv-liveness:2.8.0@aar` is mandatory now.
 

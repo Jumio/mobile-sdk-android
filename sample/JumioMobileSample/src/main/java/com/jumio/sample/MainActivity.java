@@ -10,9 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.jumio.MobileSDK;
-import com.jumio.bam.BamSDK;
-import com.jumio.core.exceptions.MissingPermissionException;
-import com.jumio.nv.NetverifySDK;
 
 /**
  * Copyright 2017 Jumio Corporation All rights reserved.
@@ -33,21 +30,6 @@ public class MainActivity extends AppCompatActivity {
 	private static String BAM_API_TOKEN = "";
 	private static String BAM_API_SECRET = "";
 
-	/**
-	 * The {@link android.support.v4.view.PagerAdapter} that will provide
-	 * fragments for each of the sections. We use a
-	 * {@link FragmentPagerAdapter} derivative, which will keep every
-	 * loaded fragment in memory. If this becomes too memory intensive, it
-	 * may be best to switch to a
-	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-	 */
-	private SectionsPagerAdapter mSectionsPagerAdapter;
-
-	/**
-	 * The {@link ViewPager} that will host the section contents.
-	 */
-	private ViewPager mViewPager;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -57,10 +39,11 @@ public class MainActivity extends AppCompatActivity {
 		setSupportActionBar(toolbar);
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the activity.
-		mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+
+		SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
 		// Set up the ViewPager with the sections adapter.
-		mViewPager = (ViewPager) findViewById(R.id.container);
+		ViewPager mViewPager = (ViewPager) findViewById(R.id.container);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 
 		TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -68,54 +51,30 @@ public class MainActivity extends AppCompatActivity {
 
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if(requestCode == NetverifyFragment.GOOGLE_VISION_REQUEST_CODE) {
+			Toast.makeText(this, "Returned from google mobile vision error handling - try again!", Toast.LENGTH_SHORT).show();
+		} else {
+			super.onActivityResult(requestCode, resultCode, data);
+		}
+	}
+
 	/**
 	 * Check and request missing permissions for the SDK.
 	 *
-	 * @param sdk         the SDK instance to check
 	 * @param requestCode the request code for the SDK
 	 */
-	public void checkPermissionsAndStart(MobileSDK sdk, int requestCode) {
+	public boolean checkPermissions(int requestCode) {
 		if (!MobileSDK.hasAllRequiredPermissions(this)) {
 			//Acquire missing permissions.
 			String[] mp = MobileSDK.getMissingPermissions(this);
 
 			ActivityCompat.requestPermissions(this, mp, requestCode);
 			//The result is received in onRequestPermissionsResult.
+			return false;
 		} else {
-			startSdk(sdk);
-		}
-	}
-
-	private void startSdk(MobileSDK sdk) {
-		try {
-			sdk.start();
-		} catch (MissingPermissionException e) {
-			Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
-		}
-	}
-
-	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-		super.onActivityResult(requestCode, resultCode, intent);
-		//Forward the results to the fragments
-		if (requestCode == NetverifySDK.REQUEST_CODE) {
-			Fragment netverifyFragment = mSectionsPagerAdapter.getItem(0);
-			if (netverifyFragment != null) {
-				netverifyFragment.onActivityResult(requestCode, resultCode, intent);
-			}
-//			Fragment documentVerificationFragment = mSectionsPagerAdapter.getItem(1);
-//			if (documentVerificationFragment != null) {
-//				documentVerificationFragment.onActivityResult(requestCode, resultCode, intent);
-//			}
-		} else if (requestCode == BamSDK.REQUEST_CODE) {
-			Fragment bamFragment = mSectionsPagerAdapter.getItem(2);
-			if (bamFragment != null) {
-				bamFragment.onActivityResult(requestCode, resultCode, intent);
-			}
-			Fragment bamCustomFragment = mSectionsPagerAdapter.getItem(3);
-			if (bamCustomFragment != null) {
-				bamCustomFragment.onActivityResult(requestCode, resultCode, intent);
-			}
+			return true;
 		}
 	}
 
@@ -123,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
 	 * one of the sections/tabs/pages.
 	 */
-	public class SectionsPagerAdapter extends FragmentPagerAdapter {
+	private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-		public SectionsPagerAdapter(FragmentManager fm) {
+		SectionsPagerAdapter(FragmentManager fm) {
 			super(fm);
 		}
 

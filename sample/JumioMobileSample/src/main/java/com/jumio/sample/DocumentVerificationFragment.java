@@ -1,5 +1,7 @@
 package com.jumio.sample;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -7,7 +9,7 @@ import android.view.*;
 import android.widget.*;
 
 import com.jumio.core.enums.JumioDataCenter;
-import com.jumio.core.exceptions.PlatformNotSupportedException;
+import com.jumio.core.exceptions.*;
 import com.jumio.dv.DocumentVerificationSDK;
 
 /**
@@ -47,7 +49,16 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 		//Since the DocumentVerificationSDK is a singleton internally, a new instance is not
 		//created here.
 		initializeDocumentVerificationSDK();
-		((MainActivity) getActivity()).checkPermissionsAndStart(documentVerificationSDK, PERMISSION_REQUEST_CODE_DOCUMENT_VERIFICATION);
+
+		if (((MainActivity) getActivity()).checkPermissions(PERMISSION_REQUEST_CODE_DOCUMENT_VERIFICATION)) {
+			try {
+				if (documentVerificationSDK != null) {
+					startActivityForResult(documentVerificationSDK.getIntent(), DocumentVerificationSDK.REQUEST_CODE);
+				}
+			} catch (MissingPermissionException e) {
+				Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+			}
+		}
 	}
 
 	private void initializeDocumentVerificationSDK() {
@@ -56,7 +67,8 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 			// DocumentVerificationSDK.getSDKVersion();
 
 			// Call the method isSupportedPlatform to check if the device is supported.
-			// DocumentVerificationSDK.isSupportedPlatform(getActivity());
+			if (!DocumentVerificationSDK.isSupportedPlatform(getActivity()))
+				Log.w(TAG, "Device not supported");
 
 			// Applications implementing the SDK shall not run on rooted devices. Use either the below
 			// method or a self-devised check to prevent usage of SDK scanning functionality on rooted
@@ -109,6 +121,24 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 		} catch (PlatformNotSupportedException e) {
 			e.printStackTrace();
 			Toast.makeText(getActivity().getApplicationContext(), "This platform is not supported", Toast.LENGTH_LONG).show();
+		}
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == DocumentVerificationSDK.REQUEST_CODE) {
+			if (resultCode == Activity.RESULT_OK) {
+				//Handle the result for the DocumentVerification SDK
+				if (data == null) {
+					return;
+				}
+			}
+			//At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that
+			//internal resources can be freed.
+			if (documentVerificationSDK != null) {
+				documentVerificationSDK.destroy();
+				documentVerificationSDK = null;
+			}
 		}
 	}
 }
