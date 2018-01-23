@@ -16,9 +16,6 @@ Document Verification SDK is a powerful solution to enable scanning various type
 ## Release notes
 For technical changes, please read our [transition guide](transition-guide_document_verification.md).
 
-#### Fixes
-* Miscellaneous bugfixes
-
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
 
@@ -41,11 +38,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:2.9.0@aar                    | x | Jumio Core library            | 3.34 MB |
-| com.jumio.android:dv:2.9.0@aar                      | x | Document Verification library | 90.94 KB |
+| com.jumio.android:core:2.10.0@aar                    | x | Jumio Core library            | 3.84 MB |
+| com.jumio.android:dv:2.10.0@aar                      | x | Document Verification library | 105.28 KB |
 | com.android.support:appcompat-v7:26.1.0             | x | Android native library        | - |
 | com.android.support:support-v4:26.1.0               | x | Android native library        | - |
-| com.jumio.android:javadoc:2.9.0                     |   | Jumio SDK Javadoc             | - |
+| com.jumio.android:javadoc:2.10.0                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -70,10 +67,10 @@ private static String YOURAPISECRET = "";
 
 DocumentVerificationSDK documentVerificationSDK = DocumentVerificationSDK.create(yourActivity, YOURAPITOKEN, YOURAPISECRET, JumioDataCenter.US);
 ```
-Make sure that your merchant API token and API secret are correct, specify an instance
-of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). If your merchant account is in the EU data center, use `JumioDataCenter.EU` instead.
+Make sure that your customer API token and API secret are correct, specify an instance
+of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). If your customer account is in the EU data center, use `JumioDataCenter.EU` instead.
 
-__Note:__ Log into your Jumio merchant backend, and you can find your merchant API token and API secret on the "Settings" page under "API credentials". We strongly recommend you to store credentials outside your app.
+__Note:__ Log into your Jumio customer portal, and you can find your customer API token and API secret on the "Settings" page under "API credentials". We strongly recommend you to store credentials outside your app.
 
 ## Configuration
 
@@ -113,7 +110,7 @@ Possible types:
 *  CUSTOM (Custom document type)
 
 #### Custom Document Type
-Use the following method to pass your custom document code. Maintain your custom document code within your Jumio merchant backend under "Settings" - "Multi Document" - "Custom".
+Use the following method to pass your custom document code. Maintain your custom document code within your Jumio customer portal under "Settings" - "Multi Document" - "Custom".
 ```
 documentVerificationSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");
 ```
@@ -131,14 +128,14 @@ Use the following property to identify the scan in your reports (max. 100 charac
 documentVerificationSDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
 ```
 
-A callback URL can be specified for individual transactions constraints see chapter [Callback URL](#callback-url)). This setting overrides your Jumio merchant settings.
+A callback URL can be specified for individual transactions constraints see chapter [Callback URL](#callback-url)). This setting overrides your Jumio customer settings.
 ```
 documentVerificationSDK.setCallbackUrl("YOURCALLBACKURL");
 ```
 
 You can also set an additional information parameter (max. 255 characters).
 
-__Note:__ The additional information should not contain sensitive data like PII (Personally Identifiable Information) or account login.
+__Note:__ The additional information must not contain sensitive data like PII (Personally Identifiable Information) or account login.
 ```
 documentVerificationSDK.setAdditionalInformation("ADDITIONALINFORMATION");
 ```
@@ -155,7 +152,7 @@ You can also set a customer identifier (max. 100 characters).
 documentVerificationSDK.setCustomerId("CUSTOMERID");
 ```
 
-__Note:__ The customer ID and merchant scan reference should not contain sensitive data like PII (Personally Identifiable Information) or account login.
+__Note:__ The customer ID and merchant scan reference must not contain sensitive data like PII (Personally Identifiable Information) or account login.
 
 Use setCameraPosition to configure the default camera (front or back).
 ```

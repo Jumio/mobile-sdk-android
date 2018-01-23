@@ -6,6 +6,7 @@
 	<string name="title_activity_main">MainActivity</string>
 	<string name="button_start">Start %1$s</string>
 	<string name="section_netverify">Netverify</string>
+    <string name="section_netverify_custom">Netverify Custom</string>
 	<string name="section_bamcheckout">Bam Checkout</string>
 	<string name="section_bam_custom">Bam Custom</string>
 	<string name="button_stop_bam_custom">Stop Bam Custom Scan</string>

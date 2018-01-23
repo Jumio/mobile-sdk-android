@@ -8,6 +8,19 @@
 
 		<item name="bam_scanOverlay">@color/jumio_white_alpha72</item>
 		<item name="bam_scanBackground">@color/jumio_black_alpha50</item>
+
+        <item name="netverify_scanOverlay">@color/jumio_white_alpha40</item>
+        <item name="netverify_scanBackground">@color/jumio_black_alpha50</item>
+
+        <item name="netverify_scanOverlayTemplateValid">@color/jumio_primary_dark</item>
+        <item name="netverify_scanOverlayTemplateInvalid">@color/jumio_grey200</item>
+        <item name="netverify_scanOverlayDetectedLine">@color/jumio_primary</item>
+        <item name="netverify_scanOverlayDetectedLineStroke">@color/jumio_white</item>
+
+        <item name="netverify_scanOverlayLivenessValid">@color/jumio_liveness_valid</item>
+        <item name="netverify_scanOverlayLivenessInvalid">@color/jumio_white_alpha40</item>
+        <item name="netverify_scanOverlayLivenessBackground">@color/jumio_black_alpha75</item>
+        <item name="netverify_scanOverlayLivenessText">@color/jumio_white_alpha80</item>
 	</style>
 
 	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">

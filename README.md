@@ -8,19 +8,23 @@
 
 # Release notes
 
-Applies to all products.
+Applies to all products. SDK version: 2.10.0
 
-#### Announcement
-* This is the last SDK version which supports Android 4.1 (API level 16). The next version will require Android 4.4 (API level 19) or later
+#### Changes
+* Added an additional network security layer
+* Increased the minimum API level to 19
+* Updated all components to Android plugin for gradle 3.0
 
 #### Fixes
-* Overall stability improvements and bug fixes
+* Fixed problems with the camera handling on various devices
+* Miscellaneous bugfixes
+* Stability improvements
 
 # Basic Setup
 
 ## General Requirements
 The requirements for the SDK are:
-*	Android 4.1 (API level 16) or higher
+*	Android 4.4 (API level 19) or higher
 *	ARMv7 processor with Neon, ARM64-v8a
 *	Internet connection
 
@@ -61,7 +65,7 @@ Use the SDK in your application by including the Maven repositories with the fol
 ```
 repositories {
 	maven { url 'https://maven.google.com/' }
-	maven { url 'http://mobile-sdk.jumio.com' }
+	maven { url 'https://mobile-sdk.jumio.com' }
 }
 ```
 
@@ -100,7 +104,7 @@ __Note:__ You get an *UnsatisfiedLinkError*, if the app and the CPU architecture
 Our SDK supports the [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages and cultures.
 All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable at `../res/values/strings.xml` within our Sample application.
 
-With accessibility support, visually impaired users can now enable __TalkBack__ or change the __font size__ on their device. The accessibility-strings that are used by TalkBack contain *accessibility_* in their key and can be also modified in the `strings.xml`.
+Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or change the __font size__ on their device. The accessibility-strings that are used by TalkBack contain *accessibility_* in their key and can be also modified in the `strings.xml`.
 
 # Get started
 - [Integration Netverify & Fastfill SDK](docs/integration_netverify-fastfill.md)
@@ -110,12 +114,12 @@ With accessibility support, visually impaired users can now enable __TalkBack__ 
 # Support
 
 ## Previous version
-The previous release version 2.8.0 of the Jumio Mobile SDK is supported until 2018-02-03.
+The previous release version 2.9.0 of the Jumio Mobile SDK is supported until 2018-05-01.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 
 ## Two-factor Authentication
-If you want to enable two-factor authentication for your Jumio merchant backend please contact us at https://support.jumio.com. Once enabled, users will be guided through the setup upon their first login to obtain a security code using the "Google Authenticator" app.
+If you want to enable two-factor authentication for your Jumio customer portal please contact us at https://support.jumio.com. Once enabled, users will be guided through the setup upon their first login to obtain a security code using the "Google Authenticator" app.
 
 ## Contact
 If you have any questions regarding our implementation guide please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com. The Jumio online helpdesk contains a wealth of information regarding our service including demo videos, product descriptions, FAQs and other things that may help to get you started with Jumio. Check it out at: https://support.jumio.com.

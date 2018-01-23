@@ -12,20 +12,23 @@ Netverify & Fastfill SDK offers scanning and authentication of governmental issu
 - [Configuration](#configuration)
 - [Customization](#customization)
 - [SDK Workflow](#sdk-workflow)
+- [Custom Scan View](#custom-scan-view)
 - [Callback](#callback)
 
 ## Release notes
 For changes in the technical area, please read our [transition guide](transition-guide_netverify-fastfill.md).
 
-#### Additions
-* Legal hints for specific countries
+SDK version: 2.10.0
 
-#### Changes
-* Redesign of document type and country selection
-* Improved face caputure process
+#### Features
+* Added Custom UI functionality to implement your own UI design
+* Improved extraction of NFC Passports and IDs
+* Extract name suffix from US/CAN Driving Licenses
+* Improved face capturing
+* Improved image quality check to reduce blurred images
 
 #### Fixes
-* Bug fixes and stability improvements
+* Fixed data extraction for a few US/CAN Driving Licenses
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -64,26 +67,26 @@ If you want to use offline scanning for Fastfill please contact your Jumio Custo
 ## Dependencies
 
 If an optional module is __not linked__, the __scan method is not available__ but the library size is reduced.
-The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify and BAM included is currently __18.43 MB__.
+The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify and BAM included is currently __19.91 MB__.
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
-| com.jumio.android:core:2.9.0@aar                   | x | Jumio Core library		| 3.34 MB |
-| com.jumio.android:nv:2.9.0@aar                     | x | Netverify library 		| 481.44 KB |
+| com.jumio.android:core:.0@aar                   | x | Jumio Core library		| 3.84 MB |
+| com.jumio.android:nv:2.10.0@aar                     | x | Netverify library 		| 517.75 KB |
 |com.android.support:appcompat-v7:26.1.0             | x | Android native library	| - |
 |com.android.support:support-v4:26.1.0               | x | Android native library	| - |
 |com.android.support:cardview-v7:26.1.0              | x | Android cardview library (Netverify only)	| - |
 |com.google.android.gms:play-services-vision:11.4.0  | x | Barcode Scanning 			| - |
-|com.jumio.android:nv-liveness:2.9.0@aar 		         | x | Face-Liveness library	| 4.32 MB |
+|com.jumio.android:nv-liveness:2.10.0@aar 		         | x | Face-Liveness library	| 4.32 MB |
 |com.android.support:design:26.1.0                   |   | Android native library	| - |
-|com.jumio.android:javadoc:2.9.0                     |   | Jumio SDK Javadoc			| - |
-|com.jumio.android:nv-barcode:2.9.0@aar              |   | US / CAN Barcode Scanning | 3.44 MB |
-|com.jumio.android:nv-barcode-vision:2.9.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) | 30.31 KB |
-|com.jumio.android:nv-mrz:2.9.0@aar             		 |   | MRZ scanning 					| 2.15 MB |
-|com.jumio.android:nv-nfc:2.9.0@aar              		 |   | eMRTD Scanning 				| 837.64 KB |
+|com.jumio.android:javadoc:2.10.0                     |   | Jumio SDK Javadoc			| - |
+|com.jumio.android:nv-barcode:2.10.0@aar              |   | US / CAN Barcode Scanning | 3.46 MB |
+|com.jumio.android:nv-barcode-vision:2.10.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) | 36.2 KB |
+|com.jumio.android:nv-mrz:2.10.0@aar             		 |   | MRZ scanning 					| 2.16 MB |
+|com.jumio.android:nv-nfc:2.10.0@aar              		 |   | eMRTD Scanning 				| 884.40 KB |
 |com.madgag.spongycastle:prov:1.58.0.0             	 |   | eMRTD Scanning 				| - |
 |net.sf.scuba:scuba-sc-android:0.0.12             	 |   | eMRTD Scanning 				| - |
-|com.jumio.android:nv-ocr:2.9.0@aar             		 |   | Template Matcher 			| 820.13 KB |
+|com.jumio.android:nv-ocr:2.10.0@aar             		 |   | Template Matcher 			| 1.57 MB |
 
 ### Google Mobile Vision
 
@@ -124,7 +127,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-compile "com.jumio.android:bam:2.9.0@aar"
+implementation "com.jumio.android:bam:2.10.0@aar"
 ```
 
 #### Root detection
@@ -149,10 +152,10 @@ private static String YOURAPISECRET = "";
 
 NetverifySDK netverifySDK = NetverifySDK.create(yourActivity, YOURAPITOKEN, YOURAPISECRET, JumioDataCenter.US);
 ```
-Make sure that your merchant API token and API secret are correct, specify an instance
-of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). If your merchant account is in the EU data center, use `JumioDataCenter.EU` instead.
+Make sure that your customer API token and API secret are correct, specify an instance
+of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). If your customer account is in the EU data center, use `JumioDataCenter.EU` instead.
 
-__Note:__ Log into your Jumio merchant backend, and you can find your merchant API token and API secret on the "Settings" page under "API credentials". We strongly recommend you to store credentials outside your app.
+__Note:__ Log into your Jumio customer portal, and you can find your customer API token and API secret on the "Settings" page under "API credentials". We strongly recommend you to store credentials outside your app.
 
 ## Configuration
 
@@ -160,14 +163,14 @@ __Note:__ Log into your Jumio merchant backend, and you can find your merchant A
 
 By default, the SDK is used in Fastfill mode which means it is limited to data extraction only. No verification of the ID is performed.
 
-Enable ID verification to receive a verification status and verified data positions (see [Callback for Netverify](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-for-netverify)). A callback URL can be specified for individual transactions (constraints see chapter [Callback URL](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-url)). Ensure that your merchant account is allowed to use this feature.
+Enable ID verification to receive a verification status and verified data positions (see [Callback for Netverify](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-for-netverify)). A callback URL can be specified for individual transactions (constraints see chapter [Callback URL](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-url)). Ensure that your customer account is allowed to use this feature.
 
 __Note:__ Not possible for accounts configured as Fastfill only.
 ```
 netverifySDK.setRequireVerification(true);
 netverifySDK.setCallbackUrl("YOURCALLBACKURL");
 ```
-You can enable face match during the ID verification for a specific transaction (if it is enabled for your account).
+You can enable Identity Verification during the ID verification for a specific transaction (if it is enabled for your account).
 ```
 netverifySDK.setRequireFaceMatch(true);
 ```
@@ -200,13 +203,13 @@ netverifySDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
 ```
 You can also set a customer identifier (max. 100 characters).
 
-__Note:__ The customer ID should not contain sensitive data like PII (Personally Identifiable Information) or account login.
+__Note:__ The customer ID must not contain sensitive data like PII (Personally Identifiable Information) or account login.
 ```
 netverifySDK.setCustomerId("CUSTOMERID");
 ```
 You can also set an additional information parameter (max. 255 characters).
 
-__Note:__ The additional information should not contain sensitive data like PII (Personally Identifiable Information) or account login.
+__Note:__ The additional information must not contain sensitive data like PII (Personally Identifiable Information) or account login.
 ```
 netverifySDK.setAdditionalInformation("ADDITIONALINFORMATION");
 ```
@@ -236,7 +239,7 @@ netverifySDK.getDebugID();
 
 ### Offline scanning
 
-If you want to use Fastfill in offline mode please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com. Once they have enabled this feature for your account, you can find your offline token in your Jumio merchant backend on the "Settings" page under "API credentials".
+If you want to use Fastfill in offline mode please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com. Once this feature is enabled for your account, you can find your offline token in your Jumio customer portal on the "Settings" page under "API credentials".
 
 ```
 netverifySDK.create(rootActivity, YOUROFFLINETOKEN, COUNTRYCODE)
@@ -273,7 +276,7 @@ netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
 ## Customization
 
 ### Customization tool
-[Jumio Surface](https://jumio.github.io/surface-android/) is a web tool that offers the possibility to apply and visualize, in real-time, all available customization options for Netverify / Fastfill SDK as well as an export feature to import the applied changes straight into the your codebase.
+[Jumio Surface](https://jumio.github.io/surface-android/) is a web tool that offers the possibility to apply and visualize, in real-time, all available customization options for Netverify / Fastfill SDK as well as an export feature to import the applied changes straight into your codebase.
 
 ### Customize look and feel
 
@@ -391,6 +394,111 @@ Class **_Error codes_**
 |260| The camera is currently not available | Camera cannot be initialized, retry impossible |
 |280| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
 |290| Transaction already finished | User did not complete SDK journey within token lifetime|
+
+
+## Custom Scan View
+
+Netverify can be also implemented as a custom scan view. This means that only the scan view (including the scan overlays) are provided by the SDK.
+The handling of the lifecycle, document selection, readability confirmation, intermediate callbacks and all other steps necessary to complete a scan have to be handled by the application that implements the SDK as custom scan view!
+
+To use the custom scan view with a plain scanning user interface, specify an instance of your class which implements the `NetverifyCustomSDKInterface`. You will receive a `NetverifyCustomSDKController` object.
+
+```
+NetverifyCustomSDKController netverifyCustomSDKController = sdk.start(yourNetverifyCustomSDKInterface);
+```
+
+Upon `onNetverifyCountriesReceived` within *yourNetverifyCustomSDKInterface*, specify country, document type and document variant to receive all relevant scan parts for the specific document.
+
+```
+@Override
+public void onNetverifyCountriesReceived(HashMap<String, NetverifyCountry>
+countryList, String userCountryCode) {
+    // YOURCODE
+    // List<ScanSide> netverifyScanSides = netverifyCustomSDKController.setDocumentConfiguration(netverifyCountries.get("USA"), NVDocumentType.PASSPORT, NVDocumentVariant.PLASTIC);
+}
+```
+
+**NetverifyCountry** methods:
+```
+public String getIsoCode();
+public Set<NVDocumentType> getDocumentTypes();
+public Set<NVDocumentVariant> getDocumentVariants(NVDocumentType documentType);
+```
+
+**NVDocumentType** values: `PASSPORT`, `ID_CARD`, `DRIVER_LICENSE`
+
+**NVDocumentVariant** values: `PAPER`, `PLASTIC`
+
+**NetverifyScanMode** values: `MRZ`, `BARCODE`, `FACE`, `MANUAL`, `OCR_CARD`, `OCR_TEMPLATE`
+
+**NVScanSide** values: `FRONT`, `BACK`, `FACE`
+
+After `onNetverifyResourcesLoaded` within *yourNetverifyCustomSDKInterface*, start scanning by providing a ScanSide from the list, instances of the class `NetverifyCustomScanView` and `NetverifyCustomConfirmationView`, and an instance of your class which implements the `NetverifyCustomScanInterface`. You will receive a `NetverifyCustomScanViewController` object.
+
+
+Add yourNetverifyCustomScanView to your layout and specify desired layout attributes using either
+* a certain width, and height as wrap_content
+* or a certain height, and width as wrap_content
+* or width and height as match_parent (full screen).
+
+
+Using width or height as wrap_content, the NetverifyCustomScanView attribute ratio needsto be set to any float value between screen width/screen height (e.g. portrait 720/1280 = ~0.6) and 4:3 (1.33). If your NetverifyCustomScanView is added to your layout via xml, specify the below namespace to access the custom attribute *yourNameSpace:ratio*. Face scans should only be done in portrait orientation with a recommended ratio of 0.7 or smaller.
+```
+xmlns:yourNameSpace="http://schemas.android.com/apk/lib/com.jumio.mobile.sdk"
+```
+
+Upon `onNetverifyCameraAvailable` within *yourNetverifyCustomScanInterface*, you can perform the following actions using the netverifyCustomScanViewController:
+
+* Get the active scan mode
+* Get the help text for the active scan mode
+* Check if front and back camera available
+* Check if front camera used
+* Switch between front and back camera
+* Check if flash available
+* Check if flash enabled
+* Switch flash mode (on or off)
+* Check if scan fallback is possible
+* Switch from default scan mode (MRZ or bar code) to fallback - remember to get the new scan mode and help text with the available getters after that
+* Stop/Retry card scanning
+* Pause/Resume extraction - the camera preview keeps running in the meantime
+
+
+Call `showShutterButton` to determine if the image will be taken manually. If so, display your shutter button and call `takePicture()` once clicked.
+
+To handle the activity lifecycle correctly, call `pause` and `resume` from the `NetverifyCustomSDKController` and `NetverifyCstomScanPresenter` if currently active.
+
+Implement the following methods within
+* NetverifyCustomScanInterface for camera, extraction, confirmation view
+and special notifications.
+* NetverifyCustomSDKInterface for general SDK notifications.
+
+Upon `onNetverifyPresentConfirmationView`, you can hide the scan view and show the confirmation view (asking user to confirm the image), retry and/or confirm the scan.
+
+**Note:** *yourNetverifyCustomScanView* can be added to your layout by specifying any desired layout attributes.
+
+Upon `onNetverifyNoUSAddressFound` after a Fastfill US driver license back side scan in barcode mode, you can start a front side scan in OCR mode (fallback) to receive the address if needed and/or confirm the scan.
+
+Upon `onNetverifyFaceOnBackside` after a backside scan of an ID or Driver License, the scanning will restart automatically to let the user recapture his backside, as it seems that he has scanned the frontside accidentally instead of the backside because a face was detected.
+
+Upon `onNetverifyFaceInLandscape` notify the user that he should rotate the device in portrait orientation to continue with face scanning.
+
+Upon `onNetverifyShowLegalAdvice` it is necessary to display the provided legal advice to the user.
+
+Upon `onNetverifyScanForPartFinished`, call `netverifyCustomScanViewController.destroy()` to release all resources before scanning the next part until all parts are scanned. Once completed, call `netverifyCustomSDKController.finish()` to finish the scan.
+
+### Retrieving information
+
+#### Result & Error handling
+Instead of using the standard method `onActivityResult`, implement the following methods within *yourNetverifyCustomSDKInterface* for successful scans and error notifications:
+
+The method `onNetverifyFinished(NetverifyDocumentData documentData, String scanReference)` has to be implemented to handle data after successful scans
+
+Upon `onNetverifyError(int errorCode, int detailedErrorCode, String errorMessage, boolean retryPossible, String scanReference)`, you can show the error message and/or call `netverifyCustomSDKController.retry()` if retryPossible.
+
+**Note**: The error codes 200, 210, 220, 240, 260, 300, 310 and 320 will be returned.
+
+#### Clean up
+After handling the result, it is very important to clean up the SDK by calling  `netverifyCustomSDKController.destroy()` and `netverifySDK.destroy()`.
 
 
 ## Callback

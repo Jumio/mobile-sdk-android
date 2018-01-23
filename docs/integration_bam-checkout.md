@@ -16,10 +16,10 @@ BAM Checkout SDK is a powerful, cutting-edge solution to extract data from your 
 - [Two-factor Authentication](#two-factor-authentication)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_bam-checkout.md).
+For technical changes, please read our [transition guide](transition-guide_bam-checkout.md). SDK version: 2.10.0
 
-#### Fixes
-* Miscellaneous bugfixes
+#### Changes
+* Removed Starbucks as supported credit card type
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Bam-Checkout.
@@ -44,11 +44,11 @@ If you want to use offline scanning for BAM Checkout (Credit card scanning), ple
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | :---------------------------- |:-------------:|:-----------------|:------------:|
-|com.jumio.android:core:2.9.0@aar                    | x | Jumio Core library|			| 3.34 MB |
-|com.jumio.android:bam:2.9.0@aar                     | x | BAM Checkout library |		| 2.02 MB |
+|com.jumio.android:core:2.10.0@aar                    | x | Jumio Core library|			| 3.84 MB |
+|com.jumio.android:bam:2.10.0@aar                     | x | BAM Checkout library |		| 2.02 MB |
 |com.android.support:appcompat-v7:26.1.0             | x | Android native library|  | - |
 |com.android.support:support-v4:26.1.0               | x | Android native library|  | - |
-|com.jumio.android:javadoc:2.9.0                     |   | Jumio SDK Javadoc|				| - |
+|com.jumio.android:javadoc:2.10.0                     |   | Jumio SDK Javadoc|				| - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -72,10 +72,10 @@ private static String YOURAPISECRET = "";
 
 NetverifySDK netverifySDK = NetverifySDK.create(yourActivity, YOURAPITOKEN, YOURAPISECRET, JumioDataCenter.US);
 ```
-Make sure that your merchant API token and API secret are correct, specify an instance
-of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). If your merchant account is in the EU data center, use `JumioDataCenter.EU` instead.
+Make sure that your customer API token and API secret are correct, specify an instance
+of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). If your customer account is in the EU data center, use `JumioDataCenter.EU` instead.
 
-__Note:__ Log into your Jumio merchant backend, and you can find your merchant API token and API secret on the "Settings" page under "API credentials". We strongly recommend you to store credentials outside your app.
+__Note:__ Log into your Jumio customer portal, and you can find your customer API token and API secret on the "Settings" page under "API credentials". We strongly recommend you to store credentials outside your app.
 
 ## Configuration
 
@@ -102,13 +102,15 @@ bamSDK.setCardHolderNameEditable(true);
 
 ### Transaction identifiers
 Overwrite your specified reporting criteria to identify each scan attempt in your reports (max. 100 characters).
+
 __Note:__ This is not required for offline scanning.
 ```
 bamSDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
 ```
 
 ### Offline scanning
-In your Jumio merchant backend on the "Settings" page under "API credentials" you can find your Offline token.
+If you want to use Fastfill in offline mode please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com. Once this feature is enabled for your account, you can find your offline token in your Jumio customer portal on the "Settings" page under "API credentials".
+
 ```
 BamSDK.create(rootActivity, YOUROFFLINETOKEN)
 ```
@@ -248,7 +250,7 @@ Instead of using the standard method `onActivityResult`, implement the following
 
 Upon `onBamError`, you can show the error message and/or call `bamCustomScanPresenter.retryScan()` if retryPossible.
 
-__Note:__ The error codes 200, 210, 220, 240, 260, 300, 310 and 320 will be returned.
+__Note:__ The error codes 200, 210, 220, 240, 260, 300, 310 and 320 will be returned. The error codes are described at the end of this chapter.
 
 ```
 @Override
@@ -282,7 +284,7 @@ Class **_BamCardInformation_**
 
 |Parameter        			| Type    | Max. length |Description               |
 |:---------------------------- 		|:-------------|:-----------------|:-------------|
-| cardType         			| CreditCardType | Jumio Core library|  AMERICAN_EXPRESS, CHINA_UNIONPAY, DINERS_CLUB, DISCOVER, JCB, MASTER_CARD, VISA or STARBUCKS    |
+| cardType         			| CreditCardType | Jumio Core library|  AMERICAN_EXPRESS, CHINA_UNIONPAY, DINERS_CLUB, DISCOVER, JCB, MASTER_CARD or VISA |
 | cardNumber       			| char[] | 16 | Full credit card number |
 | cardNumberGrouped  		| char[] | 19 | Grouped credit card number |
 | cardNumberMasked  		| char[] | 19 | First 6 and last 4 digits of the grouped credit card number, other digits are masked with "X" |
@@ -301,7 +303,7 @@ Class **_BamCardInformation_**
 | clear         			|   		 |   			| Clear card information    |
 | getCustomField      | String | String | Get entered value for added custom field |
 
-Class **_Error codes_**
+**_Error codes:_**
 
 | Code        			| Message   | Description     |
 | :---------------: |:----------|:----------------|
@@ -322,7 +324,7 @@ http://www.jumio.com/implementation-guides/credit-card-retrieval-api/
 
 ## Two-factor Authentication
 
-If you want to enable two-factor authentication for your Jumio merchant backend please contact us at https://support.jumio.com Once enabled, users will be guided through the setup upon their first login to obtain a security code using the "Google Authenticator" app.
+If you want to enable two-factor authentication for your Jumio customer portal please contact us at https://support.jumio.com Once enabled, users will be guided through the setup upon their first login to obtain a security code using the "Google Authenticator" app.
 
 ## Copyright
 

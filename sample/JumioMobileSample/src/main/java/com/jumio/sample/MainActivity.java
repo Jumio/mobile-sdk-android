@@ -104,14 +104,21 @@ public class MainActivity extends AppCompatActivity {
 					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
 					nvFragment.setArguments(bundle);
 					return nvFragment;
-				case 1:
+                case 1:
+                    NetverifyCustomFragment nvCustomFragment = new NetverifyCustomFragment();
+                    bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_netverify_custom)));
+                    bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
+                    bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
+                    nvCustomFragment.setArguments(bundle);
+                    return nvCustomFragment;
+				case 2:
 					DocumentVerificationFragment documentVerificationFragment = new DocumentVerificationFragment();
 					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_documentverification)));
 					bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
 					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
 					documentVerificationFragment.setArguments(bundle);
 					return documentVerificationFragment;
-				case 2:
+				case 3:
 					BamFragment bamFragment = new BamFragment();
 					bundle.putString(KEY_SWITCH_ONE_TEXT, getResources().getString(R.string.bam_expiry_required));
 					bundle.putString(KEY_SWITCH_TWO_TEXT, getResources().getString(R.string.bam_cvv_required));
@@ -120,9 +127,9 @@ public class MainActivity extends AppCompatActivity {
 					bundle.putString(KEY_API_SECRET, BAM_API_SECRET);
 					bamFragment.setArguments(bundle);
 					return bamFragment;
-				case 3:
+				case 4:
 					BamCustomFragment bamCustomFragment = new BamCustomFragment();
-					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_bamcheckout)));
+					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_bam_custom)));
 					bundle.putString(KEY_API_TOKEN, BAM_API_TOKEN);
 					bundle.putString(KEY_API_SECRET, BAM_API_SECRET);
 					bamCustomFragment.setArguments(bundle);
@@ -133,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
 		@Override
 		public int getCount() {
-			return 4;
+			return 5;
 		}
 
 		@Override
@@ -141,11 +148,13 @@ public class MainActivity extends AppCompatActivity {
 			switch (position) {
 				case 0:
 					return getResources().getString(R.string.section_netverify);
-				case 1:
-					return getResources().getString(R.string.section_documentverification);
+                case 1:
+                    return getResources().getString(R.string.section_netverify_custom);
 				case 2:
-					return getResources().getString(R.string.section_bamcheckout);
+					return getResources().getString(R.string.section_documentverification);
 				case 3:
+					return getResources().getString(R.string.section_bamcheckout);
+				case 4:
 					return getResources().getString(R.string.section_bam_custom);
 			}
 			return null;

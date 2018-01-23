@@ -2,6 +2,11 @@
 
 # Transition guide for BAM Checkout SDK
 
+## 2.10.0
+* SDK updated to Android plugin for gradle 3.0 - https://developer.android.com/studio/build/gradle-plugin-3-0-0-migration.html
+* Minimum API level was raised from Android 4.1 (API level 16) to Android 4.4 (API level 19)
+* Removed support for Starbucks cards
+
 ## 2.9.0
 No backward incompatible changes.
 
