@@ -15,7 +15,7 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "2.10.0"
+	SDK_VERSION = "2.10.1"
 }
 
 dependencies {

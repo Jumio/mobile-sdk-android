@@ -8,17 +8,11 @@
 
 # Release notes
 
-Applies to all products. SDK version: 2.10.0
+Applies to Netverify. Fastfill, Document Verification an BAM Checkout is unchanged.
+SDK version: 2.10.1
 
 #### Changes
-* Added an additional network security layer
-* Increased the minimum API level to 19
-* Updated all components to Android plugin for gradle 3.0
-
-#### Fixes
-* Fixed problems with the camera handling on various devices
-* Miscellaneous bugfixes
-* Stability improvements
+* Adapt handling for legal masking in Netherlands
 
 # Basic Setup
 
@@ -114,7 +108,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 2.9.0 of the Jumio Mobile SDK is supported until 2018-05-01.
+The previous release version 2.10.0 of the Jumio Mobile SDK is supported until 2018-06-01.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

@@ -16,19 +16,12 @@ Netverify & Fastfill SDK offers scanning and authentication of governmental issu
 - [Callback](#callback)
 
 ## Release notes
-For changes in the technical area, please read our [transition guide](transition-guide_netverify-fastfill.md).
+For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md)
 
-SDK version: 2.10.0
+SDK version: 2.10.1
 
-#### Features
-* Added Custom UI functionality to implement your own UI design
-* Improved extraction of NFC Passports and IDs
-* Extract name suffix from US/CAN Driving Licenses
-* Improved face capturing
-* Improved image quality check to reduce blurred images
-
-#### Fixes
-* Fixed data extraction for a few US/CAN Driving Licenses
+#### Changes
+* Adapt handling for legal masking in Netherlands
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -72,21 +65,21 @@ The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
 | com.jumio.android:core:.0@aar                   | x | Jumio Core library		| 3.84 MB |
-| com.jumio.android:nv:2.10.0@aar                     | x | Netverify library 		| 517.75 KB |
-|com.android.support:appcompat-v7:26.1.0             | x | Android native library	| - |
-|com.android.support:support-v4:26.1.0               | x | Android native library	| - |
-|com.android.support:cardview-v7:26.1.0              | x | Android cardview library (Netverify only)	| - |
-|com.google.android.gms:play-services-vision:11.4.0  | x | Barcode Scanning 			| - |
-|com.jumio.android:nv-liveness:2.10.0@aar 		         | x | Face-Liveness library	| 4.32 MB |
-|com.android.support:design:26.1.0                   |   | Android native library	| - |
-|com.jumio.android:javadoc:2.10.0                     |   | Jumio SDK Javadoc			| - |
-|com.jumio.android:nv-barcode:2.10.0@aar              |   | US / CAN Barcode Scanning | 3.46 MB |
-|com.jumio.android:nv-barcode-vision:2.10.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) | 36.2 KB |
-|com.jumio.android:nv-mrz:2.10.0@aar             		 |   | MRZ scanning 					| 2.16 MB |
-|com.jumio.android:nv-nfc:2.10.0@aar              		 |   | eMRTD Scanning 				| 884.40 KB |
+| com.jumio.android:nv:2.10.1@aar                     | x | Netverify library 		| 517.75 KB |
+|com.android.support:appcompat-v7:27.0.2             | x | Android native library	| - |
+|com.android.support:support-v4:27.0.2               | x | Android native library	| - |
+|com.android.support:cardview-v7:27.0.2              | x | Android cardview library (Netverify only)	| - |
+|com.google.android.gms:play-services-vision:11.6.2  | x | Barcode Scanning 			| - |
+|com.jumio.android:nv-liveness:2.10.1@aar 		         | x | Face-Liveness library	| 4.32 MB |
+|com.android.support:design:27.0.2                   |   | Android native library	| - |
+|com.jumio.android:javadoc:2.10.1                     |   | Jumio SDK Javadoc			| - |
+|com.jumio.android:nv-barcode:2.10.1@aar              |   | US / CAN Barcode Scanning | 3.46 MB |
+|com.jumio.android:nv-barcode-vision:2.10.1@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) | 36.2 KB |
+|com.jumio.android:nv-mrz:2.10.1@aar             		 |   | MRZ scanning 					| 2.16 MB |
+|com.jumio.android:nv-nfc:2.10.1@aar              		 |   | eMRTD Scanning 				| 884.40 KB |
 |com.madgag.spongycastle:prov:1.58.0.0             	 |   | eMRTD Scanning 				| - |
-|net.sf.scuba:scuba-sc-android:0.0.12             	 |   | eMRTD Scanning 				| - |
-|com.jumio.android:nv-ocr:2.10.0@aar             		 |   | Template Matcher 			| 1.57 MB |
+|net.sf.scuba:scuba-sc-android:0.0.13             	 |   | eMRTD Scanning 				| - |
+|com.jumio.android:nv-ocr:2.10.1@aar             		 |   | Template Matcher 			| 1.57 MB |
 
 ### Google Mobile Vision
 
@@ -127,7 +120,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:2.10.0@aar"
+implementation "com.jumio.android:bam:2.10.1@aar"
 ```
 
 #### Root detection
