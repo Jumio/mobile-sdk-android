@@ -1,7 +1,7 @@
 ![BAM Checkout](images/bam_checkout.png)
 
 # BAM Checkout SDK for Android
-BAM Checkout SDK is a powerful, cutting-edge solution to extract data from your customer´s credit card and/or ID in your mobile application within seconds, including home address. It fits perfectly, and fully automates, every checkout flow to avoid manual input at all which leads to an increased conversion rate .
+BAM Checkout SDK is a powerful, cutting-edge solution to extract data from your customer´s credit card and/or ID in your mobile application within seconds, including home address. It fits perfectly, and fully automates, every checkout flow to avoid manual input at all which leads to an increased conversion rate.
 
 ## Table of Content
 
@@ -14,11 +14,10 @@ BAM Checkout SDK is a powerful, cutting-edge solution to extract data from your 
 - [SDK Workflow](#sdk-workflow)
 - [Card retrieval API](#card-retrieval-api)
 - [Two-factor Authentication](#two-factor-authentication)
+- [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_bam-checkout.md)
-
-SDK version: 2.10.1.
+For technical changes, please read our [transition guide](transition-guide_bam-checkout.md) SDK version: 2.11.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Bam-Checkout.
@@ -43,11 +42,11 @@ If you want to use offline scanning for BAM Checkout (Credit card scanning), ple
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | :---------------------------- |:-------------:|:-----------------|:------------:|
-|com.jumio.android:core:2.10.1@aar                    | x | Jumio Core library|			| 3.84 MB |
-|com.jumio.android:bam:2.10.1@aar                     | x | BAM Checkout library |		| 2.02 MB |
-|com.android.support:appcompat-v7:27.0.2             | x | Android native library|  | - |
-|com.android.support:support-v4:27.0.2               | x | Android native library|  | - |
-|com.jumio.android:javadoc:2.10.1                     |   | Jumio SDK Javadoc|				| - |
+|com.jumio.android:core:2.11.0@aar                    | x | Jumio Core library|	4.56 MB |
+|com.jumio.android:bam:2.11.0@aar                     | x | BAM Checkout library | 2.02 MB |
+|com.android.support:appcompat-v7:27.0.2            | x | Android native library| - |
+|com.android.support:support-v4:27.0.2              | x | Android native library| - |
+|com.jumio.android:javadoc:2.11.0                     |   | Jumio SDK Javadoc| - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -180,27 +179,28 @@ Call `cardInformation.clear()` after processing the card information to make sur
 
 The parameter `EXTRA_ERROR_CODE` contains the user cancellation reason.
 
-__Note:__ The error codes 200, 210, 220, 240, 250, 260 and 310 will be returned.
+__Note:__ The error codes are described [here](#error-codes)
 
 ```
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	if (requestCode == BamSDK.REQUEST_CODE) {
-		// ArrayList<String> scanReferences = data.getStringArrayListExtra(BamSDK.EXTRA_SCAN_ATTEMPTS);
+		ArrayList<String> scanAttempts = data.getStringArrayListExtra(BamSDK.EXTRA_SCAN_ATTEMPTS);
 		if (resultCode == Activity.RESULT_OK) {
 			// OBTAIN PARAMETERS HERE
+			BamCardInformation cardInformation = data.getParcelableExtra(BamSDK.EXTRA_CARD_INFORMATION);
 			// YOURCODE
 			// cardInformation.clear();
 		}
 		else if (resultCode == Activity.RESULT_CANCELED) {
-			// int errorCode = data.getIntExtra(BamSDK.EXTRA_ERROR_CODE, 0);
-			// String errorMessage = data.getStringExtra(BamSDK.EXTRA_ERROR_MESSAGE);
+			String errorMessage = data.getStringExtra(BamSDK.EXTRA_ERROR_MESSAGE);
+			String errorCode = data.getStringExtra(BamSDK.EXTRA_ERROR_CODE);
 			// YOURCODE
 		}
 		// CLEANUP THE SDK AFTER RECEIVING THE RESULT
-		// if (bamSDK != null) {
-		// 	bamSDK.destroy();
-		// 	bamSDK = null;
-		// }
+	  if (bamSDK != null) {
+			bamSDK.destroy();
+		 	bamSDK = null;
+		}
 	}
 }
 ```
@@ -209,7 +209,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 #### Starting the SDK
 
-To use the custom scan view with a plain card scanning user interface, specify an instance of your class which implements the `BamCustomScanInterface` and provide an instance of the class `BamCustomScanView`. You will receive a `BamCustomScanPresenter` object.
+To use the custom scan view with a plain card scanning user interface, specify an instance of your class which implements the [BamCustomScanInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/bam/custom/BamCustomScanInterface.html) and provide an instance of the class [BamCustomScanView](https://jumio.github.io/mobile-sdk-android/com/jumio/bam/custom/BamCustomScanView.html). You will receive a [BamCustomScanPresenter](https://jumio.github.io/mobile-sdk-android/com/jumio/bam/custom/BamCustomScanPresenter.html) object.
 
 Add `yourBamCustomScanView` to your layout and specify desired layout attributes using either
 *  a certain width, and height as `wrap_content`
@@ -249,7 +249,7 @@ Instead of using the standard method `onActivityResult`, implement the following
 
 Upon `onBamError`, you can show the error message and/or call `bamCustomScanPresenter.retryScan()` if retryPossible.
 
-__Note:__ The error codes 200, 210, 220, 240, 260, 300, 310 and 320 will be returned. The error codes are described at the end of this chapter.
+__Note:__ The error codes are described [here](#error-codes)
 
 ```
 @Override
@@ -271,7 +271,7 @@ public void onBamExtractionFinished(BamCardInformation cardInformation, ArrayLis
 }
 
 @Override
-public void onBamError(int errorCode, String errorMessage, boolean retryPossible, ArrayList<String> scanReferences) {
+public void onBamError(String errorCode, String errorMessage, boolean retryPossible, ArrayList<String> scanAttempts) {
 	// YOURCODE like showing the error message and/or calling retry if retryPossible
 	// bamCustomScanPresenter.retryScan();
 	// bamCustomScanPresenter.clearSDK();
@@ -279,7 +279,7 @@ public void onBamError(int errorCode, String errorMessage, boolean retryPossible
 }
 ```
 
-Class **_BamCardInformation_**
+### BamCardInformation
 
 |Parameter        			| Type    | Max. length |Description               |
 |:---------------------------- 		|:-------------|:-----------------|:-------------|
@@ -302,18 +302,20 @@ Class **_BamCardInformation_**
 | clear         			|   		 |   			| Clear card information    |
 | getCustomField      | String | String | Get entered value for added custom field |
 
-**_Error codes:_**
+### Error codes
 
 | Code        			| Message   | Description     |
 | :---------------: |:----------|:----------------|
-|200<br/>210<br/>220| Authentication failed | API credentials invalid, retry impossible|
-|240| Scanning not available at this time, please contact the app vendor | Resources cannot be loaded, retry impossible |
-|250| Canceled by end-user | No error occurred |
-|260| The camera is currently not available | Camera cannot be initialized, retry impossible |
-|280| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
-|300| Your card type is not accepted | Retry possible |
-|310| Background execution is not supported | Cancellation triggered automatically |
-|320| Your card is expired | Retry possible |
+|B10000| Authentication failed | Secure connection could not be established, retry impossible |
+|C10401| Authentication failed | API credentials invalid, retry impossible |
+|D10403| Authentication failed | Wrong API credentials used, retry impossible|
+|F00000| Scanning not available this time, please contact the app vendor | Resources cannot be loaded, retry impossible |
+|G00000| Cancelled by end-user | No error occurred |
+|H00000| The camera is currently not available | Camera cannot be initialized, retry impossible |
+|I00000| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
+|L00000| Your card type is not accepted | Retry possible |
+|M00000| Background execution is not supported | Cancellation triggered automatically |
+|N00000| Your card is expired | Retry possible |
 
 ## Card retrieval API
 

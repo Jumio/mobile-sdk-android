@@ -2,6 +2,11 @@
 
 # Transition guide for BAM Checkout SDK
 
+## 2.11.0
+#### New error scheme
+The schema for `errorCode` changed and it's type is now String instead of Integer.
+Read more detailed information on this in chapter [Error codes](/docs/integration_bam-checkout.md#error-codes)
+
 ## 2.10.1
 No backward incompatible changes.
 

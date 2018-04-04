@@ -7,12 +7,18 @@
 - [Support](#support)
 
 # Release notes
+All changes apply to Netverify and Fastfill
 
-Applies to Netverify. Fastfill, Document Verification an BAM Checkout is unchanged.
-SDK version: 2.10.1
+SDK version: 2.11.0
 
 #### Changes
-* Adapt handling for legal masking in Netherlands
+* Added support for legal masking in Germany
+* Added support for new gender code X  (gender-unspecified) on MRZ documents
+* Updated errorCode schema 
+
+#### Fixes
+* Fixed handling for British Columbia driving licenses
+* Various smaller bug fixes/improvements in all products
 
 # Basic Setup
 
@@ -108,7 +114,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 2.10.0 of the Jumio Mobile SDK is supported until 2018-06-01.
+The previous release version 2.11.0 of the Jumio Mobile SDK is supported until 2018-07-04.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

@@ -1,6 +1,5 @@
 package com.jumio.sample;
 
-import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.BitmapFactory;
@@ -10,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +34,7 @@ import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.MissingPermissionException;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
 import com.jumio.nv.NetverifyDocumentData;
+import com.jumio.nv.NetverifyInitiateCallback;
 import com.jumio.nv.NetverifyMrzData;
 import com.jumio.nv.NetverifySDK;
 import com.jumio.nv.custom.NetverifyCountry;
@@ -56,6 +57,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
+/**
+ * Copyright 2018 Jumio Corporation All rights reserved.
+ */
 public class NetverifyCustomFragment extends Fragment implements View.OnClickListener {
     private final static String TAG = "NetverifyCustom";
     private static final int PERMISSION_REQUEST_CODE_NETVERIFY_CUSTOM = 303;
@@ -511,7 +515,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 //			     public void onNetverifyInitiateSuccess() {
 //			     }
 //			     @Override
-//			     public void onNetverifyInitiateError(int errorCode, int errorDetail, String errorMessage, boolean retryPossible) {
+//			     public void onNetverifyInitiateError(String errorCode, String errorMessage, boolean retryPossible) {
 //			     }
 //			 });
 
@@ -648,10 +652,10 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         }
 
         @Override
-        public void onNetverifyError(int errorCode, int detailedErrorCode, String errorMessage, boolean retryPossible, String scanReference) {
+        public void onNetverifyError(String errorCode, String errorMessage, boolean retryPossible, String scanReference) {
             hideView(true, finishButton);
             showView(true, errorRetryButton);
-            addToCallbackLog(String.format("onNetverifyError: %d, %d, %s, %d, %s", errorCode, detailedErrorCode, errorMessage, retryPossible ? 0 : 1, scanReference != null ? scanReference : "null"));
+            addToCallbackLog(String.format("onNetverifyError: %s, %s, %d, %s", errorCode, errorMessage, retryPossible ? 0 : 1, scanReference != null ? scanReference : "null"));
         }
     }
 

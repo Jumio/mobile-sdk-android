@@ -13,7 +13,7 @@ import com.jumio.core.exceptions.*;
 import com.jumio.dv.DocumentVerificationSDK;
 
 /**
- * Copyright 2017 Jumio Corporation All rights reserved.
+ * Copyright 2018 Jumio Corporation All rights reserved.
  */
 public class DocumentVerificationFragment extends Fragment implements View.OnClickListener {
 	private final static String TAG = "JumioSDK_DV";

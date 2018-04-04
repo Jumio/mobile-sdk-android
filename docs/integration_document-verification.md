@@ -12,11 +12,10 @@ Document Verification SDK is a powerful solution to enable scanning various type
 - [Customization](#customization)
 - [SDK Workflow](#sdk-workflow)
 - [Callback](#callback)
+- [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document_verification.md)
-
-SDK version: 2.10.1.
+For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.11.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -40,11 +39,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:2.10.1@aar                    | x | Jumio Core library            | 3.84 MB |
-| com.jumio.android:dv:2.10.1@aar                      | x | Document Verification library | 105.28 KB |
+| com.jumio.android:core:2.11.0@aar                    | x | Jumio Core library            | 4.56 MB |
+| com.jumio.android:dv:2.11.0@aar                      | x | Document Verification library | 104.67 KB |
 | com.android.support:appcompat-v7:27.0.2             | x | Android native library        | - |
 | com.android.support:support-v4:27.0.2               | x | Android native library        | - |
-| com.jumio.android:javadoc:2.10.1                     |   | Jumio SDK Javadoc             | - |
+| com.jumio.android:javadoc:2.11.0                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -200,30 +199,33 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			// OBTAIN PARAMETERS HERE
 			// YOURCODE
 		} else if (resultCode == Activity.RESULT_CANCELED) {
-			// String scanReference = data.getStringExtra(DocumentVerificationSDK.EXTRA_SCAN_REFERENCE);
-			// int errorCode = data.getIntExtra(DocumentVerificationSDK.EXTRA_ERROR_CODE, 0);
-			// String errorMessage = data.getStringExtra(DocumentVerificationSDK.EXTRA_ERROR_MESSAGE);
+			String scanReference = data.getStringExtra(DocumentVerificationSDK.EXTRA_SCAN_REFERENCE);
+			String errorMessage = data.getStringExtra(DocumentVerificationSDK.EXTRA_ERROR_MESSAGE);
+			String errorCode = data.getStringExtra(DocumentVerificationSDK.EXTRA_ERROR_CODE);
 			// YOURCODE
 		}
         // CLEANUP THE SDK AFTER RECEIVING THE RESULT
-        // if (documentVerificationSDK != null) {
-        // 	documentVerificationSDK.destroy();
-        // 	documentVerificationSDK = null;
-        // }
+         if (documentVerificationSDK != null) {
+           documentVerificationSDK.destroy();
+           documentVerificationSDK = null;
+         }
 	}
 }
 ```
 
-Class **_Error codes_**:
+#### Error codes
 
 |Code        			| Message   | Description    |
 | :--------------:|:----------|:---------------|
-|100<br/>110<br/>130<br/>140<br/>150<br/>160| We have encountered a network communication problem | Retry possible, user decided to cancel |
-|210<br/>220| Authentication failed | API credentials invalid, retry impossible |
-|230| No Internet connection available | Retry possible, user decided to cancel |
-|250| Cancelled by end-user | No error occurred |
-|260| The camera is currently not available | Camera cannot be initialized, retry impossible |
-|280| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
+|A10000| We have encountered a network communication problem | Retry possible, user decided to cancel |
+|B10000| Authentication failed | Secure connection could not be established, retry impossible |
+|C10401| Authentication failed | API credentials invalid, retry impossible |
+|D10403| Authentication failed | Wrong API credentials used, retry impossible|
+|E20000| No Internet connection available | Retry possible, user decided to cancel |
+|F00000| Scanning not available this time, please contact the app vendor | Resources cannot be loaded, retry impossible |
+|G00000| Cancelled by end-user | No error occurred |
+|H00000| The camera is currently not available | Camera cannot be initialized, retry impossible |
+|I00000| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
 
 ## Callback
 To get information about callbacks, Netverify Retrieval API, Netverify Delete API and Global Netverify settings and more, please read our [page with server related information](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md).

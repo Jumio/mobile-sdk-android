@@ -13,7 +13,7 @@ import com.jumio.core.exceptions.*;
 import com.jumio.nv.*;
 
 /**
- * Copyright 2017 Jumio Corporation All rights reserved.
+ * Copyright 2018 Jumio Corporation All rights reserved.
  */
 public class NetverifyFragment extends Fragment implements View.OnClickListener {
 	private final static String TAG = "JumioSDK_Netverify";
@@ -161,7 +161,7 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 //			     public void onNetverifyInitiateSuccess() {
 //			     }
 //			     @Override
-//			     public void onNetverifyInitiateError(int errorCode, int errorDetail, String errorMessage, boolean retryPossible) {
+//			     public void onNetverifyInitiateError(String errorCode, String errorMessage, boolean retryPossible) {
 //			     }
 //			 });
 
@@ -183,7 +183,7 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 				NetverifyMrzData mrzData = documentData != null ? documentData.getMrzData() : null;
 			} else if (resultCode == Activity.RESULT_CANCELED) {
 				String errorMessage = data.getStringExtra(NetverifySDK.EXTRA_ERROR_MESSAGE);
-				int errorCode = data.getIntExtra(NetverifySDK.EXTRA_ERROR_CODE, 0);
+				String errorCode = data.getStringExtra(NetverifySDK.EXTRA_ERROR_CODE);
 			}
 
 			//At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that

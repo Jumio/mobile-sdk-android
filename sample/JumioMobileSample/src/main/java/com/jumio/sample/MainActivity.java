@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.jumio.MobileSDK;
 
 /**
- * Copyright 2017 Jumio Corporation All rights reserved.
+ * Copyright 2018 Jumio Corporation All rights reserved.
  */
 public class MainActivity extends AppCompatActivity {
 

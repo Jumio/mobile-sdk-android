@@ -15,7 +15,7 @@ import com.jumio.core.exceptions.*;
 import java.util.ArrayList;
 
 /**
- * Copyright 2017 Jumio Corporation All rights reserved.
+ * Copyright 2018 Jumio Corporation All rights reserved.
  */
 public class BamFragment extends Fragment implements View.OnClickListener {
 	private final static String TAG = "JumioSDK_Bam";
@@ -166,7 +166,7 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 				cardInformation.clear();
 			} else if (resultCode == Activity.RESULT_CANCELED) {
 				String errorMessage = data.getStringExtra(BamSDK.EXTRA_ERROR_MESSAGE);
-				int errorCode = data.getIntExtra(BamSDK.EXTRA_ERROR_CODE, 0);
+				String errorCode = data.getStringExtra(BamSDK.EXTRA_ERROR_CODE);
 			}
 
 			//At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that

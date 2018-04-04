@@ -12,6 +12,7 @@ import android.widget.*;
 import com.jumio.MobileSDK;
 import com.jumio.bam.*;
 import com.jumio.bam.custom.*;
+import com.jumio.bam.enums.BamErrorCase;
 import com.jumio.commons.utils.ScreenUtil;
 import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
@@ -19,7 +20,7 @@ import com.jumio.core.exceptions.PlatformNotSupportedException;
 import java.util.ArrayList;
 
 /**
- * Copyright © 2017 Jumio Corporation All rights reserved.
+ * Copyright 2018 Jumio Corporation All rights reserved.
  */
 public class BamCustomFragment extends Fragment implements BamCustomScanInterface {
 	private final static String TAG = "JumioSDK_BamCustom";
@@ -265,10 +266,10 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 	}
 
 	@Override
-	public void onBamError(int errorCode, int detailedErrorCode, String errorMessage, boolean retryPossible, ArrayList<String> scanAttempts) {
+	public void onBamError(String errorCode, String errorMessage, boolean retryPossible, ArrayList<String> scanAttempts) {
 		Log.d("BamCustomScan", "error occured");
 		//Do not show error dialog when it is an error because of background execution not supported exception.
-		if (errorCode == 310)
+		if (errorCode.startsWith(BamErrorCase.CANCEL_TYPE_BACKGROUND.code()))
 			return;
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
 		alertDialogBuilder.setTitle("Scan error");

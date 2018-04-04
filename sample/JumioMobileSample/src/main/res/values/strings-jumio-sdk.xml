@@ -79,6 +79,9 @@
 	<string name="netverify_scanview_liveness_description">Put your face in the frame to proceed.</string>
 	<string name="netverify_scanview_legal_hint_nld">Please redact your BSN before capturing</string>
 	<string name="netverify_scanview_legal_hint_kor">Redact the second block of your Resident Registration Number before capturing</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Please redact the passport number before capturing</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Please redact the ID number before capturing</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Please redact the ID and access number before capturing</string>
 	<string name="netverify_helpview_progress_text">Step %1$d of %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">The barcode of your document didn\'t contain your address, turn your document and scan the front</string>
 	<string name="netverify_helpview_description_face_on_back">You recently scanned the front of your document.\n\nPlease flip your document and scan the back.</string>
