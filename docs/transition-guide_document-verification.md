@@ -2,6 +2,13 @@
 
 # Transition guide for Document Verification SDK
 
+## 2.12.0
+#### New method setEnableExtraction
+SDK method `documentVerificationSDK.setEnableExtraction(boolean)` has been added for enabling/disabling extraction on documents.
+
+#### Additional information method removed
+SDK method `documentVerificationSDK.setAdditionalInformation` has been removed.
+
 ## 2.11.0
 #### New error scheme
 The schema for `errorCode` changed and it's type is now String instead of Integer.

@@ -97,6 +97,9 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 			// Note: The customer ID should not contain sensitive data like PII (Personally Identifiable Information) or account login.
 			documentVerificationSDK.setCustomerId("CUSTOMERID");
 
+			// Set the following property to enable/disable data extraction for documents.
+			// documentVerificationSDK.setEnableExtraction(true);
+
 			// One of the Custom Document Type Codes as configurable by Merchant in Merchant UI.
 			// documentVerificationSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");
 
@@ -111,9 +114,6 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 
 			// Use the following method to set the default camera position.
 			// documentVerificationSDK.setCameraPosition(JumioCameraPosition.FRONT);
-
-			// Additional information for this scan should not contain sensitive data like PII (Personally Identifiable Information) or account login
-			// documentVerificationSDK.setAdditionalInformation("YOURADDITIONALINFORMATION");
 
 			// Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
 			//documentVerificationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);

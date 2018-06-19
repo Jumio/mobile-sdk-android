@@ -3,18 +3,17 @@
 	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_error_dialog_title">Error</string>
+	<string name="jumio_scanview_refocus">Please refocus</string>
 	<string name="jumio_accessibility_flash_activate">Activate flash</string>
 	<string name="jumio_accessibility_flash_deactivate">Deactivate flash</string>
 	<string name="jumio_accessibility_camera_switch_to_front">Switch to front camera</string>
 	<string name="jumio_accessibility_camera_switch_to_back">Switch to back camera</string>
 	<string name="jumio_accessibility_loading">Loading</string>
-	<string name="jumio_accessibility_double_tap_to_continue">Double-Tap to continue</string>
 	<string name="jumio_accessibility_quit_scan">Quit scan</string>
 	-->
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="netverify_search">Search</string>
 	<string name="netverify_error_network_problems">We have encountered a network communication problem</string>
 	<string name="netverify_error_auth_failed">Authentication failed</string>
 	<string name="netverify_error_device_is_offline">No internet connection available</string>
@@ -35,7 +34,6 @@
 	<string name="netverify_outside">Outside</string>
 	<string name="netverify_use_front_side_of_card">USE FRONT</string>
 	<string name="netverify_use_back_side_of_card">USE BACK</string>
-	<string name="netverify_overlay_liveness_advice">Move your eyes or blink</string>
 	<string name="netverify_nfc_view_title">NFC</string>
 	<string name="netverify_nfc_header_start">&lt;b&gt;Scan ID&lt;/b&gt;</string>
 	<string name="netverify_nfc_header_download">&lt;b&gt;Extracting data&lt;/b&gt;</string>
@@ -53,9 +51,7 @@
 	<string name="netverify_nfc_enable_dialog_title">Enable NFC</string>
 	<string name="netverify_nfc_enable_dialog_text">To get more out of your passport, please click on OK and enable your phone\'s NFC capability</string>
 	<string name="netverify_scan_options_subtitle_type">Select the type of document you wish to scan</string>
-	<string name="netverify_scan_options_country_title">Your country</string>
 	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Select your country&lt;/u&gt;&lt;/b&gt;</string>
-	<string name="netverify_scan_options_preselected_hint">Cannot be changed</string>
 	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; has been set as the issuing country of your documents.</string>
 	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; has been set as the issuing country of your documents. &lt;b&gt;&lt;u&gt;Change country&lt;/u&gt;&lt;/b&gt;</string>
 	<string name="netverify_countrylist_title">Select the issuing country of your document</string>
@@ -104,10 +100,6 @@
 	<string name="netverify_helpview_full_description_liveness_light">Use good lighting and avoid strong light from behind</string>
 	<string name="netverify_document_variant_other">Other format</string>
 	<string name="netverify_document_variant_plastic">Plastic card</string>
-	<string name="netverify_accessibility_action_double_click">Double click to choose</string>
-	<string name="netverify_accessibility_select_your_country">Select your country</string>
-	<string name="netverify_accessibility_select_your_type_of_document">Select your type of document</string>
-	<string name="netverify_confirmation_snackbar_help_default">Please verify that this image is sharp and all written information is readable</string>
 	<string name="netverify_accessibility_nfc_description_start">Please check if your ID has a chip. If so, place your phone on the ID as illustrated</string>
 	-->
 

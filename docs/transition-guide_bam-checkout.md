@@ -2,6 +2,9 @@
 
 # Transition guide for BAM Checkout SDK
 
+## 2.12.0
+No backward incompatible changes.
+
 ## 2.11.0
 #### New error scheme
 The schema for `errorCode` changed and it's type is now String instead of Integer.

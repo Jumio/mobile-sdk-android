@@ -34,7 +34,6 @@ import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.MissingPermissionException;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
 import com.jumio.nv.NetverifyDocumentData;
-import com.jumio.nv.NetverifyInitiateCallback;
 import com.jumio.nv.NetverifyMrzData;
 import com.jumio.nv.NetverifySDK;
 import com.jumio.nv.custom.NetverifyCountry;
@@ -430,7 +429,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
                 android.util.Log.w(TAG, "Device not supported");
 
             // Check if the Google Vision API is available and operational. This is required by the face match step.
-            // If the Google Vision API is not available or operational, the face match step will be skipped.
+            // If the Google Vision API is not available or operational, a fallback image picker will be used for face capturing.
             //
             // OPERATIONAL API is uptodate and can be used
             // NOT_OPERATIONAL API is not available
@@ -498,9 +497,6 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 
             // Use the following method to only support IDs where data can be extracted on mobile only.
             // netverifySDK.setDataExtractionOnMobileOnly(true);
-
-            // Additional information for this scan should not contain sensitive data like PII (Personally Identifiable Information) or account login
-            // netverifySDK.setAdditionalInformation("YOURADDITIONALINFORMATION");
 
             // Use the following method to explicitly send debug-info to Jumio. (default: false)
             // Only set this property to true if you are asked by our Jumio support personnel.
@@ -731,7 +727,12 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             addToCallbackLog("onNetverifyShowLegalAdvice");
             addToCallbackLog(legalAdvice);
         }
-    }
+
+		@Override
+		public void onNetverifyDisplayBlurHint() {
+			addToCallbackLog("onNetverifyDisplayBlurHint");
+		}
+	}
 
     private void showView(boolean hideLoading, View... views) {
         if (hideLoading)

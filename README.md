@@ -7,18 +7,18 @@
 - [Support](#support)
 
 # Release notes
-All changes apply to Netverify and Fastfill
-
-SDK version: 2.11.0
+SDK version: 2.12.0
 
 #### Changes
-* Added support for legal masking in Germany
-* Added support for new gender code X  (gender-unspecified) on MRZ documents
-* Updated errorCode schema 
+* Added support for 5 new default languages (Spanish, French, German, Chinese simple, Dutch) [Netverify/Fastfill, Document Verification]
+* Improved image quality checks to reduce the number of blurred images [Netverify/Fastfill, Document Verification]
+* Deprecated additionalInformation parameter [Netverify/Fastfill, Document Verification]
+* Added new parameter enableExtraction to activate data extraction of documents [Document Verification]
+* Updated BIN range list for credit cards [BAM Checkout]
 
 #### Fixes
-* Fixed handling for British Columbia driving licenses
-* Various smaller bug fixes/improvements in all products
+* Fixed handling of certain US/CAN barcodes [Netverify/Fastfill]
+* Various smaller bug fixes/improvements [Netverify/Fastfill, Document Verification, BAM Checkout]
 
 # Basic Setup
 
@@ -102,7 +102,15 @@ __Note:__ You get an *UnsatisfiedLinkError*, if the app and the CPU architecture
 
 ### Localizing labels
 Our SDK supports the [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages and cultures.
-All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable at `../res/values/strings.xml` within our Sample application.
+All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable at [.../src/main/res/values/strings-jumio-sdk.xml](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml) within our Sample application.
+
+For our products Fastfill & Netverify we are providing six individual languages for your convenience:
+* Chinese (Simplified)
+* Dutch
+* English
+* French
+* German
+* Spanish
 
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or change the __font size__ on their device. The accessibility-strings that are used by TalkBack contain *accessibility_* in their key and can be also modified in the `strings.xml`.
 
@@ -114,7 +122,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 2.10.1 of the Jumio Mobile SDK is supported until 2018-07-04.
+The previous release version 2.11.0 of the Jumio Mobile SDK is supported until 2018-09-19.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

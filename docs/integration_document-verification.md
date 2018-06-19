@@ -15,7 +15,7 @@ Document Verification SDK is a powerful solution to enable scanning various type
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.11.0
+For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.12.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -39,11 +39,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:2.11.0@aar                    | x | Jumio Core library            | 4.56 MB |
-| com.jumio.android:dv:2.11.0@aar                      | x | Document Verification library | 104.67 KB |
-| com.android.support:appcompat-v7:27.0.2             | x | Android native library        | - |
-| com.android.support:support-v4:27.0.2               | x | Android native library        | - |
-| com.jumio.android:javadoc:2.11.0                     |   | Jumio SDK Javadoc             | - |
+| com.jumio.android:core:2.12.0@aar                    | x | Jumio Core library            | 4.57 MB |
+| com.jumio.android:dv:2.12.0@aar                      | x | Document Verification library | 103.42 KB |
+| com.android.support:appcompat-v7:27.1.1             | x | Android native library        | - |
+| com.android.support:support-v4:27.1.1               | x | Android native library        | - |
+| com.jumio.android:javadoc:2.12.0                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -134,13 +134,15 @@ A callback URL can be specified for individual transactions constraints see chap
 documentVerificationSDK.setCallbackUrl("YOURCALLBACKURL");
 ```
 
-You can also set an additional information parameter (max. 255 characters).
+### Data Extraction
 
-__Note:__ The additional information must not contain sensitive data like PII (Personally Identifiable Information) or account login.
+When data extraction should be used, set the following parameter that enables or disables extraction for each transaction. It is mandatory to be set to `true` if extraction is activated.
+
 ```
-documentVerificationSDK.setAdditionalInformation("ADDITIONALINFORMATION");
+documentVerificationSDK.setEnableExtraction(true);
 ```
 
+__Note:__ If you want to enable extraction for your account in general, please contact your Account Manager, or reach out to Jumio Support.
 
 ### Miscellaneous
 Use the following property to identify the scan in your reports (max. 100 characters).

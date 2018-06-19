@@ -17,7 +17,7 @@ Netverify & Fastfill SDK offers scanning and authentication of governmental issu
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 2.11.0
+For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 2.12.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -60,22 +60,22 @@ The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
-| com.jumio.android:core:2.11.0@aar                   | x | Jumio Core library		| 4.56 MB |
-| com.jumio.android:nv:2.11.0@aar                     | x | Netverify library 		| 523.49 KB |
-|com.android.support:appcompat-v7:27.0.2             | x | Android native library	| - |
-|com.android.support:support-v4:27.0.2               | x | Android native library	| - |
-|com.android.support:cardview-v7:27.0.2              | x | Android cardview library (Netverify only)	| - |
-|com.google.android.gms:play-services-vision:12.0.0  | x | Barcode Scanning 			| - |
-|com.jumio.android:nv-liveness:2.11.0@aar 		         | x | Face-Liveness library	| 4.32 MB |
-|com.android.support:design:27.0.2                   |   | Android native library	| - |
-|com.jumio.android:javadoc:2.11.0                     |   | Jumio SDK Javadoc			| - |
-|com.jumio.android:nv-barcode:2.11.0@aar              |   | US / CAN Barcode Scanning | 3.46 MB |
-|com.jumio.android:nv-barcode-vision:2.11.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) | 36.2 KB |
-|com.jumio.android:nv-mrz:2.11.0@aar             		 |   | MRZ scanning 					| 2.21 MB |
-|com.jumio.android:nv-nfc:2.11.0@aar              		 |   | eMRTD Scanning 				| 884.54 KB |
+| com.jumio.android:core:2.12.0@aar                   | x | Jumio Core library		| 4.57 MB |
+| com.jumio.android:nv:2.12.0@aar                     | x | Netverify library 		| 538.59 KB |
+|com.android.support:appcompat-v7:27.1.1             | x | Android native library	| - |
+|com.android.support:support-v4:27.1.1               | x | Android native library	| - |
+|com.android.support:cardview-v7:27.1.1              | x | Android cardview library (Netverify only)	| - |
+|com.google.android.gms:play-services-vision:12.0.0  |   | Barcode Scanning 			| - |
+|com.jumio.android:nv-liveness:2.12.0@aar 		         | x | Face-Liveness library	| 4.32 MB |
+|com.android.support:design:27.1.1                   |   | Android native library	| - |
+|com.jumio.android:javadoc:2.12.0                     |   | Jumio SDK Javadoc			| - |
+|com.jumio.android:nv-barcode:2.12.0@aar              |   | US / CAN Barcode Scanning | 3.46 MB |
+|com.jumio.android:nv-barcode-vision:2.12.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) | 36.72 KB |
+|com.jumio.android:nv-mrz:2.12.0@aar             		 |   | MRZ scanning 					| 2.21 MB |
+|com.jumio.android:nv-nfc:2.12.0@aar              		 |   | eMRTD Scanning 				| 887.77 KB |
 |com.madgag.spongycastle:prov:1.58.0.0             	 |   | eMRTD Scanning 				| - |
-|net.sf.scuba:scuba-sc-android:0.0.13             	 |   | eMRTD Scanning 				| - |
-|com.jumio.android:nv-ocr:2.11.0@aar             		 |   | Template Matcher 			| 1.57 MB |
+|net.sf.scuba:scuba-sc-android:0.0.16             	 |   | eMRTD Scanning 				| - |
+|com.jumio.android:nv-ocr:2.12.0@aar             		 |   | Template Matcher 			| 1.58 MB |
 
 ### Google Mobile Vision
 
@@ -89,8 +89,7 @@ If the dependencies `com.jumio.android:nv-liveness` and `com.jumio.android:nv-ba
 ```
 
 #### Operationality
-If the Google Mobile Vision API is not operational on a device, the face workflow in Netverify can not be started!
-In this case, the SDK will skip the face workflow despite `NetverifySDK.requireFaceMatch(true)` being set.
+If the Google Mobile Vision API is not operational on a device, a manual fallback will be used for the face workflow.
 The operationality of the Google Mobile Vision API can be checked with the following SDK method (see [NetverifyFragment](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/NetverifyFragment.java)  in Sample app):
 ```
 GoogleVisionStatus NetverifySDK.isMobileVisionOperational(Activity activity, int requestCode);
@@ -116,7 +115,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:2.11.0@aar"
+implementation "com.jumio.android:bam:2.12.0@aar"
 ```
 
 #### Root detection
@@ -195,12 +194,6 @@ You can also set a customer identifier (max. 100 characters).
 __Note:__ The customer ID must not contain sensitive data like PII (Personally Identifiable Information) or account login.
 ```
 netverifySDK.setCustomerId("CUSTOMERID");
-```
-You can also set an additional information parameter (max. 255 characters).
-
-__Note:__ The additional information must not contain sensitive data like PII (Personally Identifiable Information) or account login.
-```
-netverifySDK.setAdditionalInformation("ADDITIONALINFORMATION");
 ```
 
 ### eMRTD
@@ -339,16 +332,16 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 |personalNumber|	String|	14|	Personal number of the document|
 |issuingDate|	Date|	|	Date of issue|
 |expiryDate| Date|	|	Date of expiry|
-|issuingCountry|	String|	3|	Country of issue as ([ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code|
+|issuingCountry|	String|	3|	Country of issue as [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code|
 |lastName|	String|	100	|Last name of the customer|
 |firstName|	String|	100	|First name of the customer|
 |middleName|	String|	100	|Middle name of the customer|
 |dob|	Date|		|Date of birth|
 |gender|	NVGender|		| Gender M, F or X|
-|originatingCountry|	String|	3|	Country of origin as ([ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code|
+|originatingCountry|	String|	3|	Country of origin as [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code|
 |addressLine|	String|	64	|Street name|
 |city|	String|	64	|City|
-|subdivision|	String|	3|	Last three characters of [ISO 3166-2:US](http://en.wikipedia.org/wiki/ISO_3166-2:US) state code	|
+|subdivision|	String|	3|	Last three characters of [ISO 3166-2:US](https://en.wikipedia.org/wiki/ISO_3166-2:US) or [ISO 3166-2:CA](https://en.wikipedia.org/wiki/ISO_3166-2:CA) subdivision code	|
 |postCode|	String|	15|	Postal code	|
 |mrzData|	NetverifyMrzData|		|MRZ data, see table below|
 |optionalData1|	String|	50|	Optional field of MRZ line 1|
@@ -384,7 +377,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 |G00000| Cancelled by end-user | No error occurred |
 |H00000| The camera is currently not available | Camera cannot be initialized, retry impossible |
 |I00000| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
-|J00000| Transaction already finished | User did not complete SDK journey within token lifetime|
+|J00000| Transaction already finished | User did not complete SDK journey within session lifetime|
 
 The first letter (A-J) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation. Please always include the whole code when filing an error related issue to our support team.
 
@@ -457,7 +450,7 @@ Upon `onNetverifyCameraAvailable` within *yourNetverifyCustomScanInterface*, you
 
 Call `showShutterButton` to determine if the image will be taken manually. If so, display your shutter button and call `takePicture()` once clicked.
 
-To handle the activity lifecycle correctly, call `pause` and `resume` from the `NetverifyCustomSDKController` and `NetverifyCstomScanPresenter` if currently active.
+To handle the activity lifecycle correctly, call `pause` and `resume` from the `NetverifyCustomSDKController` and `NetverifyCustomScanPresenter` if currently active.
 
 Implement the following methods within
 * NetverifyCustomScanInterface for camera, extraction, confirmation view
@@ -475,6 +468,8 @@ Upon `onNetverifyFaceOnBackside` after a backside scan of an ID or Driver Licens
 Upon `onNetverifyFaceInLandscape`, notify the user that he should rotate the device to portrait orientation to continue with face scanning.
 
 Upon `onNetverifyShowLegalAdvice`, it is necessary to display the provided legal advice to the user.
+
+Upon `onNetverifyDisplayBlurHint`, it is necessary to  notify the user that the image is blurry and therefore can't be taken. (Manual image capturing only)
 
 Upon `onNetverifyScanForPartFinished`, call `netverifyCustomScanViewController.destroy()` to release all resources before scanning the next part, until all parts are scanned. Once completed, call `netverifyCustomSDKController.finish()` to finish the scan.
 

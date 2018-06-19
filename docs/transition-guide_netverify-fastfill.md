@@ -2,6 +2,23 @@
 
 # Transition guide for Netverify & Fastfill SDK
 
+## 2.12.0
+#### Fallback for Google Vision not operational added
+A fallback to manual image picker will now be used if Google Vision is not operational due to problems on the device. This guarantees the face workflow to be finished despite problems with the availablility of the Google Play services. Details are also described in [sub-chapter operationality](integration_netverify-fastfill.md#operationality).
+The method `netverifySDK.isMobileVisionOperational` remains in the SDK but doesn't need to be checked now necessarily.
+
+#### New SDK localizations added
+In addition to English, the translations for the languages Chinese (Simplified), Dutch, Frensh, German and Spanish have been added.
+
+#### Remove unused strings for localization
+Along with the additional languages, we removed some Strings that were unused in the SDK. The following keys have been removed: `netverify_confirmation_snackbar_help_default`, `netverify_accessibility_select_your_country`, `netverify_accessibility_action_double_click`, `netverify_accessibility_select_your_country`, `netverify_scan_options_country_title`, `netverify_overlay_liveness_advice` and `netverify_scan_options_preselected_hint`.
+
+#### Additional information method removed
+SDK method `netverifySDK.setAdditionalInformation` has been removed.
+
+#### New callback in NetverifyCustomScanInterface
+`onNetverifyDisplayBlurHint()` was added for custom scan view.
+
 ## 2.11.0
 #### New error scheme
 The schema for `errorCode` changed and it's type is now String instead of Integer.
