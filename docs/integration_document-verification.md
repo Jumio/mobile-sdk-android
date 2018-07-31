@@ -1,7 +1,7 @@
 ![Document Verification](images/document_verification.png)
 
 # Document Verification SDK for Android
-Document Verification SDK is a powerful solution to enable scanning various types (Utility Bill, Bank statement and many others) of your customer's documents in your mobile application within seconds, also supporting data extraction from Utility Bills and Bank Statements from US, UK, France and Canada, as well as US Social Security Cards.
+Document Verification is a powerful solution to enable scanning various types (Utility Bill, Bank statement and many others) of your customer's documents in your mobile application within seconds, also supporting data extraction on documents like Utility Bills and Bank Statements (see [Supported documents for data extraction](https://github.com/Jumio/implementation-guides/blob/master/netverify/document-verification.md#supported-documents))
 
 ## Table of Content
 
@@ -15,7 +15,7 @@ Document Verification SDK is a powerful solution to enable scanning various type
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.12.0
+For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.12.1
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -39,11 +39,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:2.12.0@aar                    | x | Jumio Core library            | 4.57 MB |
-| com.jumio.android:dv:2.12.0@aar                      | x | Document Verification library | 103.42 KB |
+| com.jumio.android:core:2.12.1@aar                    | x | Jumio Core library            | 4.57 MB |
+| com.jumio.android:dv:2.12.1@aar                      | x | Document Verification library | 103.42 KB |
 | com.android.support:appcompat-v7:27.1.1             | x | Android native library        | - |
 | com.android.support:support-v4:27.1.1               | x | Android native library        | - |
-| com.jumio.android:javadoc:2.12.0                     |   | Jumio SDK Javadoc             | - |
+| com.jumio.android:javadoc:2.12.1                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -228,6 +228,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 |G00000| Cancelled by end-user | No error occurred |
 |H00000| The camera is currently not available | Camera cannot be initialized, retry impossible |
 |I00000| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
+|K10400| Unsupported document code defined. Please contact Jumio support | An unsupported document code has been set, retry impossible |
 
 ## Callback
 To get information about callbacks, Netverify Retrieval API, Netverify Delete API and Global Netverify settings and more, please read our [page with server related information](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md).

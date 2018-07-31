@@ -2,6 +2,9 @@
 
 # Transition guide for Netverify & Fastfill SDK
 
+## 2.12.1
+#### Fixed a problem in which the user could get stuck in the Selfie capturing process
+
 ## 2.12.0
 #### Fallback for Google Vision not operational added
 A fallback to manual image picker will now be used if Google Vision is not operational due to problems on the device. This guarantees the face workflow to be finished despite problems with the availablility of the Google Play services. Details are also described in [sub-chapter operationality](integration_netverify-fastfill.md#operationality).

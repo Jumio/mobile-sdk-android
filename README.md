@@ -7,18 +7,11 @@
 - [Support](#support)
 
 # Release notes
-SDK version: 2.12.0
+SDK version: 2.12.1
 
-#### Changes
-* Added support for 5 new default languages (Spanish, French, German, Chinese simple, Dutch) [Netverify/Fastfill, Document Verification]
-* Improved image quality checks to reduce the number of blurred images [Netverify/Fastfill, Document Verification]
-* Deprecated additionalInformation parameter [Netverify/Fastfill, Document Verification]
-* Added new parameter enableExtraction to activate data extraction of documents [Document Verification]
-* Updated BIN range list for credit cards [BAM Checkout]
 
 #### Fixes
-* Fixed handling of certain US/CAN barcodes [Netverify/Fastfill]
-* Various smaller bug fixes/improvements [Netverify/Fastfill, Document Verification, BAM Checkout]
+* Fixed a problem in which the user could get stuck in the Selfie capturing process [Netverify]
 
 # Basic Setup
 
@@ -122,7 +115,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 2.11.0 of the Jumio Mobile SDK is supported until 2018-09-19.
+The previous release version 2.12.0 of the Jumio Mobile SDK is supported until 2018-10-31.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 
@@ -133,5 +126,7 @@ If you want to enable two-factor authentication for your Jumio customer portal p
 If you have any questions regarding our implementation guide please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com. The Jumio online helpdesk contains a wealth of information regarding our service including demo videos, product descriptions, FAQs and other things that may help to get you started with Jumio. Check it out at: https://support.jumio.com.
 
 ## Copyright
-
 &copy; Jumio Corp. 268 Lambert Avenue, Palo Alto, CA 94306
+
+The source code and software available on this website (“Software”) is provided by Jumio Corp. or its affiliated group companies (“Jumio”) "as is” and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall Jumio be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to procurement of substitute goods or services, loss of use, data, profits, or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this Software, even if advised of the possibility of such damage.
+In any case, your use of this Software is subject to the terms and conditions that apply to your contractual relationship with Jumio. As regards Jumio’s privacy practices, please see our privacy notice available here: [Privacy Policy](https://www.jumio.com/legal-information/privacy-policy/).

@@ -269,10 +269,11 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 
 				try {
 					initializeNetverifySDK();
-
-
-					customSDKController = netverifySDK.start(new NetverifyCustomSDKImpl());
-					customSDKController.resume();
+					
+					if (netverifySDK != null) {
+						customSDKController = netverifySDK.start(new NetverifyCustomSDKImpl());
+						customSDKController.resume();
+					}
 
 				} catch (IllegalArgumentException | SDKNotConfiguredException | MissingPermissionException e) {
 					Snackbar.make(getView(), e.getMessage(), Snackbar.LENGTH_LONG).show();

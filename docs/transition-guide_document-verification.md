@@ -2,6 +2,9 @@
 
 # Transition guide for Document Verification SDK
 
+## 2.12.1
+No backward incompatible changes.
+
 ## 2.12.0
 #### New method setEnableExtraction
 SDK method `documentVerificationSDK.setEnableExtraction(boolean)` has been added for enabling/disabling extraction on documents.
