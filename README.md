@@ -121,7 +121,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 2.12.0 of the Jumio Mobile SDK is supported until 2018-11-23.
+The previous release version 2.12.1 of the Jumio Mobile SDK is supported until 2018-11-23.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

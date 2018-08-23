@@ -17,7 +17,7 @@ Netverify & Fastfill SDK offers scanning and authentication of governmental issu
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 2.12.1
+For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 2.13.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -56,26 +56,26 @@ If you want to use offline scanning for Fastfill please contact your Jumio Custo
 ## Dependencies
 
 If an optional module is __not linked__, the __scan method is not available__ but the library size is reduced.
-The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify, BAM and Document Verification included is currently __20.69 MB__.
+The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify, BAM and Document Verification included is currently __20.97 MB__.
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
-| com.jumio.android:core:2.12.1@aar                   | x | Jumio Core library		| 4.57 MB |
-| com.jumio.android:nv:2.12.1@aar                     | x | Netverify library 		| 538.59 KB |
+| com.jumio.android:core:2.13.0@aar                   | x | Jumio Core library		| 4.53 MB |
+| com.jumio.android:nv:2.13.0@aar                     | x | Netverify library 		| 491.82 KB |
 |com.android.support:appcompat-v7:27.1.1             | x | Android native library	| - |
 |com.android.support:support-v4:27.1.1               | x | Android native library	| - |
 |com.android.support:cardview-v7:27.1.1              | x | Android cardview library (Netverify only)	| - |
 |com.google.android.gms:play-services-vision:12.0.0  |   | Barcode Scanning 			| - |
-|com.jumio.android:nv-liveness:2.12.1@aar 		         | x | Face-Liveness library	| 4.32 MB |
+|com.jumio.android:nv-liveness:2.13.0@aar 		         | x | Face-Liveness library	| 4.54 MB |
 |com.android.support:design:27.1.1                   |   | Android native library	| - |
-|com.jumio.android:javadoc:2.12.1                     |   | Jumio SDK Javadoc			| - |
-|com.jumio.android:nv-barcode:2.12.1@aar              |   | US / CAN Barcode Scanning | 3.46 MB |
-|com.jumio.android:nv-barcode-vision:2.12.1@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) | 36.72 KB |
-|com.jumio.android:nv-mrz:2.12.1@aar             		 |   | MRZ scanning 					| 2.21 MB |
-|com.jumio.android:nv-nfc:2.12.1@aar              		 |   | eMRTD Scanning 				| 887.77 KB |
+|com.jumio.android:javadoc:2.13.0                     |   | Jumio SDK Javadoc			| - |
+|com.jumio.android:nv-barcode:2.13.0@aar              |   | US / CAN Barcode Scanning | 3.46 MB |
+|com.jumio.android:nv-barcode-vision:2.13.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) | 35.03 KB |
+|com.jumio.android:nv-mrz:2.13.0@aar             		 |   | MRZ scanning 					| 2.21 MB |
+|com.jumio.android:nv-nfc:2.13.0@aar              		 |   | eMRTD Scanning 				| 888.06 KB |
 |com.madgag.spongycastle:prov:1.58.0.0             	 |   | eMRTD Scanning 				| - |
 |net.sf.scuba:scuba-sc-android:0.0.16             	 |   | eMRTD Scanning 				| - |
-|com.jumio.android:nv-ocr:2.12.1@aar             		 |   | Template Matcher 			| 1.58 MB |
+|com.jumio.android:nv-ocr:2.13.0@aar             		 |   | Template Matcher 			| 1.57 MB |
 
 ### Google Mobile Vision
 
@@ -115,7 +115,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:2.12.1@aar"
+implementation "com.jumio.android:bam:2.13.0@aar"
 ```
 
 #### Root detection
@@ -462,7 +462,7 @@ Upon `onNetverifyPresentConfirmationView`, you can hide the scan view and show t
 
 Upon `onNetverifyNoUSAddressFound` after a Fastfill US Driver License back side scan in barcode mode, you can start a front side scan in OCR mode (fallback) to receive the address (if needed) and/or confirm the scan.
 
-Upon `onNetverifyFaceOnBackside` after a backside scan of an ID or Driver License, the scanning will restart automatically to let the user recapture the backside, as a face was detected, indicating that the user has scanned the frontside in error.
+Upon `onNetverifyDisplayFlipDocumentHint` after a backside scan of an ID or Driver License, the scanning will restart automatically to let the user recapture the backside, indicating that the user has scanned the frontside again instead of the backside.
 
 Upon `onNetverifyFaceInLandscape`, notify the user that he should rotate the device to portrait orientation to continue with face scanning.
 

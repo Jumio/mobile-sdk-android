@@ -15,7 +15,7 @@ Document Verification is a powerful solution to enable scanning various types (U
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.12.1
+For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.13.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -39,11 +39,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:2.12.1@aar                    | x | Jumio Core library            | 4.57 MB |
-| com.jumio.android:dv:2.12.1@aar                      | x | Document Verification library | 103.42 KB |
+| com.jumio.android:core:2.13.0@aar                    | x | Jumio Core library            | 4.53 MB |
+| com.jumio.android:dv:2.13.0@aar                      | x | Document Verification library | 111.96 KB |
 | com.android.support:appcompat-v7:27.1.1             | x | Android native library        | - |
 | com.android.support:support-v4:27.1.1               | x | Android native library        | - |
-| com.jumio.android:javadoc:2.12.1                     |   | Jumio SDK Javadoc             | - |
+| com.jumio.android:javadoc:2.13.0                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
