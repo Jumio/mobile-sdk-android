@@ -5,6 +5,7 @@ com.jumio.bam.util
 com.jumio.core.data.document
 com.jumio.core.enums
 com.jumio.core.exceptions
+com.jumio.dv
 com.jumio.nv
 com.jumio.nv.custom
 com.jumio.nv.data.document
