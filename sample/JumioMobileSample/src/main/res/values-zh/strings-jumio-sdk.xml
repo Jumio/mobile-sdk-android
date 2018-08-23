@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_error_dialog_title">错误</string>
+	<string name="jumio_scanview_refocus">请重新聚焦</string>
+	<string name="jumio_accessibility_flash_activate">打开闪光灯</string>
+	<string name="jumio_accessibility_flash_deactivate">关闭闪光灯</string>
+	<string name="jumio_accessibility_camera_switch_to_front">切换为前置摄像头</string>
+	<string name="jumio_accessibility_camera_switch_to_back">切换为后置摄像头</string>
+	<string name="jumio_accessibility_loading">加载中</string>
+	<string name="jumio_accessibility_quit_scan">退出扫描</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="netverify_search">搜索</string>
+	<string name="netverify_error_network_problems">我们遇到了网络通信问题</string>
+	<string name="netverify_error_auth_failed">鉴权失败</string>
+	<string name="netverify_error_device_is_offline">没有可用的网络连接</string>
+	<string name="netverify_error_startup_error">扫描目前不可用,请联系应用程序供应商</string>
+	<string name="netverify_error_cancelled_by_user">被最终用户取消</string>
+	<string name="netverify_error_no_camera_connection">摄像头目前无法使用</string>
+	<string name="netverify_error_certificate_not_valid_anymore">证书不再有效。请更新您的应用</string>
+	<string name="netverify_error_transaction_already_finished">交易已经完成</string>
+	<string name="netverify_button_retry">重试</string>
+	<string name="netverify_button_cancel">取消</string>
+	<string name="netverify_documenttype_passport">护照</string>
+	<string name="netverify_documenttype_visa">签证</string>
+	<string name="netverify_documenttype_idcard">身份证</string>
+	<string name="netverify_documenttype_driverlicense">驾驶证</string>
+	<string name="netverify_front">正面</string>
+	<string name="netverify_back">背面</string>
+	<string name="netverify_inside">内部</string>
+	<string name="netverify_outside">外部</string>
+	<string name="netverify_use_front_side_of_card">使用正面</string>
+	<string name="netverify_use_back_side_of_card">使用背面</string>
+	<string name="netverify_nfc_view_title">NFC</string>
+	<string name="netverify_nfc_header_start">&lt;b&gt;扫描证件&lt;/b&gt;</string>
+	<string name="netverify_nfc_header_download">&lt;b&gt;正在提取数据&lt;/b&gt;</string>
+	<string name="netverify_nfc_header_finish">&lt;b&gt;提取成功&lt;/b&gt;</string>
+	<string name="netverify_nfc_description_start">请检查您的身份证件是否带有以下符号 ${icon} 并按照图中所示的方式把手机置于身份证件上方来开始验证</string>
+	<string name="netverify_nfc_description_download">正在从身份证件读取数据。请稍等直到该过程结束</string>
+	<string name="netverify_nfc_requestview_button_text">我的身份证件上没有符号</string>
+	<string name="netverify_nfc_bac_dialog_title">鉴权错误</string>
+	<string name="netverify_nfc_bac_dialog_text">请仔细检查身份证件数据并手动更正。点击重试来恢复扫描</string>
+	<string name="netverify_nfc_bac_dialog_id_number">身份证件号</string>
+	<string name="netverify_nfc_bac_dialog_date_of_birth">出生日期</string>
+	<string name="netverify_nfc_bac_dialog_date_of_expiry">到期日期</string>
+	<string name="netverify_nfc_general_error_dialog_title">读取错误</string>
+	<string name="netverify_nfc_general_error_dialog_text">读取身份证件数据时发生错误。请按重试,并再次把您的手机放置在身份证件上方</string>
+	<string name="netverify_nfc_enable_dialog_title">启用 NFC</string>
+	<string name="netverify_nfc_enable_dialog_text">要从护照中获取更多信息,请点击确定并启用手机的 NFC 功能</string>
+	<string name="netverify_scan_options_subtitle_type">选择您想要扫描的文件类型</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;选择您的国家&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; 已被设置为您的文件的签发国家。</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; 已被设置为您的文件的签发国家。&lt;b&gt;&lt;u&gt;更改国家&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_countrylist_title">选择您的文件的签发国家</string>
+	<string name="netverify_countrylist_empty">列表中没有数据</string>
+	<string name="netverify_upload_progress">&lt;b&gt;正在上传您的文件&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">这应该只需要几秒钟的时间,具体取决于您的网络连接</string>
+	<string name="netverify_upload_successful">&lt;b&gt;上传成功&lt;/b&gt;</string>
+	<string name="netverify_upload_error">&lt;b&gt;上传问题&lt;/b&gt;</string>
+	<string name="netverify_scanview_title">扫描文件</string>
+	<string name="netverify_scanview_title_face">拍一张自拍照</string>
+	<string name="netverify_scanview_title_check">检查清晰度</string>
+	<string name="netverify_scanview_title_problems">遇到问题？</string>
+	<string name="netverify_scanview_snackbar_check">确保您的文件上的所有数据完全可见,无眩光且不模糊</string>
+	<string name="netverify_scanview_retake">重拍</string>
+	<string name="netverify_scanview_readable">清晰可辨</string>
+	<string name="netverify_scanview_liveness_landscape_header">&lt;b&gt;旋转您的设备&lt;/b&gt;</string>
+	<string name="netverify_scanview_liveness_landscape_description">请将手机旋转至纵向来拍摄自拍照</string>
+	<string name="netverify_scanview_liveness_follow_hint">请跟随圆圈</string>
+	<string name="netverify_scanview_liveness_move_closer">靠近一点</string>
+	<string name="netverify_scanview_liveness_move_back">向后退</string>
+	<string name="netverify_scanview_liveness_description">把您的脸放在边框内继续</string>
+	<string name="netverify_scanview_legal_hint_nld">请在拍摄前遮挡您的 BSN</string>
+	<string name="netverify_scanview_legal_hint_kor">请在拍摄前遮挡您的居民登记号码的第二部分</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">请在拍摄前遮挡护照号码</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">请在拍摄前遮挡身份证号</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">请在拍摄前遮掉身份证号和准入号码</string>
+	<string name="netverify_helpview_progress_text">第 %1$d 步,共 %2$d 步</string>
+	<string name="netverify_helpview_description_usdl_fallback">您的文件的条形码没有包含您的地址,请将您的文件翻转并扫描正面</string>
+	<string name="netverify_helpview_description_flip_document">您最近扫描了文件的正面。\n\n请翻转您的文件并扫描背面。</string>
+	<string name="netverify_helpview_liveness_continue">继续</string>
+	<string name="netverify_helpview_usdl_fallback_continue">继续</string>
+	<string name="netverify_helpview_fallback">拍摄不可用</string>
+	<string name="netverify_helpview_fallback_barcode">我的身份证件上没有条码</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;扫描%1$s%2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;拍摄%1$s%2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_description">把您的文件置于边框内,直到自动拍摄</string>
+	<string name="netverify_helpview_small_description_template">把您的文件置于摄像头前,直到自动拍摄</string>
+	<string name="netverify_helpview_small_description_barcode">把条形码置于摄像头前,直到自动拍摄</string>
+	<string name="netverify_helpview_small_description_card">把您的文件置于边框内,直到自动拍摄</string>
+	<string name="netverify_helpview_full_description">如上面的动画所示,把文件置于边框内。将自动进行拍摄。\n\n确保所有数据都可清晰可读并避免反光。</string>
+	<string name="netverify_helpview_full_description_template">如上面的动画所示,把您的文件置于摄像头前。将自动进行拍摄。\n\n确保所有数据都可清晰可读并避免反光。</string>
+	<string name="netverify_helpview_full_description_barcode">如上图所示,把条形码置于摄像头前。将自动进行拍摄。\n\n确保所有数据都可清晰可读并避免反光。</string>
+	<string name="netverify_helpview_full_description_card">将您的文件置于边框内,直到所有 4 个边缘都对齐,如上面的动画所示。将自动进行拍摄。\n\n确保所有数据都可清晰可读并避免反光。</string>
+	<string name="netverify_helpview_full_description_liveness_glasses">不要戴眼镜,如果可能的话请取下眼镜</string>
+	<string name="netverify_helpview_full_description_liveness_cap">取下任何帽子/头饰</string>
+	<string name="netverify_helpview_full_description_liveness_light">使用良好的照明,并避免来自后面的强光</string>
+	<string name="netverify_document_variant_other">其他格式</string>
+	<string name="netverify_document_variant_plastic">塑料卡片</string>
+	<string name="netverify_accessibility_nfc_description_start">请检查您的证件是否有芯片。如果有的话,请把手机放在证件上,如图所示。</string>
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_error_network_problems">我们遇到了网络通信问题</string>
+	<string name="dv_error_auth_failed">鉴权失败</string>
+	<string name="dv_error_device_is_offline">没有可用的网络连接</string>
+	<string name="dv_error_startup_error">扫描目前不可用,请联系应用程序供应商</string>
+	<string name="dv_error_cancelled_by_user">被最终用户取消</string>
+	<string name="dv_error_no_camera_connection">摄像头目前无法使用</string>
+	<string name="dv_error_certificate_not_valid_anymore">证书不再有效。请更新您的应用</string>
+	<string name="dv_button_retry">重试</string>
+	<string name="dv_button_cancel">取消</string>
+	<string name="dv_upload_progress">&lt;b&gt;正在上传您的文件&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">这应该只需要几秒钟的时间,具体取决于您的网络连接</string>
+	<string name="dv_upload_successful">&lt;b&gt;上传成功&lt;/b&gt;</string>
+	<string name="dv_upload_error">&lt;b&gt;上传问题&lt;/b&gt;</string>
+	<string name="dv_upload_error_description">我们遇到了网络通信问题</string>
+	<string name="dv_scanview_title">扫描文件</string>
+	<string name="dv_scanview_title_check">检查清晰度</string>
+	<string name="dv_scanview_snackbar_check">确保您的文件上的所有数据完全可见,无眩光且不模糊</string>
+	<string name="dv_scanview_retake">重拍</string>
+	<string name="dv_scanview_readable">清晰可辨</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;拍摄 %1$s&lt;/b&gt;</string>
+	<string name="dv_helpview_header_document">文件</string>
+	<string name="dv_helpview_header_bank_statement">银行对账单</string>
+	<string name="dv_helpview_header_credit_card">信用卡</string>
+	<string name="dv_helpview_header_insurance_card">保险卡</string>
+	<string name="dv_helpview_header_utility_bill">水电费账单</string>
+	<string name="dv_helpview_header_cash_advance_application">现金预支申请</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">公司决议证明</string>
+	<string name="dv_helpview_header_credit_card_statement">信用卡账单</string>
+	<string name="dv_helpview_header_lease_agreement">租赁协议</string>
+	<string name="dv_helpview_header_loan_application">贷款申请</string>
+	<string name="dv_helpview_header_mortgage_application">抵押贷款申请</string>
+	<string name="dv_helpview_header_tax_return">纳税申报单</string>
+	<string name="dv_helpview_header_vehicle_title">车辆所有权凭证</string>
+	<string name="dv_helpview_header_voided_check">作废支票</string>
+	<string name="dv_helpview_header_student_card">学生证</string>
+	<string name="dv_helpview_header_health_care_card">医疗保健卡</string>
+	<string name="dv_helpview_header_council_bill">理事会账单</string>
+	<string name="dv_helpview_header_seniors_card">老年卡</string>
+	<string name="dv_helpview_header_medicare_card">医保卡</string>
+	<string name="dv_helpview_header_birth_certificate">出生证明</string>
+	<string name="dv_helpview_header_us_social_security_card">美国社会保障卡</string>
+	<string name="dv_helpview_header_working_with_children_check">儿童工作证明</string>
+	<string name="dv_helpview_header_superannuation_statement">养老金结算单</string>
+	<string name="dv_helpview_header_trade_association_card">行业协会卡</string>
+	<string name="dv_helpview_header_school_enrolment_letter">学校录取通知书</string>
+	<string name="dv_helpview_header_phone_bill">电话账单</string>
+	<string name="dv_helpview_header_social_security_card">社会保障卡</string>
+	-->
+
+</resources>

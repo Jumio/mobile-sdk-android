@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
 	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
 	<!--
@@ -80,7 +80,7 @@
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Please redact the ID and access number before capturing</string>
 	<string name="netverify_helpview_progress_text">Step %1$d of %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">The barcode of your document didn\'t contain your address, turn your document and scan the front</string>
-	<string name="netverify_helpview_description_face_on_back">You recently scanned the front of your document.\n\nPlease flip your document and scan the back.</string>
+	<string name="netverify_helpview_description_flip_document">You recently scanned the front of your document.\n\nPlease flip your document and scan the back.</string>
 	<string name="netverify_helpview_liveness_continue">Continue</string>
 	<string name="netverify_helpview_usdl_fallback_continue">Continue</string>
 	<string name="netverify_helpview_fallback">CAPTURE IS NOT WORKING</string>
@@ -142,9 +142,10 @@
 	<string name="dv_error_cancelled_by_user">Cancelled by end-user</string>
 	<string name="dv_error_no_camera_connection">The camera is currently not available</string>
 	<string name="dv_error_certificate_not_valid_anymore">Certificate not valid anymore. Please update your application</string>
+	<string name="dv_error_invalid_document_type">Unsupported document code defined, please contact the app vendor</string>
 	<string name="dv_button_retry">Retry</string>
 	<string name="dv_button_cancel">Cancel</string>
-	<string name="dv_upload_progress">&lt;b&gt;Uploading&lt;/b&gt; your documents</string>
+	<string name="dv_upload_progress">&lt;b&gt;Uploading your documents&lt;/b&gt;</string>
 	<string name="dv_upload_progress_description">This should only take a couple of seconds, depending on your network connectivity</string>
 	<string name="dv_upload_successful">&lt;b&gt;Upload successful&lt;/b&gt;</string>
 	<string name="dv_upload_error">&lt;b&gt;Upload issues&lt;/b&gt;</string>

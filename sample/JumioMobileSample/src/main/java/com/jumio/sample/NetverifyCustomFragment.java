@@ -516,7 +516,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 //			     }
 //			 });
 
-        } catch (PlatformNotSupportedException e) {
+        } catch (PlatformNotSupportedException | NullPointerException e) {
             android.util.Log.e(TAG, "Error in initializeNetverifySDK: ", e);
             Toast.makeText(getActivity().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
             netverifySDK = null;
@@ -620,7 +620,6 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
                 appendKeyValue("Issuing country", documentData.getIssuingCountry());
                 appendKeyValue("Last name", documentData.getLastName());
                 appendKeyValue("First name", documentData.getFirstName());
-                appendKeyValue("Middle name", documentData.getMiddleName());
                 appendKeyValue("Date of birth", documentData.getDob() == null ? null : dateFormat.format(documentData.getDob()));
                 appendKeyValue("Gender", documentData.getGender() == null ? null : documentData.getGender().toString());
                 appendKeyValue("Originating country", documentData.getOriginatingCountry());
@@ -714,8 +713,8 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         }
 
         @Override
-        public void onNetverifyFaceOnBackside() {
-            addToCallbackLog("onNetverifyFaceOnBackside");
+        public void onNetverifyDisplayFlipDocumentHint() {
+            addToCallbackLog("onNetverifyDisplayFlipDocumentHint");
         }
 
         @Override

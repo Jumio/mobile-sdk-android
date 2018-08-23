@@ -2,6 +2,11 @@
 
 # Transition guide for BAM Checkout SDK
 
+## 2.13.0
+#### Removed deprecated ABIs mips, mips64 and armeabi
+These ABIs were deprecated in recent NDK toolsets as mentioned here - https://developer.android.com/ndk/guides/abis and are not used any more.
+
+
 ## 2.12.1
 No backward incompatible changes.
 

@@ -7,11 +7,17 @@
 - [Support](#support)
 
 # Release notes
-SDK version: 2.12.1
+SDK version: 2.13.0
 
+#### Changes
+* Added support for 5 new languages (Spanish, French, German, Chinese simple, Dutch) [Document Verification]
+* Improved image checks to reduce number of blurred Selfies [Netverify]
+* Deprecated middleName parameter - middle names will now be merged into the firstName field to be consistent with all other aquisition channels [Netverify/Fastfill]
 
 #### Fixes
-* Fixed a problem in which the user could get stuck in the Selfie capturing process [Netverify]
+* Fixed various crashes in Umoove framework [Netverify]
+* Fixed a bug in the data parsing of  some older Ohio Driving Licenses [Netverify/Fastfill]
+* Various smaller bug fixes/improvements [Netverify/Fastfill, Document Verification, BAM Checkout]
 
 # Basic Setup
 
@@ -72,7 +78,7 @@ __Note:__ The abiFilters command in the ndk closure affects the Google Play Stor
 ```
 defaultConfig {
 	ndk {
-		abiFilters "armeabi","armeabi-v7a","arm64-v8a","mips","mips64","x86","x86_64"
+		abiFilters armeabi-v7a","arm64-v8a","x86","x86_64"
 	}
 }
 ```
@@ -83,7 +89,7 @@ splits {
 	abi {
 		enable true
 		reset()
-		include "armeabi","armeabi-v7a","arm64-v8a","mips","mips64","x86","x86_64"
+		include armeabi-v7a","arm64-v8a","x86","x86_64"
 		universalApk false
 	}
 }
@@ -97,7 +103,7 @@ __Note:__ You get an *UnsatisfiedLinkError*, if the app and the CPU architecture
 Our SDK supports the [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages and cultures.
 All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable at [.../src/main/res/values/strings-jumio-sdk.xml](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml) within our Sample application.
 
-For our products Fastfill & Netverify we are providing six individual languages for your convenience:
+For our products Fastfill,Netverify & Document Verification we are providing six individual languages for your convenience:
 * Chinese (Simplified)
 * Dutch
 * English
@@ -115,7 +121,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 2.12.0 of the Jumio Mobile SDK is supported until 2018-10-31.
+The previous release version 2.12.0 of the Jumio Mobile SDK is supported until 2018-11-23.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

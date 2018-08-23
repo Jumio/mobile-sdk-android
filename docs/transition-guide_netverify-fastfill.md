@@ -2,6 +2,13 @@
 
 # Transition guide for Netverify & Fastfill SDK
 
+## 2.13.0
+#### API change in NetverifyDocumentData
+The function `getMiddleName()` has been removed. If a middle name is available, it will be concatinated with the first name.
+
+#### Removed deprecated ABIs mips, mips64 and armeabi
+These ABIs were deprecated in recent NDK toolsets as mentioned here - https://developer.android.com/ndk/guides/abis and are not used any more.
+
 ## 2.12.1
 #### Fixed a problem in which the user could get stuck in the Selfie capturing process
 

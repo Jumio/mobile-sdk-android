@@ -2,6 +2,13 @@
 
 # Transition guide for Document Verification SDK
 
+## 2.13.0
+#### Removed deprecated ABIs mips, mips64 and armeabi
+These ABIs were deprecated in recent NDK toolsets as mentioned here - https://developer.android.com/ndk/guides/abis and are not used any more.
+
+#### New SDK localizations added
+In addition to English, the translations for the languages Chinese (Simplified), Dutch, Frensh, German and Spanish have been added.
+
 ## 2.12.1
 No backward incompatible changes.
 

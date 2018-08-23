@@ -118,7 +118,7 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 			// Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
 			//documentVerificationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
-		} catch (PlatformNotSupportedException e) {
+		} catch (PlatformNotSupportedException | NullPointerException e) {
 			e.printStackTrace();
 			Toast.makeText(getActivity().getApplicationContext(), "This platform is not supported", Toast.LENGTH_LONG).show();
 		}

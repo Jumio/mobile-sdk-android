@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_error_dialog_title">Fout</string>
+	<string name="jumio_scanview_refocus">Alstublieft herfocussen</string>
+	<string name="jumio_accessibility_flash_activate">Zet flits aan</string>
+	<string name="jumio_accessibility_flash_deactivate">Zet flits uit</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Verander naar voorste camera</string>
+	<string name="jumio_accessibility_camera_switch_to_back">Verander naar achterste camera</string>
+	<string name="jumio_accessibility_loading">Aan het laden</string>
+	<string name="jumio_accessibility_quit_scan">Stop scannen</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="netverify_search">Zoeken</string>
+	<string name="netverify_error_network_problems">We zijn gestuit op een netwerk communicatieprobleem</string>
+	<string name="netverify_error_auth_failed">Authentificatie mislukt</string>
+	<string name="netverify_error_device_is_offline">Geen internetverbinding beschikbaar</string>
+	<string name="netverify_error_startup_error">Scannen niet beschikbaar op dit moment, neem alstublieft contact op met de verkoper van de app</string>
+	<string name="netverify_error_cancelled_by_user">Geannuleerd door eindgebruiker</string>
+	<string name="netverify_error_no_camera_connection">De camera is momenteel niet beschikbaar</string>
+	<string name="netverify_error_certificate_not_valid_anymore">Certificaat niet meer geldig. Update alstublieft uw applicatie</string>
+	<string name="netverify_error_transaction_already_finished">Transactie al afgerond</string>
+	<string name="netverify_button_retry">Probeer nog eens</string>
+	<string name="netverify_button_cancel">Annuleer</string>
+	<string name="netverify_documenttype_passport">Paspoort</string>
+	<string name="netverify_documenttype_visa">Visa</string>
+	<string name="netverify_documenttype_idcard">Identiteitskaart</string>
+	<string name="netverify_documenttype_driverlicense">Rijbewijs</string>
+	<string name="netverify_front">Voorkant</string>
+	<string name="netverify_back">Achterkant</string>
+	<string name="netverify_inside">Binnenkant</string>
+	<string name="netverify_outside">Buitenkant</string>
+	<string name="netverify_use_front_side_of_card">GEBRUIK VOORKANT</string>
+	<string name="netverify_use_back_side_of_card">GEBRUIK ACHTERKANT</string>
+	<string name="netverify_nfc_view_title">NFC</string>
+	<string name="netverify_nfc_header_start">&lt;b&gt;Scan ID&lt;/b&gt;</string>
+	<string name="netverify_nfc_header_download">&lt;b&gt;Data aan het uithalen&lt;/b&gt;</string>
+	<string name="netverify_nfc_header_finish">&lt;b&gt;Uithaal succesvol&lt;/b&gt;</string>
+	<string name="netverify_nfc_description_start">Controleer alstublieft of uw ID het volgende symbool bevat ${icon} en plaats uw telefoon op het ID zoals getoond om de verificatie te starten</string>
+	<string name="netverify_nfc_description_download">Data aan het lezen van het ID. Wacht alstublieft tot het proces is afgerond</string>
+	<string name="netverify_nfc_requestview_button_text">GEEN SYMBOOL OP MIJN ID</string>
+	<string name="netverify_nfc_bac_dialog_title">Fout bij authentificatie</string>
+	<string name="netverify_nfc_bac_dialog_text">Controleer alstublieft de ID-gegevens en corrigeer handmatig. Click op Retry om het scannen te hervatten</string>
+	<string name="netverify_nfc_bac_dialog_id_number">ID-nummer</string>
+	<string name="netverify_nfc_bac_dialog_date_of_birth">geboortedatum</string>
+	<string name="netverify_nfc_bac_dialog_date_of_expiry">verloopdatum</string>
+	<string name="netverify_nfc_general_error_dialog_title">Fout bij lezen</string>
+	<string name="netverify_nfc_general_error_dialog_text">Er trad een fout op tijdens het lezen van de ID-gegevens. Druk op opnieuw en plaats uw telefoon nog een keer op het ID</string>
+	<string name="netverify_nfc_enable_dialog_title">NFC inschakelen</string>
+	<string name="netverify_nfc_enable_dialog_text">Klik op OK en schakel de NFC functie in om meer uit uw paspoort te halen</string>
+	<string name="netverify_scan_options_subtitle_type">Selecteer het type document dat uw wilt scannen</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Seleceer uw land&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; is ingesteld als het uitgevende land van uw documenten.</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; is ingesteld als het uitgevende land van uw documenten. &lt;b&gt;&lt;u&gt;Verander land&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_countrylist_title">Selecteer het uitgevende land van uw document</string>
+	<string name="netverify_countrylist_empty">Geen data in lijst</string>
+	<string name="netverify_upload_progress">&lt;b&gt; Uw documenten worden geupload&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">Dit duurt slechts een paar seconden, afhankelijk van uw netwerkverbinding</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Uploaden succesvol&lt;/b&gt;</string>
+	<string name="netverify_upload_error">&lt;b&gt;Upload problemen&lt;/b&gt;</string>
+	<string name="netverify_scanview_title">Scan document</string>
+	<string name="netverify_scanview_title_face">Neem een selfie</string>
+	<string name="netverify_scanview_title_check">Controleer leesbaarheid</string>
+	<string name="netverify_scanview_title_problems">Ervaar je problemen?</string>
+	<string name="netverify_scanview_snackbar_check">Zorg ervoor dat alle data op uw document volledig zichtbaar is, glansvrij en niet wazig</string>
+	<string name="netverify_scanview_retake">OPNIEUW</string>
+	<string name="netverify_scanview_readable">LEESBAAR</string>
+	<string name="netverify_scanview_liveness_landscape_header">&lt;b&gt;Draai uw apparaat&lt;/b&gt;</string>
+	<string name="netverify_scanview_liveness_landscape_description">Draai uw telefoon naar portret om een selfie te nemen</string>
+	<string name="netverify_scanview_liveness_follow_hint">Volg de cirkel</string>
+	<string name="netverify_scanview_liveness_move_closer">Kom dichterbij</string>
+	<string name="netverify_scanview_liveness_move_back">Ga achteruit</string>
+	<string name="netverify_scanview_liveness_description">Plaats je gezicht in het frame om verder te gaan</string>
+	<string name="netverify_scanview_legal_hint_nld">Bedek alstublieft uw BSN vóór vastlegging</string>
+	<string name="netverify_scanview_legal_hint_kor">Bedek het tweede onderdeel van uw Burgerservicenummer vóór vastlegging</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Bedek alstublieft het paspoortnummer vóór vastlegging</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Bedek uw ID nummer vóór vastlegging</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Bedek alstublieft het ID- en toegangsnummer vóór vastlegging</string>
+	<string name="netverify_helpview_progress_text">Stap %1$d van %2$d</string>
+	<string name="netverify_helpview_description_usdl_fallback">De streepjescode van uw document bevat niet uw adres, draai uw document en scan de voorkant</string>
+	<string name="netverify_helpview_description_flip_document">Uw hebt recentelijk de voorkant van uw document gescand.\n\n Draai alstublieft uw document om en scan de achterkant.</string>
+	<string name="netverify_helpview_liveness_continue">VERDER GAAN</string>
+	<string name="netverify_helpview_usdl_fallback_continue">VERDER GAAN</string>
+	<string name="netverify_helpview_fallback">VASTLEGGING WERKT NIET</string>
+	<string name="netverify_helpview_fallback_barcode">GEEN STREEPJESCODE OP MIJN ID</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Scan %1$s %2$s &lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;%1$s %2$s vastleggen &lt;/b&gt;</string>
+	<string name="netverify_helpview_small_description">Plaats uw document in de frame tot het automatisch is vastgelegd</string>
+	<string name="netverify_helpview_small_description_template">Plaats uw document vóór de camera tot het automatisch wordt vastgelegd</string>
+	<string name="netverify_helpview_small_description_barcode">Plaats de streepjescode vóór de camera tot het automatisch wordt vastgelegd</string>
+	<string name="netverify_helpview_small_description_card">Plaats uw document in de frame tot het automatisch is vastgelegd</string>
+	<string name="netverify_helpview_full_description">Plaats uw document in de frame zoals wordt getoond in het beeld hierboven. Het vastleggen gebeurt automatisch.\n\nZorg ervoor dat alle data leesbaar is en vermijd reflecties.</string>
+	<string name="netverify_helpview_full_description_template">Plaats uw document vóór de camera zoals wordt getoond in de animatie hierboven. Het vastleggen gebeurt automatisch.\n\nZorg ervoor dat alle data leesbaar is en vermijd reflecties.</string>
+	<string name="netverify_helpview_full_description_barcode">Plaats de streepjescode vóór de camera zoals wordt getoond in het beeld hierboven. Het vastleggen gebeurt automatisch.\n\nZorg ervoor dat alle data leesbaar is en vermijd reflecties.</string>
+	<string name="netverify_helpview_full_description_card">Plaats uw document in het frame tot alle 4 kanten zijn uitgelijnd zoals wordt getoond in het beeld hierboven. Het vastleggen gebeurt automatisch.\n\nZorg ervoor dat alle data leesbaar is en vermijd reflecties.</string>
+	<string name="netverify_helpview_full_description_liveness_glasses">Draag geen bril, verwijd indien mogelijk</string>
+	<string name="netverify_helpview_full_description_liveness_cap">Verwijder elk hoofddeksel</string>
+	<string name="netverify_helpview_full_description_liveness_light">Gebruik goede lichtinval en vermijd sterk licht van achter</string>
+	<string name="netverify_document_variant_other">Ander formaat</string>
+	<string name="netverify_document_variant_plastic">Plastic kaart</string>
+	<string name="netverify_accessibility_nfc_description_start">Controleer alstublieft of uw ID een chip heeft. Zo ja, plaats uw telefoon op het ID zoals getoond.</string>
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_error_network_problems">We zijn gestuit op een netwerk communicatieprobleem</string>
+	<string name="dv_error_auth_failed">Authentificatie mislukt</string>
+	<string name="dv_error_device_is_offline">Geen internetverbinding beschikbaar</string>
+	<string name="dv_error_startup_error">Scannen niet beschikbaar op dit moment, neem alstublieft contact op met de verkoper van de app</string>
+	<string name="dv_error_cancelled_by_user">Geannuleerd door eindgebruiker</string>
+	<string name="dv_error_no_camera_connection">De camera is momenteel niet beschikbaar</string>
+	<string name="dv_error_certificate_not_valid_anymore">Certificaat niet meer geldig. Update alstublieft uw applicatie</string>
+	<string name="dv_button_retry">Probeer nog eens</string>
+	<string name="dv_button_cancel">Annuleer</string>
+	<string name="dv_upload_progress">&lt;b&gt; Uw documenten worden geupload&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Dit duurt slechts een paar seconden, afhankelijk van uw netwerkverbinding</string>
+	<string name="dv_upload_successful">&lt;b&gt;Uploaden succesvol&lt;/b&gt;</string>
+	<string name="dv_upload_error">&lt;b&gt;Upload problemen&lt;/b&gt;</string>
+	<string name="dv_upload_error_description">We zijn gestuit op een netwerk communicatieprobleem</string>
+	<string name="dv_scanview_title">Scan document</string>
+	<string name="dv_scanview_title_check">Controleer leesbaarheid</string>
+	<string name="dv_scanview_snackbar_check">Zorg ervoor dat alle data op uw document volledig zichtbaar is, glansvrij en niet wazig</string>
+	<string name="dv_scanview_retake">OPNIEUW</string>
+	<string name="dv_scanview_readable">LEESBAAR</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;%1$s&lt;/b&gt; vastleggen</string>
+	<string name="dv_helpview_header_document">Document</string>
+	<string name="dv_helpview_header_bank_statement">Bankafschrift</string>
+	<string name="dv_helpview_header_credit_card">Creditcard</string>
+	<string name="dv_helpview_header_insurance_card">Verzekeringskaart</string>
+	<string name="dv_helpview_header_utility_bill">Energierekening</string>
+	<string name="dv_helpview_header_cash_advance_application">Geldvoorschotverzoek</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Certificaat bedrijfsresolutie</string>
+	<string name="dv_helpview_header_credit_card_statement">Creditcardafschrift</string>
+	<string name="dv_helpview_header_lease_agreement">Huurovereenkomst</string>
+	<string name="dv_helpview_header_loan_application">Leningsverzoek</string>
+	<string name="dv_helpview_header_mortgage_application">Hypotheekaanvraag</string>
+	<string name="dv_helpview_header_tax_return">Belastingteruggave</string>
+	<string name="dv_helpview_header_vehicle_title">Voertuigtitel</string>
+	<string name="dv_helpview_header_voided_check">Nietig verklaarde cheque</string>
+	<string name="dv_helpview_header_student_card">Studentenkaart</string>
+	<string name="dv_helpview_header_health_care_card">Zorgpas</string>
+	<string name="dv_helpview_header_council_bill">Raadsvoorstel</string>
+	<string name="dv_helpview_header_seniors_card">Seniorenpas</string>
+	<string name="dv_helpview_header_medicare_card">Zorgverzekeringspas</string>
+	<string name="dv_helpview_header_birth_certificate">Geboortecertificaat</string>
+	<string name="dv_helpview_header_us_social_security_card">Sociale zekerheidspas VS</string>
+	<string name="dv_helpview_header_working_with_children_check">Cheque voor het werken met kinderen</string>
+	<string name="dv_helpview_header_superannuation_statement">Pensioenafschrift</string>
+	<string name="dv_helpview_header_trade_association_card">Pas van handelsvereniging</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Schoolinschrijvingsbrief</string>
+	<string name="dv_helpview_header_phone_bill">Telefoonrekening</string>
+	<string name="dv_helpview_header_social_security_card">Sociale zekerheidspas</string>
+	-->
+
+</resources>

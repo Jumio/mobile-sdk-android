@@ -162,7 +162,7 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 //			     }
 //			 });
 
-		} catch (PlatformNotSupportedException e) {
+		} catch (PlatformNotSupportedException | NullPointerException e) {
 			Log.e(TAG, "Error in initializeNetverifySDK: ", e);
 			Toast.makeText(getActivity().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
 			netverifySDK = null;

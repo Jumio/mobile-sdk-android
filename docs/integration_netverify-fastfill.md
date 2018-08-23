@@ -335,7 +335,6 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 |issuingCountry|	String|	3|	Country of issue as [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code|
 |lastName|	String|	100	|Last name of the customer|
 |firstName|	String|	100	|First name of the customer|
-|middleName|	String|	100	|Middle name of the customer|
 |dob|	Date|		|Date of birth|
 |gender|	NVGender|		| Gender M, F or X|
 |originatingCountry|	String|	3|	Country of origin as [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code|
