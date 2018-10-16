@@ -19,6 +19,7 @@
 #   public *;
 #}
 
+-ignorewarnings
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
 -keep class com.samsung.** { *; }

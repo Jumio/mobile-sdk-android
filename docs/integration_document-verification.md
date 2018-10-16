@@ -15,7 +15,7 @@ Document Verification is a powerful solution to enable scanning various types (U
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.13.0
+For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.14.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -39,11 +39,10 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:2.13.0@aar                    | x | Jumio Core library            | 4.53 MB |
-| com.jumio.android:dv:2.13.0@aar                      | x | Document Verification library | 111.96 KB |
-| com.android.support:appcompat-v7:27.1.1             | x | Android native library        | - |
-| com.android.support:support-v4:27.1.1               | x | Android native library        | - |
-| com.jumio.android:javadoc:2.13.0                     |   | Jumio SDK Javadoc             | - |
+| com.jumio.android:core:2.14.0@aar                    | x | Jumio Core library            | 4.52 MB |
+| com.jumio.android:dv:2.14.0@aar                      | x | Document Verification library | 117.12 KB |
+| androidx.appcompat:appcompat:1.0.0                   | x | Android native library        | - |
+| com.jumio.android:javadoc:2.14.0                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -106,7 +105,6 @@ Possible types:
 *  TAC (Trade association card)
 *  SEL (School enrolment letter)
 *  PB (Phone bill)
-*  USSS (US social security card)
 *  SSC (Social security card)
 *  CUSTOM (Custom document type)
 
@@ -136,10 +134,10 @@ documentVerificationSDK.setCallbackUrl("YOURCALLBACKURL");
 
 ### Data Extraction
 
-When data extraction should be used, set the following parameter that enables or disables extraction for each transaction. It is mandatory to be set to `true` if extraction is activated.
+Data extraction is automatically enabled when it is activated for your account. Use the following setting to disable the extraction on a transaction level:
 
 ```
-documentVerificationSDK.setEnableExtraction(true);
+documentVerificationSDK.setEnableExtraction(false);
 ```
 
 __Note:__ If you want to enable extraction for your account in general, please contact your Account Manager, or reach out to Jumio Support.

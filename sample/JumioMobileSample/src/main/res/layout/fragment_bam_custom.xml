@@ -30,7 +30,7 @@
 			android:visibility="gone">
 
 			<Button
-				android:id="@+id/stopBamCustomButton"
+				android:id="@+id/btnStopBamCustom"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="10dp"
@@ -40,7 +40,7 @@
 				android:id="@+id/bamCustomScanViewWrapper"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_below="@+id/stopBamCustomButton">
+				android:layout_below="@+id/btnStopBamCustom">
 
 				<com.jumio.bam.custom.BamCustomScanView
 					android:id="@+id/bamCustomScanView"

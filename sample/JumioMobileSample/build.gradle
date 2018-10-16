@@ -1,13 +1,17 @@
 buildscript {
+	ext.KOTLIN_VERSION = "1.2.71"
 	repositories {
 		jcenter()
         google()
 	}
 	dependencies {
 		classpath "com.android.tools.build:gradle:3.1.1"
+		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
 	}
 }
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 repositories {
 	jcenter()
@@ -16,7 +20,7 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "2.13.0"
+	SDK_VERSION = "2.14.0"
 }
 
 dependencies {
@@ -32,24 +36,28 @@ dependencies {
 	implementation "com.jumio.android:dv:${SDK_VERSION}@aar"
 
 	//for core:
-	implementation "com.android.support:support-v4:27.1.1"
-	implementation "com.android.support:appcompat-v7:27.1.1"
+	implementation "androidx.appcompat:appcompat:1.0.0"
 
 	//for nv:
-	implementation "com.android.support:design:27.1.1"
-	implementation "com.android.support:cardview-v7:27.1.1"
-    implementation "com.google.android.gms:play-services-vision:12.0.0"
+	implementation "com.google.android.material:material:1.0.0"
+	implementation "androidx.cardview:cardview:1.0.0"
+    implementation ("com.google.android.gms:play-services-vision:15.0.1"){
+		exclude group: 'com.android.support', module:'support-v4'
+	}
 
 	//only for nv-nfc
 	implementation "com.madgag.spongycastle:prov:1.58.0.0"
 	implementation "net.sf.scuba:scuba-sc-android:0.0.16"
 
+	//Kotlin
+	implementation "org.jetbrains.kotlin:kotlin-stdlib:${KOTLIN_VERSION}"
+
 	implementation fileTree(dir: 'libs', include: '*.jar')
 }
 
 android {
-	compileSdkVersion 27
-	buildToolsVersion "28.0.1"
+	compileSdkVersion 28
+	buildToolsVersion "28.0.2"
 	defaultConfig {
 		minSdkVersion 19
 		multiDexEnabled true

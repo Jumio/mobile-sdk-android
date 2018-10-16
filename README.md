@@ -7,16 +7,16 @@
 - [Support](#support)
 
 # Release notes
-SDK version: 2.13.0
+SDK version: 2.14.0
 
 #### Changes
-* Added support for 5 new languages (Spanish, French, German, Chinese simple, Dutch) [Document Verification]
-* Improved image checks to reduce number of blurred Selfies [Netverify]
-* Deprecated middleName parameter - middle names will now be merged into the firstName field to be consistent with all other aquisition channels [Netverify/Fastfill]
+* Switched to new Android X components [Netverify/Fastfill, Document Verification, BAM Checkout]
+* Added support for Kotlin to our sample project [Netverify/Fastfill, Document Verification, BAM Checkout]
+* Changed default values to true for requireVerification, requireFaceMatch and enableExtraction [Netverify/Fastfill, Document Verification]
+* Deprecated US social security card document type [Document Verification]
 
 #### Fixes
-* Fixed various crashes in Umoove framework [Netverify]
-* Fixed a bug in the data parsing of  some older Ohio Driving Licenses [Netverify/Fastfill]
+* Fixed a bug in the image quality check on Android 9 devices [Netverify/Fastfill, Document Verification]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Document Verification, BAM Checkout]
 
 # Basic Setup
@@ -121,12 +121,16 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 2.12.1 of the Jumio Mobile SDK is supported until 2018-11-23.
+The previous release version 2.13.0 of the Jumio Mobile SDK is supported until 2019-01-16.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 
 ## Two-factor Authentication
 If you want to enable two-factor authentication for your Jumio customer portal please contact us at https://support.jumio.com. Once enabled, users will be guided through the setup upon their first login to obtain a security code using the "Google Authenticator" app.
+
+## Licenses
+The software contains third-party open source software. For more information, please see [/licenses](https://github.com/Jumio/mobile-sdk-android/tree/master/licenses).
+This software is based in part on the work of the Independent JPEG Group.
 
 ## Contact
 If you have any questions regarding our implementation guide please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com. The Jumio online helpdesk contains a wealth of information regarding our service including demo videos, product descriptions, FAQs and other things that may help to get you started with Jumio. Check it out at: https://support.jumio.com.

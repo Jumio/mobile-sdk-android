@@ -1,16 +1,22 @@
-package com.jumio.sample;
+package com.jumio.sample.java;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.*;
-import android.widget.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.jumio.core.enums.JumioDataCenter;
-import com.jumio.core.exceptions.*;
+import com.jumio.core.exceptions.MissingPermissionException;
+import com.jumio.core.exceptions.PlatformNotSupportedException;
 import com.jumio.dv.DocumentVerificationSDK;
+import com.jumio.sample.R;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * Copyright 2018 Jumio Corporation All rights reserved.
@@ -83,7 +89,7 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 			documentVerificationSDK = DocumentVerificationSDK.create(getActivity(), apiToken, apiSecret, JumioDataCenter.US);
 
 			// One of the configured DocumentTypeCodes: BC, BS, CAAP, CB, CCS, CRC, HCC, IC, LAG, LOAP,
-			// MEDC, MOAP, PB, SEL, SENC, SS, STUC, TAC, TR, UB, SSC, USSS, VC, VT, WWCC, CUSTOM
+			// MEDC, MOAP, PB, SEL, SENC, SS, STUC, TAC, TR, UB, SSC, VC, VT, WWCC, CUSTOM
 			documentVerificationSDK.setType("BC");
 
 			// ISO 3166-1 alpha-3 country code

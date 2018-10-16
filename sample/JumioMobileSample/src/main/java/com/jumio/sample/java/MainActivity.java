@@ -1,15 +1,19 @@
-package com.jumio.sample;
+package com.jumio.sample.java;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.*;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
 import com.jumio.MobileSDK;
+import com.jumio.sample.R;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Copyright 2018 Jumio Corporation All rights reserved.
@@ -53,11 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if(requestCode == NetverifyFragment.GOOGLE_VISION_REQUEST_CODE) {
-			Toast.makeText(this, "Returned from google mobile vision error handling - try again!", Toast.LENGTH_SHORT).show();
-		} else {
-			super.onActivityResult(requestCode, resultCode, data);
-		}
+		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	/**

@@ -2,6 +2,24 @@
 
 # Transition guide for Netverify & Fastfill SDK
 
+This section only covers the breaking technical changes that should be considered when updating from the previous version.
+
+## 2.14.0
+#### Migrate to AndroidX
+The support library was migrated to [`AndroidX`](https://developer.android.com/jetpack/androidx/). As the developer page outlines, this is a mandatory step since all new Support Library development and maintenance will occur in the AndroidX library. This [`migration guide`](https://developer.android.com/jetpack/androidx/migrate) shows you how to migrate your application to AndroidX.
+
+Check out the changed dependencies in the  [`dependencies section`](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_netverify-fastfill.md#dependencies) or in the [`build.gradle`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of the sample application.
+The mapping for all support libraries is listed in section "Artifact mappings" [here](https://developer.android.com/jetpack/androidx/migrate)
+
+Dependencies that changed in the SDK:
++ com.android.support:appcompat-v7:27.1.1 -> androidx.appcompat:appcompat:1.0.0
++ com.android.support:cardview-v7:27.1.1 -> androidx.cardview:cardview:1.0.0
++ com.android.support:design:27.1.1 -> com.google.android.material:material:1.0.0
+- com.android.support:support-v4:27.1.1 -> androidx.legacy:legacy-support-v4:1.0.0 (was merged by AndroidX and can be therefore be fully removed)
+
+#### Default Settings
+The default values for [`requireVerification`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#setRequireVerification-boolean-) and [`requireFaceMatch`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#setRequireFaceMatch-boolean-) were changed to `true`. Please make sure that they are explicitly set to false in case a scan in Fastfill mode should be performed.
+
 ## 2.13.0
 #### API change in NetverifyDocumentData
 The function `getMiddleName()` has been removed. If a middle name is available, it will be concatinated with the first name.

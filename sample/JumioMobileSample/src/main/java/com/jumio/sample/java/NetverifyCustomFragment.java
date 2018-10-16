@@ -1,4 +1,4 @@
-package com.jumio.sample;
+package com.jumio.sample.java;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -7,9 +7,6 @@ import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +23,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.jumio.MobileSDK;
 import com.jumio.commons.log.Log;
 import com.jumio.commons.utils.ScreenUtil;
@@ -47,6 +45,7 @@ import com.jumio.nv.custom.NetverifyScanMode;
 import com.jumio.nv.custom.SDKNotConfiguredException;
 import com.jumio.nv.data.document.NVDocumentType;
 import com.jumio.nv.data.document.NVDocumentVariant;
+import com.jumio.sample.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -56,13 +55,15 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+
 /**
  * Copyright 2018 Jumio Corporation All rights reserved.
  */
 public class NetverifyCustomFragment extends Fragment implements View.OnClickListener {
     private final static String TAG = "NetverifyCustom";
     private static final int PERMISSION_REQUEST_CODE_NETVERIFY_CUSTOM = 303;
-    public static final int GOOGLE_VISION_REQUEST_CODE = 1000;
 
     private String apiToken = null;
     private String apiSecret = null;
@@ -429,16 +430,6 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             if (!NetverifySDK.isSupportedPlatform(getActivity()))
                 android.util.Log.w(TAG, "Device not supported");
 
-            // Check if the Google Vision API is available and operational. This is required by the face match step.
-            // If the Google Vision API is not available or operational, a fallback image picker will be used for face capturing.
-            //
-            // OPERATIONAL API is uptodate and can be used
-            // NOT_OPERATIONAL API is not available
-            // DIALOG_PENDING API is available but an user resolvable error occured. The errordialog is displayed
-            NetverifySDK.GoogleVisionStatus googleVisionStatus = NetverifySDK.isMobileVisionOperational(getActivity(), GOOGLE_VISION_REQUEST_CODE);
-            if(googleVisionStatus != NetverifySDK.GoogleVisionStatus.OPERATIONAL)
-                throw new PlatformNotSupportedException("Google Vision not operational at the moment!");
-
             // Applications implementing the SDK shall not run on rooted devices. Use either the below
             // method or a self-devised check to prevent usage of SDK scanning functionality on rooted
             // devices.
@@ -487,7 +478,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             // Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
             // netverifySDK.setCallbackUrl("YOURCALLBACKURL");
 
-            // You can enable face match during the ID verification for a specific transaction.
+            // You can disable face match during the ID verification for a specific transaction.
             netverifySDK.setRequireFaceMatch(switchFaceMatch.isChecked());
 
             // Use the following method to disable eMRTD scanning.

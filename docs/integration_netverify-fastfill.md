@@ -17,7 +17,7 @@ Netverify & Fastfill SDK offers scanning and authentication of governmental issu
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 2.13.0
+For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 2.14.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -56,26 +56,25 @@ If you want to use offline scanning for Fastfill please contact your Jumio Custo
 ## Dependencies
 
 If an optional module is __not linked__, the __scan method is not available__ but the library size is reduced.
-The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify, BAM and Document Verification included is currently __20.97 MB__.
+The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify, BAM and Document Verification included is currently __21.19 MB__.
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
-| com.jumio.android:core:2.13.0@aar                   | x | Jumio Core library		| 4.53 MB |
-| com.jumio.android:nv:2.13.0@aar                     | x | Netverify library 		| 491.82 KB |
-|com.android.support:appcompat-v7:27.1.1             | x | Android native library	| - |
-|com.android.support:support-v4:27.1.1               | x | Android native library	| - |
-|com.android.support:cardview-v7:27.1.1              | x | Android cardview library (Netverify only)	| - |
-|com.google.android.gms:play-services-vision:12.0.0  |   | Barcode Scanning 			| - |
-|com.jumio.android:nv-liveness:2.13.0@aar 		         | x | Face-Liveness library	| 4.54 MB |
-|com.android.support:design:27.1.1                   |   | Android native library	| - |
-|com.jumio.android:javadoc:2.13.0                     |   | Jumio SDK Javadoc			| - |
-|com.jumio.android:nv-barcode:2.13.0@aar              |   | US / CAN Barcode Scanning | 3.46 MB |
-|com.jumio.android:nv-barcode-vision:2.13.0@aar 			 |   | US / CAN Barcode Scanning Alternative (reduced size) | 35.03 KB |
-|com.jumio.android:nv-mrz:2.13.0@aar             		 |   | MRZ scanning 					| 2.21 MB |
-|com.jumio.android:nv-nfc:2.13.0@aar              		 |   | eMRTD Scanning 				| 888.06 KB |
-|com.madgag.spongycastle:prov:1.58.0.0             	 |   | eMRTD Scanning 				| - |
-|net.sf.scuba:scuba-sc-android:0.0.16             	 |   | eMRTD Scanning 				| - |
-|com.jumio.android:nv-ocr:2.13.0@aar             		 |   | Template Matcher 			| 1.57 MB |
+| com.jumio.android:core:2.14.0@aar                   | x | Jumio Core library		| 4.52 MB |
+| com.jumio.android:nv:2.14.0@aar                     | x | Netverify library 		| 497.56 KB |
+|androidx.appcompat:appcompat:1.0.0			              | x | Android native library	| - |
+|androidx.cardview:cardview:1.0.0				              | x | Android cardview library (Netverify only)	| - |
+|com.google.android.gms:play-services-vision:15.0.1   |   | Barcode Scanning 			| - |
+|com.jumio.android:nv-liveness:2.14.0@aar 	          | x | Face-Liveness library	| 4.54 MB |
+|com.google.android.material:material:1.0.0           |   | Android native library	| - |
+|com.jumio.android:javadoc:2.14.0                     |   | Jumio SDK Javadoc			| - |
+|com.jumio.android:nv-barcode:2.14.0@aar              |   | US / CAN Barcode Scanning | 3.45 MB |
+|com.jumio.android:nv-barcode-vision:2.14.0@aar 	    |   | US / CAN Barcode Scanning Alternative (reduced size) | 34.25 KB |
+|com.jumio.android:nv-mrz:2.14.0@aar             		  |   | MRZ scanning 					| 2.21 MB |
+|com.jumio.android:nv-nfc:2.14.0@aar              	  |   | eMRTD Scanning 				| 751.31 KB |
+|com.madgag.spongycastle:prov:1.58.0.0             	  |   | eMRTD Scanning 				| - |
+|net.sf.scuba:scuba-sc-android:0.0.16             	  |   | eMRTD Scanning 				| - |
+|com.jumio.android:nv-ocr:2.14.0@aar             		  |   | Template Matcher 			| 1.57 MB |
 
 ### Google Mobile Vision
 
@@ -90,7 +89,7 @@ If the dependencies `com.jumio.android:nv-liveness` and `com.jumio.android:nv-ba
 
 #### Operationality
 If the Google Mobile Vision API is not operational on a device, a manual fallback will be used for the face workflow.
-The operationality of the Google Mobile Vision API can be checked with the following SDK method (see [NetverifyFragment](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/NetverifyFragment.java)  in Sample app):
+The operationality of the Google Mobile Vision API can be checked with the following SDK method (see [NetverifyFragment](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/java/NetverifyFragment.java)  in Sample app):
 ```
 GoogleVisionStatus NetverifySDK.isMobileVisionOperational(Activity activity, int requestCode);
 ```
@@ -99,7 +98,7 @@ This method returns an enum [GoogleVisionStatus](https://jumio.github.io/mobile-
 * __NOT_OPERATIONAL__: API is not available
 * __DIALOG_PENDING__: API is available but an user-resolvable error occured. The system dialog for the resolvable error is displayed (see [Google API reference](https://developers.google.com/android/reference/com/google/android/gms/common/GoogleApiAvailability))
 
-In case of __DIALOG_PENDING__, the `requestCode` provided in the method above can used to react to the result of the dialog in the method `onActivityResult()` as follows (see [MainActivity](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/MainActivity.java)  in Sample app)):
+In case of __DIALOG_PENDING__, the `requestCode` provided in the method above can used to react to the result of the dialog in the method `onActivityResult()` as follows (see [MainActivity](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/java/MainActivity.java)  in Sample app)):
 ```
 @Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -115,7 +114,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:2.13.0@aar"
+implementation "com.jumio.android:bam:2.14.0@aar"
 ```
 
 #### Root detection
@@ -149,16 +148,21 @@ __Note:__ Log into your Jumio customer portal, and you can find your customer AP
 
 ### ID verification
 
-By default, the SDK is used in Fastfill mode which means it is limited to data extraction only. No verification of the ID is performed.
+By default the Jumio SDK enables Netverify which performs a full ID verification in the default mode.
 
-Enable ID verification to receive a verification status and verified data positions (see [Callback for Netverify](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-for-netverify)). A callback URL can be specified for individual transactions (constraints see chapter [Callback URL](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-url)). Ensure that your customer account is allowed to use this feature.
+Use ID verification to receive a verification status and verified data positions (see [Callback for Netverify](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-for-netverify)). Ensure that your customer account is allowed to use this feature. A callback URL can be specified for individual transactions (for constraints see chapter [Callback URL](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-url)). This setting overrides any callback URL you have set in the Jumio Customer Portal.
 
 __Note:__ Not possible for accounts configured as Fastfill only.
 ```
-netverifySDK.setRequireVerification(true);
 netverifySDK.setCallbackUrl("YOURCALLBACKURL");
 ```
-You can enable Identity Verification during the ID verification for a specific transaction (if it is enabled for your account).
+Set the following setting to switch to Fastfill mode (which performs data extraction only)
+```
+netverifySDK.setRequireVerification(false);
+```
+Identity Verification is automatically enabled if it is activated for your account.
+__Note:__ Identity Verification requires portrait orientation in your app.
+Set the following setting to disable Identity Verification on a transaction level:
 ```
 netverifySDK.setRequireFaceMatch(true);
 ```
@@ -245,7 +249,7 @@ Use the nv-barcode-vision library instead of the play-services-vision libary and
 
 ### Miscellaneous
 
-In case Fastfill is used (requireVerification=NO), data extraction can be limited to be executed on device only by enabling `setDataExtractionOnMobileOnly`
+In case Fastfill is used (requireVerification=false), data extraction can be limited to be executed on device only by enabling `setDataExtractionOnMobileOnly`
 ```
 netverifySDK.setDataExtractionOnMobileOnly(true);
 ```

@@ -45,7 +45,7 @@
             android:id="@+id/switchFaceMatch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="false"
+            android:checked="true"
             android:text="@string/netverify_face_required"
             android:gravity="center_horizontal"/>
 

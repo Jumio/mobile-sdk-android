@@ -2,10 +2,23 @@
 
 # Transition guide for BAM Checkout SDK
 
+This section only covers the breaking technical changes that should be considered when updating from the previous version.
+
+## 2.14.0
+#### Migrate to AndroidX
+The support library was migrated to [`AndroidX`](https://developer.android.com/jetpack/androidx/). As the developer page outlines, this is a mandatory step since all new Support Library development and maintenance will occur in the AndroidX library. This [`migration guide`](https://developer.android.com/jetpack/androidx/migrate) shows you how to migrate your application to AndroidX.
+
+Check out the changed dependencies in the  [`dependencies section`](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_netverify-fastfill.md#dependencies) or in the [`build.gradle`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of the sample application.
+The mapping for all support libraries is listed in section "Artifact mappings" [here](https://developer.android.com/jetpack/androidx/migrate)
+
+Dependencies that changed in the SDK:
++ com.android.support:appcompat-v7:27.1.1 -> androidx.appcompat:appcompat:1.0.0
++ com.android.support:design:27.1.1 -> com.google.android.material:material:1.0.0
+- com.android.support:support-v4:27.1.1 -> androidx.legacy:legacy-support-v4:1.0.0 (was merged by AndroidX and can be therefore be fully removed)
+
 ## 2.13.0
 #### Removed deprecated ABIs mips, mips64 and armeabi
 These ABIs were deprecated in recent NDK toolsets as mentioned here - https://developer.android.com/ndk/guides/abis and are not used any more.
-
 
 ## 2.12.1
 No backward incompatible changes.
