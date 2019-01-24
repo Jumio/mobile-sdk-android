@@ -152,6 +152,7 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
             // Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
 //             netverifySDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
+            // Use the following method to initialize the SDK before displaying it
 //            netverifySDK.initiate(object : NetverifyInitiateCallback {
 //                override fun onNetverifyInitiateSuccess() {}
 //                override fun onNetverifyInitiateError(errorCode: String, errorMessage: String, retryPossible: Boolean) {}

@@ -17,7 +17,7 @@ Netverify & Fastfill SDK offers scanning and authentication of governmental issu
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 2.14.0
+For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 2.15.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -56,39 +56,40 @@ If you want to use offline scanning for Fastfill please contact your Jumio Custo
 ## Dependencies
 
 If an optional module is __not linked__, the __scan method is not available__ but the library size is reduced.
-The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify, BAM and Document Verification included is currently __21.19 MB__.
+The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify, BAM and Document Verification included is currently __27.90 MB__.
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
-| com.jumio.android:core:2.14.0@aar                   | x | Jumio Core library		| 4.52 MB |
-| com.jumio.android:nv:2.14.0@aar                     | x | Netverify library 		| 497.56 KB |
-|androidx.appcompat:appcompat:1.0.0			              | x | Android native library	| - |
-|androidx.cardview:cardview:1.0.0				              | x | Android cardview library (Netverify only)	| - |
-|com.google.android.gms:play-services-vision:15.0.1   |   | Barcode Scanning 			| - |
-|com.jumio.android:nv-liveness:2.14.0@aar 	          | x | Face-Liveness library	| 4.54 MB |
-|com.google.android.material:material:1.0.0           |   | Android native library	| - |
-|com.jumio.android:javadoc:2.14.0                     |   | Jumio SDK Javadoc			| - |
-|com.jumio.android:nv-barcode:2.14.0@aar              |   | US / CAN Barcode Scanning | 3.45 MB |
-|com.jumio.android:nv-barcode-vision:2.14.0@aar 	    |   | US / CAN Barcode Scanning Alternative (reduced size) | 34.25 KB |
-|com.jumio.android:nv-mrz:2.14.0@aar             		  |   | MRZ scanning 					| 2.21 MB |
-|com.jumio.android:nv-nfc:2.14.0@aar              	  |   | eMRTD Scanning 				| 751.31 KB |
-|com.madgag.spongycastle:prov:1.58.0.0             	  |   | eMRTD Scanning 				| - |
-|net.sf.scuba:scuba-sc-android:0.0.16             	  |   | eMRTD Scanning 				| - |
-|com.jumio.android:nv-ocr:2.14.0@aar             		  |   | Template Matcher 			| 1.57 MB |
+|com.jumio.android:core:2.15.0@aar                    | x | Jumio Core library		                         | 4.52 MB |
+|com.jumio.android:nv:2.15.0@aar                      | x | Netverify library 		                         | 481.50 KB |
+|androidx.appcompat:appcompat:1.0.0                   | x | Android appcompat library	                         | - |
+|androidx.cardview:cardview:1.0.0                     | x | Android cardview library (Netverify only)	         | - |
+|androidx.room:room-runtime:2.0.0                     | x | Android database object mapping library	         | - |
+|com.google.android.gms:play-services-vision:15.0.1   |   | Barcode Scanning 			                 | - |
+|com.jumio.android:nv-face:2.15.0@aar                 |   | Face library	                                 | 78.94 KB |
+|com.facetec:zoom-authentication-hybrid:7.0.2@aar     |   | Zoom face scanning library	                         | 12.1 MB |
+|com.google.android.material:material:1.0.0           |   | Android material design library	                 | - |
+|com.jumio.android:javadoc:2.15.0                     |   | Jumio SDK Javadoc			                 | - |
+|com.jumio.android:nv-barcode:2.15.0@aar              |   | US / CAN Barcode Scanning                            | 3.45 MB |
+|com.jumio.android:nv-barcode-vision:2.15.0@aar       |   | US / CAN Barcode Scanning Alternative (reduced size) | 35.72 KB |
+|com.jumio.android:nv-mrz:2.15.0@aar                  |   | MRZ scanning                                         | 2.23 MB |
+|com.jumio.android:nv-nfc:2.15.0@aar                  |   | eMRTD Scanning                                       | 750.36 KB |
+|com.madgag.spongycastle:prov:1.58.0.0                |   | eMRTD Scanning                                       | - |
+|net.sf.scuba:scuba-sc-android:0.0.16                 |   | eMRTD Scanning                                       | - |
+|com.jumio.android:nv-ocr:2.15.0@aar                  |   | Template Matcher                                     | 1.57 MB |
 
 ### Google Mobile Vision
 
 #### Dependency conflicts
-If the dependencies `com.jumio.android:nv-liveness` and `com.jumio.android:nv-barcode-vision` are both used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues (see [AndroidManifest.xml](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/AndroidManifest.xml) in Sample app):
+If the dependency `com.jumio.android:nv-barcode-vision` is used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues (see [AndroidManifest.xml](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/AndroidManifest.xml) in Sample app):
 ```
 <meta-data
 			android:name="com.google.android.gms.vision.DEPENDENCIES"
-			android:value="barcode, face"
+			android:value="barcode"
 			tools:replace="android:value"/>
 ```
 
 #### Operationality
-If the Google Mobile Vision API is not operational on a device, a manual fallback will be used for the face workflow.
 The operationality of the Google Mobile Vision API can be checked with the following SDK method (see [NetverifyFragment](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/java/NetverifyFragment.java)  in Sample app):
 ```
 GoogleVisionStatus NetverifySDK.isMobileVisionOperational(Activity activity, int requestCode);
@@ -114,7 +115,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:2.14.0@aar"
+implementation "com.jumio.android:bam:2.15.0@aar"
 ```
 
 #### Root detection
@@ -235,7 +236,7 @@ __Note:__ COUNTRYCODE is an optional parameter and can also be passed as `null`.
 
 Possible countries: [ISO 3166-1 alpha-3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code
 
-Use the nv-barcode-vision library instead of the play-services-vision libary and add the following meta-data tags to your `AndroidManifest.xml`:
+Use the nv-barcode-vision library instead of the nv-barcode libary and add the following meta-data tags to your `AndroidManifest.xml`:
 
 ```
 <meta-data
@@ -243,7 +244,7 @@ Use the nv-barcode-vision library instead of the play-services-vision libary and
 			android:value="@integer/google_play_services_version" />
 <meta-data
 			android:name="com.google.android.gms.vision.DEPENDENCIES"
-			android:value="barcode, face"
+			android:value="barcode"
 			tools:replace="android:value"/>
 ```
 
@@ -264,12 +265,27 @@ netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
 ### Customization tool
 [Jumio Surface](https://jumio.github.io/surface-android/) is a web tool that offers the possibility to apply and visualize, in real-time, all available customization options for Netverify / Fastfill SDK as well as an export feature to import the applied changes straight into your codebase.
 
+Use the tab __"Customize SDK"__ to check out all the screens and adapt the look&feel of the SDK to your needs.
+
+The tab __"XML Output"__ visualizes all the colors that can be customized. As visualized in the code there, the SDK can be customized to fit your application's look and feel by specifying `Theme.Netverify` as a parent style and overriding attributes within this theme.
+
+After customizing the SDK, you can copy the code from the theme `CustomNetverifyTheme` to your Android app `styles.xml` file.
+
 ### Customize look and feel
+There are 2 possibilities for applying the customized theme that was explained in the previous chapter:
+* Customizing theme in AndroidManifest
+* Customizing theme at runtime
 
-The SDK can be customized to fit your application's look and feel by specifying `Theme.Netverify` as a parent style and overriding attributes within this theme. Click on the element `Theme.Netveriy` in the manifest while holding Ctrl and Android Studio will display the available attributes of the Theme that can be customized.
+#### Customizing theme in AndroidManifest
+Apply the `CustomNetverifyTheme` that you defined before by replacing `Theme.Netverify` in the AndroidManifest.xml:
+```
+<activity
+            android:name="com.jumio.nv.NetverifyActivity"
+            android:theme="@style/CustomNetverifyTheme"
+						... />
+```
 
-### Customizing theme at runtime
-
+#### Customizing theme at runtime
 To customize the theme at runtime, overwrite the theme that is used for Netverify in the manifest by calling the following property. Use the resource id of a customized theme that uses Theme.Netverify as parent.
 
 ```
@@ -388,6 +404,8 @@ The first letter (A-J) represents the error case. The remaining characters are r
 
 Netverify can be also implemented as a custom scan view. This means that only the scan view (including the scan overlays) are provided by the SDK.
 The handling of the lifecycle, document selection, readability confirmation, intermediate callbacks, and all other steps necessary to complete a scan have to be handled by the client application that implements the SDK.
+
+**Note:** The new 3D face liveness capturing technology is not optimised for tablets or when using our SDK in combination with Custom UI. When using Identity Verification, the selfie scanner will fallback to a simple face capturing functionality instead. Portrait orientation support is required in your app.
 
 To use the custom scan view with a plain scanning user interface, specify an instance of your class which implements the [NetverifyCustomSDKInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanInterface.html). You will receive a [NetverifyCustomSDKController](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKController.html) object.
 

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Switch
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.jumio.core.enums.JumioDataCenter
@@ -25,6 +26,7 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
     private var apiSecret: String? = null
 
     internal lateinit var documentVerificationSDK: DocumentVerificationSDK
+    internal lateinit var switchEnableExtraction: Switch
 
     companion object {
         private val TAG = "JumioSDK_DV"
@@ -34,12 +36,16 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
-        rootView.findViewById<View>(R.id.switchOptionOne).visibility = View.GONE
         rootView.findViewById<View>(R.id.switchOptionTwo).visibility = View.GONE
-        rootView.findViewById<View>(R.id.tvOptions).visibility = View.GONE
 
         apiToken = arguments!!.getString(MainActivity.KEY_API_TOKEN)
         apiSecret = arguments!!.getString(MainActivity.KEY_API_SECRET)
+
+        switchEnableExtraction = rootView.findViewById<View>(R.id.switchOptionOne) as Switch
+        switchEnableExtraction.isChecked = true
+
+        val args = arguments
+        switchEnableExtraction.text = args!!.getString(MainActivity.KEY_SWITCH_ONE_TEXT)
 
         val startSDK = rootView.findViewById<View>(R.id.btnStart) as Button
         startSDK.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_documentverification))
@@ -100,7 +106,7 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
             documentVerificationSDK.setCustomerId("CUSTOMERID")
 
             // Set the following property to enable/disable data extraction for documents.
-//            documentVerificationSDK.setEnableExtraction(true);
+            documentVerificationSDK.setEnableExtraction(switchEnableExtraction.isChecked);
 
             // One of the Custom Document Type Codes as configurable by Merchant in Merchant UI.
 //            documentVerificationSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");

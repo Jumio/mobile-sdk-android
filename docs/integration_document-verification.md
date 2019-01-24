@@ -15,7 +15,7 @@ Document Verification is a powerful solution to enable scanning various types (U
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.14.0
+For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.15.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -39,10 +39,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:2.14.0@aar                    | x | Jumio Core library            | 4.52 MB |
-| com.jumio.android:dv:2.14.0@aar                      | x | Document Verification library | 117.12 KB |
-| androidx.appcompat:appcompat:1.0.0                   | x | Android native library        | - |
-| com.jumio.android:javadoc:2.14.0                     |   | Jumio SDK Javadoc             | - |
+| com.jumio.android:core:2.15.0@aar                    | x | Jumio Core library            | 4.52 MB |
+| com.jumio.android:dv:2.15.0@aar                      | x | Document Verification library | 117.09 KB |
+| androidx.appcompat:appcompat:1.0.0                   | x | Android appcompat library        | - |
+|androidx.room:room-runtime:2.0.0			              | x | Android database object mapping library	| - |
+| com.jumio.android:javadoc:2.15.0                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -168,7 +169,22 @@ documentVerificationSDK.setDocumentName(“YOURDOCNAME”);
 ## Customization
 
 ### Customizing look and feel
-The SDK can be customized to fit your application’s look and feel by specifying `Theme.DocumentVerification` as a parent style of your own theme. Click on the element `Theme.DocumentVerification` in the manifest while holding Ctrl and Android Studio will display the available items.
+The SDK can be customized to fit your application’s look and feel by specifying `Theme.DocumentVerification` as a parent style of your own custom theme. Click on the element `Theme.DocumentVerification` in the manifest while holding Ctrl and Android Studio will display the available items.
+Change the colors of the styles attributes to fit your requirements.
+
+### Customize look and feel
+There are 2 possibilities for applying the customized theme that was explained in the previous chapter:
+* Customizing theme in AndroidManifest
+* Customizing theme at runtime
+
+#### Customizing theme in AndroidManifest
+Apply the your custom theme DocumentVerification with the  that you defined before by replacing `Theme.DocumentVerification` in the AndroidManifest.xml:
+```
+<activity
+            android:name="com.jumio.dv.DocumentVerificationActivity"
+            android:theme="@style/CustomDocumentVerificationTheme"
+						... />
+```
 
 ### Customizing theme at runtime
 

@@ -107,6 +107,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 2 -> {
                     val documentVerificationFragment = DocumentVerificationFragment()
+                    bundle.putString(KEY_SWITCH_ONE_TEXT, resources.getString(R.string.documentverification_enable_extraction))
                     bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
                     bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
                     documentVerificationFragment.arguments = bundle

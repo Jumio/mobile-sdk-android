@@ -4,6 +4,34 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 2.15.0
+#### Added Room
+Dependencies that have been added to the SDK:
++ androidx.room:room-runtime:2.0.0
+
+#### Added 3D Liveness
+###### Dependency changes
+* com.jumio.android:nv-face:2.15.0@aar
+* com.facetec:zoom-authentication-hybrid:7.0.2@aar
+* ~~com.jumio.android:nv-liveness:2.14.0@aar~~ The old liveness module is not supported anymore
+
+The Facetec Maven repository also needs to be added: maven { url 'http://maven.facetec.com' }
+
+###### Localization
+Please have a look at the [strings-jumio-sdk.xml](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml) for all the new added strings prefixed with `zoom_`.
+The following strings have been removed: `netverify_scanview_liveness_follow_hint`, `netverify_scanview_liveness_move_closer`, `netverify_scanview_liveness_move_back`, `netverify_scanview_liveness_description`, `netverify_helpview_full_description_liveness_glasses`, `netverify_helpview_full_description_liveness_cap` and `netverify_helpview_full_description_liveness_light`.
+
+###### Customization
+The following customization attributes have been added: `netverify_scanOverlayFaceBackground`, `netverify_scanOverlayFaceFeedbackText`, `netverify_scanOverlayFaceFeedbackBackground`, `netverify_scanOverlayFaceProgress`, `netverify_scanOverlayFaceOval`
+The following customization attributes have been removed: `netverify_scanOverlayLivenessValid`, `netverify_scanOverlayLivenessInvalid`, `netverify_scanOverlayLivenessBackground`, `netverify_scanOverlayLivenessText`
+
+###### Proguard
+The following lines need to be added in your `proguard-rules.pro` file for 3D Liveness:
+```
+-keep class com.facetec.zoom.** { *; }
+-dontwarn javax.annotation.Nullable
+```
+
 ## 2.14.0
 #### Migrate to AndroidX
 The support library was migrated to [`AndroidX`](https://developer.android.com/jetpack/androidx/). As the developer page outlines, this is a mandatory step since all new Support Library development and maintenance will occur in the AndroidX library. This [`migration guide`](https://developer.android.com/jetpack/androidx/migrate) shows you how to migrate your application to AndroidX.

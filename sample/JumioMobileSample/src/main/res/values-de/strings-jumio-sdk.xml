@@ -14,7 +14,6 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="netverify_search">Suchen</string>
 	<string name="netverify_error_network_problems">Es ist ein Verbindungsproblem aufgetreten</string>
 	<string name="netverify_error_auth_failed">Authentifizierung fehlgeschlagen</string>
 	<string name="netverify_error_device_is_offline">Keine Internetverbindung verfügbar</string>
@@ -62,7 +61,7 @@
 	<string name="netverify_upload_successful">&lt;b&gt;Upload erfolgreich&lt;/b&gt;</string>
 	<string name="netverify_upload_error">&lt;b&gt;Probleme beim Upload&lt;/b&gt;</string>
 	<string name="netverify_scanview_title">Scannen</string>
-	<string name="netverify_scanview_title_face">Selfie aufnehmen</string>
+	<string name="netverify_scanview_title_face"></string>
 	<string name="netverify_scanview_title_check">Lesbarkeit prüfen</string>
 	<string name="netverify_scanview_title_problems">Brauchen Sie Hilfe?</string>
 	<string name="netverify_scanview_snackbar_check">Stellen Sie sicher, dass alle Daten auf Ihrem Dokument komplett sichtbar und lesbar sind</string>
@@ -70,10 +69,6 @@
 	<string name="netverify_scanview_readable">LESBAR</string>
 	<string name="netverify_scanview_liveness_landscape_header">&lt;b&gt;Drehen Sie Ihr Gerät&lt;/b&gt;</string>
 	<string name="netverify_scanview_liveness_landscape_description">Bitte halten Sie Ihr Handy im Hochformat, um ein Selfie aufzunehmen.</string>
-	<string name="netverify_scanview_liveness_follow_hint">Folgen Sie dem Kreis</string>
-	<string name="netverify_scanview_liveness_move_closer">Kommen Sie näher</string>
-	<string name="netverify_scanview_liveness_move_back">Gehen Sie weiter zurück</string>
-	<string name="netverify_scanview_liveness_description">Positionieren Sie Ihr Gesicht im Rahmen</string>
 	<string name="netverify_scanview_legal_hint_nld">Bitte verdecken Sie vor der Erkennung Ihre BSN</string>
 	<string name="netverify_scanview_legal_hint_kor">Verdecken Sie vor der Erkennung den zweiten Teil Ihrer Resident Registration Number</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Bitte verdecken Sie vor der Erkennung die Passnummer</string>
@@ -82,8 +77,8 @@
 	<string name="netverify_helpview_progress_text">Schritt %1$d von %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">Der Barcode auf Ihrem Dokument enthält nicht Ihre Adresse. Wenden Sie Ihr Dokument und scannen Sie die Vorderseite</string>
 	<string name="netverify_helpview_description_flip_document">Sie haben die Vorderseite Ihres Dokumentes gescannt.\n\nBitte wenden Sie Ihr Dokument und scannen Sie die Rückseite.</string>
-	<string name="netverify_helpview_liveness_continue">Fortsetzen</string>
-	<string name="netverify_helpview_usdl_fallback_continue">Fortsetzen</string>
+	<string name="netverify_helpview_liveness_continue">Zum Fortsetzen tippen</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Zum Fortsetzen tippen</string>
 	<string name="netverify_helpview_fallback">ERKENNUNG FUNKTIONIERT NICHT</string>
 	<string name="netverify_helpview_fallback_barcode">KEIN BARCODE AUF MEINEM AUSWEIS</string>
 	<string name="netverify_helpview_small_title_scan">&lt;b&gt;%2$s %1$s scannen&lt;/b&gt;</string>
@@ -96,12 +91,27 @@
 	<string name="netverify_helpview_full_description_template">Halten Sie Ihr Dokument vor die Kamera wie in der Animation oben dargestellt. Die Erkennung erfolgt automatisch.\n\nVergewissern Sie sich, dass alle Daten lesbar sind und vermeiden Sie Spiegelungen.</string>
 	<string name="netverify_helpview_full_description_barcode">Halten Sie den Barcode vor die Kamera wie in dem Bild oben dargestellt. Die Erkennung erfolgt automatisch.\n\nVergewissern Sie sich, dass alle Daten lesbar sind und vermeiden Sie Spiegelungen.</string>
 	<string name="netverify_helpview_full_description_card">Halten Sie Ihr Dokument in den Rahmen bis alle vier Kanten übereinstimmen, so wie in der Animation oben dargestellt. Die Erkennung erfolgt automatisch.\n\nVergewissern Sie sich, dass alle Daten lesbar sind und vermeiden Sie Spiegelungen.</string>
-	<string name="netverify_helpview_full_description_liveness_glasses">Wenn möglich, nehmen Sie Ihre Brille ab</string>
-	<string name="netverify_helpview_full_description_liveness_cap">Entfernen Sie jegliche Kopfbedeckung</string>
-	<string name="netverify_helpview_full_description_liveness_light">Sorgen Sie für ein gutes Umgebungslicht</string>
 	<string name="netverify_document_variant_other">Anderes Format</string>
 	<string name="netverify_document_variant_plastic">Plastikkarte</string>
 	<string name="netverify_accessibility_nfc_description_start">Bitte prüfen Sie, ob Ihr Ausweis einen Chip enthält. Wenn ja, legen Sie Ihr Handy wie abgebildet auf den Ausweis.</string>
+	<string name="zoom_feedback_a_little_too_close">Etwas weiter weg</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Etwas weiter weg</string>
+	<string name="zoom_feedback_center_face">Gesicht zentrieren</string>
+	<string name="zoom_feedback_face_not_found">Gesicht am Rahmen ausrichten</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Geradeaus blicken</string>
+	<string name="zoom_feedback_face_not_upright">Kopf gerade halten</string>
+	<string name="zoom_feedback_hold_steady">Ruhig halten</string>
+	<string name="zoom_feedback_move_phone_away">Etwas weiter weg</string>
+	<string name="zoom_feedback_move_phone_closer">Etwas näher kommen</string>
+	<string name="zoom_feedback_move_phone_even_closer">Ein wenig näher</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Kamera auf Augenhöhe halten</string>
+	<string name="zoom_feedback_move_tablet_away">Etwas weiter weg</string>
+	<string name="zoom_feedback_move_tablet_closer">Etwas näher kommen</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Kamera auf Augenhöhe halten</string>
+	<string name="zoom_helpview_bad_angle">Halten Sie Ihre Kamera auf Augenhöhe und schauen Sie hinein</string>
+	<string name="zoom_helpview_bad_lightning">Schatten und Spiegelungen auf Ihrem Gesicht vermeiden</string>
+	<string name="zoom_helpview_general">Folgen Sie dem zweistufigen Prozess und richten Sie Ihr Gesicht am Rahmen aus. Halten Sie Ihr Gerät auf Augenhöhe und schauen Sie direkt in die Kamera. Ihr Gesicht wird automatisch erfasst.</string>
+	<string name="zoom_helpview_upfront_title">Erfasse dein Gesicht</string>
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
@@ -146,7 +156,6 @@
 	<string name="dv_helpview_header_seniors_card">Rentenausweis</string>
 	<string name="dv_helpview_header_medicare_card">Medicare-Karte</string>
 	<string name="dv_helpview_header_birth_certificate">Geburtsurkunde</string>
-	<string name="dv_helpview_header_us_social_security_card">Sozialversicherungskarte USA</string>
 	<string name="dv_helpview_header_working_with_children_check">Zulassung zur Arbeit mit Kindern</string>
 	<string name="dv_helpview_header_superannuation_statement">Pensionserklärung</string>
 	<string name="dv_helpview_header_trade_association_card">Handelsverbandskarte</string>

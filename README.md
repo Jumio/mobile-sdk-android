@@ -7,16 +7,14 @@
 - [Support](#support)
 
 # Release notes
-SDK version: 2.14.0
+SDK version: 2.15.0
 
 #### Changes
-* Switched to new Android X components [Netverify/Fastfill, Document Verification, BAM Checkout]
-* Added support for Kotlin to our sample project [Netverify/Fastfill, Document Verification, BAM Checkout]
-* Changed default values to true for requireVerification, requireFaceMatch and enableExtraction [Netverify/Fastfill, Document Verification]
-* Deprecated US social security card document type [Document Verification]
+* New ISO 30107-3 Level 1 compliant 3D face liveness capturing technology [Netverify]
+* Added the option to screen share the SDK in debug builds [Netverify/Fastfill, Document Verification, BAM Checkout]
 
 #### Fixes
-* Fixed a bug in the image quality check on Android 9 devices [Netverify/Fastfill, Document Verification]
+* Fixed a problem in which N/A was returned as the identityVerification result in the server callback [Netverify]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Document Verification, BAM Checkout]
 
 # Basic Setup
@@ -50,12 +48,11 @@ If you are using Proguard, add the following lines in its configuration.
 ```
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
--keep class com.samsung.** { *; }
--keep class com.samsung.**$* { *; }
--dontwarn com.samsung.**
 -keep class com.microblink.** { *; }
 -keep class com.microblink.**$* { *; }
 -dontwarn com.microblink.**
+-keep class com.facetec.zoom.** { *; }
+-dontwarn javax.annotation.Nullable
 ```
 
 ## Integration
@@ -63,7 +60,8 @@ Use the SDK in your application by including the Maven repositories with the fol
 
 ```
 repositories {
-	maven { url 'https://maven.google.com/' }
+	google()
+	jcenter()
 	maven { url 'https://mobile-sdk.jumio.com' }
 }
 ```
@@ -121,7 +119,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 2.13.0 of the Jumio Mobile SDK is supported until 2019-01-16.
+The previous release version 2.14.0 of the Jumio Mobile SDK is supported until 2019-04-23.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 
@@ -129,7 +127,8 @@ In case the support period is expired, no bug fixes are provided anymore (typica
 If you want to enable two-factor authentication for your Jumio customer portal please contact us at https://support.jumio.com. Once enabled, users will be guided through the setup upon their first login to obtain a security code using the "Google Authenticator" app.
 
 ## Licenses
-The software contains third-party open source software. For more information, please see [/licenses](https://github.com/Jumio/mobile-sdk-android/tree/master/licenses).
+The software contains third-party open source software. For more information, please see [licenses](https://github.com/Jumio/mobile-sdk-android/tree/master/licenses).
+
 This software is based in part on the work of the Independent JPEG Group.
 
 ## Contact

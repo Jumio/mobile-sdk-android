@@ -14,7 +14,6 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="netverify_search">Zoeken</string>
 	<string name="netverify_error_network_problems">We zijn gestuit op een netwerk communicatieprobleem</string>
 	<string name="netverify_error_auth_failed">Authentificatie mislukt</string>
 	<string name="netverify_error_device_is_offline">Geen internetverbinding beschikbaar</string>
@@ -62,7 +61,7 @@
 	<string name="netverify_upload_successful">&lt;b&gt;Uploaden succesvol&lt;/b&gt;</string>
 	<string name="netverify_upload_error">&lt;b&gt;Upload problemen&lt;/b&gt;</string>
 	<string name="netverify_scanview_title">Scan document</string>
-	<string name="netverify_scanview_title_face">Neem een selfie</string>
+	<string name="netverify_scanview_title_face"></string>
 	<string name="netverify_scanview_title_check">Controleer leesbaarheid</string>
 	<string name="netverify_scanview_title_problems">Ervaar je problemen?</string>
 	<string name="netverify_scanview_snackbar_check">Zorg ervoor dat alle data op uw document volledig zichtbaar is, glansvrij en niet wazig</string>
@@ -70,10 +69,6 @@
 	<string name="netverify_scanview_readable">LEESBAAR</string>
 	<string name="netverify_scanview_liveness_landscape_header">&lt;b&gt;Draai uw apparaat&lt;/b&gt;</string>
 	<string name="netverify_scanview_liveness_landscape_description">Draai uw telefoon naar portret om een selfie te nemen</string>
-	<string name="netverify_scanview_liveness_follow_hint">Volg de cirkel</string>
-	<string name="netverify_scanview_liveness_move_closer">Kom dichterbij</string>
-	<string name="netverify_scanview_liveness_move_back">Ga achteruit</string>
-	<string name="netverify_scanview_liveness_description">Plaats je gezicht in het frame om verder te gaan</string>
 	<string name="netverify_scanview_legal_hint_nld">Bedek alstublieft uw BSN vóór vastlegging</string>
 	<string name="netverify_scanview_legal_hint_kor">Bedek het tweede onderdeel van uw Burgerservicenummer vóór vastlegging</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Bedek alstublieft het paspoortnummer vóór vastlegging</string>
@@ -82,8 +77,8 @@
 	<string name="netverify_helpview_progress_text">Stap %1$d van %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">De streepjescode van uw document bevat niet uw adres, draai uw document en scan de voorkant</string>
 	<string name="netverify_helpview_description_flip_document">Uw hebt recentelijk de voorkant van uw document gescand.\n\n Draai alstublieft uw document om en scan de achterkant.</string>
-	<string name="netverify_helpview_liveness_continue">VERDER GAAN</string>
-	<string name="netverify_helpview_usdl_fallback_continue">VERDER GAAN</string>
+	<string name="netverify_helpview_liveness_continue">Klik om door te gaan</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Klik om door te gaan</string>
 	<string name="netverify_helpview_fallback">VASTLEGGING WERKT NIET</string>
 	<string name="netverify_helpview_fallback_barcode">GEEN STREEPJESCODE OP MIJN ID</string>
 	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Scan %1$s %2$s &lt;/b&gt;</string>
@@ -96,12 +91,27 @@
 	<string name="netverify_helpview_full_description_template">Plaats uw document vóór de camera zoals wordt getoond in de animatie hierboven. Het vastleggen gebeurt automatisch.\n\nZorg ervoor dat alle data leesbaar is en vermijd reflecties.</string>
 	<string name="netverify_helpview_full_description_barcode">Plaats de streepjescode vóór de camera zoals wordt getoond in het beeld hierboven. Het vastleggen gebeurt automatisch.\n\nZorg ervoor dat alle data leesbaar is en vermijd reflecties.</string>
 	<string name="netverify_helpview_full_description_card">Plaats uw document in het frame tot alle 4 kanten zijn uitgelijnd zoals wordt getoond in het beeld hierboven. Het vastleggen gebeurt automatisch.\n\nZorg ervoor dat alle data leesbaar is en vermijd reflecties.</string>
-	<string name="netverify_helpview_full_description_liveness_glasses">Draag geen bril, verwijd indien mogelijk</string>
-	<string name="netverify_helpview_full_description_liveness_cap">Verwijder elk hoofddeksel</string>
-	<string name="netverify_helpview_full_description_liveness_light">Gebruik goede lichtinval en vermijd sterk licht van achter</string>
 	<string name="netverify_document_variant_other">Ander formaat</string>
 	<string name="netverify_document_variant_plastic">Plastic kaart</string>
 	<string name="netverify_accessibility_nfc_description_start">Controleer alstublieft of uw ID een chip heeft. Zo ja, plaats uw telefoon op het ID zoals getoond.</string>
+	<string name="zoom_feedback_a_little_too_close">Ga een stukje achteruit</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Ga een stukje achteruit</string>
+	<string name="zoom_feedback_center_face">Centreer je gezicht</string>
+	<string name="zoom_feedback_face_not_found">Frame je gezicht</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Kijk recht vooruit</string>
+	<string name="zoom_feedback_face_not_upright">Houd je hoofd recht</string>
+	<string name="zoom_feedback_hold_steady">Niet bewegen</string>
+	<string name="zoom_feedback_move_phone_away">Ga een stukje achteruit</string>
+	<string name="zoom_feedback_move_phone_closer">Kom een stukje dichterbij</string>
+	<string name="zoom_feedback_move_phone_even_closer">Een beetje dichterbij</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Houd apparaat op ooghoogte</string>
+	<string name="zoom_feedback_move_tablet_away">Ga een stukje achteruit</string>
+	<string name="zoom_feedback_move_tablet_closer">Kom een stukje dichterbij</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Houd apparaat op ooghoogte</string>
+	<string name="zoom_helpview_bad_angle">Houd je apparaat op ooghoogte en kijk er recht in</string>
+	<string name="zoom_helpview_bad_lightning">Vermijd schaduwen en reflecties op je gezicht</string>
+	<string name="zoom_helpview_general">Volg het proces in twee stappen en stel uw gezicht gelijk met het kader. Houd uw apparaat op ooghoogte en kijk recht in de camera. Uw gezicht wordt automatisch vastgelegd</string>
+	<string name="zoom_helpview_upfront_title">Leg uw gezicht vast</string>
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
@@ -146,7 +156,6 @@
 	<string name="dv_helpview_header_seniors_card">Seniorenpas</string>
 	<string name="dv_helpview_header_medicare_card">Zorgverzekeringspas</string>
 	<string name="dv_helpview_header_birth_certificate">Geboortecertificaat</string>
-	<string name="dv_helpview_header_us_social_security_card">Sociale zekerheidspas VS</string>
 	<string name="dv_helpview_header_working_with_children_check">Cheque voor het werken met kinderen</string>
 	<string name="dv_helpview_header_superannuation_statement">Pensioenafschrift</string>
 	<string name="dv_helpview_header_trade_association_card">Pas van handelsvereniging</string>

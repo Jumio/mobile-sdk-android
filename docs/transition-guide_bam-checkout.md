@@ -4,6 +4,11 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 2.15.0
+#### Added Room
+Dependencies that have been added to the SDK:
++ androidx.room:room-runtime:2.0.0  
+
 ## 2.14.0
 #### Migrate to AndroidX
 The support library was migrated to [`AndroidX`](https://developer.android.com/jetpack/androidx/). As the developer page outlines, this is a mandatory step since all new Support Library development and maintenance will occur in the AndroidX library. This [`migration guide`](https://developer.android.com/jetpack/androidx/migrate) shows you how to migrate your application to AndroidX.

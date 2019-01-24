@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.jumio.core.enums.JumioDataCenter;
@@ -30,15 +31,18 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 
 	DocumentVerificationSDK documentVerificationSDK;
 
+	Switch switchEnableExtraction;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-		(rootView.findViewById(R.id.switchOptionOne)).setVisibility(View.GONE);
 		(rootView.findViewById(R.id.switchOptionTwo)).setVisibility(View.GONE);
-		(rootView.findViewById(R.id.tvOptions)).setVisibility(View.GONE);
+		switchEnableExtraction = (Switch) rootView.findViewById(R.id.switchOptionOne);
+		switchEnableExtraction.setChecked(true);
 
 		Bundle args = getArguments();
+		switchEnableExtraction.setText(args.getString(MainActivity.KEY_SWITCH_ONE_TEXT));
 
 		apiToken = args.getString(MainActivity.KEY_API_TOKEN);
 		apiSecret = args.getString(MainActivity.KEY_API_SECRET);
@@ -104,7 +108,7 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 			documentVerificationSDK.setCustomerId("CUSTOMERID");
 
 			// Set the following property to enable/disable data extraction for documents.
-			// documentVerificationSDK.setEnableExtraction(true);
+			documentVerificationSDK.setEnableExtraction(switchEnableExtraction.isChecked());
 
 			// One of the Custom Document Type Codes as configurable by Merchant in Merchant UI.
 			// documentVerificationSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");

@@ -14,7 +14,6 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="netverify_search">搜索</string>
 	<string name="netverify_error_network_problems">我们遇到了网络通信问题</string>
 	<string name="netverify_error_auth_failed">鉴权失败</string>
 	<string name="netverify_error_device_is_offline">没有可用的网络连接</string>
@@ -62,7 +61,7 @@
 	<string name="netverify_upload_successful">&lt;b&gt;上传成功&lt;/b&gt;</string>
 	<string name="netverify_upload_error">&lt;b&gt;上传问题&lt;/b&gt;</string>
 	<string name="netverify_scanview_title">扫描文件</string>
-	<string name="netverify_scanview_title_face">拍一张自拍照</string>
+	<string name="netverify_scanview_title_face"></string>
 	<string name="netverify_scanview_title_check">检查清晰度</string>
 	<string name="netverify_scanview_title_problems">遇到问题？</string>
 	<string name="netverify_scanview_snackbar_check">确保您的文件上的所有数据完全可见,无眩光且不模糊</string>
@@ -70,10 +69,6 @@
 	<string name="netverify_scanview_readable">清晰可辨</string>
 	<string name="netverify_scanview_liveness_landscape_header">&lt;b&gt;旋转您的设备&lt;/b&gt;</string>
 	<string name="netverify_scanview_liveness_landscape_description">请将手机旋转至纵向来拍摄自拍照</string>
-	<string name="netverify_scanview_liveness_follow_hint">请跟随圆圈</string>
-	<string name="netverify_scanview_liveness_move_closer">靠近一点</string>
-	<string name="netverify_scanview_liveness_move_back">向后退</string>
-	<string name="netverify_scanview_liveness_description">把您的脸放在边框内继续</string>
 	<string name="netverify_scanview_legal_hint_nld">请在拍摄前遮挡您的 BSN</string>
 	<string name="netverify_scanview_legal_hint_kor">请在拍摄前遮挡您的居民登记号码的第二部分</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">请在拍摄前遮挡护照号码</string>
@@ -82,8 +77,8 @@
 	<string name="netverify_helpview_progress_text">第 %1$d 步,共 %2$d 步</string>
 	<string name="netverify_helpview_description_usdl_fallback">您的文件的条形码没有包含您的地址,请将您的文件翻转并扫描正面</string>
 	<string name="netverify_helpview_description_flip_document">您最近扫描了文件的正面。\n\n请翻转您的文件并扫描背面。</string>
-	<string name="netverify_helpview_liveness_continue">继续</string>
-	<string name="netverify_helpview_usdl_fallback_continue">继续</string>
+	<string name="netverify_helpview_liveness_continue">点击继续</string>
+	<string name="netverify_helpview_usdl_fallback_continue">点击继续</string>
 	<string name="netverify_helpview_fallback">拍摄不可用</string>
 	<string name="netverify_helpview_fallback_barcode">我的身份证件上没有条码</string>
 	<string name="netverify_helpview_small_title_scan">&lt;b&gt;扫描%1$s%2$s&lt;/b&gt;</string>
@@ -96,12 +91,27 @@
 	<string name="netverify_helpview_full_description_template">如上面的动画所示,把您的文件置于摄像头前。将自动进行拍摄。\n\n确保所有数据都可清晰可读并避免反光。</string>
 	<string name="netverify_helpview_full_description_barcode">如上图所示,把条形码置于摄像头前。将自动进行拍摄。\n\n确保所有数据都可清晰可读并避免反光。</string>
 	<string name="netverify_helpview_full_description_card">将您的文件置于边框内,直到所有 4 个边缘都对齐,如上面的动画所示。将自动进行拍摄。\n\n确保所有数据都可清晰可读并避免反光。</string>
-	<string name="netverify_helpview_full_description_liveness_glasses">不要戴眼镜,如果可能的话请取下眼镜</string>
-	<string name="netverify_helpview_full_description_liveness_cap">取下任何帽子/头饰</string>
-	<string name="netverify_helpview_full_description_liveness_light">使用良好的照明,并避免来自后面的强光</string>
 	<string name="netverify_document_variant_other">其他格式</string>
 	<string name="netverify_document_variant_plastic">塑料卡片</string>
 	<string name="netverify_accessibility_nfc_description_start">请检查您的证件是否有芯片。如果有的话,请把手机放在证件上,如图所示。</string>
+	<string name="zoom_feedback_a_little_too_close">往后一点</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">往后一点</string>
+	<string name="zoom_feedback_center_face">将您的脸放到中间</string>
+	<string name="zoom_feedback_face_not_found">将您的脸放到框内</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">直视前方</string>
+	<string name="zoom_feedback_face_not_upright">头不要歪</string>
+	<string name="zoom_feedback_hold_steady">保持稳定</string>
+	<string name="zoom_feedback_move_phone_away">往后一点</string>
+	<string name="zoom_feedback_move_phone_closer">靠近一点</string>
+	<string name="zoom_feedback_move_phone_even_closer">靠近一点</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">保持设备和眼睛在同一高度</string>
+	<string name="zoom_feedback_move_tablet_away">往后一点</string>
+	<string name="zoom_feedback_move_tablet_closer">靠近一点</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">保持设备和眼睛在同一高度</string>
+	<string name="zoom_helpview_bad_angle">将您的设备保持在眼睛的高度并直视设备</string>
+	<string name="zoom_helpview_bad_lightning">请避免脸部出现阴影和反光</string>
+	<string name="zoom_helpview_general">按照这两个步骤,将你的脸与镜框对齐。将你的设备与眼睛齐平,直视摄像头。你的面部图像会被自动捕捉</string>
+	<string name="zoom_helpview_upfront_title">捕捉你的脸</string>
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
@@ -146,7 +156,6 @@
 	<string name="dv_helpview_header_seniors_card">老年卡</string>
 	<string name="dv_helpview_header_medicare_card">医保卡</string>
 	<string name="dv_helpview_header_birth_certificate">出生证明</string>
-	<string name="dv_helpview_header_us_social_security_card">美国社会保障卡</string>
 	<string name="dv_helpview_header_working_with_children_check">儿童工作证明</string>
 	<string name="dv_helpview_header_superannuation_statement">养老金结算单</string>
 	<string name="dv_helpview_header_trade_association_card">行业协会卡</string>

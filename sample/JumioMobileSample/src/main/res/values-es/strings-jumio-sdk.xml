@@ -14,7 +14,6 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="netverify_search">Buscar</string>
 	<string name="netverify_error_network_problems">Hemos detectado un problema de comunicación de red</string>
 	<string name="netverify_error_auth_failed">Error de autenticación</string>
 	<string name="netverify_error_device_is_offline">Ninguna conexión de internet disponible</string>
@@ -33,8 +32,8 @@
 	<string name="netverify_back">Reverso</string>
 	<string name="netverify_inside">Interior</string>
 	<string name="netverify_outside">Exterior</string>
-	<string name="netverify_use_front_side_of_card">UTILISE FRONTAL</string>
-	<string name="netverify_use_back_side_of_card">UTILISE REVERSO</string>
+	<string name="netverify_use_front_side_of_card">UTILICE FRONTAL</string>
+	<string name="netverify_use_back_side_of_card">UTILICE REVERSO</string>
 	<string name="netverify_nfc_view_title">NFC</string>
 	<string name="netverify_nfc_header_start">&lt;b&gt;Escanee identificación&lt;/b&gt;</string>
 	<string name="netverify_nfc_header_download">&lt;b&gt;Extrayendo datos&lt;/b&gt;</string>
@@ -62,7 +61,7 @@
 	<string name="netverify_upload_successful">&lt;b&gt;Carga correcta&lt;/b&gt;</string>
 	<string name="netverify_upload_error">&lt;b&gt;Problemas en la carga&lt;/b&gt;</string>
 	<string name="netverify_scanview_title">Escanear</string>
-	<string name="netverify_scanview_title_face">Hacerse un selfie</string>
+	<string name="netverify_scanview_title_face"></string>
 	<string name="netverify_scanview_title_check">Comprobar legibilidad</string>
 	<string name="netverify_scanview_title_problems">¿Hay problemas?</string>
 	<string name="netverify_scanview_snackbar_check">Asegúrese de que todos los datos de su documento sean totalmente visibles, no tengan reflejos y no estén borrosos</string>
@@ -70,10 +69,6 @@
 	<string name="netverify_scanview_readable">LEGIBLE</string>
 	<string name="netverify_scanview_liveness_landscape_header">&lt;b&gt;Gire su dispositivo&lt;/b&gt;</string>
 	<string name="netverify_scanview_liveness_landscape_description">Ponga el móvil en vertical para hacerse un selfie</string>
-	<string name="netverify_scanview_liveness_follow_hint">Siga el círculo</string>
-	<string name="netverify_scanview_liveness_move_closer">Acerqúese</string>
-	<string name="netverify_scanview_liveness_move_back">Aléjese</string>
-	<string name="netverify_scanview_liveness_description">Por favor, coloque su cara en el marco</string>
 	<string name="netverify_scanview_legal_hint_nld">Por favor, oculte su BSN antes de capturar</string>
 	<string name="netverify_scanview_legal_hint_kor">Por favor, oculte el segundo bloque de su número de registro de residente antes de hacer la captura</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Por favor, oculte el número de pasaporte antes de capturar</string>
@@ -82,8 +77,8 @@
 	<string name="netverify_helpview_progress_text">Paso %1$d de %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">El código de barras de su documento no incluye su dirección. Déle la vuelta al documento y escanee el frontal</string>
 	<string name="netverify_helpview_description_flip_document">Acaba de escanear el frontal de su documento.\n\nDéle la vuelta al documento y escanee el reverso.</string>
-	<string name="netverify_helpview_liveness_continue">CONTINUAR</string>
-	<string name="netverify_helpview_usdl_fallback_continue">CONTINUAR</string>
+	<string name="netverify_helpview_liveness_continue">Pulse para continuar</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Pulse para continuar</string>
 	<string name="netverify_helpview_fallback">LA CAPTURA NO ESTÁ FUNCIONANDO</string>
 	<string name="netverify_helpview_fallback_barcode">NO HAY NINGÚN CÓDIGO DE BARRAS</string>
 	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Escanee %2$s %1$s&lt;/b&gt;</string>
@@ -96,12 +91,27 @@
 	<string name="netverify_helpview_full_description_template">Coloque el documento delante de la cámara tal y como se muestra en la animación anterior. La captura se realiza automáticamente.\n\nAsegúrese de que todos los datos sean legibles y evite los reflejos.</string>
 	<string name="netverify_helpview_full_description_barcode">Coloque el código de barras delante de la cámara tal y como se muestra en la imagen anterior. La captura se realiza automáticamente.\n\nAsegúrese de que todos los datos sean legibles y evite los reflejos.</string>
 	<string name="netverify_helpview_full_description_card">Coloque el documento dentro del marco hasta que los 4 bordes estén alineados tal y como se muestra en la animación anterior. La captura se realiza automáticamente.\n\nAsegúrese de que todos los datos sean legibles y evite los reflejos.</string>
-	<string name="netverify_helpview_full_description_liveness_glasses">Por favor, no se ponga gafas.</string>
-	<string name="netverify_helpview_full_description_liveness_cap">No se ponga nada en la cabeza</string>
-	<string name="netverify_helpview_full_description_liveness_light">Por favor, utilise una buena iluminación</string>
 	<string name="netverify_document_variant_other">Otro formato</string>
 	<string name="netverify_document_variant_plastic">Tarjeta de plástico</string>
 	<string name="netverify_accessibility_nfc_description_start">Por favor, compruebe si su identificación tiene un chip. Si es así, coloque su teléfono en la identificación como se muestra en la ilustración.</string>
+	<string name="zoom_feedback_a_little_too_close">Retroceda un poco</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Retroceda un poco</string>
+	<string name="zoom_feedback_center_face">Coloque su rostro en el centro del marco</string>
+	<string name="zoom_feedback_face_not_found">Colóquese dentro del marco</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Mire hacia adelante</string>
+	<string name="zoom_feedback_face_not_upright">Mantenga la cabeza recta</string>
+	<string name="zoom_feedback_hold_steady">No se mueva</string>
+	<string name="zoom_feedback_move_phone_away">Retroceda un poco</string>
+	<string name="zoom_feedback_move_phone_closer">Acérquese un poco</string>
+	<string name="zoom_feedback_move_phone_even_closer">Un poco más cerca</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Mantenga el dispositivo al nivel de los ojos</string>
+	<string name="zoom_feedback_move_tablet_away">Retroceda un poco</string>
+	<string name="zoom_feedback_move_tablet_closer">Acérquese un poco</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Mantenga el dispositivo al nivel de los ojos</string>
+	<string name="zoom_helpview_bad_angle">Mantenga el dispositivo al nivel de los ojos y mírelo directamente</string>
+	<string name="zoom_helpview_bad_lightning">Evite sombras y reflejos en su rostro</string>
+	<string name="zoom_helpview_general">Sigue el proceso de dos pasos y coloca tu rostro dentro del marco. Mantén el dispositivo a la altura de los ojos y mira directamente a la cámara. Tu rostro se capturará automáticamente.</string>
+	<string name="zoom_helpview_upfront_title">Captura tu rostro</string>
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
@@ -146,7 +156,6 @@
 	<string name="dv_helpview_header_seniors_card">Carné de tercera edad</string>
 	<string name="dv_helpview_header_medicare_card">Tarjeta de Medicare</string>
 	<string name="dv_helpview_header_birth_certificate">Certificado de nacimiento</string>
-	<string name="dv_helpview_header_us_social_security_card">Tarjeta de seguridad social de EE. UU.</string>
 	<string name="dv_helpview_header_working_with_children_check">Verificación de personas que trabajan con niños</string>
 	<string name="dv_helpview_header_superannuation_statement">Declaración de jubilación</string>
 	<string name="dv_helpview_header_trade_association_card">Tarjeta de la asociación comercial</string>

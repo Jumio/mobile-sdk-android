@@ -1,11 +1,11 @@
 buildscript {
-	ext.KOTLIN_VERSION = "1.2.71"
+	ext.KOTLIN_VERSION = "1.3.11"
 	repositories {
-		jcenter()
         google()
+        jcenter()
 	}
 	dependencies {
-		classpath "com.android.tools.build:gradle:3.2.0"
+		classpath "com.android.tools.build:gradle:3.2.1"
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
 	}
 }
@@ -14,13 +14,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 repositories {
-	jcenter()
-	google()
+    google()
+    jcenter()
 	maven { url 'https://mobile-sdk.jumio.com' }
 }
 
 ext {
-	SDK_VERSION = "2.14.0"
+	SDK_VERSION = "2.15.0"
 }
 
 dependencies {
@@ -32,15 +32,18 @@ dependencies {
 	implementation "com.jumio.android:nv-ocr:${SDK_VERSION}@aar"
 	implementation "com.jumio.android:nv-barcode:${SDK_VERSION}@aar"
 	implementation "com.jumio.android:nv-barcode-vision:${SDK_VERSION}@aar"
-	implementation "com.jumio.android:nv-liveness:${SDK_VERSION}@aar"
+    implementation "com.jumio.android:nv-face:${SDK_VERSION}@aar"
 	implementation "com.jumio.android:dv:${SDK_VERSION}@aar"
 
 	//for core:
 	implementation "androidx.appcompat:appcompat:1.0.0"
+    implementation "androidx.room:room-runtime:2.0.0"
 
 	//for nv:
 	implementation "com.google.android.material:material:1.0.0"
 	implementation "androidx.cardview:cardview:1.0.0"
+
+    //only for nv-barcode-vision
     implementation ("com.google.android.gms:play-services-vision:15.0.1"){
 		exclude group: 'com.android.support', module:'support-v4'
 	}
@@ -48,6 +51,9 @@ dependencies {
 	//only for nv-nfc
 	implementation "com.madgag.spongycastle:prov:1.58.0.0"
 	implementation "net.sf.scuba:scuba-sc-android:0.0.16"
+
+    //only for nv-face
+    implementation "com.facetec:zoom-authentication-hybrid:7.0.4@aar"
 
 	//Kotlin
 	implementation "org.jetbrains.kotlin:kotlin-stdlib:${KOTLIN_VERSION}"
@@ -57,7 +63,7 @@ dependencies {
 
 android {
 	compileSdkVersion 28
-	buildToolsVersion "28.0.2"
+	buildToolsVersion "28.0.3"
 	defaultConfig {
 		minSdkVersion 19
 		multiDexEnabled true

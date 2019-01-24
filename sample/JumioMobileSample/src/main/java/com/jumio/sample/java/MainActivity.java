@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
 				case 2:
 					DocumentVerificationFragment documentVerificationFragment = new DocumentVerificationFragment();
 					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_documentverification)));
+					bundle.putString(KEY_SWITCH_ONE_TEXT, getResources().getString(R.string.documentverification_enable_extraction));
 					bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
 					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
 					documentVerificationFragment.setArguments(bundle);

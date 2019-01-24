@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+	
 	<!-- APP STRINGS -->
 	<string name="app_name">Jumio Sample</string>
 	<string name="title_activity_main">MainActivity</string>
@@ -13,6 +13,7 @@
 	<string name="section_documentverification">Document Verification</string>
 	<string name="header_options">Options:</string>
 	<string name="netverify_verification_required">Verification required</string>
+	<string name="documentverification_enable_extraction">Enable extraction</string>
 	<string name="netverify_face_required">Face match required</string>
 	<string name="bam_cvv_required">CVV required</string>
 	<string name="bam_expiry_required">Expiry date required</string>

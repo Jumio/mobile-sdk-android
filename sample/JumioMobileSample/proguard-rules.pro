@@ -22,10 +22,9 @@
 -ignorewarnings
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
--keep class com.samsung.** { *; }
--keep class com.samsung.**$* { *; }
 -keep class com.microblink.** { *; }
 -keep class com.microblink.**$* { *; }
+-keep class com.facetec.zoom.** { *; }
 
 -keep class net.sf.scuba.smartcards.IsoDepCardService {*;}
 -keep class org.jmrtd.** { *; }
@@ -37,5 +36,5 @@
 -dontwarn org.codehaus.**
 -dontwarn org.ejbca.**
 -dontwarn org.spongycastle.**
--dontwarn com.samsung.**
 -dontwarn com.microblink.**
+-dontwarn javax.annotation.Nullable
