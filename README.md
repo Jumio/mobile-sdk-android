@@ -10,12 +10,14 @@
 SDK version: 2.15.0
 
 #### Changes
-* New ISO 30107-3 Level 1 compliant 3D face liveness capturing technology [Netverify]
+* New ISO 30107-3 Level 1 compliant 3D face liveness capturing technology [Netverify] *
 * Added the option to screen share the SDK in debug builds [Netverify/Fastfill, Document Verification, BAM Checkout]
 
 #### Fixes
 * Fixed a problem in which N/A was returned as the identityVerification result in the server callback [Netverify]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Document Verification, BAM Checkout]
+
+<sub>(&ast;Workflow changes on server will be applied on January 31)<sub>
 
 # Basic Setup
 
