@@ -67,7 +67,7 @@ The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/
 |androidx.room:room-runtime:2.0.0                     | x | Android database object mapping library	         | - |
 |com.google.android.gms:play-services-vision:15.0.1   |   | Barcode Scanning 			                 | - |
 |com.jumio.android:nv-face:2.15.0@aar                 |   | Face library	                                 | 78.94 KB |
-|com.facetec:zoom-authentication-hybrid:7.0.2@aar     |   | Zoom face scanning library	                         | 12.1 MB |
+|com.facetec:zoom-authentication-hybrid:7.0.4@aar     |   | Zoom face scanning library	                         | 12.1 MB |
 |com.google.android.material:material:1.0.0           |   | Android material design library	                 | - |
 |com.jumio.android:javadoc:2.15.0                     |   | Jumio SDK Javadoc			                 | - |
 |com.jumio.android:nv-barcode:2.15.0@aar              |   | US / CAN Barcode Scanning                            | 3.45 MB |
