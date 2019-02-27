@@ -15,7 +15,7 @@ import com.jumio.MobileSDK
 import com.jumio.sample.R
 
 /**
- * Copyright 2018 Jumio Corporation All rights reserved.
+ * Copyright 2019 Jumio Corporation All rights reserved.
  */
 class MainActivity : AppCompatActivity() {
 
@@ -91,8 +91,8 @@ class MainActivity : AppCompatActivity() {
             when (position) {
                 0 -> {
                     val nvFragment = NetverifyFragment()
-                    bundle.putString(KEY_SWITCH_ONE_TEXT, resources.getString(R.string.netverify_verification_required))
-                    bundle.putString(KEY_SWITCH_TWO_TEXT, resources.getString(R.string.netverify_face_required))
+                    bundle.putString(KEY_SWITCH_ONE_TEXT, resources.getString(R.string.netverify_verification_enabled))
+                    bundle.putString(KEY_SWITCH_TWO_TEXT, resources.getString(R.string.netverify_identity_verification_enabled))
                     bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
                     bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
                     nvFragment.arguments = bundle
@@ -106,14 +106,28 @@ class MainActivity : AppCompatActivity() {
                     return nvCustomFragment
                 }
                 2 -> {
-                    val documentVerificationFragment = DocumentVerificationFragment()
+                    val authFragment = AuthenticationFragment()
+                    bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
+                    bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
+                    authFragment.arguments = bundle
+                    return authFragment
+                }
+                3 -> {
+                    val authCustomFragment = AuthenticationCustomFragment()
+                    bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
+                    bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
+                    authCustomFragment.arguments = bundle
+                    return authCustomFragment
+                }
+                4 -> {
+                    val dvFragment = DocumentVerificationFragment()
                     bundle.putString(KEY_SWITCH_ONE_TEXT, resources.getString(R.string.documentverification_enable_extraction))
                     bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
                     bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
-                    documentVerificationFragment.arguments = bundle
-                    return documentVerificationFragment
+                    dvFragment.arguments = bundle
+                    return dvFragment
                 }
-                3 -> {
+                5 -> {
                     val bamFragment = BamFragment()
                     bundle.putString(KEY_SWITCH_ONE_TEXT, resources.getString(R.string.bam_expiry_required))
                     bundle.putString(KEY_SWITCH_TWO_TEXT, resources.getString(R.string.bam_cvv_required))
@@ -122,7 +136,7 @@ class MainActivity : AppCompatActivity() {
                     bamFragment.arguments = bundle
                     return bamFragment
                 }
-                4 -> {
+                6 -> {
                     val bamCustomFragment = BamCustomFragment()
                     bundle.putString(KEY_API_TOKEN, BAM_API_TOKEN)
                     bundle.putString(KEY_API_SECRET, BAM_API_SECRET)
@@ -134,16 +148,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun getCount(): Int {
-            return 5
+            return 7
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
             when (position) {
                 0 -> return resources.getString(R.string.section_netverify)
                 1 -> return resources.getString(R.string.section_netverify_custom)
-                2 -> return resources.getString(R.string.section_documentverification)
-                3 -> return resources.getString(R.string.section_bamcheckout)
-                4 -> return resources.getString(R.string.section_bam_custom)
+                2 -> return resources.getString(R.string.section_authentication)
+                3 -> return resources.getString(R.string.section_authentication_custom)
+                4 -> return resources.getString(R.string.section_documentverification)
+                5 -> return resources.getString(R.string.section_bamcheckout)
+                6 -> return resources.getString(R.string.section_bam_custom)
             }
             return null
         }

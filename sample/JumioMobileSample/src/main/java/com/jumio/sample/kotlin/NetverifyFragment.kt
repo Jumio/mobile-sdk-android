@@ -20,7 +20,7 @@ import com.jumio.nv.NetverifySDK
 import com.jumio.sample.R
 
 /**
- * Copyright 2018 Jumio Corporation All rights reserved.
+ * Copyright 2019 Jumio Corporation All rights reserved.
  */
 class NetverifyFragment : Fragment(), View.OnClickListener {
 
@@ -32,7 +32,7 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
     }
 
     internal lateinit var switchVerification: Switch
-    internal lateinit var switchFaceMatch: Switch
+    internal lateinit var switchIdentityVerification: Switch
 
     internal lateinit var netverifySDK: NetverifySDK
 
@@ -40,14 +40,14 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
         switchVerification = rootView.findViewById<View>(R.id.switchOptionOne) as Switch
-        switchFaceMatch = rootView.findViewById<View>(R.id.switchOptionTwo) as Switch
-        switchFaceMatch.isChecked = true
+        switchIdentityVerification = rootView.findViewById<View>(R.id.switchOptionTwo) as Switch
+        switchIdentityVerification.isChecked = true
 
 
         val args = arguments
 
         switchVerification.text = args!!.getString(MainActivity.KEY_SWITCH_ONE_TEXT)
-        switchFaceMatch.text = args.getString(MainActivity.KEY_SWITCH_TWO_TEXT)
+        switchIdentityVerification.text = args.getString(MainActivity.KEY_SWITCH_TWO_TEXT)
 
         apiToken = args.getString(MainActivity.KEY_API_TOKEN)
         apiSecret = args.getString(MainActivity.KEY_API_SECRET)
@@ -65,7 +65,7 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
         initializeNetverifySDK()
 
         if ((activity as MainActivity).checkPermissions(PERMISSION_REQUEST_CODE_NETVERIFY)) {
-            try {
+                try {
                 if (::netverifySDK.isInitialized) {
                     startActivityForResult(netverifySDK.intent, NetverifySDK.REQUEST_CODE)
                 }
@@ -107,7 +107,7 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
 
             // Enable ID verification to receive a verification status and verified data positions (see Callback chapter).
             // Note: Not possible for accounts configured as Fastfill only.
-            netverifySDK.setRequireVerification(switchVerification.isChecked)
+            netverifySDK.setEnableVerification(switchVerification.isChecked)
 
             // You can specify issuing country (ISO 3166-1 alpha-3 country code) and/or ID types and/or document variant to skip
             // their selection during the scanning process.
@@ -119,22 +119,22 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
 //            netverifySDK.setPreselectedDocumentTypes(documentTypes);
 //            netverifySDK.setPreselectedDocumentVariant(NVDocumentVariant.PLASTIC);
 
-            // The merchant scan reference allows you to identify the scan (max. 100 characters).
+            // The customer internal reference allows you to identify the scan (max. 100 characters).
             // Note: Must not contain sensitive data like PII (Personally Identifiable Information) or account login.
-//            netverifySDK.setMerchantScanReference("YOURSCANREFERENCE");
+            // netverifySDK.setCustomerInternalReference("YOURSCANREFERENCE");
 
             // Use the following property to identify the scan in your reports (max. 100 characters).
-//            netverifySDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
+//            netverifySDK.setReportingCriteria("YOURREPORTINGCRITERIA");
 
-            // You can also set a customer identifier (max. 100 characters).
-            // Note: The customer ID should not contain sensitive data like PII (Personally Identifiable Information) or account login.
-//            netverifySDK.setCustomerId("CUSTOMERID");
+            // You can also set a user reference (max. 100 characters).
+            // Note: The user reference should not contain sensitive data like PII (Personally Identifiable Information) or account login.
+            // netverifySDK.setUserReference("USERREFERENCE");
 
             // Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
 //            netverifySDK.setCallbackUrl("YOURCALLBACKURL");
 
-            // You can disable face match during the ID verification for a specific transaction.
-            netverifySDK.setRequireFaceMatch(switchFaceMatch.isChecked)
+            // You can disable Identity Verification during the ID verification for a specific transaction.
+            netverifySDK.setEnableIdentityVerification(switchIdentityVerification.isChecked)
 
             // Use the following method to disable eMRTD scanning.
 //            netverifySDK.setEnableEMRTD(false);

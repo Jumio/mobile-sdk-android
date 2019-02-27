@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.fragment_bam_custom.*
 import java.util.*
 
 /**
- * Copyright 2018 Jumio Corporation All rights reserved.
+ * Copyright 2019 Jumio Corporation All rights reserved.
  */
 class BamCustomFragment : Fragment(), BamCustomScanInterface {
 

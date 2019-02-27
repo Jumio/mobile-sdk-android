@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import androidx.fragment.app.Fragment;
 
 /**
- * Copyright 2018 Jumio Corporation All rights reserved.
+ * Copyright 2019 Jumio Corporation All rights reserved.
  */
 public class BamFragment extends Fragment implements View.OnClickListener {
 	private final static String TAG = "JumioSDK_Bam";

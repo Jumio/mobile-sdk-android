@@ -18,6 +18,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -42,7 +43,7 @@ import com.jumio.nv.custom.NetverifyCustomScanInterface;
 import com.jumio.nv.custom.NetverifyCustomScanPresenter;
 import com.jumio.nv.custom.NetverifyCustomScanView;
 import com.jumio.nv.custom.NetverifyScanMode;
-import com.jumio.nv.custom.SDKNotConfiguredException;
+import com.jumio.sdk.custom.SDKNotConfiguredException;
 import com.jumio.nv.data.document.NVDocumentType;
 import com.jumio.nv.data.document.NVDocumentVariant;
 import com.jumio.sample.R;
@@ -59,7 +60,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 /**
- * Copyright 2018 Jumio Corporation All rights reserved.
+ * Copyright 2019 Jumio Corporation All rights reserved.
  */
 public class NetverifyCustomFragment extends Fragment implements View.OnClickListener {
     private final static String TAG = "NetverifyCustom";
@@ -70,6 +71,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 
     private NetverifySDK netverifySDK = null;
 
+    private ScrollView scrollView;
     private LinearLayout customScanContainer;
     private LinearLayout countryDocumentLayout;
     private LinearLayout partTypeLayout;
@@ -98,9 +100,10 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
     private Button retryScan;
     private Button confirmScan;
     private Button errorRetryButton;
+    private Button partRetryButton;
     private Button finishButton;
     private Switch switchVerification;
-    private Switch switchFaceMatch;
+    private Switch switchIdentityVerification;
 
     private NetverifyCustomSDKController customSDKController;
     private NetverifyCustomScanPresenter customScanViewPresenter;
@@ -121,6 +124,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         apiToken = args.getString(MainActivity.KEY_API_TOKEN);
         apiSecret = args.getString(MainActivity.KEY_API_SECRET);
 
+        scrollView = (ScrollView) rootView.findViewById(R.id.scrollView);
         netverifySettingsContainer = (LinearLayout)rootView.findViewById(R.id.netverifySettingsContainer);
         customScanContainer = (LinearLayout)rootView.findViewById(R.id.netverifyCustomContainer);
         countryDocumentLayout = (LinearLayout)rootView.findViewById(R.id.countryDocumentLayout);
@@ -149,9 +153,10 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         retryScan = (Button)rootView.findViewById(R.id.retryScan);
         confirmScan = (Button)rootView.findViewById(R.id.confirmScan);
         errorRetryButton = (Button)rootView.findViewById(R.id.errorRetryButton);
+		partRetryButton = (Button)rootView.findViewById(R.id.partRetryButton);
         finishButton = (Button)rootView.findViewById(R.id.finishButton);
         switchVerification = (Switch)rootView.findViewById(R.id.switchVerification);
-        switchFaceMatch = (Switch)rootView.findViewById(R.id.switchFaceMatch);
+        switchIdentityVerification = (Switch)rootView.findViewById(R.id.switchIdentitiyVerification);
 
         startCustomScanButton.setOnClickListener(this);
         cancelCustomScanButton.setOnClickListener(this);
@@ -168,6 +173,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         retryScan.setOnClickListener(this);
         confirmScan.setOnClickListener(this);
         errorRetryButton.setOnClickListener(this);
+		partRetryButton.setOnClickListener(this);
         finishButton.setOnClickListener(this);
 
 
@@ -176,7 +182,9 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         successDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.success));
         errorDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.error));
 
-        initScanView();
+		hideView(true, countryDocumentLayout, partTypeLayout, finishButton, loadingIndicator, errorRetryButton, partRetryButton);
+
+		initScanView();
 
         return rootView;
     }
@@ -247,12 +255,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
     	boolean isPortrait = isPortrait();
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(isPortrait ? FrameLayout.LayoutParams.MATCH_PARENT : FrameLayout.LayoutParams.WRAP_CONTENT, isPortrait ? FrameLayout.LayoutParams.WRAP_CONTENT : ScreenUtil.dpToPx(getActivity(), 300));
         customScanView.setLayoutParams(params);
-        if(customScanViewPresenter != null) {
-			if (isPortrait)
-				customScanView.setRatio(customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE ? 0.8f : 1.33f);
-			else
-				customScanView.setRatio(customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE ? 1.66f : 1.33f);
-		}
+        customScanView.setRatio(customScanView.getMinRatio());
     }
 
     @Override
@@ -339,10 +342,16 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
                 else if (v == faceButton)
                     scanSide = ScanSide.FACE;
 
-                if(isPortrait())
-                	customScanView.setRatio(scanSide == ScanSide.FACE?0.8f:1.33f);
-                else
-                	customScanView.setRatio(scanSide == ScanSide.FACE?1.66f:1.33f);
+				customScanView.setMode(scanSide == ScanSide.FACE?NetverifyCustomScanView.MODE_FACE:NetverifyCustomScanView.MODE_ID);
+				initScanView();
+
+				showView(true, customScanLayout, customScanView);
+				scrollView.post(new Runnable() {
+					@Override
+					public void run() {
+						scrollView.scrollTo(0, customScanLayout.getTop());
+					}
+				});
 
                 customScanViewPresenter = customSDKController.startScanForPart(scanSide, customScanView, customConfirmationView, new NetverifyCustomScanImpl());
 
@@ -351,7 +360,6 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
                 toggleFlash.setEnabled(false);
                 startFallback.setEnabled(false);
                 extraction.setChecked(true);
-                showView(true, customScanLayout);
                 addToCallbackLog("start scanmode: " + customScanViewPresenter.getScanMode());
                 addToCallbackLog("help text: " + customScanViewPresenter.getHelpText());
                 startFallback.setEnabled(customScanViewPresenter.isFallbackAvailable());
@@ -364,6 +372,8 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             hideView(false, customScanLayout);
             customScanViewPresenter.destroy();
             customScanViewPresenter = null;
+
+			hideView(false, partRetryButton);
         } else if (v == extraction && isScanViewControllerValid()) {
             if (extraction.isChecked())
                 customScanViewPresenter.resumeExtraction();
@@ -398,6 +408,16 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 
             if (!extraction.isChecked())
                 return;
+		} else if (v == partRetryButton && isScanViewControllerValid()) {
+			hideView(false, partRetryButton);
+
+			scrollView.post(new Runnable() {
+				@Override
+				public void run() {
+					scrollView.scrollTo(0, customScanLayout.getTop());
+					customScanViewPresenter.retryScan();
+				}
+			});
         } else if (v == errorRetryButton && isSDKControllerValid()) {
             hideView(true, errorRetryButton);
             try {
@@ -452,7 +472,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 
             // Enable ID verification to receive a verification status and verified data positions (see Callback chapter).
             // Note: Not possible for accounts configured as Fastfill only.
-            netverifySDK.setRequireVerification(switchVerification.isChecked());
+            netverifySDK.setEnableVerification(switchVerification.isChecked());
 
             // You can specify issuing country (ISO 3166-1 alpha-3 country code) and/or ID types and/or document variant to skip
             // their selection during the scanning process.
@@ -464,22 +484,22 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             // netverifySDK.setPreselectedDocumentTypes(documentTypes);
             // netverifySDK.setPreselectedDocumentVariant(NVDocumentVariant.PLASTIC);
 
-            // The merchant scan reference allows you to identify the scan (max. 100 characters).
+            // The customer internal reference allows you to identify the scan (max. 100 characters).
             // Note: Must not contain sensitive data like PII (Personally Identifiable Information) or account login.
-            // netverifySDK.setMerchantScanReference("YOURSCANREFERENCE");
+            // netverifySDK.setCustomerInternalReference("YOURSCANREFERENCE");
 
             // Use the following property to identify the scan in your reports (max. 100 characters).
-            // netverifySDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
+//            netverifySDK.setReportingCriteria("YOURREPORTINGCRITERIA");
 
-            // You can also set a customer identifier (max. 100 characters).
-            // Note: The customer ID should not contain sensitive data like PII (Personally Identifiable Information) or account login.
-            // netverifySDK.setCustomerId("CUSTOMERID");
+            // You can also set a user reference (max. 100 characters).
+            // Note: The user reference should not contain sensitive data like PII (Personally Identifiable Information) or account login.
+            // netverifySDK.setUserReference("USERREFERENCE");
 
             // Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
             // netverifySDK.setCallbackUrl("YOURCALLBACKURL");
 
-            // You can disable face match during the ID verification for a specific transaction.
-            netverifySDK.setRequireFaceMatch(switchFaceMatch.isChecked());
+            // You can disable Identity Verification during the ID verification for a specific transaction.
+            netverifySDK.setEnableIdentityVerification(switchIdentityVerification.isChecked());
 
             // Use the following method to disable eMRTD scanning.
             // netverifySDK.setEnableEMRTD(false);
@@ -711,6 +731,8 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         @Override
         public void onNetverifyFaceInLandscape() {
             addToCallbackLog("onNetverifyFaceInLandscape");
+
+			showView(false, partRetryButton);
         }
 
         @Override
@@ -722,6 +744,13 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 		@Override
 		public void onNetverifyDisplayBlurHint() {
 			addToCallbackLog("onNetverifyDisplayBlurHint");
+		}
+
+		@Override
+		public void onNetverifyScanForPartCanceled(ScanSide scanSide) {
+			addToCallbackLog("onNetverifyScanForPartCanceled");
+
+			showView(false, partRetryButton);
 		}
 	}
 

@@ -10,20 +10,20 @@
 	<string name="jumio_accessibility_camera_switch_to_back">Verander naar achterste camera</string>
 	<string name="jumio_accessibility_loading">Aan het laden</string>
 	<string name="jumio_accessibility_quit_scan">Stop scannen</string>
+	<string name="jumio_error_network_problems">We zijn gestuit op een netwerk communicatieprobleem</string>
+	<string name="jumio_error_auth_failed">Authentificatie mislukt</string>
+	<string name="jumio_error_device_is_offline">Geen internetverbinding beschikbaar</string>
+	<string name="jumio_error_startup_error">Scannen niet beschikbaar op dit moment, neem alstublieft contact op met de verkoper van de app</string>
+	<string name="jumio_error_cancelled_by_user">Geannuleerd door eindgebruiker</string>
+	<string name="jumio_error_no_camera_connection">De camera is momenteel niet beschikbaar</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Certificaat niet meer geldig. Update alstublieft uw applicatie</string>
+	<string name="jumio_error_transaction_already_finished">Transactie al afgerond</string>
+	<string name="jumio_button_retry">Probeer nog eens</string>
+	<string name="jumio_button_cancel">Annuleer</string>
 	-->
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="netverify_error_network_problems">We zijn gestuit op een netwerk communicatieprobleem</string>
-	<string name="netverify_error_auth_failed">Authentificatie mislukt</string>
-	<string name="netverify_error_device_is_offline">Geen internetverbinding beschikbaar</string>
-	<string name="netverify_error_startup_error">Scannen niet beschikbaar op dit moment, neem alstublieft contact op met de verkoper van de app</string>
-	<string name="netverify_error_cancelled_by_user">Geannuleerd door eindgebruiker</string>
-	<string name="netverify_error_no_camera_connection">De camera is momenteel niet beschikbaar</string>
-	<string name="netverify_error_certificate_not_valid_anymore">Certificaat niet meer geldig. Update alstublieft uw applicatie</string>
-	<string name="netverify_error_transaction_already_finished">Transactie al afgerond</string>
-	<string name="netverify_button_retry">Probeer nog eens</string>
-	<string name="netverify_button_cancel">Annuleer</string>
 	<string name="netverify_documenttype_passport">Paspoort</string>
 	<string name="netverify_documenttype_visa">Visa</string>
 	<string name="netverify_documenttype_idcard">Identiteitskaart</string>
@@ -63,21 +63,18 @@
 	<string name="netverify_scanview_title">Scan document</string>
 	<string name="netverify_scanview_title_face"></string>
 	<string name="netverify_scanview_title_check">Controleer leesbaarheid</string>
-	<string name="netverify_scanview_title_problems">Ervaar je problemen?</string>
 	<string name="netverify_scanview_snackbar_check">Zorg ervoor dat alle data op uw document volledig zichtbaar is, glansvrij en niet wazig</string>
 	<string name="netverify_scanview_retake">OPNIEUW</string>
 	<string name="netverify_scanview_readable">LEESBAAR</string>
-	<string name="netverify_scanview_liveness_landscape_header">&lt;b&gt;Draai uw apparaat&lt;/b&gt;</string>
-	<string name="netverify_scanview_liveness_landscape_description">Draai uw telefoon naar portret om een selfie te nemen</string>
 	<string name="netverify_scanview_legal_hint_nld">Bedek alstublieft uw BSN vóór vastlegging</string>
 	<string name="netverify_scanview_legal_hint_kor">Bedek het tweede onderdeel van uw Burgerservicenummer vóór vastlegging</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Bedek alstublieft het paspoortnummer vóór vastlegging</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Bedek uw ID nummer vóór vastlegging</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Bedek alstublieft het ID- en toegangsnummer vóór vastlegging</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Biometrische gegevens analyseren&lt;/b&gt;</string>
 	<string name="netverify_helpview_progress_text">Stap %1$d van %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">De streepjescode van uw document bevat niet uw adres, draai uw document en scan de voorkant</string>
 	<string name="netverify_helpview_description_flip_document">Uw hebt recentelijk de voorkant van uw document gescand.\n\n Draai alstublieft uw document om en scan de achterkant.</string>
-	<string name="netverify_helpview_liveness_continue">Klik om door te gaan</string>
 	<string name="netverify_helpview_usdl_fallback_continue">Klik om door te gaan</string>
 	<string name="netverify_helpview_fallback">VASTLEGGING WERKT NIET</string>
 	<string name="netverify_helpview_fallback_barcode">GEEN STREEPJESCODE OP MIJN ID</string>
@@ -94,6 +91,18 @@
 	<string name="netverify_document_variant_other">Ander formaat</string>
 	<string name="netverify_document_variant_plastic">Plastic kaart</string>
 	<string name="netverify_accessibility_nfc_description_start">Controleer alstublieft of uw ID een chip heeft. Zo ja, plaats uw telefoon op het ID zoals getoond.</string>
+	<string name="face_helpview_title_problems">Ervaar je problemen?</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Draai uw apparaat&lt;/b&gt;</string>
+	<string name="face_helpview_landscape_description">Draai uw telefoon naar portret om een selfie te nemen</string>
+	<string name="face_helpview_continue">Klik om door te gaan</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_title_problems">Ervaar je problemen?</string>
+	<string name="face_helpview_continue">Klik om door te gaan</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Draai uw apparaat&lt;/b&gt;</string>
+	<string name="face_helpview_landscape_description">Draai uw telefoon naar portret om een selfie te nemen</string>
 	<string name="zoom_feedback_a_little_too_close">Ga een stukje achteruit</string>
 	<string name="zoom_feedback_a_little_too_close_tablet">Ga een stukje achteruit</string>
 	<string name="zoom_feedback_center_face">Centreer je gezicht</string>
@@ -114,17 +123,13 @@
 	<string name="zoom_helpview_upfront_title">Leg uw gezicht vast</string>
 	-->
 
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="authentication_scanview_title_face"></string>
+	-->
+
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="dv_error_network_problems">We zijn gestuit op een netwerk communicatieprobleem</string>
-	<string name="dv_error_auth_failed">Authentificatie mislukt</string>
-	<string name="dv_error_device_is_offline">Geen internetverbinding beschikbaar</string>
-	<string name="dv_error_startup_error">Scannen niet beschikbaar op dit moment, neem alstublieft contact op met de verkoper van de app</string>
-	<string name="dv_error_cancelled_by_user">Geannuleerd door eindgebruiker</string>
-	<string name="dv_error_no_camera_connection">De camera is momenteel niet beschikbaar</string>
-	<string name="dv_error_certificate_not_valid_anymore">Certificaat niet meer geldig. Update alstublieft uw applicatie</string>
-	<string name="dv_button_retry">Probeer nog eens</string>
-	<string name="dv_button_cancel">Annuleer</string>
 	<string name="dv_upload_progress">&lt;b&gt; Uw documenten worden geupload&lt;/b&gt;</string>
 	<string name="dv_upload_progress_description">Dit duurt slechts een paar seconden, afhankelijk van uw netwerkverbinding</string>
 	<string name="dv_upload_successful">&lt;b&gt;Uploaden succesvol&lt;/b&gt;</string>

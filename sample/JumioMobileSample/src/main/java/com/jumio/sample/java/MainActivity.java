@@ -16,7 +16,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 /**
- * Copyright 2018 Jumio Corporation All rights reserved.
+ * Copyright 2019 Jumio Corporation All rights reserved.
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -97,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
 			switch (position) {
 				case 0:
 					NetverifyFragment nvFragment = new NetverifyFragment();
-					bundle.putString(KEY_SWITCH_ONE_TEXT, getResources().getString(R.string.netverify_verification_required));
-					bundle.putString(KEY_SWITCH_TWO_TEXT, getResources().getString(R.string.netverify_face_required));
+					bundle.putString(KEY_SWITCH_ONE_TEXT, getResources().getString(R.string.netverify_verification_enabled));
+					bundle.putString(KEY_SWITCH_TWO_TEXT, getResources().getString(R.string.netverify_identity_verification_enabled));
 					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_netverify)));
 					bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
 					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
@@ -112,14 +112,28 @@ public class MainActivity extends AppCompatActivity {
                     nvCustomFragment.setArguments(bundle);
                     return nvCustomFragment;
 				case 2:
-					DocumentVerificationFragment documentVerificationFragment = new DocumentVerificationFragment();
+					AuthenticationFragment authFragment = new AuthenticationFragment();
+					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_authentication)));
+					bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
+					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
+					authFragment.setArguments(bundle);
+					return authFragment;
+				case 3:
+					AuthenticationCustomFragment authCustomFragment = new AuthenticationCustomFragment();
+					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_authentication)));
+					bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
+					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
+					authCustomFragment.setArguments(bundle);
+					return authCustomFragment;
+				case 4:
+					DocumentVerificationFragment dvFragment = new DocumentVerificationFragment();
 					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_documentverification)));
 					bundle.putString(KEY_SWITCH_ONE_TEXT, getResources().getString(R.string.documentverification_enable_extraction));
 					bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
 					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
-					documentVerificationFragment.setArguments(bundle);
-					return documentVerificationFragment;
-				case 3:
+					dvFragment.setArguments(bundle);
+					return dvFragment;
+				case 5:
 					BamFragment bamFragment = new BamFragment();
 					bundle.putString(KEY_SWITCH_ONE_TEXT, getResources().getString(R.string.bam_expiry_required));
 					bundle.putString(KEY_SWITCH_TWO_TEXT, getResources().getString(R.string.bam_cvv_required));
@@ -128,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 					bundle.putString(KEY_API_SECRET, BAM_API_SECRET);
 					bamFragment.setArguments(bundle);
 					return bamFragment;
-				case 4:
+				case 6:
 					BamCustomFragment bamCustomFragment = new BamCustomFragment();
 					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_bam_custom)));
 					bundle.putString(KEY_API_TOKEN, BAM_API_TOKEN);
@@ -141,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
 		@Override
 		public int getCount() {
-			return 5;
+			return 7;
 		}
 
 		@Override
@@ -152,10 +166,14 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     return getResources().getString(R.string.section_netverify_custom);
 				case 2:
-					return getResources().getString(R.string.section_documentverification);
+					return getResources().getString(R.string.section_authentication);
 				case 3:
-					return getResources().getString(R.string.section_bamcheckout);
+					return getResources().getString(R.string.section_authentication);
 				case 4:
+					return getResources().getString(R.string.section_documentverification);
+				case 5:
+					return getResources().getString(R.string.section_bamcheckout);
+				case 6:
 					return getResources().getString(R.string.section_bam_custom);
 			}
 			return null;

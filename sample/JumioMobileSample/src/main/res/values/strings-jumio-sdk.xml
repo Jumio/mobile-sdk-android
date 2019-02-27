@@ -10,20 +10,20 @@
 	<string name="jumio_accessibility_camera_switch_to_back">Switch to back camera</string>
 	<string name="jumio_accessibility_loading">Loading</string>
 	<string name="jumio_accessibility_quit_scan">Quit scan</string>
+	<string name="jumio_error_network_problems">We have encountered a network communication problem</string>
+	<string name="jumio_error_auth_failed">Authentication failed</string>
+	<string name="jumio_error_device_is_offline">No internet connection available</string>
+	<string name="jumio_error_startup_error">Scanning not available at this time, please contact the app vendor</string>
+	<string name="jumio_error_cancelled_by_user">Cancelled by end-user</string>
+	<string name="jumio_error_no_camera_connection">The camera is currently not available</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Certificate not valid anymore. Please update your application</string>
+	<string name="jumio_error_transaction_already_finished">Transaction already finished</string>
+	<string name="jumio_button_retry">Retry</string>
+	<string name="jumio_button_cancel">Cancel</string>
 	-->
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="netverify_error_network_problems">We have encountered a network communication problem</string>
-	<string name="netverify_error_auth_failed">Authentication failed</string>
-	<string name="netverify_error_device_is_offline">No internet connection available</string>
-	<string name="netverify_error_startup_error">Scanning not available at this time, please contact the app vendor</string>
-	<string name="netverify_error_cancelled_by_user">Cancelled by end-user</string>
-	<string name="netverify_error_no_camera_connection">The camera is currently not available</string>
-	<string name="netverify_error_certificate_not_valid_anymore">Certificate not valid anymore. Please update your application</string>
-	<string name="netverify_error_transaction_already_finished">Transaction already finished</string>
-	<string name="netverify_button_retry">Retry</string>
-	<string name="netverify_button_cancel">Cancel</string>
 	<string name="netverify_documenttype_passport">Passport</string>
 	<string name="netverify_documenttype_visa">Visa</string>
 	<string name="netverify_documenttype_idcard">Identity Card</string>
@@ -63,21 +63,18 @@
 	<string name="netverify_scanview_title">Scan document</string>
 	<string name="netverify_scanview_title_face"></string>
 	<string name="netverify_scanview_title_check">Check readability</string>
-	<string name="netverify_scanview_title_problems">Experiencing problems?</string>
 	<string name="netverify_scanview_snackbar_check">Make sure that all data on your document is fully visible, glare free and not blurred</string>
 	<string name="netverify_scanview_retake">RETAKE</string>
 	<string name="netverify_scanview_readable">READABLE</string>
-	<string name="netverify_scanview_liveness_landscape_header">&lt;b&gt;Rotate your device&lt;/b&gt;</string>
-	<string name="netverify_scanview_liveness_landscape_description">Please rotate your phone to portrait to take a selfie</string>
 	<string name="netverify_scanview_legal_hint_nld">Please redact your BSN before capturing</string>
 	<string name="netverify_scanview_legal_hint_kor">Redact the second block of your Resident Registration Number before capturing</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Please redact the passport number before capturing</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Please redact the ID number before capturing</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Please redact the ID and access number before capturing</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Analyzing biometric data&lt;/b&gt;</string>
 	<string name="netverify_helpview_progress_text">Step %1$d of %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">The barcode of your document didn\'t contain your address, turn your document and scan the front</string>
 	<string name="netverify_helpview_description_flip_document">You recently scanned the front of your document.\n\nPlease flip your document and scan the back.</string>
-	<string name="netverify_helpview_liveness_continue">Tap to continue</string>
 	<string name="netverify_helpview_usdl_fallback_continue">Tap to continue</string>
 	<string name="netverify_helpview_fallback">CAPTURE IS NOT WORKING</string>
 	<string name="netverify_helpview_fallback_barcode">NO BARCODE ON MY ID</string>
@@ -94,6 +91,18 @@
 	<string name="netverify_document_variant_other">Other format</string>
 	<string name="netverify_document_variant_plastic">Plastic card</string>
 	<string name="netverify_accessibility_nfc_description_start">Please check if your ID has a chip. If so, place your phone on the ID as illustrated</string>
+	<string name="face_helpview_title_problems">Experiencing problems?</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Rotate your device&lt;/b&gt;</string>
+	<string name="face_helpview_landscape_description">Please rotate your phone to portrait to take a selfie</string>
+	<string name="face_helpview_continue">Tap to continue</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_title_problems">Experiencing problems?</string>
+	<string name="face_helpview_continue">Tap to continue</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Rotate your device&lt;/b&gt;</string>
+	<string name="face_helpview_landscape_description">Please rotate your phone to portrait to take a selfie</string>
 	<string name="zoom_feedback_a_little_too_close">Move back a bit</string>
 	<string name="zoom_feedback_a_little_too_close_tablet">Move back a bit</string>
 	<string name="zoom_feedback_center_face">Center your face</string>
@@ -112,6 +121,13 @@
 	<string name="zoom_helpview_bad_lightning">Avoid shadows and reflections on your face</string>
 	<string name="zoom_helpview_general">Follow the two step process and align your face with the frame. Hold your device on eye level and look straight into the camera. Your face will be captured automatically</string>
 	<string name="zoom_helpview_upfront_title">Capture your face</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="authentication_scanview_title_face"></string>
+	<string name="authentication_error_enrollment_invalid" translatable="false">Enrollment transaction reference invalid</string>
+	<string name="authentication_error_processing_failed" translatable="false">The scan could not be processed</string>
 	-->
 
 	<!-- POSSIBLE BAM SDK STRINGS TO OVERRIDE-->
@@ -146,16 +162,7 @@
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="dv_error_network_problems">We have encountered a network communication problem</string>
-	<string name="dv_error_auth_failed">Authentication failed</string>
-	<string name="dv_error_device_is_offline">No internet connection available</string>
-	<string name="dv_error_startup_error">Scanning not available at this time, please contact the app vendor</string>
-	<string name="dv_error_cancelled_by_user">Cancelled by end-user</string>
-	<string name="dv_error_no_camera_connection">The camera is currently not available</string>
-	<string name="dv_error_certificate_not_valid_anymore">Certificate not valid anymore. Please update your application</string>
 	<string name="dv_error_invalid_document_type" translatable="false">Unsupported document code defined, please contact the app vendor</string>
-	<string name="dv_button_retry">Retry</string>
-	<string name="dv_button_cancel">Cancel</string>
 	<string name="dv_upload_progress">&lt;b&gt;Uploading your documents&lt;/b&gt;</string>
 	<string name="dv_upload_progress_description">This should only take a couple of seconds, depending on your network connectivity</string>
 	<string name="dv_upload_successful">&lt;b&gt;Upload successful&lt;/b&gt;</string>

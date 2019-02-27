@@ -4,6 +4,13 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+# 3.0.0
+#### Renamed public API methods and parameters
+The following methods and the related parameters have been renamed to ensure consistency across all platforms
+* `setMerchantReportingCriteria(..)` -> `setReportingCriteria(..)`
+* `setMerchantIdScanReference(..)` -> `setCustomerInternalReference(..)`
+* `setCustomerId(..)` -> `setUserReference(..)`
+
 ## 2.15.0
 #### Added Room
 Dependencies that have been added to the SDK:

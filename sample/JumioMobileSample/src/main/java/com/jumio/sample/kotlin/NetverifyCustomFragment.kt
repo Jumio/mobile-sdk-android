@@ -27,12 +27,13 @@ import com.jumio.nv.custom.*
 import com.jumio.nv.data.document.NVDocumentType
 import com.jumio.nv.data.document.NVDocumentVariant
 import com.jumio.sample.R
+import com.jumio.sdk.custom.SDKNotConfiguredException
 import kotlinx.android.synthetic.main.fragment_netverify_custom.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 /**
- * Copyright 2018 Jumio Corporation All rights reserved.
+ * Copyright 2019 Jumio Corporation All rights reserved.
  */
 class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
@@ -89,7 +90,6 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
         stopNetverifyCustomButton = rootView.findViewById(R.id.stopNetverifyCustomButton)
         startCustomScanButton.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_netverify_custom))
 
-
         initScanView()
 
         return rootView
@@ -112,7 +112,10 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
         retryScan.setOnClickListener(this)
         confirmScan.setOnClickListener(this)
         errorRetryButton.setOnClickListener(this)
+        partRetryButton.setOnClickListener(this)
         finishButton.setOnClickListener(this)
+
+        hideView(true, countryDocumentLayout, partTypeLayout, finishButton, loadingIndicator, errorRetryButton, partRetryButton)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration?) {
@@ -176,12 +179,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
         val isPortrait = isPortrait
         val params = FrameLayout.LayoutParams(if (isPortrait) FrameLayout.LayoutParams.MATCH_PARENT else FrameLayout.LayoutParams.WRAP_CONTENT, if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(activity!!, 300))
         customScanView.layoutParams = params
-        if (customScanViewPresenter != null) {
-            if (isPortrait)
-                customScanView.ratio = if (customScanViewPresenter!!.scanMode == NetverifyScanMode.FACE) 0.8f else 1.33f
-            else
-                customScanView.ratio = if (customScanViewPresenter!!.scanMode == NetverifyScanMode.FACE) 1.66f else 1.33f
-        }
+        customScanView.ratio = customScanView.minRatio
     }
 
     override fun onClick(v: View) {
@@ -266,10 +264,11 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
                 else if (v === faceButton)
                     scanSide = ScanSide.FACE
 
-                if (isPortrait)
-                    customScanView.ratio = if (scanSide == ScanSide.FACE) 0.8f else 1.33f
-                else
-                    customScanView.ratio = if (scanSide == ScanSide.FACE) 1.66f else 1.33f
+                customScanView.mode = if (scanSide == ScanSide.FACE) NetverifyCustomScanView.MODE_FACE else NetverifyCustomScanView.MODE_ID
+                initScanView()
+
+                showView(true, customScanLayout, customScanView)
+                scrollView.post { scrollView.scrollTo(0, customScanLayout.top) }
 
                 customScanViewPresenter = customSDKController!!.startScanForPart(scanSide, customScanView, customConfirmationView, NetverifyCustomScanImpl())
 
@@ -278,7 +277,6 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
                 toggleFlash!!.isEnabled = false
                 startFallback!!.isEnabled = false
                 extraction!!.isChecked = true
-                showView(true, customScanLayout)
                 addToCallbackLog("start scanmode: " + customScanViewPresenter!!.scanMode!!)
                 addToCallbackLog("help text: " + customScanViewPresenter!!.helpText!!)
                 startFallback!!.isEnabled = customScanViewPresenter!!.isFallbackAvailable
@@ -292,6 +290,8 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
             hideView(false, customScanLayout!!)
             customScanViewPresenter!!.destroy()
             customScanViewPresenter = null
+
+            hideView(false, partRetryButton)
         } else if (v === extraction && isScanViewControllerValid) {
             if (extraction!!.isChecked)
                 customScanViewPresenter!!.resumeExtraction()
@@ -326,6 +326,13 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
             if (!extraction!!.isChecked)
                 return
+        } else if (v === partRetryButton && isScanViewControllerValid) {
+            hideView(false, partRetryButton)
+
+            scrollView.post {
+                scrollView.scrollTo(0, customScanLayout.top)
+                customScanViewPresenter!!.retryScan()
+            }
         } else if (v === errorRetryButton && isSDKControllerValid) {
             hideView(true, errorRetryButton!!)
             try {
@@ -381,7 +388,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
             // Enable ID verification to receive a verification status and verified data positions (see Callback chapter).
             // Note: Not possible for accounts configured as Fastfill only.
-            netverifySDK.setRequireVerification(switchVerification!!.isChecked)
+            netverifySDK.setEnableVerification(switchVerification!!.isChecked)
 
             // You can specify issuing country (ISO 3166-1 alpha-3 country code) and/or ID types and/or document variant to skip
             // their selection during the scanning process.
@@ -393,22 +400,22 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 //            netverifySDK.setPreselectedDocumentTypes(documentTypes)
 //            netverifySDK.setPreselectedDocumentVariant(NVDocumentVariant.PLASTIC)
 
-            // The merchant scan reference allows you to identify the scan (max. 100 characters).
+            // The customer internal reference allows you to identify the scan (max. 100 characters).
             // Note: Must not contain sensitive data like PII (Personally Identifiable Information) or account login.
-//            netverifySDK.setMerchantScanReference("YOURSCANREFERENCE")
+            // netverifySDK.setCustomerInternalReference("YOURSCANREFERENCE");
 
             // Use the following property to identify the scan in your reports (max. 100 characters).
-//            netverifySDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA")
+//            netverifySDK.setReportingCriteria("YOURREPORTINGCRITERIA");
 
-            // You can also set a customer identifier (max. 100 characters).
-            // Note: The customer ID should not contain sensitive data like PII (Personally Identifiable Information) or account login.
-//            netverifySDK.setCustomerId("CUSTOMERID")
+            // You can also set a user reference (max. 100 characters).
+            // Note: The user reference should not contain sensitive data like PII (Personally Identifiable Information) or account login.
+            // netverifySDK.setUserReference("USERREFERENCE");
 
             // Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
 //            netverifySDK.setCallbackUrl("YOURCALLBACKURL")
 
-            // You can disable face match during the ID verification for a specific transaction.
-            netverifySDK.setRequireFaceMatch(switchFaceMatch!!.isChecked)
+            // You can disable Identity Verification during the ID verification for a specific transaction.
+            netverifySDK.setEnableIdentityVerification(switchIdentitiyVerification!!.isChecked)
 
             // Use the following method to disable eMRTD scanning.
 //            netverifySDK.setEnableEMRTD(false)
@@ -606,6 +613,8 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
         override fun onNetverifyFaceInLandscape() {
             addToCallbackLog("onNetverifyFaceInLandscape")
+
+            showView(false, partRetryButton)
         }
 
         override fun onNetverifyShowLegalAdvice(legalAdvice: String) {
@@ -615,6 +624,12 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
         override fun onNetverifyDisplayBlurHint() {
             addToCallbackLog("onNetverifyDisplayBlurHint")
+        }
+        
+        override fun onNetverifyScanForPartCanceled(scanSide: ScanSide?) {
+            addToCallbackLog("onNetverifyScanForPartCanceled")
+
+            showView(false, partRetryButton)
         }
     }
 

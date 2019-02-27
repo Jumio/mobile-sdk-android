@@ -19,7 +19,7 @@ import com.jumio.core.exceptions.PlatformNotSupportedException
 import com.jumio.sample.R
 
 /**
- * Copyright 2018 Jumio Corporation All rights reserved.
+ * Copyright 2019 Jumio Corporation All rights reserved.
  */
 class BamFragment : Fragment(), View.OnClickListener {
 

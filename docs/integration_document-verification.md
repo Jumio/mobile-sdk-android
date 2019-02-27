@@ -15,7 +15,7 @@ Document Verification is a powerful solution to enable scanning various types (U
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 2.15.0
+For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 3.0.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -39,11 +39,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:2.15.0@aar                    | x | Jumio Core library            | 4.52 MB |
-| com.jumio.android:dv:2.15.0@aar                      | x | Document Verification library | 117.09 KB |
+| com.jumio.android:core:3.0.0@aar                    | x | Jumio Core library            | 4.53 MB |
+| com.jumio.android:dv:3.0.0@aar                      | x | Document Verification library | 115.74 |
 | androidx.appcompat:appcompat:1.0.0                   | x | Android appcompat library        | - |
 |androidx.room:room-runtime:2.0.0			              | x | Android database object mapping library	| - |
-| com.jumio.android:javadoc:2.15.0                     |   | Jumio SDK Javadoc             | - |
+| com.jumio.android:javadoc:3.0.0                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -125,7 +125,7 @@ documentVerificationSDK.setCountry("USA");
 
 Use the following property to identify the scan in your reports (max. 100 characters).
 ```
-documentVerificationSDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
+documentVerificationSDK.setReportingCriteria("YOURREPORTINGCRITERIA");
 ```
 
 A callback URL can be specified for individual transactions constraints see chapter [Callback URL](#callback-url)). This setting overrides your Jumio customer settings.
@@ -146,15 +146,15 @@ __Note:__ If you want to enable extraction for your account in general, please c
 ### Miscellaneous
 Use the following property to identify the scan in your reports (max. 100 characters).
 ```
-documentVerificationSDK.setMerchantScanReference("YOURSCANREFERENCE");
+documentVerificationSDK.setCustomerInternalReference("YOURSCANREFERENCE");
 ```
 
-You can also set a customer identifier (max. 100 characters).
+You can also set a user reference (max. 100 characters).
 ```
-documentVerificationSDK.setCustomerId("CUSTOMERID");
+documentVerificationSDK.setUserReference("USERREFERENCE");
 ```
 
-__Note:__ The customer ID and merchant scan reference must not contain sensitive data like PII (Personally Identifiable Information) or account login.
+__Note:__ The user reference and customer internal reference must not contain sensitive data like PII (Personally Identifiable Information) or account login.
 
 Use setCameraPosition to configure the default camera (front or back).
 ```
@@ -246,7 +246,3 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 ## Callback
 To get information about callbacks, Netverify Retrieval API, Netverify Delete API and Global Netverify settings and more, please read our [page with server related information](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md).
-
-## Copyright
-
-&copy; Jumio Corp. 268 Lambert Avenue, Palo Alto, CA 94306

@@ -10,20 +10,20 @@
 	<string name="jumio_accessibility_camera_switch_to_back">Basculez vers la caméra arrière</string>
 	<string name="jumio_accessibility_loading">Chargement en cours</string>
 	<string name="jumio_accessibility_quit_scan">Annuler la numérisation</string>
+	<string name="jumio_error_network_problems">Nous avons rencontré un problème de communication avec le réseau</string>
+	<string name="jumio_error_auth_failed">Échec de l\'authentification</string>
+	<string name="jumio_error_device_is_offline">Aucune connexion internet disponible</string>
+	<string name="jumio_error_startup_error">La numérisation n\'est pas disponible pour l\'instant, veuillez prendre contact avec le distributeur de l\'application</string>
+	<string name="jumio_error_cancelled_by_user">Annulé par l\'utilisateur</string>
+	<string name="jumio_error_no_camera_connection">La caméra n\'est pas disponible actuellement</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Le certificat n\'est plus valable. Veuillez mettre à jour votre application</string>
+	<string name="jumio_error_transaction_already_finished">La transaction est déjà terminée</string>
+	<string name="jumio_button_retry">Réessayer</string>
+	<string name="jumio_button_cancel">Annuler</string>
 	-->
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="netverify_error_network_problems">Nous avons rencontré un problème de communication avec le réseau</string>
-	<string name="netverify_error_auth_failed">Échec de l\'authentification</string>
-	<string name="netverify_error_device_is_offline">Aucune connexion internet disponible</string>
-	<string name="netverify_error_startup_error">La numérisation n\'est pas disponible pour l\'instant, veuillez prendre contact avec le distributeur de l\'application</string>
-	<string name="netverify_error_cancelled_by_user">Annulé par l\'utilisateur</string>
-	<string name="netverify_error_no_camera_connection">La caméra n\'est pas disponible actuellement</string>
-	<string name="netverify_error_certificate_not_valid_anymore">Le certificat n\'est plus valable. Veuillez mettre à jour votre application</string>
-	<string name="netverify_error_transaction_already_finished">La transaction est déjà terminée</string>
-	<string name="netverify_button_retry">Réessayer</string>
-	<string name="netverify_button_cancel">Annuler</string>
 	<string name="netverify_documenttype_passport">Passeport</string>
 	<string name="netverify_documenttype_visa">Visa</string>
 	<string name="netverify_documenttype_idcard">Carte d\'identité</string>
@@ -63,21 +63,18 @@
 	<string name="netverify_scanview_title">Numérisation</string>
 	<string name="netverify_scanview_title_face"></string>
 	<string name="netverify_scanview_title_check">Vérifiez la lisibilité</string>
-	<string name="netverify_scanview_title_problems">Des problèmes?</string>
 	<string name="netverify_scanview_snackbar_check">Veuillez vérifier que toutes les données sur votre document soient bien lisibles, pas floues et sans reflet</string>
 	<string name="netverify_scanview_retake">REPRENDRE</string>
 	<string name="netverify_scanview_readable">LISIBLE</string>
-	<string name="netverify_scanview_liveness_landscape_header">&lt;b&gt;Tournez votre appareil&lt;/b&gt;</string>
-	<string name="netverify_scanview_liveness_landscape_description">Veuillez tourner votre téléphone pour prendre un selfie en mode portrait.</string>
 	<string name="netverify_scanview_legal_hint_nld">Veuillez masquer votre BSN avant de détecter</string>
 	<string name="netverify_scanview_legal_hint_kor">Veuillez masquer la deuxième partie de votre numéro d\'enregistrement de résident avant de détecter</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Veuillez masquer le numéro de passeport avant de détecter</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Veuillez masquer le numéro de la pièce d\'identité avant de détecter</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Veuillez masquer le numéro de la pièce d\'identité et le numéro d\'accès avant de détecter</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Analyse des données biométriques&lt;/b&gt;</string>
 	<string name="netverify_helpview_progress_text">Étape %1$d sur %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">Le code-barres de votre document ne contenait pas votre adresse, veuillez retourner votre document et numériser le recto</string>
 	<string name="netverify_helpview_description_flip_document">Vous avez déjà numérisé le recto de votre document.\n\nVeuillez le retourner et numériser le verso.</string>
-	<string name="netverify_helpview_liveness_continue">Appuyer pour continuer</string>
 	<string name="netverify_helpview_usdl_fallback_continue">Appuyer pour continuer</string>
 	<string name="netverify_helpview_fallback">LA DÉTECTION NE FONCTIONNE PAS</string>
 	<string name="netverify_helpview_fallback_barcode">CLIQUEZ SI PAS DE BARRE-CODE</string>
@@ -94,6 +91,18 @@
 	<string name="netverify_document_variant_other">Autre format</string>
 	<string name="netverify_document_variant_plastic">Carte plastique</string>
 	<string name="netverify_accessibility_nfc_description_start">Veuillez vérifier si votre pièce d\'identité dispose d\'une puce. Si oui, placez votre téléphone sur la pièce d\'identité comme indiqué.</string>
+	<string name="face_helpview_title_problems">Des problèmes?</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Tournez votre appareil&lt;/b&gt;</string>
+	<string name="face_helpview_landscape_description">Veuillez tourner votre téléphone pour prendre un selfie en mode portrait.</string>
+	<string name="face_helpview_continue">Appuyer pour continuer</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_title_problems">Des problèmes?</string>
+	<string name="face_helpview_continue">Appuyer pour continuer</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Tournez votre appareil&lt;/b&gt;</string>
+	<string name="face_helpview_landscape_description">Veuillez tourner votre téléphone pour prendre un selfie en mode portrait.</string>
 	<string name="zoom_feedback_a_little_too_close">Reculez un peu</string>
 	<string name="zoom_feedback_a_little_too_close_tablet">Reculez un peu</string>
 	<string name="zoom_feedback_center_face">Placez votre visage au centre</string>
@@ -114,17 +123,13 @@
 	<string name="zoom_helpview_upfront_title">Capturez votre visage</string>
 	-->
 
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="authentication_scanview_title_face"></string>
+	-->
+
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="dv_error_network_problems">Nous avons rencontré un problème de communication avec le réseau</string>
-	<string name="dv_error_auth_failed">Échec de l\'authentification</string>
-	<string name="dv_error_device_is_offline">Aucune connexion internet disponible</string>
-	<string name="dv_error_startup_error">La numérisation n\'est pas disponible pour l\'instant, veuillez prendre contact avec le distributeur de l\'application</string>
-	<string name="dv_error_cancelled_by_user">Annulé par l\'utilisateur</string>
-	<string name="dv_error_no_camera_connection">La caméra n\'est pas disponible actuellement</string>
-	<string name="dv_error_certificate_not_valid_anymore">Le certificat n\'est plus valable. Veuillez mettre à jour votre application</string>
-	<string name="dv_button_retry">Réessayer</string>
-	<string name="dv_button_cancel">Annuler</string>
 	<string name="dv_upload_progress">&lt;b&gt;Chargement de vos documents en cours&lt;/b&gt;</string>
 	<string name="dv_upload_progress_description">En fonction de votre connexion réseau, cela ne devrait prendre que quelques secondes</string>
 	<string name="dv_upload_successful">&lt;b&gt;Chargement réussi&lt;/b&gt;</string>

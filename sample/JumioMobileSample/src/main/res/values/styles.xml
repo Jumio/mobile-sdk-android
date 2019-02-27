@@ -16,6 +16,13 @@
         <item name="netverify_scanOverlayTemplateInvalid">@color/jumio_grey200</item>
         <item name="netverify_scanOverlayDetectedLine">@color/jumio_primary</item>
         <item name="netverify_scanOverlayDetectedLineStroke">@color/jumio_white</item>
+
+        <item name="face_scanOverlayBackground">@color/jumio_black</item>
+        <item name="face_scanOverlayFeedbackText">@color/jumio_white</item>
+        <item name="face_scanOverlayFeedbackBackground">@color/jumio_primary</item>
+        <item name="face_scanOverlayProgress">@color/jumio_primary</item>
+        <item name="face_scanOverlayOval">@color/jumio_white</item>
+
 	</style>
 
 	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">

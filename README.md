@@ -7,17 +7,18 @@
 - [Support](#support)
 
 # Release notes
-SDK version: 2.15.0
+SDK version: 3.0.0
 
 #### Changes
-* New ISO 30107-3 Level 1 compliant 3D face liveness capturing technology [Netverify] *
-* Added the option to screen share the SDK in debug builds [Netverify/Fastfill, Document Verification, BAM Checkout]
+* Initial release of the [Jumio Authentication](https://www.jumio.com/authentication/) SDK [Authentication]
+* Optimized 3D liveness handling to increase user conversion [Netverify]
+* Added customUI support for 3D Liveness and Authentication [Netverify, Authentication]
+* Improved MRZ reading accuracy [Netverify/Fastfill]
+* Improved scanning experience for most European Driving licenses [Netverify/Fastfill]
+* Renamed some public methods [Netverify/Fastfill, Document Verification]
 
 #### Fixes
-* Fixed a problem in which N/A was returned as the identityVerification result in the server callback [Netverify]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Document Verification, BAM Checkout]
-
-<sub>(&ast;Workflow changes on server will be applied on January 31)<sub>
 
 # Basic Setup
 
@@ -83,7 +84,7 @@ defaultConfig {
 }
 ```
 
-The apk can be splitted based on the architecture if multiple apks should be uploaded to the Google Play Store. Google Play Store manages to deliver the appropriate apk for the device.
+The apk can be split based on the architecture if multiple apks should be uploaded to the Google Play Store. Google Play Store manages to deliver the appropriate apk for the device.
 ```
 splits {
 	abi {
@@ -115,13 +116,14 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 
 # Get started
 - [Integration Netverify & Fastfill SDK](docs/integration_netverify-fastfill.md)
+- [Integration Authentication SDK](docs/integration_authentication.md)
 - [Integration Document Verification SDK](docs/integration_document-verification.md)
 - [Integration BAM Checkout SDK](docs/integration_bam-checkout.md)
 
 # Support
 
 ## Previous version
-The previous release version 2.14.0 of the Jumio Mobile SDK is supported until 2019-04-23.
+The previous release version 2.15.0 of the Jumio Mobile SDK is supported until 2019-06-05.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

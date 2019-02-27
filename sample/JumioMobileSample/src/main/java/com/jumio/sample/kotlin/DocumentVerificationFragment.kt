@@ -18,7 +18,7 @@ import com.jumio.dv.DocumentVerificationSDK
 import com.jumio.sample.R
 
 /**
- * Copyright 2018 Jumio Corporation All rights reserved.
+ * Copyright 2019 Jumio Corporation All rights reserved.
  */
 class DocumentVerificationFragment : Fragment(), View.OnClickListener {
 
@@ -97,13 +97,13 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
             // ISO 3166-1 alpha-3 country code
             documentVerificationSDK.setCountry("USA")
 
-            // The merchant scan reference allows you to identify the scan (max. 100 characters).
+            // The customer internal reference allows you to identify the scan (max. 100 characters).
             // Note: Must not contain sensitive data like PII (Personally Identifiable Information) or account login.
-            documentVerificationSDK.setMerchantScanReference("YOURSCANREFERENCE")
+            documentVerificationSDK.setCustomerInternalReference("YOURSCANREFERENCE")
 
-            // You can also set a customer identifier (max. 100 characters).
-            // Note: The customer ID should not contain sensitive data like PII (Personally Identifiable Information) or account login.
-            documentVerificationSDK.setCustomerId("CUSTOMERID")
+            // You can also set a user reference (max. 100 characters).
+            // Note: The user reference should not contain sensitive data like PII (Personally Identifiable Information) or account login.
+            documentVerificationSDK.setUserReference("USERREFERENCE")
 
             // Set the following property to enable/disable data extraction for documents.
             documentVerificationSDK.setEnableExtraction(switchEnableExtraction.isChecked);
@@ -115,7 +115,7 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
 //            documentVerificationSDK.setDocumentName("DOCUMENTNAME");
 
             // Use the following property to identify the scan in your reports (max. 255 characters).
-//            documentVerificationSDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
+//            documentVerificationSDK.setReportingCriteria("YOURREPORTINGCRITERIA");
 
             // Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
 //            documentVerificationSDK.setCallbackUrl("YOURCALLBACKURL");
