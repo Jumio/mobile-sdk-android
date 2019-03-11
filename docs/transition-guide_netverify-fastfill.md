@@ -5,6 +5,9 @@
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
 # 3.0.0
+#### Renamed dependency nv-face to face
+The dependency `com.jumio.android:nv-face` was renamed to `com.jumio.android:face`, reflecting the internal restructuring of the dependencies that was necessary for adding the new product Authentication
+
 #### Renamed public API methods and parameters
 The following methods and the related parameters have been renamed to ensure consistency across all platforms
 * `setRequireFaceMatch(..)` -> `setEnableIdentityVerification(..)`
