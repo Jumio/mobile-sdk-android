@@ -103,6 +103,7 @@
 	<string name="face_helpview_continue">Klik om door te gaan</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Draai uw apparaat&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Draai uw telefoon naar portret om een selfie te nemen</string>
+	<string name="zoom_accessibility_cancel_button">Stop scannen</string>
 	<string name="zoom_feedback_a_little_too_close">Ga een stukje achteruit</string>
 	<string name="zoom_feedback_a_little_too_close_tablet">Ga een stukje achteruit</string>
 	<string name="zoom_feedback_center_face">Centreer je gezicht</string>

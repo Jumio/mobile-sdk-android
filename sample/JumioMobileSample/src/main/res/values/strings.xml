@@ -9,16 +9,25 @@
     <string name="section_netverify_custom">Netverify Custom</string>
     <string name="section_authentication">Authentication</string>
     <string name="section_authentication_custom">Authentication Custom</string>
-	<string name="section_bamcheckout">Bam Checkout</string>
+	<string name="section_bam">Bam</string>
 	<string name="section_bam_custom">Bam Custom</string>
 	<string name="button_stop_bam_custom">Stop Bam Custom Scan</string>
 	<string name="section_documentverification">Document Verification</string>
 	<string name="header_options">Options:</string>
 	<string name="netverify_verification_enabled">Verification enabled</string>
+    <string name="authentication_enrollment_transaction_reference">Enrollment Transaction Reference</string>
 	<string name="documentverification_enable_extraction">Enable extraction</string>
 	<string name="netverify_identity_verification_enabled">Identity Verification enabled</string>
 	<string name="bam_cvv_required">CVV required</string>
 	<string name="bam_expiry_required">Expiry date required</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="menu_products">Products</string>
+    <string name="menu_legal_information">Legal Information</string>
+    <string name="menu_terms_conditions">Terms &amp; Conditions</string>
+    <string name="menu_licenses">Licenses</string>
+    <string name="menu_version">SDK Version</string>
 
 	<string name="zip_code">Zip code</string>
 	<string name="state">State</string>

@@ -7,11 +7,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.google.android.material.textfield.TextInputLayout
 import com.jumio.auth.AuthenticationCallback
 import com.jumio.auth.AuthenticationResult
 import com.jumio.auth.AuthenticationSDK
@@ -19,57 +16,55 @@ import com.jumio.core.enums.JumioDataCenter
 import com.jumio.core.exceptions.MissingPermissionException
 import com.jumio.core.exceptions.PlatformNotSupportedException
 import com.jumio.sample.R
+import kotlinx.android.synthetic.main.fragment_main.*
 
 
 class AuthenticationFragment : Fragment(), View.OnClickListener {
 
     companion object {
         private val TAG = "JumioSDK_Authentication"
-        private val PERMISSION_REQUEST_CODE_AUTHENTICATION = 304
-        private var apiToken: String? = null
-        private var apiSecret: String? = null
+        private const val PERMISSION_REQUEST_CODE_AUTHENTICATION = 304
     }
 
-    internal lateinit var startSDK: Button
-    internal lateinit var textInputLayoutScanRef : TextInputLayout
-    internal lateinit var etScanRef : EditText
+	private var apiToken: String? = null
+	private var apiSecret: String? = null
+	private var dataCenter: JumioDataCenter? = null
 
-    internal lateinit var authenticationSDK: AuthenticationSDK
+	internal lateinit var authenticationSDK: AuthenticationSDK
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
-        rootView.findViewById<View>(R.id.tvOptions).visibility = View.GONE
-        rootView.findViewById<View>(R.id.switchOptionOne).visibility = View.GONE
-        rootView.findViewById<View>(R.id.switchOptionTwo).visibility = View.GONE
 
-        val args = arguments
-
-        apiToken = args!!.getString(MainActivity.KEY_API_TOKEN)
-        apiSecret = args.getString(MainActivity.KEY_API_SECRET)
-
-        textInputLayoutScanRef = rootView.findViewById(R.id.tilOptional) as TextInputLayout
-        etScanRef = rootView.findViewById(R.id.etOptional) as EditText
-        textInputLayoutScanRef.visibility = View.VISIBLE
-
-        startSDK = rootView.findViewById<View>(R.id.btnStart) as Button
-        startSDK!!.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_authentication))
-        startSDK!!.setOnClickListener(this)
+        apiToken = arguments!!.getString(MainActivity.KEY_API_TOKEN)
+        apiSecret = arguments!!.getString(MainActivity.KEY_API_SECRET)
+		dataCenter = arguments!!.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
         return rootView
     }
 
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
+
+		tvOptions.visibility = View.GONE
+		switchOptionOne.visibility = View.GONE
+		switchOptionTwo.visibility = View.GONE
+		tilOptional.visibility = View.VISIBLE
+		btnStart.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_authentication))
+		btnStart.setOnClickListener(this)
+	}
+
     override fun onClick(view: View) {
         //Since the Authentication is a singleton internally, a new instance is not
         //created here.
-        startSDK!!.isEnabled = false
+		btnStart.isEnabled = false
         initializeAuthenticationSDK()
     }
 
     private fun initializeAuthenticationSDK() {
         try {
             // You can get the current SDK version using the method below.
-            // AuthenticationSDK.getSDKVersion();
+//			AuthenticationSDK.getSDKVersion();
 
             // Call the method isSupportedPlatform to check if the device is supported.
             if (!AuthenticationSDK.isSupportedPlatform(activity))
@@ -85,23 +80,23 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
             // Make sure that your merchant API token and API secret are correct and specify an instance
             // of your activity. If your merchant account is created in the EU data center, use
             // JumioDataCenter.EU instead.
-            authenticationSDK = AuthenticationSDK.create(activity, apiToken, apiSecret, JumioDataCenter.US)
+            authenticationSDK = AuthenticationSDK.create(activity, apiToken, apiSecret, dataCenter)
 
             // Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
-            // authenticationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
+//			authenticationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
             // You can also set a user reference (max. 100 characters).
             // Note: The user reference should not contain sensitive data like PII (Personally Identifiable Information) or account login.
-            // authenticationSDK.setUserReference("USERREFERENCE");
+//			authenticationSDK.setUserReference("USERREFERENCE");
 
-            // Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
-            // authenticationSDK.setCallbackUrl("YOURCALLBACKURL");
+            // Callback URL (max. 255 characters) for the confirmation after authentication is completed. This setting overrides your Jumio merchant settings.
+//			authenticationSDK.setCallbackUrl("YOURCALLBACKURL");
 
             // Use the following method to initialize the SDK. The scan reference of an eligible Netverify scan has to be used
             // as the enrollmentTransactionReference
             var enrollmentTransactionReference = ""
-            if (etScanRef.text.toString().isNotEmpty()) {
-                enrollmentTransactionReference = etScanRef.text.toString()
+            if (etOptional.text.toString().isNotEmpty()) {
+                enrollmentTransactionReference = etOptional.text.toString()
             }
             if ((activity as MainActivity).checkPermissions(PERMISSION_REQUEST_CODE_AUTHENTICATION)) {
                 authenticationSDK.initiate(enrollmentTransactionReference, object : AuthenticationCallback {
@@ -112,34 +107,34 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
                             Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
                         }
 
-                        startSDK.isEnabled = true
+						btnStart.isEnabled = true
                     }
 
                     override fun onAuthenticationInitiateError(errorCode: String, errorMessage: String, retryPossible: Boolean) {
                         Toast.makeText(activity, errorMessage, Toast.LENGTH_LONG).show()
-                        startSDK.isEnabled = true
+						btnStart.isEnabled = true
                     }
                 })
             } else {
-                startSDK.isEnabled = true
+				btnStart.isEnabled = true
             }
 
         } catch (e: PlatformNotSupportedException) {
             Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
             Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
-            startSDK.isEnabled = true
+			btnStart.isEnabled = true
         } catch (e: NullPointerException) {
             Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
             Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
-            startSDK.isEnabled = true
+			btnStart.isEnabled = true
         } catch (e: MissingPermissionException) {
             Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
             Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
-            startSDK.isEnabled = true
+			btnStart.isEnabled = true
         } catch (e : IllegalArgumentException) {
             Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
             Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
-            startSDK.isEnabled = true
+			btnStart.isEnabled = true
         }
 
     }
@@ -158,7 +153,7 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
 
             //At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that
             //internal resources can be freed.
-            authenticationSDK!!.destroy()
+            authenticationSDK.destroy()
         }
     }
 }

@@ -1,38 +1,45 @@
 package com.jumio.sample.java;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
-import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.navigation.NavigationView;
 import com.jumio.MobileSDK;
+import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.sample.R;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * Copyright 2019 Jumio Corporation All rights reserved.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-	public static final String KEY_SWITCH_ONE_TEXT = "KEY_SWITCH_ONE_TEXT";
-	public static final String KEY_SWITCH_TWO_TEXT = "KEY_SWITCH_TWO_TEXT";
-	public static final String KEY_BUTTON_TEXT = "KEY_BUTTON_TEXT";
 	public static final String KEY_API_TOKEN = "KEY_API_TOKEN";
 	public static final String KEY_API_SECRET = "KEY_API_SECRET";
+	public static final String KEY_DATACENTER = "KEY_DATACENTER";
 
 	/* PUT YOUR NETVERIFY API TOKEN AND SECRET HERE */
 	private static String NETVERIFY_API_TOKEN = "";
 	private static String NETVERIFY_API_SECRET = "";
+	private static JumioDataCenter NETVERIFY_DATACENTER = JumioDataCenter.US;
 
 	/* PUT YOUR BAM API TOKEN AND SECRET HERE */
 	private static String BAM_API_TOKEN = "";
 	private static String BAM_API_SECRET = "";
+	private static JumioDataCenter BAM_DATACENTER = JumioDataCenter.US;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,23 +48,37 @@ public class MainActivity extends AppCompatActivity {
 
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
-		// Create the adapter that will return a fragment for each of the three
-		// primary sections of the activity.
 
-		SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+		drawer.addDrawerListener(drawerToggle);
+		drawerToggle.syncState();
 
-		// Set up the ViewPager with the sections adapter.
-		ViewPager mViewPager = (ViewPager) findViewById(R.id.container);
-		mViewPager.setAdapter(mSectionsPagerAdapter);
+		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+		if (navigationView != null) {
+			Menu menu = navigationView.getMenu();
+			menu.findItem(R.id.nav_sdk).setTitle(MobileSDK.getSDKVersion());
+			onNavigationItemSelected(menu.findItem(R.id.nav_netverify));
+			navigationView.setNavigationItemSelectedListener(this);
+			navigationView.setItemIconTintList(null);
+		}
 
-		TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-		tabLayout.setupWithViewPager(mViewPager);
 
 	}
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	@Override
+	public void onBackPressed() {
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		if (drawer.isDrawerOpen(GravityCompat.START)) {
+			drawer.closeDrawer(GravityCompat.START);
+		} else {
+			super.onBackPressed();
+		}
 	}
 
 	/**
@@ -78,105 +99,92 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 
-	/**
-	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-	 * one of the sections/tabs/pages.
-	 */
-	private class SectionsPagerAdapter extends FragmentPagerAdapter {
+	@Override
+	public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-		SectionsPagerAdapter(FragmentManager fm) {
-			super(fm);
+		Bundle bundle = new Bundle();
+
+		switch (menuItem.getItemId()) {
+			case R.id.nav_netverify:
+				NetverifyFragment nvFragment = new NetverifyFragment();
+				bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
+				bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
+				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER);
+				nvFragment.setArguments(bundle);
+				switchFragment(nvFragment);
+				break;
+			case R.id.nav_netverify_custom:
+				NetverifyCustomFragment nvCustomFragment = new NetverifyCustomFragment();
+				bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
+				bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
+				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER);
+				nvCustomFragment.setArguments(bundle);
+				switchFragment(nvCustomFragment);
+				break;
+			case R.id.nav_authentication:
+				AuthenticationFragment authFragment = new AuthenticationFragment();
+				bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
+				bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
+				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER);
+				authFragment.setArguments(bundle);
+				switchFragment(authFragment);
+				break;
+			case R.id.nav_authentication_custom:
+				AuthenticationCustomFragment authCustomFragment = new AuthenticationCustomFragment();
+				bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
+				bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
+				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER);
+				authCustomFragment.setArguments(bundle);
+				switchFragment(authCustomFragment);
+				break;
+			case R.id.nav_documentverification:
+				DocumentVerificationFragment dvFragment = new DocumentVerificationFragment();
+				bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
+				bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
+				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER);
+				dvFragment.setArguments(bundle);
+				switchFragment(dvFragment);
+				break;
+			case R.id.nav_bam:
+				BamFragment bamFragment = new BamFragment();
+				bundle.putString(KEY_API_TOKEN, BAM_API_TOKEN);
+				bundle.putString(KEY_API_SECRET, BAM_API_SECRET);
+				bundle.putSerializable(KEY_DATACENTER, BAM_DATACENTER);
+				bamFragment.setArguments(bundle);
+				switchFragment(bamFragment);
+				break;
+			case R.id.nav_bam_custom:
+				BamCustomFragment bamCustomFragment = new BamCustomFragment();
+				bundle.putString(KEY_API_TOKEN, BAM_API_TOKEN);
+				bundle.putString(KEY_API_SECRET, BAM_API_SECRET);
+				bundle.putSerializable(KEY_DATACENTER, BAM_DATACENTER);
+				bamCustomFragment.setArguments(bundle);
+				switchFragment(bamCustomFragment);
+				break;
+			case R.id.nav_terms_conditions:
+				openLink("https://www.jumio.com/legal-information/privacy-policy");
+				break;
+			case R.id.nav_licenses:
+				openLink("https://github.com/Jumio/mobile-sdk-android/tree/master/licenses");
+				break;
 		}
 
-		@Override
-		public Fragment getItem(int position) {
-			// getItem is called to instantiate the fragment for the given page.
-			// Return a PlaceholderFragment (defined as a static inner class below).
-			Bundle bundle = new Bundle();
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		drawer.closeDrawer(GravityCompat.START);
+		return true;
+	}
 
-			switch (position) {
-				case 0:
-					NetverifyFragment nvFragment = new NetverifyFragment();
-					bundle.putString(KEY_SWITCH_ONE_TEXT, getResources().getString(R.string.netverify_verification_enabled));
-					bundle.putString(KEY_SWITCH_TWO_TEXT, getResources().getString(R.string.netverify_identity_verification_enabled));
-					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_netverify)));
-					bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
-					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
-					nvFragment.setArguments(bundle);
-					return nvFragment;
-                case 1:
-                    NetverifyCustomFragment nvCustomFragment = new NetverifyCustomFragment();
-                    bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_netverify_custom)));
-                    bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
-                    bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
-                    nvCustomFragment.setArguments(bundle);
-                    return nvCustomFragment;
-				case 2:
-					AuthenticationFragment authFragment = new AuthenticationFragment();
-					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_authentication)));
-					bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
-					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
-					authFragment.setArguments(bundle);
-					return authFragment;
-				case 3:
-					AuthenticationCustomFragment authCustomFragment = new AuthenticationCustomFragment();
-					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_authentication)));
-					bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
-					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
-					authCustomFragment.setArguments(bundle);
-					return authCustomFragment;
-				case 4:
-					DocumentVerificationFragment dvFragment = new DocumentVerificationFragment();
-					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_documentverification)));
-					bundle.putString(KEY_SWITCH_ONE_TEXT, getResources().getString(R.string.documentverification_enable_extraction));
-					bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
-					bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
-					dvFragment.setArguments(bundle);
-					return dvFragment;
-				case 5:
-					BamFragment bamFragment = new BamFragment();
-					bundle.putString(KEY_SWITCH_ONE_TEXT, getResources().getString(R.string.bam_expiry_required));
-					bundle.putString(KEY_SWITCH_TWO_TEXT, getResources().getString(R.string.bam_cvv_required));
-					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_bamcheckout)));
-					bundle.putString(KEY_API_TOKEN, BAM_API_TOKEN);
-					bundle.putString(KEY_API_SECRET, BAM_API_SECRET);
-					bamFragment.setArguments(bundle);
-					return bamFragment;
-				case 6:
-					BamCustomFragment bamCustomFragment = new BamCustomFragment();
-					bundle.putString(KEY_BUTTON_TEXT, String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_bam_custom)));
-					bundle.putString(KEY_API_TOKEN, BAM_API_TOKEN);
-					bundle.putString(KEY_API_SECRET, BAM_API_SECRET);
-					bamCustomFragment.setArguments(bundle);
-					return bamCustomFragment;
-			}
-			return null;
-		}
+	private void openLink(String url) {
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setData(Uri.parse(url));
+		startActivity(intent);
+	}
 
-		@Override
-		public int getCount() {
-			return 7;
-		}
+	private void switchFragment(Fragment fragment) {
+		FragmentManager supportFragmentManager = getSupportFragmentManager();
 
-		@Override
-		public CharSequence getPageTitle(int position) {
-			switch (position) {
-				case 0:
-					return getResources().getString(R.string.section_netverify);
-                case 1:
-                    return getResources().getString(R.string.section_netverify_custom);
-				case 2:
-					return getResources().getString(R.string.section_authentication);
-				case 3:
-					return getResources().getString(R.string.section_authentication);
-				case 4:
-					return getResources().getString(R.string.section_documentverification);
-				case 5:
-					return getResources().getString(R.string.section_bamcheckout);
-				case 6:
-					return getResources().getString(R.string.section_bam_custom);
-			}
-			return null;
-		}
+		FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+		fragmentTransaction.replace(R.id.fragment_container, fragment);
+		fragmentTransaction.commitAllowingStateLoss();
 	}
 }

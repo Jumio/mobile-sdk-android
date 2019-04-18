@@ -103,6 +103,7 @@
 	<string name="face_helpview_continue">Zum Fortsetzen tippen</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Drehen Sie Ihr Gerät&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Bitte halten Sie Ihr Handy im Hochformat, um ein Selfie aufzunehmen.</string>
+	<string name="zoom_accessibility_cancel_button">Scan beenden</string>
 	<string name="zoom_feedback_a_little_too_close">Etwas weiter weg</string>
 	<string name="zoom_feedback_a_little_too_close_tablet">Etwas weiter weg</string>
 	<string name="zoom_feedback_center_face">Gesicht zentrieren</string>

@@ -53,8 +53,8 @@
 			android:id="@+id/etOptional"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:maxLines="2"
-			android:hint="Scan reference"
+			android:maxLines="1"
+			android:hint="@string/authentication_enrollment_transaction_reference"
 			android:textAlignment="center"/>
 	</com.google.android.material.textfield.TextInputLayout>
 

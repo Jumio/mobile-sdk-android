@@ -29,11 +29,13 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
 
 	private String apiToken = null;
 	private String apiSecret = null;
+	private JumioDataCenter dataCenter = null;
+
+	private AuthenticationSDK authenticationSDK;
+
 	private TextInputLayout textInputLayoutScanRef = null;
 	private EditText etScanRef = null;
 	private Button startSDK;
-
-	AuthenticationSDK authenticationSDK;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,13 +49,14 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
 
 		apiToken = args.getString(MainActivity.KEY_API_TOKEN);
 		apiSecret = args.getString(MainActivity.KEY_API_SECRET);
+		dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
 
 		textInputLayoutScanRef = (TextInputLayout) rootView.findViewById(R.id.tilOptional);
 		textInputLayoutScanRef.setVisibility(View.VISIBLE);
 		etScanRef = (EditText) rootView.findViewById(R.id.etOptional);
 
 		startSDK = (Button) rootView.findViewById(R.id.btnStart);
-		startSDK.setText(args.getString(MainActivity.KEY_BUTTON_TEXT));
+		startSDK.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_authentication)));
 		startSDK.setOnClickListener(this);
 
 		return rootView;
@@ -70,7 +73,7 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
 	private void initializeAuthenticationSDK() {
 		try {
 			// You can get the current SDK version using the method below.
-			// AuthenticationSDK.getSDKVersion();
+//			AuthenticationSDK.getSDKVersion();
 
 			// Call the method isSupportedPlatform to check if the device is supported.
 			if (!AuthenticationSDK.isSupportedPlatform(getActivity()))
@@ -86,17 +89,17 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
 			// Make sure that your merchant API token and API secret are correct and specify an instance
 			// of your activity. If your merchant account is created in the EU data center, use
 			// JumioDataCenter.EU instead.
-			authenticationSDK = AuthenticationSDK.create(getActivity(), apiToken, apiSecret, JumioDataCenter.US);
+			authenticationSDK = AuthenticationSDK.create(getActivity(), apiToken, apiSecret, dataCenter);
 
 			// Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
-			// authenticationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
+//			authenticationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
 			// You can also set a user reference (max. 100 characters).
 			// Note: The user reference should not contain sensitive data like PII (Personally Identifiable Information) or account login.
-			// authenticationSDK.setUserReference("USERREFERENCE");
+//			authenticationSDK.setUserReference("USERREFERENCE");
 
-			// Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
-			// authenticationSDK.setCallbackUrl("YOURCALLBACKURL");
+			// Callback URL (max. 255 characters) for the confirmation after authentication is completed. This setting overrides your Jumio merchant settings.
+//			authenticationSDK.setCallbackUrl("YOURCALLBACKURL");
 
 			// Use the following method to initialize the SDK. The scan reference of an eligible Netverify scan has to be used
 			// as the enrollmentTransactionReference

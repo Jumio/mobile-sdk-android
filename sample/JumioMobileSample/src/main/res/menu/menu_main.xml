@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/menu_products">
+        <menu>
+            <item
+                android:id="@+id/nav_netverify"
+                android:title="@string/section_netverify" />
+            <item
+                android:id="@+id/nav_netverify_custom"
+                android:title="@string/section_netverify_custom" />
+            <item
+                android:id="@+id/nav_authentication"
+                android:title="@string/section_authentication" />
+            <item
+                android:id="@+id/nav_authentication_custom"
+                android:title="@string/section_authentication_custom" />
+            <item
+                android:id="@+id/nav_documentverification"
+                android:title="@string/section_documentverification" />
+            <item
+                android:id="@+id/nav_bam"
+                android:title="@string/section_bam" />
+            <item
+                android:id="@+id/nav_bam_custom"
+                android:title="@string/section_bam_custom" />
+        </menu>
+    </item>
+
+    <item android:title="@string/menu_legal_information">
+        <menu>
+            <item
+                android:id="@+id/nav_terms_conditions"
+                android:icon="@drawable/ic_info"
+                android:title="@string/menu_terms_conditions" />
+            <item
+                android:id="@+id/nav_licenses"
+                android:icon="@drawable/ic_licenses"
+                android:title="@string/menu_licenses" />
+        </menu>
+    </item>
+
+    <item android:title="@string/menu_version">
+        <menu>
+            <item
+                android:id="@+id/nav_sdk"
+                android:title=""/>
+        </menu>
+
+    </item>
+</menu>

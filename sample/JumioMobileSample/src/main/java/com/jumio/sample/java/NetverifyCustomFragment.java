@@ -42,7 +42,6 @@ import com.jumio.nv.custom.NetverifyCustomSDKInterface;
 import com.jumio.nv.custom.NetverifyCustomScanInterface;
 import com.jumio.nv.custom.NetverifyCustomScanPresenter;
 import com.jumio.nv.custom.NetverifyCustomScanView;
-import com.jumio.nv.custom.NetverifyScanMode;
 import com.jumio.sdk.custom.SDKNotConfiguredException;
 import com.jumio.nv.data.document.NVDocumentType;
 import com.jumio.nv.data.document.NVDocumentVariant;
@@ -68,6 +67,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 
     private String apiToken = null;
     private String apiSecret = null;
+    private JumioDataCenter dataCenter = null;
 
     private NetverifySDK netverifySDK = null;
 
@@ -86,7 +86,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
     private Spinner customDocumentSpinner;
     private Spinner customVariantSpinner;
     private Button startCustomScanButton;
-    private Button cancelCustomScanButton;
+    private Button stopCustomScanButton;
     private Button setCountryAndDocumentTypeButton;
     private Button frontSideButton;
     private Button backSideButton;
@@ -123,6 +123,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 
         apiToken = args.getString(MainActivity.KEY_API_TOKEN);
         apiSecret = args.getString(MainActivity.KEY_API_SECRET);
+		dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
 
         scrollView = (ScrollView) rootView.findViewById(R.id.scrollView);
         netverifySettingsContainer = (LinearLayout)rootView.findViewById(R.id.netverifySettingsContainer);
@@ -139,7 +140,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         customDocumentSpinner = (Spinner)rootView.findViewById(R.id.customDocumentSpinner);
         customVariantSpinner = (Spinner)rootView.findViewById(R.id.customVariantSpinner);
         startCustomScanButton = (Button)rootView.findViewById(R.id.startNetverifyCustomButton);
-        cancelCustomScanButton = (Button)rootView.findViewById(R.id.stopNetverifyCustomButton);
+        stopCustomScanButton = (Button)rootView.findViewById(R.id.stopNetverifyCustomButton);
         setCountryAndDocumentTypeButton = (Button)rootView.findViewById(R.id.setCountryAndDocumentType);
         frontSideButton = (Button)rootView.findViewById(R.id.frontSideButton);
         backSideButton = (Button)rootView.findViewById(R.id.backSideButton);
@@ -159,7 +160,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         switchIdentityVerification = (Switch)rootView.findViewById(R.id.switchIdentitiyVerification);
 
         startCustomScanButton.setOnClickListener(this);
-        cancelCustomScanButton.setOnClickListener(this);
+        stopCustomScanButton.setOnClickListener(this);
         setCountryAndDocumentTypeButton.setOnClickListener(this);
         frontSideButton.setOnClickListener(this);
         backSideButton.setOnClickListener(this);
@@ -177,7 +178,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         finishButton.setOnClickListener(this);
 
 
-        startCustomScanButton.setText(args.getString(MainActivity.KEY_BUTTON_TEXT));
+        startCustomScanButton.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_netverify_custom)));
 
         successDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.success));
         errorDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.error));
@@ -194,14 +195,6 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         super.onConfigurationChanged(newConfig);
 
         initScanView();
-    }
-
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (!isVisibleToUser) {
-            stopCustomScanIfActiv();
-        }
     }
 
     @Override
@@ -233,15 +226,23 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         try {
-            if (customScanViewPresenter != null)
-                customScanViewPresenter.destroy();
-            if (customSDKController != null)
-                customSDKController.destroy();
+        	if (stopScan != null) {
+				stopScan.performClick();
+			}
+			if (stopCustomScanButton != null) {
+				stopCustomScanButton.performClick();
+			}
+            if (customScanViewPresenter != null) {
+				customScanViewPresenter.destroy();
+			}
+            if (customSDKController != null) {
+				customSDKController.destroy();
+			}
         } catch (SDKNotConfiguredException e) {
             e.printStackTrace();
         }
+		super.onDestroy();
     }
 
     private boolean isPortrait() {
@@ -259,7 +260,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(final View v) {
         v.setEnabled(false);
         boolean keepDisabled = false;
         if (v == startCustomScanButton) {
@@ -283,8 +284,8 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 					Snackbar.make(getView(), e.getMessage(), Snackbar.LENGTH_LONG).show();
 				}
 			}
-        } else if (v == cancelCustomScanButton && isSDKControllerValid()) {
-            hideView(false, cancelCustomScanButton, countryDocumentLayout, partTypeLayout, customScanLayout, customConfirmLayout, finishButton, loadingIndicator);
+        } else if (v == stopCustomScanButton && isSDKControllerValid()) {
+            hideView(false, stopCustomScanButton, countryDocumentLayout, partTypeLayout, customScanLayout, customConfirmLayout, finishButton, loadingIndicator);
             callbackLog.removeAllViews();
             try {
                 customSDKController.pause();
@@ -335,41 +336,24 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
                 e.printStackTrace();
             }
         } else if ((v == frontSideButton || v == backSideButton || v == faceButton) && isSDKControllerValid()) {
-            try {
-                ScanSide scanSide = ScanSide.FRONT;
-                if (v == backSideButton)
-                    scanSide = ScanSide.BACK;
-                else if (v == faceButton)
-                    scanSide = ScanSide.FACE;
+			customScanView.setMode(v == faceButton?NetverifyCustomScanView.MODE_FACE:NetverifyCustomScanView.MODE_ID);
+			initScanView();
 
-				customScanView.setMode(scanSide == ScanSide.FACE?NetverifyCustomScanView.MODE_FACE:NetverifyCustomScanView.MODE_ID);
-				initScanView();
-
-				showView(true, customScanLayout, customScanView);
-				scrollView.post(new Runnable() {
-					@Override
-					public void run() {
-						scrollView.scrollTo(0, customScanLayout.getTop());
-					}
-				});
-
-                customScanViewPresenter = customSDKController.startScanForPart(scanSide, customScanView, customConfirmationView, new NetverifyCustomScanImpl());
-
-                switchCamera.setEnabled(false);
-                takePicture.setEnabled(false);
-                toggleFlash.setEnabled(false);
-                startFallback.setEnabled(false);
-                extraction.setChecked(true);
-                addToCallbackLog("start scanmode: " + customScanViewPresenter.getScanMode());
-                addToCallbackLog("help text: " + customScanViewPresenter.getHelpText());
-                startFallback.setEnabled(customScanViewPresenter.isFallbackAvailable());
-
-            } catch (SDKNotConfiguredException e) {
-                addToCallbackLog(e.getMessage());
-            }
+			showView(true, customScanLayout, customScanView);
+			scrollView.post(new Runnable() {
+				@Override
+				public void run() {
+					scrollView.scrollTo(0, customScanLayout.getTop());
+					scrollView.post(new ScanPartRunnable(v));
+				}
+			});
+			keepDisabled = true;
         } else if (v == stopScan && isScanViewControllerValid()) {
             customScanViewPresenter.stopScan();
             hideView(false, customScanLayout);
+			frontSideButton.setEnabled(true);
+			backSideButton.setEnabled(true);
+			faceButton.setEnabled(true);
             customScanViewPresenter.destroy();
             customScanViewPresenter = null;
 
@@ -415,7 +399,12 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 				@Override
 				public void run() {
 					scrollView.scrollTo(0, customScanLayout.getTop());
-					customScanViewPresenter.retryScan();
+					scrollView.post(new Runnable() {
+						@Override
+						public void run() {
+							customScanViewPresenter.retryScan();
+						}
+					});
 				}
 			});
         } else if (v == errorRetryButton && isSDKControllerValid()) {
@@ -444,7 +433,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
     private void initializeNetverifySDK() {
         try {
             // You can get the current SDK version using the method below.
-            // NetverifySDK.getSDKVersion();
+//			NetverifySDK.getSDKVersion();
 
             // Call the method isSupportedPlatform to check if the device is supported.
             if (!NetverifySDK.isSupportedPlatform(getActivity()))
@@ -460,15 +449,15 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             // Make sure that your merchant API token and API secret are correct and specify an instance
             // of your activity. If your merchant account is created in the EU data center, use
             // JumioDataCenter.EU instead.
-            netverifySDK = NetverifySDK.create(getActivity(), apiToken, apiSecret, JumioDataCenter.US);
+            netverifySDK = NetverifySDK.create(getActivity(), apiToken, apiSecret, dataCenter);
 
             // Use the following method to create an instance of the SDK, using offline fastfill scanning.
-            // try {
-            //     netverifySDK = NetverifySDK.create(getActivity(), "YOUROFFLINETOKEN", "YOURPREFERREDCOUNTRY");
-            // } catch (SDKExpiredException e) {
-            //    e.printStackTrace();
-            //    Toast.makeText(getActivity().getApplicationContext(), "The offline SDK is expired", Toast.LENGTH_LONG).show();
-            // }
+//			try {
+//				netverifySDK = NetverifySDK.create(getActivity(), "YOUROFFLINETOKEN", "YOURPREFERREDCOUNTRY");
+//			} catch (SDKExpiredException e) {
+//				e.printStackTrace();
+//				Toast.makeText(getActivity().getApplicationContext(), "The offline SDK is expired", Toast.LENGTH_LONG).show();
+//			}
 
             // Enable ID verification to receive a verification status and verified data positions (see Callback chapter).
             // Note: Not possible for accounts configured as Fastfill only.
@@ -477,55 +466,55 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             // You can specify issuing country (ISO 3166-1 alpha-3 country code) and/or ID types and/or document variant to skip
             // their selection during the scanning process.
             // Use the following method to convert ISO 3166-1 alpha-2 into alpha-3 country code.
-            // String alpha3 = IsoCountryConverter.convertToAlpha3("AT");
-            // netverifySDK.setPreselectedCountry("AUT");
-            // ArrayList<NVDocumentType> documentTypes = new ArrayList<>();
-            // documentTypes.add(NVDocumentType.PASSPORT);
-            // netverifySDK.setPreselectedDocumentTypes(documentTypes);
-            // netverifySDK.setPreselectedDocumentVariant(NVDocumentVariant.PLASTIC);
+//			String alpha3 = IsoCountryConverter.convertToAlpha3("AT");
+//			netverifySDK.setPreselectedCountry("AUT");
+//			netverifySDK.ArrayList<NVDocumentType> documentTypes = new ArrayList<>();
+//			documentTypes.add(NVDocumentType.PASSPORT);
+//			netverifySDK.setPreselectedDocumentTypes(documentTypes);
+//			netverifySDK.setPreselectedDocumentVariant(NVDocumentVariant.PLASTIC);
 
             // The customer internal reference allows you to identify the scan (max. 100 characters).
             // Note: Must not contain sensitive data like PII (Personally Identifiable Information) or account login.
-            // netverifySDK.setCustomerInternalReference("YOURSCANREFERENCE");
+//			netverifySDK.setCustomerInternalReference("YOURSCANREFERENCE");
 
             // Use the following property to identify the scan in your reports (max. 100 characters).
-//            netverifySDK.setReportingCriteria("YOURREPORTINGCRITERIA");
+//			netverifySDK.setReportingCriteria("YOURREPORTINGCRITERIA");
 
             // You can also set a user reference (max. 100 characters).
             // Note: The user reference should not contain sensitive data like PII (Personally Identifiable Information) or account login.
-            // netverifySDK.setUserReference("USERREFERENCE");
+//			netverifySDK.setUserReference("USERREFERENCE");
 
-            // Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
-            // netverifySDK.setCallbackUrl("YOURCALLBACKURL");
+            // Callback URL (max. 255 characters) for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
+//			netverifySDK.setCallbackUrl("YOURCALLBACKURL");
 
             // You can disable Identity Verification during the ID verification for a specific transaction.
             netverifySDK.setEnableIdentityVerification(switchIdentityVerification.isChecked());
 
             // Use the following method to disable eMRTD scanning.
-            // netverifySDK.setEnableEMRTD(false);
+//			netverifySDK.setEnableEMRTD(false);
 
             // Use the following method to set the default camera position.
-            // netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
+//			netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
 
             // Use the following method to only support IDs where data can be extracted on mobile only.
-            // netverifySDK.setDataExtractionOnMobileOnly(true);
+//			netverifySDK.setDataExtractionOnMobileOnly(true);
 
             // Use the following method to explicitly send debug-info to Jumio. (default: false)
             // Only set this property to true if you are asked by our Jumio support personnel.
-            // netverifySDK.sendDebugInfoToJumio(true);
+//			netverifySDK.sendDebugInfoToJumio(true);
 
             // Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
-            // netverifySDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
+//			netverifySDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
             // Use the following method to initialize the SDK before displaying it
-//			   netverifySDK.initiate(new NetverifyInitiateCallback() {
-//			     @Override
-//			     public void onNetverifyInitiateSuccess() {
-//			     }
-//			     @Override
-//			     public void onNetverifyInitiateError(String errorCode, String errorMessage, boolean retryPossible) {
-//			     }
-//			 });
+//			netverifySDK.initiate(new NetverifyInitiateCallback() {
+//				@Override
+//				public void onNetverifyInitiateSuccess() {
+//				}
+//				@Override
+//				public void onNetverifyInitiateError(String errorCode, String errorMessage, boolean retryPossible) {
+//				}
+//			});
 
         } catch (PlatformNotSupportedException | NullPointerException e) {
             android.util.Log.e(TAG, "Error in initializeNetverifySDK: ", e);
@@ -542,12 +531,45 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         return customScanViewPresenter != null;
     }
 
-    private void stopCustomScanIfActiv() {
-        if (customSDKController != null) {
-            stopScan.performClick();
-            cancelCustomScanButton.performClick();
-        }
-    }
+	private class ScanPartRunnable implements Runnable {
+		private View view;
+
+		public ScanPartRunnable(View view) {
+			this.view = view;
+		}
+
+		@Override
+		public void run() {
+			try {
+				ScanSide scanSide = ScanSide.FRONT;
+				if (view == backSideButton)
+					scanSide = ScanSide.BACK;
+				else if (view == faceButton)
+					scanSide = ScanSide.FACE;
+
+				customScanViewPresenter = customSDKController.startScanForPart(scanSide, customScanView, customConfirmationView, new NetverifyCustomScanImpl());
+
+				frontSideButton.setEnabled(false);
+				backSideButton.setEnabled(false);
+				faceButton.setEnabled(false);
+
+				switchCamera.setEnabled(false);
+				takePicture.setEnabled(false);
+				toggleFlash.setEnabled(false);
+				startFallback.setEnabled(false);
+				extraction.setChecked(true);
+				addToCallbackLog("start scanmode: " + customScanViewPresenter.getScanMode());
+				addToCallbackLog("help text: " + customScanViewPresenter.getHelpText());
+				startFallback.setEnabled(customScanViewPresenter.isFallbackAvailable());
+
+			} catch (SDKNotConfiguredException e) {
+				addToCallbackLog(e.getMessage());
+				frontSideButton.setEnabled(true);
+				backSideButton.setEnabled(true);
+				faceButton.setEnabled(true);
+			}
+		}
+	}
 
     private class NetverifyCustomSDKImpl implements NetverifyCustomSDKInterface {
 
@@ -555,7 +577,9 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         @Override
         public void onNetverifyCountriesReceived(HashMap<String, NetverifyCountry> countryList, String userCountryCode) {
             addToCallbackLog("onNetverifyCountriesReceived - user Country is " + userCountryCode);
-            showView(true, cancelCustomScanButton, countryDocumentLayout);
+			if(stopCustomScanButton == null || countryDocumentLayout == null)
+				return;
+            showView(true, stopCustomScanButton, countryDocumentLayout);
             final Context context = getActivity();
             if(context == null)
                 return;
@@ -672,6 +696,11 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         public void onNetverifyScanForPartFinished(ScanSide scanSide, boolean allPartsScanned) {
             customScanViewPresenter.destroy();
             customScanViewPresenter = null;
+
+			frontSideButton.setEnabled(true);
+			backSideButton.setEnabled(true);
+			faceButton.setEnabled(true);
+
             addToCallbackLog("onNetverifyScanForPartFinished");
             if (customScanLayout.getVisibility() == View.VISIBLE)
                 hideView(false, customScanLayout);

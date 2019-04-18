@@ -5,20 +5,17 @@
 - [Basic Setup](#basic-setup)
 - [Get started](#get-started)
 - [Support](#support)
+- [FAQ](docs/integration_faq.md)
 
 # Release notes
-SDK version: 3.0.0
+SDK version: 3.1.0
 
 #### Changes
-* Initial release of the [Jumio Authentication](https://www.jumio.com/authentication/) SDK [Authentication]
-* Optimized 3D liveness handling to increase user conversion [Netverify]
-* Added customUI support for 3D Liveness and Authentication [Netverify, Authentication]
-* Improved MRZ reading accuracy [Netverify/Fastfill]
-* Improved scanning experience for most European Driving licenses [Netverify/Fastfill]
-* Renamed some public methods [Netverify/Fastfill, Document Verification]
+* Optimized 3D liveness handling to reduce number of false rejects [Netverify]
+* Improved reading of ePassports [Netverify]
 
 #### Fixes
-* Various smaller bug fixes/improvements [Netverify/Fastfill, Document Verification, BAM Checkout]
+* Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
 
 # Basic Setup
 
@@ -123,7 +120,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 2.15.0 of the Jumio Mobile SDK is supported until 2019-06-05.
+The previous release version 3.0.0 of the Jumio Mobile SDK is supported until 2019-07-18.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

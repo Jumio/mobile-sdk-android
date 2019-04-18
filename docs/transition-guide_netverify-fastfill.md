@@ -4,6 +4,12 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+# 3.1.0
+#### Dependency change
+*  ~~com.madgag.spongycastle:prov:1.58.0.0~~ is replaced by org.bouncycastle:bcprov-jdk15on:1.61
+*  Proguard rules containing *org.spongycastle* have been replaced with *org.bouncycastle*
+*  ~~com.facetec:zoom-authentication-hybrid:7.0.5~~ is replaced by com.facetec:zoom-authentication-hybrid:7.0.9
+
 # 3.0.0
 #### Renamed dependency nv-face to face
 The dependency `com.jumio.android:nv-face` was renamed to `com.jumio.android:face`, reflecting the internal restructuring of the dependencies that was necessary for adding the new product Authentication

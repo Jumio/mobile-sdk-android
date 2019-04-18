@@ -28,6 +28,7 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 
 	private String apiToken = null;
 	private String apiSecret = null;
+	private JumioDataCenter dataCenter = null;
 
 	DocumentVerificationSDK documentVerificationSDK;
 
@@ -42,13 +43,14 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 		switchEnableExtraction.setChecked(true);
 
 		Bundle args = getArguments();
-		switchEnableExtraction.setText(args.getString(MainActivity.KEY_SWITCH_ONE_TEXT));
+		switchEnableExtraction.setText(getResources().getString(R.string.documentverification_enable_extraction));
 
 		apiToken = args.getString(MainActivity.KEY_API_TOKEN);
 		apiSecret = args.getString(MainActivity.KEY_API_SECRET);
+		dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
 
 		Button startSDK = (Button) rootView.findViewById(R.id.btnStart);
-		startSDK.setText(args.getString(MainActivity.KEY_BUTTON_TEXT));
+		startSDK.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_documentverification)));
 		startSDK.setOnClickListener(this);
 
 		return rootView;
@@ -90,7 +92,7 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 			// Make sure that your merchant API token and API secret are correct and specify an instance
 			// of your activity. If your merchant account is created in the EU data center, use
 			// JumioDataCenter.EU instead.
-			documentVerificationSDK = DocumentVerificationSDK.create(getActivity(), apiToken, apiSecret, JumioDataCenter.US);
+			documentVerificationSDK = DocumentVerificationSDK.create(getActivity(), apiToken, apiSecret, dataCenter);
 
 			// One of the configured DocumentTypeCodes: BC, BS, CAAP, CB, CCS, CRC, HCC, IC, LAG, LOAP,
 			// MEDC, MOAP, PB, SEL, SENC, SS, STUC, TAC, TR, UB, SSC, VC, VT, WWCC, CUSTOM

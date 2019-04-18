@@ -4,6 +4,10 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.1.0
+#### Dependency change
+*  ~~com.facetec:zoom-authentication-hybrid:7.0.5~~ is replaced by com.facetec:zoom-authentication-hybrid:7.0.9
+
 ## 3.0.0
 Introduction of the Authentication product
 

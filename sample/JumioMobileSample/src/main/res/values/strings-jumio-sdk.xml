@@ -103,6 +103,7 @@
 	<string name="face_helpview_continue">Tap to continue</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Rotate your device&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Please rotate your phone to portrait to take a selfie</string>
+	<string name="zoom_accessibility_cancel_button">Quit scan</string>
 	<string name="zoom_feedback_a_little_too_close">Move back a bit</string>
 	<string name="zoom_feedback_a_little_too_close_tablet">Move back a bit</string>
 	<string name="zoom_feedback_center_face">Center your face</string>

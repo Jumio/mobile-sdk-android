@@ -103,6 +103,7 @@
 	<string name="face_helpview_continue">Pulse para continuar</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Gire su dispositivo&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Ponga el móvil en vertical para hacerse un selfie</string>
+	<string name="zoom_accessibility_cancel_button">Salir del escáner</string>
 	<string name="zoom_feedback_a_little_too_close">Retroceda un poco</string>
 	<string name="zoom_feedback_a_little_too_close_tablet">Retroceda un poco</string>
 	<string name="zoom_feedback_center_face">Coloque su rostro en el centro del marco</string>

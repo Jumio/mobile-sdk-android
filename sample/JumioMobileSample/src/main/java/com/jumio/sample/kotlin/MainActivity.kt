@@ -1,62 +1,56 @@
 package com.jumio.sample.kotlin
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.view.View
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import androidx.viewpager.widget.ViewPager
-import com.google.android.material.tabs.TabLayout
+import com.google.android.material.navigation.NavigationView
 import com.jumio.MobileSDK
+import com.jumio.core.enums.JumioDataCenter
 import com.jumio.sample.R
+import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * Copyright 2019 Jumio Corporation All rights reserved.
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     companion object {
-        const val KEY_SWITCH_ONE_TEXT = "KEY_SWITCH_ONE_TEXT"
-        const val KEY_SWITCH_TWO_TEXT = "KEY_SWITCH_TWO_TEXT"
         const val KEY_API_TOKEN = "KEY_API_TOKEN"
         const val KEY_API_SECRET = "KEY_API_SECRET"
+		const val KEY_DATACENTER = "KEY_DATACENTER"
 
         /* PUT YOUR NETVERIFY API TOKEN AND SECRET HERE */
         const val NETVERIFY_API_TOKEN = ""
         const val NETVERIFY_API_SECRET = ""
+		val NETVERIFY_DATACENTER = JumioDataCenter.US
 
         /* PUT YOUR BAM API TOKEN AND SECRET HERE */
         const val BAM_API_TOKEN = ""
         const val BAM_API_SECRET = ""
+		val BAM_DATACENTER = JumioDataCenter.US
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
 
-        val mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
+        val drawerToggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+		drawer_layout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
 
-        // Set up the ViewPager with the sections adapter.
-        val mViewPager = findViewById<View>(R.id.container) as ViewPager
-        mViewPager.offscreenPageLimit = 4
-        mViewPager.adapter = mSectionsPagerAdapter
-
-        val tabLayout = findViewById<View>(R.id.tabs) as TabLayout
-        tabLayout.setupWithViewPager(mViewPager)
-
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+        val menu = nav_view.menu
+        menu.findItem(R.id.nav_sdk)?.title = MobileSDK.getSDKVersion()
+        menu.findItem(R.id.nav_netverify)?.let { onNavigationItemSelected(it) }
+		nav_view.setNavigationItemSelectedListener(this)
+		nav_view.itemIconTintList = null
     }
 
     /**
@@ -77,91 +71,84 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * A [FragmentPagerAdapter] that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
-    private inner class SectionsPagerAdapter internal constructor(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+    override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
 
-        override fun getItem(position: Int): Fragment? {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            val bundle = Bundle()
+        val bundle = Bundle()
 
-            when (position) {
-                0 -> {
-                    val nvFragment = NetverifyFragment()
-                    bundle.putString(KEY_SWITCH_ONE_TEXT, resources.getString(R.string.netverify_verification_enabled))
-                    bundle.putString(KEY_SWITCH_TWO_TEXT, resources.getString(R.string.netverify_identity_verification_enabled))
-                    bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
-                    bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
-                    nvFragment.arguments = bundle
-                    return nvFragment
-                }
-                1 -> {
-                    val nvCustomFragment = NetverifyCustomFragment()
-                    bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
-                    bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
-                    nvCustomFragment.arguments = bundle
-                    return nvCustomFragment
-                }
-                2 -> {
-                    val authFragment = AuthenticationFragment()
-                    bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
-                    bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
-                    authFragment.arguments = bundle
-                    return authFragment
-                }
-                3 -> {
-                    val authCustomFragment = AuthenticationCustomFragment()
-                    bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
-                    bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
-                    authCustomFragment.arguments = bundle
-                    return authCustomFragment
-                }
-                4 -> {
-                    val dvFragment = DocumentVerificationFragment()
-                    bundle.putString(KEY_SWITCH_ONE_TEXT, resources.getString(R.string.documentverification_enable_extraction))
-                    bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
-                    bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
-                    dvFragment.arguments = bundle
-                    return dvFragment
-                }
-                5 -> {
-                    val bamFragment = BamFragment()
-                    bundle.putString(KEY_SWITCH_ONE_TEXT, resources.getString(R.string.bam_expiry_required))
-                    bundle.putString(KEY_SWITCH_TWO_TEXT, resources.getString(R.string.bam_cvv_required))
-                    bundle.putString(KEY_API_TOKEN, BAM_API_TOKEN)
-                    bundle.putString(KEY_API_SECRET, BAM_API_SECRET)
-                    bamFragment.arguments = bundle
-                    return bamFragment
-                }
-                6 -> {
-                    val bamCustomFragment = BamCustomFragment()
-                    bundle.putString(KEY_API_TOKEN, BAM_API_TOKEN)
-                    bundle.putString(KEY_API_SECRET, BAM_API_SECRET)
-                    bamCustomFragment.arguments = bundle
-                    return bamCustomFragment
-                }
+        when (menuItem.itemId) {
+            R.id.nav_netverify -> {
+                val nvFragment = NetverifyFragment()
+                bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
+                bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
+				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER)
+                nvFragment.arguments = bundle
+                switchFragment(nvFragment)
             }
-            return null
-        }
-
-        override fun getCount(): Int {
-            return 7
-        }
-
-        override fun getPageTitle(position: Int): CharSequence? {
-            when (position) {
-                0 -> return resources.getString(R.string.section_netverify)
-                1 -> return resources.getString(R.string.section_netverify_custom)
-                2 -> return resources.getString(R.string.section_authentication)
-                3 -> return resources.getString(R.string.section_authentication_custom)
-                4 -> return resources.getString(R.string.section_documentverification)
-                5 -> return resources.getString(R.string.section_bamcheckout)
-                6 -> return resources.getString(R.string.section_bam_custom)
+            R.id.nav_netverify_custom -> {
+                val nvCustomFragment = NetverifyCustomFragment()
+                bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
+                bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
+				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER)
+                nvCustomFragment.arguments = bundle
+                switchFragment(nvCustomFragment)
             }
-            return null
+            R.id.nav_authentication -> {
+                val authFragment = AuthenticationFragment()
+                bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
+                bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
+				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER)
+                authFragment.arguments = bundle
+                switchFragment(authFragment)
+            }
+            R.id.nav_authentication_custom -> {
+                val authCustomFragment = AuthenticationCustomFragment()
+                bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
+                bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
+				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER)
+                authCustomFragment.arguments = bundle
+                switchFragment(authCustomFragment)
+            }
+            R.id.nav_documentverification -> {
+                val dvFragment = DocumentVerificationFragment()
+                bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
+                bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
+				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER)
+                dvFragment.arguments = bundle
+                switchFragment(dvFragment)
+            }
+            R.id.nav_bam -> {
+                val bamFragment = BamFragment()
+                bundle.putString(KEY_API_TOKEN, BAM_API_TOKEN)
+                bundle.putString(KEY_API_SECRET, BAM_API_SECRET)
+				bundle.putSerializable(KEY_DATACENTER, BAM_DATACENTER)
+                bamFragment.arguments = bundle
+                switchFragment(bamFragment)
+            }
+            R.id.nav_bam_custom -> {
+                val bamCustomFragment = BamCustomFragment()
+                bundle.putString(KEY_API_TOKEN, BAM_API_TOKEN)
+                bundle.putString(KEY_API_SECRET, BAM_API_SECRET)
+				bundle.putSerializable(KEY_DATACENTER, BAM_DATACENTER)
+                bamCustomFragment.arguments = bundle
+                switchFragment(bamCustomFragment)
+            }
+            R.id.nav_terms_conditions -> openLink("https://www.jumio.com/legal-information/privacy-policy")
+            R.id.nav_licenses -> openLink("https://github.com/Jumio/mobile-sdk-android/tree/master/licenses")
         }
+
+		drawer_layout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+    private fun openLink(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
+    }
+
+    private fun switchFragment(fragment: Fragment) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
+        fragmentTransaction.commitAllowingStateLoss()
     }
 }

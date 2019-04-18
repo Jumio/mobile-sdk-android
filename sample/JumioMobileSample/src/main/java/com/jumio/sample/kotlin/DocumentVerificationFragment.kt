@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Switch
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.jumio.core.enums.JumioDataCenter
@@ -16,43 +15,44 @@ import com.jumio.core.exceptions.MissingPermissionException
 import com.jumio.core.exceptions.PlatformNotSupportedException
 import com.jumio.dv.DocumentVerificationSDK
 import com.jumio.sample.R
+import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
  * Copyright 2019 Jumio Corporation All rights reserved.
  */
 class DocumentVerificationFragment : Fragment(), View.OnClickListener {
 
+	companion object {
+		private val TAG = "JumioSDK_DV"
+		private val PERMISSION_REQUEST_CODE_DOCUMENT_VERIFICATION = 301
+	}
+
     private var apiToken: String? = null
     private var apiSecret: String? = null
+	private var dataCenter: JumioDataCenter? = null
 
     internal lateinit var documentVerificationSDK: DocumentVerificationSDK
-    internal lateinit var switchEnableExtraction: Switch
-
-    companion object {
-        private val TAG = "JumioSDK_DV"
-        private val PERMISSION_REQUEST_CODE_DOCUMENT_VERIFICATION = 301
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
-        rootView.findViewById<View>(R.id.switchOptionTwo).visibility = View.GONE
 
         apiToken = arguments!!.getString(MainActivity.KEY_API_TOKEN)
         apiSecret = arguments!!.getString(MainActivity.KEY_API_SECRET)
-
-        switchEnableExtraction = rootView.findViewById<View>(R.id.switchOptionOne) as Switch
-        switchEnableExtraction.isChecked = true
-
-        val args = arguments
-        switchEnableExtraction.text = args!!.getString(MainActivity.KEY_SWITCH_ONE_TEXT)
-
-        val startSDK = rootView.findViewById<View>(R.id.btnStart) as Button
-        startSDK.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_documentverification))
-        startSDK.setOnClickListener(this)
+		dataCenter = arguments!!.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
         return rootView
     }
+
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
+
+		switchOptionOne.text = resources.getString(R.string.documentverification_enable_extraction)
+		switchOptionOne.isChecked = true
+		switchOptionTwo.visibility = View.GONE
+		btnStart.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_documentverification))
+		btnStart.setOnClickListener(this)
+	}
 
     override fun onClick(view: View) {
         //Since the DocumentVerificationSDK is a singleton internally, a new instance is not
@@ -65,14 +65,13 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
             } catch (e: MissingPermissionException) {
                 Toast.makeText(activity, e.message, Toast.LENGTH_LONG).show()
             }
-
         }
     }
 
     private fun initializeDocumentVerificationSDK() {
         try {
             // You can get the current SDK version using the method below.
-            // DocumentVerificationSDK.getSDKVersion();
+//			DocumentVerificationSDK.getSDKVersion();
 
             // Call the method isSupportedPlatform to check if the device is supported.
             if (!DocumentVerificationSDK.isSupportedPlatform(activity))
@@ -88,7 +87,7 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
             // Make sure that your merchant API token and API secret are correct and specify an instance
             // of your activity. If your merchant account is created in the EU data center, use
             // JumioDataCenter.EU instead.
-            documentVerificationSDK = DocumentVerificationSDK.create(activity, apiToken, apiSecret, JumioDataCenter.US)
+            documentVerificationSDK = DocumentVerificationSDK.create(activity, apiToken, apiSecret, dataCenter)
 
             // One of the configured DocumentTypeCodes: BC, BS, CAAP, CB, CCS, CRC, HCC, IC, LAG, LOAP,
             // MEDC, MOAP, PB, SEL, SENC, SS, STUC, TAC, TR, UB, SSC, VC, VT, WWCC, CUSTOM
@@ -106,25 +105,25 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
             documentVerificationSDK.setUserReference("USERREFERENCE")
 
             // Set the following property to enable/disable data extraction for documents.
-            documentVerificationSDK.setEnableExtraction(switchEnableExtraction.isChecked);
+            documentVerificationSDK.setEnableExtraction(switchOptionOne.isChecked);
 
             // One of the Custom Document Type Codes as configurable by Merchant in Merchant UI.
-//            documentVerificationSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");
+//			documentVerificationSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");
 
             // Overrides the label for the document name (on Help Screen below document icon)
-//            documentVerificationSDK.setDocumentName("DOCUMENTNAME");
+//			documentVerificationSDK.setDocumentName("DOCUMENTNAME");
 
             // Use the following property to identify the scan in your reports (max. 255 characters).
-//            documentVerificationSDK.setReportingCriteria("YOURREPORTINGCRITERIA");
+//			documentVerificationSDK.setReportingCriteria("YOURREPORTINGCRITERIA");
 
             // Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
-//            documentVerificationSDK.setCallbackUrl("YOURCALLBACKURL");
+//			documentVerificationSDK.setCallbackUrl("YOURCALLBACKURL");
 
             // Use the following method to set the default camera position.
-//            documentVerificationSDK.setCameraPosition(JumioCameraPosition.FRONT);
+//			documentVerificationSDK.setCameraPosition(JumioCameraPosition.FRONT);
 
             // Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
-//            documentVerificationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
+//			documentVerificationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
         } catch (e: PlatformNotSupportedException) {
             android.util.Log.e(DocumentVerificationFragment.TAG, "Error in initializeNetverifySDK: ", e)

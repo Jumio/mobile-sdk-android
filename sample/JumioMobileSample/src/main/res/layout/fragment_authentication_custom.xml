@@ -23,14 +23,19 @@
             android:layout_marginBottom="12dp"
             android:layout_marginTop="50dp"/>
 
-        <EditText
-            android:id="@+id/etEnrollmentTransactionReference"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilOptional"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:gravity="center_horizontal"
-            android:hint="Enrollment Transaction Reference"
-            android:textSize="16sp"/>
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEnrollmentTransactionReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:hint="@string/authentication_enrollment_transaction_reference"
+                android:textAlignment="center"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 

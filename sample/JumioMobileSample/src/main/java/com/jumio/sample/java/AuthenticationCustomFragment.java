@@ -49,8 +49,10 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 
     private String apiToken = null;
     private String apiSecret = null;
+	private JumioDataCenter dataCenter = null;
 
     private AuthenticationSDK authenticationSDK = null;
+
     private ScrollView scrollView;
 	private LinearLayout authenticationSettingsContainer;
 	private LinearLayout customScanContainer;
@@ -80,6 +82,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 
         apiToken = args.getString(MainActivity.KEY_API_TOKEN);
         apiSecret = args.getString(MainActivity.KEY_API_SECRET);
+		dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
 
         scrollView = (ScrollView)rootView.findViewById(R.id.scrollView);
 		authenticationSettingsContainer = (LinearLayout)rootView.findViewById(R.id.authenticationSettingsContainer);
@@ -102,7 +105,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
         errorRetryButton.setOnClickListener(this);
 		partRetryButton.setOnClickListener(this);
 
-		startCustomScanButton.setText(args.getString(MainActivity.KEY_BUTTON_TEXT));
+		startCustomScanButton.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_authentication)));
 
         successDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.success));
         errorDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.error));
@@ -117,14 +120,6 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
         super.onConfigurationChanged(newConfig);
 
         initScanView();
-    }
-
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (!isVisibleToUser) {
-            stopCustomScanIfActiv();
-        }
     }
 
     @Override
@@ -154,8 +149,12 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
     public void onDestroy() {
         super.onDestroy();
         try {
-            if (customSDKController != null)
-                customSDKController.destroy();
+        	if(cancelCustomScanButton != null) {
+				cancelCustomScanButton.performClick();
+			}
+            if (customSDKController != null) {
+				customSDKController.destroy();
+			}
         } catch (SDKNotConfiguredException e) {
             e.printStackTrace();
         }
@@ -217,12 +216,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 				@Override
 				public void run() {
 					scrollView.scrollTo(0, customScanLayout.getTop());
-					try {
-						customSDKController.startScan(customScanView, new AuthenticationCustomScanImpl());
-						addToCallbackLog("help text: " + customSDKController.getHelpText());
-					} catch (SDKNotConfiguredException e) {
-						addToCallbackLog(e.getMessage());
-					}
+					scrollView.post(new ScanPartRunnable());
 				}
 			});
 		} else if (v == partRetryButton && isSDKControllerValid()) {
@@ -232,7 +226,12 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 				@Override
 				public void run() {
 					scrollView.scrollTo(0, customScanLayout.getTop());
-					customSDKController.retryScan();
+					scrollView.post(new Runnable() {
+						@Override
+						public void run() {
+							customSDKController.retryScan();
+						}
+					});
 				}
 			});
 		} else if (v == errorRetryButton && isSDKControllerValid()) {
@@ -250,7 +249,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 	private void initializeAuthenticationSDK() {
 		try {
 			// You can get the current SDK version using the method below.
-			// AuthenticationSDK.getSDKVersion();
+//			AuthenticationSDK.getSDKVersion();
 
 			// Call the method isSupportedPlatform to check if the device is supported.
 			if (!AuthenticationSDK.isSupportedPlatform(getActivity()))
@@ -266,17 +265,17 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 			// Make sure that your merchant API token and API secret are correct and specify an instance
 			// of your activity. If your merchant account is created in the EU data center, use
 			// JumioDataCenter.EU instead.
-			authenticationSDK = AuthenticationSDK.create(getActivity(), apiToken, apiSecret, JumioDataCenter.US);
+			authenticationSDK = AuthenticationSDK.create(getActivity(), apiToken, apiSecret, dataCenter);
 
 			// Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
-			// authenticationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
+//			authenticationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
 			// You can also set a customer identifier (max. 100 characters).
 			// Note: The customer ID should not contain sensitive data like PII (Personally Identifiable Information) or account login.
-			// authenticationSDK.setUserReference("USERREFERENCE");
+//			authenticationSDK.setUserReference("USERREFERENCE");
 
-			// Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
-			// authenticationSDK.setCallbackUrl("YOURCALLBACKURL");
+			// Callback URL (max. 255 characters) for the confirmation after authentication is completed. This setting overrides your Jumio merchant settings.
+//			authenticationSDK.setCallbackUrl("YOURCALLBACKURL");
 
 			// Use the following method to initialize the SDK
 			authenticationSDK.initiate(enrollmentTransactionReference.getText().toString(), new AuthenticationCallback() {
@@ -327,11 +326,17 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
         return customSDKController != null;
     }
 
-    private void stopCustomScanIfActiv() {
-        if (customSDKController != null) {
-            cancelCustomScanButton.performClick();
-        }
-    }
+	private class ScanPartRunnable implements Runnable {
+		@Override
+		public void run() {
+			try {
+				customSDKController.startScan(customScanView, new AuthenticationCustomScanImpl());
+				addToCallbackLog("help text: " + customSDKController.getHelpText());
+			} catch (SDKNotConfiguredException e) {
+				addToCallbackLog(e.getMessage());
+			}
+		}
+	}
 
     private class AuthenticationCustomSDKImpl implements AuthenticationCustomSDKInterface {
 

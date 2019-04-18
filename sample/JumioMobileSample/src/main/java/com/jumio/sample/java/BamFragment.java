@@ -31,11 +31,13 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 
 	private String apiToken = null;
 	private String apiSecret = null;
+	private JumioDataCenter dataCenter = null;
 
-	Switch switchExpiryDate;
-	Switch switchCvv;
+	private BamSDK bamSDK;
 
-	BamSDK bamSDK;
+	private Switch switchExpiryDate;
+	private Switch switchCvv;
+
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,14 +48,15 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 
 		Bundle args = getArguments();
 
-		switchExpiryDate.setText(args.getString(MainActivity.KEY_SWITCH_ONE_TEXT));
-		switchCvv.setText(args.getString(MainActivity.KEY_SWITCH_TWO_TEXT));
+		switchExpiryDate.setText(getResources().getString(R.string.bam_expiry_required));
+		switchCvv.setText(getResources().getString(R.string.bam_cvv_required));
 
 		apiToken = args.getString(MainActivity.KEY_API_TOKEN);
 		apiSecret = args.getString(MainActivity.KEY_API_SECRET);
+		dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
 
 		Button startSDK = (Button) rootView.findViewById(R.id.btnStart);
-		startSDK.setText(args.getString(MainActivity.KEY_BUTTON_TEXT));
+		startSDK.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_bam)));
 		startSDK.setOnClickListener(this);
 
 		return rootView;
@@ -81,7 +84,7 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 	private void initializeBamSDK() {
 		try {
 			// You can get the current SDK version using the method below.
-			// BamSDK.getSDKVersion();
+//			BamSDK.getSDKVersion();
 
 			// Call the method isSupportedPlatform to check if the device is supported.
 			if (!BamSDK.isSupportedPlatform(getActivity()))
@@ -97,63 +100,63 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 			// Make sure that your merchant API token and API secret are correct and specify an instance
 			// of your activity. If your merchant account is created in the EU data center, use
 			// JumioDataCenter.EU instead.
-			bamSDK = BamSDK.create(getActivity(), apiToken, apiSecret, JumioDataCenter.US);
+			bamSDK = BamSDK.create(getActivity(), apiToken, apiSecret, dataCenter);
 
-			// Use the following method to create an instance of the SDK, using offline credit card scanning.
-			// try {
-			//     bamSDK = BamSDK.create(getActivity(), "YOUROFFLINETOKEN");
-			// } catch (SDKExpiredException e) {
-			//    e.printStackTrace();
-			//    Toast.makeText(getActivity().getApplicationContext(), "The offline SDK is expired", Toast.LENGTH_LONG).show();
-			// }
+			// Use the following method to enable offline credit card scanning.
+//			try {
+//				bamSDK = BamSDK.create(SampleActivity.this, "YOUROFFLINETOKEN");
+//			} catch (SDKExpiredException e) {
+//				e.printStackTrace();
+//				Toast.makeText(getApplicationContext(), "The offline SDK is expired", Toast.LENGTH_LONG).show();
+//			}
 
 			// Overwrite your specified reporting criteria to identify each scan attempt in your reports (max. 100 characters).
-			// bamSDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
+//			bamSDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
 
 			// To restrict supported card types, pass an ArrayList of CreditCardTypes to the setSupportedCreditCardTypes method.
-			// ArrayList<CreditCardType> creditCardTypes = new ArrayList<CreditCardType>();
-			// creditCardTypes.add(CreditCardType.VISA);
-			// creditCardTypes.add(CreditCardType.MASTER_CARD);
-			// creditCardTypes.add(CreditCardType.AMERICAN_EXPRESS);
-			// creditCardTypes.add(CreditCardType.DINERS_CLUB);
-			// creditCardTypes.add(CreditCardType.DISCOVER);
-			// creditCardTypes.add(CreditCardType.CHINA_UNIONPAY);
-			// creditCardTypes.add(CreditCardType.JCB);
-			// bamSDK.setSupportedCreditCardTypes(creditCardTypes);
+//			ArrayList<CreditCardType> creditCardTypes = new ArrayList<CreditCardType>();
+//			creditCardTypes.add(CreditCardType.VISA);
+//			creditCardTypes.add(CreditCardType.MASTER_CARD);
+//			creditCardTypes.add(CreditCardType.AMERICAN_EXPRESS);
+//			creditCardTypes.add(CreditCardType.DINERS_CLUB);
+//			creditCardTypes.add(CreditCardType.DISCOVER);
+//			creditCardTypes.add(CreditCardType.CHINA_UNIONPAY);
+//			creditCardTypes.add(CreditCardType.JCB);
+//			bamSDK.setSupportedCreditCardTypes(creditCardTypes);
 
 			// Expiry recognition, card holder name and CVV entry are enabled by default and can be disabled.
 			// You can enable the recognition of sort code and account number.
-			bamSDK.setExpiryRequired(switchExpiryDate.isChecked());
-			// bamSDK.setCardHolderNameRequired(false);
-			bamSDK.setCvvRequired(switchCvv.isChecked());
-			// bamSDK.setSortCodeAndAccountNumberRequired(true);
+//			bamSDK.setExpiryRequired(false);
+//			bamSDK.setCardHolderNameRequired(false);
+//			bamSDK.setCvvRequired(false);
+//			bamSDK.setSortCodeAndAccountNumberRequired(true);
 
 			// You can show the unmasked credit card number to the user during the workflow if setCardNumberMaskingEnabled is disabled.
-			// bamSDK.setCardNumberMaskingEnabled(false);
+//			bamSDK.setCardNumberMaskingEnabled(false);
 
 			// The user can edit the recognized expiry date if setExpiryEditable is enabled.
-			// bamSDK.setExpiryEditable(true);
+//			bamSDK.setExpiryEditable(true);
 
 			// The user can edit the recognized card holder name if setCardHolderNameEditable is enabled.
-			// bamSDK.setCardHolderNameEditable(true);
+//			bamSDK.setCardHolderNameEditable(true);
 
 			// You can set a short vibration and sound effect to notify the user that the card has been detected.
-			// bamSDK.setVibrationEffectEnabled(true);
-			// bamSDK.setSoundEffect(R.raw.shutter_sound);
+//			bamSDK.setVibrationEffectEnabled(true);
+//			bamSDK.setSoundEffect(R.raw.shutter_sound);
 
 			// Use the following method to set the default camera position.
-			// bamSDK.setCameraPosition(JumioCameraPosition.FRONT);
+//			bamSDK.setCameraPosition(JumioCameraPosition.FRONT);
 
 			// Automatically enable flash when scan is started.
-			// bamSDK.setEnableFlashOnScanStart(true);
+//			bamSDK.setEnableFlashOnScanStart(true);
 
 			// You can add custom fields to the confirmation page (keyboard entry or predefined values).
-			// bamSDK.addCustomField("zipCodeId", getString(R.string.zip_code), InputType.TYPE_CLASS_NUMBER, "[0-9]{5,}");
+//			bamSDK.addCustomField("zipCodeId", getString(R.string.zip_code), InputType.TYPE_CLASS_NUMBER, "[0-9]{5,}");
 			// ArrayList<String> states = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.state_selection_values)));
-			// bamSDK.addCustomField("stateId", getString(R.string.state), states, false, getString(R.string.state_reset_value));
+//			bamSDK.addCustomField("stateId", getString(R.string.state), states, false, getString(R.string.state_reset_value));
 
 			// Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
-			//bamSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
+//			bamSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
 		} catch (PlatformNotSupportedException | NullPointerException e) {
 			e.printStackTrace();

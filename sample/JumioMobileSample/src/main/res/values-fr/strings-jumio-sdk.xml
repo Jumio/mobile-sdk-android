@@ -103,6 +103,7 @@
 	<string name="face_helpview_continue">Appuyer pour continuer</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Tournez votre appareil&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Veuillez tourner votre téléphone pour prendre un selfie en mode portrait.</string>
+	<string name="zoom_accessibility_cancel_button">Annuler la numérisation</string>
 	<string name="zoom_feedback_a_little_too_close">Reculez un peu</string>
 	<string name="zoom_feedback_a_little_too_close_tablet">Reculez un peu</string>
 	<string name="zoom_feedback_center_face">Placez votre visage au centre</string>

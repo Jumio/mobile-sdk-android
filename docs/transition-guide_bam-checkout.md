@@ -4,6 +4,13 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+
+## 3.1.0
+No backward incompatible changes
+
+## 3.0.0
+No backward incompatible changes.
+
 ## 2.15.0
 #### Added Room
 Dependencies that have been added to the SDK:

@@ -19,7 +19,6 @@ import com.jumio.auth.AuthenticationSDK
 import com.jumio.auth.custom.AuthenticationCustomSDKController
 import com.jumio.auth.custom.AuthenticationCustomSDKInterface
 import com.jumio.auth.custom.AuthenticationCustomScanInterface
-import com.jumio.auth.custom.AuthenticationCustomScanView
 import com.jumio.commons.log.Log
 import com.jumio.commons.utils.ScreenUtil
 import com.jumio.core.enums.JumioDataCenter
@@ -34,19 +33,20 @@ import kotlinx.android.synthetic.main.fragment_authentication_custom.*
  */
 class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
 
+	companion object {
+		private val TAG = "AuthenticationCustom"
+		private val PERMISSION_REQUEST_CODE_AUTHENTICATION_CUSTOM = 304
+	}
+
     private var apiToken: String? = null
     private var apiSecret: String? = null
+	private var dataCenter: JumioDataCenter? = null
 
     private lateinit var authenticationSDK: AuthenticationSDK
 
     private var customSDKController: AuthenticationCustomSDKController? = null
     private var successDrawable: Drawable? = null
     private var errorDrawable: Drawable? = null
-
-    private lateinit var startCustomScanButton: Button
-    private lateinit var cancelCustomScanButton: Button
-    private lateinit var customScanView: AuthenticationCustomScanView
-    private lateinit var customScanContainer: LinearLayout
 
     private val isPortrait: Boolean
         get() {
@@ -65,21 +65,12 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_authentication_custom, container, false)
 
-        val args = arguments
-
-        apiToken = args!!.getString(MainActivity.KEY_API_TOKEN)
-        apiSecret = args.getString(MainActivity.KEY_API_SECRET)
+		apiToken = arguments!!.getString(MainActivity.KEY_API_TOKEN)
+        apiSecret = arguments!!.getString(MainActivity.KEY_API_SECRET)
+		dataCenter = arguments!!.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
         successDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.success))
         errorDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.error))
-
-        customScanView = rootView.findViewById(R.id.authenticationCustomScanView)
-        customScanContainer = rootView.findViewById(R.id.authenticationCustomContainer)
-        startCustomScanButton = rootView.findViewById(R.id.startAuthenticationCustomButton)
-        cancelCustomScanButton = rootView.findViewById(R.id.stopAuthenticationCustomButton)
-        startCustomScanButton.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_authentication_custom))
-
-        initScanView()
 
         return rootView
     }
@@ -87,8 +78,11 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        startCustomScanButton.setOnClickListener(this)
-        cancelCustomScanButton.setOnClickListener(this)
+		initScanView()
+
+		startAuthenticationCustomButton.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_authentication_custom))
+        startAuthenticationCustomButton.setOnClickListener(this)
+        stopAuthenticationCustomButton.setOnClickListener(this)
         faceButton.setOnClickListener(this)
         errorRetryButton.setOnClickListener(this)
         partRetryButton.setOnClickListener(this)
@@ -99,13 +93,6 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
         super.onConfigurationChanged(newConfig)
 
         initScanView()
-    }
-
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
-        if (!isVisibleToUser) {
-            stopCustomScanIfActiv()
-        }
     }
 
     override fun onPause() {
@@ -131,40 +118,44 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
     }
 
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
         try {
-            if (customSDKController != null)
-                customSDKController!!.destroy()
+			if(stopAuthenticationCustomButton != null) {
+				stopAuthenticationCustomButton.performClick()
+			}
+            if (customSDKController != null) {
+				customSDKController!!.destroy()
+			}
         } catch (e: SDKNotConfiguredException) {
             e.printStackTrace()
         }
 
+		super.onDestroyView()
     }
 
     private fun initScanView() {
         val isPortrait = isPortrait
         val params = FrameLayout.LayoutParams(if (isPortrait) FrameLayout.LayoutParams.MATCH_PARENT else FrameLayout.LayoutParams.WRAP_CONTENT, if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(activity!!, 300))
-        customScanView.layoutParams = params
+        authenticationCustomScanView.layoutParams = params
     }
 
     override fun onClick(v: View) {
         v.isEnabled = false
 
-        if (v === startCustomScanButton) {
+        if (v === startAuthenticationCustomButton) {
             if (!MobileSDK.hasAllRequiredPermissions(activity)) {
                 ActivityCompat.requestPermissions(activity!!, MobileSDK.getMissingPermissions(activity), PERMISSION_REQUEST_CODE_AUTHENTICATION_CUSTOM)
             } else {
                 authenticationSettingsContainer!!.visibility = View.GONE
-                customScanContainer.visibility = View.VISIBLE
+                authenticationCustomContainer.visibility = View.VISIBLE
                 showView(false, loadingIndicator)
                 callbackLog!!.removeAllViews()
 
                 initializeAuthenticationSDK()
 
             }
-        } else if (v === cancelCustomScanButton && isSDKControllerValid) {
-            hideView(false, cancelCustomScanButton, partTypeLayout, customScanLayout, loadingIndicator)
+        } else if (v === stopAuthenticationCustomButton && isSDKControllerValid) {
+            hideView(false, stopAuthenticationCustomButton, partTypeLayout, customScanLayout, loadingIndicator)
             callbackLog!!.removeAllViews()
             try {
                 customSDKController!!.pause()
@@ -176,26 +167,23 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
             authenticationSDK.destroy()
 
             customSDKController = null
-            customScanContainer.visibility = View.GONE
+            authenticationCustomContainer.visibility = View.GONE
             authenticationSettingsContainer!!.visibility = View.VISIBLE
         } else if (v === faceButton && isSDKControllerValid) {
             showView(true, customScanLayout)
 
             scrollView!!.post {
                 scrollView!!.scrollTo(0, customScanLayout!!.top)
-                try {
-                    customSDKController!!.startScan(customScanView, AuthenticationCustomScanImpl())
-                    addToCallbackLog("help text: " + customSDKController!!.helpText)
-                } catch (e: SDKNotConfiguredException) {
-                    addToCallbackLog(e.message)
-                }
+                scrollView!!.post(ScanPartRunnable())
             }
         } else if (v === partRetryButton && isSDKControllerValid) {
             hideView(false, partRetryButton!!)
 
             scrollView!!.post {
                 scrollView!!.scrollTo(0, customScanLayout!!.top)
-                customSDKController!!.retryScan()
+                scrollView!!.post {
+                    customSDKController!!.retryScan()
+                }
             }
         } else if (v === errorRetryButton && isSDKControllerValid) {
             hideView(true, errorRetryButton!!)
@@ -213,7 +201,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
     private fun initializeAuthenticationSDK() {
         try {
             // You can get the current SDK version using the method below.
-            // AuthenticationSDK.getSDKVersion();
+//			AuthenticationSDK.getSDKVersion();
 
             // Call the method isSupportedPlatform to check if the device is supported.
             if (!AuthenticationSDK.isSupportedPlatform(activity))
@@ -229,23 +217,23 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
             // Make sure that your merchant API token and API secret are correct and specify an instance
             // of your activity. If your merchant account is created in the EU data center, use
             // JumioDataCenter.EU instead.
-            authenticationSDK = AuthenticationSDK.create(activity, apiToken, apiSecret, JumioDataCenter.US)
+            authenticationSDK = AuthenticationSDK.create(activity, apiToken, apiSecret, dataCenter)
 
             // Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
-            // authenticationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
+//			authenticationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
             // You can also set a customer identifier (max. 100 characters).
             // Note: The customer ID should not contain sensitive data like PII (Personally Identifiable Information) or account login.
-            // authenticationSDK.setUserReference("USERREFERENCE");
+//			authenticationSDK.setUserReference("USERREFERENCE");
 
-            // Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
-            // authenticationSDK.setCallbackUrl("YOURCALLBACKURL");
+            // Callback URL (max. 255 characters) for the confirmation after authentication is completed. This setting overrides your Jumio merchant settings.
+//			authenticationSDK.setCallbackUrl("YOURCALLBACKURL");
 
             // Use the following method to initialize the SDK
             authenticationSDK.initiate(etEnrollmentTransactionReference.text.toString(), object : AuthenticationCallback {
                 override fun onAuthenticationInitiateSuccess() {
                     try {
-                        showView(true, cancelCustomScanButton, partTypeLayout, faceButton)
+                        showView(true, stopAuthenticationCustomButton, partTypeLayout, faceButton)
                         faceButton.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
 
                         if (authenticationSDK != null) {
@@ -257,19 +245,19 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
                         Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
 
                         authenticationSettingsContainer!!.visibility = View.VISIBLE
-                        customScanContainer.visibility = View.GONE
+                        authenticationCustomContainer.visibility = View.GONE
                         hideView(false, loadingIndicator!!)
                     } catch (e: MissingPermissionException) {
                         android.util.Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
                         Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
                         authenticationSettingsContainer!!.visibility = View.VISIBLE
-                        customScanContainer.visibility = View.GONE
+                        authenticationCustomContainer.visibility = View.GONE
                         hideView(false, loadingIndicator!!)
                     } catch (e: SDKNotConfiguredException) {
                         android.util.Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
                         Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
                         authenticationSettingsContainer!!.visibility = View.VISIBLE
-                        customScanContainer.visibility = View.GONE
+                        authenticationCustomContainer.visibility = View.GONE
                         hideView(false, loadingIndicator!!)
                     }
 
@@ -279,7 +267,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
                     Toast.makeText(activity, errorMessage, Toast.LENGTH_LONG).show()
 
                     authenticationSettingsContainer!!.visibility = View.VISIBLE
-                    customScanContainer.visibility = View.GONE
+                    authenticationCustomContainer.visibility = View.GONE
                     hideView(false, loadingIndicator!!)
                 }
             })
@@ -288,33 +276,39 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
             android.util.Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
             Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
             authenticationSettingsContainer!!.visibility = View.VISIBLE
-            customScanContainer.visibility = View.GONE
+            authenticationCustomContainer.visibility = View.GONE
             hideView(false, loadingIndicator!!)
         } catch (e: NullPointerException) {
             android.util.Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
             Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
             authenticationSettingsContainer!!.visibility = View.VISIBLE
-            customScanContainer.visibility = View.GONE
+            authenticationCustomContainer.visibility = View.GONE
             hideView(false, loadingIndicator!!)
         } catch (e: MissingPermissionException) {
             android.util.Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
             Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
             authenticationSettingsContainer!!.visibility = View.VISIBLE
-            customScanContainer.visibility = View.GONE
+            authenticationCustomContainer.visibility = View.GONE
             hideView(false, loadingIndicator!!)
         } catch (e: IllegalArgumentException) {
             android.util.Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
             Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
             authenticationSettingsContainer!!.visibility = View.VISIBLE
-            customScanContainer.visibility = View.GONE
+            authenticationCustomContainer.visibility = View.GONE
             hideView(false, loadingIndicator!!)
         }
 
     }
 
-    private fun stopCustomScanIfActiv() {
-        if (customSDKController != null) {
-            cancelCustomScanButton.performClick()
+
+    private inner class ScanPartRunnable : Runnable {
+        override fun run() {
+            try {
+                customSDKController!!.startScan(authenticationCustomScanView, AuthenticationCustomScanImpl())
+                addToCallbackLog("help text: " + customSDKController!!.getHelpText())
+            } catch (e: SDKNotConfiguredException) {
+                addToCallbackLog(e.message)
+            }
         }
     }
 
@@ -402,10 +396,5 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener {
 
     private fun appendKeyValue(key: String, value: CharSequence) {
         addToCallbackLog(String.format("%s: %s", key, value))
-    }
-
-    companion object {
-        private val TAG = "AuthenticationCustom"
-        private val PERMISSION_REQUEST_CODE_AUTHENTICATION_CUSTOM = 304
     }
 }
