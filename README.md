@@ -76,7 +76,7 @@ __Note:__ The abiFilters command in the ndk closure affects the Google Play Stor
 ```
 defaultConfig {
 	ndk {
-		abiFilters armeabi-v7a","arm64-v8a","x86","x86_64"
+		abiFilters "armeabi-v7a","arm64-v8a","x86","x86_64"
 	}
 }
 ```
