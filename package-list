@@ -1,3 +1,4 @@
+com.jumio
 com.jumio.auth
 com.jumio.auth.custom
 com.jumio.bam
@@ -12,3 +13,6 @@ com.jumio.nv
 com.jumio.nv.custom
 com.jumio.nv.data.document
 com.jumio.nv.enums
+com.jumio.nv.nfc.custom
+com.jumio.sdk
+com.jumio.sdk.custom
