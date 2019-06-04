@@ -239,7 +239,83 @@
                     android:layout_below="@+id/netverifyCustomConfirmationView"
                     android:text="Confirm"/>
             </RelativeLayout>
+            <com.jumio.nv.custom.NetverifyCustomAnimationView
+                android:id="@+id/netverifyCustomAnimationView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:visibility="gone">
+            </com.jumio.nv.custom.NetverifyCustomAnimationView>
+            <RelativeLayout
+                android:id="@+id/customNfcLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+                <LinearLayout
+                    android:id="@+id/customNfcAccessLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/idNumberInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/idNumberEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="ID Number"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/dateOfBirthInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dateOfBirthEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:hint="Date of birth"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/dateOfExpiryInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dateOfExpiryEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:hint="Date of expiry"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/nfcRetryButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/customNfcAccessLayout"
+                    android:visibility="invisible"
+                    android:text="Retry"/>
+
+                <Button
+                    android:id="@+id/nfcCancelButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/customNfcAccessLayout"
+                    android:text="Cancel"/>
+            </RelativeLayout>
             <Button
                 android:id="@+id/errorRetryButton"
                 android:layout_width="match_parent"

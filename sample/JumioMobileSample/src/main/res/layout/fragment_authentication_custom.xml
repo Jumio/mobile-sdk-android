@@ -86,11 +86,19 @@
 
                 <com.jumio.auth.custom.AuthenticationCustomScanView
                     android:id="@+id/authenticationCustomScanView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="300dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    jumio:netverify_mode="face"
                     jumio:jumio_ratio="1">
                 </com.jumio.auth.custom.AuthenticationCustomScanView>
             </FrameLayout>
+
+            <com.jumio.auth.custom.AuthenticationCustomAnimationView
+                android:id="@+id/authenticationCustomAnimationView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:visibility="gone">
+            </com.jumio.auth.custom.AuthenticationCustomAnimationView>
 
             <Button
                 android:id="@+id/errorRetryButton"

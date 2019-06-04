@@ -46,9 +46,9 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_bam_custom, container, false)
 
-        apiToken = arguments!!.getString(MainActivity.KEY_API_TOKEN)
-        apiSecret = arguments!!.getString(MainActivity.KEY_API_SECRET)
-		dataCenter = arguments!!.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
+        apiToken = arguments?.getString(MainActivity.KEY_API_TOKEN)
+        apiSecret = arguments?.getString(MainActivity.KEY_API_SECRET)
+		dataCenter = arguments?.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
         return rootView
     }
@@ -56,8 +56,8 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btnStart.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_bam_custom))
-        btnStart.setOnClickListener {
+        btnStart?.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_bam_custom))
+        btnStart?.setOnClickListener {
             //Since the BamSDK is a singleton internally, a new instance is not
             //created here.
             if (!MobileSDK.hasAllRequiredPermissions(activity)) {
@@ -66,7 +66,7 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
                 btnStartScan()
         }
 
-        btnStopBamCustom.setOnClickListener {
+        btnStopBamCustom?.setOnClickListener {
             //Do not just re-instantiate the SDK here because fast subsequent taps on the button
             //can cause two SDK instances to be created, which will result in undefined (and
             //most likely incorrect) behaviour. A suitable place for the re-instantiation of the SDK
@@ -74,38 +74,31 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
             stopBamCustomScan()
         }
 
-        switchCameraImageView!!.setOnClickListener { v ->
+        switchCameraImageView?.setOnClickListener { v ->
             v.visibility = View.INVISIBLE
-            if (customScanPresenter != null && customScanPresenter!!.hasMultipleCameras())
-                customScanPresenter!!.switchCamera()
+            if (customScanPresenter?.hasMultipleCameras() == true)
+                customScanPresenter?.switchCamera()
         }
-        toggleFlashImageView!!.setOnClickListener { v ->
+        toggleFlashImageView?.setOnClickListener { v ->
             v.isEnabled = false
-            if (customScanPresenter != null && customScanPresenter!!.hasFlash()) {
-                customScanPresenter!!.toggleFlash()
+            if (customScanPresenter?.hasFlash() == true) {
+                customScanPresenter?.toggleFlash()
                 v.isEnabled = true
             }
-            toggleFlashImageView!!.setImageResource(if (customScanPresenter!!.isFlashOn) R.drawable.ic_flash_off else R.drawable.ic_flash_on)
+            toggleFlashImageView?.setImageResource(if (customScanPresenter?.isFlashOn == true) R.drawable.ic_flash_off else R.drawable.ic_flash_on)
         }
     }
 
     private fun stopBamCustomScan() {
-        if (customScanPresenter != null) {
-            customScanPresenter!!.stopScan()
-            customScanPresenter!!.clearSDK()
-            customScanPresenter = null
-        }
-        if (bamCustomContainer != null) {
-            bamCustomContainer!!.visibility = View.GONE
-        }
-        if (btnStart != null) {
-            btnStart.visibility = View.VISIBLE
-        }
+		customScanPresenter?.stopScan()
+		customScanPresenter?.clearSDK()
+		customScanPresenter = null
+		bamCustomContainer?.visibility = View.GONE
+		btnStart?.visibility = View.VISIBLE
     }
 
     override fun onPause() {
-        if (customScanPresenter != null)
-            customScanPresenter!!.onActivityPause()
+        customScanPresenter?.onActivityPause()
         stopBamCustomScan()
         super.onPause()
     }
@@ -113,8 +106,7 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
 
     override fun onDestroy() {
         super.onDestroy()
-        if (customScanPresenter != null)
-            customScanPresenter!!.clearSDK()
+        customScanPresenter?.clearSDK()
 
         if(this::bamSDK.isInitialized) {
             bamSDK.destroy()
@@ -125,17 +117,15 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
     override fun onConfigurationChanged(newConfig: Configuration?) {
         super.onConfigurationChanged(newConfig)
 
-        val isPortrait = newConfig!!.orientation == Configuration.ORIENTATION_PORTRAIT
-        val params = FrameLayout.LayoutParams(if (isPortrait) FrameLayout.LayoutParams.MATCH_PARENT else FrameLayout.LayoutParams.WRAP_CONTENT, if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(activity!!, 300))
-        bamCustomScanView!!.layoutParams = params
+        val isPortrait = newConfig?.orientation == Configuration.ORIENTATION_PORTRAIT
+        val params = FrameLayout.LayoutParams(if (isPortrait) FrameLayout.LayoutParams.MATCH_PARENT else FrameLayout.LayoutParams.WRAP_CONTENT, if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(activity, 300))
+        bamCustomScanView?.layoutParams = params
     }
 
     private fun btnStartScan() {
         try {
-            if (btnStart != null) {
-                btnStart.visibility = View.GONE
-            }
-            bamCustomContainer!!.visibility = View.VISIBLE
+            btnStart?.visibility = View.GONE
+            bamCustomContainer?.visibility = View.VISIBLE
             initializeBamSDK()
             customScanPresenter = bamSDK.start(this, bamCustomScanView)
         } catch (e: IllegalArgumentException) {
@@ -171,7 +161,7 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
 //				bamSDK = BamSDK.create(activity, "YOUROFFLINETOKEN");
 //			} catch (e: SDKExpiredException) {
 //				e.printStackTrace();
-//				Toast.makeText(activity!!.applicationContext, "The offline SDK is expired", Toast.LENGTH_LONG).show();
+//				Toast.makeText(activity?.applicationContext, "The offline SDK is expired", Toast.LENGTH_LONG).show();
 //			}
 
             // Overwrite your specified reporting criteria to identify each scan attempt in your reports (max. 100 characters).
@@ -225,10 +215,10 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
 //			bamSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
         } catch (e: PlatformNotSupportedException) {
-            android.util.Log.e(BamCustomFragment.TAG, "Error in initializeNetverifySDK: ", e)
-            Toast.makeText(activity!!.applicationContext, "This platform is not supported", Toast.LENGTH_LONG).show()
+            Log.e(TAG, "Error in initializeNetverifySDK: ", e)
+            Toast.makeText(activity?.applicationContext, "This platform is not supported", Toast.LENGTH_LONG).show()
         } catch (e1: NullPointerException) {
-            android.util.Log.e(BamCustomFragment.TAG, "Error in initializeNetverifySDK: ", e1)
+            Log.e(TAG, "Error in initializeNetverifySDK: ", e1)
         }
 
     }
@@ -243,10 +233,10 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
     //Called as soon as the camera is available for the custom scan. It is safe to check for flash and additional cameras here.
     override fun onBamCameraAvailable() {
         Log.d("BamCustomScan", "camera available")
-        switchCameraImageView!!.visibility = if (customScanPresenter!!.hasMultipleCameras()) View.VISIBLE else View.INVISIBLE
-        switchCameraImageView!!.setImageResource(if (customScanPresenter!!.isCameraFrontFacing) R.drawable.ic_camera_rear else R.drawable.ic_camera_front)
-        toggleFlashImageView!!.visibility = if (customScanPresenter!!.hasFlash()) View.VISIBLE else View.INVISIBLE
-        toggleFlashImageView!!.setImageResource(if (customScanPresenter!!.isFlashOn) R.drawable.ic_flash_off else R.drawable.ic_flash_on)
+        switchCameraImageView?.visibility = if (customScanPresenter?.hasMultipleCameras() == true) View.VISIBLE else View.INVISIBLE
+        switchCameraImageView?.setImageResource(if (customScanPresenter?.isCameraFrontFacing == true) R.drawable.ic_camera_rear else R.drawable.ic_camera_front)
+        toggleFlashImageView?.visibility = if (customScanPresenter?.hasFlash() == true) View.VISIBLE else View.INVISIBLE
+        toggleFlashImageView?.setImageResource(if (customScanPresenter?.isFlashOn == true) R.drawable.ic_flash_off else R.drawable.ic_flash_on)
     }
 
     override fun onBamError(errorCode: String, errorMessage: String, retryPossible: Boolean, scanAttempts: ArrayList<String>) {
@@ -260,10 +250,10 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
         if (retryPossible) {
             alertDialogBuilder.setPositiveButton("retry") { dialog, which ->
                 try {
-                    customScanPresenter!!.retryScan()
+                    customScanPresenter?.retryScan()
                 } catch (e: UnsupportedOperationException) {
                     e.printStackTrace()
-                    Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
                 }
             }
         }

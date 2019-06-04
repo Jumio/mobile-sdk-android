@@ -135,7 +135,6 @@
 	<string name="dv_upload_progress_description">En fonction de votre connexion réseau, cela ne devrait prendre que quelques secondes</string>
 	<string name="dv_upload_successful">&lt;b&gt;Chargement réussi&lt;/b&gt;</string>
 	<string name="dv_upload_error">&lt;b&gt;Problèmes de chargement&lt;/b&gt;</string>
-	<string name="dv_upload_error_description">Nous avons rencontré un problème de communication avec le réseau</string>
 	<string name="dv_scanview_title">Numérisation</string>
 	<string name="dv_scanview_title_check">Vérifiez la lisibilité</string>
 	<string name="dv_scanview_snackbar_check">Veuillez vérifier que toutes les données sur votre document soient bien lisibles, pas floues et sans reflet</string>

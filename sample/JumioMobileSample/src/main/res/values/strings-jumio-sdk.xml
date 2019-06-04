@@ -168,7 +168,6 @@
 	<string name="dv_upload_progress_description">This should only take a couple of seconds, depending on your network connectivity</string>
 	<string name="dv_upload_successful">&lt;b&gt;Upload successful&lt;/b&gt;</string>
 	<string name="dv_upload_error">&lt;b&gt;Upload issues&lt;/b&gt;</string>
-	<string name="dv_upload_error_description">We have encountered a network communication problem</string>
 	<string name="dv_scanview_title">Scan document</string>
 	<string name="dv_scanview_title_check">Check readability</string>
 	<string name="dv_scanview_snackbar_check">Make sure that all data on your document is fully visible, glare free and not blurred</string>

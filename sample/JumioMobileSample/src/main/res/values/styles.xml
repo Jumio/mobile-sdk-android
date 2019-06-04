@@ -10,6 +10,7 @@
 		<item name="bam_scanBackground">@color/jumio_black_alpha50</item>
 
         <item name="netverify_scanOverlay">@color/jumio_white_alpha40</item>
+        <item name="netverify_scanOverlayFill">@color/jumio_white_alpha40</item>
         <item name="netverify_scanBackground">@color/jumio_black_alpha50</item>
 
         <item name="netverify_scanOverlayTemplateValid">@color/jumio_primary_dark</item>
@@ -22,6 +23,8 @@
         <item name="face_scanOverlayFeedbackBackground">@color/jumio_primary</item>
         <item name="face_scanOverlayProgress">@color/jumio_primary</item>
         <item name="face_scanOverlayOval">@color/jumio_white</item>
+        <item name="face_helpImage">@color/jumio_black</item>
+        <item name="face_helpBackground">@color/jumio_white</item>
 
 	</style>
 

@@ -36,9 +36,9 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
 
-        apiToken = arguments!!.getString(MainActivity.KEY_API_TOKEN)
-        apiSecret = arguments!!.getString(MainActivity.KEY_API_SECRET)
-		dataCenter = arguments!!.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
+        apiToken = arguments?.getString(MainActivity.KEY_API_TOKEN)
+        apiSecret = arguments?.getString(MainActivity.KEY_API_SECRET)
+		dataCenter = arguments?.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
         return rootView
     }
@@ -46,18 +46,18 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 
-		tvOptions.visibility = View.GONE
-		switchOptionOne.visibility = View.GONE
-		switchOptionTwo.visibility = View.GONE
-		tilOptional.visibility = View.VISIBLE
-		btnStart.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_authentication))
-		btnStart.setOnClickListener(this)
+		tvOptions?.visibility = View.GONE
+		switchOptionOne?.visibility = View.GONE
+		switchOptionTwo?.visibility = View.GONE
+		tilOptional?.visibility = View.VISIBLE
+		btnStart?.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_authentication))
+		btnStart?.setOnClickListener(this)
 	}
 
     override fun onClick(view: View) {
         //Since the Authentication is a singleton internally, a new instance is not
         //created here.
-		btnStart.isEnabled = false
+		btnStart?.isEnabled = false
         initializeAuthenticationSDK()
     }
 
@@ -95,8 +95,8 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
             // Use the following method to initialize the SDK. The scan reference of an eligible Netverify scan has to be used
             // as the enrollmentTransactionReference
             var enrollmentTransactionReference = ""
-            if (etOptional.text.toString().isNotEmpty()) {
-                enrollmentTransactionReference = etOptional.text.toString()
+            if (etOptional?.text.toString().isNotEmpty()) {
+                enrollmentTransactionReference = etOptional?.text.toString()
             }
             if ((activity as MainActivity).checkPermissions(PERMISSION_REQUEST_CODE_AUTHENTICATION)) {
                 authenticationSDK.initiate(enrollmentTransactionReference, object : AuthenticationCallback {
@@ -104,51 +104,49 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
                         try {
                             startActivityForResult(authenticationSDK.intent, AuthenticationSDK.REQUEST_CODE)
                         } catch (e: MissingPermissionException) {
-                            Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
+                            Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
                         }
 
-						btnStart.isEnabled = true
+						btnStart?.isEnabled = true
                     }
 
                     override fun onAuthenticationInitiateError(errorCode: String, errorMessage: String, retryPossible: Boolean) {
                         Toast.makeText(activity, errorMessage, Toast.LENGTH_LONG).show()
-						btnStart.isEnabled = true
+						btnStart?.isEnabled = true
                     }
                 })
             } else {
-				btnStart.isEnabled = true
+				btnStart?.isEnabled = true
             }
 
         } catch (e: PlatformNotSupportedException) {
             Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
-            Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
-			btnStart.isEnabled = true
+            Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
+			btnStart?.isEnabled = true
         } catch (e: NullPointerException) {
             Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
-            Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
-			btnStart.isEnabled = true
+            Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
+			btnStart?.isEnabled = true
         } catch (e: MissingPermissionException) {
             Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
-            Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
-			btnStart.isEnabled = true
+            Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
+			btnStart?.isEnabled = true
         } catch (e : IllegalArgumentException) {
             Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
-            Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
-			btnStart.isEnabled = true
+            Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
+			btnStart?.isEnabled = true
         }
 
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == AuthenticationSDK.REQUEST_CODE) {
-            if (data == null)
-                return
             if (resultCode == Activity.RESULT_OK) {
-                val transactionReference = data.getStringExtra(AuthenticationSDK.EXTRA_TRANSACTION_REFERENCE)
-                val authenticationResult = data.getSerializableExtra(AuthenticationSDK.EXTRA_SCAN_DATA) as AuthenticationResult
+                val transactionReference = data?.getStringExtra(AuthenticationSDK.EXTRA_TRANSACTION_REFERENCE)
+                val authenticationResult = data?.getSerializableExtra(AuthenticationSDK.EXTRA_SCAN_DATA) as AuthenticationResult
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                val errorMessage = data.getStringExtra(AuthenticationSDK.EXTRA_ERROR_MESSAGE)
-                val errorCode = data.getStringExtra(AuthenticationSDK.EXTRA_ERROR_CODE)
+                val errorMessage = data?.getStringExtra(AuthenticationSDK.EXTRA_ERROR_MESSAGE)
+                val errorCode = data?.getStringExtra(AuthenticationSDK.EXTRA_ERROR_CODE)
             }
 
             //At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that

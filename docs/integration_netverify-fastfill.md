@@ -17,7 +17,7 @@ Jumio’s Netverify® ID Verification allows businesses to establish the genuine
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 3.1.0
+For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 3.2.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -60,23 +60,23 @@ The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
-|com.jumio.android:core:3.1.0@aar                    | x | Jumio Core library		                         | 4.64 MB |
-|com.jumio.android:nv:3.1.0@aar                      | x | Netverify library 		                         | 488.16 KB |
-|androidx.appcompat:appcompat:1.0.0                   | x | Android appcompat library	                         | - |
+|com.jumio.android:core:3.2.0@aar                    | x | Jumio Core library		                         | 4.65 MB |
+|com.jumio.android:nv:3.2.0@aar                      | x | Netverify library 		                         | 494.62 KB |
+|androidx.appcompat:appcompat:1.0.2                   | x | Android appcompat library	                         | - |
 |androidx.cardview:cardview:1.0.0                     | x | Android cardview library (Netverify only)	         | - |
 |androidx.room:room-runtime:2.0.0                     | x | Android database object mapping library	         | - |
 |com.google.android.gms:play-services-vision:15.0.1   |   | Barcode Scanning 			                 | - |
-|com.jumio.android:face:3.1.0@aar                 |   | Face library	                                 | 83.58 KB |
-|com.facetec:zoom-authentication-hybrid:7.0.9@aar     |   | Zoom face scanning library	                         | 12.1 MB |
+|com.jumio.android:face:3.2.0@aar                 |   | Face library	                                 | 84.23 KB |
+|com.facetec:zoom-authentication-hybrid:7.0.12@aar     |   | Zoom face scanning library	                         | 11.79 MB |
 |com.google.android.material:material:1.0.0           |   | Android material design library	                 | - |
-|com.jumio.android:javadoc:3.1.0                     |   | Jumio SDK Javadoc			                 | - |
-|com.jumio.android:nv-barcode:3.1.0@aar              |   | US / CAN Barcode Scanning                            | 3.46 MB |
-|com.jumio.android:nv-barcode-vision:3.1.0@aar       |   | US / CAN Barcode Scanning Alternative (reduced size) | 37.30 KB |
-|com.jumio.android:nv-mrz:3.1.0@aar                  |   | MRZ scanning                                         | 2.24 MB |
-|com.jumio.android:nv-nfc:3.1.0@aar                  |   | eMRTD Scanning                                       | 763.73 KB |
+|com.jumio.android:javadoc:3.2.0                     |   | Jumio SDK Javadoc			                 | - |
+|com.jumio.android:nv-barcode:3.2.0@aar              |   | US / CAN Barcode Scanning                            | 3.13 MB |
+|com.jumio.android:nv-barcode-vision:3.2.0@aar       |   | US / CAN Barcode Scanning Alternative (reduced size) | 37.44 KB |
+|com.jumio.android:nv-mrz:3.2.0@aar                  |   | MRZ scanning                                         | 2.24 MB |
+|com.jumio.android:nv-nfc:3.2.0@aar                  |   | eMRTD Scanning                                       | 763.91 KB |
 |org.bouncycastle:bcprov-jdk15on:1.61                |   | eMRTD Scanning                                       | - |
 |net.sf.scuba:scuba-sc-android:0.0.18                 |   | eMRTD Scanning                                       | - |
-|com.jumio.android:nv-ocr:3.1.0@aar                  |   | Template Matcher                                     | 1.57 MB |
+|com.jumio.android:nv-ocr:3.2.0@aar                  |   | Template Matcher                                     | 1.57 MB |
 
 ### Google Mobile Vision
 
@@ -115,7 +115,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:3.1.0@aar"
+implementation "com.jumio.android:bam:3.2.0@aar"
 ```
 
 #### Root detection
@@ -248,6 +248,15 @@ Use the nv-barcode-vision library instead of the nv-barcode libary and add the f
 			tools:replace="android:value"/>
 ```
 
+### Watchlist screening
+[Jumio Screening](https://www.jumio.com/screening/) is supported on the Jumio Android SDK. The following SDK method is used to set watchlist screening on transaction level. Enable to override the default search, or disable watchlist screening for this transaction.
+```
+netverifySDK.setWatchlistScreening(NVWatchlistScreening.ENABLED);
+```
+This method can be used to define the search profile for watchlist screening:
+```
+netverifySDK.setWatchlistSearchProfile("YOURPROFILENAME");
+```
 ### Miscellaneous
 
 In case Fastfill is used (enableVerification=false), data extraction can be limited to be executed on device only by enabling `setDataExtractionOnMobileOnly`
@@ -387,18 +396,18 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 |Code        			| Message  | Description      |
 | :--------------:|:---------|:-----------------|
-|A10000| We have encountered a network communication problem | Retry possible, user decided to cancel |
-|B10000| Authentication failed | Secure connection could not be established, retry impossible |
-|C10401| Authentication failed | API credentials invalid, retry impossible |
-|D10403| Authentication failed | Wrong API credentials used, retry impossible|
-|E20000| No Internet connection available | Retry possible, user decided to cancel |
+|A[x][yyyy]| We have encountered a network communication problem | Retry possible, user decided to cancel |
+|B[x][yyyy]| Authentication failed | Secure connection could not be established, retry impossible |
+|C[x]0401| Authentication failed | API credentials invalid, retry impossible |
+|D[x]0403| Authentication failed | Wrong API credentials used, retry impossible|
+|E[x]0000| No Internet connection available | Retry possible, user decided to cancel |
 |F00000| Scanning not available this time, please contact the app vendor | Resources cannot be loaded, retry impossible |
 |G00000| Cancelled by end-user | No error occurred |
 |H00000| The camera is currently not available | Camera cannot be initialized, retry impossible |
 |I00000| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
 |J00000| Transaction already finished | User did not complete SDK journey within session lifetime|
 
-The first letter (A-J) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation. Please always include the whole code when filing an error related issue to our support team.
+The first letter (A-J) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]). Please always include the whole code when filing an error related issue to our support team.
 
 ## Custom UI
 
@@ -493,6 +502,14 @@ Upon `onNetverifyShowLegalAdvice`, it is necessary to display the provided legal
 Upon `onNetverifyDisplayBlurHint`, it is necessary to  notify the user that the image is blurry and therefore can't be taken. (Manual image capturing only)
 
 Upon `onNetverifyScanForPartFinished`, call `netverifyCustomScanViewController.destroy()` to release all resources before scanning the next part, until all parts are scanned. Once completed, call `netverifyCustomSDKController.finish()` to finish the scan.
+
+Upon `onNetverifyScanForPartCanceled`, the scanning for this part has been canceled by the SDK and can be retried.
+
+`getNetverifyCustomNfcInterface()` is called when the NFC scan is getting prepared. If no NFC scan should be done, Null can be returned here. Please check the documentation for [NetverifyCustomNfcInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/nfc/custom/NetverifyCustomNfcInterface.html)
+
+Upon `onNetverifyStartNfcExtraction`, the NFC scan can be started and controlled with the provided [NetverifyCustomNfcPresenter](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/nfc/custom/NetverifyCustomNfcPresenter.html). Once an eId is provided NFC scanning starts automatically.
+
+The position and image of the close button for face scanning can be customized. Please have a look at the [NetverifyCustomScanView](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanView.html)
 
 ### Retrieving information
 

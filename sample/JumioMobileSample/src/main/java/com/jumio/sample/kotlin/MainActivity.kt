@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.jumio.MobileSDK
 import com.jumio.core.enums.JumioDataCenter
+import com.jumio.nv.NetverifySDK
 import com.jumio.sample.R
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -43,15 +44,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(toolbar)
 
         val drawerToggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-		drawer_layout.addDrawerListener(drawerToggle)
+		drawer_layout?.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
 
-        val menu = nav_view.menu
-        menu.findItem(R.id.nav_sdk)?.title = MobileSDK.getSDKVersion()
-        menu.findItem(R.id.nav_netverify)?.let { onNavigationItemSelected(it) }
-		nav_view.setNavigationItemSelectedListener(this)
-		nav_view.itemIconTintList = null
+        val menu = nav_view?.menu
+        menu?.findItem(R.id.nav_sdk)?.title = MobileSDK.getSDKVersion()
+        menu?.findItem(R.id.nav_netverify)?.let { onNavigationItemSelected(it) }
+		nav_view?.setNavigationItemSelectedListener(this)
+		nav_view?.itemIconTintList = null
     }
+
+	public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+		if (requestCode == NetverifySDK.REQUEST_CODE_NFC_DETECTED) {
+			val fragment = supportFragmentManager.fragments.get(0)
+			if(fragment is NetverifyCustomFragment) {
+				fragment.onActivityResult(requestCode, resultCode, data)
+			}
+		}
+
+		super.onActivityResult(requestCode, resultCode, data)
+	}
 
     /**
      * Check and request missing permissions for the SDK.

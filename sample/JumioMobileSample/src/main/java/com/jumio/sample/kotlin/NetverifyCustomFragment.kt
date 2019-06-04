@@ -1,12 +1,19 @@
 package com.jumio.sample.kotlin
 
+import android.app.DatePickerDialog
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.BitmapFactory
 import android.graphics.Point
+import android.graphics.Rect
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.text.InputFilter
+import android.text.Spanned
+import android.text.format.DateFormat
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +22,6 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.jumio.MobileSDK
-import com.jumio.commons.log.Log
 import com.jumio.commons.utils.ScreenUtil
 import com.jumio.core.data.document.ScanSide
 import com.jumio.core.enums.JumioDataCenter
@@ -26,6 +32,9 @@ import com.jumio.nv.NetverifySDK
 import com.jumio.nv.custom.*
 import com.jumio.nv.data.document.NVDocumentType
 import com.jumio.nv.data.document.NVDocumentVariant
+import com.jumio.nv.nfc.custom.NetverifyCustomNfcAccess
+import com.jumio.nv.nfc.custom.NetverifyCustomNfcInterface
+import com.jumio.nv.nfc.custom.NetverifyCustomNfcPresenter
 import com.jumio.sample.R
 import com.jumio.sdk.custom.SDKNotConfiguredException
 import kotlinx.android.synthetic.main.fragment_netverify_custom.*
@@ -50,6 +59,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
     private var customSDKController: NetverifyCustomSDKController? = null
     private var customScanViewPresenter: NetverifyCustomScanPresenter? = null
+	private var customNfcPresenter: NetverifyCustomNfcPresenter? = null
     private var customCountryAdapter: CustomCountryAdapter? = null
     private var customDocumentAdapter: CustomDocumentAdapter? = null
     private var customVariantAdapter: CustomVariantAdapter? = null
@@ -58,9 +68,9 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
     private val isPortrait: Boolean
         get() {
-            val display = activity!!.windowManager.defaultDisplay
+            val display = activity?.windowManager?.defaultDisplay
             val size = Point()
-            display.getSize(size)
+            display?.getSize(size)
             return size.y > size.x
         }
 
@@ -70,14 +80,17 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
     private val isScanViewControllerValid: Boolean
         get() = customScanViewPresenter != null
 
+	private val isNfcPresenterValid: Boolean
+		get() = customNfcPresenter != null
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_netverify_custom, container, false)
 
-        apiToken = arguments!!.getString(MainActivity.KEY_API_TOKEN)
-        apiSecret = arguments!!.getString(MainActivity.KEY_API_SECRET)
-		dataCenter = arguments!!.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
+        apiToken = arguments?.getString(MainActivity.KEY_API_TOKEN)
+        apiSecret = arguments?.getString(MainActivity.KEY_API_SECRET)
+		dataCenter = arguments?.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
         successDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.success))
         errorDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.error))
@@ -90,26 +103,28 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
 		initScanView()
 
-		startNetverifyCustomButton.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_netverify_custom))
-        startNetverifyCustomButton.setOnClickListener(this)
-		stopNetverifyCustomButton.setOnClickListener(this)
-        setCountryAndDocumentType.setOnClickListener(this)
-        frontSideButton.setOnClickListener(this)
-        backSideButton.setOnClickListener(this)
-        faceButton.setOnClickListener(this)
-        stopScan.setOnClickListener(this)
-        extraction.setOnClickListener(this)
-        startFallback.setOnClickListener(this)
-        switchCamera.setOnClickListener(this)
-        takePicture.setOnClickListener(this)
-        toggleFlash.setOnClickListener(this)
-        retryScan.setOnClickListener(this)
-        confirmScan.setOnClickListener(this)
-        errorRetryButton.setOnClickListener(this)
-        partRetryButton.setOnClickListener(this)
-        finishButton.setOnClickListener(this)
+		startNetverifyCustomButton?.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_netverify_custom))
+        startNetverifyCustomButton?.setOnClickListener(this)
+		stopNetverifyCustomButton?.setOnClickListener(this)
+        setCountryAndDocumentType?.setOnClickListener(this)
+        frontSideButton?.setOnClickListener(this)
+        backSideButton?.setOnClickListener(this)
+        faceButton?.setOnClickListener(this)
+        stopScan?.setOnClickListener(this)
+        extraction?.setOnClickListener(this)
+        startFallback?.setOnClickListener(this)
+        switchCamera?.setOnClickListener(this)
+        takePicture?.setOnClickListener(this)
+        toggleFlash?.setOnClickListener(this)
+        retryScan?.setOnClickListener(this)
+        confirmScan?.setOnClickListener(this)
+        errorRetryButton?.setOnClickListener(this)
+        partRetryButton?.setOnClickListener(this)
+        finishButton?.setOnClickListener(this)
+		nfcCancelButton?.setOnClickListener(this)
+		nfcRetryButton?.setOnClickListener(this)
 
-        hideView(true, countryDocumentLayout, partTypeLayout, finishButton, loadingIndicator, errorRetryButton, partRetryButton)
+        hideView(false, countryDocumentLayout, partTypeLayout, finishButton, errorRetryButton, partRetryButton, netverifyCustomAnimationView)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration?) {
@@ -120,10 +135,8 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
     override fun onPause() {
         try {
-            if (customScanViewPresenter != null)
-                customScanViewPresenter!!.pause()
-            if (customSDKController != null)
-                customSDKController!!.pause()
+            customScanViewPresenter?.pause()
+            customSDKController?.pause()
         } catch (e: SDKNotConfiguredException) {
             e.printStackTrace()
         }
@@ -134,10 +147,8 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
     override fun onResume() {
         super.onResume()
         try {
-            if (customSDKController != null)
-                customSDKController!!.resume()
-            if (customScanViewPresenter != null)
-                customScanViewPresenter!!.resume()
+            customSDKController?.resume()
+            customScanViewPresenter?.resume()
         } catch (e: SDKNotConfiguredException) {
             e.printStackTrace()
         }
@@ -146,18 +157,10 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
 	override fun onDestroyView() {
 		try {
-			if(stopScan != null) {
-				stopScan.performClick()
-			}
-			if(stopNetverifyCustomButton != null) {
-				stopNetverifyCustomButton.performClick()
-			}
-			if (customScanViewPresenter != null) {
-				customScanViewPresenter!!.destroy()
-			}
-			if (customSDKController != null) {
-				customSDKController!!.destroy()
-			}
+			stopScan?.performClick()
+			stopNetverifyCustomButton?.performClick()
+			customScanViewPresenter?.destroy()
+			customSDKController?.destroy()
 
 			if(this::netverifySDK.isInitialized){
 				netverifySDK.destroy()
@@ -169,11 +172,18 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 		super.onDestroyView()
 	}
 
+
+	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+		super.onActivityResult(requestCode, resultCode, data)
+
+		customSDKController?.consumeIntent(requestCode, resultCode, data)
+	}
+
     private fun initScanView() {
         val isPortrait = isPortrait
-        val params = FrameLayout.LayoutParams(if (isPortrait) FrameLayout.LayoutParams.MATCH_PARENT else FrameLayout.LayoutParams.WRAP_CONTENT, if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(activity!!, 300))
-		netverifyCustomScanView.layoutParams = params
-		netverifyCustomScanView.ratio = netverifyCustomScanView.minRatio
+        val params = FrameLayout.LayoutParams(if (isPortrait) FrameLayout.LayoutParams.MATCH_PARENT else FrameLayout.LayoutParams.WRAP_CONTENT, if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(activity, 300))
+		netverifyCustomScanView?.layoutParams = params
+		netverifyCustomScanView?.ratio = netverifyCustomScanView.minRatio
     }
 
     override fun onClick(v: View) {
@@ -183,17 +193,17 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
             if (!MobileSDK.hasAllRequiredPermissions(activity)) {
                 ActivityCompat.requestPermissions(activity!!, MobileSDK.getMissingPermissions(activity), PERMISSION_REQUEST_CODE_NETVERIFY_CUSTOM)
             } else {
-                netverifySettingsContainer!!.visibility = View.GONE
-                netverifyCustomContainer.visibility = View.VISIBLE
-                showView(false, loadingIndicator)
-                callbackLog!!.removeAllViews()
+                netverifySettingsContainer?.visibility = View.GONE
+                netverifyCustomContainer?.visibility = View.VISIBLE
+				hideView(true, countryDocumentLayout, partTypeLayout, finishButton, loadingIndicator, errorRetryButton, partRetryButton)
+                callbackLog?.removeAllViews()
 
                 try {
                     initializeNetverifySDK()
 
                     if (::netverifySDK.isInitialized) {
                         customSDKController = netverifySDK.start(NetverifyCustomSDKImpl())
-                        customSDKController!!.resume()
+                        customSDKController?.resume()
                     }
 
                 } catch (e: IllegalArgumentException) {
@@ -207,10 +217,10 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
             }
         } else if (v === stopNetverifyCustomButton && isSDKControllerValid) {
             hideView(false, stopNetverifyCustomButton, countryDocumentLayout, partTypeLayout, customScanLayout, customConfirmLayout, finishButton, loadingIndicator)
-            callbackLog!!.removeAllViews()
+            callbackLog?.removeAllViews()
             try {
-                customSDKController!!.pause()
-                customSDKController!!.destroy()
+                customSDKController?.pause()
+                customSDKController?.destroy()
             } catch (e: SDKNotConfiguredException) {
                 addToCallbackLog(e.message)
             }
@@ -218,119 +228,139 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
             netverifySDK.destroy()
 
             customSDKController = null
-            netverifyCustomContainer.visibility = View.GONE
-            netverifySettingsContainer!!.visibility = View.VISIBLE
+            netverifyCustomContainer?.visibility = View.GONE
+            netverifySettingsContainer?.visibility = View.VISIBLE
         } else if (v === setCountryAndDocumentType && isSDKControllerValid) {
-            val country = customCountryAdapter!!.getCountryObject(customCountrySpinner!!.selectedItemPosition)
-            val documentType = customDocumentAdapter!!.getDocumentType(customDocumentSpinner!!.selectedItemPosition)
-            val documentVariant = customVariantAdapter!!.getDocumentVariant(customVariantSpinner!!.selectedItemPosition)
-            frontSideButton!!.visibility = View.GONE
-            frontSideButton!!.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
-            frontSideButton!!.isEnabled = false
-            backSideButton!!.visibility = View.GONE
-            backSideButton!!.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
-            backSideButton!!.isEnabled = false
-            faceButton!!.visibility = View.GONE
-            faceButton!!.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
-            faceButton!!.isEnabled = false
+            val country = customCountryAdapter?.getCountryObject(customCountrySpinner.selectedItemPosition)
+            val documentType = customDocumentAdapter?.getDocumentType(customDocumentSpinner.selectedItemPosition)
+            val documentVariant = customVariantAdapter?.getDocumentVariant(customVariantSpinner.selectedItemPosition)
+            frontSideButton?.visibility = View.GONE
+            frontSideButton?.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
+            frontSideButton?.isEnabled = false
+            backSideButton?.visibility = View.GONE
+            backSideButton?.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
+            backSideButton?.isEnabled = false
+            faceButton?.visibility = View.GONE
+            faceButton?.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
+            faceButton?.isEnabled = false
 
             var sides: List<ScanSide>? = null
             try {
-                sides = customSDKController!!.setDocumentConfiguration(country, documentType, documentVariant)
+                sides = customSDKController?.setDocumentConfiguration(country, documentType, documentVariant)
 
                 for (side in sides!!) {
                     when (side) {
-                        ScanSide.FRONT -> frontSideButton!!.visibility = View.VISIBLE
-                        ScanSide.BACK -> backSideButton!!.visibility = View.VISIBLE
-                        ScanSide.FACE -> faceButton!!.visibility = View.VISIBLE
+                        ScanSide.FRONT -> frontSideButton?.visibility = View.VISIBLE
+                        ScanSide.BACK -> backSideButton?.visibility = View.VISIBLE
+                        ScanSide.FACE -> faceButton?.visibility = View.VISIBLE
                     }
                 }
                 showView(true, partTypeLayout)
-            } catch (e: SDKNotConfiguredException) {
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
 
         } else if ((v === frontSideButton || v === backSideButton || v === faceButton) && isSDKControllerValid) {
-			netverifyCustomScanView.mode = if (v === faceButton) NetverifyCustomScanView.MODE_FACE else NetverifyCustomScanView.MODE_ID
+			netverifyCustomScanView?.mode = if (v === faceButton) NetverifyCustomScanView.MODE_FACE else NetverifyCustomScanView.MODE_ID
             initScanView()
 
             showView(true, customScanLayout, netverifyCustomScanView)
-            scrollView.post {
-                scrollView.scrollTo(0, customScanLayout.top)
-                scrollView.post(ScanPartRunnable(v))
+            scrollView?.post {
+                scrollView?.scrollTo(0, customScanLayout?.top ?: 0)
+                scrollView?.postDelayed(ScanPartRunnable(v), 250)
             }
             keepDisabled = true
         } else if (v === stopScan && isScanViewControllerValid) {
-            customScanViewPresenter!!.stopScan()
-            hideView(false, customScanLayout!!)
-            frontSideButton!!.isEnabled = true
-            backSideButton!!.isEnabled = true
-            faceButton!!.isEnabled = true
-            customScanViewPresenter!!.destroy()
+            customScanViewPresenter?.stopScan()
+            hideView(false, customScanLayout)
+            frontSideButton?.isEnabled = true
+            backSideButton?.isEnabled = true
+            faceButton?.isEnabled = true
+            customScanViewPresenter?.destroy()
             customScanViewPresenter = null
 
-            hideView(false, partRetryButton)
+			netverifyCustomAnimationView?.destroy()
+            hideView(false, partRetryButton, netverifyCustomAnimationView)
         } else if (v === extraction && isScanViewControllerValid) {
-            if (extraction!!.isChecked)
-                customScanViewPresenter!!.resumeExtraction()
+            if (extraction?.isChecked == true)
+                customScanViewPresenter?.resumeExtraction()
             else
-                customScanViewPresenter!!.pauseExtraction()
+                customScanViewPresenter?.pauseExtraction()
         } else if (v === startFallback && isScanViewControllerValid) {
-            if (customScanViewPresenter!!.isFallbackAvailable) {
-                customScanViewPresenter!!.startFallback()
+            if (customScanViewPresenter?.isFallbackAvailable == true) {
+                customScanViewPresenter?.startFallback()
                 //startFallback could result in an onNetverifyScanForPartFinished if the part is not mandatory
                 //therefore check if the customScanViewPresenter is null!
                 if (isScanViewControllerValid)
-                    addToCallbackLog("start fallback: " + customScanViewPresenter!!.scanMode!!)
+                    addToCallbackLog("start fallback: " + customScanViewPresenter?.scanMode)
                 keepDisabled = true
             }
         } else if (v === switchCamera && isScanViewControllerValid) {
-            if (customScanViewPresenter!!.hasMultipleCameras())
-                customScanViewPresenter!!.switchCamera()
+            if (customScanViewPresenter?.hasMultipleCameras() == true)
+                customScanViewPresenter?.switchCamera()
         } else if (v === takePicture && isScanViewControllerValid) {
-            if (customScanViewPresenter!!.showShutterButton())
-                customScanViewPresenter!!.takePicture()
+            if (customScanViewPresenter?.showShutterButton() == true)
+                customScanViewPresenter?.takePicture()
         } else if (v === toggleFlash && isScanViewControllerValid) {
-            if (customScanViewPresenter!!.hasFlash())
-                customScanViewPresenter!!.toggleFlash()
+            if (customScanViewPresenter?.hasFlash() == true)
+                customScanViewPresenter?.toggleFlash()
         } else if (v === retryScan && isScanViewControllerValid) {
-            hideView(false, customConfirmLayout!!)
+            hideView(false, customConfirmLayout)
             showView(false, customScanLayout)
 
-            customScanViewPresenter!!.retryScan()
+            customScanViewPresenter?.retryScan()
         } else if (v === confirmScan && isScanViewControllerValid) {
-            hideView(true, customConfirmLayout!!)
-            customScanViewPresenter!!.confirmScan()
+            hideView(true, customConfirmLayout)
+            customScanViewPresenter?.confirmScan()
 
-            if (!extraction!!.isChecked)
+            if (extraction?.isChecked == false)
                 return
         } else if (v === partRetryButton && isScanViewControllerValid) {
-            hideView(false, partRetryButton)
+			netverifyCustomAnimationView?.destroy()
+			hideView(false, partRetryButton, netverifyCustomAnimationView)
 
-            scrollView.post {
-                scrollView.scrollTo(0, customScanLayout.top)
-                scrollView.post {
-                    customScanViewPresenter!!.retryScan()
-                }
+            scrollView?.post {
+                scrollView?.scrollTo(0, customScanLayout?.top ?: 0)
+                scrollView?.postDelayed(RetryPartRunnable(), 250)
             }
         } else if (v === errorRetryButton && isSDKControllerValid) {
-            hideView(true, errorRetryButton!!)
+            hideView(true, errorRetryButton)
             try {
-                customSDKController!!.retry()
+                customSDKController?.retry()
             } catch (e: SDKNotConfiguredException) {
                 addToCallbackLog(e.message)
             }
-
         } else if (v === finishButton && isSDKControllerValid) {
             try {
                 showView(false, loadingIndicator)
-                customSDKController!!.finish()
+                customSDKController?.finish()
                 keepDisabled = true
             } catch (e: SDKNotConfiguredException) {
                 addToCallbackLog(e.message)
             }
+        } else if (v === nfcRetryButton && isNfcPresenterValid) {
+			try {
+				if(customNfcAccessLayout?.visibility == View.VISIBLE) {
+					val nfcAccessData = NetverifyCustomNfcAccess()
+					nfcAccessData.dateOfBirth = dateOfBirthEditText?.tag as Date?
+					nfcAccessData.dateOfExpiry = dateOfExpiryEditText?.tag as Date?
+					nfcAccessData.idNumber = idNumberEditText?.text.toString()
+					customNfcPresenter?.updateAccessData(nfcAccessData)
+					hideView(true, customNfcAccessLayout)
+				}
 
-        }
+				customNfcPresenter?.retry()
+				hideView(true, customNfcLayout)
+			} catch (e: NullPointerException) {
+				addToCallbackLog(e.message)
+			}
+		} else if (v === nfcCancelButton && isNfcPresenterValid) {
+			customNfcPresenter?.cancel()
+
+			hideView(false, customNfcAccessLayout)
+			hideView(false, customNfcLayout)
+
+		}
 
         if (!keepDisabled)
             v.isEnabled = true
@@ -344,13 +374,13 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
             // Call the method isSupportedPlatform to check if the device is supported.
             if (!NetverifySDK.isSupportedPlatform(activity))
-                android.util.Log.w(TAG, "Device not supported")
+                Log.w(TAG, "Device not supported")
 
             // Applications implementing the SDK shall not run on rooted devices. Use either the below
             // method or a self-devised check to prevent usage of SDK scanning functionality on rooted
             // devices.
             if (NetverifySDK.isRooted(activity))
-                android.util.Log.w(TAG, "Device is rooted")
+                Log.w(TAG, "Device is rooted")
 
             // To create an instance of the SDK, perform the following call as soon as your activity is initialized.
             // Make sure that your merchant API token and API secret are correct and specify an instance
@@ -368,7 +398,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
             // Enable ID verification to receive a verification status and verified data positions (see Callback chapter).
             // Note: Not possible for accounts configured as Fastfill only.
-            netverifySDK.setEnableVerification(switchVerification!!.isChecked)
+            netverifySDK.setEnableVerification(switchVerification?.isChecked == true)
 
             // You can specify issuing country (ISO 3166-1 alpha-3 country code) and/or ID types and/or document variant to skip
             // their selection during the scanning process.
@@ -395,7 +425,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 //			netverifySDK.setCallbackUrl("YOURCALLBACKURL")
 
             // You can disable Identity Verification during the ID verification for a specific transaction.
-            netverifySDK.setEnableIdentityVerification(switchIdentitiyVerification!!.isChecked)
+            netverifySDK.setEnableIdentityVerification(switchIdentitiyVerification?.isChecked == true)
 
             // Use the following method to disable eMRTD scanning.
 //			netverifySDK.setEnableEMRTD(false)
@@ -413,6 +443,12 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
             // Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
 //			netverifySDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
+			// Set watchlist screening on transaction level. Enable to override the default search, or disable watchlist screening for this transaction.
+//			netverifySDK.setWatchlistScreening(NVWatchlistScreening.ENABLED);
+
+			// Search profile for watchlist screening.
+//			netverifySDK.setWatchlistSearchProfile("YOURPROFILENAME");
+
             // Use the following method to initialize the SDK before displaying it
 //			netverifySDK.initiate(object : NetverifyInitiateCallback {
 //				override fun onNetverifyInitiateSuccess() {}
@@ -420,10 +456,10 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 //			})
 
         } catch (e: PlatformNotSupportedException) {
-            android.util.Log.e(TAG, "Error in initializeNetverifySDK: ", e)
-            Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
+            Log.e(TAG, "Error in initializeNetverifySDK: ", e)
+            Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
         } catch (e1: NullPointerException) {
-            android.util.Log.e(TAG, "Error in initializeNetverifySDK: ", e1)
+            Log.e(TAG, "Error in initializeNetverifySDK: ", e1)
         }
 
     }
@@ -433,35 +469,74 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
         override fun run() {
             try {
                 var scanSide = ScanSide.FRONT
-                if (view === backSideButton)
-                    scanSide = ScanSide.BACK
-                else if (view === faceButton)
-                    scanSide = ScanSide.FACE
+				if (view === backSideButton) {
+					scanSide = ScanSide.BACK
+				} else if (view === faceButton) {
+					scanSide = ScanSide.FACE
 
-                customScanViewPresenter = customSDKController!!.startScanForPart(scanSide, netverifyCustomScanView, netverifyCustomConfirmationView, NetverifyCustomScanImpl())
+					val location = IntArray(2)
+					stopScan?.getLocationOnScreen(location)
 
-                frontSideButton.isEnabled = false
-                backSideButton.isEnabled = false
-                faceButton.isEnabled = false
+					val rectangle = Rect()
+					activity?.window?.decorView?.getWindowVisibleDisplayFrame(rectangle)
 
-                switchCamera.isEnabled = false
-                takePicture.isEnabled = false
-                toggleFlash.isEnabled = false
-                startFallback.isEnabled = false
-                extraction.isChecked = true
-                addToCallbackLog("start scanmode: " + customScanViewPresenter!!.scanMode)
-                addToCallbackLog("help text: " + customScanViewPresenter!!.helpText)
-                startFallback.isEnabled = customScanViewPresenter!!.isFallbackAvailable
+					netverifyCustomScanView?.closeButtonWidth = stopScan?.width ?:0
+					netverifyCustomScanView?.closeButtonHeight = stopScan?.height ?:0
+					netverifyCustomScanView?.closeButtonTop = location[1] - rectangle.top
+					netverifyCustomScanView?.closeButtonLeft = location[0] - rectangle.left
+					netverifyCustomScanView?.closeButtonResId = R.drawable.jumio_close_button
+				}
+
+                customScanViewPresenter = customSDKController?.startScanForPart(scanSide, netverifyCustomScanView, netverifyCustomConfirmationView, NetverifyCustomScanImpl())
+
+                frontSideButton?.isEnabled = false
+                backSideButton?.isEnabled = false
+                faceButton?.isEnabled = false
+
+                switchCamera?.isEnabled = false
+                takePicture?.isEnabled = false
+                toggleFlash?.isEnabled = false
+                startFallback?.isEnabled = false
+                extraction?.isChecked = true
+                addToCallbackLog("start scanmode: " + customScanViewPresenter?.scanMode)
+                addToCallbackLog("help text: " + customScanViewPresenter?.helpText)
+                startFallback?.isEnabled = customScanViewPresenter?.isFallbackAvailable == true
 
             } catch (e: SDKNotConfiguredException) {
                 addToCallbackLog(e.message)
-                frontSideButton.isEnabled = true
-                backSideButton.isEnabled = true
-                faceButton.isEnabled = true
+                frontSideButton?.isEnabled = true
+                backSideButton?.isEnabled = true
+                faceButton?.isEnabled = true
             }
 
         }
     }
+
+	private inner class RetryPartRunnable() : Runnable {
+
+		override fun run() {
+			try {
+				if (customScanViewPresenter?.scanMode == NetverifyScanMode.FACE) {
+					val location = IntArray(2)
+					stopScan?.getLocationOnScreen(location)
+
+					val rectangle = Rect()
+					activity?.window?.decorView?.getWindowVisibleDisplayFrame(rectangle)
+
+					netverifyCustomScanView?.closeButtonWidth = stopScan?.width ?:0
+					netverifyCustomScanView?.closeButtonHeight = stopScan?.height ?:0
+					netverifyCustomScanView?.closeButtonTop = location[1] - rectangle.top
+					netverifyCustomScanView?.closeButtonLeft = location[0] - rectangle.left
+					netverifyCustomScanView?.closeButtonResId = R.drawable.jumio_close_button
+				}
+
+				customScanViewPresenter?.retryScan()
+
+			} catch (e: Exception) {
+				addToCallbackLog(e.message)
+			}
+		}
+	}
 
     private inner class NetverifyCustomSDKImpl : NetverifyCustomSDKInterface {
 
@@ -473,20 +548,20 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
             showView(true, stopNetverifyCustomButton, countryDocumentLayout)
             val context = activity ?: return
             customCountryAdapter = CustomCountryAdapter(context, countryList)
-            customCountrySpinner!!.adapter = customCountryAdapter
-            customCountrySpinner!!.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            customCountrySpinner?.adapter = customCountryAdapter
+            customCountrySpinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                    val country: NetverifyCountry? = customCountryAdapter!!.getCountryObject(position)
+                    val country: NetverifyCountry? = customCountryAdapter?.getCountryObject(position)
                     customDocumentAdapter = CustomDocumentAdapter(context, country!!.documentTypes)
-                    customDocumentSpinner!!.adapter = customDocumentAdapter
-                    customDocumentSpinner!!.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    customDocumentSpinner?.adapter = customDocumentAdapter
+                    customDocumentSpinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                         override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                             hideView(false, partTypeLayout, customScanLayout, customConfirmLayout, finishButton, loadingIndicator)
-                            val selectedCountry = customCountryAdapter!!.getCountryObject(customCountrySpinner!!.selectedItemPosition)
-                            val documentType = customDocumentAdapter!!.getDocumentType(position)
+                            val selectedCountry = customCountryAdapter?.getCountryObject(customCountrySpinner.selectedItemPosition)
+                            val documentType = customDocumentAdapter?.getDocumentType(position)
                             customVariantAdapter = CustomVariantAdapter(context, selectedCountry!!.getDocumentVariants(documentType))
-                            customVariantSpinner!!.adapter = customVariantAdapter
-                            customVariantSpinner!!.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                            customVariantSpinner?.adapter = customVariantAdapter
+                            customVariantSpinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                                     hideView(false, partTypeLayout, customScanLayout, customConfirmLayout, finishButton, loadingIndicator)
                                 }
@@ -511,9 +586,9 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
         override fun onNetverifyResourcesLoaded() {
             addToCallbackLog("onNetverifyResourcesLoaded")
-            frontSideButton!!.isEnabled = true
-            backSideButton!!.isEnabled = true
-            faceButton!!.isEnabled = true
+            frontSideButton?.isEnabled = true
+            backSideButton?.isEnabled = true
+            faceButton?.isEnabled = true
         }
 
         override fun onNetverifyFinished(documentData: NetverifyDocumentData?, scanReference: String) {
@@ -573,25 +648,25 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
     private inner class NetverifyCustomScanImpl : NetverifyCustomScanInterface {
 
-        override fun onNetverifyScanForPartFinished(scanSide: ScanSide, allPartsScanned: Boolean) {
-            customScanViewPresenter!!.destroy()
+		override fun onNetverifyScanForPartFinished(scanSide: ScanSide, allPartsScanned: Boolean) {
+            customScanViewPresenter?.destroy()
             customScanViewPresenter = null
-            frontSideButton!!.isEnabled = true
-            backSideButton!!.isEnabled = true
-            faceButton!!.isEnabled = true
+            frontSideButton?.isEnabled = true
+            backSideButton?.isEnabled = true
+            faceButton?.isEnabled = true
             addToCallbackLog("onNetverifyScanForPartFinished")
-            if (customScanLayout!!.visibility == View.VISIBLE)
-                hideView(false, customScanLayout!!)
-            if (customConfirmLayout!!.visibility == View.VISIBLE)
-                hideView(false, customConfirmLayout!!)
-            hideView(false, loadingIndicator!!)
+            if (customScanLayout?.visibility == View.VISIBLE)
+                hideView(false, customScanLayout)
+            if (customConfirmLayout?.visibility == View.VISIBLE)
+                hideView(false, customConfirmLayout)
+            hideView(false, loadingIndicator)
             when (scanSide) {
-                ScanSide.FRONT -> frontSideButton!!.setCompoundDrawablesWithIntrinsicBounds(successDrawable, null, null, null)
-                ScanSide.BACK -> backSideButton!!.setCompoundDrawablesWithIntrinsicBounds(successDrawable, null, null, null)
-                ScanSide.FACE -> faceButton!!.setCompoundDrawablesWithIntrinsicBounds(successDrawable, null, null, null)
+                ScanSide.FRONT -> frontSideButton?.setCompoundDrawablesWithIntrinsicBounds(successDrawable, null, null, null)
+                ScanSide.BACK -> backSideButton?.setCompoundDrawablesWithIntrinsicBounds(successDrawable, null, null, null)
+                ScanSide.FACE -> faceButton?.setCompoundDrawablesWithIntrinsicBounds(successDrawable, null, null, null)
             }
             if (allPartsScanned) {
-                finishButton!!.isEnabled = true
+                finishButton?.isEnabled = true
                 showView(true, finishButton)
             }
         }
@@ -599,11 +674,11 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
         //Custom ScanView Interface
         override fun onNetverifyCameraAvailable() {
             addToCallbackLog("onNetverifyCameraAvailable")
-            switchCamera!!.isEnabled = customScanViewPresenter!!.hasMultipleCameras()
-            takePicture!!.isEnabled = customScanViewPresenter!!.showShutterButton()
-            toggleFlash!!.isEnabled = customScanViewPresenter!!.hasFlash()
-            stopScan!!.isEnabled = true
-            extraction!!.isEnabled = true
+            switchCamera?.isEnabled = customScanViewPresenter?.hasMultipleCameras() == true
+            takePicture?.isEnabled = customScanViewPresenter?.showShutterButton() == true
+            toggleFlash?.isEnabled = customScanViewPresenter?.hasFlash() == true
+            stopScan?.isEnabled = true
+            extraction?.isEnabled = true
         }
 
         override fun onNetverifyExtractionStarted() {
@@ -612,7 +687,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
         override fun onNetverifyPresentConfirmationView() {
             addToCallbackLog("onNetverifyPresentConfirmationView")
-            hideView(true, customScanLayout!!)
+            hideView(true, customScanLayout)
             showView(true, customConfirmLayout)
         }
 
@@ -627,7 +702,8 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
         override fun onNetverifyFaceInLandscape() {
             addToCallbackLog("onNetverifyFaceInLandscape")
 
-            showView(false, partRetryButton)
+			customScanViewPresenter?.getHelpAnimation(netverifyCustomAnimationView)
+            showView(false, partRetryButton, netverifyCustomAnimationView)
         }
 
         override fun onNetverifyShowLegalAdvice(legalAdvice: String) {
@@ -639,28 +715,104 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
             addToCallbackLog("onNetverifyDisplayBlurHint")
         }
         
-        override fun onNetverifyScanForPartCanceled(scanSide: ScanSide?) {
-            addToCallbackLog("onNetverifyScanForPartCanceled")
+        override fun onNetverifyScanForPartCanceled(scanSide: ScanSide?, cancelReason: NetverifyCancelReason?) {
+			addToCallbackLog(String.format("onNetverifyScanForPartCanceled scanSide: %s reason: %s helptext: %s", scanSide.toString(), cancelReason.toString(), customScanViewPresenter?.helpText))
 
-            showView(false, partRetryButton)
+			customScanViewPresenter?.getHelpAnimation(netverifyCustomAnimationView)
+			showView(false, partRetryButton, netverifyCustomAnimationView)
         }
+
+		override fun getNetverifyCustomNfcInterface(): NetverifyCustomNfcInterface {
+			addToCallbackLog("getNetverifyCustomNfcInterface")
+
+			return NetverifyCustomNfcImpl()
+		}
+
+		override fun onNetverifyStartNfcExtraction(netverifyCustomNfcPresenter: NetverifyCustomNfcPresenter?) {
+			addToCallbackLog("Waiting for eMrtd Document..")
+
+			hideView(false, nfcRetryButton)
+			showView(false, customNfcLayout)
+
+			customNfcPresenter = netverifyCustomNfcPresenter
+		}
     }
+
+	private inner class NetverifyCustomNfcImpl : NetverifyCustomNfcInterface {
+
+		override fun onNetverifyNfcStarted() {
+			addToCallbackLog("onNetverifyNfcStarted")
+
+			hideView(true, customNfcLayout)
+		}
+
+		override fun onNetverifyNfcUpdate(progress: Int) {
+			addToCallbackLog(String.format("onNetverifyNfcUpdate %d", progress))
+		}
+
+		override fun onNetverifyNfcFinished() {
+			addToCallbackLog("onNetverifyNfcFinished")
+		}
+
+		override fun onNetverifyNfcSystemSettings() {
+			addToCallbackLog("Please enable NFC in your system settings")
+
+			showView(true, customNfcLayout, nfcRetryButton)
+		}
+
+		override fun onNetverifyNfcError(errorMessage: String?, retryable: Boolean, accessUpdate: Boolean, nfcAccessData: NetverifyCustomNfcAccess?) {
+			addToCallbackLog("onNetverifyNfcError "+errorMessage)
+
+			showView(true, customNfcLayout, nfcRetryButton)
+
+			if(accessUpdate) {
+				dateOfBirthEditText?.setText(DateFormat.getDateFormat(activity).format(nfcAccessData?.dateOfBirth))
+				dateOfBirthEditText?.tag = nfcAccessData?.dateOfBirth
+				dateOfBirthEditText?.setOnClickListener(DatePickerListener(DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+					val calendar = Calendar.getInstance()
+					calendar.set(Calendar.YEAR, year)
+					calendar.set(Calendar.MONTH, monthOfYear)
+					calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+					dateOfBirthEditText?.setText(DateFormat.getDateFormat(activity).format(calendar.time))
+					dateOfBirthEditText?.tag = calendar.time
+				}, nfcAccessData?.dateOfBirth))
+
+				dateOfExpiryEditText?.setText(DateFormat.getDateFormat(activity).format(nfcAccessData?.dateOfExpiry))
+				dateOfExpiryEditText?.tag = nfcAccessData?.dateOfExpiry
+				dateOfExpiryEditText?.setOnClickListener(DatePickerListener(DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+					val calendar = Calendar.getInstance()
+					calendar.set(Calendar.YEAR, year)
+					calendar.set(Calendar.MONTH, monthOfYear)
+					calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+					dateOfExpiryEditText?.setText(DateFormat.getDateFormat(activity).format(calendar.time))
+					dateOfExpiryEditText?.tag = calendar.time
+				}, nfcAccessData?.dateOfExpiry))
+
+				val filters = ArrayList(Arrays.asList<InputFilter>(*idNumberEditText.getFilters()))
+				filters.add(0, InputFilter.AllCaps())
+				filters.add(1, AlphanumInputfilter())
+				idNumberEditText.setFilters(filters.toTypedArray())
+				idNumberEditText.setText(nfcAccessData?.idNumber)
+				showView(true, customNfcAccessLayout)
+			}
+		}
+	}
 
     private fun showView(hideLoading: Boolean, vararg views: View?) {
         if (hideLoading)
-            loadingIndicator!!.visibility = View.GONE
+            loadingIndicator?.visibility = View.GONE
         for (view in views)
             view?.visibility = View.VISIBLE
     }
 
     private fun hideView(showLoading: Boolean, vararg views: View?) {
         for (view in views) {
-			if(view != null) {
-				view.visibility = View.GONE
-			}
+			view?.visibility = View.GONE
 		}
-        if (showLoading && loadingIndicator != null) {
-			loadingIndicator.visibility = View.VISIBLE
+        if (showLoading) {
+			loadingIndicator?.visibility = View.VISIBLE
 		}
     }
 
@@ -671,9 +823,9 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
                 val context = activity ?: return
                 val logline = TextView(context)
                 logline.text = message
-                callbackLog!!.addView(logline, 0)
-                if (callbackLog!!.childCount > 40)
-                    callbackLog!!.removeViewAt(callbackLog!!.childCount - 1)
+                callbackLog?.addView(logline, 0)
+                if (callbackLog?.childCount ?:0 > 40)
+                    callbackLog?.removeViewAt(callbackLog?.childCount ?:0 - 1)
             } catch (e: Exception) {
                 Log.e("UI-Less", String.format("Could not write to callback log: %s", e.message))
                 Log.e("UI-Less", message)
@@ -730,4 +882,36 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
             return documentVariants[position]
         }
     }
+
+	private inner class AlphanumInputfilter : InputFilter {
+		override fun filter(source: CharSequence, start: Int, end: Int, dest: Spanned, dstart: Int, dend: Int): CharSequence? {
+			// Only keep characters that are alphanumeric
+			val builder = StringBuilder()
+			for (i in start until end) {
+				val c = source[i]
+				if (Character.isLetterOrDigit(c)) {
+					builder.append(c)
+				}
+			}
+
+			// If all characters are valid, return null, otherwise only return the filtered characters
+			val allCharactersValid = builder.length == end - start
+			return if (allCharactersValid) null else builder.toString()
+		}
+	}
+
+	private inner class DatePickerListener(private val mListener: DatePickerDialog.OnDateSetListener, startDate: Date?) : View.OnClickListener {
+		private val calendar = Calendar.getInstance()
+
+		init {
+			if (startDate != null) {
+				calendar.time = startDate
+			}
+		}
+
+		override fun onClick(v: View) {
+			DatePickerDialog(activity, R.style.Theme_AppCompat_Light_Dialog, mListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
+					.show()
+		}
+	}
 }

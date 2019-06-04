@@ -8,14 +8,14 @@ Biometric-based Jumio Authentication establishes the digital identities of your 
 - [Release notes](#release-notes)
 - [Setup](#setup)
 - [Dependencies](#dependencies)
-- [Initialization](#integration)
+- [Initialization](#initialization)
 - [Customization](#customization)
 - [SDK Workflow](#sdk-workflow)
 - [Custom UI](#custom-ui)
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_authentication.md) SDK version: 3.1.0
+For technical changes, please read our [transition guide](transition-guide_authentication.md) SDK version: 3.2.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Authentication.
@@ -39,14 +39,14 @@ The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
-|com.jumio.android:core:3.1.0@aar                    | x | Jumio Core library		                      | 4.64 MB |
-|com.jumio.android:auth:3.1.0@aar                      | x | Authentication library 		              | 82.59 KB |
-|com.jumio.android:face:3.1.0@aar                     | x | Face library	                            | 83.58 KB |
-|com.facetec:zoom-authentication-hybrid:7.0.9@aar     | x | Zoom face scanning library	              | 12.1 MB  |
-|androidx.appcompat:appcompat:1.0.0                   | x | Android appcompat library	                | - |
+|com.jumio.android:core:3.2.0@aar                    | x | Jumio Core library		                      | 4.65 MB |
+|com.jumio.android:auth:3.2.0@aar                      | x | Authentication library 		              | 86.33 KB |
+|com.jumio.android:face:3.2.0@aar                     | x | Face library	                            | 84.23 KB |
+|com.facetec:zoom-authentication-hybrid:7.0.12@aar     | x | Zoom face scanning library	              | 11.79 MB  |
+|androidx.appcompat:appcompat:1.0.2                   | x | Android appcompat library	                | - |
 |androidx.room:room-runtime:2.0.0                     | x | Android database object mapping library	  | - |
 |com.google.android.material:material:1.0.0           |   | Android material design library	          | - |
-|com.jumio.android:javadoc:3.1.0                     |   | Jumio SDK Javadoc			                    | - |
+|com.jumio.android:javadoc:3.2.0                     |   | Jumio SDK Javadoc			                    | - |
 
 ### Others
 
@@ -195,11 +195,11 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 |Code        			| Message  | Description      |
 | :--------------:|:---------|:-----------------|
-|A10000| We have encountered a network communication problem | Retry possible, user decided to cancel |
-|B10000| Authentication failed | Secure connection could not be established, retry impossible |
-|C10401| Authentication failed | API credentials invalid, retry impossible |
-|D10403| Authentication failed | Wrong API credentials used, retry impossible|
-|E20000| No Internet connection available | Retry possible, user decided to cancel |
+|A[x][yyyy]| We have encountered a network communication problem | Retry possible, user decided to cancel |
+|B[x][yyyy]| Authentication failed | Secure connection could not be established, retry impossible |
+|C[x]0401| Authentication failed | API credentials invalid, retry impossible |
+|D[x]0403| Authentication failed | Wrong API credentials used, retry impossible|
+|E[x]0000| No Internet connection available | Retry possible, user decided to cancel |
 |F00000| Scanning not available at this time, please contact the app vendor | Resources cannot be loaded, retry impossible |
 |G00000| Cancelled by end-user | No error occurred |
 |H00000| The camera is currently not available | Camera cannot be initialized, retry impossible |
@@ -208,7 +208,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 |L00000| Enrollment transaction reference invalid | The provided enrollment transaction reference can not be used for an authentication |
 |M00000| The scan could not be processed | An error happened during the processing. The SDK needs to be started again|
 
-The first letter (A-M) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation. Please always include the whole code when filing an error related issue to our support team.
+The first letter (A-M) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]). Please always include the whole code when filing an error related issue to our support team.
 
 ## Custom UI
 Authentication can be also implemented as a custom scan view. This means that only the scan view (including the scan overlays) are provided by the SDK.
@@ -246,6 +246,4 @@ After handling the result, it is very important to clean up the SDK by calling  
 
 ## Callback
 
-To get information about callbacks, please read our [page with server related information](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md).
-
-__Note:__ Callbacks for Authentication will be available later in March 2019, please check availability with your Account Manager.
+To get information about callbacks, please read our [page with server related information](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-for-authentication).

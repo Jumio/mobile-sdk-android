@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 import com.jumio.MobileSDK;
 import com.jumio.core.enums.JumioDataCenter;
+import com.jumio.nv.NetverifySDK;
 import com.jumio.sample.R;
 
 import androidx.annotation.NonNull;
@@ -68,6 +69,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == NetverifySDK.REQUEST_CODE_NFC_DETECTED) {
+			Fragment fragment = getSupportFragmentManager().getFragments().get(0);
+			if(fragment instanceof NetverifyCustomFragment) {
+				fragment.onActivityResult(requestCode, resultCode, data);
+			}
+		}
+
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 

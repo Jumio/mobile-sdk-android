@@ -4,10 +4,14 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.2.0
+#### Dependency change
+*  ~~androidx.appcompat:appcompat:1.0.0~~ is replaced by androidx.appcompat:appcompat:1.0.2 
+
 ## 3.1.0
 No backward incompatible changes
 
-# 3.0.0
+## 3.0.0
 #### Renamed public API methods and parameters
 The following methods and the related parameters have been renamed to ensure consistency across all platforms
 * `setMerchantReportingCriteria(..)` -> `setReportingCriteria(..)`

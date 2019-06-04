@@ -15,7 +15,7 @@ Document Verification is a powerful solution to enable scanning various types (U
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 3.1.0
+For technical changes, please read our [transition guide](transition-guide_document_verification.md) SDK version: 3.2.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -39,11 +39,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:3.1.0@aar                    | x | Jumio Core library            | 4.64 MB |
-| com.jumio.android:dv:3.1.0@aar                      | x | Document Verification library | 115.54 |
-| androidx.appcompat:appcompat:1.0.0                   | x | Android appcompat library        | - |
+| com.jumio.android:core:3.2.0@aar                    | x | Jumio Core library            | 4.65 MB |
+| com.jumio.android:dv:3.2.0@aar                      | x | Document Verification library | 115.55 KB |
+| androidx.appcompat:appcompat:1.0.2                   | x | Android appcompat library        | - |
 |androidx.room:room-runtime:2.0.0			              | x | Android database object mapping library	| - |
-| com.jumio.android:javadoc:3.1.0                     |   | Jumio SDK Javadoc             | - |
+| com.jumio.android:javadoc:3.2.0                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -233,16 +233,18 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 |Code        			| Message   | Description    |
 | :--------------:|:----------|:---------------|
-|A10000| We have encountered a network communication problem | Retry possible, user decided to cancel |
-|B10000| Authentication failed | Secure connection could not be established, retry impossible |
-|C10401| Authentication failed | API credentials invalid, retry impossible |
-|D10403| Authentication failed | Wrong API credentials used, retry impossible|
-|E20000| No Internet connection available | Retry possible, user decided to cancel |
+|A[x][yyyy]| We have encountered a network communication problem | Retry possible, user decided to cancel |
+|B[x][yyyy]| Authentication failed | Secure connection could not be established, retry impossible |
+|C[x]0401| Authentication failed | API credentials invalid, retry impossible |
+|D[x]0403| Authentication failed | Wrong API credentials used, retry impossible|
+|E[x]0000| No Internet connection available | Retry possible, user decided to cancel |
 |F00000| Scanning not available this time, please contact the app vendor | Resources cannot be loaded, retry impossible |
 |G00000| Cancelled by end-user | No error occurred |
 |H00000| The camera is currently not available | Camera cannot be initialized, retry impossible |
 |I00000| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
 |K10400| Unsupported document code defined. Please contact Jumio support | An unsupported document code has been set, retry impossible |
+
+The first letter (A-K) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]). Please always include the whole code when filing an error related issue to our support team.
 
 ## Callback
 To get information about callbacks, Netverify Retrieval API, Netverify Delete API and Global Netverify settings and more, please read our [page with server related information](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md).

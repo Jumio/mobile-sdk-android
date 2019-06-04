@@ -17,7 +17,7 @@ BAM Checkout SDK is a powerful, cutting-edge solution to extract data from your 
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_bam-checkout.md) SDK version: 3.1.0
+For technical changes, please read our [transition guide](transition-guide_bam-checkout.md) SDK version: 3.2.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Bam-Checkout.
@@ -42,11 +42,11 @@ If you want to use offline scanning for BAM Checkout (Credit card scanning), ple
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | :---------------------------- |:-------------:|:-----------------|:------------:|
-|com.jumio.android:core:3.1.0@aar                    | x | Jumio Core library|	4.64 MB |
-|com.jumio.android:bam:3.1.0@aar                     | x | BAM Checkout library | 2.02 MB |
-|androidx.appcompat:appcompat:1.0.0            				| x | Android appcompat library| - |
+|com.jumio.android:core:3.2.0@aar                    | x | Jumio Core library|	4.65 MB |
+|com.jumio.android:bam:3.2.0@aar                     | x | BAM Checkout library | 2.02 MB |
+|androidx.appcompat:appcompat:1.0.2            				| x | Android appcompat library| - |
 |androidx.room:room-runtime:2.0.0			              | x | Android database object mapping library	| - |
-|com.jumio.android:javadoc:3.1.0                     |   | Jumio SDK Javadoc| - |
+|com.jumio.android:javadoc:3.2.0                     |   | Jumio SDK Javadoc| - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -306,9 +306,9 @@ public void onBamError(String errorCode, String errorMessage, boolean retryPossi
 
 | Code        			| Message   | Description     |
 | :---------------: |:----------|:----------------|
-|B10000| Authentication failed | Secure connection could not be established, retry impossible |
-|C10401| Authentication failed | API credentials invalid, retry impossible |
-|D10403| Authentication failed | Wrong API credentials used, retry impossible|
+|B[x][yyyy]| Authentication failed | Secure connection could not be established, retry impossible |
+|C[x]0401| Authentication failed | API credentials invalid, retry impossible |
+|D[x]0403| Authentication failed | Wrong API credentials used, retry impossible|
 |F00000| Scanning not available this time, please contact the app vendor | Resources cannot be loaded, retry impossible |
 |G00000| Cancelled by end-user | No error occurred |
 |H00000| The camera is currently not available | Camera cannot be initialized, retry impossible |
@@ -316,6 +316,8 @@ public void onBamError(String errorCode, String errorMessage, boolean retryPossi
 |L00000| Your card type is not accepted | Retry possible |
 |M00000| Background execution is not supported | Cancellation triggered automatically |
 |N00000| Your card is expired | Retry possible |
+
+The first letter (B-N) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]). Please always include the whole code when filing an error related issue to our support team.
 
 ## Card retrieval API
 

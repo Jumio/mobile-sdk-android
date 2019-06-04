@@ -38,9 +38,9 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
 
-        apiToken = arguments!!.getString(MainActivity.KEY_API_TOKEN)
-        apiSecret = arguments!!.getString(MainActivity.KEY_API_SECRET)
-		dataCenter = arguments!!.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
+        apiToken = arguments?.getString(MainActivity.KEY_API_TOKEN)
+        apiSecret = arguments?.getString(MainActivity.KEY_API_SECRET)
+		dataCenter = arguments?.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
         return rootView
     }
@@ -48,11 +48,11 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 
-		switchOptionOne.text = resources.getString(R.string.netverify_verification_enabled)
-		switchOptionTwo.text = resources.getString(R.string.netverify_identity_verification_enabled)
-		switchOptionTwo.isChecked = true
-		btnStart.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_netverify))
-		btnStart.setOnClickListener(this)
+		switchOptionOne?.text = resources.getString(R.string.netverify_verification_enabled)
+		switchOptionTwo?.text = resources.getString(R.string.netverify_identity_verification_enabled)
+		switchOptionTwo?.isChecked = true
+		btnStart?.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_netverify))
+		btnStart?.setOnClickListener(this)
 	}
 
     override fun onClick(view: View) {
@@ -98,7 +98,7 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
 //				netverifySDK = NetverifySDK.create(activity, "YOUROFFLINETOKEN", "YOURPREFERREDCOUNTRY");
 //			} catch (e: SDKExpiredException) {
 //				e.printStackTrace();
-//				Toast.makeText(activity!!.applicationContext, "The offline SDK is expired", Toast.LENGTH_LONG).show();
+//				Toast.makeText(activity?.applicationContext, "The offline SDK is expired", Toast.LENGTH_LONG).show();
 //				return
 //			}
 
@@ -149,6 +149,12 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
             // Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
 //			netverifySDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
+			// Set watchlist screening on transaction level. Enable to override the default search, or disable watchlist screening for this transaction.
+//			netverifySDK.setWatchlistScreening(NVWatchlistScreening.ENABLED);
+
+			// Search profile for watchlist screening.
+//			netverifySDK.setWatchlistSearchProfile("YOURPROFILENAME");
+
             // Use the following method to initialize the SDK before displaying it
 //			netverifySDK.initiate(object : NetverifyInitiateCallback {
 //				override fun onNetverifyInitiateSuccess() {}
@@ -157,7 +163,7 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
 
         } catch (e: PlatformNotSupportedException) {
             Log.e(TAG, "Error in initializeNetverifySDK: ", e)
-            Toast.makeText(activity!!.applicationContext, e.message, Toast.LENGTH_LONG).show()
+            Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
         } catch (e1: NullPointerException) {
             Log.e(TAG, "Error in initializeNetverifySDK: ", e1)
         }
@@ -166,15 +172,13 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == NetverifySDK.REQUEST_CODE) {
-            if (data == null)
-                return
             if (resultCode == Activity.RESULT_OK) {
-                val scanReference = data.getStringExtra(NetverifySDK.EXTRA_SCAN_REFERENCE)
-                val documentData = data.getParcelableExtra<Parcelable>(NetverifySDK.EXTRA_SCAN_DATA) as? NetverifyDocumentData
-                val mrzData = if (documentData != null) documentData.mrzData else null
+                val scanReference = data?.getStringExtra(NetverifySDK.EXTRA_SCAN_REFERENCE)
+                val documentData = data?.getParcelableExtra<Parcelable>(NetverifySDK.EXTRA_SCAN_DATA) as? NetverifyDocumentData
+                val mrzData = documentData?.mrzData
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                val errorMessage = data.getStringExtra(NetverifySDK.EXTRA_ERROR_MESSAGE)
-                val errorCode = data.getStringExtra(NetverifySDK.EXTRA_ERROR_CODE)
+                val errorMessage = data?.getStringExtra(NetverifySDK.EXTRA_ERROR_MESSAGE)
+                val errorCode = data?.getStringExtra(NetverifySDK.EXTRA_ERROR_CODE)
             }
 
             //At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that

@@ -1,19 +1,28 @@
 package com.jumio.sample.java;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -25,8 +34,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 import com.jumio.MobileSDK;
-import com.jumio.commons.log.Log;
 import com.jumio.commons.utils.ScreenUtil;
 import com.jumio.core.data.document.ScanSide;
 import com.jumio.core.enums.JumioDataCenter;
@@ -35,13 +44,19 @@ import com.jumio.core.exceptions.PlatformNotSupportedException;
 import com.jumio.nv.NetverifyDocumentData;
 import com.jumio.nv.NetverifyMrzData;
 import com.jumio.nv.NetverifySDK;
+import com.jumio.nv.custom.NetverifyCancelReason;
 import com.jumio.nv.custom.NetverifyCountry;
+import com.jumio.nv.custom.NetverifyCustomAnimationView;
 import com.jumio.nv.custom.NetverifyCustomConfirmationView;
 import com.jumio.nv.custom.NetverifyCustomSDKController;
 import com.jumio.nv.custom.NetverifyCustomSDKInterface;
 import com.jumio.nv.custom.NetverifyCustomScanInterface;
 import com.jumio.nv.custom.NetverifyCustomScanPresenter;
 import com.jumio.nv.custom.NetverifyCustomScanView;
+import com.jumio.nv.custom.NetverifyScanMode;
+import com.jumio.nv.nfc.custom.NetverifyCustomNfcAccess;
+import com.jumio.nv.nfc.custom.NetverifyCustomNfcInterface;
+import com.jumio.nv.nfc.custom.NetverifyCustomNfcPresenter;
 import com.jumio.sdk.custom.SDKNotConfiguredException;
 import com.jumio.nv.data.document.NVDocumentType;
 import com.jumio.nv.data.document.NVDocumentVariant;
@@ -49,12 +64,16 @@ import com.jumio.sample.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
@@ -77,10 +96,13 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
     private LinearLayout partTypeLayout;
     private LinearLayout callbackLog;
     private LinearLayout netverifySettingsContainer;
+    private LinearLayout customNfcAccessLayout;
     private RelativeLayout customScanLayout;
     private RelativeLayout customConfirmLayout;
+    private RelativeLayout customNfcLayout;
     private NetverifyCustomScanView customScanView;
     private NetverifyCustomConfirmationView customConfirmationView;
+    private NetverifyCustomAnimationView customAnimationView;
     private ProgressBar loadingIndicator;
     private Spinner customCountrySpinner;
     private Spinner customDocumentSpinner;
@@ -102,11 +124,17 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
     private Button errorRetryButton;
     private Button partRetryButton;
     private Button finishButton;
+    private Button nfcRetryButton;
+    private Button nfcCancelButton;
     private Switch switchVerification;
     private Switch switchIdentityVerification;
+    private TextInputEditText idNumberEditText;
+    private TextInputEditText dateOfBirthEditText;
+    private TextInputEditText dateOfExpiryEditText;
 
     private NetverifyCustomSDKController customSDKController;
     private NetverifyCustomScanPresenter customScanViewPresenter;
+    private NetverifyCustomNfcPresenter customNfcPresenter;
     private CustomCountryAdapter customCountryAdapter;
     private CustomDocumentAdapter customDocumentAdapter;
     private CustomVariantAdapter customVariantAdapter;
@@ -131,10 +159,13 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         countryDocumentLayout = (LinearLayout)rootView.findViewById(R.id.countryDocumentLayout);
         partTypeLayout = (LinearLayout)rootView.findViewById(R.id.partTypeLayout);
         callbackLog = (LinearLayout)rootView.findViewById(R.id.callbackLog);
+        customNfcAccessLayout = (LinearLayout)rootView.findViewById(R.id.customNfcAccessLayout);
         customScanLayout = (RelativeLayout)rootView.findViewById(R.id.customScanLayout);
         customConfirmLayout = (RelativeLayout)rootView.findViewById(R.id.customConfirmLayout);
+        customNfcLayout = (RelativeLayout)rootView.findViewById(R.id.customNfcLayout);
         customScanView = (NetverifyCustomScanView)rootView.findViewById(R.id.netverifyCustomScanView);
         customConfirmationView = (NetverifyCustomConfirmationView)rootView.findViewById(R.id.netverifyCustomConfirmationView);
+		customAnimationView = (NetverifyCustomAnimationView)rootView.findViewById(R.id.netverifyCustomAnimationView);
         loadingIndicator = (ProgressBar)rootView.findViewById(R.id.loadingIndicator);
         customCountrySpinner = (Spinner)rootView.findViewById(R.id.customCountrySpinner);
         customDocumentSpinner = (Spinner)rootView.findViewById(R.id.customDocumentSpinner);
@@ -156,8 +187,13 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         errorRetryButton = (Button)rootView.findViewById(R.id.errorRetryButton);
 		partRetryButton = (Button)rootView.findViewById(R.id.partRetryButton);
         finishButton = (Button)rootView.findViewById(R.id.finishButton);
+        nfcRetryButton = (Button)rootView.findViewById(R.id.nfcRetryButton);
+		nfcCancelButton = (Button)rootView.findViewById(R.id.nfcCancelButton);
         switchVerification = (Switch)rootView.findViewById(R.id.switchVerification);
         switchIdentityVerification = (Switch)rootView.findViewById(R.id.switchIdentitiyVerification);
+        idNumberEditText = (TextInputEditText) rootView.findViewById(R.id.idNumberEditText);
+        dateOfBirthEditText = (TextInputEditText) rootView.findViewById(R.id.dateOfBirthEditText);
+        dateOfExpiryEditText = (TextInputEditText) rootView.findViewById(R.id.dateOfExpiryEditText);
 
         startCustomScanButton.setOnClickListener(this);
         stopCustomScanButton.setOnClickListener(this);
@@ -176,6 +212,8 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         errorRetryButton.setOnClickListener(this);
 		partRetryButton.setOnClickListener(this);
         finishButton.setOnClickListener(this);
+        nfcRetryButton.setOnClickListener(this);
+        nfcCancelButton.setOnClickListener(this);
 
 
         startCustomScanButton.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_netverify_custom)));
@@ -183,7 +221,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         successDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.success));
         errorDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.error));
 
-		hideView(true, countryDocumentLayout, partTypeLayout, finishButton, loadingIndicator, errorRetryButton, partRetryButton);
+		hideView(false, countryDocumentLayout, partTypeLayout, finishButton, errorRetryButton, partRetryButton, customAnimationView);
 
 		initScanView();
 
@@ -245,6 +283,13 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 		super.onDestroy();
     }
 
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    	if(isSDKControllerValid()) {
+    		customSDKController.consumeIntent(requestCode, resultCode, data);
+		}
+	}
+
     private boolean isPortrait() {
 		Display display = getActivity().getWindowManager().getDefaultDisplay();
 		Point size = new Point();
@@ -269,7 +314,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             } else {
 				netverifySettingsContainer.setVisibility(View.GONE);
 				customScanContainer.setVisibility(View.VISIBLE);
-				showView(false, loadingIndicator);
+				hideView(true, countryDocumentLayout, partTypeLayout, finishButton, loadingIndicator, errorRetryButton, partRetryButton);
 				callbackLog.removeAllViews();
 
 				try {
@@ -344,7 +389,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 				@Override
 				public void run() {
 					scrollView.scrollTo(0, customScanLayout.getTop());
-					scrollView.post(new ScanPartRunnable(v));
+					scrollView.postDelayed(new ScanPartRunnable(v), 250);
 				}
 			});
 			keepDisabled = true;
@@ -357,7 +402,8 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             customScanViewPresenter.destroy();
             customScanViewPresenter = null;
 
-			hideView(false, partRetryButton);
+            customAnimationView.destroy();
+			hideView(false, partRetryButton, customAnimationView);
         } else if (v == extraction && isScanViewControllerValid()) {
             if (extraction.isChecked())
                 customScanViewPresenter.resumeExtraction();
@@ -393,18 +439,14 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             if (!extraction.isChecked())
                 return;
 		} else if (v == partRetryButton && isScanViewControllerValid()) {
-			hideView(false, partRetryButton);
+			customAnimationView.destroy();
+			hideView(false, partRetryButton, customAnimationView);
 
 			scrollView.post(new Runnable() {
 				@Override
 				public void run() {
 					scrollView.scrollTo(0, customScanLayout.getTop());
-					scrollView.post(new Runnable() {
-						@Override
-						public void run() {
-							customScanViewPresenter.retryScan();
-						}
-					});
+					scrollView.postDelayed(new RetryPartRunnable(), 250);
 				}
 			});
         } else if (v == errorRetryButton && isSDKControllerValid()) {
@@ -422,7 +464,29 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             } catch (SDKNotConfiguredException e) {
                 addToCallbackLog(e.getMessage());
             }
-        }
+        } else if (v == nfcRetryButton && isNfcPresenterValid()) {
+			try {
+				if (customNfcAccessLayout.getVisibility() == View.VISIBLE) {
+					NetverifyCustomNfcAccess nfcAccessData = new NetverifyCustomNfcAccess();
+					nfcAccessData.dateOfBirth = (Date) dateOfBirthEditText.getTag();
+					nfcAccessData.dateOfExpiry = (Date) dateOfExpiryEditText.getTag();
+					nfcAccessData.idNumber = idNumberEditText.getText().toString();
+					customNfcPresenter.updateAccessData(nfcAccessData);
+					hideView(true, customNfcAccessLayout);
+				}
+
+				customNfcPresenter.retry();
+				hideView(true, customNfcLayout);
+			} catch(NullPointerException e) {
+				addToCallbackLog(e.getMessage());
+			}
+		} else if (v == nfcCancelButton && isNfcPresenterValid()) {
+			customNfcPresenter.cancel();
+
+			hideView(false, customNfcAccessLayout);
+			hideView(false, customNfcLayout);
+
+		}
 
         if (!keepDisabled)
             v.setEnabled(true);
@@ -506,6 +570,12 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             // Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
 //			netverifySDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
+			// Set watchlist screening on transaction level. Enable to override the default search, or disable watchlist screening for this transaction.
+//			netverifySDK.setWatchlistScreening(NVWatchlistScreening.ENABLED);
+
+			// Search profile for watchlist screening.
+//			netverifySDK.setWatchlistSearchProfile("YOURPROFILENAME");
+
             // Use the following method to initialize the SDK before displaying it
 //			netverifySDK.initiate(new NetverifyInitiateCallback() {
 //				@Override
@@ -531,6 +601,10 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         return customScanViewPresenter != null;
     }
 
+	private boolean isNfcPresenterValid() {
+    	return customNfcPresenter != null;
+	}
+
 	private class ScanPartRunnable implements Runnable {
 		private View view;
 
@@ -542,10 +616,23 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 		public void run() {
 			try {
 				ScanSide scanSide = ScanSide.FRONT;
-				if (view == backSideButton)
+				if (view == backSideButton) {
 					scanSide = ScanSide.BACK;
-				else if (view == faceButton)
+				} else if (view == faceButton) {
 					scanSide = ScanSide.FACE;
+
+					int[] location = new int[2];
+					stopScan.getLocationOnScreen(location);
+
+					Rect rectangle = new Rect();
+					getActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
+
+					customScanView.setCloseButtonWidth(stopScan.getWidth());
+					customScanView.setCloseButtonHeight(stopScan.getHeight());
+					customScanView.setCloseButtonTop(location[1] - rectangle.top);
+					customScanView.setCloseButtonLeft(location[0] - rectangle.left);
+					customScanView.setCloseButtonResId(R.drawable.jumio_close_button);
+				}
 
 				customScanViewPresenter = customSDKController.startScanForPart(scanSide, customScanView, customConfirmationView, new NetverifyCustomScanImpl());
 
@@ -567,6 +654,34 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 				frontSideButton.setEnabled(true);
 				backSideButton.setEnabled(true);
 				faceButton.setEnabled(true);
+			}
+		}
+	}
+
+	private class RetryPartRunnable implements Runnable {
+
+		@Override
+		public void run() {
+			try {
+				if (customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE) {
+
+					int[] location = new int[2];
+					stopScan.getLocationOnScreen(location);
+
+					Rect rectangle = new Rect();
+					getActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
+
+					customScanView.setCloseButtonWidth(stopScan.getWidth());
+					customScanView.setCloseButtonHeight(stopScan.getHeight());
+					customScanView.setCloseButtonTop(location[1] - rectangle.top);
+					customScanView.setCloseButtonLeft(location[0] - rectangle.left);
+					customScanView.setCloseButtonResId(R.drawable.jumio_close_button);
+				}
+
+				customScanViewPresenter.retryScan();
+
+			} catch (Exception e) {
+				addToCallbackLog(e.getMessage());
 			}
 		}
 	}
@@ -761,7 +876,8 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         public void onNetverifyFaceInLandscape() {
             addToCallbackLog("onNetverifyFaceInLandscape");
 
-			showView(false, partRetryButton);
+            customScanViewPresenter.getHelpAnimation(customAnimationView);
+			showView(false, partRetryButton, customAnimationView);
         }
 
         @Override
@@ -776,14 +892,106 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 		}
 
 		@Override
-		public void onNetverifyScanForPartCanceled(ScanSide scanSide) {
-			addToCallbackLog("onNetverifyScanForPartCanceled");
+		public void onNetverifyScanForPartCanceled(ScanSide scanSide, NetverifyCancelReason cancelReason) {
+			addToCallbackLog(String.format("onNetverifyScanForPartCanceled scanSide: %s reason: %s helptext: %s", scanSide.toString(), cancelReason.toString()));
 
-			showView(false, partRetryButton);
+			customScanViewPresenter.getHelpAnimation(customAnimationView);
+			showView(false, partRetryButton, customAnimationView);
+		}
+
+		@Override
+		public NetverifyCustomNfcInterface getNetverifyCustomNfcInterface() {
+			addToCallbackLog("getNetverifyCustomNfcInterface");
+
+			return new NetverifyCustomNfcImpl();
+		}
+
+		@Override
+		public void onNetverifyStartNfcExtraction(NetverifyCustomNfcPresenter netverifyCustomNfcPresenter) {
+			addToCallbackLog("Waiting for eMrtd Document..");
+
+			hideView(false, nfcRetryButton);
+			showView(false, customNfcLayout);
+
+			customNfcPresenter = netverifyCustomNfcPresenter;
 		}
 	}
 
-    private void showView(boolean hideLoading, View... views) {
+	private class NetverifyCustomNfcImpl implements NetverifyCustomNfcInterface {
+
+		@Override
+		public void onNetverifyNfcStarted() {
+			addToCallbackLog("onNetverifyNfcStarted");
+
+			hideView(true, customNfcLayout);
+		}
+
+		@Override
+		public void onNetverifyNfcUpdate(int progress) {
+			addToCallbackLog(String.format("onNetverifyNfcUpdate %d", progress));
+		}
+
+		@Override
+		public void onNetverifyNfcFinished() {
+			addToCallbackLog("onNetverifyNfcFinished");
+		}
+
+		@Override
+		public void onNetverifyNfcSystemSettings() {
+			addToCallbackLog("Please enable NFC in your system settings");
+
+			showView(true, customNfcLayout, nfcRetryButton);
+		}
+
+		@Override
+		public void onNetverifyNfcError(String errorMessage, boolean retryable, boolean accessUpdate, @Nullable NetverifyCustomNfcAccess nfcAccessData) {
+			addToCallbackLog("onNetverifyNfcError "+errorMessage);
+
+			showView(true, customNfcLayout, nfcRetryButton);
+
+			if(accessUpdate) {
+				dateOfBirthEditText.setText(DateFormat.getDateFormat(getActivity()).format(nfcAccessData.dateOfBirth));
+				dateOfBirthEditText.setTag(nfcAccessData.dateOfBirth);
+				dateOfBirthEditText.setOnClickListener(new DatePickerListener(new DatePickerDialog.OnDateSetListener(){
+					@Override
+					public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+						Calendar calendar = Calendar.getInstance();
+						calendar.set(Calendar.YEAR, year);
+						calendar.set(Calendar.MONTH, month);
+						calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+						dateOfBirthEditText.setText(DateFormat.getDateFormat(getActivity()).format(calendar.getTime()));
+						dateOfBirthEditText.setTag(calendar.getTime());
+					}
+				}, nfcAccessData.dateOfBirth));
+
+				dateOfExpiryEditText.setText(DateFormat.getDateFormat(getActivity()).format(nfcAccessData.dateOfExpiry));
+				dateOfExpiryEditText.setTag(nfcAccessData.dateOfExpiry);
+				dateOfExpiryEditText.setOnClickListener(new DatePickerListener(new DatePickerDialog.OnDateSetListener(){
+					@Override
+					public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+						Calendar calendar = Calendar.getInstance();
+						calendar.set(Calendar.YEAR, year);
+						calendar.set(Calendar.MONTH, month);
+						calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+						dateOfExpiryEditText.setText(DateFormat.getDateFormat(getActivity()).format(calendar.getTime()));
+						dateOfExpiryEditText.setTag(calendar.getTime());
+					}
+				}, nfcAccessData.dateOfExpiry));
+
+				List<InputFilter> filters = new ArrayList<>(Arrays.asList(idNumberEditText.getFilters()));
+				filters.add(0, new InputFilter.AllCaps());
+				filters.add(1, new AlphanumInputfilter());
+				idNumberEditText.setFilters(filters.toArray(new InputFilter[filters.size()]));
+				idNumberEditText.setText(nfcAccessData.idNumber);
+				showView(true, customNfcAccessLayout);
+			}
+		}
+	}
+
+
+	private void showView(boolean hideLoading, View... views) {
         if (hideLoading)
             loadingIndicator.setVisibility(View.GONE);
         for (View view : views)
@@ -871,4 +1079,41 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             return documentVariants[position];
         }
     }
+
+	private class AlphanumInputfilter implements InputFilter {
+		@Override
+		public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+			// Only keep characters that are alphanumeric
+			StringBuilder builder = new StringBuilder();
+			for (int i = start; i < end; i++) {
+				char c = source.charAt(i);
+				if (Character.isLetterOrDigit(c)) {
+					builder.append(c);
+				}
+			}
+
+			// If all characters are valid, return null, otherwise only return the filtered characters
+			boolean allCharactersValid = (builder.length() == end - start);
+			return allCharactersValid ? null : builder.toString();
+		}
+	}
+
+	private class DatePickerListener implements View.OnClickListener {
+		private final Calendar cal = Calendar.getInstance();
+		private DatePickerDialog.OnDateSetListener mListener;
+
+
+		public DatePickerListener(DatePickerDialog.OnDateSetListener listener, @Nullable Date startDate) {
+
+			mListener = listener;
+			if (startDate != null)
+				cal.setTime(startDate);
+		}
+
+		@Override
+		public void onClick(View v) {
+			new DatePickerDialog(getActivity(), R.style.Theme_AppCompat_Light_Dialog, mListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH))
+					.show();
+		}
+	}
 }

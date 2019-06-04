@@ -8,7 +8,7 @@
 - [App bundles](#app-bundles)
 - [Architectures - ABI filters & Splitting](#arch)
 
-### Reducing the size of your app
+#### Reducing the size of your app
 The Netverify SDK contains a wide range of different scanning methods. The SDK is able to capture identity documents and extract information on the device using enhanced machine learning and computer vision technologies.
 The current download size of the sample application containing all products is 27 MB as mentioned in the [Netverify guide](integration_netverify-fastfill.md).
 If you want to reduce the size of the SDK within your application, there are several ways that are explained in the following chapters.

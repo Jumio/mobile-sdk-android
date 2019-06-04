@@ -135,7 +135,6 @@
 	<string name="dv_upload_progress_description">Dit duurt slechts een paar seconden, afhankelijk van uw netwerkverbinding</string>
 	<string name="dv_upload_successful">&lt;b&gt;Uploaden succesvol&lt;/b&gt;</string>
 	<string name="dv_upload_error">&lt;b&gt;Upload problemen&lt;/b&gt;</string>
-	<string name="dv_upload_error_description">We zijn gestuit op een netwerk communicatieprobleem</string>
 	<string name="dv_scanview_title">Scan document</string>
 	<string name="dv_scanview_title_check">Controleer leesbaarheid</string>
 	<string name="dv_scanview_snackbar_check">Zorg ervoor dat alle data op uw document volledig zichtbaar is, glansvrij en niet wazig</string>

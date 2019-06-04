@@ -135,7 +135,6 @@
 	<string name="dv_upload_progress_description">这应该只需要几秒钟的时间,具体取决于您的网络连接</string>
 	<string name="dv_upload_successful">&lt;b&gt;上传成功&lt;/b&gt;</string>
 	<string name="dv_upload_error">&lt;b&gt;上传问题&lt;/b&gt;</string>
-	<string name="dv_upload_error_description">我们遇到了网络通信问题</string>
 	<string name="dv_scanview_title">扫描文件</string>
 	<string name="dv_scanview_title_check">检查清晰度</string>
 	<string name="dv_scanview_snackbar_check">确保您的文件上的所有数据完全可见,无眩光且不模糊</string>

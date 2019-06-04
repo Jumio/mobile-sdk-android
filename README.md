@@ -8,13 +8,20 @@
 - [FAQ](docs/integration_faq.md)
 
 # Release notes
-SDK version: 3.1.0
+SDK version: 3.2.0
 
 #### Changes
-* Optimized 3D liveness handling to reduce number of false rejects [Netverify]
-* Improved reading of ePassports [Netverify]
+* Added support for [Jumio screening](https://www.jumio.com/screening/)  [Netverify]
+* 3D Liveness improvements [Netverify, Authentication]
+  * Improved face models to increase conversion rate
+  * Better UX by accepting faces even if they are not perfectly aligned with the overlay
+  * Better user guidance in error cases (bad lighting, bad angle)
+  * Return face help animations in Custom UI [Netverify]
+* Added ePassport support to Custom UI [Netverify]
+* Added additional customization options to scan overlay/view [Netverify/Fastfill]
 
 #### Fixes
+* Fixed capture problem of Spanish resident permits [Netverify/Fastfill]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
 
 # Basic Setup
@@ -120,7 +127,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 3.0.0 of the Jumio Mobile SDK is supported until 2019-07-18.
+The previous release version 3.1.0 of the Jumio Mobile SDK is supported until 2019-08-05.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

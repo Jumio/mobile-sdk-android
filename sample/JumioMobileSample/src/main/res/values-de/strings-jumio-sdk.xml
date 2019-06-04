@@ -135,7 +135,6 @@
 	<string name="dv_upload_progress_description">Dies sollte je nach Internetverbindung nur wenige Sekunden dauern</string>
 	<string name="dv_upload_successful">&lt;b&gt;Upload erfolgreich&lt;/b&gt;</string>
 	<string name="dv_upload_error">&lt;b&gt;Probleme beim Upload&lt;/b&gt;</string>
-	<string name="dv_upload_error_description">Es ist ein Verbindungsproblem aufgetreten</string>
 	<string name="dv_scanview_title">Scannen</string>
 	<string name="dv_scanview_title_check">Lesbarkeit prüfen</string>
 	<string name="dv_scanview_snackbar_check">Stellen Sie sicher, dass alle Daten auf Ihrem Dokument komplett sichtbar und lesbar sind</string>

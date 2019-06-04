@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.jumio.bam.BamCardInformation
@@ -39,9 +38,9 @@ class BamFragment : Fragment(), View.OnClickListener {
 
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
 
-        apiToken = arguments!!.getString(MainActivity.KEY_API_TOKEN)
-        apiSecret = arguments!!.getString(MainActivity.KEY_API_SECRET)
-		dataCenter = arguments!!.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
+        apiToken = arguments?.getString(MainActivity.KEY_API_TOKEN)
+        apiSecret = arguments?.getString(MainActivity.KEY_API_SECRET)
+		dataCenter = arguments?.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
         return rootView
     }
@@ -49,10 +48,10 @@ class BamFragment : Fragment(), View.OnClickListener {
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 
-		switchOptionOne.text = resources.getString(R.string.bam_expiry_required)
-		switchOptionTwo.text = resources.getString(R.string.bam_cvv_required)
-		btnStart.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_bam))
-		btnStart.setOnClickListener(this)
+		switchOptionOne?.text = resources.getString(R.string.bam_expiry_required)
+		switchOptionTwo?.text = resources.getString(R.string.bam_cvv_required)
+		btnStart?.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_bam))
+		btnStart?.setOnClickListener(this)
 	}
 
     override fun onClick(view: View) {
@@ -99,7 +98,7 @@ class BamFragment : Fragment(), View.OnClickListener {
 //				bamSDK = BamSDK.create(getActivity(), "YOUROFFLINETOKEN");
 //			} catch (e: SDKExpiredException) {
 //				e.printStackTrace();
-//				Toast.makeText(activity!!.applicationContext, "The offline SDK is expired", Toast.LENGTH_LONG).show();
+//				Toast.makeText(activity?.applicationContext, "The offline SDK is expired", Toast.LENGTH_LONG).show();
 //			}
 
             // Overwrite your specified reporting criteria to identify each scan attempt in your reports (max. 100 characters).
@@ -118,9 +117,9 @@ class BamFragment : Fragment(), View.OnClickListener {
 
             // Expiry recognition, card holder name and CVV entry are enabled by default and can be disabled.
             // You can enable the recognition of sort code and account number.
-            bamSDK.setExpiryRequired(switchOptionOne.isChecked)
+            bamSDK.setExpiryRequired(switchOptionOne?.isChecked == true)
 //			bamSDK.setCardHolderNameRequired(false);
-            bamSDK.setCvvRequired(switchOptionTwo.isChecked)
+            bamSDK.setCvvRequired(switchOptionTwo?.isChecked == true)
 //			bamSDK.setSortCodeAndAccountNumberRequired(true);
 
             // You can show the unmasked credit card number to the user during the workflow if setCardNumberMaskingEnabled is disabled.
@@ -153,27 +152,24 @@ class BamFragment : Fragment(), View.OnClickListener {
 //			bamSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
         } catch (e: PlatformNotSupportedException) {
-            android.util.Log.e(BamFragment.TAG, "Error in initializeNetverifySDK: ", e)
-            Toast.makeText(activity!!.applicationContext, "This platform is not supported", Toast.LENGTH_LONG).show()
+            Log.e(TAG, "Error in initializeNetverifySDK: ", e)
+            Toast.makeText(activity?.applicationContext, "This platform is not supported", Toast.LENGTH_LONG).show()
         } catch (e1: NullPointerException) {
-            android.util.Log.e(BamFragment.TAG, "Error in initializeNetverifySDK: ", e1)
+            Log.e(TAG, "Error in initializeNetverifySDK: ", e1)
         }
 
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == BamSDK.REQUEST_CODE) {
-            if (data == null)
-                return
-            val scanAttempts = data.getStringArrayListExtra(BamSDK.EXTRA_SCAN_ATTEMPTS)
+            val scanAttempts = data?.getStringArrayListExtra(BamSDK.EXTRA_SCAN_ATTEMPTS)
 
             if (resultCode == Activity.RESULT_OK) {
-                val cardInformation = data.getParcelableExtra<BamCardInformation>(BamSDK.EXTRA_CARD_INFORMATION)
-
-                cardInformation.clear()
+                val cardInformation = data?.getParcelableExtra<BamCardInformation>(BamSDK.EXTRA_CARD_INFORMATION)
+                cardInformation?.clear()
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                val errorMessage = data.getStringExtra(BamSDK.EXTRA_ERROR_MESSAGE)
-                val errorCode = data.getStringExtra(BamSDK.EXTRA_ERROR_CODE)
+                val errorMessage = data?.getStringExtra(BamSDK.EXTRA_ERROR_MESSAGE)
+                val errorCode = data?.getStringExtra(BamSDK.EXTRA_ERROR_CODE)
             }
 
             //At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that

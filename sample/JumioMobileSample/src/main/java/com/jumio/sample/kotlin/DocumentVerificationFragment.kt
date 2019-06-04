@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.jumio.core.enums.JumioDataCenter
@@ -37,9 +36,9 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
 
-        apiToken = arguments!!.getString(MainActivity.KEY_API_TOKEN)
-        apiSecret = arguments!!.getString(MainActivity.KEY_API_SECRET)
-		dataCenter = arguments!!.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
+        apiToken = arguments?.getString(MainActivity.KEY_API_TOKEN)
+        apiSecret = arguments?.getString(MainActivity.KEY_API_SECRET)
+		dataCenter = arguments?.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
         return rootView
     }
@@ -47,11 +46,11 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 
-		switchOptionOne.text = resources.getString(R.string.documentverification_enable_extraction)
-		switchOptionOne.isChecked = true
-		switchOptionTwo.visibility = View.GONE
-		btnStart.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_documentverification))
-		btnStart.setOnClickListener(this)
+		switchOptionOne?.text = resources.getString(R.string.documentverification_enable_extraction)
+		switchOptionOne?.isChecked = true
+		switchOptionTwo?.visibility = View.GONE
+		btnStart?.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_documentverification))
+		btnStart?.setOnClickListener(this)
 	}
 
     override fun onClick(view: View) {
@@ -105,7 +104,7 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
             documentVerificationSDK.setUserReference("USERREFERENCE")
 
             // Set the following property to enable/disable data extraction for documents.
-            documentVerificationSDK.setEnableExtraction(switchOptionOne.isChecked);
+            documentVerificationSDK.setEnableExtraction(switchOptionOne?.isChecked == true);
 
             // One of the Custom Document Type Codes as configurable by Merchant in Merchant UI.
 //			documentVerificationSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");
@@ -126,10 +125,10 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
 //			documentVerificationSDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
 
         } catch (e: PlatformNotSupportedException) {
-            android.util.Log.e(DocumentVerificationFragment.TAG, "Error in initializeNetverifySDK: ", e)
-            Toast.makeText(activity!!.applicationContext, "This platform is not supported", Toast.LENGTH_LONG).show()
+            Log.e(TAG, "Error in initializeNetverifySDK: ", e)
+            Toast.makeText(activity?.applicationContext, "This platform is not supported", Toast.LENGTH_LONG).show()
         } catch (e1: NullPointerException) {
-            android.util.Log.e(DocumentVerificationFragment.TAG, "Error in initializeNetverifySDK: ", e1)
+            Log.e(TAG, "Error in initializeNetverifySDK: ", e1)
         }
 
     }

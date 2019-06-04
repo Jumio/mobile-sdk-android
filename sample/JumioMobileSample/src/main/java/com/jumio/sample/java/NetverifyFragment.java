@@ -17,6 +17,7 @@ import com.jumio.core.exceptions.PlatformNotSupportedException;
 import com.jumio.nv.NetverifyDocumentData;
 import com.jumio.nv.NetverifyMrzData;
 import com.jumio.nv.NetverifySDK;
+import com.jumio.nv.enums.NVWatchlistScreening;
 import com.jumio.sample.R;
 import com.jumio.sdk.SDKExpiredException;
 
@@ -155,6 +156,12 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 
 			// Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
 //			netverifySDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
+
+			// Set watchlist screening on transaction level. Enable to override the default search, or disable watchlist screening for this transaction.
+//			netverifySDK.setWatchlistScreening(NVWatchlistScreening.ENABLED);
+
+			// Search profile for watchlist screening.
+//			netverifySDK.setWatchlistSearchProfile("YOURPROFILENAME");
 
 			// Use the following method to initialize the SDK before displaying it
 //			netverifySDK.initiate(new NetverifyInitiateCallback() {
