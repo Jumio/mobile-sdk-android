@@ -8,7 +8,7 @@
 - [FAQ](docs/integration_faq.md)
 
 # Release notes
-SDK version: 3.2.0
+SDK version: 3.2.1
 
 #### Changes
 * Added support for [Jumio screening](https://www.jumio.com/screening/)  [Netverify]
@@ -22,6 +22,7 @@ SDK version: 3.2.0
 
 #### Fixes
 * Fixed capture problem of Spanish resident permits [Netverify/Fastfill]
+* Fixed a face scanning problem in which a black screen was shown to the user [Netverify, Authentication]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
 
 # Basic Setup
@@ -83,7 +84,7 @@ __Note:__ The abiFilters command in the ndk closure affects the Google Play Stor
 ```
 defaultConfig {
 	ndk {
-		abiFilters "armeabi-v7a","arm64-v8a","x86","x86_64"
+		abiFilters armeabi-v7a","arm64-v8a","x86","x86_64"
 	}
 }
 ```
@@ -94,7 +95,7 @@ splits {
 	abi {
 		enable true
 		reset()
-		include "armeabi-v7a","arm64-v8a","x86","x86_64"
+		include armeabi-v7a","arm64-v8a","x86","x86_64"
 		universalApk false
 	}
 }
@@ -127,7 +128,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 3.1.0 of the Jumio Mobile SDK is supported until 2019-08-05.
+The previous release version 3.2.0 of the Jumio Mobile SDK is supported until 2019-09-15.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

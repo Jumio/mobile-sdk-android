@@ -17,7 +17,7 @@ BAM Checkout SDK is a powerful, cutting-edge solution to extract data from your 
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_bam-checkout.md) SDK version: 3.2.0
+For technical changes, please read our [transition guide](transition-guide_bam-checkout.md) SDK version: 3.2.1
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Bam-Checkout.
@@ -42,11 +42,11 @@ If you want to use offline scanning for BAM Checkout (Credit card scanning), ple
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | :---------------------------- |:-------------:|:-----------------|:------------:|
-|com.jumio.android:core:3.2.0@aar                    | x | Jumio Core library|	4.65 MB |
-|com.jumio.android:bam:3.2.0@aar                     | x | BAM Checkout library | 2.02 MB |
+|com.jumio.android:core:3.2.1@aar                    | x | Jumio Core library|	4.65 MB |
+|com.jumio.android:bam:3.2.1@aar                     | x | BAM Checkout library | 2.02 MB |
 |androidx.appcompat:appcompat:1.0.2            				| x | Android appcompat library| - |
 |androidx.room:room-runtime:2.0.0			              | x | Android database object mapping library	| - |
-|com.jumio.android:javadoc:3.2.0                     |   | Jumio SDK Javadoc| - |
+|com.jumio.android:javadoc:3.2.1                     |   | Jumio SDK Javadoc| - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 

@@ -4,9 +4,12 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.2.1
+No changes
+
 ## 3.2.0
 #### Dependency change
-*  ~~androidx.appcompat:appcompat:1.0.0~~ is replaced by androidx.appcompat:appcompat:1.0.2 
+*  ~~androidx.appcompat:appcompat:1.0.0~~ is replaced by androidx.appcompat:appcompat:1.0.2
 
 ## 3.1.0
 No backward incompatible changes
