@@ -20,6 +20,7 @@ import com.jumio.sample.R;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 /**
@@ -35,27 +36,26 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 
 	private BamSDK bamSDK;
 
-	private Switch switchExpiryDate;
-	private Switch switchCvv;
-
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-		switchExpiryDate = (Switch) rootView.findViewById(R.id.switchOptionOne);
-		switchCvv = (Switch) rootView.findViewById(R.id.switchOptionTwo);
+		Switch switchExpiryDate = rootView.findViewById(R.id.switchOptionOne);
+		Switch switchCvv = rootView.findViewById(R.id.switchOptionTwo);
 
 		Bundle args = getArguments();
 
 		switchExpiryDate.setText(getResources().getString(R.string.bam_expiry_required));
 		switchCvv.setText(getResources().getString(R.string.bam_cvv_required));
 
-		apiToken = args.getString(MainActivity.KEY_API_TOKEN);
-		apiSecret = args.getString(MainActivity.KEY_API_SECRET);
-		dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+		if (args != null) {
+			apiToken = args.getString(MainActivity.KEY_API_TOKEN);
+			apiSecret = args.getString(MainActivity.KEY_API_SECRET);
+			dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+		}
 
-		Button startSDK = (Button) rootView.findViewById(R.id.btnStart);
+		Button startSDK = rootView.findViewById(R.id.btnStart);
 		startSDK.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_bam)));
 		startSDK.setOnClickListener(this);
 
@@ -70,13 +70,15 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 			bamSDK.clearCustomFields();
 		initializeBamSDK();
 
-		if (((MainActivity) getActivity()).checkPermissions(PERMISSION_REQUEST_CODE_BAM)) {
-			try {
-				if (bamSDK != null) {
-					startActivityForResult(bamSDK.getIntent(), BamSDK.REQUEST_CODE);
+		if(getActivity() != null) {
+			if (((MainActivity) getActivity()).checkPermissions(PERMISSION_REQUEST_CODE_BAM)) {
+				try {
+					if (bamSDK != null) {
+						startActivityForResult(bamSDK.getIntent(), BamSDK.REQUEST_CODE);
+					}
+				} catch (MissingPermissionException e) {
+					Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 				}
-			} catch (MissingPermissionException e) {
-				Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -160,7 +162,9 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 
 		} catch (PlatformNotSupportedException | NullPointerException e) {
 			e.printStackTrace();
-			Toast.makeText(getActivity().getApplicationContext(), "This platform is not supported", Toast.LENGTH_LONG).show();
+			if(getActivity() != null) {
+				Toast.makeText(getActivity().getApplicationContext(), "This platform is not supported", Toast.LENGTH_LONG).show();
+			}
 		}
 	}
 

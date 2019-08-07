@@ -86,7 +86,7 @@
 	<string name="netverify_helpview_small_description_card">Plaats uw document in de frame tot het automatisch is vastgelegd</string>
 	<string name="netverify_helpview_full_description">Plaats uw document in de frame zoals wordt getoond in het beeld hierboven. Het vastleggen gebeurt automatisch.\n\nZorg ervoor dat alle data leesbaar is en vermijd reflecties.</string>
 	<string name="netverify_helpview_full_description_template">Plaats uw document vóór de camera zoals wordt getoond in de animatie hierboven. Het vastleggen gebeurt automatisch.\n\nZorg ervoor dat alle data leesbaar is en vermijd reflecties.</string>
-	<string name="netverify_helpview_full_description_barcode">Plaats de streepjescode vóór de camera zoals wordt getoond in het beeld hierboven. Het vastleggen gebeurt automatisch.\n\nZorg ervoor dat alle data leesbaar is en vermijd reflecties.</string>
+	<string name="netverify_helpview_full_description_barcode">Plaats de streepjescode vóór de camera zoals wordt getoond in het beeld hierboven. Het vastleggen gebeurt automatisch.</string>
 	<string name="netverify_helpview_full_description_card">Plaats uw document in het frame tot alle 4 kanten zijn uitgelijnd zoals wordt getoond in het beeld hierboven. Het vastleggen gebeurt automatisch.\n\nZorg ervoor dat alle data leesbaar is en vermijd reflecties.</string>
 	<string name="netverify_document_variant_other">Ander formaat</string>
 	<string name="netverify_document_variant_plastic">Plastic kaart</string>

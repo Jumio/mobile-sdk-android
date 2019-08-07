@@ -1,4 +1,4 @@
-![Authentication](images/authentication.png)
+![Authentication](images/authentication.jpg)
 
 # Authentication SDK for Android
 Biometric-based Jumio Authentication establishes the digital identities of your users through the simple act of taking a selfie. Advanced 3D face map technology quickly and securely authenticates users and unlocks their digital identities.
@@ -15,7 +15,7 @@ Biometric-based Jumio Authentication establishes the digital identities of your 
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_authentication.md) SDK version: 3.2.1
+For technical changes, please read our [transition guide](transition-guide_authentication.md) SDK version: 3.3.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Authentication.
@@ -39,14 +39,14 @@ The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
-|com.jumio.android:core:3.2.1@aar                    | x | Jumio Core library		                      | 4.65 MB |
-|com.jumio.android:auth:3.2.1@aar                      | x | Authentication library 		              | 86.33 KB |
-|com.jumio.android:face:3.2.1@aar                     | x | Face library	                            | 84.23 KB |
-|com.facetec:zoom-authentication-hybrid:7.0.12@aar     | x | Zoom face scanning library	              | 11.79 MB  |
+|com.jumio.android:core:3.3.0@aar                    | x | Jumio Core library		                      | 4.09 MB |
+|com.jumio.android:auth:3.3.0@aar                      | x | Authentication library 		              | 87.01 KB |
+|com.jumio.android:face:3.3.0@aar                     | x | Face library	                            | 84.98 KB |
+|com.facetec:zoom-authentication-hybrid:7.0.14@aar     | x | Zoom face scanning library	              | 12.40 MB  |
 |androidx.appcompat:appcompat:1.0.2                   | x | Android appcompat library	                | - |
 |androidx.room:room-runtime:2.0.0                     | x | Android database object mapping library	  | - |
 |com.google.android.material:material:1.0.0           |   | Android material design library	          | - |
-|com.jumio.android:javadoc:3.2.1                     |   | Jumio SDK Javadoc			                    | - |
+|com.jumio.android:javadoc:3.3.0                     |   | Jumio SDK Javadoc			                    | - |
 
 ### Others
 
@@ -135,10 +135,17 @@ authenticationSDK.setCustomTheme(CUSTOMTHEME);
 ## SDK Workflow
 
 ### Starting the SDK
-Use the initiate method to preload the SDK. This ensures that the provided enrollment transaction reference is valid and applicable for Authentication. If initialization failes, the SDK can not be started and will throw a `RuntimeException` if `authenticationSDK.start()` or `authenticationSDK.getIntent()` is called.
+The scan reference of an eligible Netverify scan has to be used as the enrollmentTransactionReference
 ```
-String enrollmentTransactionReference = "";
-authenticationSDK.initiate(enrollmentTransactionReference, new AuthenticationInitiateCallback() {
+authenticationSDK.setEnrollmentTransactionReference(ENROLLMENTTRANSACTIONREFERENCE);
+```
+In case an Authentication transaction has been created via the facemap server to server API `setAuthenticationTransactionReference` should be used. Therefore `setEnrollmentTransactionReference` should not be called.
+```
+authenticationSDK.setAuthenticationTransactionReference(AUTHENTICATIONTRANSACTIONREFERENCE);
+```
+Use the initiate method to preload the SDK. This ensures that the provided enrollment transaction reference or authentication transaction reference is valid and applicable for Authentication. If initialization fails, the SDK can not be started and will throw a `RuntimeException` if `authenticationSDK.start()` or `authenticationSDK.getIntent()` is called.
+```
+authenticationSDK.initiate(new AuthenticationInitiateCallback() {
 	@Override
 	public void onAuthenticationInitiateSuccess() {
 		// YOURCODE - the SDK can now be started
@@ -158,7 +165,7 @@ __Note:__ The default request code is 500. To use another code, override the pub
 
 ### Retrieving information
 
-Implement the standard `onActivityResult` method in your activity or fragment for successful scans (`Activity.RESULT_OK`) and user cancellation notifications (`Activity.RESULT_CANCELED`). Call `authenticationSDK.destroy()` once you have received the result.
+Implement the standard `onActivityResult` method in your activity or fragment for successful scans (`Activity.RESULT_OK`) and user cancellation notifications (`Activity.RESULT_CANCELED`). Call `authenticationSDK.destroy()` once you have received the result and you don't need the instance anymore. If you want to perform multiple authentications, you don't need to call delete on the netverifySDK instance. In that case, please check if the internal resources are deallocated by calling `authenticationSDK.checkDeallocation(<AuthenticationDeallocationCallback>)`. Once this callback is executed, it is safe to start another workflow. This check is optional and should only be called once the SDK has returned a result and another authentication needs to be performed.
 
 ```
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -178,6 +185,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			//internal resources can be freed.
 			if (authenticationSDK != null) {
 				authenticationSDK.destroy();
+				authenticationSDK.checkDeallocation(deallocationCallback)
 				authenticationSDK = null;
 			}
 	}
@@ -242,7 +250,7 @@ Upon `onAuthenticationError(String errorCode, String errorMessage, boolean retry
 **Note**: Error codes are listed [here](#error-codes).
 
 #### Clean up
-After handling the result, it is very important to clean up the SDK by calling  `authenticationCustomSDKController.destroy()` and `authenticationSDK.destroy()`.
+After handling the result, it is very important to clean up the SDK by calling  `authenticationCustomSDKController.destroy()` and `authenticationSDK.destroy()`. If you want to perform multiple authentications, you don't need to call delete on the netverifySDK instance. In that case, please check if the internal resources are deallocated by calling `authenticationSDK.checkDeallocation(<AuthenticationDeallocationCallback>)`. Once this callback is executed, it is safe to start another workflow. This check is optional and should only be called once the SDK has returned a result and another authentication needs to be performed.
 
 ## Callback
 

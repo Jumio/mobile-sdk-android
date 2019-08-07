@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import com.jumio.core.enums.JumioDataCenter
 import com.jumio.core.exceptions.MissingPermissionException
 import com.jumio.core.exceptions.PlatformNotSupportedException
+import com.jumio.nv.NetverifyDeallocationCallback
 import com.jumio.nv.NetverifyDocumentData
 import com.jumio.nv.NetverifySDK
 import com.jumio.sample.R
@@ -21,11 +22,11 @@ import kotlinx.android.synthetic.main.fragment_main.*
 /**
  * Copyright 2019 Jumio Corporation All rights reserved.
  */
-class NetverifyFragment : Fragment(), View.OnClickListener {
+class NetverifyFragment : Fragment(), View.OnClickListener, NetverifyDeallocationCallback {
 
-    companion object {
-        private val TAG = "JumioSDK_Netverify"
-        private val PERMISSION_REQUEST_CODE_NETVERIFY = 303
+	companion object {
+        private const val TAG = "JumioSDK_Netverify"
+        private const val PERMISSION_REQUEST_CODE_NETVERIFY = 303
     }
 
 	private var apiToken: String? = null
@@ -63,10 +64,12 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
         if ((activity as MainActivity).checkPermissions(PERMISSION_REQUEST_CODE_NETVERIFY)) {
                 try {
                 if (::netverifySDK.isInitialized) {
+					view.isEnabled = false
                     startActivityForResult(netverifySDK.intent, NetverifySDK.REQUEST_CODE)
                 }
             } catch (e: MissingPermissionException) {
                 Toast.makeText(activity, e.message, Toast.LENGTH_LONG).show()
+				view.isEnabled = true
             }
 
         }
@@ -184,6 +187,13 @@ class NetverifyFragment : Fragment(), View.OnClickListener {
             //At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that
             //internal resources can be freed.
             netverifySDK.destroy()
+			netverifySDK.checkDeallocation(this)
         }
     }
+
+	override fun onNetverifyDeallocated() {
+		activity?.runOnUiThread {
+			btnStart?.isEnabled = true
+		}
+	}
 }

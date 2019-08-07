@@ -132,8 +132,8 @@ class BamFragment : Fragment(), View.OnClickListener {
 //			bamSDK.setCardHolderNameEditable(true);
 
             // You can set a short vibration and sound effect to notify the user that the card has been detected.
-            bamSDK.setVibrationEffectEnabled(true);
-            bamSDK.setSoundEffect(R.raw.shutter_sound);
+            bamSDK.setVibrationEffectEnabled(true)
+            bamSDK.setSoundEffect(R.raw.shutter_sound)
 
             // Use the following method to set the default camera position.
 //			bamSDK.setCameraPosition(JumioCameraPosition.FRONT);

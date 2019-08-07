@@ -17,6 +17,7 @@ import com.jumio.core.exceptions.PlatformNotSupportedException;
 import com.jumio.dv.DocumentVerificationSDK;
 import com.jumio.sample.R;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 /**
@@ -30,26 +31,28 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 	private String apiSecret = null;
 	private JumioDataCenter dataCenter = null;
 
-	DocumentVerificationSDK documentVerificationSDK;
+	private DocumentVerificationSDK documentVerificationSDK;
 
-	Switch switchEnableExtraction;
+	private Switch switchEnableExtraction;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 		(rootView.findViewById(R.id.switchOptionTwo)).setVisibility(View.GONE);
-		switchEnableExtraction = (Switch) rootView.findViewById(R.id.switchOptionOne);
+		switchEnableExtraction = rootView.findViewById(R.id.switchOptionOne);
 		switchEnableExtraction.setChecked(true);
 
 		Bundle args = getArguments();
 		switchEnableExtraction.setText(getResources().getString(R.string.documentverification_enable_extraction));
 
-		apiToken = args.getString(MainActivity.KEY_API_TOKEN);
-		apiSecret = args.getString(MainActivity.KEY_API_SECRET);
-		dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+		if(args != null) {
+			apiToken = args.getString(MainActivity.KEY_API_TOKEN);
+			apiSecret = args.getString(MainActivity.KEY_API_SECRET);
+			dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+		}
 
-		Button startSDK = (Button) rootView.findViewById(R.id.btnStart);
+		Button startSDK = rootView.findViewById(R.id.btnStart);
 		startSDK.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_documentverification)));
 		startSDK.setOnClickListener(this);
 
@@ -62,13 +65,15 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 		//created here.
 		initializeDocumentVerificationSDK();
 
-		if (((MainActivity) getActivity()).checkPermissions(PERMISSION_REQUEST_CODE_DOCUMENT_VERIFICATION)) {
-			try {
-				if (documentVerificationSDK != null) {
-					startActivityForResult(documentVerificationSDK.getIntent(), DocumentVerificationSDK.REQUEST_CODE);
+		if (getActivity() != null) {
+			if (((MainActivity) getActivity()).checkPermissions(PERMISSION_REQUEST_CODE_DOCUMENT_VERIFICATION)) {
+				try {
+					if (documentVerificationSDK != null) {
+						startActivityForResult(documentVerificationSDK.getIntent(), DocumentVerificationSDK.REQUEST_CODE);
+					}
+				} catch (MissingPermissionException e) {
+					Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 				}
-			} catch (MissingPermissionException e) {
-				Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -132,7 +137,9 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 
 		} catch (PlatformNotSupportedException | NullPointerException e) {
 			e.printStackTrace();
-			Toast.makeText(getActivity().getApplicationContext(), "This platform is not supported", Toast.LENGTH_LONG).show();
+			if(getActivity() != null) {
+				Toast.makeText(getActivity().getApplicationContext(), "This platform is not supported", Toast.LENGTH_LONG).show();
+			}
 		}
 	}
 

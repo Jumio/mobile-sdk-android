@@ -3,7 +3,6 @@ package com.jumio.sample.java;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,17 +12,19 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.jumio.auth.AuthenticationCallback;
+import com.jumio.auth.AuthenticationDeallocationCallback;
+import com.jumio.auth.AuthenticationResult;
+import com.jumio.auth.AuthenticationSDK;
 import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.MissingPermissionException;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
-import com.jumio.auth.AuthenticationCallback;
-import com.jumio.auth.AuthenticationResult;
-import com.jumio.auth.AuthenticationSDK;
 import com.jumio.sample.R;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-public class AuthenticationFragment extends Fragment implements View.OnClickListener {
+public class AuthenticationFragment extends Fragment implements View.OnClickListener, AuthenticationDeallocationCallback {
 	private final static String TAG = "JumioSDK_Authentication";
 	private static final int PERMISSION_REQUEST_CODE_AUTHENTICATION = 304;
 
@@ -33,13 +34,12 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
 
 	private AuthenticationSDK authenticationSDK;
 
-	private TextInputLayout textInputLayoutScanRef = null;
 	private EditText etScanRef = null;
 	private Button startSDK;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+	                         Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 		rootView.findViewById(R.id.tvOptions).setVisibility(View.GONE);
 		rootView.findViewById(R.id.switchOptionOne).setVisibility(View.GONE);
@@ -47,15 +47,17 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
 
 		Bundle args = getArguments();
 
-		apiToken = args.getString(MainActivity.KEY_API_TOKEN);
-		apiSecret = args.getString(MainActivity.KEY_API_SECRET);
-		dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+		if(args != null) {
+			apiToken = args.getString(MainActivity.KEY_API_TOKEN);
+			apiSecret = args.getString(MainActivity.KEY_API_SECRET);
+			dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+		}
 
-		textInputLayoutScanRef = (TextInputLayout) rootView.findViewById(R.id.tilOptional);
+		TextInputLayout textInputLayoutScanRef = rootView.findViewById(R.id.tilOptional);
 		textInputLayoutScanRef.setVisibility(View.VISIBLE);
-		etScanRef = (EditText) rootView.findViewById(R.id.etOptional);
+		etScanRef = rootView.findViewById(R.id.etOptional);
 
-		startSDK = (Button) rootView.findViewById(R.id.btnStart);
+		startSDK = rootView.findViewById(R.id.btnStart);
 		startSDK.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_authentication)));
 		startSDK.setOnClickListener(this);
 
@@ -101,14 +103,15 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
 			// Callback URL (max. 255 characters) for the confirmation after authentication is completed. This setting overrides your Jumio merchant settings.
 //			authenticationSDK.setCallbackUrl("YOURCALLBACKURL");
 
-			// Use the following method to initialize the SDK. The scan reference of an eligible Netverify scan has to be used
-			// as the enrollmentTransactionReference
-			String enrollmentTransactionReference = "";
-			if(etScanRef != null && !TextUtils.isEmpty(etScanRef.getText().toString())){
-				enrollmentTransactionReference = etScanRef.getText().toString();
-			}
+			// The scan reference of an eligible Netverify scan has to be used as the enrollmentTransactionReference
+			authenticationSDK.setEnrollmentTransactionReference(etScanRef.getText().toString());
+
+			// Instead an Authentication transaction can also be created via the facemap server to server API and set here
+			// authenticationSDK.setAuthenticationTransactionReference("YOURAUTHENTICATIONTRANSACTIONREFERENCE");
+
+			// Use the following method to initialize the SDK
 			if (((MainActivity) getActivity()).checkPermissions(PERMISSION_REQUEST_CODE_AUTHENTICATION)) {
-				authenticationSDK.initiate(enrollmentTransactionReference, new AuthenticationCallback() {
+				authenticationSDK.initiate(new AuthenticationCallback() {
 					@Override
 					public void onAuthenticationInitiateSuccess() {
 						try {
@@ -116,7 +119,6 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
 						} catch (MissingPermissionException e) {
 							Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 						}
-						startSDK.setEnabled(true);
 					}
 
 					@Override
@@ -131,7 +133,9 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
 
 		} catch (PlatformNotSupportedException | NullPointerException | MissingPermissionException | IllegalArgumentException e) {
 			Log.e(TAG, "Error in initializeAuthenticationSDK: ", e);
-			Toast.makeText(getActivity().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+			if(getActivity() != null) {
+				Toast.makeText(getActivity().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+			}
 			authenticationSDK = null;
 
 			startSDK.setEnabled(true);
@@ -155,8 +159,20 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
 			//internal resources can be freed.
 			if (authenticationSDK != null) {
 				authenticationSDK.destroy();
+				authenticationSDK.checkDeallocation(this);
 				authenticationSDK = null;
 			}
+		}
+	}
+
+	@Override
+	public void onAuthenticationDeallocated() {
+		if(getActivity() != null) {
+			getActivity().runOnUiThread(() -> {
+				if(startSDK != null) {
+					startSDK.setEnabled(true);
+				}
+			});
 		}
 	}
 }

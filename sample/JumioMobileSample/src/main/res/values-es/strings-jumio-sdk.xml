@@ -86,7 +86,7 @@
 	<string name="netverify_helpview_small_description_card">Coloque el documento en el marco hasta que se captura automáticamente.</string>
 	<string name="netverify_helpview_full_description">Coloque el documento dentro del marco tal y como se muestra en la animación anterior. La captura se realiza automáticamente.\n\nAsegúrese de que todos los datos sean legibles y evite los reflejos.</string>
 	<string name="netverify_helpview_full_description_template">Coloque el documento delante de la cámara tal y como se muestra en la animación anterior. La captura se realiza automáticamente.\n\nAsegúrese de que todos los datos sean legibles y evite los reflejos.</string>
-	<string name="netverify_helpview_full_description_barcode">Coloque el código de barras delante de la cámara tal y como se muestra en la imagen anterior. La captura se realiza automáticamente.\n\nAsegúrese de que todos los datos sean legibles y evite los reflejos.</string>
+	<string name="netverify_helpview_full_description_barcode">Coloque el código de barras delante de la cámara tal y como se muestra en la imagen anterior. La captura se realiza automáticamente.</string>
 	<string name="netverify_helpview_full_description_card">Coloque el documento dentro del marco hasta que los 4 bordes estén alineados tal y como se muestra en la animación anterior. La captura se realiza automáticamente.\n\nAsegúrese de que todos los datos sean legibles y evite los reflejos.</string>
 	<string name="netverify_document_variant_other">Otro formato</string>
 	<string name="netverify_document_variant_plastic">Tarjeta de plástico</string>

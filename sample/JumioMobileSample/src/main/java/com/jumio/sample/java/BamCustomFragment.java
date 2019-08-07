@@ -1,7 +1,6 @@
 package com.jumio.sample.java;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +27,7 @@ import com.jumio.sample.R;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
@@ -54,68 +54,58 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 	private RelativeLayout bamCustomContainer;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_bam_custom, container, false);
 
 		Bundle args = getArguments();
-		customScanView = (BamCustomScanView) rootView.findViewById(R.id.bamCustomScanView);
+		customScanView = rootView.findViewById(R.id.bamCustomScanView);
 
-		apiToken = args.getString(MainActivity.KEY_API_TOKEN);
-		apiSecret = args.getString(MainActivity.KEY_API_SECRET);
-		dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+		if(args != null) {
+			apiToken = args.getString(MainActivity.KEY_API_TOKEN);
+			apiSecret = args.getString(MainActivity.KEY_API_SECRET);
+			dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+		}
 
-		startBamCustom = (Button) rootView.findViewById(R.id.btnStart);
+		startBamCustom = rootView.findViewById(R.id.btnStart);
 		startBamCustom.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_bam_custom)));
-		startBamCustom.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
+		startBamCustom.setOnClickListener(view -> {
 
-				//Since the BamSDK is a singleton internally, a new instance is not
-				//created here.
-				if (!MobileSDK.hasAllRequiredPermissions(getActivity())) {
-					ActivityCompat.requestPermissions(getActivity(), MobileSDK.getMissingPermissions(getActivity()), PERMISSION_REQUEST_CODE_BAM_CUSTOM);
-				} else
-					startBamCustomScan();
-			}
+			//Since the BamSDK is a singleton internally, a new instance is not
+			//created here.
+			if (!MobileSDK.hasAllRequiredPermissions(getActivity())) {
+				ActivityCompat.requestPermissions(getActivity(), MobileSDK.getMissingPermissions(getActivity()), PERMISSION_REQUEST_CODE_BAM_CUSTOM);
+			} else
+				startBamCustomScan();
 		});
 
-		stopBamCustom = (Button) rootView.findViewById(R.id.btnStopBamCustom);
-		stopBamCustom.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
+		stopBamCustom = rootView.findViewById(R.id.btnStopBamCustom);
+		stopBamCustom.setOnClickListener(view -> {
 
-				//Do not just re-instantiate the SDK here because fast subsequent taps on the button
-				//can cause two SDK instances to be created, which will result in undefined (and
-				//most likely incorrect) behaviour. A suitable place for the re-instantiation of the SDK
-				//would be onCreate().
-				stopBamCustomScan();
-			}
+			//Do not just re-instantiate the SDK here because fast subsequent taps on the button
+			//can cause two SDK instances to be created, which will result in undefined (and
+			//most likely incorrect) behaviour. A suitable place for the re-instantiation of the SDK
+			//would be onCreate().
+			stopBamCustomScan();
 		});
 
-		bamCustomContainer = (RelativeLayout) rootView.findViewById(R.id.bamCustomContainer);
+		bamCustomContainer = rootView.findViewById(R.id.bamCustomContainer);
 
-		switchCameraImageView = (ImageView) rootView.findViewById(R.id.switchCameraImageView);
-		switchCameraImageView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				v.setVisibility(View.INVISIBLE);
-				if (customScanPresenter != null && customScanPresenter.hasMultipleCameras())
-					customScanPresenter.switchCamera();
-			}
+		switchCameraImageView = rootView.findViewById(R.id.switchCameraImageView);
+		switchCameraImageView.setOnClickListener(v -> {
+			v.setVisibility(View.INVISIBLE);
+			if (customScanPresenter != null && customScanPresenter.hasMultipleCameras())
+				customScanPresenter.switchCamera();
 		});
 
-		toggleFlashImageView = (ImageView) rootView.findViewById(R.id.toggleFlashImageView);
-		toggleFlashImageView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				v.setEnabled(false);
-				if (customScanPresenter != null && customScanPresenter.hasFlash()) {
-					customScanPresenter.toggleFlash();
-					v.setEnabled(true);
-				}
-				toggleFlashImageView.setImageResource((customScanPresenter != null && customScanPresenter.isFlashOn()) ? R.drawable.ic_flash_off : R.drawable.ic_flash_on);
+		toggleFlashImageView = rootView.findViewById(R.id.toggleFlashImageView);
+		toggleFlashImageView.setOnClickListener(v -> {
+			v.setEnabled(false);
+			if (customScanPresenter != null && customScanPresenter.hasFlash()) {
+				customScanPresenter.toggleFlash();
+				v.setEnabled(true);
 			}
+			toggleFlashImageView.setImageResource((customScanPresenter != null && customScanPresenter.isFlashOn()) ? R.drawable.ic_flash_off : R.drawable.ic_flash_on);
 		});
 
 		return rootView;
@@ -258,7 +248,9 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 
 		} catch (PlatformNotSupportedException | NullPointerException e) {
 			e.printStackTrace();
-			Toast.makeText(getActivity().getApplicationContext(), "This platform is not supported", Toast.LENGTH_LONG).show();
+			if(getActivity() != null) {
+				Toast.makeText(getActivity().getApplicationContext(), "This platform is not supported", Toast.LENGTH_LONG).show();
+			}
 		}
 	}
 
@@ -290,24 +282,18 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 		alertDialogBuilder.setTitle("Scan error");
 		alertDialogBuilder.setMessage(errorMessage);
 		if (retryPossible) {
-			alertDialogBuilder.setPositiveButton("retry", new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					try {
-						customScanPresenter.retryScan();
-					} catch (UnsupportedOperationException e) {
-						e.printStackTrace();
+			alertDialogBuilder.setPositiveButton("retry", (dialog, which) -> {
+				try {
+					customScanPresenter.retryScan();
+				} catch (UnsupportedOperationException e) {
+					e.printStackTrace();
+					if(getActivity() != null) {
 						Toast.makeText(getActivity().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
 					}
 				}
 			});
 		}
-		alertDialogBuilder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				stopBamCustom.performClick();
-			}
-		});
+		alertDialogBuilder.setNegativeButton("cancel", (dialog, which) -> stopBamCustom.performClick());
 		alertDialogBuilder.show();
 	}
 

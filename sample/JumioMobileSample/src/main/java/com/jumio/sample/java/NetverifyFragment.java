@@ -14,19 +14,19 @@ import android.widget.Toast;
 import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.MissingPermissionException;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
+import com.jumio.nv.NetverifyDeallocationCallback;
 import com.jumio.nv.NetverifyDocumentData;
 import com.jumio.nv.NetverifyMrzData;
 import com.jumio.nv.NetverifySDK;
-import com.jumio.nv.enums.NVWatchlistScreening;
 import com.jumio.sample.R;
-import com.jumio.sdk.SDKExpiredException;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 /**
  * Copyright 2019 Jumio Corporation All rights reserved.
  */
-public class NetverifyFragment extends Fragment implements View.OnClickListener {
+public class NetverifyFragment extends Fragment implements View.OnClickListener, NetverifyDeallocationCallback {
 	private final static String TAG = "JumioSDK_Netverify";
 	private static final int PERMISSION_REQUEST_CODE_NETVERIFY = 303;
 
@@ -38,13 +38,14 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 
 	private Switch switchVerification;
 	private Switch switchIdentitiyVerification;
+	private Button btnStart;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-		switchVerification = (Switch) rootView.findViewById(R.id.switchOptionOne);
-		switchIdentitiyVerification = (Switch) rootView.findViewById(R.id.switchOptionTwo);
+		switchVerification = rootView.findViewById(R.id.switchOptionOne);
+		switchIdentitiyVerification = rootView.findViewById(R.id.switchOptionTwo);
 		switchIdentitiyVerification.setChecked(true);
 
 		Bundle args = getArguments();
@@ -52,13 +53,15 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 		switchVerification.setText(getResources().getString(R.string.netverify_verification_enabled));
 		switchIdentitiyVerification.setText(getResources().getString(R.string.netverify_identity_verification_enabled));
 
-		apiToken = args.getString(MainActivity.KEY_API_TOKEN);
-		apiSecret = args.getString(MainActivity.KEY_API_SECRET);
-		dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+		if(args != null) {
+			apiToken = args.getString(MainActivity.KEY_API_TOKEN);
+			apiSecret = args.getString(MainActivity.KEY_API_SECRET);
+			dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+		}
 
-		Button startSDK = (Button) rootView.findViewById(R.id.btnStart);
-		startSDK.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_netverify)));
-		startSDK.setOnClickListener(this);
+		btnStart = (Button) rootView.findViewById(R.id.btnStart);
+		btnStart.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_netverify)));
+		btnStart.setOnClickListener(this);
 
 		return rootView;
 	}
@@ -69,13 +72,17 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 		//created here.
 		initializeNetverifySDK();
 
-		if (((MainActivity) getActivity()).checkPermissions(PERMISSION_REQUEST_CODE_NETVERIFY)) {
-			try {
-				if (netverifySDK != null) {
-					startActivityForResult(netverifySDK.getIntent(), NetverifySDK.REQUEST_CODE);
+		if(getActivity() != null) {
+			if (((MainActivity) getActivity()).checkPermissions(PERMISSION_REQUEST_CODE_NETVERIFY)) {
+				try {
+					if (netverifySDK != null) {
+						view.setEnabled(false);
+						startActivityForResult(netverifySDK.getIntent(), NetverifySDK.REQUEST_CODE);
+					}
+				} catch (MissingPermissionException e) {
+					Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+					view.setEnabled(true);
 				}
-			} catch (MissingPermissionException e) {
-				Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -175,7 +182,9 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 
 		} catch (PlatformNotSupportedException | NullPointerException e) {
 			Log.e(TAG, "Error in initializeNetverifySDK: ", e);
-			Toast.makeText(getActivity().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+			if(getActivity() != null){
+				Toast.makeText(getActivity().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+			}
 			netverifySDK = null;
 		}
 	}
@@ -198,8 +207,20 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener 
 			//internal resources can be freed.
 			if (netverifySDK != null) {
 				netverifySDK.destroy();
+				netverifySDK.checkDeallocation(this);
 				netverifySDK = null;
 			}
+		}
+	}
+
+	@Override
+	public void onNetverifyDeallocated() {
+		if (getActivity() != null) {
+			getActivity().runOnUiThread(() -> {
+				if(btnStart != null) {
+					btnStart.setEnabled(true);
+				}
+			});
 		}
 	}
 }

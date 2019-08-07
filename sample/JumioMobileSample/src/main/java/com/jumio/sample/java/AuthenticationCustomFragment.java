@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 import com.jumio.MobileSDK;
 import com.jumio.auth.AuthenticationCallback;
+import com.jumio.auth.AuthenticationDeallocationCallback;
 import com.jumio.auth.AuthenticationResult;
 import com.jumio.auth.AuthenticationSDK;
 import com.jumio.auth.custom.AuthenticationCancelReason;
@@ -41,13 +42,14 @@ import com.jumio.core.exceptions.PlatformNotSupportedException;
 import com.jumio.sample.R;
 import com.jumio.sdk.custom.SDKNotConfiguredException;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 /**
  * Copyright 2019 Jumio Corporation All rights reserved.
  */
-public class AuthenticationCustomFragment extends Fragment implements View.OnClickListener {
+public class AuthenticationCustomFragment extends Fragment implements View.OnClickListener, AuthenticationDeallocationCallback {
     private final static String TAG = "AuthenticationCustom";
     private static final int PERMISSION_REQUEST_CODE_AUTHENTICATION_CUSTOM = 304;
 
@@ -79,31 +81,33 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_authentication_custom, container, false);
 
         Bundle args = getArguments();
 
-        apiToken = args.getString(MainActivity.KEY_API_TOKEN);
-        apiSecret = args.getString(MainActivity.KEY_API_SECRET);
-		dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+        if(args != null) {
+        	apiToken = args.getString(MainActivity.KEY_API_TOKEN);
+            apiSecret = args.getString(MainActivity.KEY_API_SECRET);
+			dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
+        }
 
-        scrollView = (ScrollView)rootView.findViewById(R.id.scrollView);
-		authenticationSettingsContainer = (LinearLayout)rootView.findViewById(R.id.authenticationSettingsContainer);
-        customScanContainer = (LinearLayout)rootView.findViewById(R.id.authenticationCustomContainer);
-        partTypeLayout = (LinearLayout)rootView.findViewById(R.id.partTypeLayout);
-		customScanLayout = (FrameLayout)rootView.findViewById(R.id.customScanLayout);
-		callbackLog = (LinearLayout)rootView.findViewById(R.id.callbackLog);
-        customScanView = (AuthenticationCustomScanView)rootView.findViewById(R.id.authenticationCustomScanView);
-		customAnimationView = (AuthenticationCustomAnimationView)rootView.findViewById(R.id.authenticationCustomAnimationView);
-		enrollmentTransactionReference = (EditText)rootView.findViewById(R.id.etEnrollmentTransactionReference);
-		startCustomScanButton = (Button)rootView.findViewById(R.id.startAuthenticationCustomButton);
-		cancelCustomScanButton = (Button)rootView.findViewById(R.id.stopAuthenticationCustomButton);
-        loadingIndicator = (ProgressBar)rootView.findViewById(R.id.loadingIndicator);
-        faceButton = (Button)rootView.findViewById(R.id.faceButton);
-        errorRetryButton = (Button)rootView.findViewById(R.id.errorRetryButton);
-		partRetryButton = (Button)rootView.findViewById(R.id.partRetryButton);
+        scrollView = rootView.findViewById(R.id.scrollView);
+		authenticationSettingsContainer = rootView.findViewById(R.id.authenticationSettingsContainer);
+        customScanContainer = rootView.findViewById(R.id.authenticationCustomContainer);
+        partTypeLayout = rootView.findViewById(R.id.partTypeLayout);
+		customScanLayout = rootView.findViewById(R.id.customScanLayout);
+		callbackLog = rootView.findViewById(R.id.callbackLog);
+        customScanView = rootView.findViewById(R.id.authenticationCustomScanView);
+		customAnimationView = rootView.findViewById(R.id.authenticationCustomAnimationView);
+		enrollmentTransactionReference = rootView.findViewById(R.id.etEnrollmentTransactionReference);
+		startCustomScanButton = rootView.findViewById(R.id.startAuthenticationCustomButton);
+		cancelCustomScanButton = rootView.findViewById(R.id.stopAuthenticationCustomButton);
+        loadingIndicator = rootView.findViewById(R.id.loadingIndicator);
+        faceButton = rootView.findViewById(R.id.faceButton);
+        errorRetryButton = rootView.findViewById(R.id.errorRetryButton);
+		partRetryButton = rootView.findViewById(R.id.partRetryButton);
 
 		startCustomScanButton.setOnClickListener(this);
 		cancelCustomScanButton.setOnClickListener(this);
@@ -184,7 +188,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
     @Override
     public void onClick(View v) {
         v.setEnabled(false);
-
+		boolean keepDisabled = false;
         if (v == startCustomScanButton) {
             if (!MobileSDK.hasAllRequiredPermissions(getActivity())) {
                 ActivityCompat.requestPermissions(getActivity(), MobileSDK.getMissingPermissions(getActivity()), PERMISSION_REQUEST_CODE_AUTHENTICATION_CUSTOM);
@@ -202,7 +206,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 
 				try {
 					initializeAuthenticationSDK();
-
+					keepDisabled = true;
 				} catch (IllegalArgumentException e) {
 					Snackbar.make(getView(), e.getMessage(), Snackbar.LENGTH_LONG).show();
 				}
@@ -218,6 +222,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
             }
             if (authenticationSDK != null) {
 				authenticationSDK.destroy();
+				authenticationSDK.checkDeallocation(AuthenticationCustomFragment.this);
 				authenticationSDK = null;
             }
             customSDKController = null;
@@ -236,6 +241,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 		} else if (v == partRetryButton && isSDKControllerValid()) {
 			customAnimationView.destroy();
 			hideView(false, partRetryButton, customAnimationView);
+			showView(true, customScanLayout);
 
 			scrollView.post(new Runnable() {
 				@Override
@@ -253,7 +259,8 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 			}
 		}
 
-        v.setEnabled(true);
+		if (!keepDisabled)
+			v.setEnabled(true);
     }
 
 	private void initializeAuthenticationSDK() {
@@ -287,8 +294,14 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 			// Callback URL (max. 255 characters) for the confirmation after authentication is completed. This setting overrides your Jumio merchant settings.
 //			authenticationSDK.setCallbackUrl("YOURCALLBACKURL");
 
+			// The scan reference of an eligible Netverify scan has to be used as the enrollmentTransactionReference
+			authenticationSDK.setEnrollmentTransactionReference(enrollmentTransactionReference.getText().toString());
+
+			// Instead an Authentication transaction can also be created via the facemap server to server API and set here
+			// authenticationSDK.setAuthenticationTransactionReference("YOURAUTHENTICATIONTRANSACTIONREFERENCE");
+
 			// Use the following method to initialize the SDK
-			authenticationSDK.initiate(enrollmentTransactionReference.getText().toString(), new AuthenticationCallback() {
+			authenticationSDK.initiate(new AuthenticationCallback() {
 				@Override
 				public void onAuthenticationInitiateSuccess() {
 					try {
@@ -307,6 +320,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 						authenticationSettingsContainer.setVisibility(View.VISIBLE);
 						customScanContainer.setVisibility(View.GONE);
 						hideView(false, loadingIndicator);
+						startCustomScanButton.setEnabled(true);
 					}
 				}
 
@@ -317,6 +331,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 					authenticationSettingsContainer.setVisibility(View.VISIBLE);
 					customScanContainer.setVisibility(View.GONE);
 					hideView(false, loadingIndicator);
+					startCustomScanButton.setEnabled(true);
 				}
 			});
 
@@ -328,6 +343,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 			authenticationSettingsContainer.setVisibility(View.VISIBLE);
 			customScanContainer.setVisibility(View.GONE);
 			hideView(false, loadingIndicator);
+			startCustomScanButton.setEnabled(true);
 		}
 	}
 
@@ -335,6 +351,17 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 	private boolean isSDKControllerValid() {
         return customSDKController != null;
     }
+
+	@Override
+	public void onAuthenticationDeallocated() {
+		if(getActivity() != null) {
+	        getActivity().runOnUiThread(() -> {
+		        if(startCustomScanButton != null) {
+			        startCustomScanButton.setEnabled(true);
+		        }
+	        });
+		}
+	}
 
 	private class ScanPartRunnable implements Runnable {
 		@Override
@@ -428,6 +455,11 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 			showView(false, partRetryButton, customAnimationView);
 
 			faceButton.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null);
+		}
+
+		@Override
+		public void onAuthenticationScanForPartFinished() {
+			addToCallbackLog("onAuthenticationScanForPartFinished");
 		}
 
 		@Override

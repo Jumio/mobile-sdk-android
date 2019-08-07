@@ -1,4 +1,4 @@
-![Fastfill & Netverify](images/netverify.png)
+![Fastfill & Netverify](images/netverify.jpg)
 
 # Fastfill & Netverify SDK for Android
 Jumio’s Netverify® ID Verification allows businesses to establish the genuine identity of their users by verifying government-issued IDs in real-time. ID Verification is used by financial service organizations and leading brands to create trust for safe onboarding, money transfers, and user authentication.
@@ -17,7 +17,7 @@ Jumio’s Netverify® ID Verification allows businesses to establish the genuine
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 3.2.1
+For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 3.3.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -60,23 +60,23 @@ The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
-|com.jumio.android:core:3.2.1@aar                    | x | Jumio Core library		                         | 4.65 MB |
-|com.jumio.android:nv:3.2.1@aar                      | x | Netverify library 		                         | 494.62 KB |
+|com.jumio.android:core:3.3.0@aar                    | x | Jumio Core library		                         | 4.09 MB |
+|com.jumio.android:nv:3.3.0@aar                      | x | Netverify library 		                         | 493.46 KB |
 |androidx.appcompat:appcompat:1.0.2                   | x | Android appcompat library	                         | - |
 |androidx.cardview:cardview:1.0.0                     | x | Android cardview library (Netverify only)	         | - |
 |androidx.room:room-runtime:2.0.0                     | x | Android database object mapping library	         | - |
-|com.google.android.gms:play-services-vision:15.0.1   |   | Barcode Scanning 			                 | - |
-|com.jumio.android:face:3.2.1@aar                 |   | Face library	                                 | 84.23 KB |
-|com.facetec:zoom-authentication-hybrid:7.0.12@aar     |   | Zoom face scanning library	                         | 11.79 MB |
+|com.google.android.gms:play-services-vision:18.0.0   |   | Barcode Scanning 			                 | - |
+|com.jumio.android:face:3.3.0@aar                 |   | Face library	                                 | 84.98 KB |
+|com.facetec:zoom-authentication-hybrid:7.0.14@aar     |   | Zoom face scanning library	                         | 12.40 MB |
 |com.google.android.material:material:1.0.0           |   | Android material design library	                 | - |
-|com.jumio.android:javadoc:3.2.1                     |   | Jumio SDK Javadoc			                 | - |
-|com.jumio.android:nv-barcode:3.2.1@aar              |   | US / CAN Barcode Scanning                            | 3.13 MB |
-|com.jumio.android:nv-barcode-vision:3.2.1@aar       |   | US / CAN Barcode Scanning Alternative (reduced size) | 37.44 KB |
-|com.jumio.android:nv-mrz:3.2.1@aar                  |   | MRZ scanning                                         | 2.24 MB |
-|com.jumio.android:nv-nfc:3.2.1@aar                  |   | eMRTD Scanning                                       | 763.91 KB |
+|com.jumio.android:javadoc:3.3.0                     |   | Jumio SDK Javadoc			                 | - |
+|com.jumio.android:nv-barcode:3.3.0@aar              |   | US / CAN Barcode Scanning                            | 3.13 MB |
+|com.jumio.android:nv-barcode-vision:3.3.0@aar       |   | US / CAN Barcode Scanning Alternative (reduced size) | 37.25 KB |
+|com.jumio.android:nv-mrz:3.3.0@aar                  |   | MRZ scanning                                         | 2.08 MB |
+|com.jumio.android:nv-nfc:3.3.0@aar                  |   | eMRTD Scanning                                       | 764.66 KB |
 |org.bouncycastle:bcprov-jdk15on:1.61                |   | eMRTD Scanning                                       | - |
 |net.sf.scuba:scuba-sc-android:0.0.18                 |   | eMRTD Scanning                                       | - |
-|com.jumio.android:nv-ocr:3.2.1@aar                  |   | Template Matcher                                     | 1.57 MB |
+|com.jumio.android:nv-ocr:3.3.0@aar                  |   | Template Matcher                                     | 1.07 MB |
 
 ### Google Mobile Vision
 
@@ -115,7 +115,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:3.2.1@aar"
+implementation "com.jumio.android:bam:3.3.0@aar"
 ```
 
 #### Root detection
@@ -328,7 +328,7 @@ __Note:__ The default request code is 200. To use another code, override the pub
 
 ### Retrieving information (Fastfill)
 
-Implement the standard `onActivityResult` method in your activity or fragment for successful scans (`Activity.RESULT_OK`) and user cancellation notifications (`Activity.RESULT_CANCELED`). Call `netverifySDK.destroy()` once you received the result.
+Implement the standard `onActivityResult` method in your activity or fragment for successful scans (`Activity.RESULT_OK`) and user cancellation notifications (`Activity.RESULT_CANCELED`). Call `netverifySDK.destroy()` once you received the result and you don't need the instance anymore. If you want to scan multiple documents, you don't need to call delete on the netverifySDK instance. In that case, please check if the internal resources are deallocated by calling `netverifySDK.checkDeallocation(<NetverifyDeallocationCallback>)`. Once this callback is executed, it is safe to start another workflow. This check is optional and should only be called once the SDK has returned a result and another document scan needs to be performed.
 
 ```
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -345,6 +345,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// CLEANUP THE SDK AFTER RECEIVING THE RESULT
 		// if (netverifySDK != null) {
 		// 	netverifySDK.destroy();
+		//      netverifySDK.checkDeallocation(deallocationCallback)
 		// 	netverifySDK = null;
 		// }
 	}
@@ -523,7 +524,7 @@ Upon `onNetverifyError(String errorCode, String errorMessage, boolean retryPossi
 **Note**: Error codes are listed [here](#error-codes).
 
 #### Clean up
-After handling the result, it is very important to clean up the SDK by calling  `netverifyCustomSDKController.destroy()` and `netverifySDK.destroy()`.
+After handling the result, it is very important to clean up the SDK by calling  `netverifyCustomSDKController.destroy()` and `netverifySDK.destroy()`. If you want to scan multiple documents, you don't need to call delete on the netverifySDK instance. In that case, please check if the internal resources are deallocated by calling `netverifySDK.checkDeallocation(<NetverifyDeallocationCallback>)`. Once this callback is executed, it is safe to start another workflow. This check is optional and should only be called once the SDK has returned a result and another document scan needs to be performed.
 
 ## Callback
 

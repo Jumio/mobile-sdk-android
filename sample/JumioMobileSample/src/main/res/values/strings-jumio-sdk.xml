@@ -86,7 +86,7 @@
 	<string name="netverify_helpview_small_description_card">Place your document within the frame until it is captured automatically</string>
 	<string name="netverify_helpview_full_description">Place your document within the frame as it is shown in the animation above. The capturing happens automatically.\nEnsure that all data is readable and avoid reflections.</string>
 	<string name="netverify_helpview_full_description_template">Place your document in front of the camera as it is shown in the animation above. The capturing happens automatically.\nEnsure that all data is readable and avoid reflections.</string>
-	<string name="netverify_helpview_full_description_barcode">Place the barcode in front of the camera as it is shown in the picture above. The capturing happens automatically.\nEnsure that all data is readable and avoid reflections.</string>
+	<string name="netverify_helpview_full_description_barcode">Place the barcode in front of the camera as it is shown in the picture above. The capturing happens automatically.</string>
 	<string name="netverify_helpview_full_description_card">Place your document within the frame until all 4 edges are aligned as it is shown in the picture above. The capturing happens automatically.\nEnsure that all data is readable and avoid reflections.</string>
 	<string name="netverify_document_variant_other">Other format</string>
 	<string name="netverify_document_variant_plastic">Plastic card</string>

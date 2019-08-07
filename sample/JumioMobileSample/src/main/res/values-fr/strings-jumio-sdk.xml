@@ -86,7 +86,7 @@
 	<string name="netverify_helpview_small_description_card">Placez votre document dans le cadre jusqu\'à ce qu\'il soit détecté automatiquement</string>
 	<string name="netverify_helpview_full_description">Placez votre document dans le cadre comme indiqué dans l\'animation ci-dessus. La détection se fait automatiquement.\n\nVérifiez que toutes les données sont bien lisibles et évitez les reflets.</string>
 	<string name="netverify_helpview_full_description_template">Placez votre document devant la caméra comme indiqué dans l\'animation ci-dessus. La détection se fait automatiquement.\n\nVérifiez que toutes les données sont bien lisibles et évitez les reflets.</string>
-	<string name="netverify_helpview_full_description_barcode">Placez le code-barres devant la caméra comme indiqué dans l\'image ci-dessus. La détection se fait automatiquement.\n\nVérifiez que toutes les données sont bien lisibles et évitez les reflets.</string>
+	<string name="netverify_helpview_full_description_barcode">Placez le code-barres devant la caméra comme indiqué dans l\'image ci-dessus. La détection se fait automatiquement.</string>
 	<string name="netverify_helpview_full_description_card">Placez votre document dans le cadre en alignant les quatre bords comme indiqué dans l\'animation ci-dessus. La détection se fait automatiquement.\n\nVérifiez que toutes les données sont bien lisibles et évitez les reflets.</string>
 	<string name="netverify_document_variant_other">Autre format</string>
 	<string name="netverify_document_variant_plastic">Carte plastique</string>

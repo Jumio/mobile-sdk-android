@@ -86,7 +86,7 @@
 	<string name="netverify_helpview_small_description_card">把您的文件置于边框内,直到自动拍摄</string>
 	<string name="netverify_helpview_full_description">如上面的动画所示,把文件置于边框内。将自动进行拍摄。\n\n确保所有数据都可清晰可读并避免反光。</string>
 	<string name="netverify_helpview_full_description_template">如上面的动画所示,把您的文件置于摄像头前。将自动进行拍摄。\n\n确保所有数据都可清晰可读并避免反光。</string>
-	<string name="netverify_helpview_full_description_barcode">如上图所示,把条形码置于摄像头前。将自动进行拍摄。\n\n确保所有数据都可清晰可读并避免反光。</string>
+	<string name="netverify_helpview_full_description_barcode">如上图所示,把条形码置于摄像头前。将自动进行拍摄。</string>
 	<string name="netverify_helpview_full_description_card">将您的文件置于边框内,直到所有 4 个边缘都对齐,如上面的动画所示。将自动进行拍摄。\n\n确保所有数据都可清晰可读并避免反光。</string>
 	<string name="netverify_document_variant_other">其他格式</string>
 	<string name="netverify_document_variant_plastic">塑料卡片</string>

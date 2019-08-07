@@ -4,6 +4,16 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.3.0
+#### Deallocation callback
+Added a new method [checkDeallocation](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#checkDeallocation-com.jumio.nv.NetverifyDeallocationCallback-) in the [NetverifySDK](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html) to check if the SDK resources have already been deallocated. The method requires a  [NetverifyDeallocationCallback](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifyDeallocationCallback.html) instance as a parameter and calls `onNetverifyDeallocated` once the SDK is deallocated. The checkDeallocation method should only be called once the SDK has returned a result and another SDK instance is required.
+
+#### Date changes
+All dates are now UTC based. This affects the dates in [NetverifyDocumentData](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifyDocumentData.html) and [NetverifyCustomNfcAccess](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/nfc/custom/NetverifyCustomNfcAccess.html)
+
+#### New SDK localizations added
+SDK Translations for the languages Italian and Portuguese have been added.
+
 ## 3.2.1
 #### Fixed a face scanning problem in which a black screen was shown to the user
 

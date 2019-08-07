@@ -27,6 +27,7 @@ import com.jumio.core.data.document.ScanSide
 import com.jumio.core.enums.JumioDataCenter
 import com.jumio.core.exceptions.MissingPermissionException
 import com.jumio.core.exceptions.PlatformNotSupportedException
+import com.jumio.nv.NetverifyDeallocationCallback
 import com.jumio.nv.NetverifyDocumentData
 import com.jumio.nv.NetverifySDK
 import com.jumio.nv.custom.*
@@ -44,7 +45,7 @@ import java.util.*
 /**
  * Copyright 2019 Jumio Corporation All rights reserved.
  */
-class NetverifyCustomFragment : Fragment(), View.OnClickListener {
+class NetverifyCustomFragment : Fragment(), View.OnClickListener, NetverifyDeallocationCallback {
 
 	companion object {
 		private const val TAG = "NetverifyCustom"
@@ -127,7 +128,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
         hideView(false, countryDocumentLayout, partTypeLayout, finishButton, errorRetryButton, partRetryButton, netverifyCustomAnimationView)
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration?) {
+    override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
 
         initScanView()
@@ -161,10 +162,6 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 			stopNetverifyCustomButton?.performClick()
 			customScanViewPresenter?.destroy()
 			customSDKController?.destroy()
-
-			if(this::netverifySDK.isInitialized){
-				netverifySDK.destroy()
-			}
 		} catch (e: SDKNotConfiguredException) {
 			e.printStackTrace()
 		}
@@ -177,6 +174,12 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 		super.onActivityResult(requestCode, resultCode, data)
 
 		customSDKController?.consumeIntent(requestCode, resultCode, data)
+	}
+
+	override fun onNetverifyDeallocated() {
+		activity?.runOnUiThread {
+			startNetverifyCustomButton?.isEnabled = true
+		}
 	}
 
     private fun initScanView() {
@@ -205,7 +208,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
                         customSDKController = netverifySDK.start(NetverifyCustomSDKImpl())
                         customSDKController?.resume()
                     }
-
+					keepDisabled = true
                 } catch (e: IllegalArgumentException) {
                     Snackbar.make(view!!, e.message ?: "", Snackbar.LENGTH_LONG).show()
                 } catch (e1: SDKNotConfiguredException) {
@@ -226,6 +229,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
             }
 
             netverifySDK.destroy()
+			netverifySDK.checkDeallocation(this@NetverifyCustomFragment)
 
             customSDKController = null
             netverifyCustomContainer?.visibility = View.GONE
@@ -540,7 +544,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
     private inner class NetverifyCustomSDKImpl : NetverifyCustomSDKInterface {
 
-        //Custom SDK Interface
+		//Custom SDK Interface
         override fun onNetverifyCountriesReceived(countryList: HashMap<String, NetverifyCountry>, userCountryCode: String) {
             addToCallbackLog("onNetverifyCountriesReceived - user Country is $userCountryCode")
             if(stopNetverifyCustomButton == null || countryDocumentLayout == null)
@@ -599,7 +603,8 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 
             if (documentData != null) {
                 //Dont change the key strings - they are needed for the qa automation
-                val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
+				dateFormat.timeZone = TimeZone.getTimeZone("UTC")
                 appendKeyValue("Selected country", documentData.selectedCountry)
                 appendKeyValue("Selected document type", if (documentData.selectedDocumentType == null) "" else documentData.selectedDocumentType.name)
                 appendKeyValue("ID number", documentData.idNumber)
@@ -644,7 +649,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
             addToCallbackLog(String.format("onNetverifyError: %s, %s, %d, %s", errorCode, errorMessage, if (retryPossible) 0 else 1, scanReference
                     ?: "null"))
         }
-    }
+	}
 
     private inner class NetverifyCustomScanImpl : NetverifyCustomScanInterface {
 
@@ -766,27 +771,30 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 			showView(true, customNfcLayout, nfcRetryButton)
 
 			if(accessUpdate) {
-				dateOfBirthEditText?.setText(DateFormat.getDateFormat(activity).format(nfcAccessData?.dateOfBirth))
+				val dateFormat = DateFormat.getDateFormat(activity)
+				dateFormat.timeZone = TimeZone.getTimeZone("UTC")
+
+				dateOfBirthEditText?.setText(dateFormat.format(nfcAccessData?.dateOfBirth))
 				dateOfBirthEditText?.tag = nfcAccessData?.dateOfBirth
 				dateOfBirthEditText?.setOnClickListener(DatePickerListener(DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-					val calendar = Calendar.getInstance()
+					val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"), Locale.ENGLISH)
 					calendar.set(Calendar.YEAR, year)
 					calendar.set(Calendar.MONTH, monthOfYear)
 					calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-					dateOfBirthEditText?.setText(DateFormat.getDateFormat(activity).format(calendar.time))
+					dateOfBirthEditText?.setText(dateFormat.format(calendar.time))
 					dateOfBirthEditText?.tag = calendar.time
 				}, nfcAccessData?.dateOfBirth))
 
-				dateOfExpiryEditText?.setText(DateFormat.getDateFormat(activity).format(nfcAccessData?.dateOfExpiry))
+				dateOfExpiryEditText?.setText(dateFormat.format(nfcAccessData?.dateOfExpiry))
 				dateOfExpiryEditText?.tag = nfcAccessData?.dateOfExpiry
 				dateOfExpiryEditText?.setOnClickListener(DatePickerListener(DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-					val calendar = Calendar.getInstance()
+					val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"), Locale.ENGLISH)
 					calendar.set(Calendar.YEAR, year)
 					calendar.set(Calendar.MONTH, monthOfYear)
 					calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-					dateOfExpiryEditText?.setText(DateFormat.getDateFormat(activity).format(calendar.time))
+					dateOfExpiryEditText?.setText(dateFormat.format(calendar.time))
 					dateOfExpiryEditText?.tag = calendar.time
 				}, nfcAccessData?.dateOfExpiry))
 
@@ -901,7 +909,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 	}
 
 	private inner class DatePickerListener(private val mListener: DatePickerDialog.OnDateSetListener, startDate: Date?) : View.OnClickListener {
-		private val calendar = Calendar.getInstance()
+		private val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"), Locale.ENGLISH)
 
 		init {
 			if (startDate != null) {
@@ -910,7 +918,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener {
 		}
 
 		override fun onClick(v: View) {
-			DatePickerDialog(activity, R.style.Theme_AppCompat_Light_Dialog, mListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
+			DatePickerDialog(activity!!.applicationContext, R.style.Theme_AppCompat_Light_Dialog, mListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
 					.show()
 		}
 	}

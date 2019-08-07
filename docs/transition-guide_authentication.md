@@ -1,8 +1,19 @@
-![Fastfill & Netverify](images/netverify.png)
+![Fastfill & Netverify](images/netverify.jpg)
 
 # Transition guide for Authentication SDK
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
+
+## 3.3.0
+#### Deallocation callback
+Added a new method [checkDeallocation](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/AuthenticationSDK.html#checkDeallocation-com.jumio.auth.AuthenticationDeallocationCallback-) in the [AuthenticationSDK](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/AuthenticationSDK.html) to check if the SDK resources have already been deallocated. The method requires a  [AuthenticationDeallocationCallback](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/AuthenticationDeallocationCallback.html) instance as a parameter and calls `onAuthenticationDeallocated` once the SDK is deallocated. The checkDeallocation method should only be called once the SDK has returned a result and another SDK instance is required.
+
+#### Change in initate method
+The enrollmentTransactionReference parameter has been moved to its own [setter](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/AuthenticationSDK.html#setEnrollmentTransactionReference-java.lang.String-). It needs to be called before the initiate method is called.
+In case an Authentication transaction has been created via the facemap server to server API [setAuthenticationTransactionReference](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/AuthenticationSDK.html#setAuthenticationTransactionReference-java.lang.String-) should be used. Therefore [setEnrollmentTransactionReference](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/AuthenticationSDK.html#setEnrollmentTransactionReference-java.lang.String-) should not be called.
+
+#### New SDK localizations added
+SDK Translations for the languages Italian and Portuguese have been added.
 
 ## 3.2.1
 #### Fixed a face scanning problem in which a black screen was shown to the user

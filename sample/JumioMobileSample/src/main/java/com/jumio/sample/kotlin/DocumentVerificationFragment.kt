@@ -22,15 +22,15 @@ import kotlinx.android.synthetic.main.fragment_main.*
 class DocumentVerificationFragment : Fragment(), View.OnClickListener {
 
 	companion object {
-		private val TAG = "JumioSDK_DV"
-		private val PERMISSION_REQUEST_CODE_DOCUMENT_VERIFICATION = 301
+		private const val TAG = "JumioSDK_DV"
+		private const val PERMISSION_REQUEST_CODE_DOCUMENT_VERIFICATION = 301
 	}
 
     private var apiToken: String? = null
     private var apiSecret: String? = null
 	private var dataCenter: JumioDataCenter? = null
 
-    internal lateinit var documentVerificationSDK: DocumentVerificationSDK
+    private lateinit var documentVerificationSDK: DocumentVerificationSDK
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -104,7 +104,7 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
             documentVerificationSDK.setUserReference("USERREFERENCE")
 
             // Set the following property to enable/disable data extraction for documents.
-            documentVerificationSDK.setEnableExtraction(switchOptionOne?.isChecked == true);
+            documentVerificationSDK.setEnableExtraction(switchOptionOne?.isChecked == true)
 
             // One of the Custom Document Type Codes as configurable by Merchant in Merchant UI.
 //			documentVerificationSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");

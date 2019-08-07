@@ -1,4 +1,4 @@
-![Jumio](docs/images/jumio_feature_graphic.png)
+![Jumio](docs/images/jumio_feature_graphic.jpg)
 
 # Table of Content
 - [Release notes](#release-notes)
@@ -8,21 +8,18 @@
 - [FAQ](docs/integration_faq.md)
 
 # Release notes
-SDK version: 3.2.1
+SDK version: 3.3.0
 
 #### Changes
-* Added support for [Jumio screening](https://www.jumio.com/screening/)  [Netverify]
 * 3D Liveness improvements [Netverify, Authentication]
-  * Improved face models to increase conversion rate
-  * Better UX by accepting faces even if they are not perfectly aligned with the overlay
-  * Better user guidance in error cases (bad lighting, bad angle)
-  * Return face help animations in Custom UI [Netverify]
-* Added ePassport support to Custom UI [Netverify]
-* Added additional customization options to scan overlay/view [Netverify/Fastfill]
-
-#### Fixes
-* Fixed capture problem of Spanish resident permits [Netverify/Fastfill]
-* Fixed a face scanning problem in which a black screen was shown to the user [Netverify, Authentication]
+  * Updated detection models to improve face capture experience
+  * Fixed a problem that liveness images were rotated by 90 degree in rare situations
+  * Fixed face capture problem on some devices (e.g. Samsung J series, Redmi Note 7)
+* New Authentication features [Authentication]
+  * Added retry handling to allow up to 3 capture attempts per session
+  * Added support for storing the 3D facemap on customer premise functionality
+* Support of Portuguese and Italian language [Netverify/Fastfill, Authentication, Document Verification]
+* Improved speed of image processing during ID capture [Netverify/Fastfill]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
 
 # Basic Setup
@@ -128,7 +125,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 3.2.0 of the Jumio Mobile SDK is supported until 2019-09-15.
+The previous release version 3.2.1 of the Jumio Mobile SDK is supported until 2019-11-07.
 
 In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
 

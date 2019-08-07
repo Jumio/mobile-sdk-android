@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.jumio.auth.AuthenticationCallback
+import com.jumio.auth.AuthenticationDeallocationCallback
 import com.jumio.auth.AuthenticationResult
 import com.jumio.auth.AuthenticationSDK
 import com.jumio.core.enums.JumioDataCenter
@@ -19,10 +20,10 @@ import com.jumio.sample.R
 import kotlinx.android.synthetic.main.fragment_main.*
 
 
-class AuthenticationFragment : Fragment(), View.OnClickListener {
+class AuthenticationFragment : Fragment(), View.OnClickListener, AuthenticationDeallocationCallback {
 
-    companion object {
-        private val TAG = "JumioSDK_Authentication"
+	companion object {
+        private const val TAG = "JumioSDK_Authentication"
         private const val PERMISSION_REQUEST_CODE_AUTHENTICATION = 304
     }
 
@@ -92,22 +93,21 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
             // Callback URL (max. 255 characters) for the confirmation after authentication is completed. This setting overrides your Jumio merchant settings.
 //			authenticationSDK.setCallbackUrl("YOURCALLBACKURL");
 
-            // Use the following method to initialize the SDK. The scan reference of an eligible Netverify scan has to be used
-            // as the enrollmentTransactionReference
-            var enrollmentTransactionReference = ""
-            if (etOptional?.text.toString().isNotEmpty()) {
-                enrollmentTransactionReference = etOptional?.text.toString()
-            }
+            // The scan reference of an eligible Netverify scan has to be used as the enrollmentTransactionReference
+            authenticationSDK.setEnrollmentTransactionReference(etOptional?.text.toString())
+
+	        // Instead an Authentication transaction can also be created via the facemap server to server API and set here
+			// authenticationSDK.setAuthenticationTransactionReference("YOURAUTHENTICATIONTRANSACTIONREFERENCE")
+
+			// Use the following method to initialize the SDK.
             if ((activity as MainActivity).checkPermissions(PERMISSION_REQUEST_CODE_AUTHENTICATION)) {
-                authenticationSDK.initiate(enrollmentTransactionReference, object : AuthenticationCallback {
+                authenticationSDK.initiate(object : AuthenticationCallback {
                     override fun onAuthenticationInitiateSuccess() {
                         try {
                             startActivityForResult(authenticationSDK.intent, AuthenticationSDK.REQUEST_CODE)
                         } catch (e: MissingPermissionException) {
                             Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
                         }
-
-						btnStart?.isEnabled = true
                     }
 
                     override fun onAuthenticationInitiateError(errorCode: String, errorMessage: String, retryPossible: Boolean) {
@@ -152,6 +152,13 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
             //At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that
             //internal resources can be freed.
             authenticationSDK.destroy()
+			authenticationSDK.checkDeallocation(this)
         }
     }
+
+	override fun onAuthenticationDeallocated() {
+		activity?.runOnUiThread {
+			btnStart?.isEnabled = true
+		}
+	}
 }

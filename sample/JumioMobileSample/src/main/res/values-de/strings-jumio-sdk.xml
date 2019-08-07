@@ -86,7 +86,7 @@
 	<string name="netverify_helpview_small_description_card">Halten Sie Ihr Dokument in den Rahmen bis es automatisch erkannt  wird</string>
 	<string name="netverify_helpview_full_description">Halten Sie Ihr Dokument in den Rahmen wie in der Animation oben dargestellt. Die Erkennung erfolgt automatisch.\n\nVergewissern Sie sich, dass alle Daten lesbar sind und vermeiden Sie Spiegelungen.</string>
 	<string name="netverify_helpview_full_description_template">Halten Sie Ihr Dokument vor die Kamera wie in der Animation oben dargestellt. Die Erkennung erfolgt automatisch.\n\nVergewissern Sie sich, dass alle Daten lesbar sind und vermeiden Sie Spiegelungen.</string>
-	<string name="netverify_helpview_full_description_barcode">Halten Sie den Barcode vor die Kamera wie in dem Bild oben dargestellt. Die Erkennung erfolgt automatisch.\n\nVergewissern Sie sich, dass alle Daten lesbar sind und vermeiden Sie Spiegelungen.</string>
+	<string name="netverify_helpview_full_description_barcode">Halten Sie den Barcode vor die Kamera wie in dem Bild oben dargestellt. Die Erkennung erfolgt automatisch.</string>
 	<string name="netverify_helpview_full_description_card">Halten Sie Ihr Dokument in den Rahmen bis alle vier Kanten übereinstimmen, so wie in der Animation oben dargestellt. Die Erkennung erfolgt automatisch.\n\nVergewissern Sie sich, dass alle Daten lesbar sind und vermeiden Sie Spiegelungen.</string>
 	<string name="netverify_document_variant_other">Anderes Format</string>
 	<string name="netverify_document_variant_plastic">Plastikkarte</string>

@@ -30,8 +30,8 @@ import java.util.*
 class BamCustomFragment : Fragment(), BamCustomScanInterface {
 
 	companion object {
-		private val TAG = "JumioSDK_BamCustom"
-		private val PERMISSION_REQUEST_CODE_BAM_CUSTOM = 302
+		private const val TAG = "JumioSDK_BamCustom"
+		private const val PERMISSION_REQUEST_CODE_BAM_CUSTOM = 302
 	}
 
     private var apiToken: String? = null
@@ -114,7 +114,7 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
 
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration?) {
+    override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
 
         val isPortrait = newConfig?.orientation == Configuration.ORIENTATION_PORTRAIT

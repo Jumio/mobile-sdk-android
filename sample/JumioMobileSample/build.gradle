@@ -1,11 +1,11 @@
 buildscript {
-	ext.KOTLIN_VERSION = "1.3.30"
+	ext.KOTLIN_VERSION = "1.3.41"
 	repositories {
         google()
         jcenter()
 	}
 	dependencies {
-		classpath "com.android.tools.build:gradle:3.4.0"
+		classpath "com.android.tools.build:gradle:3.4.1"
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
 	}
 }
@@ -20,7 +20,7 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "3.2.1"
+	SDK_VERSION = "3.3.0"
 }
 
 dependencies {
@@ -45,7 +45,7 @@ dependencies {
 	implementation "androidx.cardview:cardview:1.0.0"
 
     //only for nv-barcode-vision
-    implementation ("com.google.android.gms:play-services-vision:15.0.1"){
+    implementation ("com.google.android.gms:play-services-vision:18.0.0"){
 		exclude group: 'com.android.support', module:'support-v4'
 	}
 
@@ -54,7 +54,7 @@ dependencies {
 	implementation "net.sf.scuba:scuba-sc-android:0.0.18"
 
     //only for face
-    implementation "com.facetec:zoom-authentication-hybrid:7.0.12@aar"
+    implementation "com.facetec:zoom-authentication-hybrid:7.0.14@aar"
 
 	//Kotlin
 	implementation "org.jetbrains.kotlin:kotlin-stdlib:${KOTLIN_VERSION}"
@@ -63,8 +63,8 @@ dependencies {
 }
 
 android {
-	compileSdkVersion 28
-	buildToolsVersion "28.0.3"
+	compileSdkVersion 29
+	buildToolsVersion "29.0.0"
 	defaultConfig {
         versionCode 1
         versionName "Jumio Sample"
