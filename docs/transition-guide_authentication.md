@@ -1,4 +1,4 @@
-![Fastfill & Netverify](images/netverify.jpg)
+![Fastfill & Netverify](images/authentication.jpg)
 
 # Transition guide for Authentication SDK
 
@@ -7,6 +7,9 @@ This section only covers the breaking technical changes that should be considere
 ## 3.3.0
 #### Deallocation callback
 Added a new method [checkDeallocation](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/AuthenticationSDK.html#checkDeallocation-com.jumio.auth.AuthenticationDeallocationCallback-) in the [AuthenticationSDK](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/AuthenticationSDK.html) to check if the SDK resources have already been deallocated. The method requires a  [AuthenticationDeallocationCallback](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/AuthenticationDeallocationCallback.html) instance as a parameter and calls `onAuthenticationDeallocated` once the SDK is deallocated. The checkDeallocation method should only be called once the SDK has returned a result and another SDK instance is required.
+
+#### Dependency change
+*  ~~com.facetec:zoom-authentication-hybrid:7.0.12~~ is replaced by com.facetec:zoom-authentication-hybrid:7.0.14
 
 #### Change in initate method
 The enrollmentTransactionReference parameter has been moved to its own [setter](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/AuthenticationSDK.html#setEnrollmentTransactionReference-java.lang.String-). It needs to be called before the initiate method is called.
