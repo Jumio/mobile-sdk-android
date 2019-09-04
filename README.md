@@ -8,7 +8,7 @@
 - [FAQ](docs/integration_faq.md)
 
 # Release notes
-SDK version: 3.3.0
+SDK version: 3.3.1
 
 #### Changes
 * 3D Liveness improvements [Netverify, Authentication]
@@ -20,6 +20,9 @@ SDK version: 3.3.0
   * Added support for storing the 3D facemap on customer premise functionality
 * Support of Portuguese and Italian language [Netverify/Fastfill, Authentication, Document Verification]
 * Improved speed of image processing during ID capture [Netverify/Fastfill]
+* Improved dependency check of face libraries [Netverify]
+* Fixed a bug that sometimes the ID image was cropped too much [Netverify]
+* Fixed a bug that J error was not displayed in custom UI [Netverify Custom UI]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
 
 # Basic Setup
@@ -125,9 +128,10 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 3.2.1 of the Jumio Mobile SDK is supported until 2019-11-07.
+The previous release version 3.3.0 of the Jumio Mobile SDK is supported until 2019-12-05.
 
-In case the support period is expired, no bug fixes are provided anymore (typically fixed in the upcoming versions). The SDK will keep functioning (until further notice).
+In case the support period is expired, no bug fixes and technical support are provided anymore (bugs are typically fixed in the upcoming versions).
+Older SDK versions will keep functioning with our server until further notice, but we highly recommend to always update to the latest version to benefit from SDK improvements and bug fixes.
 
 ## Two-factor Authentication
 If you want to enable two-factor authentication for your Jumio customer portal please contact us at https://support.jumio.com. Once enabled, users will be guided through the setup upon their first login to obtain a security code using the "Google Authenticator" app.
