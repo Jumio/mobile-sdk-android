@@ -8,7 +8,7 @@
 - [FAQ](docs/integration_faq.md)
 
 # Release notes
-SDK version: 3.3.1
+SDK version: 3.3.2
 
 #### Changes
 * 3D Liveness improvements [Netverify, Authentication]
@@ -23,6 +23,8 @@ SDK version: 3.3.1
 * Improved dependency check of face libraries [Netverify]
 * Fixed a bug that sometimes the ID image was cropped too much [Netverify]
 * Fixed a bug that J error was not displayed in custom UI [Netverify Custom UI]
+* Improved document alignment for more accurate image cropping [Netverify]
+* Fixed a problem when two instances were presented shortly after each other [Netverify]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
 
 # Basic Setup
@@ -128,7 +130,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 3.3.0 of the Jumio Mobile SDK is supported until 2019-12-05.
+The previous release version 3.3.1 of the Jumio Mobile SDK is supported until 2020-01-06.
 
 In case the support period is expired, no bug fixes and technical support are provided anymore (bugs are typically fixed in the upcoming versions).
 Older SDK versions will keep functioning with our server until further notice, but we highly recommend to always update to the latest version to benefit from SDK improvements and bug fixes.

@@ -4,6 +4,9 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.3.2
+No backward incompatible changes
+
 ## 3.3.1
 No backward incompatible changes
 
