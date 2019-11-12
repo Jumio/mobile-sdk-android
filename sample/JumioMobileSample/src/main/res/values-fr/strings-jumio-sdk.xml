@@ -74,7 +74,6 @@
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Analyse des données biométriques&lt;/b&gt;</string>
 	<string name="netverify_helpview_progress_text">Étape %1$d sur %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">Le code-barres de votre document ne contenait pas votre adresse, veuillez retourner votre document et numériser le recto</string>
-	<string name="netverify_helpview_description_flip_document">Vous avez déjà numérisé le recto de votre document.\n\nVeuillez le retourner et numériser le verso.</string>
 	<string name="netverify_helpview_usdl_fallback_continue">Appuyer pour continuer</string>
 	<string name="netverify_helpview_fallback">LA DÉTECTION NE FONCTIONNE PAS</string>
 	<string name="netverify_helpview_fallback_barcode">CLIQUEZ SI PAS DE BARRE-CODE</string>
@@ -95,6 +94,10 @@
 	<string name="face_helpview_landscape_header">&lt;b&gt;Tournez votre appareil&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Veuillez tourner votre téléphone pour prendre un selfie en mode portrait.</string>
 	<string name="face_helpview_continue">Appuyer pour continuer</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Vérifiez que toutes les données sur votre document sont visibles et lisibles.</string>
+	<string name="netverify_scanview_snackbar_progress">Traitement du document en cours...</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Votre document n\'a pas pu être traité. Veuillez réessayer.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">L\'image capturée ressemble au recto de votre document. Veuillez confirmer qu\'il s\'agit du verso de votre document ou reprendre l\'image.</string>
 	-->
 
 	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->

@@ -171,15 +171,17 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == BamSDK.REQUEST_CODE) {
-			if (data == null)
+			if (data == null){
 				return;
+			}
 			ArrayList<String> scanAttempts = data.getStringArrayListExtra(BamSDK.EXTRA_SCAN_ATTEMPTS);
 
 			if (resultCode == Activity.RESULT_OK) {
+				//Handle the success case and retrieve scan data
 				BamCardInformation cardInformation = data.getParcelableExtra(BamSDK.EXTRA_CARD_INFORMATION);
-
 				cardInformation.clear();
 			} else if (resultCode == Activity.RESULT_CANCELED) {
+				//Handle the error cases as described in our documentation: https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#managing-errors
 				String errorMessage = data.getStringExtra(BamSDK.EXTRA_ERROR_MESSAGE);
 				String errorCode = data.getStringExtra(BamSDK.EXTRA_ERROR_CODE);
 			}

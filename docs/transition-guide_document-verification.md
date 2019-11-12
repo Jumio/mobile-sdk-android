@@ -1,8 +1,13 @@
-![Jumio](images/document_verification.png)
+![Jumio](images/document_verification.jpg)
 
 # Transition guide for Document Verification SDK
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
+
+## 3.4.0
+#### Dependency change
+*  ~~androidx.appcompat:appcompat:1.0.2~~ is replaced by androidx.appcompat:appcompat:1.1.0
+*  ~~androidx.room:room-runtime:2.0.0~~ is replaced by androidx.room:room-runtime:2.2.1
 
 ## 3.3.2
 No backward incompatible changes

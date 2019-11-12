@@ -45,6 +45,7 @@ import com.jumio.nv.NetverifyDocumentData;
 import com.jumio.nv.NetverifyMrzData;
 import com.jumio.nv.NetverifySDK;
 import com.jumio.nv.custom.NetverifyCancelReason;
+import com.jumio.nv.custom.NetverifyConfirmationType;
 import com.jumio.nv.custom.NetverifyCountry;
 import com.jumio.nv.custom.NetverifyCustomAnimationView;
 import com.jumio.nv.custom.NetverifyCustomConfirmationView;
@@ -222,8 +223,8 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 
         startCustomScanButton.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_netverify_custom)));
 
-        successDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.success));
-        errorDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.error));
+        successDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.jumio_success));
+        errorDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.jumio_error));
 
 		hideView(false, countryDocumentLayout, partTypeLayout, finishButton, errorRetryButton, partRetryButton, customAnimationView);
 
@@ -874,8 +875,8 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         }
 
         @Override
-        public void onNetverifyPresentConfirmationView() {
-            addToCallbackLog("onNetverifyPresentConfirmationView");
+        public void onNetverifyPresentConfirmationView(NetverifyConfirmationType confirmationType) {
+			addToCallbackLog(String.format("onNetverifyPresentConfirmationView %s", confirmationType.toString()));
             hideView(true, customScanLayout);
             showView(true, customConfirmLayout);
         }
@@ -883,11 +884,6 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         @Override
         public void onNetverifyNoUSAddressFound() {
             addToCallbackLog("onNetverifyNoUsAddressFound");
-        }
-
-        @Override
-        public void onNetverifyDisplayFlipDocumentHint() {
-            addToCallbackLog("onNetverifyDisplayFlipDocumentHint");
         }
 
         @Override
@@ -913,8 +909,12 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 		public void onNetverifyScanForPartCanceled(ScanSide scanSide, NetverifyCancelReason cancelReason) {
 			addToCallbackLog(String.format("onNetverifyScanForPartCanceled scanSide: %s reason: %s helptext: %s", scanSide.toString(), cancelReason.toString()));
 
-			customScanViewPresenter.getHelpAnimation(customAnimationView);
-			showView(false, partRetryButton, customAnimationView);
+			if(scanSide == ScanSide.FACE) {
+				customScanViewPresenter.getHelpAnimation(customAnimationView);
+				showView(false, customAnimationView);
+			}
+
+			showView(false, partRetryButton);
 		}
 
 		@Override

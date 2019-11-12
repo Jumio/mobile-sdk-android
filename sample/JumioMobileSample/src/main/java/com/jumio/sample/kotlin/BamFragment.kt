@@ -162,12 +162,15 @@ class BamFragment : Fragment(), View.OnClickListener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == BamSDK.REQUEST_CODE) {
+
             val scanAttempts = data?.getStringArrayListExtra(BamSDK.EXTRA_SCAN_ATTEMPTS)
 
             if (resultCode == Activity.RESULT_OK) {
+                //Handle the success case and retrieve scan data
                 val cardInformation = data?.getParcelableExtra<BamCardInformation>(BamSDK.EXTRA_CARD_INFORMATION)
                 cardInformation?.clear()
             } else if (resultCode == Activity.RESULT_CANCELED) {
+                //Handle the error cases as described in our documentation: https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#managing-errors
                 val errorMessage = data?.getStringExtra(BamSDK.EXTRA_ERROR_MESSAGE)
                 val errorCode = data?.getStringExtra(BamSDK.EXTRA_ERROR_CODE)
             }

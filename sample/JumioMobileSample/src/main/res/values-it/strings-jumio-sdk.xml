@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_error_dialog_title">Errore</string>
+	<string name="jumio_scanview_refocus">Si prega di rimettere a fuoco</string>
+	<string name="jumio_accessibility_flash_activate">Attivare il flash</string>
+	<string name="jumio_accessibility_flash_deactivate">Disattivare il flash</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Passare alla fotocamera frontale</string>
+	<string name="jumio_accessibility_camera_switch_to_back">Passare alla fotocamera posteriore</string>
+	<string name="jumio_accessibility_loading">Caricamento</string>
+	<string name="jumio_accessibility_quit_scan">Uscire dalla scansione</string>
+	<string name="jumio_error_network_problems">Abbiamo riscontrato un problema di comunicazione di rete</string>
+	<string name="jumio_error_auth_failed">Autenticazione non riuscita</string>
+	<string name="jumio_error_device_is_offline">Nessuna connessione internet disponibile</string>
+	<string name="jumio_error_startup_error">La scansione non è disponibile al momento, si prega di contattare il produttore dell\'applicazione</string>
+	<string name="jumio_error_cancelled_by_user">Annullato dall\'utente finale</string>
+	<string name="jumio_error_no_camera_connection">La fotocamera non è al momento disponibile</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Il certificato non è più valido. Si prega di aggiornare la vostra applicazione</string>
+	<string name="jumio_error_transaction_already_finished">Transazione già ultimata</string>
+	<string name="jumio_button_retry">Riprova</string>
+	<string name="jumio_button_cancel">Annulla</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="netverify_documenttype_passport">Passaporto</string>
+	<string name="netverify_documenttype_visa">Visto</string>
+	<string name="netverify_documenttype_idcard">Carta d\'identità</string>
+	<string name="netverify_documenttype_driverlicense">Patente di guida</string>
+	<string name="netverify_front">Fronte</string>
+	<string name="netverify_back">Retro</string>
+	<string name="netverify_inside">Interno</string>
+	<string name="netverify_outside">Esterno</string>
+	<string name="netverify_use_front_side_of_card">USARE FRONTALE</string>
+	<string name="netverify_use_back_side_of_card">USARE POSTERIORE</string>
+	<string name="netverify_nfc_view_title">NFC</string>
+	<string name="netverify_nfc_header_start">&lt;b&gt;Scansione documento d\'identità &lt;/b&gt;</string>
+	<string name="netverify_nfc_header_download">&lt;b&gt;Estrazione dati&lt;/b&gt;</string>
+	<string name="netverify_nfc_header_finish">&lt;b&gt;Estrazione riuscita&lt;/b&gt;</string>
+	<string name="netverify_nfc_description_start">Si prega di controllare che il documento presenti il seguente simbolo ${icon} e di posizionare il telefono sopra il documento come illustrato per iniziare la verifica</string>
+	<string name="netverify_nfc_description_download">Lettura dati da documento. Si prega di attendere fino alla fine del processo</string>
+	<string name="netverify_nfc_requestview_button_text">NESSUN SIMBOLO SUL MIO DOCUMENTO</string>
+	<string name="netverify_nfc_bac_dialog_title">Errore di autenticazione</string>
+	<string name="netverify_nfc_bac_dialog_text">Si prega di controllare di nuovo i dati del documento e di correggerli manualmente. Premere Riprova per riprendere la scansione</string>
+	<string name="netverify_nfc_bac_dialog_id_number">Numero documento d\'identità</string>
+	<string name="netverify_nfc_bac_dialog_date_of_birth">data di nascita</string>
+	<string name="netverify_nfc_bac_dialog_date_of_expiry">data di scadenza</string>
+	<string name="netverify_nfc_general_error_dialog_title">Errore di lettura</string>
+	<string name="netverify_nfc_general_error_dialog_text">Si è verificato un errore durante la lettura dei dati del documento. Si prega di riprovare e di posizionare nuovamente il vostro telefono sul documento</string>
+	<string name="netverify_nfc_enable_dialog_title">Attiva NFC</string>
+	<string name="netverify_nfc_enable_dialog_text">Per sfruttare al meglio il vostro passaporto, si prega di cliccare su OK e consentire le funzionalità NFC del vostro telefono</string>
+	<string name="netverify_scan_options_subtitle_type">Selezionare il tipo di documento che si desidera scansionare</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Selezionate il vostro paese&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; è stato selezionato come paese emittente dei vostri documenti.</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; è stato selezionato come paese emittente dei vostri documenti. &lt;b&gt;&lt;u&gt;Cambiare paese&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_countrylist_title">Selezionare il paese emittente dei vostri documenti</string>
+	<string name="netverify_countrylist_empty">Nessun dato nell\'elenco</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Caricamento dei vostri documenti&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">Il procedimento dovrebbe durare un paio di secondi, a seconda della vostra connettività di rete</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Caricamento completato&lt;/b&gt;</string>
+	<string name="netverify_upload_error">&lt;b&gt;Problemi di caricamento&lt;/b&gt;</string>
+	<string name="netverify_scanview_title">Scansiona</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_scanview_title_check">Controllare la leggibilità</string>
+	<string name="netverify_scanview_snackbar_check">Assicuratevi che tutti i dati dei vostri documenti siano perfettamente visibili, senza riflessi e sfocature</string>
+	<string name="netverify_scanview_retake">RIFARE</string>
+	<string name="netverify_scanview_readable">LEGGIBILE</string>
+	<string name="netverify_scanview_legal_hint_nld">Si prega di censurare il vostro codice fiscale prima di scattare</string>
+	<string name="netverify_scanview_legal_hint_kor">Censurare la seconda parte del vostro Numero di Registrazione di Residenza prima di scattare</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Si prega di censurare il numero del passaporto prima di scattare</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Si prega di censurare il numero della carta d\'identità prima di scattare</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Si prega di censurare la carta d\'identità e numero di accesso prima di scattare</string>
+	<string name="netverify_scanview_analyzing_biometrics">Analisi dei dati biometrici</string>
+	<string name="netverify_helpview_progress_text" formatted="false">Fase %1$d di %2$d</string>
+	<string name="netverify_helpview_description_usdl_fallback">Il codice a barre del vostro documento non include il vostro indirizzo, girate il vostro documento e scansionate il lato frontale</string>
+	<string name="netverify_helpview_usdl_fallback_continue">CONTINUARE</string>
+	<string name="netverify_helpview_fallback">L\'ACQUISIZIONE NON STA FUNZIONANDO</string>
+	<string name="netverify_helpview_fallback_barcode">NESSUN CODICE A BARRE</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Scansionare %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;Scattare %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_description">Posizionate il vostro documento all\'interno del riquadro fino a quando non verrà acquisito automaticamente</string>
+	<string name="netverify_helpview_small_description_template">Posizionate il vostro documento davanti alla fotocamera fino a quando non verrà acquisito automaticamente</string>
+	<string name="netverify_helpview_small_description_barcode">Posizionate il codice a barre davanti alla fotocamera fino a quando non verrà acquisito automaticamente</string>
+	<string name="netverify_helpview_small_description_card">Posizionate il vostro documento all\'interno del riquadro fino a quando non verrà acquisito automaticamente</string>
+	<string name="netverify_helpview_full_description">Posizionate il vostro documento all\'interno del riquadro come mostrato nell\'animazione in alto. L\'acquisizione avviene automaticamente. \n\nAssicuratevi che tutti i dati siano leggibili ed evitate riflessi.</string>
+	<string name="netverify_helpview_full_description_template">Posizionate il vostro documento davanti alla fotocamera. L\'acquisizione avviene automaticamente. \n\nAssicuratevi che tutti i dati siano leggibili ed evitate riflessi.</string>
+	<string name="netverify_helpview_full_description_barcode">Posizionate il codice a barre davanti alla fotocamera. L\'acquisizione avviene automaticamente.</string>
+	<string name="netverify_helpview_full_description_card">Posizionate il vostro documento all\'interno del riquadro finché tutti e 4 i bordi non saranno allineati come mostrato nell\'animazione in alto. L\'acquisizione avviene automaticamente. \n\nAssicuratevi che tutti i dati siano leggibili ed evitate riflessi.</string>
+	<string name="netverify_document_variant_other">Altro formato</string>
+	<string name="netverify_document_variant_plastic">Tessera in plastica</string>
+	<string name="netverify_accessibility_nfc_description_start">Si prega di controllare che la vostra carta abbia un microchip. In caso affermativo, posizionare il vostro telefono sulla carta come mostrato.</string>
+	<string name="face_helpview_title_problems">Problemi riscontrati?</string>
+	<string name="face_helpview_continue">Premere per continuare</string>
+	<string name="face_helpview_landscape_header"><b>Ruotare il vostro dispositivo</b></string>
+	<string name="face_helpview_landscape_description">Si prega di ruotare il vostro telefono in modalità ritratto per scattare un selfie</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Assicurati che tutti i dati sul tuo documento siano visibili e leggibili.</string>
+	<string name="netverify_scanview_snackbar_progress">Elaborazione documento...</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Non è stato possibile elaborare il tuo documento, riprova.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">L\'immagine acquisita ha l\'aspetto della parte anteriore del documento. Si prega di confermare che questo è il retro del documento o riacquisire l\'immagine.</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_title_problems">Problemi riscontrati?</string>
+	<string name="face_helpview_continue">Premere per continuare</string>
+	<string name="face_helpview_landscape_header"><b>Ruotare il vostro dispositivo</b></string>
+	<string name="face_helpview_landscape_description">Si prega di ruotare il vostro telefono in modalità ritratto per scattare un selfie</string>
+	<string name="zoom_accessibility_cancel_button">Uscire dalla scansione</string>
+	<string name="zoom_feedback_a_little_too_close">Allontanarsi di poco</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Allontanarsi di poco</string>
+	<string name="zoom_feedback_center_face">Centrare il vostro volto</string>
+	<string name="zoom_feedback_face_not_found">Inquadrare il vostro volto</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Guardare dritto</string>
+	<string name="zoom_feedback_face_not_upright">Tenere la testa dritta</string>
+	<string name="zoom_feedback_hold_steady">Rimanere immobili</string>
+	<string name="zoom_feedback_move_phone_away">Allontanarsi di poco</string>
+	<string name="zoom_feedback_move_phone_closer">Avvicinarsi di poco</string>
+	<string name="zoom_feedback_move_phone_even_closer">Un poco più vicino</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Posizionare il dispositivo all\'altezza degli occhi</string>
+	<string name="zoom_feedback_move_tablet_away">Allontanarsi di poco</string>
+	<string name="zoom_feedback_move_tablet_closer">Avvicinarsi di poco</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Posizionare il dispositivo all\'altezza degli occhi</string>
+	<string name="zoom_helpview_bad_angle">Posizionare il vostro dispositivo all\'altezza degli occhi e guardare direttamente nell\'obiettivo</string>
+	<string name="zoom_helpview_bad_lightning">Evitare ombre e riflessi sul vostro viso</string>
+	<string name="zoom_helpview_general">Seguire il processo in due fasi e allineare il vostro viso con l\'inquadratura. Posizionare il vostro dispositivo all\'altezza degli occhi e guardare direttamente nella fotocamera. Il vostro viso verrà acquisito automaticamente</string>
+	<string name="zoom_helpview_upfront_title">Acquisire il vostro viso</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_upload_progress">&lt;b&gt;Caricamento dei vostri documenti&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Il procedimento dovrebbe durare un paio di secondi, a seconda della vostra connettività di rete</string>
+	<string name="dv_upload_successful">&lt;b&gt;Caricamento completato&lt;/b&gt;</string>
+	<string name="dv_upload_error">&lt;b&gt;Problemi di caricamento&lt;/b&gt;</string>
+	<string name="dv_scanview_title">Scansiona</string>
+	<string name="dv_scanview_title_check">Controllare la leggibilità</string>
+	<string name="dv_scanview_snackbar_check">Assicuratevi che tutti i dati dei vostri documenti siano perfettamente visibili, senza riflessi e sfocature</string>
+	<string name="dv_scanview_retake">RIFARE</string>
+	<string name="dv_scanview_readable">LEGGIBILE</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Acquisire %1$s&lt;/b&gt;</string>
+	<string name="dv_helpview_header_document">Documento</string>
+	<string name="dv_helpview_header_bank_statement">Rendiconto bancario</string>
+	<string name="dv_helpview_header_credit_card">Carta di credito</string>
+	<string name="dv_helpview_header_insurance_card">Tessera assicurativa</string>
+	<string name="dv_helpview_header_utility_bill">Bolletta</string>
+	<string name="dv_helpview_header_cash_advance_application">Richiesta di anticipo contanti</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Certificato di delibera aziendale</string>
+	<string name="dv_helpview_header_credit_card_statement">Resoconto della carta di credito</string>
+	<string name="dv_helpview_header_lease_agreement">Contratto d\'affitto</string>
+	<string name="dv_helpview_header_loan_application">Richiesta di prestito</string>
+	<string name="dv_helpview_header_mortgage_application">Richiesta di mutuo</string>
+	<string name="dv_helpview_header_tax_return">Dichiarazione dei redditi</string>
+	<string name="dv_helpview_header_vehicle_title">Atto di proprietà di un veicolo</string>
+	<string name="dv_helpview_header_voided_check">Assegno invalidato</string>
+	<string name="dv_helpview_header_student_card">Tessera dello studente</string>
+	<string name="dv_helpview_header_health_care_card">Tessera sanitaria</string>
+	<string name="dv_helpview_header_council_bill">Tributo comunale</string>
+	<string name="dv_helpview_header_seniors_card">Tessera anziani</string>
+	<string name="dv_helpview_header_medicare_card">Tessera Medicare</string>
+	<string name="dv_helpview_header_birth_certificate">Certificato di nascita</string>
+	<string name="dv_helpview_header_working_with_children_check">Certificato d\'idoneità per lavorare con bambini</string>
+	<string name="dv_helpview_header_superannuation_statement">Certificato contributi pensionistici</string>
+	<string name="dv_helpview_header_trade_association_card">Tessera associazione di categoria</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Lettera d\'iscrizione scolastica</string>
+	<string name="dv_helpview_header_phone_bill">Bolletta del telefono</string>
+	<string name="dv_helpview_header_social_security_card">Tessera di previdenza sociale</string>
+	-->
+
+</resources>

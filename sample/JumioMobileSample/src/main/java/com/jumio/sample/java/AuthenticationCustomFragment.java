@@ -117,8 +117,8 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 
 		startCustomScanButton.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_authentication)));
 
-        successDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.success));
-        errorDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.error));
+        successDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.jumio_success));
+        errorDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.jumio_error));
 
         initScanView();
 

@@ -8,24 +8,20 @@
 - [FAQ](docs/integration_faq.md)
 
 # Release notes
-SDK version: 3.3.2
+SDK version: 3.4.0
+
+#### Deprecation notice
+This is the last version that supports Android 4.x and 5.0. The minimum supported Android version will be increased to 5.1 in the next SDK version 3.5.0.
 
 #### Changes
-* 3D Liveness improvements [Netverify, Authentication]
-  * Updated detection models to improve face capture experience
-  * Fixed a problem that liveness images were rotated by 90 degree in rare situations
-  * Fixed face capture problem on some devices (e.g. Samsung J series, Redmi Note 7)
-* New Authentication features [Authentication]
-  * Added retry handling to allow up to 3 capture attempts per session
-  * Added support for storing the 3D facemap on customer premise functionality
-* Support of Portuguese and Italian language [Netverify/Fastfill, Authentication, Document Verification]
-* Improved speed of image processing during ID capture [Netverify/Fastfill]
-* Improved dependency check of face libraries [Netverify]
-* Fixed a bug that sometimes the ID image was cropped too much [Netverify]
-* Fixed a bug that J error was not displayed in custom UI [Netverify Custom UI]
-* Improved document alignment for more accurate image cropping [Netverify]
-* Fixed a problem when two instances were presented shortly after each other [Netverify]
-* Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
+* New major 3D Liveness version with improved face detection models [Netverify, Authentication]
+* Support for Colombian ID barcode scanning [Netverify/Fastfill]
+* Improved image selection to reduce number of documents which are not fully visible [Netverify]
+* Advanced document checks on the back of IDs to increase user conversion [Netverify]
+
+#### Fixes
+* Fixed several technical problems during face scanning [Netverify, Authentication]
+* Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification]
 
 # Basic Setup
 
@@ -111,12 +107,14 @@ __Note:__ You get an *UnsatisfiedLinkError*, if the app and the CPU architecture
 Our SDK supports the [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages and cultures.
 All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable at [.../src/main/res/values/strings-jumio-sdk.xml](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml) within our Sample application.
 
-For our products Fastfill,Netverify & Document Verification we are providing six individual languages for your convenience:
+For our products Netverify & Fastfill, Authentication & Document Verification we are providing eight individual languages for your convenience:
 * Chinese (Simplified)
 * Dutch
 * English
 * French
 * German
+* Italian
+* Portuguese
 * Spanish
 
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or change the __font size__ on their device. The accessibility-strings that are used by TalkBack contain *accessibility_* in their key and can be also modified in the `strings.xml`.
@@ -130,7 +128,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 3.3.1 of the Jumio Mobile SDK is supported until 2020-01-06.
+The previous release version 3.3.2 of the Jumio Mobile SDK is supported until 2020-02-15.
 
 In case the support period is expired, no bug fixes and technical support are provided anymore (bugs are typically fixed in the upcoming versions).
 Older SDK versions will keep functioning with our server until further notice, but we highly recommend to always update to the latest version to benefit from SDK improvements and bug fixes.

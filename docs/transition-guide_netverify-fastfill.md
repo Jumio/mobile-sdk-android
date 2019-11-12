@@ -1,8 +1,38 @@
-![Fastfill & Netverify](images/netverify.png)
+![Fastfill & Netverify](images/netverify.jpg)
 
 # Transition guide for Netverify & Fastfill SDK
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
+
+## 3.4.0
+
+#### Customization changes
+* The SDK now uses Material buttons instead of the old snackbar button styles on the confirmation view.
+* Please check out the confirmation screens and the XML output in the [Surface Tool](https://jumio.github.io/surface-android/) for all adapted content.
+Changes:
+* New style attribute **confirmationIcon** for customizing the info and warning icon on the confirmation screen.
+* New confirmation button style **Netverify.Confirmation.MaterialButton** for the positive button.
+* New confirmation button style **Netverify.Confirmation.MaterialButton.Outlined** for the negative button.
+
+#### Dependency Changes
+* Constraint layout dependency **androidx.constraintlayout:constraintlayout:1.1.3** or higher is now mandatory
+* The following plugins are now required in the build.gradle of your application:
+```
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+```
+
+* Dependency name and version change - com.facetec:zoom-authentication-hybrid:7.0.14 is replaced by **com.facetec:zoom-authentication:8.0.11@aar**
+*  ~~androidx.appcompat:appcompat:1.0.2~~ is replaced by androidx.appcompat:appcompat:1.1.0
+*  ~~androidx.room:room-runtime:2.0.0~~ is replaced by androidx.room:room-runtime:2.2.1
+
+#### Custom UI callbacks
+*  ~~onNetverifyDisplayFlipDocumentHint~~ has been removed
+*  A new parameter [NetverifyConfirmationType](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyConfirmationType.html) was added to [NetverifyCustomScanInterface$onNetverifyPresentConfirmationView](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyPresentConfirmationView-NetverifyConfirmationType-)
+
+#### Proguard changes
+`-dontwarn com.facetec.zoom.sdk.**` needs to be added
 
 ## 3.3.2
 No backward incompatible changes

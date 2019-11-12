@@ -93,8 +93,8 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener, NetverifyDeall
         apiSecret = arguments?.getString(MainActivity.KEY_API_SECRET)
 		dataCenter = arguments?.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
-        successDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.success))
-        errorDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.error))
+        successDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.jumio_success))
+        errorDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.jumio_error))
 
         return rootView
     }
@@ -690,18 +690,14 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener, NetverifyDeall
             addToCallbackLog("onNetverifyExtractionStarted")
         }
 
-        override fun onNetverifyPresentConfirmationView() {
-            addToCallbackLog("onNetverifyPresentConfirmationView")
+        override fun onNetverifyPresentConfirmationView(confirmationType: NetverifyConfirmationType) {
+			addToCallbackLog(String.format("onNetverifyPresentConfirmationView %s", confirmationType.toString()))
             hideView(true, customScanLayout)
             showView(true, customConfirmLayout)
         }
 
         override fun onNetverifyNoUSAddressFound() {
             addToCallbackLog("onNetverifyNoUsAddressFound")
-        }
-
-        override fun onNetverifyDisplayFlipDocumentHint() {
-            addToCallbackLog("onNetverifyFaceOnBackside")
         }
 
         override fun onNetverifyFaceInLandscape() {
@@ -723,8 +719,11 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener, NetverifyDeall
         override fun onNetverifyScanForPartCanceled(scanSide: ScanSide?, cancelReason: NetverifyCancelReason?) {
 			addToCallbackLog(String.format("onNetverifyScanForPartCanceled scanSide: %s reason: %s helptext: %s", scanSide.toString(), cancelReason.toString(), customScanViewPresenter?.helpText))
 
-			customScanViewPresenter?.getHelpAnimation(netverifyCustomAnimationView)
-			showView(false, partRetryButton, netverifyCustomAnimationView)
+			if(scanSide == ScanSide.FACE) {
+				customScanViewPresenter?.getHelpAnimation(netverifyCustomAnimationView)
+				showView(false, netverifyCustomAnimationView)
+			}
+			showView(false, partRetryButton)
         }
 
 		override fun getNetverifyCustomNfcInterface(): NetverifyCustomNfcInterface {

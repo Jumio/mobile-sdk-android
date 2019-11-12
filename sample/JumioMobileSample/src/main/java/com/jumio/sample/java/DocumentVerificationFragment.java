@@ -146,11 +146,17 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == DocumentVerificationSDK.REQUEST_CODE) {
+			if (data == null) {
+				return;
+			}
+			String scanReference = data.getStringExtra(DocumentVerificationSDK.EXTRA_SCAN_REFERENCE);
+
 			if (resultCode == Activity.RESULT_OK) {
-				//Handle the result for the DocumentVerification SDK
-				if (data == null) {
-					return;
-				}
+				//Handle the success case
+			} else if (resultCode == Activity.RESULT_CANCELED) {
+				//Handle the error cases as described in our documentation: https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#managing-errors
+				String errorMessage = data.getStringExtra(DocumentVerificationSDK.EXTRA_ERROR_MESSAGE);
+				String errorCode = data.getStringExtra(DocumentVerificationSDK.EXTRA_ERROR_CODE);
 			}
 			//At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that
 			//internal resources can be freed.

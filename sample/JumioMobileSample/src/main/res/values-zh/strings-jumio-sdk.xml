@@ -74,7 +74,6 @@
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;正在分析生物计量数据&lt;/b&gt;</string>
 	<string name="netverify_helpview_progress_text">第 %1$d 步,共 %2$d 步</string>
 	<string name="netverify_helpview_description_usdl_fallback">您的文件的条形码没有包含您的地址,请将您的文件翻转并扫描正面</string>
-	<string name="netverify_helpview_description_flip_document">您最近扫描了文件的正面。\n\n请翻转您的文件并扫描背面。</string>
 	<string name="netverify_helpview_usdl_fallback_continue">点击继续</string>
 	<string name="netverify_helpview_fallback">拍摄不可用</string>
 	<string name="netverify_helpview_fallback_barcode">我的身份证件上没有条码</string>
@@ -95,6 +94,10 @@
 	<string name="face_helpview_landscape_header">&lt;b&gt;旋转您的设备&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">请将手机旋转至纵向来拍摄自拍照</string>
 	<string name="face_helpview_continue">点击继续</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">确保文档上的所有数据可见且可读。</string>
+	<string name="netverify_scanview_snackbar_progress">正在处理文档...</string>
+	<string name="netverify_scanview_snackbar_check_process_error">无法处理您的文档，请重试。</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">捕获的图像似乎是文档的正面。请确定这是文档的背面，或者重取图像。</string>
 	-->
 
 	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->

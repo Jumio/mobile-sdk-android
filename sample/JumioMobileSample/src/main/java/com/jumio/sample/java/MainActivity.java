@@ -32,12 +32,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 	public static final String KEY_API_SECRET = "KEY_API_SECRET";
 	public static final String KEY_DATACENTER = "KEY_DATACENTER";
 
-	/* PUT YOUR NETVERIFY API TOKEN AND SECRET HERE */
+	/*
+	 * PUT YOUR NETVERIFY API TOKEN AND SECRET HERE
+	 * Do not store your credentials hardcoded within the app. Make sure to store them server-side and load your credentials during runtime.
+	 */
 	private static String NETVERIFY_API_TOKEN = "";
 	private static String NETVERIFY_API_SECRET = "";
 	private static JumioDataCenter NETVERIFY_DATACENTER = JumioDataCenter.US;
 
-	/* PUT YOUR BAM API TOKEN AND SECRET HERE */
+	/*
+	 * PUT YOUR BAM API TOKEN AND SECRET HERE
+	 * Do not store your credentials hardcoded within the app. Make sure to store them server-side and load your credentials during runtime.
+	 */
 	private static String BAM_API_TOKEN = "";
 	private static String BAM_API_SECRET = "";
 	private static JumioDataCenter BAM_DATACENTER = JumioDataCenter.US;

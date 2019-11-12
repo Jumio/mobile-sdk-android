@@ -74,7 +74,6 @@
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Biometrie-Daten werden analysiert&lt;/b&gt;</string>
 	<string name="netverify_helpview_progress_text">Schritt %1$d von %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">Der Barcode auf Ihrem Dokument enthält nicht Ihre Adresse. Wenden Sie Ihr Dokument und scannen Sie die Vorderseite</string>
-	<string name="netverify_helpview_description_flip_document">Sie haben die Vorderseite Ihres Dokumentes gescannt.\n\nBitte wenden Sie Ihr Dokument und scannen Sie die Rückseite.</string>
 	<string name="netverify_helpview_usdl_fallback_continue">Zum Fortsetzen tippen</string>
 	<string name="netverify_helpview_fallback">ERKENNUNG FUNKTIONIERT NICHT</string>
 	<string name="netverify_helpview_fallback_barcode">KEIN BARCODE AUF MEINEM AUSWEIS</string>
@@ -95,6 +94,10 @@
 	<string name="face_helpview_landscape_header">&lt;b&gt;Drehen Sie Ihr Gerät&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Bitte halten Sie Ihr Handy im Hochformat, um ein Selfie aufzunehmen.</string>
 	<string name="face_helpview_continue">Zum Fortsetzen tippen</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Stellen Sie sicher, dass alle Daten in Ihrem Dokument sichtbar und lesbar sind.</string>
+	<string name="netverify_scanview_snackbar_progress">Dokument wird verarbeitet...</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Ihr Dokument konnte nicht verarbeitet werden. Bitte versuchen Sie es erneut.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">Das aufgenommene Bild sieht aus wie die Vorderseite Ihres Dokuments. Bitte bestätigen Sie, dass dies die Rückseite Ihres Dokuments ist, oder nehmen Sie das Bild erneut auf.</string>
 	-->
 
 	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->

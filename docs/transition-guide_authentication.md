@@ -1,8 +1,17 @@
-![Fastfill & Netverify](images/netverify.jpg)
+![Fastfill & Netverify](images/authentication.jpg)
 
 # Transition guide for Authentication SDK
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
+
+## 3.4.0
+#### Dependency change
+*  ~~androidx.appcompat:appcompat:1.0.2~~ is replaced by androidx.appcompat:appcompat:1.1.0
+*  ~~androidx.room:room-runtime:2.0.0~~ is replaced by androidx.room:room-runtime:2.2.1
+* Dependency name and version change - com.facetec:zoom-authentication-hybrid:7.0.14 is replaced by com.facetec:zoom-authentication:8.0.11@aar
+
+#### Proguard changes
+`-dontwarn com.facetec.zoom.sdk.**` needs to be added
 
 ## 3.3.2
 No backward incompatible changes

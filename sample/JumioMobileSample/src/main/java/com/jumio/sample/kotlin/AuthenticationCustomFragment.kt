@@ -76,8 +76,8 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
         apiSecret = arguments?.getString(MainActivity.KEY_API_SECRET)
 		dataCenter = arguments?.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
-        successDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.success))
-        errorDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.error))
+        successDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.jumio_success))
+        errorDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.jumio_error))
 
         return rootView
     }

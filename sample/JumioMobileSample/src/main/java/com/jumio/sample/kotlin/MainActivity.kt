@@ -26,12 +26,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         const val KEY_API_SECRET = "KEY_API_SECRET"
 		const val KEY_DATACENTER = "KEY_DATACENTER"
 
-        /* PUT YOUR NETVERIFY API TOKEN AND SECRET HERE */
+        /*
+        * PUT YOUR NETVERIFY API TOKEN AND SECRET HERE
+        * Do not store your credentials hardcoded within the app. Make sure to store them server-side and load your credentials during runtime.
+        */
         const val NETVERIFY_API_TOKEN = ""
         const val NETVERIFY_API_SECRET = ""
 		val NETVERIFY_DATACENTER = JumioDataCenter.US
 
-        /* PUT YOUR BAM API TOKEN AND SECRET HERE */
+        /*
+        * PUT YOUR BAM API TOKEN AND SECRET HERE
+        * Do not store your credentials hardcoded within the app. Make sure to store them server-side and load your credentials during runtime.
+        */
         const val BAM_API_TOKEN = ""
         const val BAM_API_SECRET = ""
 		val BAM_DATACENTER = JumioDataCenter.US

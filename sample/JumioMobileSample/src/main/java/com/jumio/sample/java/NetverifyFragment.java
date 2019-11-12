@@ -194,11 +194,15 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener,
 		if (requestCode == NetverifySDK.REQUEST_CODE) {
 			if (data == null)
 				return;
+
+			String scanReference = data.getStringExtra(NetverifySDK.EXTRA_SCAN_REFERENCE);
+
 			if (resultCode == Activity.RESULT_OK) {
-				String scanReference = (data == null) ? "" : data.getStringExtra(NetverifySDK.EXTRA_SCAN_REFERENCE);
-				NetverifyDocumentData documentData = (data == null) ? null : (NetverifyDocumentData) data.getParcelableExtra(NetverifySDK.EXTRA_SCAN_DATA);
+				//Handle the success case and retrieve data
+				NetverifyDocumentData documentData = (NetverifyDocumentData) data.getParcelableExtra(NetverifySDK.EXTRA_SCAN_DATA);
 				NetverifyMrzData mrzData = documentData != null ? documentData.getMrzData() : null;
 			} else if (resultCode == Activity.RESULT_CANCELED) {
+				//Handle the error cases as described in our documentation: https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#managing-errors
 				String errorMessage = data.getStringExtra(NetverifySDK.EXTRA_ERROR_MESSAGE);
 				String errorCode = data.getStringExtra(NetverifySDK.EXTRA_ERROR_CODE);
 			}

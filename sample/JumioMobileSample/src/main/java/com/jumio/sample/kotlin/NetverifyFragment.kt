@@ -19,6 +19,7 @@ import com.jumio.nv.NetverifySDK
 import com.jumio.sample.R
 import kotlinx.android.synthetic.main.fragment_main.*
 
+
 /**
  * Copyright 2019 Jumio Corporation All rights reserved.
  */
@@ -175,11 +176,15 @@ class NetverifyFragment : Fragment(), View.OnClickListener, NetverifyDeallocatio
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == NetverifySDK.REQUEST_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
-                val scanReference = data?.getStringExtra(NetverifySDK.EXTRA_SCAN_REFERENCE)
-                val documentData = data?.getParcelableExtra<Parcelable>(NetverifySDK.EXTRA_SCAN_DATA) as? NetverifyDocumentData
+
+	        val scanReference = data?.getStringExtra(NetverifySDK.EXTRA_SCAN_REFERENCE)
+
+	        if (resultCode == Activity.RESULT_OK) {
+		        //Handle the success case and retrieve scan data
+		        val documentData = data?.getParcelableExtra<Parcelable>(NetverifySDK.EXTRA_SCAN_DATA) as? NetverifyDocumentData
                 val mrzData = documentData?.mrzData
             } else if (resultCode == Activity.RESULT_CANCELED) {
+	            //Handle the error cases as highlighted in our documentation: https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#managing-errors
                 val errorMessage = data?.getStringExtra(NetverifySDK.EXTRA_ERROR_MESSAGE)
                 val errorCode = data?.getStringExtra(NetverifySDK.EXTRA_ERROR_CODE)
             }

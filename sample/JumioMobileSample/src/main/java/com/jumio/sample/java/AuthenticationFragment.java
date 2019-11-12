@@ -147,10 +147,14 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
 		if (requestCode == AuthenticationSDK.REQUEST_CODE) {
 			if (data == null)
 				return;
+
+			String transactionReference = data.getStringExtra(AuthenticationSDK.EXTRA_TRANSACTION_REFERENCE);
+
 			if (resultCode == Activity.RESULT_OK) {
-				String transactionReference = data.getStringExtra(AuthenticationSDK.EXTRA_TRANSACTION_REFERENCE);
+				//Handle the success case and retrieve scan data
 				AuthenticationResult authenticationResult = (AuthenticationResult) data.getSerializableExtra(AuthenticationSDK.EXTRA_SCAN_DATA);
 			} else if (resultCode == Activity.RESULT_CANCELED) {
+				//Handle the error cases as described in our documentation: https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#managing-errors
 				String errorMessage = data.getStringExtra(AuthenticationSDK.EXTRA_ERROR_MESSAGE);
 				String errorCode = data.getStringExtra(AuthenticationSDK.EXTRA_ERROR_CODE);
 			}

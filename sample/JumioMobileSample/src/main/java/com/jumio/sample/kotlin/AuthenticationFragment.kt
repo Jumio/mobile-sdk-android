@@ -141,11 +141,15 @@ class AuthenticationFragment : Fragment(), View.OnClickListener, AuthenticationD
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == AuthenticationSDK.REQUEST_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
-                val transactionReference = data?.getStringExtra(AuthenticationSDK.EXTRA_TRANSACTION_REFERENCE)
-                val authenticationResult = data?.getSerializableExtra(AuthenticationSDK.EXTRA_SCAN_DATA) as AuthenticationResult
+
+	        val transactionReference = data?.getStringExtra(AuthenticationSDK.EXTRA_TRANSACTION_REFERENCE)
+
+	        if (resultCode == Activity.RESULT_OK) {
+		        //Handle the success case and retrieve scan data
+		        val authenticationResult = data?.getSerializableExtra(AuthenticationSDK.EXTRA_SCAN_DATA) as AuthenticationResult
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                val errorMessage = data?.getStringExtra(AuthenticationSDK.EXTRA_ERROR_MESSAGE)
+		        //Handle the error cases as described in our documentation: https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#managing-errors
+		        val errorMessage = data?.getStringExtra(AuthenticationSDK.EXTRA_ERROR_MESSAGE)
                 val errorCode = data?.getStringExtra(AuthenticationSDK.EXTRA_ERROR_CODE)
             }
 

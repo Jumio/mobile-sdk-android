@@ -135,15 +135,19 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == DocumentVerificationSDK.REQUEST_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
-                //Handle the result for the DocumentVerification SDK
-                if (data == null) {
-                    return
-                }
+
+	        val scanReference = data?.getStringArrayListExtra(DocumentVerificationSDK.EXTRA_SCAN_REFERENCE)
+
+	        if (resultCode == Activity.RESULT_OK) {
+		        //Handle the success case
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+	            //Handle the error cases as described in our documentation: https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#managing-errors
+	            val errorMessage = data?.getStringExtra(DocumentVerificationSDK.EXTRA_ERROR_MESSAGE)
+	            val errorCode = data?.getStringExtra(DocumentVerificationSDK.EXTRA_ERROR_CODE)
             }
-            //At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that
-            //internal resources can be freed.
-            documentVerificationSDK.destroy()
         }
+	    //At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that
+	    //internal resources can be freed.
+	    documentVerificationSDK.destroy()
     }
 }

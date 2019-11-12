@@ -19,7 +19,6 @@
 #   public *;
 #}
 
--ignorewarnings
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
 -keep class com.microblink.** { *; }
@@ -36,5 +35,7 @@
 -dontwarn org.codehaus.**
 -dontwarn org.ejbca.**
 -dontwarn org.bouncycastle.**
+-dontwarn module-info
 -dontwarn com.microblink.**
 -dontwarn javax.annotation.Nullable
+-dontwarn com.facetec.zoom.sdk.**

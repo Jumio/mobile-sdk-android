@@ -74,7 +74,6 @@
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Biometrische gegevens analyseren&lt;/b&gt;</string>
 	<string name="netverify_helpview_progress_text">Stap %1$d van %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">De streepjescode van uw document bevat niet uw adres, draai uw document en scan de voorkant</string>
-	<string name="netverify_helpview_description_flip_document">Uw hebt recentelijk de voorkant van uw document gescand.\n\n Draai alstublieft uw document om en scan de achterkant.</string>
 	<string name="netverify_helpview_usdl_fallback_continue">Klik om door te gaan</string>
 	<string name="netverify_helpview_fallback">VASTLEGGING WERKT NIET</string>
 	<string name="netverify_helpview_fallback_barcode">GEEN STREEPJESCODE OP MIJN ID</string>
@@ -95,6 +94,10 @@
 	<string name="face_helpview_landscape_header">&lt;b&gt;Draai uw apparaat&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Draai uw telefoon naar portret om een selfie te nemen</string>
 	<string name="face_helpview_continue">Klik om door te gaan</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Zorg ervoor dat alle data in uw document zichtbaar en leesbaar is.</string>
+	<string name="netverify_scanview_snackbar_progress">Document wordt verwerkt...</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Uw document kon niet worden verwerkt, probeer het opnieuw.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">De opname ziet eruit als de voorkant van uw document. Bevestig dat dit de achterkant van uw document is of maak een nieuwe opname.</string>
 	-->
 
 	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
