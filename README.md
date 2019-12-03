@@ -8,7 +8,7 @@
 - [FAQ](docs/integration_faq.md)
 
 # Release notes
-SDK version: 3.4.0
+### SDK version: 3.4.0
 
 #### Deprecation notice
 This is the last version that supports Android 4.x and 5.0. The minimum supported Android version will be increased to 5.1 in the next SDK version 3.5.0.
@@ -22,6 +22,14 @@ This is the last version that supports Android 4.x and 5.0. The minimum supporte
 #### Fixes
 * Fixed several technical problems during face scanning [Netverify, Authentication]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification]
+
+### SDK version: 3.4.1
+
+#### Changes
+* Updated privacy policy within user journey [Netverify, Authentication]
+
+#### Fixes
+* Fixed a problem that face capturing was not working in CustomUI on tablets [Netverify Custom UI]
 
 # Basic Setup
 
@@ -128,7 +136,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 3.3.2 of the Jumio Mobile SDK is supported until 2020-02-15.
+The previous release version 3.4.0 of the Jumio Mobile SDK is supported until 2020-03-05.
 
 In case the support period is expired, no bug fixes and technical support are provided anymore (bugs are typically fixed in the upcoming versions).
 Older SDK versions will keep functioning with our server until further notice, but we highly recommend to always update to the latest version to benefit from SDK improvements and bug fixes.

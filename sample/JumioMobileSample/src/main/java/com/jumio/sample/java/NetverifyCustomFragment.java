@@ -13,6 +13,8 @@ import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.text.format.DateFormat;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -100,6 +102,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
     private LinearLayout callbackLog;
     private LinearLayout netverifySettingsContainer;
     private LinearLayout customNfcAccessLayout;
+    private LinearLayout userConsentLayout;
     private RelativeLayout customScanLayout;
     private RelativeLayout customConfirmLayout;
     private RelativeLayout customNfcLayout;
@@ -129,6 +132,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
     private Button finishButton;
     private Button nfcRetryButton;
     private Button nfcCancelButton;
+    private Button userConsentedButton;
     private Switch switchVerification;
     private Switch switchIdentityVerification;
     private TextInputEditText idNumberEditText;
@@ -168,6 +172,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         customScanLayout = rootView.findViewById(R.id.customScanLayout);
         customConfirmLayout = rootView.findViewById(R.id.customConfirmLayout);
         customNfcLayout = rootView.findViewById(R.id.customNfcLayout);
+        userConsentLayout = rootView.findViewById(R.id.userConsentLayout);
         customScanView = rootView.findViewById(R.id.netverifyCustomScanView);
         customConfirmationView = rootView.findViewById(R.id.netverifyCustomConfirmationView);
 		customAnimationView = rootView.findViewById(R.id.netverifyCustomAnimationView);
@@ -194,6 +199,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         finishButton = rootView.findViewById(R.id.finishButton);
         nfcRetryButton = rootView.findViewById(R.id.nfcRetryButton);
 		nfcCancelButton = rootView.findViewById(R.id.nfcCancelButton);
+		userConsentedButton = rootView.findViewById(R.id.userConsentedButton);
         switchVerification = rootView.findViewById(R.id.switchVerification);
         switchIdentityVerification = rootView.findViewById(R.id.switchIdentitiyVerification);
         idNumberEditText = rootView.findViewById(R.id.idNumberEditText);
@@ -219,6 +225,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
         finishButton.setOnClickListener(this);
         nfcRetryButton.setOnClickListener(this);
         nfcCancelButton.setOnClickListener(this);
+        userConsentedButton.setOnClickListener(this);
 
 
         startCustomScanButton.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_netverify_custom)));
@@ -386,6 +393,9 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
             } catch (SDKNotConfiguredException e) {
                 e.printStackTrace();
             }
+		} else if (v == userConsentedButton && isSDKControllerValid()) {
+			customSDKController.setUserConsented();
+			hideView(false, userConsentLayout);
         } else if ((v == frontSideButton || v == backSideButton || v == faceButton) && isSDKControllerValid()) {
 			customScanView.setMode(v == faceButton?NetverifyCustomScanView.MODE_FACE:NetverifyCustomScanView.MODE_ID);
 			initScanView();
@@ -668,6 +678,8 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 				startFallback.setEnabled(customScanViewPresenter.isFallbackAvailable());
 
 			} catch (SDKNotConfiguredException e) {
+				hideView(false, customScanLayout, customScanView);
+
 				addToCallbackLog(e.getMessage());
 				frontSideButton.setEnabled(true);
 				backSideButton.setEnabled(true);
@@ -758,6 +770,15 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
                 }
             });
         }
+
+		@Override
+		public void onNetverifyUserConsentRequried(String privacyPolicy) {
+			showView(true, userConsentLayout);
+			TextView userConsentUrl = userConsentLayout.findViewById(R.id.userConsentUrl);
+			userConsentUrl.setText(privacyPolicy);
+			Linkify.addLinks(userConsentUrl, Linkify.WEB_URLS);
+			userConsentUrl.setMovementMethod(LinkMovementMethod.getInstance());
+		}
 
         @Override
         public void onNetverifyResourcesLoaded() {

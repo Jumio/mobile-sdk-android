@@ -4,6 +4,9 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.4.1
+No backward incompatible changes
+
 ## 3.4.0
 #### Dependency change
 *  ~~androidx.appcompat:appcompat:1.0.2~~ is replaced by androidx.appcompat:appcompat:1.1.0

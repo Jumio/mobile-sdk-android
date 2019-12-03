@@ -8,6 +8,8 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -64,6 +66,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 	private LinearLayout customScanContainer;
 	private LinearLayout partTypeLayout;
 	private LinearLayout callbackLog;
+	private LinearLayout userConsentLayout;
 	private FrameLayout customScanLayout;
 	private AuthenticationCustomScanView customScanView;
 	private AuthenticationCustomAnimationView customAnimationView;
@@ -74,6 +77,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 	private Button faceButton;
 	private Button errorRetryButton;
 	private Button partRetryButton;
+	private Button userConsentedButton;
 
 	private AuthenticationCustomSDKController customSDKController;
 	private Drawable successDrawable;
@@ -98,6 +102,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
         customScanContainer = rootView.findViewById(R.id.authenticationCustomContainer);
         partTypeLayout = rootView.findViewById(R.id.partTypeLayout);
 		customScanLayout = rootView.findViewById(R.id.customScanLayout);
+		userConsentLayout = rootView.findViewById(R.id.userConsentLayout);
 		callbackLog = rootView.findViewById(R.id.callbackLog);
         customScanView = rootView.findViewById(R.id.authenticationCustomScanView);
 		customAnimationView = rootView.findViewById(R.id.authenticationCustomAnimationView);
@@ -108,12 +113,15 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
         faceButton = rootView.findViewById(R.id.faceButton);
         errorRetryButton = rootView.findViewById(R.id.errorRetryButton);
 		partRetryButton = rootView.findViewById(R.id.partRetryButton);
+		userConsentedButton = rootView.findViewById(R.id.userConsentedButton);
+
 
 		startCustomScanButton.setOnClickListener(this);
 		cancelCustomScanButton.setOnClickListener(this);
         faceButton.setOnClickListener(this);
         errorRetryButton.setOnClickListener(this);
 		partRetryButton.setOnClickListener(this);
+		userConsentedButton.setOnClickListener(this);
 
 		startCustomScanButton.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_authentication)));
 
@@ -238,6 +246,10 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 					scrollView.postDelayed(new ScanPartRunnable(), 250);
 				}
 			});
+		} else if (v == userConsentedButton && isSDKControllerValid()) {
+			customSDKController.setUserConsented();
+
+			hideView(false, userConsentLayout);
 		} else if (v == partRetryButton && isSDKControllerValid()) {
 			customAnimationView.destroy();
 			hideView(false, partRetryButton, customAnimationView);
@@ -382,6 +394,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 				customSDKController.startScan(customScanView, new AuthenticationCustomScanImpl());
 				addToCallbackLog("help text: " + customSDKController.getHelpText());
 			} catch (SDKNotConfiguredException e) {
+				hideView(false, customScanLayout);
 				addToCallbackLog(e.getMessage());
 			}
 		}
@@ -433,6 +446,15 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 				appendKeyValue("Scan reference", scanReference);
 				hideView(false, partTypeLayout, loadingIndicator, errorRetryButton, partRetryButton);
 			}
+		}
+
+		@Override
+		public void onAuthenticationUserConsentRequried(String privacyPolicy) {
+			showView(true, userConsentLayout);
+			TextView userConsentUrl = userConsentLayout.findViewById(R.id.userConsentUrl);
+			userConsentUrl.setText(privacyPolicy);
+			Linkify.addLinks(userConsentUrl, Linkify.WEB_URLS);
+			userConsentUrl.setMovementMethod(LinkMovementMethod.getInstance());
 		}
 	}
 

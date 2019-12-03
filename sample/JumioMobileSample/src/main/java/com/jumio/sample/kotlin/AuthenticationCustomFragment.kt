@@ -8,6 +8,8 @@ import android.graphics.Rect
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
+import android.text.util.Linkify
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -93,6 +95,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
         faceButton?.setOnClickListener(this)
         errorRetryButton?.setOnClickListener(this)
         partRetryButton?.setOnClickListener(this)
+		userConsentedButton?.setOnClickListener(this)
 
 		hideView(false, errorRetryButton, partRetryButton, authenticationCustomAnimationView)
     }
@@ -183,6 +186,10 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
                 scrollView?.scrollTo(0, customScanLayout?.top ?:0)
                 scrollView?.postDelayed(ScanPartRunnable(), 250)
             }
+		} else if (v === userConsentedButton && isSDKControllerValid) {
+			customSDKController?.setUserConsented()
+
+			hideView(false, userConsentLayout)
         } else if (v === partRetryButton && isSDKControllerValid) {
 			authenticationCustomAnimationView?.destroy()
 			hideView(false, partRetryButton, authenticationCustomAnimationView)
@@ -346,6 +353,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
                 customSDKController?.startScan(authenticationCustomScanView, AuthenticationCustomScanImpl())
                 addToCallbackLog("help text: " + customSDKController?.helpText)
             } catch (e: Exception) {
+				hideView(false, customScanLayout)
                 addToCallbackLog(e.message)
             }
         }
@@ -398,6 +406,13 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
                 hideView(false, partTypeLayout, loadingIndicator, errorRetryButton, partRetryButton)
             }
         }
+
+		override fun onAuthenticationUserConsentRequried(privacyPolicy: String?) {
+			showView(true, userConsentLayout)
+			userConsentUrl?.text = privacyPolicy
+			Linkify.addLinks(userConsentUrl, Linkify.WEB_URLS);
+			userConsentUrl?.movementMethod = LinkMovementMethod.getInstance()
+		}
     }
 
     private inner class AuthenticationCustomScanImpl : AuthenticationCustomScanInterface {

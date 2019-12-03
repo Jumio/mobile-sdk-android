@@ -78,6 +78,24 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/userConsentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/userConsentUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/userConsentedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Consented"/>
+            </LinearLayout>
+
             <FrameLayout
                 android:id="@+id/customScanLayout"
                 android:layout_width="wrap_content"

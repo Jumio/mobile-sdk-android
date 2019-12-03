@@ -1,8 +1,12 @@
-![Fastfill & Netverify](images/authentication.jpg)
+![Authentication](images/authentication.jpg)
 
 # Transition guide for Authentication SDK
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
+
+## 3.4.1
+* A new callback [onAuthenticationUserConsentRequired](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomSDKInterface.html#onAuthenticationUserConsentRequired-java.lang.String-) was added to [AuthenticationCustomScanInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomScanInterface.html)
+* A new method [onUserConsented](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomSDKController.html#onUserConsented--) was added to [AuthenticationCustomSDKController](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomSDKController.html)
 
 ## 3.4.0
 #### Dependency change

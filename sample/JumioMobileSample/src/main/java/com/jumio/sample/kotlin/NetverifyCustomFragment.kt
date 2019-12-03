@@ -13,6 +13,8 @@ import android.os.Bundle
 import android.text.InputFilter
 import android.text.Spanned
 import android.text.format.DateFormat
+import android.text.method.LinkMovementMethod
+import android.text.util.Linkify
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -124,6 +126,7 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener, NetverifyDeall
         finishButton?.setOnClickListener(this)
 		nfcCancelButton?.setOnClickListener(this)
 		nfcRetryButton?.setOnClickListener(this)
+		userConsentedButton.setOnClickListener(this)
 
         hideView(false, countryDocumentLayout, partTypeLayout, finishButton, errorRetryButton, partRetryButton, netverifyCustomAnimationView)
     }
@@ -263,12 +266,15 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener, NetverifyDeall
             } catch (e: Exception) {
                 e.printStackTrace()
             }
-
+		} else if (v === userConsentedButton && isSDKControllerValid) {
+			customSDKController?.setUserConsented()
+			hideView(false, userConsentLayout)
         } else if ((v === frontSideButton || v === backSideButton || v === faceButton) && isSDKControllerValid) {
 			netverifyCustomScanView?.mode = if (v === faceButton) NetverifyCustomScanView.MODE_FACE else NetverifyCustomScanView.MODE_ID
             initScanView()
 
             showView(true, customScanLayout, netverifyCustomScanView)
+
             scrollView?.post {
                 scrollView?.scrollTo(0, customScanLayout?.top ?: 0)
                 scrollView?.postDelayed(ScanPartRunnable(v), 250)
@@ -507,6 +513,8 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener, NetverifyDeall
                 startFallback?.isEnabled = customScanViewPresenter?.isFallbackAvailable == true
 
             } catch (e: SDKNotConfiguredException) {
+				hideView(false, customScanLayout, netverifyCustomScanView)
+
                 addToCallbackLog(e.message)
                 frontSideButton?.isEnabled = true
                 backSideButton?.isEnabled = true
@@ -543,7 +551,6 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener, NetverifyDeall
 	}
 
     private inner class NetverifyCustomSDKImpl : NetverifyCustomSDKInterface {
-
 		//Custom SDK Interface
         override fun onNetverifyCountriesReceived(countryList: HashMap<String, NetverifyCountry>, userCountryCode: String) {
             addToCallbackLog("onNetverifyCountriesReceived - user Country is $userCountryCode")
@@ -587,6 +594,13 @@ class NetverifyCustomFragment : Fragment(), View.OnClickListener, NetverifyDeall
                 }
             }
         }
+
+		override fun onNetverifyUserConsentRequried(privacyPolicy: String?) {
+			showView(true, userConsentLayout)
+			userConsentUrl?.text = privacyPolicy
+			Linkify.addLinks(userConsentUrl, Linkify.WEB_URLS);
+			userConsentUrl?.movementMethod = LinkMovementMethod.getInstance()
+		}
 
         override fun onNetverifyResourcesLoaded() {
             addToCallbackLog("onNetverifyResourcesLoaded")

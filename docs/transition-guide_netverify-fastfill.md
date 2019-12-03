@@ -4,8 +4,11 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
-## 3.4.0
+## 3.4.1
+* A new callback [onNetverifyUserConsentRequired](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyUserConsentRequired-java.lang.String-) was added to [NetverifyCustomScanInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanInterface.html)
+* A new method [onUserConsented](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKController.html#onUserConsented--) was added to [NetverifyCustomSDKController](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKController.html)
 
+## 3.4.0
 #### Customization changes
 * The SDK now uses Material buttons instead of the old snackbar button styles on the confirmation view.
 * Please check out the confirmation screens and the XML output in the [Surface Tool](https://jumio.github.io/surface-android/) for all adapted content.

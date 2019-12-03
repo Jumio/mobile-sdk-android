@@ -15,7 +15,7 @@ Biometric-based Jumio Authentication establishes the digital identities of your 
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_authentication.md) SDK version: 3.4.0
+For technical changes, please read our [transition guide](transition-guide_authentication.md) SDK version: 3.4.1
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Authentication.
@@ -35,18 +35,18 @@ You can specify your own theme (see chapter [Customization](#customization)). Th
 
 ## Dependencies
 
-The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify, BAM, Document Verification and Authentication included is currently __27.44 MB__.
+The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify, BAM, Document Verification and Authentication included is currently __27.43 MB__.
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
-|com.jumio.android:core:3.4.0@aar                    | x | Jumio Core library		                      | 4.10 MB |
-|com.jumio.android:auth:3.4.0@aar                      | x | Authentication library 		              | 89.57 KB |
-|com.jumio.android:face:3.4.0@aar                     | x | Face library	                            | 91.37 KB |
+|com.jumio.android:core:3.4.1@aar                    | x | Jumio Core library		                      | 4.11 MB |
+|com.jumio.android:auth:3.4.1@aar                      | x | Authentication library 		              | 89.26 KB |
+|com.jumio.android:face:3.4.1@aar                     | x | Face library	                            | 93.06 KB |
 |com.facetec:zoom-authentication:8.0.11@aar     | x | Zoom face scanning library	              | 9.00 MB  |
 |androidx.appcompat:appcompat:1.1.0                   | x | Android appcompat library	                | - |
 |androidx.room:room-runtime:2.2.1                     | x | Android database object mapping library	  | - |
 |com.google.android.material:material:1.0.0           | x | Android material design library	          | - |
-|com.jumio.android:javadoc:3.4.0                     |   | Jumio SDK Javadoc			                    | - |
+|com.jumio.android:javadoc:3.4.1                     |   | Jumio SDK Javadoc			                    | - |
 
 ### Others
 
@@ -235,6 +235,8 @@ Using width as match_parent, the AuthenticationCustomScanView attribute ratio ne
 ```
 xmlns:yourNameSpace="http://schemas.android.com/apk/lib/com.jumio.mobile.sdk"
 ```
+
+`onAuthenticationUserConsentRequried` within *yourAuthenticationCustomSDKInterface* is invoked when the end-user’s consent to Jumio’s privacy policy is legally required. [onUserConsented](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomSDKController.html#onUserConsented--) needs to be called after the end-user has accepted 
 
 Start scanning by providing an instance of the class `AuthenticationCustomScanView` and an instance of your class which implements the [AuthenticationCustomScanInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomScanInterface.html).
 
