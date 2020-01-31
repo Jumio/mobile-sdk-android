@@ -4,8 +4,17 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.5.0
+#### Error code change
+* Error code D (Wrong API credentials used, retry impossible) has been removed.
+
+#### Proguard change
+* Consumer proguard rules have been added. All Jumio SDK proguard rules will now be applied automatically to the application when the Jumio Core library is included.
+
 ## 3.4.1
+#### API changes in NetverifyCustomScanInterface
 * A new callback [onNetverifyUserConsentRequired](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyUserConsentRequired-java.lang.String-) was added to [NetverifyCustomScanInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanInterface.html)
+#### API changes in NetverifyCustomSDKController
 * A new method [onUserConsented](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKController.html#onUserConsented--) was added to [NetverifyCustomSDKController](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKController.html)
 
 ## 3.4.0

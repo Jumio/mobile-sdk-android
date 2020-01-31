@@ -65,7 +65,7 @@
 	<string name="netverify_scanview_title_check">Controleer leesbaarheid</string>
 	<string name="netverify_scanview_snackbar_check">Zorg ervoor dat alle data op uw document volledig zichtbaar is, glansvrij en niet wazig</string>
 	<string name="netverify_scanview_retake">OPNIEUW</string>
-	<string name="netverify_scanview_readable">LEESBAAR</string>
+	<string name="netverify_scanview_continue">Doorgaan</string>
 	<string name="netverify_scanview_legal_hint_nld">Bedek alstublieft uw BSN vóór vastlegging</string>
 	<string name="netverify_scanview_legal_hint_kor">Bedek het tweede onderdeel van uw Burgerservicenummer vóór vastlegging</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Bedek alstublieft het paspoortnummer vóór vastlegging</string>
@@ -142,7 +142,7 @@
 	<string name="dv_scanview_title_check">Controleer leesbaarheid</string>
 	<string name="dv_scanview_snackbar_check">Zorg ervoor dat alle data op uw document volledig zichtbaar is, glansvrij en niet wazig</string>
 	<string name="dv_scanview_retake">OPNIEUW</string>
-	<string name="dv_scanview_readable">LEESBAAR</string>
+	<string name="dv_scanview_continue">Doorgaan</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;%1$s&lt;/b&gt; vastleggen</string>
 	<string name="dv_helpview_header_document">Document</string>
 	<string name="dv_helpview_header_bank_statement">Bankafschrift</string>

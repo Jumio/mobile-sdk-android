@@ -8,28 +8,23 @@
 - [FAQ](docs/integration_faq.md)
 
 # Release notes
-### SDK version: 3.4.0
+### SDK version: 3.5.0
 
 #### Deprecation notice
-This is the last version that supports Android 4.x and 5.0. The minimum supported Android version will be increased to 5.1 in the next SDK version 3.5.0.
+This is the last version that supports Android 4.x and 5.0. The minimum supported Android version will be increased to 5.1 (API level 22) in the next SDK version 3.6.0.
 
 #### Changes
-* New major 3D Liveness version with improved face detection models [Netverify, Authentication]
-* Support for Colombian ID barcode scanning [Netverify/Fastfill]
-* Improved image selection to reduce number of documents which are not fully visible [Netverify]
-* Advanced document checks on the back of IDs to increase user conversion [Netverify]
+* New Singapore datacenter compatibility [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
+* Support for dynamic library modules to reduce the initial download size of the app  [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
+* Advanced document checks on the back of IDs to increase user conversion - for paper documents [Netverify]
+* Aligned confirmation view design with Netverify [Document Verification]
+* Added fallback handling for device cameras without auto-focus [Netverify/Fastfill]
 
 #### Fixes
-* Fixed several technical problems during face scanning [Netverify, Authentication]
+* Fixed handling of credit card masking [BAM checkout]
+* Fixed problems with Belgium ID card backside scanning [Netverify/Fastfill]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification]
 
-### SDK version: 3.4.1
-
-#### Changes
-* Updated privacy policy within user journey [Netverify, Authentication]
-
-#### Fixes
-* Fixed a problem that face capturing was not working in CustomUI on tablets [Netverify Custom UI]
 
 # Basic Setup
 
@@ -57,17 +52,8 @@ public static String[] getRequiredPermissions();
 ```
 
 ## Proguard
-If you are using Proguard, add the following lines in its configuration.
-
-```
--keep class com.jumio.** { *; }
--keep class jumio.** { *; }
--keep class com.microblink.** { *; }
--keep class com.microblink.**$* { *; }
--dontwarn com.microblink.**
--keep class com.facetec.zoom.** { *; }
--dontwarn javax.annotation.Nullable
-```
+Proguard settings are applied automatically as they are defined as consumer proguard rules within the SDK.
+The current rules can also be found in the [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/).
 
 ## Integration
 Use the SDK in your application by including the Maven repositories with the following `build.gradle` configuration in Android Studio:
@@ -136,7 +122,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 3.4.0 of the Jumio Mobile SDK is supported until 2020-03-05.
+The previous release version 3.4.1 of the Jumio Mobile SDK is supported until 2020-05-01.
 
 In case the support period is expired, no bug fixes and technical support are provided anymore (bugs are typically fixed in the upcoming versions).
 Older SDK versions will keep functioning with our server until further notice, but we highly recommend to always update to the latest version to benefit from SDK improvements and bug fixes.

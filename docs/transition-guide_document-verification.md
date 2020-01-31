@@ -4,6 +4,13 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.5.0
+#### Error code change
+Error code D (Wrong API credentials used, retry impossible) has been removed
+
+#### Proguard change
+* Consumer proguard rules have been added. All Jumio SDK proguard rules will now be applied automatically to the application when the Jumio Core library is included.
+
 ## 3.4.1
 No backward incompatible changes
 

@@ -928,7 +928,7 @@ public class NetverifyCustomFragment extends Fragment implements View.OnClickLis
 
 		@Override
 		public void onNetverifyScanForPartCanceled(ScanSide scanSide, NetverifyCancelReason cancelReason) {
-			addToCallbackLog(String.format("onNetverifyScanForPartCanceled scanSide: %s reason: %s helptext: %s", scanSide.toString(), cancelReason.toString()));
+			addToCallbackLog(String.format("onNetverifyScanForPartCanceled scanSide: %s reason: %s helptext: %s", scanSide.toString(), cancelReason.toString(), customScanViewPresenter.getHelpText()));
 
 			if(scanSide == ScanSide.FACE) {
 				customScanViewPresenter.getHelpAnimation(customAnimationView);

@@ -15,7 +15,7 @@ Document Verification is a powerful solution to enable scanning various types (U
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document-verification.md) SDK version: 3.4.1
+For technical changes, please read our [transition guide](transition-guide_document-verification.md) SDK version: 3.5.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -39,11 +39,11 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:3.4.1@aar                    | x | Jumio Core library            | 4.11 MB |
-| com.jumio.android:dv:3.4.1@aar                      | x | Document Verification library | 118.77 KB |
+| com.jumio.android:core:3.5.0@aar                    | x | Jumio Core library            | 4.11 MB |
+| com.jumio.android:dv:3.5.0@aar                      | x | Document Verification library | 125.75 KB |
 | androidx.appcompat:appcompat:1.1.0                   | x | Android appcompat library        | - |
-|androidx.room:room-runtime:2.2.1			              | x | Android database object mapping library	| - |
-| com.jumio.android:javadoc:3.4.1                     |   | Jumio SDK Javadoc             | - |
+|androidx.room:room-runtime:2.2.3			              | x | Android database object mapping library	| - |
+| com.jumio.android:javadoc:3.5.0                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -236,7 +236,6 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 |A[x][yyyy]| We have encountered a network communication problem | Retry possible, user decided to cancel |
 |B[x][yyyy]| Authentication failed | Secure connection could not be established, retry impossible |
 |C[x]0401| Authentication failed | API credentials invalid, retry impossible |
-|D[x]0403| Authentication failed | Wrong API credentials used, retry impossible|
 |E[x]0000| No Internet connection available | Retry possible, user decided to cancel |
 |F00000| Scanning not available this time, please contact the app vendor | Resources cannot be loaded, retry impossible |
 |G00000| Cancelled by end-user | No error occurred |

@@ -65,7 +65,7 @@
 	<string name="netverify_scanview_title_check">Lesbarkeit prüfen</string>
 	<string name="netverify_scanview_snackbar_check">Stellen Sie sicher, dass alle Daten auf Ihrem Dokument komplett sichtbar und lesbar sind</string>
 	<string name="netverify_scanview_retake">WIEDERHOLEN</string>
-	<string name="netverify_scanview_readable">LESBAR</string>
+	<string name="netverify_scanview_continue">Weiter</string>
 	<string name="netverify_scanview_legal_hint_nld">Bitte verdecken Sie vor der Erkennung Ihre BSN</string>
 	<string name="netverify_scanview_legal_hint_kor">Verdecken Sie vor der Erkennung den zweiten Teil Ihrer Resident Registration Number</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Bitte verdecken Sie vor der Erkennung die Passnummer</string>
@@ -142,7 +142,7 @@
 	<string name="dv_scanview_title_check">Lesbarkeit prüfen</string>
 	<string name="dv_scanview_snackbar_check">Stellen Sie sicher, dass alle Daten auf Ihrem Dokument komplett sichtbar und lesbar sind</string>
 	<string name="dv_scanview_retake">WIEDERHOLEN</string>
-	<string name="dv_scanview_readable">LESBAR</string>
+	<string name="dv_scanview_continue">Weiter</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;%1$s aufnehmen&lt;/b&gt;</string>
 	<string name="dv_helpview_header_document">Dokument</string>
 	<string name="dv_helpview_header_bank_statement">Kontoauszug</string>

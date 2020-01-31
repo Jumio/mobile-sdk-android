@@ -65,7 +65,7 @@
 	<string name="netverify_scanview_title_check">检查清晰度</string>
 	<string name="netverify_scanview_snackbar_check">确保您的文件上的所有数据完全可见,无眩光且不模糊</string>
 	<string name="netverify_scanview_retake">重拍</string>
-	<string name="netverify_scanview_readable">清晰可辨</string>
+	<string name="netverify_scanview_continue">继续</string>
 	<string name="netverify_scanview_legal_hint_nld">请在拍摄前遮挡您的 BSN</string>
 	<string name="netverify_scanview_legal_hint_kor">请在拍摄前遮挡您的居民登记号码的第二部分</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">请在拍摄前遮挡护照号码</string>
@@ -142,7 +142,7 @@
 	<string name="dv_scanview_title_check">检查清晰度</string>
 	<string name="dv_scanview_snackbar_check">确保您的文件上的所有数据完全可见,无眩光且不模糊</string>
 	<string name="dv_scanview_retake">重拍</string>
-	<string name="dv_scanview_readable">清晰可辨</string>
+	<string name="dv_scanview_continue">继续</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;拍摄 %1$s&lt;/b&gt;</string>
 	<string name="dv_helpview_header_document">文件</string>
 	<string name="dv_helpview_header_bank_statement">银行对账单</string>

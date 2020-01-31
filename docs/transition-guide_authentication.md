@@ -4,8 +4,18 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.5.0
+#### Error code change
+Error code D (Wrong API credentials used, retry impossible) has been removed
+
+#### Proguard change
+* Consumer proguard rules have been added. All Jumio SDK proguard rules will now be applied automatically to the application when the Jumio Core library is included.
+
 ## 3.4.1
+#### API changes in AuthenticationCustomScanInterface
 * A new callback [onAuthenticationUserConsentRequired](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomSDKInterface.html#onAuthenticationUserConsentRequired-java.lang.String-) was added to [AuthenticationCustomScanInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomScanInterface.html)
+
+#### API changes in AuthenticationCustomSDKController
 * A new method [onUserConsented](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomSDKController.html#onUserConsented--) was added to [AuthenticationCustomSDKController](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomSDKController.html)
 
 ## 3.4.0

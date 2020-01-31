@@ -137,8 +137,10 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		if (customScanPresenter != null)
+		if (customScanPresenter != null) {
 			customScanPresenter.clearSDK();
+			customScanPresenter = null;
+		}
 
 		if (bamSDK != null) {
 			bamSDK.destroy();
@@ -307,6 +309,9 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 	public void onBamExtractionFinished(BamCardInformation bamCardInformation, ArrayList<String> scanAttempts) {
 		Log.d("BamCustomScan", "extraction finished");
 		bamCardInformation.clear();
+
+		switchCameraImageView.setVisibility(View.INVISIBLE);
+		toggleFlashImageView.setVisibility(View.INVISIBLE);
 
 //		//At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that
 //		//internal resources can be freed.

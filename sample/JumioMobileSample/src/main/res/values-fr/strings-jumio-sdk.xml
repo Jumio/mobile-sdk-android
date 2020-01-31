@@ -65,7 +65,7 @@
 	<string name="netverify_scanview_title_check">Vérifiez la lisibilité</string>
 	<string name="netverify_scanview_snackbar_check">Veuillez vérifier que toutes les données sur votre document soient bien lisibles, pas floues et sans reflet</string>
 	<string name="netverify_scanview_retake">REPRENDRE</string>
-	<string name="netverify_scanview_readable">LISIBLE</string>
+	<string name="netverify_scanview_continue">Continuer</string>
 	<string name="netverify_scanview_legal_hint_nld">Veuillez masquer votre BSN avant de détecter</string>
 	<string name="netverify_scanview_legal_hint_kor">Veuillez masquer la deuxième partie de votre numéro d\'enregistrement de résident avant de détecter</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Veuillez masquer le numéro de passeport avant de détecter</string>
@@ -142,7 +142,7 @@
 	<string name="dv_scanview_title_check">Vérifiez la lisibilité</string>
 	<string name="dv_scanview_snackbar_check">Veuillez vérifier que toutes les données sur votre document soient bien lisibles, pas floues et sans reflet</string>
 	<string name="dv_scanview_retake">REPRENDRE</string>
-	<string name="dv_scanview_readable">LISIBLE</string>
+	<string name="dv_scanview_continue">Continuer</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;Détectez %1$s&lt;/b&gt;</string>
 	<string name="dv_helpview_header_document">Document</string>
 	<string name="dv_helpview_header_bank_statement">Relevé bancaire</string>

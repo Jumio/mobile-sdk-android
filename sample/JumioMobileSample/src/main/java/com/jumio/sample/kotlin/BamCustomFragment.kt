@@ -107,6 +107,7 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
     override fun onDestroy() {
         super.onDestroy()
         customScanPresenter?.clearSDK()
+		customScanPresenter = null
 
         if(this::bamSDK.isInitialized) {
             bamSDK.destroy()
@@ -269,6 +270,9 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
     override fun onBamExtractionFinished(bamCardInformation: BamCardInformation, scanAttempts: ArrayList<String>) {
         Log.d("BamCustomScan", "extraction finished")
         bamCardInformation.clear()
+
+		switchCameraImageView?.visibility = View.INVISIBLE
+		toggleFlashImageView?.visibility = View.INVISIBLE
 
         //		//At this point, the SDK is not needed anymore. It is highly advisable to call destroy(), so that
         //		//internal resources can be freed.

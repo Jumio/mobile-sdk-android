@@ -65,13 +65,13 @@
 	<string name="netverify_scanview_title_check">Controllare la leggibilità</string>
 	<string name="netverify_scanview_snackbar_check">Assicuratevi che tutti i dati dei vostri documenti siano perfettamente visibili, senza riflessi e sfocature</string>
 	<string name="netverify_scanview_retake">RIFARE</string>
-	<string name="netverify_scanview_readable">LEGGIBILE</string>
+	<string name="netverify_scanview_continue">Continua</string>
 	<string name="netverify_scanview_legal_hint_nld">Si prega di censurare il vostro codice fiscale prima di scattare</string>
 	<string name="netverify_scanview_legal_hint_kor">Censurare la seconda parte del vostro Numero di Registrazione di Residenza prima di scattare</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Si prega di censurare il numero del passaporto prima di scattare</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Si prega di censurare il numero della carta d\'identità prima di scattare</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Si prega di censurare la carta d\'identità e numero di accesso prima di scattare</string>
-	<string name="netverify_scanview_analyzing_biometrics">Analisi dei dati biometrici</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Analisi dei dati biometrici&lt;/b&gt;</string>
 	<string name="netverify_helpview_progress_text" formatted="false">Fase %1$d di %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">Il codice a barre del vostro documento non include il vostro indirizzo, girate il vostro documento e scansionate il lato frontale</string>
 	<string name="netverify_helpview_usdl_fallback_continue">CONTINUARE</string>
@@ -141,7 +141,7 @@
 	<string name="dv_scanview_title_check">Controllare la leggibilità</string>
 	<string name="dv_scanview_snackbar_check">Assicuratevi che tutti i dati dei vostri documenti siano perfettamente visibili, senza riflessi e sfocature</string>
 	<string name="dv_scanview_retake">RIFARE</string>
-	<string name="dv_scanview_readable">LEGGIBILE</string>
+	<string name="dv_scanview_continue">Continua</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;Acquisire %1$s&lt;/b&gt;</string>
 	<string name="dv_helpview_header_document">Documento</string>
 	<string name="dv_helpview_header_bank_statement">Rendiconto bancario</string>
