@@ -1,4 +1,4 @@
-package com.jumio.sample.java;
+package com.jumio.sample.java.bam;
 
 import android.app.AlertDialog;
 import android.content.res.Configuration;
@@ -24,6 +24,7 @@ import com.jumio.commons.utils.ScreenUtil;
 import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
 import com.jumio.sample.R;
+import com.jumio.sample.java.MainActivity;
 
 import java.util.ArrayList;
 

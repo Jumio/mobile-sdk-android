@@ -6,8 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <LinearLayout
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/startNetverifyCustomButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,6 +51,15 @@
 
     </LinearLayout>
 
+    <FrameLayout
+        android:id="@+id/fragment_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/netverifySettingsContainer"
+        android:importantForAccessibility="no"
+        android:visibility="visible">
+    </FrameLayout>
+
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
@@ -67,11 +76,11 @@
             android:orientation="vertical"
             android:visibility="gone">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/stopNetverifyCustomButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Stop Netverify Custom Scan"
+                android:text="@string/custom_ui_stop_scan"
                 android:visibility="gone"/>
 
             <LinearLayout
@@ -99,7 +108,7 @@
                     android:layout_height="wrap_content">
                 </Spinner>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/setCountryAndDocumentType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -113,21 +122,21 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/frontSideButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Frontside"
                     android:visibility="gone"/>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/backSideButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Backside"
                     android:visibility="gone"/>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/faceButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -146,7 +155,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/userConsentedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -159,11 +168,11 @@
                 android:layout_height="wrap_content"
                 android:visibility="gone">
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/stopScan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
                     android:text="Stop"/>
 
                 <TextView
@@ -182,11 +191,11 @@
                     android:layout_below="@id/extractionLabel"
                     android:checked="true"/>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/startFallback"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:text="Fallback"/>
 
                 <FrameLayout
@@ -197,21 +206,21 @@
 
                     <com.jumio.nv.custom.NetverifyCustomScanView
                         android:id="@+id/netverifyCustomScanView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="300dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         jumio:jumio_ratio="1.33">
                     </com.jumio.nv.custom.NetverifyCustomScanView>
                 </FrameLayout>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/switchCamera"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
                     android:layout_below="@+id/inlineScanViewWrapper"
                     android:text="Camera"/>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/takePicture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -219,11 +228,11 @@
                     android:layout_centerHorizontal="true"
                     android:text="Take"/>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/toggleFlash"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_below="@+id/inlineScanViewWrapper"
                     android:text="Flash"/>
             </RelativeLayout>
@@ -240,22 +249,23 @@
                     android:layout_height="wrap_content">
                 </com.jumio.nv.custom.NetverifyCustomConfirmationView>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/retryScan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/netverifyCustomConfirmationView"
+                    android:layout_alignStart="@+id/netverifyCustomConfirmationView"
                     android:layout_below="@+id/netverifyCustomConfirmationView"
                     android:text="Retry"/>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/confirmScan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignRight="@+id/netverifyCustomConfirmationView"
+                    android:layout_alignEnd="@+id/netverifyCustomConfirmationView"
                     android:layout_below="@+id/netverifyCustomConfirmationView"
                     android:text="Confirm"/>
             </RelativeLayout>
+
             <com.jumio.nv.custom.NetverifyCustomAnimationView
                 android:id="@+id/netverifyCustomAnimationView"
                 android:layout_width="match_parent"
@@ -316,38 +326,38 @@
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/nfcRetryButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
                     android:layout_below="@+id/customNfcAccessLayout"
                     android:visibility="invisible"
                     android:text="Retry"/>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/nfcCancelButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_below="@+id/customNfcAccessLayout"
                     android:text="Cancel"/>
             </RelativeLayout>
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/errorRetryButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Retry"
                 android:visibility="gone"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/partRetryButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Retry"
                 android:visibility="gone"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/finishButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -366,6 +376,7 @@
                 android:layout_height="wrap_content"
                 android:minHeight="200dp"
                 android:orientation="vertical">
+
             </LinearLayout>
 
         </LinearLayout>

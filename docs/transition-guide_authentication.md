@@ -4,6 +4,14 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.6.0
+#### Dependency Changes
+AndroidX Material design library has been *updated to version 1.1.0*
+* ~~"com.google.android.material:material:1.0.0"~~ is replaced by "com.google.android.material:material:1.1.0"
+
+Local broadcast manager dependency has been added mandatory due to the design library update where it was seperated by Google
+* implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
+
 ## 3.5.0
 #### Error code change
 Error code D (Wrong API credentials used, retry impossible) has been removed

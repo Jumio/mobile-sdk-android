@@ -1,4 +1,4 @@
-package com.jumio.sample.kotlin
+package com.jumio.sample.kotlin.authentication
 
 import android.content.Context
 import android.content.res.Configuration
@@ -34,6 +34,7 @@ import com.jumio.core.enums.JumioDataCenter
 import com.jumio.core.exceptions.MissingPermissionException
 import com.jumio.core.exceptions.PlatformNotSupportedException
 import com.jumio.sample.R
+import com.jumio.sample.kotlin.MainActivity
 import com.jumio.sdk.custom.SDKNotConfiguredException
 import kotlinx.android.synthetic.main.fragment_authentication_custom.*
 
@@ -164,7 +165,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
 				keepDisabled = true
             }
         } else if (v === stopAuthenticationCustomButton && isSDKControllerValid) {
-            hideView(false, stopAuthenticationCustomButton, partTypeLayout, customScanLayout, loadingIndicator, authenticationCustomAnimationView)
+            hideView(false, stopAuthenticationCustomButton, partTypeLayout, customScanLayout, fragment_nv_custom_loading_indicator, authenticationCustomAnimationView)
             callbackLog?.removeAllViews()
             try {
                 customSDKController?.pause()
@@ -174,7 +175,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
             }
 
             authenticationSDK.destroy()
-			authenticationSDK?.checkDeallocation(this@AuthenticationCustomFragment)
+	        authenticationSDK.checkDeallocation(this@AuthenticationCustomFragment)
 
             customSDKController = null
             authenticationCustomContainer?.visibility = View.GONE
@@ -266,21 +267,21 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
 
                         authenticationSettingsContainer?.visibility = View.VISIBLE
                         authenticationCustomContainer?.visibility = View.GONE
-                        hideView(false, loadingIndicator)
+                        hideView(false, fragment_nv_custom_loading_indicator)
 						startAuthenticationCustomButton.isEnabled = true
                     } catch (e: MissingPermissionException) {
                         Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
                         Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
                         authenticationSettingsContainer?.visibility = View.VISIBLE
                         authenticationCustomContainer?.visibility = View.GONE
-                        hideView(false, loadingIndicator)
+                        hideView(false, fragment_nv_custom_loading_indicator)
 						startAuthenticationCustomButton.isEnabled = true
                     } catch (e: SDKNotConfiguredException) {
                         Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
                         Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
                         authenticationSettingsContainer?.visibility = View.VISIBLE
                         authenticationCustomContainer?.visibility = View.GONE
-                        hideView(false, loadingIndicator)
+                        hideView(false, fragment_nv_custom_loading_indicator)
 						startAuthenticationCustomButton.isEnabled = true
                     }
 
@@ -291,7 +292,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
 
                     authenticationSettingsContainer?.visibility = View.VISIBLE
                     authenticationCustomContainer?.visibility = View.GONE
-                    hideView(false, loadingIndicator)
+                    hideView(false, fragment_nv_custom_loading_indicator)
 					startAuthenticationCustomButton.isEnabled = true
                 }
             })
@@ -301,28 +302,28 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
             Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
             authenticationSettingsContainer?.visibility = View.VISIBLE
             authenticationCustomContainer?.visibility = View.GONE
-            hideView(false, loadingIndicator)
+            hideView(false, fragment_nv_custom_loading_indicator)
 			startAuthenticationCustomButton.isEnabled = true
         } catch (e: NullPointerException) {
             Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
             Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
             authenticationSettingsContainer?.visibility = View.VISIBLE
             authenticationCustomContainer?.visibility = View.GONE
-            hideView(false, loadingIndicator)
+            hideView(false, fragment_nv_custom_loading_indicator)
 			startAuthenticationCustomButton.isEnabled = true
         } catch (e: MissingPermissionException) {
             Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
             Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
             authenticationSettingsContainer?.visibility = View.VISIBLE
             authenticationCustomContainer?.visibility = View.GONE
-            hideView(false, loadingIndicator)
+            hideView(false, fragment_nv_custom_loading_indicator)
 			startAuthenticationCustomButton.isEnabled = true
         } catch (e: IllegalArgumentException) {
             Log.e(TAG, "Error in initializeAuthenticationSDK: ", e)
             Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
             authenticationSettingsContainer?.visibility = View.VISIBLE
             authenticationCustomContainer?.visibility = View.GONE
-            hideView(false, loadingIndicator)
+            hideView(false, fragment_nv_custom_loading_indicator)
 			startAuthenticationCustomButton.isEnabled = true
         }
 
@@ -387,7 +388,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
 
 		override fun onAuthenticationFinished(authenticationResult: AuthenticationResult?, transactionReference: String) {
             addToCallbackLog("onAuthenticationFinished")
-            hideView(false, partTypeLayout, loadingIndicator, errorRetryButton)
+            hideView(false, partTypeLayout, fragment_nv_custom_loading_indicator, errorRetryButton)
 
             appendKeyValue("Transaction reference", transactionReference)
 
@@ -403,14 +404,14 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
 
             if (errorCode.startsWith("M")) {
                 appendKeyValue("Transaction reference", transactionReference?: "null")
-                hideView(false, partTypeLayout, loadingIndicator, errorRetryButton, partRetryButton)
+                hideView(false, partTypeLayout, fragment_nv_custom_loading_indicator, errorRetryButton, partRetryButton)
             }
         }
 
 		override fun onAuthenticationUserConsentRequried(privacyPolicy: String?) {
 			showView(true, userConsentLayout)
 			userConsentUrl?.text = privacyPolicy
-			Linkify.addLinks(userConsentUrl, Linkify.WEB_URLS);
+			Linkify.addLinks(userConsentUrl, Linkify.WEB_URLS)
 			userConsentUrl?.movementMethod = LinkMovementMethod.getInstance()
 		}
     }
@@ -421,7 +422,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
             addToCallbackLog("onAuthenticationScanProcessing")
             if (customScanLayout?.visibility == View.VISIBLE)
                 hideView(false, customScanLayout)
-            hideView(false, loadingIndicator)
+            hideView(false, fragment_nv_custom_loading_indicator)
             faceButton?.setCompoundDrawablesWithIntrinsicBounds(successDrawable, null, null, null)
         }
 
@@ -450,7 +451,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
 
     private fun showView(hideLoading: Boolean, vararg views: View?) {
         if (hideLoading)
-            loadingIndicator?.visibility = View.GONE
+            fragment_nv_custom_loading_indicator?.visibility = View.GONE
         for (view in views)
             view?.visibility = View.VISIBLE
     }
@@ -459,7 +460,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
         for (view in views)
             view?.visibility = View.GONE
         if (showLoading)
-            loadingIndicator?.visibility = View.VISIBLE
+            fragment_nv_custom_loading_indicator?.visibility = View.VISIBLE
     }
 
     private fun addToCallbackLog(message: String?) {

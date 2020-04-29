@@ -8,21 +8,21 @@
 - [FAQ](docs/integration_faq.md)
 
 # Release notes
-### SDK version: 3.5.0
+### SDK version: 3.6.0
 
 #### Deprecation notice
-This is the last version that supports Android 4.x and 5.0. The minimum supported Android version will be increased to 5.1 (API level 22) in the next SDK version 3.6.0.
+This is the last version that supports Android 4.x and 5.0. The minimum supported Android version will be increased to 5.1 (API level 22) in the next SDK version 3.7.0.
 
 #### Changes
-* New Singapore datacenter compatibility [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
-* Support for dynamic library modules to reduce the initial download size of the app  [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
-* Advanced document checks on the back of IDs to increase user conversion - for paper documents [Netverify]
-* Aligned confirmation view design with Netverify [Document Verification]
-* Added fallback handling for device cameras without auto-focus [Netverify/Fastfill]
+* Support for 5 new languages (Czech, Greek, Hungarian, Polish, Romanian) [Netverify/Fastfill, Authentication, Document Verification]
+* Added support for right-to-left languages [Netverify/Fastfill, Authentication, Document Verification]
+* Reduced SDK size by ~1.5 MB [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
+* Provide access to document guidance animation [Netverify Custom UI]
+* Advanced custom UI sample implementation [Netverify Custom UI Sample]
+* Adjusted handling of document types which don’t support plastic documents [Netverify]
 
 #### Fixes
-* Fixed handling of credit card masking [BAM checkout]
-* Fixed problems with Belgium ID card backside scanning [Netverify/Fastfill]
+* Improved accessibility handling [Netverify/Fastfill, Authentication, Document Verification]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification]
 
 
@@ -101,15 +101,22 @@ __Note:__ You get an *UnsatisfiedLinkError*, if the app and the CPU architecture
 Our SDK supports the [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages and cultures.
 All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable at [.../src/main/res/values/strings-jumio-sdk.xml](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml) within our Sample application.
 
-For our products Netverify & Fastfill, Authentication & Document Verification we are providing eight individual languages for your convenience:
+For our products Netverify & Fastfill, Authentication & Document Verification we support following languages for your convenience:
 * Chinese (Simplified)
+* Czech
 * Dutch
 * English
 * French
 * German
+* Greek
+* Hungarian
 * Italian
+* Polish
 * Portuguese
+* Romanian
 * Spanish
+
+
 
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or change the __font size__ on their device. The accessibility-strings that are used by TalkBack contain *accessibility_* in their key and can be also modified in the `strings.xml`.
 
@@ -122,7 +129,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 3.4.1 of the Jumio Mobile SDK is supported until 2020-05-01.
+The previous release version 3.5.0 of the Jumio Mobile SDK is supported until 2020-08-04.
 
 In case the support period is expired, no bug fixes and technical support are provided anymore (bugs are typically fixed in the upcoming versions).
 Older SDK versions will keep functioning with our server until further notice, but we highly recommend to always update to the latest version to benefit from SDK improvements and bug fixes.

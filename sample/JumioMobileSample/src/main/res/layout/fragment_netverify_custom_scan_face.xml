@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:jumio="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<com.jumio.nv.custom.NetverifyCustomScanView
+		android:id="@+id/fragment_nv_custom_scan_view"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_marginTop="80dp"
+		jumio:jumio_ratio="0.75"
+		jumio:layout_constraintBottom_toTopOf="@+id/fragment_nv_custom_scan_face_helptext"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintHorizontal_bias="0.5"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toTopOf="parent" />
+
+	<com.jumio.nv.custom.NetverifyCustomAnimationView
+		android:id="@+id/fragment_nv_custom_animation_view"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		jumio:layout_constraintHeight_percent="0.7"
+		jumio:layout_constraintWidth_percent="0.9"
+		android:layout_gravity="center"
+		android:layout_marginTop="72dp"
+		jumio:jumio_ratio="0.95"
+		jumio:layout_constraintBottom_toTopOf="@+id/fragment_nv_custom_scan_face_helptext"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintHorizontal_bias="0.5"
+		jumio:layout_constraintVertical_bias="1.0"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:id="@+id/fragment_nv_custom_scan_face_helptext"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginEnd="16dp"
+		android:textAlignment="center"
+		jumio:layout_constraintBottom_toTopOf="@+id/fragment_custom_scan_face_btn_retry"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toBottomOf="@+id/fragment_nv_custom_animation_view" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/fragment_custom_scan_face_btn_retry"
+		style="@style/Base.Widget.AppCompat.Button.Colored"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:layout_marginBottom="16dp"
+		android:autoSizeMinTextSize="8sp"
+		android:autoSizeMaxTextSize="14sp"
+		android:text="@string/custom_ui_face_scan_button"
+		jumio:layout_constraintBottom_toBottomOf="parent"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toBottomOf="@+id/fragment_nv_custom_scan_face_helptext" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/fragment_custom_scan_btn_capture"
+		style="@style/Base.Widget.AppCompat.Button.Colored"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="16dp"
+		android:text="@string/custom_ui_scan_title_capture"
+		android:autoSizeMinTextSize="8sp"
+		android:autoSizeMaxTextSize="14sp"
+		android:textAlignment="center"
+		android:visibility="gone"
+		jumio:layout_constraintBottom_toBottomOf="parent"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintStart_toStartOf="parent" />
+
+	<com.jumio.nv.custom.NetverifyCustomConfirmationView
+		android:id="@+id/fragment_nv_custom_confirmation_view"
+		android:layout_width="match_parent"
+		android:layout_height="450dp"
+		android:layout_gravity="top"
+		android:visibility="gone"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toTopOf="parent" />
+
+	<ProgressBar
+		android:id="@+id/fragment_nv_custom_loading_indicator"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		jumio:layout_constraintHorizontal_bias="0.5"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toBottomOf="@id/fragment_nv_custom_loading_indicator_guideline"
+		jumio:layout_constraintTop_toTopOf="@id/fragment_nv_custom_loading_indicator_guideline" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/fragment_nv_custom_loading_indicator_guideline"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		jumio:layout_constraintGuide_percent="0.4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

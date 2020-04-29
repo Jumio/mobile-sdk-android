@@ -1,4 +1,4 @@
-package com.jumio.sample.kotlin
+package com.jumio.sample.kotlin.authentication
 
 import android.app.Activity
 import android.content.Intent
@@ -17,6 +17,7 @@ import com.jumio.core.enums.JumioDataCenter
 import com.jumio.core.exceptions.MissingPermissionException
 import com.jumio.core.exceptions.PlatformNotSupportedException
 import com.jumio.sample.R
+import com.jumio.sample.kotlin.MainActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 
 

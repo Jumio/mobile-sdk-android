@@ -35,15 +35,15 @@
 	<string name="netverify_use_front_side_of_card">UTILIZAR A FRENTE</string>
 	<string name="netverify_use_back_side_of_card">UTILIZAR O VERSO</string>
 	<string name="netverify_nfc_view_title">NFC</string>
-	<string name="netverify_nfc_header_start">&lt;b&gt;Digitalizar Documento de Identificação&lt;/b&gt;</string>
+	<string name="netverify_nfc_header_start">&lt;b&gt;Digitalizar Documento&lt;/b&gt;</string>
 	<string name="netverify_nfc_header_download">&lt;b&gt;A extrair dados&lt;/b&gt;</string>
 	<string name="netverify_nfc_header_finish">&lt;b&gt;Extracção bem sucedida&lt;/b&gt;</string>
 	<string name="netverify_nfc_description_start">Verifique se o seu Documento possui o seguinte símbolo ${icon} e coloque o seu telefone sobre o Documento, tal como exemplificado, para iniciar a verificação</string>
 	<string name="netverify_nfc_description_download">A ler os dados do Documento de Identificação. Aguarde até terminar o processo</string>
-	<string name="netverify_nfc_requestview_button_text">NÃO EXISTE ESSE SÍMBOLO NO MEU DOCUMENTO DE IDENTIFICAÇÃO</string>
+	<string name="netverify_nfc_requestview_button_text">NÃO EXISTE ESSE SÍMBOLO</string>
 	<string name="netverify_nfc_bac_dialog_title">Erro de autenticação</string>
 	<string name="netverify_nfc_bac_dialog_text">Verifique novamente os dados do Documento e corrija manualmente. Clique em \"Tentar Novamente\" para recomeçar a digitalização</string>
-	<string name="netverify_nfc_bac_dialog_id_number">Número do Documento de Identificação</string>
+	<string name="netverify_nfc_bac_dialog_id_number">Número</string>
 	<string name="netverify_nfc_bac_dialog_date_of_birth">data de nascimento</string>
 	<string name="netverify_nfc_bac_dialog_date_of_expiry">data de validade</string>
 	<string name="netverify_nfc_general_error_dialog_title">Erro de leitura</string>
@@ -64,7 +64,7 @@
 	<string name="netverify_scanview_title_face"></string>
 	<string name="netverify_scanview_title_check">Verifique a legibilidade</string>
 	<string name="netverify_scanview_snackbar_check">Certifique-se de que todos os dados constantes no seu documento estão completamente visíveis, sem reflexo e sem estarem desfocados</string>
-	<string name="netverify_scanview_retake">REPETIR</string>
+	<string name="netverify_scanview_retake">Repetir</string>
 	<string name="netverify_scanview_continue">Continuar</string>
 	<string name="netverify_scanview_legal_hint_nld">Oculte o seu BSN antes de captar a imagem</string>
 	<string name="netverify_scanview_legal_hint_kor">Oculte o segundo bloco do seu Número de Registo de Residente antes de captar a imagem</string>
@@ -72,9 +72,9 @@
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Oculte o número do Documento de Identificação antes de captar a imagem</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Oculte o número do Documento de Identificação e o número de acesso antes de captar a imagem</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;A analisar os dados biométricos&lt;/b&gt;</string>
-	<string name="netverify_helpview_progress_text" formatted="false">Passo %1$d de %2$d</string>
+	<string name="netverify_helpview_progress_text">Passo %1$d de %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">O código de barras do seu documento não incluía a sua morada; vire o seu documento e digitalize a frente</string>
-	<string name="netverify_helpview_usdl_fallback_continue">CONTINUAR</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Toque para continuar</string>
 	<string name="netverify_helpview_fallback">CAPTURA NÃO ESTÁ FUNCIONANDO</string>
 	<string name="netverify_helpview_fallback_barcode">NÃO TEM CÓDIGO DE BARRAS</string>
 	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Digitalize %1$s %2$s&lt;/b&gt;</string>
@@ -83,19 +83,19 @@
 	<string name="netverify_helpview_small_description_template">Coloque o seu documento em frente da câmara até que a imagem seja automaticamente captada</string>
 	<string name="netverify_helpview_small_description_barcode">Coloque o código de barras em frente da câmara até que a imagem seja automaticamente captada</string>
 	<string name="netverify_helpview_small_description_card">Enquadre o seu documento na moldura até que a imagem seja automaticamente captada</string>
-	<string name="netverify_helpview_full_description">Enquadre o seu documento na moldura, tal como mostra o desenho animado acima. A captação da imagem ocorre automaticamente.\n\nCertifique-se de que todos os dados estão legíveis e evite reflexos.</string>
-	<string name="netverify_helpview_full_description_template">Enquadre o seu documento na moldura, tal como mostra o desenho animado acima. A captação da imagem ocorre automaticamente.\n\nCertifique-se de que todos os dados estão legíveis e evite reflexos.</string>
-	<string name="netverify_helpview_full_description_barcode">Coloque o código de barras em frente da câmara, tal como mostra a imagem acima. A captação da imagem ocorre automaticamente.</string>
-	<string name="netverify_helpview_full_description_card">Enquadre o seu documento na moldura de modo a que os 4 bordos estejam alinhados, tal como mostra o desenho animado acima. A captação da imagem ocorre automaticamente\n\nCertifique-se de que todos os dados estão legíveis e evite reflexos.</string>
+	<string name="netverify_helpview_full_description">Enquadre o seu documento na moldura, tal como mostra o desenho animado acima. A captação da imagem ocorre automaticamente.\nCertifique-se de que todos os dados estão legíveis e evite reflexos.</string>
+	<string name="netverify_helpview_full_description_template">Enquadre o seu documento na moldura, tal como mostra o desenho animado acima. A captação da imagem ocorre automaticamente.\nCertifique-se de que todos os dados estão legíveis e evite reflexos.</string>
+	<string name="netverify_helpview_full_description_barcode">Coloque o código de barras em frente da câmara. A captação da imagem ocorre automaticamente.</string>
+	<string name="netverify_helpview_full_description_card">Enquadre o seu documento na moldura de modo a que os 4 bordos estejam alinhados, tal como mostra o desenho animado acima. A captação da imagem ocorre automaticamente\nCertifique-se de que todos os dados estão legíveis e evite reflexos.</string>
 	<string name="netverify_document_variant_other">Outro formato</string>
 	<string name="netverify_document_variant_plastic">Cartão de plástico</string>
 	<string name="netverify_accessibility_nfc_description_start">Verifique se o seu Documento possui um chip. Se assim for, coloque o seu telefone sobre o Documento, tal como exemplificado.</string>
 	<string name="face_helpview_title_problems">Está a ter problemas?</string>
 	<string name="face_helpview_continue">Toque para continuar</string>
-	<string name="face_helpview_landscape_header"><b>Rode o seu dispositivo</b></string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Rode o seu dispositivo&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Rode o seu dispositivo para o modo de retrato para tirar uma selfie</string>
 	<string name="netverify_scanview_snackbar_check_confirmation">Certifique-se de que todos os dados constantes no seu documento estão visíveis e legíveis.</string>
-	<string name="netverify_scanview_snackbar_progress">A processar documento...</string>
+	<string name="netverify_scanview_snackbar_progress">A processar documento…</string>
 	<string name="netverify_scanview_snackbar_check_process_error">Não foi possível processar o seu documento, por favor tente de novo.</string>
 	<string name="netverify_scanview_snackbar_check_face_on_back">A imagem capturada parece a frente do seu documento. Confirme se a mesma corresponde ao verso do documento ou tire a fotografia novamente.</string>
 	-->
@@ -104,9 +104,9 @@
 	<!--
 	<string name="face_helpview_title_problems">Está a ter problemas?</string>
 	<string name="face_helpview_continue">Toque para continuar</string>
-	<string name="face_helpview_landscape_header"><b>Rode o seu dispositivo</b></string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Rode o seu dispositivo&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Rode o seu dispositivo para o modo de retrato para tirar uma selfie</string>
-	<string name="zoom_accessibility_cancel_button">Quit scan</string>
+	<string name="zoom_accessibility_cancel_button">Sair da digitalização</string>
 	<string name="zoom_feedback_a_little_too_close">Afaste-se um pouco</string>
 	<string name="zoom_feedback_a_little_too_close_tablet">Afaste-se um pouco</string>
 	<string name="zoom_feedback_center_face">Centre o seu rosto</string>
@@ -129,6 +129,7 @@
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
 	<!--
+	<string name="authentication_scanview_title_face"></string>
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
@@ -140,7 +141,7 @@
 	<string name="dv_scanview_title">Digitalize</string>
 	<string name="dv_scanview_title_check">Verifique a legibilidade</string>
 	<string name="dv_scanview_snackbar_check">Certifique-se de que todos os dados constantes no seu documento estão completamente visíveis, sem reflexo e sem estarem desfocados</string>
-	<string name="dv_scanview_retake">REPETIR</string>
+	<string name="dv_scanview_retake">Repetir</string>
 	<string name="dv_scanview_continue">Continuar</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;Captar %1$s&lt;/b&gt;</string>
 	<string name="dv_helpview_header_document">Documento</string>

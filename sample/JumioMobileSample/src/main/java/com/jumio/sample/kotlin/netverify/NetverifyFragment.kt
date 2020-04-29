@@ -1,4 +1,4 @@
-package com.jumio.sample.kotlin
+package com.jumio.sample.kotlin.netverify
 
 import android.app.Activity
 import android.content.Intent
@@ -17,6 +17,7 @@ import com.jumio.nv.NetverifyDeallocationCallback
 import com.jumio.nv.NetverifyDocumentData
 import com.jumio.nv.NetverifySDK
 import com.jumio.sample.R
+import com.jumio.sample.kotlin.MainActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 
 
@@ -34,7 +35,7 @@ class NetverifyFragment : Fragment(), View.OnClickListener, NetverifyDeallocatio
 	private var apiSecret: String? = null
 	private var dataCenter: JumioDataCenter? = null
 
-	internal lateinit var netverifySDK: NetverifySDK
+	private lateinit var netverifySDK: NetverifySDK
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

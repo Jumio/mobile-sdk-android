@@ -1,4 +1,4 @@
-package com.jumio.sample.java;
+package com.jumio.sample.java.netverify;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,6 +19,7 @@ import com.jumio.nv.NetverifyDocumentData;
 import com.jumio.nv.NetverifyMrzData;
 import com.jumio.nv.NetverifySDK;
 import com.jumio.sample.R;
+import com.jumio.sample.java.MainActivity;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -59,7 +60,7 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener,
 			dataCenter = (JumioDataCenter) args.getSerializable(MainActivity.KEY_DATACENTER);
 		}
 
-		btnStart = (Button) rootView.findViewById(R.id.btnStart);
+		btnStart = rootView.findViewById(R.id.btnStart);
 		btnStart.setText(String.format(getResources().getString(R.string.button_start), getResources().getString(R.string.section_netverify)));
 		btnStart.setOnClickListener(this);
 
@@ -199,7 +200,7 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener,
 
 			if (resultCode == Activity.RESULT_OK) {
 				//Handle the success case and retrieve data
-				NetverifyDocumentData documentData = (NetverifyDocumentData) data.getParcelableExtra(NetverifySDK.EXTRA_SCAN_DATA);
+				NetverifyDocumentData documentData = data.getParcelableExtra(NetverifySDK.EXTRA_SCAN_DATA);
 				NetverifyMrzData mrzData = documentData != null ? documentData.getMrzData() : null;
 			} else if (resultCode == Activity.RESULT_CANCELED) {
 				//Handle the error cases as described in our documentation: https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#managing-errors

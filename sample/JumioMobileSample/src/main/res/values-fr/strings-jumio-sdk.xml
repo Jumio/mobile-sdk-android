@@ -64,7 +64,7 @@
 	<string name="netverify_scanview_title_face"></string>
 	<string name="netverify_scanview_title_check">Vérifiez la lisibilité</string>
 	<string name="netverify_scanview_snackbar_check">Veuillez vérifier que toutes les données sur votre document soient bien lisibles, pas floues et sans reflet</string>
-	<string name="netverify_scanview_retake">REPRENDRE</string>
+	<string name="netverify_scanview_retake">Reprendre</string>
 	<string name="netverify_scanview_continue">Continuer</string>
 	<string name="netverify_scanview_legal_hint_nld">Veuillez masquer votre BSN avant de détecter</string>
 	<string name="netverify_scanview_legal_hint_kor">Veuillez masquer la deuxième partie de votre numéro d\'enregistrement de résident avant de détecter</string>
@@ -83,10 +83,10 @@
 	<string name="netverify_helpview_small_description_template">Placez votre document devant la caméra jusqu\'à ce qu\'il soit détecté automatiquement</string>
 	<string name="netverify_helpview_small_description_barcode">Placez le code-barres devant la caméra jusqu\'à ce qu\'il soit détecté automatiquement</string>
 	<string name="netverify_helpview_small_description_card">Placez votre document dans le cadre jusqu\'à ce qu\'il soit détecté automatiquement</string>
-	<string name="netverify_helpview_full_description">Placez votre document dans le cadre comme indiqué dans l\'animation ci-dessus. La détection se fait automatiquement.\n\nVérifiez que toutes les données sont bien lisibles et évitez les reflets.</string>
-	<string name="netverify_helpview_full_description_template">Placez votre document devant la caméra comme indiqué dans l\'animation ci-dessus. La détection se fait automatiquement.\n\nVérifiez que toutes les données sont bien lisibles et évitez les reflets.</string>
+	<string name="netverify_helpview_full_description">Placez votre document dans le cadre comme indiqué dans l\'animation ci-dessus. La détection se fait automatiquement.\nVérifiez que toutes les données sont bien lisibles et évitez les reflets.</string>
+	<string name="netverify_helpview_full_description_template">Placez votre document devant la caméra comme indiqué dans l\'animation ci-dessus. La détection se fait automatiquement.\nVérifiez que toutes les données sont bien lisibles et évitez les reflets.</string>
 	<string name="netverify_helpview_full_description_barcode">Placez le code-barres devant la caméra comme indiqué dans l\'image ci-dessus. La détection se fait automatiquement.</string>
-	<string name="netverify_helpview_full_description_card">Placez votre document dans le cadre en alignant les quatre bords comme indiqué dans l\'animation ci-dessus. La détection se fait automatiquement.\n\nVérifiez que toutes les données sont bien lisibles et évitez les reflets.</string>
+	<string name="netverify_helpview_full_description_card">Placez votre document dans le cadre en alignant les quatre bords comme indiqué dans l\'animation ci-dessus. La détection se fait automatiquement.\nVérifiez que toutes les données sont bien lisibles et évitez les reflets.</string>
 	<string name="netverify_document_variant_other">Autre format</string>
 	<string name="netverify_document_variant_plastic">Carte plastique</string>
 	<string name="netverify_accessibility_nfc_description_start">Veuillez vérifier si votre pièce d\'identité dispose d\'une puce. Si oui, placez votre téléphone sur la pièce d\'identité comme indiqué.</string>
@@ -95,7 +95,7 @@
 	<string name="face_helpview_landscape_description">Veuillez tourner votre téléphone pour prendre un selfie en mode portrait.</string>
 	<string name="face_helpview_continue">Appuyer pour continuer</string>
 	<string name="netverify_scanview_snackbar_check_confirmation">Vérifiez que toutes les données sur votre document sont visibles et lisibles.</string>
-	<string name="netverify_scanview_snackbar_progress">Traitement du document en cours...</string>
+	<string name="netverify_scanview_snackbar_progress">Traitement du document en cours…</string>
 	<string name="netverify_scanview_snackbar_check_process_error">Votre document n\'a pas pu être traité. Veuillez réessayer.</string>
 	<string name="netverify_scanview_snackbar_check_face_on_back">L\'image capturée ressemble au recto de votre document. Veuillez confirmer qu\'il s\'agit du verso de votre document ou reprendre l\'image.</string>
 	-->
@@ -109,7 +109,7 @@
 	<string name="zoom_accessibility_cancel_button">Annuler la numérisation</string>
 	<string name="zoom_feedback_a_little_too_close">Reculez un peu</string>
 	<string name="zoom_feedback_a_little_too_close_tablet">Reculez un peu</string>
-	<string name="zoom_feedback_center_face">Placez votre visage au centre</string>
+	<string name="zoom_feedback_center_face">Centrez votre visage</string>
 	<string name="zoom_feedback_face_not_found">Placez votre visage dans le cadre</string>
 	<string name="zoom_feedback_face_not_looking_straight_ahead">Regardez droit devant vous</string>
 	<string name="zoom_feedback_face_not_upright">Tenez la tête droite</string>
@@ -141,7 +141,7 @@
 	<string name="dv_scanview_title">Numérisation</string>
 	<string name="dv_scanview_title_check">Vérifiez la lisibilité</string>
 	<string name="dv_scanview_snackbar_check">Veuillez vérifier que toutes les données sur votre document soient bien lisibles, pas floues et sans reflet</string>
-	<string name="dv_scanview_retake">REPRENDRE</string>
+	<string name="dv_scanview_retake">Reprendre</string>
 	<string name="dv_scanview_continue">Continuer</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;Détectez %1$s&lt;/b&gt;</string>
 	<string name="dv_helpview_header_document">Document</string>

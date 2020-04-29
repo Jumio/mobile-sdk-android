@@ -5,6 +5,8 @@
 	<string name="app_name">Jumio Sample</string>
 	<string name="title_activity_main">MainActivity</string>
 	<string name="button_start">Start %1$s</string>
+	<string name="button_continue">Continue</string>
+	<string name="button_retake">Retake</string>
 	<string name="section_netverify">Netverify</string>
     <string name="section_netverify_custom">Netverify Custom</string>
     <string name="section_authentication">Authentication</string>
@@ -86,4 +88,20 @@
         <item>Wyoming</item>
     </string-array>
 
+	<!-- Custom UI -->
+	<string name="custom_ui_document_selection_help">We need to take a picture of your document to verify your identity</string>
+	<string name="custom_ui_scan_confirmation">Make sure that all data on your document is fully visible, glare free and not blurred</string>
+	<string name="custom_ui_scan_face_on_back">The Image captured looks like the Front of your document. Please confirm this Is the Back of your document or retake the Image.</string>
+	<string name="custom_ui_scan_progress_text">Step %1$d of %2$d</string>
+	<string name="custom_ui_scan_title_capture">Capture</string>
+	<string name="custom_ui_scan_button_fallback">Fallback</string>
+	<string name="custom_ui_thank_you">Thank you</string>
+	<string name="custom_ui_success_description">Your ID has been verified and you can now start using our service</string>
+	<string name="custom_ui_variant_default">Default UI</string>
+	<string name="custom_ui_variant_custom">Custom UI</string>
+	<string name="custom_ui_verify">Verify</string>
+	<string name="custom_ui_quality">Quality</string>
+	<string name="custom_ui_capture">Capture</string>
+	<string name="custom_ui_stop_scan">Stop Netverify Custom Scan</string>
+	<string name="custom_ui_face_scan_button">Tap to continue</string>
 </resources>

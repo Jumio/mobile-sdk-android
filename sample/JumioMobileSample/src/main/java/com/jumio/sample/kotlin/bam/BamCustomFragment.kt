@@ -1,4 +1,4 @@
-package com.jumio.sample.kotlin
+package com.jumio.sample.kotlin.bam
 
 import android.app.AlertDialog
 import android.content.res.Configuration
@@ -11,6 +11,7 @@ import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import com.google.android.material.button.MaterialButton
 import com.jumio.MobileSDK
 import com.jumio.bam.BamCardInformation
 import com.jumio.bam.BamSDK
@@ -21,6 +22,7 @@ import com.jumio.commons.utils.ScreenUtil
 import com.jumio.core.enums.JumioDataCenter
 import com.jumio.core.exceptions.PlatformNotSupportedException
 import com.jumio.sample.R
+import com.jumio.sample.kotlin.MainActivity
 import kotlinx.android.synthetic.main.fragment_bam_custom.*
 import java.util.*
 
@@ -55,8 +57,7 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        btnStart?.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_bam_custom))
+        (btnStart as MaterialButton).text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_bam_custom))
         btnStart?.setOnClickListener {
             //Since the BamSDK is a singleton internally, a new instance is not
             //created here.
@@ -118,7 +119,7 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
 
-        val isPortrait = newConfig?.orientation == Configuration.ORIENTATION_PORTRAIT
+        val isPortrait = newConfig.orientation == Configuration.ORIENTATION_PORTRAIT
         val params = FrameLayout.LayoutParams(if (isPortrait) FrameLayout.LayoutParams.MATCH_PARENT else FrameLayout.LayoutParams.WRAP_CONTENT, if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(activity, 300))
         bamCustomScanView?.layoutParams = params
     }

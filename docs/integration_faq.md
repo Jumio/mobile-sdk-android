@@ -19,7 +19,7 @@ One pattern that is recognizable throughout all of our customers’ SDK implemen
 
 Our SDK provides a variety of customization options to help customers achieve a seamless integration. For customers using the standard SDK workflow, our [Surface tool](https://jumio.github.io/surface-android/) provides an easy-to-use WYSIWYG interface to see simple customization options that can be incorporated with minimal effort and generate the code necessary to implement them. For customers who want to have more granular control over look and feel, our SDK offers the [CustomUI](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_netverify-fastfill.md#custom-ui) option, which allows you to customize the entire user interface.
 
-#### Example case:
+#### Example of a non ideal SDK integration:
 ![Onboarding bad case](images/onboardingBadCase.jpg)
 - Default SDK UI is used and is presented on one of the first screens during onboarding. The user is unprepared for the next steps and might not understand the intention behind the request to show their ID.
 
@@ -43,20 +43,24 @@ The following table highlights the most common error codes which are returned fr
 
 ### Reducing the size of your app
 The Netverify SDK contains a wide range of different scanning methods. The SDK is able to capture identity documents and extract information on the device using enhanced machine learning and computer vision technologies.
-The current download size of the sample application containing all products is 29 MB as mentioned in the [Netverify guide](integration_netverify-fastfill.md).
+The current download size of the sample application containing all products is around **18 MB** as mentioned in the [Netverify guide](integration_netverify-fastfill.md).
 If you want to reduce the size of the SDK within your application, there are several ways that are explained in the following chapters.
 
 #### Strip unused modules
-Depending on the functionality you require, you may want to strip out unused functionality. This can be done adapting your jumio dependencies in your build.gradle. The following table shows a range of different product configurations with the size and modules that are linked for it. The measurements are based on our sample application.
+Depending on the functionality you require, you may want to strip out unused functionality. This can be done adapting your jumio dependencies in your build.gradle. The following table shows a range of different product configurations with the size and modules that are linked for it.
+The measurements reflect the extra size that Jumio components add to your app download size.
+The sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution
 
 |Product Configuration      | Size   | Modules   |
 |:--------------------------|:------:|:----------|
-|Full Netverify + Authentication                       | 23.7 MB    | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, auth, face |
-|Netverify MRZ only with Face                          | 20.08 MB  | core, nv, nv-mrz, face |
-|Netverify MRZ only without Face                       | 9.24 MB   | core, nv, nv-mrz |
-|Netverify Barcode scanning without Face               | 7.9 MB   | core, nv, nv-barcode-vision |
-|BAM Checkout                                          | 11.36 MB   | core, bam |
-|Document verification                                 | 7.9 MB   | core, dv  |
+|Netverify + Authentication                            | 13.6 MB    | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, auth, face, zoom-authentication |
+|Netverify w/o NFC                                     | 12.6 MB    | core, nv, nv-mrz, nv-ocr, nv-barcode, face, zoom-authentication |
+|Netverify w/o 3D liveness                             | 7.6 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode |
+|Netverify w/o 3D liveness, Barcode                    | 6.5 MB   | core, nv, nv-mrz, nv-ocr |
+|Netverify w/o 3D liveness, Barcode, OCR               | 6.0 MB   | core, nv, nv-mrz |
+|Netverify minimum                                     | 2.5 MB   | core, nv |
+|BAM Checkout                                          | 4.9 MB   | core, bam |
+|Document verification                                 | 2.3 MB   | core, dv  |
 
 
 #### App bundles

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_flash_activate">Włącz lampę błyskową</string>
+	<string name="jumio_accessibility_flash_deactivate">Wyłącz lampę błyskową</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Przełącz na przedni aparat</string>
+	<string name="jumio_accessibility_camera_switch_to_back">Przełącz na tylny aparat</string>
+	<string name="jumio_accessibility_loading">Ładowanie</string>
+	<string name="jumio_accessibility_quit_scan">Zakończ skanowanie</string>
+	<string name="jumio_scanview_refocus">Ustaw ostrość ponownie</string>
+	<string name="jumio_error_dialog_title">Błąd</string>
+	<string name="jumio_error_network_problems">Napotkaliśmy problem z komunikacją sieciową</string>
+	<string name="jumio_error_auth_failed">Uwierzytelnianie nie powiodło się</string>
+	<string name="jumio_error_device_is_offline">Brak dostępnego połączenia z Internetem</string>
+	<string name="jumio_error_startup_error">Obecnie skanowanie nie jest dostępne, skontaktuj się ze sprzedawcą aplikacji</string>
+	<string name="jumio_error_cancelled_by_user">Anulowano przez użytkownika końcowego</string>
+	<string name="jumio_error_no_camera_connection">Aparat jest obecnie niedostępny</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Certyfikat nie jest już ważny. Zaktualizuj aplikację</string>
+	<string name="jumio_error_transaction_already_finished">Transakcja już zakończona</string>
+	<string name="jumio_button_retry">Ponów</string>
+	<string name="jumio_button_cancel">Anuluj</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="netverify_documenttype_passport">Paszport</string>
+	<string name="netverify_documenttype_visa">Wiza</string>
+	<string name="netverify_documenttype_idcard">Dowód osobisty</string>
+	<string name="netverify_documenttype_driverlicense">Prawo jazdy</string>
+	<string name="netverify_front">przód</string>
+	<string name="netverify_back">tył</string>
+	<string name="netverify_inside">wewnątrz</string>
+	<string name="netverify_outside">zewnętrzną część</string>
+	<string name="netverify_use_front_side_of_card">UŻYJ PRZODU DOKUMENTU</string>
+	<string name="netverify_use_back_side_of_card">UŻYJ TYŁU DOKUMENTU</string>
+	<string name="netverify_nfc_view_title">NFC</string>
+	<string name="netverify_nfc_header_start">&lt;b&gt;Skanuj Identyfikator&lt;/b&gt;</string>
+	<string name="netverify_nfc_header_download">&lt;b&gt;Wyodrębnianie danych&lt;/b&gt;</string>
+	<string name="netverify_nfc_header_finish">&lt;b&gt;Wyodrębnianie danych zakończone pomyślnie&lt;/b&gt;</string>
+	<string name="netverify_nfc_description_start">Sprawdź, czy Twój identyfikator ma następujący symbol ${icon} i umieść telefon na identyfikatorze, jak pokazano na ilustracji, aby rozpocząć weryfikację</string>
+	<string name="netverify_nfc_description_download">Odczytywanie danych z ID. Poczekaj na zakończenie procesu</string>
+	<string name="netverify_nfc_requestview_button_text">BRAK SYMBOLU NA MOIM IDENTYFIKATORZE</string>
+	<string name="netverify_nfc_bac_dialog_title">Błąd uwierzytelniania</string>
+	<string name="netverify_nfc_bac_dialog_text">Sprawdź dokładnie dane identyfikacyjne i popraw je ręcznie. Kliknij Ponów, aby wznowić skanowanie</string>
+	<string name="netverify_nfc_bac_dialog_id_number">numer identyfikacyjny</string>
+	<string name="netverify_nfc_bac_dialog_date_of_birth">data urodzenia</string>
+	<string name="netverify_nfc_bac_dialog_date_of_expiry">data ważności</string>
+	<string name="netverify_nfc_general_error_dialog_title">Błąd odczytu</string>
+	<string name="netverify_nfc_general_error_dialog_text">Wystąpił błąd podczas odczytu danych identyfikacyjnych. Naciśnij ponów i ponownie umieść telefon na identyfikatorze</string>
+	<string name="netverify_nfc_enable_dialog_title">Włącz NFC</string>
+	<string name="netverify_nfc_enable_dialog_text">Aby uzyskać więcej z Twojego paszportu, kliknij przycisk OK i włącz funkcję NFC telefonu</string>
+	<string name="netverify_scan_options_subtitle_type">Wybierz typ dokumentu, który chcesz zeskanować</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Wybierz swój kraj&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; został ustawiony jako kraj wydania Twoich dokumentów.</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; został ustawiony jako kraj wydania Twoich dokumentów. &lt;b&gt;&lt;u&gt;Zmień kraj&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_countrylist_title">Wybierz kraj wydający dokument</string>
+	<string name="netverify_countrylist_empty">Brak krajów na liście</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Przesyłanie Twoich dokumentów&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">Powinno to zająć tylko kilka sekund, w zależności od Twojego połączenia internetowego</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Przesyłanie zakończone pomyślnie&lt;/b&gt;</string>
+	<string name="netverify_upload_error">&lt;b&gt;Problemy z przesłaniem&lt;/b&gt;</string>
+	<string name="netverify_scanview_title">Skanuj dokument</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_scanview_title_check">Sprawdź czytelność</string>
+	<string name="netverify_scanview_snackbar_check">Upewnij się, że wszystkie dane na dokumencie są w pełni widoczne, bez odblasków i nierozmyte</string>
+	<string name="netverify_scanview_retake">Ponów</string>
+	<string name="netverify_scanview_continue">Kontynuuj</string>
+	<string name="netverify_scanview_legal_hint_nld">Przed przechwyceniem zakryj numer BSN</string>
+	<string name="netverify_scanview_legal_hint_kor">Przed przechwyceniem zakryj drugi blok numeru rejestracyjnego mieszkańca</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Przed przechwyceniem zakryj numer paszportu</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Przed przechwyceniem zakryj numer identyfikacyjny</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Przed przechwyceniem zakryj numer identyfikacyjny i numer dostępu</string>
+	<string name="netverify_helpview_progress_text">Krok %1$d z %2$d</string>
+	<string name="netverify_helpview_description_usdl_fallback">Kod kreskowy dokumentu nie zawierał adresu, odwróć dokument i zeskanuj przód</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Kontynuuj</string>
+	<string name="netverify_helpview_fallback">PRZECHWYTYWANIE NIE DZIAŁA</string>
+	<string name="netverify_helpview_fallback_barcode">BRAK KODU KRESKOWEGO NA MOIM ID</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Skanuj %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;Zrób zdjęcie %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_description">Umieść dokument w ramce aż zostanie automatycznie przechwycony</string>
+	<string name="netverify_helpview_small_description_template">Umieść dokument przed aparatem aż zostanie automatycznie przechwycony</string>
+	<string name="netverify_helpview_small_description_barcode">Umieść kod kreskowy przed aparatem aż zostanie automatycznie przechwycony</string>
+	<string name="netverify_helpview_small_description_card">Umieść dokument w ramce aż zostanie automatycznie przechwycony</string>
+	<string name="netverify_helpview_full_description">Umieść dokument w ramce, jak pokazano na powyższej animacji. Przechwytywanie nastąpi automatycznie.\nUpewnij się, że wszystkie dane są czytelne i unikaj odblasków.</string>
+	<string name="netverify_helpview_full_description_template">Umieść kod kreskowy przed aparatem, jak pokazano na powyższej animacji. Przechwytywanie nastąpi automatycznie.\nUpewnij się, że wszystkie dane są czytelne i unikaj odblasków.</string>
+	<string name="netverify_helpview_full_description_barcode">Umieść kod kreskowy przed aparatem, jak pokazano na powyższym obrazku. Przechwytywanie nastąpi automatycznie.</string>
+	<string name="netverify_helpview_full_description_card">Umieść dokument w ramce, aż wszystkie 4 krawędzie zostaną wyrównane, jak pokazano na powyższej animacji. Przechwycenie nastąpi automatycznie.\nUpewnij się, że wszystkie dane są czytelne i unikaj odblasków.</string>
+	<string name="netverify_document_variant_other">Inny format</string>
+	<string name="netverify_document_variant_plastic">Plastikowa karta</string>
+	<string name="netverify_accessibility_nfc_description_start">Sprawdź, czy twój identyfikator ma chip. Jeśli tak, umieść telefon na identyfikatorze, jak pokazano na ilustracji.</string>
+	<string name="face_helpview_continue">Kontynuuj</string>
+	<string name="face_helpview_title_problems">Występują problemy?</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Obróć urządzenie&lt;/b&gt;</string>
+	<string name="face_helpview_landscape_description">Obróć telefon do pozycji pionowej, aby zrobić sobie zdjęcie</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Analiza danych biometrycznych&lt;/b&gt;</string>
+	<string name="netverify_scanview_snackbar_progress">Przetwarzanie dokumentu…</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Nie można przetworzyć Twojego dokumentu, spróbuj ponownie.</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Upewnij się, że wszystkie dane na dokumencie są widoczne i czytelne.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">Przechwycony obraz wygląda jak przód dokumentu. Potwierdź, że jest to tył dokumentu lub ponownie wykonaj zdjęcie.</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Kontynuuj</string>
+	<string name="face_helpview_title_problems">Występują problemy?</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Obróć urządzenie&lt;/b&gt;</string>
+	<string name="face_helpview_landscape_description">Obróć telefon do pozycji pionowej, aby zrobić sobie zdjęcie</string>
+	<string name="zoom_feedback_a_little_too_close">Oddal się trochę</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Oddal się trochę</string>
+	<string name="zoom_feedback_center_face">Wyśrodkuj twarz</string>
+	<string name="zoom_feedback_face_not_found">Dopasuj twarz</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Patrz prosto przed siebie</string>
+	<string name="zoom_feedback_face_not_upright">Trzymaj głowę prosto</string>
+	<string name="zoom_feedback_hold_steady">Nie ruszaj się</string>
+	<string name="zoom_feedback_move_phone_away">Oddal się trochę</string>
+	<string name="zoom_feedback_move_phone_closer">Przybliż się</string>
+	<string name="zoom_feedback_move_phone_even_closer">Trochę bliżej</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Trzymaj urządzenie na wysokości oczu</string>
+	<string name="zoom_feedback_move_tablet_away">Oddal się trochę</string>
+	<string name="zoom_feedback_move_tablet_closer">Przybliż się</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Trzymaj urządzenie na wysokości oczu</string>
+	<string name="zoom_helpview_bad_angle">Trzymaj urządzenie na wysokości oczu i patrz prosto przed siebie</string>
+	<string name="zoom_helpview_bad_lightning">Unikaj cieni i odbić na twarzy</string>
+	<string name="zoom_helpview_general">Postępuj zgodnie z dwuetapowym procesem i dopasuj swoją twarz do ramki. Trzymaj urządzenie na wysokości oczu i patrz prosto w aparat. Twoja twarz zostanie uchwycona automatycznie</string>
+	<string name="zoom_helpview_upfront_title">Uchwyć swoją twarz</string>
+	<string name="zoom_accessibility_cancel_button">Zakończ skanowanie</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="authentication_scanview_title_face"></string>
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_upload_progress">&lt;b&gt;Przesyłanie Twoich dokumentów&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Powinno to zająć tylko kilka sekund, w zależności od Twojego połączenia internetowego</string>
+	<string name="dv_upload_successful">&lt;b&gt;Przesyłanie zakończone pomyślnie&lt;/b&gt;</string>
+	<string name="dv_upload_error">&lt;b&gt;Problemy z przesłaniem&lt;/b&gt;</string>
+	<string name="dv_scanview_title">Skanuj dokument</string>
+	<string name="dv_scanview_title_check">Sprawdź czytelność</string>
+	<string name="dv_scanview_snackbar_check">Upewnij się, że wszystkie dane na dokumencie są w pełni widoczne, bez odblasków i nierozmyte</string>
+	<string name="dv_scanview_retake">Ponów</string>
+	<string name="dv_scanview_continue">Kontynuuj</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Przechwyć %1$s&lt;/b&gt;</string>
+	<string name="dv_helpview_header_document">Dokument</string>
+	<string name="dv_helpview_header_bank_statement">Wyciąg bankowy</string>
+	<string name="dv_helpview_header_credit_card">Karta kredytowa</string>
+	<string name="dv_helpview_header_insurance_card">Karta ubezpieczeniowa</string>
+	<string name="dv_helpview_header_utility_bill">Rachunek za media</string>
+	<string name="dv_helpview_header_cash_advance_application">Wniosek o zaliczkę gotówkową</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Certyfikat uchwał firmowych</string>
+	<string name="dv_helpview_header_credit_card_statement">Wyciąg z karty kredytowej</string>
+	<string name="dv_helpview_header_lease_agreement">Umowa najmu</string>
+	<string name="dv_helpview_header_loan_application">Wniosek o pożyczkę</string>
+	<string name="dv_helpview_header_mortgage_application">Wniosek o kredyt hipoteczny</string>
+	<string name="dv_helpview_header_tax_return">Zwrot podatku</string>
+	<string name="dv_helpview_header_vehicle_title">Tytuł pojazdu</string>
+	<string name="dv_helpview_header_voided_check">Anulowany czek</string>
+	<string name="dv_helpview_header_student_card">Karta studencka</string>
+	<string name="dv_helpview_header_health_care_card">Karta opieki zdrowotnej</string>
+	<string name="dv_helpview_header_council_bill">Rachunek za podatek lokalny</string>
+	<string name="dv_helpview_header_seniors_card">Karta seniora</string>
+	<string name="dv_helpview_header_medicare_card">Karta zdrowia</string>
+	<string name="dv_helpview_header_birth_certificate">Akt urodzenia</string>
+	<string name="dv_helpview_header_working_with_children_check">Potwierdzenie pracy z dziećmi</string>
+	<string name="dv_helpview_header_superannuation_statement">Oświadczenie dot. emerytury</string>
+	<string name="dv_helpview_header_trade_association_card">Karta stowarzyszenia handlowego</string>
+	<string name="dv_helpview_header_school_enrolment_letter">List w sprawie zapisu do szkoły</string>
+	<string name="dv_helpview_header_phone_bill">Rachunek za telefon</string>
+	<string name="dv_helpview_header_social_security_card">Karta ubezpieczenia społecznego</string>
+	-->
+
+</resources>

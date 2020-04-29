@@ -1,4 +1,4 @@
-package com.jumio.sample.java;
+package com.jumio.sample.java.documentverification;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import com.jumio.core.exceptions.MissingPermissionException;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
 import com.jumio.dv.DocumentVerificationSDK;
 import com.jumio.sample.R;
+import com.jumio.sample.java.MainActivity;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

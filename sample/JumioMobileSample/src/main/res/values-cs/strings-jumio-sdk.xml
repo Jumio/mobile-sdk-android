@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_scanview_refocus">Znovu zaostřete prosím</string>
+	<string name="jumio_accessibility_flash_activate">Zapnout blesk</string>
+	<string name="jumio_accessibility_flash_deactivate">Vypnout blesk</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Přepnout na přední kameru</string>
+	<string name="jumio_accessibility_camera_switch_to_back">Přepnout na zadní kameru</string>
+	<string name="jumio_accessibility_loading">Načítá se…</string>
+	<string name="jumio_accessibility_quit_scan">Ukončit skenování</string>
+	<string name="jumio_error_dialog_title">Chyba</string>
+	<string name="jumio_error_network_problems">Při síťové komunikaci došlo k problému.</string>
+	<string name="jumio_error_auth_failed">Ověření selhalo.</string>
+	<string name="jumio_error_device_is_offline">Internetové připojení není k dispozici.</string>
+	<string name="jumio_error_startup_error">Skenování není v tuto chvíli k dispozici, obraťte prosím se na dodavatele aplikace.</string>
+	<string name="jumio_error_cancelled_by_user">Zrušeno koncovým uživatelem</string>
+	<string name="jumio_error_no_camera_connection">Kamera momentálně není k dispozici.</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Certifikát již není platný. Aktualizujte prosím aplikaci.</string>
+	<string name="jumio_error_transaction_already_finished">Transakce již byla dokončena.</string>
+	<string name="jumio_button_retry">Zkusit znovu</string>
+	<string name="jumio_button_cancel">Zrušit</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="netverify_documenttype_passport">Cestovní pas</string>
+	<string name="netverify_documenttype_visa">Vízum</string>
+	<string name="netverify_documenttype_idcard">Průkaz totožnosti</string>
+	<string name="netverify_documenttype_driverlicense">Řidičský průkaz</string>
+	<string name="netverify_front">Přední</string>
+	<string name="netverify_back">Zadní</string>
+	<string name="netverify_inside">Vnitřní</string>
+	<string name="netverify_outside">Vnější</string>
+	<string name="netverify_use_front_side_of_card">POUŽÍT PŘEDNÍ STRANU</string>
+	<string name="netverify_use_back_side_of_card">POUŽÍT ZADNÍ STRANU</string>
+	<string name="netverify_nfc_view_title">NFC</string>
+	<string name="netverify_nfc_header_start">&lt;b&gt; Skenování průkazu &lt;/b&gt;</string>
+	<string name="netverify_nfc_header_download">&lt;b&gt; Extrahování dat &lt;/b&gt;</string>
+	<string name="netverify_nfc_header_finish">&lt;b&gt; Extrakce byla úspěšná &lt;/b&gt;</string>
+	<string name="netverify_nfc_description_start">Zkontrolujte prosím, zda má váš průkaz následující symbol ${icon} a umístěte telefon na průkaz podle instrukcí na obrázku.</string>
+	<string name="netverify_nfc_description_download">Načítám data z vašeho průkazu. Počkejte prosím, než bude proces hotov.</string>
+	<string name="netverify_nfc_requestview_button_text">ŽÁDNÝ SYMBOL NA MÉM PRŮKAZU</string>
+	<string name="netverify_nfc_bac_dialog_title">Chyba ověření</string>
+	<string name="netverify_nfc_bac_dialog_text">Zkontrolujte prosím znovu své údaje a opravte je ručně. Klepnutím na Opakovat obnovíte skenování.</string>
+	<string name="netverify_nfc_bac_dialog_id_number">identifikační číslo</string>
+	<string name="netverify_nfc_bac_dialog_date_of_birth">datum narození</string>
+	<string name="netverify_nfc_bac_dialog_date_of_expiry">datum vypršení platnosti</string>
+	<string name="netverify_nfc_general_error_dialog_title">Chyba čtení</string>
+	<string name="netverify_nfc_general_error_dialog_text">Při nahrávání dat vašeho průkazu došlo k chybě. Stiskněte \"zkusit znovu\" a znovu položte telefon na váš průkaz.</string>
+	<string name="netverify_nfc_enable_dialog_title">Povolit NFC</string>
+	<string name="netverify_nfc_enable_dialog_text">Chcete-li získat více ze svého pasu, klikněte na OK a povolte funkci NFC.</string>
+	<string name="netverify_scan_options_subtitle_type">Vyberte typ dokumentu, který chcete skenovat.</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt; &lt;u&gt; Vyberte svou zemi &lt;/u&gt; &lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt; %1$s &lt;/b&gt; byla nastavena jako země vydání vašich dokumentů.</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt; %1$s &lt;/b&gt; byla nastavena jako země vydání vašich dokumentů. &lt;b&gt; &lt;u&gt; Změnit zemi &lt;/u&gt; &lt;/b&gt;</string>
+	<string name="netverify_countrylist_title">Vyberte zemi, kde byl vydán váš dokument.</string>
+	<string name="netverify_countrylist_empty">V seznamu nejsou žádná data.</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Vaše dokumenty se právě nahrávají.&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">V závislosti na rychlosti vašeho připojení by to mělo trvat jen několik sekund.</string>
+	<string name="netverify_upload_successful">&lt;b&gt; Nahrání proběhlo úspěšně. &lt;/b&gt;</string>
+	<string name="netverify_upload_error">&lt;b&gt; Při nahrávání došlo k chybě. &lt;/b&gt;</string>
+	<string name="netverify_scanview_title">Oskenuj</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_scanview_title_check">Zkontrolujte čitelnost</string>
+	<string name="netverify_scanview_snackbar_check">Ujistěte se, že veškeré údaje na vašem dokumentu jsou viditelné a čitelné, bez odlesků, či rozmazané.</string>
+	<string name="netverify_scanview_retake">Opakovat</string>
+	<string name="netverify_scanview_continue">Pokračovat</string>
+	<string name="netverify_scanview_legal_hint_nld">Před zachycením snímku prosím zakryjte nebo pozměňte své osobní identifikační číslo.</string>
+	<string name="netverify_scanview_legal_hint_kor">Před pořízením snímku zakryjte nebo pozměňte posledních sedm číslic svého rezidenčního čísla.</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Před zachycením snímku prosím zakryjte nebo pozměňte číslo pasu.</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Před zachycením prosím zakryjte nebo pozměňte identifikační číslo.</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Před zachycením prosím zakryjte nebo pozměňte ID a přístupové číslo.</string>
+	<string name="netverify_helpview_progress_text">Krok %1$d z %2$d</string>
+	<string name="netverify_helpview_description_usdl_fallback">Čárový kód dokumentu neobsahoval vaši adresu, otočte dokument a naskenujte přední stranu.</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Pokračujte klepnutím</string>
+	<string name="netverify_helpview_fallback">NELZE VYFOTIT</string>
+	<string name="netverify_helpview_fallback_barcode">MÁM PRŮKAZ BEZ ČÁROVÉHO KÓDU</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt; Skenovat %1$s %2$s &lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt; Zachytit %1$s %2$s &lt;/b&gt;</string>
+	<string name="netverify_helpview_small_description">Umístěte dokument do rámečku, dokud nebude automaticky pořízen snímek.</string>
+	<string name="netverify_helpview_small_description_template">Umístěte dokument před kameru a vyčkejte, dokud nebude automaticky vyfotografován.</string>
+	<string name="netverify_helpview_small_description_barcode">Umístěte čárový kód před kameru a vyčkejte, dokud nebude automaticky vyfotografován.</string>
+	<string name="netverify_helpview_small_description_card">Umístěte dokument do rámečku, dokud nebude automaticky pořízen snímek.</string>
+	<string name="netverify_helpview_full_description">Umístěte dokument do rámečku tak, jak je zobrazeno v animaci výše. K zachycení dojde automaticky. \n Zajistěte, aby všechny údaje byly čitelné a vyhněte se odrazům.</string>
+	<string name="netverify_helpview_full_description_template">Umístěte dokument do rámečku tak, jak je zobrazeno v animaci výše. K zachycení dojde automaticky. \n Ujistěte se, že všechny údaje jsou čitelné a vyhněte se odleskům.</string>
+	<string name="netverify_helpview_full_description_barcode">Umístěte čárový kód před kameru dle znázornění na obrázku výše. K zachycení dojde automaticky.</string>
+	<string name="netverify_helpview_full_description_card">Umístěte dokument do rámečku, dokud nebudou všechny 4 okraje zarovnány tak, jak je zobrazeno v animaci výše. K zachycení dojde automaticky. \n Zajistěte, aby všechny údaje byly čitelné a vyhněte se odrazům.</string>
+	<string name="netverify_document_variant_other">Jiný formát</string>
+	<string name="netverify_document_variant_plastic">Plastová karta</string>
+	<string name="netverify_accessibility_nfc_description_start">Zkontrolujte prosím, zda má váš průkaz čip. Pokud ano, umístěte telefon na průkaz podle instrukcí v obrázku.</string>
+	<string name="face_helpview_landscape_description">Prosím, otočte telefon na výšku, abyste pořídili selfie.</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt; Natočte vaše zařízení &lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Potřebujete poradit?</string>
+	<string name="face_helpview_continue">Pokračujte klepnutím</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Analyzují se biometrické údaje…&lt;/b&gt;</string>
+	<string name="netverify_scanview_snackbar_progress">Dokument se právě zpracovává…</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Váš dokument se nepodařilo zpracovat, prosím, zkuste to znovu.</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Ujistěte se, že veškeré údaje na vašem dokumentu jsou viditelné a čitelné.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">Zachycený obrázek vypadá jako přední strana dokumentu. Potvrďte prosím, že se jedná o zadní část dokumentu, nebo zkuste snímek zachytit znovu.</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">Prosím, otočte telefon na výšku, abyste pořídili selfie.</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt; Natočte vaše zařízení &lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Potřebujete poradit?</string>
+	<string name="face_helpview_continue">Pokračujte klepnutím</string>
+	<string name="zoom_feedback_a_little_too_close">Vraťte se trochu zpět</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Vraťte se trochu zpět</string>
+	<string name="zoom_feedback_center_face">Vycentruj svou tvář</string>
+	<string name="zoom_feedback_face_not_found">Ujistěte se, že váš obličej je v rámečku.</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Dívejte se přímo před sebe</string>
+	<string name="zoom_feedback_face_not_upright">Držte hlavu rovně.</string>
+	<string name="zoom_feedback_hold_steady">Nehýbejte se</string>
+	<string name="zoom_feedback_move_phone_away">Vraťte se trochu zpět</string>
+	<string name="zoom_feedback_move_phone_closer">Přibližte se trochu</string>
+	<string name="zoom_feedback_move_phone_even_closer">Trochu blíž</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Držte fotoaparát v úrovni očí.</string>
+	<string name="zoom_feedback_move_tablet_away">Vraťte se trochu zpět</string>
+	<string name="zoom_feedback_move_tablet_closer">Přibližte se trochu</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Držte fotoaparát v úrovni očí.</string>
+	<string name="zoom_helpview_bad_angle">Držte zařízení na úrovni očí a dívejte se přímo do něj.</string>
+	<string name="zoom_helpview_bad_lightning">Vyvarujte se stínů a odrazů na tváři.</string>
+	<string name="zoom_helpview_general">Postupujte podle následujících instrukcí a zarovnejte obličej s rámečkem. Držte zařízení na úrovni očí a hleďte přímo do kamery. Vaše tvář bude zachycena automaticky.</string>
+	<string name="zoom_helpview_upfront_title">Vyfoť si obličej</string>
+	<string name="zoom_accessibility_cancel_button">Ukončit skenování</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_upload_progress">&lt;b&gt;Vaše dokumenty se právě nahrávají.&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">V závislosti na rychlosti vašeho připojení by to mělo trvat jen několik sekund.</string>
+	<string name="dv_upload_successful">&lt;b&gt; Nahrání proběhlo úspěšně. &lt;/b&gt;</string>
+	<string name="dv_upload_error">&lt;b&gt; Při nahrávání došlo k chybě. &lt;/b&gt;</string>
+	<string name="dv_scanview_title">Oskenuj</string>
+	<string name="dv_scanview_title_check">Zkontrolujte čitelnost</string>
+	<string name="dv_scanview_snackbar_check">Ujistěte se, že veškeré údaje na vašem dokumentu jsou viditelné a čitelné, bez odlesků, či rozmazané.</string>
+	<string name="dv_scanview_retake">Opakovat</string>
+	<string name="dv_scanview_continue">Pokračovat</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt; Zachytit %1$s &lt;/b&gt;</string>
+	<string name="dv_helpview_header_document">Dokument</string>
+	<string name="dv_helpview_header_bank_statement">Výpis z bankovního účtu</string>
+	<string name="dv_helpview_header_credit_card">Platební karta</string>
+	<string name="dv_helpview_header_insurance_card">Karta pojištěnce</string>
+	<string name="dv_helpview_header_utility_bill">SIPO/Inkaso</string>
+	<string name="dv_helpview_header_cash_advance_application">Žádost o hotovostní zálohu</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Plná moc</string>
+	<string name="dv_helpview_header_credit_card_statement">Výpis z kreditní karty</string>
+	<string name="dv_helpview_header_lease_agreement">Smlouva o pronájmu</string>
+	<string name="dv_helpview_header_loan_application">Žádost o půjčku</string>
+	<string name="dv_helpview_header_mortgage_application">Žádost o hypotéku</string>
+	<string name="dv_helpview_header_tax_return">Daňové přiznání</string>
+	<string name="dv_helpview_header_vehicle_title">Osvědčení o registraci vozidla</string>
+	<string name="dv_helpview_header_voided_check">Neplatná osvědčení</string>
+	<string name="dv_helpview_header_student_card">Studentský průkaz</string>
+	<string name="dv_helpview_header_health_care_card">Zdravotní průkaz pojištěnce</string>
+	<string name="dv_helpview_header_council_bill">Majetková daň</string>
+	<string name="dv_helpview_header_seniors_card">Průkaz totožnosti pro seniory pracující nad předepsaný rámec (Seniors card)</string>
+	<string name="dv_helpview_header_medicare_card">Zdravotní průkaz pojištěnce</string>
+	<string name="dv_helpview_header_birth_certificate">Rodný list</string>
+	<string name="dv_helpview_header_working_with_children_check">Osvědčení pro práci s dětmi</string>
+	<string name="dv_helpview_header_superannuation_statement">Výkaz starobního důchodu nebo podobného zabezpečení</string>
+	<string name="dv_helpview_header_trade_association_card">Průkaz totožnosti člena obchodního sdružení</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Potvrzení o přijetí do studia</string>
+	<string name="dv_helpview_header_phone_bill">Účet za telefon</string>
+	<string name="dv_helpview_header_social_security_card">Průkaz sociálního zabezpečení</string>
+	-->
+
+</resources>

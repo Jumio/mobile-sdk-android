@@ -1,4 +1,4 @@
-package com.jumio.sample.java;
+package com.jumio.sample.java.authentication;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -42,6 +42,7 @@ import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.MissingPermissionException;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
 import com.jumio.sample.R;
+import com.jumio.sample.java.MainActivity;
 import com.jumio.sdk.custom.SDKNotConfiguredException;
 
 import androidx.annotation.NonNull;
@@ -109,7 +110,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 		enrollmentTransactionReference = rootView.findViewById(R.id.etEnrollmentTransactionReference);
 		startCustomScanButton = rootView.findViewById(R.id.startAuthenticationCustomButton);
 		cancelCustomScanButton = rootView.findViewById(R.id.stopAuthenticationCustomButton);
-        loadingIndicator = rootView.findViewById(R.id.loadingIndicator);
+        loadingIndicator = rootView.findViewById(R.id.fragment_nv_custom_loading_indicator);
         faceButton = rootView.findViewById(R.id.faceButton);
         errorRetryButton = rootView.findViewById(R.id.errorRetryButton);
 		partRetryButton = rootView.findViewById(R.id.partRetryButton);

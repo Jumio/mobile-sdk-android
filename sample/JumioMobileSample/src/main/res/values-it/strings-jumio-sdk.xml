@@ -64,7 +64,7 @@
 	<string name="netverify_scanview_title_face"></string>
 	<string name="netverify_scanview_title_check">Controllare la leggibilità</string>
 	<string name="netverify_scanview_snackbar_check">Assicuratevi che tutti i dati dei vostri documenti siano perfettamente visibili, senza riflessi e sfocature</string>
-	<string name="netverify_scanview_retake">RIFARE</string>
+	<string name="netverify_scanview_retake">Rifare</string>
 	<string name="netverify_scanview_continue">Continua</string>
 	<string name="netverify_scanview_legal_hint_nld">Si prega di censurare il vostro codice fiscale prima di scattare</string>
 	<string name="netverify_scanview_legal_hint_kor">Censurare la seconda parte del vostro Numero di Registrazione di Residenza prima di scattare</string>
@@ -72,9 +72,9 @@
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Si prega di censurare il numero della carta d\'identità prima di scattare</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Si prega di censurare la carta d\'identità e numero di accesso prima di scattare</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Analisi dei dati biometrici&lt;/b&gt;</string>
-	<string name="netverify_helpview_progress_text" formatted="false">Fase %1$d di %2$d</string>
+	<string name="netverify_helpview_progress_text">Fase %1$d di %2$d</string>
 	<string name="netverify_helpview_description_usdl_fallback">Il codice a barre del vostro documento non include il vostro indirizzo, girate il vostro documento e scansionate il lato frontale</string>
-	<string name="netverify_helpview_usdl_fallback_continue">CONTINUARE</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Premere per continuare</string>
 	<string name="netverify_helpview_fallback">L\'ACQUISIZIONE NON STA FUNZIONANDO</string>
 	<string name="netverify_helpview_fallback_barcode">NESSUN CODICE A BARRE</string>
 	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Scansionare %1$s %2$s&lt;/b&gt;</string>
@@ -83,19 +83,19 @@
 	<string name="netverify_helpview_small_description_template">Posizionate il vostro documento davanti alla fotocamera fino a quando non verrà acquisito automaticamente</string>
 	<string name="netverify_helpview_small_description_barcode">Posizionate il codice a barre davanti alla fotocamera fino a quando non verrà acquisito automaticamente</string>
 	<string name="netverify_helpview_small_description_card">Posizionate il vostro documento all\'interno del riquadro fino a quando non verrà acquisito automaticamente</string>
-	<string name="netverify_helpview_full_description">Posizionate il vostro documento all\'interno del riquadro come mostrato nell\'animazione in alto. L\'acquisizione avviene automaticamente. \n\nAssicuratevi che tutti i dati siano leggibili ed evitate riflessi.</string>
-	<string name="netverify_helpview_full_description_template">Posizionate il vostro documento davanti alla fotocamera. L\'acquisizione avviene automaticamente. \n\nAssicuratevi che tutti i dati siano leggibili ed evitate riflessi.</string>
+	<string name="netverify_helpview_full_description">Posizionate il vostro documento all\'interno del riquadro come mostrato nell\'animazione in alto. L\'acquisizione avviene automaticamente. \nAssicuratevi che tutti i dati siano leggibili ed evitate riflessi.</string>
+	<string name="netverify_helpview_full_description_template">Posizionate il vostro documento davanti alla fotocamera come mostrato nell\'animazione in alto. L\'acquisizione avviene automaticamente. \nAssicuratevi che tutti i dati siano leggibili ed evitate riflessi.</string>
 	<string name="netverify_helpview_full_description_barcode">Posizionate il codice a barre davanti alla fotocamera. L\'acquisizione avviene automaticamente.</string>
-	<string name="netverify_helpview_full_description_card">Posizionate il vostro documento all\'interno del riquadro finché tutti e 4 i bordi non saranno allineati come mostrato nell\'animazione in alto. L\'acquisizione avviene automaticamente. \n\nAssicuratevi che tutti i dati siano leggibili ed evitate riflessi.</string>
+	<string name="netverify_helpview_full_description_card">Posizionate il vostro documento all\'interno del riquadro finché tutti e 4 i bordi non saranno allineati come mostrato nell\'animazione in alto. L\'acquisizione avviene automaticamente. \nAssicuratevi che tutti i dati siano leggibili ed evitate riflessi.</string>
 	<string name="netverify_document_variant_other">Altro formato</string>
 	<string name="netverify_document_variant_plastic">Tessera in plastica</string>
 	<string name="netverify_accessibility_nfc_description_start">Si prega di controllare che la vostra carta abbia un microchip. In caso affermativo, posizionare il vostro telefono sulla carta come mostrato.</string>
 	<string name="face_helpview_title_problems">Problemi riscontrati?</string>
 	<string name="face_helpview_continue">Premere per continuare</string>
-	<string name="face_helpview_landscape_header"><b>Ruotare il vostro dispositivo</b></string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Ruotare il vostro dispositivo&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Si prega di ruotare il vostro telefono in modalità ritratto per scattare un selfie</string>
 	<string name="netverify_scanview_snackbar_check_confirmation">Assicurati che tutti i dati sul tuo documento siano visibili e leggibili.</string>
-	<string name="netverify_scanview_snackbar_progress">Elaborazione documento...</string>
+	<string name="netverify_scanview_snackbar_progress">Elaborazione documento…</string>
 	<string name="netverify_scanview_snackbar_check_process_error">Non è stato possibile elaborare il tuo documento, riprova.</string>
 	<string name="netverify_scanview_snackbar_check_face_on_back">L\'immagine acquisita ha l\'aspetto della parte anteriore del documento. Si prega di confermare che questo è il retro del documento o riacquisire l\'immagine.</string>
 	-->
@@ -104,7 +104,7 @@
 	<!--
 	<string name="face_helpview_title_problems">Problemi riscontrati?</string>
 	<string name="face_helpview_continue">Premere per continuare</string>
-	<string name="face_helpview_landscape_header"><b>Ruotare il vostro dispositivo</b></string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Ruotare il vostro dispositivo&lt;/b&gt;</string>
 	<string name="face_helpview_landscape_description">Si prega di ruotare il vostro telefono in modalità ritratto per scattare un selfie</string>
 	<string name="zoom_accessibility_cancel_button">Uscire dalla scansione</string>
 	<string name="zoom_feedback_a_little_too_close">Allontanarsi di poco</string>
@@ -129,6 +129,7 @@
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
 	<!--
+	<string name="authentication_scanview_title_face"></string>
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
@@ -140,7 +141,7 @@
 	<string name="dv_scanview_title">Scansiona</string>
 	<string name="dv_scanview_title_check">Controllare la leggibilità</string>
 	<string name="dv_scanview_snackbar_check">Assicuratevi che tutti i dati dei vostri documenti siano perfettamente visibili, senza riflessi e sfocature</string>
-	<string name="dv_scanview_retake">RIFARE</string>
+	<string name="dv_scanview_retake">Rifare</string>
 	<string name="dv_scanview_continue">Continua</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;Acquisire %1$s&lt;/b&gt;</string>
 	<string name="dv_helpview_header_document">Documento</string>

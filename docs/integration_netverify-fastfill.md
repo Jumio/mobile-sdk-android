@@ -17,7 +17,7 @@ Jumio’s Netverify® ID Verification allows businesses to establish the genuine
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 3.5.0
+For technical changes, please read our [transition guide](transition-guide_netverify-fastfill.md) SDK version: 3.6.0
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Netverify.
@@ -37,28 +37,31 @@ You can specify your own theme (see chapter [Customization](#customization)). Th
 ## Dependencies
 
 If an optional module is __not linked__, the __scan method is not available__ but the library size is reduced.
-The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify, BAM, Document Verification and Authentication included is currently __26.56 MB__.
+The [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/) apk size with the products Netverify, BAM, Document Verification and Authentication included is currently around __18 MB__.
 
-|Dependency        | Mandatory           | Description            | Size (Jumio libs only) |
-| ---------------- |:-------------------:|:------------------------|:---------:|
-|com.jumio.android:core:3.5.0@aar                     | x | Jumio Core library		                         			 | 4.11 MB |
-|com.jumio.android:nv:3.5.0@aar                       | x | Netverify library 		                         			 | 537.61 KB |
-|androidx.appcompat:appcompat:1.1.0                   | x | Android appcompat library	                           | - |
-|androidx.cardview:cardview:1.0.0                     | x | Android cardview library (Netverify only)	           | - |
-|androidx.room:room-runtime:2.2.3                     | x | Android database object mapping library	         		 | - |
-|androidx.constraintlayout:constraintlayout:1.1.3     | x | Android constraint layout library 			             | - |
-|com.google.android.gms:play-services-vision:19.0.0   |   | Barcode Scanning 			                 							 | - |
-|com.jumio.android:face:3.5.0@aar                     |   | Face library	                                 			 | 95.43 KB |
-|com.facetec:zoom-authentication:8.0.11@aar            |   | Zoom face scanning library	                         | 9.00 MB |
-|com.google.android.material:material:1.0.0           |   | Android material design library	                 		 | - |
-|com.jumio.android:javadoc:3.5.0                      |   | Jumio SDK Javadoc			                 							 | - |
-|com.jumio.android:nv-barcode:3.5.0@aar               |   | US / CAN Barcode Scanning                            | 2.25 MB |
-|com.jumio.android:nv-barcode-vision:3.5.0@aar        |   | US / CAN Barcode Scanning Alternative (reduced size) | 39.44 KB |
-|com.jumio.android:nv-mrz:3.5.0@aar                   |   | MRZ scanning                                         | 2.09 MB |
-|com.jumio.android:nv-nfc:3.5.0@aar                   |   | eMRTD Scanning                                       | 788.14 KB |
-|org.bouncycastle:bcprov-jdk15on:1.61                 |   | eMRTD Scanning                                       | - |
-|net.sf.scuba:scuba-sc-android:0.0.18                 |   | eMRTD Scanning                                       | - |
-|com.jumio.android:nv-ocr:3.5.0@aar                   |   | Template Matcher                                     | 1.08 MB |
+|Dependency       																	| Mandatory | Description          					  										| Size (Jumio libs only) |
+| --------------------------------------------------|:---------:|:----------------------------------------------------|:----------------------:|
+|com.jumio.android:core:3.6.0@aar                     			| x | Jumio Core library		                         			| 4.09 MB |
+|com.jumio.android:nv:3.6.0@aar                       			| x | Netverify library 		                         			| 575.98 KB |
+|androidx.appcompat:appcompat:1.1.0                   			| x | Android appcompat library	                     			| - |
+|androidx.cardview:cardview:1.0.0                     			| x | Android cardview library (Netverify only)	     			| - |
+|androidx.room:room-runtime:2.2.3                     			| x | Android database object mapping library	       			| - |
+|androidx.constraintlayout:constraintlayout:1.1.3     			| x | Android constraint layout library 			       			| - |
+|com.google.android.gms:play-services-vision:19.0.0   			|   | Barcode Scanning 			                 				 			| - |
+|com.jumio.android:face:3.6.0@aar                     			|   | Face library	                                 			| 100.56 KB |
+|com.facetec:zoom-authentication:8.0.11@aar           			|   | Zoom face scanning library	                   			| 9.00 MB |
+|com.google.android.material:material:1.1.0           			| x | Android material design library	               			| - |
+|androidx.localbroadcastmanager:localbroadcastmanager:1.0.0 | x | Android local broadcast manager library             | - |
+|com.jumio.android:javadoc:3.6.0                      			|   | Jumio SDK Javadoc			                 							| - |
+|com.jumio.android:nv-barcode:3.6.0@aar               			|   | US / CAN Barcode Scanning                           | 2.29 MB |
+|com.jumio.android:nv-barcode-vision:3.6.0@aar        			|   | US / CAN Barcode Scanning Alternative (reduced size)| 35.04 KB |
+|com.jumio.android:nv-mrz:3.6.0@aar                   			|   | MRZ scanning                                        | 2.09 MB |
+|com.jumio.android:nv-nfc:3.6.0@aar                   			|   | eMRTD Scanning                                      | 481.12 KB |
+|org.jmrtd:jmrtd:0.7.18                               			|   | eMRTD Scanning                                      | - |
+|org.ejbca.cvc:cert-cvc:1.4.6                         			|   | eMRTD Scanning                                      | - |
+|org.bouncycastle:bcprov-jdk15on:1.64                				|   | eMRTD Scanning                                      | - |
+|net.sf.scuba:scuba-sc-android:0.0.18                 			|   | eMRTD Scanning                                      | - |
+|com.jumio.android:nv-ocr:3.6.0@aar                   			|   | Template Matcher                                    | 1.08 MB |
 
 #### Dependency conflicts
 If the dependency `com.jumio.android:nv-barcode-vision` is used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues (see [AndroidManifest.xml](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/AndroidManifest.xml) in Sample app):
@@ -70,7 +73,7 @@ If the dependency `com.jumio.android:nv-barcode-vision` is used in the applicati
 ```
 
 #### Operationality
-The operationality of the Google Mobile Vision API can be checked with the following SDK method (see [NetverifyFragment](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/java/NetverifyFragment.java)  in Sample app):
+The operationality of the Google Mobile Vision API can be checked with the following SDK method (see [NetverifyFragment](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/java/netverify/NetverifyFragment.java)  in Sample app):
 ```
 GoogleVisionStatus NetverifySDK.isMobileVisionOperational(Activity activity, int requestCode);
 ```
@@ -95,7 +98,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use Netverify and BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:3.5.0@aar"
+implementation "com.jumio.android:bam:3.6.0@aar"
 ```
 
 #### Root detection
@@ -394,7 +397,11 @@ The first letter (A-J) represents the error case. The remaining characters are r
 Netverify can be also implemented as a custom scan view. This means that only the scan view (including the scan overlays) are provided by the SDK.
 The handling of the lifecycle, document selection, readability confirmation, intermediate callbacks, and all other steps necessary to complete a scan have to be handled by the client application that implements the SDK.
 
-**Note:** The new 3D face liveness capturing technology is not optimised for tablets. When using Identity Verification, the selfie scanner will fallback to a simple face capturing functionality instead. Portrait orientation support is required in your app.
+The following sequence diagram outlines the components, callbacks and user flow for a basic Netverify scan:
+
+![Custom UI Happy Path Diagram](images/custom_ui_happy_path_diagram.jpg)
+
+**Note:** The new 3D face liveness capturing technology is not optimized for tablets. When using Identity Verification, the selfie scanner will fallback to a simple face capturing functionality instead. Portrait orientation support is required in your app.
 
 To use the custom scan view with a plain scanning user interface, specify an instance of your class which implements the [NetverifyCustomSDKInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanInterface.html). You will receive a [NetverifyCustomSDKController](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKController.html) object.
 

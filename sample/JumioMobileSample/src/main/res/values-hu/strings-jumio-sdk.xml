@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_scanview_refocus">Kérjük, koncentráljon újra</string>
+	<string name="jumio_accessibility_flash_activate">Vaku bekapcsolása</string>
+	<string name="jumio_accessibility_flash_deactivate">Vaku kikapcsolása</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Váltás az előlapi kamerára</string>
+	<string name="jumio_accessibility_camera_switch_to_back">Váltás a hátlapi kamerára</string>
+	<string name="jumio_accessibility_loading">Betöltés</string>
+	<string name="jumio_accessibility_quit_scan">Kilépés a beolvasásból</string>
+	<string name="jumio_error_dialog_title">Hiba</string>
+	<string name="jumio_error_network_problems">Hálózati kommunikációs problémába ütköztünk</string>
+	<string name="jumio_error_auth_failed">A hitelesítés sikertelen</string>
+	<string name="jumio_error_device_is_offline">Nincs elérhető internetkapcsolat</string>
+	<string name="jumio_error_startup_error">A beolvasás jelenleg nem érhető el, vegye fel a kapcsolatot az alkalmazás gyártójával</string>
+	<string name="jumio_error_cancelled_by_user">Végfelhasználó által megszakítva</string>
+	<string name="jumio_error_no_camera_connection">A kamera jelenleg nem érhető el</string>
+	<string name="jumio_error_certificate_not_valid_anymore">A tanúsítvány már nem érvényes. Frissítse az alkalmazást</string>
+	<string name="jumio_error_transaction_already_finished">A tranzakció már befejeződött</string>
+	<string name="jumio_button_retry">Újra</string>
+	<string name="jumio_button_cancel">Mégse</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="netverify_documenttype_passport">Útlevél</string>
+	<string name="netverify_documenttype_visa">Vízum</string>
+	<string name="netverify_documenttype_idcard">Személyazonosító igazolvány</string>
+	<string name="netverify_documenttype_driverlicense">Vezetői engedély</string>
+	<string name="netverify_front">Előlap</string>
+	<string name="netverify_back">Hátlap</string>
+	<string name="netverify_inside">Belső</string>
+	<string name="netverify_outside">Külső</string>
+	<string name="netverify_use_front_side_of_card">ELŐLAP HASZNÁLATA</string>
+	<string name="netverify_use_back_side_of_card">HÁTLAP HASZNÁLATA</string>
+	<string name="netverify_nfc_view_title">NFC</string>
+	<string name="netverify_nfc_header_start">&lt;b&gt;Személyazonosító igazolvány beolvasása &lt;/b&gt;</string>
+	<string name="netverify_nfc_header_download">&lt;b&gt;Adatok kigyűjtése&lt;/b&gt;</string>
+	<string name="netverify_nfc_header_finish">&lt;b&gt;Kigyűjtés sikeres&lt;/b&gt;</string>
+	<string name="netverify_nfc_description_start">Ellenőrizze, hogy személyazonosító igazolványán látható-e az ${icon} szimbólum  és helyezze a telefont az ábrán látható módon a személyazonosító igazolváyra az azonosítás elindításához</string>
+	<string name="netverify_nfc_description_download">Az adatok olvasása a személyazonosító igazolványból. Várjon, amíg a folyamat befejeződik</string>
+	<string name="netverify_nfc_requestview_button_text">NINCS SZIMBÓLUM AZ IGAZOLVÁNYOMON</string>
+	<string name="netverify_nfc_bac_dialog_title">Hitelesítési hiba</string>
+	<string name="netverify_nfc_bac_dialog_text">Kérjük, ellenőrizze újra a személyazonosító igazolvány adatait, és manuálisan javítsa ki. A beolvasás folytatásához kattintson az Újra gombra</string>
+	<string name="netverify_nfc_bac_dialog_id_number">Személyazonosító igazolvány száma</string>
+	<string name="netverify_nfc_bac_dialog_date_of_birth">születési dátum</string>
+	<string name="netverify_nfc_bac_dialog_date_of_expiry">lejárat dátuma</string>
+	<string name="netverify_nfc_general_error_dialog_title">Olvasási hiba</string>
+	<string name="netverify_nfc_general_error_dialog_text">Hiba történt a személyaszonosító igazolvány adatainak olvasása közben. Nyomja meg az újra gombot és helyezze a telefont ismét az igazolványra</string>
+	<string name="netverify_nfc_enable_dialog_title">NFC engedélyezése</string>
+	<string name="netverify_nfc_enable_dialog_text">Ha többet szeretne kihozni útlevéléből, kattintson az OK gombra, és engedélyezze telefonja NFC-funkcióját</string>
+	<string name="netverify_scan_options_subtitle_type">Válassza ki a beolvasni kívánt dokumentum típusát</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt; &lt;u&gt; Válassza ki az országát &lt;/u&gt; &lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; be van állítva az Ön dokumentumainak kibocsátó országaként.</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; be van állítva az Ön dokumentumainak kibocsátó országaként. &lt;b&gt;&lt;u&gt;Ország módosítása&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_countrylist_title">Válassza ki a dokumentumot kiállító országot</string>
+	<string name="netverify_countrylist_empty">Nincs adat a listában</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Dokumentumok feltöltése&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">Ez a hálózati kapcsolattól függően csak pár másodpercet vesz igénybe</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Feltöltés sikeres&lt;/b&gt;</string>
+	<string name="netverify_upload_error">&lt;b&gt;Problémák feltöltése&lt;/b&gt;</string>
+	<string name="netverify_scanview_title">Beolvasás</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_scanview_title_check">Olvashatóság ellenőrzése</string>
+	<string name="netverify_scanview_snackbar_check">Győződjön meg arról, hogy a dokumentumon szereplő összes adat jól látható, tükröződésmentes és nincs elmosódva</string>
+	<string name="netverify_scanview_retake">Újra készítés</string>
+	<string name="netverify_scanview_continue">Tovább</string>
+	<string name="netverify_scanview_legal_hint_nld">A rögzítés előtt kérjük, rövidítse le a BSN számot</string>
+	<string name="netverify_scanview_legal_hint_kor">A rögzítés előtt rövidítse le a lakossági regisztrációs szám második blokkját</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">A rögzítés előtt kérjük, rövidítse le az útlevél számát</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">A rögzítés előtt kérjük, rövidítse le az azonosítószámot</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">A rögzítés előtt kérjük, rövidítse le az azonosítót és a hozzáférési számot</string>
+	<string name="netverify_helpview_progress_text">%1$d / %2$d lépés</string>
+	<string name="netverify_helpview_description_usdl_fallback">A dokumentum vonalkódja nem tartalmazta a címet, fordítsa meg a dokumentumot, és olvassa be az előlapot</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Tovább</string>
+	<string name="netverify_helpview_fallback">RÖGZÍTÉS NEM MŰKÖDIK</string>
+	<string name="netverify_helpview_fallback_barcode">NINCS VONALKÓD AZ IGAZOLVÁNYOMON</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Beolvasás %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;Rögzítés %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_description">Helyezze a dokumentumot a keretbe, amíg az rögzítésre nem kerül.</string>
+	<string name="netverify_helpview_small_description_template">Helyezze a dokumentumot a kamera elé, amíg az rögzítésre nem kerül.</string>
+	<string name="netverify_helpview_small_description_barcode">Helyezze a vonalkódot a kamera elé, amíg az rögzítésre nem kerül.</string>
+	<string name="netverify_helpview_small_description_card">Helyezze a dokumentumot a keretbe, amíg az rögzítésre nem kerül.</string>
+	<string name="netverify_helpview_full_description">Helyezze a dokumentumot a keretbe a fenti animáción látható módon. A rögzítés automatikusan megtörténik. \n Gondoskodjon arról, hogy minden adat olvasható legyen, és kerülje a tükröződéseket.</string>
+	<string name="netverify_helpview_full_description_template">Helyezze a dokumentumot a keretbe a fenti animáción látható módon. A rögzítés automatikusan megtörténik. \nGondoskodjon arról, hogy minden adat olvasható legyen, és kerülje a tükröződéseket.</string>
+	<string name="netverify_helpview_full_description_barcode">Helyezze a vonalkódot a kamera elé, amint az a fenti képen látható. A rögzítés automatikusan megtörténik.</string>
+	<string name="netverify_helpview_full_description_card">Helyezze a dokumentumot a keretbe úgy, hogy mind a 4 él illeszkedjen a fenti animáción látható módon. A rögzítés automatikusan megtörténik. \nGondoskodjon arról, hogy minden adat olvasható legyen, és kerülje a tükröződéseket.</string>
+	<string name="netverify_document_variant_other">Egyéb formátum</string>
+	<string name="netverify_document_variant_plastic">Műanyag kártya</string>
+	<string name="netverify_accessibility_nfc_description_start">Ellenőrizze, hogy a személyazonosító igazolványában van-e chip. Ha igen, helyezze a telefont az ábra szerint az igazolványra.</string>
+	<string name="face_helpview_title_problems">Problémákat tapasztal?</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Forgassa el a készüléket&lt;/b&gt;</string>
+	<string name="face_helpview_landscape_description">Kérjük, hogy szelfi készítéséhez forgassa a telefont álló helyzetbe</string>
+	<string name="face_helpview_continue">Tovább</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Biometrikus adatok elemzése&lt;/b&gt;</string>
+	<string name="netverify_scanview_snackbar_progress">Dokumentum feldolgozása…</string>
+	<string name="netverify_scanview_snackbar_check_process_error">A dokumentumot nem sikerült feldolgozni, próbálkozzon újra.</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Győződjön meg arról, hogy a dokumentum minden adata látható és olvasható.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">A rögzített kép úgy néz ki, mint a dokumentum eleje. Kérjük, erősítse meg, hogy ez a dokumentum hátulja, vagy készítse el ismét a képet.</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_title_problems">Problémákat tapasztal?</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Forgassa el a készüléket&lt;/b&gt;</string>
+	<string name="face_helpview_landscape_description">Kérjük, hogy szelfi készítéséhez forgassa a telefont álló helyzetbe</string>
+	<string name="face_helpview_continue">Tovább</string>
+	<string name="zoom_feedback_a_little_too_close">Lépjen vissza egy kicsit</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Lépjen vissza egy kicsit</string>
+	<string name="zoom_feedback_center_face">Igazítsa az arcát középre</string>
+	<string name="zoom_feedback_face_not_found">Igazítsa az arcát a keretbe</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Nézzen egyenesen előre</string>
+	<string name="zoom_feedback_face_not_upright">Tartsa egyenesen a fejét</string>
+	<string name="zoom_feedback_hold_steady">Tartsa mozdulatanul</string>
+	<string name="zoom_feedback_move_phone_away">Lépjen vissza egy kicsit</string>
+	<string name="zoom_feedback_move_phone_closer">Menjen egy kicsit közelebb</string>
+	<string name="zoom_feedback_move_phone_even_closer">Egy kicsit közelebb</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Tartsa a készüléket szemmagasságban</string>
+	<string name="zoom_feedback_move_tablet_away">Lépjen vissza egy kicsit</string>
+	<string name="zoom_feedback_move_tablet_closer">Menjen egy kicsit közelebb</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Tartsa a készüléket szemmagasságban</string>
+	<string name="zoom_helpview_bad_angle">Tartsa a készüléket szemmagasságban és egyenesen nézzen bele</string>
+	<string name="zoom_helpview_bad_lightning">Kerülje az árnyékokat és a tükröződéseket az arcán</string>
+	<string name="zoom_helpview_general">Kövesse a két lépéses folyamatot és Igazítsa arcát a kerethez. Tartsa az eszközt szemmagasságban és nézzen egyenesen a kamerába. Az arca automatikusan rögzítésre kerül.</string>
+	<string name="zoom_helpview_upfront_title">Arckép készítése</string>
+	<string name="zoom_accessibility_cancel_button">Kilépés a beolvasásból</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="authentication_scanview_title_face"></string>
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_upload_progress">&lt;b&gt;Dokumentumok feltöltése&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Ez a hálózati kapcsolattól függően csak pár másodpercet vesz igénybe</string>
+	<string name="dv_upload_successful">&lt;b&gt;Feltöltés sikeres&lt;/b&gt;</string>
+	<string name="dv_upload_error">&lt;b&gt;Problémák feltöltése&lt;/b&gt;</string>
+	<string name="dv_scanview_title">Beolvasás</string>
+	<string name="dv_scanview_title_check">Olvashatóság ellenőrzése</string>
+	<string name="dv_scanview_snackbar_check">Győződjön meg arról, hogy a dokumentumon szereplő összes adat jól látható, tükröződésmentes és nincs elmosódva</string>
+	<string name="dv_scanview_retake">ÚJRA KÉSZÍTÉS</string>
+	<string name="dv_scanview_continue">Tovább</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Rögzítés %1$s&lt;/b&gt;</string>
+	<string name="dv_helpview_header_document">Dokumentum</string>
+	<string name="dv_helpview_header_bank_statement">Bankszámlakivonat</string>
+	<string name="dv_helpview_header_credit_card">Hitelkártya</string>
+	<string name="dv_helpview_header_insurance_card">Biztosítási kártya</string>
+	<string name="dv_helpview_header_utility_bill">Közüzemi számla</string>
+	<string name="dv_helpview_header_cash_advance_application">Készpénzelőleg-kérelem</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Testületi döntés tanúsítvány</string>
+	<string name="dv_helpview_header_credit_card_statement">Hitelkártya kimutatás</string>
+	<string name="dv_helpview_header_lease_agreement">Bérleti szerződés</string>
+	<string name="dv_helpview_header_loan_application">Hiteligénylés</string>
+	<string name="dv_helpview_header_mortgage_application">Jelzáloghitel-kérelem</string>
+	<string name="dv_helpview_header_tax_return">Adóbevallás</string>
+	<string name="dv_helpview_header_vehicle_title">Jármű tulajdonjoga</string>
+	<string name="dv_helpview_header_voided_check">Érvénytelenített csekk</string>
+	<string name="dv_helpview_header_student_card">Diákigazolvány</string>
+	<string name="dv_helpview_header_health_care_card">Egészségügyi kártya</string>
+	<string name="dv_helpview_header_council_bill">Önkormányzati előterjesztés</string>
+	<string name="dv_helpview_header_seniors_card">Nyugdíjaskártya</string>
+	<string name="dv_helpview_header_medicare_card">Medicare kártya</string>
+	<string name="dv_helpview_header_birth_certificate">Születési anyakönyvi kivonat</string>
+	<string name="dv_helpview_header_working_with_children_check">Gyermekekkel való munka ellenőrzése</string>
+	<string name="dv_helpview_header_superannuation_statement">Magánnyugdíj kimutatás</string>
+	<string name="dv_helpview_header_trade_association_card">Szakmai szövetség tagkártya</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Iskolai beiratkozási levél</string>
+	<string name="dv_helpview_header_phone_bill">Telefonszámla</string>
+	<string name="dv_helpview_header_social_security_card">Társadalombiztosítási kártya</string>
+	-->
+
+</resources>

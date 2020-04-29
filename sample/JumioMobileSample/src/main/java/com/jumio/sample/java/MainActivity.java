@@ -11,6 +11,13 @@ import com.jumio.MobileSDK;
 import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.nv.NetverifySDK;
 import com.jumio.sample.R;
+import com.jumio.sample.java.netverify.customui.NetverifyCustomActivity;
+import com.jumio.sample.java.netverify.NetverifyFragment;
+import com.jumio.sample.java.authentication.AuthenticationCustomFragment;
+import com.jumio.sample.java.authentication.AuthenticationFragment;
+import com.jumio.sample.java.bam.BamCustomFragment;
+import com.jumio.sample.java.bam.BamFragment;
+import com.jumio.sample.java.documentverification.DocumentVerificationFragment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -53,15 +60,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		Toolbar toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
-		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		DrawerLayout drawer = findViewById(R.id.drawer_layout);
 		ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 		drawer.addDrawerListener(drawerToggle);
 		drawerToggle.syncState();
 
-		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+		NavigationView navigationView = findViewById(R.id.nav_view);
 		if (navigationView != null) {
 			Menu menu = navigationView.getMenu();
 			menu.findItem(R.id.nav_sdk).setTitle(MobileSDK.getSDKVersion());
@@ -69,25 +76,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 			navigationView.setNavigationItemSelectedListener(this);
 			navigationView.setItemIconTintList(null);
 		}
-
-
 	}
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == NetverifySDK.REQUEST_CODE_NFC_DETECTED) {
 			Fragment fragment = getSupportFragmentManager().getFragments().get(0);
-			if(fragment instanceof NetverifyCustomFragment) {
-				fragment.onActivityResult(requestCode, resultCode, data);
-			}
 		}
-
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	@Override
 	public void onBackPressed() {
-		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		DrawerLayout drawer = findViewById(R.id.drawer_layout);
 		if (drawer.isDrawerOpen(GravityCompat.START)) {
 			drawer.closeDrawer(GravityCompat.START);
 		} else {
@@ -128,12 +129,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 				switchFragment(nvFragment);
 				break;
 			case R.id.nav_netverify_custom:
-				NetverifyCustomFragment nvCustomFragment = new NetverifyCustomFragment();
+				Intent nvCustomActivity = new Intent(getApplicationContext(), NetverifyCustomActivity.class);
 				bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN);
 				bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET);
 				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER);
-				nvCustomFragment.setArguments(bundle);
-				switchFragment(nvCustomFragment);
+				nvCustomActivity.putExtras(bundle);
+				startActivity(nvCustomActivity);
 				break;
 			case R.id.nav_authentication:
 				AuthenticationFragment authFragment = new AuthenticationFragment();
@@ -183,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 				break;
 		}
 
-		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		DrawerLayout drawer = findViewById(R.id.drawer_layout);
 		drawer.closeDrawer(GravityCompat.START);
 		return true;
 	}

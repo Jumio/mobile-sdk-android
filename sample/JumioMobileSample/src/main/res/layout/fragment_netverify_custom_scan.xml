@@ -1,0 +1,208 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:jumio="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/frameLayout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<com.jumio.nv.custom.NetverifyCustomScanView
+		android:id="@+id/fragment_nv_custom_scan_view"
+		android:layout_width="wrap_content"
+		android:layout_height="0dp"
+		jumio:layout_constraintHeight_percent="0.6"
+		android:layout_marginTop="32dp"
+		jumio:jumio_ratio="1"
+		jumio:layout_constraintBottom_toTopOf="@+id/fragment_custom_scan_tv_guideline_top"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toTopOf="parent" />
+
+	<com.jumio.nv.custom.NetverifyCustomConfirmationView
+		android:id="@+id/fragment_nv_custom_confirmation_view"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="32dp"
+		android:layout_marginEnd="16dp"
+		android:layout_marginBottom="16dp"
+		android:scaleType="centerCrop"
+		android:visibility="gone"
+		jumio:jumio_ratio="1"
+		jumio:layout_constraintBottom_toTopOf="@+id/fragment_custom_scan_tv_guideline_top"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toTopOf="parent" />
+
+	<androidx.constraintlayout.widget.Group
+		android:id="@+id/group"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		jumio:constraint_referenced_ids="fragment_custom_scan_tv_title,
+		fragment_custom_scan_tv_document_type, fragment_custom_scan_tv_steps,
+		fragment_custom_scan_tv_help" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/fragment_custom_scan_tv_guideline_top"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintGuide_percent="0.7"/>
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/fragment_custom_scan_tv_guideline_bottom"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintGuide_percent="1"/>
+
+	<TextView
+		android:id="@+id/fragment_custom_scan_tv_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		android:text="@string/custom_ui_capture"
+		android:textSize="16sp"
+		jumio:layout_constraintBottom_toTopOf="@+id/fragment_custom_scan_tv_document_type"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toTopOf="@+id/fragment_custom_scan_tv_guideline_top" />
+
+	<TextView
+		android:id="@+id/fragment_custom_scan_tv_document_type"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_weight="0.7"
+		android:gravity="start"
+		android:textDirection="locale"
+		android:text="Passport"
+		android:textColor="@color/colorPrimary"
+		android:textSize="20sp"
+		android:textStyle="bold"
+		jumio:layout_constraintBottom_toTopOf="@+id/fragment_custom_scan_tv_steps"
+		jumio:layout_constraintEnd_toStartOf="parent"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toBottomOf="@+id/fragment_custom_scan_tv_title" />
+
+	<TextView
+		android:id="@+id/fragment_custom_scan_tv_steps"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginEnd="8dp"
+		android:text="Step 1 of 2"
+		android:gravity="start"
+		android:textDirection="locale"
+		jumio:layout_constraintBottom_toTopOf="@+id/fragment_custom_scan_tv_help"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toBottomOf="@+id/fragment_custom_scan_tv_document_type" />
+
+	<TextView
+		android:id="@+id/fragment_custom_scan_tv_help"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginEnd="8dp"
+		android:textSize="14sp"
+		android:gravity="start"
+		android:textDirection="locale"
+		jumio:layout_constraintBottom_toTopOf="@+id/fragment_custom_scan_btn_retake"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toBottomOf="@+id/fragment_custom_scan_tv_steps" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/fragment_custom_scan_btn_fallback"
+		style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="8dp"
+		android:autoSizeMaxTextSize="14sp"
+		android:autoSizeMinTextSize="6sp"
+		android:autoSizeTextType="uniform"
+		android:maxLines="1"
+		android:text="@string/custom_ui_scan_button_fallback"
+		android:visibility="gone"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintTop_toTopOf="@+id/fragment_custom_scan_tv_title"
+		jumio:layout_constraintWidth_percent="0.4" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/fragment_custom_scan_btn_capture"
+		style="@style/Base.Widget.AppCompat.Button.Colored"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginEnd="24dp"
+		android:autoSizeMaxTextSize="14sp"
+		android:autoSizeMinTextSize="6sp"
+		android:autoSizeTextType="uniform"
+		android:maxLines="1"
+		android:text="@string/custom_ui_scan_title_capture"
+		android:visibility="gone"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintHorizontal_bias="1.0"
+		jumio:layout_constraintStart_toEndOf="@+id/fragment_custom_scan_tv_title"
+		jumio:layout_constraintTop_toTopOf="@+id/fragment_custom_scan_tv_title"
+		jumio:layout_constraintWidth_percent="0.4" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/fragment_custom_scan_btn_retake"
+		style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginBottom="16dp"
+		android:autoSizeMaxTextSize="14sp"
+		android:autoSizeMinTextSize="8sp"
+		android:text="@string/button_retake"
+		android:visibility="gone"
+		jumio:layout_constraintBottom_toBottomOf="@+id/fragment_custom_scan_tv_guideline_bottom"
+		jumio:layout_constraintEnd_toStartOf="@+id/fragment_custom_scan_btn_confirm"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toBottomOf="@+id/fragment_custom_scan_tv_help" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/fragment_custom_scan_btn_confirm"
+		style="@style/Base.Widget.AppCompat.Button.Colored"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginBottom="16dp"
+		android:autoSizeMaxTextSize="14sp"
+		android:autoSizeMinTextSize="8sp"
+		android:text="@string/button_continue"
+		android:visibility="gone"
+		jumio:layout_constraintBottom_toBottomOf="@+id/fragment_custom_scan_tv_guideline_bottom"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintStart_toEndOf="@+id/fragment_custom_scan_btn_retake"
+		jumio:layout_constraintTop_toBottomOf="@+id/fragment_custom_scan_tv_help" />
+
+	<ProgressBar
+		android:id="@+id/fragment_nv_custom_loading_indicator"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		jumio:layout_constraintEnd_toEndOf="parent"
+		jumio:layout_constraintHorizontal_bias="0.5"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toBottomOf="@id/fragment_nv_custom_loading_indicator_guideline"
+		jumio:layout_constraintTop_toTopOf="@id/fragment_nv_custom_loading_indicator_guideline" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/fragment_nv_custom_loading_indicator_guideline"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		jumio:layout_constraintGuide_percent="0.4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

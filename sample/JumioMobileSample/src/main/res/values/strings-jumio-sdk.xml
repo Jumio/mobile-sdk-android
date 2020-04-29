@@ -2,7 +2,6 @@
 <resources>
 	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="jumio_error_dialog_title">Error</string>
 	<string name="jumio_scanview_refocus">Please refocus</string>
 	<string name="jumio_accessibility_flash_activate">Activate flash</string>
 	<string name="jumio_accessibility_flash_deactivate">Deactivate flash</string>
@@ -10,6 +9,7 @@
 	<string name="jumio_accessibility_camera_switch_to_back">Switch to back camera</string>
 	<string name="jumio_accessibility_loading">Loading</string>
 	<string name="jumio_accessibility_quit_scan">Quit scan</string>
+	<string name="jumio_error_dialog_title">Error</string>
 	<string name="jumio_error_network_problems">We have encountered a network communication problem</string>
 	<string name="jumio_error_auth_failed">Authentication failed</string>
 	<string name="jumio_error_device_is_offline">No internet connection available</string>
@@ -67,7 +67,7 @@
 	<string name="netverify_scanview_snackbar_check_confirmation">Ensure that all data on your document is visible and readable.</string>
 	<string name="netverify_scanview_snackbar_check_process_error">Your document could not be processed, please try again.</string>
 	<string name="netverify_scanview_snackbar_check_face_on_back">The image captured looks like the Front of your document. Please confirm this is the Back of your document or retake the image.</string>
-	<string name="netverify_scanview_snackbar_progress">Processing document...</string>
+	<string name="netverify_scanview_snackbar_progress">Processing document…</string>
 	<string name="netverify_scanview_retake">Retake</string>
 	<string name="netverify_scanview_continue">Continue</string>
 	<string name="netverify_scanview_legal_hint_nld">Please redact your BSN before capturing</string>
@@ -90,7 +90,7 @@
 	<string name="netverify_helpview_full_description">Place your document within the frame as it is shown in the animation above. The capturing happens automatically.\nEnsure that all data is readable and avoid reflections.</string>
 	<string name="netverify_helpview_full_description_template">Place your document in front of the camera as it is shown in the animation above. The capturing happens automatically.\nEnsure that all data is readable and avoid reflections.</string>
 	<string name="netverify_helpview_full_description_barcode">Place the barcode in front of the camera as it is shown in the picture above. The capturing happens automatically.</string>
-	<string name="netverify_helpview_full_description_card">Place your document within the frame until all 4 edges are aligned as it is shown in the picture above. The capturing happens automatically.\nEnsure that all data is readable and avoid reflections.</string>
+	<string name="netverify_helpview_full_description_card">Place your document within the frame until all 4 edges are aligned as it is shown in the animation above. The capturing happens automatically.\nEnsure that all data is readable and avoid reflections.</string>
 	<string name="netverify_document_variant_other">Other format</string>
 	<string name="netverify_document_variant_plastic">Plastic card</string>
 	<string name="netverify_accessibility_nfc_description_start">Please check if your ID has a chip. If so, place your phone on the ID as illustrated</string>
@@ -123,7 +123,7 @@
 	<string name="zoom_feedback_move_tablet_to_eye_level">Hold device at eye level</string>
 	<string name="zoom_helpview_bad_angle">Hold your device at eye level and look straight into it</string>
 	<string name="zoom_helpview_bad_lightning">Avoid shadows and reflections on your face</string>
-	<string name="zoom_helpview_general">Follow the two step process and align your face with the frame. Hold your device on eye level and look straight into the camera. Your face will be captured automatically</string>
+	<string name="zoom_helpview_general">Follow the two-step process and align your face with the frame. Hold your device on eye level and look straight into the camera. Your face will be captured automatically</string>
 	<string name="zoom_helpview_upfront_title">Capture your face</string>
 	-->
 
@@ -174,7 +174,7 @@
 	<string name="dv_scanview_title">Scan document</string>
 	<string name="dv_scanview_title_check">Check readability</string>
 	<string name="dv_scanview_snackbar_check">Make sure that all data on your document is fully visible, glare free and not blurred</string>
-	<string name="dv_scanview_retake">RETAKE</string>
+	<string name="dv_scanview_retake">Retake</string>
 	<string name="dv_scanview_continue">Continue</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;Capture %1$s&lt;/b&gt;</string>
 	<string name="dv_helpview_header_document">Document</string>
