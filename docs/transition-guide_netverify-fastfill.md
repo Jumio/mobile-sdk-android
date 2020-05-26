@@ -4,6 +4,9 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.6.1
+No backward incompatible changes
+
 ## 3.6.0
 #### Dependency Changes
 AndroidX Material design library has been *updated to version 1.1.0*

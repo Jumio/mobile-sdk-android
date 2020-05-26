@@ -15,7 +15,7 @@ Biometric-based Jumio Authentication establishes the digital identities of your 
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_authentication.md) SDK version: 3.6.0
+For technical changes, please read our [transition guide](transition-guide_authentication.md) SDK version: 3.6.1
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Authentication.
@@ -37,15 +37,15 @@ You can specify your own theme (see chapter [Customization](#customization)). Th
 
 |Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ---------------------------- |:-------------:|:-----------------|:---------:|
-|com.jumio.android:core:3.6.0@aar                    | x | Jumio Core library		                      | 4.09 MB |
-|com.jumio.android:auth:3.6.0@aar                      | x | Authentication library 		              | 97.98 KB |
-|com.jumio.android:face:3.6.0@aar                     | x | Face library	                            | 100.56 KB |
+|com.jumio.android:core:3.6.1@aar                    | x | Jumio Core library		                      | 4.09 MB |
+|com.jumio.android:auth:3.6.1@aar                      | x | Authentication library 		              | 97.92 KB |
+|com.jumio.android:face:3.6.1@aar                     | x | Face library	                            | 100.56 KB |
 |com.facetec:zoom-authentication:8.0.11@aar     | x | Zoom face scanning library	              | 9.00 MB  |
 |androidx.appcompat:appcompat:1.1.0                   | x | Android appcompat library	                | - |
 |androidx.room:room-runtime:2.2.3                     | x | Android database object mapping library	  | - |
 |com.google.android.material:material:1.1.0           | x | Android material design library	          | - |
 |androidx.localbroadcastmanager:localbroadcastmanager:1.0.0 | x | Android local broadcast manager library | - |
-|com.jumio.android:javadoc:3.6.0                     |   | Jumio SDK Javadoc			                    | - |
+|com.jumio.android:javadoc:3.6.1                     |   | Jumio SDK Javadoc			                    | - |
 
 ### Others
 

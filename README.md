@@ -1,5 +1,11 @@
 ![Jumio](docs/images/jumio_feature_graphic.jpg)
 
+[![Version](https://img.shields.io/github/v/release/Jumio/mobile-sdk-android?style=flat)](#release-notes)
+[![License](https://img.shields.io/badge/license-commercial-3D3D3D?style=flat)](#copyright)
+[![Platform](https://img.shields.io/badge/platform-Android-lightgrey?style=flat)](#general-requirements)
+[![Maven](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fmobile-sdk.jumio.com%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat)](#integration)
+[![API Level](http://img.shields.io/badge/API%20Level-19+-orange?style=flat)](#general-requirements)
+
 # Table of Content
 - [Release notes](#release-notes)
 - [Basic Setup](#basic-setup)
@@ -24,6 +30,10 @@ This is the last version that supports Android 4.x and 5.0. The minimum supporte
 #### Fixes
 * Improved accessibility handling [Netverify/Fastfill, Authentication, Document Verification]
 * Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification]
+
+### SDK version: 3.6.1
+#### Fixes
+* Fixed wrong date parsing on magstripe encoded barcodes [Netverify/Fastfill]
 
 
 # Basic Setup
@@ -129,7 +139,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 3.5.0 of the Jumio Mobile SDK is supported until 2020-08-04.
+The previous release version 3.6.0 of the Jumio Mobile SDK is supported until 2020-08-28.
 
 In case the support period is expired, no bug fixes and technical support are provided anymore (bugs are typically fixed in the upcoming versions).
 Older SDK versions will keep functioning with our server until further notice, but we highly recommend to always update to the latest version to benefit from SDK improvements and bug fixes.
@@ -146,7 +156,7 @@ This software is based in part on the work of the Independent JPEG Group.
 If you have any questions regarding our implementation guide please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com. The Jumio online helpdesk contains a wealth of information regarding our service including demo videos, product descriptions, FAQs and other things that may help to get you started with Jumio. Check it out at: https://support.jumio.com.
 
 ## Copyright
-&copy; Jumio Corp. 268 Lambert Avenue, Palo Alto, CA 94306
+&copy; Jumio Corporation, 395 Page Mill Road, Suite 150, Palo Alto, CA 94306
 
 The source code and software available on this website (“Software”) is provided by Jumio Corp. or its affiliated group companies (“Jumio”) "as is” and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall Jumio be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to procurement of substitute goods or services, loss of use, data, profits, or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this Software, even if advised of the possibility of such damage.
 In any case, your use of this Software is subject to the terms and conditions that apply to your contractual relationship with Jumio. As regards Jumio’s privacy practices, please see our privacy notice available here: [Privacy Policy](https://www.jumio.com/legal-information/privacy-policy/).

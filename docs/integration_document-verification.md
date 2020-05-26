@@ -15,7 +15,7 @@ Document Verification is a powerful solution to enable scanning various types (U
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document-verification.md) SDK version: 3.6.0
+For technical changes, please read our [transition guide](transition-guide_document-verification.md) SDK version: 3.6.1
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -39,13 +39,13 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:3.6.0@aar                    | x | Jumio Core library            | 4.09 MB |
-| com.jumio.android:dv:3.6.0@aar                      | x | Document Verification library | 134.70 KB |
+| com.jumio.android:core:3.6.1@aar                    | x | Jumio Core library            | 4.09 MB |
+| com.jumio.android:dv:3.6.1@aar                      | x | Document Verification library | 134.72 KB |
 | androidx.appcompat:appcompat:1.1.0                   | x | Android appcompat library        | - |
 |com.google.android.material:material:1.1.0           | x | Android material design library	          | - |
 |androidx.localbroadcastmanager:localbroadcastmanager:1.0.0 | x | Android local broadcast manager library  	| - |
 |androidx.room:room-runtime:2.2.3			              | x | Android database object mapping library	| - |
-| com.jumio.android:javadoc:3.6.0                     |   | Jumio SDK Javadoc             | - |
+| com.jumio.android:javadoc:3.6.1                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 
@@ -85,30 +85,31 @@ documentVerificationSDK.setType("DOCUMENTTYPE");
 
 Possible types:
 
+*  BC (Birth certificate)
 *  BS (Bank statement)
-*  IC (Insurance card)
-*  UB (Utility bill, front side)
 *  CAAP (Cash advance application)
-*  CRC (Corporate resolution certificate)
+*  CB (Council bill)
+*  CC (Credit card)
 *  CCS (Credit card statement)
+*  CRC (Corporate resolution certificate)
+*  HCC (Health care card)
+*  IC (Insurance card)
 *  LAG (Lease agreement)
 *  LOAP (Loan application)
-*  MOAP (Mortgage application)
-*  TR (Tax return)
-*  VT (Vehicle title)
-*  VC (Voided check)
-*  STUC (Student card)
-*  HCC (Health care card)
-*  CB (Council bill)
-*  SENC (Seniors card)
 *  MEDC (Medicare card)
-*  BC (Birth certificate)
-*  WWCC (Working with children check)
-*  SS (Superannuation statement)
-*  TAC (Trade association card)
-*  SEL (School enrolment letter)
+*  MOAP (Mortgage application)
 *  PB (Phone bill)
+*  SEL (School enrolment letter)
+*  SENC (Seniors card)
+*  SS (Superannuation statement)
 *  SSC (Social security card)
+*  STUC (Student card)
+*  TAC (Trade association card)
+*  TR (Tax return)
+*  UB (Utility bill)
+*  VC (Voided check)
+*  VT (Vehicle title)
+*  WWCC (Working with children check)
 *  CUSTOM (Custom document type)
 
 #### Custom Document Type
