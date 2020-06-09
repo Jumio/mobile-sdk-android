@@ -15,7 +15,7 @@ Document Verification is a powerful solution to enable scanning various types (U
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document-verification.md) SDK version: 3.6.1
+For technical changes, please read our [transition guide](transition-guide_document-verification.md) SDK version: 3.6.2
 
 ## Setup
 The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
@@ -39,13 +39,13 @@ You can specify your own theme (see [Customization](#customizing-look-and-feel) 
 
 | Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
 | ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:3.6.1@aar                    | x | Jumio Core library            | 4.09 MB |
-| com.jumio.android:dv:3.6.1@aar                      | x | Document Verification library | 134.72 KB |
+| com.jumio.android:core:3.6.2@aar                    | x | Jumio Core library            | 4.09 MB |
+| com.jumio.android:dv:3.6.2@aar                      | x | Document Verification library | 134.72 KB |
 | androidx.appcompat:appcompat:1.1.0                   | x | Android appcompat library        | - |
 |com.google.android.material:material:1.1.0           | x | Android material design library	          | - |
 |androidx.localbroadcastmanager:localbroadcastmanager:1.0.0 | x | Android local broadcast manager library  	| - |
 |androidx.room:room-runtime:2.2.3			              | x | Android database object mapping library	| - |
-| com.jumio.android:javadoc:3.6.1                     |   | Jumio SDK Javadoc             | - |
+| com.jumio.android:javadoc:3.6.2                     |   | Jumio SDK Javadoc             | - |
 
 If an optional module is not linked, the scan method is not available but the library size is reduced.
 

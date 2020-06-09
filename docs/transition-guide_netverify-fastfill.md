@@ -4,6 +4,10 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.6.2
+The Proguard keep rule `-keep class com.jumio.** { *; }` has to be added to your Proguard rules, if it wasn't added yet.
+Details can be found in chapter [Proguard](../README.md#proguard)
+
 ## 3.6.1
 No backward incompatible changes
 

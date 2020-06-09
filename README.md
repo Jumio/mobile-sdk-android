@@ -35,6 +35,10 @@ This is the last version that supports Android 4.x and 5.0. The minimum supporte
 #### Fixes
 * Fixed wrong date parsing on magstripe encoded barcodes [Netverify/Fastfill]
 
+### SDK version: 3.6.2
+#### Changes
+* Security enhancements [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
+
 
 # Basic Setup
 
@@ -62,8 +66,13 @@ public static String[] getRequiredPermissions();
 ```
 
 ## Proguard
-Proguard settings are applied automatically as they are defined as consumer proguard rules within the SDK.
+One Proguard keep rule has to be added to the Jumio Mobile SDK:
+```
+-keep class com.jumio.** { *; }
+```
+Most of the Proguard settings are applied automatically as they are defined as consumer proguard rules within the SDK.
 The current rules can also be found in the [Sample app](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/).
+
 
 ## Integration
 Use the SDK in your application by including the Maven repositories with the following `build.gradle` configuration in Android Studio:
@@ -139,7 +148,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 # Support
 
 ## Previous version
-The previous release version 3.6.0 of the Jumio Mobile SDK is supported until 2020-08-28.
+The previous release version 3.6.1 of the Jumio Mobile SDK is supported until 2020-09-09.
 
 In case the support period is expired, no bug fixes and technical support are provided anymore (bugs are typically fixed in the upcoming versions).
 Older SDK versions will keep functioning with our server until further notice, but we highly recommend to always update to the latest version to benefit from SDK improvements and bug fixes.
