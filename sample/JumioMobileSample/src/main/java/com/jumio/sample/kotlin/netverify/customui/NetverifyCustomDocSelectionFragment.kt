@@ -24,7 +24,6 @@ class NetverifyCustomDocSelectionFragment : Fragment(), CountryListView, OnItemC
 	private var listView: ListView? = null
 	private var loadingIndicator: ProgressBar? = null
 	private var tvVerification: TextView? = null
-	private var tvIdentityCheck: TextView? = null
 	private var tvHelp: TextView? = null
 	private var callback: OnDocumentSelectionInteractionListener? = null
 	/**
@@ -40,14 +39,13 @@ class NetverifyCustomDocSelectionFragment : Fragment(), CountryListView, OnItemC
 		val root = inflater.inflate(R.layout.fragment_netverify_custom_document_selection, container, false)
 		listView = root.findViewById(R.id.fragment_custom_lv_countries)
 		tvVerification = root.findViewById(R.id.fragment_custom_tv_verification)
-		tvIdentityCheck = root.findViewById(R.id.fragment_custom_tv_identity_check)
 		tvHelp = root.findViewById(R.id.fragment_custom_tv_help)
 		loadingIndicator = root.findViewById(R.id.fragment_nv_custom_loading_indicator)
 		listView?.onItemClickListener = this
 		listView?.isFastScrollEnabled = true
 		listView?.filterTouchesWhenObscured = true
 		setHasOptionsMenu(true)
-		hideView(true, tvVerification, tvIdentityCheck, tvHelp)
+		hideView(true, tvVerification, tvHelp)
 		return root
 	}
 
@@ -79,7 +77,7 @@ class NetverifyCustomDocSelectionFragment : Fragment(), CountryListView, OnItemC
 		val countryAdapter = CountryAdapter(countries)
 		listView!!.adapter = countryAdapter
 		countryAdapter.notifyDataSetChanged()
-		showView(true, tvVerification!!, tvIdentityCheck!!, tvHelp!!, listView!!)
+		showView(true, tvVerification!!, tvHelp!!, listView!!)
 	}
 
 	/**

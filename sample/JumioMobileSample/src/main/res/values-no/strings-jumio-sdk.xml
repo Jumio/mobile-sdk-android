@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Bytt til bakkamera</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Bytt til frontkamera</string>
+	<string name="jumio_accessibility_flash_activate">Aktiver blits</string>
+	<string name="jumio_accessibility_flash_deactivate">Deaktiver blits</string>
+	<string name="jumio_accessibility_loading">Laster</string>
+	<string name="jumio_accessibility_quit_scan">Avslutt skanning</string>
+	<string name="jumio_button_cancel">Avbryt</string>
+	<string name="jumio_button_retry">Prøv på nytt</string>
+	<string name="jumio_error_auth_failed">Godkjenning mislyktes</string>
+	<string name="jumio_error_cancelled_by_user">Avbrutt av sluttbruker</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Sertifikatet er ikke gyldig lenger. Oppdater søknaden din</string>
+	<string name="jumio_error_device_is_offline">Ingen internettforbindelse tilgjengelig</string>
+	<string name="jumio_error_dialog_title">Feil</string>
+	<string name="jumio_error_network_problems">Det har oppstått et problem med nettverkskommunikasjon</string>
+	<string name="jumio_error_no_camera_connection">Kameraet er for øyeblikket ikke tilgjengelig</string>
+	<string name="jumio_error_startup_error">Skanning er ikke tilgjengelig for øyeblikket. Kontakt appleverandøren</string>
+	<string name="jumio_error_transaction_already_finished">Transaksjonen er allerede fullført</string>
+	<string name="jumio_scanview_refocus">Fokuser på nytt</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Trykk for å fortsette</string>
+	<string name="face_helpview_landscape_description">Roter telefonen til portrett for å ta en selfie</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Roter enheten&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Har du problemer?</string>
+	<string name="zoom_accessibility_cancel_button">Avslutt skanning</string>
+	<string name="zoom_feedback_a_little_too_close">Gå litt tilbake</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Gå litt tilbake</string>
+	<string name="zoom_feedback_center_face">Midtstill ansiktet ditt</string>
+	<string name="zoom_feedback_face_not_found">Hold ansiktet innenfor rammen</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Se rett frem</string>
+	<string name="zoom_feedback_face_not_upright">Hold hodet rett</string>
+	<string name="zoom_feedback_hold_steady">Stå stille</string>
+	<string name="zoom_feedback_move_phone_away">Gå litt tilbake</string>
+	<string name="zoom_feedback_move_phone_closer">Gå litt nærmere</string>
+	<string name="zoom_feedback_move_phone_even_closer">Litt nærmere</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Hold enheten i øyehøyde</string>
+	<string name="zoom_feedback_move_tablet_away">Gå litt tilbake</string>
+	<string name="zoom_feedback_move_tablet_closer">Gå litt nærmere</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Hold enheten i øyehøyde</string>
+	<string name="zoom_helpview_bad_angle">Hold enheten i øyehøyde og se rett inn i den</string>
+	<string name="zoom_helpview_bad_lightning">Unngå skygger og refleksjoner i ansiktet ditt</string>
+	<string name="zoom_helpview_general">Følg totrinnsprosessen og juster ansiktet ditt mot rammen. Hold enheten din i øyehøyde og se rett inn i kameraet. Ansiktet ditt registreres automatisk</string>
+	<string name="zoom_helpview_upfront_title">Registrer ansiktet ditt</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">Kontoutskrift</string>
+	<string name="dv_helpview_header_birth_certificate">Fødselsattest</string>
+	<string name="dv_helpview_header_cash_advance_application">Søknad om kontantforskudd</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Styrevedtaksdokument</string>
+	<string name="dv_helpview_header_council_bill">Byrådsvedtak</string>
+	<string name="dv_helpview_header_credit_card">Kredittkort</string>
+	<string name="dv_helpview_header_credit_card_statement">Kontoutskrift</string>
+	<string name="dv_helpview_header_document">Dokument</string>
+	<string name="dv_helpview_header_health_care_card">Helsekort</string>
+	<string name="dv_helpview_header_insurance_card">Forsikringskort</string>
+	<string name="dv_helpview_header_lease_agreement">Leieavtale</string>
+	<string name="dv_helpview_header_loan_application">Lånesøknad</string>
+	<string name="dv_helpview_header_medicare_card">Medicare-kort</string>
+	<string name="dv_helpview_header_mortgage_application">Boliglån-søknad</string>
+	<string name="dv_helpview_header_phone_bill">Telefonregning</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Brev om skoleregistrering</string>
+	<string name="dv_helpview_header_seniors_card">Honnørkort</string>
+	<string name="dv_helpview_header_social_security_card">Trygdekort</string>
+	<string name="dv_helpview_header_student_card">Studentkort</string>
+	<string name="dv_helpview_header_superannuation_statement">Pensjonsbevis</string>
+	<string name="dv_helpview_header_tax_return">Selvangivelse</string>
+	<string name="dv_helpview_header_trade_association_card">Handelsforeningskort</string>
+	<string name="dv_helpview_header_utility_bill">Strømregning</string>
+	<string name="dv_helpview_header_vehicle_title">Kjøretøytittel</string>
+	<string name="dv_helpview_header_voided_check">Annullert sjekk</string>
+	<string name="dv_helpview_header_working_with_children_check">Sjekk for mulighet til å jobbe med barn</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Registrer %1$s&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">Fortsett</string>
+	<string name="dv_scanview_retake">TA PÅ NYTT</string>
+	<string name="dv_scanview_snackbar_check">Kontroller at alle opplysninger i dokumentet er fullt synlige, gjenskinnsfrie og ikke uskarpe</string>
+	<string name="dv_scanview_title">Skann dokument</string>
+	<string name="dv_scanview_title_check">Sjekk lesbarhet</string>
+	<string name="dv_upload_error">&lt;b&gt;Opplastingsproblemer&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;Laster opp dokumentene dine&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Dette skal kun ta et par sekunder, avhengig av nettverkstilkoblingen din</string>
+	<string name="dv_upload_successful">&lt;b&gt;Opplasting vellykket&lt;/b&gt;</string>
+	-->
+
+</resources>

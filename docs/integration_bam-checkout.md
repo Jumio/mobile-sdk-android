@@ -13,14 +13,15 @@ BAM Checkout SDK is a powerful, cutting-edge solution to extract data from your 
 - [Customization](#customization)
 - [SDK Workflow](#sdk-workflow)
 - [Card retrieval API](#card-retrieval-api)
-- [Two-factor Authentication](#two-factor-authentication)
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_bam-checkout.md) SDK version: 3.6.2
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.0
+
+For breaking technical changes, please read our [transition guide](transition-guide_bam-checkout.md)
 
 ## Setup
-The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for Bam-Checkout.
+The [basic setup](../README.md#basics) is required before continuing with the following setup for BAM-Checkout.
 
 Using the SDK requires an activity declaration in your `AndroidManifest.xml`.
 
@@ -39,26 +40,31 @@ If you want to use offline scanning for BAM Checkout (Credit card scanning), ple
 ## Integration
 
 ### Dependencies
+Below there is a list of dependices the application will need to work in Android. Some modules are mandatory, others are optinal. If an optional module is __not linked__, some functionalities such as certain methods may not be available, but the library size will be reduced.
+```
+dependencies {
+    // mandatory
+    implementation "com.jumio.android:core:3.7.0@aar"       // Jumio Core library
+    implementation "com.jumio.android:bam:3.7.0@aar"        // BAM checkout library
 
-|Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
-| :---------------------------- |:-------------:|:-----------------|:------------:|
-|com.jumio.android:core:3.6.2@aar                    | x | Jumio Core library|	4.09 MB |
-|com.jumio.android:bam:3.6.2@aar                     | x | BAM Checkout library | 3.63 MB |
-|androidx.appcompat:appcompat:1.1.0            				| x | Android appcompat library| - |
-|androidx.room:room-runtime:2.2.3			              | x | Android database object mapping library	| - |
-|com.google.android.material:material:1.1.0           | x | Android material design library	          | - |
-|androidx.localbroadcastmanager:localbroadcastmanager:1.0.0 | x | Android local broadcast manager library  | - |
-|com.jumio.android:javadoc:3.6.2                     |   | Jumio SDK Javadoc| - |
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation "androidx.room:room-runtime:2.2.5"
+    implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
+    implementation "com.google.android.material:material:1.1.0"
 
-If an optional module is not linked, the scan method is not available but the library size is reduced.
+    // not mandatory
+    implementation "com.jumio.android:javadoc:3.7.0"
+}
+```
+__Note:__ If you use ID Verification together with BAM Checkout in your app, add additional dependencies from the Integration chapter from the [ID Verification & Fastfill integration guide](integration_id-verification-fastfill.md).
 
-__Note:__ If you use Netverify and BAM Checkout in your app, add additional dependencies from the Integration chapter from the [Netverify & Fastfill](integration_netverify-fastfill.md) Guide.
-
+#### Root detection
 Applications implementing the SDK shall not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.
 ```
 BamSDK.isRooted(Context context);
 ```
 
+#### Device supported check
 Call the method `isSupportedPlatform` to check if the device is supported.
 ```
 BamSDK.isSupportedPlatform();
@@ -70,7 +76,7 @@ To create an instance for the SDK, perform the following call as soon as your ac
 private static String YOURAPITOKEN = ""; 
 private static String YOURAPISECRET = "";
 
-NetverifySDK netverifySDK = NetverifySDK.create(yourActivity, YOURAPITOKEN, YOURAPISECRET, JumioDataCenter.US);
+BamSDK bamSDK = BamSDK.create(yourActivity, YOURAPITOKEN, YOURAPISECRET, JumioDataCenter.US);
 ```
 Make sure that your customer API token and API secret are correct, specify an instance
 of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). If your customer account is in the EU data center, use `JumioDataCenter.EU` instead.
@@ -108,8 +114,10 @@ __Note:__ This is not required for offline scanning.
 bamSDK.setMerchantReportingCriteria("YOURREPORTINGCRITERIA");
 ```
 
+__Note:__ Transaction identifiers must not contain sensitive data like PII (Personally Identifiable Information) or account login.
+
 ### Offline scanning
-If you want to use Fastfill in offline mode please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com. Once this feature is enabled for your account, you can find your offline token in your Jumio customer portal on the "Settings" page under "API credentials".
+If you want to use the SDK in offline mode, please contact Jumio Support at support@jumio.com or https://support.jumio.com. Once this feature is enabled for your account, you can find your offline token in your Jumio customer portal on the __Settings__ page in the __API credentials__ tab.
 
 ```
 BamSDK.create(rootActivity, YOUROFFLINETOKEN)
@@ -150,20 +158,32 @@ The SDK is valid until the expiration date is reached. If the Android Certificat
 ## Customization
 
 ### Customize look and feel
-The SDK can be customized to fit your application's look and feel by specifying `Theme.Bam` as a parent style and overriding attributes within this theme. Click on the element `Theme.Bam` in the manifest while holding Ctrl and Android Studio will display the available attributes of the Theme that can be customized.
+There are two possibilities for applying the customized theme that was explained in the previous chapter:
+* Customizing theme in AndroidManifest
+* Customizing theme at runtime
 
-### Customize theme at runtime
-To customize the theme at runtime overwrite the main theme by using the following property.
+#### Customizing theme in AndroidManifest
+Apply the `CustomBamTheme` that you defined before by replacing `Theme.Bam` in the AndroidManifest.xml:
 ```
-netverifySDK.setCustomTheme(CUSTOMTHEME);
+<activity
+android:name="com.jumio.bam.BamActivity"
+            android:theme="@style/CustomBamTheme"
+                        ... />
 ```
+
+#### Customizing theme at runtime
+To customize the theme at runtime, overwrite the theme that is used for Bam in the manifest by calling the following property. Use the resource ID of a customized theme that uses `Theme.Bam` as parent.
+
+```
+bamSDK.setCustomTheme(CUSTOMTHEME);
+```
+__Note:__ Customizations should be applied before the SDK is initialized.
 
 ## SDK Workflow
 
 ### Default scan view
 
 #### Starting the SDK
-
 To show the SDK, call the respective method below within your activity or fragment.
 
 Activity: `bamSDK.start();` <br/>
@@ -172,7 +192,6 @@ Fragment: `startActivityForResult(bamSDK.getIntent(), BamSDK.REQUEST_CODE);`
 __Note:__ The default request code is 100. To use another code, override the public static variable `BamSDK.REQUEST_CODE` before displaying the SDK.
 
 #### Retrieving information
-
 Implement the standard method `onActivityResult` in your activity for successful scans and user cancellation notifications. Call `bamSDK.destroy()` once you received the result.
 
 You receive a Jumio scan reference for each try, if an Internet connection is available. For offline scans an empty `String` is added to the `Arraylist scanReferences`.
@@ -305,6 +324,7 @@ public void onBamError(String errorCode, String errorMessage, boolean retryPossi
 | getCustomField      | String | String | Get entered value for added custom field |
 
 ### Error codes
+List of all **_error codes_** that are available via the `code` property of the Error object. The first letter (B-N) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]).
 
 | Code        			| Message   | Description     |
 | :---------------: |:----------|:----------------|
@@ -319,14 +339,8 @@ public void onBamError(String errorCode, String errorMessage, boolean retryPossi
 |M00000| Background execution is not supported | Cancellation triggered automatically |
 |N00000| Your card is expired | Retry possible |
 
-The first letter (B-N) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]). Please always include the whole code when filing an error related issue to our support team.
+__Note:__ Please always include the whole code when filing an error related issue to our support team.
 
 ## Card retrieval API
-
-You can implement RESTful HTTP GET APIs to retrieve credit card image and data for a specific scan. Find the Implementation Guide at the link below.
-
-http://www.jumio.com/implementation-guides/credit-card-retrieval-api/
-
-## Two-factor Authentication
-
-If you want to enable two-factor authentication for your Jumio customer portal please contact us at https://support.jumio.com Once enabled, users will be guided through the setup upon their first login to obtain a security code using the "Google Authenticator" app.
+You can implement RESTful HTTP GET APIs to retrieve credit card image and data for a specific scan. Please refer to our [implementation guide](http://www.jumio.com/implementation-guides/credit-card-retrieval-api/
+) for more information.

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Превключване към задната камера</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Превключване към предната камера</string>
+	<string name="jumio_accessibility_flash_activate">Активиране на светкавицата</string>
+	<string name="jumio_accessibility_flash_deactivate">Деактивиране на светкавицата</string>
+	<string name="jumio_accessibility_loading">Зареждане</string>
+	<string name="jumio_accessibility_quit_scan">Изход от сканирането</string>
+	<string name="jumio_button_cancel">Отмяна</string>
+	<string name="jumio_button_retry">Повторен опит</string>
+	<string name="jumio_error_auth_failed">Удостоверяването не е успешно</string>
+	<string name="jumio_error_cancelled_by_user">Отменено от крайния потребител</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Сертификатът вече не е валиден. Моля, актуализирайте приложението си.</string>
+	<string name="jumio_error_device_is_offline">Няма налична интернет връзка</string>
+	<string name="jumio_error_dialog_title">Грешка</string>
+	<string name="jumio_error_network_problems">Възникна проблем с мрежовата комуникация</string>
+	<string name="jumio_error_no_camera_connection">В момента камерата не е достъпна</string>
+	<string name="jumio_error_startup_error">Сканирането не е достъпно в момента. Моля, свържете се с доставчика на приложението.</string>
+	<string name="jumio_error_transaction_already_finished">Трансакцията вече е завършена</string>
+	<string name="jumio_scanview_refocus">Моля, фокусирайте отново</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Докоснете, за да продължите</string>
+	<string name="face_helpview_landscape_description">Завъртете телефона си в портретен режим, за да направите селфи</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Завъртете устройството си&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Имате проблеми?</string>
+	<string name="netverify_accessibility_nfc_description_start">Моля, проверете дали вашата лична карта има чип. Ако е така, поставете телефона си върху личната карта, както е показано.</string>
+	<string name="netverify_back">Задна страна</string>
+	<string name="netverify_countrylist_empty">В списъка няма данни</string>
+	<string name="netverify_countrylist_title">Изберете държавата, в която е издаден документа ви</string>
+	<string name="netverify_document_variant_other">Друг формат</string>
+	<string name="netverify_document_variant_plastic">Пластмасова карта</string>
+	<string name="netverify_documenttype_driverlicense">Шофьорска книжка</string>
+	<string name="netverify_documenttype_idcard">Лична карта</string>
+	<string name="netverify_documenttype_passport">Паспорт</string>
+	<string name="netverify_documenttype_visa">Виза</string>
+	<string name="netverify_front">Предна страна</string>
+	<string name="netverify_helpview_description_usdl_fallback">Баркодът на вашия документ не съдържа адреса ви, обърнете документа си и сканирайте предната част</string>
+	<string name="netverify_helpview_fallback">ЗАСНЕМАНЕТО НЕ РАБОТИ</string>
+	<string name="netverify_helpview_fallback_barcode">НА ЛИЧНАТА МИ КАРТА НЯМА БАРКОД</string>
+	<string name="netverify_helpview_full_description">Разположете документа си в рамката, както е показано на анимацията по-горе. Заснемането става автоматично.\nУверете се, че всички данни са четими и избягвайте отражения.</string>
+	<string name="netverify_helpview_full_description_barcode">Разположете баркода пред камерата, както е показано на снимката по-горе. Заснемането става автоматично.</string>
+	<string name="netverify_helpview_full_description_card">Разположете документа си в рамката, докато всички 4 страни се подравнят, както е показано на анимацията по-горе. Заснемането става автоматично.\nУверете се, че всички данни са четими и избягвайте отражения.</string>
+	<string name="netverify_helpview_full_description_template">Разположете документа си пред камерата, както е показано на анимацията по-горе. Заснемането става автоматично.\nУверете се, че всички данни са четими и избягвайте отражения.</string>
+	<string name="netverify_helpview_progress_text">Стъпка %1$d от %2$d</string>
+	<string name="netverify_helpview_small_description">Разположете документа си в рамката, докато бъде заснет автоматично</string>
+	<string name="netverify_helpview_small_description_barcode">Разположете баркода пред камерата, докато бъде заснет автоматично</string>
+	<string name="netverify_helpview_small_description_card">Разположете документа си в рамката, докато бъде заснет автоматично</string>
+	<string name="netverify_helpview_small_description_template">Разположете документа си пред камерата, докато бъде заснет автоматично</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;Заснемане на %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Сканиране на %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Докоснете, за да продължите</string>
+	<string name="netverify_inside">Отвътре</string>
+	<string name="netverify_nfc_description_extracting">Стойте неподвижни по време на сканиране</string>
+	<string name="netverify_nfc_description_start_other">Плъзнете телефона през предния капак, докато паспортът автоматично бъде засечен</string>
+	<string name="netverify_nfc_description_start_us">Плъзнете телефона през вътрешната част на задния капак, докато паспортът автоматично бъде засечен</string>
+	<string name="netverify_nfc_enable_dialog_text">За да получите повече от паспорта си, моля, щракнете върху „OK“ и активирайте NFC възможностите на телефона си</string>
+	<string name="netverify_nfc_enable_dialog_title">Активиране на NFC</string>
+	<string name="netverify_nfc_general_error_dialog_text">Опитайте отново и следвайте инструкциите, както е показано</string>
+	<string name="netverify_nfc_general_error_dialog_title">Незавършено сканир.</string>
+	<string name="netverify_nfc_header_extracting">Извличане на данните</string>
+	<string name="netverify_nfc_header_finish">Сканирането завърши</string>
+	<string name="netverify_nfc_header_start">Позиционирайте паспорта</string>
+	<string name="netverify_nfc_requestview_button_text">Пропуснете</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">Щом паспортът бъде засечен, стойте неподвижни</string>
+	<string name="netverify_nfc_view_title">Сканирайте паспорта</string>
+	<string name="netverify_outside">Отвън</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; е зададена като държавата, в която са издадени вашите документи. &lt;b&gt;&lt;u&gt;Промяна на държавата&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; е зададена като държавата, в която са издадени вашите документи.</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Изберете вашата държава&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">Изберете типа документ, който искате да сканирате</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Анализиране на биометричните данни&lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">Продължи</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Скрийте номера на личната карта, преди да я заснемете</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Скрийте номера на личната карта и номера за достъп, преди да я заснемете</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Скрийте номера на паспорта, преди да го заснемете</string>
+	<string name="netverify_scanview_legal_hint_kor">Скрийте втория блок от цифри на вашия граждански регистрационен номер, преди да го заснемете</string>
+	<string name="netverify_scanview_legal_hint_nld">Скрийте вашия BSN, преди да го заснемете.</string>
+	<string name="netverify_scanview_retake">Повторно</string>
+	<string name="netverify_scanview_snackbar_check">Уверете се, че всички данни в документа ви са напълно видими, без отблясъци и не са замъглени.</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Уверете се, че всички данни в документа ви са видими и четими.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">Заснетото изображение изглежда като лицевата страна на вашия документ. Моля, потвърдете, че това е гърба на документа или заснемете отново изображението.</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Документът ви не бе обработен. Моля, опитайте отново.</string>
+	<string name="netverify_scanview_snackbar_progress">Документът се обработва…</string>
+	<string name="netverify_scanview_title">Сканирай</string>
+	<string name="netverify_scanview_title_check">Проверете четливостта</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt;Проблеми с качването&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Качване на документите ви&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">Това би трябвало да отнеме само няколко секунди в зависимост от мрежовата ви връзка</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Качването е успешно&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">ИЗПОЛЗВАЙТЕ ЗАДНАТА СТРАНА</string>
+	<string name="netverify_use_front_side_of_card">ИЗПОЛЗВАЙТЕ ПРЕДНАТА СТРАНА</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Докоснете, за да продължите</string>
+	<string name="face_helpview_landscape_description">Завъртете телефона си в портретен режим, за да направите селфи</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Завъртете устройството си&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Имате проблеми?</string>
+	<string name="zoom_accessibility_cancel_button">Изход от сканирането</string>
+	<string name="zoom_action_im_ready">ГОТОВ/А СЪМ.</string>
+	<string name="zoom_action_ok">OK</string>
+	<string name="zoom_feedback_a_little_too_close">Отдръпнете се малко назад</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Отдръпнете се малко назад</string>
+	<string name="zoom_feedback_center_face">Центрирайте лицето си</string>
+	<string name="zoom_feedback_face_not_found">Наместете лицето си в рамката</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Погледнете напред</string>
+	<string name="zoom_feedback_face_not_upright">Дръжте главата си изправена</string>
+	<string name="zoom_feedback_hold_steady">Останете неподвижно</string>
+	<string name="zoom_feedback_move_phone_away">Отдръпнете се малко назад</string>
+	<string name="zoom_feedback_move_phone_closer">Приближете се малко по-близо</string>
+	<string name="zoom_feedback_move_phone_even_closer">Малко по-близо</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Дръжте устройството на нивото на очите</string>
+	<string name="zoom_feedback_move_tablet_away">Отдръпнете се малко назад</string>
+	<string name="zoom_feedback_move_tablet_closer">Приближете се малко по-близо</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Дръжте устройството на нивото на очите</string>
+	<string name="zoom_helpview_bad_angle">Дръжте устройството си на нивото на очите и гледайте право в него.</string>
+	<string name="zoom_helpview_bad_lightning">Избягвайте сенки и отражения върху лицето си</string>
+	<string name="zoom_helpview_general">Изпълнете процеса от две стъпки и разположете лицето си в рамката. Дръжте устройството си на нивото на очите и гледайте право в камерата. Лицето ви ще бъде заснето автоматично.</string>
+	<string name="zoom_helpview_upfront_title">Заснемете лицето си</string>
+	<string name="zoom_instructions_header_ready">Пригответе се за вашето видео селфи</string>
+	<string name="zoom_instructions_message_ready">Рамкирайте лицето си в малкия овал, след това в големия</string>
+	<string name="zoom_result_facemap_upload_message">Анализиране на биометрични данни</string>
+	<string name="zoom_result_success_message">Успех!</string>
+	<string name="zoom_retry_header">Опитайте отново</string>
+	<string name="zoom_retry_ideal_image_label">Идеална поза</string>
+	<string name="zoom_retry_instruction_message_1">Неутр. изражение, без усмивка</string>
+	<string name="zoom_retry_instruction_message_2">Без отбляс. или екстр. осветл.</string>
+	<string name="zoom_retry_subheader_message">Но първо, моля, погледнете снимката си и променете обстановката.</string>
+	<string name="zoom_retry_your_image_label">Вашето селфи</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">Банково извлечение</string>
+	<string name="dv_helpview_header_birth_certificate">Удостоверение за раждане</string>
+	<string name="dv_helpview_header_cash_advance_application">Заявление за авансово плащане в брой</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Сертификат за корпоративна резолюция</string>
+	<string name="dv_helpview_header_council_bill">Сметка за общински данъци</string>
+	<string name="dv_helpview_header_credit_card">Кредитна карта</string>
+	<string name="dv_helpview_header_credit_card_statement">Извлечение за кредитна карта</string>
+	<string name="dv_helpview_header_document">Документ</string>
+	<string name="dv_helpview_header_health_care_card">Здравноосигурителна карта</string>
+	<string name="dv_helpview_header_insurance_card">Застрахователна карта</string>
+	<string name="dv_helpview_header_lease_agreement">Договор за отдаване под наем</string>
+	<string name="dv_helpview_header_loan_application">Заявление за потребителски кредит</string>
+	<string name="dv_helpview_header_medicare_card">Здравна карта</string>
+	<string name="dv_helpview_header_mortgage_application">Заявление за ипотечен кредит</string>
+	<string name="dv_helpview_header_phone_bill">Сметка за телефон</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Писмо за записване в училище</string>
+	<string name="dv_helpview_header_seniors_card">Карта на пенсионер</string>
+	<string name="dv_helpview_header_social_security_card">Социалноосигурителна карта</string>
+	<string name="dv_helpview_header_student_card">Студентска карта</string>
+	<string name="dv_helpview_header_superannuation_statement">Декларация за пенсиониране</string>
+	<string name="dv_helpview_header_tax_return">Данъчна декларация</string>
+	<string name="dv_helpview_header_trade_association_card">Карта на търговско сдружение</string>
+	<string name="dv_helpview_header_utility_bill">Сметка за комунални услуги</string>
+	<string name="dv_helpview_header_vehicle_title">Талон на превозно средство</string>
+	<string name="dv_helpview_header_voided_check">Невалиден чек</string>
+	<string name="dv_helpview_header_working_with_children_check">Проверка за работа с деца</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Заснемане на %1$s&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">Продължи</string>
+	<string name="dv_scanview_retake">Повторно</string>
+	<string name="dv_scanview_snackbar_check">Уверете се, че всички данни в документа ви са напълно видими, без отблясъци и не са замъглени.</string>
+	<string name="dv_scanview_title">Сканирай</string>
+	<string name="dv_scanview_title_check">Проверете четливостта</string>
+	<string name="dv_upload_error">&lt;b&gt;Проблеми с качването&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;Качване на документите ви&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Това би трябвало да отнеме само няколко секунди в зависимост от мрежовата ви връзка</string>
+	<string name="dv_upload_successful">&lt;b&gt;Качването е успешно&lt;/b&gt;</string>
+	-->
+
+</resources>

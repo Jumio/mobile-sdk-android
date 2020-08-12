@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">후면 카메라로 전환</string>
+	<string name="jumio_accessibility_camera_switch_to_front">전면 카메라로 전환</string>
+	<string name="jumio_accessibility_flash_activate">플래시 활성화</string>
+	<string name="jumio_accessibility_flash_deactivate">플래시 비활성화</string>
+	<string name="jumio_accessibility_loading">불러오는 중</string>
+	<string name="jumio_accessibility_quit_scan">스캔 종료</string>
+	<string name="jumio_button_cancel">취소</string>
+	<string name="jumio_button_retry">다시 시도</string>
+	<string name="jumio_error_auth_failed">인증 실패</string>
+	<string name="jumio_error_cancelled_by_user">최종 사용자가 취소</string>
+	<string name="jumio_error_certificate_not_valid_anymore">인증서가 유효하지 않습니다. 애플리케이션을 업데이트하세요.</string>
+	<string name="jumio_error_device_is_offline">인터넷에 연결되어 있지 않습니다</string>
+	<string name="jumio_error_dialog_title">오류</string>
+	<string name="jumio_error_network_problems">네트워크 통신 문제가 발생했습니다</string>
+	<string name="jumio_error_no_camera_connection">현재 카메라를 사용할 수 없습니다</string>
+	<string name="jumio_error_startup_error">현재 스캔을 사용할 수 없습니다. 앱 공급업체에 문의 바랍니다.</string>
+	<string name="jumio_error_transaction_already_finished">트랜잭션이 이미 완료되었습니다</string>
+	<string name="jumio_scanview_refocus">초점을 다시 맞추세요</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">계속하려면 탭하세요</string>
+	<string name="face_helpview_landscape_description">셀카를 찍으려면 휴대폰을 세로로 회전하세요</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;기기 회전&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">문제가 있습니까?</string>
+	<string name="netverify_accessibility_nfc_description_start">신분증에 칩이 있는지 확인하세요. 칩이 있다면 휴대폰을 그림과 같이 신분증 위에 놓으세요.</string>
+	<string name="netverify_back">뒷면</string>
+	<string name="netverify_countrylist_empty">목록에 데이터 없음</string>
+	<string name="netverify_countrylist_title">문서 발급 국가 선택</string>
+	<string name="netverify_document_variant_other">기타 형식</string>
+	<string name="netverify_document_variant_plastic">실물 카드</string>
+	<string name="netverify_documenttype_driverlicense">운전 면허증</string>
+	<string name="netverify_documenttype_idcard">신분증</string>
+	<string name="netverify_documenttype_passport">여권</string>
+	<string name="netverify_documenttype_visa">비자</string>
+	<string name="netverify_front">앞면</string>
+	<string name="netverify_helpview_description_usdl_fallback">문서의 바코드에 주소가 없습니다. 문서를 돌려 앞면을 스캔하세요.</string>
+	<string name="netverify_helpview_fallback">촬영이 작동하지 않음</string>
+	<string name="netverify_helpview_fallback_barcode">ID에 바코드가 없음</string>
+	<string name="netverify_helpview_full_description">위의 애니메이션에 표시된 대로 문서를 프레임 내에 배치합니다. 촬영은 자동으로 수행됩니다.\n모든 정보를 읽을 수 있는지 확인하고 반사가 이루어지지 않도록 합니다.</string>
+	<string name="netverify_helpview_full_description_barcode">위 그림과 같이 카메라 앞에 바코드를 놓습니다. 촬영은 자동으로 수행됩니다.</string>
+	<string name="netverify_helpview_full_description_card">위의 애니메이션에 표시된 대로 4개의 가장자리가 모두 정렬될 때까지 문서를 프레임 내에 배치합니다. 촬영은 자동으로 수행됩니다.\n모든 정보를 읽을 수 있는지 확인하고 반사가 이루어지지 않도록 합니다.</string>
+	<string name="netverify_helpview_full_description_template">위의 애니메이션에 표시된 대로 문서를 카메라 앞에 놓습니다. 촬영은 자동으로 수행됩니다.\n모든 정보를 읽을 수 있는지 확인하고 반사가 이루어지지 않도록 합니다.</string>
+	<string name="netverify_helpview_progress_text">%2$d단계 중 %1$d단계</string>
+	<string name="netverify_helpview_small_description">문서가 자동으로 촬영될 때까지 프레임 안에 넣으세요</string>
+	<string name="netverify_helpview_small_description_barcode">바코드가 자동으로 촬영될 때까지 카메라 앞에 놓으세요</string>
+	<string name="netverify_helpview_small_description_card">문서가 자동으로 촬영될 때까지 프레임 안에 넣으세요</string>
+	<string name="netverify_helpview_small_description_template">문서가 자동으로 촬영될 때까지 카메라 앞에 놓으세요</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;%1$s %2$s 촬영&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;%1$s %2$s 스캔&lt;/b&gt;</string>
+	<string name="netverify_helpview_usdl_fallback_continue">계속하려면 탭하세요</string>
+	<string name="netverify_inside">내부</string>
+	<string name="netverify_nfc_description_extracting">스캔하는 동안 가만히 계세요</string>
+	<string name="netverify_nfc_description_start_other">여권이 자동으로 감지될 때까지 전면 커버를 따라 휴대폰을 천천히 움직이세요</string>
+	<string name="netverify_nfc_description_start_us">여권이 자동으로 감지될 때까지 뒷면 커버 안쪽으로 휴대폰을 천천히 움직이세요</string>
+	<string name="netverify_nfc_enable_dialog_text">여권에서 더 많은 정보를 얻으려면 OK를 클릭하고 전화기의 근거리 무선 통신(NFC) 기능을 활성화하세요.</string>
+	<string name="netverify_nfc_enable_dialog_title">NFC 사용</string>
+	<string name="netverify_nfc_general_error_dialog_text">다시 시도하고 그림대로 지시를 따르세요</string>
+	<string name="netverify_nfc_general_error_dialog_title">스캔 미완료</string>
+	<string name="netverify_nfc_header_extracting">데이터 추출</string>
+	<string name="netverify_nfc_header_finish">스캔 완료</string>
+	<string name="netverify_nfc_header_start">여권 배치</string>
+	<string name="netverify_nfc_requestview_button_text">건너 뛰기</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">여권이 감지되면 움직임을 멈추세요</string>
+	<string name="netverify_nfc_view_title">여권 스캔</string>
+	<string name="netverify_outside">외부</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; 이(가) 문서 발급 국가로 선택되었습니다. &lt;b&gt;&lt;u&gt;국가 변경&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; 이(가) 문서 발급 국가로 설정되었습니다.</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;국가 선택&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">스캔하려는 문서 유형을 선택하세요</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;생체 데이터 분석&lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">계속</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">촬영 전에 ID 번호를 수정하세요</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">촬영 전에 ID와 액세스 번호를 수정하세요</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">촬영 전에 여권 번호를 수정하세요</string>
+	<string name="netverify_scanview_legal_hint_kor">촬영 전에 주민등록번호의 두 번째 블록을 수정하세요</string>
+	<string name="netverify_scanview_legal_hint_nld">촬영 전에 BSN을 수정하세요</string>
+	<string name="netverify_scanview_retake">다시 찍기</string>
+	<string name="netverify_scanview_snackbar_check">문서의 모든 데이터가 완전히 표시되며 눈부심이 없고 흐릿하지 않아야 합니다.</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">문서의 모든 정보가 표시되며 읽을 수 있는지 확인하세요.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">촬영한 이미지가 문서 앞면인 것 같습니다. 문서 뒷면임을 확인하거나 이미지를 다시 촬영하세요.</string>
+	<string name="netverify_scanview_snackbar_check_process_error">문서를 처리할 수 없습니다. 다시 시도하세요.</string>
+	<string name="netverify_scanview_snackbar_progress">문서 처리 중…</string>
+	<string name="netverify_scanview_title">문서 스캔</string>
+	<string name="netverify_scanview_title_check">가독성 점검</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt;업로드 문제&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt;문서 업로드&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">네트워크 연결에 따라 몇 초밖에 걸리지 않습니다.</string>
+	<string name="netverify_upload_successful">&lt;b&gt;업로드 성공&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">뒷면 사용</string>
+	<string name="netverify_use_front_side_of_card">앞면 사용</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">계속하려면 탭하세요</string>
+	<string name="face_helpview_landscape_description">셀카를 찍으려면 휴대폰을 세로로 회전하세요</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;기기 회전&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">문제가 있습니까?</string>
+	<string name="zoom_accessibility_cancel_button">스캔 종료</string>
+	<string name="zoom_action_im_ready">준비 완료</string>
+	<string name="zoom_action_ok">OK</string>
+	<string name="zoom_feedback_a_little_too_close">조금 뒤로 이동</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">조금 뒤로 이동</string>
+	<string name="zoom_feedback_center_face">얼굴을 중앙에 놓아주세요</string>
+	<string name="zoom_feedback_face_not_found">얼굴을 프레임에 맞추세요</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">정면을 보세요</string>
+	<string name="zoom_feedback_face_not_upright">머리를 똑바로 맞춰주세요</string>
+	<string name="zoom_feedback_hold_steady">가만히 계세요</string>
+	<string name="zoom_feedback_move_phone_away">조금 뒤로 이동</string>
+	<string name="zoom_feedback_move_phone_closer">조금 더 가까이 이동</string>
+	<string name="zoom_feedback_move_phone_even_closer">조금 더 가까이</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">기기를 눈높이에서 들고 계세요</string>
+	<string name="zoom_feedback_move_tablet_away">조금 뒤로 이동</string>
+	<string name="zoom_feedback_move_tablet_closer">조금 더 가까이 이동</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">기기를 눈높이에서 들고 계세요</string>
+	<string name="zoom_helpview_bad_angle">기기를 눈높이에서 들고 똑바로 보세요</string>
+	<string name="zoom_helpview_bad_lightning">얼굴에 그림자와 반사가 일어나지 않게 하세요</string>
+	<string name="zoom_helpview_general">2단계 과정을 따라 얼굴을 프레임에 맞춥니다. 기기를 눈높이에서 들고 카메라를 똑바로 봅니다. 얼굴이 자동으로 촬영됩니다.</string>
+	<string name="zoom_helpview_upfront_title">얼굴 촬영</string>
+	<string name="zoom_instructions_header_ready">동영상 셀카 준비</string>
+	<string name="zoom_instructions_message_ready">작은 타원 안에 얼굴을 맞춘 다음 큰 타원에 맞추세요</string>
+	<string name="zoom_result_facemap_upload_message">생체 데이터 분석</string>
+	<string name="zoom_result_success_message">성공!</string>
+	<string name="zoom_retry_header">다시 시도하세요</string>
+	<string name="zoom_retry_ideal_image_label">이상적인 자세</string>
+	<string name="zoom_retry_instruction_message_1">웃지 않는 무표정</string>
+	<string name="zoom_retry_instruction_message_2">눈부시거나 심한 조명 없음</string>
+	<string name="zoom_retry_subheader_message">그전에 사진을 살펴보고 환경을 먼저 수정해주세요.</string>
+	<string name="zoom_retry_your_image_label">내 셀카</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">은행 명세서</string>
+	<string name="dv_helpview_header_birth_certificate">출생 증명서</string>
+	<string name="dv_helpview_header_cash_advance_application">현금 선지금 신청서</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">이사회 결의 인증서</string>
+	<string name="dv_helpview_header_council_bill">위원회 고지서</string>
+	<string name="dv_helpview_header_credit_card">신용 카드</string>
+	<string name="dv_helpview_header_credit_card_statement">신용 카드 명세서</string>
+	<string name="dv_helpview_header_document">문서</string>
+	<string name="dv_helpview_header_health_care_card">건강 관리 카드</string>
+	<string name="dv_helpview_header_insurance_card">보험증</string>
+	<string name="dv_helpview_header_lease_agreement">임대 계약서</string>
+	<string name="dv_helpview_header_loan_application">대출 신청서</string>
+	<string name="dv_helpview_header_medicare_card">메디케어 카드</string>
+	<string name="dv_helpview_header_mortgage_application">모기지 신청서</string>
+	<string name="dv_helpview_header_phone_bill">전화 요금</string>
+	<string name="dv_helpview_header_school_enrolment_letter">입학 허가서</string>
+	<string name="dv_helpview_header_seniors_card">노인 복지 카드</string>
+	<string name="dv_helpview_header_social_security_card">사회 보장 카드</string>
+	<string name="dv_helpview_header_student_card">학생증</string>
+	<string name="dv_helpview_header_superannuation_statement">연금 명세서</string>
+	<string name="dv_helpview_header_tax_return">소득 신고서</string>
+	<string name="dv_helpview_header_trade_association_card">무역 협회 카드</string>
+	<string name="dv_helpview_header_utility_bill">공과금 청구서</string>
+	<string name="dv_helpview_header_vehicle_title">자동차 등록증</string>
+	<string name="dv_helpview_header_voided_check">실효된 수표</string>
+	<string name="dv_helpview_header_working_with_children_check">Working with children check</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;%1$s 촬영&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">계속</string>
+	<string name="dv_scanview_retake">다시 찍기</string>
+	<string name="dv_scanview_snackbar_check">문서의 모든 데이터가 완전히 표시되며 눈부심이 없고 흐릿하지 않아야 합니다.</string>
+	<string name="dv_scanview_title">문서 스캔</string>
+	<string name="dv_scanview_title_check">가독성 점검</string>
+	<string name="dv_upload_error">&lt;b&gt;업로드 문제&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;문서 업로드&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">네트워크 연결에 따라 몇 초밖에 걸리지 않습니다.</string>
+	<string name="dv_upload_successful">&lt;b&gt;업로드 성공&lt;/b&gt;</string>
+	-->
+
+</resources>

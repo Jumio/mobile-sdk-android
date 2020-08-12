@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Perjungti į gale esančią kamerą</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Perjungti į priekyje esančią kamerą</string>
+	<string name="jumio_accessibility_flash_activate">Įjungti blykstę</string>
+	<string name="jumio_accessibility_flash_deactivate">Išjungti blykstę</string>
+	<string name="jumio_accessibility_loading">Įkeliama</string>
+	<string name="jumio_accessibility_quit_scan">Nutraukti skenavimą</string>
+	<string name="jumio_button_cancel">Atšaukti</string>
+	<string name="jumio_button_retry">Bandyti iš naujo</string>
+	<string name="jumio_error_auth_failed">Autentifikavimas nepavyko</string>
+	<string name="jumio_error_cancelled_by_user">Atšaukė galutinis naudotojas</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Sertifikatas daugiau nebegalioja. Prašome atnaujinti savo paraišką</string>
+	<string name="jumio_error_device_is_offline">Nėra interneto ryšio</string>
+	<string name="jumio_error_dialog_title">Klaida</string>
+	<string name="jumio_error_network_problems">Aptikta ryšio problema</string>
+	<string name="jumio_error_no_camera_connection">Kamera šiuo metu nepasiekiama</string>
+	<string name="jumio_error_startup_error">Šiuo metu skenavimas neprieinamas, prašome susisiekti su programėlės pardavėju</string>
+	<string name="jumio_error_transaction_already_finished">Operacija jau baigta</string>
+	<string name="jumio_scanview_refocus">Prašome fokusuoti iš naujo</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Paspauskite, kad tęstumėte</string>
+	<string name="face_helpview_landscape_description">Paverskite savo telefoną statmenai, kad nufotografuotumėte asmenukę</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Pasukite savo įrenginį&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Patiriate problemas?</string>
+	<string name="netverify_accessibility_nfc_description_start">Patikrinkite, ar jūsų ID turi lustą. Jei taip, padėkite telefoną ant ID, kaip parodyta.</string>
+	<string name="netverify_back">Galinė dalis</string>
+	<string name="netverify_countrylist_empty">Sąraše nėra duomenų</string>
+	<string name="netverify_countrylist_title">Pasirinkite jūsų dokumento išdavimo šalį</string>
+	<string name="netverify_document_variant_other">Kitas formatas</string>
+	<string name="netverify_document_variant_plastic">Plastikinė kortelė</string>
+	<string name="netverify_documenttype_driverlicense">Vairuotojo pažymėjimas</string>
+	<string name="netverify_documenttype_idcard">Tapatybės kortelė</string>
+	<string name="netverify_documenttype_passport">Pasas</string>
+	<string name="netverify_documenttype_visa">Viza</string>
+	<string name="netverify_front">Priekinė dalis</string>
+	<string name="netverify_helpview_description_usdl_fallback">Jūsų dokumento brūkšniniame kode nebuvo jūsų adreso, apverskite dokumentą ir nuskenuokite priekinę dalį</string>
+	<string name="netverify_helpview_fallback">FOTOGRAFAVIMAS NEVEIKIA</string>
+	<string name="netverify_helpview_fallback_barcode">MANO ID NĖRA BRŪKŠNINIO KODO</string>
+	<string name="netverify_helpview_full_description">Padėkite savo dokumentą rėmelyje, kaip tai parodyta animacijoje. Nufotografuota bus automatiškai.\nPatikrinkite, ar visi duomenys nuskaitomi, venkite atspindžių.</string>
+	<string name="netverify_helpview_full_description_barcode">Padėkite brūkšninį kodą kameros priekyje, kaip parodyta aukščiau. Fotogravimas pradedamas automatiškai.</string>
+	<string name="netverify_helpview_full_description_card">Padėkite savo dokumentą rėmelyje, kol 4 kampai susilygiuos, kaip tai parodyta animacijoje. Nufotografuota bus automatiškai.\nPatikrinkite, ar visi duomenys nuskaitomi, venkite atspindžių.</string>
+	<string name="netverify_helpview_full_description_template">Padėkite savo dokumentą prieš kamerą, kaip tai parodyta animacijoje. Nufotografuota bus automatiškai.\nPatikrinkite, ar visi duomenys nuskaitomi, venkite atspindžių.</string>
+	<string name="netverify_helpview_progress_text">Žingsnis %1$d iš %2$d</string>
+	<string name="netverify_helpview_small_description">Padėkite savo dokumentą rėmelyje, kad jis būtų automatiškai nufotografuotas</string>
+	<string name="netverify_helpview_small_description_barcode">Padėkite brūkšninį kodą kameros priekyje, kad jis būtų automatiškai nufotografuotas</string>
+	<string name="netverify_helpview_small_description_card">Padėkite savo dokumentą rėmelyje, kad jis būtų automatiškai nufotografuotas</string>
+	<string name="netverify_helpview_small_description_template">Padėkite savo dokumentą prieš kamerą, kad jis būtų automatiškai nufotografuotas</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;Fotografuoti %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Nuskenuoti %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Paspauskite, kad tęstumėte</string>
+	<string name="netverify_inside">Viduje</string>
+	<string name="netverify_nfc_description_extracting">Nejudėkite nuskaitymo metu</string>
+	<string name="netverify_nfc_description_start_other">Veskite telefoną per priekinę pusę, kol jūsų pasas bus automatiškai aptiktas</string>
+	<string name="netverify_nfc_description_start_us">Veskite telefoną per viršutinę galinės dalies pusę, kol jūsų pasas bus automatiškai aptiktas</string>
+	<string name="netverify_nfc_enable_dialog_text">Norėdami geriau išnaudoti savo pasą, spustelėkite Gerai ir įjunkite savo telefono NFC funkciją</string>
+	<string name="netverify_nfc_enable_dialog_title">Įjungti NFC</string>
+	<string name="netverify_nfc_general_error_dialog_text">Pabandykite dar kartą ir vykdykite instrukcijas, kaip parody</string>
+	<string name="netverify_nfc_general_error_dialog_title">Nuskaitymas nebaigta</string>
+	<string name="netverify_nfc_header_extracting">Iškeliami duomenys</string>
+	<string name="netverify_nfc_header_finish">Nuskaitymas baigtas</string>
+	<string name="netverify_nfc_header_start">Padėkite savo pasą</string>
+	<string name="netverify_nfc_requestview_button_text">Praleisti</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">Nejjudėkite, kol aptiks pasą</string>
+	<string name="netverify_nfc_view_title">Nuskaitykite pasą</string>
+	<string name="netverify_outside">Lauke</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; buvo nustatyta kaip jūsų dokumentus išdavusi šalis. &lt;b&gt;&lt;u&gt;Keisti šalį&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; nustatyta kaip jūsų dokumentus išdavusi šalis.</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Pasirinkite savo šalį&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">Pasirinkite norimo nuskaityti dokumento tipą</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Analizuojami biometriniai duomenys&lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">Tęsti</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Prieš fotografuodami uždenkite ID numerį</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Prieš fotografuodami uždenkite ID ir prieigos numerį</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Prieš fotografuodami uždenkite paso numerį</string>
+	<string name="netverify_scanview_legal_hint_kor">Prieš fotografuodami uždenkite antrąjį savo Gyventojo registracijos numerio laukelį</string>
+	<string name="netverify_scanview_legal_hint_nld">Prieš fotografuodami uždenkite savo BSN</string>
+	<string name="netverify_scanview_retake">Pakartokite</string>
+	<string name="netverify_scanview_snackbar_check">Patikrinkite, ar visi jūsų dokumento duomenys gerai matomi, nėra blizgesio ir išsiliejimų</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Patikrinkite, ar visi jūsų dokumento duomenys matomi ir įskaitomi.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">Užfiksuotas vaizdas panašus į priekinę jūsų dokumento pusę. Prašome patvirtinti, kad tai galinė jūsų dokumento pusė arba nufotografuoti iš naujo.</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Nepavyko apdoroti jūsų dokumento, prašome pabandyti dar kartą.</string>
+	<string name="netverify_scanview_snackbar_progress">Dokumentas apdorojamas..</string>
+	<string name="netverify_scanview_title">Nuskenuokite</string>
+	<string name="netverify_scanview_title_check">Patikrinkite įskaitomumą</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt;Įkėlimo problemos&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Įkeliami jūsų dokumentai&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">Tai turėtų užtrukti tik keletą sekundžių, priklausomai nuo jūsų tinklo</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Įkėlimas sėkmingas&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">NAUDOTI GALINĘ DALĮ</string>
+	<string name="netverify_use_front_side_of_card">NAUDOTI PRIEKINĘ DALĮ</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Paspauskite, kad tęstumėte</string>
+	<string name="face_helpview_landscape_description">Paverskite savo telefoną statmenai, kad nufotografuotumėte asmenukę</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Pasukite savo įrenginį&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Patiriate problemas?</string>
+	<string name="zoom_accessibility_cancel_button">Nutraukti skenavimą</string>
+	<string name="zoom_action_im_ready">AŠ PASIRUOŠĘS</string>
+	<string name="zoom_action_ok">GERAI</string>
+	<string name="zoom_feedback_a_little_too_close">Šiek tiek atitraukite</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Šiek tiek atitraukite</string>
+	<string name="zoom_feedback_center_face">Išlaikykite veidą centre</string>
+	<string name="zoom_feedback_face_not_found">Sutalpinkite veidą į rėmelį</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Žiūrėkite į priekį</string>
+	<string name="zoom_feedback_face_not_upright">Laikykite galvą tiesiai</string>
+	<string name="zoom_feedback_hold_steady">Laikykite ramiai</string>
+	<string name="zoom_feedback_move_phone_away">Šiek tiek atitraukite</string>
+	<string name="zoom_feedback_move_phone_closer">Šiek tiek priartinkite</string>
+	<string name="zoom_feedback_move_phone_even_closer">Šiek tiek arčiau</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Laikykite įrenginį akių lygyje</string>
+	<string name="zoom_feedback_move_tablet_away">Šiek tiek atitraukite</string>
+	<string name="zoom_feedback_move_tablet_closer">Šiek tiek priartinkite</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Laikykite įrenginį akių lygyje</string>
+	<string name="zoom_helpview_bad_angle">Laikykite savo įrenginį akių lygyje ir žiūrėkite tiesiai į jį</string>
+	<string name="zoom_helpview_bad_lightning">Venkite šešėlių ir atspindžių ant savo veido</string>
+	<string name="zoom_helpview_general">Sekite dviejų žingsnių procesą ir sulygiuokite savo veidą su rėmeliu. Laikykite savo įrenginį akių lygyje ir žiūrėkite tiesiai į kamerą. Jūsų veidas bus užfiksuotas automatiškai.</string>
+	<string name="zoom_helpview_upfront_title">Nufotografuokite savo veidą</string>
+	<string name="zoom_instructions_header_ready">Pasiruoškite savo vaizdo asmenukėi</string>
+	<string name="zoom_instructions_message_ready">Įrėminkite savo veidą į mažą ovalą ir į didelį ovalą</string>
+	<string name="zoom_result_facemap_upload_message">Analizuojami biometriniai duomenys</string>
+	<string name="zoom_result_success_message">Sėkmė!</string>
+	<string name="zoom_retry_header">Bandykite dar kartą</string>
+	<string name="zoom_retry_ideal_image_label">Ideali poza</string>
+	<string name="zoom_retry_instruction_message_1">Neutrali išraiška, be šypsenos</string>
+	<string name="zoom_retry_instruction_message_2">Venkite blyksčių</string>
+	<string name="zoom_retry_subheader_message">Bet pirma, prašome pažvelgti į savo nuotrauką ir ištaisyti savo aplinką.</string>
+	<string name="zoom_retry_your_image_label">Jūsų asmenuk</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">Banko išrašas</string>
+	<string name="dv_helpview_header_birth_certificate">Gimimo liudijimas</string>
+	<string name="dv_helpview_header_cash_advance_application">Avanso grynaisiais pinigais paraiška</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Įmonės sprendimo pažymėjimas</string>
+	<string name="dv_helpview_header_council_bill">Tarybos sprendimas</string>
+	<string name="dv_helpview_header_credit_card">Kredito kortelė</string>
+	<string name="dv_helpview_header_credit_card_statement">Kredito kortelės išrašas</string>
+	<string name="dv_helpview_header_document">Dokumentas</string>
+	<string name="dv_helpview_header_health_care_card">Sveikatos priežiūros kortelė</string>
+	<string name="dv_helpview_header_insurance_card">Draudimo kortelė</string>
+	<string name="dv_helpview_header_lease_agreement">Nuomos sutartis</string>
+	<string name="dv_helpview_header_loan_application">Paskolos paraiška</string>
+	<string name="dv_helpview_header_medicare_card">„Medicare“ kortelė</string>
+	<string name="dv_helpview_header_mortgage_application">Hipotekos paraiška</string>
+	<string name="dv_helpview_header_phone_bill">Telefono sąskaita</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Priėmimo į mokyklą laiškas</string>
+	<string name="dv_helpview_header_seniors_card">Senjoro kortelė</string>
+	<string name="dv_helpview_header_social_security_card">Socialinio draudimo kortelė</string>
+	<string name="dv_helpview_header_student_card">Studento kortelė</string>
+	<string name="dv_helpview_header_superannuation_statement">Senatvės pensijos pareiškimas</string>
+	<string name="dv_helpview_header_tax_return">Mokesčių grąžinimas</string>
+	<string name="dv_helpview_header_trade_association_card">Prekybos asociacijos kortelė</string>
+	<string name="dv_helpview_header_utility_bill">Komunalinių paslaugų sąskaita</string>
+	<string name="dv_helpview_header_vehicle_title">Transporto priemonės registracijos liudijimas</string>
+	<string name="dv_helpview_header_voided_check">Anuliuotas čekis</string>
+	<string name="dv_helpview_header_working_with_children_check">Darbo su vaikais žyma</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Fotografuoti %1$s&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">Tęsti</string>
+	<string name="dv_scanview_retake">Pakartokite</string>
+	<string name="dv_scanview_snackbar_check">Patikrinkite, ar visi jūsų dokumento duomenys gerai matomi, nėra blizgesio ir išsiliejimų</string>
+	<string name="dv_scanview_title">Nuskenuokite</string>
+	<string name="dv_scanview_title_check">Patikrinkite įskaitomumą</string>
+	<string name="dv_upload_error">&lt;b&gt;Įkėlimo problemos&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;Įkeliami jūsų dokumentai&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Tai turėtų užtrukti tik keletą sekundžių, priklausomai nuo jūsų tinklo</string>
+	<string name="dv_upload_successful">&lt;b&gt;Įkėlimas sėkmingas&lt;/b&gt;</string>
+	-->
+
+</resources>

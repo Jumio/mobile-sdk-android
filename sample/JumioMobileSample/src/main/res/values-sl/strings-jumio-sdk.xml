@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Preklopi na zadnjo kamero</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Preklopi na sprednjo kamero</string>
+	<string name="jumio_accessibility_flash_activate">Vklopi bliskavico</string>
+	<string name="jumio_accessibility_flash_deactivate">Izklopi bliskavico</string>
+	<string name="jumio_accessibility_loading">Nalaganje</string>
+	<string name="jumio_accessibility_quit_scan">Prekliči optično branje</string>
+	<string name="jumio_button_cancel">Prekliči</string>
+	<string name="jumio_button_retry">Poskusi znova</string>
+	<string name="jumio_error_auth_failed">Preverjanje pristnosti ni uspelo</string>
+	<string name="jumio_error_cancelled_by_user">Preklical končni uporabnik.</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Potrdilo ni več veljavno. Posodobite aplikacijo.</string>
+	<string name="jumio_error_device_is_offline">Internetna povezava ni na voljo</string>
+	<string name="jumio_error_dialog_title">Napaka</string>
+	<string name="jumio_error_network_problems">Naleteli smo na težavo z omrežno komunikacijo</string>
+	<string name="jumio_error_no_camera_connection">Kamera trenutno ni na voljo.</string>
+	<string name="jumio_error_startup_error">Optično branje trenutno ni na voljo, obrnite se na prodajalca aplikacije.</string>
+	<string name="jumio_error_transaction_already_finished">Transakcija je že zaključena</string>
+	<string name="jumio_scanview_refocus">Znova izostrite</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Tapnite za nadaljevanje</string>
+	<string name="face_helpview_landscape_description">Telefon obrnite pokončno in se fotografirajte</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Obrnite napravo&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Imate težave?</string>
+	<string name="netverify_accessibility_nfc_description_start">Preverite, ali ima vaš osebni dokument čip. Če ga ima, postavite telefon na osebni dokument, kot prikazuje slika.</string>
+	<string name="netverify_back">Zadaj</string>
+	<string name="netverify_countrylist_empty">Seznam ne vsebuje podatkov</string>
+	<string name="netverify_countrylist_title">Izberite državo izdajateljico dokumenta</string>
+	<string name="netverify_document_variant_other">Druga oblika</string>
+	<string name="netverify_document_variant_plastic">Plastična kartica</string>
+	<string name="netverify_documenttype_driverlicense">Vozniško dovoljenje</string>
+	<string name="netverify_documenttype_idcard">Osebna izkaznica</string>
+	<string name="netverify_documenttype_passport">Potni list</string>
+	<string name="netverify_documenttype_visa">Vizum</string>
+	<string name="netverify_front">Spredaj</string>
+	<string name="netverify_helpview_description_usdl_fallback">Črtna koda na vašem dokumentu ne vsebuje naslova. Obrnite dokument in optično preberite sprednjo stran.</string>
+	<string name="netverify_helpview_fallback">ZAJEM NE DELUJE</string>
+	<string name="netverify_helpview_fallback_barcode">NA MOJEM OSEBNEM DOKUMENTU NI ČRTNE KODE</string>
+	<string name="netverify_helpview_full_description">Dokument postavite v okvir, kot prikazuje zgornja animacija. Zajem se izvede samodejno.\nPoskrbite, da so vsi podatki čitljivi, in preprečite odseve.</string>
+	<string name="netverify_helpview_full_description_barcode">Črtno kodo postavite pred kamero, kot prikazuje zgornja slika. Zajem se izvede samodejno.</string>
+	<string name="netverify_helpview_full_description_card">Postavite dokument znotraj okvirja in poravnajte vse 4 robove, kot prikazuje zgornja animacija. Zajem se izvede samodejno.\nPoskrbite, da so vsi podatki čitljivi, in preprečite odseve.</string>
+	<string name="netverify_helpview_full_description_template">Dokument postavite pred kamero, kot prikazuje zgornja animacija. Zajem se izvede samodejno.\nPoskrbite, da so vsi podatki čitljivi, in preprečite odseve.</string>
+	<string name="netverify_helpview_progress_text">Korak %1$d od %2$d</string>
+	<string name="netverify_helpview_small_description">Dokument postavite v okvir za samodejni zajem.</string>
+	<string name="netverify_helpview_small_description_barcode">Črtno kodo postavite pred kamero za samodejni zajem.</string>
+	<string name="netverify_helpview_small_description_card">Dokument postavite v okvir za samodejni zajem.</string>
+	<string name="netverify_helpview_small_description_template">Dokument postavite pred kamero za samodejni zajem.</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;Zajemi %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Optično preberi %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Tapnite za nadaljevanje</string>
+	<string name="netverify_inside">Znotraj</string>
+	<string name="netverify_nfc_description_extracting">Med optičnim branjem držite pri miru</string>
+	<string name="netverify_nfc_description_start_other">Telefon pomaknite prek sprednje platnice, da se potni list samodejno zazna</string>
+	<string name="netverify_nfc_description_start_us">Telefon pomaknite prek notranje zadnje platnice, da se potni list samodejno zazna</string>
+	<string name="netverify_nfc_enable_dialog_text">Za boljši izkoristek potnega lista kliknite V redu in omogočite funkcijo NFC v telefonu.</string>
+	<string name="netverify_nfc_enable_dialog_title">Omogoči NFC</string>
+	<string name="netverify_nfc_general_error_dialog_text">Poskusite znova in sledite prikazanim navodilom</string>
+	<string name="netverify_nfc_general_error_dialog_title">Nedokončano branje</string>
+	<string name="netverify_nfc_header_extracting">Pridobiv. podatkov</string>
+	<string name="netverify_nfc_header_finish">Optično branje končano</string>
+	<string name="netverify_nfc_header_start">Namestite potni list</string>
+	<string name="netverify_nfc_requestview_button_text">Preskoči</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">Ko je potni list zaznan, držite pri miru</string>
+	<string name="netverify_nfc_view_title">Preberite potni list</string>
+	<string name="netverify_outside">Zunaj</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; je bila nastavljena kot država izdajateljica vaših dokumentov. &lt;b&gt;&lt;u&gt;Spremeni državo&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; je bila nastavljena kot država izdajateljica vaših dokumentov.</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Izberite svojo državo&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">Izberite vrsto dokumenta, ki ga želite optično prebrati</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Analiziranje biometričnih podatkov&lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">Naprej</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Pred zajemom popravite številko osebne izkaznice</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Pred zajemom popravite številko osebne izkaznice in dostopa</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Pred zajemom popravite številko potnega lista</string>
+	<string name="netverify_scanview_legal_hint_kor">Pred zajemom popravite drugo skupino številke registracije prebivalca</string>
+	<string name="netverify_scanview_legal_hint_nld">Pred zajemom popravite BSN</string>
+	<string name="netverify_scanview_retake">PONOVNO POSNEMI</string>
+	<string name="netverify_scanview_snackbar_check">Poskrbite, da so vsi podatki na vašem dokumentu povsem vidni, brez odsevov in niso zamegljeni.</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Poskrbite, da so vsi podatki na vašem dokumentu vidni in čitljivi.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">Zajeta slika je videti kot sprednja stran vašega dokumenta. Potrdite, da je to zadnja stran dokumenta ali pa fotografijo posnemite znova.</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Dokumenta ni mogoče obdelati, poskusite znova.</string>
+	<string name="netverify_scanview_snackbar_progress">Obdelava dokumenta …</string>
+	<string name="netverify_scanview_title">Optično branje</string>
+	<string name="netverify_scanview_title_check">Preveri čitljivost</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt;Težave z nalaganjem&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Nalaganje dokumentov&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">To bi moralo trajati le nekaj sekund, odvisno od vaše omrežne povezljivosti.</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Nalaganje uspešno&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">UPORABITE ZADNJO STRAN</string>
+	<string name="netverify_use_front_side_of_card">UPORABITE SPRENJO STRAN</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Tapnite za nadaljevanje</string>
+	<string name="face_helpview_landscape_description">Telefon obrnite pokončno in se fotografirajte</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Obrnite napravo&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Imate težave?</string>
+	<string name="zoom_accessibility_cancel_button">Prekliči optično branje</string>
+	<string name="zoom_action_im_ready">PRIPRAVLJEN SEM</string>
+	<string name="zoom_action_ok">V REDU</string>
+	<string name="zoom_feedback_a_little_too_close">Malo se oddaljite</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Malo se oddaljite</string>
+	<string name="zoom_feedback_center_face">Obraz postavite na sredino</string>
+	<string name="zoom_feedback_face_not_found">Obraz vstavite v okvir</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Glejte naravnost</string>
+	<string name="zoom_feedback_face_not_upright">Ne nagibajte glave</string>
+	<string name="zoom_feedback_hold_steady">Ne premikajte se</string>
+	<string name="zoom_feedback_move_phone_away">Malo se oddaljite</string>
+	<string name="zoom_feedback_move_phone_closer">Malo se približajte</string>
+	<string name="zoom_feedback_move_phone_even_closer">Malo bližje</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Napravo držite na višini oči.</string>
+	<string name="zoom_feedback_move_tablet_away">Malo se oddaljite</string>
+	<string name="zoom_feedback_move_tablet_closer">Malo se približajte</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Napravo držite na višini oči.</string>
+	<string name="zoom_helpview_bad_angle">Napravo držite na višini oči in glejte naravnost vanjo.</string>
+	<string name="zoom_helpview_bad_lightning">Preprečite sence in odseve na obrazu.</string>
+	<string name="zoom_helpview_general">Sledite postopku v dveh korakih in poravnajte obraz z okvirjem. Napravo držite na višini oči in glejte naravnost v kamero. Vaš obraz bo zajet samodejno.</string>
+	<string name="zoom_helpview_upfront_title">Zajemite svoj obraz</string>
+	<string name="zoom_instructions_header_ready">Pripravite se za video selfie</string>
+	<string name="zoom_instructions_message_ready">Obraz postavite v majhno elipso in nato v veliko elipso</string>
+	<string name="zoom_result_facemap_upload_message">Analiziranje biometričnih podatkov</string>
+	<string name="zoom_result_success_message">Uspeh!</string>
+	<string name="zoom_retry_header">Poskusite znova</string>
+	<string name="zoom_retry_ideal_image_label">Idealna poza</string>
+	<string name="zoom_retry_instruction_message_1">Nevtralen izraz, brez nasmeha</string>
+	<string name="zoom_retry_instruction_message_2">Brez bleščanja/preosvetlitve</string>
+	<string name="zoom_retry_subheader_message">Najprej si oglejte svojo fotografijo in popravite okolje.</string>
+	<string name="zoom_retry_your_image_label">Vaš selfie</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">Bančni izpisek</string>
+	<string name="dv_helpview_header_birth_certificate">Rojstni list</string>
+	<string name="dv_helpview_header_cash_advance_application">Vloga za predplačilo v gotovini</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Potrdilo o sklepu upravnega odbora podjetja</string>
+	<string name="dv_helpview_header_council_bill">Račun občinskega organa</string>
+	<string name="dv_helpview_header_credit_card">Kreditna kartica</string>
+	<string name="dv_helpview_header_credit_card_statement">Izpisek kreditne kartice</string>
+	<string name="dv_helpview_header_document">Dokument</string>
+	<string name="dv_helpview_header_health_care_card">Kartica zdravstvenega zavarovanja</string>
+	<string name="dv_helpview_header_insurance_card">Kartica zavarovanja</string>
+	<string name="dv_helpview_header_lease_agreement">Najemna pogodba</string>
+	<string name="dv_helpview_header_loan_application">Vloga za posojilo</string>
+	<string name="dv_helpview_header_medicare_card">Izkaznica Medicare</string>
+	<string name="dv_helpview_header_mortgage_application">Hipotekarna vloga</string>
+	<string name="dv_helpview_header_phone_bill">Telefonski račun</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Dopis o vpisu v šolo</string>
+	<string name="dv_helpview_header_seniors_card">Upokojenska izkaznica</string>
+	<string name="dv_helpview_header_social_security_card">Izkaznica socialnega zavarovanja</string>
+	<string name="dv_helpview_header_student_card">Študentska izkaznica</string>
+	<string name="dv_helpview_header_superannuation_statement">Pokojninski izpisek</string>
+	<string name="dv_helpview_header_tax_return">Davčna napoved</string>
+	<string name="dv_helpview_header_trade_association_card">Izkaznica trgovinskega združenja</string>
+	<string name="dv_helpview_header_utility_bill">Račun za javne storitve</string>
+	<string name="dv_helpview_header_vehicle_title">Prometno dovoljenje</string>
+	<string name="dv_helpview_header_voided_check">Razveljavljen ček</string>
+	<string name="dv_helpview_header_working_with_children_check">Dovoljenje za delo z otroki</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Zajemi %1$s&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">Naprej</string>
+	<string name="dv_scanview_retake">PONOVNO POSNEMI</string>
+	<string name="dv_scanview_snackbar_check">Poskrbite, da so vsi podatki na vašem dokumentu povsem vidni, brez odsevov in niso zamegljeni.</string>
+	<string name="dv_scanview_title">Optično branje</string>
+	<string name="dv_scanview_title_check">Preveri čitljivost</string>
+	<string name="dv_upload_error">&lt;b&gt;Težave z nalaganjem&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;Nalaganje dokumentov&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">To bi moralo trajati le nekaj sekund, odvisno od vaše omrežne povezljivosti.</string>
+	<string name="dv_upload_successful">&lt;b&gt;Nalaganje uspešno&lt;/b&gt;</string>
+	-->
+
+</resources>

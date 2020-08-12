@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Skakel oor na agterste kamera</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Skakel oor na voorste kamera</string>
+	<string name="jumio_accessibility_flash_activate">Aktiveer flits</string>
+	<string name="jumio_accessibility_flash_deactivate">Deaktiveer flits</string>
+	<string name="jumio_accessibility_loading">Besig om te laai</string>
+	<string name="jumio_accessibility_quit_scan">Verlaat skandering</string>
+	<string name="jumio_button_cancel">Kanselleer</string>
+	<string name="jumio_button_retry">Probeer weer</string>
+	<string name="jumio_error_auth_failed">Verifikasie het misluk</string>
+	<string name="jumio_error_cancelled_by_user">Gekanselleer deur eindgebruiker</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Sertifikaat is nie meer geldig nie. Werk u program asseblief by.</string>
+	<string name="jumio_error_device_is_offline">Geen internetverbinding beskikbaar nie</string>
+	<string name="jumio_error_dialog_title">Fout</string>
+	<string name="jumio_error_network_problems">Daar was \'n netwerkkommunikasieprobleem</string>
+	<string name="jumio_error_no_camera_connection">Die kamera is tans nie beskikbaar nie</string>
+	<string name="jumio_error_startup_error">Skandering is tans nie beskikbaar nie; kontak asseblief die programverskaffer</string>
+	<string name="jumio_error_transaction_already_finished">Transaksie is reeds voltooi</string>
+	<string name="jumio_scanview_refocus">Herfokus asseblief</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Druk om voort te gaan</string>
+	<string name="face_helpview_landscape_description">Draai asseblief u foon na portret om \'n selfie te neem</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Draai u toestel&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Ondervind u probleme?</string>
+	<string name="netverify_accessibility_nfc_description_start">Kyk asseblief of u ID \'n skyfie het. Indien wel, plaas u foon op die ID soos geïllustreer.</string>
+	<string name="netverify_back">agterkant</string>
+	<string name="netverify_countrylist_empty">Geen data in die lys nie</string>
+	<string name="netverify_countrylist_title">Kies die land wat u dokument uitgereik het</string>
+	<string name="netverify_document_variant_other">Ander formaat</string>
+	<string name="netverify_document_variant_plastic">Plastiekkaart</string>
+	<string name="netverify_documenttype_driverlicense">Bestuurderslisensie</string>
+	<string name="netverify_documenttype_idcard">Identiteitskaart</string>
+	<string name="netverify_documenttype_passport">Paspoort</string>
+	<string name="netverify_documenttype_visa">Visum</string>
+	<string name="netverify_front">voorkant</string>
+	<string name="netverify_helpview_description_usdl_fallback">Die strepieskode van u dokument bevat nie u adres nie; draai u dokument om en skandeer die voorkant</string>
+	<string name="netverify_helpview_fallback">VASLEGGING WERK NIE</string>
+	<string name="netverify_helpview_fallback_barcode">GEEN STREPIESKODE OP MY ID NIE</string>
+	<string name="netverify_helpview_full_description">Sit u dokument binne die raam, soos aangedui in die animasie hier bo. Die vaslegging geskied outomaties. \nMaak seker dat alle data leesbaar is en moenie dat daar weerkaatsings is nie.</string>
+	<string name="netverify_helpview_full_description_barcode">Sit die strepieskode voor die kamera, soos  op die afbeelding hier bo. Die vaslegging geskied outomaties.</string>
+	<string name="netverify_helpview_full_description_card">Sit u dokument binne die raam totdat al vier kante in lyn is, soos aangedui in die animasie hierbo. Die vaslegging geskied outomaties. \nMaak seker dat alle data leesbaar is en moenie dat daar weerkaatsings is nie.</string>
+	<string name="netverify_helpview_full_description_template">Sit u dokument voor die kamera, soos aangedui in die animasie hier bo. Die vaslegging geskied outomaties. \nMaak seker dat alle data leesbaar is en moenie dat daar weerkaatsings is nie.</string>
+	<string name="netverify_helpview_progress_text">Stap %1$d van %2$d</string>
+	<string name="netverify_helpview_small_description">Sit u dokument binne die raam totdat dit outomaties vasgelê word</string>
+	<string name="netverify_helpview_small_description_barcode">Sit die strepieskode voor die kamera totdat dit outomaties vasgelê word</string>
+	<string name="netverify_helpview_small_description_card">Sit u dokument binne die raam totdat dit outomaties vasgelê word</string>
+	<string name="netverify_helpview_small_description_template">Sit u dokument voor die kamera totdat dit outomaties vasgelê word</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;Lê %1$s se %2$s vas&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Skandeer %1$s se %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Druk om voort te gaan</string>
+	<string name="netverify_inside">binnekant</string>
+	<string name="netverify_nfc_description_extracting">Hou stil tydens skandering</string>
+	<string name="netverify_nfc_description_start_other">Skuif foon oor die voorblad totdat u paspoort outomaties bespeur word</string>
+	<string name="netverify_nfc_description_start_us">Skuif foon oor die binnekant van die agterblad totdat u paspoort outomaties bespeur word</string>
+	<string name="netverify_nfc_enable_dialog_text">Om meer uit u paspoort te kry, klik asseblief Oukei en aktiveer die NFC-vermoë van u telefoon</string>
+	<string name="netverify_nfc_enable_dialog_title">Aktiveer NFC</string>
+	<string name="netverify_nfc_general_error_dialog_text">Probeer weer en volg die instruksies soos geïllustreer</string>
+	<string name="netverify_nfc_general_error_dialog_title">Skandering onvoltooi</string>
+	<string name="netverify_nfc_header_extracting">Data word onttrek</string>
+	<string name="netverify_nfc_header_finish">Skandering voltooi</string>
+	<string name="netverify_nfc_header_start">Posisioneer u paspoort</string>
+	<string name="netverify_nfc_requestview_button_text">Huppel</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">Hou stil sodra die paspoort bespeur is</string>
+	<string name="netverify_nfc_view_title">Skandeer u paspoort</string>
+	<string name="netverify_outside">buitekant</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; is opgestel as die land wat u dokumente uitgereik het. &lt;b&gt;&lt;u&gt;Verander land&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; is opgestel as die land wat u dokumente uitgereik het.</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Kies u land&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">Kies die soort dokument wat u wil skandeer</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Besig om biometriese data te ontleed&lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">Gaan voort</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Kruis asseblief deur die ID-nommer voor vaslegging</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Kruis asseblief deur die ID- en toegangsnommer voor vaslegging</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Kruis asseblief deur die paspoortnommer voor vaslegging</string>
+	<string name="netverify_scanview_legal_hint_kor">Kruis deur die tweede blok van u inwonersregistrasienommer voor vaslegging</string>
+	<string name="netverify_scanview_legal_hint_nld">Kruis asseblief deur u BSN voor vaslegging</string>
+	<string name="netverify_scanview_retake">Neem weer af</string>
+	<string name="netverify_scanview_snackbar_check">Maak seker dat alle data op u dokument heeltemal sigbaar is, sonder skynsel en nie dof nie</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Maak seker dat alle data op u dokument sigbaar en leesbaar is.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">Die vasgelegde beeld lyk of dit die voorkant van u dokument is. Bevestig asseblief dat dit die agterkant van u dokument is of neem dit weer af.</string>
+	<string name="netverify_scanview_snackbar_check_process_error">U dokument kon nie verwerk word nie; probeer asseblief weer.</string>
+	<string name="netverify_scanview_snackbar_progress">Besig om dokument te verwerk…</string>
+	<string name="netverify_scanview_title">Skandeer</string>
+	<string name="netverify_scanview_title_check">Kyk of dit leesbaar is</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt;Oplaai-probleme&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Besig om u dokumente op te laai&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">Dit behoort slegs \'n paar sekondes te neem afhangend van u netwerkverbinding</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Suksesvol opgelaai&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">GEBRUIK AGTERKANT</string>
+	<string name="netverify_use_front_side_of_card">GEBRUIK VOORKANT</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Druk om voort te gaan</string>
+	<string name="face_helpview_landscape_description">Draai asseblief u foon na portret om \'n selfie te neem</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Draai u toestel&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Ondervind u probleme?</string>
+	<string name="zoom_accessibility_cancel_button">Verlaat skandering</string>
+	<string name="zoom_action_im_ready">EK IS GEREED</string>
+	<string name="zoom_action_ok">OUKEI</string>
+	<string name="zoom_feedback_a_little_too_close">Gaan \'n bietjie terug</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Gaan \'n bietjie terug</string>
+	<string name="zoom_feedback_center_face">Sit u gesig in die middel</string>
+	<string name="zoom_feedback_face_not_found">Sit u gesig in die raam</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Kyk reguit vorentoe</string>
+	<string name="zoom_feedback_face_not_upright">Hou u kop regop</string>
+	<string name="zoom_feedback_hold_steady">Hou stil</string>
+	<string name="zoom_feedback_move_phone_away">Gaan \'n bietjie terug</string>
+	<string name="zoom_feedback_move_phone_closer">Kom \'n bietjie nader</string>
+	<string name="zoom_feedback_move_phone_even_closer">\'n Bietjie nader</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Hou toestel op ooghoogte</string>
+	<string name="zoom_feedback_move_tablet_away">Gaan \'n bietjie terug</string>
+	<string name="zoom_feedback_move_tablet_closer">Kom \'n bietjie nader</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Hou toestel op ooghoogte</string>
+	<string name="zoom_helpview_bad_angle">Hou u toestel op ooghoogte en kyk direk daarna</string>
+	<string name="zoom_helpview_bad_lightning">Moenie dat daar skaduwees en weerkaatsings op u gesig is nie</string>
+	<string name="zoom_helpview_general">Volg die tweestap-proses en sit u gesig in die raam. Hou u toestel op ooghoogte en kyk direk na die kamera. U gesig sal outomaties vasgelê word.</string>
+	<string name="zoom_helpview_upfront_title">Lê u gesig vas</string>
+	<string name="zoom_instructions_header_ready">Maak gereed vir u video-selfie</string>
+	<string name="zoom_instructions_message_ready">Omraam u gesig in die klein ovaal, dan die groot ovaal</string>
+	<string name="zoom_result_facemap_upload_message">Besig om biometriese data te ontleed</string>
+	<string name="zoom_result_success_message">Sukses!</string>
+	<string name="zoom_retry_header">Probeer asb. weer</string>
+	<string name="zoom_retry_ideal_image_label">Ideale pose</string>
+	<string name="zoom_retry_instruction_message_1">Neutrale gesig, geen glimlag</string>
+	<string name="zoom_retry_instruction_message_2">Geen skynsel of skerp lig</string>
+	<string name="zoom_retry_subheader_message">Kyk asseblief eers na u foto en korrigeer u omgewing.</string>
+	<string name="zoom_retry_your_image_label">U selfie</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">Bankstaat</string>
+	<string name="dv_helpview_header_birth_certificate">Geboortesertifikaat</string>
+	<string name="dv_helpview_header_cash_advance_application">Aansoek om kontantvoorskot</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Korporatieweresolusie-sertifikaat</string>
+	<string name="dv_helpview_header_council_bill">Munisipaliteitsrekening</string>
+	<string name="dv_helpview_header_credit_card">Kredietkaart</string>
+	<string name="dv_helpview_header_credit_card_statement">Kredietkaartstaat</string>
+	<string name="dv_helpview_header_document">Dokument</string>
+	<string name="dv_helpview_header_health_care_card">Mediesefondskaart</string>
+	<string name="dv_helpview_header_insurance_card">Versekeringskaart</string>
+	<string name="dv_helpview_header_lease_agreement">Huurkontrak</string>
+	<string name="dv_helpview_header_loan_application">Leningaansoek</string>
+	<string name="dv_helpview_header_medicare_card">Medicare-kaart</string>
+	<string name="dv_helpview_header_mortgage_application">Verbandaansoek</string>
+	<string name="dv_helpview_header_phone_bill">Telefoonrekening</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Skoolinskrywingsbrief</string>
+	<string name="dv_helpview_header_seniors_card">Pensioenariskaart</string>
+	<string name="dv_helpview_header_social_security_card">Welsynskaart</string>
+	<string name="dv_helpview_header_student_card">Studentekaart</string>
+	<string name="dv_helpview_header_superannuation_statement">Aftreespaarrekeningstaat</string>
+	<string name="dv_helpview_header_tax_return">Belastingopgawe</string>
+	<string name="dv_helpview_header_trade_association_card">Handelsverenigingskaart</string>
+	<string name="dv_helpview_header_utility_bill">Munisipale rekening</string>
+	<string name="dv_helpview_header_vehicle_title">Voertuigeienaarskap-dokument</string>
+	<string name="dv_helpview_header_voided_check">Gekanselleerde tjek</string>
+	<string name="dv_helpview_header_working_with_children_check">Werk-met-kinders-kontrole</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Lê %1$s vas&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">Gaan voort</string>
+	<string name="dv_scanview_retake">Neem weer af</string>
+	<string name="dv_scanview_snackbar_check">Maak seker dat alle data op u dokument heeltemal sigbaar is, sonder skynsel en nie dof nie</string>
+	<string name="dv_scanview_title">Skandeer</string>
+	<string name="dv_scanview_title_check">Kyk of dit leesbaar is</string>
+	<string name="dv_upload_error">&lt;b&gt;Oplaai-probleme&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;Besig om u dokumente op te laai&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Dit behoort slegs \'n paar sekondes te neem afhangend van u netwerkverbinding</string>
+	<string name="dv_upload_successful">&lt;b&gt;Suksesvol opgelaai&lt;/b&gt;</string>
+	-->
+
+</resources>

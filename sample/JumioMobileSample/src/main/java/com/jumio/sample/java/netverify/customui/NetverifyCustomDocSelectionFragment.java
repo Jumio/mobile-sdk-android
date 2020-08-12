@@ -54,7 +54,6 @@ public class NetverifyCustomDocSelectionFragment extends Fragment implements Cou
 
 		listView = root.findViewById(R.id.fragment_custom_lv_countries);
 		tvVerification = root.findViewById(R.id.fragment_custom_tv_verification);
-		tvIdentityCheck = root.findViewById(R.id.fragment_custom_tv_identity_check);
 		tvHelp = root.findViewById(R.id.fragment_custom_tv_help);
 		loadingIndicator = root.findViewById(R.id.fragment_nv_custom_loading_indicator);
 

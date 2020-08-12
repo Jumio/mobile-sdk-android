@@ -1,6 +1,7 @@
 package com.jumio.sample.java.netverify.customui;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -39,6 +40,7 @@ import java.util.Locale;
 import java.util.Set;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatDrawableManager;
@@ -149,6 +151,15 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 		}
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+
+		if(customSDKController != null) {
+			customSDKController.consumeIntent(requestCode, resultCode, data);
+		}
+	}
+
 	//#####################################################
 	// FRAGMENT CALLBACKS
 	//#####################################################
@@ -175,7 +186,7 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 				sides = customSDKController.setDocumentConfiguration(selectedCountry, documentType, documentVariant);
 				selectedScanSide = 0;
 				//Start scanning for side
-				String progressString = getApplicationContext().getString(R.string.custom_ui_scan_progress_text, selectedScanSide + 1, sides.size());
+				String progressString = getApplicationContext().getString(R.string.netverify_helpview_progress_text, selectedScanSide + 1, sides.size());
 				NetverifyCustomScanFragment scanFragment = NetverifyCustomScanFragment.newInstance(sides.get(selectedScanSide).toString(), documentType.getLocalizedName(this), progressString);
 
 				startFragment(scanFragment, NetverifyCustomScanFragment.class.getSimpleName(), true);
@@ -219,7 +230,7 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 		selectedScanSide++;
 		if (selectedScanSide < sides.size()) {
 
-			String progressString = getApplicationContext().getString(R.string.custom_ui_scan_progress_text, selectedScanSide + 1, sides.size());
+			String progressString = getApplicationContext().getString(R.string.netverify_helpview_progress_text, selectedScanSide + 1, sides.size());
 			NetverifyCustomScanFragment newScanFragment = NetverifyCustomScanFragment.newInstance(sides.get(selectedScanSide).toString(),
 				selectedDocumentType.getLocalizedName(this), progressString);
 			startFragment(newScanFragment, NetverifyCustomScanFragment.class.getSimpleName(), true);
@@ -295,10 +306,9 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 
 				if (netverifySDK != null) {
 					customSDKController = netverifySDK.start(new NetverifyCustomSDKImpl());
-					customSDKController.resume();
 				}
 
-			} catch (IllegalArgumentException | SDKNotConfiguredException | MissingPermissionException e) {
+			} catch (IllegalArgumentException | MissingPermissionException e) {
 				showToastMessage(e.getMessage());
 				Log.e(TAG, "initializeNetverifyCustom: ", e);
 			}
@@ -373,7 +383,7 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 			netverifySDK.setEnableIdentityVerification(true);
 
 			// Use the following method to disable eMRTD scanning.
-//			netverifySDK.setEnableEMRTD(false);
+			netverifySDK.setEnableEMRTD(true);
 
 			// Use the following method to set the default camera position.
 //			netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
@@ -433,6 +443,12 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 		if (allGranted) {
 			if (requestCode == PERMISSION_REQUEST_CODE_NETVERIFY_CUSTOM) {
 				initializeNetverifyCustom();
+				try {
+					customSDKController.resume();
+				} catch (SDKNotConfiguredException e) {
+					showToastMessage(e.getMessage());
+					Log.e(TAG, "onRequestPermissionsResult: ", e);
+				}
 			}
 		} else {
 			Toast.makeText(getApplicationContext(), "You need to grant all required permissions to start the Jumio SDK", Toast.LENGTH_LONG).show();

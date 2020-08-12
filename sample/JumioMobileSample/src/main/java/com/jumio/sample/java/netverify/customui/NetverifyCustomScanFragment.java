@@ -1,6 +1,7 @@
 package com.jumio.sample.java.netverify.customui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -21,6 +22,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.jumio.analytics.JumioAnalytics;
+import com.jumio.analytics.MobileEvents;
+import com.jumio.analytics.Screen;
+import com.jumio.analytics.UserAction;
 import com.jumio.commons.utils.ScreenUtil;
 import com.jumio.core.data.document.ScanSide;
 import com.jumio.nv.custom.NetverifyCancelReason;
@@ -42,6 +48,7 @@ import java.util.Objects;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 
 import static com.jumio.core.data.document.ScanSide.FACE;
@@ -57,10 +64,11 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 	private ProgressBar loadingIndicator;
 	private NetverifyCustomScanView customScanView;
 	private NetverifyCustomScanPresenter customScanViewPresenter;
+	private NetverifyCustomNfcPresenter customNfcViewPresenter;
 	private NetverifyCustomConfirmationView customConfirmationView;
 	private NetverifyCustomAnimationView customAnimationView;
-	private TextView tvHelp, tvTitle, tvDocumentType;
-	private Button btnConfirm, btnRetake, btnFallback, btnRetryFace, btnCapture;
+	private TextView tvHelp, tvDocumentType, tvSteps;
+	private Button btnConfirm, btnRetake, btnFallback, btnRetryFace, btnCapture, btnDismissHelp, btnSkipNfc;
 	private boolean isOnConfirmation;
 	private int modeType;
 
@@ -120,21 +128,12 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 			modeType = NetverifyCustomScanView.MODE_FACE;
 			customScanView = root.findViewById(R.id.fragment_nv_custom_scan_view);
 
+			setScanViewCloseButtonParameters();
+
 			Rect rectangle = new Rect();
-			if(getActivity() != null) {
+			if (getActivity() != null) {
 				getActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
 			}
-
-			TypedValue tv = new TypedValue();
-			int actionBarHeight = 0;
-			if (getActivity().getTheme().resolveAttribute(R.attr.actionBarSize, tv, true)) {
-				actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
-			}
-			customScanView.setCloseButtonWidth(120);
-			customScanView.setCloseButtonHeight(120);
-			customScanView.setCloseButtonTop(rectangle.top + actionBarHeight);
-			customScanView.setCloseButtonLeft(rectangle.left);
-			customScanView.setCloseButtonResId(R.drawable.jumio_close_button);
 			customScanView.setMode(modeType);
 
 			tvHelp = root.findViewById(R.id.fragment_nv_custom_scan_face_helptext);
@@ -150,35 +149,79 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 			btnRetake.setOnClickListener(this);
 			btnConfirm.setOnClickListener(this);
 			tvHelp = root.findViewById(R.id.fragment_custom_scan_tv_help);
-			tvTitle = root.findViewById(R.id.fragment_custom_scan_tv_title);
-			TextView tvProgress = root.findViewById(R.id.fragment_custom_scan_tv_steps);
-			tvProgress.setText(progressText);
 			tvDocumentType = root.findViewById(R.id.fragment_custom_scan_tv_document_type);
-			tvDocumentType.setText(documentType);
-			modeType = NetverifyCustomScanView.MODE_ID;
+			tvDocumentType.setText(HtmlCompat.fromHtml(getContext().getString(R.string.netverify_helpview_small_title_capture, documentType, ""), HtmlCompat.FROM_HTML_MODE_LEGACY));
 
+			tvSteps = root.findViewById(R.id.fragment_custom_scan_tv_steps);
+			tvSteps.setText(progressText);
+			modeType = NetverifyCustomScanView.MODE_ID;
 			customScanView = root.findViewById(R.id.fragment_nv_custom_scan_view);
 			customScanView.setMode(modeType);
 		}
 
 		btnCapture = root.findViewById(R.id.fragment_custom_scan_btn_capture);
 		btnCapture.setOnClickListener(this);
+		btnSkipNfc = root.findViewById(R.id.fragment_custom_scan_btn_skip_nfc);
+		btnSkipNfc.setOnClickListener(this);
 
 		loadingIndicator = root.findViewById(R.id.fragment_nv_custom_loading_indicator);
 		customConfirmationView = root.findViewById(R.id.fragment_nv_custom_confirmation_view);
 		customAnimationView = root.findViewById(R.id.fragment_nv_custom_animation_view);
-		customScanImpl = new NetverifyCustomScanImpl();
-		initScanView(customScanView);
-		setHasOptionsMenu(true);
 
+		customScanImpl = new NetverifyCustomScanImpl();
 		customScanViewPresenter = callback.onStartScanningWithSide(ScanSide.valueOf(scanSide), customScanView, customConfirmationView, customScanImpl);
 		setHelpText(customScanViewPresenter.getHelpText());
 
-		if(customScanViewPresenter.isFallbackAvailable()) {
-			setFallbackVisibility(true);
+		// show initial help animation for document scanning
+		if (customScanViewPresenter != null) {
+			setHelpText(customScanViewPresenter.getHelpText());
+
+			if (ScanSide.valueOf(scanSide) == ScanSide.FRONT) {
+				btnDismissHelp = root.findViewById(R.id.fragment_custom_scan_btn_dismiss_help);
+				showDocumentHelpAnimation();
+			} else {
+				//Check for displaying shutter button for face manual capturing here as no upfront help is displayed
+				showShutterButton(customScanViewPresenter.showShutterButton());
+			}
 		}
-		showShutterButton(customScanViewPresenter.showShutterButton());
+
+		setHasOptionsMenu(true);
 		return root;
+	}
+
+	/**
+	 * Set up and show document help animation at the beginning of document scanning process
+	 * Continues to actual customScanView on button click
+	 */
+	private void showDocumentHelpAnimation() {
+		hideView(false, tvDocumentType, tvSteps, customScanView);
+		btnDismissHelp.setOnClickListener(this);
+		showView(btnDismissHelp);
+		tvDocumentType.setVisibility(View.INVISIBLE);
+		tvSteps.setVisibility(View.INVISIBLE);
+		customScanViewPresenter.getHelpAnimation(customAnimationView);
+	}
+
+	/**
+	 * Set parameters (size, placement) of 'X' close button in face scan view
+	 */
+	private void setScanViewCloseButtonParameters() {
+//		TODO:
+//		Rect rectangle = new Rect();
+//		if(getActivity().getWindow() != null) {
+//			getActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
+//			TypedValue tv = new TypedValue();
+//			int actionBarHeight = 0;
+//			if (getActivity().getTheme().resolveAttribute(R.attr.actionBarSize, tv, true)) {
+//				actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
+//			}
+//			int buttonDimens = actionBarHeight / 4;
+//			customScanView.setCloseButtonWidth( (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, buttonDimens, getContext().getResources().getDisplayMetrics()));
+//			customScanView.setCloseButtonHeight( (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, buttonDimens, getContext().getResources().getDisplayMetrics()));
+//			customScanView.setCloseButtonTop(rectangle.top + (actionBarHeight / 2));
+//			customScanView.setCloseButtonLeft(rectangle.left);
+//			customScanView.setCloseButtonResId(R.drawable.jumio_close_button);
+//		}
 	}
 
 	/**
@@ -218,11 +261,8 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 				tvHelp.setText(getString(R.string.custom_ui_scan_confirmation));
 			}
 		}
-		if (tvTitle != null) {
-			tvTitle.setText(R.string.custom_ui_verify);
-		}
 		if (tvDocumentType != null) {
-			tvDocumentType.setText(R.string.custom_ui_quality);
+			tvDocumentType.setText(R.string.netverify_scanview_title_check);
 		}
 	}
 
@@ -230,8 +270,7 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 	 * Shows loading screen with spinner as loading indicator, informs user that document is processing
 	 */
 	private void showLoading() {
-		hideView(true, customScanView, btnFallback, btnConfirm, btnRetake);
-
+		hideView(true, customScanView, btnFallback, btnConfirm, btnRetake, btnCapture);
 		if (tvHelp != null) {
 			if(modeType == NetverifyCustomScanView.MODE_ID) {
 				tvHelp.setText(getString(R.string.netverify_scanview_snackbar_progress));
@@ -243,12 +282,8 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 				tvHelp.setVisibility(View.VISIBLE);
 			}
 		}
-
-		if (tvTitle != null) {
-			tvTitle.setText(R.string.custom_ui_verify);
-		}
 		if (tvDocumentType != null) {
-			tvDocumentType.setText(R.string.custom_ui_quality);
+			tvDocumentType.setText(R.string.netverify_scanview_title_check);
 		}
 	}
 
@@ -408,6 +443,23 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 					retryFaceScanning();
 					Log.i(TAG, "Scan btn face retry clicked");
 					break;
+				case R.id.fragment_custom_scan_btn_dismiss_help:
+					hideView(false, customAnimationView, btnDismissHelp);
+					initScanView(customScanView);
+					showView(tvDocumentType, tvSteps, customScanView);
+					if(customScanViewPresenter.isFallbackAvailable()) {
+						setFallbackVisibility(true);
+					}
+					showShutterButton(customScanViewPresenter.showShutterButton());
+					Log.i(TAG, "Dismiss help btn clicked");
+					break;
+				case R.id.fragment_custom_scan_btn_skip_nfc:
+					hideView(false, customAnimationView, btnSkipNfc);
+					customNfcViewPresenter.cancel();
+					customNfcViewPresenter = null;
+					customAnimationView.destroy();
+					Log.i(TAG, "Skip NFC btn clicked");
+					break;
 				default:
 					break;
 			}
@@ -499,11 +551,8 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 			hideView(false, btnCapture);
 		}
 		showView(customScanView);
-		if (tvTitle != null) {
-			tvTitle.setText(getString(R.string.custom_ui_scan_title_capture));
-		}
 		if (tvDocumentType != null) {
-			tvDocumentType.setText(documentType);
+			tvDocumentType.setText(HtmlCompat.fromHtml(getContext().getString(R.string.netverify_helpview_small_title_capture, documentType, ""), HtmlCompat.FROM_HTML_MODE_LEGACY));
 		}
 	}
 
@@ -520,6 +569,60 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 	//#####################################################
 	// HELPER METHODS
 	//#####################################################
+
+	/**
+	 * Creates dialog to handle disbled NFC settings
+	 */
+	private void buildNfcSettingsDialog() {
+		try {
+			if(getActivity() != null) {
+				new MaterialAlertDialogBuilder(getActivity())
+					.setTitle(com.jumio.nv.R.string.netverify_nfc_enable_dialog_title)
+					.setMessage(com.jumio.nv.R.string.netverify_nfc_enable_dialog_text)
+					.setPositiveButton(android.R.string.yes, (dialog, which) -> {
+						dialog.dismiss();
+						getActivity().startActivity(new Intent("android.settings.NFC_SETTINGS"));
+					})
+					.setNegativeButton(android.R.string.no, (dialog, which) -> {
+						dialog.dismiss();
+						JumioAnalytics.add(MobileEvents.userAction(JumioAnalytics.getSessionId(), Screen.ERROR, UserAction.CANCEL));
+						customNfcViewPresenter.cancel();
+					})
+					.show();
+			}
+		} catch(Exception e) {
+			Log.e(TAG, "dialog builder: ", e);
+		}
+	}
+
+	private void buildNfcErrorDialog(String errorMessage, Boolean retryable) {
+		try {
+			if (getActivity() != null) {
+				MaterialAlertDialogBuilder dialogBuilder = new MaterialAlertDialogBuilder(getActivity());
+				dialogBuilder.setTitle(R.string.netverify_nfc_general_error_dialog_title);
+				dialogBuilder.setMessage(errorMessage);
+
+				if (retryable) {
+					dialogBuilder.setPositiveButton(R.string.jumio_button_retry, (dialog, which) -> {
+						dialog.dismiss();
+						customNfcViewPresenter.retry();
+					});
+					dialogBuilder.setNegativeButton(R.string.jumio_button_cancel, (dialog, which) -> {
+						dialog.dismiss();
+						customNfcViewPresenter.cancel();
+					});
+				} else {
+					dialogBuilder.setPositiveButton(R.string.jumio_button_cancel, (dialog, which) -> {
+						dialog.dismiss();
+						customNfcViewPresenter.cancel();
+					});
+				}
+				dialogBuilder.show();
+			}
+		} catch (Exception e) {
+			Log.e(TAG, "dialog builder: ", e);
+		}
+	}
 
 	/**
 	 * Sets text displayed at bottom of the screen to help user with the process
@@ -597,6 +700,44 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 			} else {
 				customScanView.setRatio(customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE ? 1.66f : 1.0f);
 			}
+		}
+	}
+
+	/**
+	 * Handles NFC detection.
+	 */
+	private class NetverifyCustomNfcImpl implements NetverifyCustomNfcInterface {
+
+		@Override
+		public void onNetverifyNfcStarted() {
+			Log.i(TAG, "onNetverifyNfcStarted");
+			tvDocumentType.setText(R.string.netverify_nfc_header_extracting);
+		}
+
+		@Override
+		public void onNetverifyNfcUpdate(int progress) {
+			Log.i(TAG, String.format("onNetverifyNfcUpdate %d", progress));
+		}
+
+		@Override
+		public void onNetverifyNfcFinished() {
+			hideView(false, customAnimationView, btnSkipNfc);
+			tvDocumentType.setText(R.string.netverify_nfc_header_finish);
+			showView(tvSteps);
+			Log.i(TAG, "onNetverifyNfcFinished");
+		}
+
+		@Override
+		public void onNetverifyNfcSystemSettings() {
+			buildNfcSettingsDialog();
+			Log.i(TAG, "NFC not enabled");
+		}
+
+		@Override
+		public void onNetverifyNfcError(String errorMessage, boolean retryable) {
+			tvDocumentType.setText(R.string.netverify_nfc_header_start);
+			buildNfcErrorDialog(errorMessage, retryable);
+			Log.e(TAG, String.format("$errorMessage, retry possible: $retryable"));
 		}
 	}
 
@@ -725,8 +866,6 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 			scanningCanceled();
 			switch (netverifyCancelReason) {
 				case ERROR_GENERIC:
-				case ERROR_BAD_ANGLE:
-				case ERROR_BAD_LIGHTNING:
 					customScanViewPresenter.stopScan();
 					customScanViewPresenter.getHelpAnimation(customAnimationView);
 					setHelpText(customScanViewPresenter.getHelpText());
@@ -750,7 +889,8 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 		 */
 		@Override
 		public NetverifyCustomNfcInterface getNetverifyCustomNfcInterface() {
-			return null;
+			Log.i(TAG, "getNetverifyCustomNfcInterface");
+			return new NetverifyCustomNfcImpl();
 		}
 
 		/**
@@ -760,7 +900,17 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 		 */
 		@Override
 		public void onNetverifyStartNfcExtraction(NetverifyCustomNfcPresenter netverifyCustomNfcPresenter) {
+			Log.i(TAG, "onNetverifyStartNfcExtraction");
 
+			customNfcViewPresenter = netverifyCustomNfcPresenter;
+			customNfcViewPresenter.getHelpAnimation(customAnimationView);
+
+			tvDocumentType.setText(R.string.netverify_nfc_header_start);
+			hideView(false, tvSteps);
+			setHelpText(customNfcViewPresenter.getHelpText());
+
+			showView(customAnimationView, btnSkipNfc);
+			hideView(false, customScanView, btnConfirm, btnRetake);
 		}
 	}
 

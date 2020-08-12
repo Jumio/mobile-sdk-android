@@ -1,8 +1,28 @@
-![Fastfill & Netverify](images/netverify.jpg)
+![ID Verification & Fastfill](images/id_verification.jpg)
 
-# Transition guide for Netverify & Fastfill SDK
+# Transition guide for ID Verification & Fastfill SDK
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
+
+## 3.7.0
+
+#### Dependency changes
+* Room updated: ~~"androidx.room:room-runtime:2.2.3"~~ is replaced by "androidx.room:room-runtime:2.2.5"
+* JMRTD updated: ~~"org.jmrtd:jmrtd:0.7.18"~~ is replaced by "org.jmrtd:jmrtd:0.7.19"
+* Bouncycastle updated: ~~"org.bouncycastle:bcprov-jdk15on:1.64"~~ is replaced by "org.bouncycastle:bcprov-jdk15on:1.65"
+
+
+#### API changes
+* `getEMRTDStatus()` has been removed from [NetverifyDocumentData](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifyDocumentData.html)
+* New attributes for customization of the NFC help animation have been added to our `styles.xml`:
+  * `netverify_nfc_passport_cover` - Outside passport cover color
+  * `netverify_nfc_passport_page_dark` - Color of the last page inside the passport after opening
+  * `netverify_nfc_passport_page_light` - Color of the flipped pages during opening
+  * `netverify_nfc_passport_foreground` - Foreground color for the passport text and the phone screen
+  * `netverify_nfc_phone_background` - Frame color for the phone that is positioned on the passport
+
+* Attribute `netverify_nfc_dialog_theme` has been removed and is not required any more
+* The position of the Jumio branding logo and privacy link changed to from bottom-right to center-top for all portrait scan views. In Custom UI, the top margin for this element can be adjusted using the following method [`setBrandingLogoTopMargin(int topMargin)`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanView.html#setBrandingLogoTopMargin-int-)
 
 ## 3.6.2
 The Proguard keep rule `-keep class com.jumio.** { *; }` has to be added to your Proguard rules, if it wasn't added yet.
@@ -319,4 +339,4 @@ Additions for the customization options to support the configuration of all scan
 
 ## Copyright
 
-&copy; Jumio Corp. 268 Lambert Avenue, Palo Alto, CA 94306
+&copy; Jumio Corp. 395 Page Mill Road, Palo Alto, CA 94306

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
-import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -32,12 +31,9 @@ import com.jumio.auth.AuthenticationDeallocationCallback;
 import com.jumio.auth.AuthenticationResult;
 import com.jumio.auth.AuthenticationSDK;
 import com.jumio.auth.custom.AuthenticationCancelReason;
-import com.jumio.auth.custom.AuthenticationCustomAnimationView;
 import com.jumio.auth.custom.AuthenticationCustomSDKController;
 import com.jumio.auth.custom.AuthenticationCustomSDKInterface;
 import com.jumio.auth.custom.AuthenticationCustomScanInterface;
-import com.jumio.auth.custom.AuthenticationCustomScanView;
-import com.jumio.commons.utils.ScreenUtil;
 import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.MissingPermissionException;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
@@ -69,8 +65,6 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 	private LinearLayout callbackLog;
 	private LinearLayout userConsentLayout;
 	private FrameLayout customScanLayout;
-	private AuthenticationCustomScanView customScanView;
-	private AuthenticationCustomAnimationView customAnimationView;
 	private ProgressBar loadingIndicator;
 	private EditText enrollmentTransactionReference;
 	private Button startCustomScanButton;
@@ -105,8 +99,6 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 		customScanLayout = rootView.findViewById(R.id.customScanLayout);
 		userConsentLayout = rootView.findViewById(R.id.userConsentLayout);
 		callbackLog = rootView.findViewById(R.id.callbackLog);
-        customScanView = rootView.findViewById(R.id.authenticationCustomScanView);
-		customAnimationView = rootView.findViewById(R.id.authenticationCustomAnimationView);
 		enrollmentTransactionReference = rootView.findViewById(R.id.etEnrollmentTransactionReference);
 		startCustomScanButton = rootView.findViewById(R.id.startAuthenticationCustomButton);
 		cancelCustomScanButton = rootView.findViewById(R.id.stopAuthenticationCustomButton);
@@ -129,9 +121,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
         successDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.jumio_success));
         errorDrawable = new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.jumio_error));
 
-        initScanView();
-
-		hideView(false, errorRetryButton, partRetryButton, customAnimationView);
+		hideView(false, errorRetryButton, partRetryButton);
 
         return rootView;
     }
@@ -139,8 +129,6 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-
-        initScanView();
     }
 
     @Override
@@ -181,19 +169,6 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
         }
     }
 
-    private boolean isPortrait() {
-		Display display = getActivity().getWindowManager().getDefaultDisplay();
-		Point size = new Point();
-		display.getSize(size);
-		return size.y > size.x;
-	}
-
-    private void initScanView() {
-    	boolean isPortrait = isPortrait();
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(isPortrait ? FrameLayout.LayoutParams.MATCH_PARENT : FrameLayout.LayoutParams.WRAP_CONTENT, isPortrait ? FrameLayout.LayoutParams.WRAP_CONTENT : ScreenUtil.dpToPx(getActivity(), 300));
-        customScanView.setLayoutParams(params);
-    }
-
     @Override
     public void onClick(View v) {
         v.setEnabled(false);
@@ -210,7 +185,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 					inputMethodManager.hideSoftInputFromWindow(enrollmentTransactionReference.getWindowToken(), 0);
 				}
 
-				hideView(true, errorRetryButton, partRetryButton, customAnimationView);
+				hideView(true, errorRetryButton, partRetryButton);
 				callbackLog.removeAllViews();
 
 				try {
@@ -252,8 +227,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 
 			hideView(false, userConsentLayout);
 		} else if (v == partRetryButton && isSDKControllerValid()) {
-			customAnimationView.destroy();
-			hideView(false, partRetryButton, customAnimationView);
+			hideView(false, partRetryButton);
 			showView(true, customScanLayout);
 
 			scrollView.post(new Runnable() {
@@ -380,20 +354,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 		@Override
 		public void run() {
 			try {
-				int[] location = new int[2];
-				customScanView.getLocationOnScreen(location);
-
-				Rect rectangle = new Rect();
-				getActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
-
-				customScanView.setCloseButtonWidth(ScreenUtil.dpToPx(getActivity(), 24));
-				customScanView.setCloseButtonHeight(ScreenUtil.dpToPx(getActivity(), 24));
-				customScanView.setCloseButtonTop(location[1] - rectangle.top);
-				customScanView.setCloseButtonLeft(location[0] - rectangle.left);
-				customScanView.setCloseButtonResId(R.drawable.jumio_close_button);
-
-				customSDKController.startScan(customScanView, new AuthenticationCustomScanImpl());
-				addToCallbackLog("help text: " + customSDKController.getHelpText());
+				customSDKController.startScan(new AuthenticationCustomScanImpl());
 			} catch (SDKNotConfiguredException e) {
 				hideView(false, customScanLayout);
 				addToCallbackLog(e.getMessage());
@@ -405,18 +366,6 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 		@Override
 		public void run() {
 			try {
-				int[] location = new int[2];
-				customScanView.getLocationOnScreen(location);
-
-				Rect rectangle = new Rect();
-				getActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
-
-				customScanView.setCloseButtonWidth(ScreenUtil.dpToPx(getActivity(), 24));
-				customScanView.setCloseButtonHeight(ScreenUtil.dpToPx(getActivity(), 24));
-				customScanView.setCloseButtonTop(location[1] - rectangle.top);
-				customScanView.setCloseButtonLeft(location[0] - rectangle.left);
-				customScanView.setCloseButtonResId(R.drawable.jumio_close_button);
-
 				customSDKController.retryScan();
 			} catch (Exception e) {
 				addToCallbackLog(e.getMessage());
@@ -472,10 +421,9 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 
 		@Override
 		public void onAuthenticationScanCanceled(AuthenticationCancelReason cancelReason) {
-			addToCallbackLog(String.format("onAuthenticationScanCanceled reason: %s, helptext: %s", cancelReason.toString(), customSDKController.getHelpText()));
+			addToCallbackLog(String.format("onAuthenticationScanCanceled reason: %s", cancelReason.toString()));
 
-			customSDKController.getHelpAnimation(customAnimationView);
-			showView(false, partRetryButton, customAnimationView);
+			showView(false, partRetryButton);
 
 			faceButton.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null);
 		}
@@ -489,8 +437,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 		public void onAuthenticationFaceInLandscape() {
 			addToCallbackLog("onAuthenticationFaceInLandscape");
 
-			customSDKController.getHelpAnimation(customAnimationView);
-			showView(false, partRetryButton, customAnimationView);
+			showView(false, partRetryButton);
 
 			faceButton.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null);
 		}

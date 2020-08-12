@@ -100,8 +100,8 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 			// JumioDataCenter.EU instead.
 			documentVerificationSDK = DocumentVerificationSDK.create(getActivity(), apiToken, apiSecret, dataCenter);
 
-			// One of the configured DocumentTypeCodes: BC, BS, CAAP, CB, CCS, CRC, HCC, IC, LAG, LOAP,
-			// MEDC, MOAP, PB, SEL, SENC, SS, STUC, TAC, TR, UB, SSC, VC, VT, WWCC, CUSTOM
+			// One of the configured DocumentTypeCodes: BC, BS, CAAP, CB, CC, CCS, CRC, HCC, IC, LAG, LOAP,
+			// MEDC, MOAP, PB, SEL, SENC, SS, SSC, STUC, TAC, TR, UB, VC, VT, WWCC, CUSTOM
 			documentVerificationSDK.setType("BC");
 
 			// ISO 3166-1 alpha-3 country code

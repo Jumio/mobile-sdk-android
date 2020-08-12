@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Lülitu tagakaamerale</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Lülitu esikaamerale</string>
+	<string name="jumio_accessibility_flash_activate">Aktiveeri välk</string>
+	<string name="jumio_accessibility_flash_deactivate">Inaktiveeri välk</string>
+	<string name="jumio_accessibility_loading">Laadimine</string>
+	<string name="jumio_accessibility_quit_scan">Lõpeta skannimine</string>
+	<string name="jumio_button_cancel">Tühista</string>
+	<string name="jumio_button_retry">Proovi uuesti</string>
+	<string name="jumio_error_auth_failed">Tuvastamine ebaõnnestus</string>
+	<string name="jumio_error_cancelled_by_user">Lõppkasutaja poolt tühistatud</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Sertifikaat ei kehti enam. Värskendage oma taotlust</string>
+	<string name="jumio_error_device_is_offline">Internetiühendus puudub</string>
+	<string name="jumio_error_dialog_title">Viga</string>
+	<string name="jumio_error_network_problems">Meil on tekkinud võrgusuhtluse probleem</string>
+	<string name="jumio_error_no_camera_connection">Kaamera pole praegu saadaval</string>
+	<string name="jumio_error_startup_error">Skannimine pole praegu saadaval, võtke ühendust rakenduse pakkujaga</string>
+	<string name="jumio_error_transaction_already_finished">Tehing on juba lõpule viidud</string>
+	<string name="jumio_scanview_refocus">Seadke uuesti fookusesse</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Jätkamiseks puudutage</string>
+	<string name="face_helpview_landscape_description">Selfie pildistamiseks pöörake oma telefon portreeformaati</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Pöörake seadet&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Ilmnesid probleemid?</string>
+	<string name="netverify_accessibility_nfc_description_start">Kontrollige, kas teie isikutunnistusel on kiip. Kui jah, asetage oma telefon ID-le nagu näidatud.</string>
+	<string name="netverify_back">Tagakülg</string>
+	<string name="netverify_countrylist_empty">Andmed loendis puuduvad</string>
+	<string name="netverify_countrylist_title">Valige dokumendi väljaandja riik</string>
+	<string name="netverify_document_variant_other">Muu vorming</string>
+	<string name="netverify_document_variant_plastic">Plastkaart</string>
+	<string name="netverify_documenttype_driverlicense">Juhiluba</string>
+	<string name="netverify_documenttype_idcard">Isikutunnistus</string>
+	<string name="netverify_documenttype_passport">Pass</string>
+	<string name="netverify_documenttype_visa">Viisa</string>
+	<string name="netverify_front">Esikülg</string>
+	<string name="netverify_helpview_description_usdl_fallback">Teie dokumendi vöötkood ei sisaldanud teie aadressi, pöörake dokumenti ja skannige esikülg</string>
+	<string name="netverify_helpview_fallback">JÄÄDVUSTAMINE EI TÖÖTA</string>
+	<string name="netverify_helpview_fallback_barcode">MINU ISIKUTUNNISTUSEL POLE VÖÖTKOODI</string>
+	<string name="netverify_helpview_full_description">Asetage dokument raami, nagu on näidatud ülaltoodud animatsioonis. Jäädvustamine toimub automaatselt. \nVeenduge, et kõik andmed oleks loetavad, ja vältige peegeldusi.</string>
+	<string name="netverify_helpview_full_description_barcode">Asetage vöötkood kaamera ette, nagu on näidatud ülaloleval pildil. Jäädvustamine toimub automaatselt.</string>
+	<string name="netverify_helpview_full_description_card">Asetage dokument raami, kuni kõik 4 serva on joondatud, nagu ülaltoodud animatsioonis näidatud. Jäädvustamine toimub automaatselt. \nVeenduge, et kõik andmed oleks loetavad, ja vältige peegeldusi.</string>
+	<string name="netverify_helpview_full_description_template">Asetage dokument kaamera ette, nagu on näidatud ülaltoodud animatsioonis. Jäädvustamine toimub automaatselt. \nVeenduge, et kõik andmed oleks loetavad, ja vältige peegeldusi.</string>
+	<string name="netverify_helpview_progress_text">Samm %1$d/%2$d</string>
+	<string name="netverify_helpview_small_description">Asetage dokument raami, kuni see automaatselt jäädvustatakse</string>
+	<string name="netverify_helpview_small_description_barcode">Asetage vöötkood kaamera ette, kuni see automaatselt jäädvustatakse</string>
+	<string name="netverify_helpview_small_description_card">Asetage dokument raami, kuni see automaatselt jäädvustatakse</string>
+	<string name="netverify_helpview_small_description_template">Asetage oma dokument kaamera ette, kuni see automaatselt jäädvustatakse</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;Jäädvusta %1$s %2$s &lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Skanni %1$s %2$s &lt;/b&gt;</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Jätkamiseks puudutage</string>
+	<string name="netverify_inside">Sees</string>
+	<string name="netverify_nfc_description_extracting">Hoidke skannimise ajal paigal</string>
+	<string name="netverify_nfc_description_start_other">Libistage telefoni üle esikaane, kuni teie pass tuvastatakse automaatselt</string>
+	<string name="netverify_nfc_description_start_us">Libistage telefon üle tagakaane sisekülje, kuni teie pass tuvastatakse automaatselt</string>
+	<string name="netverify_nfc_enable_dialog_text">Oma passi paremaks kasutamiseks klõpsake nuppu OK ja lubage telefoni NFC-funktsioon</string>
+	<string name="netverify_nfc_enable_dialog_title">Lubage NFC</string>
+	<string name="netverify_nfc_general_error_dialog_text">Proovige uuesti ja järgige joonisel toodud juhiseid</string>
+	<string name="netverify_nfc_general_error_dialog_title">Skannimine puudulik</string>
+	<string name="netverify_nfc_header_extracting">Andmete väljavõtmine</string>
+	<string name="netverify_nfc_header_finish">Skannimine on lõpetatud</string>
+	<string name="netverify_nfc_header_start">Paigutage oma pass</string>
+	<string name="netverify_nfc_requestview_button_text">Vahele jätma</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">Kui pass on tuvastatud, hoidke seda paigal</string>
+	<string name="netverify_nfc_view_title">Skannige oma pass</string>
+	<string name="netverify_outside">Väljas</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; on seatud teie dokumentide väljaandjariigiks. &lt;b&gt;&lt;u&gt;Muutke riik&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; on seatud teie dokumentide väljaandjariigiks.</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Valige oma riik&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">Valige skannitava dokumendi tüüp</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Biomeetriliste andmete analüüsimine&lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">Jätka</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Enne jäädvustamist kustutage isikukood</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Enne jäädvustamist kustutage isikukood ja juurdepääsunumber</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Enne jäädvustamist kustutage passi number</string>
+	<string name="netverify_scanview_legal_hint_kor">Enne jäädvustamist kustutage oma elaniku registreerimisnumbri teine osa</string>
+	<string name="netverify_scanview_legal_hint_nld">Enne jäädvustamist kustutage oma kodaniku identifitseerimisnumber</string>
+	<string name="netverify_scanview_retake">Uuesti</string>
+	<string name="netverify_scanview_snackbar_check">Veenduge, et kõik dokumendi andmed oleksid täielikult nähtavad, pimestamata ja mitte hägused</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Veenduge, et kõik dokumendi andmed oleksid nähtavad ja loetavad.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">Jäädvustatud pilt näeb välja samasugune nagu teie dokumendi esikülg. Kinnitage, et see on dokumendi tagakülg või tehke pilt uuesti.</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Teie dokumenti ei saanud töödelda. Proovige uuesti.</string>
+	<string name="netverify_scanview_snackbar_progress">Dokumendi töötlemine …</string>
+	<string name="netverify_scanview_title">Skannige</string>
+	<string name="netverify_scanview_title_check">Kontrollige loetavust</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt;Probleemid üleslaadimisel&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Dokumentide üleslaadimine&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">Olenevalt võrguühendusest peaks see võtma ainult paar sekundit</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Üleslaadimine õnnestus&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">KASUTA TAGAKÜLGE</string>
+	<string name="netverify_use_front_side_of_card">KASUTA ESIKÜLGE</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Jätkamiseks puudutage</string>
+	<string name="face_helpview_landscape_description">Selfie pildistamiseks pöörake oma telefon portreeformaati</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Pöörake seadet&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Ilmnesid probleemid?</string>
+	<string name="zoom_accessibility_cancel_button">Lõpeta skannimine</string>
+	<string name="zoom_action_im_ready">OLEN VALMIS</string>
+	<string name="zoom_action_ok">KORRAS</string>
+	<string name="zoom_feedback_a_little_too_close">Liigutage natuke tagasi</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Liigutage natuke tagasi</string>
+	<string name="zoom_feedback_center_face">Tsentreerige oma nägu</string>
+	<string name="zoom_feedback_face_not_found">Raamige oma nägu</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Vaadake otse</string>
+	<string name="zoom_feedback_face_not_upright">Hoidke pea otse</string>
+	<string name="zoom_feedback_hold_steady">Hoidke paigal</string>
+	<string name="zoom_feedback_move_phone_away">Liigutage natuke tagasi</string>
+	<string name="zoom_feedback_move_phone_closer">Liigutage natuke lähemale</string>
+	<string name="zoom_feedback_move_phone_even_closer">Natuke lähemale</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Hoidke seadet silmade kõrgusel</string>
+	<string name="zoom_feedback_move_tablet_away">Liigutage natuke tagasi</string>
+	<string name="zoom_feedback_move_tablet_closer">Liigutage natuke lähemale</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Hoidke seadet silmade kõrgusel</string>
+	<string name="zoom_helpview_bad_angle">Hoidke seadet silmade kõrgusel ja vaadake otse seadmesse</string>
+	<string name="zoom_helpview_bad_lightning">Vältige varje ja peegeldusi näol</string>
+	<string name="zoom_helpview_general">Järgige kaheastmelist protsessi ja joondage oma nägu raamiga. Hoidke seadet silmade kõrgusel ja vaadake otse kaamerasse. Teie nägu jäädvustatakse automaatselt.</string>
+	<string name="zoom_helpview_upfront_title">Jäädvustage oma nägu</string>
+	<string name="zoom_instructions_header_ready">Valmistuge oma video selfie jaoks</string>
+	<string name="zoom_instructions_message_ready">Raamige nägu väikese ovaalse, siis suure ovaalse kujuga</string>
+	<string name="zoom_result_facemap_upload_message">Biomeetriliste andmete analüüsimine</string>
+	<string name="zoom_result_success_message">Edu!</string>
+	<string name="zoom_retry_header">Palun proovi uuesti</string>
+	<string name="zoom_retry_ideal_image_label">Sobiv poos</string>
+	<string name="zoom_retry_instruction_message_1">Neutraalne ilme, naeratuseta</string>
+	<string name="zoom_retry_instruction_message_2">Pimestuse/liigse valgustuseta</string>
+	<string name="zoom_retry_subheader_message">Kuid kõigepealt vaadake oma fotot ja parandage oma ümbrust.</string>
+	<string name="zoom_retry_your_image_label">Teie selfie</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">Panga väljavõte</string>
+	<string name="dv_helpview_header_birth_certificate">Sünnitunnistus</string>
+	<string name="dv_helpview_header_cash_advance_application">Ettemakse taotlus</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Juhatuse otsus</string>
+	<string name="dv_helpview_header_council_bill">Volikogu arve</string>
+	<string name="dv_helpview_header_credit_card">Krediitkaart</string>
+	<string name="dv_helpview_header_credit_card_statement">Krediitkaardi väljavõte</string>
+	<string name="dv_helpview_header_document">Dokument</string>
+	<string name="dv_helpview_header_health_care_card">Ravikindlustuskaart</string>
+	<string name="dv_helpview_header_insurance_card">Kindlustuskaart</string>
+	<string name="dv_helpview_header_lease_agreement">Rendileping</string>
+	<string name="dv_helpview_header_loan_application">Laenutaotlus</string>
+	<string name="dv_helpview_header_medicare_card">Ravikindlustuskaart</string>
+	<string name="dv_helpview_header_mortgage_application">Hüpoteegi taotlus</string>
+	<string name="dv_helpview_header_phone_bill">Telefoniarve</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Kooli registreerimise kiri</string>
+	<string name="dv_helpview_header_seniors_card">Pensionitunnistus</string>
+	<string name="dv_helpview_header_social_security_card">Sotsiaalkindlustuskaart</string>
+	<string name="dv_helpview_header_student_card">Õpilaspilet</string>
+	<string name="dv_helpview_header_superannuation_statement">Vanaduspensioni avaldus</string>
+	<string name="dv_helpview_header_tax_return">Maksutagastus</string>
+	<string name="dv_helpview_header_trade_association_card">Ametiühingu kaart</string>
+	<string name="dv_helpview_header_utility_bill">Kommunaalarve</string>
+	<string name="dv_helpview_header_vehicle_title">Sõiduki nimetus</string>
+	<string name="dv_helpview_header_voided_check">Tühistatud tšekk</string>
+	<string name="dv_helpview_header_working_with_children_check">Lastega töötamise piirangu kontroll</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Jäädvustage %1$s&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">Jätka</string>
+	<string name="dv_scanview_retake">Uuesti</string>
+	<string name="dv_scanview_snackbar_check">Veenduge, et kõik dokumendi andmed oleksid täielikult nähtavad, pimestamata ja mitte hägused</string>
+	<string name="dv_scanview_title">Skannige</string>
+	<string name="dv_scanview_title_check">Kontrollige loetavust</string>
+	<string name="dv_upload_error">&lt;b&gt;Probleemid üleslaadimisel&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;Dokumentide üleslaadimine&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Olenevalt võrguühendusest peaks see võtma ainult paar sekundit</string>
+	<string name="dv_upload_successful">&lt;b&gt;Üleslaadimine õnnestus&lt;/b&gt;</string>
+	-->
+
+</resources>

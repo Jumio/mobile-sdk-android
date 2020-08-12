@@ -4,28 +4,70 @@
 	<style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorAccent">@color/colorAccent</item>
+		<item name="colorSecondary">@color/colorSecondary</item>
 
 		<item name="bam_scanOverlay">@color/jumio_white_alpha72</item>
 		<item name="bam_scanBackground">@color/jumio_black_alpha50</item>
 
-        <item name="netverify_scanOverlay">@color/jumio_white_alpha40</item>
-        <item name="netverify_scanOverlayFill">@color/jumio_white_alpha40</item>
-        <item name="netverify_scanBackground">@color/jumio_black_alpha50</item>
+		<item name="face_scanOverlayBackground">@color/jumio_white</item>
+		<item name="face_scanOverlayFeedbackText">@color/jumio_white</item>
+		<item name="face_scanOverlayFeedbackBackground">@color/jumio_primary</item>
+		<item name="face_scanOverlayProgress">@color/jumio_primary</item>
+		<item name="face_scanOverlayOval">@color/jumio_black</item>
+		<item name="face_helpImage">@color/jumio_black</item>
+		<item name="face_helpBackground">@color/jumio_white</item>
 
-        <item name="netverify_scanOverlayTemplateValid">@color/jumio_primary_dark</item>
-        <item name="netverify_scanOverlayTemplateInvalid">@color/jumio_grey200</item>
-        <item name="netverify_scanOverlayDetectedLine">@color/jumio_primary</item>
-        <item name="netverify_scanOverlayDetectedLineStroke">@color/jumio_white</item>
+		<item name="face_close_button_top">16dp</item>
+		<item name="face_close_button_left">16dp</item>
+		<item name="face_close_button_width">12dp</item>
+		<item name="face_close_button_height">12dp</item>
+		<item name="face_close_button_resource">@drawable/jumio_close_button</item>
+	</style>
 
-        <item name="face_scanOverlayBackground">@color/jumio_white</item>
-        <item name="face_scanOverlayFeedbackText">@color/jumio_white</item>
-        <item name="face_scanOverlayFeedbackBackground">@color/jumio_primary</item>
-        <item name="face_scanOverlayProgress">@color/jumio_primary</item>
-        <item name="face_scanOverlayOval">@color/jumio_black</item>
-        <item name="face_helpImage">@color/jumio_black</item>
-        <item name="face_helpBackground">@color/jumio_white</item>
+	<style name="AppTheme.NetverifyCustom" parent="Theme.Netverify">
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorSecondary">@color/colorSecondary</item>
+
+		<item name="materialButtonStyle">@style/CustomButtonStyleTextColor</item>
+
+		<item name="netverify_scanOverlay">@color/jumio_white_alpha40</item>
+		<item name="netverify_scanOverlayFill">@color/jumio_white_alpha40</item>
+		<item name="netverify_scanBackground">@color/jumio_black_alpha50</item>
+
 		<item name="netverify_countryListCountryName">@color/jumio_black</item>
+
+		<item name="netverify_scanOverlayTemplateValid">@color/jumio_primary_dark</item>
+		<item name="netverify_scanOverlayTemplateInvalid">@color/jumio_grey200</item>
+		<item name="netverify_scanOverlayDetectedLine">@color/jumio_primary</item>
+		<item name="netverify_scanOverlayDetectedLineStroke">@color/jumio_white</item>
+		<item name="netverify_helpImage">@color/jumio_primary</item>
+		<item name="netverify_helpBackground">@color/jumio_white</item>
+
+		<item name="face_scanOverlayBackground">@color/jumio_white</item>
+		<item name="face_scanOverlayFeedbackText">@color/jumio_white</item>
+		<item name="face_scanOverlayFeedbackBackground">@color/jumio_primary</item>
+		<item name="face_scanOverlayProgress">@color/jumio_primary</item>
+		<item name="face_scanOverlayOval">@color/jumio_black</item>
+		<item name="face_helpImage">@color/jumio_primary</item>
+		<item name="face_helpBackground">@color/jumio_white</item>
+
+		<item name="face_close_button_top">16dp</item>
+		<item name="face_close_button_left">16dp</item>
+		<item name="face_close_button_width">12dp</item>
+		<item name="face_close_button_height">12dp</item>
+		<item name="face_close_button_resource">@drawable/jumio_close_button</item>
+
+		<item name="netverify_nfc_passport_cover">@color/jumio_black</item>
+		<item name="netverify_nfc_passport_page_dark">@color/jumio_grey500</item>
+		<item name="netverify_nfc_passport_page_light">@color/jumio_grey300</item>
+		<item name="netverify_nfc_passport_foreground">@color/jumio_white</item>
+		<item name="netverify_nfc_phone_background">@color/jumio_grey800</item>
+
+	</style>
+
+	<style name="CustomButtonStyleTextColor" parent="Widget.MaterialComponents.Button">
+		<item name="android:textColor">@color/jumio_white</item>
 	</style>
 
 	<style name="AppTheme.NoActionBar">
@@ -36,13 +78,13 @@
 	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorAccent">@color/colorAccent</item>
+		<item name="colorSecondary">@color/colorSecondary</item>
 	</style>
 
 	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorAccent">@color/colorAccent</item>
+		<item name="colorSecondary">@color/colorSecondary</item>
 	</style>
 
 </resources>

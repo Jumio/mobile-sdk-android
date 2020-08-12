@@ -7,7 +7,8 @@ Document Verification is a powerful solution to enable scanning various types (U
 
 - [Release notes](#release-notes)
 - [Setup](#setup)
-- [Integration](#integration)
+- [Dependencies](#dependencies)
+- [Initialization](#integration)
 - [Configuration](#configuration)
 - [Customization](#customization)
 - [SDK Workflow](#sdk-workflow)
@@ -15,10 +16,13 @@ Document Verification is a powerful solution to enable scanning various types (U
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-For technical changes, please read our [transition guide](transition-guide_document-verification.md) SDK version: 3.6.2
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.0
+
+For breaking technical changes, please read our [transition guide](transition-guide_document-verification.md)
+
 
 ## Setup
-The [basic setup](../README.md#basic-setup) is required before continuing with the following setup for DocumentVerification.
+The [basic setup](../README.md#basics) is required before continuing with the following setup for DocumentVerification.
 
 Using the SDK requires an activity declaration in your AndroidManifest.xml.
 
@@ -33,36 +37,44 @@ Using the SDK requires an activity declaration in your AndroidManifest.xml.
 You can specify your own theme (see [Customization](#customizing-look-and-feel) chapter). The orientation can be sensor based or locked with the attribute `android:screenOrientation`.
 
 
-## Integration
+## Dependencies
+Below there is a list of dependices the application will need to work in Android. Some modules are mandatory, others are optinal. If an optional module is __not linked__, some functionalities such as certain methods may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size with the products ID Verification, BAM, Document Verification and Authentication included is currently around __18 MB__.
 
-### Dependencies
+```
+dependencies {
+    // mandatory
+    implementation "com.jumio.android:core:3.7.0@aar"   // Jumio core library
+    implementation "com.jumio.android:dv:3.7.0@aar"     // Document verification library
 
-| Dependency        | Mandatory           | Description       | Size (Jumio libs only) |
-| ----------------- |:-------------------:|:------------------|:-------------------:|
-| com.jumio.android:core:3.6.2@aar                    | x | Jumio Core library            | 4.09 MB |
-| com.jumio.android:dv:3.6.2@aar                      | x | Document Verification library | 134.72 KB |
-| androidx.appcompat:appcompat:1.1.0                   | x | Android appcompat library        | - |
-|com.google.android.material:material:1.1.0           | x | Android material design library	          | - |
-|androidx.localbroadcastmanager:localbroadcastmanager:1.0.0 | x | Android local broadcast manager library  	| - |
-|androidx.room:room-runtime:2.2.3			              | x | Android database object mapping library	| - |
-| com.jumio.android:javadoc:3.6.2                     |   | Jumio SDK Javadoc             | - |
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
+    implementation "androidx.room:room-runtime:2.2.5"
 
-If an optional module is not linked, the scan method is not available but the library size is reduced.
+    implementation "com.google.android.material:material:1.1.0"
 
+
+    // not mandatory
+    implementation "com.jumio.android:javadoc:3.7.0"
+}
+```
+__Note:__ Version numbers may vary.
+
+#### Root detection
 Applications implementing the SDK shall not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.
 ```
 DocumentVerificationSDK.isRooted(Context context);
 ```
 
+#### Device supported check
 Call the method `isSupportedPlatform` to check if the device is supported.
 ```
 DocumentVerificationSDK.isSupportedPlatform();
 ```
 
-Check the Android Studio sample projects to learn the most common use.
+Check the Android Studio [sample app](../sample/JumioMobileSample/) to learn the most common use.
 
 ## Initialization
-To create an instance for the SDK, perform the following call as soon as your activity is initialized.
+Log into your Jumio customer portal. You can find your customer API token and API secret on the __Settings__ page under __API credentials__ tab. To create an instance for the SDK, perform the following call as soon as your activity is initialized.
 
 ```
 private static String YOURAPITOKEN = ""; 
@@ -71,14 +83,14 @@ private static String YOURAPISECRET = "";
 DocumentVerificationSDK documentVerificationSDK = DocumentVerificationSDK.create(yourActivity, YOURAPITOKEN, YOURAPISECRET, JumioDataCenter.US);
 ```
 Make sure that your customer API token and API secret are correct, specify an instance
-of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). If your customer account is in the EU data center, use `JumioDataCenter.EU` instead.
+of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). If your customer account is in the EU data center, use `JumioDataCenter.EU` instead. Alternatively, use `JumioDataCenter.SG` for Singapore.
 
-__Note:__ Log into your Jumio customer portal, and you can find your customer API token and API secret on the "Settings" page under "API credentials". We strongly recommend you to store credentials outside your app.
+__Note:__ We strongly recommend storing all credentials outside of your app!
 
 ## Configuration
 
 ### Document type
-Use `setType` to pass the document type.
+Use `setType()` to pass the document type.
 ```
 documentVerificationSDK.setType("DOCUMENTTYPE");
 ```
@@ -113,40 +125,23 @@ Possible types:
 *  CUSTOM (Custom document type)
 
 #### Custom Document Type
-Use the following method to pass your custom document code. Maintain your custom document code within your Jumio customer portal under "Settings" - "Multi Document" - "Custom".
+Use the following method to pass your custom document code. Maintain your custom document code within your Jumio customer portal under the tab __Settings__ --> __Document Verification__ --> __Custom__.
 ```
 documentVerificationSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");
 ```
 
-### Country
-The country needs to be in format [ISO-3166-1 alpha 3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) or XKX for Kosovo.
+### Country selection
+You can specify issuing country  using [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country codes. In the example down below the United States ("USA") have been preselected. Use "XKX" for Kosovo.
 ```
 documentVerificationSDK.setCountry("USA");
 ```
 
 ### Transaction identifiers
-
 Use the following property to identify the scan in your reports (max. 100 characters).
 ```
 documentVerificationSDK.setReportingCriteria("YOURREPORTINGCRITERIA");
 ```
 
-A callback URL can be specified for individual transactions constraints see chapter [Callback URL](#callback-url)). This setting overrides your Jumio customer settings.
-```
-documentVerificationSDK.setCallbackUrl("YOURCALLBACKURL");
-```
-
-### Data Extraction
-
-Data extraction is automatically enabled when it is activated for your account. Use the following setting to disable the extraction on a transaction level:
-
-```
-documentVerificationSDK.setEnableExtraction(false);
-```
-
-__Note:__ If you want to enable extraction for your account in general, please contact your Account Manager, or reach out to Jumio Support.
-
-### Miscellaneous
 Use the following property to identify the scan in your reports (max. 100 characters).
 ```
 documentVerificationSDK.setCustomerInternalReference("YOURSCANREFERENCE");
@@ -157,8 +152,26 @@ You can also set a user reference (max. 100 characters).
 documentVerificationSDK.setUserReference("USERREFERENCE");
 ```
 
-__Note:__ The user reference and customer internal reference must not contain sensitive data like PII (Personally Identifiable Information) or account login.
+__Note:__ Transaction identifiers must not contain sensitive data like PII (Personally Identifiable Information) or account login.
 
+### Callback
+A callback URL can be specified for individual transactions constraints see chapter [Callback URL](#callback-url). This setting overrides your Jumio customer settings.
+```
+documentVerificationSDK.setCallbackUrl("YOURCALLBACKURL");
+```
+__Note:__ The callback URL must not contain sensitive data like PII (Personally Identifiable Information) or account login.
+
+
+### Data Extraction
+Data extraction is automatically enabled when it is activated for your account. Use the following setting to disable the extraction on a transaction level:
+
+```
+documentVerificationSDK.setEnableExtraction(false);
+```
+
+__Note:__ If you would like to enable extraction for your account in general, please contact your Account Manager, or reach out to Jumio Support at support@jumio.com or [online](https://support.jumio.com).
+
+### Camera handling
 Use setCameraPosition to configure the default camera (front or back).
 ```
 documentVerificationSDK.setCameraPosition(JumioCameraPosition.FRONT);
@@ -171,17 +184,15 @@ documentVerificationSDK.setDocumentName(“YOURDOCNAME”);
 
 ## Customization
 
-### Customizing look and feel
-The SDK can be customized to fit your application’s look and feel by specifying `Theme.DocumentVerification` as a parent style of your own custom theme. Click on the element `Theme.DocumentVerification` in the manifest while holding Ctrl and Android Studio will display the available items.
-Change the colors of the styles attributes to fit your requirements.
-
 ### Customize look and feel
-There are 2 possibilities for applying the customized theme that was explained in the previous chapter:
+The SDK can be customized to fit your application’s look and feel by specifying `Theme.DocumentVerification` as a parent style of your own custom theme. Click on the element `Theme.DocumentVerification` in the manifest while holding Ctrl and Android Studio will display the available items. Change the colors of the styles attributes to fit your requirements.
+
+There are two possibilities for applying the customized theme that was explained in the previous chapter:
 * Customizing theme in AndroidManifest
 * Customizing theme at runtime
 
 #### Customizing theme in AndroidManifest
-Apply the your custom theme DocumentVerification with the  that you defined before by replacing `Theme.DocumentVerification` in the AndroidManifest.xml:
+Apply  the '`CustomDocumentVerificationTheme` that you defined before by replacing `Theme.DocumentVerification` in the AndroidManifest.xml:
 ```
 <activity
             android:name="com.jumio.dv.DocumentVerificationActivity"
@@ -190,8 +201,7 @@ Apply the your custom theme DocumentVerification with the  that you defined befo
 ```
 
 ### Customizing theme at runtime
-
-To customize the theme at runtime, overwrite the theme that is used for Netverify in the manifest by adding the line of code below. Use the resource id of a customized theme that uses `Theme.Netverify` as parent.
+To customize the theme at runtime, overwrite the theme that is used for Document Verification in the manifest by adding the line of code below. Use the resource id of a customized theme that uses `Theme.DocumentVerification` as parent.
 ```
 documentVerificationSDK.setCustomTheme(CUSTOMTHEME);
 ```
@@ -199,17 +209,15 @@ documentVerificationSDK.setCustomTheme(CUSTOMTHEME);
 ## SDK Workflow
 
 ### Starting the SDK
-
 To show the SDK, call the respective method below within your activity or fragment.
 
-Activity: `DocumentVerificationSDK.start();` <br/>
+Activity: `DocumentVerificationSDK.start();`
 Fragment: `startActivityForResult(documentVerificationSDK.getIntent(),DocumentVerificationSDK.REQUEST_CODE);`
 
 __Note:__ The default request code is 300. To use another code, override the public static variable `DocumentVerificationSDK.REQUEST_CODE` before displaying the SDK.
 
 ### Retrieving information
-
-Implement the standard `onActivityResult` method in your activity or fragment for successful scans (`Activity.RESULT_OK`) and user cancellation notifications (`Activity.RESULT_CANCELED`). Call `documentVerificationSDK.destroy()` once you received the result.
+Implement the standard `onActivityResult()` method in your activity or fragment for successful scans (`Activity.RESULT_OK`) and user cancellation notifications (`Activity.RESULT_CANCELED`). Call `documentVerificationSDK.destroy()` once you received the result.
 
 ```
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -233,6 +241,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 ```
 
 #### Error codes
+List of all **_error codes_** that are available via the `code` property of the DocumentVerificationError object. The first letter (A-K) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]).
 
 |Code        			| Message   | Description    |
 | :--------------:|:----------|:---------------|
@@ -246,7 +255,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 |I00000| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
 |K10400| Unsupported document code defined. Please contact Jumio support | An unsupported document code has been set, retry impossible |
 
-The first letter (A-K) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]). Please always include the whole code when filing an error related issue to our support team.
+__Note:__ Please always include the whole code when filing an error related issue to our support team.
 
 ## Callback
-To get information about callbacks, Netverify Retrieval API, Netverify Delete API and Global Netverify settings and more, please read our [page with server related information](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md).
+To get information about callbacks, __Netverify Retrieval API,__ __Netverify Delete API,__ and Global ID Verification settings and more, please read our [page with server related information](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md).

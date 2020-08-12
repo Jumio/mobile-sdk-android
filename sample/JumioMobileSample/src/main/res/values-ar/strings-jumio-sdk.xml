@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">التبديل إلى الكاميرا الخلفية</string>
+	<string name="jumio_accessibility_camera_switch_to_front">التبديل إلى الكاميرا الأمامية</string>
+	<string name="jumio_accessibility_flash_activate">تنشيط الفلاش</string>
+	<string name="jumio_accessibility_flash_deactivate">إلغاء تنشيط الفلاش</string>
+	<string name="jumio_accessibility_loading">جار التحميل</string>
+	<string name="jumio_accessibility_quit_scan">إنهاء المسح</string>
+	<string name="jumio_button_cancel">إلغاء</string>
+	<string name="jumio_button_retry">إعادة المحاولة</string>
+	<string name="jumio_error_auth_failed">فشلت المصادقة</string>
+	<string name="jumio_error_cancelled_by_user">تم إلغاؤه من قبل المستخدم النهائي</string>
+	<string name="jumio_error_certificate_not_valid_anymore">الشهادة لم تعد صالحة. يُرجى تحديث طلبك</string>
+	<string name="jumio_error_device_is_offline">لا يتوفر اتصال بالإنترنت</string>
+	<string name="jumio_error_dialog_title">خطأ</string>
+	<string name="jumio_error_network_problems">واجهنا مشكلة في الاتصال بالشبكة</string>
+	<string name="jumio_error_no_camera_connection">الكاميرا غير متاحة حاليًا</string>
+	<string name="jumio_error_startup_error">المسح غير متاح في الوقت الحالي، يُرجى الاتصال ببائع التطبيق</string>
+	<string name="jumio_error_transaction_already_finished">تم إنهاء المعاملة بالفعل</string>
+	<string name="jumio_scanview_refocus">يُرجى إعادة التركيز</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">اضغط للمتابعة</string>
+	<string name="face_helpview_landscape_description">يُرجى تدوير هاتفك إلى الوضع الرأسي لالتقاط صورة ذاتية</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;قم بتدوير جهازك&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">هل تواجه مشكلات؟</string>
+	<string name="netverify_accessibility_nfc_description_start">يُرجى التحقق مما إذا كانت هويتك تحتوي على شريحة. إذا كان الأمر كذلك، فضع هاتفك على الهوية كما هو موضح.</string>
+	<string name="netverify_back">الظهر</string>
+	<string name="netverify_countrylist_empty">لا توجد بيانات في القائمة</string>
+	<string name="netverify_countrylist_title">حدد البلد المصدر لمستندك</string>
+	<string name="netverify_document_variant_other">صيغه آخرى</string>
+	<string name="netverify_document_variant_plastic">بطاقة بلاستيكية</string>
+	<string name="netverify_documenttype_driverlicense">رخصة القيادة</string>
+	<string name="netverify_documenttype_idcard">بطاقة الهوية</string>
+	<string name="netverify_documenttype_passport">جواز السفر</string>
+	<string name="netverify_documenttype_visa">التأشيرة</string>
+	<string name="netverify_front">الوجه</string>
+	<string name="netverify_helpview_description_usdl_fallback">لا يحتوي الرمز الشريطي للمستند الخاص بك على عنوانك، قم بقلب المستند وامسح الوجه</string>
+	<string name="netverify_helpview_fallback">الالتقاط لا يعمل</string>
+	<string name="netverify_helpview_fallback_barcode">لا يوجد رمز شريطي على هويتي</string>
+	<string name="netverify_helpview_full_description">ضع المستند داخل الإطار كما هو موضح في الرسم المتحرك أعلاه. يحدث الالتقاط تلقائيًا. \nتأكد من أن جميع البيانات قابلة للقراءة وتجنب الانعكاسات.</string>
+	<string name="netverify_helpview_full_description_barcode">ضع الرمز الشريطي أمام الكاميرا كما هو موضح في الصورة أعلاه. يحدث الالتقاط تلقائيًا.</string>
+	<string name="netverify_helpview_full_description_card">ضع المستند داخل الإطار حتى تتم محاذاة جميع الحواف الأربع كما هو موضح في الرسم المتحرك أعلاه. يحدث الالتقاط تلقائيًا. \nتأكد من أن جميع البيانات قابلة للقراءة وتجنب الانعكاسات.</string>
+	<string name="netverify_helpview_full_description_template">ضع المستند أمام الكاميرا كما هو موضح في الرسم المتحرك أعلاه. يحدث الالتقاط تلقائيًا. \nتأكد من أن جميع البيانات قابلة للقراءة وتجنب الانعكاسات.</string>
+	<string name="netverify_helpview_progress_text">الخطوة %1$d من %2$d</string>
+	<string name="netverify_helpview_small_description">ضع المستند داخل الإطار حتى يتم التقاطه تلقائيًا</string>
+	<string name="netverify_helpview_small_description_barcode">ضع الرمز الشريطي أمام الكاميرا حتى يتم التقاطه تلقائيًا</string>
+	<string name="netverify_helpview_small_description_card">ضع المستند داخل الإطار حتى يتم التقاطه تلقائيًا</string>
+	<string name="netverify_helpview_small_description_template">ضع المستند أمام الكاميرا حتى يتم التقاطه تلقائيًا</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;التقاط %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;مسح %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_usdl_fallback_continue">اضغط للمتابعة</string>
+	<string name="netverify_inside">الداخل</string>
+	<string name="netverify_nfc_description_extracting">اثبت في مكانك أثناء المسح</string>
+	<string name="netverify_nfc_description_start_other">مرر الهاتف عبر الغطاء الأمامي حتى يتم اكتشاف جواز سفرك تلقائيًا</string>
+	<string name="netverify_nfc_description_start_us">مرر الهاتف عبر الجزء الداخلي من الغطاء الخلفي حتى يتم اكتشاف جواز سفرك تلقائيًا</string>
+	<string name="netverify_nfc_enable_dialog_text">للحصول على المزيد من جواز سفرك، يُرجى النقر على موافق وتمكين قدرة NFC بهاتفك</string>
+	<string name="netverify_nfc_enable_dialog_title">تمكين NFC</string>
+	<string name="netverify_nfc_general_error_dialog_text">حاول مرة أخرى واتبع التعليمات كما هو موضح</string>
+	<string name="netverify_nfc_general_error_dialog_title">المسح غير مكتمل</string>
+	<string name="netverify_nfc_header_extracting">&lt;b&gt;استخراج البيانات&lt;/b&gt;</string>
+	<string name="netverify_nfc_header_finish">اكتمل المسح</string>
+	<string name="netverify_nfc_header_start">ضع جواز سفرك</string>
+	<string name="netverify_nfc_requestview_button_text">تخطى</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">انتظر حتى يتم اكتشاف جواز السفر</string>
+	<string name="netverify_nfc_view_title">مسح جواز سفرك</string>
+	<string name="netverify_outside">الخارج</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; تم التعيين كبلد إصدار لمستنداتك. &lt;b&gt;&lt;u&gt;تغيير البلد&lt;/b&gt;&lt;/u&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; تم التعيين كبلد مصدر للمستندات الخاصة بك.</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;حدد بلدك&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">حدد نوع المستند الذي ترغب في مسحه ضوئيًا</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;تحليل البيانات البيومترية&lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">متابعة</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">يُرجى تعديل رقم الهوية قبل الالتقاط</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">يُرجى تعديل الهوية ورقم الوصول قبل الالتقاط</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">يُرجى تعديل رقم جواز السفر قبل الالتقاط</string>
+	<string name="netverify_scanview_legal_hint_kor">قم بتعديل المجموعة الثانية لرقم تسجيل الإقامة الخاص بك قبل الالتقاط</string>
+	<string name="netverify_scanview_legal_hint_nld">يُرجى تعديل BSN الخاص بك قبل الالتقاط</string>
+	<string name="netverify_scanview_retake">إعادة الالتقاط</string>
+	<string name="netverify_scanview_snackbar_check">تأكد من أن جميع البيانات الموجودة في المستند مرئية تمامًا وخالية من الوهج وواضحة</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">تأكد من أن جميع البيانات الموجودة في المستند مرئية وقابلة للقراءة.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">تبدو الصورة الملتقطة مثل الجزء الأمامي من المستند. يُرجى تأكيد أن هذا هو الجزء الخلفي من المستند أو إعادة التقاط الصورة.</string>
+	<string name="netverify_scanview_snackbar_check_process_error">تعذر معالجة المستند الخاص بك، يُرجى المحاولة مرة أخرى.</string>
+	<string name="netverify_scanview_snackbar_progress">جارٍ معالجة المستند…</string>
+	<string name="netverify_scanview_title">مسح المستند</string>
+	<string name="netverify_scanview_title_check">التحقق من إمكانية القراءة</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt;مشكلات التحميل&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt;جارٍ تحميل مستنداتك&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">يجب أن يستغرق ذلك بضع ثوانٍ فقط، اعتمادًا على اتصال الشبكة</string>
+	<string name="netverify_upload_successful">&lt;b&gt;تحميل ناجح&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">استخدام الظهر</string>
+	<string name="netverify_use_front_side_of_card">استخدام الوجه</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">اضغط للمتابعة</string>
+	<string name="face_helpview_landscape_description">يُرجى تدوير هاتفك إلى الوضع الرأسي لالتقاط صورة ذاتية</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;قم بتدوير جهازك&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">هل تواجه مشكلات؟</string>
+	<string name="zoom_accessibility_cancel_button">إنهاء المسح</string>
+	<string name="zoom_action_im_ready">أنا مستعد</string>
+	<string name="zoom_action_ok">موافق</string>
+	<string name="zoom_feedback_a_little_too_close">تحرّك للوراء قليلاً</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">تحرّك للوراء قليلاً</string>
+	<string name="zoom_feedback_center_face">اجعل وجهك في الوسط</string>
+	<string name="zoom_feedback_face_not_found">ضع وجهك داخل الإطار</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">انظر للأمام مباشرة</string>
+	<string name="zoom_feedback_face_not_upright">حافظ على استقامة رأسك</string>
+	<string name="zoom_feedback_hold_steady">اثبت في مكانك</string>
+	<string name="zoom_feedback_move_phone_away">تحرّك للوراء قليلاً</string>
+	<string name="zoom_feedback_move_phone_closer">تحرك أقرب قليلاً</string>
+	<string name="zoom_feedback_move_phone_even_closer">أقرب قليلاً</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">أمسك الجهاز على مستوى العين</string>
+	<string name="zoom_feedback_move_tablet_away">تحرّك للوراء قليلاً</string>
+	<string name="zoom_feedback_move_tablet_closer">تحرك أقرب قليلاً</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">أمسك الجهاز على مستوى العين</string>
+	<string name="zoom_helpview_bad_angle">أمسك جهازك على مستوى العين وانظر إليه مباشرة</string>
+	<string name="zoom_helpview_bad_lightning">تجنب الظلال والانعكاسات على وجهك</string>
+	<string name="zoom_helpview_general">اتبع عملية من خطوتين وقم بمحاذاة وجهك مع الإطار. أمسك جهازك على مستوى العين وانظر مباشرةً إلى الكاميرا. سيتم التقاط وجهك تلقائيًا</string>
+	<string name="zoom_helpview_upfront_title">التقاط صورة لوجهك</string>
+	<string name="zoom_instructions_header_ready">استعد لصورتك الذاتية الفيديو</string>
+	<string name="zoom_instructions_message_ready">يُرجى تأطير وجهك في الشكل البيضاوي الصغير، ثم الكبير</string>
+	<string name="zoom_result_facemap_upload_message">تحليل البيانات البيومترية</string>
+	<string name="zoom_result_success_message">نجاح!</string>
+	<string name="zoom_retry_header">حاول مرة اخرى</string>
+	<string name="zoom_retry_ideal_image_label">وضع مثالي</string>
+	<string name="zoom_retry_instruction_message_1">تعبير محايد، لا تبتسم</string>
+	<string name="zoom_retry_instruction_message_2">بدون وهج أو إضاءة شديدة</string>
+	<string name="zoom_retry_subheader_message">ولكن أولاً، يُرجى إلقاء نظرة على صورتك وتصحيح بيئتك.</string>
+	<string name="zoom_retry_your_image_label">صورة ذاتية</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">كشف حساب بنكى</string>
+	<string name="dv_helpview_header_birth_certificate">شهادة ميلاد</string>
+	<string name="dv_helpview_header_cash_advance_application">طلب السلفة النقدية</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">شهادة قرار الشركة</string>
+	<string name="dv_helpview_header_council_bill">فاتورة المجلس</string>
+	<string name="dv_helpview_header_credit_card">بطاقة ائتمان</string>
+	<string name="dv_helpview_header_credit_card_statement">كشف حساب بطاقة الائتمان</string>
+	<string name="dv_helpview_header_document">المستند</string>
+	<string name="dv_helpview_header_health_care_card">بطاقة الرعاية الصحية</string>
+	<string name="dv_helpview_header_insurance_card">بطاقة التأمين</string>
+	<string name="dv_helpview_header_lease_agreement">عقد الإيجار</string>
+	<string name="dv_helpview_header_loan_application">طلب القرض</string>
+	<string name="dv_helpview_header_medicare_card">بطاقة الرعاية الطبية</string>
+	<string name="dv_helpview_header_mortgage_application">طلب الرهن العقاري</string>
+	<string name="dv_helpview_header_phone_bill">فاتورة الهاتف</string>
+	<string name="dv_helpview_header_school_enrolment_letter">خطاب الالتحاق بالمدرسة</string>
+	<string name="dv_helpview_header_seniors_card">بطاقة كبار السن</string>
+	<string name="dv_helpview_header_social_security_card">بطاقة الضمان الاجتماعي</string>
+	<string name="dv_helpview_header_student_card">بطاقة الطالب</string>
+	<string name="dv_helpview_header_superannuation_statement">بيان التقاعد</string>
+	<string name="dv_helpview_header_tax_return">الإقرار الضريبي</string>
+	<string name="dv_helpview_header_trade_association_card">بطاقة الجمعية التجارية</string>
+	<string name="dv_helpview_header_utility_bill">فاتورة مرافق</string>
+	<string name="dv_helpview_header_vehicle_title">ملكية السيارة</string>
+	<string name="dv_helpview_header_voided_check">التحقق الملغي</string>
+	<string name="dv_helpview_header_working_with_children_check">إﻓﺎدة اﻟﺗﺣﻘﱡق ﻟﻠﻌﻣل ﻣﻊ اﻷطﻔﺎل</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;التقاط %1$s&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">متابعة</string>
+	<string name="dv_scanview_retake">إعادة الالتقاط</string>
+	<string name="dv_scanview_snackbar_check">تأكد من أن جميع البيانات الموجودة في المستند مرئية تمامًا وخالية من الوهج وواضحة</string>
+	<string name="dv_scanview_title">مسح المستند</string>
+	<string name="dv_scanview_title_check">التحقق من إمكانية القراءة</string>
+	<string name="dv_upload_error">&lt;b&gt;مشكلات التحميل&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;جارٍ تحميل مستنداتك&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">يجب أن يستغرق ذلك بضع ثوانٍ فقط، اعتمادًا على اتصال الشبكة</string>
+	<string name="dv_upload_successful">&lt;b&gt;تحميل ناجح&lt;/b&gt;</string>
+	-->
+
+</resources>

@@ -88,8 +88,6 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-		initScanView()
-
 		startAuthenticationCustomButton?.text = java.lang.String.format(resources.getString(R.string.button_start), resources.getString(R.string.section_authentication_custom))
         startAuthenticationCustomButton?.setOnClickListener(this)
         stopAuthenticationCustomButton?.setOnClickListener(this)
@@ -98,13 +96,11 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
         partRetryButton?.setOnClickListener(this)
 		userConsentedButton?.setOnClickListener(this)
 
-		hideView(false, errorRetryButton, partRetryButton, authenticationCustomAnimationView)
+		hideView(false, errorRetryButton, partRetryButton)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-
-        initScanView()
     }
 
     override fun onPause() {
@@ -138,12 +134,6 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
 		super.onDestroyView()
     }
 
-    private fun initScanView() {
-        val isPortrait = isPortrait
-        val params = FrameLayout.LayoutParams(if (isPortrait) FrameLayout.LayoutParams.MATCH_PARENT else FrameLayout.LayoutParams.WRAP_CONTENT, if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(activity, 300))
-        authenticationCustomScanView?.layoutParams = params
-    }
-
     override fun onClick(v: View) {
         v.isEnabled = false
 		var keepDisabled = false
@@ -158,14 +148,14 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
 				val inputMethodManager = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 				inputMethodManager.hideSoftInputFromWindow(etEnrollmentTransactionReference?.windowToken, 0)
 
-				hideView(true, errorRetryButton, partRetryButton, authenticationCustomAnimationView)
+				hideView(true, errorRetryButton, partRetryButton)
                 callbackLog?.removeAllViews()
 
                 initializeAuthenticationSDK()
 				keepDisabled = true
             }
         } else if (v === stopAuthenticationCustomButton && isSDKControllerValid) {
-            hideView(false, stopAuthenticationCustomButton, partTypeLayout, customScanLayout, fragment_nv_custom_loading_indicator, authenticationCustomAnimationView)
+            hideView(false, stopAuthenticationCustomButton, partTypeLayout, fragment_nv_custom_loading_indicator)
             callbackLog?.removeAllViews()
             try {
                 customSDKController?.pause()
@@ -181,10 +171,8 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
             authenticationCustomContainer?.visibility = View.GONE
             authenticationSettingsContainer?.visibility = View.VISIBLE
         } else if (v === faceButton && isSDKControllerValid) {
-            showView(true, customScanLayout)
 
             scrollView?.post {
-                scrollView?.scrollTo(0, customScanLayout?.top ?:0)
                 scrollView?.postDelayed(ScanPartRunnable(), 250)
             }
 		} else if (v === userConsentedButton && isSDKControllerValid) {
@@ -192,12 +180,9 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
 
 			hideView(false, userConsentLayout)
         } else if (v === partRetryButton && isSDKControllerValid) {
-			authenticationCustomAnimationView?.destroy()
-			hideView(false, partRetryButton, authenticationCustomAnimationView)
-			showView(true, customScanLayout)
+			hideView(false, partRetryButton)
 
             scrollView?.post {
-                scrollView?.scrollTo(0, customScanLayout?.top ?:0)
                 scrollView?.postDelayed(RetryPartRunnable(), 250)
             }
         } else if (v === errorRetryButton && isSDKControllerValid) {
@@ -339,22 +324,8 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
     private inner class ScanPartRunnable : Runnable {
         override fun run() {
             try {
-				val location = IntArray(2)
-				authenticationCustomScanView?.getLocationOnScreen(location)
-
-				val rectangle = Rect()
-				activity?.window?.decorView?.getWindowVisibleDisplayFrame(rectangle)
-
-				authenticationCustomScanView?.closeButtonWidth = ScreenUtil.dpToPx(activity, 24)
-				authenticationCustomScanView?.closeButtonHeight = ScreenUtil.dpToPx(activity, 24)
-				authenticationCustomScanView?.closeButtonTop = location[1] - rectangle.top
-				authenticationCustomScanView?.closeButtonLeft = location[0] - rectangle.left
-				authenticationCustomScanView?.closeButtonResId = R.drawable.jumio_close_button
-
-                customSDKController?.startScan(authenticationCustomScanView, AuthenticationCustomScanImpl())
-                addToCallbackLog("help text: " + customSDKController?.helpText)
+                customSDKController?.startScan(AuthenticationCustomScanImpl())
             } catch (e: Exception) {
-				hideView(false, customScanLayout)
                 addToCallbackLog(e.message)
             }
         }
@@ -363,19 +334,6 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
 	private inner class RetryPartRunnable : Runnable {
 		override fun run() {
 			try {
-
-				val location = IntArray(2)
-				authenticationCustomScanView?.getLocationOnScreen(location)
-
-				val rectangle = Rect()
-				activity?.window?.decorView?.getWindowVisibleDisplayFrame(rectangle)
-
-				authenticationCustomScanView?.closeButtonWidth = ScreenUtil.dpToPx(activity, 24)
-				authenticationCustomScanView?.closeButtonHeight = ScreenUtil.dpToPx(activity, 24)
-				authenticationCustomScanView?.closeButtonTop = location[1] - rectangle.top
-				authenticationCustomScanView?.closeButtonLeft = location[0] - rectangle.left
-				authenticationCustomScanView?.closeButtonResId = R.drawable.jumio_close_button
-
 				customSDKController?.retryScan()
 			} catch (e: Exception) {
 				addToCallbackLog(e.message)
@@ -420,17 +378,14 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
 
         override fun onAuthenticationScanProcessing() {
             addToCallbackLog("onAuthenticationScanProcessing")
-            if (customScanLayout?.visibility == View.VISIBLE)
-                hideView(false, customScanLayout)
             hideView(false, fragment_nv_custom_loading_indicator)
             faceButton?.setCompoundDrawablesWithIntrinsicBounds(successDrawable, null, null, null)
         }
 
         override fun onAuthenticationScanCanceled(cancelReason: AuthenticationCancelReason) {
-			addToCallbackLog(String.format("onAuthenticationScanCanceled reason: %s helptext: %s", cancelReason.toString(), customSDKController?.helpText))
+			addToCallbackLog(String.format("onAuthenticationScanCanceled reason: %s", cancelReason.toString()))
 
-			customSDKController?.getHelpAnimation(authenticationCustomAnimationView)
-			showView(false, partRetryButton, authenticationCustomAnimationView)
+			showView(false, partRetryButton)
 
             faceButton?.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
         }
@@ -442,8 +397,7 @@ class AuthenticationCustomFragment : Fragment(), View.OnClickListener, Authentic
         override fun onAuthenticationFaceInLandscape() {
             addToCallbackLog("onAuthenticationFaceInLandscape")
 
-			customSDKController?.getHelpAnimation(authenticationCustomAnimationView)
-			showView(false, partRetryButton, authenticationCustomAnimationView)
+			showView(false, partRetryButton)
 
             faceButton?.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
         }

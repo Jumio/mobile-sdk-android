@@ -5,7 +5,7 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		classpath "com.android.tools.build:gradle:3.6.2"
+		classpath "com.android.tools.build:gradle:4.0.0"
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 	}
 }
@@ -20,7 +20,7 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "3.6.2"
+	SDK_VERSION = "3.7.0"
 }
 
 dependencies {
@@ -38,7 +38,7 @@ dependencies {
 
 	//for core:
 	implementation "androidx.appcompat:appcompat:1.1.0"
-	implementation "androidx.room:room-runtime:2.2.3"
+	implementation "androidx.room:room-runtime:2.2.5"
 	implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
 
 	//for nv:
@@ -52,13 +52,13 @@ dependencies {
 	}
 
 	//only for nv-nfc
-	implementation "org.jmrtd:jmrtd:0.7.18"
+	implementation "org.jmrtd:jmrtd:0.7.19"
 	implementation "org.ejbca.cvc:cert-cvc:1.4.6"
-	implementation "org.bouncycastle:bcprov-jdk15on:1.64"
+	implementation "org.bouncycastle:bcprov-jdk15on:1.65"
 	implementation "net.sf.scuba:scuba-sc-android:0.0.18"
 
 	//only for face
-	implementation "com.facetec:zoom-authentication:8.0.11@aar"
+	implementation "com.facetec:zoom-authentication:8.12.1@aar"
 
 	//Kotlin
 	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

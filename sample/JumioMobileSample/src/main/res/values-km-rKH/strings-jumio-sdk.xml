@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">ប្តូរទៅកាមេរ៉ាក្រោយ</string>
+	<string name="jumio_accessibility_camera_switch_to_front">ប្តូរទៅកាមេរ៉ាមុខ</string>
+	<string name="jumio_accessibility_flash_activate">បើកដំណើរការផ្លាស</string>
+	<string name="jumio_accessibility_flash_deactivate">បិទដំណើរការផ្លាស</string>
+	<string name="jumio_accessibility_loading">កំពុងផ្ទុក</string>
+	<string name="jumio_accessibility_quit_scan">ឈប់ស្កេន</string>
+	<string name="jumio_button_cancel">បោះបង់</string>
+	<string name="jumio_button_retry">ព្យាយាមម្តងទៀត</string>
+	<string name="jumio_error_auth_failed">ការផ្ទៀងផ្ទាត់បានបរាជ័យ</string>
+	<string name="jumio_error_cancelled_by_user">ត្រូវបានបោះបង់ដោយអ្នកប្រើចុងក្រោយ</string>
+	<string name="jumio_error_certificate_not_valid_anymore">វិញ្ញាបនបត្រលែងមានសុពលភាពទៀតហើយ។ សូមធ្វើបច្ចុប្បន្នភាពពាក្យសុំរបស់អ្នក</string>
+	<string name="jumio_error_device_is_offline">គ្មានការភ្ជាប់អ៊ីនធឺណិតទេ</string>
+	<string name="jumio_error_dialog_title">កំហុស</string>
+	<string name="jumio_error_network_problems">យើងបានជួបបញ្ហាទំនាក់ទំនងបណ្តាញ</string>
+	<string name="jumio_error_no_camera_connection">កាមេរ៉ានេះបច្ចុប្បន្នមិនអាចប្រើបានទេ</string>
+	<string name="jumio_error_startup_error">ការស្កេនមិនអាចប្រើបាននៅពេលនេះ សូមទាក់ទងអ្នកលក់កម្មវិធី</string>
+	<string name="jumio_error_transaction_already_finished">ប្រតិបត្តិការបានបញ្ចប់រួចរាល់</string>
+	<string name="jumio_scanview_refocus">សូមផ្ដោតឡើងវិញ</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">ប៉ះដើម្បីបន្ត</string>
+	<string name="face_helpview_landscape_description">សូមបង្វិលទូរសព្ទរបស់អ្នកទៅបញ្ឈរដើម្បីថតសែលហ្វី</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;បង្វិលឧបករណ៍របស់អ្នក&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">តើមានជួបបញ្ហាឬទេ?</string>
+	<string name="netverify_accessibility_nfc_description_start">សូមពិនិត្យមើលថាតើអត្តសញ្ញាណបណ្ណរបស់អ្នកមានឈីបដែរឬទេ។ ប្រសិនបើមាន សូមដាក់ទូរស័ព្ទរបស់អ្នកនៅលើអត្តសញ្ញាណបណ្ណដូចរូបបង្ហាញ។</string>
+	<string name="netverify_back">ខាងក្រោយ</string>
+	<string name="netverify_countrylist_empty">គ្មានទិន្នន័យនៅក្នុងបញ្ជី</string>
+	<string name="netverify_countrylist_title">ជ្រើសរើសប្រទេសចេញឯកសាររបស់អ្នក</string>
+	<string name="netverify_document_variant_other">ទម្រង់ផ្សេងទៀត</string>
+	<string name="netverify_document_variant_plastic">បណ្ណប្លាស្ទិច</string>
+	<string name="netverify_documenttype_driverlicense">បណ្ណបើកបរ</string>
+	<string name="netverify_documenttype_idcard">អត្តសញ្ញាណបណ្ណ</string>
+	<string name="netverify_documenttype_passport">លិខិតឆ្លងដែន</string>
+	<string name="netverify_documenttype_visa">ទិដ្ឋាការ</string>
+	<string name="netverify_front">ខាងមុខ</string>
+	<string name="netverify_helpview_description_usdl_fallback">បារកូដនៃឯកសាររបស់អ្នកមិនមានអាសយដ្ឋានរបស់អ្នកទេ សូមត្រឡប់ឯកសាររបស់អ្នកហើយស្កេនផ្នែកខាងមុខ</string>
+	<string name="netverify_helpview_fallback">ការថតមិនកំពុងដំណើរការទេ</string>
+	<string name="netverify_helpview_fallback_barcode">គ្មានបារកូដនៅលើ ID របស់ខ្ញុំទេ</string>
+	<string name="netverify_helpview_full_description">Pដាក់ឯកសាររបស់អ្នកនៅក្នុងស៊ុម ដូចដែលបង្ហាញនៅក្នុងរូបចលនាខាងលើ ការថតនឹងដំណើរការដោយស្វ័យប្រវត្តិ។\nEត្រូវប្រាកដថាទិន្នន័យទាំងអស់អាចអានបាន និងចៀសវាងការផ្លាតពន្លឺ។</string>
+	<string name="netverify_helpview_full_description_barcode">ដាក់បារកូដនៅពីមុខកាមេរ៉ា ដូចបង្ហាញនៅក្នុងរូបភាពខាងលើ។ ការថតនឹងដំណើរការដោយស្វ័យប្រវត្តិ។</string>
+	<string name="netverify_helpview_full_description_card">ដាក់ឯកសាររបស់អ្នកនៅក្នុងស៊ុមរហូតដល់គែមទាំង 4 ត្រង់ ដូចដែលបង្ហាញនៅក្នុងរូបចលនាខាងលើ។ ការថតនឹងដំណើរការដោយស្វ័យប្រវត្តិ។\nត្រូវប្រាកដថាទិន្នន័យទាំងអស់អាចអានបាន និងចៀសវាងការផ្លាតពន្លឺ។</string>
+	<string name="netverify_helpview_full_description_template">ដាក់ឯកសាររបស់អ្នកនៅពីមុខកាមេរ៉ា ដូចដែលបង្ហាញនៅក្នុងរូបចលនាខាងលើ។ ការថតនឹងដំណើរការដោយស្វ័យប្រវត្តិ។\nត្រូវប្រាកដថាទិន្នន័យទាំងអស់អាចអានបាន និងចៀសវាងការផ្លាតពន្លឺ។</string>
+	<string name="netverify_helpview_progress_text">ជំហាន %1$d នៃ %2$d</string>
+	<string name="netverify_helpview_small_description">ដាក់ឯកសាររបស់អ្នកនៅក្នុងស៊ុមរហូតដល់វាត្រូវបានថតដោយស្វ័យប្រវត្តិ</string>
+	<string name="netverify_helpview_small_description_barcode">ដាក់បារកូដនៅពីមុខកាមេរ៉ារហូតដល់វាត្រូវបានថតដោយស្វ័យប្រវត្តិ</string>
+	<string name="netverify_helpview_small_description_card">ដាក់ឯកសាររបស់អ្នកនៅក្នុងស៊ុមរហូតដល់វាត្រូវបានថតដោយស្វ័យប្រវត្តិ</string>
+	<string name="netverify_helpview_small_description_template">ដាក់ឯកសាររបស់អ្នកនៅពីមុខកាមេរ៉ារហូតដល់វាត្រូវបានថតដោយស្វ័យប្រវត្តិ</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;ថត %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;ស្កេន %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_usdl_fallback_continue">ប៉ះដើម្បីបន្ត</string>
+	<string name="netverify_inside">ខាងក្នុង</string>
+	<string name="netverify_nfc_description_extracting">កាន់ឲ្យនឹងពេលកំពុងស្កេន</string>
+	<string name="netverify_nfc_description_start_other">រុញទូរសព្ទឆ្លងកាត់គម្របខាងមុខរហូតដល់លិខិតឆ្លងដែនរបស់អ្នកត្រូវបានរកឃើញដោយស្វ័យប្រវត្តិ</string>
+	<string name="netverify_nfc_description_start_us">រុញទូរសព្ទឆ្លងកាត់ផ្នែកខាងក្នុងនៃគម្របខាងក្រោយរហូតដល់លិខិតឆ្លងដែនរបស់អ្នកត្រូវបានរកឃើញស្វ័យប្រវត្តិ</string>
+	<string name="netverify_nfc_enable_dialog_text">ដើម្បីទទួលបានអត្ថប្រយោជន៍ច្រើនបំផុតពីលិខិតឆ្លងដែនរបស់អ្នក សូមចុចលើប៊ូតុង យល់ព្រម ហើយសមត្ថភាពប្រព័ន្ធ NFC របស់ទូរស័ព្ទអ្នក</string>
+	<string name="netverify_nfc_enable_dialog_title">បើក NFC</string>
+	<string name="netverify_nfc_general_error_dialog_text">ព្យាយាមម្តងទៀត ហើយធ្វើតាមការណែនាំដូចដែលបានបង្ហាញ</string>
+	<string name="netverify_nfc_general_error_dialog_title">ការស្កេនមិនទាន់ចប់</string>
+	<string name="netverify_nfc_header_extracting">កំពុងទាញទិន្នន័យចេញ</string>
+	<string name="netverify_nfc_header_finish">បានបញ្ចប់ការស្កេន</string>
+	<string name="netverify_nfc_header_start">កំណត់ទីតាំងលិខិតឆ្លងដែន</string>
+	<string name="netverify_nfc_requestview_button_text">រំលង</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">កាន់ឱ្យនឹងនៅពេលដែលលិខិតឆ្លងដែនត្រូវបានរកឃើញ</string>
+	<string name="netverify_nfc_view_title">ស្កេនលិខិតឆ្លងដែន</string>
+	<string name="netverify_outside">ខាងក្រៅ</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; ត្រូវបានកំណត់ជាប្រទេសដែលចេញឯកសាររបស់អ្នក។ &lt;b&gt;&lt;u&gt;សូមផ្លាស់ប្ដូរប្រទេស&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; ត្រូវបានកំណត់ជាប្រទេសដែលចេញឯកសាររបស់អ្នក។</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;សូមជ្រើសរើសប្រទេសរបស់អ្នក&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">ជ្រើសរើសប្រភេទឯកសារដែលអ្នកចង់ស្កេន</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;កំពុងវិភាគទិន្នន័យជីវមាត្រ&lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">បន្ត</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">សូមលេខ ID  មុននឹងថត</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">សូមកែ ID និងលេខចូលប្រើ មុននឹងថត</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">សូមកែលេខលិខិតឆ្លងដែន មុននឹងថត</string>
+	<string name="netverify_scanview_legal_hint_kor">កែប្លុកទីពីរនៃលេខចុះបញ្ជីគេហជនរបស់អ្នកមុនពេលថត</string>
+	<string name="netverify_scanview_legal_hint_nld">សូមកែ BSN របស់អ្នកមុននឹងថត</string>
+	<string name="netverify_scanview_retake">ថតម្តងទៀត</string>
+	<string name="netverify_scanview_snackbar_check">ត្រូវប្រាកដថារាល់ទិន្នន័យនៅលើឯកសាររបស់អ្នកអាចមើលឃើញបានពេញលេញ និងមិនមានព្រិល</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">ត្រូវធានាថាទិន្នន័យទាំងអស់នៅលើឯកសារអាចមើលឃើញ និងអានដាច់។</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">រូបថតដែលបានថតគឺដូចផ្នែកខាងមុខនៃឯកសារ។ សូមបញ្ជាក់ថានេះជាផ្នែកខាងក្រោយនៃឯកសាររបស់អ្នក ឬថតរូបភាពឡើងវិញ។</string>
+	<string name="netverify_scanview_snackbar_check_process_error">មិនអាចដំណើរការឯកសាររបស់អ្នកបានទេ សូមព្យាយាមម្ដងទៀត។</string>
+	<string name="netverify_scanview_snackbar_progress">កំពុងដំណើរការឯកសារ…</string>
+	<string name="netverify_scanview_title">ស្កេនឯកសារ</string>
+	<string name="netverify_scanview_title_check">ពិនិត្យមើលភាពអាចអានបាន</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt;ផ្ទុកឡើងបញ្ហា&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt;កំពុងផ្ទុកឡើងឯកសាររបស់អ្នក&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">វាគួរចំណាយពេលតែពីរបីវិនាទីប៉ុណ្ណោះអាស្រ័យលើការភ្ជាប់បណ្តាញរបស់អ្នក</string>
+	<string name="netverify_upload_successful">&lt;b&gt;ផ្ទុកឡើងដោយជោគជ័យ&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">ប្រើផ្នែកខាងក្រោយ</string>
+	<string name="netverify_use_front_side_of_card">ប្រើផ្នែកខាងមុខ</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">ប៉ះដើម្បីបន្ត</string>
+	<string name="face_helpview_landscape_description">សូមបង្វិលទូរសព្ទរបស់អ្នកទៅបញ្ឈរដើម្បីថតសែលហ្វី</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;បង្វិលឧបករណ៍របស់អ្នក&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">តើមានជួបបញ្ហាឬទេ?</string>
+	<string name="zoom_accessibility_cancel_button">ឈប់ស្កេន</string>
+	<string name="zoom_action_im_ready">ខ្ញុំត្រៀមរួចរាល់ហើយ</string>
+	<string name="zoom_action_ok">យល់ព្រម</string>
+	<string name="zoom_feedback_a_little_too_close">ខិតថយក្រោយបន្តិច</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">ខិតថយក្រោយបន្តិច</string>
+	<string name="zoom_feedback_center_face">ដាក់មុខរបស់អ្នកឱ្យនៅចំកណ្ដាល</string>
+	<string name="zoom_feedback_face_not_found">ដាក់ស៊ុមជុំវិញមុខរបស់អ្នក</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">មើលឱ្យត្រង់ទៅមុខ</string>
+	<string name="zoom_feedback_face_not_upright">ដាក់ក្បាលរបស់អ្នកឱ្យត្រង់</string>
+	<string name="zoom_feedback_hold_steady">កាន់ឲ្យនឹង</string>
+	<string name="zoom_feedback_move_phone_away">ខិតថយក្រោយបន្តិច</string>
+	<string name="zoom_feedback_move_phone_closer">ខិតឱ្យជិតបន្តិចទៀត</string>
+	<string name="zoom_feedback_move_phone_even_closer">ឱ្យជិតបន្តិចទៀត</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">ដាក់ឧបករណ៍នៅកម្ពស់ត្រឹមភ្នែក</string>
+	<string name="zoom_feedback_move_tablet_away">ខិតថយក្រោយបន្តិច</string>
+	<string name="zoom_feedback_move_tablet_closer">ខិតឱ្យជិតបន្តិចទៀត</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">ដាក់ឧបករណ៍នៅកម្ពស់ត្រឹមភ្នែក</string>
+	<string name="zoom_helpview_bad_angle">ដាក់ឧបករណ៍របស់អ្នកនៅកម្ពស់ត្រឹមភ្នែកហើយសម្លឹងឱ្យចំវា</string>
+	<string name="zoom_helpview_bad_lightning">ចៀសវាងស្រមោល និងការផ្លាតពន្លឺលើផ្ទៃមុខរបស់អ្នក</string>
+	<string name="zoom_helpview_general">អនុវត្តតាមដំណើរការពីរជំហាន ហើយតម្រង់មុខរបស់អ្នកឱ្យចំស៊ុម។ ដាក់ឧបករណ៍របស់អ្នកនៅកម្ពស់ត្រឹមភ្នែក ហើយសម្លឹងឱ្យចំកាមេរ៉ា។ មុខរបស់អ្នកនឹងត្រូវបានថតដោយស្វ័យប្រវត្តិ</string>
+	<string name="zoom_helpview_upfront_title">ថតមុខរបស់អ្នក</string>
+	<string name="zoom_instructions_header_ready">ត្រៀមខ្លួនថតវីដេអូសែលហ្វីខ្លួនឯង</string>
+	<string name="zoom_instructions_message_ready">ដាក់មុខអ្នកក្នុងស៊ុមពងក្រពើតូចបន្ទាប់ក្នុងស៊ុមពងក្រពើធំ</string>
+	<string name="zoom_result_facemap_upload_message">កំពុងវិភាគទិន្នន័យជីវមាត្រ</string>
+	<string name="zoom_result_success_message">ជោគជ័យ!</string>
+	<string name="zoom_retry_header">សូមព្យាយាមម្តងទៀត</string>
+	<string name="zoom_retry_ideal_image_label">ជំហល្អបំផុត</string>
+	<string name="zoom_retry_instruction_message_1">ទឹកមុខស្មើ មិនញញឹម</string>
+	<string name="zoom_retry_instruction_message_2">គ្មានពន្លឺចាំងឬពន្លឺខ្លាំងពេក</string>
+	<string name="zoom_retry_subheader_message">ប៉ុន្តែជាដំបូង សូមមើលរូបថតរបស់អ្នក និងកែបរិស្ថានជុំវិញរបស់អ្នកសិន។</string>
+	<string name="zoom_retry_your_image_label">សែលហ្វី</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">របាយការណ៍ធនាគារ</string>
+	<string name="dv_helpview_header_birth_certificate">សំបុត្រកំណើត</string>
+	<string name="dv_helpview_header_cash_advance_application">ពាក្យស្នើសុំប្រាក់បុរេប្រទាន</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">វិញ្ញាបនបត្រស្តីពីសេចក្តីសម្រេចរបស់ក្រុមហ៊ុន</string>
+	<string name="dv_helpview_header_council_bill">វិក្កយបត្រក្រុមប្រឹក្សា</string>
+	<string name="dv_helpview_header_credit_card">បណ្ណឥណទាន</string>
+	<string name="dv_helpview_header_credit_card_statement">របាយការណ៍បណ្ណឥណទាន</string>
+	<string name="dv_helpview_header_document">ឯកសារ</string>
+	<string name="dv_helpview_header_health_care_card">បណ្ណថែទាំសុខភាព</string>
+	<string name="dv_helpview_header_insurance_card">បណ្ណធានារ៉ាប់រង</string>
+	<string name="dv_helpview_header_lease_agreement">កិច្ចសន្យាជួល</string>
+	<string name="dv_helpview_header_loan_application">ពាក្យស្នើសុំប្រាក់កម្ចី</string>
+	<string name="dv_helpview_header_medicare_card">បណ្ណ Medicare</string>
+	<string name="dv_helpview_header_mortgage_application">ពាក្យស្នើសុំខ្ចីប្រាក់ដោយដាក់វត្ថុបញ្ចាំ</string>
+	<string name="dv_helpview_header_phone_bill">វិក្កយបត្រទូរសព្ទ</string>
+	<string name="dv_helpview_header_school_enrolment_letter">សំបុត្រចុះឈ្មោះចូលរៀន</string>
+	<string name="dv_helpview_header_seniors_card">បណ្ណមនុស្សចាស់</string>
+	<string name="dv_helpview_header_social_security_card">បណ្ណសន្តិសុខសង្គម</string>
+	<string name="dv_helpview_header_student_card">កាតសិស្ស</string>
+	<string name="dv_helpview_header_superannuation_statement">របាយការណ៍ប្រាក់សោធននិវត្តន៍</string>
+	<string name="dv_helpview_header_tax_return">លិខិតប្រកាសពន្ធ</string>
+	<string name="dv_helpview_header_trade_association_card">បណ្ណសមាគមពាណិជ្ជកម្ម</string>
+	<string name="dv_helpview_header_utility_bill">វិក្កយបត្រសេវាសាធារណៈ</string>
+	<string name="dv_helpview_header_vehicle_title">បណ្ណកម្មសិទ្ធិយានយន្ត</string>
+	<string name="dv_helpview_header_voided_check">បណ្ណត្រូវបានធ្វើមោឃភាព</string>
+	<string name="dv_helpview_header_working_with_children_check">បណ្ណធ្វើការជាមួយកុមារ</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;ថត %1$s&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">បន្ត</string>
+	<string name="dv_scanview_retake">ថតម្តងទៀត</string>
+	<string name="dv_scanview_snackbar_check">ត្រូវប្រាកដថារាល់ទិន្នន័យនៅលើឯកសាររបស់អ្នកអាចមើលឃើញបានពេញលេញ និងមិនមានព្រិល</string>
+	<string name="dv_scanview_title">ស្កេនឯកសារ</string>
+	<string name="dv_scanview_title_check">ពិនិត្យមើលភាពអាចអានបាន</string>
+	<string name="dv_upload_error">&lt;b&gt;ផ្ទុកឡើងបញ្ហា&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;កំពុងផ្ទុកឡើងឯកសាររបស់អ្នក&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">វាគួរចំណាយពេលតែពីរបីវិនាទីប៉ុណ្ណោះអាស្រ័យលើការភ្ជាប់បណ្តាញរបស់អ្នក</string>
+	<string name="dv_upload_successful">&lt;b&gt;ផ្ទុកឡើងដោយជោគជ័យ&lt;/b&gt;</string>
+	-->
+
+</resources>

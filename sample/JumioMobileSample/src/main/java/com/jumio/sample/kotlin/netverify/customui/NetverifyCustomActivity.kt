@@ -1,6 +1,7 @@
 package com.jumio.sample.kotlin.netverify.customui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -61,7 +62,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 			appBarLayout.elevation = 0f
 		}
 		setSupportActionBar(toolbar)
-		supportActionBar!!.title = ""
+		supportActionBar?.title = ""
 		backStack = ArrayList()
 		//Set up credentials
 		val args = intent.extras
@@ -72,17 +73,17 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 		}
 		// action bar at top of the screen
 		if (supportActionBar != null) {
-			supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+			supportActionBar?.setDisplayHomeAsUpEnabled(true)
 			val icon = AppCompatDrawableManager.get().getDrawable(applicationContext, R.drawable.ic_arrow_back_white)
-			supportActionBar!!.setHomeAsUpIndicator(icon)
-			supportActionBar!!.setShowHideAnimationEnabled(false)
+			supportActionBar?.setHomeAsUpIndicator(icon)
+			supportActionBar?.setShowHideAnimationEnabled(false)
 		}
 		initializeNetverifyCustom()
 	}
 
 	public override fun onPause() {
 		try {
-			if (customSDKController != null) customSDKController?.pause()
+			customSDKController?.pause()
 		} catch (e: SDKNotConfiguredException) {
 			Log.e(TAG, "onPause: ", e)
 		}
@@ -91,7 +92,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 
 	public override fun onResume() {
 		try {
-			if (customSDKController != null) customSDKController?.resume()
+			customSDKController?.resume()
 		} catch (e: SDKNotConfiguredException) {
 			Log.e(TAG, "onResume: ", e)
 		}
@@ -108,6 +109,12 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 			Log.e(TAG, "onDestroy: $e")
 		}
 			super.onDestroy()
+	}
+
+	public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+		super.onActivityResult(requestCode, resultCode, data)
+
+		customSDKController?.consumeIntent(requestCode, resultCode, data)
 	}
 
 	//#####################################################
@@ -131,10 +138,10 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 				bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
 			} else {
 				// sides refers to how many sides of the document need to be scanned (front, back or both), depending on what kind of document it is and what country issued it
-				sides = customSDKController!!.setDocumentConfiguration(selectedCountry, documentType, documentVariant)
+				sides = customSDKController?.setDocumentConfiguration(selectedCountry, documentType, documentVariant)
 				selectedScanSide = 0
 				//Start scanning for side
-				val progressString = applicationContext.getString(R.string.custom_ui_scan_progress_text, selectedScanSide + 1, sides?.size)
+				val progressString = applicationContext.getString(R.string.netverify_helpview_progress_text, selectedScanSide + 1, sides?.size)
 				val scanFragment = NetverifyCustomScanFragment.newInstance(sides?.get(selectedScanSide).toString(), documentType?.getLocalizedName(this), progressString)
 				startFragment(scanFragment, NetverifyCustomScanFragment::class.java.simpleName, true)
 			}
@@ -153,7 +160,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 	override fun onStartScanningWithSide(side: ScanSide?, scanView: NetverifyCustomScanView?, confirmationView: NetverifyCustomConfirmationView?,
 	                                     customScanInterface: NetverifyCustomScanInterface?): NetverifyCustomScanPresenter? {
 		return try {
-			val customScanViewPresenter = customSDKController!!.startScanForPart(side, scanView, confirmationView, customScanInterface)
+			val customScanViewPresenter = customSDKController?.startScanForPart(side, scanView, confirmationView, customScanInterface)
 			if (customScanViewPresenter == null) {
 				Log.e(TAG, "onStartScanningWithSide ")
 				throw SDKNotConfiguredException("Could not create customScanViewPresenter")
@@ -174,7 +181,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 	override fun onScanForPartFinished() {
 		selectedScanSide++
 		if (selectedScanSide < sides!!.size) {
-			val progressString = applicationContext.getString(R.string.custom_ui_scan_progress_text, selectedScanSide + 1, sides!!.size)
+			val progressString = applicationContext.getString(R.string.netverify_helpview_progress_text, selectedScanSide + 1, sides!!.size)
 			val newScanFragment = NetverifyCustomScanFragment.newInstance(sides!![selectedScanSide].toString(),
 					selectedDocumentType!!.getLocalizedName(this), progressString)
 			startFragment(newScanFragment, NetverifyCustomScanFragment::class.java.simpleName, true)
@@ -234,13 +241,9 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 				//Initialize usual NetverifySDK
 				initializeNetverifySDK()
 				if (netverifySDK != null) {
-					customSDKController = netverifySDK!!.start(NetverifyCustomSDKImpl())
-					customSDKController?.resume()
+					customSDKController = netverifySDK?.start(NetverifyCustomSDKImpl())
 				}
 			} catch (e: IllegalArgumentException) {
-				showToastMessage(e.message)
-				Log.e(TAG, "initializeNetverifyCustom: ", e)
-			} catch (e: SDKNotConfiguredException) {
 				showToastMessage(e.message)
 				Log.e(TAG, "initializeNetverifyCustom: ", e)
 			} catch (e: MissingPermissionException) {
@@ -303,7 +306,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 // You can disable Identity Verification during the ID verification for a specific transaction.
 			netverifySDK?.setEnableIdentityVerification(true)
 			// Use the following method to disable eMRTD scanning.
-//			netverifySDK.setEnableEMRTD(false);
+			netverifySDK?.setEnableEMRTD(true);
 // Use the following method to set the default camera position.
 //			netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
 // Use the following method to only support IDs where data can be extracted on mobile only.
@@ -352,6 +355,12 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 		if (allGranted) {
 			if (requestCode == PERMISSION_REQUEST_CODE_NETVERIFY_CUSTOM) {
 				initializeNetverifyCustom()
+				try {
+					customSDKController?.resume()
+				} catch (e: SDKNotConfiguredException) {
+					showToastMessage(e.message)
+					Log.e(TAG, "onRequestPermissionsResult: ", e)
+				}
 			}
 		} else {
 			Toast.makeText(applicationContext, "You need to grant all required permissions to start the Jumio SDK", Toast.LENGTH_LONG).show()
@@ -364,7 +373,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 	 */
 	private fun cleanupSDK() {
 		if (netverifySDK != null) {
-			netverifySDK!!.destroy()
+			netverifySDK?.destroy()
 			netverifySDK = null
 		}
 	}
@@ -378,8 +387,8 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 	}
 
 	//#####################################################
-// HELPER METHODS
-//#####################################################
+	// HELPER METHODS
+	//#####################################################
 	private fun showToastMessage(s: String?) {
 		Toast.makeText(applicationContext, s, Toast.LENGTH_LONG).show()
 	}
@@ -397,13 +406,13 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 		fragmentTransaction.setCustomAnimations(R.animator.nv_fade_in, R.animator.nv_fade_out)
 		if (backStack!!.size > 0 && closeCurrentFragment) {
 			for (detachFragment in backStack!!) {
-				backStack!!.remove(detachFragment)
+				backStack?.remove(detachFragment)
 				fragmentTransaction.detach(detachFragment)
 			}
 		}
 		if (newFragment != null) {
 			fragmentTransaction.add(R.id.fragment_holder, newFragment, fragmentName)
-			backStack!!.add(newFragment)
+			backStack?.add(newFragment)
 		}
 		try {
 			fragmentTransaction.commitAllowingStateLoss()
@@ -521,7 +530,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 						alertDialogBuilder.setPositiveButton(R.string.jumio_button_retry) { _, _ ->
 							if (customSDKController != null) {
 								try {
-									customSDKController!!.retry()
+									customSDKController?.retry()
 								} catch (e: SDKNotConfiguredException) {
 									Log.e(TAG, "dialog interface: ", e)
 								}

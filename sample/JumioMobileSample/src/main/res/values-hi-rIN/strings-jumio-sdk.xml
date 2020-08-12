@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">बैक कैमरा पर स्विच करें</string>
+	<string name="jumio_accessibility_camera_switch_to_front">फ्रंट कैमरा पर स्विच करें</string>
+	<string name="jumio_accessibility_flash_activate">फ़्लैश सक्रिय करें</string>
+	<string name="jumio_accessibility_flash_deactivate">फ़्लैश को निष्क्रिय करें</string>
+	<string name="jumio_accessibility_loading">लोड हो रहा है</string>
+	<string name="jumio_accessibility_quit_scan">स्कैन से बाहर निकलें</string>
+	<string name="jumio_button_cancel">रद्द करें</string>
+	<string name="jumio_button_retry">पुन: प्रयास करें</string>
+	<string name="jumio_error_auth_failed">प्रमाणीकरण विफल हो गया</string>
+	<string name="jumio_error_cancelled_by_user">अंतिम उपयोगकर्ता द्वारा रद्द</string>
+	<string name="jumio_error_certificate_not_valid_anymore">प्रमाणपत्र अब मान्य नहीं है। कृपया अपने एप्लिकेशन को अपडेट करें</string>
+	<string name="jumio_error_device_is_offline">इंटरनेट कनेक्शन उपलब्ध नहीं है</string>
+	<string name="jumio_error_dialog_title">त्रुटि</string>
+	<string name="jumio_error_network_problems">हमें एक नेटवर्क संचार समस्या का सामना करना पड़ा है</string>
+	<string name="jumio_error_no_camera_connection">वर्तमान में कैमरा उपलब्ध नहीं है</string>
+	<string name="jumio_error_startup_error">स्कैनिंग इस समय उपलब्ध नहीं है, कृपया ऐप विक्रेता से संपर्क करें</string>
+	<string name="jumio_error_transaction_already_finished">लेन-देन पहले से ही समाप्त हो गया है</string>
+	<string name="jumio_scanview_refocus">कृपया फिर से फोकस करें</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">जारी रखने के लिए टैप करें</string>
+	<string name="face_helpview_landscape_description">सेल्फी लेने के लिए कृपया अपने फोन को पोर्ट्रेट के लिए घुमाएं</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt; अपने डिवाइस को घुमाएं &lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">समस्याएँ आ रही हैं?</string>
+	<string name="netverify_accessibility_nfc_description_start">कृपया जांचें कि आपकी आईडी में चिप है या नहीं। यदि हां, तो अपने फोन को दृष्टान्त अनुसार आईडी पर रखें।</string>
+	<string name="netverify_back">पीछे</string>
+	<string name="netverify_countrylist_empty">सूची में कोई डेटा नहीं</string>
+	<string name="netverify_countrylist_title">अपने दस्तावेज़ के जारी करने वाले देश का चयन करें</string>
+	<string name="netverify_document_variant_other">अन्य फॉर्मेट</string>
+	<string name="netverify_document_variant_plastic">प्लास्टिक कार्ड</string>
+	<string name="netverify_documenttype_driverlicense">ड्राइवर लाइसेंस</string>
+	<string name="netverify_documenttype_idcard">पहचान कार्ड</string>
+	<string name="netverify_documenttype_passport">पासपोर्ट</string>
+	<string name="netverify_documenttype_visa">वीज़ा</string>
+	<string name="netverify_front">आगे</string>
+	<string name="netverify_helpview_description_usdl_fallback">आपके दस्तावेज़ के बारकोड में आपका पता नहीं था, आपका दस्तावेज़ घुमाएं और आगे के हिस्से को स्कैन करें</string>
+	<string name="netverify_helpview_fallback">कैप्चर काम नहीं कर रहा है</string>
+	<string name="netverify_helpview_fallback_barcode">मेरी आईडी पर कोई बारकोड नहीं</string>
+	<string name="netverify_helpview_full_description">अपने दस्तावेज़ को फ्रेम के अंदर रखें जैसा कि यह ऊपर दिए गए एनीमेशन में दिखाया गया है। कैप्चरिंग अपने आप होती है।\nसुनिश्चित करें कि सभी डेटा पठनीय हैं और प्रतिबिंबों से बचें।</string>
+	<string name="netverify_helpview_full_description_barcode">कैमरे के सामने बारकोड रखें जैसा कि ऊपर चित्र में दिखाया गया है। कैप्चरिंग अपने आप होती है।</string>
+	<string name="netverify_helpview_full_description_card">अपने दस्तावेज़ को फ्रेम के भीतर रखें जब तक कि सभी 4 किनारे संरेखित नहीं हो जाते है जैसा कि ऊपर के एनीमेशन में दिखाया गया है। कैप्चरिंग अपने आप होती है।\nसुनिश्चित करें कि सभी डेटा पठनीय हैं और प्रतिबिंबों से बचें।</string>
+	<string name="netverify_helpview_full_description_template">अपने दस्तावेज़ को कैमरे के सामने रखें जैसा कि यह ऊपर दिए गए एनीमेशन में दिखाया गया है। कैप्चरिंग अपने आप होती है।\nसुनिश्चित करें कि सभी डेटा पठनीय हैं और प्रतिबिंबों से बचें।</string>
+	<string name="netverify_helpview_progress_text">%1$dका चरण %2$d</string>
+	<string name="netverify_helpview_small_description">अपने दस्तावेज़ को फ्रेम के भीतर तब तक रखें जब तक कि यह स्वचालित रूप से कैप्चर न हो जाए</string>
+	<string name="netverify_helpview_small_description_barcode">कैमरे के सामने बारकोड को तब तक रखें जब तक कि यह अपने आप कैप्चर न हो जाए</string>
+	<string name="netverify_helpview_small_description_card">अपने दस्तावेज़ को फ्रेम के भीतर तब तक रखें जब तक कि यह स्वचालित रूप से कैप्चर न हो जाए</string>
+	<string name="netverify_helpview_small_description_template">अपने दस्तावेज़ को कैमरे के सामने  तब तक रखें जब तक कि यह स्वचालित रूप से कैप्चर न हो जाए</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt; %1$s %2$s &lt;/b&gt; कैप्चर करें</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt; स्कैन %1$s %2$s &lt;/b&gt;करें</string>
+	<string name="netverify_helpview_usdl_fallback_continue">जारी रखने के लिए टैप करें</string>
+	<string name="netverify_inside">अंदर</string>
+	<string name="netverify_nfc_description_extracting">स्कैन करते समय स्थिर पकड़े रखें</string>
+	<string name="netverify_nfc_description_start_other">जब तक आपका पासपोर्ट स्वचालित रूप से पता नहीं चल जाता तब तक फ्रंट कवर पर फोन स्लाइड करें</string>
+	<string name="netverify_nfc_description_start_us">जब तक आपका पासपोर्ट अपने आप पता नहीं लग जाता है, तब तक बैक कवर के अंदर फोन स्लाइड करें</string>
+	<string name="netverify_nfc_enable_dialog_text">अपने पासपोर्ट से अधिक पाने के लिए, कृपया ओके पर क्लिक करें और अपने फोन की एनएफसी क्षमता को सक्षम करें</string>
+	<string name="netverify_nfc_enable_dialog_title">एनएफसी को सक्षम करें</string>
+	<string name="netverify_nfc_general_error_dialog_text">फिर से कोशिश करें और निर्देशों का सचित्र पालन करें</string>
+	<string name="netverify_nfc_general_error_dialog_title">स्कैन अधूरा</string>
+	<string name="netverify_nfc_header_extracting">डेटा निकालना</string>
+	<string name="netverify_nfc_header_finish">स्कैनिंग पूरी हुई</string>
+	<string name="netverify_nfc_header_start">अपना पासपोर्ट रखें</string>
+	<string name="netverify_nfc_requestview_button_text">छोड़ें</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">पासपोर्ट का पता लगने के बाद स्थिर पकड़े रखें</string>
+	<string name="netverify_nfc_view_title">अपना पासपोर्ट स्कैन</string>
+	<string name="netverify_outside">बाहर</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt; %1$s &lt;/b&gt; को आपके दस्तावेजों के जारी करने वाले देश के रूप में सेट किया गया है। &lt;b&gt; &lt;u&gt; देश बदलें &lt;/u&gt; &lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt; %1$s &lt;/b&gt; को आपके दस्तावेजों के जारी करने वाले देश के रूप में सेट किया गया है।</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt; &lt;u&gt; अपने देश का चयन करें &lt;/u&gt; &lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">आप जिस दस्तावेज़ को स्कैन करना चाहते हैं, उसका प्रकार चयन करें</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt; बायोमेट्रिक डेटा का विश्लेषण किया जा रहा है &lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">जारी रखें</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">कृपया कैप्चर करने से पहले आईडी नंबर को संपादित करें</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">कृपया कैप्चर करने से पहले आईडी और एक्सेस नंबर को संपादित करें</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">कृपया कैप्चर करने से पहले पासपोर्ट नंबर को संपादित करें</string>
+	<string name="netverify_scanview_legal_hint_kor">कैप्चर करने से पहले अपने निवासी रजिस्ट्रेशन नंबर का दूसरा ब्लॉक संपादित करें</string>
+	<string name="netverify_scanview_legal_hint_nld">कृपया कैप्चर करने से पहले अपने बीएसएन को संपादित करें</string>
+	<string name="netverify_scanview_retake">फिर से लें</string>
+	<string name="netverify_scanview_snackbar_check">सुनिश्चित करें कि आपके दस्तावेज़ का सभी डेटा पूरी तरह से दिखाई दे रहा है, चमक से मुक्त और धुंधला नहीं है</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">सुनिश्चित करें कि सभी डेटा अपने दस्तावेज़ पर दिखाई दे रहा है और पठनीय है।</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">कैप्चर की गई छवि आपके दस्तावेज़ के सामने के हिस्से की तरह दिखती है। कृपया पुष्टि करें कि यह आपके दस्तावेज़ का पिछला हिस्सा है या छवि को फिर से खींचो।</string>
+	<string name="netverify_scanview_snackbar_check_process_error">आपका दस्तावेज़ संसाधित नहीं किया जा सका, कृपया पुनः प्रयास करें।</string>
+	<string name="netverify_scanview_snackbar_progress">दस्तावेज़ संसाधित हो रहा है …</string>
+	<string name="netverify_scanview_title">दस्तावेज़ स्कैन करें</string>
+	<string name="netverify_scanview_title_check">पठनीयता की जाँच करें</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt; अपलोड करने में समस्याएं&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt; आपके दस्तावेज़ अपलोड हो रहे हैं&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">यह आपके नेटवर्क कनेक्टिविटी के आधार पर केवल कुछ सेकंड का समय लेना चाहिए</string>
+	<string name="netverify_upload_successful">&lt;b&gt;अपलोड सफल&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">पीछे के हिस्से का उपयोग करें</string>
+	<string name="netverify_use_front_side_of_card">आगे के हिस्से का उपयोग करें</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">जारी रखने के लिए टैप करें</string>
+	<string name="face_helpview_landscape_description">सेल्फी लेने के लिए कृपया अपने फोन को पोर्ट्रेट के लिए घुमाएं</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt; अपने डिवाइस को घुमाएं &lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">समस्याएँ आ रही हैं?</string>
+	<string name="zoom_accessibility_cancel_button">स्कैन से बाहर निकलें</string>
+	<string name="zoom_action_im_ready">मैं तैयार हूँ</string>
+	<string name="zoom_action_ok">ठीक है</string>
+	<string name="zoom_feedback_a_little_too_close">थोड़ा पीछे ले जाएँ</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">थोड़ा पीछे ले जाएँ</string>
+	<string name="zoom_feedback_center_face">अपने चेहरे को केंद्र में लाएं</string>
+	<string name="zoom_feedback_face_not_found">अपने चेहरे को फ्रेम करें</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">सीधे आगे देखें</string>
+	<string name="zoom_feedback_face_not_upright">अपने सिर को सीधा रखें</string>
+	<string name="zoom_feedback_hold_steady">स्थिर पकड़े रखें</string>
+	<string name="zoom_feedback_move_phone_away">थोड़ा पीछे ले जाएँ</string>
+	<string name="zoom_feedback_move_phone_closer">थोड़ा और करीब ले जाएँ</string>
+	<string name="zoom_feedback_move_phone_even_closer">थोड़ा सा करीब</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">डिवाइस को आंखों के स्तर पर पकड़ें</string>
+	<string name="zoom_feedback_move_tablet_away">थोड़ा पीछे ले जाएँ</string>
+	<string name="zoom_feedback_move_tablet_closer">थोड़ा और करीब ले जाएँ</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">डिवाइस को आंखों के स्तर पर पकड़ें</string>
+	<string name="zoom_helpview_bad_angle">अपने डिवाइस को आंखों के स्तर पर पकड़ें और सीधे इसमें देखें</string>
+	<string name="zoom_helpview_bad_lightning">आपके चेहरे को छाया और परावर्तन से बचाएं</string>
+	<string name="zoom_helpview_general">दो चरण की प्रक्रिया का पालन करें और फ्रेम के साथ अपने चेहरे को संरेखित करें। आंखके स्तर पर अपने डिवाइस पकडें  और सीधे कैमरे में देखें। आपका चेहरा स्वचालित रूप से कैप्चर हो जाएगा</string>
+	<string name="zoom_helpview_upfront_title">अपना चेहरा कैप्चर करें</string>
+	<string name="zoom_instructions_header_ready">वीडियो सेल्फी के लिए तैयार हो जाइए</string>
+	<string name="zoom_instructions_message_ready">अपना चेहरा छोटे अंडाकार, फिर बड़े अंडाकार में फ्रेम करे</string>
+	<string name="zoom_result_facemap_upload_message">बायोमेट्रिक डेटा का विश्लेषण किया जा रहा है</string>
+	<string name="zoom_result_success_message">सफलता!</string>
+	<string name="zoom_retry_header">पुन: प्रयास करें</string>
+	<string name="zoom_retry_ideal_image_label">आदर्श मुद्रा</string>
+	<string name="zoom_retry_instruction_message_1">तटस्थ अभिव्यक्ति, न मुस्कुराएं</string>
+	<string name="zoom_retry_instruction_message_2">कोई चमक या अधिक प्रकाश नहीं</string>
+	<string name="zoom_retry_subheader_message">लेकिन पहले, कृपया अपने फ़ोटो पर एक नज़र डालें और अपने वातावरण को ठीक करें।</string>
+	<string name="zoom_retry_your_image_label">आपकी सेल्फी</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">बैंक स्टेटमेंट</string>
+	<string name="dv_helpview_header_birth_certificate">जन्म प्रमाणपत्र</string>
+	<string name="dv_helpview_header_cash_advance_application">कैश एडवांस एप्लीकेशन</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">कॉर्पोरेट रिजोल्युशन सर्टिफिकेट</string>
+	<string name="dv_helpview_header_council_bill">काउंसिल बिल</string>
+	<string name="dv_helpview_header_credit_card">क्रेडिट कार्ड</string>
+	<string name="dv_helpview_header_credit_card_statement">क्रेडिट कार्ड स्टेटमेंट</string>
+	<string name="dv_helpview_header_document">दस्तावेज़</string>
+	<string name="dv_helpview_header_health_care_card">हेल्थ केयर कार्ड</string>
+	<string name="dv_helpview_header_insurance_card">बीमा कार्ड</string>
+	<string name="dv_helpview_header_lease_agreement">लीज़ अग्रीमेंट</string>
+	<string name="dv_helpview_header_loan_application">लोन एप्लीकेशन</string>
+	<string name="dv_helpview_header_medicare_card">मेडिकेयर कार्ड</string>
+	<string name="dv_helpview_header_mortgage_application">मॉर्गेज एप्लीकेशन</string>
+	<string name="dv_helpview_header_phone_bill">फ़ोन बिल</string>
+	<string name="dv_helpview_header_school_enrolment_letter">स्कूल नामांकन पत्र</string>
+	<string name="dv_helpview_header_seniors_card">सीनियर्स कार्ड</string>
+	<string name="dv_helpview_header_social_security_card">सोशल सिक्योरिटी कार्ड</string>
+	<string name="dv_helpview_header_student_card">छात्र कार्ड</string>
+	<string name="dv_helpview_header_superannuation_statement">सेवानिवृत्ति स्टेटमेंट</string>
+	<string name="dv_helpview_header_tax_return">टैक्स रिटर्न</string>
+	<string name="dv_helpview_header_trade_association_card">ट्रेड एसोसिएशन कार्ड</string>
+	<string name="dv_helpview_header_utility_bill">यूटिलिटी बिल</string>
+	<string name="dv_helpview_header_vehicle_title">वाहन का टाइटल</string>
+	<string name="dv_helpview_header_voided_check">अमान्य चेक</string>
+	<string name="dv_helpview_header_working_with_children_check">बच्चों पर निगरानी के साथ काम करना</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt; कैप्चर करें %1$s &lt;/b&gt;</string>
+	<string name="dv_scanview_continue">जारी रखें</string>
+	<string name="dv_scanview_retake">फिर से लें</string>
+	<string name="dv_scanview_snackbar_check">सुनिश्चित करें कि आपके दस्तावेज़ का सभी डेटा पूरी तरह से दिखाई दे रहा है, चमक से मुक्त और धुंधला नहीं है</string>
+	<string name="dv_scanview_title">दस्तावेज़ स्कैन करें</string>
+	<string name="dv_scanview_title_check">पठनीयता की जाँच करें</string>
+	<string name="dv_upload_error">&lt;b&gt; अपलोड करने में समस्याएं&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt; आपके दस्तावेज़ अपलोड हो रहे हैं&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">यह आपके नेटवर्क कनेक्टिविटी के आधार पर केवल कुछ सेकंड का समय लेना चाहिए</string>
+	<string name="dv_upload_successful">&lt;b&gt;अपलोड सफल&lt;/b&gt;</string>
+	-->
+
+</resources>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Växla till kameran på baksidan</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Växla till kameran på framsidan</string>
+	<string name="jumio_accessibility_flash_activate">Aktivera blixten</string>
+	<string name="jumio_accessibility_flash_deactivate">Inaktivera blixten</string>
+	<string name="jumio_accessibility_loading">Laddar</string>
+	<string name="jumio_accessibility_quit_scan">Avsluta skanningen</string>
+	<string name="jumio_button_cancel">Avbryt</string>
+	<string name="jumio_button_retry">Försök igen</string>
+	<string name="jumio_error_auth_failed">Autentisering misslyckades</string>
+	<string name="jumio_error_cancelled_by_user">Avbruten av slutanvändaren</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Certifikatet är inte längre giltigt. Uppdatera din app</string>
+	<string name="jumio_error_device_is_offline">Ingen internetanslutning är tillgänglig</string>
+	<string name="jumio_error_dialog_title">Fel</string>
+	<string name="jumio_error_network_problems">Nätverket har stött på ett kommunikationsproblem</string>
+	<string name="jumio_error_no_camera_connection">Kameran är för närvarande inte tillgänglig</string>
+	<string name="jumio_error_startup_error">Skanning är inte tillgänglig just nu. Kontakta appens leverantör</string>
+	<string name="jumio_error_transaction_already_finished">Transaktionen är redan klar</string>
+	<string name="jumio_scanview_refocus">Fokusera på nytt</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Klicka för att fortsätta</string>
+	<string name="face_helpview_landscape_description">Håll mobilen i stående läge för att ta en selfie i porträttformat</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Rotera din enhet&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Problem?</string>
+	<string name="netverify_accessibility_nfc_description_start">Har din id-handling ett chip? Placera i så fall mobilen på id-handlingen i enlighet med bilden.</string>
+	<string name="netverify_back">Baksida</string>
+	<string name="netverify_countrylist_empty">Inga uppgifter i listan</string>
+	<string name="netverify_countrylist_title">Välj dokumentets utfärdandeland</string>
+	<string name="netverify_document_variant_other">Annat format</string>
+	<string name="netverify_document_variant_plastic">Plastkort</string>
+	<string name="netverify_documenttype_driverlicense">Körkort</string>
+	<string name="netverify_documenttype_idcard">ID-kort</string>
+	<string name="netverify_documenttype_passport">Pass</string>
+	<string name="netverify_documenttype_visa">Visum</string>
+	<string name="netverify_front">Framsida</string>
+	<string name="netverify_helpview_description_usdl_fallback">Dokumentets streckkod innehöll inte din adress, vänd på dokumentet och skanna framsidan</string>
+	<string name="netverify_helpview_fallback">BILDEN TAS INTE</string>
+	<string name="netverify_helpview_fallback_barcode">MITT ID SAKNAR STRECKKOD</string>
+	<string name="netverify_helpview_full_description">Placera dokumentet inom ramen såsom visas i animeringen ovan. Bilden tas automatiskt.\nKontrollera att alla uppgifter är läsbara, och undvik reflektioner.</string>
+	<string name="netverify_helpview_full_description_barcode">Placera streckkoden framför kameran såsom visas i bilden ovan. Bilden tas automatiskt.</string>
+	<string name="netverify_helpview_full_description_card">Placera dokumentet inom ramen så att alla 4 kanter är inriktade såsom visas i animeringen ovan. Bilden tas automatiskt.\nKontrollera att alla uppgifter är läsbara, och undvik reflektioner.</string>
+	<string name="netverify_helpview_full_description_template">Placera dokumentet framför kameran såsom visas i animeringen ovan. Bilden tas automatiskt.\nKontrollera att alla uppgifter är läsbara, och undvik reflektioner.</string>
+	<string name="netverify_helpview_progress_text">Steg %1$d av %2$d</string>
+	<string name="netverify_helpview_small_description">Placera dokumentet inom ramen tills bilden tas automatiskt.</string>
+	<string name="netverify_helpview_small_description_barcode">Placera streckkoden framför kameran tills bilden tas automatiskt.</string>
+	<string name="netverify_helpview_small_description_card">Placera dokumentet inom ramen tills bilden tas automatiskt.</string>
+	<string name="netverify_helpview_small_description_template">Placera dokumentet framför kameran tills bilden tas automatiskt.</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;Ta bild %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt; Skanna %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Klicka för att fortsätta</string>
+	<string name="netverify_inside">Insida</string>
+	<string name="netverify_nfc_description_extracting">Håll stilla under skanning</string>
+	<string name="netverify_nfc_description_start_other">Låt telefonen glida över framsidan tills ditt pass har detekterats automatiskt</string>
+	<string name="netverify_nfc_description_start_us">Låt telefonen glida över baksidans insida tills ditt pass har detekterats automatiskt</string>
+	<string name="netverify_nfc_enable_dialog_text">För att få ut mer av ditt pass, klicka på OK och aktivera mobilens NFC-funktion</string>
+	<string name="netverify_nfc_enable_dialog_title">Aktivera NFC</string>
+	<string name="netverify_nfc_general_error_dialog_text">Försök igen och följ instruktionerna enligt bilden</string>
+	<string name="netverify_nfc_general_error_dialog_title">Skanning avbruten</string>
+	<string name="netverify_nfc_header_extracting">Hämtar uppgifter</string>
+	<string name="netverify_nfc_header_finish">Skanningen är klar</string>
+	<string name="netverify_nfc_header_start">Placera ditt pass</string>
+	<string name="netverify_nfc_requestview_button_text">Hoppa</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">Håll stilla när passet har detekterats</string>
+	<string name="netverify_nfc_view_title">Skanna ditt pass</string>
+	<string name="netverify_outside">Utsida</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; har angetts som utfärdandeland för dina dokument. &lt;b&gt;&lt;u&gt;Ändra land&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; har angetts som utfärdandeland för dina dokument.</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Välj ditt land&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">Välj den dokumenttyp som du vill skanna</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt; Analyserar biometriska data &lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">Fortsätt</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Justera id-numret innan bilden tas</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Justera id-handlingen och åtkomstnumret innan bilden tas</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Justera passnumret innan bilden tas</string>
+	<string name="netverify_scanview_legal_hint_kor">Justera den andra sektionen av ditt folkbokföringsnummer innan bilden tas</string>
+	<string name="netverify_scanview_legal_hint_nld">Justera BSN innan bilden tas</string>
+	<string name="netverify_scanview_retake">TA NY BILD</string>
+	<string name="netverify_scanview_snackbar_check">Kontrollera att alla uppgifter i ditt dokument är fullt synliga, fria från reflektioner och inte suddiga.</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Kontrollera att alla uppgifter i ditt dokument är synliga och läsbara.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">Den tagna bilden ser ut att visa framsidan av ditt dokument. Bekräfta att bilden visar baksidan av ditt dokument, eller ta en ny bild.</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Ditt dokument kunde inte behandlas. Försök igen.</string>
+	<string name="netverify_scanview_snackbar_progress">Behandlar dokument …</string>
+	<string name="netverify_scanview_title">Skanna</string>
+	<string name="netverify_scanview_title_check">Kontrollera läsbarheten</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt;Uppladdningsproblem&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Laddar upp dina dokument&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">Detta bör ta bara några få sekunder beroende på din nätverksanslutning</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Uppladdning klar&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">ANVÄND BAKSIDA</string>
+	<string name="netverify_use_front_side_of_card">ANVÄND FRAMSIDA</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Klicka för att fortsätta</string>
+	<string name="face_helpview_landscape_description">Håll mobilen i stående läge för att ta en selfie i porträttformat</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Rotera din enhet&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Problem?</string>
+	<string name="zoom_accessibility_cancel_button">Avsluta skanningen</string>
+	<string name="zoom_action_im_ready">JAG ÄR REDO</string>
+	<string name="zoom_action_ok">OK</string>
+	<string name="zoom_feedback_a_little_too_close">Flytta dig lite bakåt</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Flytta dig lite bakåt</string>
+	<string name="zoom_feedback_center_face">Centrera ditt ansikte</string>
+	<string name="zoom_feedback_face_not_found">Rama in ansiktet</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Titta rakt framåt</string>
+	<string name="zoom_feedback_face_not_upright">Håll huvudet rakt</string>
+	<string name="zoom_feedback_hold_steady">Håll stadigt</string>
+	<string name="zoom_feedback_move_phone_away">Flytta dig lite bakåt</string>
+	<string name="zoom_feedback_move_phone_closer">Flytta dig lite närmare</string>
+	<string name="zoom_feedback_move_phone_even_closer">Lite närmare</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Håll enheten i ögonhöjd</string>
+	<string name="zoom_feedback_move_tablet_away">Flytta dig lite bakåt</string>
+	<string name="zoom_feedback_move_tablet_closer">Flytta dig lite närmare</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Håll enheten i ögonhöjd</string>
+	<string name="zoom_helpview_bad_angle">Håll enheten i ögonhöjd och titta rätt in i den</string>
+	<string name="zoom_helpview_bad_lightning">Undvik skuggor och reflektioner i ansiktet</string>
+	<string name="zoom_helpview_general">Följ de två stegen och se till att ditt ansikte är innanför ramen. Håll din enhet i ögonhöjd och titta rakt in i kameran. Ditt ansikte fotograferas automatiskt.</string>
+	<string name="zoom_helpview_upfront_title">Ta en bild av ditt ansikte</string>
+	<string name="zoom_instructions_header_ready">Gör dig redo för din videoselfie</string>
+	<string name="zoom_instructions_message_ready">Rama in ansiktet i den lilla ovalen, sedan den stora</string>
+	<string name="zoom_result_facemap_upload_message">Analyserar biometriska data</string>
+	<string name="zoom_result_success_message">Klart!</string>
+	<string name="zoom_retry_header">Försök igen</string>
+	<string name="zoom_retry_ideal_image_label">Ideal pose</string>
+	<string name="zoom_retry_instruction_message_1">Neutralt uttryck, inget leende</string>
+	<string name="zoom_retry_instruction_message_2">Inget sken/extrem belysning</string>
+	<string name="zoom_retry_subheader_message">Men först, ta en titt på ditt foto och korrigera din omgivning.</string>
+	<string name="zoom_retry_your_image_label">Din selfie</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">Bankkontoutdrag</string>
+	<string name="dv_helpview_header_birth_certificate">Födelseattest</string>
+	<string name="dv_helpview_header_cash_advance_application">Ansökan om kontantförskott</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Företagsupplösningsbevis</string>
+	<string name="dv_helpview_header_council_bill">Faktura från kommunen</string>
+	<string name="dv_helpview_header_credit_card">Kreditkort</string>
+	<string name="dv_helpview_header_credit_card_statement">Kreditkortsutdrag</string>
+	<string name="dv_helpview_header_document">Dokument</string>
+	<string name="dv_helpview_header_health_care_card">Sjukvårdskort</string>
+	<string name="dv_helpview_header_insurance_card">Försäkringskort</string>
+	<string name="dv_helpview_header_lease_agreement">Hyresavtal</string>
+	<string name="dv_helpview_header_loan_application">Låneansökan</string>
+	<string name="dv_helpview_header_medicare_card">Medicare-kort</string>
+	<string name="dv_helpview_header_mortgage_application">Hypoteksansökan</string>
+	<string name="dv_helpview_header_phone_bill">Telefonräkning</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Inskrivningsbrev från skola</string>
+	<string name="dv_helpview_header_seniors_card">Seniorkort</string>
+	<string name="dv_helpview_header_social_security_card">Socialförsäkringsbevis</string>
+	<string name="dv_helpview_header_student_card">Studentkort</string>
+	<string name="dv_helpview_header_superannuation_statement">Pensionsbesked</string>
+	<string name="dv_helpview_header_tax_return">Skatteåterbäring</string>
+	<string name="dv_helpview_header_trade_association_card">Intyg på medlemskap i branschorganisation</string>
+	<string name="dv_helpview_header_utility_bill">Faktura för allmännyttiga tjänster, t.ex. elräkning</string>
+	<string name="dv_helpview_header_vehicle_title">Registreringsbevis för fordon</string>
+	<string name="dv_helpview_header_voided_check">Annullerad check</string>
+	<string name="dv_helpview_header_working_with_children_check">Lämplighetsintyg för arbete med barn</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Ta bild %1$s&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">Fortsätt</string>
+	<string name="dv_scanview_retake">TA NY BILD</string>
+	<string name="dv_scanview_snackbar_check">Kontrollera att alla uppgifter i ditt dokument är fullt synliga, fria från reflektioner och inte suddiga.</string>
+	<string name="dv_scanview_title">Skanna</string>
+	<string name="dv_scanview_title_check">Kontrollera läsbarheten</string>
+	<string name="dv_upload_error">&lt;b&gt;Uppladdningsproblem&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;Laddar upp dina dokument&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Detta bör ta bara några få sekunder beroende på din nätverksanslutning</string>
+	<string name="dv_upload_successful">&lt;b&gt;Uppladdning klar&lt;/b&gt;</string>
+	-->
+
+</resources>

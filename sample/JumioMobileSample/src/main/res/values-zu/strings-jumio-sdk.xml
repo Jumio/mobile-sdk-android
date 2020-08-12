@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Shintshela kukhamera yangemuva</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Shintshela kwikhamera yaphambili</string>
+	<string name="jumio_accessibility_flash_activate">Yenza i-flash isebenze</string>
+	<string name="jumio_accessibility_flash_deactivate">Yenza kungasebenzi i-flash</string>
+	<string name="jumio_accessibility_loading">Iyalowuda</string>
+	<string name="jumio_accessibility_quit_scan">Yeka ukuskena</string>
+	<string name="jumio_button_cancel">Khansela</string>
+	<string name="jumio_button_retry">Phinda uzame</string>
+	<string name="jumio_error_auth_failed">Ukuqinisekisa kuhlulekile</string>
+	<string name="jumio_error_cancelled_by_user">Ikhanselwe ngumsebenzisi</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Isitifiketi asisasebenzi. Sicela ubuyekeze isicelo sakho</string>
+	<string name="jumio_error_device_is_offline">Ayikho i-inthanethi</string>
+	<string name="jumio_error_dialog_title">Iphutha</string>
+	<string name="jumio_error_network_problems">Sithole inkinga yokuxhumana kwenethiwekhi</string>
+	<string name="jumio_error_no_camera_connection">Ikhamera okwamanje ayitholakali</string>
+	<string name="jumio_error_startup_error">Ukuskena akukho njengamanje, sicela uthintane nomdayisi we-app</string>
+	<string name="jumio_error_transaction_already_finished">Ukushintsha sekuphelile kakade</string>
+	<string name="jumio_scanview_refocus">Kufiphele sicela uthathe kabusha</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Thepha ukuze uqhubeke</string>
+	<string name="face_helpview_landscape_description">Phendula ifoni yakho ime ukuze uthathe isithombe ngekhamera engaphambili</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Jikelezisa idivayisi yakho&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Ingabe kunezinkinga onazo?</string>
+	<string name="netverify_accessibility_nfc_description_start">Sicela ubheke ukuthi i-ID yakho ine-chip yini. Uma kunjalo, beka ifoni yakho ku-ID njengoba kukhonjisiwe.</string>
+	<string name="netverify_back">Emuva</string>
+	<string name="netverify_countrylist_empty">Akukho mininingwane kulolu hlu</string>
+	<string name="netverify_countrylist_title">Khetha izwe elikhipha amadokhumenti akho</string>
+	<string name="netverify_document_variant_other">Enye ifomethi</string>
+	<string name="netverify_document_variant_plastic">Ikhadi lepulasitiki</string>
+	<string name="netverify_documenttype_driverlicense">Ilayisensi Yokushayela</string>
+	<string name="netverify_documenttype_idcard">Ikhadi Likamazisi</string>
+	<string name="netverify_documenttype_passport">Ipasipoti</string>
+	<string name="netverify_documenttype_visa">I-Visa</string>
+	<string name="netverify_front">Phambili</string>
+	<string name="netverify_helpview_description_usdl_fallback">Ibhakhodi yedokhumenti yakho ibingenalo ikheli lakho, phendula idokhumenti lakho bese uskena ngaphambili</string>
+	<string name="netverify_helpview_fallback">OKOKUTHATHA ISITHOMBE AKUSEBENZI</string>
+	<string name="netverify_helpview_fallback_barcode">AKUKHO BHAKHODI KU-ID YAMI</string>
+	<string name="netverify_helpview_full_description">Beka idokhumenti yakho phakathi kohlaka njengoba kubonisiwe kopopayi ngenhla. Ukuthatha isithombe kuzokwenzeka ngokuzenakalelayo.\nQikelela ukuthi yonke imininingwane iyafundeka futhi ugweme okuxhophayo.</string>
+	<string name="netverify_helpview_full_description_barcode">Beka ibhakhodi phambi kwekhamera njengoba kukhonjisiwe esithombeni esingenhla. Ukuthatha isithombe kwenzeka ngokuzenzakalelayo.</string>
+	<string name="netverify_helpview_full_description_card">Beka idokhumenti yakho ngaphakathi kohlaka ukuze amakhona amane aqondane nohlaka, isithombe sizobe sesithatheka ngokuzenzakalelayo.\nQikelela ukuthi yonke imininingwane iyafundeka futhi ugweme okuxhophayo.</string>
+	<string name="netverify_helpview_full_description_template">Beka idokhumenti yakho phambi kwekhamera njengoba kubonisiwe kopopayi ngenhla. Ukuthatha isithombe kuzokwenzeka ngokuzenzakalelayo.\nQikelela ukuthi yonke imininingwane iyafundeka futhi ugweme okuxhophayo</string>
+	<string name="netverify_helpview_progress_text">Isinyathelo %1$d kwezingu %2$d</string>
+	<string name="netverify_helpview_small_description">Beka idokhumenti yakho phakathi kohlaka kuze kube yilapho isithombe sithatheka ngokuzenzakalelayo</string>
+	<string name="netverify_helpview_small_description_barcode">Beka ibhakhodi phambi kwekhamera kuze kube yilapho isithombe sithatheka ngokuzenzakalelayo</string>
+	<string name="netverify_helpview_small_description_card">Beka idokhumenti yakho phakathi kohlaka kuze kube yilapho isithombe sithatheka ngokuzenzakalelayo</string>
+	<string name="netverify_helpview_small_description_template">Beka idokhumenti yakho phambi kwekhamera kuze kube yilapho isithombe sithatheka ngokuzenzakalelayo</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;Thatha isithombe %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Skena %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Thepha ukuze uqhubeke</string>
+	<string name="netverify_inside">Ngaphakathi</string>
+	<string name="netverify_nfc_description_extracting">Bamba inganyakazi uma isaskena</string>
+	<string name="netverify_nfc_description_start_other">Hambisa ifoni phezu kwesembozo esiphambili kuze kutholakale ipasipoti yakho ngokuzenzakalelayo</string>
+	<string name="netverify_nfc_description_start_us">Hambisa ifoni phezu kwesembozo sangaphakathi esingemuva kuze kutholakale ipasipoti ngokuzenzakalelay</string>
+	<string name="netverify_nfc_enable_dialog_text">Ukuze uthole okuningi kupasipoti yakho, sicela uchofoze okuthi-OK bese uvula i-NFC efonini yakho</string>
+	<string name="netverify_nfc_enable_dialog_title">Vula i-NFC</string>
+	<string name="netverify_nfc_general_error_dialog_text">Zama futhi ulandele iziqondiso njengoba kubonisiwe</string>
+	<string name="netverify_nfc_general_error_dialog_title">Ukuskena akuphelele</string>
+	<string name="netverify_nfc_header_extracting">Ikhipha imininigwane</string>
+	<string name="netverify_nfc_header_finish">Ukuskena kuphelile</string>
+	<string name="netverify_nfc_header_start">Beka kahle ipasipoti</string>
+	<string name="netverify_nfc_requestview_button_text">Yeqa</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">Bamba kunganyakazi lapho kutholwa ipasipoti</string>
+	<string name="netverify_nfc_view_title">Skena ipasipoti yakh</string>
+	<string name="netverify_outside">Ngaphandle</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; isethwe njengezwe elikhipha amadokhumenti akho. &lt;b&gt;&lt;u&gt;Shintsha izwe&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; isethwe njengezwe elikhipha amadokhumenti akho.</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Khetha izwe lakho&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">Khetha uhlobo lwedokhumenti ufisa ukuliskena</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Ihlaziya idatha ye-biometric&lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">Qhubeka</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Sicela usule inombolo ye-ID ngaphambi kokuthatha isithombe</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Sicela usule inombolo ye-ID kanye nenombolo yokungena ngaphambi kokuthatha isithombe</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Sicela usule inombolo yepasipoti ngaphambi kokuthatha isithombe</string>
+	<string name="netverify_scanview_legal_hint_kor">Sula ibholokhi yesibili yeNombolo Yakho Yokubhalisa Indawo Yokuhlala ngaphambi kokuthatha isithombe</string>
+	<string name="netverify_scanview_legal_hint_nld">Sicela usule i-BSN yakho ngaphambi kokuthatha isithombe</string>
+	<string name="netverify_scanview_retake">Thatha futhi</string>
+	<string name="netverify_scanview_snackbar_check">Qinisekisa ukuthi yonke imininingwane ekudokhumenti yakho ibonakala kahle, ayifilizi futhi ayifiphalanga</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Qinisekisa ukuthi yonke imininingwane ekudokhumenti yakho iyabonakala futhi iyafundeka.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">Isithombe esithathiwe sibukeka njengokungaphambili kwedokhumenti lakho. Sicela uqinisekise ukuthi lokhu yingemuva ledokhumenti lakho noma uthathe kabusha isithombe.</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Idokhumenti lakho alikwazanga ukucutshungulwa, sicela uzame futhi.</string>
+	<string name="netverify_scanview_snackbar_progress">Icubungula idokhumenti …</string>
+	<string name="netverify_scanview_title">Skena</string>
+	<string name="netverify_scanview_title_check">Hlola ukuthi iyafundeka yini</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt;Izinkinga zokufaka&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Ukufaka amadokhumenti akho&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">Lokhu kuzothatha imizuzwana embalwa, kuye ngoku inethiwekhi yakho idonsa kanjani</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Ifake ngokuphumelelayo&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">SEBENZISA OKUSEMUVA</string>
+	<string name="netverify_use_front_side_of_card">SEBENZISA OKUPHAMBILI</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Thepha ukuze uqhubeke</string>
+	<string name="face_helpview_landscape_description">Phendula ifoni yakho ime ukuze uthathe isithombe ngekhamera engaphambili</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Jikelezisa idivayisi yakho&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Ingabe kunezinkinga onazo?</string>
+	<string name="zoom_accessibility_cancel_button">Yeka ukuskena</string>
+	<string name="zoom_action_im_ready">NGIKULUNGELE</string>
+	<string name="zoom_action_ok">KULUNGILE</string>
+	<string name="zoom_feedback_a_little_too_close">Hlehla kancane</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Hlehla kancane</string>
+	<string name="zoom_feedback_center_face">Ubuso bakho mabube phakathi nendawo</string>
+	<string name="zoom_feedback_face_not_found">Faka ubuso bakho ohlakeni</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Bheka phambili</string>
+	<string name="zoom_feedback_face_not_upright">Gcina ikhanda lakho liqondile</string>
+	<string name="zoom_feedback_hold_steady">Yibambe unganyakazi</string>
+	<string name="zoom_feedback_move_phone_away">Hlehla kancane</string>
+	<string name="zoom_feedback_move_phone_closer">Sondela kancane</string>
+	<string name="zoom_feedback_move_phone_even_closer">Yisondeze kancane</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Bamba idivayisi yakho iqondane namehlo</string>
+	<string name="zoom_feedback_move_tablet_away">Hlehla kancane</string>
+	<string name="zoom_feedback_move_tablet_closer">Sondela kancane</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Bamba idivayisi yakho iqondane namehlo</string>
+	<string name="zoom_helpview_bad_angle">Bamba idivayisi yakho iqondane namehlo bese ubheka ngqo kuyo</string>
+	<string name="zoom_helpview_bad_lightning">Gwema isithunzi nezinto ezixhophayo ebusweni bakho</string>
+	<string name="zoom_helpview_general">Landela inqubo eyizinyathelo ezimbili, ubuso bakho ubumise kahle ohlakeni. Bamba idivayisi yakho iqondane namehlo bese ubuka ngqo kwikhamera. Isithombe sobuso bakho sizothathwa ngokuzenzakalelayo</string>
+	<string name="zoom_helpview_upfront_title">Thatha isithombe sobuso bakho</string>
+	<string name="zoom_instructions_header_ready">Lungela i-selfie yakho yevidiyo</string>
+	<string name="zoom_instructions_message_ready">Beka ubuso endilingeni encane, nasendilingeni enkulu</string>
+	<string name="zoom_result_facemap_upload_message">Ihlaziya idatha ye-biometric</string>
+	<string name="zoom_result_success_message">Impumelelo!</string>
+	<string name="zoom_retry_header">Sicela uphinde uzame</string>
+	<string name="zoom_retry_ideal_image_label">Ukuma okuhle</string>
+	<string name="zoom_retry_instruction_message_1">Ubuso obuthule, ungamamatheki</string>
+	<string name="zoom_retry_instruction_message_2">Akukho ukukhaya okuxhophayo</string>
+	<string name="zoom_retry_subheader_message">Kodwa okokuqala, bheka isithombe sakho bese ulungisa indawo okuyo.</string>
+	<string name="zoom_retry_your_image_label">I-selfie</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">Isitatimende sasebhange</string>
+	<string name="dv_helpview_header_birth_certificate">Isitifiketi sokuzalwa</string>
+	<string name="dv_helpview_header_cash_advance_application">Isicelo sokuboleka imali ngekhadi lasebhange</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Isitifiketi sezinqumo zenkampani</string>
+	<string name="dv_helpview_header_council_bill">Izindleko zomkhandlu</string>
+	<string name="dv_helpview_header_credit_card">Ikhadi lesikweletu</string>
+	<string name="dv_helpview_header_credit_card_statement">Isitatimende sekhadi lesikweletu</string>
+	<string name="dv_helpview_header_document">Idokhumenti</string>
+	<string name="dv_helpview_header_health_care_card">Ikhadi lokunakekelwa kwempilo</string>
+	<string name="dv_helpview_header_insurance_card">Ikhadi lomshwalense</string>
+	<string name="dv_helpview_header_lease_agreement">Isicelo sokuboleka imali yokuthenga isakhiwo</string>
+	<string name="dv_helpview_header_loan_application">Isicelo sokuboleka imali</string>
+	<string name="dv_helpview_header_medicare_card">Ikhadi lohlelo lokunakekelwa kwempilo</string>
+	<string name="dv_helpview_header_mortgage_application">Isicelo sokuboleka imali yokuthenga isakhiwo</string>
+	<string name="dv_helpview_header_phone_bill">Izindleko zocingo</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Incwadi yokubhalisa esikoleni</string>
+	<string name="dv_helpview_header_seniors_card">Ikhadi labantu abakhulile</string>
+	<string name="dv_helpview_header_social_security_card">Ikhadi lokuphepha kwezenhlalo</string>
+	<string name="dv_helpview_header_student_card">Ikhadi lomfundi</string>
+	<string name="dv_helpview_header_superannuation_statement">Isitatimende sesikhwama sempesheni</string>
+	<string name="dv_helpview_header_tax_return">Umbiko wentela</string>
+	<string name="dv_helpview_header_trade_association_card">Ikhadi lenhlangano yokuhweba</string>
+	<string name="dv_helpview_header_utility_bill">Isikweletu samanzi, ugesi nodoti</string>
+	<string name="dv_helpview_header_vehicle_title">Iphepha lokuba umnikazi wemoto</string>
+	<string name="dv_helpview_header_voided_check">Ukuhlola okungasebenzi</string>
+	<string name="dv_helpview_header_working_with_children_check">Ukuhlola ukusebenza nezingane</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Thatha isithombe %1$s&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">Qhubeka</string>
+	<string name="dv_scanview_retake">Thatha futhi</string>
+	<string name="dv_scanview_snackbar_check">Qinisekisa ukuthi yonke imininingwane ekudokhumenti yakho ibonakala kahle, ayifilizi futhi ayifiphalanga</string>
+	<string name="dv_scanview_title">Skena</string>
+	<string name="dv_scanview_title_check">Hlola ukuthi iyafundeka yini</string>
+	<string name="dv_upload_error">&lt;b&gt;Izinkinga zokufaka&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;Ukufaka amadokhumenti akho&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Lokhu kuzothatha imizuzwana embalwa, kuye ngoku inethiwekhi yakho idonsa kanjani</string>
+	<string name="dv_upload_successful">&lt;b&gt;Ifake ngokuphumelelayo&lt;/b&gt;</string>
+	-->
+
+</resources>

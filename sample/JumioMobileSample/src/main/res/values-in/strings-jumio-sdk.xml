@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- POSSIBLE GENERAL SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Alihkan ke kamera belakang</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Alihkan ke kamera depan</string>
+	<string name="jumio_accessibility_flash_activate">Aktifkan flash</string>
+	<string name="jumio_accessibility_flash_deactivate">Nonaktifkan flash</string>
+	<string name="jumio_accessibility_loading">Memuat</string>
+	<string name="jumio_accessibility_quit_scan">Berhenti memindai</string>
+	<string name="jumio_button_cancel">Batal</string>
+	<string name="jumio_button_retry">Coba lagi</string>
+	<string name="jumio_error_auth_failed">Autentikasi gagal</string>
+	<string name="jumio_error_cancelled_by_user">Dibatalkan oleh pengguna akhir</string>
+	<string name="jumio_error_certificate_not_valid_anymore">Sertifikat tidak berlaku lagi. Perbarui aplikasi Anda</string>
+	<string name="jumio_error_device_is_offline">Koneksi internet tidak tersedia</string>
+	<string name="jumio_error_dialog_title">Ksalahn</string>
+	<string name="jumio_error_network_problems">Kami mengalami masalah komunikasi jaringan</string>
+	<string name="jumio_error_no_camera_connection">Kamera saat ini tidak tersedia</string>
+	<string name="jumio_error_startup_error">Pemindaian tidak tersedia saat ini, hubungi vendor aplikasi</string>
+	<string name="jumio_error_transaction_already_finished">Transaksi sudah selesai</string>
+	<string name="jumio_scanview_refocus">Fokus ulang</string>
+	-->
+
+	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Ketuk untuk melanjutka</string>
+	<string name="face_helpview_landscape_description">Putar ponsel untuk memotret atau mengambil selfie</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Putar perangkat Anda&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Mengalami masalah?</string>
+	<string name="netverify_accessibility_nfc_description_start">Periksa apakah ID Anda memiliki chip. Jika ada, letakkan ponsel Anda di ID seperti tampak dalam ilustrasi.</string>
+	<string name="netverify_back">Belakang</string>
+	<string name="netverify_countrylist_empty">Tidak ada data dalam daftar</string>
+	<string name="netverify_countrylist_title">Pilih negara penerbit dokumen Anda</string>
+	<string name="netverify_document_variant_other">Format lainnya</string>
+	<string name="netverify_document_variant_plastic">Kartu plastik</string>
+	<string name="netverify_documenttype_driverlicense">SIM</string>
+	<string name="netverify_documenttype_idcard">Kartu Identitas</string>
+	<string name="netverify_documenttype_passport">Paspor</string>
+	<string name="netverify_documenttype_visa">Visa</string>
+	<string name="netverify_front">Depan</string>
+	<string name="netverify_helpview_description_usdl_fallback">Kode batang dokumen Anda tidak berisi alamat Anda, putar dokumen dan pindai bagian depannya</string>
+	<string name="netverify_helpview_fallback">TIDAK BISA MENGAMBIL GAMBAR</string>
+	<string name="netverify_helpview_fallback_barcode">TIDAK ADA KODE BATANG DI ID SAYA</string>
+	<string name="netverify_helpview_full_description">Tempatkan dokumen Anda dalam bingkai seperti yang ditunjukkan dalam animasi di atas. Gambar diambil secara otomatis.\nPastikan bahwa semua data dapat dibaca dan hindari pantulan.</string>
+	<string name="netverify_helpview_full_description_barcode">Tempatkan kode batang di depan kamera seperti yang ditunjukkan pada gambar di atas. Gambar diambil secara otomatis.</string>
+	<string name="netverify_helpview_full_description_card">Tempatkan dokumen Anda dalam bingkai sampai 4 tepi semuanya selaras seperti yang ditunjukkan pada animasi di atas. Gambar diambil secara otomatis.\nPastikan bahwa semua data dapat dibaca dan hindari pantulan.</string>
+	<string name="netverify_helpview_full_description_template">Tempatkan dokumen Anda di depan kamera seperti yang ditunjukkan dalam animasi di atas. Gambar diambil secara otomatis. \nPastikan bahwa semua data dapat dibaca dan hindari pantulan.</string>
+	<string name="netverify_helpview_progress_text">Lnkh %1$d dr %2$d</string>
+	<string name="netverify_helpview_small_description">Tempatkan dokumen dalam bingkai sampai gambar diambil secara otomatis</string>
+	<string name="netverify_helpview_small_description_barcode">Tempatkan kode batang di depan kamera sampai gambar diambil secara otomatis</string>
+	<string name="netverify_helpview_small_description_card">Tempatkan dokumen dalam bingkai sampai gambar diambil secara otomatis</string>
+	<string name="netverify_helpview_small_description_template">Tempatkan dokumen di depan kamera sampai gambar diambil secara otomatis</string>
+	<string name="netverify_helpview_small_title_capture">&lt;b&gt;Ambil %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_small_title_scan">&lt;b&gt;Pindai %1$s %2$s&lt;/b&gt;</string>
+	<string name="netverify_helpview_usdl_fallback_continue">Ketuk untuk melanjutka</string>
+	<string name="netverify_inside">Dalam</string>
+	<string name="netverify_nfc_description_extracting">Tahan terus sambil memindai</string>
+	<string name="netverify_nfc_description_start_other">Geser ponsel di penutup depan sampai paspor Anda terdeteksi secara otomatis</string>
+	<string name="netverify_nfc_description_start_us">Geser ponsel di bagian dalam penutup belakang sampai paspor Anda terdeteksi secara otomatis</string>
+	<string name="netverify_nfc_enable_dialog_text">Untuk lebih memanfaatkan paspor Anda, klik OK dan aktifkan kemampuan NFC ponsel Anda</string>
+	<string name="netverify_nfc_enable_dialog_title">Mengaktifkan NFC</string>
+	<string name="netverify_nfc_general_error_dialog_text">Coba lagi dan ikuti instruksi seperti yang diilustrasikan</string>
+	<string name="netverify_nfc_general_error_dialog_title">Pindai tidak selesai</string>
+	<string name="netverify_nfc_header_extracting">Mengekstrak data</string>
+	<string name="netverify_nfc_header_finish">Pemindaian selesai</string>
+	<string name="netverify_nfc_header_start">Posisikan paspor Anda</string>
+	<string name="netverify_nfc_requestview_button_text">Melewatkan</string>
+	<string name="netverify_nfc_tag_lost_dialog_text">Tahan terus setelah paspor terdeteksi</string>
+	<string name="netverify_nfc_view_title">Pindai paspor Anda</string>
+	<string name="netverify_outside">Luar</string>
+	<string name="netverify_scan_options_country_selection">&lt;b&gt;%1$s&lt;/b&gt; telah ditetapkan sebagai negara penerbit dokumen Anda. &lt;b&gt; &lt;u&gt;Ganti negara&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_country_selection_lock">&lt;b&gt;%1$s&lt;/b&gt; telah ditetapkan sebagai negara penerbit dokumen Anda.</string>
+	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Pilih negara Anda&lt;/u&gt;&lt;/b&gt;</string>
+	<string name="netverify_scan_options_subtitle_type">Pilih jenis dokumen yang ingin Anda pindai</string>
+	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Menganalisis data biometrik&lt;/b&gt;</string>
+	<string name="netverify_scanview_continue">Lanjutkan</string>
+	<string name="netverify_scanview_legal_hint_deu_id_paper">Susun nomor ID sebelum mengambil gambar</string>
+	<string name="netverify_scanview_legal_hint_deu_id_plastic">Susun nomor ID dan nomor akses sebelum mengambil gambar</string>
+	<string name="netverify_scanview_legal_hint_deu_passport">Susun nomor Paspor sebelum mengambil gambar</string>
+	<string name="netverify_scanview_legal_hint_kor">Susun blok kedua Nomor Induk Kependudukan sebelum mengambil gambar</string>
+	<string name="netverify_scanview_legal_hint_nld">Susun nomor layanan warga negara (BSN) Anda sebelum mengambil gambar</string>
+	<string name="netverify_scanview_retake">Ambil lagi</string>
+	<string name="netverify_scanview_snackbar_check">Pastikan semua data dokumen terlihat jelas, bebas silau dan tidak kabur</string>
+	<string name="netverify_scanview_snackbar_check_confirmation">Pastikan semua data pada dokumen Anda terlihat dan dapat dibaca.</string>
+	<string name="netverify_scanview_snackbar_check_face_on_back">Gambar yang ditangkap terlihat seperti bagian Depan dokumen Anda. Konfirmasikan ini adalah bagian Belakang dokumen Anda atau ambil gambar kembali.</string>
+	<string name="netverify_scanview_snackbar_check_process_error">Dokumen Anda tidak dapat diproses, harap coba lagi.</string>
+	<string name="netverify_scanview_snackbar_progress">Memproses dokumen…</string>
+	<string name="netverify_scanview_title">Pindai dokumen</string>
+	<string name="netverify_scanview_title_check">Periksa keterbacaan</string>
+	<string name="netverify_scanview_title_face"></string>
+	<string name="netverify_upload_error">&lt;b&gt;Masalah pengunggahan&lt;/b&gt;</string>
+	<string name="netverify_upload_progress">&lt;b&gt;Mengunggah dokumen Anda&lt;/b&gt;</string>
+	<string name="netverify_upload_progress_description">Ini seharusnya hanya memakan waktu beberapa detik, tergantung pada konektivitas jaringan Anda</string>
+	<string name="netverify_upload_successful">&lt;b&gt;Berhasil diunggah&lt;/b&gt;</string>
+	<string name="netverify_use_back_side_of_card">GUNAKAN BELAKANG</string>
+	<string name="netverify_use_front_side_of_card">GUNAKAN DEPAN</string>
+	-->
+
+	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_continue">Ketuk untuk melanjutka</string>
+	<string name="face_helpview_landscape_description">Putar ponsel untuk memotret atau mengambil selfie</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Putar perangkat Anda&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Mengalami masalah?</string>
+	<string name="zoom_accessibility_cancel_button">Berhenti memindai</string>
+	<string name="zoom_action_im_ready">SAYA SIAP</string>
+	<string name="zoom_action_ok">OKE</string>
+	<string name="zoom_feedback_a_little_too_close">Mundur sedikit</string>
+	<string name="zoom_feedback_a_little_too_close_tablet">Mundur sedikit</string>
+	<string name="zoom_feedback_center_face">Pusatkan wajah Anda</string>
+	<string name="zoom_feedback_face_not_found">Bingkai wajah Anda</string>
+	<string name="zoom_feedback_face_not_looking_straight_ahead">Lihat lurus ke depan</string>
+	<string name="zoom_feedback_face_not_upright">Jaga kepala Anda tetap lurus</string>
+	<string name="zoom_feedback_hold_steady">Tahan terus</string>
+	<string name="zoom_feedback_move_phone_away">Mundur sedikit</string>
+	<string name="zoom_feedback_move_phone_closer">Bergeraklah sedikit lebih dekat</string>
+	<string name="zoom_feedback_move_phone_even_closer">Sedikit lebih dekat</string>
+	<string name="zoom_feedback_move_phone_to_eye_level">Pegang perangkat setinggi mata</string>
+	<string name="zoom_feedback_move_tablet_away">Mundur sedikit</string>
+	<string name="zoom_feedback_move_tablet_closer">Bergeraklah sedikit lebih dekat</string>
+	<string name="zoom_feedback_move_tablet_to_eye_level">Pegang perangkat setinggi mata</string>
+	<string name="zoom_helpview_bad_angle">Pegang perangkat setinggi mata dan lihat langsung ke perangkat</string>
+	<string name="zoom_helpview_bad_lightning">Hindari bayangan dan pantulan di wajah Anda</string>
+	<string name="zoom_helpview_general">Ikuti proses dua langkah dan selaraskan wajah Anda dengan bingkai. Pegang perangkat setinggi mata dan lihat langsung ke kamera. Wajah anda akan ditangkap secara otomatis</string>
+	<string name="zoom_helpview_upfront_title">Ambil gambar wajah Anda</string>
+	<string name="zoom_instructions_header_ready">Bersiaplah untuk selfie video Anda</string>
+	<string name="zoom_instructions_message_ready">Bingkai wajah di oval kecil, lalu oval besar</string>
+	<string name="zoom_result_facemap_upload_message">Menganalisis data biometrik</string>
+	<string name="zoom_result_success_message">Keberhasilan!</string>
+	<string name="zoom_retry_header">Harap coba lagi</string>
+	<string name="zoom_retry_ideal_image_label">Pose ideal</string>
+	<string name="zoom_retry_instruction_message_1">Ekspresi netral, tidak senyum</string>
+	<string name="zoom_retry_instruction_message_2">Cahaya tak silau atau ekstrem</string>
+	<string name="zoom_retry_subheader_message">Tapi pertama-tama, lihat foto Anda dan koreksi lingkungan Anda.</string>
+	<string name="zoom_retry_your_image_label">Selfie Anda</string>
+	-->
+
+	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	-->
+
+	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
+	<!--
+	<string name="dv_helpview_header_bank_statement">Laporan bank</string>
+	<string name="dv_helpview_header_birth_certificate">Akta kelahiran</string>
+	<string name="dv_helpview_header_cash_advance_application">Permohonan pengajuan uang tunai</string>
+	<string name="dv_helpview_header_corporate_resolution_certificate">Akta resolusi perusahaan</string>
+	<string name="dv_helpview_header_council_bill">RUU Dewan</string>
+	<string name="dv_helpview_header_credit_card">Kartu kredit</string>
+	<string name="dv_helpview_header_credit_card_statement">Laporan kartu kredit</string>
+	<string name="dv_helpview_header_document">Dokumen</string>
+	<string name="dv_helpview_header_health_care_card">Kartu layanan kesehatan</string>
+	<string name="dv_helpview_header_insurance_card">Kartu asuransi</string>
+	<string name="dv_helpview_header_lease_agreement">Perjanjian sewa menyewa</string>
+	<string name="dv_helpview_header_loan_application">Permohonan pinjaman</string>
+	<string name="dv_helpview_header_medicare_card">Kartu Medicare</string>
+	<string name="dv_helpview_header_mortgage_application">Permohonan pegadaian</string>
+	<string name="dv_helpview_header_phone_bill">Tagihan telepon</string>
+	<string name="dv_helpview_header_school_enrolment_letter">Surat pendaftaran sekolah</string>
+	<string name="dv_helpview_header_seniors_card">Kartu lansia</string>
+	<string name="dv_helpview_header_social_security_card">Kartu jaminan sosial</string>
+	<string name="dv_helpview_header_student_card">Kartu pelajar</string>
+	<string name="dv_helpview_header_superannuation_statement">Laporan pensiun</string>
+	<string name="dv_helpview_header_tax_return">Pajak penghasilan</string>
+	<string name="dv_helpview_header_trade_association_card">Kartu asosiasi perdagangan</string>
+	<string name="dv_helpview_header_utility_bill">Tagihan air, listrik, dsb.</string>
+	<string name="dv_helpview_header_vehicle_title">Buku Pemilik Kendaraan Bermotor</string>
+	<string name="dv_helpview_header_voided_check">Cek kosong</string>
+	<string name="dv_helpview_header_working_with_children_check">Izin bekerja dengan anak-anak</string>
+	<string name="dv_helpview_small_title_capture">&lt;b&gt;Ambil %1$s&lt;/b&gt;</string>
+	<string name="dv_scanview_continue">Lanjutkan</string>
+	<string name="dv_scanview_retake">Ambil lagi</string>
+	<string name="dv_scanview_snackbar_check">Pastikan semua data dokumen terlihat jelas, bebas silau dan tidak kabur</string>
+	<string name="dv_scanview_title">Pindai dokumen</string>
+	<string name="dv_scanview_title_check">Periksa keterbacaan</string>
+	<string name="dv_upload_error">&lt;b&gt;Masalah pengunggahan&lt;/b&gt;</string>
+	<string name="dv_upload_progress">&lt;b&gt;Mengunggah dokumen Anda&lt;/b&gt;</string>
+	<string name="dv_upload_progress_description">Ini seharusnya hanya memakan waktu beberapa detik, tergantung pada konektivitas jaringan Anda</string>
+	<string name="dv_upload_successful">&lt;b&gt;Berhasil diunggah&lt;/b&gt;</string>
+	-->
+
+</resources>
