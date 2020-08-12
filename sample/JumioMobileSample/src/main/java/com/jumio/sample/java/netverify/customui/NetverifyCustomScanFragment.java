@@ -157,12 +157,12 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 			modeType = NetverifyCustomScanView.MODE_ID;
 			customScanView = root.findViewById(R.id.fragment_nv_custom_scan_view);
 			customScanView.setMode(modeType);
+			btnSkipNfc = root.findViewById(R.id.fragment_custom_scan_btn_skip_nfc);
+			btnSkipNfc.setOnClickListener(this);
 		}
 
 		btnCapture = root.findViewById(R.id.fragment_custom_scan_btn_capture);
 		btnCapture.setOnClickListener(this);
-		btnSkipNfc = root.findViewById(R.id.fragment_custom_scan_btn_skip_nfc);
-		btnSkipNfc.setOnClickListener(this);
 
 		loadingIndicator = root.findViewById(R.id.fragment_nv_custom_loading_indicator);
 		customConfirmationView = root.findViewById(R.id.fragment_nv_custom_confirmation_view);
