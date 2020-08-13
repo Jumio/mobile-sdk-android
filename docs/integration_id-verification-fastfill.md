@@ -377,7 +377,7 @@ The following tables give information on the specification of all document data 
 |optionalData2|	String|	50	|Optional field of MRZ line 2|
 |placeOfBirth|	String|	255	|Place of Birth	|
 |extractionMethod|	NVExtractionMethod| |Extraction method used during scanning (MRZ, OCR, BARCODE, BARCODE_OCR or NONE) |
-|imageData|	NetverifyImageData|	|Wrapper class for accessing image data for all scan sides from from an ID verification session in case this is enabled by your Account Manager. See [NetverifyImageData](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifyImageData.html) for details on how to retrieve the images|
+|imageData|	NetverifyImageData|	|Wrapper class for accessing image data for all scan sides from from an ID verification session in case this is enabled by your Account Manager.|
 
 
 #### Class ____NetverifyMrzData___
