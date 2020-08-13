@@ -64,7 +64,6 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 	private LinearLayout partTypeLayout;
 	private LinearLayout callbackLog;
 	private LinearLayout userConsentLayout;
-	private FrameLayout customScanLayout;
 	private ProgressBar loadingIndicator;
 	private EditText enrollmentTransactionReference;
 	private Button startCustomScanButton;
@@ -96,7 +95,6 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 		authenticationSettingsContainer = rootView.findViewById(R.id.authenticationSettingsContainer);
         customScanContainer = rootView.findViewById(R.id.authenticationCustomContainer);
         partTypeLayout = rootView.findViewById(R.id.partTypeLayout);
-		customScanLayout = rootView.findViewById(R.id.customScanLayout);
 		userConsentLayout = rootView.findViewById(R.id.userConsentLayout);
 		callbackLog = rootView.findViewById(R.id.callbackLog);
 		enrollmentTransactionReference = rootView.findViewById(R.id.etEnrollmentTransactionReference);
@@ -196,7 +194,7 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 				}
 			}
         } else if (v == cancelCustomScanButton && isSDKControllerValid()) {
-            hideView(false, cancelCustomScanButton, partTypeLayout, customScanLayout, loadingIndicator);
+            hideView(false, cancelCustomScanButton, partTypeLayout, loadingIndicator);
             callbackLog.removeAllViews();
             try {
                 customSDKController.pause();
@@ -213,12 +211,10 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
             customScanContainer.setVisibility(View.GONE);
             authenticationSettingsContainer.setVisibility(View.VISIBLE);
         } else if (v == faceButton && isSDKControllerValid()) {
-			showView(true, customScanLayout);
 
 			scrollView.post(new Runnable() {
 				@Override
 				public void run() {
-					scrollView.scrollTo(0, customScanLayout.getTop());
 					scrollView.postDelayed(new ScanPartRunnable(), 250);
 				}
 			});
@@ -228,12 +224,10 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 			hideView(false, userConsentLayout);
 		} else if (v == partRetryButton && isSDKControllerValid()) {
 			hideView(false, partRetryButton);
-			showView(true, customScanLayout);
 
 			scrollView.post(new Runnable() {
 				@Override
 				public void run() {
-					scrollView.scrollTo(0, customScanLayout.getTop());
 					scrollView.postDelayed(new RetryPartRunnable(), 250);
 				}
 			});
@@ -356,7 +350,6 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 			try {
 				customSDKController.startScan(new AuthenticationCustomScanImpl());
 			} catch (SDKNotConfiguredException e) {
-				hideView(false, customScanLayout);
 				addToCallbackLog(e.getMessage());
 			}
 		}
@@ -413,8 +406,6 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
 		@Override
 		public void onAuthenticationScanProcessing() {
 			addToCallbackLog("onAuthenticationScanProcessing");
-			if (customScanLayout.getVisibility() == View.VISIBLE)
-				hideView(false, customScanLayout);
 			hideView(false, loadingIndicator);
 			faceButton.setCompoundDrawablesWithIntrinsicBounds(successDrawable, null, null, null);
 		}
