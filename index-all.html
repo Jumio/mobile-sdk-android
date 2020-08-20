@@ -96,6 +96,8 @@
 <dd>
 <div class="block">Custom fields the user is asked to fill in to finish a scan.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyImageData.html#addImage-android.content.Context-byte:A-com.jumio.core.data.document.ScanSide-">addImage(Context, byte[], ScanSide)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyImageData.html" title="class in com.jumio.nv">NetverifyImageData</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/jumio/auth/AuthenticationCallback.html" title="interface in com.jumio.auth"><span class="typeNameLink">AuthenticationCallback</span></a> - Interface in <a href="com/jumio/auth/package-summary.html">com.jumio.auth</a></dt>
 <dd>
 <div class="block">Callback for intialization of the AuthenticationSDK</div>
@@ -188,6 +190,10 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/jumio/bam/BamCardInformation.html#clear--">clear()</a></span> - Method in class com.jumio.bam.<a href="com/jumio/bam/BamCardInformation.html" title="class in com.jumio.bam">BamCardInformation</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyImageData.html#clear--">clear()</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyImageData.html" title="class in com.jumio.nv">NetverifyImageData</a></dt>
+<dd>
+<div class="block">Clears all temporarily stored images and crypto values.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/bam/BamSDK.html#clearCustomFields--">clearCustomFields()</a></span> - Method in class com.jumio.bam.<a href="com/jumio/bam/BamSDK.html" title="class in com.jumio.bam">BamSDK</a></dt>
 <dd>
 <div class="block">Removes all previously added custom fields</div>
@@ -278,6 +284,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyDocumentData.html#CREATOR">CREATOR</a></span> - Static variable in class com.jumio.nv.<a href="com/jumio/nv/NetverifyDocumentData.html" title="class in com.jumio.nv">NetverifyDocumentData</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyImageData.html#CREATOR">CREATOR</a></span> - Static variable in class com.jumio.nv.<a href="com/jumio/nv/NetverifyImageData.html" title="class in com.jumio.nv">NetverifyImageData</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyMrzData.html#CREATOR">CREATOR</a></span> - Static variable in class com.jumio.nv.<a href="com/jumio/nv/NetverifyMrzData.html" title="class in com.jumio.nv">NetverifyMrzData</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/jumio/bam/enums/CreditCardType.html" title="enum in com.jumio.bam.enums"><span class="typeNameLink">CreditCardType</span></a> - Enum in <a href="com/jumio/bam/enums/package-summary.html">com.jumio.bam.enums</a></dt>
@@ -311,6 +319,8 @@
 <dt><span class="memberNameLink"><a href="com/jumio/bam/BamCardInformation.html#describeContents--">describeContents()</a></span> - Method in class com.jumio.bam.<a href="com/jumio/bam/BamCardInformation.html" title="class in com.jumio.bam">BamCardInformation</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyDocumentData.html#describeContents--">describeContents()</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyDocumentData.html" title="class in com.jumio.nv">NetverifyDocumentData</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyImageData.html#describeContents--">describeContents()</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyImageData.html" title="class in com.jumio.nv">NetverifyImageData</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyMrzData.html#describeContents--">describeContents()</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyMrzData.html" title="class in com.jumio.nv">NetverifyMrzData</a></dt>
 <dd>&nbsp;</dd>
@@ -426,9 +436,17 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyDocumentData.html#getAddressLine--">getAddressLine()</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyDocumentData.html" title="class in com.jumio.nv">NetverifyDocumentData</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyImageData.html#getBitmap-com.jumio.core.data.document.ScanSide-">getBitmap(ScanSide)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyImageData.html" title="class in com.jumio.nv">NetverifyImageData</a></dt>
+<dd>
+<div class="block">Checks if the requested <a href="com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document"><code>ScanSide</code></a> is available and returns it as a <code>Bitmap</code>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/custom/NetverifyCustomScanView.html#getBrandingLogoTopMargin--">getBrandingLogoTopMargin()</a></span> - Method in class com.jumio.nv.custom.<a href="com/jumio/nv/custom/NetverifyCustomScanView.html" title="class in com.jumio.nv.custom">NetverifyCustomScanView</a></dt>
 <dd>
 <div class="block">Set the top margin for the Jumio powered by logo and the privacy link</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyImageData.html#getByteArray-com.jumio.core.data.document.ScanSide-">getByteArray(ScanSide)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyImageData.html" title="class in com.jumio.nv">NetverifyImageData</a></dt>
+<dd>
+<div class="block">Checks if the requested <a href="com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document"><code>ScanSide</code></a> is available and returns it as a webp encoded byte array.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/jumio/bam/BamCardInformation.html#getCardAccountNumber--">getCardAccountNumber()</a></span> - Method in class com.jumio.bam.<a href="com/jumio/bam/BamCardInformation.html" title="class in com.jumio.bam">BamCardInformation</a></dt>
 <dd>
@@ -680,6 +698,10 @@
 <dd>
 <div class="block">Check if certain permissions have already been granted.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyImageData.html#hasSide-com.jumio.core.data.document.ScanSide-">hasSide(ScanSide)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyImageData.html" title="class in com.jumio.nv">NetverifyImageData</a></dt>
+<dd>
+<div class="block">Checks if the requested <a href="com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document"><code>ScanSide</code></a> is available</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#hideLoading-boolean-boolean-">hideLoading(boolean, boolean)</a></span> - Method in class com.jumio.nv.custom.<a href="com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html" title="class in com.jumio.nv.custom">NetverifyCustomSDKController.InternalController</a></dt>
 <dd>&nbsp;</dd>
 </dl>
@@ -891,6 +913,12 @@
 <div class="block">Scan result object from a <a href="com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv"><code>NetverifySDK</code></a> scan</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyDocumentData.html#NetverifyDocumentData--">NetverifyDocumentData()</a></span> - Constructor for class com.jumio.nv.<a href="com/jumio/nv/NetverifyDocumentData.html" title="class in com.jumio.nv">NetverifyDocumentData</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/jumio/nv/NetverifyImageData.html" title="class in com.jumio.nv"><span class="typeNameLink">NetverifyImageData</span></a> - Class in <a href="com/jumio/nv/package-summary.html">com.jumio.nv</a></dt>
+<dd>
+<div class="block">Gives access to all scanned images from a <a href="com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv"><code>NetverifySDK</code></a> scan</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyImageData.html#NetverifyImageData-CredentialsModel-">NetverifyImageData(CredentialsModel)</a></span> - Constructor for class com.jumio.nv.<a href="com/jumio/nv/NetverifyImageData.html" title="class in com.jumio.nv">NetverifyImageData</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/jumio/nv/NetverifyInitiateCallback.html" title="interface in com.jumio.nv"><span class="typeNameLink">NetverifyInitiateCallback</span></a> - Interface in <a href="com/jumio/nv/package-summary.html">com.jumio.nv</a></dt>
 <dd>
@@ -1369,7 +1397,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyMrzData.html#setIdNumberValid-boolean-">setIdNumberValid(boolean)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyMrzData.html" title="class in com.jumio.nv">NetverifyMrzData</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyDocumentData.html#setImageData-NetverifyImageData-">setImageData(NetverifyImageData)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyDocumentData.html" title="class in com.jumio.nv">NetverifyDocumentData</a></dt>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyDocumentData.html#setImageData-com.jumio.nv.NetverifyImageData-">setImageData(NetverifyImageData)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyDocumentData.html" title="class in com.jumio.nv">NetverifyDocumentData</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyDocumentData.html#setIssuingCountry-java.lang.String-">setIssuingCountry(String)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyDocumentData.html" title="class in com.jumio.nv">NetverifyDocumentData</a></dt>
 <dd>&nbsp;</dd>
@@ -1721,6 +1749,8 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="com/jumio/bam/BamCardInformation.html#writeToParcel-android.os.Parcel-int-">writeToParcel(Parcel, int)</a></span> - Method in class com.jumio.bam.<a href="com/jumio/bam/BamCardInformation.html" title="class in com.jumio.bam">BamCardInformation</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyDocumentData.html#writeToParcel-android.os.Parcel-int-">writeToParcel(Parcel, int)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyDocumentData.html" title="class in com.jumio.nv">NetverifyDocumentData</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyImageData.html#writeToParcel-android.os.Parcel-int-">writeToParcel(Parcel, int)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyImageData.html" title="class in com.jumio.nv">NetverifyImageData</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifyMrzData.html#writeToParcel-android.os.Parcel-int-">writeToParcel(Parcel, int)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifyMrzData.html" title="class in com.jumio.nv">NetverifyMrzData</a></dt>
 <dd>&nbsp;</dd>
