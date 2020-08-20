@@ -4,8 +4,10 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
-## 3.7.0
+## 3.7.1
+No backward incompatible changes
 
+## 3.7.0
 #### Dependency changes
 * Room updated: ~~"androidx.room:room-runtime:2.2.3"~~ is replaced by "androidx.room:room-runtime:2.2.5"
 * JMRTD updated: ~~"org.jmrtd:jmrtd:0.7.18"~~ is replaced by "org.jmrtd:jmrtd:0.7.19"

@@ -18,16 +18,17 @@
 
 	<application
 		android:allowBackup="false"
-		android:icon="@drawable/ic_launcher"
 		android:networkSecurityConfig="@xml/network_security_config"
-		android:label="@string/app_name"
 		android:supportsRtl="true">
 
 		<!-- KOTLIN -->
 		<activity
 			android:name="com.jumio.sample.kotlin.MainActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
-			android:label="@string/app_name"
+			android:label="@string/app_name_kotlin"
+			android:taskAffinity="com.jumio.sample.kotlin.MainActivity"
+			android:launchMode="singleTask"
+			android:icon="@drawable/ic_launcher_kotlin"
 			android:theme="@style/AppTheme">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
@@ -38,7 +39,7 @@
 		<activity
 			android:name="com.jumio.sample.kotlin.netverify.customui.NetverifyCustomActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
-			android:label="@string/app_name"
+			android:label="@string/app_name_kotlin"
 			android:theme="@style/AppTheme.NetverifyCustom"
 			android:screenOrientation="portrait"
 			tools:ignore="LockedOrientationActivity">
@@ -48,14 +49,21 @@
 		<activity
 			android:name="com.jumio.sample.java.MainActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
-			android:label="@string/app_name"
+			android:label="@string/app_name_java"
+			android:taskAffinity="com.jumio.sample.java.MainActivity"
+			android:launchMode="singleTask"
+			android:icon="@drawable/ic_launcher_java"
 			android:theme="@style/AppTheme">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
 		</activity>
 
 		<activity
 			android:name="com.jumio.sample.java.netverify.customui.NetverifyCustomActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
-			android:label="@string/app_name"
+			android:label="@string/app_name_java"
 			android:theme="@style/AppTheme.NetverifyCustom"
 			android:screenOrientation="portrait"
 			tools:ignore="LockedOrientationActivity">

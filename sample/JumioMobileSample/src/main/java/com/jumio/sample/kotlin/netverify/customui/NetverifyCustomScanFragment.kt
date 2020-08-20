@@ -86,8 +86,6 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 			modeType = NetverifyCustomScanView.MODE_FACE
 			customScanView = root.findViewById(R.id.fragment_nv_custom_scan_view)
 
-			setScanViewCloseButtonParameters()
-
 			customScanView?.mode = modeType
 
 			tvHelp = root.findViewById(R.id.fragment_nv_custom_scan_face_helptext)
@@ -111,12 +109,12 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 			modeType = NetverifyCustomScanView.MODE_ID
 			customScanView = root.findViewById(R.id.fragment_nv_custom_scan_view)
 			customScanView?.mode = modeType
+			btnSkipNfc = root.findViewById(R.id.fragment_custom_scan_btn_skip_nfc)
+			btnSkipNfc?.setOnClickListener(this)
 		}
 
 		btnCapture = root.findViewById(R.id.fragment_custom_scan_btn_capture)
 		btnCapture?.setOnClickListener(this)
-		btnSkipNfc = root.findViewById(R.id.fragment_custom_scan_btn_skip_nfc)
-		btnSkipNfc?.setOnClickListener(this)
 
 		loadingIndicator = root.findViewById(R.id.fragment_nv_custom_loading_indicator)
 		customConfirmationView = root.findViewById(R.id.fragment_nv_custom_confirmation_view)
@@ -153,26 +151,6 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 		tvDocumentType?.visibility = View.INVISIBLE
 		tvSteps?.visibility = View.INVISIBLE
 		customScanViewPresenter?.getHelpAnimation(customAnimationView)
-	}
-
-	/**
-	 * Set parameters (size, placement) of 'X' close button in face scan view
-	 */
-	private fun setScanViewCloseButtonParameters() {
-//		TODO:
-//		val rectangle = Rect()
-//		activity?.window?.decorView?.getWindowVisibleDisplayFrame(rectangle)
-//		val tv = TypedValue()
-//		var actionBarHeight = 0
-//		if (activity!!.theme.resolveAttribute(R.attr.actionBarSize, tv, true)) {
-//			actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, resources.displayMetrics)
-//		}
-//		var buttonDimens = actionBarHeight.toFloat() / 4
-//		customScanView?.closeButtonWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, buttonDimens, context?.resources?.displayMetrics).toInt()
-//		customScanView?.closeButtonHeight = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, buttonDimens, context?.resources?.displayMetrics).toInt()
-//		customScanView?.closeButtonTop = rectangle.top + (actionBarHeight / 2)
-//		customScanView?.closeButtonLeft = rectangle.left
-//		customScanView?.closeButtonResId = R.drawable.jumio_close_button
 	}
 
 	/**

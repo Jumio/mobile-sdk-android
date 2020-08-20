@@ -17,7 +17,7 @@ Jumio’s ID Verification allows businesses to establish the genuine identity of
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.0
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.1
 
 
 For breaking technical changes, please read our [transition guide](transition-guide_id-verification-fastfill.md)
@@ -44,8 +44,8 @@ Below there is a list of dependices the application will need to work in Android
 ```
 dependencies {
     // mandatory
-    implementation "com.jumio.android:core:3.7.0@aar"   // Jumio Core library
-    implementation "com.jumio.android:nv:3.7.0@aar"     // Netverify library
+    implementation "com.jumio.android:core:3.7.1@aar"   // Jumio Core library
+    implementation "com.jumio.android:nv:3.7.1@aar"     // Netverify library
 
     implementation "androidx.appcompat:appcompat:1.1.0"
     implementation "androidx.cardview:cardview:1.0.0"
@@ -57,18 +57,18 @@ dependencies {
 
 
     // not mandatory
-    implementation "com.jumio.android:face:3.7.0@aar"       // Face library    
+    implementation "com.jumio.android:face:3.7.1@aar"       // Face library    
 
-    implementation "com.jumio.android:nv-barcode:3.7.0@aar"     // barcode scanning
-    implementation "com.jumio.android:nv-barcode-vision:3.7.0@aar"  // barcode scanning alternative (reduced size)
-    implementation "com.jumio.android:nv-mrz:3.7.0@aar"     // MRZ scanning
-    implementation "com.jumio.android:nv-nfc:3.7.0@aar"     // eMRTD scanning
-    implementation "com.jumio.android:dv:3.7.0@aar"         // Document verification library
-    implementation "com.jumio.android:nv-ocr:3.7.0@aar"     // Template matcher
-    implementation "com.jumio.android:auth:3.7.0@aar"       // Authentication library
-    implementation "com.jumio.android:bam:3.7.0@aar"        // BAM checkout library
+    implementation "com.jumio.android:nv-barcode:3.7.1@aar"     // barcode scanning
+    implementation "com.jumio.android:nv-barcode-vision:3.7.1@aar"  // barcode scanning alternative (reduced size)
+    implementation "com.jumio.android:nv-mrz:3.7.1@aar"     // MRZ scanning
+    implementation "com.jumio.android:nv-nfc:3.7.1@aar"     // eMRTD scanning
+    implementation "com.jumio.android:dv:3.7.1@aar"         // Document verification library
+    implementation "com.jumio.android:nv-ocr:3.7.1@aar"     // Template matcher
+    implementation "com.jumio.android:auth:3.7.1@aar"       // Authentication library
+    implementation "com.jumio.android:bam:3.7.1@aar"        // BAM checkout library
 
-    implementation "com.jumio.android:javadoc:3.7.0"
+    implementation "com.jumio.android:javadoc:3.7.1"
     implementation "com.google.android.gms:play-services-vision:19.0.0"     // barcode scanning alternative
 
     implementation "com.facetec:zoom-authentication:8.12.1@aar"     // Zoom face scanning library
@@ -117,7 +117,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use ID Verification or Fastfill together with BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:3.7.0@aar"
+implementation "com.jumio.android:bam:3.7.1@aar"
 ```
 
 #### Root detection
@@ -377,7 +377,7 @@ The following tables give information on the specification of all document data 
 |optionalData2|	String|	50	|Optional field of MRZ line 2|
 |placeOfBirth|	String|	255	|Place of Birth	|
 |extractionMethod|	NVExtractionMethod| |Extraction method used during scanning (MRZ, OCR, BARCODE, BARCODE_OCR or NONE) |
-|imageData|	NetverifyImageData|	|Wrapper class for accessing image data for all scan sides from from an ID verification session in case this is enabled by your Account Manager.|
+|imageData|	NetverifyImageData|	|Wrapper class for accessing image data for all scan sides from an ID verification session in case this is enabled by your Account Manager. See [NetverifyImageData](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifyImageData.html) for details on how to retrieve the images|
 
 
 #### Class ____NetverifyMrzData___

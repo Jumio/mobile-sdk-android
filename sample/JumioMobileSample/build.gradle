@@ -20,7 +20,7 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "3.7.0"
+	SDK_VERSION = "3.7.1"
 }
 
 dependencies {

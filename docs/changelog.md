@@ -7,6 +7,9 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## SDK Version: __3.7.1__
+![Fixes](https://img.shields.io/badge/Fix-success) Fixed problem in handling the user consent [ID Verification, Authentication]
+
 ## SDK Version: __3.7.0__
 ![Changes](https://img.shields.io/badge/Change-blue) Full redesign of NFC passport workflow [ID Verification]
 

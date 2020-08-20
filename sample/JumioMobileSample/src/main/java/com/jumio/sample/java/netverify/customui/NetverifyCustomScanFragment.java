@@ -128,8 +128,6 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 			modeType = NetverifyCustomScanView.MODE_FACE;
 			customScanView = root.findViewById(R.id.fragment_nv_custom_scan_view);
 
-			setScanViewCloseButtonParameters();
-
 			Rect rectangle = new Rect();
 			if (getActivity() != null) {
 				getActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
@@ -200,28 +198,6 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 		tvDocumentType.setVisibility(View.INVISIBLE);
 		tvSteps.setVisibility(View.INVISIBLE);
 		customScanViewPresenter.getHelpAnimation(customAnimationView);
-	}
-
-	/**
-	 * Set parameters (size, placement) of 'X' close button in face scan view
-	 */
-	private void setScanViewCloseButtonParameters() {
-//		TODO:
-//		Rect rectangle = new Rect();
-//		if(getActivity().getWindow() != null) {
-//			getActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
-//			TypedValue tv = new TypedValue();
-//			int actionBarHeight = 0;
-//			if (getActivity().getTheme().resolveAttribute(R.attr.actionBarSize, tv, true)) {
-//				actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
-//			}
-//			int buttonDimens = actionBarHeight / 4;
-//			customScanView.setCloseButtonWidth( (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, buttonDimens, getContext().getResources().getDisplayMetrics()));
-//			customScanView.setCloseButtonHeight( (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, buttonDimens, getContext().getResources().getDisplayMetrics()));
-//			customScanView.setCloseButtonTop(rectangle.top + (actionBarHeight / 2));
-//			customScanView.setCloseButtonLeft(rectangle.left);
-//			customScanView.setCloseButtonResId(R.drawable.jumio_close_button);
-//		}
 	}
 
 	/**

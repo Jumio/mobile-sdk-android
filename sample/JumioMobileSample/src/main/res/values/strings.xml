@@ -2,7 +2,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 	
 	<!-- APP STRINGS -->
-	<string name="app_name">Jumio Sample</string>
+	<string name="app_name_java">Jumio Sample Java</string>
+	<string name="app_name_kotlin">Jumio Sample Kotlin</string>
 	<string name="title_activity_main">MainActivity</string>
 	<string name="button_start">Start %1$s</string>
 	<string name="section_netverify">Netverify</string>

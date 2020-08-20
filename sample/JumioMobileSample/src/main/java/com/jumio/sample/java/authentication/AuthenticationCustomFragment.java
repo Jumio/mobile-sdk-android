@@ -211,7 +211,6 @@ public class AuthenticationCustomFragment extends Fragment implements View.OnCli
             customScanContainer.setVisibility(View.GONE);
             authenticationSettingsContainer.setVisibility(View.VISIBLE);
         } else if (v == faceButton && isSDKControllerValid()) {
-
 			scrollView.post(new Runnable() {
 				@Override
 				public void run() {
