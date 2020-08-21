@@ -168,12 +168,11 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 
 		customScanImpl = new NetverifyCustomScanImpl();
 		customScanViewPresenter = callback.onStartScanningWithSide(ScanSide.valueOf(scanSide), customScanView, customConfirmationView, customScanImpl);
-		setHelpText(customScanViewPresenter.getHelpText());
-
-		// show initial help animation for document scanning
+		
 		if (customScanViewPresenter != null) {
 			setHelpText(customScanViewPresenter.getHelpText());
 
+			// show initial help animation for document scanning
 			if (ScanSide.valueOf(scanSide) == ScanSide.FRONT) {
 				btnDismissHelp = root.findViewById(R.id.fragment_custom_scan_btn_dismiss_help);
 				showDocumentHelpAnimation();
