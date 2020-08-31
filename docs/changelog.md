@@ -7,6 +7,12 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## SDK Version: __3.7.2__
+This is a mandatory update for all customers who use __Identity Verification (Selfie capture) in Custom UI__. We strongly encourage you to update your SDK immediately
+
+![Fixes](https://img.shields.io/badge/Fix-success) Fixed a critical problem in the license update of the face component [ID Verification, Authentication]
+
+
 ## SDK Version: __3.7.1__
 ![Fixes](https://img.shields.io/badge/Fix-success) Fixed problem in handling the user consent [ID Verification, Authentication]
 
@@ -22,8 +28,7 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 ![Improvement](https://img.shields.io/badge/Improvement-green) Possibility to retrieve the captured images directly in the SDK [ID Verification/Fastfill]
 
 ## SDK Version: __3.6.2__
-![Improvement](https://img.shields.io/badge/Improvement-green)
-Security enhancements [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
+![Improvement](https://img.shields.io/badge/Improvement-green) Security enhancements [Netverify/Fastfill, Authentication, Document Verification, BAM Checkout]
 
 ## SDK Version: __3.6.1__
 ![Fixes](https://img.shields.io/badge/Fix-success) Fixed wrong date parsing on magstripe encoded barcodes [Netverify/Fastfill]
