@@ -24,6 +24,7 @@
 - [Support](#support)
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 - [FAQ](docs/integration_faq.md)
+- [Known Issues](docs/known_issues.md)
 
 # Overview
 The Jumio Software Development Kit (SDK) provides you with a set of tools and UIs (default or custom) to develop an Android application perfectly fitted to your specific needs.
@@ -189,7 +190,7 @@ The software contains third-party open source software. For more information, pl
 This software is based in part on the work of the Independent JPEG Group.
 
 ## Contact
-If you have any questions regarding our implementation guide please contact Jumio Customer Service at support@jumio.com. The Jumio online helpdesk contains a wealth of information regarding our service including demo videos, product descriptions, FAQs and other things that may help to get you started with Jumio. [Check it out at here.](https://support.jumio.com.)
+If you have any questions regarding our implementation guide please contact Jumio Customer Service at support@jumio.com. The Jumio online helpdesk contains a wealth of information regarding our service including demo videos, product descriptions, FAQs and other things that may help to get you started with Jumio. [Check it out at here.](https://support.jumio.com).
 
 ## Copyright
 &copy; Jumio Corporation, 395 Page Mill Road, Suite 150, Palo Alto, CA 94306

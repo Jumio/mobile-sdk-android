@@ -11,12 +11,12 @@ No backward incompatible changes
 No backward incompatible changes
 
 ## 3.7.0
+
 #### Dependency changes
 * Zoom update: ~~"com.facetec:zoom-authentication:8.0.11@aar"~~ is replaced by "com.facetec:zoom-authentication:8.12.1@aar"
 * Room updated: ~~"androidx.room:room-runtime:2.2.3"~~ is replaced by "androidx.room:room-runtime:2.2.5"
 * JMRTD updated: ~~"org.jmrtd:jmrtd:0.7.18"~~ is replaced by "org.jmrtd:jmrtd:0.7.19"
 * Bouncycastle updated: ~~"org.bouncycastle:bcprov-jdk15on:1.64"~~ is replaced by "org.bouncycastle:bcprov-jdk15on:1.65"
-
 
 #### API changes
 * `getEMRTDStatus()` has been removed from [NetverifyDocumentData](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifyDocumentData.html)
@@ -29,6 +29,23 @@ No backward incompatible changes
 
 * Attribute `netverify_nfc_dialog_theme` has been removed and is not required any more
 * The position of the Jumio branding logo and privacy link changed to from bottom-right to center-top for all portrait scan views. In Custom UI, the top margin for this element can be adjusted using the following method [`setBrandingLogoTopMargin(int topMargin)`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanView.html#setBrandingLogoTopMargin-int-)
+
+#### Customization changes
+* Android Zoom screens update. Details can be found in [Custom theme issues](known_issues.md#custom-theme-issues)
+
+#### Localizable Strings
+Several additions and changes in regards to the Android Zoom screens update.
+
+__Added strings:__
+* [`netverify_nfc_description_xxx`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml#L58-L65) strings
+* [`zoom_action_xxx`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml#L107-L108) strings
+* [`zoom_instructions_xxx`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml#L127-L128) strings
+* [`zoom_result_xxx`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml#L129-L130) strings
+* [`zoom_retry_xxx`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml#L131-L136) strings
+
+__Removed strings:__
+* `netverify_nfc_bac_dialog_xxx` strings
+* `netverify_nfc_description_xxx` strings
 
 ## 3.6.2
 The Proguard keep rule `-keep class com.jumio.** { *; }` has to be added to your Proguard rules, if it wasn't added yet.

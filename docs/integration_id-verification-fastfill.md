@@ -286,7 +286,7 @@ There are two possibilities for applying the customized theme that was explained
 * Customizing theme at runtime
 
 #### Customizing theme in AndroidManifest
-Apply the `CustomNetverifyTheme` that you defined before by replacing `Theme.Netverify` in the AndroidManifest.xml:
+Apply the `CustomNetverifyTheme` that you defined before by replacing `Theme.Netverify` in the `AndroidManifest.xml:`
 ```
 <activity
             android:name="com.jumio.nv.NetverifyActivity"
@@ -471,7 +471,7 @@ The position and image of the close button for face scanning can also be customi
 The position of the branding logo within the `NetverifyCustomScanView` can be adjusted by setting a top margin. See method
 [`setBrandingLogoTopMargin(int topMargin)`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanView.html#setBrandingLogoTopMargin-int-)
 
-To customize the overlay inside the `NetverifyCustomScanView` there need to be some style attributes defined in the current them. Please have a look at our [Sample app](../sample/JumioMobileSample/src/main/res/values/styles.xml#L12) and make sure you have every attribute starting with `netverify_` and `face_` defined. 
+To customize the overlay inside the `NetverifyCustomScanView` there need to be some style attributes defined in the current them. Please have a look at our [Sample app](../sample/JumioMobileSample/src/main/res/values/styles.xml#L12) and make sure you have every attribute starting with `netverify_` and `face_` defined.
 
 ### NetverifyCustomScanViewController
 Upon `onNetverifyCameraAvailable()` within *yourNetverifyCustomScanInterface*, you can perform the following actions using the `netverifyCustomScanViewController`:
@@ -490,7 +490,7 @@ Upon `onNetverifyCameraAvailable()` within *yourNetverifyCustomScanInterface*, y
 * Pause/Resume extraction - the camera preview keeps running in the meantime
 
 ### Retrieving the current help animation
-[NetverifyCustomScanPresenter$getHelpAnimation](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#getHelpAnimation-com.jumio.nv.custom.NetverifyCustomAnimationView-) can be used to get the specific help animation for the currently active scan mode. An instance of [NetverifyCustomAnimationView](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomAnimationView.html) needs to be passed where the animation is rendered in.
+[`NetverifyCustomScanPresenter.getHelpAnimation()`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#getHelpAnimation-com.jumio.nv.custom.NetverifyCustomAnimationView-) can be used to get the specific help animation for the currently active scan mode. An instance of [`NetverifyCustomAnimationView`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomAnimationView.html) needs to be passed where the animation is rendered in.
 
 ### Take picture manually
 Call `showShutterButton()` to determine if the image will be taken manually. If so, display your shutter button and call `takePicture()` once clicked.
@@ -528,7 +528,7 @@ __NFC:__
 
 Upon `onNetverifyStartNfcExtraction()`, the NFC scan can be started and controlled with the provided [`NetverifyCustomNfcPresenter`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/nfc/custom/NetverifyCustomNfcPresenter.html).
 The NFC help animation can be retrieved from the `NetverifyCustomNfcPresenter` via method `getHelpAnimation(NetverifyCustomAnimationView customAnimationView)`.
-Please check out the NFC handling in our Sample app in class `NetverifyCustomScanFragment`(https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/netverify/customui/NetverifyCustomScanFragment.kt)
+Please check out the NFC handling in our Sample app in class [`NetverifyCustomScanFragment`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/netverify/customui/NetverifyCustomScanFragment.kt)
 Once the phone is positioned on the NFC chip of a Passport, NFC scanning starts automatically.
 
 ### Retrieving information in Custom UI

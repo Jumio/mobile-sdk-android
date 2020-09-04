@@ -8,10 +8,7 @@
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
 ## SDK Version: __3.7.2__
-This is a mandatory update for all customers who use __Identity Verification (Selfie capture) in Custom UI__. We strongly encourage you to update your SDK immediately
-
-![Fixes](https://img.shields.io/badge/Fix-success) Fixed a critical problem in the license update of the face component [ID Verification, Authentication]
-
+![Fixes](https://img.shields.io/badge/Fix-success) Fixed a problem that face could not be captured anymore in certain cases [ID Verification Custom UI]
 
 ## SDK Version: __3.7.1__
 ![Fixes](https://img.shields.io/badge/Fix-success) Fixed problem in handling the user consent [ID Verification, Authentication]

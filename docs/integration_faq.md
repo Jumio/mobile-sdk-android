@@ -11,6 +11,7 @@
     - [Architectures - ABI Filters & Splitting](#arch)
 - [Jumio Authentication Workflow Integration](#jumio-authentication-workflow-integration)
 - [Language Localization](#language-localization)
+    - [String Updates](#string-updates)
 - [Glossary of Commonly Used Abbreviations](#glossary)
 - [Jumio Support](#jumio-support)
 
@@ -126,6 +127,9 @@ __Note:__ The last two letters of the values folder (marked "xx" above) refer to
 
 ### Accessibility
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or increase the __text size__ on their device. The accessibility-strings that are used by TalkBack contain *accessibility* in their key and can be also modified in the `strings.xml`.
+
+### String Updates
+For an overview of all updates and changes of SDK string keys please refer to [the revision history](https://github.com/Jumio/mobile-sdk-android/blame/master/sample/JumioMobileSample/src/main/res/values/strings.xml) on Github.
 
 ## Glossary
 A [quick guide to commonly used abbreviations](integration_glossary.md) throughout the documentation which may not be all that familiar.
