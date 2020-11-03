@@ -314,7 +314,7 @@ public void onBamError(String errorCode, String errorMessage, boolean retryPossi
 | clear         			|   		 |   			| Clear card information    |
 | getCustomField      | String | String | Get entered value for added custom field |
 
-### Error codes
+### Error Codes
 List of all **_error codes_** that are available via the `code` property of the Error object. The first letter (B-N) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]).
 
 | Code        			| Message   | Description     |
@@ -332,7 +332,7 @@ List of all **_error codes_** that are available via the `code` property of the 
 
 __Note:__ Always include the whole code when filing an error-related issue with our support team.
 
-## Card retrieval API
+## Card Retrieval API
 You can implement RESTful HTTP GET APIs to retrieve credit card image and data for a specific scan. For more information, see the [Credit Card Retrieval API Guide](http://www.jumio.com/implementation-guides/credit-card-retrieval-api/).
 
 ## Release Notes
