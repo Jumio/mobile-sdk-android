@@ -59,17 +59,23 @@ BAM Checkout enables you to extract data from your customer's credit card and/or
 - [Integration BAM Checkout SDK](docs/integration_bam-checkout.md)
 
 # Quickstart
-The aim of the following section is to provide quick and very basic guide on how to get started with the [Android sample application](sample) that can be found here on Github. You will require a __commercial Jumio License__ to successfully run any of our examples. Please refer to sales@jumio.com for details.
+This section helps you get started with the Jumio Mobile SDK using the [Android sample application](sample). Before you begin, you must have: 
 
-First things first, you’ll need a current Android Studio version to open and try out with the sample project.
+* A __commercial Jumio license__ to successfully run our examples; please contact sales@jumio.com for details. 
+* A __current Android Studio version__ to open and try out the sample project. 
 
-Start by downloading the [Android sample application](sample) from the Jumio Github repo. You can do this either by cloning the repository (using SHH oder HTTPS) to your local device, or simply downloading everything as a ZIP.
+If you'd like to watch a video demo of this quick start, click [here](https://share.vidyard.com/watch/oAUXU1EWXco1mPUePz7Ue6).
 
+## Download the sample application
+Start by downloading the [Android sample application](sample) from the Jumio Github repo. You can do this either by cloning the repository (using SHH oder HTTPS) to your local device, or simply downloading everything as a ZIP. 
+
+## Import the sample into Android Studio
 Once you’ve got the sample application downloaded and unzipped if necessary, open Android Studio. You’ll be faced with a couple of options. Choose __Import project__ and navigate to where you’ve saved your sample application. Select the __JumioMobileSample folder__ and open it.
 
 Android Studio will now start to import the project. This might take a bit of time. Make sure to wait until the Grade Build has finished and the application is properly installed!
 
-The Android sample application contains the packages `com.jumio.sampe.java` and `com.jumio.sample.kotlin`. Both of those packages contain the exact same thing, in Java and Kotlin respectively. If you'd like to switch between them, you'll have to switch the `<intent-filter>` in the `AndroidManifest.xml` from one `MainActivity` to the other. As a default, the filter is set for Kotlin, see the code example down below:
+## Explore the packages
+The Android sample application contains the packages `com.jumio.sample.java` and `com.jumio.sample.kotlin`. Both of those packages contain the exact same thing, in Java and Kotlin respectively. If you'd like to switch between them, you'll have to switch the `<intent-filter>` in the `AndroidManifest.xml` from one `MainActivity` to the other. As a default, the filter is set for Kotlin, see the code example down below:
 
 ```
 <!-- KOTLIN -->
@@ -97,16 +103,18 @@ In each of the two packages, Java and Kotlin, you will find:
 
 Each of these folders contains a corresponding fragment. In each fragment, the most important methods for this service are shown and quickly outlined. If you’re interested in seeing how the ID Verification Custom UI works, check out the `customui` folder inside `netverify`, which shows an example of how a custom implementation could be done and what it could look like.
 
+## Configure your credentials
 Right at the top of the `MainActivity` you’ll find the following empty parameters:
 
 `private static String NETVERIFY_API_TOKEN`
 `private static String NETVERIFY_API_SECRET`
 
-If you haven’t done so yet, log into your Jumio customer portals. You can find your customer API token and API secret on the __Settings__ page under the __API credentials__ tab. Add your individual key and token instead of the placeholder `""`. The default setting for the data center is `JumioDataCenter.US`. If you're using [BAM Checkout](docs/integration_bam-checkout.md), you'll need to use the BAM API token and BAM API secret.
+You can find your customer API token and API secret in the Customer Portal on the __Settings__ page under __API credentials__. Add your individual key and token instead of the placeholder `""`. The default setting for the data center is `JumioDataCenter.US`. If you're using [BAM Checkout](docs/integration_bam-checkout.md), you'll need to use the BAM API token and BAM API secret.
 
 __Note:__ We strongly recommend storing all credentials outside of your app! We suggest to not hardcode them within your application but load them during runtime from your server-side implementation.
 
-Once you start up the sample application, you'll be given the option of trying out ID Verification. Select the hamburger menu in the top left corner to try out something else. Your application will also need camera permission, which will be prompted for automatically once you try to start any of services. If you deny camera permissions, you won't be able to use any of the services.
+## Try it out
+Once you start up the sample application, you'll be given the option of trying out ID Verification. Select the hamburger menu in the top-left corner to try out something else. Your application will also need camera permission, which will be prompted for automatically once you try to start any of services. If you deny camera permissions, you won't be able to use any of the services.
 
 # Basics
 
