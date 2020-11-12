@@ -3,9 +3,8 @@
 # ID Verification & Fastfill SDK for Android
 Jumio’s ID Verification allows businesses to establish the genuine identity of their users by verifying government-issued IDs in real-time. ID Verification is used by financial service organizations and leading brands to create trust for safe onboarding, money transfers, and user authentication.
 
-## Table of Content
-
-- [Release notes](#release-notes)
+## Table of Contents
+- [Release Notes](#release-notes)
 - [Setup](#setup)
 - [Dependencies](#dependencies)
 - [Initialization](#initialization)
@@ -16,36 +15,22 @@ Jumio’s ID Verification allows businesses to establish the genuine identity of
 - [Callback](#callback)
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
-## Release notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.2
-
+## Release Notes
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.3
 
 For breaking technical changes, please read our [transition guide](transition-guide_id-verification-fastfill.md)
 
 ## Setup
 The [basic setup](../README.md#basics) is required before continuing with the following setup for ID Verification.
 
-## Initialization
-Using the SDK requires an activity declaration in your `AndroidManifest.xml`.
-
-```
-<activity
-	android:theme="@style/Theme.Netverify"
-	android:hardwareAccelerated="true"
-	android:name="com.jumio.nv.NetverifyActivity"
-	android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"/>
-```
-
-You can specify your own theme (see chapter [Customization](#customization)). The orientation can be sensor based or locked with the attribute `android:screenOrientation`.
-
 ## Dependencies
-Below there is a list of dependices the application will need to work in Android. Some modules are mandatory, others are optinal. If an optional module is __not linked__, some functionalities such as certain methods may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size with the products ID Verification, BAM, Document Verification and Authentication included is currently around __18 MB__.
+Below there is a list of dependices the application will need to work in Android. Some modules are mandatory, others are optinal. If an optional module is __not linked__, some functionalities such as certain methods may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size with the products ID Verification, BAM, Document Verification and Authentication included is currently around __17 MB__.
 
 ```
 dependencies {
     // mandatory
-    implementation "com.jumio.android:core:3.7.2@aar"   // Jumio Core library
-    implementation "com.jumio.android:nv:3.7.2@aar"     // Netverify library
+    implementation "com.jumio.android:core:3.7.3@aar"   // Jumio Core library
+    implementation "com.jumio.android:nv:3.7.3@aar"     // Netverify library
 
     implementation "androidx.appcompat:appcompat:1.1.0"
     implementation "androidx.cardview:cardview:1.0.0"
@@ -57,31 +42,31 @@ dependencies {
 
 
     // not mandatory
-    implementation "com.jumio.android:face:3.7.2@aar"       // Face library    
+    implementation "com.jumio.android:face:3.7.3@aar"       				// Face library    
 
-    implementation "com.jumio.android:nv-barcode:3.7.2@aar"     // barcode scanning
-    implementation "com.jumio.android:nv-barcode-vision:3.7.2@aar"  // barcode scanning alternative (reduced size)
-    implementation "com.jumio.android:nv-mrz:3.7.2@aar"     // MRZ scanning
-    implementation "com.jumio.android:nv-nfc:3.7.2@aar"     // eMRTD scanning
-    implementation "com.jumio.android:dv:3.7.2@aar"         // Document verification library
-    implementation "com.jumio.android:nv-ocr:3.7.2@aar"     // Template matcher
-    implementation "com.jumio.android:auth:3.7.2@aar"       // Authentication library
-    implementation "com.jumio.android:bam:3.7.2@aar"        // BAM checkout library
+    implementation "com.jumio.android:nv-barcode:3.7.3@aar"     		// barcode scanning
+    implementation "com.jumio.android:nv-barcode-vision:3.7.3@aar"  // barcode scanning alternative (reduced size)
+    implementation "com.jumio.android:nv-mrz:3.7.3@aar"     				// MRZ scanning
+    implementation "com.jumio.android:nv-nfc:3.7.3@aar"    		 			// eMRTD scanning
+    implementation "com.jumio.android:dv:3.7.3@aar"         				// Document verification library
+    implementation "com.jumio.android:nv-ocr:3.7.3@aar"     				// Template matcher
+    implementation "com.jumio.android:auth:3.7.3@aar"       				// Authentication library
+    implementation "com.jumio.android:bam:3.7.3@aar"        				// BAM checkout library
 
-    implementation "com.jumio.android:javadoc:3.7.2"
+    implementation "com.jumio.android:javadoc:3.7.3"
     implementation "com.google.android.gms:play-services-vision:19.0.0"     // barcode scanning alternative
 
-    implementation "com.facetec:zoom-authentication:8.12.1@aar"     // Zoom face scanning library
+    implementation "com.facetec:zoom-authentication:8.12.1@aar" 		// Zoom face scanning library
 
-    implementation "org.jmrtd:jmrtd:0.7.19"                 // eMRTD Scanning
-    implementation "org.ejbca.cvc:cert-cvc:1.4.6"           // eMRTD Scanning
-    implementation "org.bouncycastle:bcprov-jdk15on:1.65"   // eMRTD Scanning
-    implementation "net.sf.scuba:scuba-sc-android:0.0.18"   // eMRTD Scanning
+    implementation "org.jmrtd:jmrtd:0.7.19"                 				// eMRTD Scanning
+    implementation "org.ejbca.cvc:cert-cvc:1.4.6"           				// eMRTD Scanning
+    implementation "org.bouncycastle:bcprov-jdk15on:1.65"   				// eMRTD Scanning
+    implementation "net.sf.scuba:scuba-sc-android:0.0.18"   				// eMRTD Scanning
 }
 ```
-__Note:__ Version numbers may vary.
+__Note:__ "Mandatory" libraries in this case are needed for a minimal runable SDK implementation. All libraries marked "not mandatory" are optional in the sense that they improve the scanning experience and supported documents, including additional ID type options that can be left out if they are not needed. Version numbers may vary.
 
-#### Barcode alternative
+#### Barcode Alternative
 As an alternative to the `com.jumio.android:nv-barcode` dependency, you can substitute the  `com.jumio.android:nv-barcode-vision` library together with the `com.google.android.gms:play-services-vision` library. If this combination is used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues:
 ```
 <meta-data
@@ -113,20 +98,20 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 
 ### Others
 
-#### ID usage within BAM
+#### ID Usage Within BAM
 If you use ID Verification or Fastfill together with BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:3.7.2@aar"
+implementation "com.jumio.android:bam:3.7.3@aar"
 ```
 
-#### Root detection
+#### Root Detection
 Applications implementing the SDK shall not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.
 ```
 NetverifySDK.isRooted(Context context);
 ```
 
-#### Device supported check
+#### Device Supported Check
 Call the method `isSupportedPlatform()` to check if the device platform is supported by the SDK.
 
 ```
@@ -134,6 +119,22 @@ NetverifySDK.isSupportedPlatform();
 ```
 
 ## Initialization
+Using the SDK requires an activity declaration in your `AndroidManifest.xml`.
+
+```
+<activity
+	android:theme="@style/Theme.Netverify"
+	android:hardwareAccelerated="true"
+	android:name="com.jumio.nv.NetverifyActivity"
+	android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"/>
+```
+
+You can specify your own theme (see chapter [Customization](#customization)). The orientation can be sensor based or locked with the attribute `android:screenOrientation`.
+
+### Tutorials
+* [Getting started (Video):](https://share.vidyard.com/watch/oAUXU1EWXco1mPUePz7Ue6) How to clone the repository and configure your Jumio credentials  
+* [Introduction (Video):](https://share.vidyard.com/watch/nqUmPAaqG4bMy4Wh5wb9Kn) How to initialize the SDK, run the sample on your Android device, and test the identity verification user journey
+
 Log into your Jumio customer portal. You can find your customer API token and API secret on the __Settings__ page under __API credentials__ tab. To create an instance for the SDK, perform the following call as soon as your activity is initialized.
 
 ```
@@ -148,6 +149,9 @@ of your activity and provide a reference to identify the scans in your reports (
 __Note:__ We strongly recommend storing all credentials outside of your app!
 
 ## Configuration
+
+### Tutorial
+[Configuring behavior (Video):](https://share.vidyard.com/watch/BPT2jB51oUgkvRaAuKVb3q) How to configure the behavior of the app using SDK parameters
 
 ### ID Verification
 Use ID Verification to receive a verification status and verified data points (see [Callback for ID Verification](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-for-netverify)). Ensure that your customer account is allowed to use this feature. A callback URL can be specified for individual transactions (for constraints see chapter [Callback URL](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-url)). This setting overrides any callback URL you have set in the Jumio Customer Portal.
@@ -185,7 +189,7 @@ netverifySDK.setPreselectedDocumentTypes(documentTypes);
 ```
 __Note:__ Fastfill does not support paper IDs, except German ID cards.
 
-### Transaction identifiers
+### Transaction Identifiers
 The customer internal reference allows you to identify the scan (max. 100 characters).
 
 ```
@@ -209,7 +213,7 @@ Use `setEnableEMRTD()` to read the NFC chip of an eMRTD.
 netverifySDK.setEnableEMRTD (true);
 ```
 
-### Jumio watchlist screening
+### Jumio Watchlist Screening
 [Jumio Screening](https://www.jumio.com/screening/) is supported on the Jumio Android SDK. The following SDK method is used to set watchlist screening on transaction level. Enable to override the default search, or disable watchlist screening for this transaction.
 ```
 netverifySDK.setWatchlistScreening(NVWatchlistScreening.ENABLED);
@@ -219,7 +223,7 @@ This method can be used to define the search profile for watchlist screening:
 netverifySDK.setWatchlistSearchProfile("YOURPROFILENAME");
 ```
 
-### Analytics service
+### Analytics Service
 Use the following setting to explicitly send debug information to Jumio.
 ```
 netverifySDK.setSendDebugInfoToJumio(true);
@@ -233,7 +237,7 @@ When `setSendDebugInfoToJumio()` is enabled, you receive a list of the current D
 netverifySDK.getDebugID();
 ```
 
-### Offline scanning
+### Offline Scanning
 If you want to use the SDK in offline mode, please contact Jumio Customer Service at support@jumio.com or https://support.jumio.com. Once this feature is enabled for your account, you can find your offline token in your Jumio customer portal on the __Settings__ page in the __API credentials__ tab.
 
 ```
@@ -269,7 +273,7 @@ netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
 
 ## Customization
 
-### Customization tool
+### Customization Tool
 [Jumio Surface](https://jumio.github.io/surface-android/) is a web tool that offers the possibility to apply and visualize, in real-time, all available customization options for the ID Verification and Fastfill SDK as well as an export feature to import the applied changes straight into your codebase.
 
 [![Jumio Surface](images/surface_tool.png)](https://jumio.github.io/surface-android/)
@@ -280,12 +284,15 @@ The tab __XML Output__ visualizes all the colors that can be customized. As visu
 
 After customizing the SDK, you can copy the code from the theme `CustomNetverifyTheme` to your Android app `styles.xml` file.
 
-### Customize look and feel
+### Tutorial
+[Customizing appearance (Video):](https://share.vidyard.com/watch/rEkMfyhjRXb1G7ffYUioLK) How to customize the look and feel of your application using the Jumio Surface tool
+
+### Customize Look and Feel
 There are two possibilities for applying the customized theme that was explained in the previous chapter:
 * Customizing theme in AndroidManifest
 * Customizing theme at runtime
 
-#### Customizing theme in AndroidManifest
+#### Customizing Theme in AndroidManifest
 Apply the `CustomNetverifyTheme` that you defined before by replacing `Theme.Netverify` in the `AndroidManifest.xml:`
 ```
 <activity
@@ -294,7 +301,7 @@ Apply the `CustomNetverifyTheme` that you defined before by replacing `Theme.Net
 						... />
 ```
 
-#### Customizing theme at runtime
+#### Customizing Theme at Runtime
 To customize the theme at runtime, overwrite the theme that is used for ID Verification in the manifest by calling the following property. Use the resource ID of a customized theme that uses  `Theme.Netverify` as parent.
 
 ```
@@ -325,7 +332,7 @@ Fragment: `startActivityForResult(netverifySDK.getIntent(), NetverifySDK.REQUEST
 
 __Note:__ The default request code is 200. To use another code, override the public static variable `NetverifySDK.REQUEST_CODE` before displaying the SDK.
 
-### Working with Fastfill
+### Working With Fastfill
 Implement the standard `onActivityResult()` method in your activity or fragment for successful scans (`Activity.RESULT_OK`) and user cancellation notifications (`Activity.RESULT_CANCELED`). Call `netverifySDK.destroy()` once you received the result and don't need the instance anymore. If you want to scan multiple documents, you don't need to call delete on the netverifySDK instance. Simply check if the internal resources are deallocated by calling `netverifySDK.checkDeallocation(<NetverifyDeallocationCallback>)`. Once this callback is executed, it is safe to start another workflow. This check is optional and should only be called once the SDK has returned a result and another document scan needs to be performed.
 
 ```
@@ -350,10 +357,10 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
-### Retrieving information
+### Retrieving Information
 The following tables give information on the specification of all document data parameters and errors.
 
-#### Class ___NetverifyDocumentData:___
+#### Class ___NetverifyDocumentData___
 |Parameter | Type  	| Max. length    | Description     |
 |:-------------------|:----------- 	|:-------------|:-----------------|
 |selectedCountry|	String|	3|	[ISO 3166-1 alpha-3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code as provided or selected|
@@ -380,7 +387,7 @@ The following tables give information on the specification of all document data 
 |imageData|	NetverifyImageData|	|Wrapper class for accessing image data for all scan sides from an ID verification session in case this is enabled by your Account Manager. See [NetverifyImageData](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifyImageData.html) for details on how to retrieve the images|
 
 
-#### Class ____NetverifyMrzData___
+#### Class ___NetverifyMrzData___
 |Parameter  |Type 	| Max. length | Description      |
 |:----------|:------|:------------|:-----------------|
 |format|	NVMRZFormat|		|
@@ -393,7 +400,7 @@ The following tables give information on the specification of all document data 
 |personalNumberValid	|boolean| |		True if personal number check digit is valid or not available, otherwise false|
 |compositeValid|	boolean| |		True if composite check digit is valid, otherwise false	|
 
-#### Error codes
+#### Error Codes
 List of all **_error codes_** that are available via the `code` property of the `NetverifyError` object. The first letter (A-J) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]).
 
 |Code        	  | Message  | Description      |
@@ -456,7 +463,7 @@ public Set<NVDocumentVariant> getDocumentVariants(NVDocumentType documentType);
 
 After `onNetverifyResourcesLoaded()` within *yourNetverifyCustomSDKInterface*, start scanning by providing a ScanSide from the list above (`FRONT`, `BACK`, `FACE`), an instance of the class `NetverifyCustomScanView` and `NetverifyCustomConfirmationView`, and an instance of your class which implements the `NetverifyCustomScanInterface`. You will receive a `NetverifyCustomScanPresenter` object.
 
-### NetverifyCustomScanView presentation
+### NetverifyCustomScanView Presentation
 Add your `NetverifyCustomScanView` to your layout and specify desired layout attributes using
 * a specific __width,__ and set height as wrap_content
 * or a specific __height,__ and set width as wrap_content
@@ -489,16 +496,16 @@ Upon `onNetverifyCameraAvailable()` within *yourNetverifyCustomScanInterface*, y
 * Stop/Retry card scanning
 * Pause/Resume extraction - the camera preview keeps running in the meantime
 
-### Retrieving the current help animation
+### Retrieving the Current Help Animation
 [`NetverifyCustomScanPresenter.getHelpAnimation()`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#getHelpAnimation-com.jumio.nv.custom.NetverifyCustomAnimationView-) can be used to get the specific help animation for the currently active scan mode. An instance of [`NetverifyCustomAnimationView`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomAnimationView.html) needs to be passed where the animation is rendered in.
 
-### Take picture manually
+### Take Picture Manually
 Call `showShutterButton()` to determine if the image will be taken manually. If so, display your shutter button and call `takePicture()` once clicked.
 
-### Activity lifecycle handling
+### Activity Lifecycle Handling
 To handle the activity lifecycle correctly, call `pause` and `resume` from the `NetverifyCustomSDKController` and `NetverifyCustomScanPresenter` if currently active.
 
-### Handling camera session
+### Handling Camera Session
 Implement the following methods within
 * *NetverifyCustomScanInterface* for camera, extraction, confirmation view
 and special notifications.
@@ -531,9 +538,9 @@ The NFC help animation can be retrieved from the `NetverifyCustomNfcPresenter` v
 Please check out the NFC handling in our Sample app in class [`NetverifyCustomScanFragment`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/netverify/customui/NetverifyCustomScanFragment.kt)
 Once the phone is positioned on the NFC chip of a Passport, NFC scanning starts automatically.
 
-### Retrieving information in Custom UI
+### Retrieving Information in Custom UI
 
-#### Result and Error handling
+#### Result and Error Handling
 Instead of using the standard method `onActivityResult()`, implement the following methods within *yourNetverifyCustomSDKInterface* for successful scans and error notifications:
 
 The method `onNetverifyFinished(NetverifyDocumentData documentData, String scanReference)` has to be implemented to handle data after a successful scan.
@@ -544,7 +551,7 @@ __Note__: Error codes are listed [here](#error-codes).
 
 Please refer to the section [Retrieving information](#retrieving-information) to see more about returning extracted data.
 
-#### Clean up
+#### Clean Up
 After handling the result, it is very important to clean up the SDK by calling  `netverifyCustomSDKController.destroy()` and `netverifySDK.destroy()`. If you want to scan multiple documents, you don't need to call delete the netverifySDK instance. Simply check if the internal resources are deallocated by calling `netverifySDK.checkDeallocation(<NetverifyDeallocationCallback>)`. Once this callback is executed, it is safe to start another workflow. This check is optional and should only be called once the SDK has returned a result and another document scan needs to be performed.
 
 ## Callback

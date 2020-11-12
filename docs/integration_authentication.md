@@ -3,8 +3,8 @@
 # Authentication SDK for Android
 Biometric-based Jumio Authentication establishes the digital identities of your users through the simple act of taking a selfie. Advanced 3D face map technology quickly and securely authenticates users and unlocks their digital identities.
 
-## Table of Content
-- [Release notes](#release-notes)
+## Table of Contents
+- [Release Notes](#release-notes)
 - [Setup](#setup)
 - [Dependencies](#dependencies)
 - [Initialization](#initialization)
@@ -14,8 +14,8 @@ Biometric-based Jumio Authentication establishes the digital identities of your 
 - [Callback](#callback)
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
-## Release notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.2
+## Release Notes
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.3
 
 For breaking technical changes, please read our [transition guide](transition-guide_authentication.md)
 
@@ -43,9 +43,9 @@ Below there is a list of dependices the application will need to work in Android
 ```
 dependencies {
     // mandatory
-    implementation "com.jumio.android:core:3.7.2@aar"       // Jumio Core library
-    implementation "com.jumio.android:auth:3.7.2@aar"       // Authentication library
-    implementation "com.jumio.android:face:3.7.2@aar"       // Face library
+    implementation "com.jumio.android:core:3.7.3@aar"       // Jumio Core library
+    implementation "com.jumio.android:auth:3.7.3@aar"       // Authentication library
+    implementation "com.jumio.android:face:3.7.3@aar"       // Face library
 
     implementation "com.facetec:zoom-authentication:8.0.11@aar"     // // Zoom face scanning library
 
@@ -56,20 +56,20 @@ dependencies {
     implementation "com.google.android.material:material:1.1.0"
 
     // not mandatory
-    implementation "com.jumio.android:javadoc:3.7.2"
+    implementation "com.jumio.android:javadoc:3.7.3"
 }
 ```
 __Note:__ Version numbers may vary.
 
 ### Others
 
-#### Root detection
+#### Root Detection
 Applications implementing the SDK shall not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.
 ```
 AuthenticationSDK.isRooted(Context context);
 ```
 
-#### Device supported check
+#### Device Supported Check
 Call the method `isSupportedPlatform()` to check if the device platform is supported by the SDK.
 
 ```
@@ -93,7 +93,7 @@ __Note:__ We strongly recommend storing all credentials outside of your app!
 
 ## Configuration
 
-### Transaction identifiers
+### Transaction Identifiers
 In order to connect the Authentication transaction to a specific user identity a user reference (max. 100 characters) must be set.
 
 ```
@@ -128,12 +128,12 @@ The tab __XML Output__ visualizes all the colors that can be customized. As visu
 
 After customizing the SDK, you can copy the code from the theme `CustomAuthenticationTheme` to your Android app `styles.xml` file.
 
-### Customize look and feel
+### Customize Look and Feel
 There are two possibilities for applying the customized theme that was explained in the previous chapter:
 * Customizing theme in AndroidManifest
 * Customizing theme at runtime
 
-#### Customizing theme in AndroidManifest
+#### Customizing Theme in AndroidManifest
 Apply the `CustomAuthenticationTheme` that you defined earlier by replacing `Theme.Authentication` in the AndroidManifest.xml:
 ```
 <activity
@@ -142,7 +142,7 @@ Apply the `CustomAuthenticationTheme` that you defined earlier by replacing `The
 						... />
 ```
 
-#### Customizing theme at runtime
+#### Customizing Theme at Runtime
 To customize the theme at runtime, overwrite the theme that is used for Authentication in the manifest by calling the following property. Use the resource id of a customized theme that uses Theme.Authentication as parent.
 
 ```
@@ -181,7 +181,7 @@ Fragment: `startActivityForResult(authenticationSDK.getIntent(), AuthenticationS
 __Note:__ The default request code is 500. To use another code, override the public static variable `AuthenticationSDK.REQUEST_CODE` before displaying the SDK.
 
 
-### Retrieving information
+### Retrieving Information
 
 Implement the standard `onActivityResult` method in your activity or fragment for successful scans (`Activity.RESULT_OK`) and user cancellation notifications (`Activity.RESULT_CANCELED`). Call `authenticationSDK.destroy()` once you have received the result and you don't need the instance anymore. If you want to perform multiple authentications, you don't need to call delete on the authenticationSDK instance. In that case, please check if the internal resources are deallocated by calling `authenticationSDK.checkDeallocation(<AuthenticationDeallocationCallback>)`. Once this callback is executed, it is safe to start another workflow. This check is optional and should only be called once the SDK has returned a result and another authentication needs to be performed.
 
@@ -217,7 +217,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 |SUCCESS|Authentication was successful - user is live and matches his ID/Identity Verification transaction|
 |FAILED|Authentication failed - user is not live OR does not match the ID/Identity Verification transaction|
 
-#### Error codes
+#### Error Codes
 List of all **_error codes_** that are available via the `code` property of the AuthenticationError object. he first letter (A-M) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]).
 
 |Code        			| Message  | Description      |
@@ -244,7 +244,7 @@ __Note:__ Authentication is not supported on tablets. If it is initialized on a 
 
 To use the custom scan view with a plain scanning user interface, specify an instance of your class which implements the [AuthenticationCustomSDKInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomScanInterface.html). You will receive a [AuthenticationCustomSDKController](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomSDKController.html) object.
 
-### AuthenticationCustomScanView presentation
+### AuthenticationCustomScanView Presentation
 Add your AuthenticationCustomScanView to your layout and specify desired layout attributes using
 * width as match_parent, and __height__ as wrap_content
 * or __width__ and __height__ as match_parent (full screen).
@@ -256,12 +256,12 @@ xmlns:yourNameSpace="http://schemas.android.com/apk/lib/com.jumio.mobile.sdk"
 
 The method `onAuthenticationUserConsentRequried` within *yourAuthenticationCustomSDKInterface* is invoked when the end-user’s consent to Jumio’s privacy policy is legally required. [`setUserConsented()`](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomSDKController.html#setUserConsented--) needs to be called after the end-user has accepted.
 
-### Start scanning
+### Start Scanning
 Start scanning by providing an instance of the class `AuthenticationCustomScanView` and an instance of your class which implements the [AuthenticationCustomScanInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/auth/custom/AuthenticationCustomScanInterface.html).
 
-### Retrieving information
+### Retrieving Information
 
-#### Result & Error handling
+#### Result & Error Handling
 Instead of using the standard method `onActivityResult()`, implement the following methods within *yourAuthenticationCustomSDKInterface* for successful scans and error notifications:
 
 The method `onAuthenticationFinished(AuthenticationResult authenticationResult, String transactionReference)` has to be implemented to handle data after successful scans.
@@ -270,7 +270,7 @@ The method `onAuthenticationError(String errorCode, String errorMessage, boolean
 
 __Note__: Error codes are listed [here](#error-codes).
 
-#### Clean up
+#### Clean Up
 After handling the result, it is very important to clean up the SDK by calling  `authenticationCustomSDKController.destroy()` and `authenticationSDK.destroy()`. If you want to perform multiple authentications, you don't need to call delete on the authenticationSDK instance. In that case, please check if the internal resources are deallocated by calling `authenticationSDK.checkDeallocation(<AuthenticationDeallocationCallback>)`. Once this callback is executed, it is safe to start another workflow. This check is optional and should only be called once the SDK has returned a result and another authentication needs to be performed.
 
 ## Callback

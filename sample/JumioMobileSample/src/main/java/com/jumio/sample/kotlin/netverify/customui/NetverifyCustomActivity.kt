@@ -43,7 +43,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 	private var netverifySDK: NetverifySDK? = null
 	private var backStack: ArrayList<Fragment>? = null
 	private var selectedCountry: NetverifyCountry? = null
-	private var countryMap: HashMap<String, NetverifyCountry>? = null
+	private var countryMap: Map<String, NetverifyCountry>? = null
 	private var customSDKController: NetverifyCustomSDKController? = null
 	private var selectedDocumentType: NVDocumentType? = null
 	private var selectedScanSide = 0
@@ -449,7 +449,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 		 * @param countryList     Hashmap with all possible countries. The key is the ISO 3155-1 alpha 3 code, the value is an instance of [NetverifyCountry]
 		 * @param userCountryCode - ISO 3166-1 alpha 3 user country
 		 */
-		override fun onNetverifyCountriesReceived(countryList: HashMap<String, NetverifyCountry>, userCountryCode: String) {
+		override fun onNetverifyCountriesReceived(countryList: Map<String, NetverifyCountry>, userCountryCode: String) {
 			countryMap = countryList
 			Log.i(TAG, "onNetverifyCountriesReceived - user Country is $userCountryCode")
 

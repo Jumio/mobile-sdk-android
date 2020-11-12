@@ -9,19 +9,10 @@
 		<item name="bam_scanOverlay">@color/jumio_white_alpha72</item>
 		<item name="bam_scanBackground">@color/jumio_black_alpha50</item>
 
-		<item name="face_scanOverlayBackground">@color/jumio_white</item>
-		<item name="face_scanOverlayFeedbackText">@color/jumio_white</item>
-		<item name="face_scanOverlayFeedbackBackground">@color/jumio_primary</item>
-		<item name="face_scanOverlayProgress">@color/jumio_primary</item>
-		<item name="face_scanOverlayOval">@color/jumio_black</item>
-		<item name="face_helpImage">@color/jumio_black</item>
-		<item name="face_helpBackground">@color/jumio_white</item>
-
-		<item name="face_close_button_top">16dp</item>
-		<item name="face_close_button_left">16dp</item>
-		<item name="face_close_button_width">12dp</item>
-		<item name="face_close_button_height">12dp</item>
-		<item name="face_close_button_resource">@drawable/jumio_close_button</item>
+		<item name="zoom_close_button_top">16dp</item>
+		<item name="zoom_close_button_left">16dp</item>
+		<item name="zoom_close_button_width">12dp</item>
+		<item name="zoom_close_button_height">12dp</item>
 	</style>
 
 	<style name="AppTheme.NetverifyCustom" parent="Theme.Netverify">
@@ -44,19 +35,10 @@
 		<item name="netverify_helpImage">@color/jumio_primary</item>
 		<item name="netverify_helpBackground">@color/jumio_white</item>
 
-		<item name="face_scanOverlayBackground">@color/jumio_white</item>
-		<item name="face_scanOverlayFeedbackText">@color/jumio_white</item>
-		<item name="face_scanOverlayFeedbackBackground">@color/jumio_primary</item>
-		<item name="face_scanOverlayProgress">@color/jumio_primary</item>
-		<item name="face_scanOverlayOval">@color/jumio_black</item>
-		<item name="face_helpImage">@color/jumio_primary</item>
-		<item name="face_helpBackground">@color/jumio_white</item>
-
-		<item name="face_close_button_top">16dp</item>
-		<item name="face_close_button_left">16dp</item>
-		<item name="face_close_button_width">12dp</item>
-		<item name="face_close_button_height">12dp</item>
-		<item name="face_close_button_resource">@drawable/jumio_close_button</item>
+		<item name="zoom_close_button_top">16dp</item>
+		<item name="zoom_close_button_left">16dp</item>
+		<item name="zoom_close_button_width">12dp</item>
+		<item name="zoom_close_button_height">12dp</item>
 
 		<item name="netverify_nfc_passport_cover">@color/jumio_black</item>
 		<item name="netverify_nfc_passport_page_dark">@color/jumio_grey500</item>

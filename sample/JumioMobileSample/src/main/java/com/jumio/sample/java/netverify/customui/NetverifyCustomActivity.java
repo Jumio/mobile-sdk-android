@@ -34,9 +34,9 @@ import com.jumio.sdk.custom.SDKNotConfiguredException;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 
 import androidx.annotation.NonNull;
@@ -69,7 +69,7 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 
 	private ArrayList<Fragment> backStack = null;
 	private NetverifyCountry selectedCountry = null;
-	private HashMap<String, NetverifyCountry> countryMap;
+	private Map<String, NetverifyCountry> countryMap;
 
 	private NetverifyCustomSDKController customSDKController;
 
@@ -548,7 +548,7 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 		 * @param userCountryCode - ISO 3166-1 alpha 3 user country
 		 */
 		@Override
-		public void onNetverifyCountriesReceived(HashMap<String, NetverifyCountry> countryList, String userCountryCode) {
+		public void onNetverifyCountriesReceived(Map<String, NetverifyCountry> countryList, String userCountryCode) {
 			countryMap = countryList;
 			Log.i(TAG, "onNetverifyCountriesReceived - user Country is " + userCountryCode);
 

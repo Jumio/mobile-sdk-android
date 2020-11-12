@@ -1,8 +1,16 @@
 ![ID Verification & Fastfill](images/id_verification.jpg)
 
-# Transition guide for ID Verification & Fastfill SDK
+# Transition Guide for ID Verification & Fastfill SDK
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
+
+## 3.7.3
+#### Custom UI changes
+*  The countryList parameter in [NetverifyCustomSDKInterface$onNetverifyCountriesReceived](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyCountriesReceived-java.util.Map-java.lang.String-) has been changed from `HashMap` to `Map`
+
+#### ZoOm Customization Changes
+* All the attributes starting with `face_` have been removed
+* For a full guide please head over to the [FAQ](integration_faq.md#zoom-customization)
 
 ## 3.7.2
 No backward incompatible changes
@@ -12,13 +20,13 @@ No backward incompatible changes
 
 ## 3.7.0
 
-#### Dependency changes
+#### Dependency Changes
 * Zoom update: ~~"com.facetec:zoom-authentication:8.0.11@aar"~~ is replaced by "com.facetec:zoom-authentication:8.12.1@aar"
 * Room updated: ~~"androidx.room:room-runtime:2.2.3"~~ is replaced by "androidx.room:room-runtime:2.2.5"
 * JMRTD updated: ~~"org.jmrtd:jmrtd:0.7.18"~~ is replaced by "org.jmrtd:jmrtd:0.7.19"
 * Bouncycastle updated: ~~"org.bouncycastle:bcprov-jdk15on:1.64"~~ is replaced by "org.bouncycastle:bcprov-jdk15on:1.65"
 
-#### API changes
+#### API Changes
 * `getEMRTDStatus()` has been removed from [NetverifyDocumentData](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifyDocumentData.html)
 * New attributes for customization of the NFC help animation have been added to our `styles.xml`:
   * `netverify_nfc_passport_cover` - Outside passport cover color
@@ -30,7 +38,7 @@ No backward incompatible changes
 * Attribute `netverify_nfc_dialog_theme` has been removed and is not required any more
 * The position of the Jumio branding logo and privacy link changed to from bottom-right to center-top for all portrait scan views. In Custom UI, the top margin for this element can be adjusted using the following method [`setBrandingLogoTopMargin(int topMargin)`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanView.html#setBrandingLogoTopMargin-int-)
 
-#### Customization changes
+#### Customization Changes
 * Android Zoom screens update. Details can be found in [Custom theme issues](known_issues.md#custom-theme-issues)
 
 #### Localizable Strings
@@ -67,20 +75,20 @@ JMRTD is now added as a gradle dependency - if you use NFC scanning please make 
 * implementation "org.ejbca.cvc:cert-cvc:1.4.6"
 
 ## 3.5.0
-#### Error code change
+#### Error Code Change
 * Error code D (Wrong API credentials used, retry impossible) has been removed.
 
-#### Proguard change
+#### Proguard Change
 * Consumer proguard rules have been added. All Jumio SDK proguard rules will now be applied automatically to the application when the Jumio Core library is included.
 
 ## 3.4.1
-#### API changes in NetverifyCustomScanInterface
+#### API Changes in NetverifyCustomScanInterface
 * A new callback [onNetverifyUserConsentRequired](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyUserConsentRequired-java.lang.String-) was added to [NetverifyCustomScanInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanInterface.html)
-#### API changes in NetverifyCustomSDKController
+#### API Changes in NetverifyCustomSDKController
 * A new method [onUserConsented](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKController.html#onUserConsented--) was added to [NetverifyCustomSDKController](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKController.html)
 
 ## 3.4.0
-#### Customization changes
+#### Customization Changes
 * The SDK now uses Material buttons instead of the old snackbar button styles on the confirmation view.
 * Please check out the confirmation screens and the XML output in the [Surface Tool](https://jumio.github.io/surface-android/) for all adapted content.
 Changes:
@@ -101,11 +109,11 @@ apply plugin: 'kotlin-kapt'
 *  ~~androidx.appcompat:appcompat:1.0.2~~ is replaced by androidx.appcompat:appcompat:1.1.0
 *  ~~androidx.room:room-runtime:2.0.0~~ is replaced by androidx.room:room-runtime:2.2.1
 
-#### Custom UI callbacks
+#### Custom UI Callbacks
 *  ~~onNetverifyDisplayFlipDocumentHint~~ has been removed
 *  A new parameter [NetverifyConfirmationType](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyConfirmationType.html) was added to [NetverifyCustomScanInterface$onNetverifyPresentConfirmationView](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyPresentConfirmationView-NetverifyConfirmationType-)
 
-#### Proguard changes
+#### Proguard Changes
 `-dontwarn com.facetec.zoom.sdk.**` needs to be added
 
 ## 3.3.2
@@ -115,27 +123,27 @@ No backward incompatible changes
 No backward incompatible changes
 
 ## 3.3.0
-#### Deallocation callback
+#### Deallocation Callback
 Added a new method [checkDeallocation](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#checkDeallocation-com.jumio.nv.NetverifyDeallocationCallback-) in the [NetverifySDK](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html) to check if the SDK resources have already been deallocated. The method requires a  [NetverifyDeallocationCallback](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifyDeallocationCallback.html) instance as a parameter and calls `onNetverifyDeallocated` once the SDK is deallocated. The checkDeallocation method should only be called once the SDK has returned a result and another SDK instance is required.
 
-#### Dependency change
+#### Dependency Change
 *  ~~com.facetec:zoom-authentication-hybrid:7.0.12~~ is replaced by com.facetec:zoom-authentication-hybrid:7.0.14
 
-#### Date changes
+#### Date Changes
 All dates are now UTC based. This affects the dates in [NetverifyDocumentData](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifyDocumentData.html) and [NetverifyCustomNfcAccess](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/nfc/custom/NetverifyCustomNfcAccess.html)
 
-#### New SDK localizations added
+#### New SDK Localizations Added
 SDK Translations for the languages Italian and Portuguese have been added.
 
 ## 3.2.1
-#### Fixed a face scanning problem in which a black screen was shown to the user
+#### Fixed a Face sSanning Problem in Which a Black Screen Was Shown to the User
 
 ## 3.2.0
-#### Dependency change
+#### Dependency Change
 *  ~~androidx.appcompat:appcompat:1.0.0~~ is replaced by androidx.appcompat:appcompat:1.0.2
 *  ~~com.facetec:zoom-authentication-hybrid:7.0.9~~ is replaced by com.facetec:zoom-authentication-hybrid:7.0.12
 
-#### API changes in NetverifyCustomScanInterface
+#### API Changes in NetverifyCustomScanInterface
 A new parameter [NetverifyCancelReason](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCancelReason.html) was added to [NetverifyCustomScanInterface$onNetverifyScanForPartCanceled](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyScanForPartCanceled-com.jumio.core.data.document.ScanSide-NetverifyCancelReason-)
 
 #### Watchlist Screening
@@ -145,7 +153,7 @@ netverifySDK.setWatchlistScreening(NVWatchlistScreening.ENABLED);
 netverifySDK.setWatchlistSearchProfile("YOURPROFILENAME");
 ```
 
-#### Additional functions in NetverifyCustomScanInterface
+#### Additional Functions in NetverifyCustomScanInterface
 For the new NFC scanning functionality in custom ui, there has been some additions in [NetverifyCustomScanInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanInterface.html):
 `getNetverifyCustomNfcInterface()` should return an instance of [NetverifyCustomNfcInterface](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/nfc/custom/NetverifyCustomNfcInterface.html) or Null
 `onNetverifyStartNfcExtraction(NetverifyCustomNfcPresenter)` is called when the NFC scanning can be started. The NFC scanning is controlled with the provided instance of [NetverifyCustomNfcPresenter](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/nfc/custom/NetverifyCustomNfcPresenter.html)
@@ -153,26 +161,26 @@ For the new NFC scanning functionality in custom ui, there has been some additio
 #### Customization
 The following customization attribute have been added: `netverify_scanOverlayFill`
 
-#### New Fastfill offline token required
+#### New Fastfill Offline Token Required
 Due to a license model update in our Barcode implementation, it's necessary to regenerate the offline token when updating to version 3.2.0  
 
-#### Close button customization in custom ui
+#### Close Button cCustomization in Custom UI
 The position and image of the close button for face scanning can now be customized. Please have a look at the [NetverifyCustomScanView](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanView.html)
 
-#### Custom ui help animation support
+#### Custom UI Help Animation Support
 [NetverifyCustomScanPresenter$getHelpAnimation](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#getHelpAnimation-com.jumio.nv.custom.NetverifyCustomAnimationView-) has been added to get the specific help animation in case the scan part is canceled. An instance of  [NetverifyCustomAnimationView](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomAnimationView.html) needs to be passed where the animation is rendered in.
 
 ## 3.1.0
-#### Dependency change
+#### Dependency Changes
 *  ~~com.madgag.spongycastle:prov:1.58.0.0~~ is replaced by org.bouncycastle:bcprov-jdk15on:1.61
 *  Proguard rules containing *org.spongycastle* have been replaced with *org.bouncycastle*
 *  ~~com.facetec:zoom-authentication-hybrid:7.0.5~~ is replaced by com.facetec:zoom-authentication-hybrid:7.0.9
 
 ## 3.0.0
-#### Renamed dependency nv-face to face
+#### Renamed Dependency NV-Face to Face
 The dependency `com.jumio.android:nv-face` was renamed to `com.jumio.android:face`, reflecting the internal restructuring of the dependencies that was necessary for adding the new product Authentication
 
-#### Renamed public API methods and parameters
+#### Renamed Public API Methods and Parameters
 The following methods and the related parameters have been renamed to ensure consistency across all platforms
 * `setRequireFaceMatch(..)` -> `setEnableIdentityVerification(..)`
 * `setRequireVerification(..)` -> `setEnableVerification(..)`
@@ -180,7 +188,7 @@ The following methods and the related parameters have been renamed to ensure con
 * `setMerchantIdScanReference(..)` -> `setCustomerInternalReference(..)`
 * `setCustomerId(..)` -> `setUserReference(..)`
 
-#### Additional property in NetverifyCustomScanView
+#### Additional Property in NetverifyCustomScanView
 `setMode(..)` must be called before the view is used. Possible values: NetverifyCustomScanView.MODE_ID or NetverifyCustomScanView.MODE_FACE
 
 
@@ -190,7 +198,7 @@ Dependencies that have been added to the SDK:
 + androidx.room:room-runtime:2.0.0
 
 #### Added 3D Liveness
-###### Dependency changes
+###### Dependency Changes
 * com.jumio.android:nv-face:2.15.0@aar
 * com.facetec:zoom-authentication-hybrid:7.0.2@aar
 * ~~com.jumio.android:nv-liveness:2.14.0@aar~~ The old liveness module is not supported anymore
@@ -216,7 +224,7 @@ The following lines need to be added in your `proguard-rules.pro` file for 3D Li
 #### Migrate to AndroidX
 The support library was migrated to [`AndroidX`](https://developer.android.com/jetpack/androidx/). As the developer page outlines, this is a mandatory step since all new Support Library development and maintenance will occur in the AndroidX library. This [`migration guide`](https://developer.android.com/jetpack/androidx/migrate) shows you how to migrate your application to AndroidX.
 
-Check out the changed dependencies in the  [`dependencies section`](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_netverify-fastfill.md#dependencies) or in the [`build.gradle`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of the sample application.
+Check out the changed dependencies in the  [`dependencies section`](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_id-verification-fastfill.md#dependencies) or in the [`build.gradle`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of the sample application.
 The mapping for all support libraries is listed in section "Artifact mappings" [here](https://developer.android.com/jetpack/androidx/migrate)
 
 Dependencies that changed in the SDK:
@@ -229,36 +237,36 @@ Dependencies that changed in the SDK:
 The default values for [`requireVerification`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#setRequireVerification-boolean-) and [`requireFaceMatch`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#setRequireFaceMatch-boolean-) were changed to `true`. Please make sure that they are explicitly set to false in case a scan in Fastfill mode should be performed.
 
 ## 2.13.0
-#### API change in NetverifyDocumentData
+#### API Change in NetverifyDocumentData
 The function `getMiddleName()` has been removed. If a middle name is available, it will be concatinated with the first name.
 
-#### Removed deprecated ABIs mips, mips64 and armeabi
+#### Removed Deprecated ABIs mips, mips64 and armeabi
 These ABIs were deprecated in recent NDK toolsets as mentioned here - https://developer.android.com/ndk/guides/abis and are not used any more.
 
 ## 2.12.1
-#### Fixed a problem in which the user could get stuck in the Selfie capturing process
+#### Fixed a Problem in Which the User Could Get Stuck in the Selfie Capturing Process
 
 ## 2.12.0
-#### Fallback for Google Vision not operational added
-A fallback to manual image picker will now be used if Google Vision is not operational due to problems on the device. This guarantees the face workflow to be finished despite problems with the availablility of the Google Play services. Details are also described in [sub-chapter operationality](integration_netverify-fastfill.md#operationality).
+#### Fallback for Google Vision Not Operational Added
+A fallback to manual image picker will now be used if Google Vision is not operational due to problems on the device. This guarantees the face workflow to be finished despite problems with the availablility of the Google Play services. Details are also described in [sub-chapter operationality](integration_id-verification-fastfill.md#operationality).
 The method `netverifySDK.isMobileVisionOperational` remains in the SDK but doesn't need to be checked now necessarily.
 
-#### New SDK localizations added
+#### New SDK Localizations Added
 In addition to English, the translations for the languages Chinese (Simplified), Dutch, Frensh, German and Spanish have been added.
 
-#### Remove unused strings for localization
+#### Remove Unused Strings for Localization
 Along with the additional languages, we removed some Strings that were unused in the SDK. The following keys have been removed: `netverify_confirmation_snackbar_help_default`, `netverify_accessibility_select_your_country`, `netverify_accessibility_action_double_click`, `netverify_accessibility_select_your_country`, `netverify_scan_options_country_title`, `netverify_overlay_liveness_advice` and `netverify_scan_options_preselected_hint`.
 
-#### Additional information method removed
+#### Additional Information Method Removed
 SDK method `netverifySDK.setAdditionalInformation` has been removed.
 
-#### New callback in NetverifyCustomScanInterface
+#### New Callback in NetverifyCustomScanInterface
 `onNetverifyDisplayBlurHint()` was added for custom scan view.
 
 ## 2.11.0
-#### New error scheme
+#### New Error Scheme
 The schema for `errorCode` changed and it's type is now String instead of Integer.
-Read more detailed information on this in chapter [Error codes](/docs/integration_netverify-fastfill.md#error-codes)
+Read more detailed information on this in chapter [Error codes](/docs/integration_id-verification-fastfill.md#error-codes)
 
 ## 2.10.1
 No backward incompatible changes.
@@ -269,7 +277,7 @@ No backward incompatible changes.
 
 ## 2.9.0
 
-#### Changes in SDK code
+#### Changes in SDK Code
 * New cardview dependency was added `com.android.support:cardview-v7:26.1.0` for the screen redesign. This dependency is mandatory for Netverify
 * Multidex is now mandatory, follow the steps Android Developers guide https://developer.android.com/studio/build/multidex.html#mdex-gradle to enable it if necessary in your app.
 * Additional Proguard rules for the updated Barcode Scanner have to be added:
@@ -282,9 +290,9 @@ No backward incompatible changes.
 ```
 GoogleVisionStatus NetverifySDK.isMobileVisionOperational(Activity activity, int requestCode);
 ```
-The usage is explained in the Netverify guide [sub-chapter operationality](integration_netverify-fastfill.md#operationality)
+The usage is explained in the Netverify guide [sub-chapter operationality](integration_id-verification-fastfill.md#operationality)
 
-#### Changes in localizable strings
+#### Changes in Localizable Strings
 Multiple additions and changes in regards to the new selection screen.
 
 #### Changes in Customization
@@ -318,11 +326,11 @@ No backward incompatible changes.
 
 ## 2.6.0
 
-#### Changes in SDK Api
+#### Changes in SDK API
 * Removed SDK method `setShowHelpBeforeScan(boolean)` because the collapsed help view is now constantly visible during scanning.
 * Add NetverifySDK method `isRooted(Context)` for device root-check before starting the SDK
 
-#### Changes in localizable strings
+#### Changes in Localizable Strings
 Multiple additions and changes in regards to the new guidance / help screen.
 
 #### Changes in Customization
@@ -340,7 +348,7 @@ The build.gradle was adapted to support standard UrlConnection for replacing okH
 Override the theme that is used for Netverify in the manifest by calling `netverifySDK.setCustomTheme(CUSTOMTHEMEID)`. Use the resource id of a customized theme that uses `Theme.Netverify` as parent.
 Additions and changes for customization options for the launch of the surface tool.
 
-#### Provide possibility to avoid loading spinner after SDK start
+#### Provide Possibility to Avoid Loading Spinner After SDK Start
 Use the following method to initialize the SDK before displaying it
 ```
 netverifySDK.initiate(new NetverifyInitiateCallback() {
@@ -352,7 +360,7 @@ netverifySDK.initiate(new NetverifyInitiateCallback() {
  }
 });
  ```
-#### Removed name match feature
+#### Removed Name Match Feature
 Name matching by comparing a provided name with the extracted name from a document was removed. The method `setName("FIRSTNAME LASTNAME")` in the NetverifySDK was removed.
 
 ## 2.3.0

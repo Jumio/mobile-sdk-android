@@ -6,7 +6,7 @@
 [![Maven](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fmobile-sdk.jumio.com%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat)](#integration)
 [![API Level](http://img.shields.io/badge/API%20Level-19+-orange?style=flat)](#general-requirements)
 
-# Table of Content
+# Table of Contents
 - [Overview](#overview)
 - [Get Started](#get-started)
     - [ID Verification & Fastfill SDK](docs/integration_id-verification-fastfill.md)
@@ -20,6 +20,7 @@
     - [Integration](#integration)
     - [Proguard](#proguard)
     - [Language Localization](#language-localization)
+- [Security](#security)
 - [Release Notes](#release-notes)
 - [Support](#support)
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
@@ -35,10 +36,10 @@ Onboard new users and easily verify their digital identities, by making sure the
 
 Using the Jumio SDK will allow you to create the best possible solution for your individual needs, providing you with a range of different services to choose from.
 
-# Get started
+# Get Started
 Please note that [basic setup](#basics) is required before continuing with the integration of any of the following services.
 
-## Jumio ID Verification and Fastfill
+## Jumio ID Verification & Fastfill
 ID Verification (formerly known as Netverify) is a secure and easy solution that allows you to establish the genuine identity of your users in your mobile application, by verifying their passports, government-issued IDs and VISA in real-time. Very user-friendly and highly customizable, it makes onboarding new customers quick and simple.
 
 - [Integration ID Verification & Fastfill SDK](docs/integration_id-verification-fastfill.md)
@@ -108,6 +109,12 @@ __Note:__ We strongly recommend storing all credentials outside of your app! We 
 
 Once you start up the sample application, you'll be given the option of trying out ID Verification. Select the hamburger menu in the top left corner to try out something else. Your application will also need camera permission, which will be prompted for automatically once you try to start any of services. If you deny camera permissions, you won't be able to use any of the services.
 
+### Tutorial List
+* [Getting started (Video):](https://share.vidyard.com/watch/oAUXU1EWXco1mPUePz7Ue6) How to clone the repository and configure your Jumio credentials
+* [Introduction (Video):](https://share.vidyard.com/watch/nqUmPAaqG4bMy4Wh5wb9Kn) How to initialize the SDK, run the sample on your Android device, and test the identity verification user journey
+* [Configuring behavior (Video):](https://share.vidyard.com/watch/BPT2jB51oUgkvRaAuKVb3q) How to configure the behavior of the app using SDK parameters
+* [Customizing appearance (Video):](https://share.vidyard.com/watch/rEkMfyhjRXb1G7ffYUioLK) How to customize the look and feel of your application using the Jumio Surface tool
+
 # Basics
 
 ## General Requirements
@@ -170,13 +177,16 @@ _Afrikaans, Arabic, Bulgarian, Chinese(Simplified), Chinese(Traditional), Croati
 
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or increase the __text size__ on their device. The accessibility-strings that are used by TalkBack contain *accessibility* in their key and can be also modified in the `strings.xml`.
 
+# Security
+All SDK related traffic is sent over HTTPS using TLS and public key pinning, and additionally, the information itself within the transmission is also encrypted utilizing __Application Layer Encryption__ (ALE). ALE is Jumio custom-designed security protocol which utilizes RSA-OAEP and AES-256 to ensure that the data cannot be read or manipulated even if the traffic was captured.
+
 # Release Notes
 Please refer to our [Change Log](docs/changelog.md) for more information about our current SDK version and further details.
 
 # Support
 
 ## Previous Version
-The previous release version 3.7.1 of the Jumio Mobile SDK is supported until 2020-11-30.
+The previous release version 3.7.2 of the Jumio Mobile SDK is supported until 2021-02-18.
 
 In case the support period is expired, no bug fixes and technical support are provided anymore. Current bugs are typically fixed in the upcoming versions.
 Older SDK versions will keep functioning with our server until further notice, but we highly recommend to always update to the latest version to benefit from SDK improvements and bug fixes.

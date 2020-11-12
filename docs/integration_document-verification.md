@@ -3,9 +3,8 @@
 # Document Verification SDK for Android
 Document Verification is a powerful solution to enable scanning various types (Utility Bill, Bank statement and many others) of your customer's documents in your mobile application within seconds, also supporting data extraction on documents like Utility Bills and Bank Statements (see [Supported documents for data extraction](https://github.com/Jumio/implementation-guides/blob/master/netverify/document-verification.md#supported-documents))
 
-## Table of Content
-
-- [Release notes](#release-notes)
+## Table of Contents
+- [Release Notes](#release-notes)
 - [Setup](#setup)
 - [Dependencies](#dependencies)
 - [Initialization](#integration)
@@ -15,11 +14,10 @@ Document Verification is a powerful solution to enable scanning various types (U
 - [Callback](#callback)
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
-## Release notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.2
+## Release Notes
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.3
 
 For breaking technical changes, please read our [transition guide](transition-guide_document-verification.md)
-
 
 ## Setup
 The [basic setup](../README.md#basics) is required before continuing with the following setup for DocumentVerification.
@@ -43,8 +41,8 @@ Below there is a list of dependices the application will need to work in Android
 ```
 dependencies {
     // mandatory
-    implementation "com.jumio.android:core:3.7.2@aar"   // Jumio core library
-    implementation "com.jumio.android:dv:3.7.2@aar"     // Document verification library
+    implementation "com.jumio.android:core:3.7.3@aar"   // Jumio core library
+    implementation "com.jumio.android:dv:3.7.3@aar"     // Document verification library
 
     implementation "androidx.appcompat:appcompat:1.1.0"
     implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
@@ -54,18 +52,18 @@ dependencies {
 
 
     // not mandatory
-    implementation "com.jumio.android:javadoc:3.7.2"
+    implementation "com.jumio.android:javadoc:3.7.3"
 }
 ```
 __Note:__ Version numbers may vary.
 
-#### Root detection
+#### Root Detection
 Applications implementing the SDK shall not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.
 ```
 DocumentVerificationSDK.isRooted(Context context);
 ```
 
-#### Device supported check
+#### Device Supported Check
 Call the method `isSupportedPlatform` to check if the device is supported.
 ```
 DocumentVerificationSDK.isSupportedPlatform();
@@ -89,7 +87,7 @@ __Note:__ We strongly recommend storing all credentials outside of your app!
 
 ## Configuration
 
-### Document type
+### Document Type
 Use `setType()` to pass the document type.
 ```
 documentVerificationSDK.setType("DOCUMENTTYPE");
@@ -130,13 +128,13 @@ Use the following method to pass your custom document code. Maintain your custom
 documentVerificationSDK.setCustomDocumentCode("YOURCUSTOMDOCUMENTCODE");
 ```
 
-### Country selection
+### Country Selection
 You can specify issuing country  using [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country codes. In the example down below the United States ("USA") have been preselected. Use "XKX" for Kosovo.
 ```
 documentVerificationSDK.setCountry("USA");
 ```
 
-### Transaction identifiers
+### Transaction Identifiers
 Use the following property to identify the scan in your reports (max. 100 characters).
 ```
 documentVerificationSDK.setReportingCriteria("YOURREPORTINGCRITERIA");
@@ -171,7 +169,7 @@ documentVerificationSDK.setEnableExtraction(false);
 
 __Note:__ If you would like to enable extraction for your account in general, please contact your Account Manager, or reach out to Jumio Support at support@jumio.com or [online](https://support.jumio.com).
 
-### Camera handling
+### Camera Handling
 Use setCameraPosition to configure the default camera (front or back).
 ```
 documentVerificationSDK.setCameraPosition(JumioCameraPosition.FRONT);
@@ -184,14 +182,14 @@ documentVerificationSDK.setDocumentName(“YOURDOCNAME”);
 
 ## Customization
 
-### Customize look and feel
+### Customize Look and Feel
 The SDK can be customized to fit your application’s look and feel by specifying `Theme.DocumentVerification` as a parent style of your own custom theme. Click on the element `Theme.DocumentVerification` in the manifest while holding Ctrl and Android Studio will display the available items. Change the colors of the styles attributes to fit your requirements.
 
 There are two possibilities for applying the customized theme that was explained in the previous chapter:
 * Customizing theme in AndroidManifest
 * Customizing theme at runtime
 
-#### Customizing theme in AndroidManifest
+#### Customizing Theme in AndroidManifest
 Apply  the '`CustomDocumentVerificationTheme` that you defined before by replacing `Theme.DocumentVerification` in the AndroidManifest.xml:
 ```
 <activity
@@ -200,7 +198,7 @@ Apply  the '`CustomDocumentVerificationTheme` that you defined before by replaci
 						... />
 ```
 
-### Customizing theme at runtime
+### Customizing Theme at Runtime
 To customize the theme at runtime, overwrite the theme that is used for Document Verification in the manifest by adding the line of code below. Use the resource id of a customized theme that uses `Theme.DocumentVerification` as parent.
 ```
 documentVerificationSDK.setCustomTheme(CUSTOMTHEME);
@@ -216,7 +214,7 @@ Fragment: `startActivityForResult(documentVerificationSDK.getIntent(),DocumentVe
 
 __Note:__ The default request code is 300. To use another code, override the public static variable `DocumentVerificationSDK.REQUEST_CODE` before displaying the SDK.
 
-### Retrieving information
+### Retrieving Information
 Implement the standard `onActivityResult()` method in your activity or fragment for successful scans (`Activity.RESULT_OK`) and user cancellation notifications (`Activity.RESULT_CANCELED`). Call `documentVerificationSDK.destroy()` once you received the result.
 
 ```
@@ -240,7 +238,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
-#### Error codes
+#### Error Codes
 List of all **_error codes_** that are available via the `code` property of the DocumentVerificationError object. The first letter (A-K) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]).
 
 |Code        			| Message   | Description    |

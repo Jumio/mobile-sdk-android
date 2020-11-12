@@ -4,6 +4,9 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.7.3
+No backward incompatible changes
+
 ## 3.7.2
 No backward incompatible changes
 
@@ -26,18 +29,18 @@ No backward incompatible changes
 AndroidX Material design library has been *updated to version 1.1.0*
 * ~~"com.google.android.material:material:1.0.0"~~ is replaced by "com.google.android.material:material:1.1.0"
 
-Local broadcast manager dependency has been added mandatory due to the design library update where it was seperated by Google
+Local broadcast manager dependency has been added mandatory due to the design library update where it was separated by Google
 * implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
 
 ## 3.5.0
-#### Proguard change
-* Consumer proguard rules have been added. All Jumio SDK proguard rules will now be applied automatically to the application when the Jumio Core library is included.
+#### Proguard Change
+* Consumer Proguard rules have been added. All Jumio SDK Proguard rules will now be applied automatically to the application when the Jumio Core library is included.
 
 ## 3.4.1
 No backward incompatible changes
 
 ## 3.4.0
-#### Dependency change
+#### Dependency Changes
 *  ~~androidx.appcompat:appcompat:1.0.2~~ is replaced by androidx.appcompat:appcompat:1.1.0
 *  ~~androidx.room:room-runtime:2.0.0~~ is replaced by androidx.room:room-runtime:2.2.1
 
@@ -54,7 +57,7 @@ No backward incompatible changes
 No backward incompatible changes
 
 ## 3.2.0
-#### Dependency change
+#### Dependency Change
 *  ~~androidx.appcompat:appcompat:1.0.0~~ is replaced by androidx.appcompat:appcompat:1.0.2
 
 ## 3.1.0
@@ -72,7 +75,7 @@ Dependencies that have been added to the SDK:
 #### Migrate to AndroidX
 The support library was migrated to [`AndroidX`](https://developer.android.com/jetpack/androidx/). As the developer page outlines, this is a mandatory step since all new Support Library development and maintenance will occur in the AndroidX library. This [`migration guide`](https://developer.android.com/jetpack/androidx/migrate) shows you how to migrate your application to AndroidX.
 
-Check out the changed dependencies in the  [`dependencies section`](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_netverify-fastfill.md#dependencies) or in the [`build.gradle`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of the sample application.
+Check out the changed dependencies in the  [`dependencies section`](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_id-verification-fastfill.md#dependencies) or in the [`build.gradle`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of the sample application.
 The mapping for all support libraries is listed in section "Artifact mappings" [here](https://developer.android.com/jetpack/androidx/migrate)
 
 Dependencies that changed in the SDK:
@@ -81,7 +84,7 @@ Dependencies that changed in the SDK:
 - com.android.support:support-v4:27.1.1 -> androidx.legacy:legacy-support-v4:1.0.0 (was merged by AndroidX and can be therefore be fully removed)
 
 ## 2.13.0
-#### Removed deprecated ABIs mips, mips64 and armeabi
+#### Removed Deprecated ABIs mips, mips64 and armeabi
 These ABIs were deprecated in recent NDK toolsets as mentioned here - https://developer.android.com/ndk/guides/abis and are not used any more.
 
 ## 2.12.1
@@ -91,7 +94,7 @@ No backward incompatible changes.
 No backward incompatible changes.
 
 ## 2.11.0
-#### New error scheme
+#### New Error Scheme
 The schema for `errorCode` changed and it's type is now String instead of Integer.
 Read more detailed information on this in chapter [Error codes](/docs/integration_bam-checkout.md#error-codes)
 
@@ -126,11 +129,11 @@ No backward incompatible changes.
 
 ## 2.5.0
 
-#### BAM Checkout SDK offline with an offline token
+#### BAM Checkout SDK Offline with an Offline Token
 Added the option to create an SDK instance for offline scanning with `BamSDK.create(rootActivity, YOUROFFLINETOKEN)`
 
 ## 2.4.0
-#### Removed name match feature
+#### Removed Name Match Feature
 Name matching by comparing a provided name with the extracted name from a document was removed. The method `setName("FIRSTNAME LASTNAME")` in the NetverifySDK was removed.
 
 ## 2.3.0
@@ -140,7 +143,5 @@ No backward incompatible changes.
 #### Changes in Customization
 Multiple additions and changes in regards to a new user interface design to BAM Checkout Mobile
 
-
 ## Copyright
-
 &copy; Jumio Corp. 395 Page Mill Road, Palo Alto, CA 94306
