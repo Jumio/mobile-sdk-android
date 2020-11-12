@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":9,"i2":9,"i3":10,"i4":9,"i5":10,"i6":10,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10};
+var methods = {"i0":10,"i1":9,"i2":9,"i3":9,"i4":10,"i5":9,"i6":10,"i7":10,"i8":9,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -180,13 +180,21 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv">NetverifySDK</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#create-android.app.Activity-java.lang.String-com.jumio.core.enums.JumioDataCenter-">create</a></span>(android.app.Activity&nbsp;rootActivity,
+      java.lang.String&nbsp;token,
+      <a href="../../../com/jumio/core/enums/JumioDataCenter.html" title="enum in com.jumio.core.enums">JumioDataCenter</a>&nbsp;dataCenter)</code>
+<div class="block">Creates an NetverifySDK instance</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static <a href="../../../com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv">NetverifySDK</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#create-android.app.Activity-java.lang.String-java.lang.String-">create</a></span>(android.app.Activity&nbsp;rootActivity,
       java.lang.String&nbsp;offlineToken,
       java.lang.String&nbsp;preferredCountry)</code>
 <div class="block">Creates an NetverifySDK instance</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv">NetverifySDK</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#create-android.app.Activity-java.lang.String-java.lang.String-com.jumio.core.enums.JumioDataCenter-">create</a></span>(android.app.Activity&nbsp;rootActivity,
       java.lang.String&nbsp;apiToken,
@@ -195,25 +203,25 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
 <div class="block">Creates an NetverifySDK instance</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#destroy--">destroy</a></span>()</code>
 <div class="block">Destroys the instance and frees all resources</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#getDebugID--">getDebugID</a></span>()</code>
 <div class="block">Obtains the Jumio Analytics session ID if one already exists.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>android.content.Intent</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#getIntent--">getIntent</a></span>()</code>
 <div class="block">Returns the intent to start the SDK rootActivity</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#initiate-com.jumio.nv.NetverifyInitiateCallback-">initiate</a></span>(<a href="../../../com/jumio/nv/NetverifyInitiateCallback.html" title="interface in com.jumio.nv">NetverifyInitiateCallback</a>&nbsp;loadingCallback)</code>
 <div class="block">Initiates the SDK asynchronously
@@ -221,110 +229,114 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
  All the SDK settings will be loaded before the SDK is displayed.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#isSupportedPlatform-android.content.Context-">isSupportedPlatform</a></span>(android.content.Context&nbsp;context)</code>
 <div class="block">Checks if the device platform is supported by the sdk</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#sendDebugInfoToJumio-boolean-">sendDebugInfoToJumio</a></span>(boolean&nbsp;send)</code>
 <div class="block">Enable sending debug information to Jumio servers even if that feature is disabled on server-side</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setCallbackUrl-java.lang.String-">setCallbackUrl</a></span>(java.lang.String&nbsp;callbackUrl)</code>
 <div class="block">Callback URL (max.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setCameraPosition-com.jumio.core.enums.JumioCameraPosition-">setCameraPosition</a></span>(<a href="../../../com/jumio/core/enums/JumioCameraPosition.html" title="enum in com.jumio.core.enums">JumioCameraPosition</a>&nbsp;cameraPosition)</code>
 <div class="block">Set the default camera position</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setCustomerInternalReference-java.lang.String-">setCustomerInternalReference</a></span>(java.lang.String&nbsp;customerInternalReference)</code>
 <div class="block">Identify the scan in the Jumio merchant UI.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setDataExtractionOnMobileOnly-boolean-">setDataExtractionOnMobileOnly</a></span>(boolean&nbsp;dataExtractionOnMobileOnly)</code>
 <div class="block">Use the following method to only support IDs where data can be extracted on mobile only</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setEnableEMRTD-boolean-">setEnableEMRTD</a></span>(boolean&nbsp;enable)</code>
 <div class="block">Setting this to true will enable reading the NFC chip embedded in IDs and use
  it to increase verification speed and security.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setEnableIdentityVerification-boolean-">setEnableIdentityVerification</a></span>(boolean&nbsp;enableIdentityVerification)</code>
-<div class="block">Enable a face match check between a camera still image and the document front side (default: true)</div>
-</td>
-</tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setEnableVerification-boolean-">setEnableVerification</a></span>(boolean&nbsp;enableVerification)</code>
-<div class="block">Enable verification of a scanned identity (default: true)</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setEnableIdentityVerification-boolean-">setEnableIdentityVerification</a></span>(boolean&nbsp;enableIdentityVerification)</code>
+<div class="block">Enable a face match check between a camera still image and the document front side (default: true)
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 </td>
 </tr>
 <tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setEnableVerification-boolean-">setEnableVerification</a></span>(boolean&nbsp;enableVerification)</code>
+<div class="block">Enable verification of a scanned identity (default: true)
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setPreselectedCountry-java.lang.String-">setPreselectedCountry</a></span>(java.lang.String&nbsp;country)</code>
 <div class="block">Specify a country to skip selection by the user (format: ISO 3166-1 Alpha 3 code)</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setPreselectedDocumentTypes-java.util.ArrayList-">setPreselectedDocumentTypes</a></span>(java.util.ArrayList&lt;<a href="../../../com/jumio/nv/data/document/NVDocumentType.html" title="enum in com.jumio.nv.data.document">NVDocumentType</a>&gt;&nbsp;documentTypes)</code>
 <div class="block">Preselect selection to one or more documentTypes to restrict or skip selection by the user</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setPreselectedDocumentVariant-com.jumio.nv.data.document.NVDocumentVariant-">setPreselectedDocumentVariant</a></span>(<a href="../../../com/jumio/nv/data/document/NVDocumentVariant.html" title="enum in com.jumio.nv.data.document">NVDocumentVariant</a>&nbsp;documentVariant)</code>
 <div class="block">Specify a document variant to skip selection by user</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setReportingCriteria-java.lang.String-">setReportingCriteria</a></span>(java.lang.String&nbsp;reportingCriteria)</code>
 <div class="block">Identify the scan in your reports.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setUserReference-java.lang.String-">setUserReference</a></span>(java.lang.String&nbsp;userReference)</code>
 <div class="block">Specifies how the user is registered on your system.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setWatchlistScreening-com.jumio.nv.enums.NVWatchlistScreening-">setWatchlistScreening</a></span>(<a href="../../../com/jumio/nv/enums/NVWatchlistScreening.html" title="enum in com.jumio.nv.enums">NVWatchlistScreening</a>&nbsp;watchlistScreening)</code>
-<div class="block">Override the server default for the watchlist search</div>
-</td>
-</tr>
 <tr id="i22" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setWatchlistSearchProfile-java.lang.String-">setWatchlistSearchProfile</a></span>(java.lang.String&nbsp;watchlistSearchProfile)</code>
-<div class="block">Define the watchlist search profile for the upcoming session</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setWatchlistScreening-com.jumio.nv.enums.NVWatchlistScreening-">setWatchlistScreening</a></span>(<a href="../../../com/jumio/nv/enums/NVWatchlistScreening.html" title="enum in com.jumio.nv.enums">NVWatchlistScreening</a>&nbsp;watchlistScreening)</code>
+<div class="block">Override the server default for the watchlist search
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 </td>
 </tr>
 <tr id="i23" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#setWatchlistSearchProfile-java.lang.String-">setWatchlistSearchProfile</a></span>(java.lang.String&nbsp;watchlistSearchProfile)</code>
+<div class="block">Define the watchlist search profile for the upcoming session
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#start--">start</a></span>()</code>
 <div class="block">Starts the scan.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code><a href="../../../com/jumio/nv/custom/NetverifyCustomSDKController.html" title="class in com.jumio.nv.custom">NetverifyCustomSDKController</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jumio/nv/NetverifySDK.html#start-com.jumio.nv.custom.NetverifyCustomSDKInterface-">start</a></span>(<a href="../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomSDKInterface</a>&nbsp;customSDKInterface)</code>
 <div class="block">Starts an custom scan.</div>
@@ -464,6 +476,31 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
 </dl>
 </li>
 </ul>
+<a name="create-android.app.Activity-java.lang.String-com.jumio.core.enums.JumioDataCenter-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>create</h4>
+<pre>public static&nbsp;<a href="../../../com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv">NetverifySDK</a>&nbsp;create(android.app.Activity&nbsp;rootActivity,
+                                  java.lang.String&nbsp;token,
+                                  <a href="../../../com/jumio/core/enums/JumioDataCenter.html" title="enum in com.jumio.core.enums">JumioDataCenter</a>&nbsp;dataCenter)
+                           throws <a href="../../../com/jumio/core/exceptions/PlatformNotSupportedException.html" title="class in com.jumio.core.exceptions">PlatformNotSupportedException</a>,
+                                  java.lang.NullPointerException</pre>
+<div class="block">Creates an NetverifySDK instance</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rootActivity</code> - rootActivity which starts the NetverifySDK</dd>
+<dd><code>token</code> - One-time session authorization token - can be retrieved via the server-side /account call.</dd>
+<dd><code>dataCenter</code> - Select the JumioDataCenter (US, EU)</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>An initialized NetverifySDK instance</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../com/jumio/core/exceptions/PlatformNotSupportedException.html" title="class in com.jumio.core.exceptions">PlatformNotSupportedException</a></code> - if the current platform is not supported by the sdk</dd>
+<dd><code>java.lang.NullPointerException</code> - the provided rootActivity must not be null</dd>
+</dl>
+</li>
+</ul>
 <a name="create-android.app.Activity-java.lang.String-java.lang.String-">
 <!--   -->
 </a>
@@ -551,7 +588,8 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
 <li class="blockList">
 <h4>setUserReference</h4>
 <pre>public&nbsp;void&nbsp;setUserReference(java.lang.String&nbsp;userReference)</pre>
-<div class="block">Specifies how the user is registered on your system. For example, you can use an email address, user name, or account number. Optional. (Maximum characters: 100)</div>
+<div class="block">Specifies how the user is registered on your system. For example, you can use an email address, user name, or account number. Optional. (Maximum characters: 100)
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>userReference</code> - user reference</dd>
@@ -607,7 +645,8 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
 <li class="blockList">
 <h4>setCustomerInternalReference</h4>
 <pre>public&nbsp;void&nbsp;setCustomerInternalReference(java.lang.String&nbsp;customerInternalReference)</pre>
-<div class="block">Identify the scan in the Jumio merchant UI. (Maximum characters: 100)</div>
+<div class="block">Identify the scan in the Jumio merchant UI. (Maximum characters: 100)
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>customerInternalReference</code> - scan reference string</dd>
@@ -621,7 +660,8 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
 <li class="blockList">
 <h4>setEnableIdentityVerification</h4>
 <pre>public&nbsp;void&nbsp;setEnableIdentityVerification(boolean&nbsp;enableIdentityVerification)</pre>
-<div class="block">Enable a face match check between a camera still image and the document front side (default: true)</div>
+<div class="block">Enable a face match check between a camera still image and the document front side (default: true)
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>enableIdentityVerification</code> - enable/disable</dd>
@@ -635,7 +675,8 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
 <li class="blockList">
 <h4>setEnableVerification</h4>
 <pre>public&nbsp;void&nbsp;setEnableVerification(boolean&nbsp;enableVerification)</pre>
-<div class="block">Enable verification of a scanned identity (default: true)</div>
+<div class="block">Enable verification of a scanned identity (default: true)
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>enableVerification</code> - enable/disable</dd>
@@ -649,7 +690,8 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
 <li class="blockList">
 <h4>setReportingCriteria</h4>
 <pre>public&nbsp;void&nbsp;setReportingCriteria(java.lang.String&nbsp;reportingCriteria)</pre>
-<div class="block">Identify the scan in your reports. Set it to null if you don't use it. (Maximum characters: 100)</div>
+<div class="block">Identify the scan in your reports. Set it to null if you don't use it. (Maximum characters: 100)
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>reportingCriteria</code> - reporting critieria</dd>
@@ -692,7 +734,8 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
 <h4>setCallbackUrl</h4>
 <pre>public&nbsp;void&nbsp;setCallbackUrl(java.lang.String&nbsp;callbackUrl)</pre>
 <div class="block">Callback URL (max. 255 characters) for the confirmation after the verification is completed.
- This setting overrides your Jumio merchant settings.</div>
+ This setting overrides your Jumio merchant settings.
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>callbackUrl</code> - custom callback url</dd>
@@ -743,7 +786,8 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
 <li class="blockList">
 <h4>setWatchlistScreening</h4>
 <pre>public&nbsp;void&nbsp;setWatchlistScreening(<a href="../../../com/jumio/nv/enums/NVWatchlistScreening.html" title="enum in com.jumio.nv.enums">NVWatchlistScreening</a>&nbsp;watchlistScreening)</pre>
-<div class="block">Override the server default for the watchlist search</div>
+<div class="block">Override the server default for the watchlist search
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>watchlistScreening</code> - ENABLED, DISABLED or DEFAULT</dd>
@@ -757,7 +801,8 @@ extends <a href="../../../com/jumio/MobileSDK.html" title="class in com.jumio">M
 <li class="blockList">
 <h4>setWatchlistSearchProfile</h4>
 <pre>public&nbsp;void&nbsp;setWatchlistSearchProfile(java.lang.String&nbsp;watchlistSearchProfile)</pre>
-<div class="block">Define the watchlist search profile for the upcoming session</div>
+<div class="block">Define the watchlist search profile for the upcoming session
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>watchlistSearchProfile</code> - profile name</dd>

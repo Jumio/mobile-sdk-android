@@ -256,6 +256,10 @@
 <dd>
 <div class="block">Creates an authentication instance</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/jumio/auth/AuthenticationSDK.html#create-android.app.Activity-java.lang.String-com.jumio.core.enums.JumioDataCenter-">create(Activity, String, JumioDataCenter)</a></span> - Static method in class com.jumio.auth.<a href="com/jumio/auth/AuthenticationSDK.html" title="class in com.jumio.auth">AuthenticationSDK</a></dt>
+<dd>
+<div class="block">Creates an authentication instance</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/auth/custom/AuthenticationCustomSDKController.InternalController.html#create-android.app.Activity-android.content.Context-CredentialsModel-boolean-">create(Activity, Context, CredentialsModel, boolean)</a></span> - Method in class com.jumio.auth.custom.<a href="com/jumio/auth/custom/AuthenticationCustomSDKController.InternalController.html" title="class in com.jumio.auth.custom">AuthenticationCustomSDKController.InternalController</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/bam/BamSDK.html#create-android.app.Activity-java.lang.String-java.lang.String-com.jumio.core.enums.JumioDataCenter-">create(Activity, String, String, JumioDataCenter)</a></span> - Static method in class com.jumio.bam.<a href="com/jumio/bam/BamSDK.html" title="class in com.jumio.bam">BamSDK</a></dt>
@@ -273,6 +277,10 @@
 <dt><span class="memberNameLink"><a href="com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#create-android.app.Activity-android.content.Context-CredentialsModel-boolean-">create(Activity, Context, CredentialsModel, boolean)</a></span> - Method in class com.jumio.nv.custom.<a href="com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html" title="class in com.jumio.nv.custom">NetverifyCustomSDKController.InternalController</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifySDK.html#create-android.app.Activity-java.lang.String-java.lang.String-com.jumio.core.enums.JumioDataCenter-">create(Activity, String, String, JumioDataCenter)</a></span> - Static method in class com.jumio.nv.<a href="com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv">NetverifySDK</a></dt>
+<dd>
+<div class="block">Creates an NetverifySDK instance</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifySDK.html#create-android.app.Activity-java.lang.String-com.jumio.core.enums.JumioDataCenter-">create(Activity, String, JumioDataCenter)</a></span> - Static method in class com.jumio.nv.<a href="com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv">NetverifySDK</a></dt>
 <dd>
 <div class="block">Creates an NetverifySDK instance</div>
 </dd>
@@ -842,8 +850,6 @@
 <dd>
 <div class="block">NetverifyCountry represents a country code and the list of configured <a href="com/jumio/nv/data/document/NVDocumentType.html" title="enum in com.jumio.nv.data.document"><code>NVDocumentType</code></a> for it</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/jumio/nv/custom/NetverifyCountry.html#NetverifyCountry-java.lang.String-java.util.Map-">NetverifyCountry(String, Map&lt;NVDocumentType, Set&lt;NVDocumentVariant&gt;&gt;)</a></span> - Constructor for class com.jumio.nv.custom.<a href="com/jumio/nv/custom/NetverifyCountry.html" title="class in com.jumio.nv.custom">NetverifyCountry</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="com/jumio/nv/custom/NetverifyCustomAnimationView.html" title="class in com.jumio.nv.custom"><span class="typeNameLink">NetverifyCustomAnimationView</span></a> - Class in <a href="com/jumio/nv/custom/package-summary.html">com.jumio.nv.custom</a></dt>
 <dd>
 <div class="block">Netverify custom animation view where the help view animations are displayed
@@ -1037,7 +1043,7 @@
 <dd>
 <div class="block">Indicates that the camera preview is available.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyCountriesReceived-java.util.HashMap-java.lang.String-">onNetverifyCountriesReceived(HashMap&lt;String, NetverifyCountry&gt;, String)</a></span> - Method in interface com.jumio.nv.custom.<a href="com/jumio/nv/custom/NetverifyCustomSDKInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomSDKInterface</a></dt>
+<dt><span class="memberNameLink"><a href="com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyCountriesReceived-java.util.Map-java.lang.String-">onNetverifyCountriesReceived(Map&lt;String, NetverifyCountry&gt;, String)</a></span> - Method in interface com.jumio.nv.custom.<a href="com/jumio/nv/custom/NetverifyCustomSDKInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomSDKInterface</a></dt>
 <dd>
 <div class="block">Select country and document type which has to be processed.</div>
 </dd>
@@ -1363,11 +1369,13 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifySDK.html#setEnableIdentityVerification-boolean-">setEnableIdentityVerification(boolean)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv">NetverifySDK</a></dt>
 <dd>
-<div class="block">Enable a face match check between a camera still image and the document front side (default: true)</div>
+<div class="block">Enable a face match check between a camera still image and the document front side (default: true)
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifySDK.html#setEnableVerification-boolean-">setEnableVerification(boolean)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv">NetverifySDK</a></dt>
 <dd>
-<div class="block">Enable verification of a scanned identity (default: true)</div>
+<div class="block">Enable verification of a scanned identity (default: true)
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/jumio/auth/AuthenticationSDK.html#setEnrollmentTransactionReference-java.lang.String-">setEnrollmentTransactionReference(String)</a></span> - Method in class com.jumio.auth.<a href="com/jumio/auth/AuthenticationSDK.html" title="class in com.jumio.auth">AuthenticationSDK</a></dt>
 <dd>
@@ -1514,11 +1522,13 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifySDK.html#setWatchlistScreening-com.jumio.nv.enums.NVWatchlistScreening-">setWatchlistScreening(NVWatchlistScreening)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv">NetverifySDK</a></dt>
 <dd>
-<div class="block">Override the server default for the watchlist search</div>
+<div class="block">Override the server default for the watchlist search
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/NetverifySDK.html#setWatchlistSearchProfile-java.lang.String-">setWatchlistSearchProfile(String)</a></span> - Method in class com.jumio.nv.<a href="com/jumio/nv/NetverifySDK.html" title="class in com.jumio.nv">NetverifySDK</a></dt>
 <dd>
-<div class="block">Define the watchlist search profile for the upcoming session</div>
+<div class="block">Define the watchlist search profile for the upcoming session
+ Will not be used in case authorizationToken is set - use this setting within the server-side /account call instead.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/jumio/nv/custom/NetverifyCustomScanPresenter.html#showShutterButton--">showShutterButton()</a></span> - Method in interface com.jumio.nv.custom.<a href="com/jumio/nv/custom/NetverifyCustomScanPresenter.html" title="interface in com.jumio.nv.custom">NetverifyCustomScanPresenter</a></dt>
 <dd>&nbsp;</dd>
