@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">កំពុងផ្ទុក</string>
 	<string name="jumio_accessibility_quit_scan">ឈប់ស្កេន</string>
 	<string name="jumio_button_cancel">បោះបង់</string>
+	<string name="jumio_button_continue">បន្ត</string>
 	<string name="jumio_button_retry">ព្យាយាមម្តងទៀត</string>
 	<string name="jumio_error_auth_failed">ការផ្ទៀងផ្ទាត់បានបរាជ័យ</string>
 	<string name="jumio_error_cancelled_by_user">ត្រូវបានបោះបង់ដោយអ្នកប្រើចុងក្រោយ</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">ប៉ះដើម្បីបន្ត</string>
 	<string name="face_helpview_landscape_description">សូមបង្វិលទូរសព្ទរបស់អ្នកទៅបញ្ឈរដើម្បីថតសែលហ្វី</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;បង្វិលឧបករណ៍របស់អ្នក&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">តើមានជួបបញ្ហាឬទេ?</string>
+	<string name="face_helpview_upfront_title">ថតមុខរបស់អ្នក</string>
 	<string name="netverify_accessibility_nfc_description_start">សូមពិនិត្យមើលថាតើអត្តសញ្ញាណបណ្ណរបស់អ្នកមានឈីបដែរឬទេ។ ប្រសិនបើមាន សូមដាក់ទូរស័ព្ទរបស់អ្នកនៅលើអត្តសញ្ញាណបណ្ណដូចរូបបង្ហាញ។</string>
 	<string name="netverify_back">ខាងក្រោយ</string>
 	<string name="netverify_countrylist_empty">គ្មានទិន្នន័យនៅក្នុងបញ្ជី</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;សូមជ្រើសរើសប្រទេសរបស់អ្នក&lt;/u&gt;&lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">ជ្រើសរើសប្រភេទឯកសារដែលអ្នកចង់ស្កេន</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;កំពុងវិភាគទិន្នន័យជីវមាត្រ&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">បន្ត</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">សូមលេខ ID  មុននឹងថត</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">សូមកែ ID និងលេខចូលប្រើ មុននឹងថត</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">សូមកែលេខលិខិតឆ្លងដែន មុននឹងថត</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">ប្រើផ្នែកខាងមុខ</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">ប៉ះដើម្បីបន្ត</string>
 	<string name="face_helpview_landscape_description">សូមបង្វិលទូរសព្ទរបស់អ្នកទៅបញ្ឈរដើម្បីថតសែលហ្វី</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;បង្វិលឧបករណ៍របស់អ្នក&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">តើមានជួបបញ្ហាឬទេ?</string>
+	<string name="face_helpview_upfront_title">ថតមុខរបស់អ្នក</string>
 	<string name="zoom_accessibility_cancel_button">ឈប់ស្កេន</string>
 	<string name="zoom_action_im_ready">ខ្ញុំត្រៀមរួចរាល់ហើយ</string>
 	<string name="zoom_action_ok">យល់ព្រម</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">ដាក់ឧបករណ៍របស់អ្នកនៅកម្ពស់ត្រឹមភ្នែកហើយសម្លឹងឱ្យចំវា</string>
 	<string name="zoom_helpview_bad_lightning">ចៀសវាងស្រមោល និងការផ្លាតពន្លឺលើផ្ទៃមុខរបស់អ្នក</string>
 	<string name="zoom_helpview_general">អនុវត្តតាមដំណើរការពីរជំហាន ហើយតម្រង់មុខរបស់អ្នកឱ្យចំស៊ុម។ ដាក់ឧបករណ៍របស់អ្នកនៅកម្ពស់ត្រឹមភ្នែក ហើយសម្លឹងឱ្យចំកាមេរ៉ា។ មុខរបស់អ្នកនឹងត្រូវបានថតដោយស្វ័យប្រវត្តិ</string>
-	<string name="zoom_helpview_upfront_title">ថតមុខរបស់អ្នក</string>
 	<string name="zoom_instructions_header_ready">ត្រៀមខ្លួនថតវីដេអូសែលហ្វីខ្លួនឯង</string>
 	<string name="zoom_instructions_message_ready">ដាក់មុខអ្នកក្នុងស៊ុមពងក្រពើតូចបន្ទាប់ក្នុងស៊ុមពងក្រពើធំ</string>
 	<string name="zoom_result_facemap_upload_message">កំពុងវិភាគទិន្នន័យជីវមាត្រ</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">គ្មានពន្លឺចាំងឬពន្លឺខ្លាំងពេក</string>
 	<string name="zoom_retry_subheader_message">ប៉ុន្តែជាដំបូង សូមមើលរូបថតរបស់អ្នក និងកែបរិស្ថានជុំវិញរបស់អ្នកសិន។</string>
 	<string name="zoom_retry_your_image_label">សែលហ្វី</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">សូមបង្វិលទូរសព្ទរបស់អ្នកទៅបញ្ឈរដើម្បីថតសែលហ្វី</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;បង្វិលឧបករណ៍របស់អ្នក&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">តើមានជួបបញ្ហាឬទេ?</string>
+	<string name="face_helpview_upfront_title">ថតមុខរបស់អ្នក</string>
+	<string name="iproov__prompt_liveness_align_face">សូមដាក់មុខរបស់អ្នកនៅក្នុងរង្វង់ពងក្រពើ</string>
+	<string name="iproov__prompt_liveness_no_target">ដាក់មុខរបស់អ្នកនៅក្នុងស៊ុម</string>
+	<string name="iproov__prompt_liveness_scan_completed">បានបញ្ចប់ការស្កេន</string>
+	<string name="iproov__prompt_too_close">ជិតពេក</string>
+	<string name="iproov__prompt_too_far">ខិតមកជិតជាងមុន</string>
+	<string name="iproov_intro_flash">ដាក់មុខរបស់អ្នកឲ្យចំពាក់កណ្ដាលស៊ុម ហើយកាន់វាឲ្យនឹង ពេលអេក្រង់កំពុងបញ្ចេញពន្លឺផ្លាស។</string>
+	<string name="iproov_intro_la">ដាក់មុខរបស់អ្នកឲ្យចំពាក់កណ្ដាលស៊ុម ហើយអនុវត្តតាមការណែនាំនៅលើអេក្រង់។</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -169,7 +183,6 @@
 	<string name="dv_helpview_header_voided_check">បណ្ណត្រូវបានធ្វើមោឃភាព</string>
 	<string name="dv_helpview_header_working_with_children_check">បណ្ណធ្វើការជាមួយកុមារ</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;ថត %1$s&lt;/b&gt;</string>
-	<string name="dv_scanview_continue">បន្ត</string>
 	<string name="dv_scanview_retake">ថតម្តងទៀត</string>
 	<string name="dv_scanview_snackbar_check">ត្រូវប្រាកដថារាល់ទិន្នន័យនៅលើឯកសាររបស់អ្នកអាចមើលឃើញបានពេញលេញ និងមិនមានព្រិល</string>
 	<string name="dv_scanview_title">ស្កេនឯកសារ</string>

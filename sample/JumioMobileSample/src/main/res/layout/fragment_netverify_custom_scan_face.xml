@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:jumio="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
@@ -43,7 +44,7 @@
 		jumio:layout_constraintBottom_toTopOf="@+id/fragment_custom_scan_face_btn_retry"
 		jumio:layout_constraintEnd_toEndOf="parent"
 		jumio:layout_constraintStart_toStartOf="parent"
-		jumio:layout_constraintTop_toBottomOf="@+id/fragment_nv_custom_animation_view" />
+		jumio:layout_constraintTop_toBottomOf="@+id/fragment_nv_custom_help_guideline" />
 
 	<com.google.android.material.button.MaterialButton
 		android:id="@+id/fragment_custom_scan_face_btn_retry"
@@ -57,7 +58,7 @@
 		jumio:layout_constraintEnd_toEndOf="parent"
 		jumio:layout_constraintStart_toStartOf="parent"
 		jumio:layout_constraintTop_toBottomOf="@+id/fragment_nv_custom_scan_face_helptext"
-		jumio:layout_constraintWidth_percent="0.4" />
+		jumio:layout_constraintWidth_percent="0.45" />
 
 	<com.google.android.material.button.MaterialButton
 		android:id="@+id/fragment_custom_scan_btn_capture"
@@ -71,7 +72,7 @@
 		jumio:layout_constraintBottom_toBottomOf="parent"
 		jumio:layout_constraintEnd_toEndOf="parent"
 		jumio:layout_constraintStart_toStartOf="parent"
-		jumio:layout_constraintWidth_percent="0.4" />
+		jumio:layout_constraintWidth_percent="0.45" />
 
 
 	<com.jumio.nv.custom.NetverifyCustomConfirmationView
@@ -101,5 +102,12 @@
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		jumio:layout_constraintGuide_percent="0.4" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/fragment_nv_custom_help_guideline"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		jumio:layout_constraintGuide_percent="0.8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.view.GravityCompat
@@ -16,13 +17,11 @@ import com.jumio.MobileSDK
 import com.jumio.core.enums.JumioDataCenter
 import com.jumio.nv.NetverifySDK
 import com.jumio.sample.R
-import com.jumio.sample.kotlin.authentication.AuthenticationCustomFragment
-import com.jumio.sample.kotlin.authentication.AuthenticationFragment
 import com.jumio.sample.kotlin.bam.BamCustomFragment
 import com.jumio.sample.kotlin.bam.BamFragment
 import com.jumio.sample.kotlin.documentverification.DocumentVerificationFragment
-import com.jumio.sample.kotlin.netverify.customui.NetverifyCustomActivity
 import com.jumio.sample.kotlin.netverify.NetverifyFragment
+import com.jumio.sample.kotlin.netverify.customui.NetverifyCustomActivity
 
 /**
  * Copyright 2019 Jumio Corporation All rights reserved.
@@ -30,6 +29,9 @@ import com.jumio.sample.kotlin.netverify.NetverifyFragment
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
+		// Required for vector drawable compat handling https://stackoverflow.com/a/37864531/1297835
+		AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+
 		setContentView(R.layout.activity_main)
 		val toolbar = findViewById<Toolbar>(R.id.toolbar)
 		setSupportActionBar(toolbar)
@@ -97,22 +99,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER)
 				nvCustomActivity.putExtras(bundle)
 				startActivity(nvCustomActivity)
-			}
-			R.id.nav_authentication -> {
-				val authFragment = AuthenticationFragment()
-				bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
-				bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
-				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER)
-				authFragment.arguments = bundle
-				switchFragment(authFragment)
-			}
-			R.id.nav_authentication_custom -> {
-				val authCustomFragment = AuthenticationCustomFragment()
-				bundle.putString(KEY_API_TOKEN, NETVERIFY_API_TOKEN)
-				bundle.putString(KEY_API_SECRET, NETVERIFY_API_SECRET)
-				bundle.putSerializable(KEY_DATACENTER, NETVERIFY_DATACENTER)
-				authCustomFragment.arguments = bundle
-				switchFragment(authCustomFragment)
 			}
 			R.id.nav_documentverification -> {
 				val dvFragment = DocumentVerificationFragment()

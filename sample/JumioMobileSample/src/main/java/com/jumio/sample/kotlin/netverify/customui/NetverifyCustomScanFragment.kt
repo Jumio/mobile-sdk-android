@@ -3,11 +3,9 @@ package com.jumio.sample.kotlin.netverify.customui
 import android.content.Context
 import android.content.Intent
 import android.graphics.Point
-import android.graphics.Rect
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.util.TypedValue
 import android.view.*
 import android.widget.Button
 import android.widget.ProgressBar
@@ -28,6 +26,7 @@ import com.jumio.nv.custom.*
 import com.jumio.nv.nfc.custom.NetverifyCustomNfcInterface
 import com.jumio.nv.nfc.custom.NetverifyCustomNfcPresenter
 import com.jumio.sample.R
+import kotlinx.android.synthetic.main.fragment_netverify_custom.*
 
 class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	private var scanSide: String? = null
@@ -126,14 +125,14 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 		if (customScanViewPresenter != null) {
 			setHelpText(customScanViewPresenter?.helpText)
 
-				// show initial help animation for document scanning except for manual capturing
-				if (ScanSide.valueOf(scanSide!!) == ScanSide.FRONT) {
-					btnDismissHelp = root.findViewById(R.id.fragment_custom_scan_btn_dismiss_help)
-					showDocumentHelpAnimation()
-				} else {
-					//Check for displaying shutter button for face manual capturing here as no upfront help is displayed
-					customScanViewPresenter?.showShutterButton()?.let { showShutterButton(it) }
-				}
+			// show initial help animation for document scanning except for manual capturing
+			if (ScanSide.valueOf(scanSide!!) == ScanSide.FRONT) {
+				btnDismissHelp = root.findViewById(R.id.fragment_custom_scan_btn_dismiss_help)
+				showDocumentHelpAnimation()
+			} else {
+				//Check for displaying shutter button for face manual capturing here as no upfront help is displayed
+				customScanViewPresenter?.showShutterButton()?.let { showShutterButton(it) }
+			}
 		}
 
 		setHasOptionsMenu(true)
@@ -351,7 +350,7 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 					retryFaceScanning()
 					Log.i(TAG, "Scan btn face retry clicked")
 				}
-				R.id. fragment_custom_scan_btn_dismiss_help -> {
+				R.id.fragment_custom_scan_btn_dismiss_help -> {
 					hideView(false, customAnimationView, btnDismissHelp)
 					initScanView(customScanView)
 					showView(tvDocumentType, tvSteps, customScanView)
@@ -361,7 +360,7 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 					showShutterButton(customScanViewPresenter!!.showShutterButton())
 					Log.i(TAG, "Dismiss help btn clicked")
 				}
-				R.id. fragment_custom_scan_btn_skip_nfc -> {
+				R.id.fragment_custom_scan_btn_skip_nfc -> {
 					hideView(false, customAnimationView, btnSkipNfc)
 					customNfcViewPresenter?.cancel()
 					customNfcViewPresenter = null
@@ -406,7 +405,7 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	 * Called if scan is repeated
 	 */
 	private fun onRetryScan() {
-		if (!customScanViewPresenter!!.isFallbackAvailable) {
+		if (customScanViewPresenter?.isFallbackAvailable != true) {
 			setFallbackVisibility(false)
 		} else {
 			setFallbackVisibility(true)
@@ -421,14 +420,12 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 		if (activity != null) {
 			activity?.invalidateOptionsMenu()
 		}
-		customScanViewPresenter?.retryScan()
-		setHelpText(customScanViewPresenter!!.helpText)
 		if (btnRetryFace != null) {
 			hideView(false, customAnimationView, btnRetryFace, tvHelp)
 		}
 		hideView(false, customConfirmationView, btnRetake, btnConfirm, tvHelp)
 
-		if (customScanViewPresenter!!.showShutterButton()) {
+		if (customScanViewPresenter?.showShutterButton() == true) {
 			showView(btnCapture)
 			hideView(false, btnFallback, tvHelp)
 			setHelpText("   ")
@@ -439,6 +436,8 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 		if (tvDocumentType != null) {
 			tvDocumentType?.text = context?.getString(R.string.netverify_helpview_small_title_capture, documentType, "")?.let { HtmlCompat.fromHtml(it, HtmlCompat.FROM_HTML_MODE_LEGACY) }
 		}
+		setHelpText(customScanViewPresenter?.helpText)
+		customScanViewPresenter?.retryScan()
 	}
 
 	/**
@@ -461,19 +460,21 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	fun buildNfcSettingsDialog() {
 			try {
 				if (activity != null) {
-					MaterialAlertDialogBuilder(activity)
-							.setTitle(com.jumio.nv.R.string.netverify_nfc_enable_dialog_title)
-							.setMessage(com.jumio.nv.R.string.netverify_nfc_enable_dialog_text)
-							.setPositiveButton(android.R.string.yes) { dialog, _ ->
-								dialog.dismiss()
-								activity?.startActivity(Intent("android.settings.NFC_SETTINGS"))
-							}
-							.setNegativeButton(android.R.string.no) { dialog, _ ->
-								dialog.dismiss()
-								JumioAnalytics.add(MobileEvents.userAction(JumioAnalytics.getSessionId(), Screen.ERROR, UserAction.CANCEL))
-								customNfcViewPresenter?.cancel()
-							}
-							.show()
+					activity?.applicationContext?.let {
+						MaterialAlertDialogBuilder(it)
+								.setTitle(com.jumio.nv.R.string.netverify_nfc_enable_dialog_title)
+								.setMessage(com.jumio.nv.R.string.netverify_nfc_enable_dialog_text)
+								.setPositiveButton(android.R.string.yes) { dialog, _ ->
+									dialog.dismiss()
+									activity?.startActivity(Intent("android.settings.NFC_SETTINGS"))
+								}
+								.setNegativeButton(android.R.string.no) { dialog, _ ->
+									dialog.dismiss()
+									JumioAnalytics.add(MobileEvents.userAction(JumioAnalytics.getSessionId(), Screen.ERROR, UserAction.CANCEL))
+									customNfcViewPresenter?.cancel()
+								}
+								.show()
+					}
 				}
 			} catch (e: Exception) { //do not handle
 				Log.e(TAG, "dialog builder: ", e)
@@ -489,26 +490,26 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	fun buildNfcErrorDialog(errorMessage: String?, retryable: Boolean) {
 		try {
 			if (activity != null) {
-				val dialogBuilder = MaterialAlertDialogBuilder(activity)
-				dialogBuilder.setTitle(R.string.netverify_nfc_general_error_dialog_title)
-				dialogBuilder.setMessage(errorMessage)
+				val dialogBuilder = activity?.applicationContext?.let { MaterialAlertDialogBuilder(it) }
+				dialogBuilder?.setTitle(R.string.netverify_nfc_general_error_dialog_title)
+				dialogBuilder?.setMessage(errorMessage)
 
 				if(retryable) { // retryable error
-					dialogBuilder.setPositiveButton(R.string.jumio_button_retry) { dialog, _ ->
+					dialogBuilder?.setPositiveButton(R.string.jumio_button_retry) { dialog, _ ->
 						dialog.dismiss()
 						customNfcViewPresenter?.retry()
 					}
-					dialogBuilder.setNegativeButton(R.string.jumio_button_cancel) { dialog, _ ->
+					dialogBuilder?.setNegativeButton(R.string.jumio_button_cancel) { dialog, _ ->
 						dialog.dismiss()
 						customNfcViewPresenter?.cancel()
 					}
 				} else { // not retryable error
-					dialogBuilder.setNeutralButton(R.string.jumio_button_cancel) { dialog, _ ->
+					dialogBuilder?.setNeutralButton(R.string.jumio_button_cancel) { dialog, _ ->
 						dialog.dismiss()
 						customNfcViewPresenter?.cancel()
 					}
 				}
-				dialogBuilder.show()
+				dialogBuilder?.show()
 			}
 		} catch (e: Exception) { //do not handle
 			Log.e(TAG, "dialog builder: ", e)
@@ -653,6 +654,18 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 
 		/**
 		 * Custom ScanView interface
+		 * Show loading indicator and display loading text, hide buttons
+		 */
+		override fun onNetverifyPrepareScanning() {
+			Log.i(TAG, "onNetverifyPrepareScanning")
+			showLoading()
+			hideView(true, customScanView!!, btnFallback, btnConfirm, btnRetake, btnCapture)
+			tvHelp?.visibility = View.VISIBLE
+			tvHelp?.text = getString(R.string.jumio_accessibility_loading)
+		}
+
+		/**
+		 * Custom ScanView interface
 		 * Shows confirmation if scan has been finished
 		 *
 		 * @param confirmationType the type of confirmation that should be displayed
@@ -717,7 +730,7 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 					setHelpText(customScanViewPresenter?.helpText)
 					(activity as AppCompatActivity?)!!.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 				}
-				NetverifyCancelReason.USER_BACK, NetverifyCancelReason.USER_CANCEL -> callback!!.onScanCancelled()
+				NetverifyCancelReason.USER_BACK, NetverifyCancelReason.USER_CANCEL, NetverifyCancelReason.NOT_AVAILABLE -> callback!!.onScanCancelled()
 			}
 		}
 

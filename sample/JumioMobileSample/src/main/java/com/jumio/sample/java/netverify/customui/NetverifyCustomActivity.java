@@ -183,13 +183,7 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 				bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
 			} else {
 				// sides refers to how many sides of the document need to be scanned (front, back or both), depending on what kind of document it is and what country issued it
-				sides = customSDKController.setDocumentConfiguration(selectedCountry, documentType, documentVariant);
-				selectedScanSide = 0;
-				//Start scanning for side
-				String progressString = getApplicationContext().getString(R.string.netverify_helpview_progress_text, selectedScanSide + 1, sides.size());
-				NetverifyCustomScanFragment scanFragment = NetverifyCustomScanFragment.newInstance(sides.get(selectedScanSide).toString(), documentType.getLocalizedName(this), progressString);
-
-				startFragment(scanFragment, NetverifyCustomScanFragment.class.getSimpleName(), true);
+				customSDKController.setDocumentConfiguration(selectedCountry, documentType, documentVariant);
 			}
 		} catch (SDKNotConfiguredException e) {
 			Log.e(TAG, "onDocumentTypeSelected: ", e);
@@ -567,8 +561,16 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 		 * Called as soon as all resources are loaded and scanning can be started
 		 */
 		@Override
-		public void onNetverifyResourcesLoaded() {
+		public void onNetverifyResourcesLoaded(List<ScanSide> scanSides) {
 			Log.i(TAG, "onNetverifyResourcesLoaded");
+
+			sides = scanSides;
+			selectedScanSide = 0;
+			//Start scanning for side
+			String progressString = getApplicationContext().getString(R.string.netverify_helpview_progress_text, selectedScanSide + 1, sides.size());
+			NetverifyCustomScanFragment scanFragment = NetverifyCustomScanFragment.newInstance(sides.get(selectedScanSide).toString(), selectedDocumentType!=null?selectedDocumentType.getLocalizedName(NetverifyCustomActivity.this):"", progressString);
+
+			startFragment(scanFragment, NetverifyCustomScanFragment.class.getSimpleName(), true);
 		}
 
 		/**

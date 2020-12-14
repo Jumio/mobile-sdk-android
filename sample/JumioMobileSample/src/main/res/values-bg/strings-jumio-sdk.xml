@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">Зареждане</string>
 	<string name="jumio_accessibility_quit_scan">Изход от сканирането</string>
 	<string name="jumio_button_cancel">Отмяна</string>
+	<string name="jumio_button_continue">Продължи</string>
 	<string name="jumio_button_retry">Повторен опит</string>
 	<string name="jumio_error_auth_failed">Удостоверяването не е успешно</string>
 	<string name="jumio_error_cancelled_by_user">Отменено от крайния потребител</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Докоснете, за да продължите</string>
 	<string name="face_helpview_landscape_description">Завъртете телефона си в портретен режим, за да направите селфи</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Завъртете устройството си&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Имате проблеми?</string>
+	<string name="face_helpview_upfront_title">Заснемете лицето си</string>
 	<string name="netverify_accessibility_nfc_description_start">Моля, проверете дали вашата лична карта има чип. Ако е така, поставете телефона си върху личната карта, както е показано.</string>
 	<string name="netverify_back">Задна страна</string>
 	<string name="netverify_countrylist_empty">В списъка няма данни</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Изберете вашата държава&lt;/u&gt;&lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">Изберете типа документ, който искате да сканирате</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Анализиране на биометричните данни&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">Продължи</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Скрийте номера на личната карта, преди да я заснемете</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Скрийте номера на личната карта и номера за достъп, преди да я заснемете</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Скрийте номера на паспорта, преди да го заснемете</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">ИЗПОЛЗВАЙТЕ ПРЕДНАТА СТРАНА</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Докоснете, за да продължите</string>
 	<string name="face_helpview_landscape_description">Завъртете телефона си в портретен режим, за да направите селфи</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Завъртете устройството си&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Имате проблеми?</string>
+	<string name="face_helpview_upfront_title">Заснемете лицето си</string>
 	<string name="zoom_accessibility_cancel_button">Изход от сканирането</string>
 	<string name="zoom_action_im_ready">ГОТОВ/А СЪМ.</string>
 	<string name="zoom_action_ok">OK</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">Дръжте устройството си на нивото на очите и гледайте право в него.</string>
 	<string name="zoom_helpview_bad_lightning">Избягвайте сенки и отражения върху лицето си</string>
 	<string name="zoom_helpview_general">Изпълнете процеса от две стъпки и разположете лицето си в рамката. Дръжте устройството си на нивото на очите и гледайте право в камерата. Лицето ви ще бъде заснето автоматично.</string>
-	<string name="zoom_helpview_upfront_title">Заснемете лицето си</string>
 	<string name="zoom_instructions_header_ready">Пригответе се за вашето видео селфи</string>
 	<string name="zoom_instructions_message_ready">Рамкирайте лицето си в малкия овал, след това в големия</string>
 	<string name="zoom_result_facemap_upload_message">Анализиране на биометрични данни</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">Без отбляс. или екстр. осветл.</string>
 	<string name="zoom_retry_subheader_message">Но първо, моля, погледнете снимката си и променете обстановката.</string>
 	<string name="zoom_retry_your_image_label">Вашето селфи</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">Завъртете телефона си в портретен режим, за да направите селфи</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Завъртете устройството си&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Имате проблеми?</string>
+	<string name="face_helpview_upfront_title">Заснемете лицето си</string>
+	<string name="iproov__prompt_liveness_align_face">Позиционирайте лицето си в рамката</string>
+	<string name="iproov__prompt_liveness_no_target">Позиционирайте лицето си в рамката</string>
+	<string name="iproov__prompt_liveness_scan_completed">Сканирането завърши</string>
+	<string name="iproov__prompt_too_close">Твърде близо сте</string>
+	<string name="iproov__prompt_too_far">Приближете се</string>
+	<string name="iproov_intro_flash">Позиционирайте лицето си в центъра на рамката, без да се движите по време на светкавицата.</string>
+	<string name="iproov_intro_la">Позиционирайте лицето си в центъра на рамката и последвайте инструкциите на екрана.</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -169,7 +183,6 @@
 	<string name="dv_helpview_header_voided_check">Невалиден чек</string>
 	<string name="dv_helpview_header_working_with_children_check">Проверка за работа с деца</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;Заснемане на %1$s&lt;/b&gt;</string>
-	<string name="dv_scanview_continue">Продължи</string>
 	<string name="dv_scanview_retake">Повторно</string>
 	<string name="dv_scanview_snackbar_check">Уверете се, че всички данни в документа ви са напълно видими, без отблясъци и не са замъглени.</string>
 	<string name="dv_scanview_title">Сканирай</string>

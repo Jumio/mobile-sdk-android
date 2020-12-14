@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">Φόρτωση</string>
 	<string name="jumio_accessibility_quit_scan">Τερματισμός σάρωσης</string>
 	<string name="jumio_button_cancel">Ακύρωση</string>
+	<string name="jumio_button_continue">Συνέχεια</string>
 	<string name="jumio_button_retry">Επανάληψη</string>
 	<string name="jumio_error_auth_failed">Ο έλεγχος ταυτότητας απέτυχε</string>
 	<string name="jumio_error_cancelled_by_user">Ακυρώθηκε από τον τελικό χρήστη</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Συνέχεια</string>
 	<string name="face_helpview_landscape_description">Περιστρέψτε το τηλέφωνό σας σε λειτουργία πορτραίτου για να τραβήξετε μια σέλφι</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Περιστρέψτε τη συσκευή σας&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Προβλήματά</string>
+	<string name="face_helpview_upfront_title">Σύλληψη προσώπου</string>
 	<string name="netverify_accessibility_nfc_description_start">Ελέγξτε αν η ταυτότητά σας έχει μικροτσίπ. Αν έχει, τοποθετήστε το τηλεφώνό σας στην ταυτότητα όπως φαίνεται στην εικόνα.</string>
 	<string name="netverify_back">Πίσω μέρος</string>
 	<string name="netverify_countrylist_empty">Δεν υπάρχουν δεδομένα στη λίστα</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Επιλέξτε τη χώρα σας&lt;/u&gt;&lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">Επιλέξτε τον τύπο του εγγράφου που θέλετε να σαρώσετε</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Ανάλυση βιομετρικών δεδομένων&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">Συνέχεια</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Αποκρύψτε τον αριθμό ταυτότητας πριν από τη λήψη</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Αποκρύψτε τον αριθμό ταυτότητας και πρόσβασης πριν από τη λήψη</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Αποκρύψτε τον αριθμό διαβατηρίου πριν από τη λήψη</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">ΧΡΗΣΗ ΜΠΡΟΣΤΙΝΟΥ ΜΕΡΟΥΣ</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Συνέχεια</string>
 	<string name="face_helpview_landscape_description">Περιστρέψτε το τηλέφωνό σας σε λειτουργία πορτραίτου για να τραβήξετε μια σέλφι</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Περιστρέψτε τη συσκευή σας&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Προβλήματά</string>
+	<string name="face_helpview_upfront_title">Σύλληψη προσώπου</string>
 	<string name="zoom_accessibility_cancel_button">Τερματισμός σάρωσης</string>
 	<string name="zoom_action_im_ready">ΕΊΜΑΙ ΈΤΟΙΜΟΣ/Η</string>
 	<string name="zoom_action_ok">ΕΝΤΆΞΕΙ</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">Κρατήστε τη συσκευή σας στο επίπεδο των ματιών και κοιτάξτε απευθείας σε αυτή</string>
 	<string name="zoom_helpview_bad_lightning">Αποφύγετε τις σκιές και τις αντανακλάσεις στο πρόσωπό σας</string>
 	<string name="zoom_helpview_general">Ακολουθήστε τη διαδικασία δύο βημάτων και κεντράρετε το πρόσωπό σας στο πλαίσιο. Κρατήστε τη συσκευή σας στο επίπεδο των ματιών και κοιτάξτε απευθείας στην κάμερα. Η λήψη του προσώπου σας θα γίνει αυτόματα</string>
-	<string name="zoom_helpview_upfront_title">Σύλληψη προσώπου</string>
 	<string name="zoom_instructions_header_ready">Ετοιμαστείτε για τη selfie βίντεο</string>
 	<string name="zoom_instructions_message_ready">Βάλτε το πρόσωπό σας στο μικρό οβάλ και μετά στο μεγάλο</string>
 	<string name="zoom_result_facemap_upload_message">Ανάλυση βιομετρικών δεδομένων</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">Χωρίς αντανακλ. ή έντονο φως</string>
 	<string name="zoom_retry_subheader_message">Αλλά πρώτα, δείτε τη φωτογραφία και διορθώστε το περιβάλλον γύρω σας.</string>
 	<string name="zoom_retry_your_image_label">Η selfie σας</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">Περιστρέψτε το τηλέφωνό σας σε λειτουργία πορτραίτου για να τραβήξετε μια σέλφι</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Περιστρέψτε τη συσκευή σας&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Προβλήματά</string>
+	<string name="face_helpview_upfront_title">Σύλληψη προσώπου</string>
+	<string name="iproov__prompt_liveness_align_face">Τοποθετήστε το πρόσωπό σας στο οβάλ πλαίσιο</string>
+	<string name="iproov__prompt_liveness_no_target">Τοποθετήστε το πρόσωπό σας στο πλαίσιο</string>
+	<string name="iproov__prompt_liveness_scan_completed">Η σάρωση ολοκληρώθηκε</string>
+	<string name="iproov__prompt_too_close">Πολύ κοντά</string>
+	<string name="iproov__prompt_too_far">Ελάτε πιο κοντά</string>
+	<string name="iproov_intro_flash">Κεντράρετε το πρόσωπό σας στο πλαίσιο και κρατήστε το σταθερό όσο η οθόνη αναβοσβήνει.</string>
+	<string name="iproov_intro_la">Κεντράρετε το πρόσωπό σας στο πλαίσιο και ακολουθήστε τις οδηγίες που εμφανίζονται στην οθόνη.</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -169,7 +183,6 @@
 	<string name="dv_helpview_header_voided_check">Ακυρωμένη επιταγή</string>
 	<string name="dv_helpview_header_working_with_children_check">Έλεγχος εργασίας με παιδιά</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;Λήψη %1$s&lt;/b&gt;</string>
-	<string name="dv_scanview_continue">Συνέχεια</string>
 	<string name="dv_scanview_retake">Επανάληψη</string>
 	<string name="dv_scanview_snackbar_check">Βεβαιωθείτε ότι όλα τα δεδομένα στο έγγραφό σας είναι ορατά, δεν έχουν αντανακλάσεις και δεν είναι θολά</string>
 	<string name="dv_scanview_title">Σάρωση</string>

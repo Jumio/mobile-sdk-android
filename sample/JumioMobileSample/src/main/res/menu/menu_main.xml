@@ -10,12 +10,6 @@
                 android:id="@+id/nav_netverify_custom"
                 android:title="@string/section_netverify_custom" />
             <item
-                android:id="@+id/nav_authentication"
-                android:title="@string/section_authentication" />
-            <item
-                android:id="@+id/nav_authentication_custom"
-                android:title="@string/section_authentication_custom" />
-            <item
                 android:id="@+id/nav_documentverification"
                 android:title="@string/section_documentverification" />
             <item

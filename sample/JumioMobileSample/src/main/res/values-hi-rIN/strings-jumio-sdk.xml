@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">लोड हो रहा है</string>
 	<string name="jumio_accessibility_quit_scan">स्कैन से बाहर निकलें</string>
 	<string name="jumio_button_cancel">रद्द करें</string>
+	<string name="jumio_button_continue">जारी रखें</string>
 	<string name="jumio_button_retry">पुन: प्रयास करें</string>
 	<string name="jumio_error_auth_failed">प्रमाणीकरण विफल हो गया</string>
 	<string name="jumio_error_cancelled_by_user">अंतिम उपयोगकर्ता द्वारा रद्द</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">जारी रखने के लिए टैप करें</string>
 	<string name="face_helpview_landscape_description">सेल्फी लेने के लिए कृपया अपने फोन को पोर्ट्रेट के लिए घुमाएं</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt; अपने डिवाइस को घुमाएं &lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">समस्याएँ आ रही हैं?</string>
+	<string name="face_helpview_upfront_title">अपना चेहरा कैप्चर करें</string>
 	<string name="netverify_accessibility_nfc_description_start">कृपया जांचें कि आपकी आईडी में चिप है या नहीं। यदि हां, तो अपने फोन को दृष्टान्त अनुसार आईडी पर रखें।</string>
 	<string name="netverify_back">पीछे</string>
 	<string name="netverify_countrylist_empty">सूची में कोई डेटा नहीं</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt; &lt;u&gt; अपने देश का चयन करें &lt;/u&gt; &lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">आप जिस दस्तावेज़ को स्कैन करना चाहते हैं, उसका प्रकार चयन करें</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt; बायोमेट्रिक डेटा का विश्लेषण किया जा रहा है &lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">जारी रखें</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">कृपया कैप्चर करने से पहले आईडी नंबर को संपादित करें</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">कृपया कैप्चर करने से पहले आईडी और एक्सेस नंबर को संपादित करें</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">कृपया कैप्चर करने से पहले पासपोर्ट नंबर को संपादित करें</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">आगे के हिस्से का उपयोग करें</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">जारी रखने के लिए टैप करें</string>
 	<string name="face_helpview_landscape_description">सेल्फी लेने के लिए कृपया अपने फोन को पोर्ट्रेट के लिए घुमाएं</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt; अपने डिवाइस को घुमाएं &lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">समस्याएँ आ रही हैं?</string>
+	<string name="face_helpview_upfront_title">अपना चेहरा कैप्चर करें</string>
 	<string name="zoom_accessibility_cancel_button">स्कैन से बाहर निकलें</string>
 	<string name="zoom_action_im_ready">मैं तैयार हूँ</string>
 	<string name="zoom_action_ok">ठीक है</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">अपने डिवाइस को आंखों के स्तर पर पकड़ें और सीधे इसमें देखें</string>
 	<string name="zoom_helpview_bad_lightning">आपके चेहरे को छाया और परावर्तन से बचाएं</string>
 	<string name="zoom_helpview_general">दो चरण की प्रक्रिया का पालन करें और फ्रेम के साथ अपने चेहरे को संरेखित करें। आंखके स्तर पर अपने डिवाइस पकडें  और सीधे कैमरे में देखें। आपका चेहरा स्वचालित रूप से कैप्चर हो जाएगा</string>
-	<string name="zoom_helpview_upfront_title">अपना चेहरा कैप्चर करें</string>
 	<string name="zoom_instructions_header_ready">वीडियो सेल्फी के लिए तैयार हो जाइए</string>
 	<string name="zoom_instructions_message_ready">अपना चेहरा छोटे अंडाकार, फिर बड़े अंडाकार में फ्रेम करे</string>
 	<string name="zoom_result_facemap_upload_message">बायोमेट्रिक डेटा का विश्लेषण किया जा रहा है</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">कोई चमक या अधिक प्रकाश नहीं</string>
 	<string name="zoom_retry_subheader_message">लेकिन पहले, कृपया अपने फ़ोटो पर एक नज़र डालें और अपने वातावरण को ठीक करें।</string>
 	<string name="zoom_retry_your_image_label">आपकी सेल्फी</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">सेल्फी लेने के लिए कृपया अपने फोन को पोर्ट्रेट के लिए घुमाएं</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt; अपने डिवाइस को घुमाएं &lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">समस्याएँ आ रही हैं?</string>
+	<string name="face_helpview_upfront_title">अपना चेहरा कैप्चर करें</string>
+	<string name="iproov__prompt_liveness_align_face">अपने चेहरे को अंडाकार आकृति में रखें</string>
+	<string name="iproov__prompt_liveness_no_target">अपने चेहरे को फ्रेम में रखें</string>
+	<string name="iproov__prompt_liveness_scan_completed">स्कैनिंग पूरी हुई</string>
+	<string name="iproov__prompt_too_close">बहुत पास</string>
+	<string name="iproov__prompt_too_far">थोड़ा और पास आएं</string>
+	<string name="iproov_intro_flash">अपने चेहरे को फ्रेम के अंदर केन्द्रित करें और स्क्रीन के फ्लैश होने पर अपने चेहरे को  स्थिर रखें।</string>
+	<string name="iproov_intro_la">अपने चेहरे को फ्रेम के केंद्र में रखें और स्क्रीन पर आने वाले निर्देशों का पालन करें।</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -169,7 +183,6 @@
 	<string name="dv_helpview_header_voided_check">अमान्य चेक</string>
 	<string name="dv_helpview_header_working_with_children_check">बच्चों पर निगरानी के साथ काम करना</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt; कैप्चर करें %1$s &lt;/b&gt;</string>
-	<string name="dv_scanview_continue">जारी रखें</string>
 	<string name="dv_scanview_retake">फिर से लें</string>
 	<string name="dv_scanview_snackbar_check">सुनिश्चित करें कि आपके दस्तावेज़ का सभी डेटा पूरी तरह से दिखाई दे रहा है, चमक से मुक्त और धुंधला नहीं है</string>
 	<string name="dv_scanview_title">दस्तावेज़ स्कैन करें</string>

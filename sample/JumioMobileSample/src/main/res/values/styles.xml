@@ -9,10 +9,7 @@
 		<item name="bam_scanOverlay">@color/jumio_white_alpha72</item>
 		<item name="bam_scanBackground">@color/jumio_black_alpha50</item>
 
-		<item name="zoom_close_button_top">16dp</item>
-		<item name="zoom_close_button_left">16dp</item>
-		<item name="zoom_close_button_width">12dp</item>
-		<item name="zoom_close_button_height">12dp</item>
+		<item name="materialButtonStyle">@style/CustomButtonStyleTextColor</item>
 	</style>
 
 	<style name="AppTheme.NetverifyCustom" parent="Theme.Netverify">
@@ -21,6 +18,7 @@
 		<item name="colorSecondary">@color/colorSecondary</item>
 
 		<item name="materialButtonStyle">@style/CustomButtonStyleTextColor</item>
+		<item name="materialButtonOutlinedStyle">@style/CustomButtonStyleTextColor</item>
 
 		<item name="netverify_scanOverlay">@color/jumio_white_alpha40</item>
 		<item name="netverify_scanOverlayFill">@color/jumio_white_alpha40</item>
@@ -35,11 +33,6 @@
 		<item name="netverify_helpImage">@color/jumio_primary</item>
 		<item name="netverify_helpBackground">@color/jumio_white</item>
 
-		<item name="zoom_close_button_top">16dp</item>
-		<item name="zoom_close_button_left">16dp</item>
-		<item name="zoom_close_button_width">12dp</item>
-		<item name="zoom_close_button_height">12dp</item>
-
 		<item name="netverify_nfc_passport_cover">@color/jumio_black</item>
 		<item name="netverify_nfc_passport_page_dark">@color/jumio_grey500</item>
 		<item name="netverify_nfc_passport_page_light">@color/jumio_grey300</item>
@@ -48,8 +41,9 @@
 
 	</style>
 
-	<style name="CustomButtonStyleTextColor" parent="Widget.MaterialComponents.Button">
+	<style name="CustomButtonStyleTextColor" parent="Netverify.Confirmation.MaterialButton">
 		<item name="android:textColor">@color/jumio_white</item>
+		<item name="backgroundTint">@color/jumio_color_states_button</item>
 	</style>
 
 	<style name="AppTheme.NoActionBar">

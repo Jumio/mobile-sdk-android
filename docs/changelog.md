@@ -7,12 +7,22 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## SDK Version: __3.8.0__
+![Changes](https://img.shields.io/badge/Change-blue) Added iProov as an additional liveness vendor to the [Jumio KYX platform](https://www.jumio.com/kyx/) [Identity Verification]
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Added better guidance for devices with cameras that use a fixed focal distance [ID Verification/Fastfill, Document Verification]
+
+![Fixes](https://img.shields.io/badge/Fix-success) Fixed crashes that could occur in edge cases [ID-Verification, Identity-Verification]
+
+
 ## SDK Version: __3.7.3__
 ![Improvement](https://img.shields.io/badge/Improvement-green) New error code is returned in case an ad blocker or a firewall is detected [ID Verification/Fastfill, Authentication, Document Verification]
 
 ![Improvement](https://img.shields.io/badge/Improvement-green) Added additional 3D Liveness customization options [ID Verification, Authentication]
 
 ![Fixes](https://img.shields.io/badge/Fix-success) Fixed stroke color customization on negative action button [ID Verification/Fastfill, Authentication, Document Verification]
+
+![Fixes](https://img.shields.io/badge/Fix-success) Fixed compatibility issues caused by Firebase Performance Plugin.
 
 ## SDK Version: __3.7.2__
 ![Fixes](https://img.shields.io/badge/Fix-success) Fixed a problem that face could not be captured anymore in certain cases [ID Verification Custom UI]

@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">Načítá se…</string>
 	<string name="jumio_accessibility_quit_scan">Ukončit skenování</string>
 	<string name="jumio_button_cancel">Zrušit</string>
+	<string name="jumio_button_continue">Pokračovat</string>
 	<string name="jumio_button_retry">Zkusit znovu</string>
 	<string name="jumio_error_auth_failed">Ověření selhalo.</string>
 	<string name="jumio_error_cancelled_by_user">Zrušeno koncovým uživatelem</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Pokračujte klepnutím</string>
 	<string name="face_helpview_landscape_description">Prosím, otočte telefon na výšku, abyste pořídili selfie.</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt; Natočte vaše zařízení &lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Potřebujete poradit?</string>
+	<string name="face_helpview_upfront_title">Vyfoť si obličej</string>
 	<string name="netverify_accessibility_nfc_description_start">Zkontrolujte prosím, zda má váš průkaz čip. Pokud ano, umístěte telefon na průkaz podle instrukcí v obrázku.</string>
 	<string name="netverify_back">Zadní</string>
 	<string name="netverify_countrylist_empty">V seznamu nejsou žádná data.</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt; &lt;u&gt; Vyberte svou zemi &lt;/u&gt; &lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">Vyberte typ dokumentu, který chcete skenovat.</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Analyzují se biometrické údaje…&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">Pokračovat</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Před zachycením prosím zakryjte nebo pozměňte identifikační číslo.</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Před zachycením prosím zakryjte nebo pozměňte ID a přístupové číslo.</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Před zachycením snímku prosím zakryjte nebo pozměňte číslo pasu.</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">POUŽÍT PŘEDNÍ STRANU</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Pokračujte klepnutím</string>
 	<string name="face_helpview_landscape_description">Prosím, otočte telefon na výšku, abyste pořídili selfie.</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt; Natočte vaše zařízení &lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Potřebujete poradit?</string>
+	<string name="face_helpview_upfront_title">Vyfoť si obličej</string>
 	<string name="zoom_accessibility_cancel_button">Ukončit skenování</string>
 	<string name="zoom_action_im_ready">MŮŽEME</string>
 	<string name="zoom_action_ok">OK</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">Držte zařízení na úrovni očí a dívejte se přímo do něj.</string>
 	<string name="zoom_helpview_bad_lightning">Vyvarujte se stínů a odrazů na tváři.</string>
 	<string name="zoom_helpview_general">Postupujte podle následujících instrukcí a zarovnejte obličej s rámečkem. Držte zařízení na úrovni očí a hleďte přímo do kamery. Vaše tvář bude zachycena automaticky.</string>
-	<string name="zoom_helpview_upfront_title">Vyfoť si obličej</string>
 	<string name="zoom_instructions_header_ready">Připravte se na své video selfie</string>
 	<string name="zoom_instructions_message_ready">Zarovnejte svou tvář s menším a potom větším oválem</string>
 	<string name="zoom_result_facemap_upload_message">Analyzují se biometrické údaje</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">Pozor na ostré a přímé světlo</string>
 	<string name="zoom_retry_subheader_message">Nejprve si ale prohlédněte svoji fotku a upravte prostředí</string>
 	<string name="zoom_retry_your_image_label">Vaše selfie</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">Prosím, otočte telefon na výšku, abyste pořídili selfie.</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt; Natočte vaše zařízení &lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Potřebujete poradit?</string>
+	<string name="face_helpview_upfront_title">Vyfoť si obličej</string>
+	<string name="iproov__prompt_liveness_align_face">Vyplňte oválný rámeček obličejem</string>
+	<string name="iproov__prompt_liveness_no_target">Umístěte obličej do rámečku</string>
+	<string name="iproov__prompt_liveness_scan_completed">Skenování dokončeno</string>
+	<string name="iproov__prompt_too_close">Příliš blízko</string>
+	<string name="iproov__prompt_too_far">Pojďte blíž</string>
+	<string name="iproov_intro_flash">Obličej nasměrujte do středu rámečku a držte v klidu, když obrazovka bliká.</string>
+	<string name="iproov_intro_la">Obličej nasměrujte do středu rámečku a postupujte dle pokynů na obrazovce.</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -169,7 +183,6 @@
 	<string name="dv_helpview_header_voided_check">Neplatná osvědčení</string>
 	<string name="dv_helpview_header_working_with_children_check">Osvědčení pro práci s dětmi</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt; Zachytit %1$s &lt;/b&gt;</string>
-	<string name="dv_scanview_continue">Pokračovat</string>
 	<string name="dv_scanview_retake">Opakovat</string>
 	<string name="dv_scanview_snackbar_check">Ujistěte se, že veškeré údaje na vašem dokumentu jsou viditelné a čitelné, bez odlesků, či rozmazané.</string>
 	<string name="dv_scanview_title">Oskenuj</string>

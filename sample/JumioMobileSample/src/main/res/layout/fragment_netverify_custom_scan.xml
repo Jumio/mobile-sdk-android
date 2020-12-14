@@ -1,5 +1,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:jumio="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/frameLayout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
@@ -51,7 +52,7 @@
 		android:layout_marginTop="8dp"
 		android:layout_marginBottom="8dp"
 		android:maxLines="1"
-		android:text="@string/netverify_scanview_continue"
+		android:text="@string/jumio_button_continue"
 		android:visibility="gone"
 		jumio:layout_constraintBottom_toBottomOf="parent"
 		jumio:layout_constraintEnd_toEndOf="parent"
@@ -171,7 +172,7 @@
 		jumio:layout_constraintEnd_toEndOf="parent"
 		jumio:layout_constraintStart_toStartOf="parent"
 		jumio:layout_constraintTop_toBottomOf="@+id/fragment_custom_scan_tv_guideline_bottom"
-		jumio:layout_constraintWidth_percent="0.4" />
+		jumio:layout_constraintWidth_percent="0.45" />
 
 	<com.google.android.material.button.MaterialButton
 		android:id="@+id/fragment_custom_scan_btn_retake"
@@ -184,19 +185,21 @@
 		jumio:layout_constraintBottom_toBottomOf="parent"
 		jumio:layout_constraintEnd_toStartOf="@+id/fragment_custom_scan_btn_confirm"
 		jumio:layout_constraintStart_toStartOf="parent"
-		jumio:layout_constraintTop_toBottomOf="@+id/fragment_custom_scan_tv_guideline_bottom" />
+		jumio:layout_constraintTop_toBottomOf="@+id/fragment_custom_scan_tv_guideline_bottom"
+		jumio:layout_constraintWidth_percent="0.45" />
 
 	<com.google.android.material.button.MaterialButton
 		android:id="@+id/fragment_custom_scan_btn_confirm"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:layout_margin="8dp"
-		android:text="@string/netverify_scanview_continue"
+		android:text="@string/jumio_button_continue"
 		android:visibility="gone"
 		jumio:layout_constraintBottom_toBottomOf="parent"
 		jumio:layout_constraintEnd_toEndOf="parent"
 		jumio:layout_constraintStart_toEndOf="@+id/fragment_custom_scan_btn_retake"
-		jumio:layout_constraintTop_toBottomOf="@+id/fragment_custom_scan_tv_guideline_bottom" />
+		jumio:layout_constraintTop_toBottomOf="@+id/fragment_custom_scan_tv_guideline_bottom"
+		jumio:layout_constraintWidth_percent="0.45" />
 
 	<ProgressBar
 		android:id="@+id/fragment_nv_custom_loading_indicator"

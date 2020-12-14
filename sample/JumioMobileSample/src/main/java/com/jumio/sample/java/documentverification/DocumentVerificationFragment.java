@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.MissingPermissionException;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
@@ -34,7 +35,7 @@ public class DocumentVerificationFragment extends Fragment implements View.OnCli
 
 	private DocumentVerificationSDK documentVerificationSDK;
 
-	private Switch switchEnableExtraction;
+	private SwitchMaterial switchEnableExtraction;
 
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,

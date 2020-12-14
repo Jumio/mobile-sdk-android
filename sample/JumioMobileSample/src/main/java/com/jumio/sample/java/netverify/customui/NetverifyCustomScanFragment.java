@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -168,12 +167,11 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 
 		customScanImpl = new NetverifyCustomScanImpl();
 		customScanViewPresenter = callback.onStartScanningWithSide(ScanSide.valueOf(scanSide), customScanView, customConfirmationView, customScanImpl);
-		setHelpText(customScanViewPresenter.getHelpText());
 
-		// show initial help animation for document scanning
 		if (customScanViewPresenter != null) {
 			setHelpText(customScanViewPresenter.getHelpText());
 
+			// show initial help animation for document scanning
 			if (ScanSide.valueOf(scanSide) == ScanSide.FRONT) {
 				btnDismissHelp = root.findViewById(R.id.fragment_custom_scan_btn_dismiss_help);
 				showDocumentHelpAnimation();
@@ -497,11 +495,7 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 	 * Called if scan is repeated
 	 */
 	private void onRetryScan() {
-		if(!customScanViewPresenter.isFallbackAvailable()) {
-			setFallbackVisibility(false);
-		} else {
-			setFallbackVisibility(true);
-		}
+		setFallbackVisibility(customScanViewPresenter.isFallbackAvailable());
 		isOnConfirmation = false;
 		if (flash != null) {
 			flash.setVisible(isFlashAvailable());
@@ -512,8 +506,6 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 		if(getActivity() != null) {
 			getActivity().invalidateOptionsMenu();
 		}
-		customScanViewPresenter.retryScan();
-		setHelpText(customScanViewPresenter.getHelpText());
 		if (btnRetryFace != null) {
 			hideView(false, customAnimationView, btnRetryFace, tvHelp);
 		}
@@ -530,6 +522,9 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 		if (tvDocumentType != null) {
 			tvDocumentType.setText(HtmlCompat.fromHtml(getContext().getString(R.string.netverify_helpview_small_title_capture, documentType, ""), HtmlCompat.FROM_HTML_MODE_LEGACY));
 		}
+
+		setHelpText(customScanViewPresenter.getHelpText());
+		customScanViewPresenter.retryScan();
 	}
 
 	/**
@@ -772,6 +767,21 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 				switchCamera.setVisible(false);
 			}
 			showLoading();
+		}
+
+		/**
+		 * Custom ScanView interface
+		 * Show loading indicator and display loading text, hide buttons
+		 */
+		@Override
+		public void onNetverifyPrepareScanning() {
+			Log.i(TAG, "onNetverifyPrepareScanning");
+			showLoading();
+			hideView(true, customScanView, btnFallback, btnConfirm, btnRetake, btnCapture);
+			if(tvHelp != null) {
+				tvHelp.setVisibility(View.VISIBLE);
+				tvHelp.setText(getString(R.string.jumio_accessibility_loading));
+			}
 		}
 
 		/**

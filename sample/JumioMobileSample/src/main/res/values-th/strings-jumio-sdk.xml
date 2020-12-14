@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">กำลังโหลด</string>
 	<string name="jumio_accessibility_quit_scan">ออกจากการสแกน</string>
 	<string name="jumio_button_cancel">ยกเลิก</string>
+	<string name="jumio_button_continue">ดำเนินการต่อ</string>
 	<string name="jumio_button_retry">ลองอีกครั้ง</string>
 	<string name="jumio_error_auth_failed">การรับรองความถูกต้องล้มเหลว</string>
 	<string name="jumio_error_cancelled_by_user">ยกเลิกโดยผู้ใช้ปลายทาง</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">แตะเพื่อดำเนินการต่อ</string>
 	<string name="face_helpview_landscape_description">โปรดหมุนโทรศัพท์เป็นแนวตั้งเพื่อถ่ายภาพตัวเอง</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;หมุนอุปกรณ์&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">ประสบปัญหาใช่หรือไม่</string>
+	<string name="face_helpview_upfront_title">จับภาพใบหน้าของคุณ</string>
 	<string name="netverify_accessibility_nfc_description_start">โปรดตรวจสอบว่าบัตรประชาชนของคุณมีชิปหรือไม่ วางโทรศัพท์บนบัตรประชาชนตามที่แสดง</string>
 	<string name="netverify_back">ด้านหลัง</string>
 	<string name="netverify_countrylist_empty">ไม่มีข้อมูลในรายการ</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;เลือกประเทศของคุณ&lt;/u&gt;&lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">เลือกประเภทเอกสารที่คุณต้องการสแกน</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;กำลังวิเคราะห์ข้อมูลชีวมิติ&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">ดำเนินการต่อ</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">โปรดตรวจสอบหมายเลขบัตรประชาชนก่อนจับภาพ</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">โปรดตรวจสอบเอกสารประจำตัวและหมายเลขเข้าถึงก่อนจับภาพ</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">โปรดตรวจสอบหมายเลขหนังสือเดินทางก่อนจับภาพ</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">ใช้ด้านหน้า</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">แตะเพื่อดำเนินการต่อ</string>
 	<string name="face_helpview_landscape_description">โปรดหมุนโทรศัพท์เป็นแนวตั้งเพื่อถ่ายภาพตัวเอง</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;หมุนอุปกรณ์&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">ประสบปัญหาใช่หรือไม่</string>
+	<string name="face_helpview_upfront_title">จับภาพใบหน้าของคุณ</string>
 	<string name="zoom_accessibility_cancel_button">ออกจากการสแกน</string>
 	<string name="zoom_action_im_ready">ฉันพร้อมแล้ว</string>
 	<string name="zoom_action_ok">ตกลง</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">ถืออุปกรณ์ที่ระดับสายตาและมองตรงไปที่กล้อง</string>
 	<string name="zoom_helpview_bad_lightning">หลีกเลี่ยงจุดที่ทำให้เกิดเงาและแสงสะท้อนบนใบหน้า</string>
 	<string name="zoom_helpview_general">ปฏิบัติตามกระบวนการสองขั้นตอน และวางใบหน้าให้เข้ากับกรอบ ถืออุปกรณ์ในระดับสายตาและมองตรงไปที่กล้อง ระบบจะจับภาพใบหน้าของคุณโดยอัตโนมัติ</string>
-	<string name="zoom_helpview_upfront_title">จับภาพใบหน้าของคุณ</string>
 	<string name="zoom_instructions_header_ready">เตรียมพร้อมถ่ายวิดีโอเซลฟี่ของคุณ</string>
 	<string name="zoom_instructions_message_ready">โปรดจัดใบหน้าให้อยู่ในกรอบวงรีเล็ก จากนั้นวงรีใหญ่</string>
 	<string name="zoom_result_facemap_upload_message">กำลังวิเคราะห์ข้อมูลชีวมิติ</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">ไม่มีแสงจ้าหรือแสงมากเกินไป</string>
 	<string name="zoom_retry_subheader_message">แต่ก่อนอื่น โปรดดูภาพถ่ายของคุณและแก้ไขสภาพแวดล้อม</string>
 	<string name="zoom_retry_your_image_label">เซลฟี่ของคุณ</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">โปรดหมุนโทรศัพท์เป็นแนวตั้งเพื่อถ่ายภาพตัวเอง</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;หมุนอุปกรณ์&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">ประสบปัญหาใช่หรือไม่</string>
+	<string name="face_helpview_upfront_title">จับภาพใบหน้าของคุณ</string>
+	<string name="iproov__prompt_liveness_align_face">วางใบหน้าอยู่ในกรอบวงรี</string>
+	<string name="iproov__prompt_liveness_no_target">วางให้ใบหน้าอยู่ในกรอบ</string>
+	<string name="iproov__prompt_liveness_scan_completed">การสแกนเสร็จสมบูรณ์</string>
+	<string name="iproov__prompt_too_close">ใกล้เกินไป</string>
+	<string name="iproov__prompt_too_far">เข้ามาใกล้</string>
+	<string name="iproov_intro_flash">วางใบหน้าให้อยู่กลางกรอบและถือให้นิ่งขณะที่หน้าจอกะพริบ</string>
+	<string name="iproov_intro_la">วางใบหน้าให้อยู่กลางกรอบและทำตามคำแนะนำบนหน้าจอ</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -169,7 +183,6 @@
 	<string name="dv_helpview_header_voided_check">เช็คที่เป็นโมฆะ</string>
 	<string name="dv_helpview_header_working_with_children_check">ใบตรวจสอบประวัติสำหรับการทำงานกับเด็ก</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;จับภาพ %1$s&lt;/b&gt;</string>
-	<string name="dv_scanview_continue">ดำเนินการต่อ</string>
 	<string name="dv_scanview_retake">ถ่ายใหม่</string>
 	<string name="dv_scanview_snackbar_check">ตรวจสอบให้แน่ใจว่าข้อมูลในเอกสารทั้งหมดสามารถมองเห็นได้ชัดเจน ไม่มีแสงสะท้อน และความพร่ามัว</string>
 	<string name="dv_scanview_title">สแกนเอกสาร</string>

@@ -1,9 +1,8 @@
 # Known Issues
 
 ## Table of Contents
-- [Removing Zoom Library (3.7.2)](#removing-zoom-library-(3.7.2))
+- [SDK Crashes Trying to Display Animations (Android Version 5 and Lower)](#sdk-crashes-trying-to-display-animations-(android-version-4-and-lower))
 - [Custom Theme Issues](#custom-theme-issues)
-  - [Updated Screens for Zoom Face Scanning (3.7.2)](#updated-screens-for-zoom-face-scanning-(3.7.2))
   - [Custom Theme Is Not Working](#custom-theme-is-not-working)
   - [Scan Overlay Is Not Displayed](#scan-overlay-is-not-displayed)
 - [Fallback and Manual Capturing](#fallback-and-manual-capturing)
@@ -13,32 +12,12 @@
   - [Intent Filter and Credentials](#intent-filter-and-credentials)
   - [Kotlin Integration](#kotlin-integration)
 
-## Removing Zoom Library (3.7.2)
- When removing the Zoom library, it is necessary to remove the face library too, as well as adding a dummy drawable `face_ic_clear` to prevent build issues. This will be fixed in the next version.
+## SDK Crashes Trying to Display Animations (Android Version 5 and Lower)
+Running the SDK on API Level 21/Android Version 5 ("Lollipop") or lower, the application might crash when trying to display Jumio animations. In this case it is necessary to add the line `AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)` to the `onCreate()` method of your application or `Activity`, ideally before `setContentView()` is called.
 
- __Please remove:__
-```
-implementation "com.facetec:zoom-authentication:8.12.1@aar"     // Zoom face scanning library  
-implementation "com.jumio.android:face:3.7.2@aar"               // Face library
-```
+__Note:__ Refer to [required for vector drawable compat handling](https://stackoverflow.com/a/37864531/1297835) for further information.
 
 ## Custom Theme Issues
-
-### Updated Screens for Zoom Face Scanning (3.7.2)
-As of __version 3.7.2__, the screens for face scanning have been updated. There are three new screens available: An __upfront help view__, the actual __Zoom scan view__ for face scanning like before, and an __error / help view__ in case of problems:
-
-![upfront help](images/images_zoom_update/upfront_help.png)  ![scan screen](images/images_zoom_update/scan_screen.png)  ![error default](images/images_zoom_update/error_help_default_blurred.jpg)
-
-The background color of the screens can be customized using the parameter `face_scanOverlayBackground`, pictured __black__ above. All foreground elements, text and the help screen overlay can be customized using `face_scanOverlayOval`, pictured __white__ above, and button backgrounds as well as progress text can be customized using `face_scanOverlayProgress`, pictured __green__ above.
-```
-<item name="face_scanOverlayBackground">@color/jumio_black</item> // background of all Zoom screens
-<item name="face_scanOverlayOval">@color/jumio_white</item> // all foreground elements, texts, overlay on help screen
-<item name="face_scanOverlayProgress">@color/jumio_primary</item> // button background on upfront help and as a secondary color to "face_scanOverlayOval", otherwise primary color is used by default
-```
-
-The parameters `face_scanOverlayFeedbackText`, as well as `face_scanOverlayFeedbackBackground` remain __unchanged.__ The same goes for all `face_helpXXXXX` attributes.
-
-As of 7.3.2, the attribute `face_helpProgressString` is deprecated and can be removed.
 
 ### Custom Theme Is Not Working     
 Any customized theme needs to be defined in a `styles.xml` file and has to inherit from the parent theme `Theme.Netverify`.

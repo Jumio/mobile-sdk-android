@@ -4,6 +4,11 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.8.0
+#### Dependency Changes
+* AndroidX Appcompat update: ~~`"androidx.appcompat:appcompat:1.1.0"`~~ is replaced by `"androidx.appcompat:appcompat:1.2.0"`
+* Google Material Library update: ~~`"com.google.android.material:material:1.1.0"`~~ is replaced by `"com.google.android.material:material:1.2.1"`
+
 ## 3.7.3
 No backward incompatible changes
 

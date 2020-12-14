@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">読み込み中</string>
 	<string name="jumio_accessibility_quit_scan">スキャンを終了</string>
 	<string name="jumio_button_cancel">キャンセル</string>
+	<string name="jumio_button_continue">続行</string>
 	<string name="jumio_button_retry">リトライ</string>
 	<string name="jumio_error_auth_failed">認証に失敗しました</string>
 	<string name="jumio_error_cancelled_by_user">エンドユーザーによりキャンセルされました</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">タップして続行</string>
 	<string name="face_helpview_landscape_description">自撮り写真を撮るには、スマートフォンを縦向きにしてください</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;デバイスを回転&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">問題が発生していますか？</string>
+	<string name="face_helpview_upfront_title">顔のキャプチャ</string>
 	<string name="netverify_accessibility_nfc_description_start">IDにチップがあるかどうかを確認してください。ある場合は、図のようにスマートフォンをIDに置いてください。</string>
 	<string name="netverify_back">裏面</string>
 	<string name="netverify_countrylist_empty">リストにデータがありません</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt; &lt;u&gt;国を選択してください&lt;/u&gt; &lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">スキャンするドキュメントのタイプを選択してください</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;生体認証データを分析しています&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">続行</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">キャプチャする前にID番号を編集してください</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">キャプチャする前にIDおよびアクセス番号を編集してください</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">キャプチャする前にパスポート番号を編集してください</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">表面を使用</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">タップして続行</string>
 	<string name="face_helpview_landscape_description">自撮り写真を撮るには、スマートフォンを縦向きにしてください</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;デバイスを回転&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">問題が発生していますか？</string>
+	<string name="face_helpview_upfront_title">顔のキャプチャ</string>
 	<string name="zoom_accessibility_cancel_button">スキャンを終了</string>
 	<string name="zoom_action_im_ready">準備できました</string>
 	<string name="zoom_action_ok">OK</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">デバイスを目の高さでしっかりと持ってまっすぐ見ます</string>
 	<string name="zoom_helpview_bad_lightning">顔の影や反射がないようにしてください</string>
 	<string name="zoom_helpview_general">2段階のプロセスに従って、顔をフレームに合わせてください。デバイスを目の高さでしっかりと持ってカメラをまっすぐ見てください。顔が自動的にキャプチャされます</string>
-	<string name="zoom_helpview_upfront_title">顔のキャプチャ</string>
 	<string name="zoom_instructions_header_ready">動画による自撮りの準備をしてください</string>
 	<string name="zoom_instructions_message_ready">小さな楕円形のフレームの中に顔を入れてから、大きな楕円形にしてください</string>
 	<string name="zoom_result_facemap_upload_message">生体認証データを分析しています</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">ぎらつきや極端な照明がない</string>
 	<string name="zoom_retry_subheader_message">ただし、まず写真を見て環境を修正してください。</string>
 	<string name="zoom_retry_your_image_label">あなたの自撮り</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">自撮り写真を撮るには、スマートフォンを縦向きにしてください</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;デバイスを回転&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">問題が発生していますか？</string>
+	<string name="face_helpview_upfront_title">顔のキャプチャ</string>
+	<string name="iproov__prompt_liveness_align_face">楕円形の中に自分の顔ができるだけ大きく入るようにします</string>
+	<string name="iproov__prompt_liveness_no_target">顔をフレームの中に入れます</string>
+	<string name="iproov__prompt_liveness_scan_completed">スキャンが完了しました</string>
+	<string name="iproov__prompt_too_close">近すぎます</string>
+	<string name="iproov__prompt_too_far">近くに移動します。</string>
+	<string name="iproov_intro_flash">画面が点滅している間、顔がフレームの中央になるようにして、じっとしておきます。</string>
+	<string name="iproov_intro_la">顔がフレームの中央になるようにして、画面の指示に従います。</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -169,7 +183,6 @@
 	<string name="dv_helpview_header_voided_check">無効小切手</string>
 	<string name="dv_helpview_header_working_with_children_check">無罪証明書</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;%1$sをキャプチャ&lt;/b&gt;</string>
-	<string name="dv_scanview_continue">続行</string>
 	<string name="dv_scanview_retake">撮り直す</string>
 	<string name="dv_scanview_snackbar_check">ドキュメントのすべてのデータが完全に表示され、ぎらつきがなくぼやけていないことを確認してください</string>
 	<string name="dv_scanview_title">スキャン</string>

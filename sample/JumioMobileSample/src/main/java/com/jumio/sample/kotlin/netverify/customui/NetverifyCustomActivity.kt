@@ -40,7 +40,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 	private var apiToken: String? = null
 	private var apiSecret: String? = null
 	private var datacenter: JumioDataCenter? = null
-	private var netverifySDK: NetverifySDK? = null
+	private lateinit var netverifySDK: NetverifySDK
 	private var backStack: ArrayList<Fragment>? = null
 	private var selectedCountry: NetverifyCountry? = null
 	private var countryMap: Map<String, NetverifyCountry>? = null
@@ -138,12 +138,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 				bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
 			} else {
 				// sides refers to how many sides of the document need to be scanned (front, back or both), depending on what kind of document it is and what country issued it
-				sides = customSDKController?.setDocumentConfiguration(selectedCountry, documentType, documentVariant)
-				selectedScanSide = 0
-				//Start scanning for side
-				val progressString = applicationContext.getString(R.string.netverify_helpview_progress_text, selectedScanSide + 1, sides?.size)
-				val scanFragment = NetverifyCustomScanFragment.newInstance(sides?.get(selectedScanSide).toString(), documentType?.getLocalizedName(this), progressString)
-				startFragment(scanFragment, NetverifyCustomScanFragment::class.java.simpleName, true)
+				customSDKController?.setDocumentConfiguration(selectedCountry, documentType, documentVariant)
 			}
 		} catch (e: SDKNotConfiguredException) {
 			Log.e(TAG, "onDocumentTypeSelected: ", e)
@@ -240,7 +235,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 				startFragment(docSelectionFragment, NetverifyCustomDocSelectionFragment::class.java.simpleName, false)
 				//Initialize usual NetverifySDK
 				initializeNetverifySDK()
-				if (netverifySDK != null) {
+				if (::netverifySDK.isInitialized) {
 					customSDKController = netverifySDK?.start(NetverifyCustomSDKImpl())
 				}
 			} catch (e: IllegalArgumentException) {
@@ -261,7 +256,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 	 */
 	private fun initializeNetverifySDK() {
 		try { // You can get the current SDK version using the method below.
-//			NetverifySDK.getSDKVersion();
+//			NetverifySDK.getSDKVersion()
 // Call the method isSupportedPlatform to check if the device is supported.
 			if (!NetverifySDK.isSupportedPlatform(this)) Log.w(TAG, "Device not supported")
 			// Applications implementing the SDK shall not run on rooted devices. Use either the below
@@ -275,51 +270,51 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 			netverifySDK = NetverifySDK.create(this, apiToken, apiSecret, datacenter)
 			// Use the following method to create an instance of the SDK, using offline fastfill scanning.
 //			try {
-//				netverifySDK = NetverifySDK.create(getActivity(), "YOUROFFLINETOKEN", "YOURPREFERREDCOUNTRY");
+//				netverifySDK = NetverifySDK.create(getActivity(), "YOUROFFLINETOKEN", "YOURPREFERREDCOUNTRY")
 //			} catch (SDKExpiredException e) {
-//				Toast.makeText(getActivity().getApplicationContext(), "The offline SDK is expired", Toast.LENGTH_LONG).show();
-// 				Log.e(TAG, "initializeNetverifySDK SDK expired: ", e);
+//				Toast.makeText(getActivity().getApplicationContext(), "The offline SDK is expired", Toast.LENGTH_LONG).show()
+// 				Log.e(TAG, "initializeNetverifySDK SDK expired: ", e)
 //			}
 // Enable ID verification to receive a verification status and verified data positions (see Callback chapter).
 // Note: Not possible for accounts configured as Fastfill only.
-			netverifySDK?.setEnableVerification(true)
+			netverifySDK.setEnableVerification(true)
 			// You can specify issuing country (ISO 3166-1 alpha-3 country code) and/or ID types and/or document variant to skip
 // their selection during the scanning process.
 // Use the following method to convert ISO 3166-1 alpha-2 into alpha-3 country code.
-//			String alpha3 = IsoCountryConverter.convertToAlpha3("AT");
-//			netverifySDK.setPreselectedCountry("AUT");
-//			netverifySDK.ArrayList<NVDocumentType> documentTypes = new ArrayList<>();
-//			documentTypes.add(NVDocumentType.PASSPORT);
-//			netverifySDK.setPreselectedDocumentTypes(documentTypes);
+//			String alpha3 = IsoCountryConverter.convertToAlpha3("AT")
+//			netverifySDK.setPreselectedCountry("AUT")
+//			netverifySDK.ArrayList<NVDocumentType> documentTypes = new ArrayList<>()
+//			documentTypes.add(NVDocumentType.PASSPORT)
+//			netverifySDK.setPreselectedDocumentTypes(documentTypes)
 //
-			netverifySDK?.setPreselectedDocumentVariant(NVDocumentVariant.PLASTIC)
+			netverifySDK.setPreselectedDocumentVariant(NVDocumentVariant.PLASTIC)
 			// The customer internal reference allows you to identify the scan (max. 100 characters).
 // Note: Must not contain sensitive data like PII (Personally Identifiable Information) or account login.
-//			netverifySDK.setCustomerInternalReference("YOURSCANREFERENCE");
+//			netverifySDK.setCustomerInternalReference("YOURSCANREFERENCE")
 // Use the following property to identify the scan in your reports (max. 100 characters).
-//			netverifySDK.setReportingCriteria("YOURREPORTINGCRITERIA");
+//			netverifySDK.setReportingCriteria("YOURREPORTINGCRITERIA")
 // You can also set a user reference (max. 100 characters).
 // Note: The user reference should not contain sensitive data like PII (Personally Identifiable Information) or account login.
-//			netverifySDK.setUserReference("USERREFERENCE");
+//			netverifySDK.setUserReference("USERREFERENCE")
 // Callback URL (max. 255 characters) for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
-//			netverifySDK.setCallbackUrl("YOURCALLBACKURL");
+//			netverifySDK.setCallbackUrl("YOURCALLBACKURL")
 // You can disable Identity Verification during the ID verification for a specific transaction.
-			netverifySDK?.setEnableIdentityVerification(true)
+			netverifySDK.setEnableIdentityVerification(true)
 			// Use the following method to disable eMRTD scanning.
-			netverifySDK?.setEnableEMRTD(true);
+			netverifySDK.setEnableEMRTD(true)
 // Use the following method to set the default camera position.
-//			netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
+//			netverifySDK.setCameraPosition(JumioCameraPosition.FRONT)
 // Use the following method to only support IDs where data can be extracted on mobile only.
-//			netverifySDK.setDataExtractionOnMobileOnly(true);
+//			netverifySDK.setDataExtractionOnMobileOnly(true)
 // Use the following method to explicitly send debug-info to Jumio. (default: false)
 // Only set this property to true if you are asked by our Jumio support personnel.
-//			netverifySDK.sendDebugInfoToJumio(true);
+//			netverifySDK.sendDebugInfoToJumio(true)
 // Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
-//			netverifySDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
+//			netverifySDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID)
 // Set watchlist screening on transaction level. Enable to override the default search, or disable watchlist screening for this transaction.
-//			netverifySDK.setWatchlistScreening(NVWatchlistScreening.ENABLED);
+//			netverifySDK.setWatchlistScreening(NVWatchlistScreening.ENABLED)
 // Search profile for watchlist screening.
-//			netverifySDK.setWatchlistSearchProfile("YOURPROFILENAME");
+//			netverifySDK.setWatchlistSearchProfile("YOURPROFILENAME")
 // Use the following method to initialize the SDK before displaying it
 //			netverifySDK.initiate(new NetverifyInitiateCallback() {
 //				@Override
@@ -328,11 +323,10 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 //				@Override
 //				public void onNetverifyInitiateError(String errorCode, String errorMessage, boolean retryPossible) {
 //				}
-//			});
+//			})
 		} catch (e: PlatformNotSupportedException) {
 			Log.e(TAG, "Error in initializeNetverifySDK: ", e)
 			showToastMessage(e.message)
-			netverifySDK = null
 		}
 	}
 
@@ -372,10 +366,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 	 * Destroys SDKController and NetverifySDK if they exist
 	 */
 	private fun cleanupSDK() {
-		if (netverifySDK != null) {
-			netverifySDK?.destroy()
-			netverifySDK = null
-		}
+		netverifySDK.destroy()
 	}
 
 	/**
@@ -433,7 +424,7 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 			val sortedList = ArrayList(documentData)
 			sortedList.sort()
 			val bundle = Bundle()
-			bundle.putStringArrayList(BUNDLE_DOCUMENT_TYPE_LIST, ArrayList(sortedList.map { it.toString()}.toList()))
+			bundle.putStringArrayList(BUNDLE_DOCUMENT_TYPE_LIST, ArrayList(sortedList.map { it.toString() }.toList()))
 			bottomSheetFragment.arguments = bundle
 			bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
 		}
@@ -467,8 +458,16 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 		/**
 		 * Called as soon as all resources are loaded and scanning can be started
 		 */
-		override fun onNetverifyResourcesLoaded() {
+		override fun onNetverifyResourcesLoaded(scanSides: List<ScanSide>) {
 			Log.i(TAG, "onNetverifyResourcesLoaded")
+
+			sides = scanSides
+			selectedScanSide = 0
+			//Start scanning for side
+			val progressString = applicationContext.getString(R.string.netverify_helpview_progress_text, selectedScanSide + 1, sides?.size)
+			val scanFragment = NetverifyCustomScanFragment.newInstance(sides?.get(selectedScanSide).toString(), selectedDocumentType?.getLocalizedName(this@NetverifyCustomActivity), progressString)
+
+			startFragment(scanFragment, NetverifyCustomScanFragment::class.java.simpleName, true)
 		}
 
 		/**

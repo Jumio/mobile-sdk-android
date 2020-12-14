@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">جار التحميل</string>
 	<string name="jumio_accessibility_quit_scan">إنهاء المسح</string>
 	<string name="jumio_button_cancel">إلغاء</string>
+	<string name="jumio_button_continue">متابعة</string>
 	<string name="jumio_button_retry">إعادة المحاولة</string>
 	<string name="jumio_error_auth_failed">فشلت المصادقة</string>
 	<string name="jumio_error_cancelled_by_user">تم إلغاؤه من قبل المستخدم النهائي</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">اضغط للمتابعة</string>
 	<string name="face_helpview_landscape_description">يُرجى تدوير هاتفك إلى الوضع الرأسي لالتقاط صورة ذاتية</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;قم بتدوير جهازك&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">هل تواجه مشكلات؟</string>
+	<string name="face_helpview_upfront_title">التقاط صورة لوجهك</string>
 	<string name="netverify_accessibility_nfc_description_start">يُرجى التحقق مما إذا كانت هويتك تحتوي على شريحة. إذا كان الأمر كذلك، فضع هاتفك على الهوية كما هو موضح.</string>
 	<string name="netverify_back">الظهر</string>
 	<string name="netverify_countrylist_empty">لا توجد بيانات في القائمة</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;حدد بلدك&lt;/u&gt;&lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">حدد نوع المستند الذي ترغب في مسحه ضوئيًا</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;تحليل البيانات البيومترية&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">متابعة</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">يُرجى تعديل رقم الهوية قبل الالتقاط</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">يُرجى تعديل الهوية ورقم الوصول قبل الالتقاط</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">يُرجى تعديل رقم جواز السفر قبل الالتقاط</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">استخدام الوجه</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">اضغط للمتابعة</string>
 	<string name="face_helpview_landscape_description">يُرجى تدوير هاتفك إلى الوضع الرأسي لالتقاط صورة ذاتية</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;قم بتدوير جهازك&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">هل تواجه مشكلات؟</string>
+	<string name="face_helpview_upfront_title">التقاط صورة لوجهك</string>
 	<string name="zoom_accessibility_cancel_button">إنهاء المسح</string>
 	<string name="zoom_action_im_ready">أنا مستعد</string>
 	<string name="zoom_action_ok">موافق</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">أمسك جهازك على مستوى العين وانظر إليه مباشرة</string>
 	<string name="zoom_helpview_bad_lightning">تجنب الظلال والانعكاسات على وجهك</string>
 	<string name="zoom_helpview_general">اتبع عملية من خطوتين وقم بمحاذاة وجهك مع الإطار. أمسك جهازك على مستوى العين وانظر مباشرةً إلى الكاميرا. سيتم التقاط وجهك تلقائيًا</string>
-	<string name="zoom_helpview_upfront_title">التقاط صورة لوجهك</string>
 	<string name="zoom_instructions_header_ready">استعد لصورتك الذاتية الفيديو</string>
 	<string name="zoom_instructions_message_ready">يُرجى تأطير وجهك في الشكل البيضاوي الصغير، ثم الكبير</string>
 	<string name="zoom_result_facemap_upload_message">تحليل البيانات البيومترية</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">بدون وهج أو إضاءة شديدة</string>
 	<string name="zoom_retry_subheader_message">ولكن أولاً، يُرجى إلقاء نظرة على صورتك وتصحيح بيئتك.</string>
 	<string name="zoom_retry_your_image_label">صورة ذاتية</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">يُرجى تدوير هاتفك إلى الوضع الرأسي لالتقاط صورة ذاتية</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;قم بتدوير جهازك&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">هل تواجه مشكلات؟</string>
+	<string name="face_helpview_upfront_title">التقاط صورة لوجهك</string>
+	<string name="iproov__prompt_liveness_align_face">ضع وجهك في الشكل البيضاوي</string>
+	<string name="iproov__prompt_liveness_no_target">ضع وجهك في الإطار</string>
+	<string name="iproov__prompt_liveness_scan_completed">اكتمل المسح</string>
+	<string name="iproov__prompt_too_close">قريب جدًا</string>
+	<string name="iproov__prompt_too_far">اقترب</string>
+	<string name="iproov_intro_flash">ضع وجهك في وسط الإطار وثبته جيدًا أثناء وميض الشاشة.</string>
+	<string name="iproov_intro_la">اجعل وجهك في وسط الإطار واتبع التعليمات التي تظهر على الشاشة.</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -169,7 +183,6 @@
 	<string name="dv_helpview_header_voided_check">التحقق الملغي</string>
 	<string name="dv_helpview_header_working_with_children_check">إﻓﺎدة اﻟﺗﺣﻘﱡق ﻟﻠﻌﻣل ﻣﻊ اﻷطﻔﺎل</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;التقاط %1$s&lt;/b&gt;</string>
-	<string name="dv_scanview_continue">متابعة</string>
 	<string name="dv_scanview_retake">إعادة الالتقاط</string>
 	<string name="dv_scanview_snackbar_check">تأكد من أن جميع البيانات الموجودة في المستند مرئية تمامًا وخالية من الوهج وواضحة</string>
 	<string name="dv_scanview_title">مسح المستند</string>

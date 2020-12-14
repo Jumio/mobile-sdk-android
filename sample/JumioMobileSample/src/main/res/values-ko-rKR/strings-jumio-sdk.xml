@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">불러오는 중</string>
 	<string name="jumio_accessibility_quit_scan">스캔 종료</string>
 	<string name="jumio_button_cancel">취소</string>
+	<string name="jumio_button_continue">계속</string>
 	<string name="jumio_button_retry">다시 시도</string>
 	<string name="jumio_error_auth_failed">인증 실패</string>
 	<string name="jumio_error_cancelled_by_user">최종 사용자가 취소</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">계속하려면 탭하세요</string>
 	<string name="face_helpview_landscape_description">셀카를 찍으려면 휴대폰을 세로로 회전하세요</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;기기 회전&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">문제가 있습니까?</string>
+	<string name="face_helpview_upfront_title">얼굴 촬영</string>
 	<string name="netverify_accessibility_nfc_description_start">신분증에 칩이 있는지 확인하세요. 칩이 있다면 휴대폰을 그림과 같이 신분증 위에 놓으세요.</string>
 	<string name="netverify_back">뒷면</string>
 	<string name="netverify_countrylist_empty">목록에 데이터 없음</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;국가 선택&lt;/u&gt;&lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">스캔하려는 문서 유형을 선택하세요</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;생체 데이터 분석&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">계속</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">촬영 전에 ID 번호를 수정하세요</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">촬영 전에 ID와 액세스 번호를 수정하세요</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">촬영 전에 여권 번호를 수정하세요</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">앞면 사용</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">계속하려면 탭하세요</string>
 	<string name="face_helpview_landscape_description">셀카를 찍으려면 휴대폰을 세로로 회전하세요</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;기기 회전&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">문제가 있습니까?</string>
+	<string name="face_helpview_upfront_title">얼굴 촬영</string>
 	<string name="zoom_accessibility_cancel_button">스캔 종료</string>
 	<string name="zoom_action_im_ready">준비 완료</string>
 	<string name="zoom_action_ok">OK</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">기기를 눈높이에서 들고 똑바로 보세요</string>
 	<string name="zoom_helpview_bad_lightning">얼굴에 그림자와 반사가 일어나지 않게 하세요</string>
 	<string name="zoom_helpview_general">2단계 과정을 따라 얼굴을 프레임에 맞춥니다. 기기를 눈높이에서 들고 카메라를 똑바로 봅니다. 얼굴이 자동으로 촬영됩니다.</string>
-	<string name="zoom_helpview_upfront_title">얼굴 촬영</string>
 	<string name="zoom_instructions_header_ready">동영상 셀카 준비</string>
 	<string name="zoom_instructions_message_ready">작은 타원 안에 얼굴을 맞춘 다음 큰 타원에 맞추세요</string>
 	<string name="zoom_result_facemap_upload_message">생체 데이터 분석</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">눈부시거나 심한 조명 없음</string>
 	<string name="zoom_retry_subheader_message">그전에 사진을 살펴보고 환경을 먼저 수정해주세요.</string>
 	<string name="zoom_retry_your_image_label">내 셀카</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">셀카를 찍으려면 휴대폰을 세로로 회전하세요</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;기기 회전&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">문제가 있습니까?</string>
+	<string name="face_helpview_upfront_title">얼굴 촬영</string>
+	<string name="iproov__prompt_liveness_align_face">타원에 얼굴을 맞춰주세요</string>
+	<string name="iproov__prompt_liveness_no_target">프레임에 얼굴을 놓아주세요</string>
+	<string name="iproov__prompt_liveness_scan_completed">스캔 완료</string>
+	<string name="iproov__prompt_too_close">너무 가까움</string>
+	<string name="iproov__prompt_too_far">가까이 와주세요</string>
+	<string name="iproov_intro_flash">프레임 중앙에 얼굴을 놓고 화면이 깜박이는 동안 흔들리지 않게 그대로 유지하세요.</string>
+	<string name="iproov_intro_la">프레임 중앙에 얼굴을 놓고 화면에 뜨는 설명을 따라 해주세요.</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -169,7 +183,6 @@
 	<string name="dv_helpview_header_voided_check">실효된 수표</string>
 	<string name="dv_helpview_header_working_with_children_check">Working with children check</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;%1$s 촬영&lt;/b&gt;</string>
-	<string name="dv_scanview_continue">계속</string>
 	<string name="dv_scanview_retake">다시 찍기</string>
 	<string name="dv_scanview_snackbar_check">문서의 모든 데이터가 완전히 표시되며 눈부심이 없고 흐릿하지 않아야 합니다.</string>
 	<string name="dv_scanview_title">문서 스캔</string>

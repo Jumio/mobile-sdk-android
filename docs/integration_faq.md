@@ -13,7 +13,7 @@
 - [Jumio Authentication Workflow Integration](#jumio-authentication-workflow-integration)
 - [Language Localization](#language-localization)
     - [String Updates](#string-updates)
-- [ZoOm Customization](#zoom-customization)
+- [Overview of Scanning Methods](overview-of-scanning-methods)
 - [Glossary of Commonly Used Abbreviations](#glossary)
 - [Jumio Support](#jumio-support)
 
@@ -64,14 +64,16 @@ The following table shows a range of different product configurations with the s
 
 |Product Configuration      | Size   | Modules   |
 |:--------------------------|:------:|:----------|
-|ID Verification + Authentication                            | 12.7 MB    | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, auth, face, zoom-authentication |
-|ID Verification w/o NFC                                     | 11.7 MB    | core, nv, nv-mrz, nv-ocr, nv-barcode, face, zoom-authentication |
-|ID Verification w/o 3D liveness                             | 7.0 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode |
-|ID Verification w/o 3D liveness, Barcode                    | 5.9 MB   | core, nv, nv-mrz, nv-ocr |
-|ID Verification w/o 3D liveness, Barcode, OCR               | 5.3 MB   | core, nv, nv-mrz |
-|ID Verification minimum                                     | 2.3 MB   | core, nv |
-|BAM Checkout                                          | 4.7 MB   | core, bam |
-|Document verification                                 | 2.0 MB   | core, dv  |
+|ID + Authentication (Zoom)                  | 12.73 MB | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, auth, zoom, zoom-authentication |
+|ID + Liveness (Zoom)                        | 11.71 MB | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, zoom, zoom-authentication |
+|ID + Liveness (Iproov)                      | 7.37 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, iproov |
+|ID + Liveness (Iproov) w/o NFC              | 5.86 MB  | core, nv, nv-mrz, nv-ocr, nv-barcode, iproov |
+|ID w/o Liveness                             | 7.01 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode |
+|ID w/o Liveness, Barcode                    | 5.92 MB  | core, nv, nv-mrz, nv-ocr |
+|ID w/o Liveness, Barcode, OCR               | 5.39 MB  | core, nv, nv-mrz |
+|ID minimum                                  | 2.23 MB  | core, nv |
+|BAM Checkout                                | 4.74 MB  | core, bam |
+|Document verification                       | 2.02 MB  | core, dv  |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -114,10 +116,10 @@ In case of a __successful result__ you can grant the user access to your service
 * An imposter is trying to spoof the liveness check
 * User does not want to show their face at all, but is still trying to complete the onboarding
 * User does not look straight into the camera
-* User does not finish the first or second step of Zoom
+* User does not finish the first or second step of face scan
 * User has bad lighting conditions (too dark, too bright, reflections on face, not enough contrast, …)
 * User is covering (parts) of their face with a scarf, hat or something similar
-* A different person is using Zoom in the second step than in the first one
+* A different person is scanning their face in the second step than in the first one
 * User is not able to align his face with the oval presented during scanning
 
 In case an Authentication fail is returned, we recommend to allow the user between 3-5 Authentication attempts to prove their identity, before you lock the user from performing the action. This approach makes the most sense, as you don't want to lock out possible valid users who might not have completed the face capture task successfully for a legitimate reason. Don't worry about offering a potential fraudster more attempts to gain access to your system - our bullet proof liveness check does not allow them to get a successful result.
@@ -138,7 +140,7 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 ### String Updates
 For an overview of all updates and changes of SDK string keys please refer to [the revision history](https://github.com/Jumio/mobile-sdk-android/blame/master/sample/JumioMobileSample/src/main/res/values/strings.xml) on Github.
 
-### Overview of Scanning Methods
+## Overview of Scanning Methods
 
 #### Linefinder:
 Uses edge detection, fallback option in default UI.
@@ -169,89 +171,6 @@ Used for extraction from eMRTD documents, for example passports.
 Used for automatic scanning of some driver licenses.
 
 ![OCR Empty](images/capturing_methods/ocr_template_scanning_01.png)  ![OCR Document](images/capturing_methods/ocr_template_scanning_02.png)
-
-## ZoOm Customization
-Starting with 3.8.0 we added a more granular customization for all the ZoOm screens in the SDK. It is possible to create a customization for normal light condition and for low light ones. The customization can also easily be done with our [Surface tool](https://jumio.github.io/surface-android/).
-
-__Please notice__: If you decide to not use ZoOm and you do not link the face dependency, then you also need to remove the customizations. Otherwise build erros will occur due to missing attribute definitions.
-
-### Overwrite Default Styles
-The custom styles need to be generated with the default styles as parent
-```
-<style name="CustomZoom" parent="Zoom.Customization">
-    ...
-</style>
-<style name="CustomZoomLowLight" parent="Zoom.Customization.Lowlight">
-    ...
-</style>
-```
-
-### Set the Customized Attributes
-Both of these styles can include the same set of attributes
-```
-    <item name="zoom_frameBackground">@color/jumio_black</item>
-    <item name="zoom_overlayBackground">@color/jumio_black</item>
-
-    <item name="zoom_scanOverlayFeedbackText">@color/jumio_white</item>
-    <item name="zoom_scanOverlayFeedbackBackground">@color/jumio_primary</item>
-    <item name="zoom_scanOverlayProgress">@color/jumio_primary</item>
-    <item name="zoom_scanOverlayOval">@color/jumio_white</item>
-
-    <item name="zoom_resultBackground">@color/jumio_black</item>
-    <item name="zoom_resultForeground">@color/jumio_primary</item>
-    <item name="zoom_resultActivityIndicator">@color/jumio_primary</item>
-    <item name="zoom_resultAnimationBackground">@color/jumio_white</item>
-    <item name="zoom_resultAnimationForeground">@color/jumio_primary</item>
-    <item name="zoom_uploadProgressTrack">@color/jumio_primary</item>
-    <item name="zoom_uploadProgressFill">@color/jumio_white</item>
-
-    <item name="zoom_guidanceBackground">@color/jumio_black</item>
-    <item name="zoom_guidanceForeground">@color/jumio_white</item>
-    <item name="zoom_guidanceButtonTextNormal">@color/jumio_white</item>
-    <item name="zoom_guidanceButtonTextHighlight">@color/jumio_white</item>
-    <item name="zoom_guidanceButtonTextDisabled">@color/jumio_white</item>
-    <item name="zoom_guidanceButtonBackgroundNormal">@color/jumio_primary</item>
-    <item name="zoom_guidanceButtonBackgroundHighlight">@color/jumio_primary_light</item>
-    <item name="zoom_guidanceButtonBackgroundDisabled">@color/jumio_grey500</item>
-    <item name="zoom_guidanceButtonBorder">@android:color/transparent</item>
-    <item name="zoom_guidanceReadyScreenOvalFill">@android:color/transparent</item>
-    <item name="zoom_guidanceRetryScreenOvalStroke">@color/jumio_white</item>
-    <item name="zoom_guidanceReadyScreenTextBackground">@color/jumio_black</item>
-    <item name="zoom_guidanceRetryScreenImageBorder">@color/jumio_primary</item>
-
-    <item name="zoom_close_button_resource">@drawable/zoom_close_white</item>
-```
-The SDK comes with two close button resources - zoom_close_white and zoom_close_black - please decide based on the zoom_overlayBackground color which one makes more sense. The low light style will ignore the values in zoom_frameBackground and zoom_overlayBackground and will always use white instead.
-
-### Reference the New Styles
-After that, the new styles can be referenced from the Netverify or Authentication style
-```
-<style name="CustomNetverifyTheme" parent="Theme.Netverify">
-    ...
-    <item name="zoom_customization">@style/CustomZoom</item>
-    <item name="zoom_customization_lowlight">@style/CustomZoomLowLight</item>
-    ...
-</style>
-<style name="CustomAuthenticationTheme" parent="Theme.Authentication">
-    ...
-    <item name="zoom_customization">@style/CustomZoom</item>
-    <item name="zoom_customization_lowlight">@style/CustomZoomLowLight</item>
-    ...
-</style>
-```
-
-### Custom UI
-If you integrate custom ui you can also adjust the position of the close button in your style
-```
-<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-    ...
-    <item name="zoom_close_button_top">16dp</item>
-    <item name="zoom_close_button_left">16dp</item>
-    <item name="zoom_close_button_width">12dp</item>
-    <item name="zoom_close_button_height">12dp</item>
-    ...
-</style>
-```
 
 ## Glossary
 A [quick guide to commonly used abbreviations](integration_glossary.md) throughout the documentation which may not be all that familiar.

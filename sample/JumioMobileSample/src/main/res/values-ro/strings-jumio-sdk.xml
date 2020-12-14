@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">Se încarcă</string>
 	<string name="jumio_accessibility_quit_scan">Renunțați la scanare</string>
 	<string name="jumio_button_cancel">Anulare</string>
+	<string name="jumio_button_continue">Continuare</string>
 	<string name="jumio_button_retry">Reîncercare</string>
 	<string name="jumio_error_auth_failed">Autentificarea a eșuat</string>
 	<string name="jumio_error_cancelled_by_user">Anulat de utilizatorul final</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Continuare</string>
 	<string name="face_helpview_landscape_description">Vă rugăm să rotiți telefonul pe modul portret pentru a face o poză a feței</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Rotiți dispozitivul&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Aveți probleme?</string>
+	<string name="face_helpview_upfront_title">Capturați-vă fața</string>
 	<string name="netverify_accessibility_nfc_description_start">Vă rugăm să verificați dacă actul dumneavoastră de identitare are cip. Dacă da, amplasați telefonul pe ID așa cum este ilustrat.</string>
 	<string name="netverify_back">Spate</string>
 	<string name="netverify_countrylist_empty">Nu există informații în listă</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Selectați țara dumneavoastră&lt;/u&gt;&lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">Selectați tipul de document pe care doriți să îl scanați</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Sunt analizate datele biometrice&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">Continuare</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Vă rugăm revizuiți numărul cărții de identificare înainte de a face fotografia</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Vă rugăm revizuiți cartea de identificare și numărul de acces înainte de a face fotografia</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Vă rugăm revizuiți numărul pașaportului înainte de a face fotografia</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">UTILIZARE CAMERA FRONTALĂ</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Continuare</string>
 	<string name="face_helpview_landscape_description">Vă rugăm să rotiți telefonul pe modul portret pentru a face o poză a feței</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Rotiți dispozitivul&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Aveți probleme?</string>
+	<string name="face_helpview_upfront_title">Capturați-vă fața</string>
 	<string name="zoom_accessibility_cancel_button">Renunțați la scanare</string>
 	<string name="zoom_action_im_ready">SUNT PREGĂTIT</string>
 	<string name="zoom_action_ok">OK</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">Țineți dispozitivul la nivelul ochilor și priviți direct spre acesta</string>
 	<string name="zoom_helpview_bad_lightning">Evitați umbrele și reflexiile pe față</string>
 	<string name="zoom_helpview_general">Urmați procesul de două etape și așezați fața în centrul cadrului. Țineți dispozitivul la nivelul ochilor și priviți direct în cameră. Fața va fi captată automat</string>
-	<string name="zoom_helpview_upfront_title">Capturați-vă fața</string>
 	<string name="zoom_instructions_header_ready">Pregătiți-vă pentru selfie-ul video</string>
 	<string name="zoom_instructions_message_ready">Încadrați-vă fața în ovalul mic, apoi în cel mare</string>
 	<string name="zoom_result_facemap_upload_message">Sunt analizate datele biometrice</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">Fără lum. directă sau extremă</string>
 	<string name="zoom_retry_subheader_message">Dar mai întâi, priviți fotografia dumneavoastră și corectați mediul.</string>
 	<string name="zoom_retry_your_image_label">Self. dvs.</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">Vă rugăm să rotiți telefonul pe modul portret pentru a face o poză a feței</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Rotiți dispozitivul&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Aveți probleme?</string>
+	<string name="face_helpview_upfront_title">Capturați-vă fața</string>
+	<string name="iproov__prompt_liveness_align_face">Încadrați-vă fața în oval</string>
+	<string name="iproov__prompt_liveness_no_target">Încadrați-vă fața</string>
+	<string name="iproov__prompt_liveness_scan_completed">Scanare finalizată</string>
+	<string name="iproov__prompt_too_close">Prea aproape</string>
+	<string name="iproov__prompt_too_far">Apropiați-vă</string>
+	<string name="iproov_intro_flash">Încadrați-vă fața și rămâneți pe loc, în timp ce ecranul face o fotografie cu bliț.</string>
+	<string name="iproov_intro_la">Centrați-vă fața și urmăriți instrucțiunile de pe ecran.</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -170,7 +184,6 @@
 	<string name="dv_helpview_header_voided_check">Cec anulat</string>
 	<string name="dv_helpview_header_working_with_children_check">Cazier pentru persoane care lucrează cu copii</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;Capturează %1$s&lt;/b&gt;</string>
-	<string name="dv_scanview_continue">Continuare</string>
 	<string name="dv_scanview_retake">Relua</string>
 	<string name="dv_scanview_snackbar_check">Asigurați-vă că toate informațiile din document sunt clar vizibile, fără pete de lumină și nu sunt estompate</string>
 	<string name="dv_scanview_title">Scanare</string>

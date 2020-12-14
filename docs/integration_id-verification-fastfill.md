@@ -16,7 +16,7 @@ Jumio’s ID Verification allows businesses to establish the genuine identity of
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release Notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.3
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.8.0
 
 For breaking technical changes, please read our [transition guide](transition-guide_id-verification-fastfill.md)
 
@@ -24,47 +24,48 @@ For breaking technical changes, please read our [transition guide](transition-gu
 The [basic setup](../README.md#basics) is required before continuing with the following setup for ID Verification.
 
 ## Dependencies
-Below there is a list of dependices the application will need to work in Android. Some modules are mandatory, others are optinal. If an optional module is __not linked__, some functionalities such as certain methods may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size with the products ID Verification, BAM, Document Verification and Authentication included is currently around __17 MB__.
+Below there is a list of dependencies the application will need to work in Android. Some modules are mandatory, others are optional. If an optional module is __not linked__, some functionalities such as certain methods may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size with the products ID Verification, BAM, Document Verification and Authentication included is currently around __17 MB__.
 
 ```
 dependencies {
     // mandatory
-    implementation "com.jumio.android:core:3.7.3@aar"   // Jumio Core library
-    implementation "com.jumio.android:nv:3.7.3@aar"     // Netverify library
+    implementation "com.jumio.android:core:3.8.0@aar"   // Jumio Core library
+    implementation "com.jumio.android:nv:3.8.0@aar"     // Netverify library
 
-    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation "androidx.appcompat:appcompat:1.2.0"
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "androidx.room:room-runtime:2.2.5"
-    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+    implementation "androidx.constraintlayout:constraintlayout:2.0.4"
     implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
+    implementation "androidx.core:core-ktx:1.3.1"
 
-    implementation "com.google.android.material:material:1.1.0"
+    implementation "com.google.android.material:material:1.2.1"
 
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-core:1.0.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0"
 
     // not mandatory
-    implementation "com.jumio.android:face:3.7.3@aar"       				// Face library    
+    implementation "com.jumio.android:iproov:3.8.0@aar"						// Face library
+    implementation "com.jumio.android:zoom:3.8.0@aar"						// Face library alternative    
 
-    implementation "com.jumio.android:nv-barcode:3.7.3@aar"     		// barcode scanning
-    implementation "com.jumio.android:nv-barcode-vision:3.7.3@aar"  // barcode scanning alternative (reduced size)
-    implementation "com.jumio.android:nv-mrz:3.7.3@aar"     				// MRZ scanning
-    implementation "com.jumio.android:nv-nfc:3.7.3@aar"    		 			// eMRTD scanning
-    implementation "com.jumio.android:dv:3.7.3@aar"         				// Document verification library
-    implementation "com.jumio.android:nv-ocr:3.7.3@aar"     				// Template matcher
-    implementation "com.jumio.android:auth:3.7.3@aar"       				// Authentication library
-    implementation "com.jumio.android:bam:3.7.3@aar"        				// BAM checkout library
+    implementation "com.jumio.android:nv-barcode:3.8.0@aar"					// barcode scanning
+    implementation "com.jumio.android:nv-barcode-vision:3.8.0@aar"			// barcode scanning alternative (reduced size)
+    implementation "com.jumio.android:nv-mrz:3.8.0@aar"						// MRZ scanning
+    implementation "com.jumio.android:nv-nfc:3.8.0@aar"			 			// eMRTD scanning
+    implementation "com.jumio.android:dv:3.8.0@aar"							// Document verification library
+    implementation "com.jumio.android:nv-ocr:3.8.0@aar"						// Template matcher
+    implementation "com.jumio.android:auth:3.8.0@aar"						// Authentication library
+    implementation "com.jumio.android:bam:3.8.0@aar"						// BAM checkout library
 
-    implementation "com.jumio.android:javadoc:3.7.3"
-    implementation "com.google.android.gms:play-services-vision:19.0.0"     // barcode scanning alternative
+    implementation "com.google.android.gms:play-services-vision:20.1.2"		// barcode scanning alternative
 
-    implementation "com.facetec:zoom-authentication:8.12.1@aar" 		// Zoom face scanning library
-
-    implementation "org.jmrtd:jmrtd:0.7.19"                 				// eMRTD Scanning
-    implementation "org.ejbca.cvc:cert-cvc:1.4.6"           				// eMRTD Scanning
-    implementation "org.bouncycastle:bcprov-jdk15on:1.65"   				// eMRTD Scanning
-    implementation "net.sf.scuba:scuba-sc-android:0.0.18"   				// eMRTD Scanning
+    implementation "org.jmrtd:jmrtd:0.7.19"									// eMRTD Scanning
+    implementation "org.ejbca.cvc:cert-cvc:1.4.6"							// eMRTD Scanning
+    implementation "org.bouncycastle:bcprov-jdk15on:1.65"					// eMRTD Scanning
+    implementation "net.sf.scuba:scuba-sc-android:0.0.18"					// eMRTD Scanning
 }
 ```
-__Note:__ "Mandatory" libraries in this case are needed for a minimal runable SDK implementation. All libraries marked "not mandatory" are optional in the sense that they improve the scanning experience and supported documents, including additional ID type options that can be left out if they are not needed. Version numbers may vary.
+__Note:__ "Mandatory" libraries in this case are needed for a minimal runnable SDK implementation. All libraries marked "not mandatory" are optional in the sense that they improve the scanning experience and supported documents, including additional ID type options that can be left out if they are not needed. Version numbers may vary.
 
 #### Barcode Alternative
 As an alternative to the `com.jumio.android:nv-barcode` dependency, you can substitute the  `com.jumio.android:nv-barcode-vision` library together with the `com.google.android.gms:play-services-vision` library. If this combination is used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues:
@@ -102,7 +103,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use ID Verification or Fastfill together with BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:3.7.3@aar"
+implementation "com.jumio.android:bam:3.8.0@aar"
 ```
 
 #### Root Detection
@@ -394,11 +395,11 @@ The following tables give information on the specification of all document data 
 |line1|	String|	50|	MRZ line 1	|
 |line2|	String| 50|	MRZ line 2	|
 |line3|	String|	50|	MRZ line 3	|
-|idNumberValid|	boolean| |	True if ID number check digit is valid, otherwise false	|
-|dobValid	|boolean | |True if date of birth check digit is valid, otherwise false	|
-|expiryDateValid|	boolean| |		True if date of expiry check digit is valid or not available, otherwise false|
-|personalNumberValid	|boolean| |		True if personal number check digit is valid or not available, otherwise false|
-|compositeValid|	boolean| |		True if composite check digit is valid, otherwise false	|
+|idNumberValid|	boolean | | True if ID number check digit is valid, otherwise false	|
+|dobValid| boolean | | True if date of birth check digit is valid, otherwise false	|
+|expiryDateValid|	boolean| | True if date of expiry check digit is valid or not available, otherwise false |
+|personalNumberValid	| boolean | |	True if personal number check digit is valid or not available, otherwise false |
+|compositeValid| boolean | | True if composite check digit is valid, otherwise false	|
 
 #### Error Codes
 List of all **_error codes_** that are available via the `code` property of the `NetverifyError` object. The first letter (A-J) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]).
@@ -409,11 +410,12 @@ List of all **_error codes_** that are available via the `code` property of the 
 |B[x][yyyy]| Authentication failed | Secure connection could not be established, retry impossible |
 |C[x]0401| Authentication failed | API credentials invalid, retry impossible |
 |E[x]0000| No Internet connection available | Retry possible, user decided to cancel |
-|F00000| Scanning not available this time, please contact the app vendor | Resources cannot be loaded, retry impossible |
+|F00000| Scanning not available at this time, please contact the app vendor | Resources cannot be loaded, retry impossible |
 |G00000| Cancelled by end-user | No error occurred |
 |H00000| The camera is currently not available | Camera cannot be initialized, retry impossible |
 |I00000| Certificate not valid anymore. Please update your application | End-to-end encryption key not valid anymore, retry impossible |
-|J00000| Transaction already finished | User did not complete SDK journey within session lifetime|
+|J00000| Transaction already finished | User did not complete SDK journey within session lifetime |
+|N00000| Scanning not available at this time, please contact the app vendor | Required images are missing to finalize the acquisition |
 
 __Note:__ Please always include the whole code when filing an error related issue to our support team.
 

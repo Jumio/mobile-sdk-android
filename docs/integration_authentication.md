@@ -15,7 +15,7 @@ Biometric-based Jumio Authentication establishes the digital identities of your 
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release Notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.3
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.8.0
 
 For breaking technical changes, please read our [transition guide](transition-guide_authentication.md)
 
@@ -43,20 +43,15 @@ Below there is a list of dependices the application will need to work in Android
 ```
 dependencies {
     // mandatory
-    implementation "com.jumio.android:core:3.7.3@aar"       // Jumio Core library
-    implementation "com.jumio.android:auth:3.7.3@aar"       // Authentication library
-    implementation "com.jumio.android:face:3.7.3@aar"       // Face library
+    implementation "com.jumio.android:core:3.8.0@aar"       // Jumio Core library
+    implementation "com.jumio.android:auth:3.8.0@aar"       // Authentication library
+    implementation "com.jumio.android:zoom:3.8.0@aar"       // Face library
 
-    implementation "com.facetec:zoom-authentication:8.0.11@aar"     // // Zoom face scanning library
-
-    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation "androidx.appcompat:appcompat:1.2.0"
     implementation "androidx.room:room-runtime:2.2.5"
     implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
 
-    implementation "com.google.android.material:material:1.1.0"
-
-    // not mandatory
-    implementation "com.jumio.android:javadoc:3.7.3"
+    implementation "com.google.android.material:material:1.2.1"
 }
 ```
 __Note:__ Version numbers may vary.

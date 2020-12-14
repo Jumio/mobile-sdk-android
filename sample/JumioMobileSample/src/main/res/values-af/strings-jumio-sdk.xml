@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">Besig om te laai</string>
 	<string name="jumio_accessibility_quit_scan">Verlaat skandering</string>
 	<string name="jumio_button_cancel">Kanselleer</string>
+	<string name="jumio_button_continue">Gaan voort</string>
 	<string name="jumio_button_retry">Probeer weer</string>
 	<string name="jumio_error_auth_failed">Verifikasie het misluk</string>
 	<string name="jumio_error_cancelled_by_user">Gekanselleer deur eindgebruiker</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Druk om voort te gaan</string>
 	<string name="face_helpview_landscape_description">Draai asseblief u foon na portret om \'n selfie te neem</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Draai u toestel&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Ondervind u probleme?</string>
+	<string name="face_helpview_upfront_title">Lê u gesig vas</string>
 	<string name="netverify_accessibility_nfc_description_start">Kyk asseblief of u ID \'n skyfie het. Indien wel, plaas u foon op die ID soos geïllustreer.</string>
 	<string name="netverify_back">agterkant</string>
 	<string name="netverify_countrylist_empty">Geen data in die lys nie</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Kies u land&lt;/u&gt;&lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">Kies die soort dokument wat u wil skandeer</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Besig om biometriese data te ontleed&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">Gaan voort</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Kruis asseblief deur die ID-nommer voor vaslegging</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Kruis asseblief deur die ID- en toegangsnommer voor vaslegging</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Kruis asseblief deur die paspoortnommer voor vaslegging</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">GEBRUIK VOORKANT</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Druk om voort te gaan</string>
 	<string name="face_helpview_landscape_description">Draai asseblief u foon na portret om \'n selfie te neem</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Draai u toestel&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Ondervind u probleme?</string>
+	<string name="face_helpview_upfront_title">Lê u gesig vas</string>
 	<string name="zoom_accessibility_cancel_button">Verlaat skandering</string>
 	<string name="zoom_action_im_ready">EK IS GEREED</string>
 	<string name="zoom_action_ok">OUKEI</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">Hou u toestel op ooghoogte en kyk direk daarna</string>
 	<string name="zoom_helpview_bad_lightning">Moenie dat daar skaduwees en weerkaatsings op u gesig is nie</string>
 	<string name="zoom_helpview_general">Volg die tweestap-proses en sit u gesig in die raam. Hou u toestel op ooghoogte en kyk direk na die kamera. U gesig sal outomaties vasgelê word.</string>
-	<string name="zoom_helpview_upfront_title">Lê u gesig vas</string>
 	<string name="zoom_instructions_header_ready">Maak gereed vir u video-selfie</string>
 	<string name="zoom_instructions_message_ready">Omraam u gesig in die klein ovaal, dan die groot ovaal</string>
 	<string name="zoom_result_facemap_upload_message">Besig om biometriese data te ontleed</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">Geen skynsel of skerp lig</string>
 	<string name="zoom_retry_subheader_message">Kyk asseblief eers na u foto en korrigeer u omgewing.</string>
 	<string name="zoom_retry_your_image_label">U selfie</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">Draai asseblief u foon na portret om \'n selfie te neem</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Draai u toestel&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Ondervind u probleme?</string>
+	<string name="face_helpview_upfront_title">Lê u gesig vas</string>
+	<string name="iproov__prompt_liveness_align_face">Vul die ovaal met u gesig</string>
+	<string name="iproov__prompt_liveness_no_target">Sit u gesig in die raam</string>
+	<string name="iproov__prompt_liveness_scan_completed">Skandering voltooi</string>
+	<string name="iproov__prompt_too_close">Te naby</string>
+	<string name="iproov__prompt_too_far">Kom nader</string>
+	<string name="iproov_intro_flash">Sit u gesig in die middel van die raam en hou dit stil terwyl die skerm flits.</string>
+	<string name="iproov_intro_la">Sit u gesig in die middel van die raam en volg die instruksies op die skerm.</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -169,7 +183,6 @@
 	<string name="dv_helpview_header_voided_check">Gekanselleerde tjek</string>
 	<string name="dv_helpview_header_working_with_children_check">Werk-met-kinders-kontrole</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;Lê %1$s vas&lt;/b&gt;</string>
-	<string name="dv_scanview_continue">Gaan voort</string>
 	<string name="dv_scanview_retake">Neem weer af</string>
 	<string name="dv_scanview_snackbar_check">Maak seker dat alle data op u dokument heeltemal sigbaar is, sonder skynsel en nie dof nie</string>
 	<string name="dv_scanview_title">Skandeer</string>

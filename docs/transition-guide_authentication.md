@@ -4,9 +4,15 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.8.0
+#### Dependency Changes
+* Face library update: ~~`"com.jumio.android:face"`~~ is replaced by `"com.jumio.android:zoom"`
+* AndroidX Appcompat update: ~~`"androidx.appcompat:appcompat:1.1.0"`~~ is replaced by `"androidx.appcompat:appcompat:1.2.0"`
+* Google Material Library update: ~~`"com.google.android.material:material:1.1.0"`~~ is replaced by `"com.google.android.material:material:1.2.1"`
+
 ## 3.7.3
 #### ZoOm Customization changes
-* All the attributes starting with `face_` have been removed 
+* All the attributes starting with `face_` have been removed
 * For a full guide please head over to the [FAQ](integration_faq.md#zoom-customization)
 
 ## 3.7.2

@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">Lädt</string>
 	<string name="jumio_accessibility_quit_scan">Scan beenden</string>
 	<string name="jumio_button_cancel">Beenden</string>
+	<string name="jumio_button_continue">Weiter</string>
 	<string name="jumio_button_retry">Wiederholen</string>
 	<string name="jumio_error_auth_failed">Authentifizierung fehlgeschlagen</string>
 	<string name="jumio_error_cancelled_by_user">Beendet durch Benutzer</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Zum Fortsetzen tippen</string>
 	<string name="face_helpview_landscape_description">Bitte halten Sie Ihr Handy im Hochformat, um ein Selfie aufzunehmen.</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Drehen Sie Ihr Gerät&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Brauchen Sie Hilfe?</string>
+	<string name="face_helpview_upfront_title">Erfasse dein Gesicht</string>
 	<string name="netverify_accessibility_nfc_description_start">Bitte prüfen Sie, ob Ihr Ausweis einen Chip enthält. Wenn ja, legen Sie Ihr Handy wie abgebildet auf den Ausweis.</string>
 	<string name="netverify_back">Rückseite</string>
 	<string name="netverify_countrylist_empty">Keine Daten in Liste</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Wählen Sie Ihr Land aus&lt;/u&gt;&lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">Wählen Sie den Dokumenttyp aus, den Sie scannen möchten</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Biometrie-Daten werden analysiert&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">Weiter</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Bitte verdecken Sie vor der Erkennung Ihre Ausweisnummer</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Bitte verdecken Sie vor der Erkennung die Ausweis- und Zugangsnummer</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Bitte verdecken Sie vor der Erkennung die Passnummer</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">VORDERSEITE VERWENDEN</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Zum Fortsetzen tippen</string>
 	<string name="face_helpview_landscape_description">Bitte halten Sie Ihr Handy im Hochformat, um ein Selfie aufzunehmen.</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Drehen Sie Ihr Gerät&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Brauchen Sie Hilfe?</string>
+	<string name="face_helpview_upfront_title">Erfasse dein Gesicht</string>
 	<string name="zoom_accessibility_cancel_button">Scan beenden</string>
 	<string name="zoom_action_im_ready">ICH BIN BEREIT</string>
 	<string name="zoom_action_ok">OK</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">Halten Sie Ihre Kamera auf Augenhöhe und schauen Sie hinein</string>
 	<string name="zoom_helpview_bad_lightning">Schatten und Spiegelungen auf Ihrem Gesicht vermeiden</string>
 	<string name="zoom_helpview_general">Folgen Sie dem zweistufigen Prozess und richten Sie Ihr Gesicht am Rahmen aus. Halten Sie Ihr Gerät auf Augenhöhe und schauen Sie direkt in die Kamera. Ihr Gesicht wird automatisch erfasst.</string>
-	<string name="zoom_helpview_upfront_title">Erfasse dein Gesicht</string>
 	<string name="zoom_instructions_header_ready">Bereitmachen für Ihr Video-Selfie</string>
 	<string name="zoom_instructions_message_ready">Gesicht in das kleine, dann in das große Oval einrahmen</string>
 	<string name="zoom_result_facemap_upload_message">Biometrische Daten werden analysiert</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">Kein Blenden/extremes Licht</string>
 	<string name="zoom_retry_subheader_message">Schauen Sie sich bitte erst Ihr Foto an und korrigieren Sie Ihre Umgebung.</string>
 	<string name="zoom_retry_your_image_label">Ihr Selfie</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">Bitte halten Sie Ihr Handy im Hochformat, um ein Selfie aufzunehmen.</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Drehen Sie Ihr Gerät&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Brauchen Sie Hilfe?</string>
+	<string name="face_helpview_upfront_title">Erfasse dein Gesicht</string>
+	<string name="iproov__prompt_liveness_align_face">Passen Sie Ihr Gesicht in das Oval ein</string>
+	<string name="iproov__prompt_liveness_no_target">Passen Sie Ihr Gesicht in den Rahmen ein</string>
+	<string name="iproov__prompt_liveness_scan_completed">Scannen abgeschlossen</string>
+	<string name="iproov__prompt_too_close">Zu nahe</string>
+	<string name="iproov__prompt_too_far">Näher kommen</string>
+	<string name="iproov_intro_flash">Zentrieren Sie Ihr Gesicht im Rahmen und halten Sie still während der Bildschirm blinkt.</string>
+	<string name="iproov_intro_la">Zentrieren Sie Ihr Gesicht im Rahmen und befolgen Sie die Anweisungen auf dem Bildschirm.</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -170,7 +184,6 @@
 	<string name="dv_helpview_header_voided_check">Entwerteter Scheck</string>
 	<string name="dv_helpview_header_working_with_children_check">Zulassung zur Arbeit mit Kindern</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;%1$s aufnehmen&lt;/b&gt;</string>
-	<string name="dv_scanview_continue">Weiter</string>
 	<string name="dv_scanview_retake">Wiederholen</string>
 	<string name="dv_scanview_snackbar_check">Stellen Sie sicher, dass alle Daten auf Ihrem Dokument komplett sichtbar und lesbar sind</string>
 	<string name="dv_scanview_title">Scannen</string>

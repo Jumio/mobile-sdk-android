@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.jumio.bam.BamCardInformation;
 import com.jumio.bam.BamSDK;
 import com.jumio.core.enums.JumioDataCenter;
@@ -42,8 +43,8 @@ public class BamFragment extends Fragment implements View.OnClickListener {
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-		Switch switchExpiryDate = rootView.findViewById(R.id.switchOptionOne);
-		Switch switchCvv = rootView.findViewById(R.id.switchOptionTwo);
+		SwitchMaterial switchExpiryDate = rootView.findViewById(R.id.switchOptionOne);
+		SwitchMaterial switchCvv = rootView.findViewById(R.id.switchOptionTwo);
 
 		Bundle args = getArguments();
 

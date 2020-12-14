@@ -30,7 +30,7 @@
 # Overview
 The Jumio Software Development Kit (SDK) provides you with a set of tools and UIs (default or custom) to develop an Android application perfectly fitted to your specific needs.
 
-Onboard new users and easily verify their digital identities, by making sure the IDs provided by them are valid and authentic.  Extract data from IDs and credit cards completely automatically and within seconds. Confirm users really are who they say they are by having them take a quick selfie and match it to their respective documents. Jumio uses cutting-edge biometric technology such as 3D face mapping to make sure there is an actual, real-life person in front of the screen.
+Onboard new users and easily verify their digital identities by making sure the IDs they provide are valid and authentic. Extract data from IDs and credit cards completely automatically and within seconds. Confirm that users really are who they say they are by having them take a quick selfie and match it to their respective documents. Jumio uses cutting-edge biometric technology such as 3D face mapping to make sure there is an actual, real-life person in front of the screen.
 
 ![DL EU](docs/images/images_overview/driver_license_EU.png)  ![DL US](docs/images/images_overview/driver_license_US.png)  ![Manual Capture](docs/images/images_overview/manual_capture.png)
 
@@ -40,12 +40,12 @@ Using the Jumio SDK will allow you to create the best possible solution for your
 Please note that [basic setup](#basics) is required before continuing with the integration of any of the following services.
 
 ## Jumio ID Verification & Fastfill
-ID Verification (formerly known as Netverify) is a secure and easy solution that allows you to establish the genuine identity of your users in your mobile application, by verifying their passports, government-issued IDs and VISA in real-time. Very user-friendly and highly customizable, it makes onboarding new customers quick and simple.
+ID Verification (formerly known as Netverify) is a secure and easy solution that allows you to establish the genuine identity of your users in your mobile application by verifying their passports and other government-issued IDs in real time. Very user-friendly and highly customizable, it makes onboarding new customers quick and simple.
 
 - [Integration ID Verification & Fastfill SDK](docs/integration_id-verification-fastfill.md)
 
 ## Jumio Authentication
-Authentication is a cutting-edge biometric-based service that establishes digital identities of your users, simply by taking a selfie. Advanced 3D face mapping-technology quickly and securely authenticates users and their digital identities.
+Authentication is a cutting-edge, biometric-based service that establishes digital identities of your users simply by taking a selfie. Advanced 3D face-mapping technology quickly and securely authenticates users and their digital identities.
 
 - [Integration Authentication SDK](docs/integration_authentication.md)
 
@@ -55,22 +55,20 @@ Document Verification is a powerful solution that allows users to scan various t
 - [Integration Document Verification SDK](docs/integration_document-verification.md)
 
 ## Jumio BAM Checkout
-BAM Checkout enables you to extract data from your customer's credit card and/or ID in your mobile application within seconds. Every checkout flow is fully automated, no manual input necessary!
+BAM Checkout enables you to extract data from your customer's credit card and/or ID in your mobile application within seconds. Every checkout flow is fully automated, with no manual input necessary!
 
 - [Integration BAM Checkout SDK](docs/integration_bam-checkout.md)
 
 # Quickstart
-The aim of the following section is to provide quick and very basic guide on how to get started with the [Android sample application](sample) that can be found here on Github. You will require a __commercial Jumio License__ to successfully run any of our examples. Please refer to sales@jumio.com for details.
+This section provides a quick overview of getting started with the [Android sample application](sample) that can be found here on Github. You will need a __commercial Jumio License__ to successfully run any of our examples; for details, contact sales@jumio.com. You will also need a current Android Studio version to open and try out the sample project.
 
-First things first, you’ll need a current Android Studio version to open and try out with the sample project.
+Start by downloading the [Android sample application](sample) from the Jumio Github repo. You can either clone the repository (using SSH or HTTPS) to your local device or simply download everything as a ZIP.
 
-Start by downloading the [Android sample application](sample) from the Jumio Github repo. You can do this either by cloning the repository (using SHH oder HTTPS) to your local device, or simply downloading everything as a ZIP.
+Once you’ve got the sample application downloaded and unzipped, open Android Studio. Choose __Import project__ and navigate to where you’ve saved your sample application. Select the __JumioMobileSample folder__ and open it.
 
-Once you’ve got the sample application downloaded and unzipped if necessary, open Android Studio. You’ll be faced with a couple of options. Choose __Import project__ and navigate to where you’ve saved your sample application. Select the __JumioMobileSample folder__ and open it.
+Android Studio will now start to import the project. This might take a bit of time. Make sure to wait until the Gradle Build has finished and the application is properly installed!
 
-Android Studio will now start to import the project. This might take a bit of time. Make sure to wait until the Grade Build has finished and the application is properly installed!
-
-The Android sample application contains the packages `com.jumio.sampe.java` and `com.jumio.sample.kotlin`. Both of those packages contain the exact same thing, in Java and Kotlin respectively. If you'd like to switch between them, you'll have to switch the `<intent-filter>` in the `AndroidManifest.xml` from one `MainActivity` to the other. As a default, the filter is set for Kotlin, see the code example down below:
+The Android sample application contains the packages `com.jumio.sample.java` and `com.jumio.sample.kotlin`. These packages contain the same sample but in Java and Kotlin respectively. If you'd like to switch between them, you'll have to switch the `<intent-filter>` in the `AndroidManifest.xml` from one `MainActivity` to the other. By default, the filter is set for Kotlin:
 
 ```
 <!-- KOTLIN -->
@@ -88,7 +86,7 @@ The Android sample application contains the packages `com.jumio.sampe.java` and 
 </activity>
 ```
 
-In each of the two packages, Java and Kotlin, you will find:
+Both the Java and Kotlin packages contain:
 * `MainActivity`
 * `authentication`
 * `bam`
@@ -103,13 +101,14 @@ Right at the top of the `MainActivity` you’ll find the following empty paramet
 `private static String NETVERIFY_API_TOKEN`
 `private static String NETVERIFY_API_SECRET`
 
-If you haven’t done so yet, log into your Jumio customer portals. You can find your customer API token and API secret on the __Settings__ page under the __API credentials__ tab. Add your individual key and token instead of the placeholder `""`. The default setting for the data center is `JumioDataCenter.US`. If you're using [BAM Checkout](docs/integration_bam-checkout.md), you'll need to use the BAM API token and BAM API secret.
+If you haven’t done so yet, log into your Jumio Customer Portal. You can find your customer API token and API secret on the __Settings__ page under the __API credentials__ tab. Add your individual key and token instead of the placeholder `""`. The default setting for the data center is `JumioDataCenter.US`. If you're using [BAM Checkout](docs/integration_bam-checkout.md), you'll need to use the BAM API token and BAM API secret.
 
-__Note:__ We strongly recommend storing all credentials outside of your app! We suggest to not hardcode them within your application but load them during runtime from your server-side implementation.
+__Note:__ We strongly recommend storing all credentials outside of your app! We suggest not to hardcode them within your application but to load them during runtime from your server-side implementation.
 
-Once you start up the sample application, you'll be given the option of trying out ID Verification. Select the hamburger menu in the top left corner to try out something else. Your application will also need camera permission, which will be prompted for automatically once you try to start any of services. If you deny camera permissions, you won't be able to use any of the services.
+Once you start up the sample application, you'll be given the option of trying out ID Verification. Click the hamburger menu in the top left corner to try out something else. Your application will also need camera permissions, which will be prompted for automatically once you try to start any of the services. If you deny camera permissions, you won't be able to use any of the services.
 
-### Tutorial List
+### Tutorials
+The following tutorials show you how to get started and the fundamentals of using the SDK:
 * [Getting started (Video):](https://share.vidyard.com/watch/oAUXU1EWXco1mPUePz7Ue6) How to clone the repository and configure your Jumio credentials
 * [Introduction (Video):](https://share.vidyard.com/watch/nqUmPAaqG4bMy4Wh5wb9Kn) How to initialize the SDK, run the sample on your Android device, and test the identity verification user journey
 * [Configuring behavior (Video):](https://share.vidyard.com/watch/BPT2jB51oUgkvRaAuKVb3q) How to configure the behavior of the app using SDK parameters
@@ -126,9 +125,9 @@ The following architectures are supported in the SDK:
 *	ARMv7 processor with Neon
 *	ARM64-v8a
 
-__Note:__ Currently, x86 and x86_64 are *not* supported. You get an *UnsatisfiedLinkError* if app and  CPU architecture do not match, or the CPU architecture is not supported.
+__Note:__ Currently, x86 and x86_64 are *not* supported. You get an *UnsatisfiedLinkError* if app and CPU architecture do not match or the CPU architecture is not supported.
 
-You will require a __commercial Jumio License__ to run any of our examples. Please refer to sales@jumio.com for details.
+You will need a __commercial Jumio License__ to run any of our examples. For details, contact sales@jumio.com.
 
 ## Permissions
 Required permissions are linked automatically by the SDK.
@@ -160,47 +159,45 @@ Check the Android Studio [sample projects](sample/JumioMobileSample/) to learn t
 
 
 ## Proguard
-One Proguard keep rule has to be added to the Jumio Mobile SDK:
+The following Proguard keep rules have to be added to the Jumio Mobile SDK:
 ```
 -keep class com.jumio.** { *; }
+-keep public class com.iproov.sdk.IProov {public *; }
 ```
-Most of the Proguard settings are applied automatically as they are defined as consumer proguard rules within the SDK.
-The current rules can also be found in the [Sample app](sample/JumioMobileSample/).
+Most of the Proguard settings are applied automatically as they are defined as consumer Proguard rules within the SDK. The current rules can also be found in the [Sample app](sample/JumioMobileSample/).
 
 ## Language Localization
-Our SDK supports the [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages.
-All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable [within our Sample application](sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml).
+Our SDK supports the [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages. All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable [within our Sample application](sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml).
 
-For our products ID Verification & Fastfill, Authentication & Document Verification we support following languages for your convenience:
+For the ID Verification, Fastfill, Authentication, and Document Verification products we support the following languages:
 
 _Afrikaans, Arabic, Bulgarian, Chinese(Simplified), Chinese(Traditional), Croatian, Czech, Danish, Dutch, Estonian, English, Finnish, French, German, Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Khmer, Korean, Latvian, Lithuanian, Maltese, Norwegian, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Vietnamese, Zulu_
 
-Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or increase the __text size__ on their device. The accessibility-strings that are used by TalkBack contain *accessibility* in their key and can be also modified in the `strings.xml`.
+Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or increase the __text size__ on their device. The accessibility strings that are used by TalkBack contain *accessibility* in their key and can be also modified in `strings.xml`.
 
 # Security
-All SDK related traffic is sent over HTTPS using TLS and public key pinning, and additionally, the information itself within the transmission is also encrypted utilizing __Application Layer Encryption__ (ALE). ALE is Jumio custom-designed security protocol which utilizes RSA-OAEP and AES-256 to ensure that the data cannot be read or manipulated even if the traffic was captured.
+All SDK related traffic is sent over HTTPS using TLS and public key pinning. Additionally, the information itself within the transmission is also encrypted utilizing __Application Layer Encryption__ (ALE). ALE is a Jumio custom-designed security protocol that utilizes RSA-OAEP and AES-256 to ensure that the data cannot be read or manipulated even if the traffic was captured.
 
 # Release Notes
-Please refer to our [Change Log](docs/changelog.md) for more information about our current SDK version and further details.
+See our [Change Log](docs/changelog.md) for more information about our current SDK version and further details.
 
 # Support
 
 ## Previous Version
-The previous release version 3.7.2 of the Jumio Mobile SDK is supported until 2021-02-18.
+The previous release version 3.7.3 of the Jumio Mobile SDK is supported until 2021-03-15.
 
-In case the support period is expired, no bug fixes and technical support are provided anymore. Current bugs are typically fixed in the upcoming versions.
-Older SDK versions will keep functioning with our server until further notice, but we highly recommend to always update to the latest version to benefit from SDK improvements and bug fixes.
+When the support period has expired, bug fixes and technical support will no longer be provided. Current bugs are typically fixed in the upcoming versions. Older SDK versions will keep functioning with our server until further notice, but we highly recommend that you always update to the latest version to benefit from SDK improvements and bug fixes.
 
 ## Two-factor Authentication
-If you want to enable two-factor authentication for your Jumio customer portal [please contact us.](https://support.jumio.com) Once enabled, users will be guided through the setup upon their first login to obtain a security code using the "Google Authenticator" app.
+If you want to enable two-factor authentication for your Jumio Customer Portal, [contact us](https://support.jumio.com). Once enabled, users will be guided through the setup upon their first login to obtain a security code using the Google Authenticator app.
 
 ## Licenses
-The software contains third-party open source software. For more information, please see [licenses](licenses).
+The software contains third-party open source software. For more information, see [licenses](licenses).
 
 This software is based in part on the work of the Independent JPEG Group.
 
 ## Contact
-If you have any questions regarding our implementation guide please contact Jumio Customer Service at support@jumio.com. The Jumio online helpdesk contains a wealth of information regarding our service including demo videos, product descriptions, FAQs and other things that may help to get you started with Jumio. [Check it out at here.](https://support.jumio.com).
+If you have any questions regarding our implementation guide please contact Jumio Customer Service at support@jumio.com. The [Jumio online helpdesk](https://support.jumio.com) contains a wealth of information regarding our services including demo videos, product descriptions, FAQs, and other resources that can help to get you started with Jumio.
 
 ## Copyright
 &copy; Jumio Corporation, 395 Page Mill Road, Suite 150, Palo Alto, CA 94306

@@ -9,6 +9,7 @@
 	<string name="jumio_accessibility_loading">Memuat</string>
 	<string name="jumio_accessibility_quit_scan">Berhenti memindai</string>
 	<string name="jumio_button_cancel">Batal</string>
+	<string name="jumio_button_continue">Lanjutkan</string>
 	<string name="jumio_button_retry">Coba lagi</string>
 	<string name="jumio_error_auth_failed">Autentikasi gagal</string>
 	<string name="jumio_error_cancelled_by_user">Dibatalkan oleh pengguna akhir</string>
@@ -24,10 +25,10 @@
 
 	<!-- POSSIBLE NETVERIFY SDK STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Ketuk untuk melanjutka</string>
 	<string name="face_helpview_landscape_description">Putar ponsel untuk memotret atau mengambil selfie</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Putar perangkat Anda&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Mengalami masalah?</string>
+	<string name="face_helpview_upfront_title">Ambil gambar wajah Anda</string>
 	<string name="netverify_accessibility_nfc_description_start">Periksa apakah ID Anda memiliki chip. Jika ada, letakkan ponsel Anda di ID seperti tampak dalam ilustrasi.</string>
 	<string name="netverify_back">Belakang</string>
 	<string name="netverify_countrylist_empty">Tidak ada data dalam daftar</string>
@@ -74,7 +75,6 @@
 	<string name="netverify_scan_options_select_country">&lt;b&gt;&lt;u&gt;Pilih negara Anda&lt;/u&gt;&lt;/b&gt;</string>
 	<string name="netverify_scan_options_subtitle_type">Pilih jenis dokumen yang ingin Anda pindai</string>
 	<string name="netverify_scanview_analyzing_biometrics">&lt;b&gt;Menganalisis data biometrik&lt;/b&gt;</string>
-	<string name="netverify_scanview_continue">Lanjutkan</string>
 	<string name="netverify_scanview_legal_hint_deu_id_paper">Susun nomor ID sebelum mengambil gambar</string>
 	<string name="netverify_scanview_legal_hint_deu_id_plastic">Susun nomor ID dan nomor akses sebelum mengambil gambar</string>
 	<string name="netverify_scanview_legal_hint_deu_passport">Susun nomor Paspor sebelum mengambil gambar</string>
@@ -97,12 +97,12 @@
 	<string name="netverify_use_front_side_of_card">GUNAKAN DEPAN</string>
 	-->
 
-	<!-- POSSIBLE FACE STRINGS TO OVERRIDE-->
+	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
 	<!--
-	<string name="face_helpview_continue">Ketuk untuk melanjutka</string>
 	<string name="face_helpview_landscape_description">Putar ponsel untuk memotret atau mengambil selfie</string>
 	<string name="face_helpview_landscape_header">&lt;b&gt;Putar perangkat Anda&lt;/b&gt;</string>
 	<string name="face_helpview_title_problems">Mengalami masalah?</string>
+	<string name="face_helpview_upfront_title">Ambil gambar wajah Anda</string>
 	<string name="zoom_accessibility_cancel_button">Berhenti memindai</string>
 	<string name="zoom_action_im_ready">SAYA SIAP</string>
 	<string name="zoom_action_ok">OKE</string>
@@ -123,7 +123,6 @@
 	<string name="zoom_helpview_bad_angle">Pegang perangkat setinggi mata dan lihat langsung ke perangkat</string>
 	<string name="zoom_helpview_bad_lightning">Hindari bayangan dan pantulan di wajah Anda</string>
 	<string name="zoom_helpview_general">Ikuti proses dua langkah dan selaraskan wajah Anda dengan bingkai. Pegang perangkat setinggi mata dan lihat langsung ke kamera. Wajah anda akan ditangkap secara otomatis</string>
-	<string name="zoom_helpview_upfront_title">Ambil gambar wajah Anda</string>
 	<string name="zoom_instructions_header_ready">Bersiaplah untuk selfie video Anda</string>
 	<string name="zoom_instructions_message_ready">Bingkai wajah di oval kecil, lalu oval besar</string>
 	<string name="zoom_result_facemap_upload_message">Menganalisis data biometrik</string>
@@ -134,6 +133,21 @@
 	<string name="zoom_retry_instruction_message_2">Cahaya tak silau atau ekstrem</string>
 	<string name="zoom_retry_subheader_message">Tapi pertama-tama, lihat foto Anda dan koreksi lingkungan Anda.</string>
 	<string name="zoom_retry_your_image_label">Selfie Anda</string>
+	-->
+
+	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
+	<!--
+	<string name="face_helpview_landscape_description">Putar ponsel untuk memotret atau mengambil selfie</string>
+	<string name="face_helpview_landscape_header">&lt;b&gt;Putar perangkat Anda&lt;/b&gt;</string>
+	<string name="face_helpview_title_problems">Mengalami masalah?</string>
+	<string name="face_helpview_upfront_title">Ambil gambar wajah Anda</string>
+	<string name="iproov__prompt_liveness_align_face">Isi bentuk oval dengan wajah Anda</string>
+	<string name="iproov__prompt_liveness_no_target">Letakkan wajah Anda di bingkai</string>
+	<string name="iproov__prompt_liveness_scan_completed">Pemindaian selesai</string>
+	<string name="iproov__prompt_too_close">Terlalu dekat</string>
+	<string name="iproov__prompt_too_far">Merapat</string>
+	<string name="iproov_intro_flash">Pusatkan wajah Anda di tengah bingkai dan stabilkan saat layar berkedip.</string>
+	<string name="iproov_intro_la">Pusatkan wajah Anda di tengah bingkai dan ikuti petunjuk di layar.</string>
 	-->
 
 	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
@@ -169,7 +183,6 @@
 	<string name="dv_helpview_header_voided_check">Cek kosong</string>
 	<string name="dv_helpview_header_working_with_children_check">Izin bekerja dengan anak-anak</string>
 	<string name="dv_helpview_small_title_capture">&lt;b&gt;Ambil %1$s&lt;/b&gt;</string>
-	<string name="dv_scanview_continue">Lanjutkan</string>
 	<string name="dv_scanview_retake">Ambil lagi</string>
 	<string name="dv_scanview_snackbar_check">Pastikan semua data dokumen terlihat jelas, bebas silau dan tidak kabur</string>
 	<string name="dv_scanview_title">Pindai dokumen</string>

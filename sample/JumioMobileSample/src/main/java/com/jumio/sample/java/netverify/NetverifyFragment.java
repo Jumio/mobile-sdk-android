@@ -8,9 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.Toast;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.MissingPermissionException;
 import com.jumio.core.exceptions.PlatformNotSupportedException;
@@ -37,8 +37,8 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener,
 
 	private NetverifySDK netverifySDK;
 
-	private Switch switchVerification;
-	private Switch switchIdentitiyVerification;
+	private SwitchMaterial switchVerification;
+	private SwitchMaterial switchIdentitiyVerification;
 	private Button btnStart;
 
 	@Override

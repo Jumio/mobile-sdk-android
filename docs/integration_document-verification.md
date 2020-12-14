@@ -15,7 +15,7 @@ Document Verification is a powerful solution to enable scanning various types (U
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release Notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.7.3
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.8.0
 
 For breaking technical changes, please read our [transition guide](transition-guide_document-verification.md)
 
@@ -41,18 +41,14 @@ Below there is a list of dependices the application will need to work in Android
 ```
 dependencies {
     // mandatory
-    implementation "com.jumio.android:core:3.7.3@aar"   // Jumio core library
-    implementation "com.jumio.android:dv:3.7.3@aar"     // Document verification library
+    implementation "com.jumio.android:core:3.8.0@aar"   // Jumio core library
+    implementation "com.jumio.android:dv:3.8.0@aar"     // Document verification library
 
-    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation "androidx.appcompat:appcompat:1.2.0"
     implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
     implementation "androidx.room:room-runtime:2.2.5"
 
-    implementation "com.google.android.material:material:1.1.0"
-
-
-    // not mandatory
-    implementation "com.jumio.android:javadoc:3.7.3"
+    implementation "com.google.android.material:material:1.2.1"
 }
 ```
 __Note:__ Version numbers may vary.

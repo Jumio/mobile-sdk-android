@@ -4,6 +4,49 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.8.0
+#### Dependency Changes
+* NEW AndroidX Kotlin Extension: `"androidx.core:core-ktx:1.3.1"`
+
+* NEW Kotlin dependency: `"org.jetbrains.kotlinx:kotlinx-serialization-core:1.0.0"`
+
+* NEW Kotlin dependency: `"org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0"`
+
+* NEW Kotlin plugin: `"apply plugin: 'kotlinx-serialization"`
+
+* NEW classpath definition: `"classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"`
+
+* REPLACE Jumio Face: ~~`"com.jumio.android:face"`~~ with either `"com.jumio.android.iproov"` __or__ `"com.jumio.android:zoom"`
+
+* AndroidX ConstraintLayout update: ~~`"androidx.constraintlayout:constraintlayout:2.0.1"`~~ is replaced by `"androidx.constraintlayout:constraintlayout:2.0.4"`
+
+* AndroidX Appcompat update: ~~`"androidx.appcompat:appcompat:1.1.0"`~~ is replaced by `"androidx.appcompat:appcompat:1.2.0"`
+
+* Google Play Services update: ~~`"com.google.android.gms:play-services-vision:19.0.0"`~~ is replaced by `"com.google.android.gms:play-services-vision:20.1.2"`
+
+* Google Material Library update: ~~`"com.google.android.material:material:1.1.0"`~~ is replaced by `"com.google.android.material:material:1.2.1"`
+
+#### Custom UI Changes
+* [`NetverifyCustomSDKController$setDocumentConfiguration`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKController.html#setDocumentConfiguration-com.jumio.nv.custom.NetverifyCountry-com.jumio.nv.data.document.NVDocumentType-com.jumio.nv.data.document.NVDocumentVariant-) does not return a List with all required ScanSides anymore - they are now available as a parameter of [`NetverifyCustomSDKInterface$onNetverifyResourcesLoaded`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyResourcesLoaded-java.util.List-)
+
+* Method `onNetverifyPrepareScanning()` added to `NetverifyCustomScanInterface` - indicates that the SDK is now loading information
+
+#### Proguard Changes
+Added the line ` -keep public class com.iproov.sdk.IProov {public *; }` to consumer Proguard rules.
+
+#### Strings and Style Changes
+Several additions and changes, mostly in regards to the new liveness flow.
+
+* Button style: ~~`<item name="netverify_confirmationPositiveStyle"> @style/Custom.Netverify.Confirmation.MaterialButton </item>`~~ is replaced by `<item name="materialButtonStyle">@style/Custom.Netverify.Confirmation.MaterialButton</item>`
+
+* Button style: ~~`<item name="netverify_confirmationNegativeStyle"> @style/Custom.Netverify.Confirmation.MaterialButton.Outlined</item>`~~ is replaced by `<item name="materialButtonOutlinedStyle">@style/Custom.Netverify.Confirmation.MaterialButton.Outlined</item>`
+
+* NEW Iproov attribute: `<item name="iproov_customization">@style/CustomIproov</item>`
+
+* NEW IProov theme: `<style name="CustomIproov" parent="Iproov.Customization">`
+
+* For changes in `String.xml` file changes please refer to the sample project.
+
 ## 3.7.3
 #### Custom UI changes
 *  The countryList parameter in [NetverifyCustomSDKInterface$onNetverifyCountriesReceived](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyCountriesReceived-java.util.Map-java.lang.String-) has been changed from `HashMap` to `Map`
@@ -11,6 +54,10 @@ This section only covers the breaking technical changes that should be considere
 #### ZoOm Customization Changes
 * All the attributes starting with `face_` have been removed
 * For a full guide please head over to the [FAQ](integration_faq.md#zoom-customization)
+
+#### Error Code Change
+Error code N (Access token for different product / Parts of access token are missing) has been added.
+Read more detailed information on this in chapter [Error codes](/docs/integration_id-verification-fastfill.md#error-codes)
 
 ## 3.7.2
 No backward incompatible changes

@@ -80,7 +80,7 @@ class NetverifyFragment : Fragment(), View.OnClickListener, NetverifyDeallocatio
     private fun initializeNetverifySDK() {
         try {
             // You can get the current SDK version using the method below.
-//            NetverifySDK.getSDKVersion();
+//            NetverifySDK.getSDKVersion()
 
             // Call the method isSupportedPlatform to check if the device is supported.
             if (!NetverifySDK.isSupportedPlatform(activity))
@@ -100,10 +100,10 @@ class NetverifyFragment : Fragment(), View.OnClickListener, NetverifyDeallocatio
 
             // Use the following method to create an instance of the SDK, using offline fastfill scanning.
 //			try {
-//				netverifySDK = NetverifySDK.create(activity, "YOUROFFLINETOKEN", "YOURPREFERREDCOUNTRY");
+//				netverifySDK = NetverifySDK.create(activity, "YOUROFFLINETOKEN", "YOURPREFERREDCOUNTRY")
 //			} catch (e: SDKExpiredException) {
-//				e.printStackTrace();
-//				Toast.makeText(activity?.applicationContext, "The offline SDK is expired", Toast.LENGTH_LONG).show();
+//				e.printStackTrace()
+//				Toast.makeText(activity?.applicationContext, "The offline SDK is expired", Toast.LENGTH_LONG).show()
 //				return
 //			}
 
@@ -114,51 +114,51 @@ class NetverifyFragment : Fragment(), View.OnClickListener, NetverifyDeallocatio
             // You can specify issuing country (ISO 3166-1 alpha-3 country code) and/or ID types and/or document variant to skip
             // their selection during the scanning process.
             // Use the following method to convert ISO 3166-1 alpha-2 into alpha-3 country code.
-//			val alpha3 = IsoCountryConverter.convertToAlpha3("AT");
-//			netverifySDK.setPreselectedCountry("AUT");
-//			val documentTypes = ArrayList<NVDocumentType>();
-//			documentTypes.add(NVDocumentType.PASSPORT);
-//			netverifySDK.setPreselectedDocumentTypes(documentTypes);
-//			netverifySDK.setPreselectedDocumentVariant(NVDocumentVariant.PLASTIC);
+//			val alpha3 = IsoCountryConverter.convertToAlpha3("AT")
+//			netverifySDK.setPreselectedCountry("AUT")
+//			val documentTypes = ArrayList<NVDocumentType>()
+//			documentTypes.add(NVDocumentType.PASSPORT)
+//			netverifySDK.setPreselectedDocumentTypes(documentTypes)
+//			netverifySDK.setPreselectedDocumentVariant(NVDocumentVariant.PLASTIC)
 
             // The customer internal reference allows you to identify the scan (max. 100 characters).
             // Note: Must not contain sensitive data like PII (Personally Identifiable Information) or account login.
-//			netverifySDK.setCustomerInternalReference("YOURSCANREFERENCE");
+			netverifySDK.setCustomerInternalReference("YOURSCANREFERENCE")
 
             // Use the following property to identify the scan in your reports (max. 100 characters).
-//			netverifySDK.setReportingCriteria("YOURREPORTINGCRITERIA");
+//			netverifySDK.setReportingCriteria("YOURREPORTINGCRITERIA")
 
             // You can also set a user reference (max. 100 characters).
             // Note: The user reference should not contain sensitive data like PII (Personally Identifiable Information) or account login.
-//			netverifySDK.setUserReference("USERREFERENCE");
+//			netverifySDK.setUserReference("USERREFERENCE")
 
             // Callback URL for the confirmation after the verification is completed. This setting overrides your Jumio merchant settings.
-//			netverifySDK.setCallbackUrl("YOURCALLBACKURL");
+//			netverifySDK.setCallbackUrl("YOURCALLBACKURL")
 
             // You can disable Identity Verification during the ID verification for a specific transaction.
             netverifySDK.setEnableIdentityVerification(switchOptionTwo.isChecked)
 
             // Use the following method to disable eMRTD scanning.
-//			netverifySDK.setEnableEMRTD(false);
+//			netverifySDK.setEnableEMRTD(false)
 
             // Use the following method to set the default camera position.
-//			netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
+//			netverifySDK.setCameraPosition(JumioCameraPosition.FRONT)
 
             // Use the following method to only support IDs where data can be extracted on mobile only.
-//			netverifySDK.setDataExtractionOnMobileOnly(true);
+//			netverifySDK.setDataExtractionOnMobileOnly(true)
 
             // Use the following method to explicitly send debug-info to Jumio. (default: false)
             // Only set this property to true if you are asked by our Jumio support personnel.
-//			netverifySDK.sendDebugInfoToJumio(true);
+//			netverifySDK.sendDebugInfoToJumio(true)
 
             // Use the following method to override the SDK theme that is defined in the Manifest with a custom Theme at runtime
-//			netverifySDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID);
+//			netverifySDK.setCustomTheme(R.style.YOURCUSTOMTHEMEID)
 
 			// Set watchlist screening on transaction level. Enable to override the default search, or disable watchlist screening for this transaction.
-//			netverifySDK.setWatchlistScreening(NVWatchlistScreening.ENABLED);
+//			netverifySDK.setWatchlistScreening(NVWatchlistScreening.ENABLED)
 
 			// Search profile for watchlist screening.
-//			netverifySDK.setWatchlistSearchProfile("YOURPROFILENAME");
+//			netverifySDK.setWatchlistSearchProfile("YOURPROFILENAME")
 
             // Use the following method to initialize the SDK before displaying it
 //			netverifySDK.initiate(object : NetverifyInitiateCallback {
