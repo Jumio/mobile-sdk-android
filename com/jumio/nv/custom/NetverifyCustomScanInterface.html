@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -157,31 +157,37 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyPresentConfirmationView-com.jumio.nv.custom.NetverifyConfirmationType-">onNetverifyPresentConfirmationView</a></span>(<a href="../../../../com/jumio/nv/custom/NetverifyConfirmationType.html" title="enum in com.jumio.nv.custom">NetverifyConfirmationType</a>&nbsp;confirmationType)</code>
-<div class="block">The <a href="../../../../com/jumio/nv/custom/NetverifyCustomConfirmationView.html" title="class in com.jumio.nv.custom"><code>NetverifyCustomConfirmationView</code></a> should be display.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyPrepareScanning--">onNetverifyPrepareScanning</a></span>()</code>
+<div class="block">Indicates that the SDK is now loading information and a loading indicator should be displayed.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyScanForPartCanceled-com.jumio.core.data.document.ScanSide-com.jumio.nv.custom.NetverifyCancelReason-">onNetverifyScanForPartCanceled</a></span>(<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&nbsp;scanSide,
-                              <a href="../../../../com/jumio/nv/custom/NetverifyCancelReason.html" title="enum in com.jumio.nv.custom">NetverifyCancelReason</a>&nbsp;cancelReason)</code>
-<div class="block">The scanning for this scanside has been cancelled</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyPresentConfirmationView-com.jumio.nv.custom.NetverifyConfirmationType-">onNetverifyPresentConfirmationView</a></span>(<a href="../../../../com/jumio/nv/custom/NetverifyConfirmationType.html" title="enum in com.jumio.nv.custom">NetverifyConfirmationType</a>&nbsp;confirmationType)</code>
+<div class="block">The <a href="../../../../com/jumio/nv/custom/NetverifyCustomConfirmationView.html" title="class in com.jumio.nv.custom"><code>NetverifyCustomConfirmationView</code></a> should be display.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyScanForPartFinished-com.jumio.core.data.document.ScanSide-boolean-">onNetverifyScanForPartFinished</a></span>(<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&nbsp;scanSide,
-                              boolean&nbsp;allPartsScanned)</code>
-<div class="block">Indicates that the document part has been successfully scanned</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyScanForPartCanceled-com.jumio.core.data.document.ScanSide-com.jumio.nv.custom.NetverifyCancelReason-">onNetverifyScanForPartCanceled</a></span>(<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&nbsp;scanSide,
+                              <a href="../../../../com/jumio/nv/custom/NetverifyCancelReason.html" title="enum in com.jumio.nv.custom">NetverifyCancelReason</a>&nbsp;cancelReason)</code>
+<div class="block">The scanning for this scanside has been cancelled.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyScanForPartFinished-com.jumio.core.data.document.ScanSide-boolean-">onNetverifyScanForPartFinished</a></span>(<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&nbsp;scanSide,
+                              boolean&nbsp;allPartsScanned)</code>
+<div class="block">Indicates that the document part has been successfully scanned.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyShowLegalAdvice-java.lang.String-">onNetverifyShowLegalAdvice</a></span>(java.lang.String&nbsp;legalAdvice)</code>
 <div class="block">During the scanning of some ID cards, a legal advice need to be shown.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html#onNetverifyStartNfcExtraction-com.jumio.nv.nfc.custom.NetverifyCustomNfcPresenter-">onNetverifyStartNfcExtraction</a></span>(<a href="../../../../com/jumio/nv/nfc/custom/NetverifyCustomNfcPresenter.html" title="interface in com.jumio.nv.nfc.custom">NetverifyCustomNfcPresenter</a>&nbsp;netverifyCustomNfcPresenter)</code>
 <div class="block">NFC scanning can be started now and can be controlled with the <a href="../../../../com/jumio/nv/nfc/custom/NetverifyCustomNfcPresenter.html" title="interface in com.jumio.nv.nfc.custom"><code>NetverifyCustomNfcPresenter</code></a></div>
@@ -222,6 +228,17 @@ var activeTableTab = "activeTableTab";
 <div class="block">The extraction process started which also indicates that the preview is now stopped</div>
 </li>
 </ul>
+<a name="onNetverifyPrepareScanning--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>onNetverifyPrepareScanning</h4>
+<pre>void&nbsp;onNetverifyPrepareScanning()</pre>
+<div class="block">Indicates that the SDK is now loading information and a loading indicator should be displayed.
+ This callback is only triggered if a scanning method requires pre-loading of information</div>
+</li>
+</ul>
 <a name="onNetverifyPresentConfirmationView-com.jumio.nv.custom.NetverifyConfirmationType-">
 <!--   -->
 </a>
@@ -244,7 +261,7 @@ var activeTableTab = "activeTableTab";
 <h4>onNetverifyScanForPartFinished</h4>
 <pre>void&nbsp;onNetverifyScanForPartFinished(<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&nbsp;scanSide,
                                     boolean&nbsp;allPartsScanned)</pre>
-<div class="block">Indicates that the document part has been successfully scanned</div>
+<div class="block">Indicates that the document part has been successfully scanned. Displayed loading indicators should be dismissed</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>scanSide</code> - the scanned side</dd>
@@ -301,7 +318,7 @@ var activeTableTab = "activeTableTab";
 <h4>onNetverifyScanForPartCanceled</h4>
 <pre>void&nbsp;onNetverifyScanForPartCanceled(<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&nbsp;scanSide,
                                     <a href="../../../../com/jumio/nv/custom/NetverifyCancelReason.html" title="enum in com.jumio.nv.custom">NetverifyCancelReason</a>&nbsp;cancelReason)</pre>
-<div class="block">The scanning for this scanside has been cancelled</div>
+<div class="block">The scanning for this scanside has been cancelled. Displayed loading indicators should be dismissed</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>scanSide</code> - the scanned side</dd>

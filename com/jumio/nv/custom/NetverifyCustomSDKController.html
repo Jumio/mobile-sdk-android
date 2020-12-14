@@ -206,7 +206,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>java.util.List&lt;<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&gt;</code></td>
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.html#setDocumentConfiguration-com.jumio.nv.custom.NetverifyCountry-com.jumio.nv.data.document.NVDocumentType-com.jumio.nv.data.document.NVDocumentVariant-">setDocumentConfiguration</a></span>(<a href="../../../../com/jumio/nv/custom/NetverifyCountry.html" title="class in com.jumio.nv.custom">NetverifyCountry</a>&nbsp;country,
                         <a href="../../../../com/jumio/nv/data/document/NVDocumentType.html" title="enum in com.jumio.nv.data.document">NVDocumentType</a>&nbsp;documentType,
                         <a href="../../../../com/jumio/nv/data/document/NVDocumentVariant.html" title="enum in com.jumio.nv.data.document">NVDocumentVariant</a>&nbsp;documentVariant)</code>
@@ -277,19 +277,17 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setDocumentConfiguration</h4>
-<pre>public&nbsp;java.util.List&lt;<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&gt;&nbsp;setDocumentConfiguration(<a href="../../../../com/jumio/nv/custom/NetverifyCountry.html" title="class in com.jumio.nv.custom">NetverifyCountry</a>&nbsp;country,
-                                                         <a href="../../../../com/jumio/nv/data/document/NVDocumentType.html" title="enum in com.jumio.nv.data.document">NVDocumentType</a>&nbsp;documentType,
-                                                         <a href="../../../../com/jumio/nv/data/document/NVDocumentVariant.html" title="enum in com.jumio.nv.data.document">NVDocumentVariant</a>&nbsp;documentVariant)
-                                                  throws <a href="../../../../com/jumio/sdk/custom/SDKNotConfiguredException.html" title="class in com.jumio.sdk.custom">SDKNotConfiguredException</a>,
-                                                         java.lang.IllegalArgumentException</pre>
+<pre>public&nbsp;void&nbsp;setDocumentConfiguration(<a href="../../../../com/jumio/nv/custom/NetverifyCountry.html" title="class in com.jumio.nv.custom">NetverifyCountry</a>&nbsp;country,
+                                     <a href="../../../../com/jumio/nv/data/document/NVDocumentType.html" title="enum in com.jumio.nv.data.document">NVDocumentType</a>&nbsp;documentType,
+                                     <a href="../../../../com/jumio/nv/data/document/NVDocumentVariant.html" title="enum in com.jumio.nv.data.document">NVDocumentVariant</a>&nbsp;documentVariant)
+                              throws <a href="../../../../com/jumio/sdk/custom/SDKNotConfiguredException.html" title="class in com.jumio.sdk.custom">SDKNotConfiguredException</a>,
+                                     java.lang.IllegalArgumentException</pre>
 <div class="block">Select country and document type which has to be processed.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>country</code> - selected country which has to be choosen from the list in <a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyCountriesReceived-java.util.Map-java.lang.String-"><code>NetverifyCustomSDKInterface.onNetverifyCountriesReceived(Map, String)</code></a></dd>
 <dd><code>documentType</code> - document which has to be scanned - Has to be part of <a href="../../../../com/jumio/nv/custom/NetverifyCountry.html#getDocumentTypes--"><code>NetverifyCountry.getDocumentTypes()</code></a></dd>
 <dd><code>documentVariant</code> - variant which has to be scanned - Has to be part of <a href="../../../../com/jumio/nv/custom/NetverifyCountry.html#getDocumentVariants-com.jumio.nv.data.document.NVDocumentType-"><code>NetverifyCountry.getDocumentVariants(NVDocumentType)</code></a></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>List of all document parts which have to be scanned</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalArgumentException</code> - Country is not part of the returned list from <a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyCountriesReceived-java.util.Map-java.lang.String-"><code>NetverifyCustomSDKInterface.onNetverifyCountriesReceived(Map, String)</code></a>, document is not part of <a href="../../../../com/jumio/nv/custom/NetverifyCountry.html#getDocumentTypes--"><code>NetverifyCountry.getDocumentTypes()</code></a> or document variant is not part of <a href="../../../../com/jumio/nv/custom/NetverifyCountry.html#getDocumentVariants-com.jumio.nv.data.document.NVDocumentType-"><code>NetverifyCountry.getDocumentVariants(NVDocumentType)</code></a></dd>
 <dd><code><a href="../../../../com/jumio/sdk/custom/SDKNotConfiguredException.html" title="class in com.jumio.sdk.custom">SDKNotConfiguredException</a></code> - this controller is already destroyed</dd>

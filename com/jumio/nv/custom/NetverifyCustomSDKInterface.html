@@ -144,7 +144,7 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyResourcesLoaded--">onNetverifyResourcesLoaded</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyResourcesLoaded-java.util.List-">onNetverifyResourcesLoaded</a></span>(java.util.List&lt;<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&gt;&nbsp;scanSides)</code>
 <div class="block">Called as soon as all resources are loaded and scanning can be started</div>
 </td>
 </tr>
@@ -177,7 +177,7 @@ var activeTableTab = "activeTableTab";
 <h4>onNetverifyCountriesReceived</h4>
 <pre>void&nbsp;onNetverifyCountriesReceived(java.util.Map&lt;java.lang.String,<a href="../../../../com/jumio/nv/custom/NetverifyCountry.html" title="class in com.jumio.nv.custom">NetverifyCountry</a>&gt;&nbsp;countryList,
                                   java.lang.String&nbsp;userCountryCode)</pre>
-<div class="block">Select country and document type which has to be processed.</div>
+<div class="block">Select country and document type which has to be processed. Will only be called if the workflow contains an ID part</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>countryList</code> - Hashmap with all possible countries. The key is the ISO 3155-1 alpha 3 code, the value is an instance of <a href="../../../../com/jumio/nv/custom/NetverifyCountry.html" title="class in com.jumio.nv.custom"><code>NetverifyCountry</code></a></dd>
@@ -185,14 +185,18 @@ var activeTableTab = "activeTableTab";
 </dl>
 </li>
 </ul>
-<a name="onNetverifyResourcesLoaded--">
+<a name="onNetverifyResourcesLoaded-java.util.List-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>onNetverifyResourcesLoaded</h4>
-<pre>void&nbsp;onNetverifyResourcesLoaded()</pre>
+<pre>void&nbsp;onNetverifyResourcesLoaded(java.util.List&lt;<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&gt;&nbsp;scanSides)</pre>
 <div class="block">Called as soon as all resources are loaded and scanning can be started</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>scanSides</code> - List of all document parts which have to be scanned</dd>
+</dl>
 </li>
 </ul>
 <a name="onNetverifyFinished-com.jumio.nv.NetverifyDocumentData-java.lang.String-">
