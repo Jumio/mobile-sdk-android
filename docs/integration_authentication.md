@@ -45,7 +45,10 @@ dependencies {
     // mandatory
     implementation "com.jumio.android:core:3.8.0@aar"       // Jumio Core library
     implementation "com.jumio.android:auth:3.8.0@aar"       // Authentication library
-    implementation "com.jumio.android:zoom:3.8.0@aar"       // Face library
+
+    // Face library
+    implementation "com.jumio.android:zoom:3.8.0@aar"       
+    implementation "com.facetec:zoom-authentication:8.12.1@aar"
 
     implementation "androidx.appcompat:appcompat:1.2.0"
     implementation "androidx.room:room-runtime:2.2.5"

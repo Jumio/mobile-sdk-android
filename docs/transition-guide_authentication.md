@@ -6,7 +6,8 @@ This section only covers the breaking technical changes that should be considere
 
 ## 3.8.0
 #### Dependency Changes
-* Face library update: ~~`"com.jumio.android:face"`~~ is replaced by `"com.jumio.android:zoom"`
+* Face library update: ~~`"com.jumio.android:face"`~~ is replaced with `"com.jumio.android:zoom:3.8.0@aar"` and `"com.facetec:zoom-authentication:8.12.1@aar"`
+
 * AndroidX Appcompat update: ~~`"androidx.appcompat:appcompat:1.1.0"`~~ is replaced by `"androidx.appcompat:appcompat:1.2.0"`
 * Google Material Library update: ~~`"com.google.android.material:material:1.1.0"`~~ is replaced by `"com.google.android.material:material:1.2.1"`
 

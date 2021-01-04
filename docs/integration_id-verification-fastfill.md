@@ -29,8 +29,8 @@ Below there is a list of dependencies the application will need to work in Andro
 ```
 dependencies {
     // mandatory
-    implementation "com.jumio.android:core:3.8.0@aar"   // Jumio Core library
-    implementation "com.jumio.android:nv:3.8.0@aar"     // Netverify library
+    implementation "com.jumio.android:core:3.8.0@aar"       // Jumio Core library
+    implementation "com.jumio.android:nv:3.8.0@aar"         // Netverify library
 
     implementation "androidx.appcompat:appcompat:1.2.0"
     implementation "androidx.cardview:cardview:1.0.0"
@@ -45,24 +45,32 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0"
 
     // not mandatory
-    implementation "com.jumio.android:iproov:3.8.0@aar"						// Face library
-    implementation "com.jumio.android:zoom:3.8.0@aar"						// Face library alternative    
 
-    implementation "com.jumio.android:nv-barcode:3.8.0@aar"					// barcode scanning
-    implementation "com.jumio.android:nv-barcode-vision:3.8.0@aar"			// barcode scanning alternative (reduced size)
-    implementation "com.jumio.android:nv-mrz:3.8.0@aar"						// MRZ scanning
-    implementation "com.jumio.android:nv-nfc:3.8.0@aar"			 			// eMRTD scanning
-    implementation "com.jumio.android:dv:3.8.0@aar"							// Document verification library
-    implementation "com.jumio.android:nv-ocr:3.8.0@aar"						// Template matcher
-    implementation "com.jumio.android:auth:3.8.0@aar"						// Authentication library
-    implementation "com.jumio.android:bam:3.8.0@aar"						// BAM checkout library
+        // Face library
+    implementation "com.jumio.android:iproov:3.8.0@aar"       
+    implementation ("com.iproov.sdk:iproov:6.1.0"){          
+		    exclude group: 'org.json', module:'json'
+	  }                                                         
 
-    implementation "com.google.android.gms:play-services-vision:20.1.2"		// barcode scanning alternative
+        // Face library alternative
+    implementation "com.jumio.android:zoom:3.8.0@aar"     
+    implementation "com.facetec:zoom-authentication:8.12.1@aar"
 
-    implementation "org.jmrtd:jmrtd:0.7.19"									// eMRTD Scanning
-    implementation "org.ejbca.cvc:cert-cvc:1.4.6"							// eMRTD Scanning
-    implementation "org.bouncycastle:bcprov-jdk15on:1.65"					// eMRTD Scanning
-    implementation "net.sf.scuba:scuba-sc-android:0.0.18"					// eMRTD Scanning
+    implementation "com.jumio.android:nv-barcode:3.8.0@aar"   // Barcode scanning
+    implementation "com.jumio.android:nv-barcode-vision:3.8.0@aar"        // Barcode scanning alternative (reduced size)
+    implementation "com.google.android.gms:play-services-vision:20.1.2"   // Barcode scanning alternative
+
+    implementation "com.jumio.android:nv-mrz:3.8.0@aar"       // MRZ scanning
+    implementation "com.jumio.android:nv-ocr:3.8.0@aar"       // Template matcher
+    implementation "com.jumio.android:dv:3.8.0@aar"           // Document verification library
+    implementation "com.jumio.android:auth:3.8.0@aar"         // Authentication library
+    implementation "com.jumio.android:bam:3.8.0@aar"          // BAM checkout library
+
+    implementation "com.jumio.android:nv-nfc:3.8.0@aar"       // eMRTD scanning
+    implementation "org.jmrtd:jmrtd:0.7.19"                   // eMRTD Scanning
+    implementation "org.ejbca.cvc:cert-cvc:1.4.6"             // eMRTD Scanning
+    implementation "org.bouncycastle:bcprov-jdk15on:1.65"     // eMRTD Scanning
+    implementation "net.sf.scuba:scuba-sc-android:0.0.18"     // eMRTD Scanning
 }
 ```
 __Note:__ "Mandatory" libraries in this case are needed for a minimal runnable SDK implementation. All libraries marked "not mandatory" are optional in the sense that they improve the scanning experience and supported documents, including additional ID type options that can be left out if they are not needed. Version numbers may vary.

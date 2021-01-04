@@ -10,7 +10,7 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 ## SDK Version: __3.8.0__
 ![Changes](https://img.shields.io/badge/Change-blue) Added iProov as an additional liveness vendor to the [Jumio KYX platform](https://www.jumio.com/kyx/) [Identity Verification]
 
-![Improvement](https://img.shields.io/badge/Improvement-green) Added better guidance for devices with cameras that use a fixed focal distance [ID Verification/Fastfill, Document Verification]
+![Improvement](https://img.shields.io/badge/Improvement-green) Added better guidance for devices with a fixed focal distance [ID Verification/Fastfill, Document Verification]
 
 ![Fixes](https://img.shields.io/badge/Fix-success) Fixed crashes that could occur in edge cases [ID-Verification, Identity-Verification]
 
