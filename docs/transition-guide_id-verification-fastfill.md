@@ -17,7 +17,7 @@ This section only covers the breaking technical changes that should be considere
 * NEW classpath definition: `"classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"`
 
 * REPLACE Jumio Face: ~~`"com.jumio.android:face"`~~ with either:
-  * `"com.jumio.android.iproov:3.8.0@aar"` and `implementation ("com.iproov.sdk:iproov:6.1.0"){ exclude group: 'org.json', module:'json' }`
+  * `"com.jumio.android:iproov:3.8.0@aar"` and `implementation ("com.iproov.sdk:iproov:6.1.0"){ exclude group: 'org.json', module:'json' }`
   __or__
   * `"com.jumio.android:zoom:3.8.0@aar"` and `"com.facetec:zoom-authentication:8.12.1@aar"`
 
