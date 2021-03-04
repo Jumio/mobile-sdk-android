@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.jumio.MobileSDK;
 import com.jumio.bam.BamCardInformation;
 import com.jumio.bam.BamSDK;
 import com.jumio.bam.custom.BamCustomScanInterface;
@@ -74,8 +73,8 @@ public class BamCustomFragment extends Fragment implements BamCustomScanInterfac
 
 			//Since the BamSDK is a singleton internally, a new instance is not
 			//created here.
-			if (!MobileSDK.hasAllRequiredPermissions(getActivity())) {
-				ActivityCompat.requestPermissions(getActivity(), MobileSDK.getMissingPermissions(getActivity()), PERMISSION_REQUEST_CODE_BAM_CUSTOM);
+			if (!BamSDK.hasAllRequiredPermissions(getActivity())) {
+				ActivityCompat.requestPermissions(getActivity(), BamSDK.getMissingPermissions(getActivity()), PERMISSION_REQUEST_CODE_BAM_CUSTOM);
 			} else
 				startBamCustomScan();
 		});

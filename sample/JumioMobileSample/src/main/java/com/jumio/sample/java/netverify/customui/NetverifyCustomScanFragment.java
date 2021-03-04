@@ -22,10 +22,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.jumio.analytics.JumioAnalytics;
-import com.jumio.analytics.MobileEvents;
-import com.jumio.analytics.Screen;
-import com.jumio.analytics.UserAction;
 import com.jumio.commons.utils.ScreenUtil;
 import com.jumio.core.data.document.ScanSide;
 import com.jumio.nv.custom.NetverifyCancelReason;
@@ -45,6 +41,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.text.HtmlCompat;
@@ -75,6 +72,7 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 	private NetverifyCustomScanImpl customScanImpl;
 
 	private MenuItem flash, switchCamera;
+	private Toast blurToast;
 
 	/**
 	 * Constructor with parameters
@@ -122,7 +120,7 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 			root = inflater.inflate(R.layout.fragment_netverify_custom_scan_face, container, false);
 			btnRetryFace = root.findViewById(R.id.fragment_custom_scan_face_btn_retry);
 			btnRetryFace.setOnClickListener(this);
-			btnRetryFace.setVisibility(View.GONE);
+			btnRetryFace.setVisibility(View.INVISIBLE);
 
 			modeType = NetverifyCustomScanView.MODE_FACE;
 			customScanView = root.findViewById(R.id.fragment_nv_custom_scan_view);
@@ -161,28 +159,36 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 		btnCapture = root.findViewById(R.id.fragment_custom_scan_btn_capture);
 		btnCapture.setOnClickListener(this);
 
+		btnDismissHelp = root.findViewById(R.id.fragment_custom_scan_btn_dismiss_help);
+		btnDismissHelp.setOnClickListener(this);
+
 		loadingIndicator = root.findViewById(R.id.fragment_nv_custom_loading_indicator);
 		customConfirmationView = root.findViewById(R.id.fragment_nv_custom_confirmation_view);
 		customAnimationView = root.findViewById(R.id.fragment_nv_custom_animation_view);
 
 		customScanImpl = new NetverifyCustomScanImpl();
-		customScanViewPresenter = callback.onStartScanningWithSide(ScanSide.valueOf(scanSide), customScanView, customConfirmationView, customScanImpl);
+		customScanViewPresenter = callback.onInitScanningWithSide(ScanSide.valueOf(scanSide), customScanView, customConfirmationView, customScanImpl);
+		setHasOptionsMenu(true);
+		return root;
+	}
 
-		if (customScanViewPresenter != null) {
+	@Override
+	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+		if (customScanViewPresenter != null && savedInstanceState == null) {
 			setHelpText(customScanViewPresenter.getHelpText());
 
-			// show initial help animation for document scanning
-			if (ScanSide.valueOf(scanSide) == ScanSide.FRONT) {
-				btnDismissHelp = root.findViewById(R.id.fragment_custom_scan_btn_dismiss_help);
+			// show upfront help animation if available, otherwise skip and start scanning directly
+			if (customScanViewPresenter.hasHelpAnimation()) {
 				showDocumentHelpAnimation();
 			} else {
 				//Check for displaying shutter button for face manual capturing here as no upfront help is displayed
-				showShutterButton(customScanViewPresenter.showShutterButton());
+				customScanViewPresenter.startScan();
 			}
-		}
 
-		setHasOptionsMenu(true);
-		return root;
+			//Check for displaying shutter button for face manual capturing here as no upfront help is displayed
+			showShutterButton(customScanViewPresenter.showShutterButton());
+		}
 	}
 
 	/**
@@ -191,11 +197,10 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 	 */
 	private void showDocumentHelpAnimation() {
 		hideView(false, tvDocumentType, tvSteps, customScanView);
-		btnDismissHelp.setOnClickListener(this);
-		showView(btnDismissHelp);
-		tvDocumentType.setVisibility(View.INVISIBLE);
-		tvSteps.setVisibility(View.INVISIBLE);
-		customScanViewPresenter.getHelpAnimation(customAnimationView);
+		showView(btnDismissHelp, customAnimationView);
+		if (customScanViewPresenter.hasHelpAnimation()) {
+			customScanViewPresenter.getHelpAnimation(customAnimationView);
+		}
 	}
 
 	/**
@@ -261,19 +266,29 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 		}
 	}
 
+
+
 	/**
 	 * Handles cancelled scan
 	 * If document scan was cancelled, user is asked to try again, if face scan was cancelled
 	 * user is shown appropriate help animation
 	 */
-	private void scanningCanceled() {
-		showView(btnRetake);
-		hideView(false);
-		if (tvHelp != null) {
-			tvHelp.setText(getString(R.string.netverify_scanview_snackbar_check_process_error));
+	private void displayRetryHelp(ScanSide scanSide) {
+		if (customScanViewPresenter != null) {
+			customScanViewPresenter.stopScan();
+			if (customScanViewPresenter.hasHelpAnimation()) {
+				customScanViewPresenter.getHelpAnimation(customAnimationView);
+				showView(customAnimationView);
+			}
+			setHelpText(customScanViewPresenter.getHelpText());
 		}
-		if (ScanSide.valueOf(scanSide) == FACE) {
-			showView(customAnimationView, btnRetryFace, tvHelp);
+		if ((getActivity()) != null && ((AppCompatActivity) getActivity()).getSupportActionBar() != null) {
+			Objects.requireNonNull(((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+		}
+		if (scanSide == ScanSide.FACE) {
+			showView(btnRetryFace, tvHelp);
+		} else {
+			showView(btnRetake, tvHelp);
 		}
 	}
 
@@ -342,12 +357,6 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 			inflater.inflate(R.menu.menu_netverify_custom, menu);
 		}
 		if (customScanViewPresenter != null) {
-			if(modeType == NetverifyCustomScanView.MODE_FACE) {
-				// back arrow not used, scanView has own cancel button
-				if (getActivity() != null  && ((AppCompatActivity) getActivity()).getSupportActionBar() != null) {
-						Objects.requireNonNull(((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
-				}
-			}
 			customScanImpl.onNetverifyCameraAvailable();
 		}
 
@@ -420,6 +429,7 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 				case R.id.fragment_custom_scan_btn_dismiss_help:
 					hideView(false, customAnimationView, btnDismissHelp);
 					initScanView(customScanView);
+					customScanViewPresenter.startScan();
 					showView(tvDocumentType, tvSteps, customScanView);
 					if(customScanViewPresenter.isFallbackAvailable()) {
 						setFallbackVisibility(true);
@@ -442,10 +452,10 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 
 	@Override
 	public void onResume() {
+		super.onResume();
 		if (customScanViewPresenter != null) {
 			customScanViewPresenter.resume();
 		}
-		super.onResume();
 	}
 
 	@Override
@@ -454,14 +464,6 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 			customScanViewPresenter.pause();
 		}
 		super.onPause();
-	}
-
-	@Override
-	public void onDestroy() {
-		if (customScanViewPresenter != null) {
-			customScanViewPresenter.destroy();
-		}
-		super.onDestroy();
 	}
 
 	/**
@@ -556,7 +558,6 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 					})
 					.setNegativeButton(android.R.string.no, (dialog, which) -> {
 						dialog.dismiss();
-						JumioAnalytics.add(MobileEvents.userAction(JumioAnalytics.getSessionId(), Screen.ERROR, UserAction.CANCEL));
 						customNfcViewPresenter.cancel();
 					})
 					.show();
@@ -667,11 +668,17 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 		customScanView.setLayoutParams(params);
 		if (customScanViewPresenter != null) {
 			if (isPortrait) {
-				customScanView.setRatio(customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE ? 0.71f : 0.9f);
+				customScanView.setRatio(isFaceScan() ? 0.71f : 0.9f);
 			} else {
-				customScanView.setRatio(customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE ? 1.66f : 1.0f);
+				customScanView.setRatio(isFaceScan() ? 1.66f : 1.0f);
 			}
 		}
+	}
+
+	private boolean isFaceScan() {
+		return customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE_MANUAL ||
+			customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE_IPROOV ||
+			customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE_ZOOM;
 	}
 
 	/**
@@ -829,13 +836,24 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 		}
 
 		/**
-		 * Notify the user that the image is blurry and therefore can't be taken. (Manual image capturing only)
+		 * Notify the user that the image is blurry and therefore can't be taken.
 		 */
 		@Override
 		public void onNetverifyDisplayBlurHint() {
-			Toast toast = Toast.makeText(getActivity().getApplicationContext(), R.string.jumio_scanview_refocus, Toast.LENGTH_SHORT);
-			toast.setGravity(Gravity.CENTER, 0, 0);
-			toast.show();
+			if(blurToast != null) {
+				try {
+					if (blurToast.getView().isShown()) {
+						return;
+					} else {
+						blurToast.cancel();
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			blurToast = Toast.makeText(getActivity().getApplicationContext(), R.string.jumio_scanview_refocus, Toast.LENGTH_SHORT);
+			blurToast.setGravity(Gravity.CENTER, 0, 0);
+			blurToast.show();
 			Log.i(TAG, "onNetverifyDisplayBlurHint");
 		}
 
@@ -849,19 +867,32 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 		@Override
 		public void onNetverifyScanForPartCanceled(ScanSide scanSide, NetverifyCancelReason netverifyCancelReason) {
 			Log.i(TAG, "onNetverifyScanForPartCanceled");
-			scanningCanceled();
+			if(isDetached()) {
+				return;
+			}
+			hideView(false);
+			if (tvHelp != null) {
+				setHelpText(getString(R.string.netverify_scanview_snackbar_check_process_error));
+			}
+
 			switch (netverifyCancelReason) {
 				case ERROR_GENERIC:
-					customScanViewPresenter.stopScan();
-					customScanViewPresenter.getHelpAnimation(customAnimationView);
-					setHelpText(customScanViewPresenter.getHelpText());
-					if((getActivity()) != null && ((AppCompatActivity) getActivity()).getSupportActionBar() != null) {
-						Objects.requireNonNull(((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-					}
+					displayRetryHelp(scanSide);
 					break;
 				case USER_BACK:
 				case USER_CANCEL:
-					callback.onScanCancelled();
+					if (scanSide == ScanSide.FACE) {
+						displayRetryHelp(scanSide);
+					} else {
+						if (callback != null) {
+							callback.onScanCancelled();
+						}
+					}
+					break;
+				case NOT_AVAILABLE:
+					if (callback != null) {
+						callback.onScanCancelled();
+					}
 					break;
 				default:
 					break;
@@ -905,8 +936,8 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 	 */
 	public interface OnScanFragmentInteractionListener {
 
-		NetverifyCustomScanPresenter onStartScanningWithSide(ScanSide side, NetverifyCustomScanView scanView,
-		                                                     NetverifyCustomConfirmationView confirmationView, NetverifyCustomScanInterface customScanInterface);
+		NetverifyCustomScanPresenter onInitScanningWithSide(ScanSide side, NetverifyCustomScanView scanView,
+		                                                    NetverifyCustomConfirmationView confirmationView, NetverifyCustomScanInterface customScanInterface);
 
 		void onScanForPartFinished();
 

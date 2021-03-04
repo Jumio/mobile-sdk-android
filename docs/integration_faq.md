@@ -5,14 +5,20 @@
 ## Table of Contents
 - [Improve User Experience and Reduce Drop-off Rate](#improve-user-experience-and-reduce-drop-off-rate)
 - [Managing Errors](#managing-errors)
-    - [Ad blockers or Firewall](#ad-blockers-or-firewall)
+    - [Ad Blockers or Firewall](#ad-blockers-or-firewall)
 - [Reducing the Size of Your App](#reducing-the-size-of-your-app)
     - [Strip Unused Modules](#strip-unused-modules)
     - [App Bundles](#app-bundles)
-    - [Architectures - ABI Filters & Splitting](#arch)
+    - [Architectures, ABI Filters & Splitting](#architectures,-abi-filters-&-splitting)
 - [Jumio Authentication Workflow Integration](#jumio-authentication-workflow-integration)
+- [Fallback and Manual Capturing](#fallback-and-manual-capturing)
+- [Intent Filter and Credentials for Sample App](#intent-filter-and-credentials-for-sample-app)
+- [Custom Theme](#custom-theme-issues)
+  - [Custom Theme Is Not Working](#custom-theme-is-not-working)
+  - [Scan Overlay Is Not Displayed](#scan-overlay-is-not-displayed)
 - [Language Localization](#language-localization)
     - [String Updates](#string-updates)
+- [Java 8 Compatibility](#Java-8-compatibility)
 - [Overview of Scanning Methods](overview-of-scanning-methods)
 - [Glossary of Commonly Used Abbreviations](#glossary)
 - [Jumio Support](#jumio-support)
@@ -47,10 +53,11 @@ The following table highlights the most common error codes which are returned fr
 | G[0][0000] | The user pressed back or X to exit the SDK while no error view was presented. | Reasons for this could be manyfold. Often it might be due to the fact that the user didn't have his identity document at hand. Give the user the option to retry. |
 | J[x][yyyy] | The SDK journey was not completed within the session's max. lifetime. (The default is 15 minutes.) | The user should be informed about the timeout and be directed to start a new Jumio SDK session. |
 
-### Ad blockers or Firewall
+### Ad Blockers or Firewall
 End users might face the situation where they are connected to a network that can't reach our Jumio endpoints.
-Possible reasons for this might be ad blockers on the device, network wide ad blockers or network specific firewall settings.
-In these cases the SDK will return a specific error code: A10900. If this error is received we suggest to add a screen where the user is advised to switch network and/or turn off possible ad blockers.
+
+Possible reasons for this might be ad blockers on the device, network wide ad blockers or network specific firewall settings.  
+In these cases the SDK will return a specific error code: __A10900__ If this error is received, we suggest to add a screen where the user is advised to switch network and/or turn off possible ad blockers.
 
 ## Reducing the Size of Your App
 The Netverify SDK contains a wide range of different scanning methods. The SDK is able to capture identity documents and extract information on the device using enhanced machine learning and computer vision technologies.
@@ -64,13 +71,13 @@ The following table shows a range of different product configurations with the s
 
 |Product Configuration      | Size   | Modules   |
 |:--------------------------|:------:|:----------|
-|ID + Authentication (Zoom)                  | 12.73 MB | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, auth, zoom, zoom-authentication |
-|ID + Liveness (Zoom)                        | 11.71 MB | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, zoom, zoom-authentication |
-|ID + Liveness (Iproov)                      | 7.37 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, iproov |
-|ID + Liveness (Iproov) w/o NFC              | 5.86 MB  | core, nv, nv-mrz, nv-ocr, nv-barcode, iproov |
-|ID w/o Liveness                             | 7.01 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode |
-|ID w/o Liveness, Barcode                    | 5.92 MB  | core, nv, nv-mrz, nv-ocr |
-|ID w/o Liveness, Barcode, OCR               | 5.39 MB  | core, nv, nv-mrz |
+|ID + Authentication (Zoom)                  | 12.76 MB | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, auth, zoom |
+|ID + Liveness (Zoom)                        | 12.75 MB | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, zoom |
+|ID + Liveness (Iproov)                      | 7.42 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, iproov |
+|ID + Liveness (Iproov) w/o NFC              | 5.89 MB  | core, nv, nv-mrz, nv-ocr, nv-barcode, iproov |
+|ID w/o Liveness                             | 7.04 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode |
+|ID w/o Liveness, Barcode                    | 5.95 MB  | core, nv, nv-mrz, nv-ocr |
+|ID w/o Liveness, Barcode, OCR               | 5.42 MB  | core, nv, nv-mrz |
 |ID minimum                                  | 2.23 MB  | core, nv |
 |BAM Checkout                                | 4.74 MB  | core, bam |
 |Document verification                       | 2.02 MB  | core, dv  |
@@ -81,7 +88,7 @@ __Note:__  The size values in the table above depict the decompressed install si
 Android offers a way to reduce the size of a customer's built application using [App bundles](https://developer.android.com/guide/app-bundle/)
 Google Play’s new app serving model uses the *App bundle* to generate and serve optimized APKs for each user’s device configuration, so they download only the code and resources they need to run your app.
 
-### Architectures - ABI Filters & Splitting
+### Architectures, ABI Filters & Splitting
 The SDK supports *armeabi-v7a* and *arm64-v8a* architecture. You can filter which architecture to use by specifying the abiFilters. That way, you could manually filter for *armeabi-v7a* as *arm64-v8a*.
 
 __Be aware:__ As of August 2019, Google Play Console will require that new apps and app updates with native libraries provide 64-bit versions in addition to their 32-bit versions, as mentioned in the [Android developers blog.](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
@@ -124,11 +131,63 @@ In case of a __successful result__ you can grant the user access to your service
 
 In case an Authentication fail is returned, we recommend to allow the user between 3-5 Authentication attempts to prove their identity, before you lock the user from performing the action. This approach makes the most sense, as you don't want to lock out possible valid users who might not have completed the face capture task successfully for a legitimate reason. Don't worry about offering a potential fraudster more attempts to gain access to your system - our bullet proof liveness check does not allow them to get a successful result.
 
-## Language Localization
-Our SDK supports the [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages and cultures.
-All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable [within our Sample application](../sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml).
+## Fallback and Manual Capturing
+The method [`isFallbackAvailable()`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#isFallbackAvailable--) determines if a fallback for the current scan mode is available and returns a boolean. If the method returns true, the available fallback scan mode will have to be started with the method [`startFallback()`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#startFallback--).
 
-Currently, the following languages are automatically supported for your convenience: [supported languages](../README.md#language-localization)
+The method [`showShutterButton()`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#showShutterButton--) determines if a shutter button needs to be shown because the image has to be taken manually and returns a boolean. If the method returns true, you will have to display your own shutter button and call the method [`takePicture()`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#takePicture--) once it is clicked.
+
+__Note:__ Please note that the method `showShutterButton()` does neither create nor display the actual shutter button!
+
+"Manual capturing" simply refers to the user being able to manually take a picture. "Fallback" refers to an alternative scan mode the SDK can resort to if possible, in case there is an issue during the original scanning process. The fallback scan mode might be manual capturing in some cases, but not all.
+
+## Intent Filter and Credentials for Sample App
+The sample project contains two identical packages: One in Kotlin, one in Java. Please note that the `intent filter` in the sample project is set to Kotlin by default.
+```
+		<activity
+			android:name="com.jumio.sample.kotlin.MainActivity"
+			... >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+```
+
+Make sure to set the intent filter for the correct activity in the `AndroidManifest.xml` file and add your API credentials (API token and API secret) to the right package.
+
+## Custom Theme
+
+### Custom Theme Is Not Working     
+Any customized theme needs to be defined in a `styles.xml` file and has to inherit from the parent theme `Theme.Netverify`.
+```
+<style name="AppTheme.NetverifyCustom" parent="Theme.Netverify">
+  <item name="colorPrimary">@color/colorPrimary</item>
+  ...
+</style>
+
+```
+The actual name of the customized theme is arbitrary and can be chosen at will.
+
+Any customized theme needs to be added to the `AndroidManifest.xml` file by replacing the initial `Theme.Netverify`.  
+```
+<activity
+  android:name="com.jumio.nv.NetverifyActivity"
+  android:theme="@style/CustomNetverifyTheme"
+  ...
+<activity/>
+```
+
+### Scan Overlay Is Not Displayed  
+Make sure all necessary style attributes have been added to your custom theme specified in the `style.xml` file. In case of issues with scan overlay, all relevant attributes start with `scanOverlay` and `face_scanOverlay`.
+
+An overview of all style attributes [can be found here](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/styles.xml)
+
+## Language Localization
+[`Jumio Android Localization`](../README.md#language-localization) supports the [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for a number of different languages and cultures. Any language changes within the SDK or separate language support during runtime (meaning the SDK language differs from the overall device languages) are not possible.
+
+All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. All modifiable strings can be modified can be found [within our Sample application](../sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml).
+
+Currently, the following languages are automatically supported for your convenience: [Supported languages](../README.md#language-localization)
 
 Runtime language changes *within* the SDK or separate language support (meaning the SDK language differs from the overall device languages) is not possible. All of the used string values can be found in the [sample project resource folder](../sample/JumioMobileSample/src/main/res). If you want to [manage certain strings individually](https://developer.android.com/guide/topics/resources/localization#managing-strings), please access them in the __values-xx__ folder that corresponds to the language.
 
@@ -139,6 +198,18 @@ Our SDK supports accessibility features. Visually impaired users can now enable 
 
 ### String Updates
 For an overview of all updates and changes of SDK string keys please refer to [the revision history](https://github.com/Jumio/mobile-sdk-android/blame/master/sample/JumioMobileSample/src/main/res/values/strings.xml) on Github.
+
+## Java 8 Compatibility
+Jumio SDK uses [Java 8 language.](https://developer.android.com/studio/write/java8-support.html) It is necessary to enable Java 8 source and target compatibility for in the `build.gradle` file using `compileOptions`:
+```
+android {
+...
+  compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+```
 
 ## Overview of Scanning Methods
 

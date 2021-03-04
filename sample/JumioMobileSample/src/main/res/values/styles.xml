@@ -39,6 +39,12 @@
 		<item name="netverify_nfc_passport_foreground">@color/jumio_white</item>
 		<item name="netverify_nfc_phone_background">@color/jumio_grey800</item>
 
+		<item name="iproov_customization">@style/CustomIproov</item>
+	</style>
+
+	<style name="CustomIproov" parent="Iproov.Customization">
+		<item name="iproov_helpBackground">@color/jumio_white</item>
+		<item name="iproov_helpImage">@color/jumio_black</item>
 	</style>
 
 	<style name="CustomButtonStyleTextColor" parent="Netverify.Confirmation.MaterialButton">

@@ -9,11 +9,11 @@
 		android:id="@+id/fragment_nv_custom_scan_view"
 		android:layout_width="wrap_content"
 		android:layout_height="0dp"
-		android:layout_marginTop="32dp"
+		android:layout_marginTop="24dp"
 		jumio:jumio_ratio="1"
 		jumio:layout_constraintBottom_toTopOf="@+id/fragment_custom_scan_tv_guideline_top"
 		jumio:layout_constraintEnd_toEndOf="parent"
-		jumio:layout_constraintHeight_percent="0.6"
+		jumio:layout_constraintHeight_percent="0.68"
 		jumio:layout_constraintStart_toStartOf="parent"
 		jumio:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +24,7 @@
 		jumio:jumio_ratio="1"
 		jumio:layout_constraintBottom_toTopOf="@+id/fragment_custom_scan_tv_guideline_top"
 		jumio:layout_constraintEnd_toEndOf="parent"
-		jumio:layout_constraintHeight_percent="0.6"
+		jumio:layout_constraintHeight_percent="0.68"
 		jumio:layout_constraintStart_toStartOf="parent"
 		jumio:layout_constraintTop_toTopOf="parent" />
 
@@ -89,7 +89,7 @@
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		jumio:layout_constraintEnd_toEndOf="parent"
-		jumio:layout_constraintGuide_percent="0.6497948"
+		jumio:layout_constraintGuide_percent="0.68"
 		jumio:layout_constraintStart_toStartOf="parent" />
 
 	<androidx.constraintlayout.widget.Guideline
@@ -101,6 +101,16 @@
 		jumio:layout_constraintGuide_percent=".9"
 		jumio:layout_constraintStart_toStartOf="parent" />
 
+	<RelativeLayout
+		android:id="@+id/rl_background"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:background="@color/jumio_white"
+		jumio:layout_constraintHeight_percent="0.32"
+		jumio:layout_constraintEnd_toStartOf="parent"
+		jumio:layout_constraintStart_toStartOf="parent"
+		jumio:layout_constraintTop_toBottomOf="@id/fragment_custom_scan_tv_guideline_top"/>
+
 	<TextView
 		android:id="@+id/fragment_custom_scan_tv_document_type"
 		android:layout_width="match_parent"
@@ -110,7 +120,7 @@
 		android:gravity="start"
 		android:text="@string/custom_ui_scan_document_type"
 		android:textDirection="locale"
-		android:textSize="21sp"
+		android:textSize="20sp"
 		android:textStyle="bold"
 		jumio:layout_constraintBottom_toTopOf="@+id/fragment_custom_scan_tv_steps"
 		jumio:layout_constraintEnd_toStartOf="parent"

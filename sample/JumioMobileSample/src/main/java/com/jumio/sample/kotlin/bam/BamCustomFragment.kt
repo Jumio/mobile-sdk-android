@@ -8,22 +8,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButton
-import com.jumio.MobileSDK
 import com.jumio.bam.BamCardInformation
 import com.jumio.bam.BamSDK
 import com.jumio.bam.custom.BamCustomScanInterface
 import com.jumio.bam.custom.BamCustomScanPresenter
+import com.jumio.bam.custom.BamCustomScanView
 import com.jumio.bam.enums.BamErrorCase
 import com.jumio.commons.utils.ScreenUtil
 import com.jumio.core.enums.JumioDataCenter
 import com.jumio.core.exceptions.PlatformNotSupportedException
 import com.jumio.sample.R
 import com.jumio.sample.kotlin.MainActivity
-import kotlinx.android.synthetic.main.fragment_bam_custom.*
 import java.util.*
 
 /**
@@ -39,6 +40,12 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
     private var apiToken: String? = null
     private var apiSecret: String? = null
 	private var dataCenter: JumioDataCenter? = null
+    private var btnStart : MaterialButton? = null
+    private var btnStopBamCustom: MaterialButton? = null
+    private var switchCameraImageView: ImageView? = null
+    private var toggleFlashImageView: ImageView? = null
+    private var bamCustomContainer: RelativeLayout? = null
+    private var bamCustomScanView: BamCustomScanView? = null
 
 	private lateinit var bamSDK: BamSDK
 
@@ -52,6 +59,13 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
         apiSecret = arguments?.getString(MainActivity.KEY_API_SECRET)
 		dataCenter = arguments?.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
 
+        btnStart  = rootView.findViewById(R.id.btnStart)
+        btnStopBamCustom = rootView.findViewById(R.id.btnStopBamCustom)
+        switchCameraImageView = rootView.findViewById(R.id.switchCameraImageView)
+        toggleFlashImageView = rootView.findViewById(R.id.toggleFlashImageView)
+        bamCustomContainer = rootView.findViewById(R.id.bamCustomContainer)
+        bamCustomScanView = rootView.findViewById(R.id.bamCustomScanView)
+
         return rootView
     }
 
@@ -61,8 +75,8 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
         btnStart?.setOnClickListener {
             //Since the BamSDK is a singleton internally, a new instance is not
             //created here.
-            if (!MobileSDK.hasAllRequiredPermissions(activity)) {
-                ActivityCompat.requestPermissions(activity!!, MobileSDK.getMissingPermissions(activity), PERMISSION_REQUEST_CODE_BAM_CUSTOM)
+            if (!BamSDK.hasAllRequiredPermissions(activity)) {
+                ActivityCompat.requestPermissions(activity!!, BamSDK.getMissingPermissions(activity), PERMISSION_REQUEST_CODE_BAM_CUSTOM)
             } else
                 btnStartScan()
         }
@@ -250,7 +264,7 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
         alertDialogBuilder.setTitle("Scan error")
         alertDialogBuilder.setMessage(errorMessage)
         if (retryPossible) {
-            alertDialogBuilder.setPositiveButton("retry") { dialog, which ->
+            alertDialogBuilder.setPositiveButton("retry") { _, _ ->
                 try {
                     customScanPresenter?.retryScan()
                 } catch (e: UnsupportedOperationException) {
@@ -259,7 +273,7 @@ class BamCustomFragment : Fragment(), BamCustomScanInterface {
                 }
             }
         }
-        alertDialogBuilder.setNegativeButton("cancel") { dialog, which -> btnStopBamCustom.performClick() }
+        alertDialogBuilder.setNegativeButton("cancel") { _, _ -> btnStopBamCustom?.performClick() }
         alertDialogBuilder.show()
     }
 

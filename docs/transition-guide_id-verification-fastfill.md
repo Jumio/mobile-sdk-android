@@ -4,6 +4,68 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.9.0
+#### Dependency Changes
+* IProov update: ~~`"com.iproov.sdk:iproov:6.1.0"`~~ is replaced by "androidx.room:room-runtime:6.3.0"
+
+* Room update: ~~`"androidx.room:room-runtime:2.2.5"`~~ is replaced by "androidx.room:room-runtime:2.2.6"
+
+* AndroidX Kotlin Extension update: ~~`"androidx.core:core-ktx:1.3.1"`~~ is replaced by `"androidx.core:core-ktx:1.3.2"`
+
+* JMRTD update: ~~`"org.jmrtd:jmrtd:0.7.19"`~~ is replaced by `"org.jmrtd:jmrtd:0.7.24"`
+
+* Bouncycastle update: ~~`"org.bouncycastle:bcprov-jdk15on:1.65"`~~ is replaced by `"org.bouncycastle:bcprov-jdk15on:1.67"`
+
+* REMOVE LocalBroadcastManager ~~`"androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"`~~
+
+* REPLACE `apply plugin: 'kotlin-android` with `apply plugin: kotlin-parcelize`. The extensions plugin has been [deprecated by Google](https://goo.gle/kotlin-android-extensions-deprecation). The parcelize functionality has been extracted to a separate plugin.
+
+#### Public API Changes
+* `setEnableEMRTD(boolean enable)` has been removed from [NetverifySDK](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html)
+
+* `recreate(Activity rootActivity)` has been added to [NetverifySDK](https://jumio.github.io/mobile-sdk-android/com/jumio/MobileSDK.html#recreate-android.app.Activity-) - this needs to be called in case the hosting activity that was passed in [`create`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#create-android.app.Activity-java.lang.String-java.lang.String-com.jumio.core.enums.JumioDataCenter-) is recreated.
+
+#### Custom UI Changes
+* [`NetverifyCustomSDKInterface$onNetverifyFinished`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyFinished-android.os.Bundle-) all parameters were replaced with a Bundle. The keys are defined as constants in the [`NetverifySDK.EXTRA_SCAN_REFERENCE`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html):
+ * [`EXTRA_SCAN_REFERENCE`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#EXTRA_SCAN_REFERENCE)
+ * [`EXTRA_ACCOUNT_ID`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#EXTRA_ACCOUNT_ID)
+ * [`EXTRA_SCAN_DATA`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#EXTRA_SCAN_DATA)
+
+
+* [`NetverifyCustomSDKInterface$onNetverifyError`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyError-java.lang.String-java.lang.String-boolean-java.lang.String-java.lang.String-) added an optional parameter `accountId`
+
+* New methods for handling host activity lifecycle changes have been added:
+  * `recreate(Activity activity, NetverifyCustomSDKInterface netverifyCustomSDKInterface)` has been added to [NetverifyCustomSDKController](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKController.html#recreate-android.app.Activity-com.jumio.nv.custom.NetverifyCustomSDKInterface-) - this needs to be called in case the hosting activity is recreated.
+
+  * `recreate(NetverifyCustomScanView scanView, NetverifyCustomConfirmationView confirmationView, NetverifyCustomScanInterface netverifyCustomScanInterface)` has been added to [NetverifyCustomScanPresenter](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#recreate-com.jumio.nv.custom.NetverifyCustomScanView-com.jumio.nv.custom.NetverifyCustomConfirmationView-com.jumio.nv.custom.NetverifyCustomScanInterface-) - this needs to be called in case the hosting activity is recreated.
+
+* The initialization and start of scan presenters has been splitted. This allows displaying a help view with the help animation prior to starting the scan presenter:
+  * `startScanForPart(ScanSide scanSide, NetverifyCustomScanView scanView, NetverifyCustomConfirmationView confirmationView, NetverifyCustomScanInterface scanViewInterface` has been replaced with `initScanForPart(ScanSide scanSide, NetverifyCustomScanView scanView, NetverifyCustomConfirmationView confirmationView, NetverifyCustomScanInterface scanViewInterface)`
+
+  * The following method was added to `NetverifyCustomScanPresenter` to trigger scanning start after the initialization. This method needs to be called on the `NetverifyCustomScanPresenter` after it was initialized with `initScanForPart(..)`.
+```
+/**
+	 * Starts a scan after a scan presenter has been initialized
+	 */
+	void startScan();
+```
+
+  * Make sure to display the `NetverifyCustomScanView` only AFTER calling `startScan()` as done in our [Sample](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/netverify/customui/NetverifyCustomScanFragment.kt), to ensure that the scan presenter is fully initialized and the camera callback `onNetverifyCameraAvailable()` will be fired.
+
+* ~~[`NetverifyScanMode.FACE`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyScanMode.html#FACE)~~ is replaced with
+  * [`NetverifyScanMode.FACE_MANUAL`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyScanMode.html#FACE_MANUAL) for manual face scanning
+
+  * [`NetverifyScanMode.FACE_IPROOV`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyScanMode.html#FACE_IPROOV) for face scanning with IProov
+
+  * [`NetverifyScanMode.FACE_ZOOM`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyScanMode.html#FACE_ZOOM) for face scanning with Facetec ZoOm
+
+#### Jetifier adaptions
+Due to a bug in the Jetifier, the Bouncycastle library needs to be added to the Jetifiers ignorelist in the [`gradle.properties`](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/gradle.properties)
+```
+android.jetifier.blacklist=bcprov-jdk15on
+```
+Please note that the naming of this will change with the Android Gradle Plugin 4 release and will become `android.jetifier.ignorelist`
+
 ## 3.8.0
 #### Dependency Changes
 * NEW AndroidX Kotlin Extension: `"androidx.core:core-ktx:1.3.1"`
@@ -17,7 +79,7 @@ This section only covers the breaking technical changes that should be considere
 * NEW classpath definition: `"classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"`
 
 * REPLACE Jumio Face: ~~`"com.jumio.android:face"`~~ with either:
-  * `"com.jumio.android.iproov:3.8.0@aar"` and `implementation ("com.iproov.sdk:iproov:6.1.0"){ exclude group: 'org.json', module:'json' }`
+  * `"com.jumio.android:iproov:3.8.0@aar"` and `implementation ("com.iproov.sdk:iproov:6.1.0"){ exclude group: 'org.json', module:'json' }`
   __or__
   * `"com.jumio.android:zoom:3.8.0@aar"` and `"com.facetec:zoom-authentication:8.12.1@aar"`
 

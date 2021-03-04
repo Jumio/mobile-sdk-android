@@ -4,11 +4,11 @@
 
 ## Table of Contents
 - [Zoom Dependencies](#zoom-dependencies)
-- [Removing Zoom Library (3.7.2)](#removing-zoom-library-(3.7.2))
+- [Removing Zoom Library](#removing-zoom-library)
 - [Zoom Customization](#Zoom-customization)
   - [Overwrite Default Styles](#overwrite-default-styles)
   - [Set the Customized Attributes](#set-the-customized-attributes)
-  - [Updated Screens for Zoom Face Scanning (3.7.2)](#updated-screens-for-zoom-face-scanning-(3.7.2)
+  - [Updated Screens for Zoom Face Scanning 3.7.2](#updated-screens-for-zoom-face-scanning-3.7.2)
   - [Reference the New Styles](#reference-the-new-styles)
   - [Custom UI](#custom-ui)
 - [Jumio Support](#jumio-support)
@@ -16,17 +16,17 @@
 ## Zoom Dependencies
 Below there is a list of dependencies the application will need to make Zoom work in Android. If one of the modules is __not linked__, some functionalities such as certain methods may not be available.
 ```
-implementation "com.facetec:zoom-authentication:8.12.1@aar"    // Zoom face scanning library
-implementation "com.jumio.android:zoom:3.8.0@aar             // Face library
+implementation "com.facetec:zoom-authentication:8.12.1@aar"     // Zoom face scanning library
+implementation "com.jumio.android:zoom:3.9.0@aar                // Face library
 ```
 
-## Removing Zoom Library (3.8.0)
+## Removing Zoom Library
  When removing the Zoom library, it is necessary to remove the face library too, as well as adding a dummy drawable `face_ic_clear` to prevent build issues.
 
  __Please remove:__
 ```
 implementation "com.facetec:zoom-authentication:8.12.1@aar"     // Zoom face scanning library  
-implementation "com.jumio.android:zoom:3.8.0@aar"              // Face library
+implementation "com.jumio.android:zoom:3.9.0@aar"               // Face library
 ```
 
 ## Zoom Customization
@@ -110,10 +110,10 @@ If you integrate custom ui you can also adjust the position of the close button 
 </style>
 ```
 
-### Updated Screens for Zoom Face Scanning (3.7.2)
+### Updated Screens for Zoom Face Scanning 3.7.2
 As of __version 3.7.2__, the screens for face scanning have been updated. There are three new screens available: An __upfront help view__, the actual __Zoom scan view__ for face scanning like before, and an __error / help view__ in case of problems:
 
-![upfront help](images/images_Zoom_update/upfront_help.png)  ![scan screen](images/images_Zoom_update/scan_screen.png)  ![error default](images/images_Zoom_update/error_help_default_blurred.jpg)
+![upfront help](images/images_zoom_update/upfront_help.png)  ![scan screen](images/images_zoom_update/scan_screen.png)  ![error default](images/images_zoom_update/error_help_default_blurred.jpg)
 
 The background color of the screens can be customized using the parameter `face_scanOverlayBackground`, pictured __black__ above. All foreground elements, text and the help screen overlay can be customized using `face_scanOverlayOval`, pictured __white__ above, and button backgrounds as well as progress text can be customized using `face_scanOverlayProgress`, pictured __green__ above.
 ```

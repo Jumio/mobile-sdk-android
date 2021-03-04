@@ -149,9 +149,6 @@ public class NetverifyFragment extends Fragment implements View.OnClickListener,
 			// You can disable Identity Verification during the ID verification for a specific transaction.
 			netverifySDK.setEnableIdentityVerification(switchIdentitiyVerification.isChecked());
 
-			// Use the following method to disable eMRTD scanning.
-//			netverifySDK.setEnableEMRTD(false);
-
 			// Use the following method to set the default camera position.
 //			netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
 

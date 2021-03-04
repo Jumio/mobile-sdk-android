@@ -4,6 +4,12 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.9.0
+#### Dependency Changes
+* Room update: ~~"androidx.room:room-runtime:2.2.5"~~ is replaced by "androidx.room:room-runtime:2.2.6"
+
+* LocalBroadcastManager removed: ~~`"androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"`~~
+
 ## 3.8.0
 #### Dependency Changes
 * AndroidX Appcompat update: ~~`"androidx.appcompat:appcompat:1.1.0"`~~ is replaced by `"androidx.appcompat:appcompat:1.2.0"`

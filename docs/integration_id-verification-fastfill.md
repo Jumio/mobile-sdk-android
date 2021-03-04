@@ -16,7 +16,7 @@ Jumio’s ID Verification allows businesses to establish the genuine identity of
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release Notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.8.0
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.9.0
 
 For breaking technical changes, please read our [transition guide](transition-guide_id-verification-fastfill.md)
 
@@ -29,15 +29,14 @@ Below there is a list of dependencies the application will need to work in Andro
 ```
 dependencies {
     // mandatory
-    implementation "com.jumio.android:core:3.8.0@aar"       // Jumio Core library
-    implementation "com.jumio.android:nv:3.8.0@aar"         // Netverify library
+    implementation "com.jumio.android:core:3.9.0@aar"       // Jumio Core library
+    implementation "com.jumio.android:nv:3.9.0@aar"         // Netverify library
 
     implementation "androidx.appcompat:appcompat:1.2.0"
     implementation "androidx.cardview:cardview:1.0.0"
-    implementation "androidx.room:room-runtime:2.2.5"
+    implementation "androidx.room:room-runtime:2.2.6"
     implementation "androidx.constraintlayout:constraintlayout:2.0.4"
-    implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
-    implementation "androidx.core:core-ktx:1.3.1"
+    implementation "androidx.core:core-ktx:1.3.2"
 
     implementation "com.google.android.material:material:1.2.1"
 
@@ -45,35 +44,56 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0"
 
     // not mandatory
-
-        // Face library
-    implementation "com.jumio.android:iproov:3.8.0@aar"       
-    implementation ("com.iproov.sdk:iproov:6.1.0"){          
+    implementation "com.jumio.android:iproov:3.9.0@aar"       // Face Liveness library (iProov)
+    implementation ("com.iproov.sdk:iproov:6.3.0"){           // Face Liveness library (iProov)
 		    exclude group: 'org.json', module:'json'
 	  }                                                         
 
-        // Face library alternative
-    implementation "com.jumio.android:zoom:3.8.0@aar"     
-    implementation "com.facetec:zoom-authentication:8.12.1@aar"
+    implementation "com.jumio.android:zoom:3.9.0@aar"             // Face Liveness library (ZoOm)
+    implementation "com.facetec:zoom-authentication:8.12.1@aar"   // Face Liveness library (ZoOm)
 
-    implementation "com.jumio.android:nv-barcode:3.8.0@aar"   // Barcode scanning
-    implementation "com.jumio.android:nv-barcode-vision:3.8.0@aar"        // Barcode scanning alternative (reduced size)
-    implementation "com.google.android.gms:play-services-vision:20.1.2"   // Barcode scanning alternative
+    implementation "com.jumio.android:nv-barcode:3.9.0@aar"   // Barcode scanning
+    implementation "com.jumio.android:nv-barcode-vision:3.9.0@aar"        // Barcode scanning alternative (reduced size)
+    implementation "com.google.android.gms:play-services-vision:20.1.3"   // Barcode scanning alternative
 
-    implementation "com.jumio.android:nv-mrz:3.8.0@aar"       // MRZ scanning
-    implementation "com.jumio.android:nv-ocr:3.8.0@aar"       // Template matcher
-    implementation "com.jumio.android:dv:3.8.0@aar"           // Document verification library
-    implementation "com.jumio.android:auth:3.8.0@aar"         // Authentication library
-    implementation "com.jumio.android:bam:3.8.0@aar"          // BAM checkout library
+    implementation "com.jumio.android:nv-mrz:3.9.0@aar"       // MRZ scanning
+    implementation "com.jumio.android:nv-ocr:3.9.0@aar"       // Template matcher
+    implementation "com.jumio.android:dv:3.9.0@aar"           // Document verification library
+    implementation "com.jumio.android:auth:3.9.0@aar"         // Authentication library
+    implementation "com.jumio.android:bam:3.9.0@aar"          // BAM checkout library
 
-    implementation "com.jumio.android:nv-nfc:3.8.0@aar"       // eMRTD scanning
-    implementation "org.jmrtd:jmrtd:0.7.19"                   // eMRTD Scanning
+    implementation "com.jumio.android:nv-nfc:3.9.0@aar"       // eMRTD scanning
+    implementation "org.jmrtd:jmrtd:0.7.24"                   // eMRTD Scanning
     implementation "org.ejbca.cvc:cert-cvc:1.4.6"             // eMRTD Scanning
-    implementation "org.bouncycastle:bcprov-jdk15on:1.65"     // eMRTD Scanning
+    implementation "org.bouncycastle:bcprov-jdk15on:1.67"     // eMRTD Scanning
     implementation "net.sf.scuba:scuba-sc-android:0.0.18"     // eMRTD Scanning
 }
 ```
 __Note:__ "Mandatory" libraries in this case are needed for a minimal runnable SDK implementation. All libraries marked "not mandatory" are optional in the sense that they improve the scanning experience and supported documents, including additional ID type options that can be left out if they are not needed. Version numbers may vary.
+
+#### Certified Liveness Vendor
+Jumio offers the choice between two Certified Liveness vendors to determine liveness:
+
+* iProov
+* ZoOm
+
+The SDK can only use one vendor at a time. Switching vendors during runtime is not possible. If both dependencies are linked in the same project, Jumio SDK will use iProov.
+
+__Using iProov:__
+```
+implementation "com.jumio.android:iproov:3.9.0@aar"       
+implementation ("com.iproov.sdk:iproov:6.3.0"){
+    exclude group: 'org.json', module:'json'
+}
+```
+
+iProov currently depends on okhttp 3.8.1. (Please refer to [Known Issues](known_issues.md#Issues-with-okhttp3-dependency-using-iproov) for detailed information.)
+
+__Using ZoOm:__
+```
+implementation "com.jumio.android:zoom:3.9.0@aar"     
+implementation "com.facetec:zoom-authentication:8.12.1@aar"
+```
 
 #### Barcode Alternative
 As an alternative to the `com.jumio.android:nv-barcode` dependency, you can substitute the  `com.jumio.android:nv-barcode-vision` library together with the `com.google.android.gms:play-services-vision` library. If this combination is used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues:
@@ -111,7 +131,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use ID Verification or Fastfill together with BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:3.8.0@aar"
+implementation "com.jumio.android:bam:3.9.0@aar"
 ```
 
 #### Root Detection
@@ -216,12 +236,6 @@ netverifySDK.setUserReference("USERREFERENCE");
 ```
 __Note:__ Transaction identifiers must not contain sensitive data like PII (Personally Identifiable Information) or account login.
 
-### eMRTD
-Use `setEnableEMRTD()` to read the NFC chip of an eMRTD.
-```
-netverifySDK.setEnableEMRTD (true);
-```
-
 ### Jumio Watchlist Screening
 [Jumio Screening](https://www.jumio.com/screening/) is supported on the Jumio Android SDK. The following SDK method is used to set watchlist screening on transaction level. Enable to override the default search, or disable watchlist screening for this transaction.
 ```
@@ -295,6 +309,43 @@ After customizing the SDK, you can copy the code from the theme `CustomNetverify
 
 ### Tutorial
 [Customizing appearance (Video):](https://share.vidyard.com/watch/rEkMfyhjRXb1G7ffYUioLK) How to customize the look and feel of your application using the Jumio Surface tool
+
+__Customize iProov:__   
+
+iProov appearance can be customized using:
+```
+<style name="CustomIproov" parent="Iproov.Customization">
+```
+This style has to be added to your main custom theme using:
+
+```
+<style name="CustomNetverifyTheme" parent="Theme.Netverify">
+  ...
+  <item name="iproov_customization">@style/CustomIproov</item>
+  ...
+</style>
+```
+
+__Customize Zoom:__   
+
+Zoom appearance can be customized using:
+```
+<style name="CustomZoom" parent="Zoom.Customization">
+<style name="CustomZoomLowLight" parent="Zoom.Customization.Lowlight">
+```
+
+One or both of these styles have to be added to your main custom theme using:
+
+```
+<style name="CustomNetverifyTheme" parent="Theme.Netverify">
+  ...
+  <item name="zoom_customization">@style/CustomZoom</item>
+  <item name="zoom_customization_lowlight">@style/CustomZoomLowLight</item>
+  ...
+</style>
+```
+
+__Note:__ Using the surface tool will provide you with XML Output for both themes. Please make sure to customize accordingly and remove the styles you won't use.
 
 ### Customize Look and Feel
 There are two possibilities for applying the customized theme that was explained in the previous chapter:
@@ -465,7 +516,7 @@ public Set<NVDocumentVariant> getDocumentVariants(NVDocumentType documentType);
 
 **[NVDocumentVariant](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/data/document/NVDocumentVariant.html)** values: `PAPER`, `PLASTIC`
 
-**[NetverifyScanMode](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyScanMode.html)** values: `BARCODE`, `FACE`, `MANUAL`, `MRZ`, `NFC`, `OCR_CARD`, `OCR_TEMPLATE`
+**[NetverifyScanMode](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyScanMode.html)** values: `BARCODE`, `FACE_MANUAL`, `FACE_IPROOV`, `FACE_ZOOM`, `MANUAL`, `MRZ`, `NFC`, `OCR_CARD`, `OCR_TEMPLATE`
 
 **[NVScanSide](https://jumio.github.io/mobile-sdk-android/com/jumio/core/data/document/ScanSide.html)** values: `FRONT`, `BACK`, `FACE`
 
@@ -513,7 +564,7 @@ Upon `onNetverifyCameraAvailable()` within *yourNetverifyCustomScanInterface*, y
 Call `showShutterButton()` to determine if the image will be taken manually. If so, display your shutter button and call `takePicture()` once clicked.
 
 ### Activity Lifecycle Handling
-To handle the activity lifecycle correctly, call `pause` and `resume` from the `NetverifyCustomSDKController` and `NetverifyCustomScanPresenter` if currently active.
+To handle the activity lifecycle correctly, call `pause` and `resume` from the `NetverifyCustomSDKController` and `NetverifyCustomScanPresenter` if currently active. Also make sure to keep instances of `NetverifySDK`, `NetverifyCustomSDKController` and `NetverifyCustomScanPresenter` static and call their `recreate` functions in case the hosting activity gets recreated.
 
 ### Handling Camera Session
 Implement the following methods within
@@ -553,7 +604,7 @@ Once the phone is positioned on the NFC chip of a Passport, NFC scanning starts 
 #### Result and Error Handling
 Instead of using the standard method `onActivityResult()`, implement the following methods within *yourNetverifyCustomSDKInterface* for successful scans and error notifications:
 
-The method `onNetverifyFinished(NetverifyDocumentData documentData, String scanReference)` has to be implemented to handle data after a successful scan.
+The method `onNetverifyFinished(Bundle data)` has to be implemented to handle data after a successful scan.
 
 The method `onNetverifyError(String errorCode, String errorMessage, boolean retryPossible, String scanReference)` has to be implemented to handle data after an unsuccessful scan. You can show the error message and/or call `netverifyCustomSDKController.retry()` if a retry is possible.
 

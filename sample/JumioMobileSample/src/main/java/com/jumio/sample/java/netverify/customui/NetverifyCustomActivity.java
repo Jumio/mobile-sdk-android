@@ -11,7 +11,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.AppBarLayout;
-import com.jumio.MobileSDK;
 import com.jumio.core.data.document.ScanSide;
 import com.jumio.core.enums.JumioDataCenter;
 import com.jumio.core.exceptions.MissingPermissionException;
@@ -32,6 +31,7 @@ import com.jumio.sample.R;
 import com.jumio.sample.java.MainActivity;
 import com.jumio.sdk.custom.SDKNotConfiguredException;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -59,19 +59,23 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 	private final static String TAG = "NetverifyCustomActivity";
 	public static final String BUNDLE_DOCUMENT_TYPE_LIST = "BUNDLE_DOCUMENT_TYPE_LIST";
 	public static final String BUNDLE_DOCUMENT_TYPE = "BUNDLE_DOCUMENT_TYPE";
+	private static final String INSTANCE_COUNTRY_MAP = "country_map";
+	private static final String INSTANCE_SCANSIDES = "scansides";
+	private static final String INSTANCE_SELECTED_COUNTRY = "selected_country";
+	private static final String INSTANCE_SELECTED_DOCUMENTTYPE = "selected_documenttype";
+	private static final String INSTANCE_SELECTED_SCANSIDE = "selected_scanside";
 	private static final int PERMISSION_REQUEST_CODE_NETVERIFY_CUSTOM = 303;
 
 	private String apiToken = null;
 	private String apiSecret = null;
 	private JumioDataCenter datacenter = null;
 
-	private NetverifySDK netverifySDK = null;
+	private static NetverifySDK netverifySDK = null;
+	private static NetverifyCustomSDKController customSDKController = null;
+	private static NetverifyCustomScanPresenter customScanViewPresenter = null;
 
-	private ArrayList<Fragment> backStack = null;
 	private NetverifyCountry selectedCountry = null;
-	private Map<String, NetverifyCountry> countryMap;
-
-	private NetverifyCustomSDKController customSDKController;
+	private Map<String, NetverifyCountry> countryMap = null;
 
 	private NVDocumentType selectedDocumentType;
 	private int selectedScanSide;
@@ -95,7 +99,6 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 		if (getSupportActionBar() != null) {
 			getSupportActionBar().setTitle("");
 		}
-		backStack = new ArrayList<>();
 
 		//Set up credentials
 		Bundle args = getIntent().getExtras();
@@ -113,7 +116,21 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 			getSupportActionBar().setHomeAsUpIndicator(icon);
 			getSupportActionBar().setShowHideAnimationEnabled(false);
 		}
-		initializeNetverifyCustom();
+
+		if(savedInstanceState != null && netverifySDK != null && customSDKController != null) {
+			//Activity has been recreated
+			netverifySDK.recreate(this);
+			customSDKController.recreate(this, new NetverifyCustomSDKImpl());
+
+			countryMap = (Map<String, NetverifyCountry>) savedInstanceState.getSerializable(INSTANCE_COUNTRY_MAP);
+			sides = (List<ScanSide>) savedInstanceState.getSerializable(INSTANCE_SCANSIDES);
+			selectedCountry = (NetverifyCountry) savedInstanceState.getSerializable(INSTANCE_SELECTED_COUNTRY);
+			selectedDocumentType = (NVDocumentType) savedInstanceState.getSerializable(INSTANCE_SELECTED_DOCUMENTTYPE);
+			selectedScanSide = savedInstanceState.getInt(INSTANCE_SELECTED_SCANSIDE);
+		} else {
+			cleanupSDK();
+			initializeNetverifyCustom();
+		}
 	}
 
 	@Override
@@ -139,16 +156,14 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 	}
 
 	@Override
-	public void onDestroy() {
-		super.onDestroy();
-		try {
-			if (customSDKController != null) {
-				customSDKController.destroy();
-				customSDKController = null;
-			}
-		} catch (SDKNotConfiguredException e) {
-			Log.e(TAG, "onDestroy: " + e);
-		}
+	protected void onSaveInstanceState(@NonNull Bundle outState) {
+		super.onSaveInstanceState(outState);
+
+		outState.putSerializable(INSTANCE_SELECTED_COUNTRY, selectedCountry);
+		outState.putSerializable(INSTANCE_COUNTRY_MAP, (Serializable) countryMap);
+		outState.putSerializable(INSTANCE_SELECTED_DOCUMENTTYPE, selectedDocumentType);
+		outState.putSerializable(INSTANCE_SCANSIDES, (Serializable) sides);
+		outState.putInt(INSTANCE_SELECTED_SCANSIDE, selectedScanSide);
 	}
 
 	@Override
@@ -191,17 +206,21 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 	}
 
 	/**
-	 * Scan has been started.
+	 * Scan has been initialized.
 	 *
 	 * @param side             refers to which side of the document is being scanned (front or back)
 	 * @param scanView         does the actual document and face scanning
 	 * @param confirmationView returns the scanned image for confirmation
 	 */
-	public NetverifyCustomScanPresenter onStartScanningWithSide(ScanSide side, NetverifyCustomScanView scanView, NetverifyCustomConfirmationView confirmationView,
-	                                                            NetverifyCustomScanInterface customScanImpl) {
+	public NetverifyCustomScanPresenter onInitScanningWithSide(ScanSide side, NetverifyCustomScanView scanView, NetverifyCustomConfirmationView confirmationView,
+	                                                           NetverifyCustomScanInterface customScanImpl) {
 
 		try {
-			NetverifyCustomScanPresenter customScanViewPresenter = customSDKController.startScanForPart(side, scanView, confirmationView, customScanImpl);
+			if(customScanViewPresenter == null) {
+				customScanViewPresenter = customSDKController.initScanForPart(side, scanView, confirmationView, customScanImpl);
+			} else {
+				customScanViewPresenter.recreate(scanView, confirmationView, customScanImpl);
+			}
 			if (customScanViewPresenter == null) {
 				Log.e(TAG, "onStartScanningWithSide ");
 				throw new SDKNotConfiguredException("Could not create customScanViewPresenter");
@@ -221,6 +240,7 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 	 */
 	@Override
 	public void onScanForPartFinished() {
+		customScanViewPresenter = null;
 		selectedScanSide++;
 		if (selectedScanSide < sides.size()) {
 
@@ -245,6 +265,7 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 	@Override
 	public void onScanFinished() {
 		try {
+			customScanViewPresenter = null;
 			customSDKController.finish();
 		} catch (SDKNotConfiguredException e) {
 			Log.e(TAG, "onScanFinished: ", e);
@@ -286,8 +307,8 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 	private void initializeNetverifyCustom() {
 
 		//Check if there is permission to use a customized version of NetverifySDK
-		if (!MobileSDK.hasAllRequiredPermissions(this)) {
-			ActivityCompat.requestPermissions(this, MobileSDK.getMissingPermissions(this), PERMISSION_REQUEST_CODE_NETVERIFY_CUSTOM);
+		if (!NetverifySDK.hasAllRequiredPermissions(this)) {
+			ActivityCompat.requestPermissions(this, NetverifySDK.getMissingPermissions(this), PERMISSION_REQUEST_CODE_NETVERIFY_CUSTOM);
 		} else {
 			//Show Document Selection Fragment
 			try {
@@ -376,9 +397,6 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 			// You can disable Identity Verification during the ID verification for a specific transaction.
 			netverifySDK.setEnableIdentityVerification(true);
 
-			// Use the following method to disable eMRTD scanning.
-			netverifySDK.setEnableEMRTD(true);
-
 			// Use the following method to set the default camera position.
 //			netverifySDK.setCameraPosition(JumioCameraPosition.FRONT);
 
@@ -454,6 +472,22 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 	 * Destroys SDKController and NetverifySDK if they exist
 	 */
 	private void cleanupSDK() {
+		if(customScanViewPresenter != null) {
+			try {
+				customScanViewPresenter.destroy();
+			} catch (Exception e) {
+				Log.w(TAG, e.getMessage());
+			}
+			customScanViewPresenter = null;
+		}
+		if(customSDKController != null) {
+			try {
+				customSDKController.destroy();
+			} catch (Exception e) {
+				Log.w(TAG, e.getMessage());
+			}
+			customSDKController = null;
+		}
 		if (netverifySDK != null) {
 			netverifySDK.destroy();
 			netverifySDK = null;
@@ -489,19 +523,7 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 		fragmentTransaction.setCustomAnimations(R.animator.nv_fade_in, R.animator.nv_fade_out);
-
-		if (backStack.size() > 0) {
-			if (closeCurrentFragment) {
-				for (Fragment detachFragment : backStack) {
-					backStack.remove(detachFragment);
-					fragmentTransaction.detach(detachFragment);
-				}
-			}
-		}
-		if (newFragment != null) {
-			fragmentTransaction.add(R.id.fragment_holder, newFragment, fragmentName);
-			backStack.add(newFragment);
-		}
+		fragmentTransaction.replace(R.id.fragment_holder, newFragment, fragmentName);
 		try {
 			fragmentTransaction.commitAllowingStateLoss();
 		} catch (IllegalStateException e) {
@@ -577,14 +599,14 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 		 * Sets parameters for and starts confirmation fragment if all scans have been finished
 		 * and verification process has been successful
 		 *
-		 * @param documentData  extracted {@link NetverifyDocumentData}
-		 * @param scanReference Scan reference
+		 * @param data  workflow result data, like {@link com.jumio.nv.NetverifySDK#EXTRA_SCAN_REFERENCE},  {@link com.jumio.nv.NetverifySDK#EXTRA_ACCOUNT_ID},  {@link com.jumio.nv.NetverifySDK#EXTRA_SCAN_DATA}
 		 */
 		@Override
-		public void onNetverifyFinished(NetverifyDocumentData documentData, String scanReference) {
+		public void onNetverifyFinished(Bundle data) {
 			Log.i(TAG, "onNetverifyFinished");
-			Log.i(TAG, "scanReference: " + scanReference);
-
+			Log.i(TAG, "scanReference: " + data.getString(NetverifySDK.EXTRA_SCAN_REFERENCE));
+			Log.i(TAG, "accountId: " + data.getString(NetverifySDK.EXTRA_ACCOUNT_ID));
+			NetverifyDocumentData documentData = (NetverifyDocumentData) data.getSerializable(NetverifySDK.EXTRA_SCAN_DATA);
 			if (documentData != null) {
 				String firstName = !TextUtils.isEmpty(documentData.getFirstName()) ? documentData.getFirstName() : "";
 				String lastname = !TextUtils.isEmpty(documentData.getLastName()) ? documentData.getLastName() : "";
@@ -603,10 +625,11 @@ public class NetverifyCustomActivity extends AppCompatActivity implements Bottom
 		 * @param errorMessage  the localized error message
 		 * @param retryPossible true when {@link NetverifyCustomSDKController#retry()} can be called
 		 * @param scanReference Scan reference
+		 * @param accountId     Account ID, if available
 		 */
 		@Override
-		public void onNetverifyError(String errorCode, String errorMessage, boolean retryPossible, String scanReference) {
-			Log.i(TAG, String.format(Locale.getDefault(), "onNetverifyError: %s, %s, %d, %s", errorCode, errorMessage, retryPossible ? 0 : 1, scanReference != null ? scanReference : "null"));
+		public void onNetverifyError(String errorCode, String errorMessage, boolean retryPossible,  @Nullable  String scanReference, @Nullable String accountId) {
+			Log.i(TAG, String.format(Locale.getDefault(), "onNetverifyError: %s, %s, %d, %s, %s", errorCode, errorMessage, retryPossible ? 0 : 1, scanReference != null ? scanReference : "null", accountId != null ? accountId : "null"));
 			NetverifyCustomActivity.this.runOnUiThread(new NetverifyErrorPresenter(errorCode, errorMessage, retryPossible));
 		}
 

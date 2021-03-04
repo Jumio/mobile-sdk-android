@@ -4,6 +4,14 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.9.0
+#### Dependency Changes
+* Room update: ~~"androidx.room:room-runtime:2.2.5"~~ is replaced by "androidx.room:room-runtime:2.2.6"
+
+* AndroidX Kotlin Extension update: ~~`"androidx.core:core-ktx:1.3.1"`~~ is replaced by `"androidx.core:core-ktx:1.3.2"`
+
+* LocalBroadcastManager removed: ~~`"androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"`~~
+
 ## 3.8.0
 #### Dependency Changes
 * Face library update: ~~`"com.jumio.android:face"`~~ is replaced with `"com.jumio.android:zoom:3.8.0@aar"` and `"com.facetec:zoom-authentication:8.12.1@aar"`

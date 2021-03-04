@@ -184,7 +184,7 @@ See our [Change Log](docs/changelog.md) for more information about our current S
 # Support
 
 ## Previous Version
-The previous release version 3.7.3 of the Jumio Mobile SDK is supported until 2021-03-15.
+The previous release version 3.8.0 of the Jumio Mobile SDK is supported until 2021-06-05.
 
 When the support period has expired, bug fixes and technical support will no longer be provided. Current bugs are typically fixed in the upcoming versions. Older SDK versions will keep functioning with our server until further notice, but we highly recommend that you always update to the latest version to benefit from SDK improvements and bug fixes.
 

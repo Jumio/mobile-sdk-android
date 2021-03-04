@@ -7,13 +7,33 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
-## SDK Version: __3.8.0__
-![Changes](https://img.shields.io/badge/Change-blue) Added iProov as an additional liveness vendor to the [Jumio KYX platform](https://www.jumio.com/kyx/) [Identity Verification]
+## SDK Version: __3.9.0__
+![Improvement](https://img.shields.io/badge/Improvement-green) Improved SDK lifecycle and state handling to reduce specific scenarios in which SDK crashes could have happened [Identity Verification]
 
+![Improvement](https://img.shields.io/badge/Improvement-green) Improved retry guidance for Identity Verification [Identity Verification]
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Improved customization options [Identity Verification]
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Added more granular differentiations for `ScanMode` in CustomUI [Identity Verification]
+
+![Fixes](https://img.shields.io/badge/Fix-success) Fixed rare issue that caused "Blur Hint" toast being displayed multiple times on certain devices [Identity Verification]
+
+![Fixes](https://img.shields.io/badge/Fix-success) Fixed possible Camera Exception using CustomUI [ID Verification/Fastfill, Identity Verification, Authentication]
+
+![Fixes](https://img.shields.io/badge/Fix-success) Fixed possible app crash when calling `NetverifyCustomSDKController.retry()` [ID Verification/Fastfill, Identity Verification]
+
+![Fixes](https://img.shields.io/badge/Fix-success) Fixed Zoom Authentication 412 error handling, preventing user from getting stuck in certain scenarios [Identity Verification]
+
+![Changes](https://img.shields.io/badge/Change-blue) Removed deprecated Android Kotlin plugins [ID Verification/Fastfill, Identity Verification, Authentication, Document Verification]
+
+![Changes](https://img.shields.io/badge/Improvement-green) iProov SDK version update to 6.3.0, which includes accuracy improvements using Liveness Assurance [Identity Verification]
+
+## SDK Version: __3.8.0__
 ![Improvement](https://img.shields.io/badge/Improvement-green) Added better guidance for devices with a fixed focal distance [ID Verification/Fastfill, Document Verification]
 
 ![Fixes](https://img.shields.io/badge/Fix-success) Fixed crashes that could occur in edge cases [ID-Verification, Identity-Verification]
 
+![Changes](https://img.shields.io/badge/Change-blue) Added iProov as an additional liveness vendor to the [Jumio KYX platform](https://www.jumio.com/kyx/) [Identity Verification]
 
 ## SDK Version: __3.7.3__
 ![Improvement](https://img.shields.io/badge/Improvement-green) New error code is returned in case an ad blocker or a firewall is detected [ID Verification/Fastfill, Authentication, Document Verification]

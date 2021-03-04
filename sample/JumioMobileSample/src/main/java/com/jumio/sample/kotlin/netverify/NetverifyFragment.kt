@@ -10,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.switchmaterial.SwitchMaterial
 import com.jumio.core.enums.JumioDataCenter
 import com.jumio.core.exceptions.MissingPermissionException
 import com.jumio.core.exceptions.PlatformNotSupportedException
@@ -18,7 +20,6 @@ import com.jumio.nv.NetverifyDocumentData
 import com.jumio.nv.NetverifySDK
 import com.jumio.sample.R
 import com.jumio.sample.kotlin.MainActivity
-import kotlinx.android.synthetic.main.fragment_main.*
 
 
 /**
@@ -34,6 +35,9 @@ class NetverifyFragment : Fragment(), View.OnClickListener, NetverifyDeallocatio
 	private var apiToken: String? = null
 	private var apiSecret: String? = null
 	private var dataCenter: JumioDataCenter? = null
+	private var switchOptionOne: SwitchMaterial? = null
+	private var switchOptionTwo: SwitchMaterial? = null
+	private var btnStart: MaterialButton? = null
 
 	private lateinit var netverifySDK: NetverifySDK
 
@@ -44,6 +48,10 @@ class NetverifyFragment : Fragment(), View.OnClickListener, NetverifyDeallocatio
         apiToken = arguments?.getString(MainActivity.KEY_API_TOKEN)
         apiSecret = arguments?.getString(MainActivity.KEY_API_SECRET)
 		dataCenter = arguments?.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
+
+	    switchOptionOne = rootView.findViewById(R.id.switchOptionOne)
+	    switchOptionTwo = rootView.findViewById(R.id.switchOptionTwo)
+	    btnStart = rootView.findViewById(R.id.btnStart)
 
         return rootView
     }
@@ -109,7 +117,7 @@ class NetverifyFragment : Fragment(), View.OnClickListener, NetverifyDeallocatio
 
             // Enable ID verification to receive a verification status and verified data positions (see Callback chapter).
             // Note: Not possible for accounts configured as Fastfill only.
-            netverifySDK.setEnableVerification(switchOptionOne.isChecked)
+            netverifySDK.setEnableVerification(switchOptionOne?.isChecked == true)
 
             // You can specify issuing country (ISO 3166-1 alpha-3 country code) and/or ID types and/or document variant to skip
             // their selection during the scanning process.
@@ -136,10 +144,7 @@ class NetverifyFragment : Fragment(), View.OnClickListener, NetverifyDeallocatio
 //			netverifySDK.setCallbackUrl("YOURCALLBACKURL")
 
             // You can disable Identity Verification during the ID verification for a specific transaction.
-            netverifySDK.setEnableIdentityVerification(switchOptionTwo.isChecked)
-
-            // Use the following method to disable eMRTD scanning.
-//			netverifySDK.setEnableEMRTD(false)
+            netverifySDK.setEnableIdentityVerification(switchOptionTwo?.isChecked == true)
 
             // Use the following method to set the default camera position.
 //			netverifySDK.setCameraPosition(JumioCameraPosition.FRONT)

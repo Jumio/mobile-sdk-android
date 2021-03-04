@@ -9,13 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.switchmaterial.SwitchMaterial
 import com.jumio.core.enums.JumioDataCenter
 import com.jumio.core.exceptions.MissingPermissionException
 import com.jumio.core.exceptions.PlatformNotSupportedException
 import com.jumio.dv.DocumentVerificationSDK
 import com.jumio.sample.R
 import com.jumio.sample.kotlin.MainActivity
-import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
  * Copyright 2019 Jumio Corporation All rights reserved.
@@ -30,6 +31,9 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
     private var apiToken: String? = null
     private var apiSecret: String? = null
 	private var dataCenter: JumioDataCenter? = null
+	private var switchOptionOne: SwitchMaterial? = null
+	private var switchOptionTwo: SwitchMaterial? = null
+	private var btnStart: MaterialButton? = null
 
     private lateinit var documentVerificationSDK: DocumentVerificationSDK
 
@@ -40,6 +44,9 @@ class DocumentVerificationFragment : Fragment(), View.OnClickListener {
         apiToken = arguments?.getString(MainActivity.KEY_API_TOKEN)
         apiSecret = arguments?.getString(MainActivity.KEY_API_SECRET)
 		dataCenter = arguments?.getSerializable(MainActivity.KEY_DATACENTER) as JumioDataCenter
+	    switchOptionOne = rootView.findViewById(R.id.switchOptionOne)
+	    switchOptionTwo = rootView.findViewById(R.id.switchOptionTwo)
+	    btnStart = rootView.findViewById(R.id.btnStart)
 
         return rootView
     }

@@ -16,17 +16,12 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.jumio.analytics.JumioAnalytics
-import com.jumio.analytics.MobileEvents
-import com.jumio.analytics.Screen
-import com.jumio.analytics.UserAction
 import com.jumio.commons.utils.ScreenUtil
 import com.jumio.core.data.document.ScanSide
 import com.jumio.nv.custom.*
 import com.jumio.nv.nfc.custom.NetverifyCustomNfcInterface
 import com.jumio.nv.nfc.custom.NetverifyCustomNfcPresenter
 import com.jumio.sample.R
-import kotlinx.android.synthetic.main.fragment_netverify_custom.*
 
 class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	private var scanSide: String? = null
@@ -55,6 +50,7 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	private var customScanImpl: NetverifyCustomScanImpl? = null
 	private var flash: MenuItem? = null
 	private var switchCamera: MenuItem? = null
+	private var blurToast: Toast? = null
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		if (arguments != null) {
@@ -100,11 +96,10 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 			btnConfirm?.setOnClickListener(this)
 			btnFallback?.setOnClickListener(this)
 			tvHelp = root.findViewById(R.id.fragment_custom_scan_tv_help)
-			val tvProgress = root.findViewById<TextView>(R.id.fragment_custom_scan_tv_steps)
-			tvProgress.text = progressText
 			tvDocumentType = root.findViewById(R.id.fragment_custom_scan_tv_document_type)
 			tvDocumentType?.text = context?.getString(R.string.netverify_helpview_small_title_capture, documentType, "")?.let { HtmlCompat.fromHtml(it, HtmlCompat.FROM_HTML_MODE_LEGACY) }
 			tvSteps = root.findViewById(R.id.fragment_custom_scan_tv_steps)
+			tvSteps?.text = progressText
 			modeType = NetverifyCustomScanView.MODE_ID
 			customScanView = root.findViewById(R.id.fragment_nv_custom_scan_view)
 			customScanView?.mode = modeType
@@ -115,28 +110,35 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 		btnCapture = root.findViewById(R.id.fragment_custom_scan_btn_capture)
 		btnCapture?.setOnClickListener(this)
 
+		btnDismissHelp = root.findViewById(R.id.fragment_custom_scan_btn_dismiss_help)
+		btnDismissHelp?.setOnClickListener(this)
+
 		loadingIndicator = root.findViewById(R.id.fragment_nv_custom_loading_indicator)
 		customConfirmationView = root.findViewById(R.id.fragment_nv_custom_confirmation_view)
 		customAnimationView = root.findViewById(R.id.fragment_nv_custom_animation_view)
 
 		customScanImpl = NetverifyCustomScanImpl()
-		customScanViewPresenter = callback?.onStartScanningWithSide(ScanSide.valueOf(scanSide!!), customScanView, customConfirmationView, customScanImpl)
-
-		if (customScanViewPresenter != null) {
-			setHelpText(customScanViewPresenter?.helpText)
-
-			// show initial help animation for document scanning except for manual capturing
-			if (ScanSide.valueOf(scanSide!!) == ScanSide.FRONT) {
-				btnDismissHelp = root.findViewById(R.id.fragment_custom_scan_btn_dismiss_help)
-				showDocumentHelpAnimation()
-			} else {
-				//Check for displaying shutter button for face manual capturing here as no upfront help is displayed
-				customScanViewPresenter?.showShutterButton()?.let { showShutterButton(it) }
-			}
-		}
+		customScanViewPresenter = callback?.onInitScanningWithSide(ScanSide.valueOf(scanSide!!), customScanView, customConfirmationView, customScanImpl)
 
 		setHasOptionsMenu(true)
 		return root
+	}
+
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
+
+		if (customScanViewPresenter != null && savedInstanceState == null) {
+			setHelpText(customScanViewPresenter?.helpText)
+			// show upfront help animation if available, otherwise skip and start scanning directly
+			if (customScanViewPresenter?.hasHelpAnimation() == true) {
+				showDocumentHelpAnimation()
+			} else {
+				customScanViewPresenter?.startScan()
+			}
+
+			//Check for displaying shutter button for face manual capturing here as no upfront help is displayed
+			showShutterButton(customScanViewPresenter?.showShutterButton() == true)
+		}
 	}
 
 	/**
@@ -149,7 +151,9 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 		showView(btnDismissHelp)
 		tvDocumentType?.visibility = View.INVISIBLE
 		tvSteps?.visibility = View.INVISIBLE
-		customScanViewPresenter?.getHelpAnimation(customAnimationView)
+		if (customScanViewPresenter?.hasHelpAnimation() == true) {
+			customScanViewPresenter?.getHelpAnimation(customAnimationView)
+		}
 	}
 
 	/**
@@ -216,14 +220,19 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	 * If document scan was cancelled, user is asked to try again, if face scan was cancelled
 	 * user is shown appropriate help animation
 	 */
-	fun scanningCanceled() {
-		showView(btnRetake)
-		hideView(false)
-		if (tvHelp != null) {
-			tvHelp?.text = getString(R.string.netverify_scanview_snackbar_check_process_error)
+	fun displayRetryHelp(scanSide: ScanSide) {
+		customScanViewPresenter?.stopScan()
+		if(customScanViewPresenter?.hasHelpAnimation() == true) {
+			customScanViewPresenter?.getHelpAnimation(customAnimationView)
+			showView(customAnimationView)
 		}
-		if (ScanSide.valueOf(scanSide!!) == ScanSide.FACE) {
-			showView(customAnimationView!!, btnRetryFace, tvHelp)
+		setHelpText(customScanViewPresenter?.helpText)
+		(activity as AppCompatActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+		if (scanSide == ScanSide.FACE) {
+			showView(btnRetryFace, tvHelp)
+		} else {
+			showView(btnRetake, tvHelp)
 		}
 	}
 
@@ -286,10 +295,7 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
 		inflater.inflate(R.menu.menu_netverify_custom, menu)
 		if (customScanViewPresenter != null) {
-			if (modeType == NetverifyCustomScanView.MODE_FACE) { // back arrow not used, scanView has own cancel button
-				(activity as AppCompatActivity?)!!.supportActionBar!!.setDisplayHomeAsUpEnabled(false)
-			}
-			customScanImpl!!.onNetverifyCameraAvailable()
+			customScanImpl?.onNetverifyCameraAvailable()
 		}
 		flash = menu.findItem(R.id.action_toggle_flash)
 		switchCamera = menu.findItem(R.id.action_switch_camera)
@@ -343,7 +349,7 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 					Log.i(TAG, "Scan btn fallback clicked")
 				}
 				R.id.fragment_custom_scan_btn_capture -> {
-					customScanViewPresenter!!.takePicture()
+					customScanViewPresenter?.takePicture()
 					Log.i(TAG, "Capture btn clicked")
 				}
 				R.id.fragment_custom_scan_face_btn_retry -> {
@@ -352,12 +358,13 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 				}
 				R.id.fragment_custom_scan_btn_dismiss_help -> {
 					hideView(false, customAnimationView, btnDismissHelp)
-					initScanView(customScanView)
+					customScanView?.let { initScanView(it) }
+					customScanViewPresenter?.startScan()
 					showView(tvDocumentType, tvSteps, customScanView)
-					if (customScanViewPresenter!!.isFallbackAvailable) {
+					if (customScanViewPresenter?.isFallbackAvailable == true) {
 						setFallbackVisibility(true)
 					}
-					showShutterButton(customScanViewPresenter!!.showShutterButton())
+					customScanViewPresenter?.showShutterButton()?.let { showShutterButton(it) }
 					Log.i(TAG, "Dismiss help btn clicked")
 				}
 				R.id.fragment_custom_scan_btn_skip_nfc -> {
@@ -372,10 +379,10 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	}
 
 	override fun onResume() {
+		super.onResume()
 		if (customScanViewPresenter != null) {
 			customScanViewPresenter?.resume()
 		}
-		super.onResume()
 	}
 
 	override fun onPause() {
@@ -383,13 +390,6 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 			customScanViewPresenter?.pause()
 		}
 		super.onPause()
-	}
-
-	override fun onDestroy() {
-		if (customScanViewPresenter != null) {
-			customScanViewPresenter?.destroy()
-		}
-		super.onDestroy()
 	}
 
 	/**
@@ -470,7 +470,6 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 								}
 								.setNegativeButton(android.R.string.no) { dialog, _ ->
 									dialog.dismiss()
-									JumioAnalytics.add(MobileEvents.userAction(JumioAnalytics.getSessionId(), Screen.ERROR, UserAction.CANCEL))
 									customNfcViewPresenter?.cancel()
 								}
 								.show()
@@ -490,7 +489,7 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	fun buildNfcErrorDialog(errorMessage: String?, retryable: Boolean) {
 		try {
 			if (activity != null) {
-				val dialogBuilder = activity?.applicationContext?.let { MaterialAlertDialogBuilder(it) }
+				val dialogBuilder = activity?.let { MaterialAlertDialogBuilder(it) }
 				dialogBuilder?.setTitle(R.string.netverify_nfc_general_error_dialog_title)
 				dialogBuilder?.setMessage(errorMessage)
 
@@ -587,18 +586,24 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	 *
 	 * @param customScanView
 	 */
-	private fun initScanView(customScanView: NetverifyCustomScanView?) { //Changes layout parameters if device is in portrait mode
+	private fun initScanView(customScanView: NetverifyCustomScanView) { //Changes layout parameters if device is in portrait mode
 		val isPortrait = isPortrait
 		val params = ConstraintLayout.LayoutParams(if (isPortrait) ConstraintLayout.LayoutParams.MATCH_PARENT else ConstraintLayout.LayoutParams.WRAP_CONTENT,
 				if (isPortrait) ConstraintLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(activity!!.applicationContext, 300))
-		customScanView!!.layoutParams = params
+		customScanView.layoutParams = params
 		if (customScanViewPresenter != null) {
 			if (isPortrait) {
-				customScanView.ratio = if (customScanViewPresenter!!.scanMode == NetverifyScanMode.FACE) 0.71f else 0.9f
+				customScanView.ratio = if (isFaceScan()) 0.71f else 0.9f
 			} else {
-				customScanView.ratio = if (customScanViewPresenter!!.scanMode == NetverifyScanMode.FACE) 1.66f else 1.0f
+				customScanView.ratio = if (isFaceScan()) 1.66f else 1.0f
 			}
 		}
+	}
+
+	private fun isFaceScan(): Boolean {
+		return customScanViewPresenter!!.scanMode == NetverifyScanMode.FACE_MANUAL ||
+				customScanViewPresenter!!.scanMode == NetverifyScanMode.FACE_IPROOV ||
+				customScanViewPresenter!!.scanMode == NetverifyScanMode.FACE_ZOOM
 	}
 
 	/**
@@ -705,12 +710,23 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 		}
 
 		/**
-		 * Notify the user that the image is blurry and therefore can't be taken. (Manual image capturing only)
+		 * Notify the user that the image is blurry and therefore can't be taken.
 		 */
 		override fun onNetverifyDisplayBlurHint() {
-			val toast = Toast.makeText(activity!!.applicationContext, R.string.jumio_scanview_refocus, Toast.LENGTH_SHORT)
-			toast.setGravity(Gravity.CENTER, 0, 0)
-			toast.show()
+			if (blurToast != null) {
+				try {
+					if (blurToast?.getView()?.isShown() == true) {
+						return
+					} else {
+						blurToast?.cancel()
+					}
+				} catch (e: java.lang.Exception) {
+					e.printStackTrace()
+				}
+			}
+			blurToast = Toast.makeText(activity!!.applicationContext, R.string.jumio_scanview_refocus, Toast.LENGTH_SHORT)
+			blurToast?.setGravity(Gravity.CENTER, 0, 0)
+			blurToast?.show()
 			Log.i(TAG, "onNetverifyDisplayBlurHint")
 		}
 		/**
@@ -722,15 +738,24 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 		 */
 		override fun onNetverifyScanForPartCanceled(scanSide: ScanSide, netverifyCancelReason: NetverifyCancelReason) {
 			Log.i(TAG, "onNetverifyScanForPartCanceled")
-			scanningCanceled()
+			if(isDetached) {
+				return
+			}
+			hideView(false)
+			setHelpText(getString(R.string.netverify_scanview_snackbar_check_process_error))
+
 			when (netverifyCancelReason) {
 				NetverifyCancelReason.ERROR_GENERIC -> {
-					customScanViewPresenter?.stopScan()
-					customScanViewPresenter?.getHelpAnimation(customAnimationView)
-					setHelpText(customScanViewPresenter?.helpText)
-					(activity as AppCompatActivity?)!!.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+					displayRetryHelp(scanSide)
 				}
-				NetverifyCancelReason.USER_BACK, NetverifyCancelReason.USER_CANCEL, NetverifyCancelReason.NOT_AVAILABLE -> callback!!.onScanCancelled()
+				NetverifyCancelReason.USER_CANCEL, NetverifyCancelReason.USER_BACK -> {
+					if (scanSide == ScanSide.FACE) {
+						displayRetryHelp(scanSide)
+					} else {
+						callback?.onScanCancelled()
+					}
+				}
+				NetverifyCancelReason.NOT_AVAILABLE -> callback?.onScanCancelled()
 			}
 		}
 
@@ -801,8 +826,8 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 	 * Interface for fragment interaction with activity.
 	 */
 	interface OnScanFragmentInteractionListener {
-		fun onStartScanningWithSide(side: ScanSide?, scanView: NetverifyCustomScanView?,
-		                            confirmationView: NetverifyCustomConfirmationView?, customScanInterface: NetverifyCustomScanInterface?): NetverifyCustomScanPresenter?
+		fun onInitScanningWithSide(side: ScanSide?, scanView: NetverifyCustomScanView?,
+		                           confirmationView: NetverifyCustomConfirmationView?, customScanInterface: NetverifyCustomScanInterface?): NetverifyCustomScanPresenter?
 
 		fun onScanForPartFinished()
 		fun onScanCancelled()
