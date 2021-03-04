@@ -128,17 +128,17 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyError-java.lang.String-java.lang.String-boolean-java.lang.String-">onNetverifyError</a></span>(java.lang.String&nbsp;errorCode,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyError-java.lang.String-java.lang.String-boolean-java.lang.String-java.lang.String-">onNetverifyError</a></span>(java.lang.String&nbsp;errorCode,
                 java.lang.String&nbsp;errorMessage,
                 boolean&nbsp;retryPossible,
-                java.lang.String&nbsp;scanReference)</code>
+                java.lang.String&nbsp;scanReference,
+                java.lang.String&nbsp;accountId)</code>
 <div class="block">An error occured during the process</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyFinished-com.jumio.nv.NetverifyDocumentData-java.lang.String-">onNetverifyFinished</a></span>(<a href="../../../../com/jumio/nv/NetverifyDocumentData.html" title="class in com.jumio.nv">NetverifyDocumentData</a>&nbsp;documentData,
-                   java.lang.String&nbsp;scanReference)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyFinished-android.os.Bundle-">onNetverifyFinished</a></span>(android.os.Bundle&nbsp;data)</code>
 <div class="block">Whole verification or fastfill workflow has been successfully finished</div>
 </td>
 </tr>
@@ -199,23 +199,21 @@ var activeTableTab = "activeTableTab";
 </dl>
 </li>
 </ul>
-<a name="onNetverifyFinished-com.jumio.nv.NetverifyDocumentData-java.lang.String-">
+<a name="onNetverifyFinished-android.os.Bundle-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>onNetverifyFinished</h4>
-<pre>void&nbsp;onNetverifyFinished(<a href="../../../../com/jumio/nv/NetverifyDocumentData.html" title="class in com.jumio.nv">NetverifyDocumentData</a>&nbsp;documentData,
-                         java.lang.String&nbsp;scanReference)</pre>
+<pre>void&nbsp;onNetverifyFinished(android.os.Bundle&nbsp;data)</pre>
 <div class="block">Whole verification or fastfill workflow has been successfully finished</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>documentData</code> - extracted <a href="../../../../com/jumio/nv/NetverifyDocumentData.html" title="class in com.jumio.nv"><code>NetverifyDocumentData</code></a></dd>
-<dd><code>scanReference</code> - Scan reference</dd>
+<dd><code>data</code> - workflow result data, like <a href="../../../../com/jumio/nv/NetverifySDK.html#EXTRA_SCAN_REFERENCE"><code>NetverifySDK.EXTRA_SCAN_REFERENCE</code></a>,  <a href="../../../../com/jumio/nv/NetverifySDK.html#EXTRA_ACCOUNT_ID"><code>NetverifySDK.EXTRA_ACCOUNT_ID</code></a>,  <a href="../../../../com/jumio/nv/NetverifySDK.html#EXTRA_SCAN_DATA"><code>NetverifySDK.EXTRA_SCAN_DATA</code></a></dd>
 </dl>
 </li>
 </ul>
-<a name="onNetverifyError-java.lang.String-java.lang.String-boolean-java.lang.String-">
+<a name="onNetverifyError-java.lang.String-java.lang.String-boolean-java.lang.String-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -224,7 +222,8 @@ var activeTableTab = "activeTableTab";
 <pre>void&nbsp;onNetverifyError(java.lang.String&nbsp;errorCode,
                       java.lang.String&nbsp;errorMessage,
                       boolean&nbsp;retryPossible,
-                      java.lang.String&nbsp;scanReference)</pre>
+                      java.lang.String&nbsp;scanReference,
+                      java.lang.String&nbsp;accountId)</pre>
 <div class="block">An error occured during the process</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -232,6 +231,7 @@ var activeTableTab = "activeTableTab";
 <dd><code>errorMessage</code> - the localized error message</dd>
 <dd><code>retryPossible</code> - true when <a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.html#retry--"><code>NetverifyCustomSDKController.retry()</code></a> can be called</dd>
 <dd><code>scanReference</code> - Scan reference</dd>
+<dd><code>accountId</code> - Account ID, if available</dd>
 </dl>
 </li>
 </ul>

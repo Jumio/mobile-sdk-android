@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":10,"i7":6};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":10,"i7":10,"i8":6};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -188,11 +188,17 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/jumio/MobileSDK.html#recreate-android.app.Activity-">recreate</a></span>(android.app.Activity&nbsp;rootActivity)</code>
+<div class="block">This should only be called in case the hosting activity gets recreated</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/jumio/MobileSDK.html#setCustomTheme-int-">setCustomTheme</a></span>(int&nbsp;themeResourceId)</code>
 <div class="block">Sets a custom theme for the SDK.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/jumio/MobileSDK.html#start--">start</a></span>()</code>&nbsp;</td>
 </tr>
@@ -235,6 +241,20 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="recreate-android.app.Activity-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recreate</h4>
+<pre>public&nbsp;void&nbsp;recreate(android.app.Activity&nbsp;rootActivity)</pre>
+<div class="block">This should only be called in case the hosting activity gets recreated</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rootActivity</code> - reference to the new activity</dd>
+</dl>
+</li>
+</ul>
 <a name="getSDKVersion--">
 <!--   -->
 </a>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -151,7 +151,12 @@ extends AuthenticationController</pre>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKController.InternalController.html#finishSDK-android.content.Intent-">finishSDK</a></span>(android.content.Intent&nbsp;intent)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKController.InternalController.html#recreate-android.app.Activity-com.jumio.auth.custom.AuthenticationCustomSDKInterface-">recreate</a></span>(android.app.Activity&nbsp;activity,
+        <a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKInterface.html" title="interface in com.jumio.auth.custom">AuthenticationCustomSDKInterface</a>&nbsp;authenticationCustomSDKInterface)</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKController.InternalController.html#shutdown-android.content.Intent-">shutdown</a></span>(android.content.Intent&nbsp;intent)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -187,6 +192,16 @@ extends AuthenticationController</pre>
                    boolean&nbsp;firstStart)</pre>
 </li>
 </ul>
+<a name="recreate-android.app.Activity-com.jumio.auth.custom.AuthenticationCustomSDKInterface-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recreate</h4>
+<pre>public&nbsp;void&nbsp;recreate(android.app.Activity&nbsp;activity,
+                     <a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKInterface.html" title="interface in com.jumio.auth.custom">AuthenticationCustomSDKInterface</a>&nbsp;authenticationCustomSDKInterface)</pre>
+</li>
+</ul>
 <a name="destroy--">
 <!--   -->
 </a>
@@ -197,13 +212,13 @@ extends AuthenticationController</pre>
 <div class="block">Releases all resources which have been allocated by the SDK. The controller can't be used anymore</div>
 </li>
 </ul>
-<a name="finishSDK-android.content.Intent-">
+<a name="shutdown-android.content.Intent-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>finishSDK</h4>
-<pre>public&nbsp;void&nbsp;finishSDK(android.content.Intent&nbsp;intent)</pre>
+<h4>shutdown</h4>
+<pre>public&nbsp;void&nbsp;shutdown(android.content.Intent&nbsp;intent)</pre>
 </li>
 </ul>
 </li>

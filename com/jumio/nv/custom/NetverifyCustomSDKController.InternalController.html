@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -150,33 +150,33 @@ extends NetverifyController</pre>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#finishSDK-android.content.Intent-">finishSDK</a></span>(android.content.Intent&nbsp;intent)</code>&nbsp;</td>
-</tr>
-<tr id="i3" class="rowColor">
 <td class="colFirst"><code>android.app.Activity</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#getActivity--">getActivity</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#getCloseDelay--">getCloseDelay</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>android.content.Context</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#getContext--">getContext</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>CredentialsModel</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#getCredentialsModel--">getCredentialsModel</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>NfcController</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#getNfcController--">getNfcController</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#hideLoading-boolean-boolean-">hideLoading</a></span>(boolean&nbsp;loadingAnimated,
            boolean&nbsp;proceedToCountrySelection)</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#isCustomUi--">isCustomUi</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -199,9 +199,18 @@ extends NetverifyController</pre>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#start-boolean-">start</a></span>(boolean&nbsp;selectionSkipped)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#recreate-android.app.Activity-com.jumio.nv.custom.NetverifyCustomSDKInterface-">recreate</a></span>(android.app.Activity&nbsp;activity,
+        <a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomSDKInterface</a>&nbsp;netverifyCustomSDKInterface)</code>&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#shutdown-android.content.Intent-">shutdown</a></span>(android.content.Intent&nbsp;intent)</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#start-boolean-">start</a></span>(boolean&nbsp;selectionSkipped)</code>&nbsp;</td>
+</tr>
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.InternalController.html#uploadComplete--">uploadComplete</a></span>()</code>&nbsp;</td>
 </tr>
@@ -227,6 +236,16 @@ extends NetverifyController</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="recreate-android.app.Activity-com.jumio.nv.custom.NetverifyCustomSDKInterface-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recreate</h4>
+<pre>public&nbsp;void&nbsp;recreate(android.app.Activity&nbsp;activity,
+                     <a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomSDKInterface</a>&nbsp;netverifyCustomSDKInterface)</pre>
+</li>
+</ul>
 <a name="create-android.app.Activity-android.content.Context-CredentialsModel-boolean-">
 <!--   -->
 </a>
@@ -267,6 +286,15 @@ extends NetverifyController</pre>
 <pre>public&nbsp;android.content.Context&nbsp;getContext()</pre>
 </li>
 </ul>
+<a name="shutdown-android.content.Intent-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shutdown</h4>
+<pre>public&nbsp;void&nbsp;shutdown(android.content.Intent&nbsp;intent)</pre>
+</li>
+</ul>
 <a name="onError-java.lang.Throwable-">
 <!--   -->
 </a>
@@ -283,6 +311,15 @@ extends NetverifyController</pre>
 <li class="blockList">
 <h4>getCredentialsModel</h4>
 <pre>public&nbsp;CredentialsModel&nbsp;getCredentialsModel()</pre>
+</li>
+</ul>
+<a name="isCustomUi--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isCustomUi</h4>
+<pre>public&nbsp;boolean&nbsp;isCustomUi()</pre>
 </li>
 </ul>
 <a name="start-boolean-">
@@ -355,19 +392,10 @@ extends NetverifyController</pre>
 <a name="uploadComplete--">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>uploadComplete</h4>
 <pre>public&nbsp;void&nbsp;uploadComplete()</pre>
-</li>
-</ul>
-<a name="finishSDK-android.content.Intent-">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>finishSDK</h4>
-<pre>public&nbsp;void&nbsp;finishSDK(android.content.Intent&nbsp;intent)</pre>
 </li>
 </ul>
 </li>

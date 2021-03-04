@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -180,30 +180,38 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKController.html#recreate-android.app.Activity-com.jumio.auth.custom.AuthenticationCustomSDKInterface-com.jumio.auth.custom.AuthenticationCustomScanInterface-">recreate</a></span>(android.app.Activity&nbsp;activity,
+        <a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKInterface.html" title="interface in com.jumio.auth.custom">AuthenticationCustomSDKInterface</a>&nbsp;authenticationCustomSDKInterface,
+        <a href="../../../../com/jumio/auth/custom/AuthenticationCustomScanInterface.html" title="interface in com.jumio.auth.custom">AuthenticationCustomScanInterface</a>&nbsp;scanViewInterface)</code>
+<div class="block">This should only be called in case the hosting activity gets recreated - sets the new activity and a new  <a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKInterface.html" title="interface in com.jumio.auth.custom"><code>AuthenticationCustomSDKInterface</code></a> to deliver callbacks</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKController.html#resume--">resume</a></span>()</code>
 <div class="block">This function needs to be called in the onResume lifecycle function of the Fragment or Activity</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKController.html#retry--">retry</a></span>()</code>
 <div class="block">Retry in case of an error</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKController.html#retryScan--">retryScan</a></span>()</code>
 <div class="block">Restart scan if the scan has been stopped</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKController.html#setUserConsented--">setUserConsented</a></span>()</code>
 <div class="block">This function needs to be called once the user accepted the Jumio privacy policy after <a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKInterface.html#onAuthenticationUserConsentRequried-java.lang.String-"><code>AuthenticationCustomSDKInterface.onAuthenticationUserConsentRequried(String)</code></a>
  has been called.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKController.html#startScan-com.jumio.auth.custom.AuthenticationCustomScanInterface-">startScan</a></span>(<a href="../../../../com/jumio/auth/custom/AuthenticationCustomScanInterface.html" title="interface in com.jumio.auth.custom">AuthenticationCustomScanInterface</a>&nbsp;scanViewInterface)</code>
 <div class="block">Start the scanning</div>
@@ -251,6 +259,23 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="recreate-android.app.Activity-com.jumio.auth.custom.AuthenticationCustomSDKInterface-com.jumio.auth.custom.AuthenticationCustomScanInterface-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recreate</h4>
+<pre>public&nbsp;void&nbsp;recreate(android.app.Activity&nbsp;activity,
+                     <a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKInterface.html" title="interface in com.jumio.auth.custom">AuthenticationCustomSDKInterface</a>&nbsp;authenticationCustomSDKInterface,
+                     <a href="../../../../com/jumio/auth/custom/AuthenticationCustomScanInterface.html" title="interface in com.jumio.auth.custom">AuthenticationCustomScanInterface</a>&nbsp;scanViewInterface)</pre>
+<div class="block">This should only be called in case the hosting activity gets recreated - sets the new activity and a new  <a href="../../../../com/jumio/auth/custom/AuthenticationCustomSDKInterface.html" title="interface in com.jumio.auth.custom"><code>AuthenticationCustomSDKInterface</code></a> to deliver callbacks</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>activity</code> - the new hosting activity</dd>
+<dd><code>authenticationCustomSDKInterface</code> - the new callback interface</dd>
+</dl>
+</li>
+</ul>
 <a name="startScan-com.jumio.auth.custom.AuthenticationCustomScanInterface-">
 <!--   -->
 </a>

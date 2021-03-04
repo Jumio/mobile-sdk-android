@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -188,24 +188,40 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html" title="interface in com.jumio.nv.custom">NetverifyCustomScanPresenter</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.html#initScanForPart-com.jumio.core.data.document.ScanSide-com.jumio.nv.custom.NetverifyCustomScanView-com.jumio.nv.custom.NetverifyCustomConfirmationView-com.jumio.nv.custom.NetverifyCustomScanInterface-">initScanForPart</a></span>(<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&nbsp;scanSide,
+               <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanView.html" title="class in com.jumio.nv.custom">NetverifyCustomScanView</a>&nbsp;scanView,
+               <a href="../../../../com/jumio/nv/custom/NetverifyCustomConfirmationView.html" title="class in com.jumio.nv.custom">NetverifyCustomConfirmationView</a>&nbsp;confirmationView,
+               <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomScanInterface</a>&nbsp;scanViewInterface)</code>
+<div class="block">Initializes the scanning of a document part</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.html#pause--">pause</a></span>()</code>
 <div class="block">This function needs to be called in the onPause lifecycle function of the Fragment or Activity</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.html#recreate-android.app.Activity-com.jumio.nv.custom.NetverifyCustomSDKInterface-">recreate</a></span>(android.app.Activity&nbsp;activity,
+        <a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomSDKInterface</a>&nbsp;netverifyCustomSDKInterface)</code>
+<div class="block">This should only be called in case the hosting activity gets recreated - sets the new activity and a new  <a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html" title="interface in com.jumio.nv.custom"><code>NetverifyCustomSDKInterface</code></a> to deliver callbacks</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.html#resume--">resume</a></span>()</code>
 <div class="block">This function needs to be called in the onResume lifecycle function of the Fragment or Activity</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.html#retry--">retry</a></span>()</code>
 <div class="block">Retry in case of an error</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.html#setDocumentConfiguration-com.jumio.nv.custom.NetverifyCountry-com.jumio.nv.data.document.NVDocumentType-com.jumio.nv.data.document.NVDocumentVariant-">setDocumentConfiguration</a></span>(<a href="../../../../com/jumio/nv/custom/NetverifyCountry.html" title="class in com.jumio.nv.custom">NetverifyCountry</a>&nbsp;country,
                         <a href="../../../../com/jumio/nv/data/document/NVDocumentType.html" title="enum in com.jumio.nv.data.document">NVDocumentType</a>&nbsp;documentType,
@@ -213,20 +229,11 @@ extends java.lang.Object</pre>
 <div class="block">Select country and document type which has to be processed.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.html#setUserConsented--">setUserConsented</a></span>()</code>
 <div class="block">This function needs to be called once the user accepted the Jumio privacy policy after <a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyUserConsentRequried-java.lang.String-"><code>NetverifyCustomSDKInterface.onNetverifyUserConsentRequried(String)</code></a>
  has been called.</div>
-</td>
-</tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html" title="interface in com.jumio.nv.custom">NetverifyCustomScanPresenter</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.html#startScanForPart-com.jumio.core.data.document.ScanSide-com.jumio.nv.custom.NetverifyCustomScanView-com.jumio.nv.custom.NetverifyCustomConfirmationView-com.jumio.nv.custom.NetverifyCustomScanInterface-">startScanForPart</a></span>(<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&nbsp;scanSide,
-                <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanView.html" title="class in com.jumio.nv.custom">NetverifyCustomScanView</a>&nbsp;scanView,
-                <a href="../../../../com/jumio/nv/custom/NetverifyCustomConfirmationView.html" title="class in com.jumio.nv.custom">NetverifyCustomConfirmationView</a>&nbsp;confirmationView,
-                <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomScanInterface</a>&nbsp;scanViewInterface)</code>
-<div class="block">Start the scanning of a document part</div>
 </td>
 </tr>
 </table>
@@ -271,6 +278,22 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="recreate-android.app.Activity-com.jumio.nv.custom.NetverifyCustomSDKInterface-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recreate</h4>
+<pre>public&nbsp;void&nbsp;recreate(android.app.Activity&nbsp;activity,
+                     <a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomSDKInterface</a>&nbsp;netverifyCustomSDKInterface)</pre>
+<div class="block">This should only be called in case the hosting activity gets recreated - sets the new activity and a new  <a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKInterface.html" title="interface in com.jumio.nv.custom"><code>NetverifyCustomSDKInterface</code></a> to deliver callbacks</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>activity</code> - the new hosting activity</dd>
+<dd><code>netverifyCustomSDKInterface</code> - the new callback interface</dd>
+</dl>
+</li>
+</ul>
 <a name="setDocumentConfiguration-com.jumio.nv.custom.NetverifyCountry-com.jumio.nv.data.document.NVDocumentType-com.jumio.nv.data.document.NVDocumentVariant-">
 <!--   -->
 </a>
@@ -305,19 +328,19 @@ extends java.lang.Object</pre>
  has been called.</div>
 </li>
 </ul>
-<a name="startScanForPart-com.jumio.core.data.document.ScanSide-com.jumio.nv.custom.NetverifyCustomScanView-com.jumio.nv.custom.NetverifyCustomConfirmationView-com.jumio.nv.custom.NetverifyCustomScanInterface-">
+<a name="initScanForPart-com.jumio.core.data.document.ScanSide-com.jumio.nv.custom.NetverifyCustomScanView-com.jumio.nv.custom.NetverifyCustomConfirmationView-com.jumio.nv.custom.NetverifyCustomScanInterface-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>startScanForPart</h4>
-<pre>public&nbsp;<a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html" title="interface in com.jumio.nv.custom">NetverifyCustomScanPresenter</a>&nbsp;startScanForPart(<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&nbsp;scanSide,
-                                                     <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanView.html" title="class in com.jumio.nv.custom">NetverifyCustomScanView</a>&nbsp;scanView,
-                                                     <a href="../../../../com/jumio/nv/custom/NetverifyCustomConfirmationView.html" title="class in com.jumio.nv.custom">NetverifyCustomConfirmationView</a>&nbsp;confirmationView,
-                                                     <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomScanInterface</a>&nbsp;scanViewInterface)
-                                              throws <a href="../../../../com/jumio/sdk/custom/SDKNotConfiguredException.html" title="class in com.jumio.sdk.custom">SDKNotConfiguredException</a>,
-                                                     java.lang.IllegalArgumentException</pre>
-<div class="block">Start the scanning of a document part</div>
+<h4>initScanForPart</h4>
+<pre>public&nbsp;<a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html" title="interface in com.jumio.nv.custom">NetverifyCustomScanPresenter</a>&nbsp;initScanForPart(<a href="../../../../com/jumio/core/data/document/ScanSide.html" title="enum in com.jumio.core.data.document">ScanSide</a>&nbsp;scanSide,
+                                                    <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanView.html" title="class in com.jumio.nv.custom">NetverifyCustomScanView</a>&nbsp;scanView,
+                                                    <a href="../../../../com/jumio/nv/custom/NetverifyCustomConfirmationView.html" title="class in com.jumio.nv.custom">NetverifyCustomConfirmationView</a>&nbsp;confirmationView,
+                                                    <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomScanInterface</a>&nbsp;scanViewInterface)
+                                             throws <a href="../../../../com/jumio/sdk/custom/SDKNotConfiguredException.html" title="class in com.jumio.sdk.custom">SDKNotConfiguredException</a>,
+                                                    java.lang.IllegalArgumentException</pre>
+<div class="block">Initializes the scanning of a document part</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>scanSide</code> - The scan side which has to be part of the list which <a href="../../../../com/jumio/nv/custom/NetverifyCustomSDKController.html#setDocumentConfiguration-com.jumio.nv.custom.NetverifyCountry-com.jumio.nv.data.document.NVDocumentType-com.jumio.nv.data.document.NVDocumentVariant-"><code>setDocumentConfiguration(NetverifyCountry, NVDocumentType, NVDocumentVariant)</code></a> returned</dd>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -189,51 +189,65 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#recreate-com.jumio.nv.custom.NetverifyCustomScanView-com.jumio.nv.custom.NetverifyCustomConfirmationView-com.jumio.nv.custom.NetverifyCustomScanInterface-">recreate</a></span>(<a href="../../../../com/jumio/nv/custom/NetverifyCustomScanView.html" title="class in com.jumio.nv.custom">NetverifyCustomScanView</a>&nbsp;scanView,
+        <a href="../../../../com/jumio/nv/custom/NetverifyCustomConfirmationView.html" title="class in com.jumio.nv.custom">NetverifyCustomConfirmationView</a>&nbsp;confirmationView,
+        <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomScanInterface</a>&nbsp;netverifyCustomScanInterface)</code>
+<div class="block">This should only be called in case the hosting activity gets recreated</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#resume--">resume</a></span>()</code>
 <div class="block">This function needs to be called in the onResume lifecycle function of the Fragment or Activity</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#resumeExtraction--">resumeExtraction</a></span>()</code>
 <div class="block">Resume the extraction</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#retryScan--">retryScan</a></span>()</code>
 <div class="block">Restart scan if the scan has been stopped</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#showShutterButton--">showShutterButton</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#startFallback--">startFallback</a></span>()</code>
 <div class="block">Switches to the fallback scan mode (overlay and probably scan side will be changed)</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#startScan--">startScan</a></span>()</code>
+<div class="block">Starts a scan after a scan presenter has been initialized</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#stopScan--">stopScan</a></span>()</code>
 <div class="block">Scan can be stopped manually, retryScan is possible after this method is called.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#switchCamera--">switchCamera</a></span>()</code>
 <div class="block">switches between the cameras</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#takePicture--">takePicture</a></span>()</code>
 <div class="block">Manually takes a picture - only possible if <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#showShutterButton--"><code>showShutterButton()</code></a> returns true</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jumio/nv/custom/NetverifyCustomScanPresenter.html#toggleFlash--">toggleFlash</a></span>()</code>
 <div class="block">Toggles the flash, if one is available</div>
@@ -262,6 +276,24 @@ var activeTableTab = "activeTableTab";
 <h4>destroy</h4>
 <pre>void&nbsp;destroy()</pre>
 <div class="block">Releases all allocated resources (Camera, ...). Must be called when scanning is finished. retryScan is not possible anymore</div>
+</li>
+</ul>
+<a name="recreate-com.jumio.nv.custom.NetverifyCustomScanView-com.jumio.nv.custom.NetverifyCustomConfirmationView-com.jumio.nv.custom.NetverifyCustomScanInterface-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recreate</h4>
+<pre>void&nbsp;recreate(<a href="../../../../com/jumio/nv/custom/NetverifyCustomScanView.html" title="class in com.jumio.nv.custom">NetverifyCustomScanView</a>&nbsp;scanView,
+              <a href="../../../../com/jumio/nv/custom/NetverifyCustomConfirmationView.html" title="class in com.jumio.nv.custom">NetverifyCustomConfirmationView</a>&nbsp;confirmationView,
+              <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html" title="interface in com.jumio.nv.custom">NetverifyCustomScanInterface</a>&nbsp;netverifyCustomScanInterface)</pre>
+<div class="block">This should only be called in case the hosting activity gets recreated</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>scanView</code> - new reference for <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanView.html" title="class in com.jumio.nv.custom"><code>NetverifyCustomScanView</code></a></dd>
+<dd><code>confirmationView</code> - new reference for <a href="../../../../com/jumio/nv/custom/NetverifyCustomConfirmationView.html" title="class in com.jumio.nv.custom"><code>NetverifyCustomConfirmationView</code></a></dd>
+<dd><code>netverifyCustomScanInterface</code> - new callback <a href="../../../../com/jumio/nv/custom/NetverifyCustomScanInterface.html" title="interface in com.jumio.nv.custom"><code>NetverifyCustomScanInterface</code></a></dd>
+</dl>
 </li>
 </ul>
 <a name="getScanMode--">
@@ -337,6 +369,16 @@ var activeTableTab = "activeTableTab";
 <h4>pause</h4>
 <pre>void&nbsp;pause()</pre>
 <div class="block">This function needs to be called in the onPause lifecycle function of the Fragment or Activity</div>
+</li>
+</ul>
+<a name="startScan--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startScan</h4>
+<pre>void&nbsp;startScan()</pre>
+<div class="block">Starts a scan after a scan presenter has been initialized</div>
 </li>
 </ul>
 <a name="retryScan--">
