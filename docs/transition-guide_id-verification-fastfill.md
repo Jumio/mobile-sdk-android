@@ -6,7 +6,7 @@ This section only covers the breaking technical changes that should be considere
 
 ## 3.9.0
 #### Dependency Changes
-* IProov update: ~~`"com.iproov.sdk:iproov:6.1.0"`~~ is replaced by "androidx.room:room-runtime:6.3.0"
+* IProov update: ~~`"com.iproov.sdk:iproov:6.1.0"`~~ is replaced by "com.iproov.sdk:iproov:6.3.0"
 
 * Room update: ~~`"androidx.room:room-runtime:2.2.5"`~~ is replaced by "androidx.room:room-runtime:2.2.6"
 
