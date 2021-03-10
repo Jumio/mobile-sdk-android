@@ -16,7 +16,7 @@ Jumio’s ID Verification allows businesses to establish the genuine identity of
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release Notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.9.0
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.9.1
 
 For breaking technical changes, please read our [transition guide](transition-guide_id-verification-fastfill.md)
 
@@ -29,8 +29,8 @@ Below there is a list of dependencies the application will need to work in Andro
 ```
 dependencies {
     // mandatory
-    implementation "com.jumio.android:core:3.9.0@aar"       // Jumio Core library
-    implementation "com.jumio.android:nv:3.9.0@aar"         // Netverify library
+    implementation "com.jumio.android:core:3.9.1@aar"       // Jumio Core library
+    implementation "com.jumio.android:nv:3.9.1@aar"         // Netverify library
 
     implementation "androidx.appcompat:appcompat:1.2.0"
     implementation "androidx.cardview:cardview:1.0.0"
@@ -44,25 +44,25 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0"
 
     // not mandatory
-    implementation "com.jumio.android:iproov:3.9.0@aar"       // Face Liveness library (iProov)
-    implementation ("com.iproov.sdk:iproov:6.3.0"){           // Face Liveness library (iProov)
+    implementation "com.jumio.android:iproov:3.9.1@aar"       // Face Liveness library (iProov)
+    implementation ("com.iproov.sdk:iproov:6.3.1"){           // Face Liveness library (iProov)
 		    exclude group: 'org.json', module:'json'
 	  }                                                         
 
-    implementation "com.jumio.android:zoom:3.9.0@aar"             // Face Liveness library (ZoOm)
+    implementation "com.jumio.android:zoom:3.9.1@aar"             // Face Liveness library (ZoOm)
     implementation "com.facetec:zoom-authentication:8.12.1@aar"   // Face Liveness library (ZoOm)
 
-    implementation "com.jumio.android:nv-barcode:3.9.0@aar"   // Barcode scanning
-    implementation "com.jumio.android:nv-barcode-vision:3.9.0@aar"        // Barcode scanning alternative (reduced size)
+    implementation "com.jumio.android:nv-barcode:3.9.1@aar"   // Barcode scanning
+    implementation "com.jumio.android:nv-barcode-vision:3.9.1@aar"        // Barcode scanning alternative (reduced size)
     implementation "com.google.android.gms:play-services-vision:20.1.3"   // Barcode scanning alternative
 
-    implementation "com.jumio.android:nv-mrz:3.9.0@aar"       // MRZ scanning
-    implementation "com.jumio.android:nv-ocr:3.9.0@aar"       // Template matcher
-    implementation "com.jumio.android:dv:3.9.0@aar"           // Document verification library
-    implementation "com.jumio.android:auth:3.9.0@aar"         // Authentication library
-    implementation "com.jumio.android:bam:3.9.0@aar"          // BAM checkout library
+    implementation "com.jumio.android:nv-mrz:3.9.1@aar"       // MRZ scanning
+    implementation "com.jumio.android:nv-ocr:3.9.1@aar"       // Template matcher
+    implementation "com.jumio.android:dv:3.9.1@aar"           // Document verification library
+    implementation "com.jumio.android:auth:3.9.1@aar"         // Authentication library
+    implementation "com.jumio.android:bam:3.9.1@aar"          // BAM checkout library
 
-    implementation "com.jumio.android:nv-nfc:3.9.0@aar"       // eMRTD scanning
+    implementation "com.jumio.android:nv-nfc:3.9.1@aar"       // eMRTD scanning
     implementation "org.jmrtd:jmrtd:0.7.24"                   // eMRTD Scanning
     implementation "org.ejbca.cvc:cert-cvc:1.4.6"             // eMRTD Scanning
     implementation "org.bouncycastle:bcprov-jdk15on:1.67"     // eMRTD Scanning
@@ -81,17 +81,17 @@ The SDK can only use one vendor at a time. Switching vendors during runtime is n
 
 __Using iProov:__
 ```
-implementation "com.jumio.android:iproov:3.9.0@aar"       
-implementation ("com.iproov.sdk:iproov:6.3.0"){
+implementation "com.jumio.android:iproov:3.9.1@aar"       
+implementation ("com.iproov.sdk:iproov:6.3.1"){
     exclude group: 'org.json', module:'json'
 }
 ```
 
-iProov currently depends on okhttp 3.8.1. (Please refer to [Known Issues](known_issues.md#Issues-with-okhttp3-dependency-using-iproov) for detailed information.)
+iProov currently depends on okhttp 3.8.1, but also supports okhttp 4.x versions (Please refer to [Known Issues](known_issues.md#Issues-with-okhttp3-dependency-using-iproov) for detailed information.)
 
 __Using ZoOm:__
 ```
-implementation "com.jumio.android:zoom:3.9.0@aar"     
+implementation "com.jumio.android:zoom:3.9.1@aar"     
 implementation "com.facetec:zoom-authentication:8.12.1@aar"
 ```
 
@@ -131,7 +131,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use ID Verification or Fastfill together with BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:3.9.0@aar"
+implementation "com.jumio.android:bam:3.9.1@aar"
 ```
 
 #### Root Detection

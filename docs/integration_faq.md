@@ -71,9 +71,9 @@ The following table shows a range of different product configurations with the s
 
 |Product Configuration      | Size   | Modules   |
 |:--------------------------|:------:|:----------|
-|ID + Authentication (Zoom)                  | 12.76 MB | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, auth, zoom |
+|ID + Authentication (Zoom)                  | 12.77 MB | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, auth, zoom |
 |ID + Liveness (Zoom)                        | 12.75 MB | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, zoom |
-|ID + Liveness (Iproov)                      | 7.42 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, iproov |
+|ID + Liveness (Iproov)                      | 7.43 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, iproov |
 |ID + Liveness (Iproov) w/o NFC              | 5.89 MB  | core, nv, nv-mrz, nv-ocr, nv-barcode, iproov |
 |ID w/o Liveness                             | 7.04 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode |
 |ID w/o Liveness, Barcode                    | 5.95 MB  | core, nv, nv-mrz, nv-ocr |

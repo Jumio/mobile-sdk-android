@@ -17,7 +17,7 @@
 Below there is a list of dependencies the application will need to make Zoom work in Android. If one of the modules is __not linked__, some functionalities such as certain methods may not be available.
 ```
 implementation "com.facetec:zoom-authentication:8.12.1@aar"     // Zoom face scanning library
-implementation "com.jumio.android:zoom:3.9.0@aar                // Face library
+implementation "com.jumio.android:zoom:3.9.1@aar                // Face library
 ```
 
 ## Removing Zoom Library
@@ -26,7 +26,7 @@ implementation "com.jumio.android:zoom:3.9.0@aar                // Face library
  __Please remove:__
 ```
 implementation "com.facetec:zoom-authentication:8.12.1@aar"     // Zoom face scanning library  
-implementation "com.jumio.android:zoom:3.9.0@aar"               // Face library
+implementation "com.jumio.android:zoom:3.9.1@aar"               // Face library
 ```
 
 ## Zoom Customization

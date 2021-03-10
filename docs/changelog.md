@@ -7,6 +7,11 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## SDK Version: __3.9.1__
+![Changes](https://img.shields.io/badge/Improvement-green) iProov SDK version update to 6.3.1, which fixes cross-dependency problems with OkHttp 4.x versions [Identity Verification]
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Improved customization options [Identity Verification]
+
 ## SDK Version: __3.9.0__
 ![Improvement](https://img.shields.io/badge/Improvement-green) Improved SDK lifecycle and state handling to reduce specific scenarios in which SDK crashes could have happened [Identity Verification]
 

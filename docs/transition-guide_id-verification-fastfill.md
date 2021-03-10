@@ -4,9 +4,16 @@
 
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
+## 3.9.1
+#### Dependency Changes
+* IProov update: ~~`"com.iproov.sdk:iproov:6.3.0"`~~ is replaced by "com.iproov.sdk:iproov:6.3.1". This version fixes cross-dependency problems with okhttp 4.x
+
+#### Customization update
+* Added attribute `iproov_backgroundColor` to the IProov theme `Iproov.Customization` to allow customization of the IProov background color during scanning.
+
 ## 3.9.0
 #### Dependency Changes
-* IProov update: ~~`"com.iproov.sdk:iproov:6.1.0"`~~ is replaced by "com.iproov.sdk:iproov:6.3.0"
+* IProov update: ~~`"com.iproov.sdk:iproov:6.1.0"`~~ is replaced by "androidx.room:room-runtime:6.3.0"
 
 * Room update: ~~`"androidx.room:room-runtime:2.2.5"`~~ is replaced by "androidx.room:room-runtime:2.2.6"
 
@@ -18,7 +25,7 @@ This section only covers the breaking technical changes that should be considere
 
 * REMOVE LocalBroadcastManager ~~`"androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"`~~
 
-* REPLACE `apply plugin: 'kotlin-android` with `apply plugin: kotlin-parcelize`. The extensions plugin has been [deprecated by Google](https://goo.gle/kotlin-android-extensions-deprecation). The parcelize functionality has been extracted to a separate plugin.
+* REPLACE `apply plugin: 'kotlin-android-extensions` with `apply plugin: kotlin-parcelize`. The extensions plugin has been [deprecated by Google](https://goo.gle/kotlin-android-extensions-deprecation). The parcelize functionality has been extracted to a separate plugin.
 
 #### Public API Changes
 * `setEnableEMRTD(boolean enable)` has been removed from [NetverifySDK](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html)

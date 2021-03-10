@@ -4,6 +4,7 @@
 - [SDK Version 3.9.0](#sdk-version-390)
   - [Custom UI](#custom-ui)
 - [SDK Version 3.8.0 and Newer](#sdk-version-380-and-newer)
+  - [Stuck on 'Processing Documents' Screen ](#stuck-on-'processing-documents'-screen)
   - [Issues with okhttp3 Dependency Using iProov](#Issues-with-okhttp3-dependency-using-iproov)
   - [Jetifier Issues](#jetifier-issues)
   - [Fallback to Manual Capturing Using iProov](#fallback-to-manual-capturing-using-iProov)
@@ -21,6 +22,24 @@
 * Make sure to display the `NetverifyCustomScanView` only AFTER calling `startScan()` as done in our [Sample](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/netverify/customui/NetverifyCustomScanFragment.kt), to ensure that the scan presenter is fully initialized and the camera callback `onNetverifyCameraAvailable()` will be fired.
 
 # SDK Version 3.8.0 and Newer
+
+## Stuck on 'Processing Documents' Screen
+If user is getting stuck indefinitely after scanning process during 'Processing documents' stage without a callback or error message, please make sure the following dependencies
+```
+classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version  
+
+apply plugin: 'kotlinx-serialization'
+
+dependencies {  
+  ...
+  implementation "org.jetbrains.kotlinx:kotlinx-serialization-core:1.0.0"
+  implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0"
+  ...
+}
+```
+have been included in your `build.gradle` file. Missing Kotlin serialization will result in infinite loading without a callback.
+
+Please also refer to the 3.8.0 __"Dependency Changes"__ section of our [transition guide](transition-guide_id-verification-fastfill.md) and the `build.gradle`(https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of our sample application for additional information.
 
 ## Fallback to Manual Capturing Using iProov
 In some rare cases, the iproov Token Call can take too long to complete, which means the token is not yet available when the decision for the Liveness Vendor is made. When this happens, the scan mode `FACE_MANUAL` (Manual Capturing) will be used as a fallback. This also applies to __Tablets__ and devices running on __Android Version 5__ ("Lollipop") or lower.
