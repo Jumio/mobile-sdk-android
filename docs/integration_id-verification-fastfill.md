@@ -45,7 +45,7 @@ dependencies {
 
     // not mandatory
     implementation "com.jumio.android:iproov:3.9.1@aar"       // Face Liveness library (iProov)
-    implementation ("com.iproov.sdk:iproov:6.3.1"){           // Face Liveness library (iProov)
+    implementation ("com.iproov.sdk:iproov:6.4.0"){           // Face Liveness library (iProov)
 		    exclude group: 'org.json', module:'json'
 	  }                                                         
 
@@ -82,7 +82,7 @@ The SDK can only use one vendor at a time. Switching vendors during runtime is n
 __Using iProov:__
 ```
 implementation "com.jumio.android:iproov:3.9.1@aar"       
-implementation ("com.iproov.sdk:iproov:6.3.1"){
+implementation ("com.iproov.sdk:iproov:6.4.0"){
     exclude group: 'org.json', module:'json'
 }
 ```
