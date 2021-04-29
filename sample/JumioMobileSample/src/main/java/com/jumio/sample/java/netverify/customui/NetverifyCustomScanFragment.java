@@ -677,8 +677,7 @@ public class NetverifyCustomScanFragment extends Fragment implements View.OnClic
 
 	private boolean isFaceScan() {
 		return customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE_MANUAL ||
-			customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE_IPROOV ||
-			customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE_ZOOM;
+			customScanViewPresenter.getScanMode() == NetverifyScanMode.FACE_IPROOV;
 	}
 
 	/**

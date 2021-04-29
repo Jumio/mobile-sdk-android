@@ -544,7 +544,6 @@ class NetverifyCustomActivity : AppCompatActivity(), BottomSheetDialogDocuments.
 		override fun run() {
 			if (!errorCode.startsWith("G")) {
 				try {
-					runOnUiThread { }
 					val alertDialogBuilder = AlertDialog.Builder(this@NetverifyCustomActivity)
 					alertDialogBuilder.setMessage(errorMessage)
 					alertDialogBuilder.setCancelable(false)

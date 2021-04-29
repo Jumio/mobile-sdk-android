@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">使用正面</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">请将手机旋转至纵向来拍摄自拍照</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;旋转您的设备&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">遇到问题？</string>
-	<string name="face_helpview_upfront_title">捕捉你的脸</string>
-	<string name="zoom_accessibility_cancel_button">退出扫描</string>
-	<string name="zoom_action_im_ready">我准备好了</string>
-	<string name="zoom_action_ok">好</string>
-	<string name="zoom_feedback_a_little_too_close">往后一点</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">往后一点</string>
-	<string name="zoom_feedback_center_face">将您的脸放到中间</string>
-	<string name="zoom_feedback_face_not_found">将您的脸放到框内</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">直视前方</string>
-	<string name="zoom_feedback_face_not_upright">头不要歪</string>
-	<string name="zoom_feedback_hold_steady">保持稳定</string>
-	<string name="zoom_feedback_move_phone_away">往后一点</string>
-	<string name="zoom_feedback_move_phone_closer">靠近一点</string>
-	<string name="zoom_feedback_move_phone_even_closer">靠近一点</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">保持设备和眼睛在同一高度</string>
-	<string name="zoom_feedback_move_tablet_away">往后一点</string>
-	<string name="zoom_feedback_move_tablet_closer">靠近一点</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">保持设备和眼睛在同一高度</string>
-	<string name="zoom_helpview_bad_angle">将您的设备保持在眼睛的高度并直视设备</string>
-	<string name="zoom_helpview_bad_lightning">请避免脸部出现阴影和反光</string>
-	<string name="zoom_helpview_general">按照这两个步骤,将你的脸与镜框对齐。将你的设备与眼睛齐平,直视摄像头。你的面部图像会被自动捕捉</string>
-	<string name="zoom_instructions_header_ready">准备好您的视频自拍</string>
-	<string name="zoom_instructions_message_ready">请把你的脸放在小椭圆形中，然后再放入大椭圆形中</string>
-	<string name="zoom_result_facemap_upload_message">正在分析生物计量数据</string>
-	<string name="zoom_result_success_message">成功！</string>
-	<string name="zoom_retry_header">请重试</string>
-	<string name="zoom_retry_ideal_image_label">理想姿势</string>
-	<string name="zoom_retry_instruction_message_1">不要做表情，不要微笑</string>
-	<string name="zoom_retry_instruction_message_2">无眩光或极端照明</string>
-	<string name="zoom_retry_subheader_message">但首先，请查看您的照片并更正您的环境。</string>
-	<string name="zoom_retry_your_image_label">您的自拍</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">请将手机旋转至纵向来拍摄自拍照</string>
@@ -182,11 +144,6 @@
 	<string name="iproov_failure_generic_title">无法识别人脸</string>
 	<string name="iproov_intro_gpa">将您的面部置于框中并在扫描灯闪烁时保持不动。</string>
 	<string name="iproov_intro_la">将您的面部置于框中并按照屏幕上的指示。</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
-	<string name="authentication_scanview_title_face"></string>
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

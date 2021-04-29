@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">ELŐLAP HASZNÁLATA</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Kérjük, hogy szelfi készítéséhez forgassa a telefont álló helyzetbe</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Forgassa el a készüléket&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Problémákat tapasztal?</string>
-	<string name="face_helpview_upfront_title">Arckép készítése</string>
-	<string name="zoom_accessibility_cancel_button">Kilépés a beolvasásból</string>
-	<string name="zoom_action_im_ready">KÉSZEN ÁLLOK</string>
-	<string name="zoom_action_ok">OK</string>
-	<string name="zoom_feedback_a_little_too_close">Lépjen vissza egy kicsit</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Lépjen vissza egy kicsit</string>
-	<string name="zoom_feedback_center_face">Igazítsa az arcát középre</string>
-	<string name="zoom_feedback_face_not_found">Igazítsa az arcát a keretbe</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Nézzen egyenesen előre</string>
-	<string name="zoom_feedback_face_not_upright">Tartsa egyenesen a fejét</string>
-	<string name="zoom_feedback_hold_steady">Tartsa mozdulatanul</string>
-	<string name="zoom_feedback_move_phone_away">Lépjen vissza egy kicsit</string>
-	<string name="zoom_feedback_move_phone_closer">Menjen egy kicsit közelebb</string>
-	<string name="zoom_feedback_move_phone_even_closer">Egy kicsit közelebb</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Tartsa a készüléket szemmagasságban</string>
-	<string name="zoom_feedback_move_tablet_away">Lépjen vissza egy kicsit</string>
-	<string name="zoom_feedback_move_tablet_closer">Menjen egy kicsit közelebb</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Tartsa a készüléket szemmagasságban</string>
-	<string name="zoom_helpview_bad_angle">Tartsa a készüléket szemmagasságban és egyenesen nézzen bele</string>
-	<string name="zoom_helpview_bad_lightning">Kerülje az árnyékokat és a tükröződéseket az arcán</string>
-	<string name="zoom_helpview_general">Kövesse a két lépéses folyamatot és Igazítsa arcát a kerethez. Tartsa az eszközt szemmagasságban és nézzen egyenesen a kamerába. Az arca automatikusan rögzítésre kerül.</string>
-	<string name="zoom_instructions_header_ready">Készüljön fel a videós szelfire</string>
-	<string name="zoom_instructions_message_ready">Helyezze arcát a kis, majd a nagy ovális formába</string>
-	<string name="zoom_result_facemap_upload_message">Biometrikus adatok elemzése</string>
-	<string name="zoom_result_success_message">Siker!</string>
-	<string name="zoom_retry_header">Próbálja meg újra</string>
-	<string name="zoom_retry_ideal_image_label">Ideális póz</string>
-	<string name="zoom_retry_instruction_message_1">Semleges arc, nincs mosoly</string>
-	<string name="zoom_retry_instruction_message_2">Nincs csillogás vagy erős fény</string>
-	<string name="zoom_retry_subheader_message">De először kérjük, nézze meg a képet, és javítson a környezeten.</string>
-	<string name="zoom_retry_your_image_label">Az Ön képe</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Kérjük, hogy szelfi készítéséhez forgassa a telefont álló helyzetbe</string>
@@ -182,11 +144,6 @@
 	<string name="iproov_failure_generic_title">Az arc nem ismerhető fel</string>
 	<string name="iproov_intro_gpa">Helyezze az arcát a keret közepébe, és tartsa mozdulatlanul, amíg a képernyő villog.</string>
 	<string name="iproov_intro_la">Helyezze az arcát a keret közepébe, és kövesse a képernyőn megjelenő utasításokat.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
-	<string name="authentication_scanview_title_face"></string>
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">IZMANTOT PRIEKŠPUSI</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Lūdzu, pagrieziet tālruni portreta režīmā, lai ņemtu pašportretu</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Pagrieziet savu ierīci&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Vai rodas problēmas?</string>
-	<string name="face_helpview_upfront_title">Uzņemt sejas attēlu</string>
-	<string name="zoom_accessibility_cancel_button">Pārtraukt seknēšanu</string>
-	<string name="zoom_action_im_ready">ESMU GATAVS</string>
-	<string name="zoom_action_ok">LABI</string>
-	<string name="zoom_feedback_a_little_too_close">Paejiet nedaudz tālāk</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Paejiet nedaudz tālāk</string>
-	<string name="zoom_feedback_center_face">Centrējiet savu seju</string>
-	<string name="zoom_feedback_face_not_found">Kadrējiet savu seju</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Skatieties taisni uz priekšu</string>
-	<string name="zoom_feedback_face_not_upright">Turiet galvu taisni</string>
-	<string name="zoom_feedback_hold_steady">Stāviet un nekustieties</string>
-	<string name="zoom_feedback_move_phone_away">Paejiet nedaudz tālāk</string>
-	<string name="zoom_feedback_move_phone_closer">Pieejiet nedaudz tuvāk</string>
-	<string name="zoom_feedback_move_phone_even_closer">Nedaudz tuvāk</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Turiet ierīci acu līmenī</string>
-	<string name="zoom_feedback_move_tablet_away">Paejiet nedaudz tālāk</string>
-	<string name="zoom_feedback_move_tablet_closer">Pieejiet nedaudz tuvāk</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Turiet ierīci acu līmenī</string>
-	<string name="zoom_helpview_bad_angle">Turiet ierīci acu līmenī un skatieties tieši tajā</string>
-	<string name="zoom_helpview_bad_lightning">Izvairieties no ēnām un atspulgiem uz sejas</string>
-	<string name="zoom_helpview_general">Sekojiet divpakāpju procesam un novietojiet seju tā, lai tā ietilpst rāmī. Turiet ierīci acu līmenī un skatieties tieši kamerā. Jūsu sejas attēls tiks uzņemts automātiski.</string>
-	<string name="zoom_instructions_header_ready">Gatavojieties savam video selfijam</string>
-	<string name="zoom_instructions_message_ready">Ievietojiet seju mazajā ovālajā, pēc tam lielajā</string>
-	<string name="zoom_result_facemap_upload_message">Analizē biometriskos datus</string>
-	<string name="zoom_result_success_message">Panākumi!</string>
-	<string name="zoom_retry_header">Mēģiniet vēlreiz</string>
-	<string name="zoom_retry_ideal_image_label">Ideāla poza</string>
-	<string name="zoom_retry_instruction_message_1">Neitrāla izteiksme, bez smaida</string>
-	<string name="zoom_retry_instruction_message_2">Nav mirdzuma, spožas gaismas</string>
-	<string name="zoom_retry_subheader_message">Bet vispirms, lūdzu, apskatiet savu fotoattēlu un sakārtojiet vidi</string>
-	<string name="zoom_retry_your_image_label">Jūsu selfijs</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Lūdzu, pagrieziet tālruni portreta režīmā, lai ņemtu pašportretu</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">Seja nav atpazīta</string>
 	<string name="iproov_intro_gpa">Iecentrējiet seju rāmītī un nekustieties, kamēr ekrāns mirgo.</string>
 	<string name="iproov_intro_la">Iecentrējiet seju rāmītī un sekojiet norādījumiem uz ekrāna.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

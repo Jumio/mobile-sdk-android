@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">استخدام الوجه</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">يُرجى تدوير هاتفك إلى الوضع الرأسي لالتقاط صورة ذاتية</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;قم بتدوير جهازك&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">هل تواجه مشكلات؟</string>
-	<string name="face_helpview_upfront_title">التقاط صورة لوجهك</string>
-	<string name="zoom_accessibility_cancel_button">إنهاء المسح</string>
-	<string name="zoom_action_im_ready">أنا مستعد</string>
-	<string name="zoom_action_ok">موافق</string>
-	<string name="zoom_feedback_a_little_too_close">تحرّك للوراء قليلاً</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">تحرّك للوراء قليلاً</string>
-	<string name="zoom_feedback_center_face">اجعل وجهك في الوسط</string>
-	<string name="zoom_feedback_face_not_found">ضع وجهك داخل الإطار</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">انظر للأمام مباشرة</string>
-	<string name="zoom_feedback_face_not_upright">حافظ على استقامة رأسك</string>
-	<string name="zoom_feedback_hold_steady">اثبت في مكانك</string>
-	<string name="zoom_feedback_move_phone_away">تحرّك للوراء قليلاً</string>
-	<string name="zoom_feedback_move_phone_closer">تحرك أقرب قليلاً</string>
-	<string name="zoom_feedback_move_phone_even_closer">أقرب قليلاً</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">أمسك الجهاز على مستوى العين</string>
-	<string name="zoom_feedback_move_tablet_away">تحرّك للوراء قليلاً</string>
-	<string name="zoom_feedback_move_tablet_closer">تحرك أقرب قليلاً</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">أمسك الجهاز على مستوى العين</string>
-	<string name="zoom_helpview_bad_angle">أمسك جهازك على مستوى العين وانظر إليه مباشرة</string>
-	<string name="zoom_helpview_bad_lightning">تجنب الظلال والانعكاسات على وجهك</string>
-	<string name="zoom_helpview_general">اتبع عملية من خطوتين وقم بمحاذاة وجهك مع الإطار. أمسك جهازك على مستوى العين وانظر مباشرةً إلى الكاميرا. سيتم التقاط وجهك تلقائيًا</string>
-	<string name="zoom_instructions_header_ready">استعد لصورتك الذاتية الفيديو</string>
-	<string name="zoom_instructions_message_ready">يُرجى تأطير وجهك في الشكل البيضاوي الصغير، ثم الكبير</string>
-	<string name="zoom_result_facemap_upload_message">تحليل البيانات البيومترية</string>
-	<string name="zoom_result_success_message">نجاح!</string>
-	<string name="zoom_retry_header">حاول مرة اخرى</string>
-	<string name="zoom_retry_ideal_image_label">وضع مثالي</string>
-	<string name="zoom_retry_instruction_message_1">تعبير محايد، لا تبتسم</string>
-	<string name="zoom_retry_instruction_message_2">بدون وهج أو إضاءة شديدة</string>
-	<string name="zoom_retry_subheader_message">ولكن أولاً، يُرجى إلقاء نظرة على صورتك وتصحيح بيئتك.</string>
-	<string name="zoom_retry_your_image_label">صورة ذاتية</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">يُرجى تدوير هاتفك إلى الوضع الرأسي لالتقاط صورة ذاتية</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">لم يتم التعرف على الوجه</string>
 	<string name="iproov_intro_gpa">ضع وجهك في وسط الإطار وثبته جيدًا أثناء وميض الشاشة.</string>
 	<string name="iproov_intro_la">اجعل وجهك في وسط الإطار واتبع التعليمات التي تظهر على الشاشة.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

@@ -10,7 +10,6 @@
 - [Overview](#overview)
 - [Get Started](#get-started)
     - [ID Verification & Fastfill SDK](docs/integration_id-verification-fastfill.md)
-    - [Authentication SDK](docs/integration_authentication.md)
     - [Document Verification SDK](docs/integration_document-verification.md)
     - [BAM Checkout SDK](docs/integration_bam-checkout.md)
 - [Quickstart](#quickstart)
@@ -43,11 +42,6 @@ Please note that [basic setup](#basics) is required before continuing with the i
 ID Verification (formerly known as Netverify) is a secure and easy solution that allows you to establish the genuine identity of your users in your mobile application by verifying their passports and other government-issued IDs in real time. Very user-friendly and highly customizable, it makes onboarding new customers quick and simple.
 
 - [Integration ID Verification & Fastfill SDK](docs/integration_id-verification-fastfill.md)
-
-## Jumio Authentication
-Authentication is a cutting-edge, biometric-based service that establishes digital identities of your users simply by taking a selfie. Advanced 3D face-mapping technology quickly and securely authenticates users and their digital identities.
-
-- [Integration Authentication SDK](docs/integration_authentication.md)
 
 ## Jumio Document Verification
 Document Verification is a powerful solution that allows users to scan various types of documents quickly and easily in your mobile application. Data extraction is already supported for various document types, such as bank statements.
@@ -184,7 +178,7 @@ See our [Change Log](docs/changelog.md) for more information about our current S
 # Support
 
 ## Previous Version
-The previous release version 3.8.0 of the Jumio Mobile SDK is supported until 2021-06-05.
+The previous release version 3.9.1 of the Jumio Mobile SDK is supported until 2021-09-10.
 
 When the support period has expired, bug fixes and technical support will no longer be provided. Current bugs are typically fixed in the upcoming versions. Older SDK versions will keep functioning with our server until further notice, but we highly recommend that you always update to the latest version to benefit from SDK improvements and bug fixes.
 

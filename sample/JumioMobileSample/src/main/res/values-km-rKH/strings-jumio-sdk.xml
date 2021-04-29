@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">ប្រើផ្នែកខាងមុខ</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">សូមបង្វិលទូរសព្ទរបស់អ្នកទៅបញ្ឈរដើម្បីថតសែលហ្វី</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;បង្វិលឧបករណ៍របស់អ្នក&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">តើមានជួបបញ្ហាឬទេ?</string>
-	<string name="face_helpview_upfront_title">ថតមុខរបស់អ្នក</string>
-	<string name="zoom_accessibility_cancel_button">ឈប់ស្កេន</string>
-	<string name="zoom_action_im_ready">ខ្ញុំត្រៀមរួចរាល់ហើយ</string>
-	<string name="zoom_action_ok">យល់ព្រម</string>
-	<string name="zoom_feedback_a_little_too_close">ខិតថយក្រោយបន្តិច</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">ខិតថយក្រោយបន្តិច</string>
-	<string name="zoom_feedback_center_face">ដាក់មុខរបស់អ្នកឱ្យនៅចំកណ្ដាល</string>
-	<string name="zoom_feedback_face_not_found">ដាក់ស៊ុមជុំវិញមុខរបស់អ្នក</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">មើលឱ្យត្រង់ទៅមុខ</string>
-	<string name="zoom_feedback_face_not_upright">ដាក់ក្បាលរបស់អ្នកឱ្យត្រង់</string>
-	<string name="zoom_feedback_hold_steady">កាន់ឲ្យនឹង</string>
-	<string name="zoom_feedback_move_phone_away">ខិតថយក្រោយបន្តិច</string>
-	<string name="zoom_feedback_move_phone_closer">ខិតឱ្យជិតបន្តិចទៀត</string>
-	<string name="zoom_feedback_move_phone_even_closer">ឱ្យជិតបន្តិចទៀត</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">ដាក់ឧបករណ៍នៅកម្ពស់ត្រឹមភ្នែក</string>
-	<string name="zoom_feedback_move_tablet_away">ខិតថយក្រោយបន្តិច</string>
-	<string name="zoom_feedback_move_tablet_closer">ខិតឱ្យជិតបន្តិចទៀត</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">ដាក់ឧបករណ៍នៅកម្ពស់ត្រឹមភ្នែក</string>
-	<string name="zoom_helpview_bad_angle">ដាក់ឧបករណ៍របស់អ្នកនៅកម្ពស់ត្រឹមភ្នែកហើយសម្លឹងឱ្យចំវា</string>
-	<string name="zoom_helpview_bad_lightning">ចៀសវាងស្រមោល និងការផ្លាតពន្លឺលើផ្ទៃមុខរបស់អ្នក</string>
-	<string name="zoom_helpview_general">អនុវត្តតាមដំណើរការពីរជំហាន ហើយតម្រង់មុខរបស់អ្នកឱ្យចំស៊ុម។ ដាក់ឧបករណ៍របស់អ្នកនៅកម្ពស់ត្រឹមភ្នែក ហើយសម្លឹងឱ្យចំកាមេរ៉ា។ មុខរបស់អ្នកនឹងត្រូវបានថតដោយស្វ័យប្រវត្តិ</string>
-	<string name="zoom_instructions_header_ready">ត្រៀមខ្លួនថតវីដេអូសែលហ្វីខ្លួនឯង</string>
-	<string name="zoom_instructions_message_ready">ដាក់មុខអ្នកក្នុងស៊ុមពងក្រពើតូចបន្ទាប់ក្នុងស៊ុមពងក្រពើធំ</string>
-	<string name="zoom_result_facemap_upload_message">កំពុងវិភាគទិន្នន័យជីវមាត្រ</string>
-	<string name="zoom_result_success_message">ជោគជ័យ!</string>
-	<string name="zoom_retry_header">សូមព្យាយាមម្តងទៀត</string>
-	<string name="zoom_retry_ideal_image_label">ជំហល្អបំផុត</string>
-	<string name="zoom_retry_instruction_message_1">ទឹកមុខស្មើ មិនញញឹម</string>
-	<string name="zoom_retry_instruction_message_2">គ្មានពន្លឺចាំងឬពន្លឺខ្លាំងពេក</string>
-	<string name="zoom_retry_subheader_message">ប៉ុន្តែជាដំបូង សូមមើលរូបថតរបស់អ្នក និងកែបរិស្ថានជុំវិញរបស់អ្នកសិន។</string>
-	<string name="zoom_retry_your_image_label">សែលហ្វី</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">សូមបង្វិលទូរសព្ទរបស់អ្នកទៅបញ្ឈរដើម្បីថតសែលហ្វី</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">មិនស្គាល់មុខទេ</string>
 	<string name="iproov_intro_gpa">ដាក់មុខរបស់អ្នកឲ្យចំពាក់កណ្ដាលស៊ុម ហើយកាន់វាឲ្យនឹង ពេលអេក្រង់កំពុងបញ្ចេញពន្លឺផ្លាស។</string>
 	<string name="iproov_intro_la">ដាក់មុខរបស់អ្នកឲ្យចំពាក់កណ្ដាលស៊ុម ហើយអនុវត្តតាមការណែនាំនៅលើអេក្រង់។</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

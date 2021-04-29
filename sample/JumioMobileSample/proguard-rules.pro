@@ -37,4 +37,3 @@
 -dontwarn module-info
 -dontwarn com.microblink.**
 -dontwarn javax.annotation.Nullable
--dontwarn com.facetec.zoom.sdk.**

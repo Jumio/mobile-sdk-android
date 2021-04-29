@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">BRUG FORSIDE</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Roter din telefon til portrættilstand for at tage en selfie</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Roter din enhed&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Har du problemer?</string>
-	<string name="face_helpview_upfront_title">Tag et billede af dit ansigt</string>
-	<string name="zoom_accessibility_cancel_button">Afslut scanning</string>
-	<string name="zoom_action_im_ready">JEG ER KLAR</string>
-	<string name="zoom_action_ok">OK</string>
-	<string name="zoom_feedback_a_little_too_close">Ryk lidt tilbage</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Ryk lidt tilbage</string>
-	<string name="zoom_feedback_center_face">Centrer dit ansigt</string>
-	<string name="zoom_feedback_face_not_found">Placer dit ansigt i rammen</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Se lige frem</string>
-	<string name="zoom_feedback_face_not_upright">Hold hovedet lige</string>
-	<string name="zoom_feedback_hold_steady">Hold stille</string>
-	<string name="zoom_feedback_move_phone_away">Ryk lidt tilbage</string>
-	<string name="zoom_feedback_move_phone_closer">Ryk lidt tættere på</string>
-	<string name="zoom_feedback_move_phone_even_closer">Lidt tættere på</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Hold enheden i øjenhøjde</string>
-	<string name="zoom_feedback_move_tablet_away">Ryk lidt tilbage</string>
-	<string name="zoom_feedback_move_tablet_closer">Ryk lidt tættere på</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Hold enheden i øjenhøjde</string>
-	<string name="zoom_helpview_bad_angle">Hold enheden i øjenhøjde og kig direkte ind i den</string>
-	<string name="zoom_helpview_bad_lightning">Undgå skygger og refleksioner på dit ansigt</string>
-	<string name="zoom_helpview_general">Følg de to trin og placer dit ansigt inden for rammen. Hold enheden i øjenhøjde, og kig direkte ind i kameraet. Billedet tages automatisk.</string>
-	<string name="zoom_instructions_header_ready">Gør dig klar til din video-selfie</string>
-	<string name="zoom_instructions_message_ready">Indram ansigtet i den lille oval og derefter den store</string>
-	<string name="zoom_result_facemap_upload_message">Analyserer biometriske data</string>
-	<string name="zoom_result_success_message">Vellykket!</string>
-	<string name="zoom_retry_header">Prøv venligst igen</string>
-	<string name="zoom_retry_ideal_image_label">God positur</string>
-	<string name="zoom_retry_instruction_message_1">Neutralt udtryk, ingen smil</string>
-	<string name="zoom_retry_instruction_message_2">Ingen blænding / ekstremt lys</string>
-	<string name="zoom_retry_subheader_message">Men først skal du tage et kig på dit foto og rette dine omgivelser.</string>
-	<string name="zoom_retry_your_image_label">Din selfie</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Roter din telefon til portrættilstand for at tage en selfie</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">Ansigt ikke genkendt</string>
 	<string name="iproov_intro_gpa">Centrer dit ansigt i rammen, og hold det stille, mens skærmen blinker.</string>
 	<string name="iproov_intro_la">Centrer dit ansigt i rammen, og og følg vejledningen på skærmen.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

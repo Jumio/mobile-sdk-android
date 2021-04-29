@@ -71,16 +71,14 @@ The following table shows a range of different product configurations with the s
 
 |Product Configuration      | Size   | Modules   |
 |:--------------------------|:------:|:----------|
-|ID + Authentication (Zoom)                  | 12.77 MB | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, auth, zoom |
-|ID + Liveness (Zoom)                        | 12.75 MB | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, zoom |
 |ID + Liveness (Iproov)                      | 7.43 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, iproov |
 |ID + Liveness (Iproov) w/o NFC              | 5.90 MB  | core, nv, nv-mrz, nv-ocr, nv-barcode, iproov |
 |ID w/o Liveness                             | 7.04 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode |
 |ID w/o Liveness, Barcode                    | 5.95 MB  | core, nv, nv-mrz, nv-ocr |
 |ID w/o Liveness, Barcode, OCR               | 5.42 MB  | core, nv, nv-mrz |
-|ID minimum                                  | 2.23 MB  | core, nv |
-|BAM Checkout                                | 4.74 MB  | core, bam |
-|Document verification                       | 2.02 MB  | core, dv  |
+|ID minimum                                  | 2.25 MB  | core, nv |
+|BAM Checkout                                | 4.76 MB  | core, bam |
+|Document verification                       | 2.04 MB  | core, dv  |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 

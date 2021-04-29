@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">ИСПОЛЬЗОВАТЬ ЛИЦЕВУЮ СТОРОНУ</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Поверните телефон вертикально, чтобы сделать селфи</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Поверните устройство&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Возникли проблемы?</string>
-	<string name="face_helpview_upfront_title">Сделайте снимок своего лица</string>
-	<string name="zoom_accessibility_cancel_button">Завершить сканирование</string>
-	<string name="zoom_action_im_ready">Я ГОТОВ(-А)</string>
-	<string name="zoom_action_ok">ХОРОШО</string>
-	<string name="zoom_feedback_a_little_too_close">Отодвиньте немного дальше</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Отодвиньте немного дальше</string>
-	<string name="zoom_feedback_center_face">Выровняйте лицо по центру</string>
-	<string name="zoom_feedback_face_not_found">Поместите лицо в рамку</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Смотрите прямо перед собой</string>
-	<string name="zoom_feedback_face_not_upright">Держите голову прямо</string>
-	<string name="zoom_feedback_hold_steady">Не двигайтесь</string>
-	<string name="zoom_feedback_move_phone_away">Отодвиньте немного дальше</string>
-	<string name="zoom_feedback_move_phone_closer">Пододвиньте немного ближе</string>
-	<string name="zoom_feedback_move_phone_even_closer">Немного ближе</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Держите устройство на уровне глаз</string>
-	<string name="zoom_feedback_move_tablet_away">Отодвиньте немного дальше</string>
-	<string name="zoom_feedback_move_tablet_closer">Пододвиньте немного ближе</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Держите устройство на уровне глаз</string>
-	<string name="zoom_helpview_bad_angle">Держите устройство на уровне глаз и смотрите прямо в него</string>
-	<string name="zoom_helpview_bad_lightning">Избегайте теней и отражений на лице</string>
-	<string name="zoom_helpview_general">Пройдите двухэтапный процесс и выровняйте свое лицо по рамке. Держите устройство на уровне глаз и смотрите прямо в камеру. Ваше лицо будет снято автоматически</string>
-	<string name="zoom_instructions_header_ready">Приготовьтесь к видео-селфи</string>
-	<string name="zoom_instructions_message_ready">Поместите свое лицо в маленький овал, а затем в большой</string>
-	<string name="zoom_result_facemap_upload_message">Анализ биометрических данных</string>
-	<string name="zoom_result_success_message">Готово!</string>
-	<string name="zoom_retry_header">Попробуйте еще раз</string>
-	<string name="zoom_retry_ideal_image_label">Идеально</string>
-	<string name="zoom_retry_instruction_message_1">Нейтральное лицо, без улыбки</string>
-	<string name="zoom_retry_instruction_message_2">Без бликов или яркого света</string>
-	<string name="zoom_retry_subheader_message">Но сначала посмотрите на свою фотографию и исправьте обстановку.</string>
-	<string name="zoom_retry_your_image_label">Ваше селфи</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Поверните телефон вертикально, чтобы сделать селфи</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">Лицо не распознано</string>
 	<string name="iproov_intro_gpa">Поместите лицо в рамку и не двигайтесь, пока не будет сделан снимок.</string>
 	<string name="iproov_intro_la">Поместите лицо в рамку и следуйте инструкциям на экране.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

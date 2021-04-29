@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">SỬ DỤNG MẶT TRƯỚC</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Hãy xoay dọc điện thoại để chụp ảnh tự chụp</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Xoay thiết bị của bạn&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Bạn gặp vấn đề?</string>
-	<string name="face_helpview_upfront_title">Chụp ảnh khuôn mặt bạn</string>
-	<string name="zoom_accessibility_cancel_button">Thoát khỏi quét</string>
-	<string name="zoom_action_im_ready">TÔI ĐÃ SẴN SÀNG</string>
-	<string name="zoom_action_ok">OK</string>
-	<string name="zoom_feedback_a_little_too_close">Di chuyển ra xa một chút</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Di chuyển ra xa một chút</string>
-	<string name="zoom_feedback_center_face">Chỉnh khuôn mặt bạn vào giữa</string>
-	<string name="zoom_feedback_face_not_found">Chỉnh khuôn mặt vào trong khung</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Nhìn thẳng về phía trước</string>
-	<string name="zoom_feedback_face_not_upright">Giữ thẳng đầu</string>
-	<string name="zoom_feedback_hold_steady">Giữ yên</string>
-	<string name="zoom_feedback_move_phone_away">Di chuyển ra xa một chút</string>
-	<string name="zoom_feedback_move_phone_closer">Di chuyển lại gần hơn một chút</string>
-	<string name="zoom_feedback_move_phone_even_closer">Gần hơn một chút</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Giữ thiết bị ngang tầm mắt</string>
-	<string name="zoom_feedback_move_tablet_away">Di chuyển ra xa một chút</string>
-	<string name="zoom_feedback_move_tablet_closer">Di chuyển lại gần hơn một chút</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Giữ thiết bị ngang tầm mắt</string>
-	<string name="zoom_helpview_bad_angle">Giữ thiết bị ngang tầm mắt và nhìn thẳng vào đó</string>
-	<string name="zoom_helpview_bad_lightning">Tránh bóng tối và bóng phản chiếu trên khuôn mặt bạn</string>
-	<string name="zoom_helpview_general">Làm theo quy trình gồm hai bước và căn chỉnh khuôn mặt của bạn vào khung. Giữ yên thiết bị ngang tầm mắt và nhìn thẳng vào máy ảnh. Khuôn mặt của bạn sẽ được tự động chụp.</string>
-	<string name="zoom_instructions_header_ready">Hãy sẵn sàng cho video tự quay</string>
-	<string name="zoom_instructions_message_ready">Hãy điều chỉnh khuôn mặt bạn vào khung hình oval nhỏ, s</string>
-	<string name="zoom_result_facemap_upload_message">Đang phân tích dữ liệu sinh trắc học</string>
-	<string name="zoom_result_success_message">Thành công!</string>
-	<string name="zoom_retry_header">Vui lòng thử lại</string>
-	<string name="zoom_retry_ideal_image_label">Tư thế lý tư</string>
-	<string name="zoom_retry_instruction_message_1">Nét mặt bình thường không cười</string>
-	<string name="zoom_retry_instruction_message_2">Không có ánh sáng chói hoặc cự</string>
-	<string name="zoom_retry_subheader_message">Nhưng trước hết, hãy xem ảnh và chỉnh sửa môi trường của bạn.</string>
-	<string name="zoom_retry_your_image_label">Ảnh tự chụp</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Hãy xoay dọc điện thoại để chụp ảnh tự chụp</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">Không nhận dạng được khuôn mặt</string>
 	<string name="iproov_intro_gpa">Căn giữa khuôn mặt của bạn trong khung và giữ cố định trong khi màn hình nhấp nháy.</string>
 	<string name="iproov_intro_la">Căn giữa khuôn mặt của bạn trong khung và làm theo hướng dẫn trên màn hình.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

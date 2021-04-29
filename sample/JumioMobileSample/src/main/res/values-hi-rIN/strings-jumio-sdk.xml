@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">आगे के हिस्से का उपयोग करें</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">सेल्फी लेने के लिए कृपया अपने फोन को पोर्ट्रेट के लिए घुमाएं</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt; अपने डिवाइस को घुमाएं &lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">समस्याएँ आ रही हैं?</string>
-	<string name="face_helpview_upfront_title">अपना चेहरा कैप्चर करें</string>
-	<string name="zoom_accessibility_cancel_button">स्कैन से बाहर निकलें</string>
-	<string name="zoom_action_im_ready">मैं तैयार हूँ</string>
-	<string name="zoom_action_ok">ठीक है</string>
-	<string name="zoom_feedback_a_little_too_close">थोड़ा पीछे ले जाएँ</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">थोड़ा पीछे ले जाएँ</string>
-	<string name="zoom_feedback_center_face">अपने चेहरे को केंद्र में लाएं</string>
-	<string name="zoom_feedback_face_not_found">अपने चेहरे को फ्रेम करें</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">सीधे आगे देखें</string>
-	<string name="zoom_feedback_face_not_upright">अपने सिर को सीधा रखें</string>
-	<string name="zoom_feedback_hold_steady">स्थिर पकड़े रखें</string>
-	<string name="zoom_feedback_move_phone_away">थोड़ा पीछे ले जाएँ</string>
-	<string name="zoom_feedback_move_phone_closer">थोड़ा और करीब ले जाएँ</string>
-	<string name="zoom_feedback_move_phone_even_closer">थोड़ा सा करीब</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">डिवाइस को आंखों के स्तर पर पकड़ें</string>
-	<string name="zoom_feedback_move_tablet_away">थोड़ा पीछे ले जाएँ</string>
-	<string name="zoom_feedback_move_tablet_closer">थोड़ा और करीब ले जाएँ</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">डिवाइस को आंखों के स्तर पर पकड़ें</string>
-	<string name="zoom_helpview_bad_angle">अपने डिवाइस को आंखों के स्तर पर पकड़ें और सीधे इसमें देखें</string>
-	<string name="zoom_helpview_bad_lightning">आपके चेहरे को छाया और परावर्तन से बचाएं</string>
-	<string name="zoom_helpview_general">दो चरण की प्रक्रिया का पालन करें और फ्रेम के साथ अपने चेहरे को संरेखित करें। आंखके स्तर पर अपने डिवाइस पकडें  और सीधे कैमरे में देखें। आपका चेहरा स्वचालित रूप से कैप्चर हो जाएगा</string>
-	<string name="zoom_instructions_header_ready">वीडियो सेल्फी के लिए तैयार हो जाइए</string>
-	<string name="zoom_instructions_message_ready">अपना चेहरा छोटे अंडाकार, फिर बड़े अंडाकार में फ्रेम करे</string>
-	<string name="zoom_result_facemap_upload_message">बायोमेट्रिक डेटा का विश्लेषण किया जा रहा है</string>
-	<string name="zoom_result_success_message">सफलता!</string>
-	<string name="zoom_retry_header">पुन: प्रयास करें</string>
-	<string name="zoom_retry_ideal_image_label">आदर्श मुद्रा</string>
-	<string name="zoom_retry_instruction_message_1">तटस्थ अभिव्यक्ति, न मुस्कुराएं</string>
-	<string name="zoom_retry_instruction_message_2">कोई चमक या अधिक प्रकाश नहीं</string>
-	<string name="zoom_retry_subheader_message">लेकिन पहले, कृपया अपने फ़ोटो पर एक नज़र डालें और अपने वातावरण को ठीक करें।</string>
-	<string name="zoom_retry_your_image_label">आपकी सेल्फी</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">सेल्फी लेने के लिए कृपया अपने फोन को पोर्ट्रेट के लिए घुमाएं</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">चेहरा पहचाना नहीं गया</string>
 	<string name="iproov_intro_gpa">अपने चेहरे को फ्रेम के अंदर केन्द्रित करें और स्क्रीन के फ्लैश होने पर अपने चेहरे को  स्थिर रखें।</string>
 	<string name="iproov_intro_la">अपने चेहरे को फ्रेम के केंद्र में रखें और स्क्रीन पर आने वाले निर्देशों का पालन करें।</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

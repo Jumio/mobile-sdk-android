@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">SEBENZISA OKUPHAMBILI</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Phendula ifoni yakho ime ukuze uthathe isithombe ngekhamera engaphambili</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Jikelezisa idivayisi yakho&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Ingabe kunezinkinga onazo?</string>
-	<string name="face_helpview_upfront_title">Thatha isithombe sobuso bakho</string>
-	<string name="zoom_accessibility_cancel_button">Yeka ukuskena</string>
-	<string name="zoom_action_im_ready">NGIKULUNGELE</string>
-	<string name="zoom_action_ok">KULUNGILE</string>
-	<string name="zoom_feedback_a_little_too_close">Hlehla kancane</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Hlehla kancane</string>
-	<string name="zoom_feedback_center_face">Ubuso bakho mabube phakathi nendawo</string>
-	<string name="zoom_feedback_face_not_found">Faka ubuso bakho ohlakeni</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Bheka phambili</string>
-	<string name="zoom_feedback_face_not_upright">Gcina ikhanda lakho liqondile</string>
-	<string name="zoom_feedback_hold_steady">Yibambe unganyakazi</string>
-	<string name="zoom_feedback_move_phone_away">Hlehla kancane</string>
-	<string name="zoom_feedback_move_phone_closer">Sondela kancane</string>
-	<string name="zoom_feedback_move_phone_even_closer">Yisondeze kancane</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Bamba idivayisi yakho iqondane namehlo</string>
-	<string name="zoom_feedback_move_tablet_away">Hlehla kancane</string>
-	<string name="zoom_feedback_move_tablet_closer">Sondela kancane</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Bamba idivayisi yakho iqondane namehlo</string>
-	<string name="zoom_helpview_bad_angle">Bamba idivayisi yakho iqondane namehlo bese ubheka ngqo kuyo</string>
-	<string name="zoom_helpview_bad_lightning">Gwema isithunzi nezinto ezixhophayo ebusweni bakho</string>
-	<string name="zoom_helpview_general">Landela inqubo eyizinyathelo ezimbili, ubuso bakho ubumise kahle ohlakeni. Bamba idivayisi yakho iqondane namehlo bese ubuka ngqo kwikhamera. Isithombe sobuso bakho sizothathwa ngokuzenzakalelayo</string>
-	<string name="zoom_instructions_header_ready">Lungela i-selfie yakho yevidiyo</string>
-	<string name="zoom_instructions_message_ready">Beka ubuso endilingeni encane, nasendilingeni enkulu</string>
-	<string name="zoom_result_facemap_upload_message">Ihlaziya idatha ye-biometric</string>
-	<string name="zoom_result_success_message">Impumelelo!</string>
-	<string name="zoom_retry_header">Sicela uphinde uzame</string>
-	<string name="zoom_retry_ideal_image_label">Ukuma okuhle</string>
-	<string name="zoom_retry_instruction_message_1">Ubuso obuthule, ungamamatheki</string>
-	<string name="zoom_retry_instruction_message_2">Akukho ukukhaya okuxhophayo</string>
-	<string name="zoom_retry_subheader_message">Kodwa okokuqala, bheka isithombe sakho bese ulungisa indawo okuyo.</string>
-	<string name="zoom_retry_your_image_label">I-selfie</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Phendula ifoni yakho ime ukuze uthathe isithombe ngekhamera engaphambili</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">Ubuso abuqashelwa</string>
 	<string name="iproov_intro_gpa">Beka ubuso bakho phakathi nendawo ohlakeni bese uma unganyakazi ngesikhathi isikrini sibaneka.</string>
 	<string name="iproov_intro_la">Beka ubuso bakho phakathi nendawo ohlakeni futhi ulandele iziqondiso ezisesikrinini.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

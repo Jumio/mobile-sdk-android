@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">UŻYJ PRZODU DOKUMENTU</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Obróć telefon do pozycji pionowej, aby zrobić sobie zdjęcie</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Obróć urządzenie&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Występują problemy?</string>
-	<string name="face_helpview_upfront_title">Uchwyć swoją twarz</string>
-	<string name="zoom_accessibility_cancel_button">Zakończ skanowanie</string>
-	<string name="zoom_action_im_ready">GOTOWE</string>
-	<string name="zoom_action_ok">OK</string>
-	<string name="zoom_feedback_a_little_too_close">Oddal się trochę</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Oddal się trochę</string>
-	<string name="zoom_feedback_center_face">Wyśrodkuj twarz</string>
-	<string name="zoom_feedback_face_not_found">Dopasuj twarz</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Patrz prosto przed siebie</string>
-	<string name="zoom_feedback_face_not_upright">Trzymaj głowę prosto</string>
-	<string name="zoom_feedback_hold_steady">Nie ruszaj się</string>
-	<string name="zoom_feedback_move_phone_away">Oddal się trochę</string>
-	<string name="zoom_feedback_move_phone_closer">Przybliż się</string>
-	<string name="zoom_feedback_move_phone_even_closer">Trochę bliżej</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Trzymaj urządzenie na wysokości oczu</string>
-	<string name="zoom_feedback_move_tablet_away">Oddal się trochę</string>
-	<string name="zoom_feedback_move_tablet_closer">Przybliż się</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Trzymaj urządzenie na wysokości oczu</string>
-	<string name="zoom_helpview_bad_angle">Trzymaj urządzenie na wysokości oczu i patrz prosto przed siebie</string>
-	<string name="zoom_helpview_bad_lightning">Unikaj cieni i odbić na twarzy</string>
-	<string name="zoom_helpview_general">Postępuj zgodnie z dwuetapowym procesem i dopasuj swoją twarz do ramki. Trzymaj urządzenie na wysokości oczu i patrz prosto w aparat. Twoja twarz zostanie uchwycona automatycznie</string>
-	<string name="zoom_instructions_header_ready">Przygotuj się na selfie wideo</string>
-	<string name="zoom_instructions_message_ready">Umieść twarz w małym owalu, następnie w dużym owalu</string>
-	<string name="zoom_result_facemap_upload_message">Analizowanie danych biometrycznych</string>
-	<string name="zoom_result_success_message">Sukces!</string>
-	<string name="zoom_retry_header">Spróbuj ponownie</string>
-	<string name="zoom_retry_ideal_image_label">Idealna poza</string>
-	<string name="zoom_retry_instruction_message_1">Neutralnie, bez uśmiechu</string>
-	<string name="zoom_retry_instruction_message_2">Brak odblasków/mocnego światła</string>
-	<string name="zoom_retry_subheader_message">Ale najpierw spójrz na swoje zdjęcie i popraw swoje tło.</string>
-	<string name="zoom_retry_your_image_label">Twoje selfie</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Obróć telefon do pozycji pionowej, aby zrobić sobie zdjęcie</string>
@@ -182,11 +144,6 @@
 	<string name="iproov_failure_generic_title">Nie rozpoznano twarzy</string>
 	<string name="iproov_intro_gpa">Wyśrodkuj twarz w ramce i przytrzymaj ją nieruchomo, gdy ekran miga.</string>
 	<string name="iproov_intro_la">Wyśrodkuj twarz w ramce i postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
-	<string name="authentication_scanview_title_face"></string>
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

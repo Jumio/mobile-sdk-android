@@ -16,7 +16,7 @@ Jumio’s ID Verification allows businesses to establish the genuine identity of
 - [Javadoc](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release Notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.9.1
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 3.9.2
 
 For breaking technical changes, please read our [transition guide](transition-guide_id-verification-fastfill.md)
 
@@ -29,8 +29,8 @@ Below there is a list of dependencies the application will need to work in Andro
 ```
 dependencies {
     // mandatory
-    implementation "com.jumio.android:core:3.9.1@aar"       // Jumio Core library
-    implementation "com.jumio.android:nv:3.9.1@aar"         // Netverify library
+    implementation "com.jumio.android:core:3.9.2@aar"       // Jumio Core library
+    implementation "com.jumio.android:nv:3.9.2@aar"         // Netverify library
 
     implementation "androidx.appcompat:appcompat:1.2.0"
     implementation "androidx.cardview:cardview:1.0.0"
@@ -44,25 +44,22 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0"
 
     // not mandatory
-    implementation "com.jumio.android:iproov:3.9.1@aar"       // Face Liveness library (iProov)
+    implementation "com.jumio.android:iproov:3.9.2@aar"       // Face Liveness library (iProov)
     implementation ("com.iproov.sdk:iproov:6.4.0"){           // Face Liveness library (iProov)
 		    exclude group: 'org.json', module:'json'
 	  }                                                         
 
-    implementation "com.jumio.android:zoom:3.9.1@aar"             // Face Liveness library (ZoOm)
-    implementation "com.facetec:zoom-authentication:8.12.1@aar"   // Face Liveness library (ZoOm)
-
-    implementation "com.jumio.android:nv-barcode:3.9.1@aar"   // Barcode scanning
-    implementation "com.jumio.android:nv-barcode-vision:3.9.1@aar"        // Barcode scanning alternative (reduced size)
+    implementation "com.jumio.android:nv-barcode:3.9.2@aar"   // Barcode scanning
+    implementation "com.jumio.android:nv-barcode-vision:3.9.2@aar"        // Barcode scanning alternative (reduced size)
     implementation "com.google.android.gms:play-services-vision:20.1.3"   // Barcode scanning alternative
 
-    implementation "com.jumio.android:nv-mrz:3.9.1@aar"       // MRZ scanning
-    implementation "com.jumio.android:nv-ocr:3.9.1@aar"       // Template matcher
-    implementation "com.jumio.android:dv:3.9.1@aar"           // Document verification library
-    implementation "com.jumio.android:auth:3.9.1@aar"         // Authentication library
-    implementation "com.jumio.android:bam:3.9.1@aar"          // BAM checkout library
+    implementation "com.jumio.android:nv-mrz:3.9.2@aar"       // MRZ scanning
+    implementation "com.jumio.android:nv-ocr:3.9.2@aar"       // Template matcher
+    implementation "com.jumio.android:dv:3.9.2@aar"           // Document verification library
+    implementation "com.jumio.android:auth:3.9.2@aar"         // Authentication library
+    implementation "com.jumio.android:bam:3.9.2@aar"          // BAM checkout library
 
-    implementation "com.jumio.android:nv-nfc:3.9.1@aar"       // eMRTD scanning
+    implementation "com.jumio.android:nv-nfc:3.9.2@aar"       // eMRTD scanning
     implementation "org.jmrtd:jmrtd:0.7.24"                   // eMRTD Scanning
     implementation "org.ejbca.cvc:cert-cvc:1.4.6"             // eMRTD Scanning
     implementation "org.bouncycastle:bcprov-jdk15on:1.67"     // eMRTD Scanning
@@ -72,28 +69,16 @@ dependencies {
 __Note:__ "Mandatory" libraries in this case are needed for a minimal runnable SDK implementation. All libraries marked "not mandatory" are optional in the sense that they improve the scanning experience and supported documents, including additional ID type options that can be left out if they are not needed. Version numbers may vary.
 
 #### Certified Liveness Vendor
-Jumio offers the choice between two Certified Liveness vendors to determine liveness:
-
-* iProov
-* ZoOm
-
-The SDK can only use one vendor at a time. Switching vendors during runtime is not possible. If both dependencies are linked in the same project, Jumio SDK will use iProov.
-
-__Using iProov:__
+Jumio uses Certified Liveness technology to determine liveness.   
 ```
-implementation "com.jumio.android:iproov:3.9.1@aar"       
+implementation "com.jumio.android:iproov:3.9.2@aar"       
 implementation ("com.iproov.sdk:iproov:6.4.0"){
     exclude group: 'org.json', module:'json'
 }
 ```
-
 iProov currently depends on okhttp 3.8.1, but also supports okhttp 4.x versions (Please refer to [Known Issues](known_issues.md#Issues-with-okhttp3-dependency-using-iproov) for detailed information.)
 
-__Using ZoOm:__
-```
-implementation "com.jumio.android:zoom:3.9.1@aar"     
-implementation "com.facetec:zoom-authentication:8.12.1@aar"
-```
+__Note:__ In case your application uses __ZoOm__ as a liveness vendor, please contact [Jumio support](../README.md#support) or your account manager directly.
 
 #### Barcode Alternative
 As an alternative to the `com.jumio.android:nv-barcode` dependency, you can substitute the  `com.jumio.android:nv-barcode-vision` library together with the `com.google.android.gms:play-services-vision` library. If this combination is used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues:
@@ -131,7 +116,7 @@ In case of __DIALOG_PENDING__, the `requestCode` provided in the method above ca
 If you use ID Verification or Fastfill together with BAM Checkout in your app, add the following dependency:
 
 ```
-implementation "com.jumio.android:bam:3.9.1@aar"
+implementation "com.jumio.android:bam:3.9.2@aar"
 ```
 
 #### Root Detection
@@ -326,25 +311,6 @@ This style has to be added to your main custom theme using:
 </style>
 ```
 
-__Customize Zoom:__   
-
-Zoom appearance can be customized using:
-```
-<style name="CustomZoom" parent="Zoom.Customization">
-<style name="CustomZoomLowLight" parent="Zoom.Customization.Lowlight">
-```
-
-One or both of these styles have to be added to your main custom theme using:
-
-```
-<style name="CustomNetverifyTheme" parent="Theme.Netverify">
-  ...
-  <item name="zoom_customization">@style/CustomZoom</item>
-  <item name="zoom_customization_lowlight">@style/CustomZoomLowLight</item>
-  ...
-</style>
-```
-
 __Note:__ Using the surface tool will provide you with XML Output for both themes. Please make sure to customize accordingly and remove the styles you won't use.
 
 ### Customize Look and Feel
@@ -516,7 +482,7 @@ public Set<NVDocumentVariant> getDocumentVariants(NVDocumentType documentType);
 
 **[NVDocumentVariant](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/data/document/NVDocumentVariant.html)** values: `PAPER`, `PLASTIC`
 
-**[NetverifyScanMode](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyScanMode.html)** values: `BARCODE`, `FACE_MANUAL`, `FACE_IPROOV`, `FACE_ZOOM`, `MANUAL`, `MRZ`, `NFC`, `OCR_CARD`, `OCR_TEMPLATE`
+**[NetverifyScanMode](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyScanMode.html)** values: `BARCODE`, `FACE_MANUAL`, `FACE_IPROOV`, `MANUAL`, `MRZ`, `NFC`, `OCR_CARD`, `OCR_TEMPLATE`
 
 **[NVScanSide](https://jumio.github.io/mobile-sdk-android/com/jumio/core/data/document/ScanSide.html)** values: `FRONT`, `BACK`, `FACE`
 
@@ -534,7 +500,6 @@ Using width or height as wrap_content, the `NetverifyCustomScanView` attribute r
 ```
 xmlns:yourNameSpace="http://schemas.android.com/apk/lib/com.jumio.mobile.sdk"
 ```
-The position and image of the close button for face scanning can also be customized. Please have a look at the [`NetverifyCustomScanView`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanView.html)
 
 The position of the branding logo within the `NetverifyCustomScanView` can be adjusted by setting a top margin. See method
 [`setBrandingLogoTopMargin(int topMargin)`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanView.html#setBrandingLogoTopMargin-int-)

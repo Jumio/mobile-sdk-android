@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">UTILISEZ LE RECTO</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Veuillez tourner votre téléphone pour prendre un selfie en mode portrait.</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Tournez votre appareil&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Des problèmes?</string>
-	<string name="face_helpview_upfront_title">Capturez votre visage</string>
-	<string name="zoom_accessibility_cancel_button">Annuler la numérisation</string>
-	<string name="zoom_action_im_ready">JE SUIS PRÊT(E)</string>
-	<string name="zoom_action_ok">OK</string>
-	<string name="zoom_feedback_a_little_too_close">Reculez un peu</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Reculez un peu</string>
-	<string name="zoom_feedback_center_face">Centrez votre visage</string>
-	<string name="zoom_feedback_face_not_found">Placez votre visage dans le cadre</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Regardez droit devant vous</string>
-	<string name="zoom_feedback_face_not_upright">Tenez la tête droite</string>
-	<string name="zoom_feedback_hold_steady">Ne bougez pas</string>
-	<string name="zoom_feedback_move_phone_away">Reculez un peu</string>
-	<string name="zoom_feedback_move_phone_closer">Rapprochez-vous un peu</string>
-	<string name="zoom_feedback_move_phone_even_closer">Encore plus près</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Placez la caméra à hauteur d\'yeux</string>
-	<string name="zoom_feedback_move_tablet_away">Reculez un peu</string>
-	<string name="zoom_feedback_move_tablet_closer">Rapprochez-vous un peu</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Placez la caméra à hauteur d\'yeux</string>
-	<string name="zoom_helpview_bad_angle">Placez la caméra à hauteur d\'yeux et regardez droit devant</string>
-	<string name="zoom_helpview_bad_lightning">Évitez les ombres et les reflets sur votre visage</string>
-	<string name="zoom_helpview_general">Suivez le processus à deux étapes et alignez votre visage avec le cadre. Tenez votre appareil au niveau des yeux et regardez droit dans la caméra. Votre visage sera capturé automatiquement.</string>
-	<string name="zoom_instructions_header_ready">Préparation pour votre selfie vidéo</string>
-	<string name="zoom_instructions_message_ready">Placez votre visage dans le petit ovale, puis le grand</string>
-	<string name="zoom_result_facemap_upload_message">Analyse des données biométriques</string>
-	<string name="zoom_result_success_message">Bravo !</string>
-	<string name="zoom_retry_header">Veuillez réessayer</string>
-	<string name="zoom_retry_ideal_image_label">Pose idéale</string>
-	<string name="zoom_retry_instruction_message_1">Expression neutre sans sourire</string>
-	<string name="zoom_retry_instruction_message_2">Aucun reflet ou lum. extrême</string>
-	<string name="zoom_retry_subheader_message">Veuillez d\'abord jeter un œil à votre photo et corriger votre environnement</string>
-	<string name="zoom_retry_your_image_label">Votre selfie</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Veuillez tourner votre téléphone pour prendre un selfie en mode portrait.</string>
@@ -182,11 +144,6 @@
 	<string name="iproov_failure_generic_title">Visage non reconnu</string>
 	<string name="iproov_intro_gpa">Centrez votre visage dans le cadre et maintenez-le stable pendant que l’écran clignote.</string>
 	<string name="iproov_intro_la">Centrez votre visage dans le cadre et suivez les instructions à l’écran.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
-	<string name="authentication_scanview_title_face"></string>
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

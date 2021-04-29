@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">POUŽÍT PŘEDNÍ STRANU</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Prosím, otočte telefon na výšku, abyste pořídili selfie.</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt; Natočte vaše zařízení &lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Potřebujete poradit?</string>
-	<string name="face_helpview_upfront_title">Vyfoť si obličej</string>
-	<string name="zoom_accessibility_cancel_button">Ukončit skenování</string>
-	<string name="zoom_action_im_ready">MŮŽEME</string>
-	<string name="zoom_action_ok">OK</string>
-	<string name="zoom_feedback_a_little_too_close">Vraťte se trochu zpět</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Vraťte se trochu zpět</string>
-	<string name="zoom_feedback_center_face">Vycentruj svou tvář</string>
-	<string name="zoom_feedback_face_not_found">Ujistěte se, že váš obličej je v rámečku.</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Dívejte se přímo před sebe</string>
-	<string name="zoom_feedback_face_not_upright">Držte hlavu rovně.</string>
-	<string name="zoom_feedback_hold_steady">Nehýbejte se</string>
-	<string name="zoom_feedback_move_phone_away">Vraťte se trochu zpět</string>
-	<string name="zoom_feedback_move_phone_closer">Přibližte se trochu</string>
-	<string name="zoom_feedback_move_phone_even_closer">Trochu blíž</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Držte fotoaparát v úrovni očí.</string>
-	<string name="zoom_feedback_move_tablet_away">Vraťte se trochu zpět</string>
-	<string name="zoom_feedback_move_tablet_closer">Přibližte se trochu</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Držte fotoaparát v úrovni očí.</string>
-	<string name="zoom_helpview_bad_angle">Držte zařízení na úrovni očí a dívejte se přímo do něj.</string>
-	<string name="zoom_helpview_bad_lightning">Vyvarujte se stínů a odrazů na tváři.</string>
-	<string name="zoom_helpview_general">Postupujte podle následujících instrukcí a zarovnejte obličej s rámečkem. Držte zařízení na úrovni očí a hleďte přímo do kamery. Vaše tvář bude zachycena automaticky.</string>
-	<string name="zoom_instructions_header_ready">Připravte se na své video selfie</string>
-	<string name="zoom_instructions_message_ready">Zarovnejte svou tvář s menším a potom větším oválem</string>
-	<string name="zoom_result_facemap_upload_message">Analyzují se biometrické údaje</string>
-	<string name="zoom_result_success_message">Podařilo se!</string>
-	<string name="zoom_retry_header">Zkuste to znovu</string>
-	<string name="zoom_retry_ideal_image_label">Ideální póza</string>
-	<string name="zoom_retry_instruction_message_1">Neutrální výraz bez úsměvu</string>
-	<string name="zoom_retry_instruction_message_2">Pozor na ostré a přímé světlo</string>
-	<string name="zoom_retry_subheader_message">Nejprve si ale prohlédněte svoji fotku a upravte prostředí</string>
-	<string name="zoom_retry_your_image_label">Vaše selfie</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Prosím, otočte telefon na výšku, abyste pořídili selfie.</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">Tvář nerozpoznána.</string>
 	<string name="iproov_intro_gpa">Obličej nasměrujte do středu rámečku a držte v klidu, když obrazovka bliká.</string>
 	<string name="iproov_intro_la">Obličej nasměrujte do středu rámečku a postupujte dle pokynů na obrazovce.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

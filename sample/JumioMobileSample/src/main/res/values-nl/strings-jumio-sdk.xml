@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">GEBRUIK VOORKANT</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Draai uw telefoon naar portret om een selfie te nemen</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Draai uw apparaat&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Ervaar je problemen?</string>
-	<string name="face_helpview_upfront_title">Leg uw gezicht vast</string>
-	<string name="zoom_accessibility_cancel_button">Stop scannen</string>
-	<string name="zoom_action_im_ready">IK BEN ER KLAAR VOOR</string>
-	<string name="zoom_action_ok">OK</string>
-	<string name="zoom_feedback_a_little_too_close">Ga een stukje achteruit</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Ga een stukje achteruit</string>
-	<string name="zoom_feedback_center_face">Centreer je gezicht</string>
-	<string name="zoom_feedback_face_not_found">Frame je gezicht</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Kijk recht vooruit</string>
-	<string name="zoom_feedback_face_not_upright">Houd je hoofd recht</string>
-	<string name="zoom_feedback_hold_steady">Niet bewegen</string>
-	<string name="zoom_feedback_move_phone_away">Ga een stukje achteruit</string>
-	<string name="zoom_feedback_move_phone_closer">Kom een stukje dichterbij</string>
-	<string name="zoom_feedback_move_phone_even_closer">Een beetje dichterbij</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Houd apparaat op ooghoogte</string>
-	<string name="zoom_feedback_move_tablet_away">Ga een stukje achteruit</string>
-	<string name="zoom_feedback_move_tablet_closer">Kom een stukje dichterbij</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Houd apparaat op ooghoogte</string>
-	<string name="zoom_helpview_bad_angle">Houd je apparaat op ooghoogte en kijk er recht in</string>
-	<string name="zoom_helpview_bad_lightning">Vermijd schaduwen en reflecties op je gezicht</string>
-	<string name="zoom_helpview_general">Volg het proces in twee stappen en stel uw gezicht gelijk met het kader. Houd uw apparaat op ooghoogte en kijk recht in de camera. Uw gezicht wordt automatisch vastgelegd</string>
-	<string name="zoom_instructions_header_ready">Maak je klaar voor je video-selfie</string>
-	<string name="zoom_instructions_message_ready">Plaats je gezicht in de kleine ovaal, dan in de grote</string>
-	<string name="zoom_result_facemap_upload_message">Biometrische gegevens analyseren</string>
-	<string name="zoom_result_success_message">Gelukt!</string>
-	<string name="zoom_retry_header">Probeer het nog eens</string>
-	<string name="zoom_retry_ideal_image_label">Beste stand</string>
-	<string name="zoom_retry_instruction_message_1">Neutrale look, niet glimlachen</string>
-	<string name="zoom_retry_instruction_message_2">Geen felle weerkaatsing</string>
-	<string name="zoom_retry_subheader_message">Laten we eerst je foto bekijken en je omgeving corrigeren.</string>
-	<string name="zoom_retry_your_image_label">Je selfie</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Draai uw telefoon naar portret om een selfie te nemen</string>
@@ -182,11 +144,6 @@
 	<string name="iproov_failure_generic_title">Gezicht wordt niet herkend</string>
 	<string name="iproov_intro_gpa">Plaats je gezicht in het frame en houd het stil, terwijl het scherm knippert.</string>
 	<string name="iproov_intro_la">Plaats je gezicht in het frame en volg de instructies op het scherm.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
-	<string name="authentication_scanview_title_face"></string>
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

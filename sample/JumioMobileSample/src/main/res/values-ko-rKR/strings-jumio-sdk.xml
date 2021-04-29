@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">앞면 사용</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">셀카를 찍으려면 휴대폰을 세로로 회전하세요</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;기기 회전&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">문제가 있습니까?</string>
-	<string name="face_helpview_upfront_title">얼굴 촬영</string>
-	<string name="zoom_accessibility_cancel_button">스캔 종료</string>
-	<string name="zoom_action_im_ready">준비 완료</string>
-	<string name="zoom_action_ok">OK</string>
-	<string name="zoom_feedback_a_little_too_close">조금 뒤로 이동</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">조금 뒤로 이동</string>
-	<string name="zoom_feedback_center_face">얼굴을 중앙에 놓아주세요</string>
-	<string name="zoom_feedback_face_not_found">얼굴을 프레임에 맞추세요</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">정면을 보세요</string>
-	<string name="zoom_feedback_face_not_upright">머리를 똑바로 맞춰주세요</string>
-	<string name="zoom_feedback_hold_steady">가만히 계세요</string>
-	<string name="zoom_feedback_move_phone_away">조금 뒤로 이동</string>
-	<string name="zoom_feedback_move_phone_closer">조금 더 가까이 이동</string>
-	<string name="zoom_feedback_move_phone_even_closer">조금 더 가까이</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">기기를 눈높이에서 들고 계세요</string>
-	<string name="zoom_feedback_move_tablet_away">조금 뒤로 이동</string>
-	<string name="zoom_feedback_move_tablet_closer">조금 더 가까이 이동</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">기기를 눈높이에서 들고 계세요</string>
-	<string name="zoom_helpview_bad_angle">기기를 눈높이에서 들고 똑바로 보세요</string>
-	<string name="zoom_helpview_bad_lightning">얼굴에 그림자와 반사가 일어나지 않게 하세요</string>
-	<string name="zoom_helpview_general">2단계 과정을 따라 얼굴을 프레임에 맞춥니다. 기기를 눈높이에서 들고 카메라를 똑바로 봅니다. 얼굴이 자동으로 촬영됩니다.</string>
-	<string name="zoom_instructions_header_ready">동영상 셀카 준비</string>
-	<string name="zoom_instructions_message_ready">작은 타원 안에 얼굴을 맞춘 다음 큰 타원에 맞추세요</string>
-	<string name="zoom_result_facemap_upload_message">생체 데이터 분석</string>
-	<string name="zoom_result_success_message">성공!</string>
-	<string name="zoom_retry_header">다시 시도하세요</string>
-	<string name="zoom_retry_ideal_image_label">이상적인 자세</string>
-	<string name="zoom_retry_instruction_message_1">웃지 않는 무표정</string>
-	<string name="zoom_retry_instruction_message_2">눈부시거나 심한 조명 없음</string>
-	<string name="zoom_retry_subheader_message">그전에 사진을 살펴보고 환경을 먼저 수정해주세요.</string>
-	<string name="zoom_retry_your_image_label">내 셀카</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">셀카를 찍으려면 휴대폰을 세로로 회전하세요</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">얼굴 인식 불가</string>
 	<string name="iproov_intro_gpa">프레임 중앙에 얼굴을 놓고 화면이 깜박이는 동안 흔들리지 않게 그대로 유지하세요.</string>
 	<string name="iproov_intro_la">프레임 중앙에 얼굴을 놓고 화면에 뜨는 설명을 따라 해주세요.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">UŻA N-NAĦA TA\' QUDDIEM</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Jekk jogħġbok dawwar il-mowbajl tiegħek fil-pożizzjoni portrait biex tieħu stessu</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Dawwar it-tagħmir tiegħek&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Qed tesperjenza xi problemi?</string>
-	<string name="face_helpview_upfront_title">Iġbed ritratt ta\' wiċċek</string>
-	<string name="zoom_accessibility_cancel_button">Waqqaf l-iskenn</string>
-	<string name="zoom_action_im_ready">JIEN LEST</string>
-	<string name="zoom_action_ok">OK</string>
-	<string name="zoom_feedback_a_little_too_close">Imxi ftit lura</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Imxi ftit lura</string>
-	<string name="zoom_feedback_center_face">Poġġi wiċċek fiċ-ċentru</string>
-	<string name="zoom_feedback_face_not_found">Daħħal wiċċek fil-frejm</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Ħares dritt \'il quddiem</string>
-	<string name="zoom_feedback_face_not_upright">Żomm rasek dritta</string>
-	<string name="zoom_feedback_hold_steady">Tiċċaqlaqx</string>
-	<string name="zoom_feedback_move_phone_away">Imxi ftit lura</string>
-	<string name="zoom_feedback_move_phone_closer">Imxi ftit aktar viċin</string>
-	<string name="zoom_feedback_move_phone_even_closer">Ftit aktar viċin</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Żomm it-tagħmir f\'livell mal-għajnejn</string>
-	<string name="zoom_feedback_move_tablet_away">Imxi ftit lura</string>
-	<string name="zoom_feedback_move_tablet_closer">Imxi ftit aktar viċin</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Żomm it-tagħmir f\'livell mal-għajnejn</string>
-	<string name="zoom_helpview_bad_angle">Żomm it-tagħmir tiegħek f\'livell mal-għajnejn u ħares dritt lejh</string>
-	<string name="zoom_helpview_bad_lightning">Evita dellijiet u riflessjonijiet fuq wiċċek</string>
-	<string name="zoom_helpview_general">Segwi l-proċess li fih żewġ passi u allinja wiċċek mal-frejm. Żomm it-tagħmir tiegħek f\'livell mal-għajnejn u ħares dritt fil-kamera. Se jinġibed ritratt ta\' wiċċek awtomatikament.</string>
-	<string name="zoom_instructions_header_ready">Ipprepara ruħek għall-video selfie</string>
-	<string name="zoom_instructions_message_ready">Inkwadra wiċċek fl-ovali ż-żgħira, imbagħad fil-kbira</string>
-	<string name="zoom_result_facemap_upload_message">Qed janalizza d-dejta bijometrika</string>
-	<string name="zoom_result_success_message">Suċċess!</string>
-	<string name="zoom_retry_header">Erġa\' pprova</string>
-	<string name="zoom_retry_ideal_image_label">Poża ideali</string>
-	<string name="zoom_retry_instruction_message_1">Kun naturali, titbissimx</string>
-	<string name="zoom_retry_instruction_message_2">L-ebda dija jew dawl estrem</string>
-	<string name="zoom_retry_subheader_message">Iżda l-ewwel agħti ħarsa lejn ir-ritratt tiegħek u kkoreġi l-ambjent.</string>
-	<string name="zoom_retry_your_image_label">Stessu</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Jekk jogħġbok dawwar il-mowbajl tiegħek fil-pożizzjoni portrait biex tieħu stessu</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">Il-wiċċ ma ġiex rikonoxxut</string>
 	<string name="iproov_intro_gpa">Poġġi wiċċek fil-frejm u tiċċaqlaqx sakemm l-iskrin qiegħed iteptep.</string>
 	<string name="iproov_intro_la">Poġġi wiċċek fil-frejm u imxi mal-istruzzjonijiet li tara fuq l-iskrin.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

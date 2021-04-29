@@ -602,8 +602,7 @@ class NetverifyCustomScanFragment : Fragment(), View.OnClickListener {
 
 	private fun isFaceScan(): Boolean {
 		return customScanViewPresenter!!.scanMode == NetverifyScanMode.FACE_MANUAL ||
-				customScanViewPresenter!!.scanMode == NetverifyScanMode.FACE_IPROOV ||
-				customScanViewPresenter!!.scanMode == NetverifyScanMode.FACE_ZOOM
+				customScanViewPresenter!!.scanMode == NetverifyScanMode.FACE_IPROOV
 	}
 
 	/**

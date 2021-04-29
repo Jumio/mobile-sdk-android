@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">ใช้ด้านหน้า</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">โปรดหมุนโทรศัพท์เป็นแนวตั้งเพื่อถ่ายภาพตัวเอง</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;หมุนอุปกรณ์&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">ประสบปัญหาใช่หรือไม่</string>
-	<string name="face_helpview_upfront_title">จับภาพใบหน้าของคุณ</string>
-	<string name="zoom_accessibility_cancel_button">ออกจากการสแกน</string>
-	<string name="zoom_action_im_ready">ฉันพร้อมแล้ว</string>
-	<string name="zoom_action_ok">ตกลง</string>
-	<string name="zoom_feedback_a_little_too_close">ถอยหลังไปเล็กน้อย</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">ถอยหลังไปเล็กน้อย</string>
-	<string name="zoom_feedback_center_face">วางใบหน้าให้อยู่ตรงกลาง</string>
-	<string name="zoom_feedback_face_not_found">วางใบหน้าอยู่ในกรอบ</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">มองตรงไปข้างหน้า</string>
-	<string name="zoom_feedback_face_not_upright">ตั้งศีรษะให้ตรง</string>
-	<string name="zoom_feedback_hold_steady">ถือนิ่ง ๆ</string>
-	<string name="zoom_feedback_move_phone_away">ถอยหลังไปเล็กน้อย</string>
-	<string name="zoom_feedback_move_phone_closer">ขยับเข้ามาใกล้เล็กน้อย</string>
-	<string name="zoom_feedback_move_phone_even_closer">ใกล้เข้ามาอีก</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">ถืออุปกรณ์ในระดับสายตา</string>
-	<string name="zoom_feedback_move_tablet_away">ถอยหลังไปเล็กน้อย</string>
-	<string name="zoom_feedback_move_tablet_closer">ขยับเข้ามาใกล้เล็กน้อย</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">ถืออุปกรณ์ในระดับสายตา</string>
-	<string name="zoom_helpview_bad_angle">ถืออุปกรณ์ที่ระดับสายตาและมองตรงไปที่กล้อง</string>
-	<string name="zoom_helpview_bad_lightning">หลีกเลี่ยงจุดที่ทำให้เกิดเงาและแสงสะท้อนบนใบหน้า</string>
-	<string name="zoom_helpview_general">ปฏิบัติตามกระบวนการสองขั้นตอน และวางใบหน้าให้เข้ากับกรอบ ถืออุปกรณ์ในระดับสายตาและมองตรงไปที่กล้อง ระบบจะจับภาพใบหน้าของคุณโดยอัตโนมัติ</string>
-	<string name="zoom_instructions_header_ready">เตรียมพร้อมถ่ายวิดีโอเซลฟี่ของคุณ</string>
-	<string name="zoom_instructions_message_ready">โปรดจัดใบหน้าให้อยู่ในกรอบวงรีเล็ก จากนั้นวงรีใหญ่</string>
-	<string name="zoom_result_facemap_upload_message">กำลังวิเคราะห์ข้อมูลชีวมิติ</string>
-	<string name="zoom_result_success_message">สำเร็จ!</string>
-	<string name="zoom_retry_header">โปรดลองอีกครั้ง</string>
-	<string name="zoom_retry_ideal_image_label">ท่าเหมาะสม</string>
-	<string name="zoom_retry_instruction_message_1">สีหน้าปกติ ไม่ต้องยิ้ม</string>
-	<string name="zoom_retry_instruction_message_2">ไม่มีแสงจ้าหรือแสงมากเกินไป</string>
-	<string name="zoom_retry_subheader_message">แต่ก่อนอื่น โปรดดูภาพถ่ายของคุณและแก้ไขสภาพแวดล้อม</string>
-	<string name="zoom_retry_your_image_label">เซลฟี่ของคุณ</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">โปรดหมุนโทรศัพท์เป็นแนวตั้งเพื่อถ่ายภาพตัวเอง</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">ไม่รู้จักใบหน้า</string>
 	<string name="iproov_intro_gpa">วางใบหน้าให้อยู่กลางกรอบและถือให้นิ่งขณะที่หน้าจอกะพริบ</string>
 	<string name="iproov_intro_la">วางใบหน้าให้อยู่กลางกรอบและทำตามคำแนะนำบนหน้าจอ</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

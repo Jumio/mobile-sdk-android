@@ -95,44 +95,7 @@
 	<string name="netverify_use_front_side_of_card">使用正面</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">請旋轉手機至人像以自拍</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;旋轉裝置&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">遇到問題了嗎？</string>
-	<string name="zoom_accessibility_cancel_button">退出掃描</string>
-	<string name="zoom_feedback_a_little_too_close">移後一點</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">移後一點</string>
-	<string name="zoom_feedback_center_face">臉部居中</string>
-	<string name="zoom_feedback_face_not_found">框住您的臉</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">直視前方</string>
-	<string name="zoom_feedback_face_not_upright">保持頭直</string>
-	<string name="zoom_feedback_hold_steady">保持不動</string>
-	<string name="zoom_feedback_move_phone_away">移後一點</string>
-	<string name="zoom_feedback_move_phone_closer">移近一點</string>
-	<string name="zoom_feedback_move_phone_even_closer">靠近一點</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">將裝置放在視線高度</string>
-	<string name="zoom_feedback_move_tablet_away">移後一點</string>
-	<string name="zoom_feedback_move_tablet_closer">移近一點</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">將裝置放在視線高度</string>
-	<string name="zoom_helpview_bad_angle">將裝置放在視線高度並直視它</string>
-	<string name="zoom_helpview_bad_lightning">避免臉上出現陰影和反射</string>
-	<string name="zoom_helpview_general">遵循兩步過程，將您的臉與框架對齊。將您的裝置放在視線水平的位置，直視攝像機。您的臉將被自動捕捉</string>
-	<string name="zoom_instructions_header_ready">做好自錄視訊的準備</string>
-	<string name="zoom_instructions_message_ready">請用小橢圓形框住您的臉，然後用大橢圓形框住</string>
-	<string name="zoom_retry_header">請再試一次</string>
-	<string name="zoom_retry_ideal_image_label">理想姿勢</string>
-	<string name="zoom_retry_instruction_message_1">中性表情，沒有微笑</string>
-	<string name="zoom_retry_instruction_message_2">沒有眩光或極端照明</string>
-	<string name="zoom_retry_subheader_message">但首先，請看一下您的照片並更正您的環境。</string>
-	<string name="zoom_retry_your_image_label">您的自拍</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
 	<!--
 	-->
 

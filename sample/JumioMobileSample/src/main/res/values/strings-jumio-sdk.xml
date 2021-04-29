@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">USE FRONT</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Please rotate your phone to portrait to take a selfie</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Rotate your device&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Experiencing problems?</string>
-	<string name="face_helpview_upfront_title">Capture your face</string>
-	<string name="zoom_accessibility_cancel_button">Quit scan</string>
-	<string name="zoom_action_im_ready">I\'M READY</string>
-	<string name="zoom_action_ok">OK</string>
-	<string name="zoom_feedback_a_little_too_close">Move back a bit</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Move back a bit</string>
-	<string name="zoom_feedback_center_face">Center your face</string>
-	<string name="zoom_feedback_face_not_found">Frame your face</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Look straight ahead</string>
-	<string name="zoom_feedback_face_not_upright">Keep your head straight</string>
-	<string name="zoom_feedback_hold_steady">Hold still</string>
-	<string name="zoom_feedback_move_phone_away">Move back a bit</string>
-	<string name="zoom_feedback_move_phone_closer">Move a bit closer</string>
-	<string name="zoom_feedback_move_phone_even_closer">A bit closer</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Hold device at eye level</string>
-	<string name="zoom_feedback_move_tablet_away">Move back a bit</string>
-	<string name="zoom_feedback_move_tablet_closer">Move a bit closer</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Hold device at eye level</string>
-	<string name="zoom_helpview_bad_angle">Hold your device at eye level and look straight into it</string>
-	<string name="zoom_helpview_bad_lightning">Avoid shadows and reflections on your face</string>
-	<string name="zoom_helpview_general">Follow the two-step process and align your face with the frame. Hold your device on eye level and look straight into the camera. Your face will be captured automatically</string>
-	<string name="zoom_instructions_header_ready">Get ready for your video selfie</string>
-	<string name="zoom_instructions_message_ready">Please frame your face in the small oval, then big oval</string>
-	<string name="zoom_result_facemap_upload_message">Analyzing biometric data</string>
-	<string name="zoom_result_success_message">Success!</string>
-	<string name="zoom_retry_header">Please try again</string>
-	<string name="zoom_retry_ideal_image_label">Ideal pose</string>
-	<string name="zoom_retry_instruction_message_1">Neutral expression, no smiling</string>
-	<string name="zoom_retry_instruction_message_2">No glare or extreme lighting</string>
-	<string name="zoom_retry_subheader_message">But first, please take a look at your photo and correct your environment.</string>
-	<string name="zoom_retry_your_image_label">Your selfie</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Please rotate your phone to portrait to take a selfie</string>
@@ -182,13 +144,6 @@
 	<string name="iproov_failure_generic_title">Face not recognized</string>
 	<string name="iproov_intro_gpa">Center your face in the frame and hold it steady while the screen is flashing.</string>
 	<string name="iproov_intro_la">Center your face in the frame and follow the on-screen instructions.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
-	<string name="authentication_scanview_title_face"></string>
-	<string name="authentication_error_enrollment_invalid" translatable="false">Enrollment transaction reference invalid</string>
-	<string name="authentication_error_processing_failed" translatable="false">The scan could not be processed</string>
 	-->
 
 	<!-- POSSIBLE BAM SDK STRINGS TO OVERRIDE-->

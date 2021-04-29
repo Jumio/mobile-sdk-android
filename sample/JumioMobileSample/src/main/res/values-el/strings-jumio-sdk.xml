@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">ΧΡΗΣΗ ΜΠΡΟΣΤΙΝΟΥ ΜΕΡΟΥΣ</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Περιστρέψτε το τηλέφωνό σας σε λειτουργία πορτραίτου για να τραβήξετε μια σέλφι</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Περιστρέψτε τη συσκευή σας&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Προβλήματά</string>
-	<string name="face_helpview_upfront_title">Σύλληψη προσώπου</string>
-	<string name="zoom_accessibility_cancel_button">Τερματισμός σάρωσης</string>
-	<string name="zoom_action_im_ready">ΕΊΜΑΙ ΈΤΟΙΜΟΣ/Η</string>
-	<string name="zoom_action_ok">ΕΝΤΆΞΕΙ</string>
-	<string name="zoom_feedback_a_little_too_close">Μετακινηθείτε λίγο πιο πίσω</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Μετακινηθείτε λίγο πιο πίσω</string>
-	<string name="zoom_feedback_center_face">Κεντρική όψη</string>
-	<string name="zoom_feedback_face_not_found">Κεντράρετε το πρόσωπό σας στο πλαίσιο</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Κοιτάξτε ευθεία μπροστά</string>
-	<string name="zoom_feedback_face_not_upright">Κρατήστε το κεφάλι σας ίσιο</string>
-	<string name="zoom_feedback_hold_steady">Μείνετε ακίνητοι.</string>
-	<string name="zoom_feedback_move_phone_away">Μετακινηθείτε λίγο πιο πίσω</string>
-	<string name="zoom_feedback_move_phone_closer">Μετακινηθείτε λίγο πιο κοντά</string>
-	<string name="zoom_feedback_move_phone_even_closer">Λίγο πιο κοντά</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Κρατήστε τη συσκευή στο επίπεδο των ματιών</string>
-	<string name="zoom_feedback_move_tablet_away">Μετακινηθείτε λίγο πιο πίσω</string>
-	<string name="zoom_feedback_move_tablet_closer">Μετακινηθείτε λίγο πιο κοντά</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Κρατήστε τη συσκευή στο επίπεδο των ματιών</string>
-	<string name="zoom_helpview_bad_angle">Κρατήστε τη συσκευή σας στο επίπεδο των ματιών και κοιτάξτε απευθείας σε αυτή</string>
-	<string name="zoom_helpview_bad_lightning">Αποφύγετε τις σκιές και τις αντανακλάσεις στο πρόσωπό σας</string>
-	<string name="zoom_helpview_general">Ακολουθήστε τη διαδικασία δύο βημάτων και κεντράρετε το πρόσωπό σας στο πλαίσιο. Κρατήστε τη συσκευή σας στο επίπεδο των ματιών και κοιτάξτε απευθείας στην κάμερα. Η λήψη του προσώπου σας θα γίνει αυτόματα</string>
-	<string name="zoom_instructions_header_ready">Ετοιμαστείτε για τη selfie βίντεο</string>
-	<string name="zoom_instructions_message_ready">Βάλτε το πρόσωπό σας στο μικρό οβάλ και μετά στο μεγάλο</string>
-	<string name="zoom_result_facemap_upload_message">Ανάλυση βιομετρικών δεδομένων</string>
-	<string name="zoom_result_success_message">Επιτυχία!</string>
-	<string name="zoom_retry_header">Δοκιμάστε ξανά</string>
-	<string name="zoom_retry_ideal_image_label">Ιδανική πόζα</string>
-	<string name="zoom_retry_instruction_message_1">Ουδέτερη έκφραση, όχι χαμόγελο</string>
-	<string name="zoom_retry_instruction_message_2">Χωρίς αντανακλ. ή έντονο φως</string>
-	<string name="zoom_retry_subheader_message">Αλλά πρώτα, δείτε τη φωτογραφία και διορθώστε το περιβάλλον γύρω σας.</string>
-	<string name="zoom_retry_your_image_label">Η selfie σας</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Περιστρέψτε το τηλέφωνό σας σε λειτουργία πορτραίτου για να τραβήξετε μια σέλφι</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">Το πρόσωπο δεν αναγνωρίστηκε</string>
 	<string name="iproov_intro_gpa">Κεντράρετε το πρόσωπό σας στο πλαίσιο και κρατήστε το σταθερό όσο η οθόνη αναβοσβήνει.</string>
 	<string name="iproov_intro_la">Κεντράρετε το πρόσωπό σας στο πλαίσιο και ακολουθήστε τις οδηγίες που εμφανίζονται στην οθόνη.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

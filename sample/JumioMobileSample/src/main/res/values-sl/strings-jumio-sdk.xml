@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">UPORABITE SPRENJO STRAN</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Telefon obrnite pokončno in se fotografirajte</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Obrnite napravo&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Imate težave?</string>
-	<string name="face_helpview_upfront_title">Zajemite svoj obraz</string>
-	<string name="zoom_accessibility_cancel_button">Prekliči optično branje</string>
-	<string name="zoom_action_im_ready">PRIPRAVLJEN SEM</string>
-	<string name="zoom_action_ok">V REDU</string>
-	<string name="zoom_feedback_a_little_too_close">Malo se oddaljite</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Malo se oddaljite</string>
-	<string name="zoom_feedback_center_face">Obraz postavite na sredino</string>
-	<string name="zoom_feedback_face_not_found">Obraz vstavite v okvir</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Glejte naravnost</string>
-	<string name="zoom_feedback_face_not_upright">Ne nagibajte glave</string>
-	<string name="zoom_feedback_hold_steady">Ne premikajte se</string>
-	<string name="zoom_feedback_move_phone_away">Malo se oddaljite</string>
-	<string name="zoom_feedback_move_phone_closer">Malo se približajte</string>
-	<string name="zoom_feedback_move_phone_even_closer">Malo bližje</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Napravo držite na višini oči.</string>
-	<string name="zoom_feedback_move_tablet_away">Malo se oddaljite</string>
-	<string name="zoom_feedback_move_tablet_closer">Malo se približajte</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Napravo držite na višini oči.</string>
-	<string name="zoom_helpview_bad_angle">Napravo držite na višini oči in glejte naravnost vanjo.</string>
-	<string name="zoom_helpview_bad_lightning">Preprečite sence in odseve na obrazu.</string>
-	<string name="zoom_helpview_general">Sledite postopku v dveh korakih in poravnajte obraz z okvirjem. Napravo držite na višini oči in glejte naravnost v kamero. Vaš obraz bo zajet samodejno.</string>
-	<string name="zoom_instructions_header_ready">Pripravite se za video selfie</string>
-	<string name="zoom_instructions_message_ready">Obraz postavite v majhno elipso in nato v veliko elipso</string>
-	<string name="zoom_result_facemap_upload_message">Analiziranje biometričnih podatkov</string>
-	<string name="zoom_result_success_message">Uspeh!</string>
-	<string name="zoom_retry_header">Poskusite znova</string>
-	<string name="zoom_retry_ideal_image_label">Idealna poza</string>
-	<string name="zoom_retry_instruction_message_1">Nevtralen izraz, brez nasmeha</string>
-	<string name="zoom_retry_instruction_message_2">Brez bleščanja/preosvetlitve</string>
-	<string name="zoom_retry_subheader_message">Najprej si oglejte svojo fotografijo in popravite okolje.</string>
-	<string name="zoom_retry_your_image_label">Vaš selfie</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Telefon obrnite pokončno in se fotografirajte</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">Obraz ni prepoznan</string>
 	<string name="iproov_intro_gpa">Obraz postavite na sredino okvirja in ga ne premikajte, dokler zaslon utripa.</string>
 	<string name="iproov_intro_la">Obraz postavite na sredino okvirja in sledite navodilom na zaslonu.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

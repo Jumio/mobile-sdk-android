@@ -16,7 +16,6 @@
 	<string name="section_documentverification">Document Verification</string>
 	<string name="header_options">Options:</string>
 	<string name="netverify_verification_enabled">Verification enabled</string>
-	<string name="authentication_enrollment_transaction_reference">Enrollment Transaction Reference</string>
 	<string name="documentverification_enable_extraction">Enable extraction</string>
 	<string name="netverify_identity_verification_enabled">Identity Verification enabled</string>
 	<string name="bam_cvv_required">CVV required</string>

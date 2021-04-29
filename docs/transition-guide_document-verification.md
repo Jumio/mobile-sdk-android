@@ -1,8 +1,15 @@
 ![Jumio](images/document_verification.jpg)
 
 # Transition Guide for Document Verification SDK
-
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
+
+
+When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
+__Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
+
+
+## 3.9.2
+No backward incompatible changes
 
 ## 3.9.1
 No backward incompatible changes

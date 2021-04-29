@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">ÖN YÜZÜ KULLANIN</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Lütfen selfie çekmek için telefonunuzu dikey konuma döndürün</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Cihazınızı döndürün&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Sorun mu yaşıyorsunuz?</string>
-	<string name="face_helpview_upfront_title">Yüzünüzün resmini çekin</string>
-	<string name="zoom_accessibility_cancel_button">Taramadan çık</string>
-	<string name="zoom_action_im_ready">HAZIRIM</string>
-	<string name="zoom_action_ok">TAMAM</string>
-	<string name="zoom_feedback_a_little_too_close">Biraz uzaklaşın</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Biraz uzaklaşın</string>
-	<string name="zoom_feedback_center_face">Yüzünüzü ortalayın</string>
-	<string name="zoom_feedback_face_not_found">Yüzünüzü çerçeveye sığdırın</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Tam karşıya bakın</string>
-	<string name="zoom_feedback_face_not_upright">Kafanızı dik tutun</string>
-	<string name="zoom_feedback_hold_steady">Sabit durun</string>
-	<string name="zoom_feedback_move_phone_away">Biraz uzaklaşın</string>
-	<string name="zoom_feedback_move_phone_closer">Biraz daha yaklaşın</string>
-	<string name="zoom_feedback_move_phone_even_closer">Biraz daha yakından</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Cihazı göz hizasında tutun</string>
-	<string name="zoom_feedback_move_tablet_away">Biraz uzaklaşın</string>
-	<string name="zoom_feedback_move_tablet_closer">Biraz daha yaklaşın</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Cihazı göz hizasında tutun</string>
-	<string name="zoom_helpview_bad_angle">Cihazınızı göz hizasında tutun ve doğrudan kameraya bakın</string>
-	<string name="zoom_helpview_bad_lightning">Yüzünüzde oluşabilecek gölgelerden ve yansımalardan kaçının</string>
-	<string name="zoom_helpview_general">İki adımlı süreci izleyip yüzünüzü çerçeveyle hizalayın. Cihazınızı göz hizasında tutun ve doğrudan kameraya bakın. Yüzünüzün resmi otomatik olarak çekilir.</string>
-	<string name="zoom_instructions_header_ready">Video selfie\'niz için hazırlanın</string>
-	<string name="zoom_instructions_message_ready">Lütfen yüzünüzü önce küçük, sonra büyük ovale sığdırın</string>
-	<string name="zoom_result_facemap_upload_message">Biyometrik veriler inceleniyor</string>
-	<string name="zoom_result_success_message">Başarı!</string>
-	<string name="zoom_retry_header">Tekrar deneyin</string>
-	<string name="zoom_retry_ideal_image_label">İdeal poz</string>
-	<string name="zoom_retry_instruction_message_1">Nötr ifade, gülümseme yok</string>
-	<string name="zoom_retry_instruction_message_2">Parlama veya aşırı ışık yok</string>
-	<string name="zoom_retry_subheader_message">Ancak lütfen önce fotoğrafınıza göz atın ve ortamınızı düzeltin.</string>
-	<string name="zoom_retry_your_image_label">Selfie\'niz</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Lütfen selfie çekmek için telefonunuzu dikey konuma döndürün</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">Yüz tanınmadı</string>
 	<string name="iproov_intro_gpa">Yüzünüzü çerçevenin içinde ortalayın ve ekran yanıp sönerken yüzünüzü sabit tutun.</string>
 	<string name="iproov_intro_la">Yüzünüzü çerçevenin içinde ortalayın ve ekrandaki talimatları izleyin.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->

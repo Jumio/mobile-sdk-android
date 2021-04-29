@@ -98,44 +98,6 @@
 	<string name="netverify_use_front_side_of_card">KÄYTÄ ETUPUOLTA</string>
 	-->
 
-	<!-- POSSIBLE ZOOM STRINGS TO OVERRIDE-->
-	<!--
-	<string name="face_helpview_landscape_description">Ota selfie kääntämällä puhelin pystyasentoon</string>
-	<string name="face_helpview_landscape_header">&lt;b&gt;Käännä laitetta&lt;/b&gt;</string>
-	<string name="face_helpview_title_problems">Onko sinulla ongelmia?</string>
-	<string name="face_helpview_upfront_title">Kuvaa kasvosi</string>
-	<string name="zoom_accessibility_cancel_button">Lopeta skannaus</string>
-	<string name="zoom_action_im_ready">OLEN VALMIINA</string>
-	<string name="zoom_action_ok">OK</string>
-	<string name="zoom_feedback_a_little_too_close">Siirry hieman taaksepäin</string>
-	<string name="zoom_feedback_a_little_too_close_tablet">Siirry hieman taaksepäin</string>
-	<string name="zoom_feedback_center_face">Keskitä kasvosi</string>
-	<string name="zoom_feedback_face_not_found">Sovita kasvosi kehykseen</string>
-	<string name="zoom_feedback_face_not_looking_straight_ahead">Katso suoraan eteenpäin</string>
-	<string name="zoom_feedback_face_not_upright">Pidä pää suorassa</string>
-	<string name="zoom_feedback_hold_steady">Pysy paikoillasi</string>
-	<string name="zoom_feedback_move_phone_away">Siirry hieman taaksepäin</string>
-	<string name="zoom_feedback_move_phone_closer">Siirry hieman lähemmäksi</string>
-	<string name="zoom_feedback_move_phone_even_closer">Hieman lähemmäksi</string>
-	<string name="zoom_feedback_move_phone_to_eye_level">Pidä laitetta silmien tasolla</string>
-	<string name="zoom_feedback_move_tablet_away">Siirry hieman taaksepäin</string>
-	<string name="zoom_feedback_move_tablet_closer">Siirry hieman lähemmäksi</string>
-	<string name="zoom_feedback_move_tablet_to_eye_level">Pidä laitetta silmien tasolla</string>
-	<string name="zoom_helpview_bad_angle">Pidä laitetta silmien tasolla ja katso suoraan laitteeseen</string>
-	<string name="zoom_helpview_bad_lightning">Vältä varjoja ja heijastuksia</string>
-	<string name="zoom_helpview_general">Noudata kaksivaiheista prosessia ja kohdista kasvosi kehykseen. Pidä laitetta silmien tasolla ja katso suoraan kameraan. Kuva tallennetaan automaattisesti</string>
-	<string name="zoom_instructions_header_ready">Valmistaudu videoselfieen</string>
-	<string name="zoom_instructions_message_ready">Sijoita kasvot ensin pieneen soikioon, sitten isoon</string>
-	<string name="zoom_result_facemap_upload_message">Biometrisia tietoja analysoidaan</string>
-	<string name="zoom_result_success_message">Onnistui!</string>
-	<string name="zoom_retry_header">Yritä uudelleen</string>
-	<string name="zoom_retry_ideal_image_label">Paras asento</string>
-	<string name="zoom_retry_instruction_message_1">Neutraali ilme, älä hymyile</string>
-	<string name="zoom_retry_instruction_message_2">Ei häikäisyä tai liikaa valoa</string>
-	<string name="zoom_retry_subheader_message">Katso ensin kuvaasi ja korjaa ympäristöä.</string>
-	<string name="zoom_retry_your_image_label">Oma selfiesi</string>
-	-->
-
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
 	<string name="face_helpview_landscape_description">Ota selfie kääntämällä puhelin pystyasentoon</string>
@@ -182,10 +144,6 @@
 	<string name="iproov_failure_generic_title">Kasvojentunnistus epäonnistui</string>
 	<string name="iproov_intro_gpa">Kohdista kasvosi kehyksen keskelle ja ole liikkumatta, kun näyttö vilkkuu.</string>
 	<string name="iproov_intro_la">Kohdista kasvosi kehyksen keskelle ja noudata näytöllä näkyviä ohjeita.</string>
-	-->
-
-	<!-- POSSIBLE AUTHENTICATION SDK STRINGS TO OVERRIDE-->
-	<!--
 	-->
 
 	<!-- POSSIBLE DOCUMENT VERIFICATION SDK STRINGS TO OVERRIDE-->
