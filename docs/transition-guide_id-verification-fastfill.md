@@ -8,7 +8,16 @@ __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the cha
 
 ## 3.9.2
 #### Dependency Changes
-* IProov update: ~~`"com.iproov.sdk:iproov:6.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:6.4.0"`. This version improves conversion and offers additional customization options.
+* IProov update: ~~`"com.iproov.sdk:iproov:6.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:6.4.1"`. This version improves conversion and offers additional customization options.
+
+#### Customization update
+* Added additional customization attributes to the IProov theme `Iproov.Customization`:
+  * `iproov_headerTextColor`
+  * `iproov_headerBackgroundColor`
+  * `iproov_footerTextColor`
+  * `iproov_footerBackgroundColor`
+  * `iproov_livenessScanningTintColor`
+  * `iproov_progressBarColor`
 
 
 ## 3.9.1
