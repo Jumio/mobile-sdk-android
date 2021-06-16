@@ -45,7 +45,7 @@ dependencies {
 
     // not mandatory
     implementation "com.jumio.android:iproov:3.9.2@aar"       // Face Liveness library (iProov)
-    implementation ("com.iproov.sdk:iproov:6.4.1"){           // Face Liveness library (iProov)
+    implementation ("com.iproov.sdk:iproov:6.5.1"){           // Face Liveness library (iProov)
 		    exclude group: 'org.json', module:'json'
 	  }                                                         
 
@@ -72,7 +72,7 @@ __Note:__ "Mandatory" libraries in this case are needed for a minimal runnable S
 Jumio uses Certified Liveness technology to determine liveness.   
 ```
 implementation "com.jumio.android:iproov:3.9.2@aar"       
-implementation ("com.iproov.sdk:iproov:6.4.1"){
+implementation ("com.iproov.sdk:iproov:6.5.1"){
     exclude group: 'org.json', module:'json'
 }
 ```
