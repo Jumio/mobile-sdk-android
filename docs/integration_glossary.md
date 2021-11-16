@@ -46,6 +46,12 @@ Machine Readable Zone: Standardized, usually at the bottom of the identity page 
 ### NV
 Netverify
 
+### OAuth2
+An [industry-standard protocol for authorization](https://oauth.net/2/)
+
+### OAuth2 Access Token
+An [access token using the OAuth2 protocol](https://oauth.net/2/access-tokens/) to make safe API calls and securely access resources from a server
+
 ### OCR
 [Optical Character Recognition:](https://en.wikipedia.org/wiki/Optical_character_recognition) Converts images of text, such as text on IDs, to machine-encoded and machine-readable text
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.jumio.sample"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	package="com.jumio.sample"
+	android:installLocation="auto">
 
 	<supports-screens
 		android:anyDensity="true"
@@ -10,10 +10,15 @@
 		android:normalScreens="true"
 		android:resizeable="true"
 		android:smallScreens="true"
-		android:xlargeScreens="true"/>
+		android:xlargeScreens="true" />
 
+	<uses-sdk tools:overrideLibrary="com.iproov.sdk" />
+
+	<!-- Workaround for Iproov on API 31 devices -->
+	<uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS"/>
+	<!-- Workaround end -->
 	<!-- optional start -->
-	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.VIBRATE" />
 	<!-- optional end -->
 
 	<application
@@ -27,68 +32,21 @@
 		<activity
 			android:name="com.jumio.sample.kotlin.MainActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
-			android:label="@string/app_name_kotlin"
-			android:taskAffinity="com.jumio.sample.kotlin.MainActivity"
-			android:launchMode="singleTask"
+			android:exported="true"
 			android:icon="@drawable/ic_launcher_kotlin"
-			android:theme="@style/AppTheme">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
-				<category android:name="android.intent.category.LAUNCHER"/>
-			</intent-filter>
-		</activity>
-
-		<activity
-			android:name="com.jumio.sample.kotlin.netverify.customui.NetverifyCustomActivity"
-			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
 			android:label="@string/app_name_kotlin"
-			android:theme="@style/AppTheme.NetverifyCustom"
-			android:screenOrientation="portrait"
-			tools:ignore="LockedOrientationActivity">
-		</activity>
-
-		<!-- JAVA -->
-		<activity
-			android:name="com.jumio.sample.java.MainActivity"
-			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
-			android:label="@string/app_name_java"
-			android:taskAffinity="com.jumio.sample.java.MainActivity"
-			android:launchMode="singleTask"
-			android:icon="@drawable/ic_launcher_java"
 			android:theme="@style/AppTheme">
 			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
-				<category android:name="android.intent.category.LAUNCHER"/>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-
 		<activity
-			android:name="com.jumio.sample.java.netverify.customui.NetverifyCustomActivity"
+			android:name="com.jumio.sample.kotlin.customui.CustomUiActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
-			android:label="@string/app_name_java"
-			android:theme="@style/AppTheme.NetverifyCustom"
+			android:exported="false"
 			android:screenOrientation="portrait"
-			tools:ignore="LockedOrientationActivity">
-		</activity>
-
-		<!-- SDK Activities start -->
-		<activity
-			android:name="com.jumio.bam.BamActivity"
-			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
-			android:hardwareAccelerated="true"
-			android:theme="@style/Theme.Bam"/>
-		<activity
-			android:name="com.jumio.nv.NetverifyActivity"
-			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
-			android:hardwareAccelerated="true"
-			android:theme="@style/Theme.Netverify"
-			android:windowSoftInputMode="adjustResize"/>
-		<activity
-			android:name="com.jumio.dv.DocumentVerificationActivity"
-			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
-			android:hardwareAccelerated="true"
-			android:theme="@style/Theme.DocumentVerification"
-			android:windowSoftInputMode="adjustResize"/>
+			android:theme="@style/Theme.Jumio" />
 	</application>
 
 </manifest>

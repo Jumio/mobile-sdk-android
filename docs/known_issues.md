@@ -39,7 +39,7 @@ dependencies {
 ```
 have been included in your `build.gradle` file. Missing Kotlin serialization will result in infinite loading without a callback.
 
-Please also refer to the 3.8.0 __"Dependency Changes"__ section of our [transition guide](transition-guide_id-verification-fastfill.md) and the `build.gradle`(https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of our sample application for additional information.
+Please also refer to the 3.8.0 __"Dependency Changes"__ section of our [transition guide](transition_guide.md) and the `build.gradle`(https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of our sample application for additional information.
 
 ## Fallback to Manual Capturing Using iProov
 In some rare cases, the iproov Token Call can take too long to complete, which means the token is not yet available when the decision for the Liveness Vendor is made. When this happens, the scan mode `FACE_MANUAL` (Manual Capturing) will be used as a fallback. This also applies to __Tablets__ and devices running on __Android Version 5__ ("Lollipop") or lower.
@@ -96,6 +96,6 @@ Countries with documents that have a barcode might not be available if the neces
 ```
 implementation "com.jumio.android:nv-barcode:3.9.0@aar"
 ```
-A complete list of all dependencies [can be found here.](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_id-verification-fastfill.md#dependencies)
+A complete list of all dependencies [can be found here.](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#dependencies)
 
 __Note:__ Version numbers may vary.

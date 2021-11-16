@@ -7,8 +7,21 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## SDK Version: __4.0.0__
+This is a complete rewrite of our SDK. The SDK was built with Custom UI as a basis and restructured to align Android and iOS to reduce overall complexity and integration effort.
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Improved security by switching to one-time authorization tokens for SDK initialization instead of relying on API token and secret
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Redesigned Default UI flow
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Slimline SDK configuration of only 1.8 MB size
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Improved data extraction via enhancing the SDK capabilities with server-side extraction capabilities
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Manual capture is now available as a fallback option for all other capture methods
+
 ## SDK Version: __3.9.2__
-![Changes](https://img.shields.io/badge/Change-blue) iProov SDK version update to 6.5.1, which improves performance and offers additional customization options  [Identity Verification]
+![Changes](https://img.shields.io/badge/Change-blue) iProov SDK version update to 6.4.1, which improves performance and offers additional customization options  [Identity Verification]
 
 ## SDK Version: __3.9.1__
 ![Changes](https://img.shields.io/badge/Change-blue) iProov SDK version update to 6.3.1, which fixes cross-dependency problems with OkHttp 4.x versions [Identity Verification]
@@ -34,7 +47,7 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 
 ![Changes](https://img.shields.io/badge/Change-blue) Removed deprecated Android Kotlin plugins [ID Verification/Fastfill, Identity Verification, Authentication, Document Verification]
 
-![Changes](https://img.shields.io/badge/Improvement-green) iProov SDK version update to 6.3.0, which includes accuracy improvements using Liveness Assurance [Identity Verification]
+![Changes](https://img.shields.io/badge/Change-blue) iProov SDK version update to 6.3.0, which includes accuracy improvements using Liveness Assurance [Identity Verification]
 
 ## SDK Version: __3.8.0__
 ![Improvement](https://img.shields.io/badge/Improvement-green) Added better guidance for devices with a fixed focal distance [ID Verification/Fastfill, Document Verification]
@@ -93,8 +106,8 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 ![Fixes](https://img.shields.io/badge/Fix-success)
 Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification]
 
-## SDK Version: __3.5.0__
-The previous release version 3.5.0 of the Jumio Mobile SDK is supported until 2020-08-04.
+## SDK Version: __4.0.0__
+The previous release version 3.9.2 of the Jumio Mobile SDK is supported until 2021-10-04.
 
 # Support
 In case the support period is expired, no bug fixes and technical support are provided anymore. Current bugs are typically fixed in the upcoming versions.
