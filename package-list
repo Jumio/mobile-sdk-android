@@ -10,6 +10,7 @@ com.jumio.sdk.enums
 com.jumio.sdk.error
 com.jumio.sdk.exceptions
 com.jumio.sdk.interfaces
+com.jumio.sdk.reject
 com.jumio.sdk.result
 com.jumio.sdk.retry
 com.jumio.sdk.scanpart
