@@ -70,13 +70,13 @@ The following table shows a range of different product configurations with the s
 
 | Product Configuration  | Size     | Modules      |
 |:-----------------------|:--------:|:------------:|
-| Base                   | 1.71 MB  | core         |
-| Base + Liveness        | 2.21 MB  | core, iproov |
-| Base + MRZ             | 3.08 MB  | core, mrz    |
-| Base + MRZ, Linefinder | 3.35 MB  | core, mrz, linefinder |
-| Base + MRZ, Linefinder, Barcode, Liveness | 5.10 MB  | core, mrz, linefinder, barcode, iproov |
-| Base + MRZ, Linefinder, Barcode, NFC | 6.12 MB  | core, mrz, linefinder, barcode, nfc |
-| All                    | 6.60 MB  | core, mrz, linefinder, barcode, nfc, iproov  |    
+| Base                   | 1.76 MB  | core         |
+| Base + Liveness        | 2.23 MB  | core, iproov |
+| Base + MRZ             | 3.13 MB  | core, mrz    |
+| Base + MRZ, Linefinder | 3.40 MB  | core, mrz, linefinder |
+| Base + MRZ, Linefinder, Barcode, Liveness | 4.91 MB  | core, mrz, linefinder, barcode, iproov |
+| Base + MRZ, Linefinder, Barcode, NFC | 5.94 MB  | core, mrz, linefinder, barcode, nfc |
+| All                    | 6.67 MB  | core, mrz, linefinder, barcode, nfc, iproov  |    
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 

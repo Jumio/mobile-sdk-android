@@ -7,8 +7,24 @@
 # Change Log
 All notable changes, such as SDK releases, updates and fixes, are documented in this file.
 
+## Support Period
+The previous release version 4.0.0 of the Jumio Mobile SDK is supported until 2022-06-07.
+
+When the support period has expired, bug fixes and technical support will no longer be provided. Current bugs are typically fixed in the upcoming versions. __Older SDK versions will keep functioning with our server until further notice,__ but we highly recommend that you always update to the latest version to benefit from SDK improvements and bug fixes.
+
+## SDK Version: __4.1.0__
+![Improvement](https://img.shields.io/badge/Improvement-green) Improved, granular user feedback for improved user experience and workflow through addition of Instant Feedback [ID Verification, Identity Verification]
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Support for Dark Mode for DefaultUI and CustomUI [ID Verification, Identity Verification]
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Addition of optional Datadog diagnostics module for monitoring SDK behavior and performance, as well as more efficient troubleshooting
+
+![Changes](https://img.shields.io/badge/Change-blue) iProov SDK version update to 7.2.0 [Identity Verification]
+
+![Fixes](https://img.shields.io/badge/Fix-success) Bug fixes: UI bugs, security improvements, internal crashes
+
 ## SDK Version: __4.0.0__
-This is a complete rewrite of our SDK. The SDK was built with Custom UI as a basis and restructured to align Android and iOS to reduce overall complexity and integration effort.
+This is a complete rewrite of our SDK. The SDK was built with CustomUI as a basis and restructured to align Android and iOS to reduce overall complexity and integration effort.
 
 ![Improvement](https://img.shields.io/badge/Improvement-green) Improved security by switching to one-time authorization tokens for SDK initialization instead of relying on API token and secret
 
@@ -105,13 +121,6 @@ This is a complete rewrite of our SDK. The SDK was built with Custom UI as a bas
 
 ![Fixes](https://img.shields.io/badge/Fix-success)
 Various smaller bug fixes/improvements [Netverify/Fastfill, Authentication, Document Verification]
-
-## SDK Version: __4.0.0__
-The previous release version 3.9.2 of the Jumio Mobile SDK is supported until 2021-10-04.
-
-# Support
-In case the support period is expired, no bug fixes and technical support are provided anymore. Current bugs are typically fixed in the upcoming versions.
-Older SDK versions will keep functioning with our server until further notice, but we highly recommend to always update to the latest version to benefit from SDK improvements and bug fixes.
 
 ## Contact
 If you have any questions regarding our implementation guide please contact Jumio Customer Service at support@jumio.com. The Jumio online helpdesk contains a wealth of information regarding our service including demo videos, product descriptions, FAQs and other things that may help to get you started with Jumio. [Check it out at here.](https://support.jumio.com.)

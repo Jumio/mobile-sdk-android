@@ -4,9 +4,6 @@
 
 ## Commonly Used Abbreviations
 
-### BAM
-Boron Aluminium Magnesium: BAM Checkout is Jumio’s mobile credit card scanning software, named after the chemical compound with the least sliding friction
-
 ### CVV
 Card Verification Value: A verification number on any credit card, usually 3-4 digits long
 

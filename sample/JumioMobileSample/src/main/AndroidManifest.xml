@@ -14,9 +14,6 @@
 
 	<uses-sdk tools:overrideLibrary="com.iproov.sdk" />
 
-	<!-- Workaround for Iproov on API 31 devices -->
-	<uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS"/>
-	<!-- Workaround end -->
 	<!-- optional start -->
 	<uses-permission android:name="android.permission.VIBRATE" />
 	<!-- optional end -->

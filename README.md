@@ -20,6 +20,7 @@
     - [Integration](#integration)
     - [Proguard](#proguard)
     - [Language Localization](#language-localization)
+    - [Analytics with Datadog](#analytics-with-datadog)
 - [Security](#security)
 - [Release Notes](#release-notes)
 - [Support](#support)
@@ -73,9 +74,9 @@ The Android sample application contains the package `com.jumio.sample.kotlin`, w
   * `CustomDocumentAdapter`
   * `CustomVariantAdapter`
 
-Right at the top of the `MainActivity` you’ll find a `companion object` with the following empty parameters:
+Right at the top of the `CustomUiActivity` you’ll find a `companion object` with the following empty parameters:
 
-`const val EXTRA_TOKEN="sdk_token"`
+`const val EXTRA_TOKEN="sdk_token"`     
 `const val EXTRA_DATACENTER="datacenter"`
 
 If you haven't done so already, please refer to the [Authentication and Encryption section](#authentication-and-encryption) for more details on how to obtain your SDK token. Add your individual SDK token instead of the placeholder. The default setting for the data center is `JumioDataCenter.US`.
@@ -87,6 +88,9 @@ Once you start up the sample application, you'll be given the option of trying o
 # Basics
 
 ## General Requirements
+⚠️&nbsp;&nbsp;__Android Deprecation Notice__  
+Please be aware that SDK 4.1.0 will be the last SDK version supporting Android 4.4 (API level 19). All subsequent SDK versions will require at least Android 5.0 "Lollipop" (API level 21).
+
 The minimum requirements for the SDK are:
 *	Android 4.4 (API level 19) or higher
 *	Internet connection
@@ -154,13 +158,11 @@ After creating/updating a new account you will receive a `sdk.token` (JWT) for i
 ```
 sdk = JumioSDK(context: Context)
 sdk.token = "YOUR_SDK_TOKEN"
-sdk.dataCenter = jumioDataCenter
+sdk.dataCenter = "YOUR_DATACENTER"
 ```
 
 ## Permissions
-Required permissions are linked automatically by the SDK.
-
-The following permissions are optional:
+The following permission is optional:
 ```
 <uses-permission android:name="android.permission.VIBRATE"/>
 ```
@@ -176,7 +178,17 @@ Use the SDK in your application by including the Maven repositories with the fol
 repositories {
 	google()
 	mavenCentral()
-	maven { url 'https://mobile-sdk.jumio.com' }
+	exclusiveContent {
+		forRepository {
+			maven {
+				url 'https://mobile-sdk.jumio.com'
+			}
+		}
+		filter {
+			includeGroup "com.jumio.android"
+			includeGroup "com.iproov.sdk"
+		}
+	}
 }
 ```
 Check the Android Studio [sample projects](sample/JumioMobileSample/) to learn the most common use.
@@ -214,6 +226,18 @@ _Afrikaans, Arabic, Bulgarian, Chinese(Simplified), Chinese(Traditional), Croati
 
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or increase the __text size__ on their device. The accessibility strings that are used by TalkBack contain *accessibility* in their key and can be also modified in `strings.xml`.
 
+## Analytics With Datadog
+Analytic feedback and diagnostics enable us to continually improve our SDK and its performance, as well as investigate potential issues. With the Jumio SDK, we use [Datadog](https://github.com/DataDog/dd-sdk-android) as an optional tool to collect diagnostic information. Data collected includes specific SKD information like version numbers, started and finished SDK instances and scan workflows, thrown exceptions and error information, as well as other mobile events. Please note that gathering analytics data requires user consent due to legal regulations such as GDPR. The consent is granted when our MLA is accepted.
+
+To benefit from Datadog, add the following dependency to your `build.gradle` file:
+```
+implementation "com.jumio.android:datadog:${SDK_VERSION}"
+```
+
+To grant or revoke user consent, please use `JumioSDK.giveDataDogConsent(boolean)` method.
+
+⚠️&nbsp;&nbsp;__Note:__ The use of the Datadog module is only possible if it is not already included in your application.
+
 # Security
 All SDK related traffic is sent over HTTPS using TLS and public key pinning. Additionally, the information itself within the transmission is also encrypted utilizing __Application Layer Encryption__ (ALE). ALE is a Jumio custom-designed security protocol that utilizes RSA-OAEP and AES-256 to ensure that the data cannot be read or manipulated even if the traffic was captured.
 
@@ -223,9 +247,9 @@ See our [Change Log](docs/changelog.md) for more information about our current S
 # Support
 
 ## Previous Version
-The previous release version 3.9.2 of the Jumio Mobile SDK is supported until 2022-06-01.
+The previous release version 4.0.0 of the Jumio Mobile SDK is supported until 2022-06-07.
 
-When the support period has expired, bug fixes and technical support will no longer be provided. Current bugs are typically fixed in the upcoming versions. Older SDK versions will keep functioning with our server until further notice, but we highly recommend that you always update to the latest version to benefit from SDK improvements and bug fixes.
+When the support period has expired, bug fixes and technical support will no longer be provided. Current bugs are typically fixed in the upcoming versions. __Older SDK versions will keep functioning with our server until further notice,__ but we highly recommend that you always update to the latest version to benefit from SDK improvements and bug fixes.
 
 ## Two-factor Authentication
 If you want to enable two-factor authentication for your Jumio Customer Portal, [contact us](https://support.jumio.com). Once enabled, users will be guided through the setup upon their first login to obtain a security code using the Google Authenticator app.

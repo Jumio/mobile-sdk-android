@@ -6,6 +6,34 @@ This section only covers the breaking technical changes that should be considere
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.1.0
+#### Dependency Updates
+* NEW Datadog dependency (optional): `implementation "com.jumio.android:datadog:4.1.0"`
+
+* IProov update: ~~`"com.iproov.sdk:iproov:7.0.3"`~~ is replace by `"com.iproov.sdk:iproov:7.2.0"`
+
+#### Customization Updates
+* Dark mode is now available. DefaultUI will switch automatically if system settings of the user device change.
+* Dark mode can also be customized by creating a custom theme, utilizing `values-night` in the resources directory.
+
+#### Instant Feedback Reject Reasons
+Added Instant Feedback functionality to give more granular user feedback with new reject reasons:
+* BLACK_WHITE_COPY
+* COLOR_PHOTOCOPY
+* DIGITAL_COPY
+* NOT_READABLE
+* NO_DOC
+* MISSING_BACK
+* MISSING_FRONT
+* BLURRY
+* MISSING_PART_DOC
+* DAMAGED_DOCUMENT
+* HIDDEN_PART_DOC
+* GLARE
+
+#### Deprecation Notice  
+⚠️&nbsp;&nbsp;SDK 4.1.0 will be the last SDK version supporting Android 4.4 (API level 19). All subsequent SDK versions will require at least Android 5.0 "Lollipop" (API level 21).
+
 ## 4.0.0
 #### Dependency Updates
 * The repository declaration for ~~`jcenter()`~~ is replaced with `mavenCentral()` as [JFrog will be shutting down JCenter](https://blog.gradle.org/jcenter-shutdown)
@@ -26,6 +54,10 @@ __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the cha
 
 
 * The Jumio liveness dependency `"com.iproov.sdk:iproov:7.0.3"` is referenced as a transitive dependency within the iProov module and does not have to be added manually to the `build.gradle` anymore.
+
+* `kotlin-parcelize` and `kotlinx-serialization` plugins, as well as the following dependencies have been removed:
+  * `org.jetbrains.kotlinx:kotlinx-serialization-core:1.0.0`
+  * `org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0`
 
 #### Initialization Updates
 * ~~`apiToken`~~ and ~~`apiSecret`~~ are replaced by one-time `sdk.token`

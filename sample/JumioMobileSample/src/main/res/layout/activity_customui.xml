@@ -1,487 +1,487 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/rootScrollView"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:focusable="true"
 	android:focusableInTouchMode="true">
 
-		<LinearLayout
-			android:id="@+id/inlineScanContainer"
+	<LinearLayout
+		android:id="@+id/inlineScanContainer"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/controllerControls"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:background="@color/jumio_grey150"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingTop="@dimen/activity_vertical_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="visible">
+
+			<TextView
+				android:id="@+id/controllerHeader"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="Controller"
+				android:textAllCaps="true"
+				android:textColor="@color/colorPrimary"
+				android:textSize="16sp"
+				android:textStyle="bold"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/controllerCancel"
+				style="?attr/materialButtonOutlinedStyle"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="Cancel"
+				app:layout_constraintEnd_toStartOf="@+id/controllerFinish"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/controllerHeader" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/controllerFinish"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="Finish"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/controllerCancel"
+				app:layout_constraintTop_toBottomOf="@+id/controllerHeader" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<LinearLayout
+			android:id="@+id/credentialLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_grey150"
+			android:orientation="vertical"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingTop="@dimen/activity_vertical_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingBottom="@dimen/activity_vertical_margin"
+			android:visibility="gone"></LinearLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/credentialControls"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_white"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="gone">
+
+			<TextView
+				android:id="@+id/credentialHeader"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="Credential"
+				android:textAllCaps="true"
+				android:textColor="@color/colorPrimary"
+				android:textSize="16sp"
+				android:textStyle="bold"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/credentialCancel"
+				style="?attr/materialButtonOutlinedStyle"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="Cancel"
+				app:layout_constraintEnd_toStartOf="@+id/credentialFinish"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/credentialHeader" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/credentialFinish"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="Finish"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/credentialCancel"
+				app:layout_constraintTop_toBottomOf="@+id/credentialHeader" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<LinearLayout
+			android:id="@+id/countryDocumentLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_white"
+			android:orientation="vertical"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="gone">
+
+			<Spinner
+				android:id="@+id/customCountrySpinner"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+
+			<Spinner
+				android:id="@+id/customDocumentSpinner"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+
+			<Spinner
+				android:id="@+id/customVariantSpinner"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/btnSetCountryAndDocumentType"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Set Country and DocType" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/scanSideLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_white"
+			android:orientation="vertical"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingBottom="@dimen/activity_vertical_margin"
+			android:visibility="gone"></LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/userConsentLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_grey150"
+			android:orientation="vertical"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="gone">
+
+			<TextView
+				android:id="@+id/userConsentUrl"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/userConsentedButton"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Consented" />
+		</LinearLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/addonControls"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_white"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="gone">
+
+			<TextView
+				android:id="@+id/addonHeader"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="Addon Scan Part"
+				android:textAllCaps="true"
+				android:textColor="@color/colorPrimary"
+				android:textSize="16sp"
+				android:textStyle="bold"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/addonCancel"
+				style="?attr/materialButtonOutlinedStyle"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="Cancel"
+				app:layout_constraintEnd_toStartOf="@+id/addonInit"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/addonHeader" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/addonInit"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="Init"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/addonCancel"
+				app:layout_constraintTop_toBottomOf="@+id/addonHeader" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/scanPartControls"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_grey150"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="gone">
+
+			<TextView
+				android:id="@+id/scanPartHeader"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="Scan Part"
+				android:textAllCaps="true"
+				android:textColor="@color/colorPrimary"
+				android:textSize="16sp"
+				android:textStyle="bold"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/scanPartStart"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Start"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/scanPartHeader" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/scanPartCancel"
+				style="?attr/materialButtonOutlinedStyle"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="Cancel"
+				app:layout_constraintEnd_toStartOf="@+id/scanPartFinish"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/scanPartStart" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/scanPartFinish"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="Finish"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/scanPartCancel"
+				app:layout_constraintTop_toBottomOf="@+id/scanPartStart" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<LinearLayout
+			android:id="@+id/seekBarLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_grey150"
+			android:orientation="horizontal"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingTop="@dimen/activity_vertical_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="gone">
+
+			<SeekBar
+				android:id="@+id/ratioSeekBar"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.8" />
+
+			<TextView
+				android:id="@+id/ratioTextView"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.2" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/topMarginSeekBarLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_grey150"
+			android:orientation="horizontal"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="gone">
+
+			<SeekBar
+				android:id="@+id/topMarginSeekBar"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.8" />
+
+			<TextView
+				android:id="@+id/topMarginTextView"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.2" />
+		</LinearLayout>
+
+		<RelativeLayout
+			android:id="@+id/inlineScanLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_grey150"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="gone">
+
+			<TextView
+				android:id="@+id/extractionLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:text="Extraction"
+				android:textSize="10sp" />
+
+			<com.google.android.material.switchmaterial.SwitchMaterial
+				android:id="@+id/extraction"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/extractionLabel"
+				android:layout_centerHorizontal="true"
+				android:checked="true" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/startFallback"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentEnd="true"
+				android:text="Fallback" />
+
+			<FrameLayout
+				android:id="@+id/inlineScanViewWrapper"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/startFallback">
+
+				<com.jumio.sdk.views.JumioScanView
+					android:id="@+id/scanView"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					app:jumio_mode="id"
+					app:jumio_ratio="1.33" />
+			</FrameLayout>
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/switchCamera"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/inlineScanViewWrapper"
+				android:layout_alignParentStart="true"
+				android:text="Camera" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/takePicture"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/inlineScanViewWrapper"
+				android:layout_centerHorizontal="true"
+				android:text="Take" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/toggleFlash"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/inlineScanViewWrapper"
+				android:layout_alignParentEnd="true"
+				android:text="Flash" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:id="@+id/inlineConfirmLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_grey150"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="gone">
+
+			<com.jumio.sdk.views.JumioConfirmationView
+				android:id="@+id/confirmationView"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/retryScan"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/confirmationView"
+				android:layout_alignStart="@+id/confirmationView"
+				android:text="Retry" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/confirmScan"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/confirmationView"
+				android:layout_alignEnd="@+id/confirmationView"
+				android:text="Confirm" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:id="@+id/inlineRejectLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_grey150"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="gone">
+
+			<com.jumio.sdk.views.JumioRejectView
+				android:id="@+id/rejectView"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/rejectScan"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/rejectView"
+				android:layout_alignStart="@+id/rejectView"
+				android:text="Reject" />
+		</RelativeLayout>
+
+		<com.jumio.sdk.views.JumioAnimationView
+			android:id="@+id/animationView"
+			android:layout_width="match_parent"
+			android:layout_height="400dp"
+			android:visibility="gone" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/errorRetryButton"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:text="Retry"
+			android:visibility="gone" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/partRetryButton"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:text="Retry"
+			android:visibility="gone" />
+
+		<ProgressBar
+			android:id="@+id/loadingIndicator"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:indeterminateTint="@color/colorPrimary" />
+
+		<LinearLayout
+			android:id="@+id/inlineCallbackLog"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="200dp"
 			android:orientation="vertical">
 
-
-			<androidx.constraintlayout.widget.ConstraintLayout
-				android:id="@+id/controllerControls"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@color/jumio_grey150"
-				android:paddingTop="@dimen/activity_vertical_margin"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:visibility="visible">
-
-				<TextView
-					android:id="@+id/controllerHeader"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					app:layout_constraintEnd_toEndOf="parent"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toTopOf="parent"
-					android:gravity="center"
-					android:textAllCaps="true"
-					android:textSize="16sp"
-					android:textStyle="bold"
-					android:textColor="@color/colorPrimary"
-					android:text="Controller"/>
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/controllerCancel"
-					style="?attr/materialButtonOutlinedStyle"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					android:text="Cancel"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintEnd_toStartOf="@+id/controllerFinish"
-					app:layout_constraintTop_toBottomOf="@+id/controllerHeader" />
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/controllerFinish"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					app:layout_constraintStart_toEndOf="@+id/controllerCancel"
-					app:layout_constraintEnd_toEndOf="parent"
-					app:layout_constraintTop_toBottomOf="@+id/controllerHeader"
-					android:text="Finish" />
-			</androidx.constraintlayout.widget.ConstraintLayout>
-
-			<LinearLayout
-				android:id="@+id/credentialLayout"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="vertical"
-				android:background="@color/jumio_grey150"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:paddingTop="@dimen/activity_vertical_margin"
-				android:paddingBottom="@dimen/activity_vertical_margin"
-				android:visibility="gone">
-			</LinearLayout>
-
-			<androidx.constraintlayout.widget.ConstraintLayout
-				android:id="@+id/credentialControls"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@color/jumio_white"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:visibility="gone">
-
-				<TextView
-					android:id="@+id/credentialHeader"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					app:layout_constraintEnd_toEndOf="parent"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toTopOf="parent"
-					android:gravity="center"
-					android:textAllCaps="true"
-					android:textSize="16sp"
-					android:textStyle="bold"
-					android:textColor="@color/colorPrimary"
-					android:text="Credential"/>
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/credentialCancel"
-					style="?attr/materialButtonOutlinedStyle"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					android:text="Cancel"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintEnd_toStartOf="@+id/credentialFinish"
-					app:layout_constraintTop_toBottomOf="@+id/credentialHeader" />
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/credentialFinish"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					app:layout_constraintStart_toEndOf="@+id/credentialCancel"
-					app:layout_constraintEnd_toEndOf="parent"
-					app:layout_constraintTop_toBottomOf="@+id/credentialHeader"
-					android:text="Finish" />
-			</androidx.constraintlayout.widget.ConstraintLayout>
-
-			<LinearLayout
-				android:id="@+id/countryDocumentLayout"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="vertical"
-				android:background="@color/jumio_white"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:visibility="gone">
-
-				<Spinner
-					android:id="@+id/customCountrySpinner"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content" />
-
-				<Spinner
-					android:id="@+id/customDocumentSpinner"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content" />
-
-				<Spinner
-					android:id="@+id/customVariantSpinner"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content" />
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/btnSetCountryAndDocumentType"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:text="Set Country and DocType" />
-			</LinearLayout>
-
-			<LinearLayout
-				android:id="@+id/scanSideLayout"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="vertical"
-				android:background="@color/jumio_white"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:paddingBottom="@dimen/activity_vertical_margin"
-				android:visibility="gone">
-			</LinearLayout>
-
-			<LinearLayout
-				android:id="@+id/userConsentLayout"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="vertical"
-				android:background="@color/jumio_grey150"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:visibility="gone">
-
-				<TextView
-					android:id="@+id/userConsentUrl"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content" />
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/userConsentedButton"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:text="Consented" />
-			</LinearLayout>
-
-
-			<androidx.constraintlayout.widget.ConstraintLayout
-				android:id="@+id/addonControls"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@color/jumio_white"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:visibility="gone">
-
-				<TextView
-					android:id="@+id/addonHeader"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					app:layout_constraintEnd_toEndOf="parent"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toTopOf="parent"
-					android:gravity="center"
-					android:textAllCaps="true"
-					android:textSize="16sp"
-					android:textStyle="bold"
-					android:textColor="@color/colorPrimary"
-					android:text="Addon Scan Part"/>
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/addonCancel"
-					style="?attr/materialButtonOutlinedStyle"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					android:text="Cancel"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintEnd_toStartOf="@+id/addonInit"
-					app:layout_constraintTop_toBottomOf="@+id/addonHeader" />
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/addonInit"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					app:layout_constraintStart_toEndOf="@+id/addonCancel"
-					app:layout_constraintEnd_toEndOf="parent"
-					app:layout_constraintTop_toBottomOf="@+id/addonHeader"
-					android:text="Init" />
-			</androidx.constraintlayout.widget.ConstraintLayout>
-
-
-			<androidx.constraintlayout.widget.ConstraintLayout
-				android:id="@+id/scanPartControls"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@color/jumio_grey150"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:visibility="gone">
-
-				<TextView
-					android:id="@+id/scanPartHeader"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					app:layout_constraintEnd_toEndOf="parent"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toTopOf="parent"
-					android:gravity="center"
-					android:textAllCaps="true"
-					android:textSize="16sp"
-					android:textStyle="bold"
-					android:textColor="@color/colorPrimary"
-					android:text="Scan Part"/>
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/scanPartStart"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:text="Start"
-					app:layout_constraintEnd_toEndOf="parent"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toBottomOf="@+id/scanPartHeader" />
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/scanPartCancel"
-					style="?attr/materialButtonOutlinedStyle"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					android:text="Cancel"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintEnd_toStartOf="@+id/scanPartFinish"
-					app:layout_constraintTop_toBottomOf="@+id/scanPartStart" />
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/scanPartFinish"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					app:layout_constraintStart_toEndOf="@+id/scanPartCancel"
-					app:layout_constraintEnd_toEndOf="parent"
-					app:layout_constraintTop_toBottomOf="@+id/scanPartStart"
-					android:text="Finish" />
-			</androidx.constraintlayout.widget.ConstraintLayout>
-
-			<LinearLayout
-				android:id="@+id/seekBarLayout"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal"
-				android:background="@color/jumio_grey150"
-				android:paddingTop="@dimen/activity_vertical_margin"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:visibility="gone">
-
-				<SeekBar
-					android:id="@+id/ratioSeekBar"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					android:layout_weight="0.8" />
-
-				<TextView
-					android:id="@+id/ratioTextView"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					android:layout_weight="0.2" />
-			</LinearLayout>
-
-			<LinearLayout
-				android:id="@+id/topMarginSeekBarLayout"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal"
-				android:background="@color/jumio_grey150"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:visibility="gone">
-
-				<SeekBar
-					android:id="@+id/topMarginSeekBar"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					android:layout_weight="0.8" />
-
-				<TextView
-					android:id="@+id/topMarginTextView"
-					android:layout_width="0dp"
-					android:layout_height="wrap_content"
-					android:layout_weight="0.2" />
-			</LinearLayout>
-
-			<RelativeLayout
-				android:id="@+id/inlineScanLayout"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@color/jumio_grey150"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:visibility="gone">
-
-				<TextView
-					android:id="@+id/extractionLabel"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_centerHorizontal="true"
-					android:text="Extraction"
-					android:textSize="10sp" />
-
-				<com.google.android.material.switchmaterial.SwitchMaterial
-					android:id="@+id/extraction"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@id/extractionLabel"
-					android:layout_centerHorizontal="true"
-					android:checked="true" />
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/startFallback"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_alignParentEnd="true"
-					android:text="Fallback" />
-
-				<FrameLayout
-					android:id="@+id/inlineScanViewWrapper"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@+id/startFallback">
-
-					<com.jumio.sdk.views.JumioScanView
-						android:id="@+id/scanView"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						app:jumio_ratio="1.33"
-						app:jumio_mode="id" />
-				</FrameLayout>
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/switchCamera"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@+id/inlineScanViewWrapper"
-					android:layout_alignParentStart="true"
-					android:text="Camera" />
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/takePicture"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@+id/inlineScanViewWrapper"
-					android:layout_centerHorizontal="true"
-					android:text="Take" />
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/toggleFlash"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@+id/inlineScanViewWrapper"
-					android:layout_alignParentEnd="true"
-					android:text="Flash" />
-			</RelativeLayout>
-
-			<RelativeLayout
-				android:id="@+id/inlineConfirmLayout"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@color/jumio_grey150"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:visibility="gone">
-
-				<com.jumio.sdk.views.JumioConfirmationView
-					android:id="@+id/confirmationView"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content" />
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/retryScan"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@+id/confirmationView"
-					android:layout_alignStart="@+id/confirmationView"
-					android:text="Retry" />
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/confirmScan"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@+id/confirmationView"
-					android:layout_alignEnd="@+id/confirmationView"
-					android:text="Confirm" />
-			</RelativeLayout>
-
-			<RelativeLayout
-				android:id="@+id/inlineRejectLayout"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@color/jumio_grey150"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:visibility="gone">
-
-				<com.jumio.sdk.views.JumioRejectView
-					android:id="@+id/rejectView"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content" />
-
-				<com.google.android.material.button.MaterialButton
-					android:id="@+id/rejectScan"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@+id/rejectView"
-					android:layout_alignStart="@+id/rejectView"
-					android:text="Reject" />
-			</RelativeLayout>
-
-			<com.jumio.sdk.views.JumioAnimationView
-				android:id="@+id/animationView"
-				android:layout_width="match_parent"
-				android:layout_height="400dp"
-				android:visibility="gone" />
-
-			<com.google.android.material.button.MaterialButton
-				android:id="@+id/errorRetryButton"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:text="Retry"
-				android:visibility="gone" />
-
-			<com.google.android.material.button.MaterialButton
-				android:id="@+id/partRetryButton"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
-				android:text="Retry"
-				android:visibility="gone" />
-
-			<ProgressBar
-				android:id="@+id/loadingIndicator"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:indeterminateTint="@color/colorPrimary" />
-
-			<LinearLayout
-				android:id="@+id/inlineCallbackLog"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:minHeight="200dp"
-				android:orientation="vertical" >
-
-			</LinearLayout>
 		</LinearLayout>
+	</LinearLayout>
 </ScrollView>

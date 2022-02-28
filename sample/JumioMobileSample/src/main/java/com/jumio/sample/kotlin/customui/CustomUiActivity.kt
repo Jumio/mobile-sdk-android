@@ -10,16 +10,16 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsets
 import android.widget.*
 import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
-import com.jumio.commons.log.Log
-import com.jumio.commons.utils.ScreenUtil
-import com.jumio.core.credentials.JumioDocumentCredential
 import com.jumio.defaultui.JumioActivity
 import com.jumio.sample.R
 import com.jumio.sample.databinding.ActivityCustomuiBinding
@@ -43,6 +43,11 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 	companion object {
 		const val EXTRA_TOKEN = "token"
 		const val EXTRA_DATACENTER = "datacenter"
+		const val SELECTED_COUNTRY_STATE_KEY = "selectedCountryStateKey"
+		const val SELECTED_DOCUMENT_STATE_KEY = "selectedDocumentStateKey"
+		const val SELECTED_VARIANT_STATE_KEY = "selectedVariantStateKey"
+		const val CREDENTIALS_PREFIX = "credentials"
+		const val SCAN_SIDES_PREFIX = "scansides"
 
 		@JvmStatic
 		fun start(activity: Activity, activityResultLauncher: ActivityResultLauncher<Intent>, token: String, dataCenter: JumioDataCenter) {
@@ -101,14 +106,14 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 				onInitialized(credentials, null)
 				credential?.let {
 
-					val country = savedInstanceState.getString("selectedCountry")
-					val document = savedInstanceState.getString("selectedDocument")
-					val variant = savedInstanceState.getString("selectedVariant")
+					val country = savedInstanceState.getString(SELECTED_COUNTRY_STATE_KEY)
+					val document = savedInstanceState.getString(SELECTED_DOCUMENT_STATE_KEY)
+					val variant = savedInstanceState.getString(SELECTED_VARIANT_STATE_KEY)
 					setupCredential(country, document, variant)
-					restoreIconState(binding.credentialLayout, savedInstanceState, "credentials")
+					restoreIconState(binding.credentialLayout, savedInstanceState, CREDENTIALS_PREFIX)
 					scanPart?.let {
 						setupScanPart()
-						restoreIconState(binding.scanSideLayout, savedInstanceState, "scansides")
+						restoreIconState(binding.scanSideLayout, savedInstanceState, SCAN_SIDES_PREFIX)
 					}
 				}
 			}
@@ -161,7 +166,6 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 			hideView(binding.credentialControls)
 			hideViewsAfter(binding.credentialControls)
 		}
-
 
 		binding.scanPartStart.setOnClickListener {
 			scanPart?.start()
@@ -252,13 +256,13 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 	override fun onSaveInstanceState(outState: Bundle) {
 		super.onSaveInstanceState(outState)
 
-		outState.putString("selectedCountry", binding.customCountrySpinner.selectedItem as String?)
-		outState.putString("selectedDocument", binding.customDocumentSpinner.selectedItem as String?)
-		outState.putString("selectedVariant", binding.customVariantSpinner.selectedItem as String?)
+		outState.putString(SELECTED_COUNTRY_STATE_KEY, binding.customCountrySpinner.selectedItem as String?)
+		outState.putString(SELECTED_DOCUMENT_STATE_KEY, binding.customDocumentSpinner.selectedItem as String?)
+		outState.putString(SELECTED_VARIANT_STATE_KEY, binding.customVariantSpinner.selectedItem as String?)
 
 		//save views:
-		saveIconState(binding.credentialLayout, outState, "credentials")
-		saveIconState(binding.scanSideLayout, outState, "scansides")
+		saveIconState(binding.credentialLayout, outState, CREDENTIALS_PREFIX)
+		saveIconState(binding.scanSideLayout, outState, SCAN_SIDES_PREFIX)
 
 		if (this::jumioController.isInitialized && !jumioController.isComplete) {
 			jumioController.persist(outState)
@@ -375,7 +379,7 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 			JumioScanUpdate.FALLBACK -> {
 				scanPart?.let {
 					log("Start Fallback: ${it.scanMode}")
-					binding.startFallback.isEnabled = it.hasFallback
+					binding.startFallback.isEnabled = it.hasFallback == true
 					binding.takePicture.isEnabled = binding.scanView.isShutterEnabled
 				}
 			}
@@ -413,7 +417,7 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 				scanPart?.let {
 					binding.scanView.attach(it)
 					lifecycle.addObserver(binding.scanView)
-					binding.startFallback.isEnabled = it.hasFallback
+					binding.startFallback.isEnabled = it.hasFallback == true
 				}
 			}
 			JumioScanStep.IMAGE_TAKEN -> {
@@ -429,6 +433,16 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 				}
 			}
 			JumioScanStep.REJECT_VIEW -> {
+				if (data is String) {
+					log("retry code: $data")
+				}
+				/**
+				 * To display granular feedback, check against the values provided in [com.jumio.sdk.reject.JumioRejectReason]
+				 */
+//				when(data) {
+//					JumioRejectReason.BLURRY -> TODO()
+//					...
+//				}
 				showView(binding.inlineRejectLayout)
 				scanPart?.let {
 					binding.rejectView.attach(it)
@@ -494,7 +508,7 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 	}
 
 	override fun onNothingSelected(parent: AdapterView<*>) {
-
+		// Left intentionally blank, nothing to do.
 	}
 
 	/**
@@ -523,6 +537,7 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 						}
 
 						override fun onNothingSelected(parent: AdapterView<*>?) {
+							// Left intentionally blank, nothing to do.
 						}
 
 					}
@@ -539,6 +554,7 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 						}
 
 						override fun onNothingSelected(parent: AdapterView<*>?) {
+							// Left intentionally blank, nothing to do.
 						}
 
 					}
@@ -556,6 +572,7 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 						}
 
 						override fun onNothingSelected(parent: AdapterView<*>?) {
+							// Left intentionally blank, nothing to do.
 						}
 
 					}
@@ -567,12 +584,6 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 				}
 			}
 			is JumioFaceCredential -> {
-				hideView(binding.countryDocumentLayout)
-				credential?.let {
-					setupScanSides(it.scanSides)
-				}
-			}
-			is JumioDocumentCredential -> {
 				hideView(binding.countryDocumentLayout)
 				credential?.let {
 					setupScanSides(it.scanSides)
@@ -631,7 +642,9 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 
 		val params = FrameLayout.LayoutParams(
 			if (isPortrait) FrameLayout.LayoutParams.MATCH_PARENT else FrameLayout.LayoutParams.WRAP_CONTENT,
-			if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(this, 300)
+			if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else TypedValue.applyDimension(
+				TypedValue.COMPLEX_UNIT_DIP, 300f, resources.displayMetrics
+			).toInt()
 		)
 		binding.scanView.layoutParams = params
 
@@ -647,12 +660,15 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 		binding.ratioSeekBar.progress = 0
 		binding.scanView.ratio = binding.scanView.minRatio
 		binding.ratioTextView.text = ratioText(binding.scanView.ratio)
+		binding.ratioTextView.setBackgroundColor(ContextCompat.getColor(this, R.color.spinnerBackground))
 
 		binding.ratioSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 			override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+				// Left intentionally blank, nothing to do.
 			}
 
 			override fun onStartTrackingTouch(seekBar: SeekBar) {
+				// Left intentionally blank, nothing to do.
 			}
 
 			override fun onStopTrackingTouch(seekBar: SeekBar) {
@@ -818,7 +834,7 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 	 * @param message
 	 * @param color
 	 */
-	private fun log(message: String?, color: Int = Color.BLACK) {
+	private fun log(message: String?, color: Int = ContextCompat.getColor(this, R.color.logText)) {
 		if (message == null) {
 			return
 		}
@@ -860,6 +876,7 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 	 */
 	private fun setSpinner(spinner: Spinner?, value: String?, compare: ((Any?) -> String)? = null) {
 		val adapter = spinner?.adapter as ArrayAdapter<*>?
+		spinner?.setBackgroundColor(ContextCompat.getColor(this, R.color.spinnerBackground))
 		if (value == null) {
 			if (adapter != null && !adapter.isEmpty) spinner?.setSelection(0)
 			return

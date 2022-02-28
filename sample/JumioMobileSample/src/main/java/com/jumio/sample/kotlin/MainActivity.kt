@@ -143,11 +143,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 	private val sdkForResultLauncher: ActivityResultLauncher<Intent> =
 		registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-			val jumioResult: JumioResult = result.data?.getSerializableExtra(JumioActivity.EXTRA_RESULT) as JumioResult
-			Log.d(TAG, "AccountId: ${jumioResult.accountId}")
-			Log.d(TAG, "WorkflowExecutionId: ${jumioResult.workflowExecutionId}")
+			val jumioResult: JumioResult? = result.data?.getSerializableExtra(JumioActivity.EXTRA_RESULT) as JumioResult?
+			Log.d(TAG, "AccountId: ${jumioResult?.accountId}")
+			Log.d(TAG, "WorkflowExecutionId: ${jumioResult?.workflowExecutionId}")
 
-			if (jumioResult.isSuccess) {
+			if (jumioResult?.isSuccess == true) {
 				jumioResult.credentialInfos?.forEach {
 					when (jumioResult.getResult(it)) {
 						is JumioIDResult -> { //check your id result here
@@ -157,7 +157,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 					}
 				}
 			} else {
-				jumioResult.error?.let {
+				jumioResult?.error?.let {
 					Log.d(TAG, it.message)
 				}
 			}

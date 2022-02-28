@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-	
+
 	<!-- APP STRINGS -->
 	<string name="app_name_java">Jumio Sample Java</string>
 	<string name="app_name_kotlin">Jumio Sample Kotlin</string>

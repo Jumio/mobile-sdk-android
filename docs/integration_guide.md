@@ -12,11 +12,12 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 - [Customization](#customization)
 - [SDK Workflow](#sdk-workflow)
 - [Custom UI](#custom-ui)
+  - [Instant Feedback](#instant-feedback)
 - [Callback](#callback)
 - [Code Documentation](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release Notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 4.0.0
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 4.1.0
 
 For breaking technical changes, please read our [Transition Guide](transition_guide.md)
 
@@ -24,26 +25,31 @@ For breaking technical changes, please read our [Transition Guide](transition_gu
 The [basic setup](../README.md#basics) is required before continuing with the following setup for the Jumio SDK.
 
 ## Dependencies
+The [SDK Setup Tool](https://jumio.github.io/mobile-configuration-tool/out/) is a web tool that helps determine available product combinations and corresponding dependencies for the Jumio SDK, as well as an export feature to easily import the applied changes straight into your codebase.
+
+[![Jumio Setup](images/setup_tool.png)](https://jumio.github.io/mobile-configuration-tool/out/)
+
 Below there is a list of dependencies the application will need to work in Android. Some modules are mandatory, others are optional. If an optional module is __not linked__, some functionalities such as certain methods may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size is currently around __17 MB__.
 
 ```
 dependencies {
-    implementation "com.jumio.android:core:4.0.0"               // Jumio Core library
-    implementation "com.jumio.android:defaultui:4.0.0"          // Jumio Default UI
-    implementation "com.jumio.android:mrz:4.0.0"                // MRZ Scanning
-    implementation "com.jumio.android:nfc:4.0.0"                // NFC Scanning
-    implementation "com.jumio.android:linefinder:4.0.0"         // Linefinder Scanning
-    implementation "com.jumio.android:barcode:4.0.0"            // Barcode scanning
-    implementation "com.jumio.android:barcode-mlkit:4.0.0"      // Barcode scanning alternative
-    implementation "com.jumio.android:iproov:4.0.0"             // Face Liveness library (iProov)
+    implementation "com.jumio.android:core:4.1.0"               // Jumio Core library
+    implementation "com.jumio.android:defaultui:4.1.0"          // Jumio Default UI
+    implementation "com.jumio.android:mrz:4.1.0"                // MRZ Scanning
+    implementation "com.jumio.android:nfc:4.1.0"                // NFC Scanning
+    implementation "com.jumio.android:linefinder:4.1.0"         // Linefinder Scanning
+    implementation "com.jumio.android:barcode:4.1.0"            // Barcode scanning
+    implementation "com.jumio.android:barcode-mlkit:4.1.0"      // Barcode scanning alternative
+    implementation "com.jumio.android:iproov:4.1.0"             // Face Liveness library (iProov)
+    implementation "com.jumio.android:datadog:4.1.0"            // Analytics library
 ```
 
 #### Certified Liveness Vendor
 Jumio uses Certified Liveness technology to determine liveness. The iProov SDK is referenced as a transitive dependency within the `com.jumio.android:iproov` module.
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 ```
-implementation "com.jumio.android:iproov:4.0.0"       
-implementation ("com.iproov.sdk:iproov:7.0.3"){
+implementation "com.jumio.android:iproov:4.1.0"       
+implementation ("com.iproov.sdk:iproov:7.2.0"){
     exclude group: 'org.json', module:'json'
 }
 ```
@@ -98,10 +104,10 @@ const val YOUR_SDK_TOKEN = ""
 const val YOUR_DATACENTER = ""
 
 JumioSDK sdk = JumioSDK(context: Context)
-sdk.token = YOUR_SDK_TOKEN
-sdk.datacenter = YOUR_DATACENTER
+sdk.token = "YOUR_SDK_TOKEN"
+sdk.datacenter = "YOUR_DATACENTER"
 ```
-Make sure that your SDK token is correct. If it isn't, an exception will be thrown. Then specify an instance of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). Data center is set to `JumioDataCenter.US` by default. If your customer account is in the EU data center, use `JumioDataCenter.EU` instead. Alternatively, use `JumioDataCenter.SG` for Singapore.
+Make sure that your SDK token is correct. If it isn't, an exception will be thrown. Then specify an instance of your activity and provide a reference to identify the scans in your reports (max. 100 characters or `null`). Data center is set to `"US"` by default. If your customer account is in the EU data center, use `"EU"` instead. Alternatively, use `"SG"` for Singapore.
 
 ⚠️&nbsp;&nbsp;__Note:__ We strongly recommend storing all credentials outside of your app! We suggest loading them during runtime from your server-side implementation.
 
@@ -109,7 +115,7 @@ Make sure that your SDK token is correct. If it isn't, an exception will be thro
 Every Jumio SDK instance is initialized using a specific `sdk.token`. This token contains information about the workflow, credentials, transaction identifiers and other parameters. Configuration of this token allows you to provide your own internal tracking information for the user and their transaction, specify what user information is captured and by which method, as well as preset options to enhance the user journey. Values configured within the `sdk.token` during your API request will override any corresponding settings configured in the Customer Portal.
 
 ### Worfklow Selection
-Use ID verification callback to receive a verification status and verified data positions (see [Callback for ID Verification](https://github.com/Jumio/implementation-guides/blob/master/netverify/callback.md#callback-for-netverify)). Make sure that your customer account is enabled to use this feature. A callback URL can be specified for individual transactions (for URL constraints see chapter [Callback URL](https://github.com/Jumio/implementation-guides/blob/master/netverify/portal-settings.md#callback-url)). This setting overrides any callback URL you have set in the Jumio Customer Portal. Your callback URL must not contain sensitive data like PII (Personally Identifiable Information) or account login. Set your callback URL using the `callbackUrl` parameter.
+Use ID verification callback to receive a verification status and verified data positions (see [API v3 Callback section](https://github.com/Jumio/implementation-guides/blob/master/api-guide/api_guide.md#callback)). Make sure that your customer account is enabled to use this feature. A callback URL can be specified for individual transactions (for URL constraints see chapter [Callback URL](https://github.com/Jumio/implementation-guides/blob/master/api-guide/api_guide.md#jumio-callback-ip-addresses)). This setting overrides any callback URL you have set in the Jumio Customer Portal. Your callback URL must not contain sensitive data like PII (Personally Identifiable Information) or account login. Set your callback URL using the `callbackUrl` parameter.
 
 Use the correct [workflow definition key](https://github.com/Jumio/implementation-guides/blob/master/api-guide/api_guide.md#workflow-definition-keys) in order to request a specific workflow. Set your key using the `workflowDefinition.key` parameter. For example: Use [workflow 2 "ID Verification"](https://github.com/Jumio/implementation-guides/blob/master/api-guide/workflow_descriptions.md#workflow-2-id-verification) to verify an ID document and extract data from that document. Use [workflow 3 "ID and Identity Verification"](https://github.com/Jumio/implementation-guides/blob/master/api-guide/workflow_descriptions.md#workflow-3-id-and-identity-verification) to verify a photo ID document and extract data from that document, as well as compare the user's face with the photo on the ID and perform a liveness check to ensure the person is physically present.
 
@@ -179,25 +185,25 @@ scanView.cameraFacing = JumioCameraPosition.FRONT
 ## Customization
 
 ### Customization Tool
-##### ⚠️&nbsp;&nbsp;__Note:__ Please be aware that the Surface Tool is not yet supported for SDK 4.0.0, but will be available soon.  
-[Jumio Surface](https://jumio.github.io/surface-android/) is a web tool that offers the possibility to apply and visualize, in real-time, all available customization options for the Jumio SDK, as well as an export feature to import the applied changes straight into your codebase.
+[Jumio Surface](https://jumio.github.io/surface-android/4.0.0) is a web tool that offers the possibility to apply and visualize, in real-time, all available customization options for the Jumio SDK, as well as an export feature to import the applied changes straight into your codebase.
 
-[![Jumio Surface](images/surface_tool.png)](https://jumio.github.io/surface-android/)
+[![Jumio Surface](images/surface_tool.png)](https://jumio.github.io/surface-android/4.0.0)
 
-Use the tab __Customize SDK__ to check out all the screens and adapt the look & feel of the SDK to your needs.
+The surface tool lets you go through all available screens and visualizes all the colors that can be customized. As visualized in the code there, the SDK can be customized to fit your application's look and feel by specifying `Theme.Jumio` as a parent style and overriding attributes within this theme.
 
-The tab __XML Output__ visualizes all the colors that can be customized. As visualized in the code there, the SDK can be customized to fit your application's look and feel by specifying `Theme.Jumio` as a parent style and overriding attributes within this theme.
+After customizing the SDK, you can click the __Android-Xml__ button in the __Output__ menu on the bottom right to copy the code from the theme `AppThemeCustomJumio` to your Android app's `styles.xml` file.
 
-After customizing the SDK, you can copy the code from the theme `CustomJumioTheme` to your Android app `styles.xml` file.
-
-#### Customizing Theme in AndroidManifest
-Apply the `CustomJumioTheme` that you defined before by replacing `Theme.Jumio` in the `AndroidManifest.xml:`
+### Customizing Theme in AndroidManifest
+Apply the custom theme that you defined before by replacing `Theme.Jumio` in the `AndroidManifest.xml:`
 ```
 <activity
             android:name="com.jumio.defaultui.JumioAcitivty"
-            android:theme="@style/CustomJumioTheme"
+            android:theme="@style/AppThemeCustomJumio"
 						... />
 ```
+
+### Dark Mode
+`Theme.Jumio` attributes can also be customized for dark mode. If you haven't done so already, create a `values-night` folder in your resources directory and add a new `styles.xml` file. Adapt your custom Jumio theme for dark mode. The SDK will switch automatically to match the system settings of the user device.
 
 ## SDK Workflow
 
@@ -238,11 +244,29 @@ The following tables give information on the specification of all data parameter
 | extractionMethod | JumioScanMode  | | Extraction method used during scanning (FACE_MANUAL, FACE_IPROOV) |
 | imageData | JumioImageData | | Wrapper class for accessing image data of all scan sides from an ID verification session. This feature has to be enabled by your account manager. |
 
+#### Class ___JumioRejectReason___
+List of all possible reject reasons returned if Instant Feedback is used:   
+
+| Code          | Message  | Description      |
+|:--------------|:---------|:-----------------|
+| 102  | BLACK_WHITE_COPY | Document appears to be a black and white photocopy |  
+| 103  | COLOR_PHOTOCOPY  | Document appears to be a colored photocopy |
+| 104  | DIGITAL_COPY     | Document appears to be a digital copy |
+| 200  | NOT_READABLE     | Document is not readable |
+| 201  | NO_DOC           | No document could be detected |
+| 206  | MISSING_BACK     | Backside of the document is missing |
+| 214  | MISSING_FRONT    | Frontside of the document is missing |
+| 2001 | BLURRY           | Document image is unusable because it is blurry |
+| 2003 | MISSING_PART_DOC | Part of the document is missing |
+| 2005 | DAMAGED_DOCUMENT | Document appears to be damaged |
+| 2004 | HIDDEN_PART_DOC  | Part of the document is hidden |
+| 2006 | GLARE            | Document image is unusable because of glare |
+
 #### Error Codes
 List of all **_error codes_** that are available via the `code` and `message` property of the `JumioError` object. The first letter (A-J) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]).
 
 |Code        	  | Message  | Description      |
-| :--------------:|:---------|:-----------------|
+|:-------------:|:---------|:-----------------|
 |A[x][yyyy]| We have encountered a network communication problem | Retry possible, user decided to cancel |
 |B[x][yyyy]| Authentication failed | Secure connection could not be established, retry impossible |
 |C[x]0401| Authentication failed | API credentials invalid, retry impossible |
@@ -254,7 +278,7 @@ List of all **_error codes_** that are available via the `code` and `message` pr
 |J00000| Transaction already finished | User did not complete SDK journey within session lifetime |
 |N00000| Scanning not available at this time, please contact the app vendor | Required images are missing to finalize the acquisition |
 
-⚠️&nbsp;&nbsp;__Note:__ Please always include the whole error code when filing an error related issue to our support team.
+⚠️&nbsp;&nbsp;__Note:__ Please always include error code and message when filing an error related issue to our support team.
 
 ## Custom UI
 ID Verification can be also implemented as a __custom scan view.__ This means that only the scan view (including the scan overlays) are provided by the SDK.
@@ -271,7 +295,7 @@ CustomUI enables you to use a custom scan view with a plain scanning user interf
 ```
 sdk = JumioSDK(context: Context)
 sdk.token = "YOUR_SDK_TOKEN"
-sdk.datacenter = jumioDataCenter
+sdk.datacenter = JumioDataCenter.YOUR_DATACENTER
 ```
 
 * `JumioDataCenter` values: `US`, `EU`, `SG`
@@ -430,7 +454,10 @@ override fun onError(error: JumioError) {
                        (error.isRetryable) "true" else "false" )
 	}
 ```
-If an error is retryable, jumioController.retry() should be called to execute a retry.
+If an error is retryable, `jumioController.retry()` should be called to execute a retry.
+
+#### Instant Feedback
+The use of Instant Feedback provides immediate end user feedback by performing a usability check on any image the user took and prompting them to provide a new image immediately if this image is not usable, for example because it is too blurry. Please refer to the [JumioRejectReason table](#class-jumiorejectreason) for a list of all reject possibilities.
 
 # Security
 All SDK related traffic is sent over HTTPS using TLS and public key pinning. Additionally, the information itself within the transmission is also encrypted utilizing __Application Layer Encryption__ (ALE). ALE is a Jumio custom-designed security protocol that utilizes RSA-OAEP and AES-256 to ensure that the data cannot be read or manipulated even if the traffic was captured.

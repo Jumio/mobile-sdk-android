@@ -1,46 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorSecondary">@color/colorSecondary</item>
-	</style>
-
-	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorSecondary">@color/colorSecondary</item>
-	</style>
-
-	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
-		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorSecondary">@color/colorSecondary</item>
-	</style>
-
 	<style name="AppThemeCustomJumio" parent="Theme.Jumio">
+		<!--Dark Mode-->
 		<item name="colorPrimary">#F2F233</item>
-		<item name="jumio_background">#fffee0</item>
-		<item name="jumio_text_foreground">#1361BD</item>
+		<item name="jumio_background">#1C2229</item>
+		<item name="jumio_text_foreground">#E0E0E0</item>
 		<item name="jumio_navigation_icon">#EC407A</item>
 
-		<item name="jumio_bubble_background">#bc2e41</item>
+		<item name="jumio_bubble_background">#333D47</item>
 		<item name="jumio_bubble_background_selected">#57ffc7</item>
 		<item name="jumio_bubble_foreground">#FF5722</item>
 
-		<item name="jumio_primary_button_background">#F2F233</item>
+		<item name="jumio_primary_button_background">#333D47</item>
 		<item name="jumio_primary_button_background_pressed">#00B0FF</item>
 		<item name="jumio_primary_button_background_disabled">#92C039</item>
-		<item name="jumio_primary_button_foreground">#000000</item>
+		<item name="jumio_primary_button_foreground">#E0E0E0</item>
 		<item name="jumio_secondary_button_background">#9Edd9E</item>
 		<item name="jumio_secondary_button_background_pressed">#D900ff00</item>
 		<item name="jumio_secondary_button_background_disabled">#E35252</item>
-		<item name="jumio_secondary_button_foreground">#044071</item>
+		<item name="jumio_secondary_button_foreground">#E0E0E0</item>
 
 		<item name="jumio_circle_item_background">#00B0FF</item>
 		<item name="jumio_circle_item_foreground">#E0E011</item>
 
-		<item name="jumio_selection_icon_foreground">#123cff</item>
+		<item name="jumio_selection_icon_foreground">#E0E0E0</item>
 
 		<item name="jumio_search_bubble_background">#AC3D9A</item>
 		<item name="jumio_search_bubble_foreground">#E35252</item>
@@ -58,7 +41,7 @@
 		<item name="jumio_loading_circle_gradient_end">#033598</item>
 		<item name="jumio_error_circle_gradient_start">#AC3D9A</item>
 		<item name="jumio_error_circle_gradient_end">#C31322</item>
-		<item name="jumio_loading_circle_icon">#050202</item>
+		<item name="jumio_loading_circle_icon">#FFCA28</item>
 
 		<!-- scan-overlay, iproov & nfc colors -->
 		<item name="jumio_overlay_customization">@style/CustomOverlay</item>
@@ -70,7 +53,7 @@
 		<item name="jumio_scanOverlay">#FF5722</item>
 		<item name="jumio_scanOverlayFill">#60EDED3B</item>
 		<item name="jumio_scanOverlayTransparent">#ff0000ff</item>
-		<item name="jumio_scanBackground">#59FFFFFF</item>
+		<item name="jumio_scanBackground">#333D47</item>
 	</style>
 
 	<style name="CustomNfc" parent="Nfc.Customization">
@@ -78,18 +61,18 @@
 		<item name="nfc_passport_page_dark">#0558ff</item>
 		<item name="nfc_passport_page_light">#31bce1</item>
 		<item name="nfc_passport_foreground">@color/jumio_white</item>
-		<item name="nfc_phone_background">#cc00cc</item>
+		<item name="nfc_phone_background">#333D47</item>
 	</style>
 
 	<style name="CustomIproov" parent="Iproov.Customization">
 		<!--Help screen colors-->
 		<item name="iproov_animation_foreground">#FF5722</item>
-		<item name="iproov_animation_background">#E0E011</item>
+		<item name="iproov_animation_background">#1C2229</item>
 		<!--Iproov scan colors-->
-		<item name="iproov_backgroundColor">#B6FFFFFF</item>
-		<item name="iproov_lineColor">#3032b4</item>
+		<item name="iproov_backgroundColor">#1C2229</item>
+		<item name="iproov_lineColor">#31bce1</item>
 		<item name="iproov_headerTextColor">#FF5722</item>
-		<item name="iproov_headerBackgroundColor">#31bce1</item>
+		<item name="iproov_headerBackgroundColor">#333D47</item>
 		<item name="iproov_footerTextColor">#ff0000ff</item>
 		<item name="iproov_footerBackgroundColor">#ffff00</item>
 		<item name="iproov_livenessAssurance_primaryTintColor">#ff55a1</item>
@@ -99,5 +82,4 @@
 		<item name="iproov_genuinePresenceAssurance_notReadyTintColor">#42e242</item>
 		<item name="iproov_genuinePresenceAssurance_readyTintColor">#CffCCC</item>
 	</style>
-
 </resources>
