@@ -247,20 +247,20 @@ The following tables give information on the specification of all data parameter
 #### Class ___JumioRejectReason___
 List of all possible reject reasons returned if Instant Feedback is used:   
 
-| Code          | Message  | Description      |
-|:--------------|:---------|:-----------------|
-| 102  | BLACK_WHITE_COPY | Document appears to be a black and white photocopy |  
-| 103  | COLOR_PHOTOCOPY  | Document appears to be a colored photocopy |
-| 104  | DIGITAL_COPY     | Document appears to be a digital copy |
-| 200  | NOT_READABLE     | Document is not readable |
-| 201  | NO_DOC           | No document could be detected |
-| 206  | MISSING_BACK     | Backside of the document is missing |
-| 214  | MISSING_FRONT    | Frontside of the document is missing |
-| 2001 | BLURRY           | Document image is unusable because it is blurry |
-| 2003 | MISSING_PART_DOC | Part of the document is missing |
-| 2005 | DAMAGED_DOCUMENT | Document appears to be damaged |
-| 2004 | HIDDEN_PART_DOC  | Part of the document is hidden |
-| 2006 | GLARE            | Document image is unusable because of glare |
+| Code          | Message  | Description      | Already Active |
+|:--------------|:---------|:-----------------|:--------------:|
+| 102  | BLACK_WHITE_COPY | Document appears to be a black and white photocopy | x |
+| 103  | COLOR_PHOTOCOPY  | Document appears to be a colored photocopy | |
+| 104  | DIGITAL_COPY     | Document appears to be a digital copy | |
+| 200  | NOT_READABLE     | Document is not readable | |
+| 201  | NO_DOC           | No document could be detected | x |
+| 206  | MISSING_BACK     | Backside of the document is missing | x |
+| 214  | MISSING_FRONT    | Frontside of the document is missing | x |
+| 2001 | BLURRY           | Document image is unusable because it is blurry | x |
+| 2003 | MISSING_PART_DOC | Part of the document is missing | x |
+| 2005 | DAMAGED_DOCUMENT | Document appears to be damaged | |
+| 2004 | HIDDEN_PART_DOC  | Part of the document is hidden | |
+| 2006 | GLARE            | Document image is unusable because of glare | x |
 
 #### Error Codes
 List of all **_error codes_** that are available via the `code` and `message` property of the `JumioError` object. The first letter (A-J) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation([x][yyyy]).
