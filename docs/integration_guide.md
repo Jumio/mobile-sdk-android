@@ -1,4 +1,4 @@
-![ID Verification](images/id_verification.jpg)
+![Header Graphic](images/jumio_feature_graphic.jpg)
 
 # Integration Guide for Android SDK
 Jumio’s products allow businesses to establish the genuine identity of their users by verifying government-issued IDs in real-time. ID Verification, Identity Verification and other services are used by financial service organizations and other leading brands to create trust for safe onboarding, money transfers, and user authentication.
@@ -17,12 +17,15 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 - [Code Documentation](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release Notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: 4.1.0
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: __4.2.0__
 
 For breaking technical changes, please read our [Transition Guide](transition_guide.md)
 
 ## Setup
-The [basic setup](../README.md#basics) is required before continuing with the following setup for the Jumio SDK.
+The [basic setup](../README.md#basics) is required before continuing with the following setup for the Jumio SDK. If you are updating your SDK to a newer version, please also refer to:
+
+:arrow_right:&nbsp;&nbsp;[Changelog](docs/changelog.md)     
+:arrow_right:&nbsp;&nbsp;[Transition Guide](docs/transition_guide.md)    
 
 ## Dependencies
 The [SDK Setup Tool](https://jumio.github.io/mobile-configuration-tool/out/) is a web tool that helps determine available product combinations and corresponding dependencies for the Jumio SDK, as well as an export feature to easily import the applied changes straight into your codebase.
@@ -33,28 +36,35 @@ Below there is a list of dependencies the application will need to work in Andro
 
 ```
 dependencies {
-    implementation "com.jumio.android:core:4.1.0"               // Jumio Core library
-    implementation "com.jumio.android:defaultui:4.1.0"          // Jumio Default UI
-    implementation "com.jumio.android:mrz:4.1.0"                // MRZ Scanning
-    implementation "com.jumio.android:nfc:4.1.0"                // NFC Scanning
-    implementation "com.jumio.android:linefinder:4.1.0"         // Linefinder Scanning
-    implementation "com.jumio.android:barcode:4.1.0"            // Barcode scanning
-    implementation "com.jumio.android:barcode-mlkit:4.1.0"      // Barcode scanning alternative
-    implementation "com.jumio.android:iproov:4.1.0"             // Face Liveness library (iProov)
-    implementation "com.jumio.android:datadog:4.1.0"            // Analytics library
+    implementation "com.jumio.android:core:4.2.0"               // Jumio Core library
+    implementation "com.jumio.android:defaultui:4.2.0"          // Jumio Default UI
+    implementation "com.jumio.android:mrz:4.2.0"                // MRZ Scanning
+    implementation "com.jumio.android:nfc:4.2.0"                // NFC Scanning
+    implementation "com.jumio.android:linefinder:4.2.0"         // Linefinder Scanning
+    implementation "com.jumio.android:docfinder:4.2.0"          // Generic ID Scanning (beta)
+    implementation "com.jumio.android:barcode:4.2.0"            // Barcode scanning
+    implementation "com.jumio.android:barcode-mlkit:4.2.0"      // Barcode scanning alternative
+    implementation "com.jumio.android:iproov:4.2.0"             // Face Liveness library
+    implementation "com.jumio.android:datadog:4.2.0"            // Analytics library
+    implementation "com.jumio.android:devicerisk:4.2.0"         // Device fingerprinting library
 ```
 
-#### Certified Liveness Vendor
+#### Generic ID Scanning
+The module `com.jumio.android:docfinder` offers a generic scanning method across all ID documents, providing a more seamless capture experience for the end user. The SDK will automatically detect which type of ID document is presented by the user and guide them through the capturing process with live feedback.
+
+⚠️&nbsp;&nbsp;__Note:__ This feature is currently i the Beta stage and suspect to change in the next SDK version. If you intend to use it in production, please contact Jumio Customer Service at support@jumio.com.
+
+#### Certified Face Liveness
 Jumio uses Certified Liveness technology to determine liveness. The iProov SDK is referenced as a transitive dependency within the `com.jumio.android:iproov` module.
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 ```
-implementation "com.jumio.android:iproov:4.1.0"       
+implementation "com.jumio.android:iproov:4.2.0"       
 implementation ("com.iproov.sdk:iproov:7.2.0"){
     exclude group: 'org.json', module:'json'
 }
 ```
 
-#### Barcode Alternative
+#### Barcode Scanning Alternative
 As an alternative to the `com.jumio.android:barcode` dependency, you can substitute `com.jumio.android:barcode-mlkit`. This dependency includes `com.google.android.gms:play-services-mlkit-barcode-scanning` library - if your application includes __other Google ML-kit libraries__, it might be necessary to override meta-data specified in the application tag of the `play-services-mlkit-barcode-scanning` manifest by [merging multiple manifests](https://developer.android.com/studio/build/manage-manifests#merge-manifests):
 ```
 <meta-data
@@ -235,23 +245,23 @@ The following tables give information on the specification of all data parameter
 | mrzLine3           | String     |	50           | MRZ line 3	|
 | rawBarcodeData     | String     |	50           | Extracted barcode data	|
 | extractionMethod   | JumioScanMode  |          | Extraction method used during scanning (MRZ, BARCODE, MANUAL, OCR_CARD, NFC) |
-| imageData          | JumioImageData |          | Wrapper class for accessing image data of all scan sides from an ID verification session. This feature has to be enabled by your account manager. |
+| imageData          | JumioImageData |          | Wrapper class for accessing image data of all credential parts from an ID verification session. This feature has to be enabled by your account manager. |
 
 #### Class ___JumioFaceResult___
 |Parameter  |Type 	  | Max. length | Description      |
 |:----------|:--------|:------------|:-----------------|
 | passed    |	Boolean |	          	|
 | extractionMethod | JumioScanMode  | | Extraction method used during scanning (FACE_MANUAL, FACE_IPROOV) |
-| imageData | JumioImageData | | Wrapper class for accessing image data of all scan sides from an ID verification session. This feature has to be enabled by your account manager. |
+| imageData | JumioImageData | | Wrapper class for accessing image data of all credential parts from an ID verification session. This feature has to be enabled by your account manager. |
 
 #### Class ___JumioRejectReason___
 List of all possible reject reasons returned if Instant Feedback is used:   
 
-| Code          | Message  | Description      | Already Active |
-|:--------------|:---------|:-----------------|:--------------:|
+| Code          | Message  | Description      | Check enabled server-side (2022-05-25) |
+|:--------------|:---------|:-----------------|:-----------------:|
 | 102  | BLACK_WHITE_COPY | Document appears to be a black and white photocopy | x |
 | 103  | COLOR_PHOTOCOPY  | Document appears to be a colored photocopy | |
-| 104  | DIGITAL_COPY     | Document appears to be a digital copy | |
+| 104  | DIGITAL_COPY     | Document appears to be a digital copy | x |
 | 200  | NOT_READABLE     | Document is not readable | |
 | 201  | NO_DOC           | No document could be detected | x |
 | 206  | MISSING_BACK     | Backside of the document is missing | x |
@@ -307,7 +317,7 @@ Start the SDK by passing `context` and the `JumioControllerInterface` instance. 
 
 When the `jumioController` is initialized, the following callback will be triggered:
 
-`onInitialized(credentials: ArrayList<JumioCredentialInfo>, policyUrl: String?)`
+`onInitialized(credentials: List<JumioCredentialInfo>, policyUrl: String?)`
 
 If a user’s consent is required, the parameter `policyUrl` will provide a valid URL that will redirect the user to Jumio’s consent details. User can open and continue to this link if they choose to do so. If the user consents to the Jumio policy, `jumioController.userConsented()` is required to be called internally before any credential can be initialized and the user journey can continue. If no consent is required, the parameter `policyUrl` will be null.
 
@@ -342,27 +352,68 @@ val jumioDocument = countries.get(“USA”)
 
 * `JumioDocumentVariant` values: `PAPER`, `PLASTIC`
 
-Retrieve the first scan side of the credential to start the scanning process by calling:
+Retrieve the first credential part of the credential to start the scanning process by calling:
 ```
-currentCredential?.scanSides?.first()
-startScanPartWithSide(currentScanSide)
+val credentialPart = currentCredential?.credentialParts?.first()
+currentCredential?.initScanPart(credentialPart, yourScanPartInterface)
 ```
+
+#### Jumio Data Credential
+`JumioDataCredential` is used for the device fingerprinting. There are some optional configurations you can do to enhance it's behaviour.
+
+1. Add the following Android permissions to your AndroidManifest.xml, if not already added:
+```
+   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> // Get user's GPS Location.
+   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> // Get user's GPS Location.
+   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> // Get User's Wifi name and Status.
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> // Get User's Network information and State.
+   <uses-permission android:name="android.permission.READ_PHONE_STATE" /> // Get Phone and Network information (MNC, MCC, IMEI, Phone Number, Phone Type (GSM/CDMA), SIM Number, ...etc).
+   <uses-permission android:name="android.permission.USE_BIOMETRIC" /> // Get user's Biometric authentication settings (Face or Fingerprint authentication).
+   <uses-permission android:name="android.permission.USE_FINGERPRINT" /> // Get user's Biometric authentication settings (Face or Fingerprint authentication).
+   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> // Write data into device to check re-installation behaviour.
+   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> // Get External storage status, total size, free size...etc.
+   <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" /> // 	Get GSFID (Google Services Id) for accurate identification for unique users.
+```
+
+Note:
+* the reason for the requirement of the given permission is added as inline comment
+* some of them are `dangerous` permissions, and you have to ask for the permission from the user. More information about permissions can be found in the official [Android documentation](https://developer.android.com/guide/topics/permissions/overview)
+* The above permissions imply to add some features to your manifest file:
+```  
+  <uses-feature
+  android:name="android.hardware.location"
+  android:required="false" />
+  <uses-feature
+  android:name="android.hardware.telephony"
+  android:required="false" />
+  <uses-feature
+  android:name="android.hardware.wifi"
+  android:required="false" />
+```
+
+2. If you use proguard for obfuscation, you have to add some rules to your proguard-rules.pro configuration file:
+```
+   -keep com.google.android.gms.*
+   -keep com.google.android.gms.tasks.*
+   -keep com.google.android.gms.ads.identifier.AdvertisingIdClient
+```
+
 
 ### ScanPart Handling
 The following sequence diagram outlines an overview of ScanPart handling details:
 ![ScanPart Happy Path Diagram](images/happy_paths/scanpart_happy_path_diagram.png)
 
-Start the scanning process by initializing the scan part. Provide a `JumioScanSide` from the list below:
+Start the scanning process by initializing the scan part. Provide a `JumioCredentialPart` from the list below:
 
-`currentScanPart = currentCredential?.initScanPart(scanSide, yourJumioScanPartInterface)`
+`currentScanPart = currentCredential?.initScanPart(credentialPart, yourJumioScanPartInterface)`
 
-* `JumioScanSide` values: `FRONT`, `BACK`, `FACE`, `DOCUMENT`, `NFC`
+* `JumioCredentialPart` values: `FRONT`, `BACK`, `FACE`, `DOCUMENT`, `NFC`, `DEVICE_RISK`
 
 When the scanning is done, the parameter `JumioScanStep.CAN_FINISH` will be received and the scan part can be finished by calling `currentScanPart?.finish()`.
 
-To see if the finished scan side was the last one of the credential, check `currentScanSide == currentCredential?.scanSides?.last()` Check if the credential is complete by calling `currentCredential?.isComplete` and finish the current credential by calling `currentCredential?.finish()`.
+Check if the credential is complete by calling `currentCredential?.isComplete` and finish the current credential by calling `currentCredential?.finish()`.
 
-Continue that procedure until all needed credentials (e.g. `ID`, `FACE`, `DOCUMENT`) are finished. Check if the last credential is finished with `currentCredentialInfo == credentialInfoList.last()`, then call `jumioController?.finish()` to finish the user journey.
+Continue that procedure until all needed credentials (e.g. `ID`, `FACE`, `DOCUMENT`) are finished. Check if all credentials are finished with `controller.isComplete`, then call `jumioController?.finish()` to finish the user journey.
 
 The callback `onFinished() ` will be received after the controller has finished:
 

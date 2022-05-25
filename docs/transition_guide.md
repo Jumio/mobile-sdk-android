@@ -1,10 +1,26 @@
-![ID Verification](images/id_verification.jpg)
+![Header Graphic](images/jumio_feature_graphic.jpg)
 
 # Transition Guide for Android SDK
 This section only covers the breaking technical changes that should be considered when updating from the previous version.
 
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
+
+## 4.2.0
+#### Public API Changes
+* In [JumioControllerInterface](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/index.html) the signature of function `onInitialized` has been changed. Parameter `credentials` has been changed from `ArrayList<JumioCredentialInfo>` to `List<JumioCredentialInfo>`
+* In [JumioResult](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.result/-jumio-result/index.html) field `credentialInfos` has been changed from `ArrayList<JumioCredentialInfo>?` to `List<JumioCredentialInfo>?`
+* `JumioScanSide` from package `com.jumio.sdk.enums` in `com.jumio.sdk:core` has been renamed to [JumioCredentialPart](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html)
+
+#### Dependency Updates
+* NEW Generic ID Scanning dependency (Beta): `implementation "com.jumio.android:docfinder:4.2.0"`
+
+#### Customization Updates
+* Boolean `iproov_floating_prompt_enabled` has been added to [`Iproov.Customization` theme](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/styles.xml#L84)
+* Color attribute ~`iproov_footerTextColor` has been replaced with `iproov_promptTextColor` in [`Iproov.Customization` theme](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/styles.xml#L84)
+
+#### Deprecation Notice  
+⚠️&nbsp;&nbsp;SDK 4.2.0 will be the last SDK version supporting Android 4.4 (API level 19). All subsequent SDK versions will require at least Android 5.0 "Lollipop" (API level 21).
 
 ## 4.1.0
 #### Dependency Updates
@@ -31,10 +47,10 @@ Added Instant Feedback functionality to give more granular user feedback with ne
 * HIDDEN_PART_DOC
 * GLARE
 
-#### Deprecation Notice  
-⚠️&nbsp;&nbsp;SDK 4.1.0 will be the last SDK version supporting Android 4.4 (API level 19). All subsequent SDK versions will require at least Android 5.0 "Lollipop" (API level 21).
+## 4.0.0   
+#### Authentication
+ℹ️&nbsp;&nbsp;__As of version 4.0.0 and onward, the SDK can only be used in combination with Jumio KYX or Jumio API v3. API v2 as well as using API token and secret to authenticate against the SDK will no longer be compatible.__
 
-## 4.0.0
 #### Dependency Updates
 * The repository declaration for ~~`jcenter()`~~ is replaced with `mavenCentral()` as [JFrog will be shutting down JCenter](https://blog.gradle.org/jcenter-shutdown)
 

@@ -1,4 +1,4 @@
-// Copyright 2021 Jumio Corporation, all rights reserved.
+// Copyright 2022 Jumio Corporation, all rights reserved.
 package com.jumio.sample.kotlin.customui
 
 import android.content.Context

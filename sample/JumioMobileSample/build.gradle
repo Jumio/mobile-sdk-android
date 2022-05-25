@@ -1,12 +1,12 @@
 buildscript {
-	ext.kotlin_version = "1.5.31"
+	ext.kotlin_version = "1.6.20"
 	repositories {
 		google()
 		mavenCentral()
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath "com.android.tools.build:gradle:7.0.3"
+		classpath "com.android.tools.build:gradle:7.2.0"
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 	}
 }
@@ -20,7 +20,7 @@ repositories {
 	exclusiveContent {
 		forRepository {
 			maven {
-				url 'https://mobile-sdk.jumio.com'
+				url 'https://repo.mobile.jumio.ai'
 			}
 		}
 		filter {
@@ -31,13 +31,15 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "4.1.0"
+	SDK_VERSION = "4.2.0"
 }
 
 dependencies {
 	// Jumio dependencies
 	implementation "com.jumio.android:core:${SDK_VERSION}"
 	implementation "com.jumio.android:linefinder:${SDK_VERSION}"
+	// The Docfinder module is still in Beta and suspect to change in the next version. If you intend to use it in production, please contact Jumio Customer Service at support@jumio.com
+//	implementation "com.jumio.android:docfinder:${SDK_VERSION}"
 	implementation "com.jumio.android:mrz:${SDK_VERSION}"
 	implementation "com.jumio.android:nfc:${SDK_VERSION}"
 	implementation "com.jumio.android:barcode:${SDK_VERSION}"
@@ -45,13 +47,14 @@ dependencies {
 	implementation "com.jumio.android:iproov:${SDK_VERSION}"
 	implementation "com.jumio.android:defaultui:${SDK_VERSION}"
 	implementation "com.jumio.android:datadog:${SDK_VERSION}"
+	implementation "com.jumio.android:devicerisk:${SDK_VERSION}"
 
 	//only for the sample code
 	implementation "androidx.activity:activity-ktx:1.4.0"
 
 	//Kotlin
 	implementation "androidx.multidex:multidex:2.0.1"
-	implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
 	implementation fileTree(dir: 'libs', include: '*.jar')
 }
@@ -59,11 +62,6 @@ dependencies {
 android {
 	compileSdkVersion 31
 	buildToolsVersion "32.0.0"
-
-	compileOptions {
-		sourceCompatibility JavaVersion.VERSION_1_8
-		targetCompatibility JavaVersion.VERSION_1_8
-	}
 
 	defaultConfig {
 		versionCode 1
@@ -81,7 +79,16 @@ android {
 		dataBinding false
 	}
 
-	lintOptions {
+	compileOptions {
+		sourceCompatibility 11
+		targetCompatibility 11
+	}
+
+	kotlinOptions {
+		jvmTarget = 11
+	}
+
+	lint {
 		abortOnError false
 	}
 

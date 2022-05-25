@@ -73,7 +73,7 @@
 		<item name="iproov_lineColor">#31bce1</item>
 		<item name="iproov_headerTextColor">#FF5722</item>
 		<item name="iproov_headerBackgroundColor">#333D47</item>
-		<item name="iproov_footerTextColor">#ff0000ff</item>
+		<item name="iproov_promptTextColor">#ff0000ff</item>
 		<item name="iproov_footerBackgroundColor">#ffff00</item>
 		<item name="iproov_livenessAssurance_primaryTintColor">#ff55a1</item>
 		<item name="iproov_livenessAssurance_secondaryTintColor">#CC0000</item>
@@ -81,5 +81,7 @@
 		<item name="iproov_genuinePresenceAssurance_progressBarColor">#1e89a6</item>
 		<item name="iproov_genuinePresenceAssurance_notReadyTintColor">#42e242</item>
 		<item name="iproov_genuinePresenceAssurance_readyTintColor">#CffCCC</item>
+		<!-- Floating prompt on scan screen -->
+		<item name="iproov_floating_prompt_enabled">false</item>
 	</style>
 </resources>

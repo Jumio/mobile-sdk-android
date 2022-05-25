@@ -1,4 +1,4 @@
-![FAQ](images/jumio_feature_graphic.jpg)
+![Header Graphic](images/jumio_feature_graphic.jpg)
 
 # Glossary
 

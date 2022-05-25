@@ -1,4 +1,4 @@
-// Copyright 2021 Jumio Corporation, all rights reserved.
+// Copyright 2022 Jumio Corporation, all rights reserved.
 package com.jumio.sample.kotlin
 
 import android.content.Intent
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 	override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
 		when (menuItem.itemId) {
-			R.id.nav_terms_conditions -> openLink("https://www.jumio.com/legal-information/privacy-policy")
+			R.id.nav_terms_of_use, R.id.nav_privacy_policy -> openLink("https://www.jumio.com/legal-information/privacy-policy/jumio-showcase-app-privacy-terms/")
 			R.id.nav_licenses -> openLink("https://github.com/Jumio/mobile-sdk-android/tree/master/licenses")
 		}
 		binding.drawerLayout.closeDrawer(GravityCompat.START)
