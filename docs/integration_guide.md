@@ -195,9 +195,9 @@ scanView.cameraFacing = JumioCameraPosition.FRONT
 ## Customization
 
 ### Customization Tool
-[Jumio Surface](https://jumio.github.io/surface-android/4.0.0) is a web tool that offers the possibility to apply and visualize, in real-time, all available customization options for the Jumio SDK, as well as an export feature to import the applied changes straight into your codebase.
+[Jumio Surface](https://jumio.github.io/surface-tool/4.2.0) is a web tool that offers the possibility to apply and visualize, in real-time, all available customization options for the Jumio SDK, as well as an export feature to import the applied changes straight into your codebase.
 
-[![Jumio Surface](images/surface_tool.png)](https://jumio.github.io/surface-android/4.0.0)
+[![Jumio Surface](images/surface_tool.png)](https://jumio.github.io/surface-tool/4.2.0)
 
 The surface tool lets you go through all available screens and visualizes all the colors that can be customized. As visualized in the code there, the SDK can be customized to fit your application's look and feel by specifying `Theme.Jumio` as a parent style and overriding attributes within this theme.
 
