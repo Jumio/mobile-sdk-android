@@ -18,6 +18,16 @@
 		<item name="colorSecondary">@color/colorSecondary</item>
 	</style>
 
+	<style name="AppTheme.Widget.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+		<item name="materialThemeOverlay">@style/AppTheme.ThemeOverlay.RadioButton</item>
+	</style>
+
+	<style name="AppTheme.ThemeOverlay.RadioButton" parent="">
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorControlActivated">@color/colorPrimary</item>
+		<item name="colorOnSurface">@color/colorPrimary</item>
+	</style>
+
 	<style name="AppThemeCustomJumio" parent="Theme.Jumio">
 		<item name="colorPrimary">#F2F233</item>
 		<item name="jumio_background">#fffee0</item>

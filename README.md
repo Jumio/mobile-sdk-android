@@ -18,7 +18,8 @@
     - [Integration](#integration)
     - [Proguard](#proguard)
     - [Language Localization](#language-localization)
-    - [Analytics with Datadog](#analytics-with-datadog)
+- [Analytics with Datadog](#analytics-with-datadog)
+- [Document Verification](#document-verification)
 - [Security](#security)
 - [Release Notes](#release-notes)
 - [Support](#support)
@@ -89,10 +90,10 @@ Once you start up the sample application, you'll be given the option of trying o
 
 ## General Requirements
 ⚠️&nbsp;&nbsp;__Android Deprecation Notice__  
-Please be aware that SDK 4.2.0 will be the last SDK version supporting Android 4.4 (API level 19). All subsequent SDK versions will require at least Android 5.0 "Lollipop" (API level 21).
+Please be aware that SDK 4.3.0 does not support Android 4.4 (API level 19) anymore.
 
 The minimum requirements for the SDK are:
-* Android 4.4 (API level 19) or higher
+* Android 5.0 "Lollipop" (API level 21) or higher
 * Internet connection
 * Jumio KYX or Jumio API v3
 
@@ -107,9 +108,9 @@ You will need a __commercial Jumio License__ to run any of our examples. For det
 ## Authentication and Encryption
 ℹ️&nbsp;&nbsp;__As of version 4.0.0 and onward, the SDK can only be used in combination with Jumio KYX or Jumio API v3. API v2 as well as using API token and secret to authenticate against the SDK will no longer be compatible.__
 
-Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://github.com/Jumio/implementation-guides/blob/master/api-guide/api_guide.md) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Customer Portal.
+Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://jumio.github.io/kyx/integration-guide.html) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Customer Portal.
 
-Within the response of the [Account Creation](https://github.com/Jumio/implementation-guides/blob/master/api-guide/api_guide.md#account-creation) or [Account Update](https://github.com/Jumio/implementation-guides/blob/master/api-guide/api_guide.md#account-update) API, a SDK token is returned, which needs to be applied to initiate the mobile SDK.
+Within the response of the [Account Creation](https://jumio.github.io/kyx/integration-guide.html#account-creation) or [Account Update](https://jumio.github.io/kyx/integration-guide.html#account-update) API, a SDK token is returned, which needs to be applied to initiate the mobile SDK.
 
 ### Basic Authentication (Deprecated)
 Previously, Basic Auth credentials were constructed using your API token as the User ID and your API secret as the password. You still can manage API token and secret in the Customer Portal under:
@@ -213,12 +214,12 @@ The following Proguard Keep rules have to be added to the Jumio Mobile SDK if th
 -keep public class com.iproov.sdk.IProov {public *; }
 
 -keep class org.jmrtd.** { *; }
--keep class net.sf.scuba.** {*;}
--keep class org.bouncycastle.** {*;}
--keep class org.ejbca.** {*;}
+-keep class net.sf.scuba.** { *; }
+-keep class org.bouncycastle.** { *; }
+-keep class org.ejbca.** { *; }
 ```
 
-Most of the Proguard settings are applied automatically, as they are defined as consumer Proguard rules within the SDK. The current rules can also be found in the [Sample app](sample/JumioMobileSample/).
+Most of the Proguard settings are applied automatically, as they are defined as consumer Proguard rules within the SDK. The current rules can also be found in the [Sample app](sample/JumioMobileSample/proguard-rules.pro).
 
 ## Language Localization
 Our SDK supports [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages. All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable [within our Sample application](sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml).
@@ -229,7 +230,7 @@ _Afrikaans, Arabic, Bulgarian, Chinese(Simplified), Chinese(Traditional), Croati
 
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or increase the __text size__ on their device. The accessibility strings that are used by TalkBack contain *accessibility* in their key and can be also modified in `strings.xml`.
 
-## Analytics With Datadog
+# Analytics With Datadog
 Analytic feedback and diagnostics enable us to continually improve our SDK and its performance, as well as investigate potential issues. With the Jumio SDK, we use [Datadog](https://github.com/DataDog/dd-sdk-android) as an optional tool to collect diagnostic information. Data collected includes specific SKD information like version numbers, started and finished SDK instances and scan workflows, thrown exceptions and error information, as well as other mobile events. Please note that gathering analytics data requires user consent due to legal regulations such as GDPR. The consent is granted when our MLA is accepted.
 
 To benefit from Datadog, add the following dependency to your `build.gradle` file:
@@ -240,6 +241,40 @@ implementation "com.jumio.android:datadog:${SDK_VERSION}"
 To grant or revoke user consent, please use `JumioSDK.giveDataDogConsent(boolean)` method.
 
 ⚠️&nbsp;&nbsp;__Note:__ The use of the Datadog module is only possible if it is not already included in your application.
+
+# Document Verification
+As of Android SDK 4.3.0, Document Verification functionality is available.
+This functionality allows users to submit a number of different document types (e.g. a utility bill or bank statement) in digital form and verify the validity and authenticity of this document.
+
+Documents can be submitted using one of two ways: Taking a photo of the document or uploading a PDF file.
+For more details, please refer to our [integration guide](docs/inegration_guide.md#jumio-document-credential).
+
+### Supported Documents:
+* BC (Birth certificate)
+* BS (Bank statement)
+* CAAP (Cash advance application)
+* CB (Council bill)
+* CRC (Corporate resolution certificate)
+* HCC (Health care card)
+* IC (Insurance card)
+* LAG (Lease agreement)
+* LOAP (Loan application)
+* MEDC (Medicare card)
+* MOAP (Mortgage application)
+* PB (Phone bill)
+* SEL (School enrollment letter)
+* SENC (Seniors card)
+* SS (Superannuation statement)
+* SSC (Social security card)
+* STUC (Student card)
+* TAC (Trade association card)
+* TR (Tax return)
+* UB (Utility bill)
+* VC (Voided check)
+* VT (Vehicle title)
+* WWCC (Working with children check)
+
+ℹ️&nbsp;&nbsp;__Note:__ To enable the use of this feature, please contact [Jumio support](#support).
 
 ----
 
@@ -254,7 +289,7 @@ See our [Change Log](docs/changelog.md) for more information about our current S
 # Support
 
 ## Previous Version
-The previous release version 4.1.0 of the Jumio Mobile SDK is supported until 2022-08-27.
+The previous release version 4.2.0 of the Jumio Mobile SDK is supported until 2022-11-28.
 
 When the support period has expired, bug fixes and technical support will no longer be provided. Current bugs are typically fixed in the upcoming versions. __Older SDK versions will keep functioning with our server until further notice,__ but we highly recommend that you always update to the latest version to benefit from SDK improvements and bug fixes.
 

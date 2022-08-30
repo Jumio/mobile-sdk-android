@@ -70,18 +70,18 @@ The following table shows a range of different product configurations with the s
 
 | Product Configuration  | Size     | Modules      |
 |:-----------------------|:--------:|:------------:|
-| Base                   | 1.78 MB  | core         |
-| Base + Liveness        | 2.23 MB  | core, iproov |
-| Base + MRZ             | 3.15 MB  | core, mrz    |
-| Base + MRZ, Linefinder | 3.42 MB  | core, mrz, linefinder |
-| Base + MRZ, Linefinder, Barcode | 4.47 MB  | core, mrz, linefinder, barcode |
+| Base                   | 1.79 MB  | core         |
+| Base + Liveness        | 2.26 MB  | core, iproov |
+| Base + MRZ             | 3.16 MB  | core, mrz    |
+| Base + MRZ, Linefinder | 3.43 MB  | core, mrz, linefinder |
+| Base + MRZ, Linefinder, Barcode | 4.48 MB  | core, mrz, linefinder, barcode |
 | Base + MRZ, Linefinder, Barcode-Vision | 3.72 MB  | core, mrz, linefinder, barcode-vision |
-| Base + MRZ, Linefinder, Barcode, Liveness | 4.91 MB  | core, mrz, linefinder, barcode, iproov |
-| Base + MRZ, Linefinder, Barcode, NFC | 6.02 MB  | core, mrz, linefinder, barcode, nfc |
-| All (Custom UI only)   | 12.30 MB  | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk  |    
+| Base + MRZ, Linefinder, Barcode, Liveness | 4.95 MB  | core, mrz, linefinder, barcode, iproov |
+| Base + MRZ, Linefinder, Barcode, NFC | 6.11 MB  | core, mrz, linefinder, barcode, nfc |
+| All (Custom UI only)   | 8.16 MB  | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk  |
 | Base + MRZ, Linefinder, Default UI | 3.84 MB  | core, mrz, linefinder, default-ui |
-| Base + MRZ, Linefinder, Default UI, DataDog | 4.34 MB  | core, mrz, linefinder, default-ui, datadog |
-| All (with Default UI)  | 13.13 MB  | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, default-ui, datadog  |
+| Base + MRZ, Linefinder, Default UI, DataDog | 4.35 MB  | core, mrz, linefinder, default-ui, datadog |
+| All (with Default UI)  | 8.97 MB  | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, default-ui, datadog  |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -198,6 +198,11 @@ android {
 ```
 
 ## Overview of Scanning Methods
+
+#### Autocapture
+Combines all previously existing scanning methods into one automatic, seamless experience.
+
+![Autocapture Success](images/capturing_methods/autocapture_01.jpg)  ![Autocapture Scanning](images/capturing_methods/autocapture_02.jpg)
 
 #### Linefinder
 Scanning using edge detection.

@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-commercial-3D3D3D?style=flat)](#copyright)
 [![Platform](https://img.shields.io/badge/platform-Android-lightgrey?style=flat)](#general-requirements)
 [![Maven](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo.mobile.jumio.ai%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat)](#integration)
-[![API Level](http://img.shields.io/badge/API%20Level-19+-orange?style=flat)](#general-requirements)
+[![API Level](http://img.shields.io/badge/API%20Level-21+-orange?style=flat)](#general-requirements)
 
 [Improvement]: https://img.shields.io/badge/Improvement-green "Improvement shield"
 [Change]: https://img.shields.io/badge/Change-blue "Change shield"
@@ -15,13 +15,25 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 For detailed technical changes please refer to our [Transition Guide](transition_guide.md).
 
 ## Support Period
-Current SDK version: __4.2.0__
-The previous release version 4.1.0 of the Jumio Mobile SDK is supported until 2022-08-27.
+Current SDK version: __4.3.0__
+The previous release version 4.2.0 of the Jumio Mobile SDK is supported until 2022-11-28.
 
 When the support period has expired, bug fixes and technical support will no longer be provided. Current bugs are typically fixed in the upcoming versions. __Older SDK versions will keep functioning with our server until further notice,__ but we highly recommend you always update to the latest version to benefit from SDK improvements and bug fixes.
 
+## SDK Version: __4.3.0__
+
+![Improvement] Autocapture functionality (introduced in SDK 4.2.0) is no longer in beta stage [ID Verification]
+
+![Improvement] [Document Verification](../README.md#document-verification) functionality added
+
+![Improvement] Improved user guidance: Clear distinction between scanning frontside or backside of ID document [ID Verification]
+
+![Change] iProov SDK version update to 7.5.0 [Identity Verification]
+
+![Fix] UI bugs, internal crashes [Identity Verification]
+
 ## SDK Version: __4.2.0__
-![Improvement] Alignment of previously existing scanning method and improved user experience through addition of Generic ID Scanning module (Beta) [ID Verification]
+![Improvement] Alignment of previously existing scanning method and improved user experience through addition of Autocapture module (Beta) [ID Verification]
 
 ![Improvement] Support for device fingerprint capability [ID Verification, Identity Verification]
 
