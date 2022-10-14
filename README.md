@@ -22,7 +22,7 @@
 - [Document Verification](#document-verification)
 - [Security](#security)
 - [Release Notes](#release-notes)
-- [Support](#support)
+- [Maintenance and Support](#maintenance-and-support)
 - [Code Documentation](https://jumio.github.io/mobile-sdk-android/)
 - [FAQ](docs/integration_faq.md)
 - [Known Issues](docs/known_issues.md)
@@ -286,12 +286,10 @@ All SDK related traffic is sent over HTTPS using TLS and public key pinning. Add
 # Release Notes
 See our [Change Log](docs/changelog.md) for more information about our current SDK version and further details.
 
-# Support
+# Maintenance and Support
 
 ## Previous Version
-The previous release version 4.2.0 of the Jumio Mobile SDK is supported until 2022-11-28.
-
-When the support period has expired, bug fixes and technical support will no longer be provided. Current bugs are typically fixed in the upcoming versions. __Older SDK versions will keep functioning with our server until further notice,__ but we highly recommend that you always update to the latest version to benefit from SDK improvements and bug fixes.
+Please refer to our [SDK maintenance and support policy](docs/maintenance_policy.md) for more information about Mobile SDK maintenance and support.
 
 ## Two-factor Authentication
 If you want to enable two-factor authentication for your Jumio Customer Portal, [contact us](https://support.jumio.com). Once enabled, users will be guided through the setup upon their first login to obtain a security code using the Google Authenticator app.
