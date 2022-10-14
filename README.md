@@ -287,8 +287,6 @@ All SDK related traffic is sent over HTTPS using TLS and public key pinning. Add
 See our [Change Log](docs/changelog.md) for more information about our current SDK version and further details.
 
 # Maintenance and Support
-
-## Previous Version
 Please refer to our [SDK maintenance and support policy](docs/maintenance_policy.md) for more information about Mobile SDK maintenance and support.
 
 ## Two-factor Authentication
