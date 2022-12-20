@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Daqs massimu tal-fajl: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Numru massimu ta\' paġni: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Id-dokument m\'għandux ikun protett b\'password</string>
+	<string name="jumio_error_button_retake_both">Erġa\' ħu t-tnejn li huma mill-ġdid</string>
+	<string name="jumio_error_button_retake_one">Erġa\' ħu mill-ġdid</string>
 	<string name="jumio_error_button_retry">Erġa\' pprova</string>
 	<string name="jumio_error_connection_title">Żball tal-konnessjoni</string>
 	<string name="jumio_error_dialog_title">Żball</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Żomm id-dokument tiegħek b\'mod sod waqt li tkun qed tieħu ritratt</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Kun żgur li d-dettalji kollha fuq id-dokument tiegħek jistgħu jinqraw</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Ir-ritratt mhux ċar biżżejjed biex jiġi vverifikat</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Ir-ritratti għandhom bżonn jittieħdu mill-ġdid</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Jekk jogħġbok erġa\' pprova b\'immaġni tal-kulur</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">L-immaġni hija fotokopja bl-abjad u bl-iswed</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">L-immaġni tidher li hija fotokopja bil-kulur</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Aċċerta li tieħu ritratt tad-dokument kollu</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">L-immaġni mhijiex forma ta\' identifikazzjoni valida</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Il-kwalità tar-ritratt mhijiex tajba biżżejjed biex jiġi vverifikat</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Ir-ritratt għandu bżonn jittieħed mill-ġdid</string>
 	<string name="jumio_error_instant_feedback_title">Erġa\' pprova</string>
 	<string name="jumio_error_no_camera_connection">Il-kamera bħalissa mhix disponibbli</string>
 	<string name="jumio_error_wrong_token">Bħalissa ma tistax tiskennja, jekk jogħġbok ikkuntattja lit-tim tal-appoġġ</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">Ħu ritratt tad-dokument tiegħek</string>
 	<string name="jumio_id_scan_manual_back">Ħu ritratt ta\' wara</string>
 	<string name="jumio_id_scan_manual_tips">Aċċerta li tieħu ritratt tad-dokument kollu</string>
+	<string name="jumio_id_scan_prompt_back_captured">Ir-ritratt ta\' WARA ġie meħud</string>
 	<string name="jumio_id_scan_prompt_barcode">Ara li l-barcode tkun fin-nofs</string>
+	<string name="jumio_id_scan_prompt_capture_success">Irċivejnih(a)!</string>
 	<string name="jumio_id_scan_prompt_center_id">Poġġi d-dokument tiegħek fin-nofs</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Dawwar għal fuq in-naħa ta\' WARA</string>
+	<string name="jumio_id_scan_prompt_front_captured">Ir-ritratt ta\' QUDDIEM ġie meħud</string>
 	<string name="jumio_id_scan_prompt_hold_still">TIċċaqlaqx…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Oqgħod dritt</string>
 	<string name="jumio_id_scan_prompt_initial_back">Dawwar l-ID tiegħek</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">Ersaq aktar viċin</string>
 	<string name="jumio_id_scan_prompt_processing">Qed niċċekkjaw l-immaġni…</string>
 	<string name="jumio_id_scan_prompt_too_close">Qiegħed wisq qrib</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Iżżumja fuq il-barcode tiegħek</string>
+	<string name="jumio_id_scan_take_photo_back_dl">Ħu ritratt minn WARA tal-liċenzja tas-sewqan tiegħek.</string>
+	<string name="jumio_id_scan_take_photo_back_ic">Ħu ritratt minn WARA tal-karta tal-identità tiegħek.</string>
+	<string name="jumio_id_scan_take_photo_back_pd">Ħu ritratt minn WARA tad-dokument personali tiegħek.</string>
+	<string name="jumio_id_scan_take_photo_front_dl">Ħu ritratt minn QUDDIEM tal-liċenzja tas-sewqan tiegħek.</string>
+	<string name="jumio_id_scan_take_photo_front_ic">Ħu ritratt minn QUDDIEM tal-karta tal-identità tiegħek.</string>
+	<string name="jumio_id_scan_take_photo_front_pd">Ħu ritratt minn QUDDIEM tad-dokument personali tiegħek.</string>
+	<string name="jumio_id_scan_take_photo_pp">Ħu ritratt tal-passaport tiegħek.</string>
 	<string name="jumio_id_scan_tips_barcode">Qarreb il-kamera lejn il-barcode</string>
 	<string name="jumio_id_scan_tips_button_fallback">Ħu r-ritratt b\'mod manwali</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">L-iskenn mhux taħdem</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">Ħu ritratt tad-dokument tiegħek</string>
 	<string name="jumio_start_step_identity">Ħu stessu</string>
 	<string name="jumio_start_step_ready">Lesti d-dokument tiegħek</string>
+	<string name="jumio_start_steps_title">Se nibdew il-proċess sabiex tiġi vverifikat</string>
 	<string name="jumio_start_title_plural">Verifika b\'\n%1$d-il pass sempliċi</string>
 	<string name="jumio_start_title_singular">Verifika\nb\'pass 1 sempliċi</string>
 	<string name="jumio_uploading_success">Telgħu b\'suċċess</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Żomm l-apparat quddiem wiċċek u ħares lejn l-iskrin</string>
+	<string name="iproov__accessibility_prompt_scanning">Qed jiskennja</string>
 	<string name="iproov__error_camera">L-aċċess għall-kamera huwa ddiżattivat</string>
 	<string name="iproov__error_camera_permission_denied">L-aċċess għall-kamera huwa ddiżattivat</string>
 	<string name="iproov__error_capture_already_active">Diġà jeżisti ritratt li qed jiġi pproċessat</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">Kien hemm żball mhux mistenni</string>
 	<string name="iproov__error_server">Jekk jogħġbok iċċekkja li qiegħed online</string>
 	<string name="iproov__error_unexpected_error">Kien hemm żball mhux mistenni</string>
-	<string name="iproov__failure_ambiguous_outcome">Riżultat ambigwu</string>
-	<string name="iproov__failure_lighting_backlit">Jidher li hemm sors ta\' dawl qawwi warajk</string>
-	<string name="iproov__failure_lighting_face_too_bright">Hemm wisq dawl fuq wiċċek</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Id-dawl tal-kamra qawwi wisq jew id-dija tal-iskrin hija baxxa wisq</string>
-	<string name="iproov__failure_lighting_too_dark">L-ambjent ta\' madwarek jidher imdallam wisq</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Jekk jogħġbok titkellimx waqt li tkun qed tiskennja</string>
-	<string name="iproov__failure_motion_too_much_movement">Jekk jogħġbok tiċċaqlaqx waqt li tkun qed tiskennja</string>
+	<string name="iproov__failure_eyes_closed">Żomm għajnejk miftuħin</string>
+	<string name="iproov__failure_face_too_close">Biegħed wiċċek mill-iskrin</string>
+	<string name="iproov__failure_face_too_far">Qarreb wiċċek lejn l-iskrin</string>
+	<string name="iproov__failure_misaligned_face">Żomm wiċċek fl-ovali</string>
+	<string name="iproov__failure_not_supported">It-tagħmir mhux appoġġjat</string>
+	<string name="iproov__failure_obscured_face">Neħħi kull ħaġa li tgħatti l-wiċċ</string>
+	<string name="iproov__failure_sunglasses">Neħħi n-nuċċali tax-xemx</string>
+	<string name="iproov__failure_too_bright">Mur x\'imkien fejn hemm iktar dell</string>
+	<string name="iproov__failure_too_dark">Mur x\'imkien fejn hemm iktar dawl</string>
+	<string name="iproov__failure_too_much_movement">Tiċċaqlaqx</string>
+	<string name="iproov__failure_unknown">Erġa\' pprova</string>
 	<string name="iproov__failure_user_timeout">Is-sessjoni tiegħek skadiet</string>
 	<string name="iproov__progress_assessing_genuine_presence">Qed jiġi ċċekkjat jekk il-preżenza hix reali…</string>
 	<string name="iproov__progress_assessing_liveness">Qed tiġi evalwata l-liveness…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">Qed jiġi identifikat il-wiċċ…</string>
 	<string name="iproov__progress_loading">Qed jillowdja…</string>
 	<string name="iproov__progress_streaming">Qed jistrimja…</string>
-	<string name="iproov__progress_streaming_slow">In-network tiegħek jaf jidher li huwa batut. Jekk jogħġbok stenna sakemm nipproċessaw.</string>
-	<string name="iproov__prompt_align_face_accessibility">Żomm l-apparat quddiem wiċċek u ħares lejn l-iskrin</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Poġġi wiċċek fil-frejm</string>
+	<string name="iproov__prompt_align_face">Poġġi wiċċek fl-ovali</string>
 	<string name="iproov__prompt_get_ready">Lesti…</string>
-	<string name="iproov__prompt_liveness_align_face">Poġġi wiċċek fl-ovali</string>
-	<string name="iproov__prompt_liveness_no_target">Poġġi wiċċek fil-frejm</string>
 	<string name="iproov__prompt_liveness_scan_completed">L-iskennjar lest</string>
 	<string name="iproov__prompt_pitch_too_high">Żomm it-tagħmir f\'livell mal-għajnejn</string>
 	<string name="iproov__prompt_pitch_too_low">Żomm it-tagħmir f\'livell mal-għajnejn</string>
 	<string name="iproov__prompt_roll_too_high">Evita li tmejjel rasek</string>
 	<string name="iproov__prompt_roll_too_low">Evita li tmejjel rasek</string>
 	<string name="iproov__prompt_scanning">Qed jiġi skennjat…</string>
-	<string name="iproov__prompt_tap_to_begin">Agħfas l-iskrin biex tibda</string>
 	<string name="iproov__prompt_too_bright">Mur x\'imkien fejn hemm iktar dell</string>
 	<string name="iproov__prompt_too_close">Qiegħed wisq qrib</string>
 	<string name="iproov__prompt_too_far">Ersaq aktar viċin</string>

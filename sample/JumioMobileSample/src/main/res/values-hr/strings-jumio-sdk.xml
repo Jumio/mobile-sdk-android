@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maksimalna veličina datoteke: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimalni broj stranica: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument ne treba biti potvrđen lozinkom</string>
+	<string name="jumio_error_button_retake_both">Ponovno snimi oboje</string>
+	<string name="jumio_error_button_retake_one">Ponovno snimi</string>
 	<string name="jumio_error_button_retry">Pokušajte ponovno</string>
 	<string name="jumio_error_connection_title">Pogreška u povezivanju</string>
 	<string name="jumio_error_dialog_title">Pogreška</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Mirno držite dokument prilikom fotografiranja</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Pobrinite se da su sve pojedinosti na vašem dokumentu čitljive</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Slika je previše mutna da bi se potvrdila</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Morate ponovno snimiti slike</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Pokušajte ponovno sa slikom u boji</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Slika je crno-bijela fotokopija</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Čini se da je slika fotokopija u boji</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Make sure to capture the whole document</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Slika nije valjan oblik identifikacije</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Kvaliteta slike nije dovoljno dobra za provjeru</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Morate ponovno snimiti sliku</string>
 	<string name="jumio_error_instant_feedback_title">Pokušajte ponovno</string>
 	<string name="jumio_error_no_camera_connection">Kamera trenutno nije dostupna</string>
 	<string name="jumio_error_wrong_token">Skeniranje trenutno nije dostupno, obratite se timu za podršku</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">Fotografirajte dokument</string>
 	<string name="jumio_id_scan_manual_back">Fotografirajte pozadinu</string>
 	<string name="jumio_id_scan_manual_tips">Make sure to capture the whole document</string>
+	<string name="jumio_id_scan_prompt_back_captured">POLEĐINA je dohvaćena</string>
 	<string name="jumio_id_scan_prompt_barcode">Centrirajte svoj barkod</string>
+	<string name="jumio_id_scan_prompt_capture_success">Razumijem!</string>
 	<string name="jumio_id_scan_prompt_center_id">Centrirajte dokument</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Okrenite na POLEĐINU</string>
+	<string name="jumio_id_scan_prompt_front_captured">PREDNJA STRANA je dohvaćena</string>
 	<string name="jumio_id_scan_prompt_hold_still">Budite mirni…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Držite se uspravno</string>
 	<string name="jumio_id_scan_prompt_initial_back">Okrenite svoj identifikacijski dokument</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">Priđite bliže</string>
 	<string name="jumio_id_scan_prompt_processing">Provjera slike…</string>
 	<string name="jumio_id_scan_prompt_too_close">Preblizu</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Povećajte crtični kod</string>
+	<string name="jumio_id_scan_take_photo_back_dl">Fotografirajte POLEĐINU vozačke dozvole.</string>
+	<string name="jumio_id_scan_take_photo_back_ic">Fotografirajte POLEĐINU osobne iskaznice.</string>
+	<string name="jumio_id_scan_take_photo_back_pd">Fotografirajte POLEĐINU osobnog dokumenta.</string>
+	<string name="jumio_id_scan_take_photo_front_dl">Fotografirajte PREDNJU STRANU vozačke dozvole.</string>
+	<string name="jumio_id_scan_take_photo_front_ic">Fotografirajte PREDNJU STRANU osobne iskaznice.</string>
+	<string name="jumio_id_scan_take_photo_front_pd">Fotografirajte PREDNJU STRANU osobnog dokumenta.</string>
+	<string name="jumio_id_scan_take_photo_pp">Fotografirajte svoju putovnicu.</string>
 	<string name="jumio_id_scan_tips_barcode">Približite kameru barkodu</string>
 	<string name="jumio_id_scan_tips_button_fallback">Fotografiraj manualno</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">Skeniranje nije uspjelo</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">Fotografirajte svoj osobni dokument</string>
 	<string name="jumio_start_step_identity">Snimite selfie</string>
 	<string name="jumio_start_step_ready">Držite svoj dokument spremnim</string>
+	<string name="jumio_start_steps_title">Hajde da vas provjerimo</string>
 	<string name="jumio_start_title_plural">Provjera\nu %1$d jednostavnih koraka</string>
 	<string name="jumio_start_title_singular">Provjera\nu 1 jednostavnom koraku</string>
 	<string name="jumio_uploading_success">Prijenos je uspio</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Držite uređaj ispred lica i gledajte u zaslon</string>
+	<string name="iproov__accessibility_prompt_scanning">Skeniranje</string>
 	<string name="iproov__error_camera">Pristup kameri onemogućen</string>
 	<string name="iproov__error_camera_permission_denied">Pristup kameri onemogućen</string>
 	<string name="iproov__error_capture_already_active">Postojeća slika je već u tijeku</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">Dogodila se neočekivana pogreška.</string>
 	<string name="iproov__error_server">Molimo, provjerite da ste na mreži</string>
 	<string name="iproov__error_unexpected_error">Dogodila se neočekivana pogreška.</string>
-	<string name="iproov__failure_ambiguous_outcome">Nejasni rezultat</string>
-	<string name="iproov__failure_lighting_backlit">Jak izvor svjetla je otkriven iza vas</string>
-	<string name="iproov__failure_lighting_face_too_bright">Previše svjetla je otkriveno na vašem licu</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Svjetlo okoline je previše jako ili je osvjetljenje zaslona previše nisko</string>
-	<string name="iproov__failure_lighting_too_dark">Vaša okolina se čini pretamnom</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Ne govorite tijekom skeniranja</string>
-	<string name="iproov__failure_motion_too_much_movement">Molimo, nemojte se pomicati tijekom skeniranja</string>
+	<string name="iproov__failure_eyes_closed">Držite oči otvorenima</string>
+	<string name="iproov__failure_face_too_close">Odmaknite lice od zaslona</string>
+	<string name="iproov__failure_face_too_far">Približite lice zaslonu</string>
+	<string name="iproov__failure_misaligned_face">Zadržite položaj lica unutar okvira</string>
+	<string name="iproov__failure_not_supported">Uređaj nije podržan</string>
+	<string name="iproov__failure_obscured_face">Uklonite sve što prekriva lice</string>
+	<string name="iproov__failure_sunglasses">Skinite sunčane naočale</string>
+	<string name="iproov__failure_too_bright">Premjestite se na tamnije mjesto</string>
+	<string name="iproov__failure_too_dark">Premjestite se na svjetlije mjesto</string>
+	<string name="iproov__failure_too_much_movement">Budite mirni</string>
+	<string name="iproov__failure_unknown">Pokušajte ponovno</string>
 	<string name="iproov__failure_user_timeout">Vaša sesija je istekla</string>
 	<string name="iproov__progress_assessing_genuine_presence">Procjena stvarne prisutnosti…</string>
 	<string name="iproov__progress_assessing_liveness">Procjena životnosti…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">Prepoznavanje lica…</string>
 	<string name="iproov__progress_loading">Učitavanje…</string>
 	<string name="iproov__progress_streaming">Streaming…</string>
-	<string name="iproov__progress_streaming_slow">Čini se da vam je mreža spora. Molimo, sačekajte dok obrađujemo.</string>
-	<string name="iproov__prompt_align_face_accessibility">Držite uređaj ispred svog lica i gledajte u zaslon</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Stavite svoje lice u okvir</string>
+	<string name="iproov__prompt_align_face">Postavite lice tako da bude unutar okvira</string>
 	<string name="iproov__prompt_get_ready">Spremite se</string>
-	<string name="iproov__prompt_liveness_align_face">Ispunite ovalni oblik svojim licem</string>
-	<string name="iproov__prompt_liveness_no_target">Stavite svoje lice u okvir</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skeniranje je završeno</string>
 	<string name="iproov__prompt_pitch_too_high">Držite uređaj u razini očiju</string>
 	<string name="iproov__prompt_pitch_too_low">Držite uređaj u razini očiju</string>
 	<string name="iproov__prompt_roll_too_high">Izbjegavajte naginjanje glave</string>
 	<string name="iproov__prompt_roll_too_low">Izbjegavajte naginjanje glave</string>
 	<string name="iproov__prompt_scanning">Skeniranje…</string>
-	<string name="iproov__prompt_tap_to_begin">Dodirnite zaslon za početak</string>
 	<string name="iproov__prompt_too_bright">Idite negdje više u sjenku</string>
 	<string name="iproov__prompt_too_close">Preblizu</string>
 	<string name="iproov__prompt_too_far">Približite se</string>

@@ -28,7 +28,6 @@ class CustomDocumentAdapter(context: Context, documentList: List<JumioDocument>)
 			}
 			documentVariantMap[documentType] = variantList
 		}
-
 	}
 
 	/**

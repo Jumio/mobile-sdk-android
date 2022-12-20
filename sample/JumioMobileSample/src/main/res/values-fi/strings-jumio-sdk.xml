@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Tiedoston enimmäiskoko: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Sivujen enimmäismäärä: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Asiakirjan ei tulisi olla salasanasuojattu</string>
+	<string name="jumio_error_button_retake_both">Ota molemmat uudelleen</string>
+	<string name="jumio_error_button_retake_one">Ota uudelleen</string>
 	<string name="jumio_error_button_retry">Yritä uudelleen</string>
 	<string name="jumio_error_connection_title">Yhteysvirhe</string>
 	<string name="jumio_error_dialog_title">Virhe</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Pidä asiakirja vakaana kuvaa otettaessa</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Varmista, että kaikki asiakirjan tiedot ovat luettavissa.</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Kuva on liian epäselvä vahvistamista varten</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Ota kuvat uudelleen</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Yritä uudelleen värikuvalla.</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Kuva on mustavalkoinen valokopio</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Kuva näyttää olevan värillinen valokopio</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Varmista, että asiakirja näkyy kokonaisuudessaan</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Kuva ei ole kelvollinen tunnistamiseen</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Kuvanlaatu ei ole riittävän hyvä vahvistamista varten</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Ota kuva uudelleen</string>
 	<string name="jumio_error_instant_feedback_title">Yritä uudelleen</string>
 	<string name="jumio_error_no_camera_connection">Kamera ei ole tällä hetkellä käytettävissä</string>
 	<string name="jumio_error_wrong_token">Skannaus ei ole tällä hetkellä käytettävissä. Ota yhteyttä tukeen</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">Ota valokuva asiakirjastasi</string>
 	<string name="jumio_id_scan_manual_back">Ota valokuva kääntöpuolesta</string>
 	<string name="jumio_id_scan_manual_tips">Varmista, että asiakirja näkyy kokonaisuudessaan</string>
+	<string name="jumio_id_scan_prompt_back_captured">KÄÄNTÖPUOLI kuvattu</string>
 	<string name="jumio_id_scan_prompt_barcode">Keskitä viivakoodi</string>
+	<string name="jumio_id_scan_prompt_capture_success">Selvä!</string>
 	<string name="jumio_id_scan_prompt_center_id">Keskitä asiakirjasi</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Käännä KÄÄNTÖPUOLELLE</string>
+	<string name="jumio_id_scan_prompt_front_captured">ETUPUOLI kuvattu</string>
 	<string name="jumio_id_scan_prompt_hold_still">Pitele paikoillaan…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Pitele suorassa</string>
 	<string name="jumio_id_scan_prompt_initial_back">Käännä henkilöllisyystodistus</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">Siirrä lähemmäksi</string>
 	<string name="jumio_id_scan_prompt_processing">Kuvaa tarkistetaan…</string>
 	<string name="jumio_id_scan_prompt_too_close">Liian lähellä</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Lähennä viivakoodiin</string>
+	<string name="jumio_id_scan_take_photo_back_dl">Ota kuva ajokortin KÄÄNTÖPUOLESTA.</string>
+	<string name="jumio_id_scan_take_photo_back_ic">Ota kuva henkilökortin KÄÄNTÖPUOLESTA.</string>
+	<string name="jumio_id_scan_take_photo_back_pd">Ota kuva henkilökohtaisen asiakirjan KÄÄNTÖPUOLESTA.</string>
+	<string name="jumio_id_scan_take_photo_front_dl">Ota kuva ajokortin ETUPUOLESTA.</string>
+	<string name="jumio_id_scan_take_photo_front_ic">Ota kuva henkilökortin ETUPUOLESTA.</string>
+	<string name="jumio_id_scan_take_photo_front_pd">Ota kuva henkilökohtaisen asiakirjan ETUPUOLESTA.</string>
+	<string name="jumio_id_scan_take_photo_pp">Ota valokuva passistasi.</string>
 	<string name="jumio_id_scan_tips_barcode">Siirrä kameraa lähemmäksi viivakoodia</string>
 	<string name="jumio_id_scan_tips_button_fallback">Ota valokuva manuaalisesti</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">Skannaus ei toimi</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">Ota valokuva asiakirjastasi</string>
 	<string name="jumio_start_step_identity">Ota selfie</string>
 	<string name="jumio_start_step_ready">Ota asiakirjasi valmiiksi esiin</string>
+	<string name="jumio_start_steps_title">Vahvistetaan sinut</string>
 	<string name="jumio_start_title_plural">Vahvistus\n%1$d yksinkertaisessa vaiheessa</string>
 	<string name="jumio_start_title_singular">Vahvistus\n1 helpossa vaiheessa</string>
 	<string name="jumio_uploading_success">Lataaminen onnistui</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Pitele laitetta kasvojesi edessä ja katso näyttöä kohti</string>
+	<string name="iproov__accessibility_prompt_scanning">Skannataan</string>
 	<string name="iproov__error_camera">Kamera on poistettu käytöstä</string>
 	<string name="iproov__error_camera_permission_denied">Kamera on poistettu käytöstä</string>
 	<string name="iproov__error_capture_already_active">Tallennus on jo käynnissä</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">Tapahtui jokin odottamaton virhe</string>
 	<string name="iproov__error_server">Varmista, että olet yhteydessä internetiin</string>
 	<string name="iproov__error_unexpected_error">Tapahtui jokin odottamaton virhe</string>
-	<string name="iproov__failure_ambiguous_outcome">Epäselvä tulos</string>
-	<string name="iproov__failure_lighting_backlit">Takanasi on havaittu voimakas valonlähde</string>
-	<string name="iproov__failure_lighting_face_too_bright">Kasvoillasi on havaittu liikaa valoa</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Ympäristön valaistus on liian voimakas, tai näytön kirkkaus on liian alhainen</string>
-	<string name="iproov__failure_lighting_too_dark">Ympäristösi näyttää liian tummalta</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Älä puhu skannauksen aikana</string>
-	<string name="iproov__failure_motion_too_much_movement">Älä liiku skannauksen aikana</string>
+	<string name="iproov__failure_eyes_closed">Pidä silmät auki</string>
+	<string name="iproov__failure_face_too_close">Vie kasvosi kauemmas näytöstä</string>
+	<string name="iproov__failure_face_too_far">Tuo kasvosi lähemmäs näyttöä</string>
+	<string name="iproov__failure_misaligned_face">Pidä kasvosi soikion sisällä</string>
+	<string name="iproov__failure_not_supported">Laitetta ei tueta</string>
+	<string name="iproov__failure_obscured_face">Riisu kaikki, mikä peittää kasvot</string>
+	<string name="iproov__failure_sunglasses">Ota aurinkolasit pois</string>
+	<string name="iproov__failure_too_bright">Siirry vähemmän valoisaan paikkaan</string>
+	<string name="iproov__failure_too_dark">Siirry valoisampaan paikkaan</string>
+	<string name="iproov__failure_too_much_movement">Ole liikkumatta</string>
+	<string name="iproov__failure_unknown">Yritä uudelleen</string>
 	<string name="iproov__failure_user_timeout">Istuntosi on vanhentunut</string>
 	<string name="iproov__progress_assessing_genuine_presence">Arvioidaan oikeaa läsnäoloa…</string>
 	<string name="iproov__progress_assessing_liveness">Arvioidaan elävyyttä…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">Tunnistetaan kasvoja…</string>
 	<string name="iproov__progress_loading">Ladataan…</string>
 	<string name="iproov__progress_streaming">Suoratoistetaan…</string>
-	<string name="iproov__progress_streaming_slow">Verkkoyhteytesi näyttäisi olevan hidas. Odota, kunnes tietosi on käsitelty.</string>
-	<string name="iproov__prompt_align_face_accessibility">Pitele laitetta kasvojesi edessä ja katso näyttöä kohti</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Sovita kasvosi kehykseen</string>
+	<string name="iproov__prompt_align_face">Sijoita kasvosi soikion sisälle</string>
 	<string name="iproov__prompt_get_ready">Valmistaudu…</string>
-	<string name="iproov__prompt_liveness_align_face">Kohdista kasvosi siten, että ne täyttävät soikean kehyksen</string>
-	<string name="iproov__prompt_liveness_no_target">Sovita kasvosi kehykseen</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skannaus valmis</string>
 	<string name="iproov__prompt_pitch_too_high">Pidä laitetta silmien tasolla</string>
 	<string name="iproov__prompt_pitch_too_low">Pidä laitetta silmien tasolla</string>
 	<string name="iproov__prompt_roll_too_high">Älä kallista päätäsi</string>
 	<string name="iproov__prompt_roll_too_low">Älä kallista päätäsi</string>
 	<string name="iproov__prompt_scanning">Skannataan…</string>
-	<string name="iproov__prompt_tap_to_begin">Aloita napauttamalla näyttöä</string>
 	<string name="iproov__prompt_too_bright">Siirry varjoisampaan paikkaan</string>
 	<string name="iproov__prompt_too_close">Liian lähellä</string>
 	<string name="iproov__prompt_too_far">Siirry lähemmäs</string>

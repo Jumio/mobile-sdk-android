@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maximale bestandsgrootte: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maximaal aantal pagina\'s: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Het identiteitsbewijs moet niet met een wachtwoord worden beveiligd</string>
+	<string name="jumio_error_button_retake_both">Allebei opnieuw nemen</string>
+	<string name="jumio_error_button_retake_one">Opnieuw nemen</string>
 	<string name="jumio_error_button_retry">Probeer het opnieuw</string>
 	<string name="jumio_error_connection_title">Verbindingsfout</string>
 	<string name="jumio_error_dialog_title">Fout</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Houd uw document stabiel bij het maken van een foto</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Zorg ervoor dat alle details op uw document leesbaar zijn.</string>
 	<string name="jumio_error_instant_feedback_blurry_title">De afbeelding is te wazig om te worden geverifieerd</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Foto\'s moeten opnieuw worden genomen</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Probeer het opnieuw met een foto in kleur.</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">De afbeelding is een zwart-wit foto</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">De afbeelding lijkt een kleurenkopie te zijn</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Zorg ervoor dat u het hele document vastlegt</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">De afbeelding is een ongeldig identiteitsbewijs.</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">De beeldkwaliteit is niet goed genoeg om te worden geverifieerd</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Foto moet opnieuw worden genomen</string>
 	<string name="jumio_error_instant_feedback_title">Probeer het nog eens</string>
 	<string name="jumio_error_no_camera_connection">De camera is momenteel niet beschikbaar</string>
 	<string name="jumio_error_wrong_token">Scannen is momenteel niet beschikbaar, neem contact op met het ondersteuningsteam</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">Maak een foto van uw document</string>
 	<string name="jumio_id_scan_manual_back">Maak een foto van de achterkant</string>
 	<string name="jumio_id_scan_manual_tips">Zorg ervoor dat u het hele document vastlegt</string>
+	<string name="jumio_id_scan_prompt_back_captured">ACHTERKANT genomen</string>
 	<string name="jumio_id_scan_prompt_barcode">Centreer uw streepjescode</string>
+	<string name="jumio_id_scan_prompt_capture_success">Hebbes!</string>
 	<string name="jumio_id_scan_prompt_center_id">Centreer uw document</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Draai naar de ACHTERKANT</string>
+	<string name="jumio_id_scan_prompt_front_captured">VOORKANT genomen</string>
 	<string name="jumio_id_scan_prompt_hold_still">Niet bewegen…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Recht houden</string>
 	<string name="jumio_id_scan_prompt_initial_back">Draai uw identiteitsbewijs om</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">Kom dichterbij</string>
 	<string name="jumio_id_scan_prompt_processing">De afbeelding controleren…</string>
 	<string name="jumio_id_scan_prompt_too_close">Te dichtbij</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Zoom in op je streepjescode</string>
+	<string name="jumio_id_scan_take_photo_back_dl">Neem een foto van de ACHTERKANT van je rijbewijs.</string>
+	<string name="jumio_id_scan_take_photo_back_ic">Neem een foto van de ACHTERKANT van de identiteitskaart.</string>
+	<string name="jumio_id_scan_take_photo_back_pd">Neem een foto van de ACHTERKANT van je persoonlijke document.</string>
+	<string name="jumio_id_scan_take_photo_front_dl">Neem een foto van de VOORKANT van je rijbewijs.</string>
+	<string name="jumio_id_scan_take_photo_front_ic">Neem een foto van de VOORKANT van de identiteitskaart.</string>
+	<string name="jumio_id_scan_take_photo_front_pd">Neem een foto van de VOORKANT van je persoonlijke document.</string>
+	<string name="jumio_id_scan_take_photo_pp">Neem een foto van je paspoort.</string>
 	<string name="jumio_id_scan_tips_barcode">Breng de camera dichter bij de streepjescode</string>
 	<string name="jumio_id_scan_tips_button_fallback">Foto handmatig maken</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">Scan werkt niet</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">Maak een foto van uw document</string>
 	<string name="jumio_start_step_identity">Neem een selfie</string>
 	<string name="jumio_start_step_ready">Houd uw identiteitsbewijs bij de hand</string>
+	<string name="jumio_start_steps_title">Laten we je verifiëren</string>
 	<string name="jumio_start_title_plural">Verificatie\nin %1$d eenvoudige stappen</string>
 	<string name="jumio_start_title_singular">Verificatie\nin 1 eenvoudige stap</string>
 	<string name="jumio_uploading_success">Uploaden succesvol</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Houd het apparaat vóór uw gezicht en kijk naar het scherm</string>
+	<string name="iproov__accessibility_prompt_scanning">Scannen</string>
 	<string name="iproov__error_camera">Cameratoegang ontgrendeld</string>
 	<string name="iproov__error_camera_permission_denied">Cameratoegang ontgrendeld</string>
 	<string name="iproov__error_capture_already_active">Een bestaande opname is al in behandeling</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">Er is een onverwachte fout opgetreden</string>
 	<string name="iproov__error_server">Controleer of u online bent</string>
 	<string name="iproov__error_unexpected_error">Er is een onverwachte fout opgetreden</string>
-	<string name="iproov__failure_ambiguous_outcome">Onduidelijk resultaat</string>
-	<string name="iproov__failure_lighting_backlit">Sterke lichtbron vastgesteld achter u</string>
-	<string name="iproov__failure_lighting_face_too_bright">Teveel licht op uw gezicht vastgesteld</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Het omgevingslicht is te sterk of de helderheid van het scherm is te laag</string>
-	<string name="iproov__failure_lighting_too_dark">Uw omgeving lijkt te donker</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Niet praten tijdens het scannen</string>
-	<string name="iproov__failure_motion_too_much_movement">Niet bewegen tijdens het scannen</string>
+	<string name="iproov__failure_eyes_closed">Houd uw ogen open</string>
+	<string name="iproov__failure_face_too_close">Houd uw gezicht verder van het scherm af</string>
+	<string name="iproov__failure_face_too_far">Houd uw gezicht dichter bij het scherm</string>
+	<string name="iproov__failure_misaligned_face">Zorg dat uw gezicht binnen het kader blijft</string>
+	<string name="iproov__failure_not_supported">Toestel wordt niet ondersteund</string>
+	<string name="iproov__failure_obscured_face">Verwijder eventuele gezichtsbedekkende voorwerpen</string>
+	<string name="iproov__failure_sunglasses">Zet uw zonnebril af</string>
+	<string name="iproov__failure_too_bright">Ga naar een donkerdere plek</string>
+	<string name="iproov__failure_too_dark">Ga naar een lichtere plek</string>
+	<string name="iproov__failure_too_much_movement">Niet bewegen</string>
+	<string name="iproov__failure_unknown">Probeer het opnieuw</string>
 	<string name="iproov__failure_user_timeout">Uw sessie is verlopen</string>
 	<string name="iproov__progress_assessing_genuine_presence">Echte aanwezigheid beoordelen…</string>
 	<string name="iproov__progress_assessing_liveness">Beoordelen of het live is…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">Gezicht herkennen…</string>
 	<string name="iproov__progress_loading">Laden…</string>
 	<string name="iproov__progress_streaming">Streamen…</string>
-	<string name="iproov__progress_streaming_slow">Uw netwerk kan traag lijken. Graag even geduld, terwijl we aan het verwerken zijn.</string>
-	<string name="iproov__prompt_align_face_accessibility">Houd het apparaat vóór uw gezicht en kijk naar het scherm</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Plaats je gezicht in het frame</string>
+	<string name="iproov__prompt_align_face">Plaats uw gezicht in het kader</string>
 	<string name="iproov__prompt_get_ready">Maak uzelf klaar…</string>
-	<string name="iproov__prompt_liveness_align_face">Plaats je gezicht in de ovaal</string>
-	<string name="iproov__prompt_liveness_no_target">Plaats je gezicht in het frame</string>
 	<string name="iproov__prompt_liveness_scan_completed">Scannen voltooid</string>
 	<string name="iproov__prompt_pitch_too_high">Houd apparaat op ooghoogte</string>
 	<string name="iproov__prompt_pitch_too_low">Houd apparaat op ooghoogte</string>
 	<string name="iproov__prompt_roll_too_high">Vermijd het hoofd schuin te houden</string>
 	<string name="iproov__prompt_roll_too_low">Vermijd het hoofd schuin te houden</string>
 	<string name="iproov__prompt_scanning">Aan het scannen…</string>
-	<string name="iproov__prompt_tap_to_begin">Tik op het scherm om te beginnen</string>
 	<string name="iproov__prompt_too_bright">Ga ergens met meer schaduw</string>
 	<string name="iproov__prompt_too_close">Te dichtbij</string>
 	<string name="iproov__prompt_too_far">Kom dichterbij</string>

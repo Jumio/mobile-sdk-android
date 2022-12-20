@@ -20,6 +20,7 @@
 - [Java 8 Compatibility](#Java-8-compatibility)
 - [Overview of Scanning Methods](overview-of-scanning-methods)
 - [Glossary of Commonly Used Abbreviations](#glossary)
+- [Google Play Store Prominent Disclosure](#google-play-store-prominent-disclosure)
 - [Jumio Support](#jumio-support)
 
 ## Improve User Experience and Reduce Drop-off Rate
@@ -70,18 +71,18 @@ The following table shows a range of different product configurations with the s
 
 | Product Configuration  | Size     | Modules      |
 |:-----------------------|:--------:|:------------:|
-| Base                   | 1.79 MB  | core         |
-| Base + Liveness        | 2.26 MB  | core, iproov |
-| Base + MRZ             | 3.16 MB  | core, mrz    |
-| Base + MRZ, Linefinder | 3.43 MB  | core, mrz, linefinder |
-| Base + MRZ, Linefinder, Barcode | 4.48 MB  | core, mrz, linefinder, barcode |
-| Base + MRZ, Linefinder, Barcode-Vision | 3.72 MB  | core, mrz, linefinder, barcode-vision |
-| Base + MRZ, Linefinder, Barcode, Liveness | 4.95 MB  | core, mrz, linefinder, barcode, iproov |
-| Base + MRZ, Linefinder, Barcode, NFC | 6.11 MB  | core, mrz, linefinder, barcode, nfc |
-| All (Custom UI only)   | 8.16 MB  | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk  |
-| Base + MRZ, Linefinder, Default UI | 3.84 MB  | core, mrz, linefinder, default-ui |
-| Base + MRZ, Linefinder, Default UI, DataDog | 4.35 MB  | core, mrz, linefinder, default-ui, datadog |
-| All (with Default UI)  | 8.97 MB  | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, default-ui, datadog  |
+| Base                   | 1.74 MB  | core         |
+| Base + Liveness        | 2.80 MB  | core, iproov |
+| Base + MRZ             | 3.11 MB  | core, mrz    |
+| Base + MRZ, Linefinder | 3.38 MB  | core, mrz, linefinder |
+| Base + MRZ, Linefinder, Barcode | 4.44 MB  | core, mrz, linefinder, barcode |
+| Base + MRZ, Linefinder, Barcode-Vision | 3.70 MB  | core, mrz, linefinder, barcode-vision |
+| Base + MRZ, Linefinder, Barcode, Liveness | 5.48 MB  | core, mrz, linefinder, barcode, iproov |
+| Base + MRZ, Linefinder, Barcode, NFC | 6.07 MB  | core, mrz, linefinder, barcode, nfc |
+| All (Custom UI only)   | 8.90 MB  | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk  |
+| Base + MRZ, Linefinder, Default UI | 3.78 MB  | core, mrz, linefinder, default-ui |
+| Base + MRZ, Linefinder, Default UI, DataDog | 4.24 MB  | core, mrz, linefinder, default-ui, datadog |
+| All (with Default UI)  | 9.54 MB  | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, default-ui, datadog  |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -231,6 +232,9 @@ Data extraction from eMRTD documents, for example passports.
 
 ## Glossary
 A [quick guide to commonly used abbreviations](integration_glossary.md) throughout the documentation which may not be all that familiar.
+
+## Google Play Store Prominent Disclosure
+Some parts of the SDK might require prominent disclosure - please see the [Privacy Notice](integration_guide.md#privacy-notice) section in the Integration Guide for further details
 
 ## Jumio Support
 The Jumio development team is constantly striving to optimize the size of our frameworks while increasing functionality, to improve your KYC and to fight fraud. If you have any further questions, please reach out to our [support team](mailto:support@jumio.com).

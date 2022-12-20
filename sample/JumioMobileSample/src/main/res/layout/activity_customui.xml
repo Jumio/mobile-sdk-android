@@ -440,25 +440,26 @@
 			android:paddingEnd="@dimen/activity_horizontal_margin"
 			android:visibility="gone">
 
-			<com.jumio.sdk.views.JumioConfirmationView
-				android:id="@+id/confirmationView"
+			<LinearLayout
+				android:id="@+id/confirmationViewList"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content" />
+				android:layout_height="wrap_content"
+				android:orientation="vertical" />
 
 			<com.google.android.material.button.MaterialButton
 				android:id="@+id/retryScan"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_below="@+id/confirmationView"
-				android:layout_alignStart="@+id/confirmationView"
+				android:layout_below="@+id/confirmationViewList"
+				android:layout_alignStart="@+id/confirmationViewList"
 				android:text="Retry" />
 
 			<com.google.android.material.button.MaterialButton
 				android:id="@+id/confirmScan"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_below="@+id/confirmationView"
-				android:layout_alignEnd="@+id/confirmationView"
+				android:layout_below="@+id/confirmationViewList"
+				android:layout_alignEnd="@+id/confirmationViewList"
 				android:text="Confirm" />
 		</RelativeLayout>
 
@@ -471,17 +472,18 @@
 			android:paddingEnd="@dimen/activity_horizontal_margin"
 			android:visibility="gone">
 
-			<com.jumio.sdk.views.JumioRejectView
-				android:id="@+id/rejectView"
+			<LinearLayout
+				android:id="@+id/rejectViewList"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content" />
+				android:layout_height="wrap_content"
+				android:orientation="vertical" />
 
 			<com.google.android.material.button.MaterialButton
 				android:id="@+id/rejectScan"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_below="@+id/rejectView"
-				android:layout_alignStart="@+id/rejectView"
+				android:layout_below="@+id/rejectViewList"
+				android:layout_alignStart="@+id/rejectViewList"
 				android:text="Reject" />
 		</RelativeLayout>
 

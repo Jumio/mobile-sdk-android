@@ -95,7 +95,7 @@ Please be aware that SDK 4.3.0 does not support Android 4.4 (API level 19) anymo
 The minimum requirements for the SDK are:
 * Android 5.0 "Lollipop" (API level 21) or higher
 * Internet connection
-* Jumio KYX or Jumio API v3
+* Jumio KYX
 
 The following architectures are supported in the SDK:
 *	ARMv7 processor with Neon
@@ -106,7 +106,7 @@ The following architectures are supported in the SDK:
 You will need a __commercial Jumio License__ to run any of our examples. For details, contact sales@jumio.com.
 
 ## Authentication and Encryption
-ℹ️&nbsp;&nbsp;__As of version 4.0.0 and onward, the SDK can only be used in combination with Jumio KYX or Jumio API v3. API v2 as well as using API token and secret to authenticate against the SDK will no longer be compatible.__
+ℹ️&nbsp;&nbsp;__As of version 4.0.0 and onward, the SDK can only be used in combination with Jumio KYX. API v2 as well as using API token and secret to authenticate against the SDK will no longer be compatible.__
 
 Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://jumio.github.io/kyx/integration-guide.html) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Customer Portal.
 
@@ -209,14 +209,32 @@ The following Proguard Keep rules have to be added to the Jumio Mobile SDK:
 ### Optional
 The following Proguard Keep rules have to be added to the Jumio Mobile SDK if the corresponding dependencies have been added:
 ```
+#Microblink
 -keep class com.microblink.** { *; }
 -keep class com.microblink.**$* { *; }
--keep public class com.iproov.sdk.IProov {public *; }
+-dontwarn com.microblink.**
 
+#IProov
+-keep public class com.iproov.sdk.IProov {public *; }
+-keep class com.iproov.** { *; }
+-keep class com.iproov.**$* { *; }
+-keep class com.google.protobuf.** { *; }
+-keep class com.google.protobuf.**$* { *; }
+-dontwarn com.google.protobuf.**
+-dontwarn com.tinder.**
+-dontwarn okhttp3.**
+-dontwarn okio.**
+
+#JMRTD
 -keep class org.jmrtd.** { *; }
--keep class net.sf.scuba.** { *; }
--keep class org.bouncycastle.** { *; }
--keep class org.ejbca.** { *; }
+-keep class net.sf.scuba.** {*;}
+-keep class org.bouncycastle.** {*;}
+-keep class org.ejbca.** {*;}
+-dontwarn java.nio.**
+-dontwarn org.codehaus.**
+-dontwarn org.ejbca.**
+-dontwarn org.bouncycastle.**
+-dontwarn module-info
 ```
 
 Most of the Proguard settings are applied automatically, as they are defined as consumer Proguard rules within the SDK. The current rules can also be found in the [Sample app](sample/JumioMobileSample/proguard-rules.pro).

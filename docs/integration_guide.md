@@ -13,11 +13,10 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 - [SDK Workflow](#sdk-workflow)
 - [Custom UI](#custom-ui)
   - [Instant Feedback](#instant-feedback)
-- [Callback](#callback)
 - [Code Documentation](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release Notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: __4.3.0__
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: __4.4.0__
 
 For breaking technical changes, please read our [Transition Guide](transition_guide.md)
 
@@ -36,28 +35,29 @@ Below there is a list of dependencies the application will need to work in Andro
 
 ```
 dependencies {
-    implementation "com.jumio.android:core:4.3.0"               // Jumio Core library
-    implementation "com.jumio.android:defaultui:4.3.0"          // Jumio Default UI
-    implementation "com.jumio.android:mrz:4.3.0"                // MRZ Scanning
-    implementation "com.jumio.android:nfc:4.3.0"                // NFC Scanning
-    implementation "com.jumio.android:linefinder:4.3.0"         // Linefinder Scanning
-    implementation "com.jumio.android:docfinder:4.3.0"          // Autocapture
-    implementation "com.jumio.android:barcode:4.3.0"            // Barcode scanning
-    implementation "com.jumio.android:barcode-mlkit:4.3.0"      // Barcode scanning alternative
-    implementation "com.jumio.android:iproov:4.3.0"             // Face Liveness library
-    implementation "com.jumio.android:datadog:4.3.0"            // Analytics library
-    implementation "com.jumio.android:devicerisk:4.3.0"         // Device fingerprinting library
+    implementation "com.jumio.android:core:4.4.0"               // Jumio Core library
+    implementation "com.jumio.android:defaultui:4.4.0"          // Jumio Default UI
+    implementation "com.jumio.android:mrz:4.4.0"                // MRZ Scanning
+    implementation "com.jumio.android:nfc:4.4.0"                // NFC Scanning
+    implementation "com.jumio.android:linefinder:4.4.0"         // Linefinder Scanning
+    implementation "com.jumio.android:docfinder:4.4.0"          // Autocapture
+    implementation "com.jumio.android:barcode:4.4.0"            // Barcode scanning
+    implementation "com.jumio.android:barcode-mlkit:4.4.0"      // Barcode scanning alternative
+    implementation "com.jumio.android:iproov:4.4.0"             // Face Liveness library
+    implementation "com.jumio.android:datadog:4.4.0"            // Analytics library
+    implementation "com.jumio.android:devicerisk:4.4.0"         // Device fingerprinting library
 ```
 
 #### Autocapture
 The module `com.jumio.android:docfinder` offers one generic scanning method across all ID documents, providing a more seamless capture experience for the end user. The SDK will automatically detect which type of ID document is presented by the user and guide them through the capturing process with live feedback.
+The models can be bundled with the app directly to save time on the download during the SDK runtime. Therefore download the following files from [here](https://cdn.mobile.jumio.ai/model/classifier_on_device_ep_99_float16_quant.enc) and [here](https://cdn.mobile.jumio.ai/model/normalized_ensemble_passports_v2_float16_quant.enc) and add it to the app assets folder.
 
 #### Certified Face Liveness
 Jumio uses Certified Liveness technology to determine liveness. The iProov SDK is referenced as a transitive dependency within the `com.jumio.android:iproov` module.
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 ```
-implementation "com.jumio.android:iproov:4.3.0"       
-implementation ("com.iproov.sdk:iproov:7.5.0"){
+implementation "com.jumio.android:iproov:4.4.0"       
+implementation ("com.iproov.sdk:iproov:8.0.3"){
     exclude group: 'org.json', module:'json'
 }
 ```
@@ -70,6 +70,22 @@ As an alternative to the `com.jumio.android:barcode` dependency, you can substit
 			android:value="barcode"
 			tools:replace="android:value"/>
 ```
+
+#### Privacy Notice
+If the module `com.jumio.android:devicerisk` is linked we collect data depending on the permissions given for fraud detection on
+* Location
+* Battery Usage
+* Device Identifier
+* Device Storage
+* MAC Address
+* SIM information (MNC, MCC, IMEI, Phone Number, Phone Type (GSM/CDMA), SIM Number, ...etc)
+* Google Services ID
+
+If you submit your app to the Google Play Store a [Prominent Disclosure](https://support.google.com/googleplay/android-developer/answer/11150561) explaining the collected [User Data](https://support.google.com/googleplay/android-developer/answer/10144311) is required. The collected user data also needs to be declared in your [Data Safety Form](https://play.google.com/console/developers/app/app-content/data-privacy-security) and the [Privacy Policy](https://play.google.com/console/developers/app/app-content/privacy-policy) related to your application.
+
+Other stores might require something similar - please check before submitting your app to the store.
+
+Please see the [Jumio Privacy Policy for Online Services](https://www.jumio.com/legal-information/privacy-notices/jumio-corp-privacy-policy-for-online-services/) for further information.
 
 #### SDK Version Check
 Use `JumioSDK.sdkVersion` to check which SDK version is being used.
@@ -123,9 +139,9 @@ Make sure that your SDK token is correct. If it isn't, an exception will be thro
 Every Jumio SDK instance is initialized using a specific [`sdk.token`][token]. This token contains information about the workflow, credentials, transaction identifiers and other parameters. Configuration of this token allows you to provide your own internal tracking information for the user and their transaction, specify what user information is captured and by which method, as well as preset options to enhance the user journey. Values configured within the [`sdk.token`][token] during your API request will override any corresponding settings configured in the Customer Portal.
 
 ### Worfklow Selection
-Use ID verification callback to receive a verification status and verified data positions (see [API v3 Callback section](https://jumio.github.io/kyx/integration-guide.html#callback)). Make sure that your customer account is enabled to use this feature. A callback URL can be specified for individual transactions (for URL constraints see chapter [Callback URL](https://jumio.github.io/kyx/integration-guide.html#jumio-callback-ip-addresses)). This setting overrides any callback URL you have set in the Jumio Customer Portal. Your callback URL must not contain sensitive data like PII (Personally Identifiable Information) or account login. Set your callback URL using the `callbackUrl` parameter.
+Use ID verification callback to receive a verification status and verified data positions (see [Callback section](https://jumio.github.io/kyx/integration-guide.html#callback)). Make sure that your customer account is enabled to use this feature. A callback URL can be specified for individual transactions (for URL constraints see chapter [Callback URL](https://jumio.github.io/kyx/integration-guide.html#jumio-callback-ip-addresses)). This setting overrides any callback URL you have set in the Jumio Customer Portal. Your callback URL must not contain sensitive data like PII (Personally Identifiable Information) or account login. Set your callback URL using the `callbackUrl` parameter.
 
-Use the correct [workflow definition key](https://jumio.github.io/kyx/integration-guide.html#workflow-definition-keys) in order to request a specific workflow. Set your key using the `workflowDefinition.key` parameter. For example: Use workflow [2 "ID Verification"](https://github.com/Jumio/implementation-guides/blob/master/api-guide/workflow_descriptions.md#workflow-2-id-verification) to verify an ID document and extract data from that document. Use [workflow 3 "ID and Identity Verification"](https://github.com/Jumio/implementation-guides/blob/master/api-guide/workflow_descriptions.md#workflow-3-id-and-identity-verification) to verify a photo ID document and extract data from that document, as well as compare the user's face with the photo on the ID and perform a liveness check to ensure the person is physically present.
+Use the correct [workflow definition key](https://jumio.github.io/kyx/integration-guide.html#workflow-definition-keys) in order to request a specific workflow. Set your key using the `workflowDefinition.key` parameter.
 
 ```
 '{
@@ -217,6 +233,7 @@ Apply the custom theme that you defined before by replacing `Theme.Jumio` in the
 ## SDK Workflow
 
 ### Retrieving Information
+The SDK returns a [`JumioResult`][jumioResult] object which contains the result of the finished workflow. Extracted ID data will not be returned by default - please contact [Jumio Customer Service at support@jumio.com](mailto:support@jumio.com) in case this is needed.
 The following tables give information on the specification of all data parameters and errors:
 * [`JumioIDResult`][jumioIDResult]
 * [`JumioFaceResult`][jumioFaceResult]
@@ -434,23 +451,26 @@ fileAttacher.setFile(file)
     android:required="false" />
 ```
 
-2. If you use proguard for obfuscation, you have to add some rules to your [`proguard-rules.pro`](sample/JumioMobileSample/proguard-rules.pro) configuration file:
+2. If you use proguard for obfuscation, you have to add some rules to your [`proguard-rules.pro`][proguardRules] configuration file:
 ```
    -keep com.google.android.gms.*
    -keep com.google.android.gms.tasks.*
    -keep com.google.android.gms.ads.identifier.AdvertisingIdClient
 ```
 
-
 ### ScanPart Handling
 The following sequence diagram outlines an overview of ScanPart handling details:
 ![ScanPart Happy Path Diagram](images/happy_paths/scanpart_happy_path_diagram.png)
 
-Start the scanning process by initializing the [`JumioScanPart`][jumioScanPart]. Provide a [`jumioCredentialPart`][jumioCredentialPart] from the list below:
+Start the scanning process by initializing the [`JumioScanPart`][jumioScanPart]. A list of mandatory [`JumioCredentialPart`][jumioCredentialPart]s is retrievable over [`currentCredential?.credentialParts`](credentialPartsList) as soon as the credential is configured. Possible values are:
 
 `currentScanPart = currentCredential?.initScanPart(credentialPart, yourJumioScanPartInterface)`
 
-* [`JumioCredentialPart`][jumioCredentialPart] values: `FRONT`, `BACK`, `FACE`, `DOCUMENT`, `NFC`, `DEVICE_RISK`
+* [`JumioCredentialPart`][jumioCredentialPart] values: `FRONT`, `BACK`, `MULTIPART`, `FACE`, `DOCUMENT`, `NFC`, `DEVICE_RISK`
+
+`MULTIPART` handles the scanning of multiple sides in one seamless capture experience. Please also check the new [`NEXT_PART`][nextPart] scan step for this [`JumioCredentialPart`][jumioCredentialPart]
+
+Start the execution of the acquired [`JumioScanPart`][jumioScanPart] by calling [`currentScanPart?.start()`][startScanPart]. After that 
 
 When the scanning is done, the parameter [`JumioScanStep.CAN_FINISH`][canFinish] will be received and the scan part can be finished by calling [`currentScanPart?.finish()`][finishScanPart].
 
@@ -468,11 +488,11 @@ override fun onFinished(result: JumioResult) {
 ```
 
 #### Scan steps
-During the scanning process, use the `scanPart` method [`onScanStep()`][onScanStep] to check on the scanning progress. The scan step [`CAN_FINISH`][canFinish] indicates that the scanning process for this part is done.
+During the scanning process [`onScanStep()`][onScanStep] will be called as soon as the [`JumioScanPart`][jumioScanPart] needs additional input to continue the scanning journey. The provided [`JumioScanStep`][jumioScanStep] indicates what needs to be done next. 
 
 [`JumioScanStep`][jumioScanStep] covers lifecycle events which require action from the customer to continue the process.
 
-[`JumioScanStep`][jumioScanStep] values: `PREPARE`, `STARTED`, `ATTACH_ACTIVITY`, `ATTACH_FILE`, `SCAN_VIEW`, `IMAGE_TAKEN`, `PROCESSING`, `CONFIRMATION_VIEW`, `REJECT_VIEW`, `RETRY`, `CAN_FINISH`, `ADDON_SCAN_PART`
+[`JumioScanStep`][jumioScanStep] values: `PREPARE`, `STARTED`, `ATTACH_ACTIVITY`, `ATTACH_FILE`, `SCAN_VIEW`, `NEXT_PART`, `IMAGE_TAKEN`, `PROCESSING`, `CONFIRMATION_VIEW`, `REJECT_VIEW`, `RETRY`, `CAN_FINISH`, `ADDON_SCAN_PART`
 
 [`PREPARE`][prepare] is only sent if a scan part requires upfront preparation and the customer should be notified (e.g. by displaying a loading screen):
 ```
@@ -488,20 +508,59 @@ JumioScanStep.STARTED -> {
 }
 ```
 
-[`IMAGE_TAKEN`][imageTaken] is triggered as soon as the image is taken and has been uploaded to the Jumio server. The camera preview is stopped during that step
+[`ATTACH_ACTIVITY`][attachActivity] indicates that an Activity Context is needed. Please see [`JumioActivityAttacher`][jumioActivityAttacher] for more information.
+```
+JumioScanStep.ATTACH_ACTIVITY -> {
+	currentScanPart?.let {
+		JumioActivityAttacher(this).attach(it)
+	}
+}
+```
+
+[`ATTACH_FILE`][attachFile] is called when a File through the [`JumioFileAttacher`][jumioFileAttacher] can be added to the [`JumioScanPart`][jumioScanPart].
+```
+JumioScanStep.ATTACH_FILE -> {
+	currentScanPart?.let {
+		val jumioFileAttacher = JumioFileAttacher()
+		jumioFileAttacher.attach(it)
+		//Choose how the file should be attached
+		//jumioFileAttacher.setFileDescriptor(<your file descriptor>)
+		//jumioFileAttacher.setFile(<your file>)
+	}
+}
+```
+[`SCAN_VIEW`][scanView] points out that a [`JumioScanView`][jumioScanView] needs to be attached to the [`JumioScanPart`][jumioScanPart]. The [`JumioScanView`][jumioScanView] is a custom view that can be placed in your layout. During runtime it just needs to be attached to the [`JumioScanPart`][jumioScanPart]. 
+```
+JumioScanStep.SCAN_VIEW -> {
+	currentScanPart?.let {
+		jumioScanView.attach(it)
+	}
+}
+```
+[`IMAGE_TAKEN`][imageTaken] is triggered as soon as the image is taken and has been uploaded to the Jumio server. The camera preview is stopped during that step if no additional part needs to be scanned. Otherwise [`NEXT_PART`][nextPart] will be triggered with additional information on which part has to be scanned next.
 
 When background processing is executed, [`JumioScanStep.PROCESSING`][processing] is triggered.
 
-When a confirmation view should be displayed, depending on the outcome either [`JumioScanStep.CONFIRMATION_VIEW`][confirmationView] or [`JumioScanStep.REJECT_VIEW`][rejectView] is triggered. To display the ScanPart in [`JumioConfirmationView`][jumioConfirmationView] or [`JumioRejectView`][jumioRejectView] view, simply attach the views once the steps are triggered:
+If images for confirmation or rejection need to be displayed then [`JumioScanStep.CONFIRMATION_VIEW`][confirmationView] or [`JumioScanStep.REJECT_VIEW`][rejectView] is triggered. Simply attach the [`JumioConfirmationHandler`][jumioConfirmationHandler] or [`JumioRejectHandler`][jumioRejectHandler] once the steps are triggered and render the available [`JumioCredentialParts`][jumioCredentialPart] in [`JumioConfirmationView`][jumioConfirmationView] or [`JumioRejectView`][jumioRejectView] objects:
 
 ```
 JumioScanStep.CONFIRMATION_VIEW -> {
-	confirmationView.setVisibility(View.VISIBLE)
-	confirmationView.attach(scanPart)
+    val confirmationHandler = ConfirmationHandler()
+	confirmationHandler.attach(scanPart)
+	confirmationHandler.parts.forEach {
+        val confirmationView = JumioConfirmationView(context)
+        confirmationHandler.renderPart(it, confirmationView)
+        ...
+    }
 }
 JumioScanStep.REJECT_VIEW -> {
-	rejectView.setVisibility(View.VISIBLE)
-	rejectView.attach(scanPart)
+  val rejectHandler = RejectHandler()
+  rejectHandler.attach(scanPart)
+  rejectHandler.parts.forEach {
+      val rejectView = JumioRejectView(context)
+      rejectHandler.renderPart(it, rejectView)
+      ...
+  }
 }
 ```
 The scan part can be confirmed by calling [`confirmationView.confirm()`][confirm] or retaken by calling [`confirmationView.retake()`][retakeConfirmation] or [`rejectView.retake()`][retakeReject].
@@ -568,7 +627,7 @@ The software contains third-party open source software. For more information, se
 This software is based in part on the work of the Independent JPEG Group.
 
 ## Contact
-If you have any questions regarding our implementation guide please contact Jumio Customer Service at support@jumio.com. The [Jumio online helpdesk](https://support.jumio.com) contains a wealth of information regarding our services including demo videos, product descriptions, FAQs, and other resources that can help to get you started with Jumio.
+If you have any questions regarding our implementation guide please contact [Jumio Customer Service at support@jumio.com](mailto:support@jumio.com). The [Jumio online helpdesk](https://support.jumio.com) contains a wealth of information regarding our services including demo videos, product descriptions, FAQs, and other resources that can help to get you started with Jumio.
 
 ## Copyright
 &copy; Jumio Corporation, 395 Page Mill Road, Suite 150, Palo Alto, CA 94306
@@ -589,6 +648,7 @@ In any case, your use of this Software is subject to the terms and conditions th
 [setIDConfiguration]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/set-configuration.html
 [isCompleteCredential]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-credential/is-complete.html
 [isCompleteController]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.controller/-jumio-controller/is-complete.html
+[startScanPart]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/start.html
 [finishScanPart]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/finish.html
 [finishCredential]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-credential/finish.html
 [finishController]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.controller/-jumio-controller/finish.html
@@ -604,13 +664,19 @@ In any case, your use of this Software is subject to the terms and conditions th
 [canFinish]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-c-a-n_-f-i-n-i-s-h/index.html
 [prepare]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-p-r-e-p-a-r-e/index.html
 [started]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-s-t-a-r-t-e-d/index.html
+[attachActivity]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-a-t-t-a-c-h_-a-c-t-i-v-i-t-y/index.html
+[attachFile]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-a-t-t-a-c-h_-f-i-l-e/index.html
+[scanView]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-s-c-a-n_-v-i-e-w/index.html
 [imageTaken]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-i-m-a-g-e_-t-a-k-e-n/index.html
+[nextPart]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-n-e-x-t_-p-a-r-t/index.html
 [processing]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-p-r-o-c-e-s-s-i-n-g/index.html
 [confirmationView]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-c-o-n-f-i-r-m-a-t-i-o-n_-v-i-e-w/index.html
 [rejectView]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-r-e-j-e-c-t_-v-i-e-w/index.html
 [retry]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-r-e-t-r-y/index.html
 [addOnScanPart]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-a-d-d-o-n_-s-c-a-n_-p-a-r-t/index.html
 
+[jumioActivityAttacher]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-activity-attacher/index.html
+[jumioFileAttacher]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-file-attacher/index.html
 [jumioScanView]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-scan-view/index.html
 [jumioController]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.controller/-jumio-controller/index.html
 [jumioControllerInterface]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/index.html
@@ -633,7 +699,11 @@ In any case, your use of this Software is subject to the terms and conditions th
 [jumioRetryReason]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.retry/-jumio-retry-reason/index.html
 [jumioConfirmationView]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-confirmation-view/index.html
 [jumioRejectView]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-reject-view/index.html
+[jumioConfirmationHandler]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-confirmation-handler/index.html
+[jumioRejectHandler]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-reject-handler/index.html
 [jumioScanUpdate]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html
 [jumioFileAttacher]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-file-attacher/index.html
 [jumioScanPart]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html
 [jumioScanMode]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html
+[credentialPartsList]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-credential/credential-parts.html
+[proguardRules]: https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/proguard-rules.pro

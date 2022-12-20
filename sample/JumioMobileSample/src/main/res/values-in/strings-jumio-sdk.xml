@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Ukuran maksimum file: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Jumlah maksimum halaman: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokumen tidak boleh dilindungi dengan kata sandi</string>
+	<string name="jumio_error_button_retake_both">Ambil ulang keduanya</string>
+	<string name="jumio_error_button_retake_one">Ambil ulang</string>
 	<string name="jumio_error_button_retry">Coba lagi</string>
 	<string name="jumio_error_connection_title">Kesalahan koneksi</string>
 	<string name="jumio_error_dialog_title">Ksalahn</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Pegang dokumen Anda dengan stabil saat mengambil foto</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Pastikan semua detail pada dokumen Anda terbaca</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Gambar terlalu buram untuk diverifikasi</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Gambar harus diambil ulang</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Harap coba lagi dengan gambar berwarna</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Gambar fotokopi hitam putih</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Gambar tampak seperti fotokopi berwarna</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Pastikan menangkap seluruh dokumen</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Gambar bukan bukti identifikasi yang valid</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Kualitas gambar tidak cukup bagus untuk diverifikasi</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Gambar harus diambil ulang</string>
 	<string name="jumio_error_instant_feedback_title">Harap coba lagi</string>
 	<string name="jumio_error_no_camera_connection">Kamera saat ini tidak tersedia</string>
 	<string name="jumio_error_wrong_token">Pemindaian tidak tersedia saat ini, hubungi tim dukungan</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">Ambil foto dokumen Anda</string>
 	<string name="jumio_id_scan_manual_back">Ambil foto bagian belakang</string>
 	<string name="jumio_id_scan_manual_tips">Pastikan menangkap seluruh dokumen</string>
+	<string name="jumio_id_scan_prompt_back_captured">Sisi BELAKANG difoto</string>
 	<string name="jumio_id_scan_prompt_barcode">Pusatkan kode batang</string>
+	<string name="jumio_id_scan_prompt_capture_success">Oke!</string>
 	<string name="jumio_id_scan_prompt_center_id">Posisikan dokumen Anda di tengah</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Balik ke sisi BELAKANG</string>
+	<string name="jumio_id_scan_prompt_front_captured">Sisi DEPAN difoto</string>
 	<string name="jumio_id_scan_prompt_hold_still">Tahan terus…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Tegakkan badan</string>
 	<string name="jumio_id_scan_prompt_initial_back">Balikkan dokumen ID</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">Merapat</string>
 	<string name="jumio_id_scan_prompt_processing">Memeriksa gambar…</string>
 	<string name="jumio_id_scan_prompt_too_close">Terlalu dekat</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Perbesar kode batang Anda</string>
+	<string name="jumio_id_scan_take_photo_back_dl">Ambil foto sisi BELAKANG SIM Anda.</string>
+	<string name="jumio_id_scan_take_photo_back_ic">Ambil foto sisi BELAKANG KTP Anda.</string>
+	<string name="jumio_id_scan_take_photo_back_pd">Ambil foto sisi BELAKANG dokumen pribadi Anda.</string>
+	<string name="jumio_id_scan_take_photo_front_dl">Ambil foto sisi DEPAN SIM Anda.</string>
+	<string name="jumio_id_scan_take_photo_front_ic">Ambil foto sisi DEPAN KTP Anda.</string>
+	<string name="jumio_id_scan_take_photo_front_pd">Ambil foto sisi DEPAN dokumen pribadi Anda.</string>
+	<string name="jumio_id_scan_take_photo_pp">Ambil foto paspor Anda.</string>
 	<string name="jumio_id_scan_tips_barcode">Dekatkan kamera ke kode batang</string>
 	<string name="jumio_id_scan_tips_button_fallback">Ambil foto secara manual</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">Pemindaian tidak bekerja</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">Ambil foto dokumen Anda</string>
 	<string name="jumio_start_step_identity">Ambil selfie</string>
 	<string name="jumio_start_step_ready">Siapkan dokumen Anda</string>
+	<string name="jumio_start_steps_title">Jadikan Anda terverifikasi</string>
 	<string name="jumio_start_title_plural">Verifikasi\ndalam %1$d langkah mudah</string>
 	<string name="jumio_start_title_singular">Verifikasi\ndalam 1 langkah sederhana</string>
 	<string name="jumio_uploading_success">Pengunggahan berhasil</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Pegang perangkat menghadap ke wajah Anda dan lihat ke layar</string>
+	<string name="iproov__accessibility_prompt_scanning">Pemindaian</string>
 	<string name="iproov__error_camera">Akses kamera dinonaktifkan</string>
 	<string name="iproov__error_camera_permission_denied">Akses kamera dinonaktifkan</string>
 	<string name="iproov__error_capture_already_active">Pengambilan gambar yang sudah ada sedang berlangsung</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">Terjadi kesalahan yang tidak terduga</string>
 	<string name="iproov__error_server">Periksa apakah Anda sedang online</string>
 	<string name="iproov__error_unexpected_error">Terjadi kesalahan yang tidak terduga</string>
-	<string name="iproov__failure_ambiguous_outcome">Hasil ambigu</string>
-	<string name="iproov__failure_lighting_backlit">Sumber cahaya yang kuat terdeteksi di belakang Anda</string>
-	<string name="iproov__failure_lighting_face_too_bright">Terlalu banyak cahaya terdeteksi di wajah Anda</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Cahaya sekitar terlalu kuat atau kecerahan layar terlalu lemah</string>
-	<string name="iproov__failure_lighting_too_dark">Lingkungan Anda tampak terlalu gelap</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Harap jangan berbicara saat memindai</string>
-	<string name="iproov__failure_motion_too_much_movement">Harap jangan bergerak saat memindai</string>
+	<string name="iproov__failure_eyes_closed">Jangan pejamkan mata</string>
+	<string name="iproov__failure_face_too_close">Jauhkan wajah Anda dari layar</string>
+	<string name="iproov__failure_face_too_far">Dekatkan wajah Anda ke layar</string>
+	<string name="iproov__failure_misaligned_face">Pastikan wajah Anda berada di bidang oval</string>
+	<string name="iproov__failure_not_supported">Perangkat tidak didukung</string>
+	<string name="iproov__failure_obscured_face">Lepas penutup wajah</string>
+	<string name="iproov__failure_sunglasses">Lepas kacamata hitam</string>
+	<string name="iproov__failure_too_bright">Pindah ke tempat yang lebih gelap</string>
+	<string name="iproov__failure_too_dark">Pindah ke tempat yang lebih terang</string>
+	<string name="iproov__failure_too_much_movement">Tahan</string>
+	<string name="iproov__failure_unknown">Coba lagi</string>
 	<string name="iproov__failure_user_timeout">Sesi Anda telah kedaluwarsa</string>
 	<string name="iproov__progress_assessing_genuine_presence">Menilai kehadiran sebenarnya…</string>
 	<string name="iproov__progress_assessing_liveness">Menilai kualitas siaran langsung…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">Mengidentifikasi wajah…</string>
 	<string name="iproov__progress_loading">Memuat…</string>
 	<string name="iproov__progress_streaming">Streaming…</string>
-	<string name="iproov__progress_streaming_slow">Jaringan Anda mungkin tampak lambat. Harap tunggu sementara kami melakukan pemrosesan.</string>
-	<string name="iproov__prompt_align_face_accessibility">Pegang perangkat menghadap ke wajah Anda dan lihat ke layar</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Letakkan wajah Anda di bingkai</string>
+	<string name="iproov__prompt_align_face">Letakkan wajah Anda di bidang oval</string>
 	<string name="iproov__prompt_get_ready">Bersiaplah…</string>
-	<string name="iproov__prompt_liveness_align_face">Isi bentuk oval dengan wajah Anda</string>
-	<string name="iproov__prompt_liveness_no_target">Letakkan wajah Anda di bingkai</string>
 	<string name="iproov__prompt_liveness_scan_completed">Pemindaian selesai</string>
 	<string name="iproov__prompt_pitch_too_high">Pegang perangkat setinggi mata</string>
 	<string name="iproov__prompt_pitch_too_low">Pegang perangkat setinggi mata</string>
 	<string name="iproov__prompt_roll_too_high">Jangan memiringkan kepala Anda</string>
 	<string name="iproov__prompt_roll_too_low">Jangan memiringkan kepala Anda</string>
 	<string name="iproov__prompt_scanning">Memindai…</string>
-	<string name="iproov__prompt_tap_to_begin">Ketuk layar untuk memulai</string>
 	<string name="iproov__prompt_too_bright">Pergi ke suatu tempat yang lebih teduh</string>
 	<string name="iproov__prompt_too_close">Terlalu dekat</string>
 	<string name="iproov__prompt_too_far">Merapat</string>

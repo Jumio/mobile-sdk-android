@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">最大檔案：%1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">最大頁數：%1$d</string>
 	<string name="jumio_dv_upload_tips_protected">文件不應受密碼保護</string>
+	<string name="jumio_error_button_retake_both">兩個都需重新拍攝</string>
+	<string name="jumio_error_button_retake_one">重新拍攝</string>
 	<string name="jumio_error_button_retry">再試一次</string>
 	<string name="jumio_error_connection_title">連線錯誤</string>
 	<string name="jumio_error_dialog_title">錯誤</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">拍照時拿穩文件</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">確保文件的所有詳細資料均可讀取</string>
 	<string name="jumio_error_instant_feedback_blurry_title">圖像過於模糊，無法進行驗證</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">必須重新拍攝圖像</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">請使用彩色圖片重試</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">圖片為黑白影印</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">圖片似乎是彩色影印件</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">確保擷取完整文件</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">圖片不是有效的身分證件形式</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">圖像品質不夠好，無法進行驗證</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">必須重新拍攝圖像</string>
 	<string name="jumio_error_instant_feedback_title">請再試一次</string>
 	<string name="jumio_error_no_camera_connection">該相機目前不可用</string>
 	<string name="jumio_error_wrong_token">目前無法掃描，請聯絡支援團隊</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">拍一張文件相片</string>
 	<string name="jumio_id_scan_manual_back">拍一張背面相片</string>
 	<string name="jumio_id_scan_manual_tips">確保擷取完整文件</string>
+	<string name="jumio_id_scan_prompt_back_captured">背面截圖</string>
 	<string name="jumio_id_scan_prompt_barcode">條碼居中</string>
+	<string name="jumio_id_scan_prompt_capture_success">瞭解！</string>
 	<string name="jumio_id_scan_prompt_center_id">文件置中</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">翻到背面</string>
+	<string name="jumio_id_scan_prompt_front_captured">正面截圖</string>
 	<string name="jumio_id_scan_prompt_hold_still">保持不動…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">站直</string>
 	<string name="jumio_id_scan_prompt_initial_back">將身分證件翻過來</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">靠近一點</string>
 	<string name="jumio_id_scan_prompt_processing">正在檢查圖像…</string>
 	<string name="jumio_id_scan_prompt_too_close">太近</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">放大您的條碼</string>
+	<string name="jumio_id_scan_take_photo_back_dl">拍攝駕照的背面。</string>
+	<string name="jumio_id_scan_take_photo_back_ic">拍攝身分證的背面。</string>
+	<string name="jumio_id_scan_take_photo_back_pd">拍攝個人文件的背面。</string>
+	<string name="jumio_id_scan_take_photo_front_dl">拍攝駕照的正面。</string>
+	<string name="jumio_id_scan_take_photo_front_ic">拍攝身分證的正面。</string>
+	<string name="jumio_id_scan_take_photo_front_pd">拍攝個人文件的正面。</string>
+	<string name="jumio_id_scan_take_photo_pp">拍攝您的護照。</string>
 	<string name="jumio_id_scan_tips_barcode">將相機移近條碼</string>
 	<string name="jumio_id_scan_tips_button_fallback">手動拍照</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">無法掃描</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">拍一張文件相片</string>
 	<string name="jumio_start_step_identity">自拍</string>
 	<string name="jumio_start_step_ready">備妥文件</string>
+	<string name="jumio_start_steps_title">開始驗證</string>
 	<string name="jumio_start_title_plural">驗證\n%1$d簡單步驟</string>
 	<string name="jumio_start_title_singular">只需\n1 個簡單步驟即可驗證</string>
 	<string name="jumio_uploading_success">上傳成功</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">將裝置放在臉前並注視螢幕</string>
+	<string name="iproov__accessibility_prompt_scanning">掃描中…</string>
 	<string name="iproov__error_camera">相機存取權限已停用</string>
 	<string name="iproov__error_camera_permission_denied">相機存取權限已停用</string>
 	<string name="iproov__error_capture_already_active">已有捕捉處理中</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">發生未預期錯誤</string>
 	<string name="iproov__error_server">請檢查您是否處於線上狀態</string>
 	<string name="iproov__error_unexpected_error">發生未預期錯誤</string>
-	<string name="iproov__failure_ambiguous_outcome">模糊的結果</string>
-	<string name="iproov__failure_lighting_backlit">偵測到您背後的光線太強</string>
-	<string name="iproov__failure_lighting_face_too_bright">臉部偵測到太多光線</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">環境光太強或螢幕亮度太低</string>
-	<string name="iproov__failure_lighting_too_dark">您所處環境過暗</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">掃描時請勿交談</string>
-	<string name="iproov__failure_motion_too_much_movement">掃描時請勿移動</string>
+	<string name="iproov__failure_eyes_closed">保持眼睛睜開</string>
+	<string name="iproov__failure_face_too_close">將臉遠離螢幕</string>
+	<string name="iproov__failure_face_too_far">將臉靠近螢幕</string>
+	<string name="iproov__failure_misaligned_face">您的臉保持在橢圓形內</string>
+	<string name="iproov__failure_not_supported">不支援裝置</string>
+	<string name="iproov__failure_obscured_face">取下任何面罩</string>
+	<string name="iproov__failure_sunglasses">取下太陽鏡</string>
+	<string name="iproov__failure_too_bright">移動到較暗的位置</string>
+	<string name="iproov__failure_too_dark">移動到較明亮的位置</string>
+	<string name="iproov__failure_too_much_movement">保持不動</string>
+	<string name="iproov__failure_unknown">再試一次</string>
 	<string name="iproov__failure_user_timeout">您的工作階段已過期</string>
 	<string name="iproov__progress_assessing_genuine_presence">正在評估實際存在…</string>
 	<string name="iproov__progress_assessing_liveness">正在評估活性…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">正在識別臉部…</string>
 	<string name="iproov__progress_loading">載入中…</string>
 	<string name="iproov__progress_streaming">串流中…</string>
-	<string name="iproov__progress_streaming_slow">您的網路似乎較慢。請稍等，我們正在處理。</string>
-	<string name="iproov__prompt_align_face_accessibility">將裝置放在臉前並注視螢幕</string>
-	<string name="iproov__prompt_genuine_presence_align_face">將您的面部置於框內</string>
+	<string name="iproov__prompt_align_face">將臉放在橢圓形內</string>
 	<string name="iproov__prompt_get_ready">準備好…</string>
-	<string name="iproov__prompt_liveness_align_face">將面部置於橢圓形中</string>
-	<string name="iproov__prompt_liveness_no_target">將您的面部置於框內</string>
 	<string name="iproov__prompt_liveness_scan_completed">掃描完成</string>
 	<string name="iproov__prompt_pitch_too_high">將裝置放在視線高度</string>
 	<string name="iproov__prompt_pitch_too_low">將裝置放在視線高度</string>
 	<string name="iproov__prompt_roll_too_high">避免歪頭</string>
 	<string name="iproov__prompt_roll_too_low">避免歪頭</string>
 	<string name="iproov__prompt_scanning">掃描中…</string>
-	<string name="iproov__prompt_tap_to_begin">點選螢幕即可開始</string>
 	<string name="iproov__prompt_too_bright">請到較暗處</string>
 	<string name="iproov__prompt_too_close">太近</string>
 	<string name="iproov__prompt_too_far">靠近一點</string>

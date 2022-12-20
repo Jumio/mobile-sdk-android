@@ -8,7 +8,10 @@ import com.jumio.sdk.document.JumioDocument
 /**
  * Array adapter implementation for the country list spinner
  */
-class CustomCountryAdapter(context: Context, private val countryList: Map<String, List<JumioDocument>>) :
+class CustomCountryAdapter(
+	context: Context,
+	private val countryList: Map<String, List<JumioDocument>>
+) :
 	ArrayAdapter<String>(context, android.R.layout.simple_spinner_item) {
 
 	init {

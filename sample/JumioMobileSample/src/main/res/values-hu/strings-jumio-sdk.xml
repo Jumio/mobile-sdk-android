@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Fájl maximális mérete: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Oldalak maximális száma: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">A dokumentum nem lehet jelszóval védett</string>
+	<string name="jumio_error_button_retake_both">Mindkettő megismétlése</string>
+	<string name="jumio_error_button_retake_one">Megismétlés</string>
 	<string name="jumio_error_button_retry">Újra próbálkozás</string>
 	<string name="jumio_error_connection_title">Kapcsolati hiba</string>
 	<string name="jumio_error_dialog_title">Hiba</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Fényképezés közben tartsa stabilan a dokumentumot</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Győződjön meg arról, hogy a dokumentum minden adata olvasható.</string>
 	<string name="jumio_error_instant_feedback_blurry_title">A kép túl homályos az ellenőrzéshez</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">A képek készítését meg kell ismételni</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Kérjük, próbálkozzon újra egy színes képpel</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">A kép fekete-fehér fénymásolat</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">A kép színes fénymásolatnak tűnik</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Ügyeljen arra, hogy a teljes dokumentumot rögzítse</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">A kép nem érvényes azonosító</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">A képminőség nem elég jó az ellenőrzéshez</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">A kép készítését meg kell ismételni</string>
 	<string name="jumio_error_instant_feedback_title">Próbálja meg újra</string>
 	<string name="jumio_error_no_camera_connection">A kamera jelenleg nem érhető el</string>
 	<string name="jumio_error_wrong_token">A beolvasás jelenleg nem érhető el, vegye fel a kapcsolatot a témogatási csapattal</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">Készítsen fényképet a dokumentumról</string>
 	<string name="jumio_id_scan_manual_back">Készítsen egy fényképet a hátsó oldalról</string>
 	<string name="jumio_id_scan_manual_tips">Ügyeljen arra, hogy a teljes dokumentumot rögzítse</string>
+	<string name="jumio_id_scan_prompt_back_captured">HÁTULSÓ oldal rögzítve</string>
 	<string name="jumio_id_scan_prompt_barcode">Igazítsa a vonalkódot középre</string>
+	<string name="jumio_id_scan_prompt_capture_success">Megvan!</string>
 	<string name="jumio_id_scan_prompt_center_id">Igazítsa középre a dokumentumot</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Fordítsa át a HÁTULSÓ oldalára</string>
+	<string name="jumio_id_scan_prompt_front_captured">ELÜLSŐ oldal rögzítve</string>
 	<string name="jumio_id_scan_prompt_hold_still">Tartsa mozdulatanul…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Tartsa egyenesen</string>
 	<string name="jumio_id_scan_prompt_initial_back">Fordítsa meg az igazolványt</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">Mozgassa közelebb</string>
 	<string name="jumio_id_scan_prompt_processing">Kép ellenőrzése folyamatban…</string>
 	<string name="jumio_id_scan_prompt_too_close">Túl közel</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Olvassa be a vonalkódját</string>
+	<string name="jumio_id_scan_take_photo_back_dl">Fényképezze le járművezetői jogosítványa HÁTULSÓ felét!</string>
+	<string name="jumio_id_scan_take_photo_back_ic">Fényképezze le személyi igazolványa HÁTULSÓ felét!</string>
+	<string name="jumio_id_scan_take_photo_back_pd">Fényképezze le személyes okmánya HÁTULSÓ felét!</string>
+	<string name="jumio_id_scan_take_photo_front_dl">Fényképezze le járművezetői jogosítványa ELÜLSŐ felét!</string>
+	<string name="jumio_id_scan_take_photo_front_ic">Fényképezze le személyi igazolványa ELÜLSŐ felét!</string>
+	<string name="jumio_id_scan_take_photo_front_pd">Fényképezze le személyes okmánya ELÜLSŐ felét!</string>
+	<string name="jumio_id_scan_take_photo_pp">Fényképezze le útlevelét!</string>
 	<string name="jumio_id_scan_tips_barcode">Vigye egy kicsit közelebb a kamerát a vonalkódhoz</string>
 	<string name="jumio_id_scan_tips_button_fallback">Fénykép készítése manuálisan</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">A beolvasás nem működik</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">Készítsen fényképet a dokumentumról</string>
 	<string name="jumio_start_step_identity">Készítsen egy szelfit</string>
 	<string name="jumio_start_step_ready">Tartsa kéznél igazolványát</string>
+	<string name="jumio_start_steps_title">Akkor most ellenőrizzük az Ön személyazonosságát</string>
 	<string name="jumio_start_title_plural">Ellenőrzés\n%1$d egyszerű lépésben</string>
 	<string name="jumio_start_title_singular">Ellenőrzés\n1 egyszerű lépésben</string>
 	<string name="jumio_uploading_success">Feltöltés sikeres</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Tartsa az eszközt az arca elé, és nézzen a képernyőre</string>
+	<string name="iproov__accessibility_prompt_scanning">Szkennelés</string>
 	<string name="iproov__error_camera">A kamera hozzáférése letiltva</string>
 	<string name="iproov__error_camera_permission_denied">A kamera hozzáférése letiltva</string>
 	<string name="iproov__error_capture_already_active">Egy meglévő rögzítés már folyamatban van</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">Váratlan hiba történt</string>
 	<string name="iproov__error_server">Ellenőrizze, hogy kapcsolódik-e az internethez.</string>
 	<string name="iproov__error_unexpected_error">Váratlan hiba történt</string>
-	<string name="iproov__failure_ambiguous_outcome">Kétes kimenet</string>
-	<string name="iproov__failure_lighting_backlit">Erős fényforrás észlelhető Ön mögött</string>
-	<string name="iproov__failure_lighting_face_too_bright">Túl sok fény észlelhető az arcán</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">A környezeti fény túl erős, vagy a képernyő fényereje túl alacsony</string>
-	<string name="iproov__failure_lighting_too_dark">Környezete túl sötétnek tűnik</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Kérjük szkennelés közben ne beszéljen</string>
-	<string name="iproov__failure_motion_too_much_movement">Kérjük szkennelés közben ne mozogjon</string>
+	<string name="iproov__failure_eyes_closed">Tartsa nyitva a szemét</string>
+	<string name="iproov__failure_face_too_close">Vigye távolabb az arcát a képernyőtől</string>
+	<string name="iproov__failure_face_too_far">Vigye közelebb az arcát a képernyőhöz</string>
+	<string name="iproov__failure_misaligned_face">Tartsa az arcát az ovális keretben</string>
+	<string name="iproov__failure_not_supported">Az eszköz nem támogatott</string>
+	<string name="iproov__failure_obscured_face">Vegye le az arcát takaró tárgyakat</string>
+	<string name="iproov__failure_sunglasses">Vegye le a napszemüveget</string>
+	<string name="iproov__failure_too_bright">Menjen sötétebb helyre</string>
+	<string name="iproov__failure_too_dark">Menjen világosabb helyre</string>
+	<string name="iproov__failure_too_much_movement">Maradjon mozdulatlan</string>
+	<string name="iproov__failure_unknown">Újra próbálkozás</string>
 	<string name="iproov__failure_user_timeout">A munkamenete lejárt</string>
 	<string name="iproov__progress_assessing_genuine_presence">Valós jelenlét értékelése…</string>
 	<string name="iproov__progress_assessing_liveness">Élő személy értékelése…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">Arc azonosítása…</string>
 	<string name="iproov__progress_loading">Töltés…</string>
 	<string name="iproov__progress_streaming">Közvetítés…</string>
-	<string name="iproov__progress_streaming_slow">Lehet, hogy hálózata lassúnak tűnik. Várjon, amíg feldolgozzuk.</string>
-	<string name="iproov__prompt_align_face_accessibility">Tartsa az eszközt az arca elé és nézzen a képernyőre</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Igazítsa az arcát a keretbe</string>
+	<string name="iproov__prompt_align_face">Igazítsa az arcát az ovális keretbe</string>
 	<string name="iproov__prompt_get_ready">Készüljön fel…</string>
-	<string name="iproov__prompt_liveness_align_face">Helyezze az arcát az ovális keretbe</string>
-	<string name="iproov__prompt_liveness_no_target">Igazítsa az arcát a keretbe</string>
 	<string name="iproov__prompt_liveness_scan_completed">A szkennelés befejeződött</string>
 	<string name="iproov__prompt_pitch_too_high">Tartsa a készüléket szemmagasságban</string>
 	<string name="iproov__prompt_pitch_too_low">Tartsa a készüléket szemmagasságban</string>
 	<string name="iproov__prompt_roll_too_high">Ne döntse a fejét oldalra</string>
 	<string name="iproov__prompt_roll_too_low">Ne döntse a fejét oldalra</string>
 	<string name="iproov__prompt_scanning">Szkennelés</string>
-	<string name="iproov__prompt_tap_to_begin">A kezdéshez érintse meg a képernyőt</string>
 	<string name="iproov__prompt_too_bright">Menj árnyékosabb helyre</string>
 	<string name="iproov__prompt_too_close">Túl közel</string>
 	<string name="iproov__prompt_too_far">Mozgassa közelebb</string>

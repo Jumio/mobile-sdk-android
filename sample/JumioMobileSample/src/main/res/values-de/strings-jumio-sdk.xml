@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Max. Dateigröße: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Max. Seitenanzahl: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument darf nicht passwortgeschützt sein</string>
+	<string name="jumio_error_button_retake_both">Beides erneut aufnehmen</string>
+	<string name="jumio_error_button_retake_one">Erneut aufnehmen</string>
 	<string name="jumio_error_button_retry">Erneut versuchen</string>
 	<string name="jumio_error_connection_title">Verbindungsfehler</string>
 	<string name="jumio_error_dialog_title">Fehler</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Halten Sie Ihr Dokument beim Fotografieren ruhig</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Stellen Sie sicher, dass alle Informationen auf Ihrem Dokument lesbar sind.</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Das Bild ist zu verschwommen, um überprüft zu werden</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Bilder müssen erneut aufgenommen werden</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Versuchen Sie es bitte noch einmal mit einem Farbfoto</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Bei dem Bild handelt es sich um eine Schwarz-Weiß-Fotokopie</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Bei dem Bild scheint es sich um eine Farbfotokopie zu handeln</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Stellen Sie sicher, dass Sie das gesamte Dokument erfassen</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Das Bild ist keine gültige Identifizierung</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Die Bildqualität ist nicht gut genug, um überprüft zu werden</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Bild muss erneut aufgenommen werden</string>
 	<string name="jumio_error_instant_feedback_title">Erneut versuchen</string>
 	<string name="jumio_error_no_camera_connection">Die Kamera ist im Moment nicht verfügbar</string>
 	<string name="jumio_error_wrong_token">Scannen derzeit nicht verfügbar, bitte kontaktieren Sie das Support-Team</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">Machen Sie ein Foto Ihres Dokuments</string>
 	<string name="jumio_id_scan_manual_back">Machen Sie ein Foto der Rückseite</string>
 	<string name="jumio_id_scan_manual_tips">Stellen Sie sicher, dass Sie das gesamte Dokument erfassen</string>
+	<string name="jumio_id_scan_prompt_back_captured">RÜCKSEITE erfasst</string>
 	<string name="jumio_id_scan_prompt_barcode">Zentrieren Sie Ihren Barcode</string>
+	<string name="jumio_id_scan_prompt_capture_success">Abgeschlossen!</string>
 	<string name="jumio_id_scan_prompt_center_id">Zentrieren Sie Ihr Dokument</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Auf die RÜCKSEITE wechseln</string>
+	<string name="jumio_id_scan_prompt_front_captured">VORDERSEITE erfasst</string>
 	<string name="jumio_id_scan_prompt_hold_still">Bitte ruhig halten …</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Bitte gerade halten …</string>
 	<string name="jumio_id_scan_prompt_initial_back">Drehen Sie Ihren Ausweis um</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">Bitte näher an die Kamera bewegen</string>
 	<string name="jumio_id_scan_prompt_processing">Bild überprüfen…</string>
 	<string name="jumio_id_scan_prompt_too_close">Zu nahe</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Vergrößern Sie Ihren Barcode</string>
+	<string name="jumio_id_scan_take_photo_back_dl">Machen Sie ein Foto von der RÜCKSEITE Ihres Führerscheins.</string>
+	<string name="jumio_id_scan_take_photo_back_ic">Machen Sie ein Foto von der RÜCKSEITE Ihres Ausweises.</string>
+	<string name="jumio_id_scan_take_photo_back_pd">Machen Sie ein Foto von der RÜCKSEITE Ihres persönlichen Dokuments.</string>
+	<string name="jumio_id_scan_take_photo_front_dl">Machen Sie ein Foto von der VORDERSEITE Ihres Führerscheins.</string>
+	<string name="jumio_id_scan_take_photo_front_ic">Machen Sie ein Foto von der VORDERSEITE Ihres Ausweises.</string>
+	<string name="jumio_id_scan_take_photo_front_pd">Machen Sie ein Foto von der VORDERSEITE Ihres persönlichen Dokuments.</string>
+	<string name="jumio_id_scan_take_photo_pp">Machen Sie ein Foto von Ihrem Reisepass.</string>
 	<string name="jumio_id_scan_tips_barcode">Bringen Sie die Kamera näher an den Barcode</string>
 	<string name="jumio_id_scan_tips_button_fallback">Nehmen Sie ein manuelles Foto auf</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">Scan funktioniert nicht</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">Machen Sie ein Foto Ihres Ausweisdokuments</string>
 	<string name="jumio_start_step_identity">Selfie aufnehmen</string>
 	<string name="jumio_start_step_ready">Halten Sie Ihr Dokument bereit</string>
+	<string name="jumio_start_steps_title">Lassen Sie uns Ihre Verifizierung starten</string>
 	<string name="jumio_start_title_plural">Verifizierung\nin %1$d einfachen Schritten</string>
 	<string name="jumio_start_title_singular">Verifizierung\nin 1 einfachem Schritt</string>
 	<string name="jumio_uploading_success">Upload erfolgreich</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Halten Sie das Gerät vor Ihr Gesicht und blicken Sie auf den Bildschirm</string>
+	<string name="iproov__accessibility_prompt_scanning">Wird gescannt</string>
 	<string name="iproov__error_camera">Kamerazugriff ist deaktiviert</string>
 	<string name="iproov__error_camera_permission_denied">Kamerazugriff ist deaktiviert</string>
 	<string name="iproov__error_capture_already_active">Eine bestehende Erfassung ist bereits in Gang</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">Ein unerwarteter Fehler ist aufgetreten</string>
 	<string name="iproov__error_server">Bitte prüfen Sie, ob Sie online sind</string>
 	<string name="iproov__error_unexpected_error">Ein unerwarteter Fehler ist aufgetreten</string>
-	<string name="iproov__failure_ambiguous_outcome">Unklares Ergebnis</string>
-	<string name="iproov__failure_lighting_backlit">Hinter Ihnen wurde eine starke Lichtquelle erkannt</string>
-	<string name="iproov__failure_lighting_face_too_bright">Auf Ihrem Gesicht wurde zu viel Licht erkannt</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Das Umgebungslicht ist zu stark oder die Bildschirmhelligheit zu niedrig</string>
-	<string name="iproov__failure_lighting_too_dark">Ihre Umgebung wirkt zu dunkel</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Bitte sprechen Sie während des Scannens nicht</string>
-	<string name="iproov__failure_motion_too_much_movement">Bitte bewegen Sie sich während des Scannens nicht</string>
+	<string name="iproov__failure_eyes_closed">Halten Sie die Augen offen</string>
+	<string name="iproov__failure_face_too_close">Bewegen Sie Ihr Gesicht weiter vom Bildschirm weg</string>
+	<string name="iproov__failure_face_too_far">Bewegen Sie Ihr Gesicht näher an den Bildschirm</string>
+	<string name="iproov__failure_misaligned_face">Halten Sie Ihr Gesicht im Oval</string>
+	<string name="iproov__failure_not_supported">Gerät wird nicht unterstützt</string>
+	<string name="iproov__failure_obscured_face">Entfernen Sie alle Gesichtsbedeckungen</string>
+	<string name="iproov__failure_sunglasses">Nehmen Sie Sonnenbrillen ab</string>
+	<string name="iproov__failure_too_bright">Gehen Sie an einen dunkleren Ort</string>
+	<string name="iproov__failure_too_dark">Gehen Sie an einen helleren Ort</string>
+	<string name="iproov__failure_too_much_movement">Halten Sie still</string>
+	<string name="iproov__failure_unknown">Erneut versuchen</string>
 	<string name="iproov__failure_user_timeout">Ihre Sitzung ist abgelaufen</string>
 	<string name="iproov__progress_assessing_genuine_presence">Tatsächliche Anwesenheit wird überprüft …</string>
 	<string name="iproov__progress_assessing_liveness">Live-Übertragung wird überprüft …</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">Gesicht wird identifiziert …</string>
 	<string name="iproov__progress_loading">Ladevorgang läuft …</string>
 	<string name="iproov__progress_streaming">Streaming läuft …</string>
-	<string name="iproov__progress_streaming_slow">Ihr Netzwerk könnte langsam erscheinen. Bitte warten Sie, während wir die Daten verarbeiten.</string>
-	<string name="iproov__prompt_align_face_accessibility">Halten Sie das Gerät vor Ihr Gesicht und blicken Sie auf den Bildschirm</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Passen Sie Ihr Gesicht in den Rahmen ein</string>
+	<string name="iproov__prompt_align_face">Platzieren Sie Ihr Gesicht im Oval</string>
 	<string name="iproov__prompt_get_ready">Machen Sie sich bereit …</string>
-	<string name="iproov__prompt_liveness_align_face">Passen Sie Ihr Gesicht in das Oval ein</string>
-	<string name="iproov__prompt_liveness_no_target">Passen Sie Ihr Gesicht in den Rahmen ein</string>
 	<string name="iproov__prompt_liveness_scan_completed">Scannen abgeschlossen</string>
 	<string name="iproov__prompt_pitch_too_high">Kamera auf Augenhöhe halten</string>
 	<string name="iproov__prompt_pitch_too_low">Kamera auf Augenhöhe halten</string>
 	<string name="iproov__prompt_roll_too_high">Neigen Sie Ihren Kopf nicht</string>
 	<string name="iproov__prompt_roll_too_low">Neigen Sie Ihren Kopf nicht</string>
 	<string name="iproov__prompt_scanning">Wird gescannt …</string>
-	<string name="iproov__prompt_tap_to_begin">Tippen Sie auf den Bildschirm, um anzufangen</string>
 	<string name="iproov__prompt_too_bright">Gehen Sie in den Schatten</string>
 	<string name="iproov__prompt_too_close">Zu nahe</string>
 	<string name="iproov__prompt_too_far">Näher kommen</string>

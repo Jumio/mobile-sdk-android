@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Didžiausias failo dydis: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimalus puslapių skaičius: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokumentas neturi būti apsaugotas slaptažodžiu</string>
+	<string name="jumio_error_button_retake_both">Pakartoti abi</string>
+	<string name="jumio_error_button_retake_one">Pakartoti</string>
 	<string name="jumio_error_button_retry">Bandykite dar kartą</string>
 	<string name="jumio_error_connection_title">Ryšio klaida</string>
 	<string name="jumio_error_dialog_title">Klaida</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Fotografuodami nejudinkite dokumento</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Patikrinkite, ar visi jūsų dokumento duomenys įskaitomi</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Nuotrauka neryški, todėl neįmanoma patvirtinti</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Nuotraukas būtina pakartoti</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Pateikite spalvotą nuotrauką</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Nuotrauka yra nespalvota fotokopija</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Panašu, kad tai spalvota fotokopija</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Nufotografuokite visą dokumentą</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Nuotrauka netinkama atpažinimui</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Nuotraukos kokybė netinkama, todėl neįmanoma patvirtinti</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Nuotrauką būtina pakartoti</string>
 	<string name="jumio_error_instant_feedback_title">Bandykite dar kartą</string>
 	<string name="jumio_error_no_camera_connection">Kamera šiuo metu nepasiekiama</string>
 	<string name="jumio_error_wrong_token">Šiuo metu skenavimas neprieinamas, susisiekite su pagalbos komanda</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">Nufotografuokite savo asmens dokumentą</string>
 	<string name="jumio_id_scan_manual_back">Nufotografuokite galinę dalį</string>
 	<string name="jumio_id_scan_manual_tips">Nufotografuokite visą dokumentą</string>
+	<string name="jumio_id_scan_prompt_back_captured">GALINĖ pusė nufotografuota</string>
 	<string name="jumio_id_scan_prompt_barcode">Išlaikykite brūkšninį kodą centre</string>
+	<string name="jumio_id_scan_prompt_capture_success">Pavyko!</string>
 	<string name="jumio_id_scan_prompt_center_id">Lygiuokite savo dokumentą centre</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Atverskite GALINĘ pusę</string>
+	<string name="jumio_id_scan_prompt_front_captured">PRIEKINĖ pusė nufotografuota</string>
 	<string name="jumio_id_scan_prompt_hold_still">Nejudėkite…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Stovėkite tiesiai</string>
 	<string name="jumio_id_scan_prompt_initial_back">Apverskite savo asmens dokumentą</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">Prieikite arčiau</string>
 	<string name="jumio_id_scan_prompt_processing">Nuotrauka tikrinama…</string>
 	<string name="jumio_id_scan_prompt_too_close">Per arti</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Priartinkite brūkšninį kodą</string>
+	<string name="jumio_id_scan_take_photo_back_dl">Nufotografuokite savo vairuotojo pažymėjimo GALINĘ pusę.</string>
+	<string name="jumio_id_scan_take_photo_back_ic">Nufotografuokite savo tapatybės kortelės GALINĘ pusę.</string>
+	<string name="jumio_id_scan_take_photo_back_pd">Nufotografuokite savo asmens dokumento GALINĘ pusę.</string>
+	<string name="jumio_id_scan_take_photo_front_dl">Nufotografuokite savo vairuotojo pažymėjimo PRIEKINĘ pusę.</string>
+	<string name="jumio_id_scan_take_photo_front_ic">Nufotografuokite savo tapatybės kortelės PRIEKINĘ pusę.</string>
+	<string name="jumio_id_scan_take_photo_front_pd">Nufotografuokite savo asmens dokumento PRIEKINĘ pusę.</string>
+	<string name="jumio_id_scan_take_photo_pp">Nufotografuokite savo pasą.</string>
 	<string name="jumio_id_scan_tips_barcode">Priartinkite kamerą prie brūkšninio kodo</string>
 	<string name="jumio_id_scan_tips_button_fallback">Fotografuoti rankiniu būdu</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">Nepavyksta nuskenuoti</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">Nufotografuokite savo asmens dokumentą</string>
 	<string name="jumio_start_step_identity">Nufotografuokite asmenukę</string>
 	<string name="jumio_start_step_ready">Paruoškite asmens dokumentą</string>
+	<string name="jumio_start_steps_title">Jūsų tapatybės patvirtinimas</string>
 	<string name="jumio_start_title_plural">Patvirtinimas \n %1$d paprastais veiksmais</string>
 	<string name="jumio_start_title_singular">Patvirtinimas\n1 paprastu žingsniu</string>
 	<string name="jumio_uploading_success">Įkėlimas sėkmingas</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Laikykite įrenginį priešais veidą ir žiūrėkite į ekraną</string>
+	<string name="iproov__accessibility_prompt_scanning">Nuskaitoma</string>
 	<string name="iproov__error_camera">Prieiga prie fotoaparato išjungta</string>
 	<string name="iproov__error_camera_permission_denied">Prieiga prie fotoaparato išjungta</string>
 	<string name="iproov__error_capture_already_active">Jau apdorojamas įkeltas vaizdas</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">Įvyko netikėta klaida</string>
 	<string name="iproov__error_server">Patikrinkite, ar esate prisijungę prie interneto</string>
 	<string name="iproov__error_unexpected_error">Įvyko netikėta klaida</string>
-	<string name="iproov__failure_ambiguous_outcome">Neaiškus rezultatas</string>
-	<string name="iproov__failure_lighting_backlit">Už jūsų yra stiprus šviesos šaltinis</string>
-	<string name="iproov__failure_lighting_face_too_bright">Jūsų veidas per daug apšviestas</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Per stiprus aplinkos apšvietimas arba per mažas ekrano ryškumas</string>
-	<string name="iproov__failure_lighting_too_dark">Aplinkoje, kurioje esate, yra per tamsu</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Nekalbėkite nuskaitymo metu</string>
-	<string name="iproov__failure_motion_too_much_movement">Nejudėkite nuskaitymo metu</string>
+	<string name="iproov__failure_eyes_closed">Nemirksėkite</string>
+	<string name="iproov__failure_face_too_close">Atitraukite veidą nuo ekrano</string>
+	<string name="iproov__failure_face_too_far">Priartinkite veidą prie ekrano</string>
+	<string name="iproov__failure_misaligned_face">Išlaikykite veidą ovaliame rėmelyje</string>
+	<string name="iproov__failure_not_supported">Įrenginys nepalaikomas</string>
+	<string name="iproov__failure_obscured_face">Nusiimkite veido apdangalus</string>
+	<string name="iproov__failure_sunglasses">Nusiimkite akinius nuo saulės</string>
+	<string name="iproov__failure_too_bright">Pereikite į tamsesnę vietą</string>
+	<string name="iproov__failure_too_dark">Pereikite į šviesesnę vietą</string>
+	<string name="iproov__failure_too_much_movement">Nejudėkite</string>
+	<string name="iproov__failure_unknown">Bandykite dar kartą</string>
 	<string name="iproov__failure_user_timeout">Jūsų seanso laikas baigėsi</string>
 	<string name="iproov__progress_assessing_genuine_presence">Vertinamas asmens buvimas…</string>
 	<string name="iproov__progress_assessing_liveness">Vertinamas tikrumas…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">Identifikuojamas veidas…</string>
 	<string name="iproov__progress_loading">Įkeliama…</string>
 	<string name="iproov__progress_streaming">Srautinis siuntimas…</string>
-	<string name="iproov__progress_streaming_slow">Jūsų tinklo ryšys gali sulėtėti. Palaukite, kol apdorosime.</string>
-	<string name="iproov__prompt_align_face_accessibility">Laikykite įrenginį priešais veidą ir žiūrėkite į ekraną</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Patalpinkite savo veidą rėmelyje</string>
+	<string name="iproov__prompt_align_face">Sulyginkite veidą su ovaliu rėmeliu</string>
 	<string name="iproov__prompt_get_ready">Pasiruoškite…</string>
-	<string name="iproov__prompt_liveness_align_face">Jūsų veidas turi tilpti ovale</string>
-	<string name="iproov__prompt_liveness_no_target">Patalpinkite savo veidą rėmelyje</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skenavimas baigtas</string>
 	<string name="iproov__prompt_pitch_too_high">Laikykite įrenginį akių lygyje</string>
 	<string name="iproov__prompt_pitch_too_low">Laikykite įrenginį akių lygyje</string>
 	<string name="iproov__prompt_roll_too_high">Stenkitės nekelti galvos</string>
 	<string name="iproov__prompt_roll_too_low">Stenkitės nekelti galvos</string>
 	<string name="iproov__prompt_scanning">Nuskaitoma…</string>
-	<string name="iproov__prompt_tap_to_begin">Norėdami pradėti, palieskite ekraną</string>
 	<string name="iproov__prompt_too_bright">Eikite į mažiau apšviestą vietą</string>
 	<string name="iproov__prompt_too_close">Per arti</string>
 	<string name="iproov__prompt_too_far">Prieikite arčiau</string>

@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">최대 파일 크기: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">최대 페이지 수: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">문서를 암호로 보호하면 안 됩니다.</string>
+	<string name="jumio_error_button_retake_both">모두 다시 찍기</string>
+	<string name="jumio_error_button_retake_one">다시 찍기</string>
 	<string name="jumio_error_button_retry">다시 시도</string>
 	<string name="jumio_error_connection_title">연결 오류</string>
 	<string name="jumio_error_dialog_title">오류</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">사진 촬영 시 문서가 흔들리지 않도록 고정하세요</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">문서의 모든 세부 정보를 읽을 수 있는지 확인하세요</string>
 	<string name="jumio_error_instant_feedback_blurry_title">이미지가 너무 흐려서 확인할 수 없습니다</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">이미지를 다시 찍어야 합니다</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">컬러 이미지로 다시 시도하세요</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">이미지가 흑백 사본입니다</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">이미지가 컬러 사본인 것 같습니다</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">전체 서류를 캡처해야 합니다</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">올바른 신분증 이미지가 아닙니다</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">이미지 화질이 좋지 않아서 확인할 수 없습니다</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">이미지를 다시 찍어야 합니다</string>
 	<string name="jumio_error_instant_feedback_title">다시 시도하세요</string>
 	<string name="jumio_error_no_camera_connection">현재 카메라를 사용할 수 없습니다</string>
 	<string name="jumio_error_wrong_token">현재 스캔을 사용할 수 없습니다. 지원팀에 문의하시기 바랍니다.</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">문서 사진 찍기</string>
 	<string name="jumio_id_scan_manual_back">뒷면 촬영하기</string>
 	<string name="jumio_id_scan_manual_tips">전체 서류를 캡처해야 합니다</string>
+	<string name="jumio_id_scan_prompt_back_captured">뒷면이 촬영되었습니다</string>
 	<string name="jumio_id_scan_prompt_barcode">바코드를 중앙에 배치하세요</string>
+	<string name="jumio_id_scan_prompt_capture_success">끝났습니다!</string>
 	<string name="jumio_id_scan_prompt_center_id">문서를 중앙에 놓아주세요</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">뒷면으로 뒤집으세요</string>
+	<string name="jumio_id_scan_prompt_front_captured">앞면이 촬영되었습니다</string>
 	<string name="jumio_id_scan_prompt_hold_still">가만히 계세요…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">정면 응시 후 정지</string>
 	<string name="jumio_id_scan_prompt_initial_back">신분증을 뒤집으세요</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">가까이 이동</string>
 	<string name="jumio_id_scan_prompt_processing">이미지 확인 중…</string>
 	<string name="jumio_id_scan_prompt_too_close">너무 가까움</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">바코드를 확대하세요</string>
+	<string name="jumio_id_scan_take_photo_back_dl">운전 면허증 뒷면의 사진을 찍으세요.</string>
+	<string name="jumio_id_scan_take_photo_back_ic">신분증 뒷면의 사진을 찍으세요.</string>
+	<string name="jumio_id_scan_take_photo_back_pd">개인 문서 뒷면의 사진을 찍으세요.</string>
+	<string name="jumio_id_scan_take_photo_front_dl">운전 면허증 앞면의 사진을 찍으세요.</string>
+	<string name="jumio_id_scan_take_photo_front_ic">신분증 앞면의 사진을 찍으세요.</string>
+	<string name="jumio_id_scan_take_photo_front_pd">개인 문서 앞면의 사진을 찍으세요.</string>
+	<string name="jumio_id_scan_take_photo_pp">여권의 사진을 찍으세요.</string>
 	<string name="jumio_id_scan_tips_barcode">카메라를 바코드에 가깝게 이동하세요</string>
 	<string name="jumio_id_scan_tips_button_fallback">직접 사진 촬영하기</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">스캔이 작동하지 않음</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">문서 사진 찍기</string>
 	<string name="jumio_start_step_identity">셀카 찍기</string>
 	<string name="jumio_start_step_ready">서류 준비하기</string>
+	<string name="jumio_start_steps_title">인증을 시작하겠습니다</string>
 	<string name="jumio_start_title_plural">인증을\n%1$d단계로 간단하게</string>
 	<string name="jumio_start_title_singular">간단한\n1단계 인증</string>
 	<string name="jumio_uploading_success">업로드 성공</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">기기를 얼굴 앞에 대고 화면을 봅니다</string>
+	<string name="iproov__accessibility_prompt_scanning">스캔 중</string>
 	<string name="iproov__error_camera">카메라 액세스 비활성화</string>
 	<string name="iproov__error_camera_permission_denied">카메라 액세스 비활성화</string>
 	<string name="iproov__error_capture_already_active">기존 캡처가 이미 진행 중입니다.</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">예기치 못한 오류가 발생했습니다.</string>
 	<string name="iproov__error_server">온라인 상태인지 확인해 주세요</string>
 	<string name="iproov__error_unexpected_error">예기치 못한 오류가 발생했습니다.</string>
-	<string name="iproov__failure_ambiguous_outcome">애매한 결과</string>
-	<string name="iproov__failure_lighting_backlit">뒤에서 강한 광원이 감지되었습니다.</string>
-	<string name="iproov__failure_lighting_face_too_bright">얼굴에 과도한 빛이 감지되었습니다.</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">주변 조명이 너무 강하거나 화면 밝기가 너무 낮습니다.</string>
-	<string name="iproov__failure_lighting_too_dark">주변 환경이 너무 어두운 것 같습니다.</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">스캔 중에는 말하지 마십시오.</string>
-	<string name="iproov__failure_motion_too_much_movement">스캔 중에는 움직이지 마십시오.</string>
+	<string name="iproov__failure_eyes_closed">눈을 뜨고 계세요</string>
+	<string name="iproov__failure_face_too_close">얼굴을 화면에서 멀리 이동하세요</string>
+	<string name="iproov__failure_face_too_far">얼굴을 화면에 더 가깝게 이동하세요</string>
+	<string name="iproov__failure_misaligned_face">타원 안에 얼굴을 맞추세요</string>
+	<string name="iproov__failure_not_supported">장치가 지원되지 않습니다.</string>
+	<string name="iproov__failure_obscured_face">얼굴을 가리는 것을 모두 제거하세요</string>
+	<string name="iproov__failure_sunglasses">선글라스를 벗으세요</string>
+	<string name="iproov__failure_too_bright">더 어두운 곳으로 이동하십시오</string>
+	<string name="iproov__failure_too_dark">더 밝은 곳으로 이동하십시오</string>
+	<string name="iproov__failure_too_much_movement">가만히 계세요</string>
+	<string name="iproov__failure_unknown">다시 시도</string>
 	<string name="iproov__failure_user_timeout">세션이 만료되었습니다.</string>
 	<string name="iproov__progress_assessing_genuine_presence">실제 인물인지 평가 중…</string>
 	<string name="iproov__progress_assessing_liveness">활동성 평가 중…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">얼굴 인식 중…</string>
 	<string name="iproov__progress_loading">로딩 중…</string>
 	<string name="iproov__progress_streaming">스트리밍 중…</string>
-	<string name="iproov__progress_streaming_slow">네트워크 연결이 느린 것 같습니다. 처리하는 동안 잠시 기다려 주십시오.</string>
-	<string name="iproov__prompt_align_face_accessibility">기기를 얼굴 앞에 대고 화면을 봅니다.</string>
-	<string name="iproov__prompt_genuine_presence_align_face">프레임에 얼굴을 놓아주세요</string>
+	<string name="iproov__prompt_align_face">타원 안에 얼굴을 놓아주세요</string>
 	<string name="iproov__prompt_get_ready">준비하세요…</string>
-	<string name="iproov__prompt_liveness_align_face">타원에 얼굴을 맞춰주세요</string>
-	<string name="iproov__prompt_liveness_no_target">프레임에 얼굴을 놓아주세요</string>
 	<string name="iproov__prompt_liveness_scan_completed">스캔 완료</string>
 	<string name="iproov__prompt_pitch_too_high">기기를 눈높이에서 들고 계세요</string>
 	<string name="iproov__prompt_pitch_too_low">기기를 눈높이에서 들고 계세요</string>
 	<string name="iproov__prompt_roll_too_high">고개를 기울이지 마십시오.</string>
 	<string name="iproov__prompt_roll_too_low">고개를 기울이지 마십시오.</string>
 	<string name="iproov__prompt_scanning">스캔 중…</string>
-	<string name="iproov__prompt_tap_to_begin">화면을 탭하여 시작</string>
 	<string name="iproov__prompt_too_bright">더 그늘진 곳으로 이동하십시오.</string>
 	<string name="iproov__prompt_too_close">너무 가까움</string>
 	<string name="iproov__prompt_too_far">가까이 와주세요</string>

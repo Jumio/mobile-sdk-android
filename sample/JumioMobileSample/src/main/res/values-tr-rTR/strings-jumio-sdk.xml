@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maksimum dosya boyutu: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimum sayfa sayısı: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Belge şifre korumalı olmamalıdır</string>
+	<string name="jumio_error_button_retake_both">İkisini de yeniden çek</string>
+	<string name="jumio_error_button_retake_one">Yeniden çek</string>
 	<string name="jumio_error_button_retry">Tekrar deneyin</string>
 	<string name="jumio_error_connection_title">Bağlantı hatası</string>
 	<string name="jumio_error_dialog_title">Hata</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Bir fotoğraf çekerken belgenizi sabit tutun</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Belgenizdeki tüm ayrıntıların okunabilir olduğuna emin olun</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Görüntü doğrulanamayacak kadar bulanık</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Görüntüler yeniden çekilmelidir</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Lütfen renkli bir görüntüyle tekrar deneyin</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Bu görüntü siyah beyaz bir fotokopi</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Bu görüntü renkli bir fotokopi gibi görünüyor</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Belgenin tamamını çektiğinizden emin olun</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Bu görüntü, geçerli bir kimlik saptama biçimi değil</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Görüntü kalitesi doğrulanabilecek kadar iyi değil</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Görüntü yeniden çekilmelidir</string>
 	<string name="jumio_error_instant_feedback_title">Tekrar deneyin</string>
 	<string name="jumio_error_no_camera_connection">Kamera şu anda kullanılamıyor</string>
 	<string name="jumio_error_wrong_token">Tarama şu anda kullanılamıyor, lütfen destek ekibi ile iletişime geçin.</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">Belgenizin fotoğrafını çekin</string>
 	<string name="jumio_id_scan_manual_back">Arkasının fotoğrafını çekin</string>
 	<string name="jumio_id_scan_manual_tips">Belgenin tamamını çektiğinizden emin olun</string>
+	<string name="jumio_id_scan_prompt_back_captured">ARKA tarafın görüntüsü alındı</string>
 	<string name="jumio_id_scan_prompt_barcode">Barkodunuzu ortalayın</string>
+	<string name="jumio_id_scan_prompt_capture_success">Tamamdır!</string>
 	<string name="jumio_id_scan_prompt_center_id">Belgenizi ortalayın</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">ARKA tarafa çevirin</string>
+	<string name="jumio_id_scan_prompt_front_captured">ÖN tarafın görüntüsü alındı</string>
 	<string name="jumio_id_scan_prompt_hold_still">Sabit durun…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Dik durun</string>
 	<string name="jumio_id_scan_prompt_initial_back">Kimlik belgenizin arkasını çevirin</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">Yaklaşın</string>
 	<string name="jumio_id_scan_prompt_processing">Görüntü kontrol ediliyor…</string>
 	<string name="jumio_id_scan_prompt_too_close">Çok yakın</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Barkodunuzu yakınlaştırın</string>
+	<string name="jumio_id_scan_take_photo_back_dl">Ehliyetinizin ARKA yüzünün bir fotoğrafını çekin.</string>
+	<string name="jumio_id_scan_take_photo_back_ic">Kimlik kartınızın ARKA yüzünün bir fotoğrafını çekin.</string>
+	<string name="jumio_id_scan_take_photo_back_pd">Kişisel belgenizin ARKA yüzünün bir fotoğrafını çekin.</string>
+	<string name="jumio_id_scan_take_photo_front_dl">Ehliyetinizin ÖN yüzünün bir fotoğrafını çekin.</string>
+	<string name="jumio_id_scan_take_photo_front_ic">Kimlik kartınızın ÖN yüzünün bir fotoğrafını çekin.</string>
+	<string name="jumio_id_scan_take_photo_front_pd">Kişisel belgenizin ÖN yüzünün bir fotoğrafını çekin.</string>
+	<string name="jumio_id_scan_take_photo_pp">Pasaportunuzun fotoğrafını çekin.</string>
 	<string name="jumio_id_scan_tips_barcode">Kamerayı barkoda yaklaştırın</string>
 	<string name="jumio_id_scan_tips_button_fallback">Fotoğrafı manuel olarak çekin</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">Tarama çalışmıyor</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">Belgenizin fotoğrafını çekin</string>
 	<string name="jumio_start_step_identity">Selfie çekin</string>
 	<string name="jumio_start_step_ready">Belgenizi hazırlayın</string>
+	<string name="jumio_start_steps_title">Sizi doğrulayalım</string>
 	<string name="jumio_start_title_plural">%1$d basit adımlarla \n doğrulama</string>
 	<string name="jumio_start_title_singular">Tek basit\nadımla doğrulama</string>
 	<string name="jumio_uploading_success">Yükleme başarılı</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Cihazı yüzünüzün önünde tutun ve ekrana bakın</string>
+	<string name="iproov__accessibility_prompt_scanning">Tarama</string>
 	<string name="iproov__error_camera">Kamera erişimi devre dışı</string>
 	<string name="iproov__error_camera_permission_denied">Kamera erişimi devre dışı</string>
 	<string name="iproov__error_capture_already_active">Geçerli çekim zaten devam ediyor</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">Beklenmeyen bir hata oluştu</string>
 	<string name="iproov__error_server">Lütfen çevrimiçi olduğunuzu kontrol edin</string>
 	<string name="iproov__error_unexpected_error">Beklenmeyen bir hata oluştu</string>
-	<string name="iproov__failure_ambiguous_outcome">Belirsiz sonuç</string>
-	<string name="iproov__failure_lighting_backlit">Arkanızda güçlü bir ışık kaynağı tespit edildi</string>
-	<string name="iproov__failure_lighting_face_too_bright">Yüzünüze çok fazla ışık geldiği tespit edildi</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Ortam ışığı çok güçlü veya ekran parlaklığı çok düşük</string>
-	<string name="iproov__failure_lighting_too_dark">İçinde bulunduğunuz ortam çok karanlık</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Tarama sırasında lütfen konuşmayın</string>
-	<string name="iproov__failure_motion_too_much_movement">Tarama sırasında lütfen hareket etmeyin</string>
+	<string name="iproov__failure_eyes_closed">Gözlerinizi açık tutun</string>
+	<string name="iproov__failure_face_too_close">Yüzünüzü ekrandan uzaklaştırın</string>
+	<string name="iproov__failure_face_too_far">Yüzünüzü ekrana yaklaştırın</string>
+	<string name="iproov__failure_misaligned_face">Yüzünüzü oval alanda tutun</string>
+	<string name="iproov__failure_not_supported">Cihaz desteklenmiyor</string>
+	<string name="iproov__failure_obscured_face">Yüzünüzü kapatan her şeyi çıkarın</string>
+	<string name="iproov__failure_sunglasses">Güneş gözlüklerini çıkarın</string>
+	<string name="iproov__failure_too_bright">Daha karanlık bir yere geçin</string>
+	<string name="iproov__failure_too_dark">Daha aydınlık bir yere geçin</string>
+	<string name="iproov__failure_too_much_movement">Sabit durun</string>
+	<string name="iproov__failure_unknown">Tekrar deneyin</string>
 	<string name="iproov__failure_user_timeout">Oturumunuzun süresi doldu</string>
 	<string name="iproov__progress_assessing_genuine_presence">Mevcudiyetin gerçek olup olmadığı değerlendiriliyor…</string>
 	<string name="iproov__progress_assessing_liveness">Taramanın gerçek bir kişiye ait olup olmadığı değerlendiriliyor…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">Yüz tanımlanıyor…</string>
 	<string name="iproov__progress_loading">Yükleniyor…</string>
 	<string name="iproov__progress_streaming">Veri akışı gerçekleşiyor…</string>
-	<string name="iproov__progress_streaming_slow">Ağınız yavaş görünüyor olabilir. İşlem devam ederken lütfen bekleyin.</string>
-	<string name="iproov__prompt_align_face_accessibility">Cihazı yüzünüzün önünde tutun ve ekrana bakın</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Yüzünüzü çerçeveye ortalayın</string>
+	<string name="iproov__prompt_align_face">Yüzünüzü oval alana oturtun</string>
 	<string name="iproov__prompt_get_ready">Hazır olun…</string>
-	<string name="iproov__prompt_liveness_align_face">Yüzünüz ovalin içinde olmalı</string>
-	<string name="iproov__prompt_liveness_no_target">Yüzünüzü çerçeveye ortalayın</string>
 	<string name="iproov__prompt_liveness_scan_completed">Tarama tamamlandı</string>
 	<string name="iproov__prompt_pitch_too_high">Cihazı göz hizasında tutun</string>
 	<string name="iproov__prompt_pitch_too_low">Cihazı göz hizasında tutun</string>
 	<string name="iproov__prompt_roll_too_high">Başınızı eğmekten kaçının</string>
 	<string name="iproov__prompt_roll_too_low">Başınızı eğmekten kaçının</string>
 	<string name="iproov__prompt_scanning">Taranıyor…</string>
-	<string name="iproov__prompt_tap_to_begin">Başlamak için ekrana dokunun</string>
 	<string name="iproov__prompt_too_bright">Daha gölgeli bir yere gidin</string>
 	<string name="iproov__prompt_too_close">Çok yakın</string>
 	<string name="iproov__prompt_too_far">Yaklaşın</string>

@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maximálna veľkosť súboru: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maximálny počet strán: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument nesmie byť chránený heslom</string>
+	<string name="jumio_error_button_retake_both">Obidva znovu odfotiť</string>
+	<string name="jumio_error_button_retake_one">Znovu odfotiť</string>
 	<string name="jumio_error_button_retry">Skúste znova</string>
 	<string name="jumio_error_connection_title">Chyba spojenia</string>
 	<string name="jumio_error_dialog_title">Chyba</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Pri fotografovaní držte preukaz totožnosti pevne</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Uistite sa, že všetky údaje na vašom preukaze totožnosti sú čitateľné</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Fotografia je príliš rozmazaná na overenie</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Fotografie je potrebné urobiť znovu</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Skúste to znova s farebným obrázkom</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Obrázok je čiernobielou fotokópiou</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Obrázok vyzerá ako farebná fotokópia</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Musíte zachytiť celý dokument</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Obrázok nezodpovedá platnému druhu preukazu totožnosti</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Kvalita fotografie nie je dostatočne dobrá na overenie</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Fotografiu je potrebné urobiť znovu</string>
 	<string name="jumio_error_instant_feedback_title">Skúste to znova</string>
 	<string name="jumio_error_no_camera_connection">Fotoaparát momentálne nie je k dispozícii</string>
 	<string name="jumio_error_wrong_token">Skenovanie nie je momentálne k dispozícii, obráťte sa na tím podpory</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">Odfoťte dokument</string>
 	<string name="jumio_id_scan_manual_back">Urobte fotografiu zadnej strany</string>
 	<string name="jumio_id_scan_manual_tips">Musíte zachytiť celý dokument</string>
+	<string name="jumio_id_scan_prompt_back_captured">ZADNÁ strana nasnímaná</string>
 	<string name="jumio_id_scan_prompt_barcode">Vycentrujte čiarový kód</string>
+	<string name="jumio_id_scan_prompt_capture_success">Hotovo!</string>
 	<string name="jumio_id_scan_prompt_center_id">Vycentrujte dokument</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Otočte na ZADNÚ stranu</string>
+	<string name="jumio_id_scan_prompt_front_captured">PREDNÁ strana nasnímaná</string>
 	<string name="jumio_id_scan_prompt_hold_still">Nehýbte sa…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Držte sa vzpriamene</string>
 	<string name="jumio_id_scan_prompt_initial_back">Otočte váš doklad totožnosti</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">Pristúpte bližšie</string>
 	<string name="jumio_id_scan_prompt_processing">Kontroluje sa obrázok…</string>
 	<string name="jumio_id_scan_prompt_too_close">Príliš blízko</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Priblížte si čiarový kód</string>
+	<string name="jumio_id_scan_take_photo_back_dl">Odfoťte ZADNÚ stranu svojho vodičského preukazu.</string>
+	<string name="jumio_id_scan_take_photo_back_ic">Odfoťte ZADNÚ stranu svojho občianskeho preukazu.</string>
+	<string name="jumio_id_scan_take_photo_back_pd">Odfoťte ZADNÚ stranu svojho dokladu totožnosti.</string>
+	<string name="jumio_id_scan_take_photo_front_dl">Odfoťte PREDNÚ stranu svojho vodičského preukazu.</string>
+	<string name="jumio_id_scan_take_photo_front_ic">Odfoťte PREDNÚ stranu svojho občianskeho preukazu.</string>
+	<string name="jumio_id_scan_take_photo_front_pd">Odfoťte PREDNÚ stranu svojho dokladu totožnosti.</string>
+	<string name="jumio_id_scan_take_photo_pp">Odfoťte svoj pas.</string>
 	<string name="jumio_id_scan_tips_barcode">Posuňte fotoaparát bližšie k čiarovému kódu</string>
 	<string name="jumio_id_scan_tips_button_fallback">Urobiť fotografiu manuálne</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">Skenovanie nefunguje</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">Odfoťte dokument</string>
 	<string name="jumio_start_step_identity">Urobte si selfie</string>
 	<string name="jumio_start_step_ready">Pripravte si preukaz</string>
+	<string name="jumio_start_steps_title">Overíme si vás</string>
 	<string name="jumio_start_title_plural">Overenie\nv %1$d jednoduchých krokoch</string>
 	<string name="jumio_start_title_singular">Overenie\nv 1 jednoduchom kroku</string>
 	<string name="jumio_uploading_success">Nahrávanie úspešné</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Držte zariadenie pred tvárou a pozerajte sa na obrazovku</string>
+	<string name="iproov__accessibility_prompt_scanning">Snímanie</string>
 	<string name="iproov__error_camera">Prístup k fotoaparátu je zamietnutý</string>
 	<string name="iproov__error_camera_permission_denied">Prístup k fotoaparátu je zamietnutý</string>
 	<string name="iproov__error_capture_already_active">Existujúca snímka sa spracováva</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">Vyskytla sa neočakávaná chyba</string>
 	<string name="iproov__error_server">Skontrolujte svoje pripojenie</string>
 	<string name="iproov__error_unexpected_error">Vyskytla sa neočakávaná chyba</string>
-	<string name="iproov__failure_ambiguous_outcome">Nejasný výsledok</string>
-	<string name="iproov__failure_lighting_backlit">Za vami sa nachádza príliš silný zdroj svetla</string>
-	<string name="iproov__failure_lighting_face_too_bright">Vaša tvár je príliš osvetlená</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Okolité svetlo je príliš silné alebo jas obrazovky je príliš nízky</string>
-	<string name="iproov__failure_lighting_too_dark">Vaše okolie je príliš tmavé</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Nehovorte počas skenovania</string>
-	<string name="iproov__failure_motion_too_much_movement">Nehýbte sa počas skenovania</string>
+	<string name="iproov__failure_eyes_closed">Majte oči otvorené</string>
+	<string name="iproov__failure_face_too_close">Posuňte svoju tvár ďalej od obrazovky</string>
+	<string name="iproov__failure_face_too_far">Presuňte svoju tvár bližšie k obrazovke</string>
+	<string name="iproov__failure_misaligned_face">Udržujte svoju tvár v ovále</string>
+	<string name="iproov__failure_not_supported">Zariadenie nie je podporované</string>
+	<string name="iproov__failure_obscured_face">Odstráňte všetky pokrývky tváre</string>
+	<string name="iproov__failure_sunglasses">Odstráňte slnečné okuliare</string>
+	<string name="iproov__failure_too_bright">Presuňte sa na tmavšie miesto</string>
+	<string name="iproov__failure_too_dark">Presuňte sa na svetlejšie miesto</string>
+	<string name="iproov__failure_too_much_movement">Nehýbte sa</string>
+	<string name="iproov__failure_unknown">Skúste znova</string>
 	<string name="iproov__failure_user_timeout">Vaša relácia vypršala</string>
 	<string name="iproov__progress_assessing_genuine_presence">Posudzuje sa skutočná prítomnosť…</string>
 	<string name="iproov__progress_assessing_liveness">Posudzuje sa živosť…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">Identifikácia tváre…</string>
 	<string name="iproov__progress_loading">Načítavanie…</string>
 	<string name="iproov__progress_streaming">Streamovanie…</string>
-	<string name="iproov__progress_streaming_slow">Vaše pripojenie je pomalé. Čakajte, kým prebieha spracovanie.</string>
-	<string name="iproov__prompt_align_face_accessibility">Podržte zariadenie pre svojou tvárou a pozerajte sa na obrazovku</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Umiestnite tvár do rámika</string>
+	<string name="iproov__prompt_align_face">Dajte svoju tvár do oválu</string>
 	<string name="iproov__prompt_get_ready">Pripravte sa …</string>
-	<string name="iproov__prompt_liveness_align_face">Vyplňte ovál vašou tvárou</string>
-	<string name="iproov__prompt_liveness_no_target">Umiestnite tvár do rámika</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skenovanie bolo dokončené</string>
 	<string name="iproov__prompt_pitch_too_high">Zariadenie držte na úrovni očí</string>
 	<string name="iproov__prompt_pitch_too_low">Zariadenie držte na úrovni očí</string>
 	<string name="iproov__prompt_roll_too_high">Nenakláňajte hlavu</string>
 	<string name="iproov__prompt_roll_too_low">Nenakláňajte hlavu</string>
 	<string name="iproov__prompt_scanning">Skenovanie …</string>
-	<string name="iproov__prompt_tap_to_begin">Pre spustenie ťuknite na obrazovku</string>
 	<string name="iproov__prompt_too_bright">Nájdite tmavšie miesto</string>
 	<string name="iproov__prompt_too_close">Príliš blízko</string>
 	<string name="iproov__prompt_too_far">Pristúpte bližšie</string>

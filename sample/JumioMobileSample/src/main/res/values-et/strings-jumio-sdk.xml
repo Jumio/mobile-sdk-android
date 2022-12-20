@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maksimaalne faili suurus: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimaalne lehekülgede arv: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument ei tohi olla parooliga kaitstud</string>
+	<string name="jumio_error_button_retake_both">Mõlemad uuesti</string>
+	<string name="jumio_error_button_retake_one">Uuesti</string>
 	<string name="jumio_error_button_retry">Proovige uuesti</string>
 	<string name="jumio_error_connection_title">Ühendusetõrge</string>
 	<string name="jumio_error_dialog_title">Viga</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Pildistamise ajal hoidke dokumenti paigal</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Veenduge, et kõik doumendil olevad andmed oleksid loetavad</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Foto on tuvastamiseks liiga hägune</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Pildid tuleb uuesti teha</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Palun proovige uuesti värvipildiga</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Pilt on mustvalge fotokoopia</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Näib, et pilt on värviline fotokoopia</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Kontrollige, et kogu dokument oleks pildil nähtav</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Pilt ei ole õige tuvastamisformaat</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Foto kvaliteet pole tuvastamiseks piisavalt hea</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Pilt tuleb uuesti teha</string>
 	<string name="jumio_error_instant_feedback_title">Palun proovi uuesti</string>
 	<string name="jumio_error_no_camera_connection">Kaamera pole praegu saadaval</string>
 	<string name="jumio_error_wrong_token">Skannimine pole praegu saadaval, võtke ühendust kasutajatoega</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">Tehke foto oma dokumendist</string>
 	<string name="jumio_id_scan_manual_back">Tehke foto tagaküljest</string>
 	<string name="jumio_id_scan_manual_tips">Kontrollige, et kogu dokument oleks pildil nähtav</string>
+	<string name="jumio_id_scan_prompt_back_captured">TAGAKÜLG jäädvustatud</string>
 	<string name="jumio_id_scan_prompt_barcode">Tsentreerige ribakood</string>
+	<string name="jumio_id_scan_prompt_capture_success">Sain aru!</string>
 	<string name="jumio_id_scan_prompt_center_id">Tsentreerige oma dokument</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Pöörake TAGUMINE külg</string>
+	<string name="jumio_id_scan_prompt_front_captured">ESIKÜLG jäädvustatud</string>
 	<string name="jumio_id_scan_prompt_hold_still">Olge paigal…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Selg sirgu</string>
 	<string name="jumio_id_scan_prompt_initial_back">Pöörake dokument teistpidi</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">Liikuge lähemale</string>
 	<string name="jumio_id_scan_prompt_processing">Foto kontrollimine…</string>
 	<string name="jumio_id_scan_prompt_too_close">Liiga lähedal</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Suumige oma vöötkoodi sisse</string>
+	<string name="jumio_id_scan_take_photo_back_dl">Tehke foto oma juhiloa TAGAKÜLJEST.</string>
+	<string name="jumio_id_scan_take_photo_back_ic">Tehke foto oma ID-kaardi TAGAKÜLJEST.</string>
+	<string name="jumio_id_scan_take_photo_back_pd">Tehke foto oma isikutunnistuse TAGAKÜLJEST.</string>
+	<string name="jumio_id_scan_take_photo_front_dl">Tehke foto oma juhiloa ESIKÜLJEST.</string>
+	<string name="jumio_id_scan_take_photo_front_ic">Tehke foto oma ID-kaardi ESIKÜLJEST.</string>
+	<string name="jumio_id_scan_take_photo_front_pd">Tehke foto oma isikutunnistuse ESIKÜLJEST.</string>
+	<string name="jumio_id_scan_take_photo_pp">Tehke foto oma passist.</string>
 	<string name="jumio_id_scan_tips_barcode">Liigutage kaamera ribakoodile lähemale</string>
 	<string name="jumio_id_scan_tips_button_fallback">Tehke foto käsitsi</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">Skannimine ei tööta</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">Tehke foto oma dokumendist</string>
 	<string name="jumio_start_step_identity">Tehke selfie</string>
 	<string name="jumio_start_step_ready">Valmistage ette oma dokument</string>
+	<string name="jumio_start_steps_title">Nüüd kontrollime teie isikusamasust</string>
 	<string name="jumio_start_title_plural">Kinnitamine\n%1$d lihtsa sammuga</string>
 	<string name="jumio_start_title_singular">Kontroll\n1 lihtsa toiminguga</string>
 	<string name="jumio_uploading_success">Üleslaadimine õnnestus</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Hoidke seadet oma näo ees ja vaadake ekraanile</string>
+	<string name="iproov__accessibility_prompt_scanning">Skannimine</string>
 	<string name="iproov__error_camera">Juurdepääs kaamerale on keelatud</string>
 	<string name="iproov__error_camera_permission_denied">Juurdepääs kaamerale on keelatud</string>
 	<string name="iproov__error_capture_already_active">Olemasolev jäädvustus on juba töös</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">Tekkis ootamatu viga</string>
 	<string name="iproov__error_server">Kontrollige, et teil oleks võrguühendus</string>
 	<string name="iproov__error_unexpected_error">Tekkis ootamatu viga</string>
-	<string name="iproov__failure_ambiguous_outcome">Ebaselge tulemus</string>
-	<string name="iproov__failure_lighting_backlit">Teie taga on tuvastatud tugev valgusallikas</string>
-	<string name="iproov__failure_lighting_face_too_bright">Teie näol on tuvastatud liiga palju valgust</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Ümbritsev valgus on liiga tugev või ekraani heledus liiga madal</string>
-	<string name="iproov__failure_lighting_too_dark">Teie keskkond on liiga tume</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Palun ärge skannimise ajal rääkige</string>
-	<string name="iproov__failure_motion_too_much_movement">Palun ärge skannimise ajal liikuge</string>
+	<string name="iproov__failure_eyes_closed">Hoidke oma silmad lahti</string>
+	<string name="iproov__failure_face_too_close">Liigutage oma nägu ekraanist kaugemale</string>
+	<string name="iproov__failure_face_too_far">Liigutage oma nägu ekraanile lähemale</string>
+	<string name="iproov__failure_misaligned_face">Hoidke oma nägu ovaali sees</string>
+	<string name="iproov__failure_not_supported">Seadet ei toetata</string>
+	<string name="iproov__failure_obscured_face">Eemaldage nägu katvad aksessuaarid</string>
+	<string name="iproov__failure_sunglasses">Eemaldage päikseprillid</string>
+	<string name="iproov__failure_too_bright">Liikuge mõnda varjulisemasse kohta</string>
+	<string name="iproov__failure_too_dark">Liikuge mõnda valgusrikkamasse kohta</string>
+	<string name="iproov__failure_too_much_movement">Olge paigal</string>
+	<string name="iproov__failure_unknown">Proovige uuesti</string>
 	<string name="iproov__failure_user_timeout">Sessioon on aegunud</string>
 	<string name="iproov__progress_assessing_genuine_presence">Tegeliku kohalolu hindamine…</string>
 	<string name="iproov__progress_assessing_liveness">Elulisuse hindamine…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">Näo tuvastamine…</string>
 	<string name="iproov__progress_loading">Laadimine…</string>
 	<string name="iproov__progress_streaming">Voogedastus…</string>
-	<string name="iproov__progress_streaming_slow">Teie võrk tundub aeglane. Oodake, kuni me töötleme.</string>
-	<string name="iproov__prompt_align_face_accessibility">Hoidke seadet oma näo ees ja vaadake ekraanile</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Asetage oma nägu raami sisse</string>
+	<string name="iproov__prompt_align_face">Asetage oma nägu ovaali sisse</string>
 	<string name="iproov__prompt_get_ready">Seadke end valmis…</string>
-	<string name="iproov__prompt_liveness_align_face">Täitke ovaal oma näoga</string>
-	<string name="iproov__prompt_liveness_no_target">Asetage oma nägu raami sisse</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skannimine on lõpetatud</string>
 	<string name="iproov__prompt_pitch_too_high">Hoidke seadet silmade kõrgusel</string>
 	<string name="iproov__prompt_pitch_too_low">Hoidke seadet silmade kõrgusel</string>
 	<string name="iproov__prompt_roll_too_high">Vältige pea kallutamist</string>
 	<string name="iproov__prompt_roll_too_low">Vältige pea kallutamist</string>
 	<string name="iproov__prompt_scanning">Skannimine…</string>
-	<string name="iproov__prompt_tap_to_begin">Alustamiseks puudutage ekraani</string>
 	<string name="iproov__prompt_too_bright">Minge mõnda varjulisemasse kohta</string>
 	<string name="iproov__prompt_too_close">Liiga lähedal</string>
 	<string name="iproov__prompt_too_far">Liigutage lähemale</string>

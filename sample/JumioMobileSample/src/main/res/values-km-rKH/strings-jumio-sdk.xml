@@ -58,6 +58,8 @@
 	<string name="jumio_dv_upload_tips_file_size">ទំហំឯកសារអតិបរមា៖ %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">ចំនួនទំព័រអតិបរមា៖ %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">ឯកសារមិនគួរការពារដោយពាក្យសម្ងាត់ឡើយ</string>
+	<string name="jumio_error_button_retake_both">ថតទាំងសងខាងម្ដងទៀត</string>
+	<string name="jumio_error_button_retake_one">ថតម្ដងទៀត</string>
 	<string name="jumio_error_button_retry">សូមព្យាយាមម្ដងទៀត</string>
 	<string name="jumio_error_connection_title">កំហុសក្នុងការភ្ជាប់</string>
 	<string name="jumio_error_dialog_title">កំហុស</string>
@@ -65,6 +67,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">កាន់ឯកសាររបស់អ្នកឱ្យនឹងនៅពេលថតរូប</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">ត្រូវប្រាកដថាព័ត៌មានលម្អិតទាំងអស់នៅលើឯកសាររបស់អ្នកអាចអានដាច់</string>
 	<string name="jumio_error_instant_feedback_blurry_title">រូបភាពព្រិលពេកមិនអាចផ្ទៀងផ្ទាត់បានទេ</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">រូបភាពត្រូវតែថតម្ដងទៀត</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">សូមព្យាយាមម្តងទៀតជាមួយនឹងរូបភាពពណ៌</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">រូបភាពគឺជារូបថតចម្លងសខ្មៅ</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">រូបភាពហាក់ដូចជារូបថតចម្លងពណ៌</string>
@@ -87,6 +90,7 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">ត្រូវប្រាកដថាថតឯកសារទាំងមូល</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">រូបភាពមិនមែនជាទម្រង់អត្តសញ្ញាណត្រឹមត្រូវទេ</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">គុណភាពរូបភាពមិនសូវល្អសម្រាប់ផ្ទៀងផ្ទាត់ទេ</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">រូបភាពត្រូវតែថតម្ដងទៀត</string>
 	<string name="jumio_error_instant_feedback_title">សូមព្យាយាមម្តងទៀត</string>
 	<string name="jumio_error_no_camera_connection">កាមេរ៉ានេះបច្ចុប្បន្នមិនអាចប្រើបានទេ</string>
 	<string name="jumio_error_wrong_token">ការស្កេនមិនមាននៅពេលនេះទេ សូមទាក់ទងក្រុមផ្ដល់ជំនួយ</string>
@@ -98,8 +102,12 @@
 	<string name="jumio_id_scan_manual">ថតរូបឯកសាររបស់អ្នក</string>
 	<string name="jumio_id_scan_manual_back">ថតរូបផ្នែកខាងក្រោយ</string>
 	<string name="jumio_id_scan_manual_tips">ត្រូវប្រាកដថាថតឯកសារទាំងមូល</string>
+	<string name="jumio_id_scan_prompt_back_captured">បានថតខាងក្រោយ</string>
 	<string name="jumio_id_scan_prompt_barcode">ដាក់បារកូដរបស់អ្នកឲ្យចំកណ្តាល</string>
+	<string name="jumio_id_scan_prompt_capture_success">យល់ហើយ!</string>
 	<string name="jumio_id_scan_prompt_center_id">ដាក់ឯកសារចំកណ្ដាល</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">ត្រឡប់ទៅខាងក្រោយ</string>
+	<string name="jumio_id_scan_prompt_front_captured">បានថតខាងមុខ</string>
 	<string name="jumio_id_scan_prompt_hold_still">កាន់ឲ្យនឹង…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">កាន់ឲ្យត្រង់</string>
 	<string name="jumio_id_scan_prompt_initial_back">បង្វែរអត្តសញ្ញាណប័ណ្ណរបស់អ្នក</string>
@@ -107,6 +115,14 @@
 	<string name="jumio_id_scan_prompt_move_closer">ខិតឲ្យជិតជាងនេះ</string>
 	<string name="jumio_id_scan_prompt_processing">កំពុងពិនិត្យរូបភាព…</string>
 	<string name="jumio_id_scan_prompt_too_close">ជិតពេក</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">ពង្រីកនៅលើបារកូដរបស់អ្នក</string>
+	<string name="jumio_id_scan_take_photo_back_dl">ថតរូបផ្នែកខាងក្រោយនៃបណ្ណបើកបររបស់អ្នក។</string>
+	<string name="jumio_id_scan_take_photo_back_ic">ថតរូបផ្នែកខាងក្រោយនៃអត្តសញ្ញាណបណ្ណរបស់អ្នក។</string>
+	<string name="jumio_id_scan_take_photo_back_pd">ថតរូបផ្នែកខាងក្រោយនៃឯកសារផ្ទាល់ខ្លួនរបស់អ្នក។</string>
+	<string name="jumio_id_scan_take_photo_front_dl">ថតរូបផ្នែកខាងមុខនៃបណ្ណបើកបររបស់អ្នក។</string>
+	<string name="jumio_id_scan_take_photo_front_ic">ថតរូបផ្នែកខាងមុខនៃអត្តសញ្ញាណបណ្ណរបស់អ្នក។</string>
+	<string name="jumio_id_scan_take_photo_front_pd">ថតរូបផ្នែកខាងមុខនៃឯកសារផ្ទាល់ខ្លួនរបស់អ្នក។</string>
+	<string name="jumio_id_scan_take_photo_pp">ថតរូបលិខិតឆ្លងដែនរបស់អ្នក។</string>
 	<string name="jumio_id_scan_tips_barcode">ផ្លាស់ទីកាមេរ៉ាឱ្យជិតបារកូដ</string>
 	<string name="jumio_id_scan_tips_button_fallback">ថតរូបដោយប្រើដៃ</string>
 	<string name="jumio_id_scan_tips_button_fallback_old">ការស្កេនមិនកំពុងដំណើរការ</string>
@@ -153,6 +169,7 @@
 	<string name="jumio_start_step_id">ថតរូបឯកសាររបស់អ្នក</string>
 	<string name="jumio_start_step_identity">ថតរូបសែលហ្វី</string>
 	<string name="jumio_start_step_ready">មានអត្តសញ្ញាណបណ្ណក្នុងដៃអ្នករួចរាល់</string>
+	<string name="jumio_start_steps_title">ចាប់ផ្ដើមផ្ទៀងផ្ទាត់អ្នក</string>
 	<string name="jumio_start_title_plural">ការផ្ទៀងផ្ទាត់ \n ក្នុងជំហានសាមញ្ញ %1$d</string>
 	<string name="jumio_start_title_singular">ការផ្ទៀងផ្ទាត់តាម\n1 ជំហានងាយៗ</string>
 	<string name="jumio_uploading_success">ការផ្ទុកឡើងបានជោគជ័យ</string>
@@ -161,6 +178,8 @@
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">កាន់ឧបករណ៍នៅចំពីមុខអ្នក ហើយមើលទៅអេក្រង់</string>
+	<string name="iproov__accessibility_prompt_scanning">កំពុងស្កេន</string>
 	<string name="iproov__error_camera">ការចូលប្រើកាមេរ៉ាត្រូវបានបិទ</string>
 	<string name="iproov__error_camera_permission_denied">ការចូលប្រើកាមេរ៉ាត្រូវបានបិទ</string>
 	<string name="iproov__error_capture_already_active">ការថតដែលមានស្រាប់កំពុងតែដំណើរការហើយ</string>
@@ -172,13 +191,17 @@
 	<string name="iproov__error_no_listener_exception">មានកំហុសដែលមិនបានរំពឹងទុកកើតឡើង</string>
 	<string name="iproov__error_server">សូមពិនិត្យមើលថាអ្នកកំពុងអនឡាញ</string>
 	<string name="iproov__error_unexpected_error">មានកំហុសដែលមិនបានរំពឹងទុកកើតឡើង</string>
-	<string name="iproov__failure_ambiguous_outcome">លទ្ធផលមិនច្បាស់លាស់</string>
-	<string name="iproov__failure_lighting_backlit">បានរកឃើញប្រភពពន្លឺខ្លាំងនៅពីក្រោយអ្នក</string>
-	<string name="iproov__failure_lighting_face_too_bright">បានរកឃើញពន្លឺខ្លាំងពេកនៅលើផ្ទៃមុខរបស់អ្នក</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">ពន្លឺជុំវិញខ្លាំងពេក ឬកម្រិតពន្លឺអេក្រង់ទាបពេក</string>
-	<string name="iproov__failure_lighting_too_dark">បរិស្ថានរបស់អ្នកដូចជាងងឹតពេក</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">សូមកុំនិយាយពេលកំពុងស្កេន</string>
-	<string name="iproov__failure_motion_too_much_movement">សូមកុំផ្លាស់ទីពេលកំពុងស្កេន</string>
+	<string name="iproov__failure_eyes_closed">សូមកុំបិទភ្នែក</string>
+	<string name="iproov__failure_face_too_close">ខិតមុខរបស់អ្នកឲ្យឆ្ងាយពីអេក្រង់បន្តិច</string>
+	<string name="iproov__failure_face_too_far">ខិតមុខរបស់អ្នកឲ្យមកជិតអេក្រង់បន្តិច</string>
+	<string name="iproov__failure_misaligned_face">រក្សាមុខរបស់អ្នកឲ្យនៅក្នុងរង្វង់ពងក្រពើ</string>
+	<string name="iproov__failure_not_supported">មិនស្គាល់ឧបករណ៍នេះទេ</string>
+	<string name="iproov__failure_obscured_face">ដោះរបាំងមុខចេញ</string>
+	<string name="iproov__failure_sunglasses">ដោះវែនតាចេញ</string>
+	<string name="iproov__failure_too_bright">ទៅកន្លែងណាដែលងងឹតជាងនេះ</string>
+	<string name="iproov__failure_too_dark">ទៅកន្លែងណាដែលភ្លឺជាងនេះ</string>
+	<string name="iproov__failure_too_much_movement">កាន់ឲ្យនឹង</string>
+	<string name="iproov__failure_unknown">សូមព្យាយាមម្ដងទៀត</string>
 	<string name="iproov__failure_user_timeout">រយៈពេលរបស់អ្នកបានផុតកំណត់ហើយ</string>
 	<string name="iproov__progress_assessing_genuine_presence">កំពុងវាយតម្លៃវត្តមានជាពិសេស…</string>
 	<string name="iproov__progress_assessing_liveness">កំពុងវាយតម្លៃភាពរស់រវើក…</string>
@@ -188,19 +211,14 @@
 	<string name="iproov__progress_identifying_face">កំពុងកំណត់អត្តសញ្ញាណមុខ…</string>
 	<string name="iproov__progress_loading">កំពុងផ្ទុក…</string>
 	<string name="iproov__progress_streaming">កំពុងស្ទ្រីម…</string>
-	<string name="iproov__progress_streaming_slow">បណ្ដាញរបស់អ្នកប្រហែលជាដើរយឹត។ សូមរង់ចាំ ខណៈដែលយើងកំពុងដំណើរការ។</string>
-	<string name="iproov__prompt_align_face_accessibility">កាន់ឧបករណ៍នៅពីមុខរបស់អ្នក ហើយសម្លឹងមើលអេក្រង់</string>
-	<string name="iproov__prompt_genuine_presence_align_face">ដាក់មុខរបស់អ្នកនៅក្នុងស៊ុម</string>
+	<string name="iproov__prompt_align_face">ដាក់មុខរបស់អ្នកនៅក្នុងរង្វង់ពងក្រពើ</string>
 	<string name="iproov__prompt_get_ready">ត្រៀម…</string>
-	<string name="iproov__prompt_liveness_align_face">សូមដាក់មុខរបស់អ្នកនៅក្នុងរង្វង់ពងក្រពើ</string>
-	<string name="iproov__prompt_liveness_no_target">ដាក់មុខរបស់អ្នកនៅក្នុងស៊ុម</string>
 	<string name="iproov__prompt_liveness_scan_completed">បានបញ្ចប់ការស្កេន</string>
 	<string name="iproov__prompt_pitch_too_high">ដាក់ឧបករណ៍នៅកម្ពស់ត្រឹមភ្នែក</string>
 	<string name="iproov__prompt_pitch_too_low">ដាក់ឧបករណ៍នៅកម្ពស់ត្រឹមភ្នែក</string>
 	<string name="iproov__prompt_roll_too_high">កុំផ្អៀងក្បាលរបស់អ្នក</string>
 	<string name="iproov__prompt_roll_too_low">កុំផ្អៀងក្បាលរបស់អ្នក</string>
 	<string name="iproov__prompt_scanning">កំពុងស្កេន…</string>
-	<string name="iproov__prompt_tap_to_begin">ប៉ះអេក្រង់ដើម្បីចាប់ផ្ដើម</string>
 	<string name="iproov__prompt_too_bright">ទៅកន្លែងណាដែលមានស្រមោលជាងនេះ</string>
 	<string name="iproov__prompt_too_close">ជិតពេក</string>
 	<string name="iproov__prompt_too_far">ខិតមកជិតជាងមុន</string>
