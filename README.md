@@ -272,7 +272,10 @@ For more details, please refer to our [integration guide](docs/integration_guide
 * BS (Bank statement)
 * CAAP (Cash advance application)
 * CB (Council bill)
+* CC (Credit card)
+* CCS (Credit card statement)
 * CRC (Corporate resolution certificate)
+* CUSTOM 
 * HCC (Health care card)
 * IC (Insurance card)
 * LAG (Lease agreement)
