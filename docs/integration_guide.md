@@ -16,7 +16,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 - [Code Documentation](https://jumio.github.io/mobile-sdk-android/)
 
 ## Release Notes
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: __4.4.0__
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: __4.4.1__
 
 For breaking technical changes, please read our [Transition Guide](transition_guide.md)
 
@@ -35,17 +35,17 @@ Below there is a list of dependencies the application will need to work in Andro
 
 ```
 dependencies {
-    implementation "com.jumio.android:core:4.4.0"               // Jumio Core library
-    implementation "com.jumio.android:defaultui:4.4.0"          // Jumio Default UI
-    implementation "com.jumio.android:mrz:4.4.0"                // MRZ Scanning
-    implementation "com.jumio.android:nfc:4.4.0"                // NFC Scanning
-    implementation "com.jumio.android:linefinder:4.4.0"         // Linefinder Scanning
-    implementation "com.jumio.android:docfinder:4.4.0"          // Autocapture
-    implementation "com.jumio.android:barcode:4.4.0"            // Barcode scanning
-    implementation "com.jumio.android:barcode-mlkit:4.4.0"      // Barcode scanning alternative
-    implementation "com.jumio.android:iproov:4.4.0"             // Face Liveness library
-    implementation "com.jumio.android:datadog:4.4.0"            // Analytics library
-    implementation "com.jumio.android:devicerisk:4.4.0"         // Device fingerprinting library
+    implementation "com.jumio.android:core:4.4.1"               // Jumio Core library
+    implementation "com.jumio.android:defaultui:4.4.1"          // Jumio Default UI
+    implementation "com.jumio.android:mrz:4.4.1"                // MRZ Scanning
+    implementation "com.jumio.android:nfc:4.4.1"                // NFC Scanning
+    implementation "com.jumio.android:linefinder:4.4.1"         // Linefinder Scanning
+    implementation "com.jumio.android:docfinder:4.4.1"          // Autocapture
+    implementation "com.jumio.android:barcode:4.4.1"            // Barcode scanning
+    implementation "com.jumio.android:barcode-mlkit:4.4.1"      // Barcode scanning alternative
+    implementation "com.jumio.android:iproov:4.4.1"             // Face Liveness library
+    implementation "com.jumio.android:datadog:4.4.1"            // Analytics library
+    implementation "com.jumio.android:devicerisk:4.4.1"         // Device fingerprinting library
 ```
 
 #### Autocapture
@@ -56,7 +56,7 @@ The models can be bundled with the app directly to save time on the download dur
 Jumio uses Certified Liveness technology to determine liveness. The iProov SDK is referenced as a transitive dependency within the `com.jumio.android:iproov` module.
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 ```
-implementation "com.jumio.android:iproov:4.4.0"       
+implementation "com.jumio.android:iproov:4.4.1"       
 implementation ("com.iproov.sdk:iproov:8.0.3"){
     exclude group: 'org.json', module:'json'
 }
@@ -470,7 +470,7 @@ Start the scanning process by initializing the [`JumioScanPart`][jumioScanPart].
 
 `MULTIPART` handles the scanning of multiple sides in one seamless capture experience. Please also check the new [`NEXT_PART`][nextPart] scan step for this [`JumioCredentialPart`][jumioCredentialPart]
 
-Start the execution of the acquired [`JumioScanPart`][jumioScanPart] by calling [`currentScanPart?.start()`][startScanPart]. After that 
+Start the execution of the acquired [`JumioScanPart`][jumioScanPart] by calling [`currentScanPart?.start()`][startScanPart].
 
 When the scanning is done, the parameter [`JumioScanStep.CAN_FINISH`][canFinish] will be received and the scan part can be finished by calling [`currentScanPart?.finish()`][finishScanPart].
 
@@ -488,7 +488,7 @@ override fun onFinished(result: JumioResult) {
 ```
 
 #### Scan steps
-During the scanning process [`onScanStep()`][onScanStep] will be called as soon as the [`JumioScanPart`][jumioScanPart] needs additional input to continue the scanning journey. The provided [`JumioScanStep`][jumioScanStep] indicates what needs to be done next. 
+During the scanning process [`onScanStep()`][onScanStep] will be called as soon as the [`JumioScanPart`][jumioScanPart] needs additional input to continue the scanning journey. The provided [`JumioScanStep`][jumioScanStep] indicates what needs to be done next.
 
 [`JumioScanStep`][jumioScanStep] covers lifecycle events which require action from the customer to continue the process.
 
@@ -529,7 +529,7 @@ JumioScanStep.ATTACH_FILE -> {
 	}
 }
 ```
-[`SCAN_VIEW`][scanView] points out that a [`JumioScanView`][jumioScanView] needs to be attached to the [`JumioScanPart`][jumioScanPart]. The [`JumioScanView`][jumioScanView] is a custom view that can be placed in your layout. During runtime it just needs to be attached to the [`JumioScanPart`][jumioScanPart]. 
+[`SCAN_VIEW`][scanView] points out that a [`JumioScanView`][jumioScanView] needs to be attached to the [`JumioScanPart`][jumioScanPart]. The [`JumioScanView`][jumioScanView] is a custom view that can be placed in your layout. During runtime it just needs to be attached to the [`JumioScanPart`][jumioScanPart].
 ```
 JumioScanStep.SCAN_VIEW -> {
 	currentScanPart?.let {

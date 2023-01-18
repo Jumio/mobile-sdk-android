@@ -275,7 +275,7 @@ For more details, please refer to our [integration guide](docs/integration_guide
 * CC (Credit card)
 * CCS (Credit card statement)
 * CRC (Corporate resolution certificate)
-* CUSTOM 
+* CUSTOM
 * HCC (Health care card)
 * IC (Insurance card)
 * LAG (Lease agreement)

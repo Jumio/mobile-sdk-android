@@ -6,6 +6,8 @@ This section only covers the breaking technical changes that should be considere
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.4.1
+No backward incompatible changes
 
 ## 4.4.0
 #### Public API Changes
@@ -16,6 +18,9 @@ __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the cha
 * Functions in [`JumioRejectView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-reject-view/index.html) have been moved to [`JumioRejectHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-reject-handler/index.html).
 * `NEXT_PART` has been added in [`JumioScanStep`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/index.html)
 * `MULTIPART` has been added in [`JumioCredentialPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html)
+
+#### Customization Updates
+* Attributes changed and added to [`Iproov.Customization` theme](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/styles.xml#L95)
 
 #### Dependency Updates
 * IProov update: ~~`"com.iproov.sdk:iproov:7.5.0"`~~ is replaced by `"com.iproov.sdk:iproov:8.0.3"`
