@@ -339,6 +339,13 @@ When the `jumioController` is initialized, the following callback will be trigge
 
 `onInitialized(credentials: List<JumioCredentialInfo>, policyUrl: String?)`
 
+To support compliance with various biometric data protection laws in the United States, the parameter `policyUrl` will provide a valid URL that will redirect the user to Jumio’s consent details when the user is located in the United States at the time of the transaction. If no consent is required, the parameter `policyUrl` will be `null`.
+The user can open and continue to this link if they choose to do so. If the user consents to Jumio’s collection, [`jumioController.userConsented()`][userConsented] is required to be called internally before any credential can be initialized and the user journey can continue. If the user does not provide consent or if [`jumioController.userConsented()`][userConsented] is not called, the user journey will end.
+
+___Please note that biometric data protection laws and other laws governing consent can change over time and therefore you must include user consent handling as described above, even if a record of the user’s consent is not required for your current use case.___
+
+⚠️&nbsp;&nbsp;__Note:__ Please also be aware that in cases where `policyUrl` is not `null`, the user is required to consent to Jumio's collection of personal information, including biometric data. Do not accept automatically without showing the user any terms.
+
 If a user’s consent is required, the parameter `policyUrl` will provide a valid URL that will redirect the user to Jumio’s consent details. User can open and continue to this link if they choose to do so. If the user consents to the Jumio policy, [`jumioController.userConsented()`][userConsented] is required to be called internally before any credential can be initialized and the user journey can continue. If no consent is required, the parameter `policyUrl` will be null.
 
 ⚠️&nbsp;&nbsp;__Note:__ Please be aware that in cases where `policyUrl` is not null, the user is __legally required__ to __actually consent__ to Jumio's policy. Do not accept automatically without showing the user any terms.
