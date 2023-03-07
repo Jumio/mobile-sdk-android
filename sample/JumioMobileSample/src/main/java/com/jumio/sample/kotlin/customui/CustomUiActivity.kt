@@ -2,12 +2,19 @@
 package com.jumio.sample.kotlin.customui
 
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
+import android.provider.Browser
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
@@ -363,7 +370,6 @@ class CustomUiActivity :
 
 	/**
 	 * Handle back button accordingly - finish the SDK when it is complete, otherwise just cancel it
-	 *
 	 */
 	override fun onBackPressed() {
 		if (this::jumioController.isInitialized) {
@@ -391,7 +397,10 @@ class CustomUiActivity :
 	override fun onInitialized(credentials: List<JumioCredentialInfo>, policyUrl: String?) {
 		policyUrl?.let {
 			log("User consent required")
-			binding.userConsentUrl.text = it
+			binding.userConsentUrl.apply {
+				text = getConsentText(it)
+				movementMethod = LinkMovementMethod.getInstance()
+			}
 			showView(binding.userConsentLayout)
 		}
 
@@ -1072,6 +1081,43 @@ class CustomUiActivity :
 			if (format == value) {
 				spinner?.setSelection(i, false)
 				break
+			}
+		}
+	}
+
+	/**
+	 * Get the consent text as a [SpannableString] which makes a part of the text clickable to display the [policyUrl].
+	 *
+	 * @param policyUrl The Jumio privacy policy url
+	 * @return [SpannableString]
+	 */
+	private fun getConsentText(policyUrl: String): Spanned {
+		val linkText = getString(R.string.consent_link)
+		val consentText = getString(R.string.consent_text, binding.userConsentedButton.text, linkText)
+		val spannable = SpannableString(consentText)
+		spannable.setSpan(
+			ClickableSpanImpl(policyUrl),
+			consentText.indexOf(linkText),
+			consentText.indexOf(linkText) + linkText.length,
+			Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+		)
+		return spannable
+	}
+
+	/**
+	 * Helper class to create a [ClickableSpan] to display the [policyUrl] as a [Intent.ACTION_VIEW].
+	 *
+	 * @property policyUrl The Jumio privacy policy url
+	 */
+	private class ClickableSpanImpl(private val policyUrl: String) : ClickableSpan() {
+		override fun onClick(widget: View) {
+			val uri = Uri.parse(policyUrl)
+			val intent = Intent(Intent.ACTION_VIEW, uri)
+			intent.putExtra(Browser.EXTRA_APPLICATION_ID, widget.context.packageName)
+			try {
+				widget.context.startActivity(intent)
+			} catch (e: ActivityNotFoundException) {
+				Log.w("CustomUI", "Activity was not found for intent, $intent")
 			}
 		}
 	}

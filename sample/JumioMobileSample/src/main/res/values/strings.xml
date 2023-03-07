@@ -19,6 +19,9 @@
 	<string name="menu_licenses">Licenses</string>
 	<string name="menu_version">SDK Version</string>
 
+	<string name="consent_text">By clicking "%1$s" you consent to Jumio collecting and disclosing your biometric data pursuant to its %2$s.</string>
+	<string name="consent_link">Privacy Policy</string>
+
 	<string-array name="datacenter">
 		<item>US</item>
 		<item>EU</item>
