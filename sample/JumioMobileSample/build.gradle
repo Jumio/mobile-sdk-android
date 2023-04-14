@@ -31,7 +31,7 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "4.4.1"
+	SDK_VERSION = "4.5.0"
 }
 
 dependencies {
@@ -47,6 +47,7 @@ dependencies {
 	implementation "com.jumio.android:defaultui:${SDK_VERSION}"
 	implementation "com.jumio.android:datadog:${SDK_VERSION}"
 	implementation "com.jumio.android:devicerisk:${SDK_VERSION}"
+	implementation "com.jumio.android:digital-identity:${SDK_VERSION}"
 
 	//only for the sample code
 	implementation "androidx.activity:activity-ktx:1.5.1"

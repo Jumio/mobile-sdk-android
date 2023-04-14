@@ -3,6 +3,7 @@ package com.jumio.sample.kotlin
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -69,11 +70,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 		binding.navView.itemIconTintList = null
 	}
 
+	@Deprecated("Deprecated in Java")
 	override fun onBackPressed() {
 		if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
 			binding.drawerLayout.closeDrawer(GravityCompat.START)
 		} else {
-			super.onBackPressed()
+			onBackPressedDispatcher.onBackPressed()
 		}
 	}
 
@@ -138,7 +140,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 			when (it.id) {
 				R.id.btn_startCustom -> {
 					val dataCenter = JumioDataCenter.valueOf(binding.datacenterSpinner.selectedItem as String)
-					CustomUiActivity.start(this, sdkForResultLauncher, token, dataCenter)
+					CustomUiActivity.start(
+						this,
+						sdkForResultLauncher,
+						token,
+						dataCenter
+						// The following parameter can be used to apply a custom theme:
+						// customTheme = R.style.AppThemeCustomJumio
+					)
 				}
 				R.id.btn_startDefault -> {
 					val intent = Intent(this, JumioActivity::class.java)
@@ -155,8 +164,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 	private val sdkForResultLauncher: ActivityResultLauncher<Intent> =
 		registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-			val jumioResult: JumioResult? =
+
+			val jumioResult = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+				result.data?.getSerializableExtra(JumioActivity.EXTRA_RESULT, JumioResult::class.java)
+			} else {
+				@Suppress("DEPRECATION")
 				result.data?.getSerializableExtra(JumioActivity.EXTRA_RESULT) as JumioResult?
+			}
 			Log.d(TAG, "AccountId: ${jumioResult?.accountId}")
 			Log.d(TAG, "WorkflowExecutionId: ${jumioResult?.workflowExecutionId}")
 

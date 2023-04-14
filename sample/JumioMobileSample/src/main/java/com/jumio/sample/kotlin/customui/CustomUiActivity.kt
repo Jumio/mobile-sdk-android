@@ -1,22 +1,15 @@
 // Copyright 2022 Jumio Corporation, all rights reserved.
 package com.jumio.sample.kotlin.customui
 
+import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.os.Bundle
-import android.provider.Browser
-import android.text.SpannableString
-import android.text.Spanned
-import android.text.method.LinkMovementMethod
-import android.text.style.ClickableSpan
-import android.util.Log
-import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
@@ -29,12 +22,23 @@ import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import com.jumio.commons.log.Log
+import com.jumio.commons.utils.ScreenUtil
+import com.jumio.core.views.CameraScanView
 import com.jumio.defaultui.JumioActivity
 import com.jumio.sample.R
 import com.jumio.sample.databinding.ActivityCustomuiBinding
+import com.jumio.sample.kotlin.customui.adapter.CustomConsentAdapter
+import com.jumio.sample.kotlin.customui.adapter.CustomCountryAdapter
+import com.jumio.sample.kotlin.customui.adapter.CustomDocumentAdapter
+import com.jumio.sample.kotlin.customui.adapter.JumioArrayAdapter
 import com.jumio.sdk.JumioSDK
+import com.jumio.sdk.consent.JumioConsentItem
 import com.jumio.sdk.controller.JumioController
 import com.jumio.sdk.credentials.JumioCredential
 import com.jumio.sdk.credentials.JumioCredentialInfo
@@ -43,6 +47,7 @@ import com.jumio.sdk.credentials.JumioDocumentCredential
 import com.jumio.sdk.credentials.JumioFaceCredential
 import com.jumio.sdk.credentials.JumioIDCredential
 import com.jumio.sdk.enums.JumioAcquireMode
+import com.jumio.sdk.enums.JumioConsentType
 import com.jumio.sdk.enums.JumioCredentialPart
 import com.jumio.sdk.enums.JumioDataCenter
 import com.jumio.sdk.enums.JumioFallbackReason
@@ -50,6 +55,7 @@ import com.jumio.sdk.enums.JumioScanMode
 import com.jumio.sdk.enums.JumioScanStep
 import com.jumio.sdk.enums.JumioScanUpdate
 import com.jumio.sdk.error.JumioError
+import com.jumio.sdk.exceptions.SDKNotConfiguredException
 import com.jumio.sdk.handler.JumioConfirmationHandler
 import com.jumio.sdk.handler.JumioRejectHandler
 import com.jumio.sdk.interfaces.JumioControllerInterface
@@ -57,56 +63,35 @@ import com.jumio.sdk.interfaces.JumioScanPartInterface
 import com.jumio.sdk.result.JumioResult
 import com.jumio.sdk.retry.JumioRetryReason
 import com.jumio.sdk.scanpart.JumioScanPart
+import com.jumio.sdk.util.JumioDeepLinkHandler
 import com.jumio.sdk.views.JumioActivityAttacher
 import com.jumio.sdk.views.JumioConfirmationView
 import com.jumio.sdk.views.JumioFileAttacher
 import com.jumio.sdk.views.JumioRejectView
 import java.text.DecimalFormat
 
+private const val TAG = "UI-Less"
+
 /**
- * Sample activity that handles the whole jumio sdk workflow for the custom ui approach
+ * Sample implementation that handles the whole Jumio SDK Workflow for the Custom UI approach
  */
 class CustomUiActivity :
 	AppCompatActivity(),
 	JumioControllerInterface,
 	JumioScanPartInterface,
 	AdapterView.OnItemSelectedListener {
-	companion object {
-		const val EXTRA_TOKEN = "token"
-		const val EXTRA_DATACENTER = "datacenter"
-		const val SELECTED_COUNTRY_STATE_KEY = "selectedCountryStateKey"
-		const val SELECTED_DOCUMENT_STATE_KEY = "selectedDocumentStateKey"
-		const val SELECTED_VARIANT_STATE_KEY = "selectedVariantStateKey"
-		const val CREDENTIALS_PREFIX = "credentials"
-		const val SCAN_SIDES_PREFIX = "scansides"
 
-		@JvmStatic
-		fun start(
-			activity: Activity,
-			activityResultLauncher: ActivityResultLauncher<Intent>,
-			token: String,
-			dataCenter: JumioDataCenter
-		) {
-			require(token.isNotEmpty()) { "Token needs to be set" }
-
-			val intent = Intent(activity, CustomUiActivity::class.java).apply {
-				putExtra(EXTRA_TOKEN, token)
-				putExtra(EXTRA_DATACENTER, dataCenter)
-			}
-
-			activityResultLauncher.launch(intent)
-		}
-	}
-
-	private lateinit var binding: ActivityCustomuiBinding
 	private lateinit var sdk: JumioSDK
+	private lateinit var binding: ActivityCustomuiBinding
 	private lateinit var jumioController: JumioController
+
+	private var consentItems: List<JumioConsentItem>? = null
 	private var credential: JumioCredential? = null
 	private var scanPart: JumioScanPart? = null
 
 	private var customCountryAdapter: CustomCountryAdapter? = null
 	private var customDocumentAdapter: CustomDocumentAdapter? = null
-	private var customVariantAdapter: CustomVariantAdapter? = null
+	private var customConsentAdapter: CustomConsentAdapter? = null
 
 	private var confirmationHandler: JumioConfirmationHandler = JumioConfirmationHandler()
 	private var rejectHandler: JumioRejectHandler = JumioRejectHandler()
@@ -117,32 +102,36 @@ class CustomUiActivity :
 	private var error: JumioError? = null
 	private var retryReason: JumioRetryReason? = null
 
-	private val fileAttacher = JumioFileAttacher()
-	private val filePickerLauncher =
-		registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-			if (result.resultCode == RESULT_OK) {
-				try {
-					scanPart?.let { fileAttacher.attach(it) }
-					result.data?.let {
-						val returnUri = it.data ?: throw Exception("Could not get Uri")
-						val fileDescriptor =
-							contentResolver.openFileDescriptor(returnUri, "r")
-								?: throw Exception("Could not open file descriptor")
-						fileAttacher.setFileDescriptor(fileDescriptor)
-					}
-				} catch (e: Exception) {
-					e.message?.let {
-						showError(it)
-					}
-				}
-			}
+	private val scanView: CameraScanView
+		get() = binding.scanView
+
+	private fun validatePermissions(): Boolean {
+		if (JumioSDK.hasAllRequiredPermissions(this)) {
+			return true
 		}
 
-	/**
-	 * Create or restore the JumioSDK instance and set all the click listeners
-	 *
-	 * @param savedInstanceState
-	 */
+		val mp = JumioSDK.getMissingPermissions(this)
+		ActivityCompat.requestPermissions(this, mp, PERMISSION_REQUEST_CODE)
+
+		return false
+	}
+
+	override fun onRequestPermissionsResult(
+		requestCode: Int,
+		permissions: Array<String>,
+		grantResults: IntArray
+	) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+		if (requestCode != PERMISSION_REQUEST_CODE ||
+			grantResults.isEmpty() ||
+			grantResults[0] != PackageManager.PERMISSION_GRANTED
+		) {
+			finish()
+		}
+	}
+
+	@Suppress("DEPRECATION")
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 
@@ -151,111 +140,130 @@ class CustomUiActivity :
 		binding = ActivityCustomuiBinding.inflate(layoutInflater)
 		setContentView(binding.root)
 
-		sdk = JumioSDK(this)
-		sdk.token = intent.getStringExtra(EXTRA_TOKEN) as String
-		sdk.dataCenter = intent.getSerializableExtra(EXTRA_DATACENTER) as JumioDataCenter
+		sdk = JumioSDK(this).apply {
+			token = intent.getStringExtra(EXTRA_TOKEN) as String
+			dataCenter = intent.getSerializableExtra(EXTRA_DATACENTER) as JumioDataCenter
+			intent.getIntExtra(EXTRA_CUSTOMTHEME, 0).let {
+				if (it != 0) {
+					customThemeId = it
+				}
+			}
+		}
 
 		successDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.jumio_success))
 		errorDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.jumio_error))
 
-		if (savedInstanceState != null) {
-			sdk.restore(
-				this,
-				savedInstanceState,
-				this,
-				this
-			) { controller, credentials, activeCredential, activeScanPart ->
-				jumioController = controller
-				credential = activeCredential
-				scanPart = activeScanPart
-
-				hideView(binding.loadingIndicator)
-				onInitialized(credentials, null)
-				credential?.let {
-					val country = savedInstanceState.getString(SELECTED_COUNTRY_STATE_KEY)
-					val document = savedInstanceState.getString(SELECTED_DOCUMENT_STATE_KEY)
-					val variant = savedInstanceState.getString(SELECTED_VARIANT_STATE_KEY)
-					setupCredential(country, document, variant)
-					restoreIconState(binding.credentialLayout, savedInstanceState, CREDENTIALS_PREFIX)
-					scanPart?.let {
-						setupScanPart()
-						restoreIconState(binding.scanSideLayout, savedInstanceState, SCAN_SIDES_PREFIX)
-					}
-				}
-			}
-		} else {
-			jumioController = sdk.start(this, this)
+		if (savedInstanceState == null) {
+			jumioController = sdk.start(applicationContext, this)
 			showView(binding.loadingIndicator, binding.controllerControls, hideLoading = false)
+		} else {
+			restoreJumioSdk(savedInstanceState)
 		}
 
-		binding.controllerCancel.setOnClickListener {
-			jumioController.cancel()
-			hideViewsAfter(binding.controllerControls)
-			showView(binding.loadingIndicator)
+		initControllerUi()
+		initDocumentSelectionUi()
+		initCredentialUi()
+		initScanPartUi()
+
+		binding.extraction.setOnCheckedChangeListener { _, isChecked ->
+			scanView.extraction = isChecked
 		}
-		binding.controllerFinish.setOnClickListener {
-			catchAndShow {
-				jumioController.finish()
-				hideViewsAfter(binding.controllerControls)
-				showView(binding.loadingIndicator)
-			}
+
+		binding.switchCamera.setOnClickListener {
+			scanView.switchCamera()
 		}
-		binding.btnSetCountryAndDocumentType.setOnClickListener {
-			if (credential is JumioIDCredential) {
-				val country = customCountryAdapter?.getItem(binding.customCountrySpinner.selectedItemPosition)
-				val documentList =
-					customCountryAdapter?.getDocumentList(binding.customCountrySpinner.selectedItemPosition)
-				val documentType =
-					customDocumentAdapter?.getDocumentType(binding.customDocumentSpinner.selectedItemPosition)
-				val documentVariant =
-					customVariantAdapter?.getDocumentVariant(binding.customVariantSpinner.selectedItemPosition)
-				val jumioDocument = documentList?.find { it.type == documentType && it.variant == documentVariant }
-				if (country != null && jumioDocument != null) {
-					(credential as JumioIDCredential).let {
-						it.setConfiguration(country, jumioDocument)
-						setupCredentialParts(it.credentialParts)
-					}
-				}
-			}
+
+		binding.takePicture.setOnClickListener {
+			scanView.takePicture()
 		}
-		binding.btnSetAcquireMode.setOnClickListener {
-			if (credential is JumioDocumentCredential) {
-				try {
-					val acquireMode = when (binding.acquireModeGroup.checkedRadioButtonId) {
-						R.id.acquireModeCamera -> JumioAcquireMode.CAMERA
-						R.id.acquireModeFile -> JumioAcquireMode.FILE
-						else -> throw Exception("AcquireMode not supported")
-					}
-					(credential as JumioDocumentCredential).setConfiguration(acquireMode)
-					setupCredentialParts(credential!!.credentialParts)
-				} catch (e: Exception) {
-					e.message?.let {
-						showError(it)
-					}
-				}
+
+		binding.toggleFlash.setOnClickListener {
+			scanView.flash = !scanView.flash
+		}
+
+		binding.startFallback.setOnClickListener {
+			scanPart?.fallback()
+		}
+
+		binding.retryScan.setOnClickListener {
+			hideViewsAfter(binding.inlineScanLayout)
+			confirmationHandler.retake()
+		}
+
+		binding.confirmScan.setOnClickListener {
+			hideViewsAfter(binding.inlineScanLayout)
+			confirmationHandler.confirm()
+		}
+
+		binding.rejectScan.setOnClickListener {
+			hideViewsAfter(binding.inlineScanLayout)
+			rejectHandler.retake()
+		}
+
+		binding.partRetryButton.setOnClickListener { view ->
+			hideView(view)
+
+			retryReason?.let {
+				scanPart?.retry(it)
 			}
 		}
 
-		binding.credentialFinish.setOnClickListener {
-			catchAndShow {
-				credential?.finish()
-				updateIcon(binding.credentialLayout, credential?.isComplete == true)
-				credential = null
-				hideView(binding.credentialControls)
-				hideViewsAfter(binding.credentialControls)
+		binding.errorRetryButton.setOnClickListener { _ ->
+			hideView(binding.errorRetryButton, showLoading = true)
+
+			error?.let {
+				jumioController.retry(it)
 			}
 		}
-		binding.credentialCancel.setOnClickListener {
-			credential?.cancel()
-			updateIcon(binding.credentialLayout, credential?.isComplete == true)
-			credential = null
-			hideView(binding.credentialControls)
-			hideViewsAfter(binding.credentialControls)
-		}
 
+		binding.userConsentedButton.setOnClickListener {
+			consentItems?.filter { it.type == JumioConsentType.PASSIVE }?.forEach {
+				setUserConsent(it, true)
+			}
+			if (userConsentedAll()) {
+				hideViewsAfter(binding.credentialLayout)
+				log("User consented to all consent items")
+			} else {
+				log("User consent is missing")
+			}
+		}
+		validatePermissions()
+	}
+
+	@SuppressLint("MissingSuperCall")
+	override fun onNewIntent(intent: Intent) {
+		super.onNewIntent(intent)
+
+		intent.data?.let { deepLink ->
+			val activeScanPart = scanPart ?: return
+			JumioDeepLinkHandler.consumeForScanPart(deepLink, activeScanPart)
+		}
+	}
+
+	private fun setUserConsent(consentItem: JumioConsentItem, decision: Boolean) {
+		jumioController.userConsented(consentItem, decision)
+	}
+
+	private fun userConsentedAll(): Boolean {
+		val unconsentedItems = jumioController.getUnconsentedItems()
+		return unconsentedItems.isEmpty()
+	}
+
+	private fun initConsentUi() {
+		val consentItems: List<JumioConsentItem> = consentItems ?: return
+
+		val recyclerView = findViewById<RecyclerView>(R.id.userConsentList)
+		customConsentAdapter = CustomConsentAdapter(consentItems, this::setUserConsent)
+		recyclerView.adapter = customConsentAdapter
+		recyclerView.layoutManager = LinearLayoutManager(this)
+		showView(binding.userConsentLayout, binding.userConsentList)
+	}
+
+	private fun initScanPartUi() {
 		binding.scanPartStart.setOnClickListener {
 			scanPart?.start()
 		}
+
 		binding.scanPartFinish.setOnClickListener {
 			catchAndShow {
 				scanPart?.finish()
@@ -265,6 +273,7 @@ class CustomUiActivity :
 				hideViewsAfter(binding.scanPartControls)
 			}
 		}
+
 		binding.scanPartCancel.setOnClickListener {
 			catchAndShow {
 				scanPart?.cancel()
@@ -274,6 +283,7 @@ class CustomUiActivity :
 				hideViewsAfter(binding.scanPartControls)
 			}
 		}
+
 		binding.addonInit.setOnClickListener {
 			catchAndShow {
 				scanPart = credential?.getAddonPart()
@@ -281,6 +291,7 @@ class CustomUiActivity :
 				showView(binding.scanPartControls)
 			}
 		}
+
 		binding.addonCancel.setOnClickListener {
 			catchAndShow {
 				scanPart = credential?.getAddonPart()
@@ -289,66 +300,120 @@ class CustomUiActivity :
 				hideView(binding.addonControls)
 			}
 		}
-		binding.extraction.setOnCheckedChangeListener { _, isChecked ->
-			binding.scanView.extraction = isChecked
-		}
-		binding.switchCamera.setOnClickListener {
-			binding.scanView.switchCamera()
-		}
-		binding.takePicture.setOnClickListener {
-			binding.scanView.takePicture()
-		}
-		binding.toggleFlash.setOnClickListener {
-			binding.scanView.flash = !binding.scanView.flash
-		}
-		binding.startFallback.setOnClickListener {
-			scanPart?.fallback()
-		}
-		binding.retryScan.setOnClickListener {
-			hideViewsAfter(binding.inlineScanLayout)
-			confirmationHandler.retake()
-		}
-		binding.confirmScan.setOnClickListener {
-			hideViewsAfter(binding.inlineScanLayout)
-			confirmationHandler.confirm()
-		}
-		binding.rejectScan.setOnClickListener {
-			hideViewsAfter(binding.inlineScanLayout)
-			rejectHandler.retake()
-		}
-		binding.partRetryButton.setOnClickListener {
-			hideView(it)
-			retryReason?.let {
-				scanPart?.retry(it)
+	}
+
+	private fun initCredentialUi() {
+		binding.credentialFinish.setOnClickListener {
+			catchAndShow {
+				credential?.finish()
+				updateIcon(binding.credentialLayout, credential?.isComplete == true)
+				credential = null
+				hideView(binding.credentialControls)
+				hideViewsAfter(binding.credentialControls)
 			}
 		}
-		binding.errorRetryButton.setOnClickListener {
-			hideView(binding.errorRetryButton, showLoading = true)
-			error?.let {
-				jumioController.retry(it)
-			}
-		}
-		binding.userConsentedButton.setOnClickListener {
-			hideViewsAfter(binding.credentialLayout)
-			jumioController.userConsented()
+
+		binding.credentialCancel.setOnClickListener {
+			credential?.cancel()
+			updateIcon(binding.credentialLayout, credential?.isComplete == true)
+			credential = null
+			hideView(binding.credentialControls)
+			hideViewsAfter(binding.credentialControls)
 		}
 	}
 
-	/**
-	 * Save the actual state and persist the SDK in case of activity persistence
-	 *
-	 * @param outState
-	 */
+	private fun initDocumentSelectionUi() {
+		binding.btnSetCountryAndDocumentType.setOnClickListener {
+			if (credential is JumioIDCredential) {
+				val country = customCountryAdapter?.getItem(
+					binding.customCountrySpinner.selectedItemPosition
+				) ?: throw IllegalStateException("Country not available!")
+
+				val jumioDocument = customDocumentAdapter?.getDocument(
+					binding.customDocumentSpinner.selectedItemPosition
+				) ?: throw IllegalStateException("Document not available!")
+
+				(credential as JumioIDCredential).let {
+					it.setConfiguration(country, jumioDocument)
+					setupCredentialParts(it.credentialParts)
+				}
+			}
+		}
+
+		binding.btnSetAcquireMode.setOnClickListener {
+			if (credential is JumioDocumentCredential) {
+				try {
+					val acquireMode = when (binding.acquireModeGroup.checkedRadioButtonId) {
+						R.id.acquireModeCamera -> JumioAcquireMode.CAMERA
+						R.id.acquireModeFile -> JumioAcquireMode.FILE
+						else -> throw Exception("AcquireMode not supported")
+					}
+
+					(credential as JumioDocumentCredential).setConfiguration(acquireMode)
+
+					setupCredentialParts(credential!!.credentialParts)
+				} catch (e: Exception) {
+					showError(e.message)
+				}
+			}
+		}
+	}
+
+	private fun initControllerUi() {
+		binding.controllerCancel.setOnClickListener {
+			jumioController.cancel()
+			hideViewsAfter(binding.controllerControls)
+			showView(binding.loadingIndicator)
+		}
+
+		binding.controllerFinish.setOnClickListener {
+			catchAndShow {
+				jumioController.finish()
+				hideViewsAfter(binding.controllerControls)
+				showView(binding.loadingIndicator)
+			}
+		}
+	}
+
+	private fun restoreJumioSdk(savedInstanceState: Bundle) {
+		sdk.restore(
+			applicationContext,
+			savedInstanceState,
+			this,
+			this
+		) { controller, credentials, activeCredential, activeScanPart ->
+			jumioController = controller
+			credential = activeCredential
+			scanPart = activeScanPart
+
+			hideView(binding.loadingIndicator)
+			onInitialized(credentials, null)
+			credential?.let {
+				val country = savedInstanceState.getString("selectedCountry")
+				val document = savedInstanceState.getString("selectedDocument")
+				setupCredential(country, document)
+
+				restoreIconState(binding.credentialLayout, savedInstanceState, "credentials")
+
+				scanPart?.let {
+					binding.digitalIdentityView.restoreState(savedInstanceState)
+					setupScanPart()
+					restoreIconState(binding.scanSideLayout, savedInstanceState, "scansides")
+				}
+			}
+		}
+	}
+
 	override fun onSaveInstanceState(outState: Bundle) {
 		super.onSaveInstanceState(outState)
 
-		outState.putString(SELECTED_COUNTRY_STATE_KEY, binding.customCountrySpinner.selectedItem as String?)
-		outState.putString(SELECTED_DOCUMENT_STATE_KEY, binding.customDocumentSpinner.selectedItem as String?)
-		outState.putString(SELECTED_VARIANT_STATE_KEY, binding.customVariantSpinner.selectedItem as String?)
+		outState.putString("selectedCountry", binding.customCountrySpinner.selectedItem as? String)
+		outState.putString("selectedDocument", binding.customDocumentSpinner.selectedItem as? String)
 
 		// save views:
-		saveIconState(binding.credentialLayout, outState, CREDENTIALS_PREFIX)
-		saveIconState(binding.scanSideLayout, outState, SCAN_SIDES_PREFIX)
+		saveIconState(binding.credentialLayout, outState, "credentials")
+		saveIconState(binding.scanSideLayout, outState, "scansides")
+		binding.digitalIdentityView.saveState(outState)
 
 		if (this::jumioController.isInitialized && !jumioController.isComplete) {
 			jumioController.persist(outState)
@@ -357,20 +422,28 @@ class CustomUiActivity :
 
 	/**
 	 * In case the activity is destroyed and the workflow has not been finished already (indicated by [JumioController.isComplete]),
-	 * make sure to call [jumioController.stop]
-	 *
+	 * make sure to call [JumioController.stop]
 	 */
 	override fun onDestroy() {
-		super.onDestroy()
-
 		if (this::jumioController.isInitialized && !jumioController.isComplete) {
 			jumioController.stop()
 		}
+
+		try {
+			// Cancel (and destroy) any active scan part
+			scanPart?.cancel()
+		} catch (e: SDKNotConfiguredException) {
+			Log.w(TAG, e.message)
+		}
+
+		super.onDestroy()
 	}
 
 	/**
-	 * Handle back button accordingly - finish the SDK when it is complete, otherwise just cancel it
+	 * Handle back button presses accordingly - finish the SDK when it is complete, otherwise just cancel it
 	 */
+	@Suppress("DEPRECATION")
+	@Deprecated("Deprecated in Java")
 	override fun onBackPressed() {
 		if (this::jumioController.isInitialized) {
 			if (jumioController.isComplete) {
@@ -383,40 +456,71 @@ class CustomUiActivity :
 		}
 	}
 
+	private fun saveIconState(group: ViewGroup, outState: Bundle, prefix: String) {
+		for (i in 0..group.childCount) {
+			val child: View? = group.getChildAt(i)
+			(child as Button?)?.let {
+				outState.putBoolean("$prefix ${it.text}", it.compoundDrawables[0] == successDrawable)
+				if (it.tag == true) {
+					outState.putString(prefix, it.text.toString())
+				}
+			}
+		}
+	}
+
+	private fun restoreIconState(group: ViewGroup, inState: Bundle, prefix: String) {
+		for (i in 0..group.childCount) {
+			val child: View? = group.getChildAt(i)
+			val selected = inState.getString(prefix)
+			(child as Button?)?.let {
+				if (it.text == selected) {
+					it.tag = true
+				}
+				it.setCompoundDrawables(
+					if (inState.getBoolean("$prefix ${it.text}")) {
+						successDrawable
+					} else {
+						errorDrawable
+					},
+					null,
+					null,
+					null
+				)
+			}
+		}
+	}
+
 	// /////////////////////////////////////////////////////////////
-	//                  JumioControllerInterface                 //
+	// //////////////// JumioControllerInterface
 	// /////////////////////////////////////////////////////////////
 	/**
 	 * Called as soon as the sdk is preloaded and credentials can be started.
-	 * If the policyUrl is not null make sure to display user consent information and then
-	 * call [JumioController.userConsented] if the user consents
+	 * If the list of consentItems is not null, make sure to display user consent information,
+	 * give the user the opportunity to consent if necessary, and then
+	 * call [JumioController.userConsented] with a boolean representing the user decision.
 	 *
 	 * @param credentials
-	 * @param policyUrl
+	 * @param consentItems
 	 */
-	override fun onInitialized(credentials: List<JumioCredentialInfo>, policyUrl: String?) {
-		policyUrl?.let {
+	@SuppressLint("SetTextI18n")
+	override fun onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItem>?) {
+		this.consentItems = consentItems
+		consentItems?.let {
+			initConsentUi()
 			log("User consent required")
-			binding.userConsentUrl.apply {
-				text = getConsentText(it)
-				movementMethod = LinkMovementMethod.getInstance()
-			}
-			showView(binding.userConsentLayout)
 		}
 
 		binding.credentialLayout.removeAllViews()
 		credentials.forEach { credentialInfo ->
 			val button = Button(this)
-			button.text = "${credentialInfo.category.name} ${credentialInfo.id.subSequence(0, 5)}"
+			button.text = credentialInfo.category.name + " " + credentialInfo.id.subSequence(0, 5)
 			button.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
 			button.setOnClickListener { view ->
 				try {
 					credential = jumioController.start(credentialInfo)
 					view.tag = true
 				} catch (e: IllegalArgumentException) {
-					e.message?.let {
-						showError(it)
-					}
+					showError(e.message)
 					return@setOnClickListener
 				}
 				setupCredential()
@@ -426,29 +530,30 @@ class CustomUiActivity :
 		showView(binding.credentialLayout)
 	}
 
-	/**
-	 * Invoked in case an error occured - in case it is not retryable the [JumioController.cancel] needs to be called,
-	 * otherwise it can be retried by calling [JumioController.retry]
-	 *
-	 * @param error
-	 */
 	override fun onError(error: JumioError) {
 		if (error.isRetryable) {
 			showView(binding.errorRetryButton)
 		} else {
 			hideView(binding.errorRetryButton)
 		}
-		hideView(binding.loadingIndicator)
+
+		hideView(binding.loadingIndicator, binding.inlineDiLayout)
+
 		log(
-			String.format("onError: %s, %s, %s", error.code, error.message, if (error.isRetryable) "true" else "false"),
+			String.format(
+				"onError: %s, %s, %s",
+				error.code,
+				error.message,
+				"retry-able: ${if (error.isRetryable) "true" else "false"}"
+			),
 			Color.RED
 		)
+
 		this.error = error
 	}
 
 	/**
 	 * The workflow is now finished and the result can be consumed
-	 *
 	 * @param result
 	 */
 	override fun onFinished(result: JumioResult) {
@@ -460,7 +565,7 @@ class CustomUiActivity :
 	}
 
 	// /////////////////////////////////////////////////////////////
-	//                 JumioScanPartInterface                    //
+	// //////////////// JumioScanPartInterface
 	// /////////////////////////////////////////////////////////////
 	/**
 	 * [JumioScanUpdate] are optional information that can be consumed
@@ -478,18 +583,16 @@ class CustomUiActivity :
 			}
 			JumioScanUpdate.CAMERA_AVAILABLE -> {
 				log("CAMERA_AVAILABLE")
-				binding.toggleFlash.isEnabled = binding.scanView.hasFlash
-				binding.switchCamera.isEnabled = binding.scanView.hasMultipleCameras
-				binding.takePicture.isEnabled = binding.scanView.isShutterEnabled
+				binding.toggleFlash.isEnabled = scanView.hasFlash
+				binding.switchCamera.isEnabled = scanView.hasMultipleCameras
+				binding.takePicture.isEnabled = scanView.isShutterEnabled
 			}
 			JumioScanUpdate.FALLBACK -> {
-				scanPart?.let {
-					log(
-						"Fallback initiated due to: ${(data as? JumioFallbackReason)?.toString()}. Current scanMode: ${scanPart?.scanMode}" // ktlint-disable max-line-length
-					)
-					binding.startFallback.isEnabled = it.hasFallback
-					binding.takePicture.isEnabled = binding.scanView.isShutterEnabled
-				}
+				log(
+					"Fallback initiated due to: ${(data as? JumioFallbackReason)?.toString()}. Current scanMode: ${scanPart?.scanMode}"
+				) // ktlint-disable max-line-length
+				binding.startFallback.isEnabled = scanPart?.hasFallback == true
+				binding.takePicture.isEnabled = scanView.isShutterEnabled
 			}
 			JumioScanUpdate.NFC_EXTRACTION_STARTED -> {
 				log("NFC Extraction started")
@@ -525,36 +628,43 @@ class CustomUiActivity :
 	 * @param data optional
 	 */
 	override fun onScanStep(jumioScanStep: JumioScanStep, data: Any?) {
-		log("onScanStep: ${jumioScanStep.name}")
+		var logText = "onScanStep: ${jumioScanStep.name}"
+
 		when (jumioScanStep) {
 			JumioScanStep.PREPARE -> {
 				showView(binding.loadingIndicator)
 			}
 			JumioScanStep.STARTED -> {
+				if (data is JumioCredentialPart) {
+					logText += ": $data\nExtraction Method: ${scanPart?.scanMode}"
+				}
 				hideView(binding.loadingIndicator)
 			}
 			JumioScanStep.SCAN_VIEW -> {
+				val activeScanPart = scanPart ?: return
+
 				binding.toggleFlash.isEnabled = false
 				binding.switchCamera.isEnabled = false
 				binding.takePicture.isEnabled = false
+
 				showView(binding.inlineScanLayout)
-				binding.scanView.invalidate()
-				binding.scanView.requestLayout()
-				scanPart?.let {
-					binding.scanView.attach(it)
-					lifecycle.addObserver(binding.scanView)
-					binding.startFallback.isEnabled = it.hasFallback == true
-				}
+
+				scanView.invalidate()
+				scanView.requestLayout()
+				scanView.attach(activeScanPart)
+				lifecycle.addObserver(scanView)
+
+				binding.startFallback.isEnabled = scanPart?.hasFallback == true
 			}
 			JumioScanStep.IMAGE_TAKEN -> {
-				// Nothing to do in this custom ui implementation
+				// Nothing to do in the custom ui implementation
 			}
 			JumioScanStep.NEXT_PART -> {
 				if (data is JumioCredentialPart) {
-					log("next side: $data\nExtraction method: ${scanPart?.scanMode}")
+					logText += ": $data\nExtraction Method: ${scanPart?.scanMode}"
 				}
 				binding.startFallback.isEnabled = scanPart?.hasFallback == true
-				binding.takePicture.isEnabled = binding.scanView.isShutterEnabled
+				binding.takePicture.isEnabled = scanView.isShutterEnabled
 			}
 			JumioScanStep.PROCESSING -> {
 				hideView(binding.inlineScanLayout, showLoading = true)
@@ -562,54 +672,58 @@ class CustomUiActivity :
 			JumioScanStep.CONFIRMATION_VIEW -> {
 				hideView(binding.inlineScanLayout)
 				showView(binding.inlineConfirmLayout)
-				scanPart?.let {
+				scanPart?.let { jumioScanPart ->
 					binding.confirmationViewList.removeAllViews()
-					confirmationHandler.attach(it)
-					confirmationHandler.parts.forEach {
+					confirmationHandler.attach(jumioScanPart)
+					confirmationHandler.parts.forEach { jumioCredentialPart ->
 						val confirmationView = JumioConfirmationView(this@CustomUiActivity)
-						confirmationHandler.renderPart(it, confirmationView)
+						confirmationHandler.renderPart(jumioCredentialPart, confirmationView)
 						binding.confirmationViewList.addView(confirmationView)
 					}
 				}
 			}
 			JumioScanStep.REJECT_VIEW -> {
-				(data as? Map<JumioCredentialPart, String>)?.forEach {
-					log("${it.key.name} -> ${it.value}")
+				val rejectMap = data as? Map<JumioCredentialPart, String>
+				rejectMap?.forEach {
+					logText += ": ${it.key.name} -> ${it.value}"
 				}
 				/**
 				 * To display granular feedback, check against the values provided in [com.jumio.sdk.reject.JumioRejectReason]
 				 */
 // 				when(data) {
-// 					JumioRejectReason.BLURRY -> TODO()
+// 					JumioRejectReason.BLURRY -> ...
+// 					JumioRejectReason.DIGITAL_COPY -> ...
 // 					...
 // 				}
 				showView(binding.inlineRejectLayout)
-				scanPart?.let {
+				scanPart?.let { jumioScanPart ->
 					binding.rejectViewList.removeAllViews()
-					rejectHandler.attach(it)
-					rejectHandler.parts.forEach {
+					rejectHandler.attach(jumioScanPart)
+					rejectHandler.parts.forEach { jumioCredentialPart ->
 						val rejectView = JumioRejectView(this@CustomUiActivity)
-						rejectHandler.renderPart(it, rejectView)
+						rejectHandler.renderPart(jumioCredentialPart, rejectView)
 						binding.rejectViewList.addView(rejectView)
 					}
 				}
 			}
 			JumioScanStep.RETRY -> {
 				if (data is JumioRetryReason) {
-					log("retry reason: ${data.code}")
-					log("retry message: ${data.message}")
+					logText += ", Reason: ${data.code}"
 					retryReason = data
 				}
 				showView(binding.partRetryButton)
 			}
 			JumioScanStep.CAN_FINISH -> {
-				lifecycle.removeObserver(binding.scanView)
-				hideView(binding.inlineConfirmLayout, binding.partRetryButton, binding.loadingIndicator)
+				lifecycle.removeObserver(scanView)
+				hideView(
+					binding.inlineConfirmLayout,
+					binding.partRetryButton,
+					binding.loadingIndicator,
+					binding.inlineDiLayout
+				)
 			}
 			JumioScanStep.ATTACH_ACTIVITY -> {
-				scanPart?.let {
-					JumioActivityAttacher(this).attach(it)
-				}
+				scanPart?.let { JumioActivityAttacher(this).attach(it) }
 			}
 			JumioScanStep.ATTACH_FILE -> {
 				val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
@@ -618,7 +732,7 @@ class CustomUiActivity :
 					putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("application/pdf"))
 				}
 				try {
-					filePickerLauncher.launch(intent)
+					launcher.launch(intent)
 				} catch (e: Exception) {
 					e.printStackTrace()
 					log("Could not start file picker", Color.RED)
@@ -627,13 +741,42 @@ class CustomUiActivity :
 			JumioScanStep.ADDON_SCAN_PART -> {
 				showView(binding.addonControls)
 			}
+			JumioScanStep.DIGITAL_IDENTITY_VIEW -> {
+				val activeScanPart = scanPart ?: return
+
+				showView(binding.inlineDiLayout)
+				binding.digitalIdentityView.attach(activeScanPart)
+			}
+			JumioScanStep.THIRD_PARTY_VERIFICATION -> {
+				hideView(binding.inlineDiLayout, showLoading = true)
+			}
+		}
+
+		log(logText)
+	}
+
+	private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+		if (result.resultCode == RESULT_OK) {
+			val fileAttacher = JumioFileAttacher()
+			try {
+				scanPart?.let { fileAttacher.attach(it) }
+				result.data?.let {
+					val returnUri = it.data ?: throw Exception("Could not get Uri")
+					val fileDescriptor = contentResolver.openFileDescriptor(returnUri, "r") ?: throw Exception(
+						"Could not open file descriptor"
+					)
+
+					fileAttacher.setFileDescriptor(fileDescriptor)
+				}
+			} catch (e: Exception) {
+				showError(e.message)
+			}
 		}
 	}
 
 	// /////////////////////////////////////////////////////////////
-	//                    Helper Functions                       //
+	// //////////////// Helper Functions
 	// /////////////////////////////////////////////////////////////
-
 	/**
 	 * OnItemSelectedListener interface implementation for handling country, document and variant spinner changes
 	 *
@@ -645,21 +788,16 @@ class CustomUiActivity :
 	override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
 		when (parent) {
 			binding.customCountrySpinner -> {
-				customCountryAdapter?.getDocumentList(position)?.also {
-					customDocumentAdapter = CustomDocumentAdapter(this@CustomUiActivity, it)
+				(credential as? JumioIDCredential)?.let { credential ->
+					val selectedCountry = binding.customCountrySpinner.selectedItem as String
+					val documents = credential.getPhysicalDocumentsForCountry(selectedCountry) +
+						credential.getDigitalDocumentsForCountry(selectedCountry)
+
+					customDocumentAdapter = CustomDocumentAdapter(this@CustomUiActivity, documents)
 					binding.customDocumentSpinner.adapter = customDocumentAdapter
 				}
 			}
 			binding.customDocumentSpinner -> {
-				hideViewsAfter(binding.countryDocumentLayout)
-				customDocumentAdapter?.getDocumentType(position)?.also { documentType ->
-					customDocumentAdapter?.getDocumentVariants(documentType)?.also { variantList ->
-						customVariantAdapter = CustomVariantAdapter(this@CustomUiActivity, variantList)
-						binding.customVariantSpinner.adapter = customVariantAdapter
-					}
-				}
-			}
-			binding.customVariantSpinner -> {
 				hideViewsAfter(binding.countryDocumentLayout)
 			}
 		}
@@ -674,24 +812,17 @@ class CustomUiActivity :
 	 *
 	 * @param country
 	 * @param document
-	 * @param variant
 	 */
-	private fun setupCredential(
-		country: String? = null,
-		document: String? = null,
-		variant: String? = null
-	) {
+	private fun setupCredential(country: String? = null, document: String? = null) {
 		showView(binding.credentialControls)
 		when (credential) {
 			is JumioIDCredential -> {
-				(credential as JumioIDCredential).let {
-					showView(binding.countryDocumentLayout)
-					// setup country/doctype/variant spinner
+				(credential as JumioIDCredential).also { idCredential ->
+					showView(binding.countryDocumentLayout) // setup country/doctype/variant spinner
 					binding.customCountrySpinner.onItemSelectedListener = null
 					binding.customDocumentSpinner.onItemSelectedListener = null
-					binding.customVariantSpinner.onItemSelectedListener = null
 
-					customCountryAdapter = CustomCountryAdapter(this, it.countries)
+					customCountryAdapter = CustomCountryAdapter(this, idCredential.supportedCountries)
 					binding.customCountrySpinner.adapter = customCountryAdapter
 					binding.customCountrySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 						override fun onItemSelected(parent: AdapterView<*>?, view: View?, bposition: Int, id: Long) {
@@ -702,54 +833,56 @@ class CustomUiActivity :
 							// Left intentionally blank, nothing to do.
 						}
 					}
-					log("Suggested Country: ${it.suggestedCountry}")
-					setSpinner(binding.customCountrySpinner, country ?: it.suggestedCountry)
 
-					customCountryAdapter?.getDocumentList(binding.customCountrySpinner.selectedItemPosition)?.also {
-						customDocumentAdapter = CustomDocumentAdapter(this@CustomUiActivity, it)
-						binding.customDocumentSpinner.adapter = customDocumentAdapter
-					}
-					binding.customDocumentSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-						override fun onItemSelected(parent: AdapterView<*>?, view: View?, bposition: Int, id: Long) {
-							binding.customDocumentSpinner.onItemSelectedListener = this@CustomUiActivity
-						}
+					log("Suggested Country: ${idCredential.suggestedCountry}")
+					setSpinner(binding.customCountrySpinner, country ?: idCredential.suggestedCountry)
 
-						override fun onNothingSelected(parent: AdapterView<*>?) {
-							// Left intentionally blank, nothing to do.
-						}
-					}
-					setSpinner(binding.customDocumentSpinner, document)
+					val selectedCountry = binding.customCountrySpinner.selectedItem as String
+					val documents = idCredential.getPhysicalDocumentsForCountry(selectedCountry) +
+						idCredential.getDigitalDocumentsForCountry(selectedCountry)
 
-					customDocumentAdapter?.getDocumentType(binding.customDocumentSpinner.selectedItemPosition)
-						?.also { documentType ->
-							customDocumentAdapter?.getDocumentVariants(documentType)?.also { variantList ->
-								customVariantAdapter = CustomVariantAdapter(this@CustomUiActivity, variantList)
-								binding.customVariantSpinner.adapter = customVariantAdapter
+					customDocumentAdapter = CustomDocumentAdapter(this@CustomUiActivity, documents)
+					binding.customDocumentSpinner.adapter = customDocumentAdapter
+					binding.customDocumentSpinner.onItemSelectedListener =
+						object : AdapterView.OnItemSelectedListener {
+							override fun onItemSelected(
+								parent: AdapterView<*>?,
+								view: View?,
+								bposition: Int,
+								id: Long
+							) {
+								binding.customDocumentSpinner.onItemSelectedListener = this@CustomUiActivity
+							}
+
+							override fun onNothingSelected(parent: AdapterView<*>?) {
+								// Left intentionally blank, nothing to do.
 							}
 						}
-					binding.customVariantSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-						override fun onItemSelected(parent: AdapterView<*>?, view: View?, bposition: Int, id: Long) {
-							binding.customVariantSpinner.onItemSelectedListener = this@CustomUiActivity
-						}
 
-						override fun onNothingSelected(parent: AdapterView<*>?) {
-							// Left intentionally blank, nothing to do.
-						}
-					}
-					setSpinner(binding.customVariantSpinner, variant)
+					setSpinner(binding.customDocumentSpinner, document)
 
-					if (it.isConfigured) {
-						setupCredentialParts(it.credentialParts)
+					if (idCredential.isConfigured) {
+						setupCredentialParts(idCredential.credentialParts)
 					}
 				}
 			}
 			is JumioDocumentCredential -> {
 				(credential as JumioDocumentCredential).let {
-					binding.acquireModeCamera.visibility =
-						if (it.availableAcquireModes.contains(JumioAcquireMode.CAMERA)) View.VISIBLE else View.GONE
-					binding.acquireModeFile.visibility =
-						if (it.availableAcquireModes.contains(JumioAcquireMode.FILE)) View.VISIBLE else View.GONE
+					binding.acquireModeCamera.visibility = if (
+						it.availableAcquireModes.contains(JumioAcquireMode.CAMERA)
+					) {
+						View.VISIBLE
+					} else {
+						View.GONE
+					}
+					binding.acquireModeFile.visibility = if (it.availableAcquireModes.contains(JumioAcquireMode.FILE)) {
+						View.VISIBLE
+					} else {
+						View.GONE
+					}
+
 					showView(binding.acquireModeLayout)
+
 					if (it.isConfigured) {
 						setupCredentialParts(it.credentialParts)
 					}
@@ -757,6 +890,7 @@ class CustomUiActivity :
 			}
 			is JumioFaceCredential, is JumioDataCredential -> {
 				hideViewsAfter(binding.credentialControls)
+
 				credential?.let {
 					setupCredentialParts(it.credentialParts)
 				}
@@ -769,58 +903,34 @@ class CustomUiActivity :
 	 */
 	private fun setupScanPart() {
 		showView(binding.scanPartControls)
-		if (scanPart?.scanMode != JumioScanMode.FACE_IPROOV) {
+
+		val activeScanPart = scanPart ?: return
+
+		if (activeScanPart.scanMode == JumioScanMode.WEB) {
+			hideView(binding.inlineScanLayout)
+			showView(binding.digitalIdentityView)
+		} else if (activeScanPart.scanMode != JumioScanMode.FACE_IPROOV &&
+			activeScanPart.scanMode != JumioScanMode.DEVICE_RISK
+		) {
+			hideView(binding.digitalIdentityView)
 			initScanView()
-			showView(binding.seekBarLayout)
 		}
 	}
 
-	/**
-	 * Setup the credential parts in the gui
-	 *
-	 * @param credentialParts
-	 */
-	private fun setupCredentialParts(credentialParts: List<JumioCredentialPart>) {
-		binding.scanSideLayout.removeAllViews()
-		credentialParts.forEach { part ->
-			val button = Button(this)
-			button.text = part.name
-			button.setOnClickListener { view ->
-				try {
-					scanPart = credential?.initScanPart(part, this)
-					view.tag = true
-					setupScanPart()
-				} catch (e: Exception) {
-					e.message?.let {
-						showError(it)
-					}
-				}
-			}
-			button.setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
-			binding.scanSideLayout.addView(button)
-		}
-		showView(binding.scanSideLayout)
-	}
+	private val decimalFormat: DecimalFormat = DecimalFormat("0.00")
 
 	/**
 	 * Initialize the scan view with the min size and set the ratio seekbar to sane values
-	 *
 	 */
 	private fun initScanView() {
+		showView(binding.scanView)
+
 		val screenRatio = binding.rootScrollView.width.toFloat() / binding.rootScrollView.height
 		val isPortrait = binding.rootScrollView.height > binding.rootScrollView.width || isTabletDevice()
 
 		val params = FrameLayout.LayoutParams(
 			if (isPortrait) FrameLayout.LayoutParams.MATCH_PARENT else FrameLayout.LayoutParams.WRAP_CONTENT,
-			if (isPortrait) {
-				FrameLayout.LayoutParams.WRAP_CONTENT
-			} else {
-				TypedValue.applyDimension(
-					TypedValue.COMPLEX_UNIT_DIP,
-					300f,
-					resources.displayMetrics
-				).toInt()
-			}
+			if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(this, 300)
 		)
 		binding.scanView.layoutParams = params
 
@@ -835,7 +945,7 @@ class CustomUiActivity :
 
 		binding.ratioSeekBar.progress = 0
 		binding.scanView.ratio = calculateScanViewRatio(isPortrait)
-		binding.ratioTextView.text = ratioText(binding.scanView.ratio)
+		binding.ratioTextView.text = "Ratio: " + decimalFormat.format(binding.scanView.ratio)
 		binding.ratioTextView.setBackgroundColor(ContextCompat.getColor(this, R.color.spinnerBackground))
 
 		binding.ratioSeekBar.setOnSeekBarChangeListener(
@@ -851,7 +961,8 @@ class CustomUiActivity :
 				override fun onStopTrackingTouch(seekBar: SeekBar) {
 					binding.scanView.ratio = calculateScanViewRatio(isPortrait)
 
-					binding.ratioTextView.text = ratioText(binding.scanView.ratio)
+					binding.ratioTextView.text = "Ratio: " + decimalFormat.format(binding.scanView.ratio)
+
 					binding.scanView.invalidate()
 					binding.scanView.requestLayout()
 				}
@@ -862,19 +973,11 @@ class CustomUiActivity :
 	}
 
 	/**
-	 * Formats ratio for displaying
-	 *
-	 * @param ratio   Ratio from scanView
-	 * @return Ratio formatted in pattern "0.00"
-	 */
-	private fun ratioText(ratio: Float) = "Ratio: " + DecimalFormat("0.00").format(ratio)
-
-	/**
 	 * Checks if the current device is a tablet device, based on the smallest screen width
 	 *
 	 * @return true in case it is a tablet
 	 */
-	private fun isTabletDevice() = resources.configuration.smallestScreenWidthDp >= 600
+	private fun isTabletDevice(): Boolean = resources.configuration.smallestScreenWidthDp >= 600
 
 	/**
 	 * Calculates the scan view ratio based on the minRatio and the current progress
@@ -882,39 +985,54 @@ class CustomUiActivity :
 	 * @param isPortrait if the screen is in portrait orientation or not
 	 * @return scan view ratio
 	 */
-	private fun calculateScanViewRatio(isPortrait: Boolean) = if (isPortrait) {
-		binding.scanView.minRatio - binding.ratioSeekBar.progress.toFloat() / 100
-	} else {
-		binding.scanView.minRatio + binding.ratioSeekBar.progress.toFloat() / 100
+	private fun calculateScanViewRatio(isPortrait: Boolean): Float {
+		return if (isPortrait) {
+			binding.scanView.minRatio - binding.ratioSeekBar.progress.toFloat() / 100
+		} else {
+			binding.scanView.minRatio + binding.ratioSeekBar.progress.toFloat() / 100
+		}
 	}
 
 	/**
-	 * Show different view sections
+	 * Setup the credential parts in the gui
 	 *
-	 * @param views
-	 * @param hideLoading
+	 * @param credentialParts
 	 */
+	private fun setupCredentialParts(credentialParts: List<JumioCredentialPart>) {
+		binding.scanSideLayout.removeAllViews()
+
+		credentialParts.forEach { part ->
+			val button = Button(this).apply {
+				text = part.name
+				setCompoundDrawablesWithIntrinsicBounds(errorDrawable, null, null, null)
+
+				setOnClickListener { view ->
+					try {
+						scanPart = credential?.initScanPart(part, this@CustomUiActivity)
+						view.tag = true
+						setupScanPart()
+					} catch (e: Exception) {
+						showError(e.message)
+					}
+				}
+			}
+
+			binding.scanSideLayout.addView(button)
+		}
+
+		showView(binding.scanSideLayout)
+	}
+
 	private fun showView(vararg views: View, hideLoading: Boolean = true) {
 		if (hideLoading) binding.loadingIndicator.visibility = View.GONE
 		for (view in views) view.visibility = View.VISIBLE
 	}
 
-	/**
-	 * Hide different view sections
-	 *
-	 * @param views
-	 * @param showLoading
-	 */
 	private fun hideView(vararg views: View, showLoading: Boolean = false) {
 		for (view in views) view.visibility = View.GONE
 		if (showLoading) binding.loadingIndicator.visibility = View.VISIBLE
 	}
 
-	/**
-	 * Hide all view sections after the specified one
-	 *
-	 * @param lastVisible
-	 */
 	private fun hideViewsAfter(lastVisible: View) {
 		val views = arrayOf(
 			binding.controllerControls,
@@ -928,6 +1046,7 @@ class CustomUiActivity :
 			binding.scanPartControls,
 			binding.seekBarLayout,
 			binding.inlineScanLayout,
+			binding.inlineDiLayout,
 			binding.inlineConfirmLayout,
 			binding.inlineRejectLayout,
 			binding.animationView,
@@ -940,78 +1059,12 @@ class CustomUiActivity :
 	}
 
 	/**
-	 * Save the icon state in different view groups (scan sides, credentials)
-	 *
-	 * @param group
-	 * @param outState
-	 * @param prefix
-	 */
-	private fun saveIconState(group: ViewGroup, outState: Bundle, prefix: String) {
-		for (i in 0..group.childCount) {
-			val child: View? = group.getChildAt(i)
-			(child as Button?)?.let {
-				outState.putBoolean("$prefix ${it.text}", it.compoundDrawables[0] == successDrawable)
-				if (it.tag == true) {
-					outState.putString(prefix, it.text.toString())
-				}
-			}
-		}
-	}
-
-	/**
-	 * Restore the icon state in different view groups (scan sides, credentials)
-	 *
-	 * @param group
-	 * @param inState
-	 * @param prefix
-	 */
-	private fun restoreIconState(group: ViewGroup, inState: Bundle, prefix: String) {
-		for (i in 0..group.childCount) {
-			val child: View? = group.getChildAt(i)
-			val selected = inState.getString(prefix)
-			(child as Button?)?.let {
-				if (it.text == selected) {
-					it.tag = true
-				}
-				it.setCompoundDrawables(
-					if (inState.getBoolean("$prefix ${it.text}")) successDrawable else errorDrawable,
-					null,
-					null,
-					null
-				)
-			}
-		}
-	}
-
-	/**
-	 * Update the icon of an active child in a group
-	 *
-	 * @param group
-	 * @param success
-	 */
-	private fun updateIcon(group: ViewGroup, success: Boolean) {
-		for (i in 0..group.childCount) {
-			val child: View? = group.getChildAt(i)
-			if (child?.tag == true) {
-				(child as Button).setCompoundDrawablesWithIntrinsicBounds(
-					if (success) successDrawable else errorDrawable,
-					null,
-					null,
-					null
-				)
-				child.tag = false
-				break
-			}
-		}
-	}
-
-	/**
-	 * Display the message in a snackbar
+	 * Display the error [message] as snackbar
 	 *
 	 * @param message
 	 */
-	private fun showError(message: String) {
-		Snackbar.make(binding.root, message, Snackbar.LENGTH_LONG).show()
+	private fun showError(message: String?) {
+		Snackbar.make(binding.root, message ?: "Unknown error", Snackbar.LENGTH_LONG).show()
 	}
 
 	/**
@@ -1024,33 +1077,45 @@ class CustomUiActivity :
 		if (message == null) {
 			return
 		}
-		Log.d("CustomUI", message)
+		Log.d(TAG, message)
 		try {
-			val logline = TextView(this)
-			logline.text = message
-			logline.setTextColor(color)
+			val logline = TextView(this).apply {
+				text = message
+				setTextColor(color)
+			}
+
 			binding.inlineCallbackLog.addView(logline, 0)
+
 			if (binding.inlineCallbackLog.childCount > 40) {
 				binding.inlineCallbackLog.removeViewAt(binding.inlineCallbackLog.childCount - 1)
 			}
 		} catch (e: Exception) {
-			Log.e("CustomUI", String.format("Could not write to callback log: %s", e.message))
-			Log.e("CustomUI", message)
+			Log.e(TAG, String.format("Could not write to callback log: %s", e.message))
+			Log.e(TAG, message)
 		}
 	}
 
-	/**
-	 * Helper to catch and show an exception
-	 *
-	 * @param function
-	 */
 	private fun catchAndShow(function: () -> Any) {
 		try {
 			function()
 		} catch (e: Exception) {
 			e.printStackTrace()
-			e.message?.let {
-				showError(it)
+			showError(e.message)
+		}
+	}
+
+	private fun updateIcon(group: ViewGroup, success: Boolean) {
+		for (i in 0..group.childCount) {
+			val child: View? = group.getChildAt(i)
+			if (child?.tag == true) {
+				(child as Button).setCompoundDrawablesWithIntrinsicBounds(
+					if (success) successDrawable else errorDrawable,
+					null,
+					null,
+					null
+				)
+				child.tag = false
+				break
 			}
 		}
 	}
@@ -1075,9 +1140,12 @@ class CustomUiActivity :
 		for (i in 0 until adapter.count) {
 			val format: String = if (compare != null) {
 				compare(adapter.getItem(i))
+			} else if (adapter is JumioArrayAdapter<*>) {
+				adapter.getValue(i)
 			} else {
 				adapter.getItem(i) as String
 			}
+
 			if (format == value) {
 				spinner?.setSelection(i, false)
 				break
@@ -1085,40 +1153,29 @@ class CustomUiActivity :
 		}
 	}
 
-	/**
-	 * Get the consent text as a [SpannableString] which makes a part of the text clickable to display the [policyUrl].
-	 *
-	 * @param policyUrl The Jumio privacy policy url
-	 * @return [SpannableString]
-	 */
-	private fun getConsentText(policyUrl: String): Spanned {
-		val linkText = getString(R.string.consent_link)
-		val consentText = getString(R.string.consent_text, binding.userConsentedButton.text, linkText)
-		val spannable = SpannableString(consentText)
-		spannable.setSpan(
-			ClickableSpanImpl(policyUrl),
-			consentText.indexOf(linkText),
-			consentText.indexOf(linkText) + linkText.length,
-			Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-		)
-		return spannable
-	}
+	companion object {
+		const val PERMISSION_REQUEST_CODE = 100
+		const val EXTRA_TOKEN = "token"
+		const val EXTRA_DATACENTER = "datacenter"
+		const val EXTRA_CUSTOMTHEME = "customtheme"
 
-	/**
-	 * Helper class to create a [ClickableSpan] to display the [policyUrl] as a [Intent.ACTION_VIEW].
-	 *
-	 * @property policyUrl The Jumio privacy policy url
-	 */
-	private class ClickableSpanImpl(private val policyUrl: String) : ClickableSpan() {
-		override fun onClick(widget: View) {
-			val uri = Uri.parse(policyUrl)
-			val intent = Intent(Intent.ACTION_VIEW, uri)
-			intent.putExtra(Browser.EXTRA_APPLICATION_ID, widget.context.packageName)
-			try {
-				widget.context.startActivity(intent)
-			} catch (e: ActivityNotFoundException) {
-				Log.w("CustomUI", "Activity was not found for intent, $intent")
+		@JvmStatic
+		fun start(
+			activity: Activity,
+			activityResultLauncher: ActivityResultLauncher<Intent>,
+			token: String,
+			dataCenter: JumioDataCenter,
+			customTheme: Int = 0
+		) {
+			require(token.isNotEmpty()) { "Token needs to be set" }
+
+			val intent = Intent(activity, CustomUiActivity::class.java).apply {
+				putExtra(EXTRA_TOKEN, token)
+				putExtra(EXTRA_DATACENTER, dataCenter)
+				putExtra(EXTRA_CUSTOMTHEME, customTheme)
 			}
+
+			activityResultLauncher.launch(intent)
 		}
 	}
 }

@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Premašeno je ograničenje PDF stranice</string>
 	<string name="jumio_dv_retry_size_limit">Premašeno je maksimalno ograničenje veličine PDF-a</string>
 	<string name="jumio_error_case_auth_failed">Provjera autentičnosti nije uspjela</string>
+	<string name="jumio_error_case_cancelled">Poništen</string>
 	<string name="jumio_error_case_cancelled_by_user">Otkazano od krajnjeg korisnika</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Certifikat više nije valjan. Ažurirajte svoju aplikaciju</string>
 	<string name="jumio_error_case_device_is_offline">Molimo, provjerite da ste na mreži</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">Molimo da uredite broj putovnice prije snimanja</string>
 	<string name="jumio_id_scan_prompt_redact_kor">Ponovno uredite drugi blok svog Registracijskog broja prebivališta prije snimanja</string>
 	<string name="jumio_id_scan_prompt_redact_nld">Molimo uredite svoj BSN prije snimanja</string>
+	<string name="jumio_idtype_di">Digitalni identifikacijski dokument</string>
 	<string name="jumio_idtype_dl">Vozačka dozvola</string>
 	<string name="jumio_idtype_id">Osobna iskaznica</string>
 	<string name="jumio_idtype_pp">Putovnica</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">Analiza biometrijskih podataka</string>
 	<string name="jumio_button_cancel">Otkaži</string>
 	<string name="jumio_button_continue">Nastavi</string>
+	<string name="jumio_button_okay">U redu</string>
 	<string name="jumio_button_retry">Pokušajte ponovno</string>
+	<string name="jumio_di_back_to_document_selection">Bit ćete vraćeni na odabir dokumenta.</string>
+	<string name="jumio_di_vendor_selection_title">Odaberi pružatelja digitalnih identifikacijskih dokumenata</string>
+	<string name="jumio_di_verification_prompt_processing">Dovršite tijek u aplikaciji dobavljača %s.</string>
 	<string name="jumio_dv_confirm_button_reselect">Ponovno odaberi</string>
 	<string name="jumio_dv_confirm_file_info">Provjerite jeste li odabrali pravu PDF datoteku</string>
 	<string name="jumio_dv_confirm_file_title">Potvrdite svoju datoteku</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">Vađenje podataka</string>
 	<string name="jumio_nfc_header_finish">Skeniranje je završeno</string>
 	<string name="jumio_nfc_header_start">Postavite putovnicu</string>
+	<string name="jumio_processing_title">Provjera rezultata</string>
 	<string name="jumio_scanview_refocus">Molimo fokusirajte opet</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_step_doc">Podnesite dokument</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">Približite se</string>
 	<string name="iproov__prompt_yaw_too_high">Okrenite se malo nalijevo</string>
 	<string name="iproov__prompt_yaw_too_low">Okrenite se malo nadesno</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Vaša sesija je istekla</string>
+	<string name="jumio_di_retry_service_error">Provjera nije uspjela</string>
+	<string name="jumio_di_retry_third_party_verification_error">Provjera nije uspjela</string>
+	<string name="jumio_di_retry_unknown">Nešto nije u redu</string>
 	-->
 
 </resources>

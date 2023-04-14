@@ -1,31 +1,37 @@
 ![Header Graphic](docs/images/jumio_feature_graphic.jpg)
 
 [![Version](https://img.shields.io/github/v/release/Jumio/mobile-sdk-android?style=flat)](#release-notes)
+[![API Doc](https://img.shields.io/github/v/release/Jumio/mobile-sdk-android?label=API%20doc&color=green&style=flat)](https://jumio.github.io/mobile-sdk-android/)
 [![License](https://img.shields.io/badge/license-commercial-3D3D3D?style=flat)](#copyright)
 [![Platform](https://img.shields.io/badge/platform-Android-lightgrey?style=flat)](#general-requirements)
+[![API Level](https://img.shields.io/badge/API%20level-21+-orange?style=flat)](#general-requirements)
 [![Maven](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo.mobile.jumio.ai%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat)](#integration)
-[![API Level](http://img.shields.io/badge/API%20Level-19+-orange?style=flat)](#general-requirements)
 
 # Table of Contents
 - [Overview](#overview)
 - [Get Started](#get-started)
-    -  [Jumio SDK Integration](docs/integration_guide.md)
+  - [Jumio SDK Integration](#jumio-sdk-integration)
+  - [Code Documentation](#code-documentation)
+  - [FAQ](#faq)
+  - [Known Issues](#known-issues)
 - [Quickstart](#quickstart)
 - [Basics](#basics)
-    - [General Requirements](#general-requirements)
-    - [Authentication and Encryption](#authentication-and-encryption)
-    - [Permissions](#permissions)
-    - [Integration](#integration)
-    - [Proguard](#proguard)
-    - [Language Localization](#language-localization)
-- [Analytics with Datadog](#analytics-with-datadog)
+  - [General Requirements](#general-requirements)
+  - [Authentication and Encryption](#authentication-and-encryption)
+  - [Permissions](#permissions)
+  - [Integration](#integration)
+  - [Proguard](#proguard)
+  - [Language Localization](#language-localization)
 - [Document Verification](#document-verification)
+- [Digital Identity](#digital-identity)
+- [Analytics With Datadog](#analytics-with-datadog)
 - [Security](#security)
 - [Release Notes](#release-notes)
 - [Maintenance and Support](#maintenance-and-support)
-- [Code Documentation](https://jumio.github.io/mobile-sdk-android/)
-- [FAQ](docs/integration_faq.md)
-- [Known Issues](docs/known_issues.md)
+  - [Two-factor Authentication](#two-factor-authentication)
+  - [Licenses](#licenses)
+  - [Contact](#contact)
+  - [Copyright](#copyright)
 
 # Overview
 The Jumio Software Development Kit (SDK) provides you with a set of tools and UIs (default or custom) to develop an Android application perfectly fitted to your specific needs.
@@ -48,11 +54,20 @@ Jumio KYX platform and related services are a secure and easy solution that allo
 :arrow_right:&nbsp;&nbsp;[Changelog](docs/changelog.md)   
 :arrow_right:&nbsp;&nbsp;[Transition Guide](docs/transition_guide.md)   
 
-#### Previous SDK Versions
+### Previous SDK Versions
 If you need information on older SDK versions, please refer to:    
 - [3.9.2](https://github.com/Jumio/mobile-sdk-android/tree/v3.9.2)
 - [3.9.1](https://github.com/Jumio/mobile-sdk-android/tree/v3.9.1)
 - [3.9.0](https://github.com/Jumio/mobile-sdk-android/tree/v3.9.0)
+
+## Code Documentation
+Full API documentation for the Jumio iOS SDK can be found [here](https://jumio.github.io/mobile-sdk-ios/Jumio).
+
+## FAQ
+Link to Jumio iOS SDK FAQ can be found [here](docs/integration_faq.md).
+
+## Known Issues
+List of known issues can be found [here](docs/known_issues.md).
 
 -----
 
@@ -132,7 +147,8 @@ The [TLS Protocol](https://tools.ietf.org/html/rfc5246) is required to securely 
 ℹ️&nbsp;&nbsp;__Note:__ Calls with missing, incorrect or suspicious headers or parameter values will result in HTTP status code __400 Bad Request Error__ or __403 Forbidden__.
 
 #### Request Access Token (OAuth2)
-```
+
+```bash
 curl --request POST --location 'https://auth.amer-1.jumio.ai/oauth2/token' \
     --header 'Accept: application/json' \
     --header 'Content-Type: application/x-www-form-urlencoded' \
@@ -141,7 +157,8 @@ curl --request POST --location 'https://auth.amer-1.jumio.ai/oauth2/token' \
 ```
 
 #### Response Access Token (OAuth2)
-```
+
+```json
 {
   "access_token": "YOUR_ACCESS_TOKEN",
   "expires_in": 3600,
@@ -159,15 +176,17 @@ As soon as the workflow (transaction) starts, a 15 minutes session timeout is tr
 
 After creating/updating a new account you will receive a `sdk.token` (JWT) for initializing the SDK. Use this SDK token with your Android code:
 
-```
-sdk = JumioSDK(context: Context)
-sdk.token = "YOUR_SDK_TOKEN"
-sdk.dataCenter = "YOUR_DATACENTER"
+```kotlin
+sdk = JumioSDK(context: Context).apply {
+  token = "YOUR_SDK_TOKEN"
+  dataCenter = "YOUR_DATACENTER"
+}
 ```
 
 ## Permissions
 The following permission is optional:
-```
+
+```xml
 <uses-permission android:name="android.permission.VIBRATE"/>
 ```
 
@@ -178,7 +197,7 @@ Use `JumioSDK.hasAllRequiredPermissions(context: Context)` to make sure the Jumi
 ## Integration
 Use the SDK in your application by including the Maven repositories with the following `build.gradle` configuration in Android Studio:
 
-```
+```groovy
 repositories {
 	google()
 	mavenCentral()
@@ -195,20 +214,23 @@ repositories {
 	}
 }
 ```
+
 Check the Android Studio [sample projects](sample/JumioMobileSample/) to learn the most common use.
 
 ## Proguard
 
 ### Mandatory
 The following Proguard Keep rules have to be added to the Jumio Mobile SDK:
-```
+
+```text
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
 ```
 
 ### Optional
 The following Proguard Keep rules have to be added to the Jumio Mobile SDK if the corresponding dependencies have been added:
-```
+
+```text
 #Microblink
 -keep class com.microblink.** { *; }
 -keep class com.microblink.**$* { *; }
@@ -248,18 +270,6 @@ _Afrikaans, Arabic, Bulgarian, Chinese(Simplified), Chinese(Traditional), Croati
 
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or increase the __text size__ on their device. The accessibility strings that are used by TalkBack contain *accessibility* in their key and can be also modified in `strings.xml`.
 
-# Analytics With Datadog
-Analytic feedback and diagnostics enable us to continually improve our SDK and its performance, as well as investigate potential issues. With the Jumio SDK, we use [Datadog](https://github.com/DataDog/dd-sdk-android) as an optional tool to collect diagnostic information. Data collected includes specific SKD information like version numbers, started and finished SDK instances and scan workflows, thrown exceptions and error information, as well as other mobile events. Please note that gathering analytics data requires user consent due to legal regulations such as GDPR. The consent is granted when our MLA is accepted.
-
-To benefit from Datadog, add the following dependency to your `build.gradle` file:
-```
-implementation "com.jumio.android:datadog:${SDK_VERSION}"
-```
-
-To grant or revoke user consent, please use `JumioSDK.giveDataDogConsent(boolean)` method.
-
-⚠️&nbsp;&nbsp;__Note:__ The use of the Datadog module is only possible if it is not already included in your application.
-
 # Document Verification
 As of Android SDK 4.3.0, Document Verification functionality is available.
 This functionality allows users to submit a number of different document types (e.g. a utility bill or bank statement) in digital form and verify the validity and authenticity of this document.
@@ -296,6 +306,26 @@ For more details, please refer to our [integration guide](docs/integration_guide
 * WWCC (Working with children check)
 
 ℹ️&nbsp;&nbsp;__Note:__ To enable the use of this feature, please contact [Jumio support](#support).
+
+# Digital Identity
+As of Jumio Android SDK 4.5.0, users may use their Digital Identity to verify their identity.
+For now 'ID by Mastercard' is the only Digital Identity provider currently supported by our SDK.
+
+If you want to enable Digital Identity verification for your account please [contact us](https://support.jumio.com).
+In case you are already set up to use Digital Identity verification within your app, check out the integration steps explained [here](docs/integration_guide.md#digital-identity-did).
+
+# Analytics With Datadog
+Analytic feedback and diagnostics enable us to continually improve our SDK and its performance, as well as investigate potential issues. With the Jumio SDK, we use [Datadog](https://github.com/DataDog/dd-sdk-android) as an optional tool to collect diagnostic information. Data collected includes specific SDK information like version numbers, started and finished SDK instances and scan workflows, thrown exceptions and error information, as well as other mobile events. Please note that gathering analytics data requires user consent due to legal regulations such as GDPR. The consent is granted when our MLA is accepted.
+
+To benefit from Datadog, add the following dependency to your `build.gradle` file:
+
+```groovy
+implementation "com.jumio.android:datadog:${SDK_VERSION}"
+```
+
+To grant or revoke user consent, please use `JumioSDK.giveDataDogConsent(boolean)` method.
+
+⚠️&nbsp;&nbsp;__Note:__ The use of the Datadog module is only possible if it is not already included in your application.
 
 ----
 

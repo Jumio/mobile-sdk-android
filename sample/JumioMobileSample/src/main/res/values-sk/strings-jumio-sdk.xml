@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Bol prekročený maximálny počet strán súboru PDF</string>
 	<string name="jumio_dv_retry_size_limit">Bola prekročená maximálna veľkosť súboru PDF</string>
 	<string name="jumio_error_case_auth_failed">Overenie zlyhalo</string>
+	<string name="jumio_error_case_cancelled">Zrušené</string>
 	<string name="jumio_error_case_cancelled_by_user">Zrušené koncovým používateľom</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Certifikát už nie je platný. Aktualizujte svoju žiadosť</string>
 	<string name="jumio_error_case_device_is_offline">Skontrolujte svoje pripojenie</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">Pred zachytením zmeňte číslo pasu</string>
 	<string name="jumio_id_scan_prompt_redact_kor">Pred zachytením upravte druhý blok svojho registračného čísla pre obyvateľov</string>
 	<string name="jumio_id_scan_prompt_redact_nld">Pred nasnímaním upravte svoje číslo BSN</string>
+	<string name="jumio_idtype_di">Digitálny identifikátor</string>
 	<string name="jumio_idtype_dl">Vodičský preukaz</string>
 	<string name="jumio_idtype_id">Občiansky preukaz</string>
 	<string name="jumio_idtype_pp">Cestovný pas</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">Analýza biometrických údajov</string>
 	<string name="jumio_button_cancel">Zrušiť</string>
 	<string name="jumio_button_continue">Pokračovať</string>
+	<string name="jumio_button_okay">Dobre</string>
 	<string name="jumio_button_retry">Skúste znova</string>
+	<string name="jumio_di_back_to_document_selection">Prejdete späť na výber dokumentu.</string>
+	<string name="jumio_di_vendor_selection_title">Vyberte poskytovateľa digitálneho identifikátora</string>
+	<string name="jumio_di_verification_prompt_processing">Dokončite postup v aplikácii %s.</string>
 	<string name="jumio_dv_confirm_button_reselect">Vybrať znova</string>
 	<string name="jumio_dv_confirm_file_info">Uistite sa, že ste zvolili správny súbor PDF</string>
 	<string name="jumio_dv_confirm_file_title">Potvrďte svoj súbor</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">Sťahovanie údajov</string>
 	<string name="jumio_nfc_header_finish">Skenovanie bolo dokončené</string>
 	<string name="jumio_nfc_header_start">Umiestnite svoj pas</string>
+	<string name="jumio_processing_title">Kontroluje sa výsledok</string>
 	<string name="jumio_scanview_refocus">Prosím, zaostrite</string>
 	<string name="jumio_start_button">Začať</string>
 	<string name="jumio_start_step_doc">Odošlite dokument</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">Pristúpte bližšie</string>
 	<string name="iproov__prompt_yaw_too_high">Trochu sa otočte doľava</string>
 	<string name="iproov__prompt_yaw_too_low">Trochu sa otočte doprava</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Vaša relácia vypršala</string>
+	<string name="jumio_di_retry_service_error">Overenie zlyhalo</string>
+	<string name="jumio_di_retry_third_party_verification_error">Overenie zlyhalo</string>
+	<string name="jumio_di_retry_unknown">Niečo sa pokazilo</string>
 	-->
 
 </resources>

@@ -77,7 +77,7 @@ android.jetifier.blacklist=bcprov-jdk15on
 Please note that the naming of this will change with the Android Gradle Plugin 4 release and will become `android.jetifier.ignorelist`
 
 ## Custom UI
-On using iProov in CustomUI, in case `NetverifySDKController$retry` function is called for an error EX0000, the SDK can fail with the following exception: `java.lang.NoClassDefFoundError: Failed resolution of: Lcom/jumio/zoom/custom/ZoomCustomScanPresenter`. This issue was fixed in SDK version 3.9.0. As a workaround it is possible to only add `implementation "com.jumio.android:zoom:3.8.0@aar"` to the build.gradle dependencies.
+On using iProov in CustomUI, in case `NetverifySDKController$retry` function is called for an error EXX0000, the SDK can fail with the following exception: `java.lang.NoClassDefFoundError: Failed resolution of: Lcom/jumio/zoom/custom/ZoomCustomScanPresenter`. This issue was fixed in SDK version 3.9.0. As a workaround it is possible to only add `implementation "com.jumio.android:zoom:3.8.0@aar"` to the build.gradle dependencies.
 
 # SDK Version 3.7.x
 

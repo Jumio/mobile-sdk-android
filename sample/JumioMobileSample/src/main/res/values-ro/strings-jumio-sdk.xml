@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Limita maximă de pagini PDF depășită</string>
 	<string name="jumio_dv_retry_size_limit">Limita maximă de dimensiune PDF depășită</string>
 	<string name="jumio_error_case_auth_failed">Autentificarea a eșuat</string>
+	<string name="jumio_error_case_cancelled">Anulat</string>
 	<string name="jumio_error_case_cancelled_by_user">Anulat de utilizatorul final</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Certificatul nu mai este valabil. Vă rugăm să actualizați aplicația</string>
 	<string name="jumio_error_case_device_is_offline">Vă rugăm să vă asigurați că sunteți online</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">Vă rugăm revizuiți numărul pașaportului înainte de a face fotografia</string>
 	<string name="jumio_id_scan_prompt_redact_kor">Revizuiți al doilea set de cifre din numărul de înregistrare ca rezident înainte de a face fotografia</string>
 	<string name="jumio_id_scan_prompt_redact_nld">Revizuiți numărul dumneavoastră BSN înainte de a face fotografia</string>
+	<string name="jumio_idtype_di">ID digital</string>
 	<string name="jumio_idtype_dl">Permis de conducere</string>
 	<string name="jumio_idtype_id">Carte de identitate</string>
 	<string name="jumio_idtype_pp">Pașaport</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">Sunt analizate datele biometrice</string>
 	<string name="jumio_button_cancel">Anulare</string>
 	<string name="jumio_button_continue">Continuare</string>
+	<string name="jumio_button_okay">Bine</string>
 	<string name="jumio_button_retry">Încercați din nou</string>
+	<string name="jumio_di_back_to_document_selection">Veți naviga înapoi la selecția documentului.</string>
+	<string name="jumio_di_vendor_selection_title">Selectați furnizorul de ID digital</string>
+	<string name="jumio_di_verification_prompt_processing">Vă rugăm să încheiați fluxul în aplicația %s.</string>
 	<string name="jumio_dv_confirm_button_reselect">Selectați din nou</string>
 	<string name="jumio_dv_confirm_file_info">Asigurați-vă că ați selectat fișierul PDF corect</string>
 	<string name="jumio_dv_confirm_file_title">Confirmați fișierul dvs.</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">Se extrag datele</string>
 	<string name="jumio_nfc_header_finish">Scanare finalizată</string>
 	<string name="jumio_nfc_header_start">Poziționați-vă pașaportul</string>
+	<string name="jumio_processing_title">Se verifică rezultatul</string>
 	<string name="jumio_scanview_refocus">Vă rugăm să focalizați din nou</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_step_doc">Trimiteți-vă documentul</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">Apropiați-vă</string>
 	<string name="iproov__prompt_yaw_too_high">Întoarceți-vă ușor spre stânga</string>
 	<string name="iproov__prompt_yaw_too_low">Întoarceți-vă ușor spre dreapta</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Sesiunea dumneavoastră a expirat</string>
+	<string name="jumio_di_retry_service_error">Verificarea nu a reușit</string>
+	<string name="jumio_di_retry_third_party_verification_error">Verificarea nu a reușit</string>
+	<string name="jumio_di_retry_unknown">Ceva nu a funcționat corect</string>
 	-->
 
 </resources>

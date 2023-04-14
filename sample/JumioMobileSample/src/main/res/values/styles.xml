@@ -18,7 +18,7 @@
 		<item name="colorSecondary">@color/colorSecondary</item>
 	</style>
 
-	<style name="AppTheme.Widget.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+	<style name="Jumio.Widget.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
 		<item name="materialThemeOverlay">@style/AppTheme.ThemeOverlay.RadioButton</item>
 	</style>
 

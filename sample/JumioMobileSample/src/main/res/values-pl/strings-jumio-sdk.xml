@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Przekroczony maksymalny limit stron PDF</string>
 	<string name="jumio_dv_retry_size_limit">Przekroczono maksymalny rozmiar pliku PDF</string>
 	<string name="jumio_error_case_auth_failed">Uwierzytelnianie nie powiodło się</string>
+	<string name="jumio_error_case_cancelled">Anulowano</string>
 	<string name="jumio_error_case_cancelled_by_user">Anulowano przez użytkownika końcowego</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Certyfikat nie jest już ważny. Zaktualizuj aplikację</string>
 	<string name="jumio_error_case_device_is_offline">Sprawdź, czy jesteś online</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">Przed przechwyceniem zakryj numer paszportu</string>
 	<string name="jumio_id_scan_prompt_redact_kor">Przed przechwyceniem zakryj drugi blok numeru rejestracyjnego mieszkańca</string>
 	<string name="jumio_id_scan_prompt_redact_nld">Przed przechwyceniem zakryj numer BSN</string>
+	<string name="jumio_idtype_di">Identyfikator cyfrowy</string>
 	<string name="jumio_idtype_dl">Prawo jazdy</string>
 	<string name="jumio_idtype_id">Dowód osobisty</string>
 	<string name="jumio_idtype_pp">Paszport</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">Analiza danych biometrycznych</string>
 	<string name="jumio_button_cancel">Anuluj</string>
 	<string name="jumio_button_continue">Kontynuuj</string>
+	<string name="jumio_button_okay">OK</string>
 	<string name="jumio_button_retry">Spróbuj ponownie</string>
+	<string name="jumio_di_back_to_document_selection">Nastąpi powrót do wyboru dokumentów.</string>
+	<string name="jumio_di_vendor_selection_title">Wybierz dostawcę identyfikatora cyfrowego</string>
+	<string name="jumio_di_verification_prompt_processing">Dokończ procedurę w aplikacji %s.</string>
 	<string name="jumio_dv_confirm_button_reselect">Wybierz ponownie</string>
 	<string name="jumio_dv_confirm_file_info">Upewnij się, że wybrano właściwy plik PDF</string>
 	<string name="jumio_dv_confirm_file_title">Potwierdź swój plik</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">Wyodrębnianie danych</string>
 	<string name="jumio_nfc_header_finish">Skanowanie zakończone</string>
 	<string name="jumio_nfc_header_start">Ustaw swój paszport</string>
+	<string name="jumio_processing_title">Sprawdzanie wyniku</string>
 	<string name="jumio_scanview_refocus">Ustaw ostrość ponownie</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_step_doc">Prześlij swój dokument</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">Przybliż twarz</string>
 	<string name="iproov__prompt_yaw_too_high">Skręć lekko w lewo</string>
 	<string name="iproov__prompt_yaw_too_low">Skręć lekko w prawo</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Sesja wygasła</string>
+	<string name="jumio_di_retry_service_error">Weryfikacja nie powiodła się</string>
+	<string name="jumio_di_retry_third_party_verification_error">Weryfikacja nie powiodła się</string>
+	<string name="jumio_di_retry_unknown">Coś poszło nie tak</string>
 	-->
 
 </resources>
