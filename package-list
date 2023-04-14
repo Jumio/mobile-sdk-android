@@ -3,6 +3,7 @@ $dokka.linkExtension:html
 
 module:Core
 com.jumio.sdk
+com.jumio.sdk.consent
 com.jumio.sdk.controller
 com.jumio.sdk.credentials
 com.jumio.sdk.document
@@ -17,6 +18,8 @@ com.jumio.sdk.retry
 com.jumio.sdk.scanpart
 com.jumio.sdk.util
 com.jumio.sdk.views
+module:Digital Identity
+com.jumio.sdk.retry
 module:IProov
 com.jumio.sdk.retry
 module:NFC
