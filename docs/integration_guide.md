@@ -472,7 +472,7 @@ val jumioController: JumioController = sdk.start(context, jumioControllerInterfa
 When the `jumioController` is initialized, the following callback will be triggered:
 
 ```kotlin
-onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItems>?)`)
+onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItems>?)
 ```
 
 #### Consent Handling
@@ -484,7 +484,7 @@ Each consent item can be one of two types:
 * [`JumioConsentType.ACTIVE`][jumioconsenttype]
 * [`JumioConsentType.PASSIVE`][jumioconsenttype]
 
-For `ACTIVE` types, the user needs to accept the consent items explicitly, e.g. by enabling a UI switch or checking a checkbox for each consent item. For `PASSIVE` types, it is enough to present the consent text and URL to the user. The user implicitly accepts the passive consent items by continuing with the journey. For details please check out consent handling [(1)](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/customui/CustomUiActivity.kt#L218-L234) [(2)](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/customui/CustomUiActivity.kt#L249-L260) and [consent adapter](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/customui/CustomConsentAdapter.kt) in our sample app.
+For `ACTIVE` types, the user needs to accept the consent items explicitly, e.g. by enabling a UI switch or checking a checkbox for each consent item. For `PASSIVE` types, it is enough to present the consent text and URL to the user. The user implicitly accepts the passive consent items by continuing with the journey. For details please check out consent handling [(1)](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/customui/CustomUiActivity.kt#L218-L234) [(2)](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/customui/CustomUiActivity.kt#L252-L260) and [consent adapter](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/customui/adapter/CustomConsentAdapter.kt) in our sample app.
 
 The user can open and continue to the provided consent link if they choose to do so. If the user consents to Jumio's policy, [`jumioController.userConsented(consentItem: JumioConsentItem, userConsent: Boolean)`][userconsented] is required to be called internally before any credential can be initialized and the user journey can continue. If no consent is required, the list of (`JumioConsentItems`)[] will be `null`. If the user does not consent or if [`jumioController.userConsented(consentItem: JumioConsentItem, userConsent: Boolean)`][userconsented] is not called for all the items inside the `consentItems` list, the user will not be able to continue the user journey.
 
@@ -1013,6 +1013,6 @@ In any case, your use of this Software is subject to the terms and conditions th
 [jumioscanpart]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html
 [jumioscanmode]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html
 [jumioconsenttype]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-consent-type/index.html
-[jumioconsentitem]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent.jumio-consent-item/index.html
+[jumioconsentitem]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-consent-item/index.html
 [credentialpartslist]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-credential/credential-parts.html
 [proguardrules]: https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/proguard-rules.pro

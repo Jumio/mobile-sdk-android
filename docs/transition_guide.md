@@ -13,7 +13,7 @@ __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the cha
 * [`JumioError.code`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.error/-jumio-error/index.html) format updated from `[A][x][yyyy]` to `[A][xx][yyyy]`
 
 * Property [`countries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/countries.html) of `JumioIDCredential` has been deprecated. Instead the following new property and functions have been added:
-    * [`JumioIDCredential.supportedCountries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/supportedCountries.html)
+    * [`JumioIDCredential.supportedCountries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/supported-countries.html)
     * [`JumioIDCredential.getPhysicalDocumentsForCountry(countryCode:)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/get-physical-documents-for-country.html)
     * [`JumioIDCredential.getDigitalDocumentsForCountry(countryCode:)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/get-digital-documents-for-country.html)
 
@@ -30,7 +30,7 @@ __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the cha
 
 * [`JumioRetryReasonDigitalIdentity`](https://jumio.github.io/mobile-sdk-android/jumio-digital-identity/com.jumio.sdk.retry/-jumio-retry-reason-digital-identity/index.html) has been added
 
-* [`JumioConsentItem`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent.jumio-consent-item/index.html) class and [`JumioConsentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-consent-type/index.html) enum have been added
+* [`JumioConsentItem`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-consent-item/index.html) class and [`JumioConsentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-consent-type/index.html) enum have been added
 
 * [`onInitialized()`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-initialized.html) callback has been changed from ~~`onInitialized(credentials: List<JumioCredentialInfo>, policyUrl: String?)`~~ to [`onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItems>?)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-initialized.html)
   * Please refer to the [Consent Handling section](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#consent-handling) in our integration guide for more details.
