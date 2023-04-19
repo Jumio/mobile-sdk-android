@@ -3,6 +3,7 @@
 # FAQ
 
 ## Table of Contents
+- [User Consent](#user-consent)
 - [Improve User Experience and Reduce Drop-off Rate](#improve-user-experience-and-reduce-drop-off-rate)
 - [Managing Errors](#managing-errors)
     - [Ad Blockers or Firewall](#ad-blockers-or-firewall)
@@ -22,6 +23,15 @@
 - [Glossary of Commonly Used Abbreviations](#glossary)
 - [Google Play Store Prominent Disclosure](#google-play-store-prominent-disclosure)
 - [Jumio Support](#jumio-support)
+
+## User Consent
+User consent is now acquired for all users to ensure the accordance with biometric data protection laws. Depending on the legal requirements, consent can be acquired in one of two ways: __Active__ or __passive__.
+
+For __active__ consent instances, the user needs to accept the consent items explicitly, e.g. by enabling a UI switch or checking a checkbox for each consent item. For __passive__ consent instances, it is enough to present the consent text and URL to the user. The user implicitly accepts the passive consent items by continuing with the journey.
+
+<img src="images/consent/consent_passive.jpg" alt="Acquiring passive user consent">
+<img src="images/consent/consent_active_unchecked.jpg" alt="Acquiring active user consent">
+<img src="images/consent/consent_active_checked.jpg" alt="Acquired active user consent">
 
 ## Improve User Experience and Reduce Drop-off Rate
 When evaluating user flows, one of the most commonly used metrics is the rate of drop-offs. At Jumio, we see considerable variance in drop-off rates across industries and customer implementations. For some implementations and industries, we see a higher rate of drop-offs on the first screens when compared with the average.

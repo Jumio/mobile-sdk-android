@@ -689,7 +689,7 @@ Start the scanning process by initializing the [`JumioScanPart`][jumioscanpart].
 
 - [`JumioCredentialPart`][jumiocredentialpart] values: `FRONT`, `BACK`, `MULTIPART`, `FACE`, `DOCUMENT`, `NFC`, `DEVICE_RISK`
 
-`MULTIPART` handles the scanning of multiple sides in one seamless capture experience. Please also check the new [`NEXT_PART`][nextpart] scan step for this [`JumioCredentialPart`][jumiocredentialpart]
+`MULTIPART` handles the scanning of multiple sides in one seamless capture experience. When a [`MULTIPART`][jumiomultipart] scan part is started, an additional [`NEXT_PART`][nextpart] step is sent after [`IMAGE_TAKEN`][imagetaken]. This signals that another side of the document should be scanned now. The step returns the [`JumioCredentialPart`][jumiocredentialpart] that should be scanned next. We suggest to actively guide the user to move to the next part, e.g. by showing an animation and by disabling the extraction during the animation. Please also check the new [`NEXT_PART`][nextpart] scan step for this [`JumioCredentialPart`][jumiocredentialpart] 
 
 Start the execution of the acquired [`JumioScanPart`][jumioscanpart] by calling [`currentScanPart?.start()`][startscanpart].
 
@@ -1011,6 +1011,7 @@ In any case, your use of this Software is subject to the terms and conditions th
 [jumioscanupdate]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html
 [jumiofileattacher]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-file-attacher/index.html
 [jumioscanpart]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html
+[jumiomultipart](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/-m-u-l-t-i-p-a-r-t/index.html)
 [jumioscanmode]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html
 [jumioconsenttype]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-consent-type/index.html
 [jumioconsentitem]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-consent-item/index.html
