@@ -61,10 +61,10 @@ If you need information on older SDK versions, please refer to:
 - [3.9.0](https://github.com/Jumio/mobile-sdk-android/tree/v3.9.0)
 
 ## Code Documentation
-Full API documentation for the Jumio iOS SDK can be found [here](https://jumio.github.io/mobile-sdk-ios/Jumio).
+Full API documentation for the Jumio Android SDK can be found [here](https://jumio.github.io/mobile-sdk-android).
 
 ## FAQ
-Link to Jumio iOS SDK FAQ can be found [here](docs/integration_faq.md).
+Link to Jumio Android SDK FAQ can be found [here](docs/integration_faq.md).
 
 ## Known Issues
 List of known issues can be found [here](docs/known_issues.md).
