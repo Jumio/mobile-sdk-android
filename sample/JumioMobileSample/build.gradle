@@ -6,7 +6,7 @@ buildscript {
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath "com.android.tools.build:gradle:7.3.0"
+		classpath "com.android.tools.build:gradle:7.3.1"
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 	}
 }
@@ -31,7 +31,7 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "4.5.0"
+	SDK_VERSION = "4.6.0"
 }
 
 dependencies {
@@ -48,6 +48,7 @@ dependencies {
 	implementation "com.jumio.android:datadog:${SDK_VERSION}"
 	implementation "com.jumio.android:devicerisk:${SDK_VERSION}"
 	implementation "com.jumio.android:digital-identity:${SDK_VERSION}"
+	implementation "com.jumio.android:liveness:${SDK_VERSION}"
 
 	//only for the sample code
 	implementation "androidx.activity:activity-ktx:1.5.1"

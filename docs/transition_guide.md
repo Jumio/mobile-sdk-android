@@ -6,6 +6,34 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.6.0
+#### Public API Changes
+* `JUMIO_LIVENESS` has been added to [`JumioScanMode`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html)
+* `MOVE_FACE_CLOSER` has been added to [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html)
+* `FACE_TOO_CLOSE` has been added to [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html)
+
+#### Customization Changes
+* A new customization theme `<item name="jumio_face_animation_customization">@style/CustomFaceHelp</item>` has been added to help customize the newly added Jumio Liveness solution. This style includes the following attributes:
+  * `<item name="jumio_face_animation_foreground">`
+  * `<item name="jumio_face_animation_background">`
+
+
+* The following customization attributes have been added to `@style/CustomOverlay` theme:
+  * `<item name="jumio_scanOverlay">`
+  * `<item name="jumio_scanOverlay_livenessStrokeAnimation">`
+  * `<item name="jumio_scanOverlay_livenessStrokeAnimationCompleted>`      
+
+
+* The following customization attributes have been removed from `@style/CustomIproov` theme:
+  * ~~`<item name="iproov_animation_foreground">`~~
+  * ~~`<item name="iproov_animation_background">`~~
+
+
+* See also: [Jumio sample `styles.xml`](../sample/JumioMobileSample/src/main/res/values/styles.xml)
+
+#### Dependency Updates
+* NEW Liveness dependency: `implementation "com.jumio.android:liveness:4.6.0"` 
+
 ## 4.5.0
 #### Public API Changes
 * ~~`onPause`~~ has been removed from [JumioScanPart](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html)
@@ -16,7 +44,6 @@ __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the cha
     * [`JumioIDCredential.supportedCountries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/supported-countries.html)
     * [`JumioIDCredential.getPhysicalDocumentsForCountry(countryCode:)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/get-physical-documents-for-country.html)
     * [`JumioIDCredential.getDigitalDocumentsForCountry(countryCode:)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/get-digital-documents-for-country.html)
-
 
 * [`JumioDeepLinkHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.util/-jumio-deep-link-handler/index.html) has been added
 

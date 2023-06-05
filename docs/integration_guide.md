@@ -42,7 +42,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.5.0**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.6.0**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -70,33 +70,39 @@ If an optional module is **not linked**, some functionalities may not be availab
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.5.0"               
+	implementation "com.jumio.android:core:4.6.0"               
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:mrz:4.5.0"                // MRZ Scanning
-	implementation "com.jumio.android:nfc:4.5.0"                // NFC Scanning
-	implementation "com.jumio.android:linefinder:4.5.0"         // Linefinder Scanning
-	implementation "com.jumio.android:docfinder:4.5.0"          // Autocapture
-	implementation "com.jumio.android:barcode:4.5.0"            // Barcode scanning
-	implementation "com.jumio.android:barcode-mlkit:4.5.0"      // Barcode scanning alternative
-	implementation "com.jumio.android:iproov:4.5.0"             // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.5.0"   // Digital Identity verification library
+	implementation "com.jumio.android:mrz:4.6.0"                // MRZ scanning
+	implementation "com.jumio.android:nfc:4.6.0"                // NFC scanning
+	implementation "com.jumio.android:linefinder:4.6.0"         // Linefinder scanning
+	implementation "com.jumio.android:docfinder:4.6.0"          // Autocapture library
+	implementation "com.jumio.android:barcode:4.6.0"            // Barcode scanning
+	implementation "com.jumio.android:iproov:4.6.0"             // Face Liveness library
+  	implementation "com.jumio.android:liveness:4.6.0"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.6.0"   // Digital Identity verification library
   	...
+}
+
+// [Optional] Extraction methods alternatives
+dependencies {
+  implementation "com.jumio.android:barcode-mlkit:4.6.0"      // Barcode scanning alternative
+  ...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.5.0"
+	implementation "com.jumio.android:defaultui:4.6.0"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:datadog:4.5.0"            // Analytics library
-	implementation "com.jumio.android:devicerisk:4.5.0"         // Device fingerprinting library
+	implementation "com.jumio.android:datadog:4.6.0"            // Analytics library
+	implementation "com.jumio.android:devicerisk:4.6.0"         // Device fingerprinting library
   	...
 }
 ```
@@ -129,11 +135,12 @@ The models can be bundled with the app directly to save time on the download dur
 
 ### Certified Face Liveness
 
-Jumio uses Certified Liveness technology to determine liveness. The iProov SDK is referenced as a transitive dependency within the `com.jumio.android:iproov` module.
+Jumio uses Certified Liveness technology to determine liveness. Link `com.jumio.android:liveness` and  `com.jumio.android:iproov` modules in order to use Jumio Liveness.
+
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 
 ```groovy
-implementation "com.jumio.android:iproov:4.5.0"
+implementation "com.jumio.android:iproov:4.6.0"
 implementation("com.iproov.sdk:iproov:8.3.1") {
 	exclude group: 'org.json', module: 'json'
 }
@@ -476,7 +483,7 @@ onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioCo
 ```
 
 #### Consent Handling
-To support compliance with various biometric data protection laws, if a user’s consent is required the parameter `consentItems` will provide a list of [`JumioConsentItems`][jumioconsentitem]. Each consent item contains a text, a consent type and an URL that will redirect the user to Jumio’s consent details. Each [`JumioConsentItem`][jumioconsentitem] also provides a method `spannedTextWithLinkColor(color: Int)` that will return a spanned string containing the consent text and the link holder. If no color is specified, the link portion of the spanned string will only be underlined.
+To support compliance with various data protection laws, if a user’s consent is required the parameter `consentItems` will provide a list of [`JumioConsentItems`][jumioconsentitem]. Each consent item contains a text, a consent type and an URL that will redirect the user to Jumio’s consent details. Each [`JumioConsentItem`][jumioconsentitem] also provides a method `spannedTextWithLinkColor(color: Int)` that will return a spanned string containing the consent text and the link holder. If no color is specified, the link portion of the spanned string will only be underlined.
 
 If no consent is required, the parameter `consentItems` will be `null`.
 
@@ -488,7 +495,7 @@ For `ACTIVE` types, the user needs to accept the consent items explicitly, e.g. 
 
 The user can open and continue to the provided consent link if they choose to do so. If the user consents to Jumio's policy, [`jumioController.userConsented(consentItem: JumioConsentItem, userConsent: Boolean)`][userconsented] is required to be called internally before any credential can be initialized and the user journey can continue. If no consent is required, the list of [`JumioConsentItems`][jumioconsentitem] will be `null`. If the user does not consent or if [`jumioController.userConsented(consentItem: JumioConsentItem, userConsent: Boolean)`][userconsented] is not called for all the items inside the `consentItems` list, the user will not be able to continue the user journey.
 
-⚠️&nbsp;&nbsp;**Note:** Please be aware that in cases where the list of `consentItems` is not `null`, the user is **legally required** to **actually consent** to Jumio's policy. Do not accept automatically without showing the user any terms.
+⚠️&nbsp;&nbsp;**Note:** Please be aware that in cases where the list of `consentItems` is not `null`, the user **must consent** to Jumio's processing of personal information, including biometric data, and be provided a link to Jumio's Privacy Notice. Do not accept automatically without showing the user any terms.
 
 ### Credential Handling
 
@@ -549,6 +556,7 @@ idCredential.setConfiguration(country, document)
   - [`JumioDocumentType`][jumiodocumenttype] values: `PASSPORT`, `VISA`, `DRIVING_LICENSE`, `ID_CARD`
 
   - [`JumioDocumentVariant`][jumiodocumentvariant] values: `PAPER`, `PLASTIC`
+
 - [`JumioDigitalDocument`][jumiodigitaldocument] represents a digital document ("Digital Identity")
 
 Once the credential is configured, it is ready to initialize it's first scan part and start the verification process:
@@ -689,7 +697,7 @@ Start the scanning process by initializing the [`JumioScanPart`][jumioscanpart].
 
 - [`JumioCredentialPart`][jumiocredentialpart] values: `FRONT`, `BACK`, `MULTIPART`, `FACE`, `DOCUMENT`, `NFC`, `DEVICE_RISK`
 
-`MULTIPART` handles the scanning of multiple sides in one seamless capture experience. When a [`MULTIPART`][jumiomultipart] scan part is started, an additional [`NEXT_PART`][nextpart] step is sent after [`IMAGE_TAKEN`][imagetaken]. This signals that another side of the document should be scanned now. The step returns the [`JumioCredentialPart`][jumiocredentialpart] that should be scanned next. We suggest to actively guide the user to move to the next part, e.g. by showing an animation and by disabling the extraction during the animation. Please also check the new [`NEXT_PART`][nextpart] scan step for this [`JumioCredentialPart`][jumiocredentialpart] 
+`MULTIPART` handles the scanning of multiple sides in one seamless capture experience. When a [`MULTIPART`][jumiomultipart] scan part is started, an additional [`NEXT_PART`][nextpart] step is sent after [`IMAGE_TAKEN`][imagetaken]. This signals that another side of the document should be scanned now. The step returns the [`JumioCredentialPart`][jumiocredentialpart] that should be scanned next. We suggest to actively guide the user to move to the next part, e.g. by showing an animation and by disabling the extraction during the animation. Please also check the new [`NEXT_PART`][nextpart] scan step for this [`JumioCredentialPart`][jumiocredentialpart]
 
 Start the execution of the acquired [`JumioScanPart`][jumioscanpart] by calling [`currentScanPart?.start()`][startscanpart].
 
@@ -837,7 +845,7 @@ When an add-on to the current scan part is available, [`JumioScanStep.ADDON_SCAN
 
 Apart from the scan steps, there are also scan updates distributed the `scanPart` method [`onUpdate()`][onupdate]. They cover additional scan information that is relevant and might need to be displayed during scanning. The parameters are [`JumioScanUpdate`][jumioscanupdate] and an optional value `data` of type `Any` that can contain additional information for each scan update as described.
 
-[`JumioScanUpdate`][jumioscanupdate] values: `LEGAL_HINT`, `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`
+[`JumioScanUpdate`][jumioscanupdate] values: `LEGAL_HINT`, `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`
 
 For `FALLBACK`, there are 2 possible [`JumioFallbackReason`][fallbackreason]'s sent in the optional `data` value to indicate the reason of the fallback.
 

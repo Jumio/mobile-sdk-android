@@ -16,9 +16,14 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 For detailed technical changes please refer to our [Transition Guide](transition_guide.md).
 
 ## Support Period
-Current SDK version: __4.5.0__
+Current SDK version: __4.6.0__
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+
+## SDK Version: __4.6.0__
+![Improvement] Added Jumio Liveness module to enhance the Liveness user experience and interface (Identity Verification)
+
+![Improvement] Improved Liveness customization options (Identity Verification)
 
 ## SDK Version: __4.5.0__
 ![Improvement] Added possibility for users to verify their identity using [Digital Identity](../README.md#digital-identity) [ID Verification, Identity Verification]

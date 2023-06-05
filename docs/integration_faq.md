@@ -79,20 +79,21 @@ Depending on your specific needs, you may want to strip out unused functionality
 
 The following table shows a range of different product configurations with the size and modules that are linked for it. These measurements reflect the extra size that Jumio components add to your app download size and are based on our [sample application](../sample/JumioMobileSample/).
 
-| Product Configuration                       |   Size   |                                                 Modules                                                 |
-|:--------------------------------------------|:--------:|:-------------------------------------------------------------------------------------------------------:|
-| Base                                        | 2.58 MB  |                                                  core                                                   |
-| Base + Liveness                             | 3.50 MB  |                                              core, iproov                                               |
-| Base + MRZ                                  | 4.10 MB  |                                                core, mrz                                                |
-| Base + MRZ, Linefinder                      | 4.48 MB  |                                          core, mrz, linefinder                                          |
-| Base + MRZ, Linefinder, Barcode             | 5.53 MB  |                                     core, mrz, linefinder, barcode                                      |
-| Base + MRZ, Linefinder, Barcode-Vision      | 4.80 MB  |                                  core, mrz, linefinder, barcode-vision                                  |
-| Base + MRZ, Linefinder, Barcode, Liveness   | 6.44 MB  |                                 core, mrz, linefinder, barcode, iproov                                  |
-| Base + MRZ, Linefinder, Barcode, NFC        | 7.17 MB  |                                   core, mrz, linefinder, barcode, nfc                                   |
-| All (Custom UI only)                        | 9.87 MB  |           core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk            |
-| Base + MRZ, Linefinder, Default UI          | 4.89 MB  |                                    core, mrz, linefinder, default-ui                                    |
-| Base + MRZ, Linefinder, Default UI, DataDog | 5.35 MB  |                               core, mrz, linefinder, default-ui, datadog                                |
-| All (with Default UI)                       | 10.57 MB | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, default-ui, datadog |
+| Product Configuration                       |   Size   |                                                      Modules                                                      |
+|:--------------------------------------------|:--------:|:-----------------------------------------------------------------------------------------------------------------:|
+| Base                                        | 2.68 MB  |                                                       core                                                        |
+| Base + iProov                               | 3.51 MB  |                                                   core, iproov                                                    |
+| Base + MRZ                                  | 4.19 MB  |                                                     core, mrz                                                     |
+| Base + MRZ, Linefinder                      | 4.57 MB  |                                               core, mrz, linefinder                                               |
+| Base + MRZ, Linefinder, Barcode             | 5.62 MB  |                                          core, mrz, linefinder, barcode                                           |
+| Base + MRZ, Linefinder, Barcode-Vision      | 4.89 MB  |                                       core, mrz, linefinder, barcode-vision                                       |
+| Base + MRZ, Linefinder, Barcode, iProov     | 6.45 MB  |                                      core, mrz, linefinder, barcode, iproov                                       |
+| Base + MRZ, Linefinder, Barcode, Liveness   | 8.93 MB  |                                     core, mrz, linefinder, barcode, liveness                                      |
+| Base + MRZ, Linefinder, Barcode, NFC        | 7.26 MB  |                                        core, mrz, linefinder, barcode, nfc                                        |
+| All (Custom UI only)                        | 13.07 MB |           core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, liveness            |
+| Base + MRZ, Linefinder, Default UI          | 4.92 MB  |                                         core, mrz, linefinder, default-ui                                         |
+| Base + MRZ, Linefinder, Default UI, DataDog | 5.09 MB  |                                    core, mrz, linefinder, default-ui, datadog                                     |
+| All (with Default UI)                       | 13.58 MB | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, default-ui, datadog, liveness |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
