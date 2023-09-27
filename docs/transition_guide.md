@@ -6,6 +6,30 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.7.0
+#### Public API Changes
+* `rawBarcodeData` has been removed from [`JumioIDResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.result/-jumio-i-d-result/index.html)
+* `LEGAL_HINT` has been removed from [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html)
+* `giveDataDogConsent` has been removed from [`JumioSDK`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk/-jumio-s-d-k/-companion/index.html)
+
+#### Dependency Updates
+* Removed MRZ dependency: ~~`implementation "com.jumio.android:mrz:4.6.0"`~~
+* Removed Linefinder dependency: ~~`implementation "com.jumio.android:linefinder:4.6.0"`~~
+* Removed Barcode dependency: ~~`implementation "com.jumio.android:barcode:4.6.0"`~~
+* Datadog update: ~~`"com.datadoghq:dd-sdk-android:1.19.3"`~~ is replaced by `"com.datadoghq:dd-sdk-android-rum:2.0.0"` - If Datadog is used in a dynamic feature module please have a look at [this known issue](known_issues.md#datadog-in-dynamic-feature-modules).
+
+#### Custom UI Changes
+* The platform check has been moved from the [`JumioSDK`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk/-jumio-s-d-k/-companion/index.html) constructor to the [`JumioController`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.controller/-jumio-controller/index.html) constructor. In case the platform is not supported there will be a non-retryable F000001 [`JumioError`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.error/-jumio-error/index.html) delivered in [`JumioControllerInterface$onError`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-error.html) instead of a [`PlatformNotSupportedException`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.exceptions/-platform-not-supported-exception/index.html) being thrown. Please also make sure to check [`isSupportedPlatform`](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#device-supported-check) before using the SDK.
+
+#### Localization Changes
+* SDK string translations for Brazilian Portuguese (pt-rBR) have been added
+
+#### Customization Changes
+* Customization attribute ~~`<item name="jumio_face_animation_background">`~~ has been removed
+
+#### Documentation Changes
+* Functions `persist` and `stop` in [`JumioController`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.controller/-jumio-controller/index.html) need to be called independently from `isComplete` as long as the workflow is not yet finished or canceled.
+
 ## 4.6.0
 #### Public API Changes
 * `JUMIO_LIVENESS` has been added to [`JumioScanMode`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html)
@@ -32,7 +56,7 @@ __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the cha
 * See also: [Jumio sample `styles.xml`](../sample/JumioMobileSample/src/main/res/values/styles.xml)
 
 #### Dependency Updates
-* NEW Liveness dependency: `implementation "com.jumio.android:liveness:4.6.0"` 
+* NEW Liveness dependency: `implementation "com.jumio.android:liveness:4.6.0"`
 
 ## 4.5.0
 #### Public API Changes

@@ -16,9 +16,24 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 For detailed technical changes please refer to our [Transition Guide](transition_guide.md).
 
 ## Support Period
-Current SDK version: __4.6.0__
+Current SDK version: __4.7.0__
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+
+## SDK Version: __4.7.0__
+![Improvement] Added support for [CameraX](https://developer.android.com/training/camerax)
+
+![Improvement] Datadog SDK version update to 2.0: Added possibility to have a dedicated Jumio Datadog instance
+
+![Improvement] Improved Jumio Liveness capturing experience [Identity Verification]
+
+![Change] Updated Jumio Liveness module [Identity Verification]
+
+![Change] Removed previous scanning functionalities, now all included in Autocatpure functionality [ID Verification]
+
+![Change] Removed Microblink barcode scanning, switched to MLkit [ID Verification]
+
+![Fix] Fixed Liveness customizaton bug [Identity Verification]
 
 ## SDK Version: __4.6.0__
 ![Improvement] Added Jumio Liveness module to enhance the Liveness user experience and interface (Identity Verification)

@@ -17,9 +17,9 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_grey150"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingTop="@dimen/activity_vertical_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingTop="@dimen/jumio_activity_vertical_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="visible">
 
 			<androidx.appcompat.widget.AppCompatTextView
@@ -62,10 +62,10 @@
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_grey150"
 			android:orientation="vertical"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingTop="@dimen/activity_vertical_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
-			android:paddingBottom="@dimen/activity_vertical_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingTop="@dimen/jumio_activity_vertical_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
+			android:paddingBottom="@dimen/jumio_activity_vertical_margin"
 			android:visibility="gone" />
 
 		<androidx.constraintlayout.widget.ConstraintLayout
@@ -73,8 +73,8 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_white"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<androidx.appcompat.widget.AppCompatTextView
@@ -117,8 +117,8 @@
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_white"
 			android:orientation="vertical"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<Spinner
@@ -144,8 +144,8 @@
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_white"
 			android:orientation="vertical"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<RadioGroup
@@ -186,9 +186,9 @@
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_white"
 			android:orientation="vertical"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
-			android:paddingBottom="@dimen/activity_vertical_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
+			android:paddingBottom="@dimen/jumio_activity_vertical_margin"
 			android:visibility="gone" />
 
 		<LinearLayout
@@ -197,16 +197,16 @@
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_grey150"
 			android:orientation="vertical"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<androidx.recyclerview.widget.RecyclerView
 				android:id="@+id/userConsentList"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:paddingStart="@dimen/activity_horizontal_margin"
-				android:paddingEnd="@dimen/activity_horizontal_margin"
+				android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+				android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 				android:visibility="gone"
 				android:orientation="vertical" />
 
@@ -228,8 +228,8 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_white"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<androidx.appcompat.widget.AppCompatTextView
@@ -271,8 +271,8 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_grey150"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<androidx.appcompat.widget.AppCompatTextView
@@ -324,9 +324,9 @@
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_grey150"
 			android:orientation="horizontal"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingTop="@dimen/activity_vertical_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingTop="@dimen/jumio_activity_vertical_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<SeekBar
@@ -348,8 +348,8 @@
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_grey150"
 			android:orientation="horizontal"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<SeekBar
@@ -370,8 +370,8 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_grey150"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<androidx.appcompat.widget.AppCompatTextView
@@ -442,8 +442,8 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:background="@color/jumio_grey150"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<com.jumio.sdk.views.JumioDigitalIdentityView
@@ -462,8 +462,8 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_grey150"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<LinearLayout
@@ -494,8 +494,8 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="@color/jumio_grey150"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:visibility="gone">
 
 			<LinearLayout
@@ -523,8 +523,8 @@
 			android:id="@+id/errorRetryButton"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:text="Retry"
 			android:visibility="gone" />
 
@@ -532,8 +532,8 @@
 			android:id="@+id/partRetryButton"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:paddingStart="@dimen/activity_horizontal_margin"
-			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+			android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
 			android:text="Retry"
 			android:visibility="gone" />
 
