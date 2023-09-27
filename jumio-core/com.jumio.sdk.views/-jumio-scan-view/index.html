@@ -4,10 +4,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>JumioScanView</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../styles/style.css" rel="Stylesheet">
 <link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
@@ -18,16 +26,20 @@ if(savedDarkMode === true){
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer></script>
-<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
 <div class="navigation-wrapper" id="navigation-wrapper">
     <div id="leftToggler"><span class="icon-toggler"></span></div>
     <div class="library-name">
 <a href="../../../index.html">
-<span>Android SDK 4.6.0 (1)</span>            </a>    </div>
+<span>Android SDK 4.7.0 (4)</span>            </a>    </div>
     <div>
     </div>
     <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":jumio-core:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
         <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
         <div id="searchBar"></div>
     </div>
@@ -37,292 +49,266 @@ if(savedDarkMode === true){
         <div id="sideMenu"></div>
     </div>
     <div id="main">
-<div class="main-content" id="content" pageids="Core::com.jumio.sdk.views/JumioScanView///PointingToDeclaration//316989039">
-  <div class="breadcrumbs"><a href="../../index.html">Core</a><span class="delimiter">/</span><a href="../index.html">com.jumio.sdk.views</a><span class="delimiter">/</span><a href="index.html">JumioScanView</a></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="Core::com.jumio.sdk.views/JumioScanView///PointingToDeclaration//316989039">
+  <div class="breadcrumbs"><a href="../../index.html">Core</a><span class="delimiter">/</span><a href="../index.html">com.jumio.sdk.views</a><span class="delimiter">/</span><span class="current">JumioScanView</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Jumio</span><wbr><span>Scan</span><wbr><span><span>View</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">JumioScanView</a>&nbsp;<span><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a>&nbsp;</span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;attrs<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/AttributeSet.html">AttributeSet</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyle<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="com.jumio.core.views/CameraScanView///PointingToDeclaration/">CameraScanView</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">A custom view to display the camera preview and enable scanning of a <a href="../../com.jumio.sdk.scanpart/-jumio-scan-part/index.html">JumioScanPart</a>.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">JumioScanView</a>&nbsp;<span><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a>&nbsp;</span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">attrs<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/AttributeSet.html">AttributeSet</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">defStyle<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="com.jumio.core.views/CameraScanView///PointingToDeclaration/">CameraScanView</span></div><p class="paragraph">A custom view to display the camera preview and enable scanning of a <a href="../../com.jumio.sdk.scanpart/-jumio-scan-part/index.html">JumioScanPart</a>.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>context</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Context: The Context the view is running in, through which it can access the current theme, resources, etc.</p></div></div></div></div><div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>attrs</span></span></u></div></span></div><div><div class="title"><p class="paragraph">AttributeSet: The attributes of the XML tag that is inflating the view. This value may be null.</p></div></div></div></div><div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>def</span><wbr><span><span>Style</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Int: An attribute in the current theme that contains a reference to a style resource that supplies default values for the view. Can be 0 to not look for defaults.</p></div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button><button class="section-tab" data-togglable="Parameters">Parameters</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Parameters</h2>
-      <div data-togglable="Parameters">
-        <div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>context</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Context: The Context the view is running in, through which it can access the current theme, resources, etc.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>attrs</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">AttributeSet: The attributes of the XML tag that is inflating the view. This value may be null.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span>def</span><wbr><span><span>Style</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Int: An attribute in the current theme that contains a reference to a style resource that supplies default values for the view. Can be 0 to not look for defaults.</p></div></div></div></div></div></div></div></div></div>
-      </div>
-      <h2 class="tabbedcontent">Constructors</h2>
-      <div class="table" data-togglable="Constructors"><a data-name="-644665391%2FConstructors%2F316989039" anchor-label="JumioScanView" id="-644665391%2FConstructors%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue TabbedContent">
-            <div class=""><span class="inline-flex">
-                <div><a href="-jumio-scan-view.html"><span>Jumio</span><wbr><span>Scan</span><wbr><span><span>View</span></span></a></div>
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-644665391%2FConstructors%2F316989039" anchor-label="JumioScanView" id="-644665391%2FConstructors%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-jumio-scan-view.html"><span>Jumio</span><wbr><span>Scan</span><wbr><span><span>View</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-644665391%2FConstructors%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="-jumio-scan-view.html"><span class="token function">JumioScanView</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;attrs<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/AttributeSet.html">AttributeSet</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyle<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">attrs<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/AttributeSet.html">AttributeSet</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">defStyle<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h2 class="">Types</h2>
-      <div class="table" data-togglable="Types"><a data-name="-468208047%2FClasslikes%2F316989039" anchor-label="Companion" id="-468208047%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-468208047%2FClasslikes%2F316989039" anchor-label="Companion" id="-468208047%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-468208047%2FClasslikes%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="1353464068%2FClasslikes%2F316989039" anchor-label="InterfaceImpl" id="1353464068%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-interface-impl/index.html"><span>Interface</span><wbr><span><span>Impl</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1353464068%2FClasslikes%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">inner </span><span class="token keyword">class </span><a href="-interface-impl/index.html">InterfaceImpl</a> : <a href="https://developer.android.com/reference/kotlin/android/view/ViewTreeObserver.OnGlobalLayoutListener.html">ViewTreeObserver.OnGlobalLayoutListener</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h2 class="">Functions</h2>
-      <div class="table" data-togglable="Functions"><a data-name="-1787577974%2FFunctions%2F316989039" anchor-label="attach" id="-1787577974%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="attach.html"><span><span>attach</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1787577974%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="attach.html"><span class="token function">attach</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">scanPart<span class="token operator">: </span><a href="../../com.jumio.sdk.scanpart/-jumio-scan-part/index.html">JumioScanPart</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Attach a <a href="attach.html">scanPart</a> to this scan view after JumioScanStep.SCAN_VIEW event has been received to enable scanning.</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="1365438036%2FFunctions%2F316989039" anchor-label="pause" id="1365438036%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="pause.html"><span><span>pause</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1365438036%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="pause.html"><span class="token function">pause</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Pauses the camera feed.</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="-1534950909%2FFunctions%2F316989039" anchor-label="resume" id="-1534950909%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="resume.html"><span><span>resume</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1534950909%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="resume.html"><span class="token function">resume</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Resumes the camera feed.</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="-716849673%2FFunctions%2F316989039" anchor-label="switchCamera" id="-716849673%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="switch-camera.html"><span>switch</span><wbr><span><span>Camera</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-716849673%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="switch-camera.html"><span class="token function">switchCamera</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Switches to the next camera.</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="1021427507%2FFunctions%2F316989039" anchor-label="takePicture" id="1021427507%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="take-picture.html"><span>take</span><wbr><span><span>Picture</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1021427507%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="take-picture.html"><span class="token function">takePicture</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Takes picture for <a href="../../com.jumio.sdk.enums/-jumio-scan-mode/-m-a-n-u-a-l/index.html">JumioScanMode.MANUAL</a> and <a href="../../com.jumio.sdk.enums/-jumio-scan-mode/-f-a-c-e_-m-a-n-u-a-l/index.html">JumioScanMode.FACE_MANUAL</a>.</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="-723145519%2FProperties%2F316989039" anchor-label="cameraFacing" id="-723145519%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="camera-facing.html"><span>camera</span><wbr><span><span>Facing</span></span></a></div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-723145519%2FProperties%2F316989039" anchor-label="cameraFacing" id="-723145519%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="camera-facing.html"><span>camera</span><wbr><span><span>Facing</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-723145519%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="-723145519%2FProperties%2F316989039" anchor-label="cameraFacing" id="-723145519%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="camera-facing.html">cameraFacing</a><span class="token operator">: </span><a href="../../com.jumio.sdk.enums/-jumio-camera-facing/index.html">JumioCameraFacing</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-723145519%2FProperties%2F316989039" anchor-label="cameraFacing" id="-723145519%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Is responsible for the <a href="../../com.jumio.sdk.enums/-jumio-camera-facing/index.html">JumioCameraFacing</a> of this scan view</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="camera-facing.html">cameraFacing</a><span class="token operator">: </span><a href="../../com.jumio.sdk.enums/-jumio-camera-facing/index.html">JumioCameraFacing</a></div><div class="brief "><p class="paragraph">Is responsible for the <a href="../../com.jumio.sdk.enums/-jumio-camera-facing/index.html">JumioCameraFacing</a> of this scan view</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-661418487%2FProperties%2F316989039" anchor-label="extraction" id="-661418487%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="extraction.html"><span><span>extraction</span></span></a></div>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="extraction.html"><span><span>extraction</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-661418487%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="-661418487%2FProperties%2F316989039" anchor-label="extraction" id="-661418487%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="extraction.html">extraction</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-661418487%2FProperties%2F316989039" anchor-label="extraction" id="-661418487%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Controls the image extraction of the camera feed</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="extraction.html">extraction</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Controls the image extraction of the camera feed</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1179283866%2FProperties%2F316989039" anchor-label="flash" id="1179283866%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="flash.html"><span><span>flash</span></span></a></div>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="flash.html"><span><span>flash</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1179283866%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="1179283866%2FProperties%2F316989039" anchor-label="flash" id="1179283866%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="flash.html">flash</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="1179283866%2FProperties%2F316989039" anchor-label="flash" id="1179283866%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Controls the flash light if available</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="flash.html">flash</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Controls the flash light if available</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="226654234%2FProperties%2F316989039" anchor-label="hasFlash" id="226654234%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="has-flash.html"><span>has</span><wbr><span><span>Flash</span></span></a></div>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-flash.html"><span>has</span><wbr><span><span>Flash</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="226654234%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="226654234%2FProperties%2F316989039" anchor-label="hasFlash" id="226654234%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="has-flash.html">hasFlash</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="226654234%2FProperties%2F316989039" anchor-label="hasFlash" id="226654234%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Indicates if the current camera has a flash light</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="has-flash.html">hasFlash</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Indicates if the current camera has a flash light</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="68160972%2FProperties%2F316989039" anchor-label="hasMultipleCameras" id="68160972%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="has-multiple-cameras.html"><span>has</span><wbr><span>Multiple</span><wbr><span><span>Cameras</span></span></a></div>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-multiple-cameras.html"><span>has</span><wbr><span>Multiple</span><wbr><span><span>Cameras</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="68160972%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="68160972%2FProperties%2F316989039" anchor-label="hasMultipleCameras" id="68160972%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="has-multiple-cameras.html">hasMultipleCameras</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="68160972%2FProperties%2F316989039" anchor-label="hasMultipleCameras" id="68160972%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Indicates if more than one camera is available</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="has-multiple-cameras.html">hasMultipleCameras</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Indicates if more than one camera is available</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1577006346%2FProperties%2F316989039" anchor-label="interfaces" id="-1577006346%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="interfaces.html"><span><span>interfaces</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1577006346%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="-1577006346%2FProperties%2F316989039" anchor-label="interfaces" id="-1577006346%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="interfaces.html">interfaces</a><span class="token operator">: </span><a href="-interface-impl/index.html">JumioScanView.InterfaceImpl</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
 <a data-name="-2112124622%2FProperties%2F316989039" anchor-label="isShutterEnabled" id="-2112124622%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="is-shutter-enabled.html"><span>is</span><wbr><span>Shutter</span><wbr><span><span>Enabled</span></span></a></div>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-shutter-enabled.html"><span>is</span><wbr><span>Shutter</span><wbr><span><span>Enabled</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2112124622%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="-2112124622%2FProperties%2F316989039" anchor-label="isShutterEnabled" id="-2112124622%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="is-shutter-enabled.html">isShutterEnabled</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-2112124622%2FProperties%2F316989039" anchor-label="isShutterEnabled" id="-2112124622%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Indicates if a manual shutter button needs to be displayed</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="is-shutter-enabled.html">isShutterEnabled</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Indicates if a manual shutter button needs to be displayed</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1285725719%2FProperties%2F316989039" anchor-label="minRatio" id="1285725719%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="min-ratio.html"><span>min</span><wbr><span><span>Ratio</span></span></a></div>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="min-ratio.html"><span>min</span><wbr><span><span>Ratio</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1285725719%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="1285725719%2FProperties%2F316989039" anchor-label="minRatio" id="1285725719%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="min-ratio.html">minRatio</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="1285725719%2FProperties%2F316989039" anchor-label="minRatio" id="1285725719%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Minimal ratio based on the current <a href="mode.html">mode</a></p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="min-ratio.html">minRatio</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">Minimal ratio based on the current <a href="mode.html">mode</a></p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1222059507%2FProperties%2F316989039" anchor-label="mode" id="-1222059507%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="mode.html"><span><span>mode</span></span></a></div>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="mode.html"><span><span>mode</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1222059507%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="-1222059507%2FProperties%2F316989039" anchor-label="mode" id="-1222059507%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="mode.html">mode</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1222059507%2FProperties%2F316989039" anchor-label="mode" id="-1222059507%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Current mode of this view - either <a href="-companion/-m-o-d-e_-i-d.html">MODE_ID</a> or <a href="-companion/-m-o-d-e_-f-a-c-e.html">MODE_FACE</a></p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="mode.html">mode</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Current mode of this view - either <a href="-companion/-m-o-d-e_-i-d.html">MODE_ID</a> or <a href="-companion/-m-o-d-e_-f-a-c-e.html">MODE_FACE</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="926799327%2FProperties%2F316989039" anchor-label="ratio" id="926799327%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="ratio.html"><span><span>ratio</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="926799327%2FProperties%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="ratio.html">ratio</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">Current ratio for this view if no absolute values are used</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-<a data-name="926799327%2FProperties%2F316989039" anchor-label="ratio" id="926799327%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="ratio.html"><span><span>ratio</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="926799327%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="926799327%2FProperties%2F316989039" anchor-label="ratio" id="926799327%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="ratio.html">ratio</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="926799327%2FProperties%2F316989039" anchor-label="ratio" id="926799327%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Current ratio for this view if no absolute values are used</p></div></div></div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1787577974%2FFunctions%2F316989039" anchor-label="attach" id="-1787577974%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="attach.html"><span><span>attach</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1787577974%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="attach.html"><span class="token function">attach</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">scanPart<span class="token operator">: </span><a href="../../com.jumio.sdk.scanpart/-jumio-scan-part/index.html">JumioScanPart</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Attach a <a href="attach.html">scanPart</a> to this scan view after JumioScanStep.SCAN_VIEW event has been received to enable scanning.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1365438036%2FFunctions%2F316989039" anchor-label="pause" id="1365438036%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="pause.html"><span><span>pause</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1365438036%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="pause.html"><span class="token function">pause</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Pauses the camera feed.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1534950909%2FFunctions%2F316989039" anchor-label="resume" id="-1534950909%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="resume.html"><span><span>resume</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1534950909%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="resume.html"><span class="token function">resume</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Resumes the camera feed.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-716849673%2FFunctions%2F316989039" anchor-label="switchCamera" id="-716849673%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="switch-camera.html"><span>switch</span><wbr><span><span>Camera</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-716849673%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="switch-camera.html"><span class="token function">switchCamera</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Switches to the next camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1021427507%2FFunctions%2F316989039" anchor-label="takePicture" id="1021427507%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="take-picture.html"><span>take</span><wbr><span><span>Picture</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1021427507%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="take-picture.html"><span class="token function">takePicture</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Takes picture for <a href="../../com.jumio.sdk.enums/-jumio-scan-mode/-m-a-n-u-a-l/index.html">JumioScanMode.MANUAL</a> and <a href="../../com.jumio.sdk.enums/-jumio-scan-mode/-f-a-c-e_-m-a-n-u-a-l/index.html">JumioScanMode.FACE_MANUAL</a>.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -336,6 +322,6 @@ if(savedDarkMode === true){
       </div>
     </div>
 </div>
-
-</body></html>
+</body>
+</html>
 

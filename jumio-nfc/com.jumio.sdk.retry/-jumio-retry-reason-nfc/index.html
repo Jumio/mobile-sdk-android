@@ -4,10 +4,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>JumioRetryReasonNfc</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../styles/style.css" rel="Stylesheet">
 <link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
@@ -18,16 +26,20 @@ if(savedDarkMode === true){
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer></script>
-<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
 <div class="navigation-wrapper" id="navigation-wrapper">
     <div id="leftToggler"><span class="icon-toggler"></span></div>
     <div class="library-name">
 <a href="../../../index.html">
-<span>Android SDK 4.6.0 (1)</span>            </a>    </div>
+<span>Android SDK 4.7.0 (4)</span>            </a>    </div>
     <div>
     </div>
     <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":jumio-nfc:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
         <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
         <div id="searchBar"></div>
     </div>
@@ -37,57 +49,59 @@ if(savedDarkMode === true){
         <div id="sideMenu"></div>
     </div>
     <div id="main">
-<div class="main-content" id="content" pageids="NFC::com.jumio.sdk.retry/JumioRetryReasonNfc///PointingToDeclaration//-1033383201">
-  <div class="breadcrumbs"><a href="../../index.html">NFC</a><span class="delimiter">/</span><a href="../index.html">com.jumio.sdk.retry</a><span class="delimiter">/</span><a href="index.html">JumioRetryReasonNfc</a></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="NFC::com.jumio.sdk.retry/JumioRetryReasonNfc///PointingToDeclaration//-1033383201">
+  <div class="breadcrumbs"><a href="../../index.html">NFC</a><span class="delimiter">/</span><a href="../index.html">com.jumio.sdk.retry</a><span class="delimiter">/</span><span class="current">JumioRetryReasonNfc</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Jumio</span><wbr><span>Retry</span><wbr><span>Reason</span><wbr><span><span>Nfc</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-nfc:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">JumioRetryReasonNfc</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">List of nfc retry reasons</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-nfc:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">JumioRetryReasonNfc</a></div><p class="paragraph">List of nfc retry reasons</p></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="1979011386%2FProperties%2F-1033383201" anchor-label="NFC_BAC_ERROR" id="1979011386%2FProperties%2F-1033383201" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-nfc:dokkaHtmlPartial/release" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-n-f-c_-b-a-c_-e-r-r-o-r.html"><span><span>NFC_BAC_ERROR</span></span></a></div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1979011386%2FProperties%2F-1033383201" anchor-label="NFC_BAC_ERROR" id="1979011386%2FProperties%2F-1033383201" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-nfc:dokkaHtmlPartial/release" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-f-c_-b-a-c_-e-r-r-o-r.html"><span><span>NFC_BAC_ERROR</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1979011386%2FProperties%2F-1033383201"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-nfc:dokkaHtmlPartial/release"><a data-name="1979011386%2FProperties%2F-1033383201" anchor-label="NFC_BAC_ERROR" id="1979011386%2FProperties%2F-1033383201" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-n-f-c_-b-a-c_-e-r-r-o-r.html">NFC_BAC_ERROR</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">302</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-nfc:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-n-f-c_-b-a-c_-e-r-r-o-r.html">NFC_BAC_ERROR</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">302</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1820246231%2FProperties%2F-1033383201" anchor-label="NFC_DISABLED" id="1820246231%2FProperties%2F-1033383201" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-nfc:dokkaHtmlPartial/release" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-n-f-c_-d-i-s-a-b-l-e-d.html"><span><span>NFC_DISABLED</span></span></a></div>
+          <div class="table-row" data-filterable-current=":jumio-nfc:dokkaHtmlPartial/release" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-f-c_-d-i-s-a-b-l-e-d.html"><span><span>NFC_DISABLED</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1820246231%2FProperties%2F-1033383201"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-nfc:dokkaHtmlPartial/release"><a data-name="1820246231%2FProperties%2F-1033383201" anchor-label="NFC_DISABLED" id="1820246231%2FProperties%2F-1033383201" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-n-f-c_-d-i-s-a-b-l-e-d.html">NFC_DISABLED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">301</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-nfc:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-n-f-c_-d-i-s-a-b-l-e-d.html">NFC_DISABLED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">301</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-782148822%2FProperties%2F-1033383201" anchor-label="NFC_TAG_LOST" id="-782148822%2FProperties%2F-1033383201" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-nfc:dokkaHtmlPartial/release" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-n-f-c_-t-a-g_-l-o-s-t.html"><span><span>NFC_TAG_LOST</span></span></a></div>
+          <div class="table-row" data-filterable-current=":jumio-nfc:dokkaHtmlPartial/release" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-f-c_-t-a-g_-l-o-s-t.html"><span><span>NFC_TAG_LOST</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-782148822%2FProperties%2F-1033383201"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-nfc:dokkaHtmlPartial/release"><a data-name="-782148822%2FProperties%2F-1033383201" anchor-label="NFC_TAG_LOST" id="-782148822%2FProperties%2F-1033383201" data-filterable-set=":jumio-nfc:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-n-f-c_-t-a-g_-l-o-s-t.html">NFC_TAG_LOST</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">303</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-nfc:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-n-f-c_-t-a-g_-l-o-s-t.html">NFC_TAG_LOST</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">303</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -101,6 +115,6 @@ if(savedDarkMode === true){
       </div>
     </div>
 </div>
-
-</body></html>
+</body>
+</html>
 

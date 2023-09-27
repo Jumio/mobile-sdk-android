@@ -4,10 +4,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>JumioCredentialPart</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../styles/style.css" rel="Stylesheet">
 <link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
@@ -18,16 +26,20 @@ if(savedDarkMode === true){
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer></script>
-<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
 <div class="navigation-wrapper" id="navigation-wrapper">
     <div id="leftToggler"><span class="icon-toggler"></span></div>
     <div class="library-name">
 <a href="../../../index.html">
-<span>Android SDK 4.6.0 (1)</span>            </a>    </div>
+<span>Android SDK 4.7.0 (4)</span>            </a>    </div>
     <div>
     </div>
     <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":jumio-core:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
         <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
         <div id="searchBar"></div>
     </div>
@@ -37,132 +49,168 @@ if(savedDarkMode === true){
         <div id="sideMenu"></div>
     </div>
     <div id="main">
-<div class="main-content" id="content" pageids="Core::com.jumio.sdk.enums/JumioCredentialPart///PointingToDeclaration//316989039">
-  <div class="breadcrumbs"><a href="../../index.html">Core</a><span class="delimiter">/</span><a href="../index.html">com.jumio.sdk.enums</a><span class="delimiter">/</span><a href="index.html">JumioCredentialPart</a></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="Core::com.jumio.sdk.enums/JumioCredentialPart///PointingToDeclaration//316989039">
+  <div class="breadcrumbs"><a href="../../index.html">Core</a><span class="delimiter">/</span><a href="../index.html">com.jumio.sdk.enums</a><span class="delimiter">/</span><span class="current">JumioCredentialPart</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Jumio</span><wbr><span>Credential</span><wbr><span><span>Part</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="index.html">JumioCredentialPart</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">JumioCredentialPart</a><span class="token operator">&gt; </span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Supported parts of credentials.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="index.html">JumioCredentialPart</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">JumioCredentialPart</a><span class="token operator">&gt; </span></div><p class="paragraph">Supported parts of credentials.</p></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Entries">Entries</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="ENTRY">Entries</button></div>
     <div class="tabs-section-body">
-      <h2 class="tabbedcontent">Entries</h2>
-      <div class="table" data-togglable="Entries"><a data-name="-327357667%2FClasslikes%2F316989039" anchor-label="FRONT" id="-327357667%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f-r-o-n-t/index.html">FRONT</a></div>
+      <div data-togglable="ENTRY">
+        <h2 class="">Entries</h2>
+        <div class="table"><a data-name="-327357667%2FClasslikes%2F316989039" anchor-label="FRONT" id="-327357667%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-r-o-n-t/index.html">FRONT</a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-327357667%2FClasslikes%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-f-r-o-n-t/index.html">FRONT</a></div><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-f-r-o-n-t/index.html">FRONT</a></div></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-378631429%2FClasslikes%2F316989039" anchor-label="BACK" id="-378631429%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-b-a-c-k/index.html">BACK</a></div>
+          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-a-c-k/index.html">BACK</a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-378631429%2FClasslikes%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-b-a-c-k/index.html">BACK</a></div><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-b-a-c-k/index.html">BACK</a></div></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="656342624%2FClasslikes%2F316989039" anchor-label="MULTIPART" id="656342624%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-m-u-l-t-i-p-a-r-t/index.html">MULTIPART</a></div>
+          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-u-l-t-i-p-a-r-t/index.html">MULTIPART</a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="656342624%2FClasslikes%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-m-u-l-t-i-p-a-r-t/index.html">MULTIPART</a></div><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-m-u-l-t-i-p-a-r-t/index.html">MULTIPART</a></div></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-2019761679%2FClasslikes%2F316989039" anchor-label="FACE" id="-2019761679%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f-a-c-e/index.html">FACE</a></div>
+          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-a-c-e/index.html">FACE</a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2019761679%2FClasslikes%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-f-a-c-e/index.html">FACE</a></div><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-f-a-c-e/index.html">FACE</a></div></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1687170095%2FClasslikes%2F316989039" anchor-label="DOCUMENT" id="1687170095%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-d-o-c-u-m-e-n-t/index.html">DOCUMENT</a></div>
+          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-o-c-u-m-e-n-t/index.html">DOCUMENT</a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1687170095%2FClasslikes%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-d-o-c-u-m-e-n-t/index.html">DOCUMENT</a></div><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-d-o-c-u-m-e-n-t/index.html">DOCUMENT</a></div></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1488706335%2FClasslikes%2F316989039" anchor-label="NFC" id="1488706335%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-n-f-c/index.html">NFC</a></div>
+          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-f-c/index.html">NFC</a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1488706335%2FClasslikes%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-n-f-c/index.html">NFC</a></div><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-n-f-c/index.html">NFC</a></div></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="887729132%2FClasslikes%2F316989039" anchor-label="DEVICE_RISK" id="887729132%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-d-e-v-i-c-e_-r-i-s-k/index.html">DEVICE_RISK</a></div>
+          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-e-v-i-c-e_-r-i-s-k/index.html">DEVICE_RISK</a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="887729132%2FClasslikes%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-d-e-v-i-c-e_-r-i-s-k/index.html">DEVICE_RISK</a></div><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-d-e-v-i-c-e_-r-i-s-k/index.html">DEVICE_RISK</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-130289972%2FClasslikes%2F316989039" anchor-label="DIGITAL" id="-130289972%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-i-g-i-t-a-l/index.html">DIGITAL</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-130289972%2FClasslikes%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-d-i-g-i-t-a-l/index.html">DIGITAL</a></div></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-<a data-name="-130289972%2FClasslikes%2F316989039" anchor-label="DIGITAL" id="-130289972%2FClasslikes%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-d-i-g-i-t-a-l/index.html">DIGITAL</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-130289972%2FClasslikes%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-d-i-g-i-t-a-l/index.html">DIGITAL</a></div><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="881685102%2FFunctions%2F316989039" anchor-label="valueOf" id="881685102%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="value-of.html"><span>value</span><wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="881685102%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="value-of.html"><span class="token function">valueOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">JumioCredentialPart</a></div><div class="brief "><p class="paragraph">Returns the enum constant of this type with the specified name. The string must match exactly an identifier used to declare an enum constant in this type. (Extraneous whitespace characters are not permitted.)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="659552250%2FFunctions%2F316989039" anchor-label="values" id="659552250%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="values.html"><span><span>values</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="659552250%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="values.html"><span class="token function">values</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">JumioCredentialPart</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns an array containing the constants of this enum type, in the order they're declared.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -176,6 +224,6 @@ if(savedDarkMode === true){
       </div>
     </div>
 </div>
-
-</body></html>
+</body>
+</html>
 

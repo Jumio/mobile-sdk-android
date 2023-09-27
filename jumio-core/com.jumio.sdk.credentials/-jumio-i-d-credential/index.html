@@ -4,10 +4,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>JumioIDCredential</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../styles/style.css" rel="Stylesheet">
 <link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
@@ -18,16 +26,20 @@ if(savedDarkMode === true){
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer></script>
-<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
 <div class="navigation-wrapper" id="navigation-wrapper">
     <div id="leftToggler"><span class="icon-toggler"></span></div>
     <div class="library-name">
 <a href="../../../index.html">
-<span>Android SDK 4.6.0 (1)</span>            </a>    </div>
+<span>Android SDK 4.7.0 (4)</span>            </a>    </div>
     <div>
     </div>
     <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":jumio-core:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
         <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
         <div id="searchBar"></div>
     </div>
@@ -37,194 +49,198 @@ if(savedDarkMode === true){
         <div id="sideMenu"></div>
     </div>
     <div id="main">
-<div class="main-content" id="content" pageids="Core::com.jumio.sdk.credentials/JumioIDCredential///PointingToDeclaration//316989039">
-  <div class="breadcrumbs"><a href="../../index.html">Core</a><span class="delimiter">/</span><a href="../index.html">com.jumio.sdk.credentials</a><span class="delimiter">/</span><a href="index.html">JumioIDCredential</a></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="Core::com.jumio.sdk.credentials/JumioIDCredential///PointingToDeclaration//316989039">
+  <div class="breadcrumbs"><a href="../../index.html">Core</a><span class="delimiter">/</span><a href="../index.html">com.jumio.sdk.credentials</a><span class="delimiter">/</span><span class="current">JumioIDCredential</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Jumio</span><wbr><span><span>IDCredential</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">JumioIDCredential</a> : <a href="../-jumio-credential/index.html">JumioCredential</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Takes care of the ID verification process.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">JumioIDCredential</a> : <a href="../-jumio-credential/index.html">JumioCredential</a></div><p class="paragraph">Takes care of the ID verification process.</p></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Functions</h2>
-      <div class="table" data-togglable="Functions"><a data-name="-1122692204%2FFunctions%2F316989039" anchor-label="cancel" id="-1122692204%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="cancel.html"><span><span>cancel</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1122692204%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="cancel.html"><span class="token function">cancel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Cancels the credential</p></div></div></div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-825912104%2FProperties%2F316989039" anchor-label="countries" id="-825912104%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="countries.html"><span><span>countries</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-825912104%2FProperties%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="countries.html"><strike>countries</strike></a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.jumio.sdk.document/-jumio-physical-document/index.html">JumioPhysicalDocument</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Represents all supported countries in ISO 3166 ALPHA-3 with a corresponding List of <a href="../../com.jumio.sdk.document/-jumio-physical-document/index.html">JumioPhysicalDocument</a>s.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1054567525%2FFunctions%2F316989039" anchor-label="finish" id="-1054567525%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="finish.html"><span><span>finish</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1054567525%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="finish.html"><span class="token function">finish</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Finishes the credential in case <a href="../../../jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/is-complete.html">isComplete</a> is true, otherwise an IllegalArgumentException will be thrown</p></div></div></div>
+<a data-name="-813602525%2FProperties%2F316989039" anchor-label="credentialParts" id="-813602525%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="credential-parts.html"><span>credential</span><wbr><span><span>Parts</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-813602525%2FProperties%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="credential-parts.html">credentialParts</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.jumio.sdk.enums/-jumio-credential-part/index.html">JumioCredentialPart</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Represents all the <a href="../../com.jumio.sdk.scanpart/-jumio-scan-part/index.html">JumioScanPart</a> that are required for this credential.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-310916901%2FFunctions%2F316989039" anchor-label="getDigitalDocumentsForCountry" id="-310916901%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-digital-documents-for-country.html"><span>get</span><wbr><span>Digital</span><wbr><span>Documents</span><wbr><span>For</span><wbr><span><span>Country</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-310916901%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-digital-documents-for-country.html"><span class="token function">getDigitalDocumentsForCountry</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">countryCode<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.jumio.sdk.document/-jumio-digital-document/index.html">JumioDigitalDocument</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the list of available <a href="../../com.jumio.sdk.document/-jumio-digital-document/index.html">JumioDigitalDocument</a>s for a given <a href="get-digital-documents-for-country.html">countryCode</a>.</p></div></div></div>
+<a data-name="-1632135674%2FProperties%2F316989039" anchor-label="isConfigured" id="-1632135674%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-configured.html"><span>is</span><wbr><span><span>Configured</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1632135674%2FProperties%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="is-configured.html">isConfigured</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Indicates if this credential is configured and <a href="credential-parts.html">credentialParts</a> are available.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-375982130%2FFunctions%2F316989039" anchor-label="getPhysicalDocumentsForCountry" id="-375982130%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-physical-documents-for-country.html"><span>get</span><wbr><span>Physical</span><wbr><span>Documents</span><wbr><span>For</span><wbr><span><span>Country</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-375982130%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-physical-documents-for-country.html"><span class="token function">getPhysicalDocumentsForCountry</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">countryCode<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.jumio.sdk.document/-jumio-physical-document/index.html">JumioPhysicalDocument</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the list of available <a href="../../com.jumio.sdk.document/-jumio-physical-document/index.html">JumioPhysicalDocument</a>s for a given <a href="get-physical-documents-for-country.html">countryCode</a>.</p></div></div></div>
+<a data-name="-1071897605%2FProperties%2F316989039" anchor-label="suggestedCountry" id="-1071897605%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="suggested-country.html"><span>suggested</span><wbr><span><span>Country</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1071897605%2FProperties%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="suggested-country.html">suggestedCountry</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Suggests a country in ISO 3166 ALPHA-3 based on the device IP, if this country is supported.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="1771492890%2FFunctions%2F316989039" anchor-label="initScanPart" id="1771492890%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="init-scan-part.html"><span>init</span><wbr><span>Scan</span><wbr><span><span>Part</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1771492890%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-synchronized/index.html"><span class="token annotation">Synchronized</span></a></div></div><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="init-scan-part.html"><span class="token function">initScanPart</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">credentialPart<span class="token operator">: </span><a href="../../com.jumio.sdk.enums/-jumio-credential-part/index.html">JumioCredentialPart</a><span class="token punctuation">, </span></span><span class="parameter ">scanPartInterface<span class="token operator">: </span><a href="../../com.jumio.sdk.interfaces/-jumio-scan-part-interface/index.html">JumioScanPartInterface</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.jumio.sdk.scanpart/-jumio-scan-part/index.html">JumioScanPart</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Initializes and returns a <a href="../../com.jumio.sdk.scanpart/-jumio-scan-part/index.html">JumioScanPart</a> based on the provided <a href="../../com.jumio.sdk.enums/-jumio-credential-part/index.html">JumioCredentialPart</a></p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="1225774080%2FFunctions%2F316989039" anchor-label="isSupportedConfiguration" id="1225774080%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="is-supported-configuration.html"><span>is</span><wbr><span>Supported</span><wbr><span><span>Configuration</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1225774080%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-supported-configuration.html"><span class="token function">isSupportedConfiguration</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">country<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">document<span class="token operator">: </span><a href="../../com.jumio.sdk.document/-jumio-document/index.html">JumioDocument</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Validates a given <a href="is-supported-configuration.html">country</a> and <a href="is-supported-configuration.html">document</a> combination</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="225824958%2FFunctions%2F316989039" anchor-label="setConfiguration" id="225824958%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-configuration.html"><span>set</span><wbr><span><span>Configuration</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="225824958%2FFunctions%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-configuration.html"><span class="token function">setConfiguration</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">country<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">document<span class="token operator">: </span><a href="../../com.jumio.sdk.document/-jumio-document/index.html">JumioDocument</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Sets a given <a href="set-configuration.html">country</a> and <a href="set-configuration.html">document</a> combination</p></div></div></div>
+<a data-name="535728232%2FProperties%2F316989039" anchor-label="supportedCountries" id="535728232%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="supported-countries.html"><span>supported</span><wbr><span><span>Countries</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="535728232%2FProperties%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="supported-countries.html">supportedCountries</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Represents all supported country codes in ISO 3166 ALPHA-3.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="-825912104%2FProperties%2F316989039" anchor-label="countries" id="-825912104%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="countries.html"><span><span>countries</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-825912104%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="-825912104%2FProperties%2F316989039" anchor-label="countries" id="-825912104%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace strikethrough"><strike><span class="token keyword"></span></strike><strike><span class="token keyword">val </span></strike><a href="countries.html"><strike>countries</strike></a><strike><span class="token operator">: </span></strike><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.jumio.sdk.document/-jumio-physical-document/index.html">JumioPhysicalDocument</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-825912104%2FProperties%2F316989039" anchor-label="countries" id="-825912104%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Represents all supported countries in ISO 3166 ALPHA-3 with a corresponding List of <a href="../../com.jumio.sdk.document/-jumio-physical-document/index.html">JumioPhysicalDocument</a>s.</p></div></div></div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1122692204%2FFunctions%2F316989039" anchor-label="cancel" id="-1122692204%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cancel.html"><span><span>cancel</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1122692204%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="cancel.html"><span class="token function">cancel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Cancels the credential</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-813602525%2FProperties%2F316989039" anchor-label="credentialParts" id="-813602525%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="credential-parts.html"><span>credential</span><wbr><span><span>Parts</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-813602525%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="-813602525%2FProperties%2F316989039" anchor-label="credentialParts" id="-813602525%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="credential-parts.html">credentialParts</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.jumio.sdk.enums/-jumio-credential-part/index.html">JumioCredentialPart</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-813602525%2FProperties%2F316989039" anchor-label="credentialParts" id="-813602525%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Represents all the <a href="../../com.jumio.sdk.scanpart/-jumio-scan-part/index.html">JumioScanPart</a> that are required for this credential.</p></div></div></div>
+<a data-name="-1054567525%2FFunctions%2F316989039" anchor-label="finish" id="-1054567525%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="finish.html"><span><span>finish</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1054567525%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="finish.html"><span class="token function">finish</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Finishes the credential in case <a href="../../../jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/is-complete.html">isComplete</a> is true, otherwise an IllegalArgumentException will be thrown</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1632135674%2FProperties%2F316989039" anchor-label="isConfigured" id="-1632135674%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="is-configured.html"><span>is</span><wbr><span><span>Configured</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1632135674%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="-1632135674%2FProperties%2F316989039" anchor-label="isConfigured" id="-1632135674%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="is-configured.html">isConfigured</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1632135674%2FProperties%2F316989039" anchor-label="isConfigured" id="-1632135674%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Indicates if this credential is configured and <a href="credential-parts.html">credentialParts</a> are available.</p></div></div></div>
+<a data-name="-310916901%2FFunctions%2F316989039" anchor-label="getDigitalDocumentsForCountry" id="-310916901%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-digital-documents-for-country.html"><span>get</span><wbr><span>Digital</span><wbr><span>Documents</span><wbr><span>For</span><wbr><span><span>Country</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-310916901%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-digital-documents-for-country.html"><span class="token function">getDigitalDocumentsForCountry</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">countryCode<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.jumio.sdk.document/-jumio-digital-document/index.html">JumioDigitalDocument</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns the list of available <a href="../../com.jumio.sdk.document/-jumio-digital-document/index.html">JumioDigitalDocument</a>s for a given <a href="get-digital-documents-for-country.html">countryCode</a>.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1071897605%2FProperties%2F316989039" anchor-label="suggestedCountry" id="-1071897605%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="suggested-country.html"><span>suggested</span><wbr><span><span>Country</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1071897605%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="-1071897605%2FProperties%2F316989039" anchor-label="suggestedCountry" id="-1071897605%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="suggested-country.html">suggestedCountry</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1071897605%2FProperties%2F316989039" anchor-label="suggestedCountry" id="-1071897605%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Suggests a country in ISO 3166 ALPHA-3 based on the device IP, if this country is supported.</p></div></div></div>
+<a data-name="-375982130%2FFunctions%2F316989039" anchor-label="getPhysicalDocumentsForCountry" id="-375982130%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-physical-documents-for-country.html"><span>get</span><wbr><span>Physical</span><wbr><span>Documents</span><wbr><span>For</span><wbr><span><span>Country</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-375982130%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-physical-documents-for-country.html"><span class="token function">getPhysicalDocumentsForCountry</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">countryCode<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.jumio.sdk.document/-jumio-physical-document/index.html">JumioPhysicalDocument</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns the list of available <a href="../../com.jumio.sdk.document/-jumio-physical-document/index.html">JumioPhysicalDocument</a>s for a given <a href="get-physical-documents-for-country.html">countryCode</a>.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="535728232%2FProperties%2F316989039" anchor-label="supportedCountries" id="535728232%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="supported-countries.html"><span>supported</span><wbr><span><span>Countries</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="535728232%2FProperties%2F316989039"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><a data-name="535728232%2FProperties%2F316989039" anchor-label="supportedCountries" id="535728232%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="supported-countries.html">supportedCountries</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="535728232%2FProperties%2F316989039" anchor-label="supportedCountries" id="535728232%2FProperties%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a><p class="paragraph">Represents all supported country codes in ISO 3166 ALPHA-3.</p></div></div></div>
+<a data-name="1771492890%2FFunctions%2F316989039" anchor-label="initScanPart" id="1771492890%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="init-scan-part.html"><span>init</span><wbr><span>Scan</span><wbr><span><span>Part</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1771492890%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-synchronized/index.html"><span class="token annotation builtin">Synchronized</span></a></div></div><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="init-scan-part.html"><span class="token function">initScanPart</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">credentialPart<span class="token operator">: </span><a href="../../com.jumio.sdk.enums/-jumio-credential-part/index.html">JumioCredentialPart</a><span class="token punctuation">, </span></span><span class="parameter ">scanPartInterface<span class="token operator">: </span><a href="../../com.jumio.sdk.interfaces/-jumio-scan-part-interface/index.html">JumioScanPartInterface</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.jumio.sdk.scanpart/-jumio-scan-part/index.html">JumioScanPart</a></div><div class="brief "><p class="paragraph">Initializes and returns a <a href="../../com.jumio.sdk.scanpart/-jumio-scan-part/index.html">JumioScanPart</a> based on the provided <a href="../../com.jumio.sdk.enums/-jumio-credential-part/index.html">JumioCredentialPart</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1225774080%2FFunctions%2F316989039" anchor-label="isSupportedConfiguration" id="1225774080%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-supported-configuration.html"><span>is</span><wbr><span>Supported</span><wbr><span><span>Configuration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1225774080%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-supported-configuration.html"><span class="token function">isSupportedConfiguration</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">country<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">document<span class="token operator">: </span><a href="../../com.jumio.sdk.document/-jumio-document/index.html">JumioDocument</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Validates a given <a href="is-supported-configuration.html">country</a> and <a href="is-supported-configuration.html">document</a> combination</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="225824958%2FFunctions%2F316989039" anchor-label="setConfiguration" id="225824958%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-configuration.html"><span>set</span><wbr><span><span>Configuration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="225824958%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-configuration.html"><span class="token function">setConfiguration</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">country<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">document<span class="token operator">: </span><a href="../../com.jumio.sdk.document/-jumio-document/index.html">JumioDocument</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sets a given <a href="set-configuration.html">country</a> and <a href="set-configuration.html">document</a> combination</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -238,6 +254,6 @@ if(savedDarkMode === true){
       </div>
     </div>
 </div>
-
-</body></html>
+</body>
+</html>
 
