@@ -1,5 +1,5 @@
 buildscript {
-	ext.kotlin_version = "1.8.21"
+	ext.kotlin_version = "1.8.22"
 	repositories {
 		google()
 		mavenCentral()
@@ -31,14 +31,14 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "4.7.0"
+	SDK_VERSION = "4.8.0"
 }
 
 dependencies {
 	implementation fileTree(dir: 'libs', include: '*.jar')
 
 	// Kotlin
-	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22"
 	// only for the sample code
 	implementation "androidx.activity:activity-ktx:1.7.2"
 	implementation "androidx.multidex:multidex:2.0.1"
@@ -59,7 +59,7 @@ dependencies {
 
 android {
 	compileSdkVersion 33
-	buildToolsVersion "33.0.0"
+	buildToolsVersion "33.0.1"
 	namespace "com.jumio.sample"
 
 	defaultConfig {
@@ -96,7 +96,7 @@ android {
 		}
 		release {
 			minifyEnabled true
-			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
 	}
 }

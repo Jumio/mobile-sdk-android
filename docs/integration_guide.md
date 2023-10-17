@@ -19,6 +19,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
   - [Device Supported Check](#device-supported-check)
   - [Privacy Notice](#privacy-notice)
   - [Digital Identity (DID)](#digital-identity-did)
+  - [Risk Signal: Device Risk](#risk-signal-device-risk)
 - [Initialization](#initialization)
   - [Requesting a Token (via OAuth2)](#requesting-a-token-via-oauth2)
   - [Initializing the Jumio SDK](#initializing-the-jumio-sdk)
@@ -43,7 +44,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.7.0**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.8.0**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -71,32 +72,32 @@ If an optional module is **not linked**, some functionalities may not be availab
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.7.0"               
+	implementation "com.jumio.android:core:4.8.0"               
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.7.0"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.7.0"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.7.0"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:iproov:4.7.0"             // Face Liveness library
-	implementation "com.jumio.android:liveness:4.7.0"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.7.0"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.8.0"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.8.0"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.8.0"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:iproov:4.8.0"             // Face Liveness library
+	implementation "com.jumio.android:liveness:4.8.0"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.8.0"   // Digital Identity verification library
   	...
 }
-S
+
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.7.0"
+	implementation "com.jumio.android:defaultui:4.8.0"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.7.0"         // CameraX library 
-	implementation "com.jumio.android:datadog:4.7.0"         // Analytics library
-	implementation "com.jumio.android:devicerisk:4.7.0"      // Device fingerprinting library
+	implementation "com.jumio.android:camerax:4.8.0"         // CameraX library 
+	implementation "com.jumio.android:datadog:4.8.0"         // Analytics library
+	implementation "com.jumio.android:devicerisk:4.8.0"      // Device fingerprinting library
   	...
 }
 ```
@@ -113,7 +114,7 @@ Jumio uses Certified Liveness technology to determine liveness. Link `com.jumio.
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 
 ```groovy
-implementation "com.jumio.android:iproov:4.7.0"
+implementation "com.jumio.android:iproov:4.8.0"
 implementation("com.iproov.sdk:iproov:8.3.1") {
 	exclude group: 'org.json', module: 'json'
 }
@@ -229,6 +230,16 @@ override fun onNewIntent(intent: Intent) {
 	}
 }
 ```
+
+### Risk Signal: Device Risk
+If you want to include risk signals into your application, please check our [Risk Signal guide](https://docs.jumio.com/production/Content/References/Risk%20Signals/Device%20Risk.htm).
+
+#### Iovation setup
+To integrate the device risk vendor Iovation into your application, please follow the [Iovation integration guide](https://github.com/iovation/deviceprint-SDK-android).
+
+#### API call
+To provide Jumio with the generated Device Risk blackbox, please follow the [Device Risk API guide](https://docs.jumio.com/production/Content/Integration/Integration%20Channels/REST%20APIs.htm).
+
 
 ## Initialization
 
