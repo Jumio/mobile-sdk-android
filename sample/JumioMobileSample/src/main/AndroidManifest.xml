@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	package="com.jumio.sample"
-	android:installLocation="auto">
+    android:installLocation="auto">
 
 	<supports-screens
 		android:anyDensity="true"
@@ -27,7 +26,7 @@
 
 		<!-- KOTLIN -->
 		<activity
-			android:name="com.jumio.sample.kotlin.MainActivity"
+			android:name="com.jumio.sample.MainActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
 			android:exported="true"
 			android:icon="@drawable/ic_launcher_kotlin"
@@ -38,7 +37,7 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="com.jumio.sample.kotlin.customui.CustomUiActivity"
+			android:name="com.jumio.sample.customui.CustomUiActivity"
 			android:exported="true"
 			android:screenOrientation="portrait"
 			android:launchMode="singleTask"

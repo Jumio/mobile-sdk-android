@@ -38,7 +38,7 @@ The Jumio Software Development Kit (SDK) provides you with a set of tools and UI
 
 Onboard new users and easily verify their digital identities by making sure the IDs they provide are valid and authentic. Extract data from ID documents completely automatically and within seconds. Confirm that users really are who they say they are by having them take a quick selfie and match it to their respective documents. Jumio uses cutting-edge biometric technology such as 3D face mapping to make sure there is an actual, real-life person in front of the screen.
 
-![SDK Overview](docs/images/images_overview/images_overview.png)
+![SDK Overview](docs/images/images_overview/overview_android_4.7.0.png)
 
 Using the Jumio SDK will allow you to create the best possible solution for your individual needs, providing you with a range of different services to choose from.
 
@@ -80,24 +80,21 @@ Once you’ve got the sample application downloaded and unzipped, open Android S
 
 Android Studio will now start to import the project. This might take a bit of time. Make sure to wait until the Gradle Build has finished and the application is properly installed!
 
-The Android sample application contains the package `com.jumio.sample.kotlin`, which consists of:
-* `MainActivity`
-* `customui`
-  * `CustomUIActivity`
-  * `CustomCountryAdapter`
-  * `CustomDocumentAdapter`
-  * `CustomVariantAdapter`
+The Android sample application contains the package `com.jumio.sample`, which consists of:
+* `MainActivity.kt`
+* `customui/`
+  * `CustomUIActivity.kt`
+  * `adapter/`
+    * `CustomConsentAdapter.kt`
+    * `CustomCountryAdapter.kt`
+    * `CustomDocumentAdapter.kt`
 
-Right at the top of the `CustomUiActivity` you’ll find a `companion object` with the following empty parameters:
-
-`const val EXTRA_TOKEN="sdk_token"`     
-`const val EXTRA_DATACENTER="datacenter"`
-
-If you haven't done so already, please refer to the [Authentication and Encryption section](#authentication-and-encryption) for more details on how to obtain your SDK token. Add your individual SDK token instead of the placeholder. The default setting for the data center is `JumioDataCenter.US`.
+To use the Jumio Sample Application you need an SDK Token. If you haven't done so already, please refer to the [Authentication and Encryption section](#authentication-and-encryption) for more details on how to obtain your SDK token.
+To add your individual SDK token to the application copy/paste it to the token input field once the application is started.
 
 ⚠️&nbsp;&nbsp;__Note:__ We strongly recommend not storing any credentials inside your app! We suggest loading them during runtime from your server-side implementation.
 
-Once you start up the sample application, you'll be given the option of trying out the Jumio SDK. Click the hamburger menu in the top left corner to choose a service. Your application will also need camera permissions, which will be prompted for automatically once you try to start any of the services. If you deny camera permissions, you won't be able to use any of the services.
+Once you start up the sample application, you'll be given the option of trying out the Jumio SDK. The sample application needs camera permissions, which will be prompted for automatically once you try to start the SDK via one of the buttons. If you deny camera permissions, you won't be able to use the SDK.
 
 -----
 
@@ -232,10 +229,10 @@ The following Proguard Keep rules have to be added to the Jumio Mobile SDK:
 The following Proguard Keep rules have to be added to the Jumio Mobile SDK if the corresponding dependencies have been added:
 
 ```text
-#Microblink
--keep class com.microblink.** { *; }
--keep class com.microblink.**$* { *; }
--dontwarn com.microblink.**
+#Tensorflow
+-keep class org.tensorflow.** { *; }
+-keep class org.tensorflow.**$* { *; }
+-dontwarn org.tensorflow.**
 
 #IProov
 -keep public class com.iproov.sdk.IProov {public *; }
@@ -247,6 +244,10 @@ The following Proguard Keep rules have to be added to the Jumio Mobile SDK if th
 -dontwarn com.tinder.**
 -dontwarn okhttp3.**
 -dontwarn okio.**
+
+#Datadog
+-keep class com.datadog.** { *; }
+-keep class com.datadog.**$* { *; }
 
 #JMRTD
 -keep class org.jmrtd.** { *; }
@@ -323,10 +324,6 @@ To benefit from Datadog, add the following dependency to your `build.gradle` fil
 ```groovy
 implementation "com.jumio.android:datadog:${SDK_VERSION}"
 ```
-
-To grant or revoke user consent, please use `JumioSDK.giveDataDogConsent(boolean)` method.
-
-⚠️&nbsp;&nbsp;__Note:__ The use of the Datadog module is only possible if it is not already included in your application.
 
 ----
 
