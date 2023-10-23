@@ -16,9 +16,17 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 For detailed technical changes please refer to our [Transition Guide](transition_guide.md).
 
 ## Support Period
-Current SDK version: __4.5.1__
+Current SDK version: __4.6.1__
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+
+## SDK Version: __4.6.1__
+![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
+
+## SDK Version: __4.6.0__
+![Improvement] Added Jumio Liveness module to enhance the Liveness user experience and interface (Identity Verification)
+
+![Improvement] Improved Liveness customization options (Identity Verification)
 
 ## SDK Version: __4.5.1__
 ![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
@@ -28,7 +36,13 @@ Please refer to our [SDK maintenance and support policy](maintenance_policy.md) 
 
 ![Improvement] iProov SDK version update to 8.3.1 [Identity Verification]
 
-![Improvement] Improved user consent handling in accordance with biometric data protection laws [ID Verification, Identity Verification]
+![Improvement] Improved user consent handling [ID Verification, Identity Verification]
+<details>     
+<summary>More details</summary>       
+
+### User consent
+User consent is now acquired for all users to ensure the accordance with biometric data protection laws. Please also refer to the [User Consent section](integration_faq.md#user-consent) in our FAQ.
+</details>   
 
 ![Fix] Bug fixes: UI bugs, passport scanning issue for certain countries [ID Verification]
 

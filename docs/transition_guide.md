@@ -6,6 +6,37 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.6.1
+No backward incompatible changes
+
+## 4.6.0
+#### Public API Changes
+* `JUMIO_LIVENESS` has been added to [`JumioScanMode`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html)
+* `MOVE_FACE_CLOSER` has been added to [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html)
+* `FACE_TOO_CLOSE` has been added to [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html)
+
+#### Customization Changes
+* A new customization theme `<item name="jumio_face_animation_customization">@style/CustomFaceHelp</item>` has been added to help customize the newly added Jumio Liveness solution. This style includes the following attributes:
+  * `<item name="jumio_face_animation_foreground">`
+  * `<item name="jumio_face_animation_background">`
+
+
+* The following customization attributes have been added to `@style/CustomOverlay` theme:
+  * `<item name="jumio_scanOverlay">`
+  * `<item name="jumio_scanOverlay_livenessStrokeAnimation">`
+  * `<item name="jumio_scanOverlay_livenessStrokeAnimationCompleted>`      
+
+
+* The following customization attributes have been removed from `@style/CustomIproov` theme:
+  * ~~`<item name="iproov_animation_foreground">`~~
+  * ~~`<item name="iproov_animation_background">`~~
+
+
+* See also: [Jumio sample `styles.xml`](../sample/JumioMobileSample/src/main/res/values/styles.xml)
+
+#### Dependency Updates
+* NEW Liveness dependency: `implementation "com.jumio.android:liveness:4.6.0"` 
+
 ## 4.5.1
 No backward incompatible changes
 
@@ -16,10 +47,9 @@ No backward incompatible changes
 * [`JumioError.code`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.error/-jumio-error/index.html) format updated from `[A][x][yyyy]` to `[A][xx][yyyy]`
 
 * Property [`countries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/countries.html) of `JumioIDCredential` has been deprecated. Instead the following new property and functions have been added:
-    * [`JumioIDCredential.supportedCountries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/supportedCountries.html)
+    * [`JumioIDCredential.supportedCountries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/supported-countries.html)
     * [`JumioIDCredential.getPhysicalDocumentsForCountry(countryCode:)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/get-physical-documents-for-country.html)
     * [`JumioIDCredential.getDigitalDocumentsForCountry(countryCode:)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/get-digital-documents-for-country.html)
-
 
 * [`JumioDeepLinkHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.util/-jumio-deep-link-handler/index.html) has been added
 
@@ -33,7 +63,7 @@ No backward incompatible changes
 
 * [`JumioRetryReasonDigitalIdentity`](https://jumio.github.io/mobile-sdk-android/jumio-digital-identity/com.jumio.sdk.retry/-jumio-retry-reason-digital-identity/index.html) has been added
 
-* [`JumioConsentItem`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent.jumio-consent-item/index.html) class and [`JumioConsentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-consent-type/index.html) enum have been added
+* [`JumioConsentItem`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-consent-item/index.html) class and [`JumioConsentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-consent-type/index.html) enum have been added
 
 * [`onInitialized()`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-initialized.html) callback has been changed from ~~`onInitialized(credentials: List<JumioCredentialInfo>, policyUrl: String?)`~~ to [`onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItems>?)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-initialized.html)
   * Please refer to the [Consent Handling section](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#consent-handling) in our integration guide for more details.
@@ -51,7 +81,7 @@ The following keys have been added to `strings.xml`:
 #### Dependency Updates
 * IProov update: ~~`"com.iproov.sdk:iproov:8.0.3"`~~ is replaced by `"com.iproov.sdk:iproov:8.3.1"`
 
-## 4.4.1
+## 4.4.2
 No backward incompatible changes
 
 ## 4.4.1
@@ -63,9 +93,9 @@ No backward incompatible changes
 * [`JumioConfirmationHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-confirmation-handler/index.html) has been added. Attach a [JumioScanPart](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html) to this class to retrieve all accepted images and render them to [`JumioConfirmationView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-confirmation-view/index.html) objects for confirmation.
 * [`JumioRejectHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-reject-handler/index.html) has been added. Attach a [JumioScanPart](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html) to this class to retrieve all rejected images and render them to [`JumioRejectView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-reject-view/index.html) objects for retaking.
 * Functions in [`JumioConfirmationView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-confirmation-view/index.html) have been moved to [`JumioConfirmationHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-confirmation-handler/index.html).
-* Functions in [`JumioRejectView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-reject-view/index.html) have been moved to [`JumioRejectHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-reject-handler/index.html).
-* `NEXT_PART` has been added in [`JumioScanStep`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/index.html)
-* `MULTIPART` has been added in [`JumioCredentialPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html)
+* Functions in [`JumioRejectView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-reject-view/index.html) have been moved to [`JumioRejectHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-reject-handler/index.html)
+* `MULTIPART` has been added in [`JumioCredentialPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html) as a new Autocapture scan part: Instead of having a single scan part for all parts of a document (front, back), there is now a single `MULTIPART` scan part that combines the two. Within this scan part all needed parts of a document are captured at once.
+* `NEXT_PART` has been added in [`JumioScanStep`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/index.html): This scan step shows that the previous part has been captured and the next one can be started (e.g. frontside has been captured, now switch to the backside of the document)
 
 #### Customization Updates
 * Attributes changed and added to [`Iproov.Customization` theme](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/styles.xml#L95)

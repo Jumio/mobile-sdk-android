@@ -61,10 +61,10 @@ If you need information on older SDK versions, please refer to:
 - [3.9.0](https://github.com/Jumio/mobile-sdk-android/tree/v3.9.0)
 
 ## Code Documentation
-Full API documentation for the Jumio iOS SDK can be found [here](https://jumio.github.io/mobile-sdk-ios/Jumio).
+Full API documentation for the Jumio Android SDK can be found [here](https://jumio.github.io/mobile-sdk-android).
 
 ## FAQ
-Link to Jumio iOS SDK FAQ can be found [here](docs/integration_faq.md).
+Link to Jumio Android SDK FAQ can be found [here](docs/integration_faq.md).
 
 ## Known Issues
 List of known issues can be found [here](docs/known_issues.md).
@@ -105,7 +105,8 @@ Once you start up the sample application, you'll be given the option of trying o
 
 ## General Requirements
 ⚠️&nbsp;&nbsp;__Android Deprecation Notice__  
-Please be aware that SDK 4.3.0 does not support Android 4.4 (API level 19) anymore.
+Please be aware that the upcoming SDK 4.7.0 will be the last SDK version supporting Android 5.0 (API level 21).
+All subsequent SDK versions will require at least Android 6.0 "Marshmallow" (API level 23).
 
 The minimum requirements for the SDK are:
 * Android 5.0 "Lollipop" (API level 21) or higher
@@ -123,9 +124,9 @@ You will need a __commercial Jumio License__ to run any of our examples. For det
 ## Authentication and Encryption
 ℹ️&nbsp;&nbsp;__As of version 4.0.0 and onward, the SDK can only be used in combination with Jumio KYX. API v2 as well as using API token and secret to authenticate against the SDK will no longer be compatible.__
 
-Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://jumio.github.io/kyx/integration-guide.html) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Customer Portal.
+Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://docs.jumio.com/production/Content/Integration/Integration%20Guide.htm) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Customer Portal.
 
-Within the response of the [Account Creation](https://jumio.github.io/kyx/integration-guide.html#account-creation) or [Account Update](https://jumio.github.io/kyx/integration-guide.html#account-update) API, a SDK token is returned, which needs to be applied to initiate the mobile SDK.
+Within the response of the [Account Creation or Account Update](https://docs.jumio.com/production/Content/Integration/Creating%20or%20Updatng%20Account/Creating%20or%20Updating%20Accounts.htm) API, a SDK token is returned, which needs to be applied to initiate the mobile SDK.
 
 ### Basic Authentication (Deprecated)
 Previously, Basic Auth credentials were constructed using your API token as the User ID and your API secret as the password. You still can manage API token and secret in the Customer Portal under:
@@ -142,7 +143,7 @@ Client ID and Client secret are used to generate an OAuth2 access token. OAuth2 
 * EU: `https://auth.emea-1.jumio.ai/oauth2/token`
 * SG: `https://auth.apac-1.jumio.ai/oauth2/token`
 
-The [TLS Protocol](https://tools.ietf.org/html/rfc5246) is required to securely transmit your data, and we strongly recommend using the latest version. For information on cipher suites supported by Jumio during the TLS handshake see [supported cipher suites](https://github.com/Jumio/implementation-guides/blob/master/netverify/supported-cipher-suites.md).
+The [TLS Protocol](https://tools.ietf.org/html/rfc5246) is required to securely transmit your data, and we strongly recommend using the latest version. For information on cipher suites supported by Jumio during the TLS handshake see [supported cipher suites](https://docs.jumio.com/production/Content/Integration/API%20Authorization/Supported%20Cipher%20Suites.htm?Highlight=cipher).
 
 ℹ️&nbsp;&nbsp;__Note:__ Calls with missing, incorrect or suspicious headers or parameter values will result in HTTP status code __400 Bad Request Error__ or __403 Forbidden__.
 
@@ -170,7 +171,7 @@ curl --request POST --location 'https://auth.amer-1.jumio.ai/oauth2/token' \
 Your OAuth2 access token is valid for 60 minutes. After the token lifetime is expired, it is necessary to generate a new access token.
 
 ### Workflow Transaction Token Timeout
-The token lifetime is set to 30 minutes per default. It can be configured via the [Jumio Customer Portal](https://github.com/Jumio/implementation-guides/blob/master/netverify/portal-settings.md) and can be overwritten using the API call (`tokenLifetime`). Within this token lifetime the token can be used to initialize the SDK.
+The token lifetime is set to 30 minutes per default. It can be configured via the [Jumio Customer Portal](https://docs.jumio.com/production/Content/Settings/Identity%20Verification/Application%20Settings.htm) and can be overwritten using the API call (`tokenLifetime`). Within this token lifetime the token can be used to initialize the SDK.
 
 As soon as the workflow (transaction) starts, a 15 minutes session timeout is triggered. For each action performed (capture image, upload image) the session timeout will reset, and the 15 minutes will start again.
 

@@ -606,6 +606,12 @@ class CustomUiActivity :
 			JumioScanUpdate.CENTER_ID -> {
 				log("Center your ID")
 			}
+			JumioScanUpdate.CENTER_FACE -> {
+				log("Center your face")
+			}
+			JumioScanUpdate.LEVEL_EYES_AND_DEVICE -> {
+				log("Hold your device at eye level")
+			}
 			JumioScanUpdate.HOLD_STILL -> {
 				log("Hold still...")
 			}
@@ -617,6 +623,12 @@ class CustomUiActivity :
 			}
 			JumioScanUpdate.TOO_CLOSE -> {
 				log("Too close")
+			}
+			JumioScanUpdate.MOVE_FACE_CLOSER -> {
+				log("Move face closer")
+			}
+			JumioScanUpdate.FACE_TOO_CLOSE -> {
+				log("Face too close")
 			}
 		}
 	}

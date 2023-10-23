@@ -3,6 +3,8 @@
 # Known Issues
 
 ## Table of Contents
+- [SDK Version 4.0.0 and Above](#sdk-version-400-and-above)
+  - [Duplicate Files for 'libc++_shared.so' Library](#duplicate-lib-c)
 - [SDK Version 3.9.2 and 4.0.0](#sdk-version-392-and-400)
   - [Face Scan Crash at Start](#face-scan-crash-at-start)
 - [SDK Version 3.9.0](#sdk-version-390)
@@ -19,6 +21,28 @@
   - [Static Interface Methods Are only Supported with Android N](#Static-interface-methods-are-only-supported-with-Android-N)
   - [SDK Crashes Trying to Display Animations (Android Version 5 and Lower)](#sdk-crashes-trying-to-display-animations-(android-version-4-and-lower))
   - [Country Missing from the Country List](#country-missing-from-the-country-list)
+
+# SDK Version 4.0.0 and Above
+
+<div id="duplicate-lib-c">
+<h2>Duplicate Files for 'libc++_shared.so' Library</h2>
+</div>
+
+If build fails with error message:
+
+_2 files found with path 'lib/arm6-v8a/libc++\_shared.so' from inputs ..._
+
+Please add the following `packagingOptions` to the configuration in your `build.gradle` file:
+
+```
+android{
+  packagingOptions {
+      pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+      pickFirst 'lib/arm64-v8a/libc++_shared.so'
+  }
+}
+
+```
 
 # SDK Version 3.9.2 and 4.0.0
 
