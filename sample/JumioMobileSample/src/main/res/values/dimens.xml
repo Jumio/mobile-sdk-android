@@ -1,9 +1,6 @@
 <resources>
 	<!-- Default screen margins, per the Android Design guidelines. -->
-	<dimen name="jumio_activity_horizontal_margin">16dp</dimen>
-	<dimen name="jumio_activity_vertical_margin">16dp</dimen>
+	<dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_vertical_margin">16dp</dimen>
 	<dimen name="fab_margin">16dp</dimen>
-
-	<!-- Ratios for constraint layouts need to be defined as strings -->
-	<string name="di_view_ratio" translatable="false">9:16</string>
 </resources>

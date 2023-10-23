@@ -1,0 +1,78 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/frameLayout2"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context="com.jumio.sample.java.netverify.customui.NetverifyCustomSuccessFragment"
+	tools:layout_editor_absoluteY="80dp">
+
+	<ImageView
+		android:id="@+id/fragment_success_iv_checkmark"
+		android:layout_width="141dp"
+		android:layout_height="146dp"
+		android:contentDescription="checkmark"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.5"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.26999998"
+		app:srcCompat="@drawable/ic_check_circle_green" />
+
+	<TextView
+		android:id="@+id/fragment_success_tv_thank"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:text="@string/custom_ui_thank_you"
+		android:textSize="24sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.5"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/fragment_success_iv_checkmark" />
+
+	<TextView
+		android:id="@+id/fragment_success_tv_name"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:text="FIRSTNAME LASTNAME"
+		android:textAlignment="center"
+		android:textSize="26sp"
+		android:textStyle="bold"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.5"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/fragment_success_tv_thank" />
+
+	<TextView
+		android:id="@+id/fragment_success_tv_description"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="16dp"
+		android:layout_marginEnd="16dp"
+		android:text="@string/custom_ui_success_description"
+		android:textAlignment="center"
+		android:textSize="18sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.5"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/fragment_success_tv_name" />
+
+
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+		android:id="@+id/fragment_success_fab_finish"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom|end"
+		android:layout_margin="@dimen/fab_margin"
+		app:tint="@color/jumio_white"
+		app:backgroundTint="@color/colorPrimary"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:srcCompat="@drawable/ic_check_circle_green" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

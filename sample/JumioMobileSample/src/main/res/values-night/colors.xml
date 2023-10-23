@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<color name="colorPrimary">#2ABC6D</color>
-	<color name="colorPrimaryDark">#008b41</color>
-	<color name="colorSecondary">#EDF1F5</color>
-
-	<color name="logText">#FFFFFF</color>
-	<color name="spinnerBackground">#1C2229</color>
-</resources>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingBottom="8dp"
+              android:paddingTop="8dp">
+
+	<!-- NOTE: This list should be displayed in a list
+	instead of nested layouts -->
+
+	<LinearLayout
+		android:id="@+id/bottom_sheet_documents_option1"
+		android:layout_width="match_parent"
+		android:layout_height="48dp"
+		android:clickable="true"
+		android:focusable="true"
+		android:foreground="?attr/selectableItemBackground"
+		android:orientation="horizontal"
+		android:paddingBottom="8dp"
+		android:paddingStart="@dimen/activity_horizontal_margin"
+		android:paddingEnd="@dimen/activity_horizontal_margin"
+		android:paddingTop="8dp"
+		android:visibility="gone" >
+
+		<ImageView
+			android:id="@+id/bottom_sheet_documents_option1_image"
+			android:layout_width="24dp"
+			android:layout_height="24dp"
+			android:layout_gravity="center_vertical"
+			android:layout_marginEnd="32dp"/>
+
+		<TextView
+			android:id="@+id/bottom_sheet_documents_option1_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:text="Preview"
+			android:textColor="#737373"
+			android:textSize="18sp"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/bottom_sheet_documents_option2"
+		android:layout_width="match_parent"
+		android:layout_height="48dp"
+		android:clickable="true"
+		android:foreground="?attr/selectableItemBackground"
+		android:orientation="horizontal"
+		android:paddingBottom="8dp"
+		android:paddingStart="@dimen/activity_horizontal_margin"
+		android:paddingEnd="@dimen/activity_horizontal_margin"
+		android:paddingTop="8dp"
+		app:layout_anchor="@+id/bottom_sheet_documents_option1"
+		app:layout_anchorGravity="bottom"
+		android:visibility="gone" >
+
+		<ImageView
+			android:id="@+id/bottom_sheet_documents_option2_image"
+			android:layout_width="24dp"
+			android:layout_height="24dp"
+			android:layout_gravity="center_vertical"
+			android:layout_marginEnd="32dp"/>
+
+		<TextView
+			android:id="@+id/bottom_sheet_documents_option2_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:text="Share"
+			android:textColor="#737373"
+			android:textSize="18sp"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/bottom_sheet_documents_option3"
+		android:layout_width="match_parent"
+		android:layout_height="48dp"
+		android:clickable="true"
+		android:foreground="?attr/selectableItemBackground"
+		android:orientation="horizontal"
+		android:paddingBottom="8dp"
+		android:paddingStart="@dimen/activity_horizontal_margin"
+		android:paddingEnd="@dimen/activity_horizontal_margin"
+		android:paddingTop="8dp"
+		app:layout_anchor="@+id/bottom_sheet_documents_option2"
+		app:layout_anchorGravity="bottom"
+		android:visibility="gone" >
+
+		<ImageView
+			android:id="@+id/bottom_sheet_documents_option3_image"
+			android:layout_width="24dp"
+			android:layout_height="24dp"
+			android:layout_gravity="center_vertical"
+			android:layout_marginEnd="32dp"/>
+
+		<TextView
+			android:id="@+id/bottom_sheet_documents_option3_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:text="Get link"
+			android:textColor="#737373"
+			android:textSize="18sp"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/bottom_sheet_documents_option4"
+		android:layout_width="match_parent"
+		android:layout_height="48dp"
+		android:clickable="true"
+		android:foreground="?attr/selectableItemBackground"
+		android:orientation="horizontal"
+		android:paddingBottom="8dp"
+		android:paddingStart="@dimen/activity_horizontal_margin"
+		android:paddingEnd="@dimen/activity_horizontal_margin"
+		android:paddingTop="8dp"
+		app:layout_anchor="@+id/bottom_sheet_documents_option3"
+		app:layout_anchorGravity="bottom"
+		android:visibility="gone" >
+
+		<ImageView
+			android:id="@+id/bottom_sheet_documents_option4_image"
+			android:layout_width="24dp"
+			android:layout_height="24dp"
+			android:layout_gravity="center_vertical"
+			android:layout_marginEnd="32dp"/>
+
+		<TextView
+			android:id="@+id/bottom_sheet_documents_option4_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:text="Make a Copy"
+			android:textColor="#737373"
+			android:textSize="18sp"/>
+
+	</LinearLayout>
+
+</LinearLayout>

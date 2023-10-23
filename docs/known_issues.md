@@ -1,12 +1,6 @@
-![Header Graphic](images/jumio_feature_graphic.jpg)
-
 # Known Issues
 
 ## Table of Contents
-- [SDK Version 4.0.0 and Above](#sdk-version-400-and-above)
-  - [Duplicate Files for 'libc++_shared.so' Library](#duplicate-lib-c)
-- [SDK Version 3.9.2 and 4.0.0](#sdk-version-392-and-400)
-  - [Face Scan Crash at Start](#face-scan-crash-at-start)
 - [SDK Version 3.9.0](#sdk-version-390)
   - [Custom UI](#custom-ui)
 - [SDK Version 3.8.0 and Newer](#sdk-version-380-and-newer)
@@ -21,41 +15,6 @@
   - [Static Interface Methods Are only Supported with Android N](#Static-interface-methods-are-only-supported-with-Android-N)
   - [SDK Crashes Trying to Display Animations (Android Version 5 and Lower)](#sdk-crashes-trying-to-display-animations-(android-version-4-and-lower))
   - [Country Missing from the Country List](#country-missing-from-the-country-list)
-  - [Datadog in Dynamic feature modules](#datadog-in-dynamic-feature-modules)
-
-# SDK Version 4.0.0 and Above
-
-<div id="duplicate-lib-c">
-<h2>Duplicate Files for 'libc++_shared.so' Library</h2>
-</div>
-
-If build fails with error message:
-
-_2 files found with path 'lib/arm64-v8a/libc++\_shared.so' from inputs ..._
-
-Please add the following `packagingOptions` to the configuration in your `build.gradle` file:
-
-```
-android{
-  packagingOptions {
-      pickFirst 'lib/armeabi-v7a/libc++_shared.so'
-      pickFirst 'lib/arm64-v8a/libc++_shared.so'
-  }
-}
-
-```
-
-# SDK Version 3.9.2 and 4.0.0
-
-## Face Scan Crash at Start
-If the face scan crashes without warning on camera start and/or the following error message is displayed:    
-
-_java.lang.SecurityException: To use the sampling rate of 0 microseconds, app needs to declare the normal permission HIGH_SAMPLING_RATE_SENSORS._
-
-Please make sure to add the following permission to your `AndroidManifest.xml` file:
-```
-<uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS"/>
-```
 
 # SDK Version 3.9.0
 
@@ -80,7 +39,7 @@ dependencies {
 ```
 have been included in your `build.gradle` file. Missing Kotlin serialization will result in infinite loading without a callback.
 
-Please also refer to the 3.8.0 __"Dependency Changes"__ section of our [transition guide](transition_guide.md) and the `build.gradle`(https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of our sample application for additional information.
+Please also refer to the 3.8.0 __"Dependency Changes"__ section of our [transition guide](transition-guide_id-verification-fastfill.md) and the `build.gradle`(https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of our sample application for additional information.
 
 ## Fallback to Manual Capturing Using iProov
 In some rare cases, the iproov Token Call can take too long to complete, which means the token is not yet available when the decision for the Liveness Vendor is made. When this happens, the scan mode `FACE_MANUAL` (Manual Capturing) will be used as a fallback. This also applies to __Tablets__ and devices running on __Android Version 5__ ("Lollipop") or lower.
@@ -102,7 +61,7 @@ android.jetifier.blacklist=bcprov-jdk15on
 Please note that the naming of this will change with the Android Gradle Plugin 4 release and will become `android.jetifier.ignorelist`
 
 ## Custom UI
-On using iProov in CustomUI, in case `NetverifySDKController$retry` function is called for an error EXX0000, the SDK can fail with the following exception: `java.lang.NoClassDefFoundError: Failed resolution of: Lcom/jumio/zoom/custom/ZoomCustomScanPresenter`. This issue was fixed in SDK version 3.9.0. As a workaround it is possible to only add `implementation "com.jumio.android:zoom:3.8.0@aar"` to the build.gradle dependencies.
+On using iProov in CustomUI, in case `NetverifySDKController$retry` function is called for an error EX0000, the SDK can fail with the following exception: `java.lang.NoClassDefFoundError: Failed resolution of: Lcom/jumio/zoom/custom/ZoomCustomScanPresenter`. This issue was fixed in SDK version 3.9.0. As a workaround it is possible to only add `implementation "com.jumio.android:zoom:3.8.0@aar"` to the build.gradle dependencies.
 
 # SDK Version 3.7.x
 
@@ -137,13 +96,6 @@ Countries with documents that have a barcode might not be available if the neces
 ```
 implementation "com.jumio.android:nv-barcode:3.9.0@aar"
 ```
-A complete list of all dependencies [can be found here.](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#dependencies)
+A complete list of all dependencies [can be found here.](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_id-verification-fastfill.md#dependencies)
 
-__Note:__ Version numbers may vary.
-
-## Datadog in Dynamic feature modules
-Datadog registers a Content Receiver through its AndroidManifest. Therefore Datadog needs to be linked in the base app, otherwise the app will crash during start.
-```
-api "com.datadoghq:dd-sdk-android-rum:2.0.0"
-```
 __Note:__ Version numbers may vary.

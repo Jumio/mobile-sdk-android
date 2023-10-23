@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:jumio="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+	tools:context="com.jumio.sample.java.netverify.customui.NetverifyCustomDocSelectionFragment" >
+
+	<TextView
+		android:id="@+id/fragment_custom_tv_verification"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:text="@string/custom_ui_document_selection"
+		android:textSize="24sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<TextView
+		android:id="@+id/fragment_custom_tv_help"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/custom_ui_document_selection_help"
+		android:textAlignment="viewStart"
+		android:textSize="18sp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/fragment_custom_tv_verification" />
+
+	<ListView
+		android:id="@+id/fragment_custom_lv_countries"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginBottom="8dp"
+		android:dividerHeight="1dp"
+		android:paddingBottom="16dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/fragment_custom_tv_help" />
+
+	<ProgressBar
+		android:id="@+id/fragment_nv_custom_loading_indicator"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:visibility="gone"
+		android:indeterminateTint="@color/colorPrimary"
+		app:layout_constraintTop_toTopOf="@+id/fragment_custom_tv_help"
+		app:layout_constraintBottom_toBottomOf="parent"
+		tools:layout_editor_absoluteX="16dp" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/fragment_nv_custom_loading_indicator_guideline"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		jumio:layout_constraintGuide_percent="0.4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

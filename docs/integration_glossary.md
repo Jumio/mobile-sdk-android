@@ -1,8 +1,11 @@
-![Header Graphic](images/jumio_feature_graphic.jpg)
+![FAQ](images/jumio_feature_graphic.jpg)
 
 # Glossary
 
 ## Commonly Used Abbreviations
+
+### BAM
+Boron Aluminium Magnesium: BAM Checkout is Jumio’s mobile credit card scanning software, named after the chemical compound with the least sliding friction
 
 ### CVV
 Card Verification Value: A verification number on any credit card, usually 3-4 digits long
@@ -43,12 +46,6 @@ Machine Readable Zone: Standardized, usually at the bottom of the identity page 
 ### NV
 Netverify
 
-### OAuth2
-An [industry-standard protocol for authorization](https://oauth.net/2/)
-
-### OAuth2 Access Token
-An [access token using the OAuth2 protocol](https://oauth.net/2/access-tokens/) to make safe API calls and securely access resources from a server
-
 ### OCR
 [Optical Character Recognition:](https://en.wikipedia.org/wiki/Optical_character_recognition) Converts images of text, such as text on IDs, to machine-encoded and machine-readable text
 
@@ -60,6 +57,3 @@ Passport
 
 ### 3D-Liveness
 Liveness check: The 3D-liveness check makes sure that a face scan performed was not of a picture, but of an actual, living person who also matches the picture on the previously scanned document
-
-### DID
-Digital Identity

@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.jumio.sample.NetverifyCustomActivity">
+
+		<item
+			android:id="@+id/action_toggle_flash"
+			android:icon="@drawable/ic_flash_on"
+			android:title="@string/jumio_accessibility_flash_activate"
+			app:showAsAction="always"/>
+		<item
+			android:id="@+id/action_switch_camera"
+			android:icon="@drawable/ic_camera_front"
+			android:title="@string/jumio_accessibility_camera_switch_to_front"
+			app:showAsAction="always"/>
+</menu>

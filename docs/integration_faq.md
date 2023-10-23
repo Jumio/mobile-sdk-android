@@ -1,9 +1,8 @@
-![Header Graphic](images/jumio_feature_graphic.jpg)
+![FAQ](images/jumio_feature_graphic.jpg)
 
 # FAQ
 
 ## Table of Contents
-- [User Consent](#user-consent)
 - [Improve User Experience and Reduce Drop-off Rate](#improve-user-experience-and-reduce-drop-off-rate)
 - [Managing Errors](#managing-errors)
     - [Ad Blockers or Firewall](#ad-blockers-or-firewall)
@@ -13,6 +12,7 @@
     - [Architectures, ABI Filters & Splitting](#architectures,-abi-filters-&-splitting)
 - [Jumio Authentication Workflow Integration](#jumio-authentication-workflow-integration)
 - [Fallback and Manual Capturing](#fallback-and-manual-capturing)
+- [Intent Filter and Credentials for Sample App](#intent-filter-and-credentials-for-sample-app)
 - [Custom Theme](#custom-theme-issues)
   - [Custom Theme Is Not Working](#custom-theme-is-not-working)
   - [Scan Overlay Is Not Displayed](#scan-overlay-is-not-displayed)
@@ -21,17 +21,7 @@
 - [Java 8 Compatibility](#Java-8-compatibility)
 - [Overview of Scanning Methods](overview-of-scanning-methods)
 - [Glossary of Commonly Used Abbreviations](#glossary)
-- [Google Play Store Prominent Disclosure](#google-play-store-prominent-disclosure)
 - [Jumio Support](#jumio-support)
-
-## User Consent
-User consent is now acquired for all users to ensure the accordance with biometric data protection laws. Depending on the legal requirements, consent can be acquired in one of two ways: __Active__ or __passive__.
-
-For __active__ consent instances, the user needs to accept the consent items explicitly, e.g. by enabling a UI switch or checking a checkbox for each consent item. For __passive__ consent instances, it is enough to present the consent text and URL to the user. The user implicitly accepts the passive consent items by continuing with the journey.
-
-<img src="images/consent/consent_passive.jpg" alt="Acquiring passive user consent">
-<img src="images/consent/consent_active_unchecked.jpg" alt="Acquiring active user consent">
-<img src="images/consent/consent_active_checked.jpg" alt="Acquired active user consent">
 
 ## Improve User Experience and Reduce Drop-off Rate
 When evaluating user flows, one of the most commonly used metrics is the rate of drop-offs. At Jumio, we see considerable variance in drop-off rates across industries and customer implementations. For some implementations and industries, we see a higher rate of drop-offs on the first screens when compared with the average.
@@ -39,7 +29,7 @@ Scanning an ID with sensitive personal data printed on it naturally creates a hi
 
 One pattern that is recognizable throughout all of our customers’ SDK implementations: the more seamless the SDK integration, and the better job is done of setting user expectations prior to the SDK journey, the lower the drop-off rate becomes.
 
-Our SDK provides a variety of [customization options](integration_guide.md#customization) to help customers achieve a seamless integration. For customers using the standard SDK workflow, our [Surface tool](https://jumio.github.io/surface-android/) provides an easy-to-use WYSIWYG interface to see simple customization options that can be incorporated with minimal effort and generate the code necessary to implement them. For customers who want to have more granular control over look and feel, our SDK offers the [CustomUI](integration_guide.md#custom-ui) option, which allows you to customize the entire user interface.
+Our SDK provides a variety of [customization options](integration_id-verification-fastfill.md#customization) to help customers achieve a seamless integration. For customers using the standard SDK workflow, our [Surface tool](https://jumio.github.io/surface-android/) provides an easy-to-use WYSIWYG interface to see simple customization options that can be incorporated with minimal effort and generate the code necessary to implement them. For customers who want to have more granular control over look and feel, our SDK offers the [CustomUI](integration_id-verification-fastfill.md#custom-ui) option, which allows you to customize the entire user interface.
 
 ### Example of a Non-Ideal SDK integration:
 ![Onboarding bad case](images/onboardingBadCase.jpg)
@@ -48,20 +38,20 @@ Our SDK provides a variety of [customization options](integration_guide.md#custo
 ### Suggested Improvements with Additional Customization:
 ![Onboarding good case](images/onboardingGoodCase.jpg)
  - Host application has an explanatory help screen that explains what will happen next and why this information is needed.
- - SDK is either customized to have a more embedded appearance or [CustomUI](integration_guide.md#custom-ui) is used to create a completely seamless integration in the UX of our customers.
+ - SDK is either customized to have a more embedded appearance or [CustomUI](integration_id-verification-fastfill.md#custom-ui) is used to create a completely seamless integration in the UX of our customers.
  - Also after the Jumio workflow that shows the displayed results and/or a message that the ID is currently verified, which might take some minutes.
 
 ## Managing Errors
-Not every error that is returned from the SDK should be treated the same. The error codes listed for [ID Verification](integration_guide.md#error-codes) should be handled specifically.
+Not every error that is returned from the SDK should be treated the same. The error codes listed for [ID Verification](integration_id-verification-fastfill.md#error-codes) should be handled specifically.
 
 The following table highlights the most common error codes which are returned from the SDK and explains how to handle them appropriately in your application.
 
-|    Code     | Cause                                                                                              | Recommended Handling                                                                                                                                              |
-|:-----------:|:---------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| A[xx][yyyy] | Caused by temporary network issues like a slow connection.                                         | Advise to check the signal and retry the SDK journey.                                                                                                             |
-| E[xx][yyyy] | Flight mode is activated or no connection available.                                               | The user should be asked to disable flight mode or to verify if the phone has proper signal. Advise to connect to WIFI and retry the SDK journey afterwards.      |
-| G[xx][0000] | The user pressed back or X to exit the SDK while no error view was presented.                      | Reasons for this could be manifold. Often it might be due to the fact that the user didn't have his identity document at hand. Give the user the option to retry. |
-| J[xx][yyyy] | The SDK journey was not completed within the session's max. lifetime. (The default is 15 minutes.) | The user should be informed about the timeout and be directed to start a new Jumio SDK session.                                                                   |
+|Code | Cause | Recommended Handling |
+|:---:|:------|:---------------------|
+| A[x][yyyy] | Caused by temporary network issues like a slow connection. | Advise to check the signal and retry the SDK journey. |
+| E[x][yyyy] | Flight mode is activated or no connection available. | The user should be asked to disable flight mode or to verify if the phone has proper signal. Advise to connect to WIFI and retry the SDK journey afterwards. |
+| G[0][0000] | The user pressed back or X to exit the SDK while no error view was presented. | Reasons for this could be manyfold. Often it might be due to the fact that the user didn't have his identity document at hand. Give the user the option to retry. |
+| J[x][yyyy] | The SDK journey was not completed within the session's max. lifetime. (The default is 15 minutes.) | The user should be informed about the timeout and be directed to start a new Jumio SDK session. |
 
 ### Ad Blockers or Firewall
 End users might face the situation where they are connected to a network that can't reach our Jumio endpoints.
@@ -71,27 +61,24 @@ In these cases the SDK will return a specific error code: __A10900__ If this err
 
 ## Reducing the Size of Your App
 The Netverify SDK contains a wide range of different scanning methods. The SDK is able to capture identity documents and extract information on the device using enhanced machine learning and computer vision technologies.
-The current download size of the [sample application](../sample/JumioMobileSample/) containing all products is around **12.5 MB** as mentioned in the [ID Verification guide](integration_guide.md).
+The current download size of the [sample application](../sample/JumioMobileSample/) containing all products is around **17 MB** as mentioned in the [ID Verification guide](integration_id-verification-fastfill.md).
 If you want to reduce the size of the SDK within your application, there are several ways to achieve this:
 
 ### Strip Unused Modules
-Depending on your specific needs, you may want to strip out unused functionality. As most of our modules can be linked optionally, you can reduce file size by adapting your [Jumio dependencies](integration_guide.md#dependencies) in your build.gradle.
+Depending on your specific needs, you may want to strip out unused functionality. As most of our modules can be linked optionally, you can reduce file size by adapting your [Jumio dependencies](integration_id-verification-fastfill.md#dependencies) in your build.gradle.
 
 The following table shows a range of different product configurations with the size and modules that are linked for it. These measurements reflect the extra size that Jumio components add to your app download size and are based on our [sample application](../sample/JumioMobileSample/).
 
-| Product Configuration                        |   Size   |                                           Modules                                            |
-| :------------------------------------------- | :------: | :------------------------------------------------------------------------------------------: |
-| Base                                         | 2.67 MB  |                                             core                                             |
-| Base + iProov                                | 3.52 MB  |                                         core, iproov                                         |
-| Base + Autocapture                           | 4.21 MB  |                                       core, docfinder                                        |
-| Base + Autocapture, Barcode-Vision           | 4.51 MB  |                               core, docfinder, barcode-vision                                |
-| Base + Autocapture, Barcode-Vision, iProov   | 5.35 MB  |                               core, docfinder, barcode, iproov                               |
-| Base + Autocapture, Barcode-Vision, Liveness | 6.28 MB  |                              core, docfinder, barcode, liveness                              |
-| Base + Autocapture, Barcode-Vision, NFC      | 7.59 MB  |                                core, docfinder, barcode, nfc                                 |
-| All (Custom UI only)                         | 10.33 MB | core, docfinder, barcode-vision, iproov, nfc, devicerisk, digital-identity, camerax,liveness |
-| Base + Autocapture, Default UI               | 4.60 MB  |                                 core, docfinder, default-ui                                  |
-| Base + Autocapture, Default UI, Datadog      | 5.21 MB  |                             core, docfinder, default-ui, datadog                             |
-| All (with Default UI)                        | 11.17 MB |   core, docfinder, barcode-vision, iproov, nfc, devicerisk, default-ui, datadog, liveness    |
+|Product Configuration      | Size   | Modules   |
+|:--------------------------|:------:|:----------|
+|ID + Liveness (Iproov)                      | 7.43 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, iproov |
+|ID + Liveness (Iproov) w/o NFC              | 5.90 MB  | core, nv, nv-mrz, nv-ocr, nv-barcode, iproov |
+|ID w/o Liveness                             | 7.04 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode |
+|ID w/o Liveness, Barcode                    | 5.95 MB  | core, nv, nv-mrz, nv-ocr |
+|ID w/o Liveness, Barcode, OCR               | 5.42 MB  | core, nv, nv-mrz |
+|ID minimum                                  | 2.25 MB  | core, nv |
+|BAM Checkout                                | 4.76 MB  | core, bam |
+|Document verification                       | 2.04 MB  | core, dv  |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -114,7 +101,7 @@ defaultConfig {
 }
 ```
 
-It's also possible to manually provide a split apk on Google Play. The apk can be split based on the architecture if multiple apks should be uploaded to the Google Play Store. Google Play Store manages to deliver the appropriate apk for the device.
+It's also possible to manually provide a splitted apk on Google Play. The apk can be split based on the architecture if multiple apks should be uploaded to the Google Play Store. Google Play Store manages to deliver the appropriate apk for the device.
 ```
 splits {
 	abi {
@@ -151,12 +138,27 @@ __Note:__ Please note that the method `showShutterButton()` does neither create 
 
 "Manual capturing" simply refers to the user being able to manually take a picture. "Fallback" refers to an alternative scan mode the SDK can resort to if possible, in case there is an issue during the original scanning process. The fallback scan mode might be manual capturing in some cases, but not all.
 
+## Intent Filter and Credentials for Sample App
+The sample project contains two identical packages: One in Kotlin, one in Java. Please note that the `intent filter` in the sample project is set to Kotlin by default.
+```
+		<activity
+			android:name="com.jumio.sample.kotlin.MainActivity"
+			... >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+```
+
+Make sure to set the intent filter for the correct activity in the `AndroidManifest.xml` file and add your API credentials (API token and API secret) to the right package.
+
 ## Custom Theme
 
 ### Custom Theme Is Not Working     
-Any customized theme needs to be defined in a `styles.xml` file and has to inherit from the parent theme `Theme.Jumio`.
+Any customized theme needs to be defined in a `styles.xml` file and has to inherit from the parent theme `Theme.Netverify`.
 ```
-<style name="AppTheme.JumioCustom" parent="Theme.Jumio">
+<style name="AppTheme.NetverifyCustom" parent="Theme.Netverify">
   <item name="colorPrimary">@color/colorPrimary</item>
   ...
 </style>
@@ -164,17 +166,17 @@ Any customized theme needs to be defined in a `styles.xml` file and has to inher
 ```
 The actual name of the customized theme is arbitrary and can be chosen at will.
 
-Any customized theme needs to be added to the `AndroidManifest.xml` file by replacing the initial `Theme.Jumio`.  
+Any customized theme needs to be added to the `AndroidManifest.xml` file by replacing the initial `Theme.Netverify`.  
 ```
 <activity
-  android:name="com.jumio.defaultui.JumioActivity"
-  android:theme="@style/AppTheme.JumioCustom"
+  android:name="com.jumio.nv.NetverifyActivity"
+  android:theme="@style/CustomNetverifyTheme"
   ...
 <activity/>
 ```
 
 ### Scan Overlay Is Not Displayed  
-Make sure all necessary style attributes have been added to your custom theme specified in the `style.xml` file. In case of issues with scan overlay, all relevant attributes start with `jumio_scanOverlay` and `face_scanOverlay`.
+Make sure all necessary style attributes have been added to your custom theme specified in the `style.xml` file. In case of issues with scan overlay, all relevant attributes start with `scanOverlay` and `face_scanOverlay`.
 
 An overview of all style attributes [can be found here](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/styles.xml)
 
@@ -209,47 +211,38 @@ android {
 
 ## Overview of Scanning Methods
 
-#### Autocapture
-Combines all previously existing scanning methods into one automatic, seamless experience.
+#### Linefinder:
+Uses edge detection, fallback option in default UI.
 
-![Autocapture Success](images/capturing_methods/autocapture_01.jpg)  ![Autocapture Scanning](images/capturing_methods/autocapture_02.jpg)
+![Linefinder Empty](images/capturing_methods/linefinder_scanning_01.png)  ![Linefinder Document](images/capturing_methods/linefinder_scanning_02.png)
 
-#### Linefinder (deprecated)
-***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
-instead.***
-Scanning using edge detection.
+#### MRZ:
+Used for passports, some identity cards and some visas.
 
-![Linefinder Empty](images/capturing_methods/linefinder_scanning_01.jpg)  ![Linefinder Document](images/capturing_methods/linefinder_scanning_02.jpg) ![Linefinder Processing](images/capturing_methods/linefinder_scanning_03.jpg)
+![MRZ Empty](images/capturing_methods/mrz_scanning_01.png)  ![MRZ Document](images/capturing_methods/mrz_scanning_02.png)
 
-#### MRZ (deprecated)
-***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
-instead.***
-Data extraction from passports, some identity cards and some visas.
+#### Barcode:
+Used for PDF417 barcode, for example US and CAN driver licenses.
 
-![MRZ Empty](images/capturing_methods/mrz_scanning_01.jpg)  ![MRZ Document](images/capturing_methods/mrz_scanning_02.jpg)
+![Barcode Empty](images/capturing_methods/barcode_scanning_01.png)  ![Barcode Document](images/capturing_methods/barcode_scanning_02.png)
 
-#### Barcode (deprecated)
-***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
-instead.***
-PDF417 barcode data extraction, for example from US and Canadian driver licenses.
+#### Manual Capture:
+Manual scanning (taking a picture) with shutterbutton.
 
-![Barcode Empty](images/capturing_methods/barcode_scanning_01.jpg)  ![Barcode Document](images/capturing_methods/barcode_scanning_02.jpg)
+![Manual Capture Empty](images/capturing_methods/manual_capturing.png)
 
-#### Manual Capture
-Manual scanning (taking a picture) using the shutterbutton, fallback option in case user is having trouble.
+#### NFC:
+Used for extraction from eMRTD documents, for example passports.
 
-![Manual Capture Empty](images/capturing_methods/manual_capturing_01.jpg) ![Manual Capture Document](images/capturing_methods/manual_capturing_02.jpg)
+![NFC Start](images/capturing_methods/nfc_scanning_01.png)  ![NFC Scanning](images/capturing_methods/nfc_scanning_02.png)
 
-#### NFC
-Data extraction from eMRTD documents, for example passports.
+#### OCR Template:
+Used for automatic scanning of some driver licenses.
 
-![NFC Start](images/capturing_methods/nfc_scanning_01.jpg)  ![NFC Scanning](images/capturing_methods/nfc_scanning_02.jpg)
+![OCR Empty](images/capturing_methods/ocr_template_scanning_01.png)  ![OCR Document](images/capturing_methods/ocr_template_scanning_02.png)
 
 ## Glossary
 A [quick guide to commonly used abbreviations](integration_glossary.md) throughout the documentation which may not be all that familiar.
-
-## Google Play Store Prominent Disclosure
-Some parts of the SDK might require prominent disclosure - please see the [Privacy Notice](integration_guide.md#privacy-notice) section in the Integration Guide for further details
 
 ## Jumio Support
 The Jumio development team is constantly striving to optimize the size of our frameworks while increasing functionality, to improve your KYC and to fight fraud. If you have any further questions, please reach out to our [support team](mailto:support@jumio.com).

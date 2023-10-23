@@ -1,92 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:id="@+id/drawer_layout"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:fitsSystemWindows="true">
+<androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawer_layout"
+                                                 xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:fitsSystemWindows="true">
 
-	<androidx.coordinatorlayout.widget.CoordinatorLayout
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:fitsSystemWindows="true">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
-		<com.google.android.material.appbar.AppBarLayout
-			android:id="@+id/appbar"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:animateLayoutChanges="true"
-			android:theme="@style/AppTheme.AppBarOverlay"
-			app:elevation="0dp">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:elevation="0dp"
+            android:animateLayoutChanges="true"
+            >
 
-			<androidx.appcompat.widget.Toolbar
-				android:id="@+id/toolbar"
-				android:layout_width="match_parent"
-				android:layout_height="?attr/actionBarSize"
-				android:background="?attr/colorPrimary"
-				app:popupTheme="@style/AppTheme.PopupOverlay" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+            </androidx.appcompat.widget.Toolbar>
 
-		</com.google.android.material.appbar.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_margin="16dp"
-			android:orientation="vertical"
-			app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context="com.jumio.showcase.activities.MainActivity">
 
-			<com.google.android.material.textfield.TextInputLayout
-				android:id="@+id/tokenInputLayout"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@android:color/transparent"
-				app:boxBackgroundColor="@android:color/transparent"
-				app:endIconMode="clear_text">
+        </FrameLayout>
 
-				<com.google.android.material.textfield.TextInputEditText
-					android:id="@+id/tokenEditText"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="16dp"
-					android:hint="Token"
-					android:inputType="textMultiLine"
-					android:lines="8"
-					android:maxLines="10"
-					android:minLines="6" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-			</com.google.android.material.textfield.TextInputLayout>
-
-			<Spinner
-				android:id="@+id/datacenterSpinner"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="16dp"
-				android:entries="@array/datacenter" />
-
-			<com.google.android.material.button.MaterialButton
-				android:id="@+id/btn_startCustom"
-				android:layout_width="match_parent"
-				android:layout_height="64dp"
-				android:layout_marginTop="16dp"
-				android:text="Start Custom UI" />
-
-			<com.google.android.material.button.MaterialButton
-				android:id="@+id/btn_startDefault"
-				android:layout_width="match_parent"
-				android:layout_height="64dp"
-				android:layout_marginTop="8dp"
-				android:text="Start Default UI" />
-
-		</LinearLayout>
-
-	</androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-	<com.google.android.material.navigation.NavigationView
-		android:id="@+id/nav_view"
-		android:layout_width="wrap_content"
-		android:layout_height="match_parent"
-		android:layout_gravity="start"
-		android:fitsSystemWindows="true"
-		app:menu="@menu/menu_main" />
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/menu_main"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

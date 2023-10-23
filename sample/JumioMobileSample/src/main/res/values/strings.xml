@@ -1,21 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-
+	
 	<!-- APP STRINGS -->
+	<string name="app_name_java">Jumio Sample Java</string>
 	<string name="app_name_kotlin">Jumio Sample Kotlin</string>
+	<string name="title_activity_main">MainActivity</string>
+	<string name="button_start">Start %1$s</string>
+	<string name="section_netverify">Netverify</string>
+	<string name="section_netverify_custom">Netverify Custom</string>
+	<string name="section_authentication">Authentication</string>
+	<string name="section_authentication_custom">Authentication Custom</string>
+	<string name="section_bam">Bam</string>
+	<string name="section_bam_custom">Bam Custom</string>
+	<string name="button_stop_bam_custom">Stop Bam Custom Scan</string>
+	<string name="section_documentverification">Document Verification</string>
+	<string name="header_options">Options:</string>
+	<string name="netverify_verification_enabled">Verification enabled</string>
+	<string name="documentverification_enable_extraction">Enable extraction</string>
+	<string name="netverify_identity_verification_enabled">Identity Verification enabled</string>
+	<string name="bam_cvv_required">CVV required</string>
+	<string name="bam_expiry_required">Expiry date required</string>
 
 	<string name="navigation_drawer_open">Open navigation drawer</string>
 	<string name="navigation_drawer_close">Close navigation drawer</string>
 	<string name="menu_products">Products</string>
 	<string name="menu_legal_information">Legal Information</string>
-	<string name="menu_terms_of_use">Terms of Use</string>
-	<string name="menu_privacy_policy">Privacy Policy</string>
+	<string name="menu_terms_conditions">Terms &amp; Conditions</string>
 	<string name="menu_licenses">Licenses</string>
 	<string name="menu_version">SDK Version</string>
 
-	<string-array name="datacenter">
-		<item>US</item>
-		<item>EU</item>
-		<item>SG</item>
+	<string name="zip_code">Zip code</string>
+	<string name="state">State</string>
+	<string name="state_reset_value">\u002D\u002D no value \u002D\u002D</string>
+
+	<string-array name="state_selection_values">
+		<item>Alabama</item>
+		<item>Alaska</item>
+		<item>Arizona</item>
+		<item>Arkansas</item>
+		<item>California</item>
+		<item>Colorado</item>
+		<item>Connecticut</item>
+		<item>Delaware</item>
+		<item>Florida</item>
+		<item>Georgia</item>
+		<item>Hawaii</item>
+		<item>Idaho</item>
+		<item>Illinois</item>
+		<item>Indiana</item>
+		<item>Iowa</item>
+		<item>Kansas</item>
+		<item>Kentucky</item>
+		<item>Louisiana</item>
+		<item>Maine</item>
+		<item>Maryland</item>
+		<item>Massachusetts</item>
+		<item>Michigan</item>
+		<item>Minnesota</item>
+		<item>Mississippi</item>
+		<item>Missouri</item>
+		<item>Montana</item>
+		<item>Nebraska</item>
+		<item>Nevada</item>
+		<item>New Hampshire</item>
+		<item>New Jersey</item>
+		<item>New Mexico</item>
+		<item>New York</item>
+		<item>North Carolina</item>
+		<item>North Dakota</item>
+		<item>Ohio</item>
+		<item>Oklahoma</item>
+		<item>Oregon</item>
+		<item>Pennsylvania</item>
+		<item>Rhode Island</item>
+		<item>South Carolina</item>
+		<item>South Dakota</item>
+		<item>Tennessee</item>
+		<item>Texas</item>
+		<item>Utah</item>
+		<item>Vermont</item>
+		<item>Virginia</item>
+		<item>Washington</item>
+		<item>West Virginia</item>
+		<item>Wisconsin</item>
+		<item>Wyoming</item>
 	</string-array>
+
+	<!-- Custom UI -->
+	<string name="custom_ui_document_selection">Verify your identity </string>
+	<string name="custom_ui_document_selection_help">In order to verify your identity you need to submit your ID during the process. Please select the issuing country of your document</string>
+	<string name="custom_ui_scan_confirmation">Make sure that all data on your document is fully visible, glare free and not blurred</string>
+	<string name="custom_ui_scan_document_type">Document Type</string>
+	<string name="custom_ui_scan_title_capture">Capture</string>
+	<string name="custom_ui_scan_button_fallback">Experiencing problems?</string>
+	<string name="custom_ui_scan_face_on_back">The Image captured looks like the front of your document. Please confirm this Is the Back of your document or retake the Image.</string>
+	<string name="custom_ui_thank_you">Thank you</string>
+	<string name="custom_ui_success_description">Your ID has been verified. You can now start using our service.</string>
+	<string name="custom_ui_variant_default">Default UI</string>
+	<string name="custom_ui_variant_custom">Custom UI</string>
+	<string name="custom_ui_stop_scan">Stop Netverify Custom Scan</string>
 </resources>

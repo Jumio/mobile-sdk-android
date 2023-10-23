@@ -1,0 +1,76 @@
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:jumio="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_gravity="center_horizontal"
+	android:paddingBottom="@dimen/activity_vertical_margin"
+	android:paddingStart="@dimen/activity_horizontal_margin"
+	android:paddingEnd="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin">
+
+	<Button
+		android:id="@+id/btnStart"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="12dp"/>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentBottom="true"
+		android:orientation="vertical">
+
+		<RelativeLayout
+			android:id="@+id/bamCustomContainer"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="50dp"
+			android:visibility="gone">
+
+			<Button
+				android:id="@+id/btnStopBamCustom"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="@string/button_stop_bam_custom"/>
+
+			<FrameLayout
+				android:id="@+id/bamCustomScanViewWrapper"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/btnStopBamCustom">
+
+				<com.jumio.bam.custom.BamCustomScanView
+					android:id="@+id/bamCustomScanView"
+					android:layout_width="wrap_content"
+					android:layout_height="300dp"
+					jumio:jumio_ratio="1.33">
+				</com.jumio.bam.custom.BamCustomScanView>
+
+			</FrameLayout>
+
+			<ImageView
+				android:id="@+id/switchCameraImageView"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignBottom="@+id/bamCustomScanViewWrapper"
+				android:layout_alignStart="@+id/bamCustomScanViewWrapper"
+				jumio:srcCompat="@drawable/jumio_ic_camera_switch"
+				android:visibility="gone"/>
+
+			<ImageView
+				android:id="@+id/toggleFlashImageView"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignBottom="@+id/bamCustomScanViewWrapper"
+				android:layout_alignEnd="@+id/bamCustomScanViewWrapper"
+				jumio:srcCompat="@drawable/jumio_ic_flash_on"
+				android:visibility="gone"/>
+
+		</RelativeLayout>
+
+	</ScrollView>
+
+</RelativeLayout>
