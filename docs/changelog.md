@@ -16,9 +16,15 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 For detailed technical changes please refer to our [Transition Guide](transition_guide.md).
 
 ## Support Period
-Current SDK version: __4.7.1__
+Current SDK version: __4.8.1__
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+
+## SDK Version: __4.8.1__
+![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
+
+## SDK Version: __4.8.0__
+![Improvement] Managing Liveness dependencies to help better conversion [Identity Verification]
 
 ## SDK Version: __4.7.1__
 ![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
