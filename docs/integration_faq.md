@@ -12,7 +12,6 @@
     - [Architectures, ABI Filters & Splitting](#architectures,-abi-filters-&-splitting)
 - [Jumio Authentication Workflow Integration](#jumio-authentication-workflow-integration)
 - [Fallback and Manual Capturing](#fallback-and-manual-capturing)
-- [Intent Filter and Credentials for Sample App](#intent-filter-and-credentials-for-sample-app)
 - [Custom Theme](#custom-theme-issues)
   - [Custom Theme Is Not Working](#custom-theme-is-not-working)
   - [Scan Overlay Is Not Displayed](#scan-overlay-is-not-displayed)
@@ -29,7 +28,7 @@ Scanning an ID with sensitive personal data printed on it naturally creates a hi
 
 One pattern that is recognizable throughout all of our customers’ SDK implementations: the more seamless the SDK integration, and the better job is done of setting user expectations prior to the SDK journey, the lower the drop-off rate becomes.
 
-Our SDK provides a variety of [customization options](integration_id-verification-fastfill.md#customization) to help customers achieve a seamless integration. For customers using the standard SDK workflow, our [Surface tool](https://jumio.github.io/surface-android/) provides an easy-to-use WYSIWYG interface to see simple customization options that can be incorporated with minimal effort and generate the code necessary to implement them. For customers who want to have more granular control over look and feel, our SDK offers the [CustomUI](integration_id-verification-fastfill.md#custom-ui) option, which allows you to customize the entire user interface.
+Our SDK provides a variety of [customization options](integration_guide.md#customization) to help customers achieve a seamless integration. For customers using the standard SDK workflow, our [Surface tool](https://jumio.github.io/surface-android/) provides an easy-to-use WYSIWYG interface to see simple customization options that can be incorporated with minimal effort and generate the code necessary to implement them. For customers who want to have more granular control over look and feel, our SDK offers the [CustomUI](integration_guide.md#custom-ui) option, which allows you to customize the entire user interface.
 
 ### Example of a Non-Ideal SDK integration:
 ![Onboarding bad case](images/onboardingBadCase.jpg)
@@ -38,11 +37,11 @@ Our SDK provides a variety of [customization options](integration_id-verificatio
 ### Suggested Improvements with Additional Customization:
 ![Onboarding good case](images/onboardingGoodCase.jpg)
  - Host application has an explanatory help screen that explains what will happen next and why this information is needed.
- - SDK is either customized to have a more embedded appearance or [CustomUI](integration_id-verification-fastfill.md#custom-ui) is used to create a completely seamless integration in the UX of our customers.
+ - SDK is either customized to have a more embedded appearance or [CustomUI](integration_guide.md#custom-ui) is used to create a completely seamless integration in the UX of our customers.
  - Also after the Jumio workflow that shows the displayed results and/or a message that the ID is currently verified, which might take some minutes.
 
 ## Managing Errors
-Not every error that is returned from the SDK should be treated the same. The error codes listed for [ID Verification](integration_id-verification-fastfill.md#error-codes) should be handled specifically.
+Not every error that is returned from the SDK should be treated the same. The error codes listed for [ID Verification](integration_guide.md#error-codes) should be handled specifically.
 
 The following table highlights the most common error codes which are returned from the SDK and explains how to handle them appropriately in your application.
 
@@ -61,24 +60,23 @@ In these cases the SDK will return a specific error code: __A10900__ If this err
 
 ## Reducing the Size of Your App
 The Netverify SDK contains a wide range of different scanning methods. The SDK is able to capture identity documents and extract information on the device using enhanced machine learning and computer vision technologies.
-The current download size of the [sample application](../sample/JumioMobileSample/) containing all products is around **17 MB** as mentioned in the [ID Verification guide](integration_id-verification-fastfill.md).
+The current download size of the [sample application](../sample/JumioMobileSample/) containing all products is around **12.5 MB** as mentioned in the [ID Verification guide](integration_guide.md).
 If you want to reduce the size of the SDK within your application, there are several ways to achieve this:
 
 ### Strip Unused Modules
-Depending on your specific needs, you may want to strip out unused functionality. As most of our modules can be linked optionally, you can reduce file size by adapting your [Jumio dependencies](integration_id-verification-fastfill.md#dependencies) in your build.gradle.
+Depending on your specific needs, you may want to strip out unused functionality. As most of our modules can be linked optionally, you can reduce file size by adapting your [Jumio dependencies](integration_guide.md#dependencies) in your build.gradle.
 
 The following table shows a range of different product configurations with the size and modules that are linked for it. These measurements reflect the extra size that Jumio components add to your app download size and are based on our [sample application](../sample/JumioMobileSample/).
 
-|Product Configuration      | Size   | Modules   |
-|:--------------------------|:------:|:----------|
-|ID + Liveness (Iproov)                      | 7.43 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode, iproov |
-|ID + Liveness (Iproov) w/o NFC              | 5.90 MB  | core, nv, nv-mrz, nv-ocr, nv-barcode, iproov |
-|ID w/o Liveness                             | 7.04 MB  | core, nv, nv-mrz, nv-ocr, nv-nfc, nv-barcode |
-|ID w/o Liveness, Barcode                    | 5.95 MB  | core, nv, nv-mrz, nv-ocr |
-|ID w/o Liveness, Barcode, OCR               | 5.42 MB  | core, nv, nv-mrz |
-|ID minimum                                  | 2.25 MB  | core, nv |
-|BAM Checkout                                | 4.76 MB  | core, bam |
-|Document verification                       | 2.04 MB  | core, dv  |
+| Product Configuration  | Size     | Modules      |
+|:-----------------------|:--------:|:------------:|
+| Base                   | 1.76 MB  | core         |
+| Base + Liveness        | 2.23 MB  | core, iproov |
+| Base + MRZ             | 3.13 MB  | core, mrz    |
+| Base + MRZ, Linefinder | 3.40 MB  | core, mrz, linefinder |
+| Base + MRZ, Linefinder, Barcode, Liveness | 4.91 MB  | core, mrz, linefinder, barcode, iproov |
+| Base + MRZ, Linefinder, Barcode, NFC | 5.94 MB  | core, mrz, linefinder, barcode, nfc |
+| All                    | 6.67 MB  | core, mrz, linefinder, barcode, nfc, iproov  |    
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -138,27 +136,12 @@ __Note:__ Please note that the method `showShutterButton()` does neither create 
 
 "Manual capturing" simply refers to the user being able to manually take a picture. "Fallback" refers to an alternative scan mode the SDK can resort to if possible, in case there is an issue during the original scanning process. The fallback scan mode might be manual capturing in some cases, but not all.
 
-## Intent Filter and Credentials for Sample App
-The sample project contains two identical packages: One in Kotlin, one in Java. Please note that the `intent filter` in the sample project is set to Kotlin by default.
-```
-		<activity
-			android:name="com.jumio.sample.kotlin.MainActivity"
-			... >
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
-				<category android:name="android.intent.category.LAUNCHER"/>
-			</intent-filter>
-		</activity>
-```
-
-Make sure to set the intent filter for the correct activity in the `AndroidManifest.xml` file and add your API credentials (API token and API secret) to the right package.
-
 ## Custom Theme
 
 ### Custom Theme Is Not Working     
-Any customized theme needs to be defined in a `styles.xml` file and has to inherit from the parent theme `Theme.Netverify`.
+Any customized theme needs to be defined in a `styles.xml` file and has to inherit from the parent theme `Theme.Jumio`.
 ```
-<style name="AppTheme.NetverifyCustom" parent="Theme.Netverify">
+<style name="AppTheme.JumioCustom" parent="Theme.Jumio">
   <item name="colorPrimary">@color/colorPrimary</item>
   ...
 </style>
@@ -166,17 +149,17 @@ Any customized theme needs to be defined in a `styles.xml` file and has to inher
 ```
 The actual name of the customized theme is arbitrary and can be chosen at will.
 
-Any customized theme needs to be added to the `AndroidManifest.xml` file by replacing the initial `Theme.Netverify`.  
+Any customized theme needs to be added to the `AndroidManifest.xml` file by replacing the initial `Theme.Jumio`.  
 ```
 <activity
-  android:name="com.jumio.nv.NetverifyActivity"
-  android:theme="@style/CustomNetverifyTheme"
+  android:name="com.jumio.defaultui.JumioActivity"
+  android:theme="@style/AppTheme.JumioCustom"
   ...
 <activity/>
 ```
 
 ### Scan Overlay Is Not Displayed  
-Make sure all necessary style attributes have been added to your custom theme specified in the `style.xml` file. In case of issues with scan overlay, all relevant attributes start with `scanOverlay` and `face_scanOverlay`.
+Make sure all necessary style attributes have been added to your custom theme specified in the `style.xml` file. In case of issues with scan overlay, all relevant attributes start with `jumio_scanOverlay` and `face_scanOverlay`.
 
 An overview of all style attributes [can be found here](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/styles.xml)
 
@@ -211,35 +194,30 @@ android {
 
 ## Overview of Scanning Methods
 
-#### Linefinder:
-Uses edge detection, fallback option in default UI.
+#### Linefinder
+Scanning using edge detection.
 
-![Linefinder Empty](images/capturing_methods/linefinder_scanning_01.png)  ![Linefinder Document](images/capturing_methods/linefinder_scanning_02.png)
+![Linefinder Empty](images/capturing_methods/linefinder_scanning_01.jpg)  ![Linefinder Document](images/capturing_methods/linefinder_scanning_02.jpg) ![Linefinder Processing](images/capturing_methods/linefinder_scanning_03.jpg)
 
-#### MRZ:
-Used for passports, some identity cards and some visas.
+#### MRZ
+Data extraction from passports, some identity cards and some visas.
 
-![MRZ Empty](images/capturing_methods/mrz_scanning_01.png)  ![MRZ Document](images/capturing_methods/mrz_scanning_02.png)
+![MRZ Empty](images/capturing_methods/mrz_scanning_01.jpg)  ![MRZ Document](images/capturing_methods/mrz_scanning_02.jpg)
 
-#### Barcode:
-Used for PDF417 barcode, for example US and CAN driver licenses.
+#### Barcode
+PDF417 barcode data extraction, for example from US and Canadian driver licenses.
 
-![Barcode Empty](images/capturing_methods/barcode_scanning_01.png)  ![Barcode Document](images/capturing_methods/barcode_scanning_02.png)
+![Barcode Empty](images/capturing_methods/barcode_scanning_01.jpg)  ![Barcode Document](images/capturing_methods/barcode_scanning_02.jpg)
 
-#### Manual Capture:
-Manual scanning (taking a picture) with shutterbutton.
+#### Manual Capture
+Manual scanning (taking a picture) using the shutterbutton, fallback option in case user is having trouble.
 
-![Manual Capture Empty](images/capturing_methods/manual_capturing.png)
+![Manual Capture Empty](images/capturing_methods/manual_capturing_01.jpg) ![Manual Capture Document](images/capturing_methods/manual_capturing_02.jpg)
 
-#### NFC:
-Used for extraction from eMRTD documents, for example passports.
+#### NFC
+Data extraction from eMRTD documents, for example passports.
 
-![NFC Start](images/capturing_methods/nfc_scanning_01.png)  ![NFC Scanning](images/capturing_methods/nfc_scanning_02.png)
-
-#### OCR Template:
-Used for automatic scanning of some driver licenses.
-
-![OCR Empty](images/capturing_methods/ocr_template_scanning_01.png)  ![OCR Document](images/capturing_methods/ocr_template_scanning_02.png)
+![NFC Start](images/capturing_methods/nfc_scanning_01.jpg)  ![NFC Scanning](images/capturing_methods/nfc_scanning_02.jpg)
 
 ## Glossary
 A [quick guide to commonly used abbreviations](integration_glossary.md) throughout the documentation which may not be all that familiar.

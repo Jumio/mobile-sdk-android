@@ -1,6 +1,8 @@
 # Known Issues
 
 ## Table of Contents
+- [SDK Version 3.9.2 and 4.0.0](#sdk-version-392-and-400)
+  - [Face Scan Crash at Start](#face-scan-crash-at-start)
 - [SDK Version 3.9.0](#sdk-version-390)
   - [Custom UI](#custom-ui)
 - [SDK Version 3.8.0 and Newer](#sdk-version-380-and-newer)
@@ -15,6 +17,18 @@
   - [Static Interface Methods Are only Supported with Android N](#Static-interface-methods-are-only-supported-with-Android-N)
   - [SDK Crashes Trying to Display Animations (Android Version 5 and Lower)](#sdk-crashes-trying-to-display-animations-(android-version-4-and-lower))
   - [Country Missing from the Country List](#country-missing-from-the-country-list)
+
+# SDK Version 3.9.2 and 4.0.0
+
+## Face Scan Crash at Start
+If the face scan crashes without warning on camera start and/or the following error message is displayed:    
+
+_java.lang.SecurityException: To use the sampling rate of 0 microseconds, app needs to declare the normal permission HIGH_SAMPLING_RATE_SENSORS._
+
+Please make sure to add the following permission to your `AndroidManifest.xml` file:
+```
+<uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS"/>
+```
 
 # SDK Version 3.9.0
 
@@ -39,7 +53,7 @@ dependencies {
 ```
 have been included in your `build.gradle` file. Missing Kotlin serialization will result in infinite loading without a callback.
 
-Please also refer to the 3.8.0 __"Dependency Changes"__ section of our [transition guide](transition-guide_id-verification-fastfill.md) and the `build.gradle`(https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of our sample application for additional information.
+Please also refer to the 3.8.0 __"Dependency Changes"__ section of our [transition guide](transition_guide.md) and the `build.gradle`(https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/build.gradle) of our sample application for additional information.
 
 ## Fallback to Manual Capturing Using iProov
 In some rare cases, the iproov Token Call can take too long to complete, which means the token is not yet available when the decision for the Liveness Vendor is made. When this happens, the scan mode `FACE_MANUAL` (Manual Capturing) will be used as a fallback. This also applies to __Tablets__ and devices running on __Android Version 5__ ("Lollipop") or lower.
@@ -96,6 +110,6 @@ Countries with documents that have a barcode might not be available if the neces
 ```
 implementation "com.jumio.android:nv-barcode:3.9.0@aar"
 ```
-A complete list of all dependencies [can be found here.](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_id-verification-fastfill.md#dependencies)
+A complete list of all dependencies [can be found here.](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#dependencies)
 
 __Note:__ Version numbers may vary.
