@@ -1,12 +1,57 @@
 ![Header Graphic](images/jumio_feature_graphic.jpg)
 
 # Transition Guide for Android SDK
-This section only covers the breaking technical changes that should be considered when updating from the previous version.
+This section covers all technical changes that should be considered when updating from previous versions, including, but not exclusively: API breaking changes or new functionality in the public API, major dependency changes, attribute changes, deprecation notices.
 
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
-## 4.4.2
+## 4.5.1
+No backward incompatible changes
+
+## 4.5.0
+#### Public API Changes
+* ~~`onPause`~~ has been removed from [JumioScanPart](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html)
+
+* [`JumioError.code`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.error/-jumio-error/index.html) format updated from `[A][x][yyyy]` to `[A][xx][yyyy]`
+
+* Property [`countries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/countries.html) of `JumioIDCredential` has been deprecated. Instead the following new property and functions have been added:
+    * [`JumioIDCredential.supportedCountries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/supportedCountries.html)
+    * [`JumioIDCredential.getPhysicalDocumentsForCountry(countryCode:)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/get-physical-documents-for-country.html)
+    * [`JumioIDCredential.getDigitalDocumentsForCountry(countryCode:)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/get-digital-documents-for-country.html)
+
+
+* [`JumioDeepLinkHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.util/-jumio-deep-link-handler/index.html) has been added
+
+* [`JumioPhysicalDocument`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-physical-document/index.html) and [`JumioDigitalDocument`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-digital-document/index.html) have been added
+
+* [`JumioDocument`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document/index.html) type has changed to interface. (Original `JumioDocument` class has been replaced by `JumioPhysicalDocument`)
+
+* `DIGITAL` has been added in [`JumioCredentialPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html)
+
+* `DIGITAL_IDENTITY_VIEW` and `THIRD_PARTY_VERIFICATION` have been added in [`JumioScanStep`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/index.html)
+
+* [`JumioRetryReasonDigitalIdentity`](https://jumio.github.io/mobile-sdk-android/jumio-digital-identity/com.jumio.sdk.retry/-jumio-retry-reason-digital-identity/index.html) has been added
+
+* [`JumioConsentItem`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent.jumio-consent-item/index.html) class and [`JumioConsentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-consent-type/index.html) enum have been added
+
+* [`onInitialized()`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-initialized.html) callback has been changed from ~~`onInitialized(credentials: List<JumioCredentialInfo>, policyUrl: String?)`~~ to [`onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItems>?)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-initialized.html)
+  * Please refer to the [Consent Handling section](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#consent-handling) in our integration guide for more details.
+
+#### Localization Keys
+The following keys have been added to `strings.xml`:
+  * jumio_idtype_di
+  * jumio_di_vendor_selection_title
+  * jumio_di_retry_unknown
+  * jumio_di_retry_third_party_verification_error
+  * jumio_di_retry_service_error
+  * jumio_di_retry_expired
+  * jumio_di_back_to_document_selection
+
+#### Dependency Updates
+* IProov update: ~~`"com.iproov.sdk:iproov:8.0.3"`~~ is replaced by `"com.iproov.sdk:iproov:8.3.1"`
+
+## 4.4.1
 No backward incompatible changes
 
 ## 4.4.1
@@ -198,7 +243,7 @@ No backward incompatible changes
 
   * `recreate(NetverifyCustomScanView scanView, NetverifyCustomConfirmationView confirmationView, NetverifyCustomScanInterface netverifyCustomScanInterface)` has been added to [NetverifyCustomScanPresenter](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#recreate-com.jumio.nv.custom.NetverifyCustomScanView-com.jumio.nv.custom.NetverifyCustomConfirmationView-com.jumio.nv.custom.NetverifyCustomScanInterface-) - this needs to be called in case the hosting activity is recreated.
 
-* The initialization and start of scan presenters has been splitted. This allows displaying a help view with the help animation prior to starting the scan presenter:
+* The initialization and start of scan presenters has been split. This allows displaying a help view with the help animation prior to starting the scan presenter:
   * `startScanForPart(ScanSide scanSide, NetverifyCustomScanView scanView, NetverifyCustomConfirmationView confirmationView, NetverifyCustomScanInterface scanViewInterface` has been replaced with `initScanForPart(ScanSide scanSide, NetverifyCustomScanView scanView, NetverifyCustomConfirmationView confirmationView, NetverifyCustomScanInterface scanViewInterface)`
 
   * The following method was added to `NetverifyCustomScanPresenter` to trigger scanning start after the initialization. This method needs to be called on the `NetverifyCustomScanPresenter` after it was initialized with `initScanForPart(..)`.
@@ -266,7 +311,7 @@ Several additions and changes, mostly in regards to the new liveness flow.
 
 * Button style: ~~`<item name="netverify_confirmationNegativeStyle"> @style/Custom.Netverify.Confirmation.MaterialButton.Outlined</item>`~~ is replaced by `<item name="materialButtonOutlinedStyle">@style/Custom.Netverify.Confirmation.MaterialButton.Outlined</item>`
 
-* NEW Iproov attribute: `<item name="iproov_customization">@style/CustomIproov</item>`
+* NEW IProov attribute: `<item name="iproov_customization">@style/CustomIproov</item>`
 
 * NEW IProov theme: `<style name="CustomIproov" parent="Iproov.Customization">`
 
@@ -339,7 +384,7 @@ No backward incompatible changes
 AndroidX Material design library has been *updated to version 1.1.0*
 * ~~"com.google.android.material:material:1.0.0"~~ is replaced by "com.google.android.material:material:1.1.0"
 
-Local broadcast manager dependency has been added mandatory due to the design library update where it was seperated by Google
+Local broadcast manager dependency has been added mandatory due to the design library update where it was separated by Google
 * implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
 
 JMRTD is now added as a gradle dependency - if you use NFC scanning please make sure to add the new dependencies:
@@ -408,7 +453,7 @@ All dates are now UTC based. This affects the dates in [NetverifyDocumentData](h
 SDK Translations for the languages Italian and Portuguese have been added.
 
 ## 3.2.1
-#### Fixed a Face sSanning Problem in Which a Black Screen Was Shown to the User
+#### Fixed a Face Scanning Problem in Which a Black Screen Was Shown to the User
 
 ## 3.2.0
 #### Dependency Change
@@ -510,7 +555,7 @@ The default values for [`requireVerification`](https://jumio.github.io/mobile-sd
 
 ## 2.13.0
 #### API Change in NetverifyDocumentData
-The function `getMiddleName()` has been removed. If a middle name is available, it will be concatinated with the first name.
+The function `getMiddleName()` has been removed. If a middle name is available, it will be contained with the first name.
 
 #### Removed Deprecated ABIs mips, mips64 and armeabi
 These ABIs were deprecated in recent NDK toolsets as mentioned here - https://developer.android.com/ndk/guides/abis and are not used any more.
@@ -524,7 +569,7 @@ A fallback to manual image picker will now be used if Google Vision is not opera
 The method `netverifySDK.isMobileVisionOperational` remains in the SDK but doesn't need to be checked now necessarily.
 
 #### New SDK Localizations Added
-In addition to English, the translations for the languages Chinese (Simplified), Dutch, Frensh, German and Spanish have been added.
+In addition to English, the translations for the languages Chinese (Simplified), Dutch, French, German and Spanish have been added.
 
 #### Remove Unused Strings for Localization
 Along with the additional languages, we removed some Strings that were unused in the SDK. The following keys have been removed: `netverify_confirmation_snackbar_help_default`, `netverify_accessibility_select_your_country`, `netverify_accessibility_action_double_click`, `netverify_accessibility_select_your_country`, `netverify_scan_options_country_title`, `netverify_overlay_liveness_advice` and `netverify_scan_options_preselected_hint`.
@@ -577,7 +622,7 @@ Attributes added for replacing the previous selection screen: `netverify_scanOpt
 ## 2.7.0
 * New Dependency `com.jumio.android:nv-liveness:2.7.0@aar` was added for face-liveness functionality.
 * Dependency `com.google.android.gms:play-services-vision` is now mandatory required because of added functionality.
-* Change SDK method `setEnableEpassport(boolean)` to `setEnableEMRTD(boolean)` beacause of to the support for NFC ID documents.
+* Change SDK method `setEnableEpassport(boolean)` to `setEnableEMRTD(boolean)` because of to the support for NFC ID documents.
 * If the dependencies `com.jumio.android:nv-liveness` and `com.jumio.android:nv-barcode-vision` are both used in the application, the following lines have to be added to the application tag in the AndroidManifest.xml to avoid merge issues.
 ```
 <meta-data

@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Umkhawulo wamakhasi aphezulu e-PDF udluliwe</string>
 	<string name="jumio_dv_retry_size_limit">Usayizi ophezulu womkhawulo we-PDF udluliwe</string>
 	<string name="jumio_error_case_auth_failed">Ukuqinisekisa kuhlulekile</string>
+	<string name="jumio_error_case_cancelled">Kukhanseliwe</string>
 	<string name="jumio_error_case_cancelled_by_user">Ikhanselwe ngumsebenzisi</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Isitifiketi asisasebenzi. Sicela ubuyekeze isicelo sakho</string>
 	<string name="jumio_error_case_device_is_offline">Sicela uhlole ukuthi uxhumile yini ku-inthanethi</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">Sicela usule inombolo yepasipoti ngaphambi kokuthatha isithombe</string>
 	<string name="jumio_id_scan_prompt_redact_kor">Sula ibholokhi yesibili yeNombolo Yakho Yokubhalisa Indawo Yokuhlala ngaphambi kokuthatha isithombe</string>
 	<string name="jumio_id_scan_prompt_redact_nld">Sicela usule i-BSN yakho ngaphambi kokuthatha isithombe</string>
+	<string name="jumio_idtype_di">I-ID Eyidijithali</string>
 	<string name="jumio_idtype_dl">Ilayisensi Yokushayela</string>
 	<string name="jumio_idtype_id">Ikhadi Likamazisi</string>
 	<string name="jumio_idtype_pp">Ipasipoti</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">Ihlaziya idatha ye-biometric</string>
 	<string name="jumio_button_cancel">Khansela</string>
 	<string name="jumio_button_continue">Qhubeka</string>
+	<string name="jumio_button_okay">Kulungile</string>
 	<string name="jumio_button_retry">Zama futhi</string>
+	<string name="jumio_di_back_to_document_selection">Uzozulazula ubuyele ekukhethweni kwedokhumenti</string>
+	<string name="jumio_di_vendor_selection_title">Khetha umhlinzeki we-ID eyidijithali</string>
+	<string name="jumio_di_verification_prompt_processing">Sicela ugcwalisa ukulandelelana ku-%s app.</string>
 	<string name="jumio_dv_confirm_button_reselect">Khetha kabusha</string>
 	<string name="jumio_dv_confirm_file_info">Qinisekisa ukuthi ukhethe ifayela le-PDF elinembile</string>
 	<string name="jumio_dv_confirm_file_title">Qinisekisa ifayela lakho</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">Ikhipha imininigwane</string>
 	<string name="jumio_nfc_header_finish">Ukuskena kuphelile</string>
 	<string name="jumio_nfc_header_start">Beka kahle ipasipoti</string>
+	<string name="jumio_processing_title">Ihlola umphumela</string>
 	<string name="jumio_scanview_refocus">Kufiphele sicela uthathe kabusha</string>
 	<string name="jumio_start_button">Qala</string>
 	<string name="jumio_start_step_doc">Thumela idokhumenti yakho</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">Sondela</string>
 	<string name="iproov__prompt_yaw_too_high">Phendukela kancane kwesobunxele</string>
 	<string name="iproov__prompt_yaw_too_low">Phendukela kancane kwesokudla</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Iseshini yakho isiphelelwe yisikhathi</string>
+	<string name="jumio_di_retry_service_error">Ukuqinisekisa kuhlulekile</string>
+	<string name="jumio_di_retry_third_party_verification_error">Ukuqinisekisa kuhlulekile</string>
+	<string name="jumio_di_retry_unknown">Kukhona okungahambang kahle</string>
 	-->
 
 </resources>

@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Perk vir maksimum aantal PDF-bladsye oorskry</string>
 	<string name="jumio_dv_retry_size_limit">Perk vir maksimum PDF-grootte oorskry</string>
 	<string name="jumio_error_case_auth_failed">Verifikasie het misluk</string>
+	<string name="jumio_error_case_cancelled">Gekanselleer</string>
 	<string name="jumio_error_case_cancelled_by_user">Gekanselleer deur eindgebruiker</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Sertifikaat is nie meer geldig nie. Werk u program asseblief by.</string>
 	<string name="jumio_error_case_device_is_offline">Maak asseblief seker u is aanlyn</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">Kruis asseblief deur die paspoortnommer voor vaslegging</string>
 	<string name="jumio_id_scan_prompt_redact_kor">Kruis deur die tweede blok van u inwonersregistrasienommer voor vaslegging</string>
 	<string name="jumio_id_scan_prompt_redact_nld">Kruis asseblief deur u BSN voor vaslegging</string>
+	<string name="jumio_idtype_di">Digitale ID</string>
 	<string name="jumio_idtype_dl">Bestuurderslisensie</string>
 	<string name="jumio_idtype_id">Identiteitskaart</string>
 	<string name="jumio_idtype_pp">Paspoort</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">Besig om biometriese data te ontleed</string>
 	<string name="jumio_button_cancel">Kanselleer</string>
 	<string name="jumio_button_continue">Gaan voort</string>
+	<string name="jumio_button_okay">Goed</string>
 	<string name="jumio_button_retry">Probeer weer</string>
+	<string name="jumio_di_back_to_document_selection">Ons sal jou na dokumentseleksie terughelp.</string>
+	<string name="jumio_di_vendor_selection_title">Kies digitale-ID-verskaffer</string>
+	<string name="jumio_di_verification_prompt_processing">Voltooi asseblief die vloei op %s-app.</string>
 	<string name="jumio_dv_confirm_button_reselect">Herselekteer</string>
 	<string name="jumio_dv_confirm_file_info">Sorg dat u die regte PDF-lêer gekies het</string>
 	<string name="jumio_dv_confirm_file_title">Bevestig u lêer</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">Data word onttrek</string>
 	<string name="jumio_nfc_header_finish">Skandering voltooi</string>
 	<string name="jumio_nfc_header_start">Posisioneer u paspoort</string>
+	<string name="jumio_processing_title">Besig om resultaat te kontroleer</string>
 	<string name="jumio_scanview_refocus">Herfokus asseblief</string>
 	<string name="jumio_start_button">Begin</string>
 	<string name="jumio_start_step_doc">Dien u dokument in</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">Kom nader</string>
 	<string name="iproov__prompt_yaw_too_high">Draai effens na u linkerkant</string>
 	<string name="iproov__prompt_yaw_too_low">Draai effens na u regterkant</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">U sessie het verstryk</string>
+	<string name="jumio_di_retry_service_error">Verfiëring het misluk</string>
+	<string name="jumio_di_retry_third_party_verification_error">Verfiëring het misluk</string>
+	<string name="jumio_di_retry_unknown">Iets het skeefgeloop</string>
 	-->
 
 </resources>

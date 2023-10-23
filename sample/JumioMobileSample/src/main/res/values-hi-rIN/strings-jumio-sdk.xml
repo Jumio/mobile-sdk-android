@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">अधिकतम PDF पेज की सीमा पार हो गई</string>
 	<string name="jumio_dv_retry_size_limit">अधिकतम PDF साइज की सीमा पार हो गई</string>
 	<string name="jumio_error_case_auth_failed">प्रमाणीकरण विफल हो गया</string>
+	<string name="jumio_error_case_cancelled">रद्द</string>
 	<string name="jumio_error_case_cancelled_by_user">अंतिम उपयोगकर्ता द्वारा रद्द</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">प्रमाणपत्र अब मान्य नहीं है। कृपया अपने एप्लिकेशन को अपडेट करें</string>
 	<string name="jumio_error_case_device_is_offline">कृपया जांचें कि आप ऑनलाइन हैं</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">कृपया कैप्चर करने से पहले पासपोर्ट नंबर को संपादित करें</string>
 	<string name="jumio_id_scan_prompt_redact_kor">कैप्चर करने से पहले अपने निवासी रजिस्ट्रेशन नंबर का दूसरा ब्लॉक संपादित करें</string>
 	<string name="jumio_id_scan_prompt_redact_nld">कृपया कैप्चर करने से पहले अपने बीएसएन को संपादित करें</string>
+	<string name="jumio_idtype_di">डिजिटल आईडी</string>
 	<string name="jumio_idtype_dl">ड्राइवर लाइसेंस</string>
 	<string name="jumio_idtype_id">पहचान कार्ड</string>
 	<string name="jumio_idtype_pp">पासपोर्ट</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">बायोमेट्रिक डेटा का विश्लेषण किया जा रहा है</string>
 	<string name="jumio_button_cancel">रद्द करें</string>
 	<string name="jumio_button_continue">जारी रखें</string>
+	<string name="jumio_button_okay">ठीक</string>
 	<string name="jumio_button_retry">पुन: प्रयास करें</string>
+	<string name="jumio_di_back_to_document_selection">आपको दस्तावेज़ चयन पर वापस नेविगेट किया जाएगा।</string>
+	<string name="jumio_di_vendor_selection_title">डिजिटल आईडी प्रोवाइडर चुनें</string>
+	<string name="jumio_di_verification_prompt_processing">कृपया %s ऐप पर फ़्लो पूरा करें।</string>
 	<string name="jumio_dv_confirm_button_reselect">फिर से चुनें</string>
 	<string name="jumio_dv_confirm_file_info">सुनिश्चित करें कि आपने सही PDF फाइल चुनी है</string>
 	<string name="jumio_dv_confirm_file_title">अपनी फाइल को कंफर्म करें</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">डेटा निकालना</string>
 	<string name="jumio_nfc_header_finish">स्कैनिंग पूरी हुई</string>
 	<string name="jumio_nfc_header_start">अपना पासपोर्ट रखें</string>
+	<string name="jumio_processing_title">रिजल्ट चेक कर रहे हैं</string>
 	<string name="jumio_scanview_refocus">कृपया फिर से फोकस करें</string>
 	<string name="jumio_start_button">शुरू करें</string>
 	<string name="jumio_start_step_doc">अपना दस्तावेज़ सबमिट करें</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">थोड़ा और पास आएं</string>
 	<string name="iproov__prompt_yaw_too_high">अपनी बाईं ओर थोड़ा मुड़ें</string>
 	<string name="iproov__prompt_yaw_too_low">अपने दाहिने तरफ थोड़ा मुड़ें</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">आपका सत्र समाप्त हो गया है</string>
+	<string name="jumio_di_retry_service_error">सत्यापन विफल हो गया है।</string>
+	<string name="jumio_di_retry_third_party_verification_error">सत्यापन विफल हो गया है।</string>
+	<string name="jumio_di_retry_unknown">कुछ गलत हुआ</string>
 	-->
 
 </resources>

@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">បានលើសទំព័រកំណត់នៃឯកសារ PDF អតិបរមាហើយ</string>
 	<string name="jumio_dv_retry_size_limit">បានលើសទំហំកំណត់នៃឯកសា PDF អតិបរមាហើយ</string>
 	<string name="jumio_error_case_auth_failed">ការផ្ទៀងផ្ទាត់បានបរាជ័យ</string>
+	<string name="jumio_error_case_cancelled">លុបចោល</string>
 	<string name="jumio_error_case_cancelled_by_user">ត្រូវបានបោះបង់ដោយអ្នកប្រើចុងក្រោយ</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">វិញ្ញាបនបត្រលែងមានសុពលភាពទៀតហើយ។ សូមធ្វើបច្ចុប្បន្នភាពពាក្យសុំរបស់អ្នក</string>
 	<string name="jumio_error_case_device_is_offline">សូមពិនិត្យមើលថាអ្នកកំពុងអនឡាញ</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">សូមកែលេខលិខិតឆ្លងដែន មុននឹងថត</string>
 	<string name="jumio_id_scan_prompt_redact_kor">កែប្លុកទីពីរនៃលេខចុះបញ្ជីគេហជនរបស់អ្នកមុនពេលថត</string>
 	<string name="jumio_id_scan_prompt_redact_nld">សូមកែ BSN របស់អ្នកមុននឹងថត</string>
+	<string name="jumio_idtype_di">អត្តសញ្ញាណបណ្ណឌីជីថល</string>
 	<string name="jumio_idtype_dl">បណ្ណបើកបរ</string>
 	<string name="jumio_idtype_id">អត្តសញ្ញាណបណ្ណ</string>
 	<string name="jumio_idtype_pp">លិខិតឆ្លងដែន</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">កំពុងវិភាគទិន្នន័យជីវមាត្រ</string>
 	<string name="jumio_button_cancel">បោះបង់</string>
 	<string name="jumio_button_continue">បន្ត</string>
+	<string name="jumio_button_okay">យល់ព្រម</string>
 	<string name="jumio_button_retry">សូមព្យាយាមម្ដងទៀត</string>
+	<string name="jumio_di_back_to_document_selection">អ្នកនឹងរុករកត្រលប់មកកាន់ការជ្រើសរើសឯកសារវិញ។</string>
+	<string name="jumio_di_vendor_selection_title">ជ្រើសរើសអ្នកផ្ដល់សេវាកម្មអត្តសញ្ញាណបណ្ណឌីជីថល</string>
+	<string name="jumio_di_verification_prompt_processing">សូមបំពេញលំហូរការងារនៅលើកម្មវិធី %s។</string>
 	<string name="jumio_dv_confirm_button_reselect">ជ្រើសឡើងវិញ</string>
 	<string name="jumio_dv_confirm_file_info">ត្រូវប្រាកដថា អ្នកបានជ្រើសរើសឯកសារ PDF ត្រឹមត្រូវ</string>
 	<string name="jumio_dv_confirm_file_title">បញ្ជាក់ឯកសាររបស់អ្នក</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">កំពុងទាញទិន្នន័យចេញ</string>
 	<string name="jumio_nfc_header_finish">បានបញ្ចប់ការស្កេន</string>
 	<string name="jumio_nfc_header_start">កំណត់ទីតាំងលិខិតឆ្លងដែន</string>
+	<string name="jumio_processing_title">កំពុងពិនិត្យលទ្ធផល</string>
 	<string name="jumio_scanview_refocus">សូមផ្ដោតឡើងវិញ</string>
 	<string name="jumio_start_button">ចាប់ផ្តើម</string>
 	<string name="jumio_start_step_doc">ដាក់ឯកសាររបស់អ្នក</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">ខិតមកជិតជាងមុន</string>
 	<string name="iproov__prompt_yaw_too_high">ងាកទៅខាងឆ្វេងតិចៗ</string>
 	<string name="iproov__prompt_yaw_too_low">ងាកទៅខាងស្ដាំតិចៗ</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">រយៈពេលរបស់អ្នកបានផុតកំណត់ហើយ</string>
+	<string name="jumio_di_retry_service_error">ការផ្ទៀងផ្ទាត់បានបរាជ័យ</string>
+	<string name="jumio_di_retry_third_party_verification_error">ការផ្ទៀងផ្ទាត់បានបរាជ័យ</string>
+	<string name="jumio_di_retry_unknown">មានអ្វីមួយបានខុសពីប្រក្រតី</string>
 	-->
 
 </resources>

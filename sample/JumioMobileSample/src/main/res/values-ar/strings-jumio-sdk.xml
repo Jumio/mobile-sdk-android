@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">تم تجاوز الحد الأقصى لصفحة PDF</string>
 	<string name="jumio_dv_retry_size_limit">تم تجاوز الحد الأقصى لحجم PDF</string>
 	<string name="jumio_error_case_auth_failed">فشلت المصادقة</string>
+	<string name="jumio_error_case_cancelled">الغاء</string>
 	<string name="jumio_error_case_cancelled_by_user">تم إلغاؤه من قبل المستخدم النهائي</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">الشهادة لم تعد صالحة. يُرجى تحديث طلبك</string>
 	<string name="jumio_error_case_device_is_offline">يُرجى التحقق من أنك متصل بالإنترنت</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">يُرجى تعديل رقم جواز السفر قبل الالتقاط</string>
 	<string name="jumio_id_scan_prompt_redact_kor">قم بتعديل المجموعة الثانية لرقم تسجيل الإقامة الخاص بك قبل الالتقاط</string>
 	<string name="jumio_id_scan_prompt_redact_nld">يُرجى تعديل BSN الخاص بك قبل الالتقاط</string>
+	<string name="jumio_idtype_di">الهوية الرقمية</string>
 	<string name="jumio_idtype_dl">رخصة القيادة</string>
 	<string name="jumio_idtype_id">بطاقة الهوية</string>
 	<string name="jumio_idtype_pp">جواز السفر</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">تحليل البيانات البيومترية</string>
 	<string name="jumio_button_cancel">إلغاء</string>
 	<string name="jumio_button_continue">متابعة</string>
+	<string name="jumio_button_okay">موافق</string>
 	<string name="jumio_button_retry">حاول مجددًا</string>
+	<string name="jumio_di_back_to_document_selection">ستتم إعادتك إلى تحديد المستندات.</string>
+	<string name="jumio_di_vendor_selection_title">حدد مزود الهوية الرقمية</string>
+	<string name="jumio_di_verification_prompt_processing">يرجى استكمال سير العمل في تطبيق %s.</string>
 	<string name="jumio_dv_confirm_button_reselect">إعادة تحديد</string>
 	<string name="jumio_dv_confirm_file_info">تأكد من تحديد ملف PDF الصحيح</string>
 	<string name="jumio_dv_confirm_file_title">تأكيد ملفك</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">استخراج البيانات</string>
 	<string name="jumio_nfc_header_finish">اكتمل المسح</string>
 	<string name="jumio_nfc_header_start">ضع جواز سفرك</string>
+	<string name="jumio_processing_title">جارٍ التحقق من النتيجة</string>
 	<string name="jumio_scanview_refocus">يُرجى إعادة التركيز</string>
 	<string name="jumio_start_button">بدء</string>
 	<string name="jumio_start_step_doc">أرسل مستندك</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">اقترب</string>
 	<string name="iproov__prompt_yaw_too_high">انعطف ببطء إلى يسارك</string>
 	<string name="iproov__prompt_yaw_too_low">انعطف ببطء إلى يمينك</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">انتهت صلاحية جلستك</string>
+	<string name="jumio_di_retry_service_error">نأسف! فشل</string>
+	<string name="jumio_di_retry_third_party_verification_error">نأسف! فشل</string>
+	<string name="jumio_di_retry_unknown">وقع خطأ</string>
 	-->
 
 </resources>

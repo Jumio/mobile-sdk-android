@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2021 Jumio Corporation, all rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/holder_bg"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal">
+
+	<ScrollView
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="0.85"
+		android:gravity="start" >
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<TextView
+				android:id="@+id/tv_consent_item"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:textAppearance="@style/Jumio.TextAppearance.Body1" />
+
+		</LinearLayout>
+	</ScrollView>
+
+	<com.google.android.material.switchmaterial.SwitchMaterial
+		android:id="@+id/switch_consent_item"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="0.15"
+		android:saveEnabled="false"
+		android:visibility="gone" />
+
+	</LinearLayout>

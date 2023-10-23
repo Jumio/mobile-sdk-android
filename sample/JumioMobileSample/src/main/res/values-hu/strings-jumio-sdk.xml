@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">A PDF maximális oldalszámának korlátja túl lett lépve</string>
 	<string name="jumio_dv_retry_size_limit">A PDF maximális méretének korlátja túl lett lépve</string>
 	<string name="jumio_error_case_auth_failed">A hitelesítés sikertelen</string>
+	<string name="jumio_error_case_cancelled">Törölt</string>
 	<string name="jumio_error_case_cancelled_by_user">Végfelhasználó által megszakítva</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">A tanúsítvány már nem érvényes. Frissítse az alkalmazást</string>
 	<string name="jumio_error_case_device_is_offline">Ellenőrizze, hogy kapcsolódik-e az internethez.</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">A rögzítés előtt kérjük, rövidítse le az útlevél számát</string>
 	<string name="jumio_id_scan_prompt_redact_kor">A rögzítés előtt rövidítse le a lakossági regisztrációs szám második blokkját</string>
 	<string name="jumio_id_scan_prompt_redact_nld">A rögzítés előtt kérjük, rövidítse le a BSN számot</string>
+	<string name="jumio_idtype_di">Digitális azonosító</string>
 	<string name="jumio_idtype_dl">Vezetői engedély</string>
 	<string name="jumio_idtype_id">Személyi igazolvány</string>
 	<string name="jumio_idtype_pp">Útlevél</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">Biometrikus adatok elemzése</string>
 	<string name="jumio_button_cancel">Mégse</string>
 	<string name="jumio_button_continue">Tovább</string>
+	<string name="jumio_button_okay">Oké</string>
 	<string name="jumio_button_retry">Újra próbálkozás</string>
+	<string name="jumio_di_back_to_document_selection">Vissza fog térni a dokumentum kiválasztásához.</string>
+	<string name="jumio_di_vendor_selection_title">Digitális identitásszolgáltató kiválasztása</string>
+	<string name="jumio_di_verification_prompt_processing">Kérjük, menjen végig a folyamaton a(z) %s alkalmazásban.</string>
 	<string name="jumio_dv_confirm_button_reselect">Ismételt kiválasztás</string>
 	<string name="jumio_dv_confirm_file_info">Győződjön meg arról, hogy a megfelelő PDF-fájlt választotta ki</string>
 	<string name="jumio_dv_confirm_file_title">Erősítse meg a fájlt</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">Adatok kigyűjtése</string>
 	<string name="jumio_nfc_header_finish">A szkennelés befejeződött</string>
 	<string name="jumio_nfc_header_start">Állítsa be az útlevelet</string>
+	<string name="jumio_processing_title">Eredmény ellenőrzése</string>
 	<string name="jumio_scanview_refocus">Kérjük, koncentráljon újra</string>
 	<string name="jumio_start_button">Indítás</string>
 	<string name="jumio_start_step_doc">Küldje el a dokumentumot</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">Mozgassa közelebb</string>
 	<string name="iproov__prompt_yaw_too_high">Forduljon kissé balra</string>
 	<string name="iproov__prompt_yaw_too_low">Forduljon kissé jobbra</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">A munkamenete lejárt</string>
+	<string name="jumio_di_retry_service_error">Az ellenőrzés sikertelen</string>
+	<string name="jumio_di_retry_third_party_verification_error">Az ellenőrzés sikertelen</string>
+	<string name="jumio_di_retry_unknown">Valami hiba történt</string>
 	-->
 
 </resources>

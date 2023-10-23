@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Ограничението за максимален брой страници на PDF е надвишено</string>
 	<string name="jumio_dv_retry_size_limit">Ограничението за максимален размер на PDF е надвишено</string>
 	<string name="jumio_error_case_auth_failed">Удостоверяването не е успешно</string>
+	<string name="jumio_error_case_cancelled">Прекратена верификация</string>
 	<string name="jumio_error_case_cancelled_by_user">Отменено от крайния потребител</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Сертификатът вече не е валиден. Моля, актуализирайте приложението си.</string>
 	<string name="jumio_error_case_device_is_offline">Проверете дали сте онлайн</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">Скрийте номера на паспорта, преди да го заснемете</string>
 	<string name="jumio_id_scan_prompt_redact_kor">Скрийте втория блок от цифри на вашия граждански регистрационен номер, преди да го заснемете</string>
 	<string name="jumio_id_scan_prompt_redact_nld">Скрийте вашия BSN, преди да го заснемете.</string>
+	<string name="jumio_idtype_di">Цифрова самоличност</string>
 	<string name="jumio_idtype_dl">Шофьорска книжка</string>
 	<string name="jumio_idtype_id">Лична карта</string>
 	<string name="jumio_idtype_pp">Паспорт</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">Анализиране на биометричните данни</string>
 	<string name="jumio_button_cancel">Отмяна</string>
 	<string name="jumio_button_continue">Продължи</string>
+	<string name="jumio_button_okay">Добре</string>
 	<string name="jumio_button_retry">Опитайте отново</string>
+	<string name="jumio_di_back_to_document_selection">Ще се върнете обратно към избора на документ.</string>
+	<string name="jumio_di_vendor_selection_title">Доставчик на цифрова самоличност</string>
+	<string name="jumio_di_verification_prompt_processing">Моля, изпълнете процеса в приложението %s.</string>
 	<string name="jumio_dv_confirm_button_reselect">Повторен избор</string>
 	<string name="jumio_dv_confirm_file_info">Уверете се, че сте избрали правилния PDF файл</string>
 	<string name="jumio_dv_confirm_file_title">Потвърдете файла си</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">Извличане на данните</string>
 	<string name="jumio_nfc_header_finish">Сканирането завърши</string>
 	<string name="jumio_nfc_header_start">Позиционирайте паспорта</string>
+	<string name="jumio_processing_title">Проверка на резултата</string>
 	<string name="jumio_scanview_refocus">Моля, фокусирайте отново</string>
 	<string name="jumio_start_button">Старт</string>
 	<string name="jumio_start_step_doc">Подайте документа</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">Приближете се</string>
 	<string name="iproov__prompt_yaw_too_high">Обърнете се леко наляво</string>
 	<string name="iproov__prompt_yaw_too_low">Обърнете се леко надясно</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Сесията ви изтече</string>
+	<string name="jumio_di_retry_service_error">Проверката е неуспешна</string>
+	<string name="jumio_di_retry_third_party_verification_error">Проверката е неуспешна</string>
+	<string name="jumio_di_retry_unknown">Нещо се обърка</string>
 	-->
 
 </resources>

@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">超出最大 PDF 页数限制</string>
 	<string name="jumio_dv_retry_size_limit">超出最大 PDF 大小限制</string>
 	<string name="jumio_error_case_auth_failed">鉴权失败</string>
+	<string name="jumio_error_case_cancelled">取消</string>
 	<string name="jumio_error_case_cancelled_by_user">被最终用户取消</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">证书不再有效。请更新您的应用</string>
 	<string name="jumio_error_case_device_is_offline">请检查您是否在线</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">请在拍摄前遮挡护照号码</string>
 	<string name="jumio_id_scan_prompt_redact_kor">请在拍摄前遮挡您的居民登记号码的第二部分</string>
 	<string name="jumio_id_scan_prompt_redact_nld">请在拍摄前遮挡您的 BSN</string>
+	<string name="jumio_idtype_di">数字身份</string>
 	<string name="jumio_idtype_dl">驾驶证</string>
 	<string name="jumio_idtype_id">身份证</string>
 	<string name="jumio_idtype_pp">护照</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">正在分析生物计量数据</string>
 	<string name="jumio_button_cancel">取消</string>
 	<string name="jumio_button_continue">继续</string>
+	<string name="jumio_button_okay">确定</string>
 	<string name="jumio_button_retry">重试</string>
+	<string name="jumio_di_back_to_document_selection">您将导航回文档选择。</string>
+	<string name="jumio_di_vendor_selection_title">选择数字身份提供商</string>
+	<string name="jumio_di_verification_prompt_processing">请完成 %s 应用上的流程。</string>
 	<string name="jumio_dv_confirm_button_reselect">重新选择</string>
 	<string name="jumio_dv_confirm_file_info">确保您选择了正确的 PDF 文件</string>
 	<string name="jumio_dv_confirm_file_title">确认您的文件</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">正在提取数据</string>
 	<string name="jumio_nfc_header_finish">扫描完成</string>
 	<string name="jumio_nfc_header_start">放置护照</string>
+	<string name="jumio_processing_title">检查结果</string>
 	<string name="jumio_scanview_refocus">请重新聚焦</string>
 	<string name="jumio_start_button">开始</string>
 	<string name="jumio_start_step_doc">提交您的证件</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">靠近一点</string>
 	<string name="iproov__prompt_yaw_too_high">请稍微转向左侧</string>
 	<string name="iproov__prompt_yaw_too_low">请稍微转向右侧</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">您的会话已过期</string>
+	<string name="jumio_di_retry_service_error">验证失败了。</string>
+	<string name="jumio_di_retry_third_party_verification_error">验证失败了。</string>
+	<string name="jumio_di_retry_unknown">出错了</string>
 	-->
 
 </resources>

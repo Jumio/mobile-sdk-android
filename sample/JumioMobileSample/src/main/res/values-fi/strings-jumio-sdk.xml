@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">PDF-tiedosto ylittää sivujen enimmäismäärän</string>
 	<string name="jumio_dv_retry_size_limit">PDF-tiedosto ylittää enimmäiskoon</string>
 	<string name="jumio_error_case_auth_failed">Todennus epäonnistui</string>
+	<string name="jumio_error_case_cancelled">Peruttu</string>
 	<string name="jumio_error_case_cancelled_by_user">Loppukäyttäjän peruuttama</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Varmenne on vanhentunut. Päivitä sovelluksesi</string>
 	<string name="jumio_error_case_device_is_offline">Varmista, että olet yhteydessä internetiin</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">Peitä passin numero ennen kuvan tallentamista</string>
 	<string name="jumio_id_scan_prompt_redact_kor">Peitä asuinrekisterinumeron toinen osa ennen kuvan tallentamista</string>
 	<string name="jumio_id_scan_prompt_redact_nld">Peitä BSN ennen kuvan tallentamista</string>
+	<string name="jumio_idtype_di">Digitaalinen henkilöllisyystodistus</string>
 	<string name="jumio_idtype_dl">Ajokortti</string>
 	<string name="jumio_idtype_id">Henkilökortti</string>
 	<string name="jumio_idtype_pp">Passi</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">Biometrisia tietoja analysoidaan</string>
 	<string name="jumio_button_cancel">Peruuta</string>
 	<string name="jumio_button_continue">Jatka</string>
+	<string name="jumio_button_okay">Selvä</string>
 	<string name="jumio_button_retry">Yritä uudelleen</string>
+	<string name="jumio_di_back_to_document_selection">Sinut siiretään takaisin asiakirjan valintaan.</string>
+	<string name="jumio_di_vendor_selection_title">Valitse digitaalisen henkilöllisyystodistuksen tarjoaja</string>
+	<string name="jumio_di_verification_prompt_processing">Suorita prosessi %s-sovelluksessa.</string>
 	<string name="jumio_dv_confirm_button_reselect">Valitse uudelleen</string>
 	<string name="jumio_dv_confirm_file_info">Varmista, että olet valinnut oikean PDF-tiedoston</string>
 	<string name="jumio_dv_confirm_file_title">Vahvista tiedostosi</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">Tietoja poimitaan</string>
 	<string name="jumio_nfc_header_finish">Skannaus valmis</string>
 	<string name="jumio_nfc_header_start">Aseta passi</string>
+	<string name="jumio_processing_title">Tulosta tarkistetaan</string>
 	<string name="jumio_scanview_refocus">Tarkenna uudelleen</string>
 	<string name="jumio_start_button">Aloita</string>
 	<string name="jumio_start_step_doc">Lähetä asiakirjasi</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">Siirry lähemmäs</string>
 	<string name="iproov__prompt_yaw_too_high">Käänny jonkin verran vasemmalle</string>
 	<string name="iproov__prompt_yaw_too_low">Käänny jonkin verran oikealle</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Istuntosi on vanhentunut</string>
+	<string name="jumio_di_retry_service_error">Vahvistaminen epäonnistui</string>
+	<string name="jumio_di_retry_third_party_verification_error">Vahvistaminen epäonnistui</string>
+	<string name="jumio_di_retry_unknown">Jokin meni vikaan</string>
 	-->
 
 </resources>

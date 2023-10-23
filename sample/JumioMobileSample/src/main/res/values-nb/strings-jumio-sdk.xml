@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Maksimal PDF-sidegrense er overskredet</string>
 	<string name="jumio_dv_retry_size_limit">Maksimal PDF-størrelsesgrense er overskredet</string>
 	<string name="jumio_error_case_auth_failed">Godkjenning mislyktes</string>
+	<string name="jumio_error_case_cancelled">Avlyst</string>
 	<string name="jumio_error_case_cancelled_by_user">Avbrutt av sluttbruker</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Sertifikatet er ikke gyldig lenger. Oppdater søknaden din</string>
 	<string name="jumio_error_case_device_is_offline">Kontroller om du er online</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">Vennligst rediger passnummeret før du tar bildet</string>
 	<string name="jumio_id_scan_prompt_redact_kor">Rediger den andre blokken med registreringsnummeret ditt før du tar bildet</string>
 	<string name="jumio_id_scan_prompt_redact_nld">Rediger BSN-en før du tar bildet</string>
+	<string name="jumio_idtype_di">Digital-ID</string>
 	<string name="jumio_idtype_dl">Førerkort</string>
 	<string name="jumio_idtype_id">Identitetskort</string>
 	<string name="jumio_idtype_pp">Pass</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">Analysere biometriske data</string>
 	<string name="jumio_button_cancel">Avbryt</string>
 	<string name="jumio_button_continue">Fortsett</string>
+	<string name="jumio_button_okay">OK</string>
 	<string name="jumio_button_retry">Prøv igjen</string>
+	<string name="jumio_di_back_to_document_selection">Du vil sendes tilbake til dokumentvalget.</string>
+	<string name="jumio_di_vendor_selection_title">Velg leverandør av digital-ID</string>
+	<string name="jumio_di_verification_prompt_processing">Fullfør flyten i %s-appen.</string>
 	<string name="jumio_dv_confirm_button_reselect">Velg på nytt</string>
 	<string name="jumio_dv_confirm_file_info">Pass på at du har valgt riktig PDF-fil</string>
 	<string name="jumio_dv_confirm_file_title">Bekreft filen din</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">Henter ut data</string>
 	<string name="jumio_nfc_header_finish">Skanningen er fullført</string>
 	<string name="jumio_nfc_header_start">Plasser passet ditt</string>
+	<string name="jumio_processing_title">Sjekker resultatet</string>
 	<string name="jumio_scanview_refocus">Fokuser på nytt</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_step_doc">Send inn dokumentet ditt</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">Kom nærmere</string>
 	<string name="iproov__prompt_yaw_too_high">Vri deg litt til venstre</string>
 	<string name="iproov__prompt_yaw_too_low">Vri deg litt til høyre</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Økten din har utløpt</string>
+	<string name="jumio_di_retry_service_error">Bekreftelsen mislyktes</string>
+	<string name="jumio_di_retry_third_party_verification_error">Bekreftelsen mislyktes</string>
+	<string name="jumio_di_retry_unknown">Noe gikk galt</string>
 	-->
 
 </resources>

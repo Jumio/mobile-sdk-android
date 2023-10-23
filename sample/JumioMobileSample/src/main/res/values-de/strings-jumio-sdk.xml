@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Max. Seitenanzahl der PDF-Datei überschritten</string>
 	<string name="jumio_dv_retry_size_limit">Max. Größe der PDF-Datei überschritten</string>
 	<string name="jumio_error_case_auth_failed">Authentifizierung fehlgeschlagen</string>
+	<string name="jumio_error_case_cancelled">Abgebrochen</string>
 	<string name="jumio_error_case_cancelled_by_user">Beendet durch Benutzer</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Zertifikat nicht mehr gültig. Bitte aktualisieren Sie Ihre Applikation</string>
 	<string name="jumio_error_case_device_is_offline">Bitte prüfen Sie, ob Sie online sind</string>
@@ -19,6 +20,7 @@
 	<string name="jumio_id_scan_prompt_redact_deu_passport">Bitte verdecken Sie vor der Erkennung die Passnummer</string>
 	<string name="jumio_id_scan_prompt_redact_kor">Verdecken Sie vor der Erkennung den zweiten Teil Ihrer Resident Registration Number</string>
 	<string name="jumio_id_scan_prompt_redact_nld">Bitte verdecken Sie vor der Erkennung Ihre BSN</string>
+	<string name="jumio_idtype_di">Digitale ID</string>
 	<string name="jumio_idtype_dl">Führerschein</string>
 	<string name="jumio_idtype_id">Personalausweis</string>
 	<string name="jumio_idtype_pp">Reisepass</string>
@@ -45,7 +47,11 @@
 	<string name="jumio_analyzing_biometric">Biometrie-Daten werden analysiert</string>
 	<string name="jumio_button_cancel">Beenden</string>
 	<string name="jumio_button_continue">Weiter</string>
+	<string name="jumio_button_okay">Okay</string>
 	<string name="jumio_button_retry">Erneut versuchen</string>
+	<string name="jumio_di_back_to_document_selection">Sie kehren zur Dokumentauswahl zurück.</string>
+	<string name="jumio_di_vendor_selection_title">Digitaler ID-Anbieter</string>
+	<string name="jumio_di_verification_prompt_processing">Bitte vervollständigen Sie den Ablauf auf der %s-App.</string>
 	<string name="jumio_dv_confirm_button_reselect">Neu auswählen</string>
 	<string name="jumio_dv_confirm_file_info">Stellen Sie sicher, dass Sie die richtige PDF-Datei ausgewählt haben</string>
 	<string name="jumio_dv_confirm_file_title">Bestätigen Sie Ihre Datei</string>
@@ -163,6 +169,7 @@
 	<string name="jumio_nfc_header_extracting">Daten extrahieren</string>
 	<string name="jumio_nfc_header_finish">Scannen abgeschlossen</string>
 	<string name="jumio_nfc_header_start">Reisepass positionieren</string>
+	<string name="jumio_processing_title">Ergebnis wird überprüft</string>
 	<string name="jumio_scanview_refocus">Bitte neu fokussieren</string>
 	<string name="jumio_start_button">Starten</string>
 	<string name="jumio_start_step_doc">Reichen Sie Ihr Dokument ein</string>
@@ -224,6 +231,14 @@
 	<string name="iproov__prompt_too_far">Näher kommen</string>
 	<string name="iproov__prompt_yaw_too_high">Drehen Sie sich leicht nach links</string>
 	<string name="iproov__prompt_yaw_too_low">Drehen Sie sich leicht nach rechts</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Ihre Sitzung ist abgelaufen</string>
+	<string name="jumio_di_retry_service_error">Die Verifizierung ist fehlgeschlagen</string>
+	<string name="jumio_di_retry_third_party_verification_error">Die Verifizierung ist fehlgeschlagen</string>
+	<string name="jumio_di_retry_unknown">Es ist ein Fehler aufgetreten</string>
 	-->
 
 </resources>
