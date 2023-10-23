@@ -1,17 +1,15 @@
-![Jumio](docs/images/jumio_feature_graphic.jpg)
+![Header Graphic](docs/images/jumio_feature_graphic.jpg)
 
 [![Version](https://img.shields.io/github/v/release/Jumio/mobile-sdk-android?style=flat)](#release-notes)
 [![License](https://img.shields.io/badge/license-commercial-3D3D3D?style=flat)](#copyright)
 [![Platform](https://img.shields.io/badge/platform-Android-lightgrey?style=flat)](#general-requirements)
-[![Maven](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fmobile-sdk.jumio.com%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat)](#integration)
+[![Maven](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo.mobile.jumio.ai%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat)](#integration)
 [![API Level](http://img.shields.io/badge/API%20Level-19+-orange?style=flat)](#general-requirements)
 
 # Table of Contents
 - [Overview](#overview)
 - [Get Started](#get-started)
-    - [ID Verification](docs/integration_guide.md)
-    - [Authentication SDK](https://github.com/Jumio/mobile-sdk-android/blob/v3.9.2/docs/integration_authentication.md)
-    - [Document Verification SDK](https://github.com/Jumio/mobile-sdk-android/blob/v3.9.2/docs/integration_document-verification.md)
+    -  [Jumio SDK Integration](docs/integration_guide.md)
 - [Quickstart](#quickstart)
 - [Basics](#basics)
     - [General Requirements](#general-requirements)
@@ -20,10 +18,11 @@
     - [Integration](#integration)
     - [Proguard](#proguard)
     - [Language Localization](#language-localization)
-    - [Analytics with Datadog](#analytics-with-datadog)
+- [Analytics with Datadog](#analytics-with-datadog)
+- [Document Verification](#document-verification)
 - [Security](#security)
 - [Release Notes](#release-notes)
-- [Support](#support)
+- [Maintenance and Support](#maintenance-and-support)
 - [Code Documentation](https://jumio.github.io/mobile-sdk-android/)
 - [FAQ](docs/integration_faq.md)
 - [Known Issues](docs/known_issues.md)
@@ -33,29 +32,29 @@ The Jumio Software Development Kit (SDK) provides you with a set of tools and UI
 
 Onboard new users and easily verify their digital identities by making sure the IDs they provide are valid and authentic. Extract data from ID documents completely automatically and within seconds. Confirm that users really are who they say they are by having them take a quick selfie and match it to their respective documents. Jumio uses cutting-edge biometric technology such as 3D face mapping to make sure there is an actual, real-life person in front of the screen.
 
-![Menu Screen](docs/images/images_overview/menu_screen.jpg)  ![Scan Screen](docs/images/images_overview/intro_screen.jpg)  ![Confirm Screen](docs/images/images_overview/confirm_screen.jpg)
+![SDK Overview](docs/images/images_overview/images_overview.png)
 
 Using the Jumio SDK will allow you to create the best possible solution for your individual needs, providing you with a range of different services to choose from.
+
+-----
 
 # Get Started
 Please note that [basic setup](#basics) is required before continuing with the integration of any of the following services.
 
-## ID Verification
-ID Verification (formerly known as Netverify) is a secure and easy solution that allows you to establish the genuine identity of your users in your mobile application by verifying their passports and other government-issued IDs in real time. Very user-friendly and highly customizable, it makes onboarding new customers quick and simple.
+## Jumio SDK Integration
+Jumio KYX platform and related services are a secure and easy solution that allows you to establish the genuine identity of your users in your mobile application, by verifying their passports, government-issued IDs and actual liveness in real-time. Very user-friendly and highly customizable, it makes onboarding new customers quick and simple.
 
-- [Jumio Mobile SDK](docs/integration_guide.md)
+:arrow_right:&nbsp;&nbsp;[SDK INTEGRATION GUIDE](docs/integration_guide.md)    
+:arrow_right:&nbsp;&nbsp;[Changelog](docs/changelog.md)   
+:arrow_right:&nbsp;&nbsp;[Transition Guide](docs/transition_guide.md)   
 
-## Jumio Authentication
-Authentication is a cutting-edge biometric-based service that establishes digital identities of your users, simply by taking a selfie. Advanced 3D face mapping-technology quickly and securely authenticates users and their digital identities.
+#### Previous SDK Versions
+If you need information on older SDK versions, please refer to:    
+- [3.9.2](https://github.com/Jumio/mobile-sdk-android/tree/v3.9.2)
+- [3.9.1](https://github.com/Jumio/mobile-sdk-android/tree/v3.9.1)
+- [3.9.0](https://github.com/Jumio/mobile-sdk-android/tree/v3.9.0)
 
-- [Integration Authentication SDK (3.9.0, deprecated)](https://github.com/Jumio/mobile-sdk-android/blob/v3.9.0/docs/integration_authentication.md)
-- [Transition Guide Authentication SDK (3.9.0, deprecated)](https://github.com/Jumio/mobile-sdk-android/blob/v3.9.0/docs/transition-guide_authentication.md)
-
-## Jumio Document Verification
-Document Verification is a powerful solution that allows users to scan various types of documents quickly and easily in your mobile application. Data extraction is already supported for various document types, such as bank statements.
-
-- [Integration Document Verification SDK (3.9.2, deprecated)](https://github.com/Jumio/mobile-sdk-android/blob/v3.9.2/docs/integration_document-verification.md)
-- [Transition Guide Document Verification SDK (3.9.2, deprecated)](https://github.com/Jumio/mobile-sdk-android/blob/v3.9.2/docs/transition-guide_document-verification.md)
+-----
 
 # Quickstart
 This section provides a quick overview on how to get started with the [Android sample application](sample) that can be found here on Github. You will need a __commercial Jumio License__ to successfully run any of our examples; for details, contact sales@jumio.com. You will also need an up-to-date Android Studio version to open and try out the sample project.
@@ -85,15 +84,18 @@ If you haven't done so already, please refer to the [Authentication and Encrypti
 
 Once you start up the sample application, you'll be given the option of trying out the Jumio SDK. Click the hamburger menu in the top left corner to choose a service. Your application will also need camera permissions, which will be prompted for automatically once you try to start any of the services. If you deny camera permissions, you won't be able to use any of the services.
 
+-----
+
 # Basics
 
 ## General Requirements
 ⚠️&nbsp;&nbsp;__Android Deprecation Notice__  
-Please be aware that SDK 4.1.0 will be the last SDK version supporting Android 4.4 (API level 19). All subsequent SDK versions will require at least Android 5.0 "Lollipop" (API level 21).
+Please be aware that SDK 4.3.0 does not support Android 4.4 (API level 19) anymore.
 
 The minimum requirements for the SDK are:
-*	Android 4.4 (API level 19) or higher
-*	Internet connection
+* Android 5.0 "Lollipop" (API level 21) or higher
+* Internet connection
+* Jumio KYX
 
 The following architectures are supported in the SDK:
 *	ARMv7 processor with Neon
@@ -104,9 +106,11 @@ The following architectures are supported in the SDK:
 You will need a __commercial Jumio License__ to run any of our examples. For details, contact sales@jumio.com.
 
 ## Authentication and Encryption
-Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://github.com/Jumio/implementation-guides/blob/master/api-guide/api_guide.md) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Customer Portal.
+ℹ️&nbsp;&nbsp;__As of version 4.0.0 and onward, the SDK can only be used in combination with Jumio KYX. API v2 as well as using API token and secret to authenticate against the SDK will no longer be compatible.__
 
-Within the response of the [Account Creation](https://github.com/Jumio/implementation-guides/blob/master/api-guide/api_guide.md#account-creation) or [Account Update](https://github.com/Jumio/implementation-guides/blob/master/api-guide/api_guide.md#account-update) API, a SDK token is returned, which needs to be applied to initiate the mobile SDK.
+Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://jumio.github.io/kyx/integration-guide.html) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Customer Portal.
+
+Within the response of the [Account Creation](https://jumio.github.io/kyx/integration-guide.html#account-creation) or [Account Update](https://jumio.github.io/kyx/integration-guide.html#account-update) API, a SDK token is returned, which needs to be applied to initiate the mobile SDK.
 
 ### Basic Authentication (Deprecated)
 Previously, Basic Auth credentials were constructed using your API token as the User ID and your API secret as the password. You still can manage API token and secret in the Customer Portal under:
@@ -181,7 +185,7 @@ repositories {
 	exclusiveContent {
 		forRepository {
 			maven {
-				url 'https://mobile-sdk.jumio.com'
+				url 'https://repo.mobile.jumio.ai'
 			}
 		}
 		filter {
@@ -205,17 +209,35 @@ The following Proguard Keep rules have to be added to the Jumio Mobile SDK:
 ### Optional
 The following Proguard Keep rules have to be added to the Jumio Mobile SDK if the corresponding dependencies have been added:
 ```
+#Microblink
 -keep class com.microblink.** { *; }
 -keep class com.microblink.**$* { *; }
--keep public class com.iproov.sdk.IProov {public *; }
+-dontwarn com.microblink.**
 
+#IProov
+-keep public class com.iproov.sdk.IProov {public *; }
+-keep class com.iproov.** { *; }
+-keep class com.iproov.**$* { *; }
+-keep class com.google.protobuf.** { *; }
+-keep class com.google.protobuf.**$* { *; }
+-dontwarn com.google.protobuf.**
+-dontwarn com.tinder.**
+-dontwarn okhttp3.**
+-dontwarn okio.**
+
+#JMRTD
 -keep class org.jmrtd.** { *; }
 -keep class net.sf.scuba.** {*;}
 -keep class org.bouncycastle.** {*;}
 -keep class org.ejbca.** {*;}
+-dontwarn java.nio.**
+-dontwarn org.codehaus.**
+-dontwarn org.ejbca.**
+-dontwarn org.bouncycastle.**
+-dontwarn module-info
 ```
 
-Most of the Proguard settings are applied automatically, as they are defined as consumer Proguard rules within the SDK. The current rules can also be found in the [Sample app](sample/JumioMobileSample/).
+Most of the Proguard settings are applied automatically, as they are defined as consumer Proguard rules within the SDK. The current rules can also be found in the [Sample app](sample/JumioMobileSample/proguard-rules.pro).
 
 ## Language Localization
 Our SDK supports [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages. All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable [within our Sample application](sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml).
@@ -226,7 +248,7 @@ _Afrikaans, Arabic, Bulgarian, Chinese(Simplified), Chinese(Traditional), Croati
 
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or increase the __text size__ on their device. The accessibility strings that are used by TalkBack contain *accessibility* in their key and can be also modified in `strings.xml`.
 
-## Analytics With Datadog
+# Analytics With Datadog
 Analytic feedback and diagnostics enable us to continually improve our SDK and its performance, as well as investigate potential issues. With the Jumio SDK, we use [Datadog](https://github.com/DataDog/dd-sdk-android) as an optional tool to collect diagnostic information. Data collected includes specific SKD information like version numbers, started and finished SDK instances and scan workflows, thrown exceptions and error information, as well as other mobile events. Please note that gathering analytics data requires user consent due to legal regulations such as GDPR. The consent is granted when our MLA is accepted.
 
 To benefit from Datadog, add the following dependency to your `build.gradle` file:
@@ -238,18 +260,55 @@ To grant or revoke user consent, please use `JumioSDK.giveDataDogConsent(boolean
 
 ⚠️&nbsp;&nbsp;__Note:__ The use of the Datadog module is only possible if it is not already included in your application.
 
+# Document Verification
+As of Android SDK 4.3.0, Document Verification functionality is available.
+This functionality allows users to submit a number of different document types (e.g. a utility bill or bank statement) in digital form and verify the validity and authenticity of this document.
+
+Documents can be submitted using one of two ways: Taking a photo of the document or uploading a PDF file.
+For more details, please refer to our [integration guide](docs/integration_guide.md#jumio-document-credential).
+
+### Supported Documents:
+* BC (Birth certificate)
+* BS (Bank statement)
+* CAAP (Cash advance application)
+* CB (Council bill)
+* CC (Credit card)
+* CCS (Credit card statement)
+* CRC (Corporate resolution certificate)
+* CUSTOM
+* HCC (Health care card)
+* IC (Insurance card)
+* LAG (Lease agreement)
+* LOAP (Loan application)
+* MEDC (Medicare card)
+* MOAP (Mortgage application)
+* PB (Phone bill)
+* SEL (School enrollment letter)
+* SENC (Seniors card)
+* SS (Superannuation statement)
+* SSC (Social security card)
+* STUC (Student card)
+* TAC (Trade association card)
+* TR (Tax return)
+* UB (Utility bill)
+* VC (Voided check)
+* VT (Vehicle title)
+* WWCC (Working with children check)
+
+ℹ️&nbsp;&nbsp;__Note:__ To enable the use of this feature, please contact [Jumio support](#support).
+
+----
+
 # Security
 All SDK related traffic is sent over HTTPS using TLS and public key pinning. Additionally, the information itself within the transmission is also encrypted utilizing __Application Layer Encryption__ (ALE). ALE is a Jumio custom-designed security protocol that utilizes RSA-OAEP and AES-256 to ensure that the data cannot be read or manipulated even if the traffic was captured.
+
+----
 
 # Release Notes
 See our [Change Log](docs/changelog.md) for more information about our current SDK version and further details.
 
-# Support
-
-## Previous Version
-The previous release version 4.0.0 of the Jumio Mobile SDK is supported until 2022-06-07.
-
-When the support period has expired, bug fixes and technical support will no longer be provided. Current bugs are typically fixed in the upcoming versions. __Older SDK versions will keep functioning with our server until further notice,__ but we highly recommend that you always update to the latest version to benefit from SDK improvements and bug fixes.
+# Maintenance and Support
+Please refer to our [SDK maintenance and support policy](docs/maintenance_policy.md) for more information about Mobile SDK maintenance and support.
 
 ## Two-factor Authentication
 If you want to enable two-factor authentication for your Jumio Customer Portal, [contact us](https://support.jumio.com). Once enabled, users will be guided through the setup upon their first login to obtain a security code using the Google Authenticator app.

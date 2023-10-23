@@ -1,4 +1,4 @@
-// Copyright 2021 Jumio Corporation, all rights reserved.
+// Copyright 2022 Jumio Corporation, all rights reserved.
 package com.jumio.sample.kotlin
 
 import android.content.Intent
@@ -38,7 +38,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 	private lateinit var binding: ActivityMainBinding
 
 	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState) // Required for vector drawable compat handling https://stackoverflow.com/a/37864531/1297835
+		super.onCreate(savedInstanceState)
+
+		// Required for vector drawable compat handling https://stackoverflow.com/a/37864531/1297835
 		AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
 
 		binding = ActivityMainBinding.inflate(layoutInflater)
@@ -50,7 +52,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 		binding.btnStartCustom.setOnClickListener(this)
 
 		val drawerToggle = ActionBarDrawerToggle(
-			this, binding.drawerLayout, binding.toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+			this,
+			binding.drawerLayout,
+			binding.toolbar,
+			R.string.navigation_drawer_open,
+			R.string.navigation_drawer_close
 		)
 		binding.drawerLayout.addDrawerListener(drawerToggle)
 		drawerToggle.syncState()
@@ -77,9 +83,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 	 * @param requestCode the request code for the SDK
 	 */
 	private fun checkPermissions(requestCode: Int = PERMISSION_REQUEST_CODE) =
-		if (!JumioSDK.hasAllRequiredPermissions(this)) { //Acquire missing permissions.
+		if (!JumioSDK.hasAllRequiredPermissions(this)) { // Acquire missing permissions.
 			val mp = JumioSDK.getMissingPermissions(this)
-			ActivityCompat.requestPermissions(this, mp, requestCode) //The result is received in onRequestPermissionsResult.
+			ActivityCompat.requestPermissions(
+				this,
+				mp,
+				requestCode
+			) // The result is received in onRequestPermissionsResult.
 			false
 		} else {
 			true
@@ -87,7 +97,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 	override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
 		when (menuItem.itemId) {
-			R.id.nav_terms_conditions -> openLink("https://www.jumio.com/legal-information/privacy-policy")
+			R.id.nav_terms_of_use, R.id.nav_privacy_policy -> openLink(
+				"https://www.jumio.com/legal-information/privacy-policy/jumio-showcase-app-privacy-terms/"
+			) // ktlint-disable max-line-length
 			R.id.nav_licenses -> openLink("https://github.com/Jumio/mobile-sdk-android/tree/master/licenses")
 		}
 		binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -133,8 +145,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 					val dataCenter: String = binding.datacenterSpinner.selectedItem.toString()
 					intent.putExtra(JumioActivity.EXTRA_TOKEN, token)
 					intent.putExtra(JumioActivity.EXTRA_DATACENTER, dataCenter)
-					//The following intent extra can be used to customize the Theme of Default UI
-					//intent.putExtra(JumioActivity.EXTRA_CUSTOM_THEME, R.style.AppThemeCustomJumio)
+					// The following intent extra can be used to customize the Theme of Default UI
+					// intent.putExtra(JumioActivity.EXTRA_CUSTOM_THEME, R.style.AppThemeCustomJumio)
 					sdkForResultLauncher.launch(intent)
 				}
 			}
@@ -143,16 +155,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 	private val sdkForResultLauncher: ActivityResultLauncher<Intent> =
 		registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-			val jumioResult: JumioResult? = result.data?.getSerializableExtra(JumioActivity.EXTRA_RESULT) as JumioResult?
+			val jumioResult: JumioResult? =
+				result.data?.getSerializableExtra(JumioActivity.EXTRA_RESULT) as JumioResult?
 			Log.d(TAG, "AccountId: ${jumioResult?.accountId}")
 			Log.d(TAG, "WorkflowExecutionId: ${jumioResult?.workflowExecutionId}")
 
 			if (jumioResult?.isSuccess == true) {
 				jumioResult.credentialInfos?.forEach {
 					when (jumioResult.getResult(it)) {
-						is JumioIDResult -> { //check your id result here
+						is JumioIDResult -> { // check your id result here
 						}
-						is JumioFaceResult -> { //check your face result here
+						is JumioFaceResult -> { // check your face result here
 						}
 					}
 				}

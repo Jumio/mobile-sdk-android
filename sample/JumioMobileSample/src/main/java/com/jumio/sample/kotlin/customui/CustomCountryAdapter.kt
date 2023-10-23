@@ -1,4 +1,4 @@
-// Copyright 2021 Jumio Corporation, all rights reserved.
+// Copyright 2022 Jumio Corporation, all rights reserved.
 package com.jumio.sample.kotlin.customui
 
 import android.content.Context
@@ -8,7 +8,10 @@ import com.jumio.sdk.document.JumioDocument
 /**
  * Array adapter implementation for the country list spinner
  */
-class CustomCountryAdapter(context: Context, private val countryList: Map<String, List<JumioDocument>>) :
+class CustomCountryAdapter(
+	context: Context,
+	private val countryList: Map<String, List<JumioDocument>>
+) :
 	ArrayAdapter<String>(context, android.R.layout.simple_spinner_item) {
 
 	init {

@@ -1,3 +1,5 @@
+![Header Graphic](images/jumio_feature_graphic.jpg)
+
 # Known Issues
 
 ## Table of Contents

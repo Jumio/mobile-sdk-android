@@ -3,14 +3,18 @@
 
 	<item
 		android:id="@+id/nav_products"
-		android:title="@string/menu_products"></item>
+		android:title="@string/menu_products" />
 
 	<item android:title="@string/menu_legal_information">
 		<menu>
 			<item
-				android:id="@+id/nav_terms_conditions"
+				android:id="@+id/nav_terms_of_use"
 				android:icon="@drawable/ic_info"
-				android:title="@string/menu_terms_conditions" />
+				android:title="@string/menu_terms_of_use" />
+			<item
+				android:id="@+id/nav_privacy_policy"
+				android:icon="@drawable/ic_info"
+				android:title="@string/menu_privacy_policy" />
 			<item
 				android:id="@+id/nav_licenses"
 				android:icon="@drawable/ic_licenses"
