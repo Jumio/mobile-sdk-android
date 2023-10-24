@@ -1,11 +1,10 @@
 ![Header Graphic](images/jumio_feature_graphic.jpg)
 
-[![Version](https://img.shields.io/github/v/release/Jumio/mobile-sdk-android?style=flat)](../README.md#release-notes)
-[![API Doc](https://img.shields.io/github/v/release/Jumio/mobile-sdk-android?label=API%20doc&color=green&style=flat)](https://jumio.github.io/mobile-sdk-android/)
-[![License](https://img.shields.io/badge/license-commercial-3D3D3D?style=flat)](../README.md#copyright)
-[![Platform](https://img.shields.io/badge/platform-Android-lightgrey?style=flat)](../README.md#general-requirements)
-[![API Level](https://img.shields.io/badge/API%20level-21+-orange?style=flat)](../README.md#general-requirements)
-[![Maven](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo.mobile.jumio.ai%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat)](../README.md#integration)
+[![Version](https://img.shields.io/github/v/release/Jumio/mobile-sdk-android?style=flat)](#release-notes)
+[![License](https://img.shields.io/badge/license-commercial-3D3D3D?style=flat)](#copyright)
+[![Platform](https://img.shields.io/badge/platform-Android-lightgrey?style=flat)](#general-requirements)
+[![Maven](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo.mobile.jumio.ai%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat)](#integration)
+[![API Level](http://img.shields.io/badge/API%20Level-19+-orange?style=flat)](#general-requirements)
 
 [Improvement]: https://img.shields.io/badge/Improvement-green "Improvement shield"
 [Change]: https://img.shields.io/badge/Change-blue "Change shield"
@@ -16,93 +15,16 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 For detailed technical changes please refer to our [Transition Guide](transition_guide.md).
 
 ## Support Period
-Current SDK version: __4.8.1__
+Current SDK version: __4.2.1__
+The previous release version 4.1.0 of the Jumio Mobile SDK is supported until 2022-08-27.
 
-Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+When the support period has expired, bug fixes and technical support will no longer be provided. Current bugs are typically fixed in the upcoming versions. __Older SDK versions will keep functioning with our server until further notice,__ but we highly recommend you always update to the latest version to benefit from SDK improvements and bug fixes.
 
-## SDK Version: __4.8.1__
+## SDK Version: __4.2.1__
 ![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
-
-## SDK Version: __4.8.0__
-![Improvement] Managing Liveness dependencies to help better conversion [Identity Verification]
-
-## SDK Version: __4.7.1__
-![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
-
-## SDK Version: __4.7.0__
-![Improvement] Added support for [CameraX](https://developer.android.com/training/camerax)
-
-![Improvement] Datadog SDK version update to 2.0: Added possibility to have a dedicated Jumio Datadog instance
-
-![Improvement] Improved Jumio Liveness capturing experience [Identity Verification]
-
-![Change] Updated Jumio Liveness module [Identity Verification]
-
-![Change] Removed previous scanning functionalities, now all included in Autocatpure functionality [ID Verification]
-
-![Change] Removed Microblink barcode scanning, switched to MLkit [ID Verification]
-
-![Fix] Fixed Liveness customizaton bug [Identity Verification]
-
-## SDK Version: __4.6.1__
-![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
-
-## SDK Version: __4.6.0__
-![Improvement] Added Jumio Liveness module to enhance the Liveness user experience and interface (Identity Verification)
-
-![Improvement] Improved Liveness customization options (Identity Verification)
-
-## SDK Version: __4.5.1__
-![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
-
-## SDK Version: __4.5.0__
-![Improvement] Added possibility for users to verify their identity using [Digital Identity](../README.md#digital-identity) [ID Verification, Identity Verification]
-
-![Improvement] iProov SDK version update to 8.3.1 [Identity Verification]
-
-![Improvement] Improved user consent handling [ID Verification, Identity Verification]
-<details>     
-<summary>More details</summary>       
-
-### User consent
-User consent is now acquired for all users to ensure the accordance with biometric data protection laws. Please also refer to the [User Consent section](integration_faq.md#user-consent) in our FAQ.
-</details>   
-
-![Fix] Bug fixes: UI bugs, passport scanning issue for certain countries [ID Verification]
-
-## SDK Version: __4.4.2__
-![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
-
-## SDK Version: __4.4.1__
-
-![Fix] Bug fix: Internal crashes for certain edge cases
-
-## SDK Version: __4.4.0__
-
-![Improvement] Fully redesigned ID Autocapture experience - seamless capturing, precise guidance and faster user journey [ID Verification]
-
-![Improvement] Major iProov SDK version update to 8.0.3 - no more face scanning filter, improved UI and more customization options [Identity Verification]
-
-![Improvement] Mandatory NFC scanning option [ID Verification]
-
-![Fix] Bug fixes: UI bugs, internal crashes
-
-## SDK Version: __4.3.0__
-
-![Improvement] Autocapture functionality (introduced in SDK 4.2.0) is no longer in beta stage [ID Verification]
-
-![Improvement] [Document Verification](../README.md#document-verification) functionality added
-
-![Improvement] Improved user guidance: Clear distinction between scanning frontside or backside of ID document [ID Verification]
-
-![Change] iProov SDK version update to 7.5.0 [Identity Verification]
-
-![Change] The SDK's minSdkVersion has been increased to 21 (Lollipop). Please check the [Transition Guide](transition_guide.md) for details.
-
-![Fix] UI bugs, internal crashes [Identity Verification]
 
 ## SDK Version: __4.2.0__
-![Improvement] Alignment of previously existing scanning method and improved user experience through addition of Autocapture module (Beta) [ID Verification]
+![Improvement] Alignment of previously existing scanning method and improved user experience through addition of Generic ID Scanning module (Beta) [ID Verification]
 
 ![Improvement] Support for device fingerprint capability [ID Verification, Identity Verification]
 

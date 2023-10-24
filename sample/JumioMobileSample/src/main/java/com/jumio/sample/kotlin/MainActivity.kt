@@ -1,9 +1,8 @@
-// Copyright 2023 Jumio Corporation, all rights reserved.
-package com.jumio.sample
+// Copyright 2022 Jumio Corporation, all rights reserved.
+package com.jumio.sample.kotlin
 
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -19,8 +18,9 @@ import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.jumio.defaultui.JumioActivity
-import com.jumio.sample.customui.CustomUiActivity
+import com.jumio.sample.R
 import com.jumio.sample.databinding.ActivityMainBinding
+import com.jumio.sample.kotlin.customui.CustomUiActivity
 import com.jumio.sdk.JumioSDK
 import com.jumio.sdk.enums.JumioDataCenter
 import com.jumio.sdk.result.JumioFaceResult
@@ -28,7 +28,7 @@ import com.jumio.sdk.result.JumioIDResult
 import com.jumio.sdk.result.JumioResult
 
 private const val PERMISSION_REQUEST_CODE: Int = 303
-private const val TAG = "MainActivity"
+private val TAG = MainActivity::class.java.simpleName
 
 /**
  * Sample activity that handles the whole jumio sdk workflow for the custom ui approach
@@ -38,9 +38,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 	private lateinit var binding: ActivityMainBinding
 
 	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-
-		// Required for vector drawable compat handling https://stackoverflow.com/a/37864531/1297835
+		super.onCreate(savedInstanceState) // Required for vector drawable compat handling https://stackoverflow.com/a/37864531/1297835
 		AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
 
 		binding = ActivityMainBinding.inflate(layoutInflater)
@@ -52,11 +50,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 		binding.btnStartCustom.setOnClickListener(this)
 
 		val drawerToggle = ActionBarDrawerToggle(
-			this,
-			binding.drawerLayout,
-			binding.toolbar,
-			R.string.navigation_drawer_open,
-			R.string.navigation_drawer_close
+			this, binding.drawerLayout, binding.toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
 		)
 		binding.drawerLayout.addDrawerListener(drawerToggle)
 		drawerToggle.syncState()
@@ -69,12 +63,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 		binding.navView.itemIconTintList = null
 	}
 
-	@Deprecated("Deprecated in Java")
 	override fun onBackPressed() {
 		if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
 			binding.drawerLayout.closeDrawer(GravityCompat.START)
 		} else {
-			onBackPressedDispatcher.onBackPressed()
+			super.onBackPressed()
 		}
 	}
 
@@ -84,14 +77,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 	 * @param requestCode the request code for the SDK
 	 */
 	private fun checkPermissions(requestCode: Int = PERMISSION_REQUEST_CODE) =
-		if (!JumioSDK.hasAllRequiredPermissions(this)) {
-			// Acquire missing permissions.
+		if (!JumioSDK.hasAllRequiredPermissions(this)) { //Acquire missing permissions.
 			val mp = JumioSDK.getMissingPermissions(this)
-			ActivityCompat.requestPermissions(
-				this,
-				mp,
-				requestCode
-			) // The result is received in onRequestPermissionsResult.
+			ActivityCompat.requestPermissions(this, mp, requestCode) //The result is received in onRequestPermissionsResult.
 			false
 		} else {
 			true
@@ -99,9 +87,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 	override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
 		when (menuItem.itemId) {
-			R.id.nav_terms_of_use, R.id.nav_privacy_policy -> openLink(
-				"https://www.jumio.com/legal-information/privacy-policy/jumio-showcase-app-privacy-terms/"
-			)
+			R.id.nav_terms_of_use, R.id.nav_privacy_policy -> openLink("https://www.jumio.com/legal-information/privacy-policy/jumio-showcase-app-privacy-terms/")
 			R.id.nav_licenses -> openLink("https://github.com/Jumio/mobile-sdk-android/tree/master/licenses")
 		}
 		binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -140,22 +126,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 			when (it.id) {
 				R.id.btn_startCustom -> {
 					val dataCenter = JumioDataCenter.valueOf(binding.datacenterSpinner.selectedItem as String)
-					CustomUiActivity.start(
-						this,
-						sdkForResultLauncher,
-						token,
-						dataCenter
-						// The following parameter can be used to apply a custom theme:
-						// customTheme = R.style.AppThemeCustomJumio
-					)
+					CustomUiActivity.start(this, sdkForResultLauncher, token, dataCenter)
 				}
 				R.id.btn_startDefault -> {
 					val intent = Intent(this, JumioActivity::class.java)
 					val dataCenter: String = binding.datacenterSpinner.selectedItem.toString()
 					intent.putExtra(JumioActivity.EXTRA_TOKEN, token)
 					intent.putExtra(JumioActivity.EXTRA_DATACENTER, dataCenter)
-					// The following intent extra can be used to customize the Theme of Default UI
-					// intent.putExtra(JumioActivity.EXTRA_CUSTOM_THEME, R.style.AppThemeCustomJumio)
+					//The following intent extra can be used to customize the Theme of Default UI
+					//intent.putExtra(JumioActivity.EXTRA_CUSTOM_THEME, R.style.AppThemeCustomJumio)
 					sdkForResultLauncher.launch(intent)
 				}
 			}
@@ -164,25 +143,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 	private val sdkForResultLauncher: ActivityResultLauncher<Intent> =
 		registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-
-			val jumioResult = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-				result.data?.getSerializableExtra(JumioActivity.EXTRA_RESULT, JumioResult::class.java)
-			} else {
-				@Suppress("DEPRECATION")
-				result.data?.getSerializableExtra(JumioActivity.EXTRA_RESULT) as JumioResult?
-			}
-
+			val jumioResult: JumioResult? = result.data?.getSerializableExtra(JumioActivity.EXTRA_RESULT) as JumioResult?
 			Log.d(TAG, "AccountId: ${jumioResult?.accountId}")
 			Log.d(TAG, "WorkflowExecutionId: ${jumioResult?.workflowExecutionId}")
 
 			if (jumioResult?.isSuccess == true) {
 				jumioResult.credentialInfos?.forEach {
 					when (jumioResult.getResult(it)) {
-						is JumioIDResult -> {
-							// check your id result here
+						is JumioIDResult -> { //check your id result here
 						}
-						is JumioFaceResult -> {
-							// check your face result here
+						is JumioFaceResult -> { //check your face result here
 						}
 					}
 				}

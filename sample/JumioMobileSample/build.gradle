@@ -1,12 +1,12 @@
 buildscript {
-	ext.kotlin_version = "1.8.22"
+	ext.kotlin_version = "1.6.20"
 	repositories {
 		google()
 		mavenCentral()
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath "com.android.tools.build:gradle:7.4.2"
+		classpath "com.android.tools.build:gradle:7.2.0"
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 	}
 }
@@ -31,42 +31,43 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "4.8.1"
+	SDK_VERSION = "4.2.1"
 }
 
 dependencies {
-	implementation fileTree(dir: 'libs', include: '*.jar')
-
-	// Kotlin
-	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22"
-	// only for the sample code
-	implementation "androidx.activity:activity-ktx:1.7.2"
-	implementation "androidx.multidex:multidex:2.0.1"
-
 	// Jumio dependencies
 	implementation "com.jumio.android:core:${SDK_VERSION}"
-	implementation "com.jumio.android:docfinder:${SDK_VERSION}"
+	implementation "com.jumio.android:linefinder:${SDK_VERSION}"
+	// The Docfinder module is still in Beta and suspect to change in the next version. If you intend to use it in production, please contact Jumio Customer Service at support@jumio.com
+//	implementation "com.jumio.android:docfinder:${SDK_VERSION}"
+	implementation "com.jumio.android:mrz:${SDK_VERSION}"
 	implementation "com.jumio.android:nfc:${SDK_VERSION}"
+	implementation "com.jumio.android:barcode:${SDK_VERSION}"
 	implementation "com.jumio.android:barcode-mlkit:${SDK_VERSION}"
 	implementation "com.jumio.android:iproov:${SDK_VERSION}"
 	implementation "com.jumio.android:defaultui:${SDK_VERSION}"
 	implementation "com.jumio.android:datadog:${SDK_VERSION}"
 	implementation "com.jumio.android:devicerisk:${SDK_VERSION}"
-	implementation "com.jumio.android:digital-identity:${SDK_VERSION}"
-	implementation "com.jumio.android:liveness:${SDK_VERSION}"
-	implementation "com.jumio.android:camerax:${SDK_VERSION}"
+
+	//only for the sample code
+	implementation "androidx.activity:activity-ktx:1.4.0"
+
+	//Kotlin
+	implementation "androidx.multidex:multidex:2.0.1"
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+	implementation fileTree(dir: 'libs', include: '*.jar')
 }
 
 android {
-	compileSdkVersion 33
-	buildToolsVersion "33.0.1"
-	namespace "com.jumio.sample"
+	compileSdkVersion 31
+	buildToolsVersion "32.0.0"
 
 	defaultConfig {
 		versionCode 1
 		versionName "Jumio Sample"
-		minSdkVersion 21
-		targetSdkVersion 33
+		minSdkVersion 19
+		targetSdkVersion 31
 		multiDexEnabled true
 		vectorDrawables.useSupportLibrary true
 	}
@@ -96,7 +97,7 @@ android {
 		}
 		release {
 			minifyEnabled true
-			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 		}
 	}
 }

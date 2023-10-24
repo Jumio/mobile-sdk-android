@@ -18,23 +18,11 @@
 		<item name="colorSecondary">@color/colorSecondary</item>
 	</style>
 
-	<style name="Jumio.Widget.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
-		<item name="materialThemeOverlay">@style/AppTheme.ThemeOverlay.RadioButton</item>
-	</style>
-
-	<style name="AppTheme.ThemeOverlay.RadioButton" parent="">
-		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorControlActivated">@color/colorPrimary</item>
-		<item name="colorOnSurface">@color/colorPrimary</item>
-	</style>
-
 	<style name="AppThemeCustomJumio" parent="Theme.Jumio">
 		<item name="colorPrimary">#F2F233</item>
-		<item name="android:statusBarColor">#57ffc7</item>
 		<item name="jumio_background">#fffee0</item>
 		<item name="jumio_text_foreground">#1361BD</item>
 		<item name="jumio_navigation_icon">#EC407A</item>
-		<item name="jumio_navigation_icon_dark">#EC407A</item>
 
 		<item name="jumio_bubble_background">#bc2e41</item>
 		<item name="jumio_bubble_background_selected">#57ffc7</item>
@@ -64,8 +52,6 @@
 
 		<item name="jumio_scanview_shutter">#AC3D9A</item>
 		<item name="jumio_scanview_shutter_pressed">#E0E011</item>
-		<item name="jumio_scanview_shutter_dark">#AC3D9A</item>
-		<item name="jumio_scanview_shutter_dark_pressed">#E0E011</item>
 
 		<item name="jumio_loading_circle_plain">#FFCA28</item>
 		<item name="jumio_loading_circle_gradient_start">#04A7F3</item>
@@ -75,15 +61,9 @@
 		<item name="jumio_loading_circle_icon">#050202</item>
 
 		<!-- scan-overlay, iproov & nfc colors -->
-		<item name="jumio_face_animation_customization">@style/CustomFaceHelp</item>
 		<item name="jumio_overlay_customization">@style/CustomOverlay</item>
 		<item name="iproov_customization">@style/CustomIproov</item>
 		<item name="nfc_customization">@style/CustomNfc</item>
-	</style>
-
-	<style name="CustomFaceHelp" parent="Jumio.Face.Animation.Customization">
-		<!--Help screen colors-->
-		<item name="jumio_face_animation_foreground">#C31322</item>
 	</style>
 
 	<style name="CustomOverlay" parent="Jumio.Overlay.Customization">
@@ -91,10 +71,6 @@
 		<item name="jumio_scanOverlayFill">#60EDED3B</item>
 		<item name="jumio_scanOverlayTransparent">#ff0000ff</item>
 		<item name="jumio_scanBackground">#59FFFFFF</item>
-
-		<item name="jumio_scanOverlay_livenessStroke">#EDED3B</item>
-		<item name="jumio_scanOverlay_livenessStrokeAnimation">#FF5722</item>
-		<item name="jumio_scanOverlay_livenessStrokeAnimationCompleted">#C31322</item>
 	</style>
 
 	<style name="CustomNfc" parent="Nfc.Customization">
@@ -106,21 +82,24 @@
 	</style>
 
 	<style name="CustomIproov" parent="Iproov.Customization">
-		<!--Animation colors-->
-		<item name="iproov_filterForegroundColor">#3032b4</item>
-		<item name="iproov_filterBackgroundColor">#B6FFFFFF</item>
+		<!--Help screen colors-->
+		<item name="iproov_animation_foreground">#FF5722</item>
+		<item name="iproov_animation_background">#E0E011</item>
 		<!--Iproov scan colors-->
-		<item name="iproov_titleTextColor">#FF5722</item>
-		<item name="iproov_promptTextColor">#5C031D</item>
-		<item name="iproov_promptBackgroundColor">#ffff00</item>
-		<item name="iproov_promptRoundedCorners">false</item>
-		<item name="iproov_surroundColor">#3032b4</item>
-		<item name="iproov_closeButton_colorTint">#CC0000</item>
-		<item name="iproov_livenessAssurance_ovalStrokeColor">#ff55a1</item>
-		<item name="iproov_livenessAssurance_completedOvalStrokeColor">#FF5722</item>
+		<item name="iproov_backgroundColor">#ff0000ff</item>
+		<item name="iproov_lineColor">#3032b4</item>
+		<item name="iproov_headerTextColor">#FF5722</item>
+		<item name="iproov_headerBackgroundColor">#31bce1</item>
+		<item name="iproov_promptTextColor">#ff0000ff</item>
+		<item name="iproov_footerBackgroundColor">#ffff00</item>
+		<item name="iproov_livenessAssurance_primaryTintColor">#ff55a1</item>
+		<item name="iproov_livenessAssurance_secondaryTintColor">#CC0000</item>
 		<!--GPA specific colors-->
-		<item name="iproov_genuinePresenceAssurance_notReadyOvalStrokeColor">#060668</item>
-		<item name="iproov_genuinePresenceAssurance_readyOvalStrokeColor">#E91E63</item>
+		<item name="iproov_genuinePresenceAssurance_progressBarColor">#1e89a6</item>
+		<item name="iproov_genuinePresenceAssurance_notReadyTintColor">#42e242</item>
+		<item name="iproov_genuinePresenceAssurance_readyTintColor">#CffCCC</item>
+		<!-- Floating prompt on scan screen -->
+		<item name="iproov_floating_prompt_enabled">true</item>
 	</style>
 
 </resources>
