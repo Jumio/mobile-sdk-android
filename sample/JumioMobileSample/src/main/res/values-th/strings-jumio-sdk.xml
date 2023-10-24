@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">เกินขีดจำกัดหน้า PDF สูงสุด</string>
 	<string name="jumio_dv_retry_size_limit">เกินขีดจำกัดขนาด PDF สูงสุด</string>
 	<string name="jumio_error_case_auth_failed">การรับรองความถูกต้องล้มเหลว</string>
+	<string name="jumio_error_case_cancelled">ยก เลิก</string>
 	<string name="jumio_error_case_cancelled_by_user">ยกเลิกโดยผู้ใช้ปลายทาง</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">ใบรับรองใช้ไม่ได้อีกต่อไป กรุณาอัปเดตใบสมัครของคุณ</string>
 	<string name="jumio_error_case_device_is_offline">โปรดตรวจสอบว่าคุณออนไลน์อยู่</string>
@@ -14,11 +15,7 @@
 	<string name="jumio_error_case_no_camera_connection">การเข้าถึงกล้องถูกปิดใช้งาน</string>
 	<string name="jumio_error_case_ocr_failed">ไม่สามารถสแกนได้ในขณะนี้ โปรดติดต่อทีมสนับสนุน</string>
 	<string name="jumio_error_case_session_expired">เซสชันหมดอายุ</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_paper">โปรดตรวจสอบหมายเลขบัตรประชาชนก่อนจับภาพ</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_plastic">โปรดตรวจสอบเอกสารประจำตัวและหมายเลขเข้าถึงก่อนจับภาพ</string>
-	<string name="jumio_id_scan_prompt_redact_deu_passport">โปรดตรวจสอบหมายเลขหนังสือเดินทางก่อนจับภาพ</string>
-	<string name="jumio_id_scan_prompt_redact_kor">ตรวจสอบช่องที่สองของหมายเลขทะเบียนผู้พำนักก่อนจับภาพ</string>
-	<string name="jumio_id_scan_prompt_redact_nld">โปรดตรวจสอบ BSN ก่อนจับภาพ</string>
+	<string name="jumio_idtype_di">เอกสารประจำตัวดิจิทัล</string>
 	<string name="jumio_idtype_dl">ใบขับขี่</string>
 	<string name="jumio_idtype_id">บัตรประชาชน</string>
 	<string name="jumio_idtype_pp">หนังสือเดินทาง</string>
@@ -30,22 +27,17 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
-	<string name="jumio_accessibility_button_close">ปิด</string>
-	<string name="jumio_accessibility_flash_activate">เปิดแฟลช</string>
-	<string name="jumio_accessibility_flash_deactivate">ปิดแฟลช</string>
 	<string name="jumio_accessibility_nfc_description_start">โปรดตรวจสอบว่าบัตรประชาชนของคุณมีชิปหรือไม่ วางโทรศัพท์บนบัตรประชาชนตามที่แสดง</string>
 	<string name="jumio_accessibility_quit_scan">ออกจากการสแกน</string>
-	<string name="jumio_accessibility_scan_back">ย้อนกลับ</string>
-	<string name="jumio_accessibility_scan_close">ปิด</string>
 	<string name="jumio_accessibility_scan_help">เมนูช่วยเหลือ</string>
-	<string name="jumio_accessibility_scan_id_back">ด้านหลัง</string>
-	<string name="jumio_accessibility_scan_id_front">ด้านหน้า</string>
 	<string name="jumio_accessibility_scan_shutter_button">ถ่ายรูป</string>
 	<string name="jumio_accessibility_scan_switch_camera">สลับกล้อง</string>
 	<string name="jumio_analyzing_biometric">กำลังวิเคราะห์ข้อมูลชีวมิติ</string>
 	<string name="jumio_button_cancel">ยกเลิก</string>
-	<string name="jumio_button_continue">ดำเนินการต่อ</string>
 	<string name="jumio_button_retry">ลองอีกครั้ง</string>
+	<string name="jumio_di_back_to_document_selection">เราจะพาคุณกลับไปเลือกเอกสาร</string>
+	<string name="jumio_di_vendor_selection_title">เลือกผู้ให้บริการเอกสารประจำตัวดิจิทัล</string>
+	<string name="jumio_di_verification_prompt_processing">โปรดดำเนินการตามขั้นตอนในแอป %s</string>
 	<string name="jumio_dv_confirm_button_reselect">เลือกใหม่อีกครั้ง</string>
 	<string name="jumio_dv_confirm_file_info">ตรวจสอบให้แน่ใจว่าคุณเลือกไฟล์ PDF ที่ถูกต้อง</string>
 	<string name="jumio_dv_confirm_file_title">ยืนยันไฟล์ของคุณ</string>
@@ -58,13 +50,15 @@
 	<string name="jumio_dv_upload_tips_file_size">ขนาดไฟล์สูงสุด: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">จำนวนหน้าสูงสุด: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">เอกสารไม่ควรมีการป้องกันด้วยรหัสผ่าน</string>
+	<string name="jumio_error_button_retake_both">ถ่ายรูปใหม่ทั้งคู่</string>
+	<string name="jumio_error_button_retake_one">ถ่ายรูปใหม่</string>
 	<string name="jumio_error_button_retry">ลองอีกครั้ง</string>
 	<string name="jumio_error_connection_title">ข้อผิดพลาดการเชื่อมต่อ</string>
-	<string name="jumio_error_dialog_title">ข้อผิดพลาด</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_focus">ตรวจสอบให้แน่ใจว่าภาพอยู่ในโฟกัส</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">ถือเอกสารของคุณให้นิ่งขณะถ่ายภาพ</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">ตรวจสอบให้แน่ใจว่ารายละเอียดทั้งหมดในเอกสารของคุณนั้นอ่านออก</string>
 	<string name="jumio_error_instant_feedback_blurry_title">ภาพพร่ามัวเกินกว่าที่จะตรวจสอบได้</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">ต้องถ่ายรูปใหม่</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">โปรดลองอีกครั้งด้วยภาพสี</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">รูปภาพเป็นสำเนาสีขาวดำ</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">รูปภาพดูเหมือนจะเป็นสำเนาสี</string>
@@ -87,34 +81,34 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">ดูให้แน่ใจว่าถ่ายภาพเอกสารทั้งฉบับ</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">รูปภาพไม่ใช่เอกสารประจำตัวที่ถูกต้อง</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">คุณภาพของภาพไม่ดีพอที่จะตรวจสอบ</string>
-	<string name="jumio_error_instant_feedback_title">โปรดลองอีกครั้ง</string>
-	<string name="jumio_error_no_camera_connection">กล้องไม่พร้อมใช้งานในขณะนี้</string>
-	<string name="jumio_error_wrong_token">ไม่สามารถสแกนได้ในขณะนี้ โปรดติดต่อทีมสนับสนุน</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">ต้องถ่ายรูปใหม่</string>
 	<string name="jumio_id_confirm_button_confirm">ยืนยัน</string>
 	<string name="jumio_id_confirm_button_retry">ถ่ายใหม่</string>
 	<string name="jumio_id_confirm_paragraph">ตรวจสอบให้แน่ใจว่ารายละเอียดสามารถมองเห็นชัดเจนและอ่านออกได้</string>
 	<string name="jumio_id_confirm_title">ยืนยันภาพถ่ายของคุณ</string>
+	<string name="jumio_id_scan_guide_back_side">ถ่ายภาพด้านหลัง</string>
+	<string name="jumio_id_scan_guide_back_side_manually">ถ่ายภาพด้านหลังด้วยตัวเอง</string>
+	<string name="jumio_id_scan_guide_photo_side">ถ่ายภาพด้านรูปภาพ</string>
+	<string name="jumio_id_scan_guide_photo_side_manually">ถ่ายภาพด้านรูปภาพด้วยตัวเอง</string>
 	<string name="jumio_id_scan_hint_performance_fallback">การสแกนได้รับการปรับปรุงเพื่อให้อุปกรณ์มีประสิทธิภาพดีขึ้น</string>
 	<string name="jumio_id_scan_manual">ถ่ายภาพเอกสารของคุณ</string>
-	<string name="jumio_id_scan_manual_back">ถ่ายภาพด้านหลังบัตร</string>
 	<string name="jumio_id_scan_manual_tips">ดูให้แน่ใจว่าถ่ายภาพเอกสารทั้งฉบับ</string>
-	<string name="jumio_id_scan_prompt_barcode">วางบาร์โค้ดให้อยู่ตรงกลาง</string>
+	<string name="jumio_id_scan_prompt_back_captured">จับภาพด้านหลังแล้ว</string>
+	<string name="jumio_id_scan_prompt_capture_success">เข้าใจแล้ว</string>
 	<string name="jumio_id_scan_prompt_center_id">จัดเอกสารให้อยู่กึ่งกลาง</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">พลิกไปด้านหลัง</string>
+	<string name="jumio_id_scan_prompt_front_captured">จับภาพด้านหน้าแล้ว</string>
 	<string name="jumio_id_scan_prompt_hold_still">ถือนิ่ง ๆ…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">ถือตรง ๆ</string>
-	<string name="jumio_id_scan_prompt_initial_back">พลิกเอกสารประจำตัว</string>
-	<string name="jumio_id_scan_prompt_initial_linefinder">วางเอกสารของคุณให้อยู่ในกรอบ</string>
 	<string name="jumio_id_scan_prompt_move_closer">เข้ามาใกล้</string>
 	<string name="jumio_id_scan_prompt_processing">กำลังตรวจสอบภาพ…</string>
 	<string name="jumio_id_scan_prompt_too_close">ใกล้เกินไป</string>
-	<string name="jumio_id_scan_tips_barcode">เลื่อนกล้องเข้าไปใกล้บาร์โค้ด</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">ซูมไปที่บาร์โค้ดของคุณ</string>
 	<string name="jumio_id_scan_tips_button_fallback">ถ่ายภาพด้วยตนเอง</string>
-	<string name="jumio_id_scan_tips_button_fallback_old">การสแกนไม่ทํางาน</string>
 	<string name="jumio_id_scan_tips_button_retry">ลองอีกครั้ง</string>
 	<string name="jumio_id_scan_tips_focusing">ตรวจสอบให้แน่ใจว่าภาพอยู่ในโฟกัส</string>
 	<string name="jumio_id_scan_tips_glare">หลีกเลี่ยงการสะท้อนและแสงจ้า</string>
 	<string name="jumio_id_scan_tips_lighting">อย่าถ่ายภาพในที่มืด</string>
-	<string name="jumio_id_scan_tips_passport">จัดวางภาพซ้อนทับกับหน้าที่มีรูปภาพ</string>
 	<string name="jumio_id_scan_tips_placing">วางเอกสารประจำตัวบนพื้นผิวเรียบ</string>
 	<string name="jumio_id_scan_tips_title">เคล็ดลับ</string>
 	<string name="jumio_id_scan_tooltip">ต้องการความช่วยเหลือหรือไม่</string>
@@ -135,50 +129,53 @@
 	<string name="jumio_iproov_failure_generic_glare">หลีกเลี่ยงแสงสะท้อนและแสงจ้าบนกระจก</string>
 	<string name="jumio_iproov_failure_generic_light">ใบหน้าของคุณจะต้องสว่างสม่ำเสมอและโดดเด่นจากพื้นหลัง</string>
 	<string name="jumio_iproov_failure_generic_title">ไม่รู้จักใบหน้า</string>
-	<string name="jumio_iproov_intro_gpa">วางใบหน้าให้อยู่กลางกรอบและถือให้นิ่งขณะที่หน้าจอกะพริบ</string>
 	<string name="jumio_iproov_intro_la">วางใบหน้าให้อยู่กลางกรอบและทำตามคำแนะนำบนหน้าจอ</string>
+	<string name="jumio_liveness_prompt_no_target">วางให้ใบหน้าอยู่ในกรอบ</string>
+	<string name="jumio_liveness_prompt_success_another_shot">เข้าใจแล้ว! มาถ่ายรูปกันอีกสักรอบเถอะนะ</string>
+	<string name="jumio_liveness_prompt_too_close">ใกล้เกินไป</string>
+	<string name="jumio_liveness_prompt_too_far">เข้ามาใกล้</string>
 	<string name="jumio_loading_title">กำลังโหลด</string>
 	<string name="jumio_nfc_button_skip">ข้าม</string>
 	<string name="jumio_nfc_description_extracting">ถือนิ่ง ๆ ขณะสแกน</string>
 	<string name="jumio_nfc_description_start_other">เลื่อนโทรศัพท์ผ่านปกหน้าจนกว่าจะตรวจพบหนังสือเดินทางโดยอัตโนมัติ</string>
 	<string name="jumio_nfc_description_start_us">เลื่อนโทรศัพท์ผ่านด้านในของปกหลังจนกว่าจะตรวจพบหนังสือเดินทางโดยอัตโนมัติ</string>
-	<string name="jumio_nfc_enable_dialog_title">เปิดใช้งาน NFC</string>
 	<string name="jumio_nfc_general_error_dialog_title">สแกนไม่เสร็จสมบูรณ์</string>
 	<string name="jumio_nfc_header_extracting">กำลังแยกข้อมูล</string>
-	<string name="jumio_nfc_header_finish">การสแกนเสร็จสมบูรณ์</string>
 	<string name="jumio_nfc_header_start">วางหนังสือเดินทาง</string>
-	<string name="jumio_scanview_refocus">โปรดปรับโฟกัส</string>
+	<string name="jumio_processing_title">กำลังตรวจสอบผลลัพธ์</string>
 	<string name="jumio_start_button">เริ่ม</string>
 	<string name="jumio_start_step_doc">ส่งเอกสารของคุณ</string>
 	<string name="jumio_start_step_id">ถ่ายภาพเอกสารของคุณ</string>
 	<string name="jumio_start_step_identity">ถ่ายภาพตัวเอง</string>
-	<string name="jumio_start_step_ready">เตรียมเอกสารของคุณให้พร้อม</string>
-	<string name="jumio_start_title_plural">การตรวจสอบ\nใน %1$d ขั้นตอนง่าย ๆ</string>
-	<string name="jumio_start_title_singular">การยืนยันใน\n1 ขั้นตอนง่าย ๆ</string>
+	<string name="jumio_start_steps_title">มายืนยันตัวตนของคุณกัน</string>
 	<string name="jumio_uploading_success">อัปโหลดสำเร็จ</string>
 	<string name="jumio_uploading_title">กำลังอัปโหลด</string>
 	-->
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">ถืออุปกรณ์ไว้ข้างหน้าและมองไปที่หน้าจอ</string>
+	<string name="iproov__accessibility_prompt_scanning">กำลังสแกน</string>
 	<string name="iproov__error_camera">การเข้าถึงกล้องถูกปิดใช้งาน</string>
 	<string name="iproov__error_camera_permission_denied">การเข้าถึงกล้องถูกปิดใช้งาน</string>
 	<string name="iproov__error_capture_already_active">การจับภาพที่มีอยู่กําลังดําเนินการอยู่แล้ว</string>
 	<string name="iproov__error_device_not_supported">ไม่รองรับอุปกรณ์</string>
 	<string name="iproov__error_face_detector">ไม่รู้จักใบหน้า</string>
-	<string name="iproov__error_invalid_options_error">เกิดข้อผิดพลาดที่ไม่คาดคิด</string>
 	<string name="iproov__error_multi_window_mode_unsupported">แอปพลิเคชันอยู่ในโหมดหลายหน้าต่าง</string>
 	<string name="iproov__error_network">โปรดตรวจสอบว่าคุณออนไลน์อยู่</string>
-	<string name="iproov__error_no_listener_exception">เกิดข้อผิดพลาดที่ไม่คาดคิด</string>
 	<string name="iproov__error_server">โปรดตรวจสอบว่าคุณออนไลน์อยู่</string>
 	<string name="iproov__error_unexpected_error">เกิดข้อผิดพลาดที่ไม่คาดคิด</string>
-	<string name="iproov__failure_ambiguous_outcome">ผลลัพธ์คลุมเครือ</string>
-	<string name="iproov__failure_lighting_backlit">ตรวจพบแสงส่องจ้าจากด้านหลังคุณ</string>
-	<string name="iproov__failure_lighting_face_too_bright">ตรวจพบแสงมากเกินไปบนใบหน้าของคุณ</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">สภาพแวดล้อมมีแสงจ้าเกินไปหรือความสว่างหน้าจอต่ำเกินไป</string>
-	<string name="iproov__failure_lighting_too_dark">สภาพแวดล้อมของคุณมืดเกินไป</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">กรุณาอย่าพูดคุยขณะสแกน</string>
-	<string name="iproov__failure_motion_too_much_movement">กรุณาอย่าขยับขณะสแกน</string>
+	<string name="iproov__failure_eyes_closed">ลืมตาไว้</string>
+	<string name="iproov__failure_face_too_close">ขยับใบหน้าออกห่างหน้าจอ</string>
+	<string name="iproov__failure_face_too_far">ขยับใบหน้าเข้าใกล้หน้าจอ</string>
+	<string name="iproov__failure_misaligned_face">รักษาใบหน้าให้อยู่ในกรอบวงรี</string>
+	<string name="iproov__failure_not_supported">ไม่รองรับอุปกรณ์</string>
+	<string name="iproov__failure_obscured_face">นำสิ่งที่บดบังใบหน้าออก</string>
+	<string name="iproov__failure_sunglasses">ถอดแว่นกันแดด</string>
+	<string name="iproov__failure_too_bright">ย้ายไปที่ร่มกว่านี้</string>
+	<string name="iproov__failure_too_dark">ย้ายไปที่สว่างขึ้น</string>
+	<string name="iproov__failure_too_much_movement">อยู่นิ่งๆ</string>
+	<string name="iproov__failure_unknown">ลองอีกครั้ง</string>
 	<string name="iproov__failure_user_timeout">เซสชันของคุณหมดอายุ</string>
 	<string name="iproov__progress_assessing_genuine_presence">กำลังประเมินการแสดงตัวจริง…</string>
 	<string name="iproov__progress_assessing_liveness">กำลังประเมินตัวจริง…</string>
@@ -188,24 +185,26 @@
 	<string name="iproov__progress_identifying_face">กำลังระบุใบหน้า…</string>
 	<string name="iproov__progress_loading">กำลังโหลด…</string>
 	<string name="iproov__progress_streaming">กำลังสตรีม…</string>
-	<string name="iproov__progress_streaming_slow">การเชื่อมต่อของคุณช้า โปรดรอสักครู่ขณะที่เรากําลังประมวลผล</string>
-	<string name="iproov__prompt_align_face_accessibility">ถืออุปกรณ์ไว้ข้างหน้าและมองไปที่หน้าจอ</string>
-	<string name="iproov__prompt_genuine_presence_align_face">วางให้ใบหน้าอยู่ในกรอบ</string>
+	<string name="iproov__prompt_align_face">วางใบหน้าให้อยู่ในกรอบวงรี</string>
 	<string name="iproov__prompt_get_ready">เตรียมพร้อม…</string>
-	<string name="iproov__prompt_liveness_align_face">วางใบหน้าอยู่ในกรอบวงรี</string>
-	<string name="iproov__prompt_liveness_no_target">วางให้ใบหน้าอยู่ในกรอบ</string>
 	<string name="iproov__prompt_liveness_scan_completed">การสแกนเสร็จสมบูรณ์</string>
 	<string name="iproov__prompt_pitch_too_high">ถืออุปกรณ์ในระดับสายตา</string>
 	<string name="iproov__prompt_pitch_too_low">ถืออุปกรณ์ในระดับสายตา</string>
 	<string name="iproov__prompt_roll_too_high">อย่าเอียงศีรษะ</string>
 	<string name="iproov__prompt_roll_too_low">อย่าเอียงศีรษะ</string>
-	<string name="iproov__prompt_scanning">กำลังสแกน…</string>
-	<string name="iproov__prompt_tap_to_begin">แตะหน้าจอเพื่อเริ่มต้น</string>
 	<string name="iproov__prompt_too_bright">ย้ายไปที่ร่มกว่านี้</string>
 	<string name="iproov__prompt_too_close">ใกล้เกินไป</string>
 	<string name="iproov__prompt_too_far">เข้ามาใกล้</string>
 	<string name="iproov__prompt_yaw_too_high">หันซ้ายเล็กน้อย</string>
 	<string name="iproov__prompt_yaw_too_low">หันขวาเล็กน้อย</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">เซสชันของคุณหมดอายุ</string>
+	<string name="jumio_di_retry_service_error">การยืนยันล้มเหลว</string>
+	<string name="jumio_di_retry_third_party_verification_error">การยืนยันล้มเหลว</string>
+	<string name="jumio_di_retry_unknown">มีบางอย่างผิดพลาด</string>
 	-->
 
 </resources>

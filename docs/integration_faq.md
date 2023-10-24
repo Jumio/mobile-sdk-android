@@ -3,6 +3,7 @@
 # FAQ
 
 ## Table of Contents
+- [User Consent](#user-consent)
 - [Improve User Experience and Reduce Drop-off Rate](#improve-user-experience-and-reduce-drop-off-rate)
 - [Managing Errors](#managing-errors)
     - [Ad Blockers or Firewall](#ad-blockers-or-firewall)
@@ -20,7 +21,17 @@
 - [Java 8 Compatibility](#Java-8-compatibility)
 - [Overview of Scanning Methods](overview-of-scanning-methods)
 - [Glossary of Commonly Used Abbreviations](#glossary)
+- [Google Play Store Prominent Disclosure](#google-play-store-prominent-disclosure)
 - [Jumio Support](#jumio-support)
+
+## User Consent
+User consent is now acquired for all users to ensure the accordance with biometric data protection laws. Depending on the legal requirements, consent can be acquired in one of two ways: __Active__ or __passive__.
+
+For __active__ consent instances, the user needs to accept the consent items explicitly, e.g. by enabling a UI switch or checking a checkbox for each consent item. For __passive__ consent instances, it is enough to present the consent text and URL to the user. The user implicitly accepts the passive consent items by continuing with the journey.
+
+<img src="images/consent/consent_passive.jpg" alt="Acquiring passive user consent">
+<img src="images/consent/consent_active_unchecked.jpg" alt="Acquiring active user consent">
+<img src="images/consent/consent_active_checked.jpg" alt="Acquired active user consent">
 
 ## Improve User Experience and Reduce Drop-off Rate
 When evaluating user flows, one of the most commonly used metrics is the rate of drop-offs. At Jumio, we see considerable variance in drop-off rates across industries and customer implementations. For some implementations and industries, we see a higher rate of drop-offs on the first screens when compared with the average.
@@ -45,12 +56,12 @@ Not every error that is returned from the SDK should be treated the same. The er
 
 The following table highlights the most common error codes which are returned from the SDK and explains how to handle them appropriately in your application.
 
-|Code | Cause | Recommended Handling |
-|:---:|:------|:---------------------|
-| A[x][yyyy] | Caused by temporary network issues like a slow connection. | Advise to check the signal and retry the SDK journey. |
-| E[x][yyyy] | Flight mode is activated or no connection available. | The user should be asked to disable flight mode or to verify if the phone has proper signal. Advise to connect to WIFI and retry the SDK journey afterwards. |
-| G[0][0000] | The user pressed back or X to exit the SDK while no error view was presented. | Reasons for this could be manyfold. Often it might be due to the fact that the user didn't have his identity document at hand. Give the user the option to retry. |
-| J[x][yyyy] | The SDK journey was not completed within the session's max. lifetime. (The default is 15 minutes.) | The user should be informed about the timeout and be directed to start a new Jumio SDK session. |
+|    Code     | Cause                                                                                              | Recommended Handling                                                                                                                                              |
+|:-----------:|:---------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| A[xx][yyyy] | Caused by temporary network issues like a slow connection.                                         | Advise to check the signal and retry the SDK journey.                                                                                                             |
+| E[xx][yyyy] | Flight mode is activated or no connection available.                                               | The user should be asked to disable flight mode or to verify if the phone has proper signal. Advise to connect to WIFI and retry the SDK journey afterwards.      |
+| G[xx][0000] | The user pressed back or X to exit the SDK while no error view was presented.                      | Reasons for this could be manifold. Often it might be due to the fact that the user didn't have his identity document at hand. Give the user the option to retry. |
+| J[xx][yyyy] | The SDK journey was not completed within the session's max. lifetime. (The default is 15 minutes.) | The user should be informed about the timeout and be directed to start a new Jumio SDK session.                                                                   |
 
 ### Ad Blockers or Firewall
 End users might face the situation where they are connected to a network that can't reach our Jumio endpoints.
@@ -68,20 +79,19 @@ Depending on your specific needs, you may want to strip out unused functionality
 
 The following table shows a range of different product configurations with the size and modules that are linked for it. These measurements reflect the extra size that Jumio components add to your app download size and are based on our [sample application](../sample/JumioMobileSample/).
 
-| Product Configuration  | Size     | Modules      |
-|:-----------------------|:--------:|:------------:|
-| Base                   | 1.79 MB  | core         |
-| Base + Liveness        | 2.26 MB  | core, iproov |
-| Base + MRZ             | 3.16 MB  | core, mrz    |
-| Base + MRZ, Linefinder | 3.43 MB  | core, mrz, linefinder |
-| Base + MRZ, Linefinder, Barcode | 4.48 MB  | core, mrz, linefinder, barcode |
-| Base + MRZ, Linefinder, Barcode-Vision | 3.72 MB  | core, mrz, linefinder, barcode-vision |
-| Base + MRZ, Linefinder, Barcode, Liveness | 4.95 MB  | core, mrz, linefinder, barcode, iproov |
-| Base + MRZ, Linefinder, Barcode, NFC | 6.11 MB  | core, mrz, linefinder, barcode, nfc |
-| All (Custom UI only)   | 8.16 MB  | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk  |
-| Base + MRZ, Linefinder, Default UI | 3.84 MB  | core, mrz, linefinder, default-ui |
-| Base + MRZ, Linefinder, Default UI, DataDog | 4.35 MB  | core, mrz, linefinder, default-ui, datadog |
-| All (with Default UI)  | 8.97 MB  | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, default-ui, datadog  |
+| Product Configuration                        |   Size   |                                           Modules                                            |
+| :------------------------------------------- | :------: | :------------------------------------------------------------------------------------------: |
+| Base                                         | 2.67 MB  |                                             core                                             |
+| Base + iProov                                | 3.52 MB  |                                         core, iproov                                         |
+| Base + Autocapture                           | 4.21 MB  |                                       core, docfinder                                        |
+| Base + Autocapture, Barcode-Vision           | 4.51 MB  |                               core, docfinder, barcode-vision                                |
+| Base + Autocapture, Barcode-Vision, iProov   | 5.35 MB  |                               core, docfinder, barcode, iproov                               |
+| Base + Autocapture, Barcode-Vision, Liveness | 6.28 MB  |                              core, docfinder, barcode, liveness                              |
+| Base + Autocapture, Barcode-Vision, NFC      | 7.59 MB  |                                core, docfinder, barcode, nfc                                 |
+| All (Custom UI only)                         | 10.33 MB | core, docfinder, barcode-vision, iproov, nfc, devicerisk, digital-identity, camerax,liveness |
+| Base + Autocapture, Default UI               | 4.60 MB  |                                 core, docfinder, default-ui                                  |
+| Base + Autocapture, Default UI, Datadog      | 5.21 MB  |                             core, docfinder, default-ui, datadog                             |
+| All (with Default UI)                        | 11.17 MB |   core, docfinder, barcode-vision, iproov, nfc, devicerisk, default-ui, datadog, liveness    |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -104,7 +114,7 @@ defaultConfig {
 }
 ```
 
-It's also possible to manually provide a splitted apk on Google Play. The apk can be split based on the architecture if multiple apks should be uploaded to the Google Play Store. Google Play Store manages to deliver the appropriate apk for the device.
+It's also possible to manually provide a split apk on Google Play. The apk can be split based on the architecture if multiple apks should be uploaded to the Google Play Store. Google Play Store manages to deliver the appropriate apk for the device.
 ```
 splits {
 	abi {
@@ -204,17 +214,23 @@ Combines all previously existing scanning methods into one automatic, seamless e
 
 ![Autocapture Success](images/capturing_methods/autocapture_01.jpg)  ![Autocapture Scanning](images/capturing_methods/autocapture_02.jpg)
 
-#### Linefinder
+#### Linefinder (deprecated)
+***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
+instead.***
 Scanning using edge detection.
 
 ![Linefinder Empty](images/capturing_methods/linefinder_scanning_01.jpg)  ![Linefinder Document](images/capturing_methods/linefinder_scanning_02.jpg) ![Linefinder Processing](images/capturing_methods/linefinder_scanning_03.jpg)
 
-#### MRZ
+#### MRZ (deprecated)
+***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
+instead.***
 Data extraction from passports, some identity cards and some visas.
 
 ![MRZ Empty](images/capturing_methods/mrz_scanning_01.jpg)  ![MRZ Document](images/capturing_methods/mrz_scanning_02.jpg)
 
-#### Barcode
+#### Barcode (deprecated)
+***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
+instead.***
 PDF417 barcode data extraction, for example from US and Canadian driver licenses.
 
 ![Barcode Empty](images/capturing_methods/barcode_scanning_01.jpg)  ![Barcode Document](images/capturing_methods/barcode_scanning_02.jpg)
@@ -231,6 +247,9 @@ Data extraction from eMRTD documents, for example passports.
 
 ## Glossary
 A [quick guide to commonly used abbreviations](integration_glossary.md) throughout the documentation which may not be all that familiar.
+
+## Google Play Store Prominent Disclosure
+Some parts of the SDK might require prominent disclosure - please see the [Privacy Notice](integration_guide.md#privacy-notice) section in the Integration Guide for further details
 
 ## Jumio Support
 The Jumio development team is constantly striving to optimize the size of our frameworks while increasing functionality, to improve your KYC and to fight fraud. If you have any further questions, please reach out to our [support team](mailto:support@jumio.com).

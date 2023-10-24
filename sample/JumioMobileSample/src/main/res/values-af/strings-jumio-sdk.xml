@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Perk vir maksimum aantal PDF-bladsye oorskry</string>
 	<string name="jumio_dv_retry_size_limit">Perk vir maksimum PDF-grootte oorskry</string>
 	<string name="jumio_error_case_auth_failed">Verifikasie het misluk</string>
+	<string name="jumio_error_case_cancelled">Gekanselleer</string>
 	<string name="jumio_error_case_cancelled_by_user">Gekanselleer deur eindgebruiker</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Sertifikaat is nie meer geldig nie. Werk u program asseblief by.</string>
 	<string name="jumio_error_case_device_is_offline">Maak asseblief seker u is aanlyn</string>
@@ -14,11 +15,7 @@
 	<string name="jumio_error_case_no_camera_connection">Toegang tot kamera is gedeaktiveer</string>
 	<string name="jumio_error_case_ocr_failed">Skandering is tans nie beskikbaar nie; kontak asseblief die bystandspan</string>
 	<string name="jumio_error_case_session_expired">Sessie het verstryk</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_paper">Kruis asseblief deur die ID-nommer voor vaslegging</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_plastic">Kruis asseblief deur die ID- en toegangsnommer voor vaslegging</string>
-	<string name="jumio_id_scan_prompt_redact_deu_passport">Kruis asseblief deur die paspoortnommer voor vaslegging</string>
-	<string name="jumio_id_scan_prompt_redact_kor">Kruis deur die tweede blok van u inwonersregistrasienommer voor vaslegging</string>
-	<string name="jumio_id_scan_prompt_redact_nld">Kruis asseblief deur u BSN voor vaslegging</string>
+	<string name="jumio_idtype_di">Digitale ID</string>
 	<string name="jumio_idtype_dl">Bestuurderslisensie</string>
 	<string name="jumio_idtype_id">Identiteitskaart</string>
 	<string name="jumio_idtype_pp">Paspoort</string>
@@ -30,22 +27,17 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
-	<string name="jumio_accessibility_button_close">Sluit</string>
-	<string name="jumio_accessibility_flash_activate">Aktiveer flits</string>
-	<string name="jumio_accessibility_flash_deactivate">Deaktiveer flits</string>
 	<string name="jumio_accessibility_nfc_description_start">Kyk asseblief of u ID \'n skyfie het. Indien wel, plaas u foon op die ID soos geïllustreer.</string>
 	<string name="jumio_accessibility_quit_scan">Verlaat skandering</string>
-	<string name="jumio_accessibility_scan_back">Terug</string>
-	<string name="jumio_accessibility_scan_close">Sluit</string>
 	<string name="jumio_accessibility_scan_help">Hulpkieslys</string>
-	<string name="jumio_accessibility_scan_id_back">Agterkant</string>
-	<string name="jumio_accessibility_scan_id_front">Voorkant</string>
 	<string name="jumio_accessibility_scan_shutter_button">Neem \'n foto</string>
 	<string name="jumio_accessibility_scan_switch_camera">Verander van kamera</string>
 	<string name="jumio_analyzing_biometric">Besig om biometriese data te ontleed</string>
 	<string name="jumio_button_cancel">Kanselleer</string>
-	<string name="jumio_button_continue">Gaan voort</string>
 	<string name="jumio_button_retry">Probeer weer</string>
+	<string name="jumio_di_back_to_document_selection">Ons sal jou na dokumentseleksie terughelp.</string>
+	<string name="jumio_di_vendor_selection_title">Kies digitale-ID-verskaffer</string>
+	<string name="jumio_di_verification_prompt_processing">Voltooi asseblief die vloei op %s-app.</string>
 	<string name="jumio_dv_confirm_button_reselect">Herselekteer</string>
 	<string name="jumio_dv_confirm_file_info">Sorg dat u die regte PDF-lêer gekies het</string>
 	<string name="jumio_dv_confirm_file_title">Bevestig u lêer</string>
@@ -58,13 +50,15 @@
 	<string name="jumio_dv_upload_tips_file_size">Maksimum lêergrootte: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimum aantal bladsye: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument moenie met ‘n wagwoord beveilig wees nie</string>
+	<string name="jumio_error_button_retake_both">Neem albei weer</string>
+	<string name="jumio_error_button_retake_one">Neem weer</string>
 	<string name="jumio_error_button_retry">Probeer weer</string>
 	<string name="jumio_error_connection_title">Verbindingsfout</string>
-	<string name="jumio_error_dialog_title">Fout</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_focus">Maak seker foto is in fokus</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Hou u dokument stil wanneer u ’n foto neem</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Maak seker dat alle besonderhede op u dokument leesbaar is</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Die beeld is te onduidelik om te verifieer</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Beelde moet weer geneem word</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Probeer asseblief weer met ’n beeld in kleur</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Die beeld is ’n swart-en-wit-fotokopie</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Die beeld is blykbaar ’n kleurfotokopie</string>
@@ -87,34 +81,34 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Sorg dat die hele dokument vasgelê word</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Die beeld is nie ’n geldige vorm van identifikasie nie</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Die beeldgehalte is te swak om dit te verifieer</string>
-	<string name="jumio_error_instant_feedback_title">Probeer asb. weer</string>
-	<string name="jumio_error_no_camera_connection">Die kamera is tans nie beskikbaar nie</string>
-	<string name="jumio_error_wrong_token">Skandering is tans nie beskikbaar nie; kontak asseblief die bystandspan</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Beeld moet weer geneem word</string>
 	<string name="jumio_id_confirm_button_confirm">Bevestig</string>
 	<string name="jumio_id_confirm_button_retry">Neem weer af</string>
 	<string name="jumio_id_confirm_paragraph">Maak seker die besonderhede is duidelik sigbaar en leesbaar</string>
 	<string name="jumio_id_confirm_title">Bevestig u foto</string>
+	<string name="jumio_id_scan_guide_back_side">Neem die AGTERKANT af</string>
+	<string name="jumio_id_scan_guide_back_side_manually">Neem die AGTERKANT handmatig af</string>
+	<string name="jumio_id_scan_guide_photo_side">Neem die FOTOKANT af</string>
+	<string name="jumio_id_scan_guide_photo_side_manually">Neem die FOTOKANT handmatig af</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skandering geoptimaliseer vir beter prestasie van toestel</string>
 	<string name="jumio_id_scan_manual">Neem ’n foto van u dokument</string>
-	<string name="jumio_id_scan_manual_back">Neem ’n foto van die agterkant</string>
 	<string name="jumio_id_scan_manual_tips">Sorg dat die hele dokument vasgelê word</string>
-	<string name="jumio_id_scan_prompt_barcode">Plaas u strepieskode in die middel</string>
+	<string name="jumio_id_scan_prompt_back_captured">AGTERKANT vasgelê</string>
+	<string name="jumio_id_scan_prompt_capture_success">Het dit!</string>
 	<string name="jumio_id_scan_prompt_center_id">Sit u dokument in die middel</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Draai om na die AGTERKANT</string>
+	<string name="jumio_id_scan_prompt_front_captured">VOORKANT vasgelê</string>
 	<string name="jumio_id_scan_prompt_hold_still">Hou u stil…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Hou u reguit</string>
-	<string name="jumio_id_scan_prompt_initial_back">Draai u ID om</string>
-	<string name="jumio_id_scan_prompt_initial_linefinder">Omraam u dokument</string>
 	<string name="jumio_id_scan_prompt_move_closer">Kom nader</string>
 	<string name="jumio_id_scan_prompt_processing">Besig om beeld te kontroleer …</string>
 	<string name="jumio_id_scan_prompt_too_close">Te naby</string>
-	<string name="jumio_id_scan_tips_barcode">Beweeg kamera nader aan strepieskode</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Zoem in op u strepieskode</string>
 	<string name="jumio_id_scan_tips_button_fallback">Neem foto handmatig</string>
-	<string name="jumio_id_scan_tips_button_fallback_old">Skandeerfunksie werk nie</string>
 	<string name="jumio_id_scan_tips_button_retry">Probeer weer</string>
 	<string name="jumio_id_scan_tips_focusing">Maak seker foto is in fokus</string>
 	<string name="jumio_id_scan_tips_glare">Vermy weerkaatsings en skynsels</string>
 	<string name="jumio_id_scan_tips_lighting">Moenie foto in die donker neem nie</string>
-	<string name="jumio_id_scan_tips_passport">Bring oorlegsel in lyn met die fotobladsy</string>
 	<string name="jumio_id_scan_tips_placing">Plaas ID op ’n plat oppervlak</string>
 	<string name="jumio_id_scan_tips_title">Wenke</string>
 	<string name="jumio_id_scan_tooltip">Hulp nodig?</string>
@@ -135,50 +129,53 @@
 	<string name="jumio_iproov_failure_generic_glare">Vermy weerkaatsings en skynsels op ‘n bril</string>
 	<string name="jumio_iproov_failure_generic_light">U gesig moet egalig belig wees en teen die agtergrond uitstaan</string>
 	<string name="jumio_iproov_failure_generic_title">Gesig nie herken nie</string>
-	<string name="jumio_iproov_intro_gpa">Sit u gesig in die middel van die raam en hou dit stil terwyl die skerm flits.</string>
 	<string name="jumio_iproov_intro_la">Sit u gesig in die middel van die raam en volg die instruksies op die skerm.</string>
+	<string name="jumio_liveness_prompt_no_target">Sit u gesig in die raam</string>
+	<string name="jumio_liveness_prompt_success_another_shot">Daarsy! Kom ons neem nog ’n skoot</string>
+	<string name="jumio_liveness_prompt_too_close">Te naby</string>
+	<string name="jumio_liveness_prompt_too_far">Kom nader</string>
 	<string name="jumio_loading_title">Besig om te laai</string>
 	<string name="jumio_nfc_button_skip">Huppel</string>
 	<string name="jumio_nfc_description_extracting">Hou stil tydens skandering</string>
 	<string name="jumio_nfc_description_start_other">Skuif foon oor die voorblad totdat u paspoort outomaties bespeur word</string>
 	<string name="jumio_nfc_description_start_us">Skuif foon oor die binnekant van die agterblad totdat u paspoort outomaties bespeur word</string>
-	<string name="jumio_nfc_enable_dialog_title">Aktiveer NFC</string>
 	<string name="jumio_nfc_general_error_dialog_title">Skandering onvoltooi</string>
 	<string name="jumio_nfc_header_extracting">Data word onttrek</string>
-	<string name="jumio_nfc_header_finish">Skandering voltooi</string>
 	<string name="jumio_nfc_header_start">Posisioneer u paspoort</string>
-	<string name="jumio_scanview_refocus">Herfokus asseblief</string>
+	<string name="jumio_processing_title">Besig om resultaat te kontroleer</string>
 	<string name="jumio_start_button">Begin</string>
 	<string name="jumio_start_step_doc">Dien u dokument in</string>
 	<string name="jumio_start_step_id">Neem ’n foto van u dokument</string>
 	<string name="jumio_start_step_identity">Neem \'n selfie</string>
-	<string name="jumio_start_step_ready">Kry u dokument gereed</string>
-	<string name="jumio_start_title_plural">Verifikasie\nin %1$d eenvoudige stappe</string>
-	<string name="jumio_start_title_singular">Verifiëring\nin 1 eenvoudige stap</string>
+	<string name="jumio_start_steps_title">Kom ons kry u geverifieer</string>
 	<string name="jumio_uploading_success">Oplaai was suksesvol</string>
 	<string name="jumio_uploading_title">Besig om op te laai</string>
 	-->
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Hou die toesstel voor jou gesig en kyk na die skerm</string>
+	<string name="iproov__accessibility_prompt_scanning">Skandeer tans</string>
 	<string name="iproov__error_camera">Toegang tot kamera is gedeaktiveer</string>
 	<string name="iproov__error_camera_permission_denied">Toegang tot kamera is gedeaktiveer</string>
 	<string name="iproov__error_capture_already_active">’n Bestaande vaslegging is reeds aan die gang</string>
 	<string name="iproov__error_device_not_supported">Toestel word nie ondersteun nie</string>
 	<string name="iproov__error_face_detector">Gesig nie herken nie</string>
-	<string name="iproov__error_invalid_options_error">Daar was ’n onverwagse fout</string>
 	<string name="iproov__error_multi_window_mode_unsupported">Toepassing is in multivenstermodus</string>
 	<string name="iproov__error_network">Maak asseblief seker u is aanlyn</string>
-	<string name="iproov__error_no_listener_exception">Daar was ’n onverwagse fout</string>
 	<string name="iproov__error_server">Maak asseblief seker u is aanlyn</string>
 	<string name="iproov__error_unexpected_error">Daar was ’n onverwagse fout</string>
-	<string name="iproov__failure_ambiguous_outcome">Dubbelsinnige resultaat</string>
-	<string name="iproov__failure_lighting_backlit">Sterk ligbron agter u bespeur</string>
-	<string name="iproov__failure_lighting_face_too_bright">Te veel lig op u gesig bespeur</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Omgewingslig te sterk of skermhelderheid te laag</string>
-	<string name="iproov__failure_lighting_too_dark">U omgewing blyk te donker te wees</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Moet asb. nie tydens skandering praat nie</string>
-	<string name="iproov__failure_motion_too_much_movement">Moet asb. nie tydens skandering beweeg nie</string>
+	<string name="iproov__failure_eyes_closed">Hou jou oë oop</string>
+	<string name="iproov__failure_face_too_close">Skuif jou gesig verder van die skerm</string>
+	<string name="iproov__failure_face_too_far">Skuif jou gesig nader aan die skerm</string>
+	<string name="iproov__failure_misaligned_face">Hou jou gesig in die ovaal</string>
+	<string name="iproov__failure_not_supported">Toestel word nie ondersteun nie</string>
+	<string name="iproov__failure_obscured_face">Verwyder enige gesigbedekkings</string>
+	<string name="iproov__failure_sunglasses">Verwyder sonbril</string>
+	<string name="iproov__failure_too_bright">Skuif iewers heen waar dit donkerder is</string>
+	<string name="iproov__failure_too_dark">Skuif iewers heen waar daar meer lig is</string>
+	<string name="iproov__failure_too_much_movement">Hou stil</string>
+	<string name="iproov__failure_unknown">Probeer weer</string>
 	<string name="iproov__failure_user_timeout">U sessie het verstryk</string>
 	<string name="iproov__progress_assessing_genuine_presence">Bepaal werlike teenwoordigheid…</string>
 	<string name="iproov__progress_assessing_liveness">Bepaal lewendigheid…</string>
@@ -188,24 +185,26 @@
 	<string name="iproov__progress_identifying_face">Identifiseer gesig…</string>
 	<string name="iproov__progress_loading">Laai</string>
 	<string name="iproov__progress_streaming">Stroom…</string>
-	<string name="iproov__progress_streaming_slow">U netwerk kan dalk lyk of dit stadig is. Wag asb. terwyl ons verwerk.</string>
-	<string name="iproov__prompt_align_face_accessibility">Hou die toestel voor u gesig en kyk na die skerm</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Sit u gesig in die raam</string>
+	<string name="iproov__prompt_align_face">Sit jou gesig in die ovaal</string>
 	<string name="iproov__prompt_get_ready">Maak gereed …</string>
-	<string name="iproov__prompt_liveness_align_face">Vul die ovaal met u gesig</string>
-	<string name="iproov__prompt_liveness_no_target">Sit u gesig in die raam</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skandering voltooi</string>
 	<string name="iproov__prompt_pitch_too_high">Hou toestel op ooghoogte</string>
 	<string name="iproov__prompt_pitch_too_low">Hou toestel op ooghoogte</string>
 	<string name="iproov__prompt_roll_too_high">Moenie u kop skuins hou nie</string>
 	<string name="iproov__prompt_roll_too_low">Moenie u kop skuins hou nie</string>
-	<string name="iproov__prompt_scanning">Skandeer tans …</string>
-	<string name="iproov__prompt_tap_to_begin">Tik die skerm om te begin</string>
 	<string name="iproov__prompt_too_bright">Gaan staan iewers met meer skaduwee</string>
 	<string name="iproov__prompt_too_close">Te naby</string>
 	<string name="iproov__prompt_too_far">Kom nader</string>
 	<string name="iproov__prompt_yaw_too_high">Draai effens na u linkerkant</string>
 	<string name="iproov__prompt_yaw_too_low">Draai effens na u regterkant</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">U sessie het verstryk</string>
+	<string name="jumio_di_retry_service_error">Verfiëring het misluk</string>
+	<string name="jumio_di_retry_third_party_verification_error">Verfiëring het misluk</string>
+	<string name="jumio_di_retry_unknown">Iets het skeefgeloop</string>
 	-->
 
 </resources>

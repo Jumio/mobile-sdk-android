@@ -19,21 +19,40 @@
 #   public *;
 #}
 
+#Jumio
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
--keep class com.microblink.** { *; }
--keep class com.microblink.**$* { *; }
--keep public class com.iproov.sdk.IProov {public *; }
+-dontwarn javax.annotation.Nullable
+-dontwarn org.jetbrains.annotations.ApiStatus$Internal
+-dontwarn org.jetbrains.annotations.ApiStatus$ScheduledForRemoval
 
+#Tensorflow
+-keep class org.tensorflow.** { *; }
+-keep class org.tensorflow.**$* { *; }
+-dontwarn org.tensorflow.**
+
+#IProov
+-keep public class com.iproov.sdk.IProov {public *; }
+-keep class com.iproov.** { *; }
+-keep class com.iproov.**$* { *; }
+-keep class com.google.protobuf.** { *; }
+-keep class com.google.protobuf.**$* { *; }
+-dontwarn com.google.protobuf.**
+-dontwarn com.tinder.**
+-dontwarn okhttp3.**
+-dontwarn okio.**
+
+#Datadog
+-keep class com.datadog.** { *; }
+-keep class com.datadog.**$* { *; }
+
+#JMRTD
 -keep class org.jmrtd.** { *; }
 -keep class net.sf.scuba.** {*;}
 -keep class org.bouncycastle.** {*;}
 -keep class org.ejbca.** {*;}
-
 -dontwarn java.nio.**
 -dontwarn org.codehaus.**
 -dontwarn org.ejbca.**
 -dontwarn org.bouncycastle.**
 -dontwarn module-info
--dontwarn com.microblink.**
--dontwarn javax.annotation.Nullable

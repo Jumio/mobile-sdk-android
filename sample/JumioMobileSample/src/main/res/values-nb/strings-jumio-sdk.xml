@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Maksimal PDF-sidegrense er overskredet</string>
 	<string name="jumio_dv_retry_size_limit">Maksimal PDF-størrelsesgrense er overskredet</string>
 	<string name="jumio_error_case_auth_failed">Godkjenning mislyktes</string>
+	<string name="jumio_error_case_cancelled">Avlyst</string>
 	<string name="jumio_error_case_cancelled_by_user">Avbrutt av sluttbruker</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Sertifikatet er ikke gyldig lenger. Oppdater søknaden din</string>
 	<string name="jumio_error_case_device_is_offline">Kontroller om du er online</string>
@@ -14,11 +15,7 @@
 	<string name="jumio_error_case_no_camera_connection">Kameratilgang deaktivert</string>
 	<string name="jumio_error_case_ocr_failed">Skanning er ikke tilgjengelig for øyeblikket. Kontakt kundestøtte</string>
 	<string name="jumio_error_case_session_expired">Økten er utløpt</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_paper">Vennligst rediger ID-nummeret før du tar bildet</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_plastic">Rediger ID-en og tilgangsnummeret før du tar bildet</string>
-	<string name="jumio_id_scan_prompt_redact_deu_passport">Vennligst rediger passnummeret før du tar bildet</string>
-	<string name="jumio_id_scan_prompt_redact_kor">Rediger den andre blokken med registreringsnummeret ditt før du tar bildet</string>
-	<string name="jumio_id_scan_prompt_redact_nld">Rediger BSN-en før du tar bildet</string>
+	<string name="jumio_idtype_di">Digital-ID</string>
 	<string name="jumio_idtype_dl">Førerkort</string>
 	<string name="jumio_idtype_id">Identitetskort</string>
 	<string name="jumio_idtype_pp">Pass</string>
@@ -30,22 +27,17 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
-	<string name="jumio_accessibility_button_close">Lukk</string>
-	<string name="jumio_accessibility_flash_activate">Aktiver blits</string>
-	<string name="jumio_accessibility_flash_deactivate">Deaktiver blits</string>
 	<string name="jumio_accessibility_nfc_description_start">Sjekk om ID-en din har en brikke. I så fall plasserer du telefonen på ID-en som illustrert.</string>
 	<string name="jumio_accessibility_quit_scan">Avslutt skanning</string>
-	<string name="jumio_accessibility_scan_back">Tilbake</string>
-	<string name="jumio_accessibility_scan_close">Lukk</string>
 	<string name="jumio_accessibility_scan_help">Hjelp-menyen</string>
-	<string name="jumio_accessibility_scan_id_back">Bakside</string>
-	<string name="jumio_accessibility_scan_id_front">Fremside</string>
 	<string name="jumio_accessibility_scan_shutter_button">Ta et bilde</string>
 	<string name="jumio_accessibility_scan_switch_camera">Bytt kameravinkel</string>
 	<string name="jumio_analyzing_biometric">Analysere biometriske data</string>
 	<string name="jumio_button_cancel">Avbryt</string>
-	<string name="jumio_button_continue">Fortsett</string>
 	<string name="jumio_button_retry">Prøv igjen</string>
+	<string name="jumio_di_back_to_document_selection">Du vil sendes tilbake til dokumentvalget.</string>
+	<string name="jumio_di_vendor_selection_title">Velg leverandør av digital-ID</string>
+	<string name="jumio_di_verification_prompt_processing">Fullfør flyten i %s-appen.</string>
 	<string name="jumio_dv_confirm_button_reselect">Velg på nytt</string>
 	<string name="jumio_dv_confirm_file_info">Pass på at du har valgt riktig PDF-fil</string>
 	<string name="jumio_dv_confirm_file_title">Bekreft filen din</string>
@@ -58,13 +50,15 @@
 	<string name="jumio_dv_upload_tips_file_size">Maksimal filstørrelse: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimalt antall sider: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokumentet skal ikke være passordbeskyttet</string>
+	<string name="jumio_error_button_retake_both">Ta begge på nytt</string>
+	<string name="jumio_error_button_retake_one">Ta på nytt</string>
 	<string name="jumio_error_button_retry">Prøv igjen</string>
 	<string name="jumio_error_connection_title">Tilkoblingsfeil</string>
-	<string name="jumio_error_dialog_title">Feil</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_focus">Forsikre deg om at bildet er i fokus</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Hold dokumentet stødig når du tar et bilde</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Sørg for at alle opplysninger på dokumentet er lesbare</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Bildet er for uskarpt til å bli bekreftet</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Bildene må tas på nytt</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Prøv igjen med et fargebilde</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Bildet er en sort/hvit fotokopi</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Bildet ser ut til å være en fargefotokopi</string>
@@ -87,34 +81,34 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Sørg for å få med hele dokumentet</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Bildet er ikke en gyldig form for identifikasjon</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Bildekvaliteten er ikke god nok til å bli bekreftet</string>
-	<string name="jumio_error_instant_feedback_title">Vennligst prøv igjen</string>
-	<string name="jumio_error_no_camera_connection">Kameraet er for øyeblikket ikke tilgjengelig</string>
-	<string name="jumio_error_wrong_token">Skanning er ikke tilgjengelig for øyeblikket. Kontakt kundestøtte</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Bildet må tas på nytt</string>
 	<string name="jumio_id_confirm_button_confirm">Bekreft</string>
 	<string name="jumio_id_confirm_button_retry">TA PÅ NYTT</string>
 	<string name="jumio_id_confirm_paragraph">Forsikre deg om at detaljene er godt synlige og lesbare</string>
 	<string name="jumio_id_confirm_title">Bekreft bildet ditt</string>
+	<string name="jumio_id_scan_guide_back_side">Ta bilde av BAKSIDEN</string>
+	<string name="jumio_id_scan_guide_back_side_manually">Ta bilde av BAKSIDEN manuelt</string>
+	<string name="jumio_id_scan_guide_photo_side">Ta bilde av FOTOSIDEN</string>
+	<string name="jumio_id_scan_guide_photo_side_manually">Ta bilde av FOTOSIDEN manuelt</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skanningen er justert for å sikre at enheten fungerer optimalt</string>
 	<string name="jumio_id_scan_manual">Ta et bilde av dokumentet ditt</string>
-	<string name="jumio_id_scan_manual_back">Ta et bilde av baksiden</string>
 	<string name="jumio_id_scan_manual_tips">Sørg for å få med hele dokumentet</string>
-	<string name="jumio_id_scan_prompt_barcode">Sentrer strekkoden</string>
+	<string name="jumio_id_scan_prompt_back_captured">Baksiden er registrert</string>
+	<string name="jumio_id_scan_prompt_capture_success">Ferdig!</string>
 	<string name="jumio_id_scan_prompt_center_id">Midtstill dokumentet</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Snu til baksiden</string>
+	<string name="jumio_id_scan_prompt_front_captured">Forsiden er registrert</string>
 	<string name="jumio_id_scan_prompt_hold_still">Hold i ro…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Hold rett</string>
-	<string name="jumio_id_scan_prompt_initial_back">Snu ID-en din</string>
-	<string name="jumio_id_scan_prompt_initial_linefinder">Ram inn dokumentet ditt</string>
 	<string name="jumio_id_scan_prompt_move_closer">Flytt nærmere</string>
 	<string name="jumio_id_scan_prompt_processing">Kontrollerer bildet …</string>
 	<string name="jumio_id_scan_prompt_too_close">For nært</string>
-	<string name="jumio_id_scan_tips_barcode">Flytt kameraet nærmere strekkoden</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Zoom inn på strekkoden</string>
 	<string name="jumio_id_scan_tips_button_fallback">Take photo manually</string>
-	<string name="jumio_id_scan_tips_button_fallback_old">Skanningen fungerer ikke</string>
 	<string name="jumio_id_scan_tips_button_retry">Prøv igjen</string>
 	<string name="jumio_id_scan_tips_focusing">Forsikre deg om at bildet er i fokus</string>
 	<string name="jumio_id_scan_tips_glare">Unngå refleksjoner og gjenskinn</string>
 	<string name="jumio_id_scan_tips_lighting">Ikke ta bilde i mørket</string>
-	<string name="jumio_id_scan_tips_passport">Juster overlegget med fotosiden</string>
 	<string name="jumio_id_scan_tips_placing">Plasser ID-en på et flatt underlag</string>
 	<string name="jumio_id_scan_tips_title">Tips</string>
 	<string name="jumio_id_scan_tooltip">Trenger du hjelp?</string>
@@ -135,50 +129,53 @@
 	<string name="jumio_iproov_failure_generic_glare">Unngå refleksjoner og gjenskinn i briller</string>
 	<string name="jumio_iproov_failure_generic_light">Ansiktet ditt må være jevnt opplyst og skille seg ut fra bakgrunnen</string>
 	<string name="jumio_iproov_failure_generic_title">Ansiktet ikke registrert</string>
-	<string name="jumio_iproov_intro_gpa">Sentrer ansiktet ditt i rammen og hold deg rolig mens det blinker på skjermen.</string>
 	<string name="jumio_iproov_intro_la">Sentrer ansiktet ditt i rammen og følg instruksjonene på skjermen.</string>
+	<string name="jumio_liveness_prompt_no_target">Plasser ansiktet ditt i rammen</string>
+	<string name="jumio_liveness_prompt_success_another_shot">Flott! La oss ta enda et bilde.</string>
+	<string name="jumio_liveness_prompt_too_close">For nært</string>
+	<string name="jumio_liveness_prompt_too_far">Kom nærmere</string>
 	<string name="jumio_loading_title">Laster</string>
 	<string name="jumio_nfc_button_skip">Hoppe over</string>
 	<string name="jumio_nfc_description_extracting">Hold stille mens du skanner</string>
 	<string name="jumio_nfc_description_start_other">Skyv telefonen over frontdekselet til passet ditt oppdages automatisk</string>
 	<string name="jumio_nfc_description_start_us">Skyv telefonen over innsiden av bakdekselet til passet ditt oppdages automatisk</string>
-	<string name="jumio_nfc_enable_dialog_title">Aktiver NFC</string>
 	<string name="jumio_nfc_general_error_dialog_title">Skann ufullstendig</string>
 	<string name="jumio_nfc_header_extracting">Henter ut data</string>
-	<string name="jumio_nfc_header_finish">Skanningen er fullført</string>
 	<string name="jumio_nfc_header_start">Plasser passet ditt</string>
-	<string name="jumio_scanview_refocus">Fokuser på nytt</string>
+	<string name="jumio_processing_title">Sjekker resultatet</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_step_doc">Send inn dokumentet ditt</string>
 	<string name="jumio_start_step_id">Ta et bilde av dokumentet ditt</string>
 	<string name="jumio_start_step_identity">Ta en selfie</string>
-	<string name="jumio_start_step_ready">Ha dokumentet ditt klart</string>
-	<string name="jumio_start_title_plural">Bekreftelse\ni %1$d enkle trinn</string>
-	<string name="jumio_start_title_singular">Bekreftelse\ni ett enkelt trinn</string>
+	<string name="jumio_start_steps_title">La oss få deg verifisert</string>
 	<string name="jumio_uploading_success">Opplasting vellykket</string>
 	<string name="jumio_uploading_title">Laster opp</string>
 	-->
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Hold enheten foran ansiktet ditt og se på skjermen</string>
+	<string name="iproov__accessibility_prompt_scanning">Skanner</string>
 	<string name="iproov__error_camera">Kameratilgang deaktivert</string>
 	<string name="iproov__error_camera_permission_denied">Kameratilgang deaktivert</string>
 	<string name="iproov__error_capture_already_active">En eksisterende bildetaking pågår allerede</string>
 	<string name="iproov__error_device_not_supported">Enheten støttes ikke</string>
 	<string name="iproov__error_face_detector">Ansiktet ikke registrert</string>
-	<string name="iproov__error_invalid_options_error">Det oppsto en uventet feil</string>
 	<string name="iproov__error_multi_window_mode_unsupported">Applikasjonen er i modus for flere vinduer</string>
 	<string name="iproov__error_network">Kontroller om du er online</string>
-	<string name="iproov__error_no_listener_exception">Det oppsto en uventet feil</string>
 	<string name="iproov__error_server">Kontroller om du er online</string>
 	<string name="iproov__error_unexpected_error">Det oppsto en uventet feil</string>
-	<string name="iproov__failure_ambiguous_outcome">Tvetydig utfall</string>
-	<string name="iproov__failure_lighting_backlit">Sterk lyskilde oppdaget bak deg</string>
-	<string name="iproov__failure_lighting_face_too_bright">For mye lys registrert i ansiktet ditt</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Omgivelseslyset er for sterkt eller lysstyrken på skjermen for lav</string>
-	<string name="iproov__failure_lighting_too_dark">Miljøet ditt virker for mørkt</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Vennligst ikke snakk mens du skanner</string>
-	<string name="iproov__failure_motion_too_much_movement">Ikke beveg deg mens du skanner</string>
+	<string name="iproov__failure_eyes_closed">Hold øynene åpne</string>
+	<string name="iproov__failure_face_too_close">Flytt ansiktet lengre fra skjermen</string>
+	<string name="iproov__failure_face_too_far">Flytt ansiktet nærmere skjermen</string>
+	<string name="iproov__failure_misaligned_face">Hold ansiktet i ovalen</string>
+	<string name="iproov__failure_not_supported">Enheten støttes ikke</string>
+	<string name="iproov__failure_obscured_face">Ta av alt som kan dekke til ansiktet</string>
+	<string name="iproov__failure_sunglasses">Ta av solbriller</string>
+	<string name="iproov__failure_too_bright">Finn et sted med mindre lys</string>
+	<string name="iproov__failure_too_dark">Finn et sted med mer lys</string>
+	<string name="iproov__failure_too_much_movement">Stå helt i ro</string>
+	<string name="iproov__failure_unknown">Prøv igjen</string>
 	<string name="iproov__failure_user_timeout">Økten din har utløpt</string>
 	<string name="iproov__progress_assessing_genuine_presence">Vurderer ekte tilstedeværelse …</string>
 	<string name="iproov__progress_assessing_liveness">Vurderer livlighet…</string>
@@ -188,24 +185,26 @@
 	<string name="iproov__progress_identifying_face">Identifiserer ansikt …</string>
 	<string name="iproov__progress_loading">Laster inn…</string>
 	<string name="iproov__progress_streaming">Strømmer …</string>
-	<string name="iproov__progress_streaming_slow">Nettverket ditt kan virke tregt. Vent mens vi behandler.</string>
-	<string name="iproov__prompt_align_face_accessibility">Hold enheten foran ansiktet ditt og se på skjermen</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Plasser ansiktet ditt i rammen</string>
+	<string name="iproov__prompt_align_face">Plasser ansiktet ditt i ovalen</string>
 	<string name="iproov__prompt_get_ready">Gjør deg klar…</string>
-	<string name="iproov__prompt_liveness_align_face">La ansiktet ditt fylle ovalen</string>
-	<string name="iproov__prompt_liveness_no_target">Plasser ansiktet ditt i rammen</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skanningen er fullført</string>
 	<string name="iproov__prompt_pitch_too_high">Hold enheten i øyehøyde</string>
 	<string name="iproov__prompt_pitch_too_low">Hold enheten i øyehøyde</string>
 	<string name="iproov__prompt_roll_too_high">Unngå å vippe på hodet</string>
 	<string name="iproov__prompt_roll_too_low">Unngå å vippe på hodet</string>
-	<string name="iproov__prompt_scanning">Skanner…</string>
-	<string name="iproov__prompt_tap_to_begin">Trykk på skjermen for å begynne</string>
 	<string name="iproov__prompt_too_bright">Gå et sted med mer skygge</string>
 	<string name="iproov__prompt_too_close">For nært</string>
 	<string name="iproov__prompt_too_far">Kom nærmere</string>
 	<string name="iproov__prompt_yaw_too_high">Vri deg litt til venstre</string>
 	<string name="iproov__prompt_yaw_too_low">Vri deg litt til høyre</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Økten din har utløpt</string>
+	<string name="jumio_di_retry_service_error">Bekreftelsen mislyktes</string>
+	<string name="jumio_di_retry_third_party_verification_error">Bekreftelsen mislyktes</string>
+	<string name="jumio_di_retry_unknown">Noe gikk galt</string>
 	-->
 
 </resources>

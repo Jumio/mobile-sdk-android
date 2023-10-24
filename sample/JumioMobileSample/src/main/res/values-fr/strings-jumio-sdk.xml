@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Limite maximale des pages PDF dépassée</string>
 	<string name="jumio_dv_retry_size_limit">Limite maximale de la taille du PDF dépassée</string>
 	<string name="jumio_error_case_auth_failed">Échec de l\'authentification</string>
+	<string name="jumio_error_case_cancelled">Annulé</string>
 	<string name="jumio_error_case_cancelled_by_user">Annulé par l\'utilisateur</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Le certificat n\'est plus valable. Veuillez mettre à jour votre application</string>
 	<string name="jumio_error_case_device_is_offline">Veuillez vérifier que vous êtes en ligne</string>
@@ -14,11 +15,7 @@
 	<string name="jumio_error_case_no_camera_connection">Accès à la caméra désactivé</string>
 	<string name="jumio_error_case_ocr_failed">Numérisation indisponible pour le moment, veuillez contacter l\'équipe d\'assistance</string>
 	<string name="jumio_error_case_session_expired">Session expirée</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_paper">Veuillez masquer le numéro de la pièce d\'identité avant de détecter</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_plastic">Veuillez masquer le numéro de la pièce d\'identité et le numéro d\'accès avant de détecter</string>
-	<string name="jumio_id_scan_prompt_redact_deu_passport">Veuillez masquer le numéro de passeport avant de détecter</string>
-	<string name="jumio_id_scan_prompt_redact_kor">Veuillez masquer la deuxième partie de votre numéro d\'enregistrement de résident avant de détecter</string>
-	<string name="jumio_id_scan_prompt_redact_nld">Veuillez masquer votre BSN avant de détecter</string>
+	<string name="jumio_idtype_di">Identité numérique</string>
 	<string name="jumio_idtype_dl">Permis de conduire</string>
 	<string name="jumio_idtype_id">Carte d\'identité</string>
 	<string name="jumio_idtype_pp">Passeport</string>
@@ -30,22 +27,17 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
-	<string name="jumio_accessibility_button_close">Fermer</string>
-	<string name="jumio_accessibility_flash_activate">Activez le flash</string>
-	<string name="jumio_accessibility_flash_deactivate">Désactivez le flash</string>
 	<string name="jumio_accessibility_nfc_description_start">Veuillez vérifier si votre pièce d\'identité dispose d\'une puce. Si oui, placez votre téléphone sur la pièce d\'identité comme indiqué.</string>
 	<string name="jumio_accessibility_quit_scan">Annuler la numérisation</string>
-	<string name="jumio_accessibility_scan_back">Retour</string>
-	<string name="jumio_accessibility_scan_close">Fermer</string>
 	<string name="jumio_accessibility_scan_help">Menu d\'aide</string>
-	<string name="jumio_accessibility_scan_id_back">Arrière</string>
-	<string name="jumio_accessibility_scan_id_front">Recto</string>
 	<string name="jumio_accessibility_scan_shutter_button">Prendre une photo</string>
 	<string name="jumio_accessibility_scan_switch_camera">Changer de caméra</string>
 	<string name="jumio_analyzing_biometric">Analyse des données biométriques</string>
 	<string name="jumio_button_cancel">Annuler</string>
-	<string name="jumio_button_continue">Continuer</string>
 	<string name="jumio_button_retry">Réessayer</string>
+	<string name="jumio_di_back_to_document_selection">Vous serez redirigé(e) vers la sélection de documents.</string>
+	<string name="jumio_di_vendor_selection_title">Sélectionnez le fournisseur d\'identité numérique</string>
+	<string name="jumio_di_verification_prompt_processing">Veuillez compléter le flux sur l\'application %s.</string>
 	<string name="jumio_dv_confirm_button_reselect">Sélectionner à nouveau</string>
 	<string name="jumio_dv_confirm_file_info">Assurez-vous d\'avoir sélectionné le bon fichier PDF</string>
 	<string name="jumio_dv_confirm_file_title">Confirmer votre fichier</string>
@@ -58,13 +50,15 @@
 	<string name="jumio_dv_upload_tips_file_size">Taille maximale de fichier: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Nombre maximal de pages : %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Le document ne doit pas être protégé par un mot de passe</string>
+	<string name="jumio_error_button_retake_both">Reprendre les deux</string>
+	<string name="jumio_error_button_retake_one">Reprendre</string>
 	<string name="jumio_error_button_retry">Réessayer</string>
 	<string name="jumio_error_connection_title">Erreur de connexion</string>
-	<string name="jumio_error_dialog_title">Erreur</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_focus">Assurez-vous que la photo est nette</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Maintenez la pièce d\'identité stable lorsque vous prenez une photo</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Assurez-vous que tous les détails de votre pièce d\'identité sont lisibles</string>
 	<string name="jumio_error_instant_feedback_blurry_title">L\'image est trop floue pour être vérifiée</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Les images doivent être reprises</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Veuillez réessayer avec une image en couleur</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">L\'image est une photocopie en noir et blanc</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">L\'image semble être une photocopie en couleur</string>
@@ -87,34 +81,34 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Assurez-vous de prendre l\'intégralité du document</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">L\'image n\'est pas une pièce d\'identité valide</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">La qualité d\'image n\'est pas assez bonne pour être vérifiée.</string>
-	<string name="jumio_error_instant_feedback_title">Veuillez réessayer</string>
-	<string name="jumio_error_no_camera_connection">La caméra n\'est pas disponible actuellement</string>
-	<string name="jumio_error_wrong_token">Numérisation indisponible pour le moment, veuillez contacter l\'équipe d\'assistance</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">L\'image doit être reprise</string>
 	<string name="jumio_id_confirm_button_confirm">Confirmer</string>
 	<string name="jumio_id_confirm_button_retry">Reprendre</string>
 	<string name="jumio_id_confirm_paragraph">Assurez-vous que les détails sont visibles et lisibles</string>
 	<string name="jumio_id_confirm_title">Confirmez votre photo</string>
+	<string name="jumio_id_scan_guide_back_side">Prenez une photo du VERSO</string>
+	<string name="jumio_id_scan_guide_back_side_manually">Prenez manuellement une photo du VERSO</string>
+	<string name="jumio_id_scan_guide_photo_side">Prenez une photo du côté de la PHOTO</string>
+	<string name="jumio_id_scan_guide_photo_side_manually">Prenez manuellement une photo du côté de la PHOTO</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Numérisation optimisée pour une meilleure performance de l\'appareil</string>
 	<string name="jumio_id_scan_manual">Prenez une photo de votre document</string>
-	<string name="jumio_id_scan_manual_back">Prenez une photo du verso</string>
 	<string name="jumio_id_scan_manual_tips">Assurez-vous de prendre l\'intégralité du document</string>
-	<string name="jumio_id_scan_prompt_barcode">Centrez votre code-barres</string>
+	<string name="jumio_id_scan_prompt_back_captured">VERSO enregistré</string>
+	<string name="jumio_id_scan_prompt_capture_success">C\'est bon !</string>
 	<string name="jumio_id_scan_prompt_center_id">Centrez votre document</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Retournez le document vers le VERSO</string>
+	<string name="jumio_id_scan_prompt_front_captured">RECTO enregistré</string>
 	<string name="jumio_id_scan_prompt_hold_still">Ne bougez plus…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Tenez-vous droit</string>
-	<string name="jumio_id_scan_prompt_initial_back">Retournez votre pièce d\'identité</string>
-	<string name="jumio_id_scan_prompt_initial_linefinder">Cadrez votre document</string>
 	<string name="jumio_id_scan_prompt_move_closer">Rapprochez-vous</string>
 	<string name="jumio_id_scan_prompt_processing">Vérification de l\'image…</string>
 	<string name="jumio_id_scan_prompt_too_close">Trop près</string>
-	<string name="jumio_id_scan_tips_barcode">Rapprochez l\'appareil photo du code-barres</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Zoomez sur votre code-barres</string>
 	<string name="jumio_id_scan_tips_button_fallback">Prendre une photo manuellement</string>
-	<string name="jumio_id_scan_tips_button_fallback_old">La capture d\'image ne fonctionne pas</string>
 	<string name="jumio_id_scan_tips_button_retry">Réessayer</string>
 	<string name="jumio_id_scan_tips_focusing">Assurez-vous que la photo est nette</string>
 	<string name="jumio_id_scan_tips_glare">Évitez les reflets et la lumière éblouissante</string>
 	<string name="jumio_id_scan_tips_lighting">Ne prenez pas la photo dans l\'obscurité</string>
-	<string name="jumio_id_scan_tips_passport">Alignez la page comportant la photo</string>
 	<string name="jumio_id_scan_tips_placing">Placez la pièce d\'identité sur une surface plane</string>
 	<string name="jumio_id_scan_tips_title">Conseils</string>
 	<string name="jumio_id_scan_tooltip">Besoin d\'aide ?</string>
@@ -135,50 +129,53 @@
 	<string name="jumio_iproov_failure_generic_glare">Évitez les reflets et la lumière éblouissante sur les lunettes</string>
 	<string name="jumio_iproov_failure_generic_light">Assurez-vous que votre visage est éclairé de manière uniforme et se distingue de l\'arrière-plan</string>
 	<string name="jumio_iproov_failure_generic_title">Visage non reconnu</string>
-	<string name="jumio_iproov_intro_gpa">Centrez votre visage dans le cadre et maintenez-le stable pendant que l’écran clignote.</string>
 	<string name="jumio_iproov_intro_la">Centrez votre visage dans le cadre et suivez les instructions à l’écran.</string>
+	<string name="jumio_liveness_prompt_no_target">Mettez votre visage dans le cadre</string>
+	<string name="jumio_liveness_prompt_success_another_shot">J\'ai compris ! Prenons une autre photo</string>
+	<string name="jumio_liveness_prompt_too_close">Trop près</string>
+	<string name="jumio_liveness_prompt_too_far">Se rapprocher</string>
 	<string name="jumio_loading_title">Chargement en cours</string>
 	<string name="jumio_nfc_button_skip">Sauter</string>
 	<string name="jumio_nfc_description_extracting">Restez immobile pendant la numérisation</string>
 	<string name="jumio_nfc_description_start_other">Faites glisser le téléphone sur le recto jusqu\'à ce que votre passeport soit automatiquement détecté</string>
 	<string name="jumio_nfc_description_start_us">Faites glisser le téléphone à l\'intérieur du recto jusqu\'à ce que votre passeport soit détecté auto.</string>
-	<string name="jumio_nfc_enable_dialog_title">Activez la CCP</string>
 	<string name="jumio_nfc_general_error_dialog_title">Numérisation incomp.</string>
 	<string name="jumio_nfc_header_extracting">Données extraites</string>
-	<string name="jumio_nfc_header_finish">Numérisation terminée</string>
 	<string name="jumio_nfc_header_start">Placez votre passeport</string>
-	<string name="jumio_scanview_refocus">Refaire la mise au point</string>
+	<string name="jumio_processing_title">Vérification du résultat</string>
 	<string name="jumio_start_button">Commencer</string>
 	<string name="jumio_start_step_doc">Soumettez votre document</string>
 	<string name="jumio_start_step_id">Prenez une photo de votre document</string>
 	<string name="jumio_start_step_identity">Prendre un selfie</string>
-	<string name="jumio_start_step_ready">Préparez votre document</string>
-	<string name="jumio_start_title_plural">Vérification\nen %1$d étapes simples</string>
-	<string name="jumio_start_title_singular">Vérification\nen 1 étape simple</string>
+	<string name="jumio_start_steps_title">Procédons à votre vérification</string>
 	<string name="jumio_uploading_success">Chargement réussi</string>
 	<string name="jumio_uploading_title">Envoi en cours</string>
 	-->
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Tenez l\'appareil devant votre visage et regardez l\'écran</string>
+	<string name="iproov__accessibility_prompt_scanning">Numérisation</string>
 	<string name="iproov__error_camera">Accès à la caméra désactivé</string>
 	<string name="iproov__error_camera_permission_denied">Accès à la caméra désactivé</string>
 	<string name="iproov__error_capture_already_active">Une capture existante est déjà en cours</string>
 	<string name="iproov__error_device_not_supported">L\'appareil n\'est pas pris en charge</string>
 	<string name="iproov__error_face_detector">Visage non reconnu</string>
-	<string name="iproov__error_invalid_options_error">Une erreur inattendue s\'est produite</string>
 	<string name="iproov__error_multi_window_mode_unsupported">L\'application est en mode multi-fenêtre</string>
 	<string name="iproov__error_network">Veuillez vérifier que vous êtes en ligne</string>
-	<string name="iproov__error_no_listener_exception">Une erreur inattendue s\'est produite</string>
 	<string name="iproov__error_server">Veuillez vérifier que vous êtes en ligne</string>
 	<string name="iproov__error_unexpected_error">Une erreur inattendue s\'est produite</string>
-	<string name="iproov__failure_ambiguous_outcome">Résultat ambigu</string>
-	<string name="iproov__failure_lighting_backlit">Une forte source de lumière est détectée derrière vous</string>
-	<string name="iproov__failure_lighting_face_too_bright">Trop de lumière détectée sur votre visage</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Lumière ambiante trop forte ou luminosité de l\'écran trop faible</string>
-	<string name="iproov__failure_lighting_too_dark">Votre environnement semble trop sombre</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Veuillez ne pas parler pendant la numérisation</string>
-	<string name="iproov__failure_motion_too_much_movement">Veuillez ne pas bouger pendant la numérisation</string>
+	<string name="iproov__failure_eyes_closed">Gardez les yeux ouverts</string>
+	<string name="iproov__failure_face_too_close">Éloignez votre visage de l\'écran</string>
+	<string name="iproov__failure_face_too_far">Rapprochez votre visage de l\'écran</string>
+	<string name="iproov__failure_misaligned_face">Maintenez votre visage dans l\'ovale</string>
+	<string name="iproov__failure_not_supported">L\'appareil n\'est pas pris en charge</string>
+	<string name="iproov__failure_obscured_face">Retirez tout accessoire du visage</string>
+	<string name="iproov__failure_sunglasses">Retirez vos lunettes</string>
+	<string name="iproov__failure_too_bright">Déplacez-vous dans un lieu plus sombre</string>
+	<string name="iproov__failure_too_dark">Déplacez-vous dans un lieu plus lumineux</string>
+	<string name="iproov__failure_too_much_movement">Restez immobile</string>
+	<string name="iproov__failure_unknown">Réessayer</string>
 	<string name="iproov__failure_user_timeout">Votre session a expiré</string>
 	<string name="iproov__progress_assessing_genuine_presence">Évaluation d\'une présence authentique…</string>
 	<string name="iproov__progress_assessing_liveness">Évaluation de la vivacité…</string>
@@ -188,24 +185,26 @@
 	<string name="iproov__progress_identifying_face">Identification du visage…</string>
 	<string name="iproov__progress_loading">Chargement…</string>
 	<string name="iproov__progress_streaming">Diffusion en cours…</string>
-	<string name="iproov__progress_streaming_slow">Votre réseau peut sembler lent. Merci de patienter pendant le traitement.</string>
-	<string name="iproov__prompt_align_face_accessibility">Tenez l\'appareil devant votre visage et regardez l\'écran</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Mettez votre visage dans le cadre</string>
+	<string name="iproov__prompt_align_face">Mettez votre visage dans l\'ovale</string>
 	<string name="iproov__prompt_get_ready">Préparez-vous…</string>
-	<string name="iproov__prompt_liveness_align_face">Remplissez l’ovale avec votre visage</string>
-	<string name="iproov__prompt_liveness_no_target">Mettez votre visage dans le cadre</string>
 	<string name="iproov__prompt_liveness_scan_completed">Numérisation terminée</string>
 	<string name="iproov__prompt_pitch_too_high">Placez la caméra à hauteur d\'yeux</string>
 	<string name="iproov__prompt_pitch_too_low">Placez la caméra à hauteur d\'yeux</string>
 	<string name="iproov__prompt_roll_too_high">Évitez de pencher la tête</string>
 	<string name="iproov__prompt_roll_too_low">Évitez de pencher la tête</string>
-	<string name="iproov__prompt_scanning">Numérisation…</string>
-	<string name="iproov__prompt_tap_to_begin">Appuyez sur l\'écran pour commencer</string>
 	<string name="iproov__prompt_too_bright">Allez dans un endroit plus sombre</string>
 	<string name="iproov__prompt_too_close">Trop près</string>
 	<string name="iproov__prompt_too_far">Se rapprocher</string>
 	<string name="iproov__prompt_yaw_too_high">Tournez légèrement à gauche</string>
 	<string name="iproov__prompt_yaw_too_low">Tournez légèrement à droite</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Votre session a expiré</string>
+	<string name="jumio_di_retry_service_error">La vérification a échoué</string>
+	<string name="jumio_di_retry_third_party_verification_error">La vérification a échoué</string>
+	<string name="jumio_di_retry_unknown">Une erreur s\'est produite</string>
 	-->
 
 </resources>

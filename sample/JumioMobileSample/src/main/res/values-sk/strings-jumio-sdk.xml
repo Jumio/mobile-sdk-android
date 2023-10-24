@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Bol prekročený maximálny počet strán súboru PDF</string>
 	<string name="jumio_dv_retry_size_limit">Bola prekročená maximálna veľkosť súboru PDF</string>
 	<string name="jumio_error_case_auth_failed">Overenie zlyhalo</string>
+	<string name="jumio_error_case_cancelled">Zrušené</string>
 	<string name="jumio_error_case_cancelled_by_user">Zrušené koncovým používateľom</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Certifikát už nie je platný. Aktualizujte svoju žiadosť</string>
 	<string name="jumio_error_case_device_is_offline">Skontrolujte svoje pripojenie</string>
@@ -14,11 +15,7 @@
 	<string name="jumio_error_case_no_camera_connection">Prístup k fotoaparátu je zamietnutý</string>
 	<string name="jumio_error_case_ocr_failed">Skenovanie nie je momentálne k dispozícii, obráťte sa na tím podpory</string>
 	<string name="jumio_error_case_session_expired">Platnosť relácie vypršala</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_paper">Pred zachytením zmeňte číslo preukazu totožnosti</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_plastic">Pred zachytením upravte preukaz totožnosti a prístupové číslo</string>
-	<string name="jumio_id_scan_prompt_redact_deu_passport">Pred zachytením zmeňte číslo pasu</string>
-	<string name="jumio_id_scan_prompt_redact_kor">Pred zachytením upravte druhý blok svojho registračného čísla pre obyvateľov</string>
-	<string name="jumio_id_scan_prompt_redact_nld">Pred nasnímaním upravte svoje číslo BSN</string>
+	<string name="jumio_idtype_di">Digitálny identifikátor</string>
 	<string name="jumio_idtype_dl">Vodičský preukaz</string>
 	<string name="jumio_idtype_id">Občiansky preukaz</string>
 	<string name="jumio_idtype_pp">Cestovný pas</string>
@@ -30,22 +27,17 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
-	<string name="jumio_accessibility_button_close">Zatvoriť</string>
-	<string name="jumio_accessibility_flash_activate">Zapnúť blesk</string>
-	<string name="jumio_accessibility_flash_deactivate">Vypnúť blesk</string>
 	<string name="jumio_accessibility_nfc_description_start">Skontrolujte, či má váš preukaz totožnosti čip. Ak áno, umiestnite telefón na preukaz podľa obrázka.</string>
 	<string name="jumio_accessibility_quit_scan">Ukončiť skenovanie</string>
-	<string name="jumio_accessibility_scan_back">Späť</string>
-	<string name="jumio_accessibility_scan_close">Zatvoriť</string>
 	<string name="jumio_accessibility_scan_help">Pomocník</string>
-	<string name="jumio_accessibility_scan_id_back">Zadná strana</string>
-	<string name="jumio_accessibility_scan_id_front">Predná strana</string>
 	<string name="jumio_accessibility_scan_shutter_button">Zhotoviť fotografiu</string>
 	<string name="jumio_accessibility_scan_switch_camera">Prepnutie fotoaparátu</string>
 	<string name="jumio_analyzing_biometric">Analýza biometrických údajov</string>
 	<string name="jumio_button_cancel">Zrušiť</string>
-	<string name="jumio_button_continue">Pokračovať</string>
 	<string name="jumio_button_retry">Skúste znova</string>
+	<string name="jumio_di_back_to_document_selection">Prejdete späť na výber dokumentu.</string>
+	<string name="jumio_di_vendor_selection_title">Vyberte poskytovateľa digitálneho identifikátora</string>
+	<string name="jumio_di_verification_prompt_processing">Dokončite postup v aplikácii %s.</string>
 	<string name="jumio_dv_confirm_button_reselect">Vybrať znova</string>
 	<string name="jumio_dv_confirm_file_info">Uistite sa, že ste zvolili správny súbor PDF</string>
 	<string name="jumio_dv_confirm_file_title">Potvrďte svoj súbor</string>
@@ -58,13 +50,15 @@
 	<string name="jumio_dv_upload_tips_file_size">Maximálna veľkosť súboru: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maximálny počet strán: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument nesmie byť chránený heslom</string>
+	<string name="jumio_error_button_retake_both">Obidva znovu odfotiť</string>
+	<string name="jumio_error_button_retake_one">Znovu odfotiť</string>
 	<string name="jumio_error_button_retry">Skúste znova</string>
 	<string name="jumio_error_connection_title">Chyba spojenia</string>
-	<string name="jumio_error_dialog_title">Chyba</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_focus">Uistite sa, že je fotografia zaostrená</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Pri fotografovaní držte preukaz totožnosti pevne</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Uistite sa, že všetky údaje na vašom preukaze totožnosti sú čitateľné</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Fotografia je príliš rozmazaná na overenie</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Fotografie je potrebné urobiť znovu</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Skúste to znova s farebným obrázkom</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Obrázok je čiernobielou fotokópiou</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Obrázok vyzerá ako farebná fotokópia</string>
@@ -87,34 +81,34 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Musíte zachytiť celý dokument</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Obrázok nezodpovedá platnému druhu preukazu totožnosti</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Kvalita fotografie nie je dostatočne dobrá na overenie</string>
-	<string name="jumio_error_instant_feedback_title">Skúste to znova</string>
-	<string name="jumio_error_no_camera_connection">Fotoaparát momentálne nie je k dispozícii</string>
-	<string name="jumio_error_wrong_token">Skenovanie nie je momentálne k dispozícii, obráťte sa na tím podpory</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Fotografiu je potrebné urobiť znovu</string>
 	<string name="jumio_id_confirm_button_confirm">Potvrdiť</string>
 	<string name="jumio_id_confirm_button_retry">Opakovať</string>
 	<string name="jumio_id_confirm_paragraph">Uistite sa, že všetky detaily sú jasne viditeľné a čitateľné</string>
 	<string name="jumio_id_confirm_title">Potvrďte svoju fotografiu</string>
+	<string name="jumio_id_scan_guide_back_side">Masnímajte ZADNÚ stranu</string>
+	<string name="jumio_id_scan_guide_back_side_manually">Mnauálne nasnímajte ZADNÚ stranu</string>
+	<string name="jumio_id_scan_guide_photo_side">Nasnímajte stranu s FOTKOU</string>
+	<string name="jumio_id_scan_guide_photo_side_manually">Mnauálne nasnímajte stranu s FOTKOU</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skenovanie je optimalizované pre lepší výkon zariadenia</string>
 	<string name="jumio_id_scan_manual">Odfoťte dokument</string>
-	<string name="jumio_id_scan_manual_back">Urobte fotografiu zadnej strany</string>
 	<string name="jumio_id_scan_manual_tips">Musíte zachytiť celý dokument</string>
-	<string name="jumio_id_scan_prompt_barcode">Vycentrujte čiarový kód</string>
+	<string name="jumio_id_scan_prompt_back_captured">ZADNÁ strana nasnímaná</string>
+	<string name="jumio_id_scan_prompt_capture_success">Hotovo!</string>
 	<string name="jumio_id_scan_prompt_center_id">Vycentrujte dokument</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Otočte na ZADNÚ stranu</string>
+	<string name="jumio_id_scan_prompt_front_captured">PREDNÁ strana nasnímaná</string>
 	<string name="jumio_id_scan_prompt_hold_still">Nehýbte sa…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Držte sa vzpriamene</string>
-	<string name="jumio_id_scan_prompt_initial_back">Otočte váš doklad totožnosti</string>
-	<string name="jumio_id_scan_prompt_initial_linefinder">Nastavte ohraničenie preukazu</string>
 	<string name="jumio_id_scan_prompt_move_closer">Pristúpte bližšie</string>
 	<string name="jumio_id_scan_prompt_processing">Kontroluje sa obrázok…</string>
 	<string name="jumio_id_scan_prompt_too_close">Príliš blízko</string>
-	<string name="jumio_id_scan_tips_barcode">Posuňte fotoaparát bližšie k čiarovému kódu</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Priblížte si čiarový kód</string>
 	<string name="jumio_id_scan_tips_button_fallback">Urobiť fotografiu manuálne</string>
-	<string name="jumio_id_scan_tips_button_fallback_old">Skenovanie nefunguje</string>
 	<string name="jumio_id_scan_tips_button_retry">Skúste znova</string>
 	<string name="jumio_id_scan_tips_focusing">Uistite sa, že je fotografia zaostrená</string>
 	<string name="jumio_id_scan_tips_glare">Vyhnite sa odrazom a oslneniu</string>
 	<string name="jumio_id_scan_tips_lighting">Nefotografujte v tme</string>
-	<string name="jumio_id_scan_tips_passport">Zarovnajte kryciu vrstvu so stranou s fotografiou</string>
 	<string name="jumio_id_scan_tips_placing">Umiestnite doklad totožnosti na rovný povrch</string>
 	<string name="jumio_id_scan_tips_title">Tipy</string>
 	<string name="jumio_id_scan_tooltip">Potrebujete poradiť?</string>
@@ -135,50 +129,53 @@
 	<string name="jumio_iproov_failure_generic_glare">Zabráňte odrazom od okuliarov</string>
 	<string name="jumio_iproov_failure_generic_light">Vaša tvár musí byť rovnomerne osvetlená a vynikať oproti pozadiu</string>
 	<string name="jumio_iproov_failure_generic_title">Tvár nebola rozpoznaná</string>
-	<string name="jumio_iproov_intro_gpa">Umiestnite tvár do stredu rámika a držte ju rovnomerne, zatiaľ čo obrazovka bliká.</string>
 	<string name="jumio_iproov_intro_la">Umiestnite tvár do stredu rámika a postupuje podľa inštrukcií na obrazovke.</string>
+	<string name="jumio_liveness_prompt_no_target">Umiestnite tvár do rámika</string>
+	<string name="jumio_liveness_prompt_success_another_shot">Hotovo! Zhotovte ešte jednu snímku</string>
+	<string name="jumio_liveness_prompt_too_close">Príliš blízko</string>
+	<string name="jumio_liveness_prompt_too_far">Pristúpte bližšie</string>
 	<string name="jumio_loading_title">Načítavanie</string>
 	<string name="jumio_nfc_button_skip">Preskočiť</string>
 	<string name="jumio_nfc_description_extracting">Počas skenovania sa nehýbte</string>
 	<string name="jumio_nfc_description_start_other">Posuňte telefón cez prednú stranu, kým nedôjde k automatickému rozoznaniu vášho pasu</string>
 	<string name="jumio_nfc_description_start_us">Posuňte telefón cez vnútro zadnej strany, kým nedôjde k automatickému rozoznaniu vášho pasu</string>
-	<string name="jumio_nfc_enable_dialog_title">Povoliť NFC</string>
 	<string name="jumio_nfc_general_error_dialog_title">Skenovanie neúplné</string>
 	<string name="jumio_nfc_header_extracting">Sťahovanie údajov</string>
-	<string name="jumio_nfc_header_finish">Skenovanie bolo dokončené</string>
 	<string name="jumio_nfc_header_start">Umiestnite svoj pas</string>
-	<string name="jumio_scanview_refocus">Prosím, zaostrite</string>
+	<string name="jumio_processing_title">Kontroluje sa výsledok</string>
 	<string name="jumio_start_button">Začať</string>
 	<string name="jumio_start_step_doc">Odošlite dokument</string>
 	<string name="jumio_start_step_id">Odfoťte dokument</string>
 	<string name="jumio_start_step_identity">Urobte si selfie</string>
-	<string name="jumio_start_step_ready">Pripravte si preukaz</string>
-	<string name="jumio_start_title_plural">Overenie\nv %1$d jednoduchých krokoch</string>
-	<string name="jumio_start_title_singular">Overenie\nv 1 jednoduchom kroku</string>
+	<string name="jumio_start_steps_title">Overíme si vás</string>
 	<string name="jumio_uploading_success">Nahrávanie úspešné</string>
 	<string name="jumio_uploading_title">Nahrávanie</string>
 	-->
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Držte zariadenie pred tvárou a pozerajte sa na obrazovku</string>
+	<string name="iproov__accessibility_prompt_scanning">Snímanie</string>
 	<string name="iproov__error_camera">Prístup k fotoaparátu je zamietnutý</string>
 	<string name="iproov__error_camera_permission_denied">Prístup k fotoaparátu je zamietnutý</string>
 	<string name="iproov__error_capture_already_active">Existujúca snímka sa spracováva</string>
 	<string name="iproov__error_device_not_supported">Zariadenie nie je podporované</string>
 	<string name="iproov__error_face_detector">Tvár nebola rozpoznaná</string>
-	<string name="iproov__error_invalid_options_error">Vyskytla sa neočakávaná chyba</string>
 	<string name="iproov__error_multi_window_mode_unsupported">Aplikácia je v režime viacerých okien</string>
 	<string name="iproov__error_network">Skontrolujte svoje pripojenie</string>
-	<string name="iproov__error_no_listener_exception">Vyskytla sa neočakávaná chyba</string>
 	<string name="iproov__error_server">Skontrolujte svoje pripojenie</string>
 	<string name="iproov__error_unexpected_error">Vyskytla sa neočakávaná chyba</string>
-	<string name="iproov__failure_ambiguous_outcome">Nejasný výsledok</string>
-	<string name="iproov__failure_lighting_backlit">Za vami sa nachádza príliš silný zdroj svetla</string>
-	<string name="iproov__failure_lighting_face_too_bright">Vaša tvár je príliš osvetlená</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Okolité svetlo je príliš silné alebo jas obrazovky je príliš nízky</string>
-	<string name="iproov__failure_lighting_too_dark">Vaše okolie je príliš tmavé</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Nehovorte počas skenovania</string>
-	<string name="iproov__failure_motion_too_much_movement">Nehýbte sa počas skenovania</string>
+	<string name="iproov__failure_eyes_closed">Majte oči otvorené</string>
+	<string name="iproov__failure_face_too_close">Posuňte svoju tvár ďalej od obrazovky</string>
+	<string name="iproov__failure_face_too_far">Presuňte svoju tvár bližšie k obrazovke</string>
+	<string name="iproov__failure_misaligned_face">Udržujte svoju tvár v ovále</string>
+	<string name="iproov__failure_not_supported">Zariadenie nie je podporované</string>
+	<string name="iproov__failure_obscured_face">Odstráňte všetky pokrývky tváre</string>
+	<string name="iproov__failure_sunglasses">Odstráňte slnečné okuliare</string>
+	<string name="iproov__failure_too_bright">Presuňte sa na tmavšie miesto</string>
+	<string name="iproov__failure_too_dark">Presuňte sa na svetlejšie miesto</string>
+	<string name="iproov__failure_too_much_movement">Nehýbte sa</string>
+	<string name="iproov__failure_unknown">Skúste znova</string>
 	<string name="iproov__failure_user_timeout">Vaša relácia vypršala</string>
 	<string name="iproov__progress_assessing_genuine_presence">Posudzuje sa skutočná prítomnosť…</string>
 	<string name="iproov__progress_assessing_liveness">Posudzuje sa živosť…</string>
@@ -188,24 +185,26 @@
 	<string name="iproov__progress_identifying_face">Identifikácia tváre…</string>
 	<string name="iproov__progress_loading">Načítavanie…</string>
 	<string name="iproov__progress_streaming">Streamovanie…</string>
-	<string name="iproov__progress_streaming_slow">Vaše pripojenie je pomalé. Čakajte, kým prebieha spracovanie.</string>
-	<string name="iproov__prompt_align_face_accessibility">Podržte zariadenie pre svojou tvárou a pozerajte sa na obrazovku</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Umiestnite tvár do rámika</string>
+	<string name="iproov__prompt_align_face">Dajte svoju tvár do oválu</string>
 	<string name="iproov__prompt_get_ready">Pripravte sa …</string>
-	<string name="iproov__prompt_liveness_align_face">Vyplňte ovál vašou tvárou</string>
-	<string name="iproov__prompt_liveness_no_target">Umiestnite tvár do rámika</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skenovanie bolo dokončené</string>
 	<string name="iproov__prompt_pitch_too_high">Zariadenie držte na úrovni očí</string>
 	<string name="iproov__prompt_pitch_too_low">Zariadenie držte na úrovni očí</string>
 	<string name="iproov__prompt_roll_too_high">Nenakláňajte hlavu</string>
 	<string name="iproov__prompt_roll_too_low">Nenakláňajte hlavu</string>
-	<string name="iproov__prompt_scanning">Skenovanie …</string>
-	<string name="iproov__prompt_tap_to_begin">Pre spustenie ťuknite na obrazovku</string>
 	<string name="iproov__prompt_too_bright">Nájdite tmavšie miesto</string>
 	<string name="iproov__prompt_too_close">Príliš blízko</string>
 	<string name="iproov__prompt_too_far">Pristúpte bližšie</string>
 	<string name="iproov__prompt_yaw_too_high">Trochu sa otočte doľava</string>
 	<string name="iproov__prompt_yaw_too_low">Trochu sa otočte doprava</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Vaša relácia vypršala</string>
+	<string name="jumio_di_retry_service_error">Overenie zlyhalo</string>
+	<string name="jumio_di_retry_third_party_verification_error">Overenie zlyhalo</string>
+	<string name="jumio_di_retry_unknown">Niečo sa pokazilo</string>
 	-->
 
 </resources>

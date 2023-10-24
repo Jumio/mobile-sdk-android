@@ -7,6 +7,7 @@
 	<string name="jumio_dv_retry_page_limit">Đã vượt quá giới hạn trang PDF tối đa</string>
 	<string name="jumio_dv_retry_size_limit">Đã vượt quá giới hạn kích thước tối đa của tệp PDF</string>
 	<string name="jumio_error_case_auth_failed">Xác thực thất bại</string>
+	<string name="jumio_error_case_cancelled">Bị hủy bỏ</string>
 	<string name="jumio_error_case_cancelled_by_user">Đã hủy bởi người dùng cuối</string>
 	<string name="jumio_error_case_certificate_not_valid_anymore">Chứng chỉ không còn hợp lệ. Vui lòng cập nhật ứng dụng của bạn</string>
 	<string name="jumio_error_case_device_is_offline">Vui lòng kiểm tra xem bạn có trực tuyến không</string>
@@ -14,11 +15,7 @@
 	<string name="jumio_error_case_no_camera_connection">Quyền truy cập máy ảnh bị vô hiệu hóa</string>
 	<string name="jumio_error_case_ocr_failed">Tính năng quét không khả dụng vào lúc này, vui lòng liên hệ với nhóm hỗ trợ</string>
 	<string name="jumio_error_case_session_expired">Phiên hết hạn</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_paper">Hãy che số ID trước khi chụp</string>
-	<string name="jumio_id_scan_prompt_redact_deu_id_plastic">Hãy che số ID và số truy cập trước khi chụp</string>
-	<string name="jumio_id_scan_prompt_redact_deu_passport">Hãy che số hộ chiếu và số truy cập trước khi chụp</string>
-	<string name="jumio_id_scan_prompt_redact_kor">Hãy che phần sau của Số đăng ký cư trú trước khi chụp</string>
-	<string name="jumio_id_scan_prompt_redact_nld">Hãy che BSN trước khi chụp</string>
+	<string name="jumio_idtype_di">ID kỹ thuật số</string>
 	<string name="jumio_idtype_dl">Giấy phép lái xe</string>
 	<string name="jumio_idtype_id">Thẻ căn cước</string>
 	<string name="jumio_idtype_pp">Hộ chiếu</string>
@@ -30,22 +27,17 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
-	<string name="jumio_accessibility_button_close">Đóng</string>
-	<string name="jumio_accessibility_flash_activate">Bật đèn flash</string>
-	<string name="jumio_accessibility_flash_deactivate">Tắt đèn flash</string>
 	<string name="jumio_accessibility_nfc_description_start">Vui lòng kiểm tra xem ID của bạn có chip không. Nếu có, hãy đặt điện thoại của bạn trên ID như minh họa.</string>
 	<string name="jumio_accessibility_quit_scan">Thoát khỏi quét</string>
-	<string name="jumio_accessibility_scan_back">Trở lại</string>
-	<string name="jumio_accessibility_scan_close">Đóng</string>
 	<string name="jumio_accessibility_scan_help">Menu trợ giúp</string>
-	<string name="jumio_accessibility_scan_id_back">Mặt sau</string>
-	<string name="jumio_accessibility_scan_id_front">Mặt trước</string>
 	<string name="jumio_accessibility_scan_shutter_button">Chụp ảnh</string>
 	<string name="jumio_accessibility_scan_switch_camera">Chuyển đổi máy ảnh</string>
 	<string name="jumio_analyzing_biometric">Đang phân tích dữ liệu sinh trắc học</string>
 	<string name="jumio_button_cancel">Hủy</string>
-	<string name="jumio_button_continue">Tiếp tục</string>
 	<string name="jumio_button_retry">Thử lại</string>
+	<string name="jumio_di_back_to_document_selection">Bạn sẽ được điều hướng trở lại lựa chọn tài liệu.</string>
+	<string name="jumio_di_vendor_selection_title">Chọn nhà cung cấp ID kỹ thuật số</string>
+	<string name="jumio_di_verification_prompt_processing">Vui lòng hoàn tất quy trình trên ứng dụng %s.</string>
 	<string name="jumio_dv_confirm_button_reselect">Chọn lại</string>
 	<string name="jumio_dv_confirm_file_info">Đảm bảo rằng bạn đã chọn đúng tệp PDF</string>
 	<string name="jumio_dv_confirm_file_title">Xác nhận tệp của bạn</string>
@@ -58,13 +50,15 @@
 	<string name="jumio_dv_upload_tips_file_size">Kích thước tệp tối đa: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Số trang tối đa: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Tài liệu không được bảo vệ bằng mật khẩu</string>
+	<string name="jumio_error_button_retake_both">Chụp lại cả hai</string>
+	<string name="jumio_error_button_retake_one">Chụp lại</string>
 	<string name="jumio_error_button_retry">Thử lại</string>
 	<string name="jumio_error_connection_title">Lỗi kết nối</string>
-	<string name="jumio_error_dialog_title">Lỗi</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_focus">Đảm bảo ảnh được lấy nét</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Cầm chắc tài liệu của bạn khi chụp ảnh</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Đảm bảo rằng tất cả các chi tiết trên tài liệu của bạn đều có thể đọc được</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Hình ảnh quá mờ để có thể xác minh</string>
+	<string name="jumio_error_instant_feedback_both_images_retaken">Hình ảnh phải được chụp lại</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Vui lòng thử lại với một hình ảnh màu</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Hình ảnh là một bản photocopy đen trắng</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Hình ảnh có vẻ là một bản photocopy màu</string>
@@ -87,34 +81,34 @@
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Đảm bảo chụp toàn bộ tài liệu</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Hình ảnh không phải là hình thức nhận dạng hợp lệ</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Chất lượng hình ảnh không đủ tốt để được xác minh</string>
-	<string name="jumio_error_instant_feedback_title">Vui lòng thử lại</string>
-	<string name="jumio_error_no_camera_connection">Máy ảnh hiện không khả dụng</string>
-	<string name="jumio_error_wrong_token">Tính năng quét không khả dụng vào lúc này, vui lòng liên hệ với nhóm hỗ trợ</string>
+	<string name="jumio_error_instant_feedback_one_image_retaken">Hình ảnh phải được chụp lại</string>
 	<string name="jumio_id_confirm_button_confirm">Xác nhận</string>
 	<string name="jumio_id_confirm_button_retry">Chụp lại</string>
 	<string name="jumio_id_confirm_paragraph">Đảm bảo rằng có thể nhìn thấy rõ ràng và có thể đọc được các chi tiết</string>
 	<string name="jumio_id_confirm_title">Xác nhận ảnh của bạn</string>
+	<string name="jumio_id_scan_guide_back_side">Chụp mặt SAU của giấy tờ</string>
+	<string name="jumio_id_scan_guide_back_side_manually">Chụp mặt SAU của giấy tờ theo cách thủ công</string>
+	<string name="jumio_id_scan_guide_photo_side">Chụp mặt TRƯỚC của giấy tờ</string>
+	<string name="jumio_id_scan_guide_photo_side_manually">Chụp mặt TRƯỚC của giấy tờ theo cách thủ công</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Quy trình quét được tối ưu hóa để thiết bị đạt hiệu suất tốt hơn</string>
 	<string name="jumio_id_scan_manual">Chụp ảnh tài liệu của bạn</string>
-	<string name="jumio_id_scan_manual_back">Chụp ảnh mặt sau</string>
 	<string name="jumio_id_scan_manual_tips">Đảm bảo chụp toàn bộ tài liệu</string>
-	<string name="jumio_id_scan_prompt_barcode">Căn giữa mã vạch của bạn</string>
+	<string name="jumio_id_scan_prompt_back_captured">Đã chụp MẶT SAU</string>
+	<string name="jumio_id_scan_prompt_capture_success">Đã hiểu!</string>
 	<string name="jumio_id_scan_prompt_center_id">Căn giữa tài liệu của bạn</string>
+	<string name="jumio_id_scan_prompt_flip_to_back">Lật sang MẶT SAU</string>
+	<string name="jumio_id_scan_prompt_front_captured">Đã chụp MẶT TRƯỚC</string>
 	<string name="jumio_id_scan_prompt_hold_still">Giữ yên…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Giữ thẳng</string>
-	<string name="jumio_id_scan_prompt_initial_back">Lật ID của bạn lại</string>
-	<string name="jumio_id_scan_prompt_initial_linefinder">Đóng khung ID của bạn</string>
 	<string name="jumio_id_scan_prompt_move_closer">Tiến lại gần</string>
 	<string name="jumio_id_scan_prompt_processing">Đang kiểm tra hình ảnh…</string>
 	<string name="jumio_id_scan_prompt_too_close">Quá gần</string>
-	<string name="jumio_id_scan_tips_barcode">Di chuyển máy ảnh đến gần mã vạch</string>
+	<string name="jumio_id_scan_prompt_zoom_barcode">Phóng to mã vạch của bạn</string>
 	<string name="jumio_id_scan_tips_button_fallback">Chụp ảnh thủ công</string>
-	<string name="jumio_id_scan_tips_button_fallback_old">Tính năng quét không hoạt động</string>
 	<string name="jumio_id_scan_tips_button_retry">Thử lại</string>
 	<string name="jumio_id_scan_tips_focusing">Đảm bảo ảnh được lấy nét</string>
 	<string name="jumio_id_scan_tips_glare">Tránh phản xạ và ánh sáng chói</string>
 	<string name="jumio_id_scan_tips_lighting">Không chụp ảnh trong bóng tối</string>
-	<string name="jumio_id_scan_tips_passport">Căn chỉnh lớp phủ với trang ảnh</string>
 	<string name="jumio_id_scan_tips_placing">Đặt ID trên một bề mặt phẳng</string>
 	<string name="jumio_id_scan_tips_title">Mẹo</string>
 	<string name="jumio_id_scan_tooltip">Cần trợ giúp?</string>
@@ -135,50 +129,53 @@
 	<string name="jumio_iproov_failure_generic_glare">Tránh tình trạng chói lóa kính</string>
 	<string name="jumio_iproov_failure_generic_light">Khuôn mặt của bạn phải được chiếu sáng đồng đều và nổi bật so với nền xung quanh</string>
 	<string name="jumio_iproov_failure_generic_title">Không nhận dạng được khuôn mặt</string>
-	<string name="jumio_iproov_intro_gpa">Căn giữa khuôn mặt của bạn trong khung và giữ cố định trong khi màn hình nhấp nháy.</string>
 	<string name="jumio_iproov_intro_la">Căn giữa khuôn mặt của bạn trong khung và làm theo hướng dẫn trên màn hình.</string>
+	<string name="jumio_liveness_prompt_no_target">Kéo mặt bạn vào khung</string>
+	<string name="jumio_liveness_prompt_success_another_shot">Đã hiểu! Hãy chụp một bức ảnh khác</string>
+	<string name="jumio_liveness_prompt_too_close">Quá gần</string>
+	<string name="jumio_liveness_prompt_too_far">Di chuyển lại gần hơn</string>
 	<string name="jumio_loading_title">Đang tải</string>
 	<string name="jumio_nfc_button_skip">Nhảy</string>
 	<string name="jumio_nfc_description_extracting">Giữ yên trong khi quét</string>
 	<string name="jumio_nfc_description_start_other">Trượt điện thoại qua bìa trước đến khi hộ chiếu của bạn được tự động phát hiện</string>
 	<string name="jumio_nfc_description_start_us">Trượt điện thoại qua mặt trong của bìa sau đến khi hộ chiếu của bạn được tự động phát hiện</string>
-	<string name="jumio_nfc_enable_dialog_title">Bật NFC</string>
 	<string name="jumio_nfc_general_error_dialog_title">Quét chưa hoàn tất</string>
 	<string name="jumio_nfc_header_extracting">Trích xuất dữ liệu</string>
-	<string name="jumio_nfc_header_finish">Đã quét xong</string>
 	<string name="jumio_nfc_header_start">Định vị hộ chiếu</string>
-	<string name="jumio_scanview_refocus">Vui lòng lấy nét lại</string>
+	<string name="jumio_processing_title">Đang kiểm tra kết quả</string>
 	<string name="jumio_start_button">Bắt đầu</string>
 	<string name="jumio_start_step_doc">Gửi tài liệu của bạn</string>
 	<string name="jumio_start_step_id">Chụp ảnh tài liệu của bạn</string>
 	<string name="jumio_start_step_identity">Chụp ảnh tự chụp</string>
-	<string name="jumio_start_step_ready">Chuẩn bị sẵn ID của bạn</string>
-	<string name="jumio_start_title_plural">Xác minh\ntrong %1$d bước đơn giản</string>
-	<string name="jumio_start_title_singular">Xác minh\ntrong 1 bước đơn giản</string>
+	<string name="jumio_start_steps_title">Hãy xác minh bạn</string>
 	<string name="jumio_uploading_success">Tải lên thành công</string>
 	<string name="jumio_uploading_title">Đang tải lên</string>
 	-->
 
 	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
 	<!--
+	<string name="iproov__accessibility_prompt_align_face">Giữ thiết bị trước mặt và nhìn vào màn hình</string>
+	<string name="iproov__accessibility_prompt_scanning">Đang quét</string>
 	<string name="iproov__error_camera">Quyền truy cập máy ảnh bị vô hiệu hóa</string>
 	<string name="iproov__error_camera_permission_denied">Quyền truy cập máy ảnh bị vô hiệu hóa</string>
 	<string name="iproov__error_capture_already_active">Quá trình chụp hiện có đang diễn ra</string>
 	<string name="iproov__error_device_not_supported">Thiết bị không được hỗ trợ</string>
 	<string name="iproov__error_face_detector">Không nhận dạng được khuôn mặt</string>
-	<string name="iproov__error_invalid_options_error">Đã xảy ra lỗi không mong muốn</string>
 	<string name="iproov__error_multi_window_mode_unsupported">Ứng dụng đang ở chế độ nhiều cửa sổ</string>
 	<string name="iproov__error_network">Vui lòng kiểm tra xem bạn có trực tuyến không</string>
-	<string name="iproov__error_no_listener_exception">Đã xảy ra lỗi không mong muốn</string>
 	<string name="iproov__error_server">Vui lòng kiểm tra xem bạn có trực tuyến không</string>
 	<string name="iproov__error_unexpected_error">Đã xảy ra lỗi không mong muốn</string>
-	<string name="iproov__failure_ambiguous_outcome">Kết quả không rõ ràng</string>
-	<string name="iproov__failure_lighting_backlit">Phát hiện nguồn sáng mạnh phía sau bạn</string>
-	<string name="iproov__failure_lighting_face_too_bright">Phát hiện quá nhiều ánh sáng trên khuôn mặt của bạn</string>
-	<string name="iproov__failure_lighting_flash_reflection_too_low">Ánh sáng xung quanh quá mạnh hoặc độ sáng màn hình quá thấp</string>
-	<string name="iproov__failure_lighting_too_dark">Môi trường của bạn có vẻ quá tối</string>
-	<string name="iproov__failure_motion_too_much_mouth_movement">Vui lòng không nói trong khi quét</string>
-	<string name="iproov__failure_motion_too_much_movement">Vui lòng không di chuyển trong khi quét</string>
+	<string name="iproov__failure_eyes_closed">Giữ cho đôi mắt của bạn mở</string>
+	<string name="iproov__failure_face_too_close">Di chuyển khuôn mặt của bạn ra xa màn hình hơn</string>
+	<string name="iproov__failure_face_too_far">Di chuyển khuôn mặt của bạn đến gần màn hình hơn</string>
+	<string name="iproov__failure_misaligned_face">Giữ khuôn mặt của bạn trong hình bầu dục</string>
+	<string name="iproov__failure_not_supported">Thiết bị không được hỗ trợ</string>
+	<string name="iproov__failure_obscured_face">Tháo khẩu trang</string>
+	<string name="iproov__failure_sunglasses">Tháo kính râm</string>
+	<string name="iproov__failure_too_bright">Di chuyển đến một nơi tối hơn</string>
+	<string name="iproov__failure_too_dark">Di chuyển đến một nơi sáng hơn</string>
+	<string name="iproov__failure_too_much_movement">Giữ khuôn mặt không di chuyển</string>
+	<string name="iproov__failure_unknown">Thử lại</string>
 	<string name="iproov__failure_user_timeout">Phiên của bạn đã hết hạn</string>
 	<string name="iproov__progress_assessing_genuine_presence">Đánh giá sự hiện diện thực sự…</string>
 	<string name="iproov__progress_assessing_liveness">Đang đánh giá thực thể sống…</string>
@@ -188,24 +185,26 @@
 	<string name="iproov__progress_identifying_face">Đang nhận dạng khuôn mặt…</string>
 	<string name="iproov__progress_loading">Đang tải…</string>
 	<string name="iproov__progress_streaming">Đang phát trực tiếp</string>
-	<string name="iproov__progress_streaming_slow">Mạng của bạn có thể có vẻ chậm. Vui lòng chờ đợi trong khi chúng tôi tiến hành xử lý.</string>
-	<string name="iproov__prompt_align_face_accessibility">Giữ thiết bị trước mặt và nhìn vào màn hình</string>
-	<string name="iproov__prompt_genuine_presence_align_face">Kéo mặt bạn vào khung</string>
+	<string name="iproov__prompt_align_face">Đặt khuôn mặt của bạn trong hình bầu dục</string>
 	<string name="iproov__prompt_get_ready">Chuẩn bị…</string>
-	<string name="iproov__prompt_liveness_align_face">Kéo mặt bạn vào hình ô-van</string>
-	<string name="iproov__prompt_liveness_no_target">Kéo mặt bạn vào khung</string>
 	<string name="iproov__prompt_liveness_scan_completed">Đã quét xong</string>
 	<string name="iproov__prompt_pitch_too_high">Giữ thiết bị ngang tầm mắt</string>
 	<string name="iproov__prompt_pitch_too_low">Giữ thiết bị ngang tầm mắt</string>
 	<string name="iproov__prompt_roll_too_high">Tránh nghiêng đầu</string>
 	<string name="iproov__prompt_roll_too_low">Tránh nghiêng đầu</string>
-	<string name="iproov__prompt_scanning">Đang quét…</string>
-	<string name="iproov__prompt_tap_to_begin">Nhấn vào màn hình để bắt đầu</string>
 	<string name="iproov__prompt_too_bright">Đi đến nơi tối hơn</string>
 	<string name="iproov__prompt_too_close">Quá gần</string>
 	<string name="iproov__prompt_too_far">Di chuyển lại gần hơn</string>
 	<string name="iproov__prompt_yaw_too_high">Xoay nhẹ sang bên trái của bạn</string>
 	<string name="iproov__prompt_yaw_too_low">Xoay nhẹ sang bên phải của bạn</string>
+	-->
+
+	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
+	<!--
+	<string name="jumio_di_retry_expire">Phiên của bạn đã hết hạn</string>
+	<string name="jumio_di_retry_service_error">Xác minh không thành công</string>
+	<string name="jumio_di_retry_third_party_verification_error">Xác minh không thành công</string>
+	<string name="jumio_di_retry_unknown">Đã xảy ra lỗi</string>
 	-->
 
 </resources>

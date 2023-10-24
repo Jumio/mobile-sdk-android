@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	package="com.jumio.sample"
-	android:installLocation="auto">
+    android:installLocation="auto">
 
 	<supports-screens
 		android:anyDensity="true"
@@ -27,11 +26,10 @@
 
 		<!-- KOTLIN -->
 		<activity
-			android:name="com.jumio.sample.kotlin.MainActivity"
+			android:name="com.jumio.sample.MainActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
 			android:exported="true"
 			android:icon="@drawable/ic_launcher_kotlin"
-			android:label="@string/app_name_kotlin"
 			android:theme="@style/AppTheme">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -39,11 +37,42 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="com.jumio.sample.kotlin.customui.CustomUiActivity"
-			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
-			android:exported="false"
+			android:name="com.jumio.sample.customui.CustomUiActivity"
+			android:exported="true"
 			android:screenOrientation="portrait"
-			android:theme="@style/Theme.Jumio" />
+			android:launchMode="singleTask"
+			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
+			android:theme="@style/Theme.Jumio"
+			android:label="Jumio Sample Custom UI">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data
+					android:host="jumio-di-redirect"
+					android:scheme="app" />
+			</intent-filter>
+		</activity>
+
+		<activity
+			android:name="com.jumio.defaultui.JumioActivity"
+			android:exported="true"
+			android:launchMode="singleTask"
+			tools:replace="android:exported">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data
+					android:host="jumio-di-redirect"
+					android:scheme="app" />
+			</intent-filter>
+		</activity>
+
 	</application>
 
 </manifest>
