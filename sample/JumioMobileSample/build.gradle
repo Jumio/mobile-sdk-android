@@ -1,12 +1,12 @@
 buildscript {
-	ext.kotlin_version = "1.6.20"
+	ext.kotlin_version = "1.7.0"
 	repositories {
 		google()
 		mavenCentral()
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath "com.android.tools.build:gradle:7.2.0"
+		classpath "com.android.tools.build:gradle:7.2.1"
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 	}
 }
@@ -31,15 +31,14 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "4.2.1"
+	SDK_VERSION = "4.3.1"
 }
 
 dependencies {
 	// Jumio dependencies
 	implementation "com.jumio.android:core:${SDK_VERSION}"
 	implementation "com.jumio.android:linefinder:${SDK_VERSION}"
-	// The Docfinder module is still in Beta and suspect to change in the next version. If you intend to use it in production, please contact Jumio Customer Service at support@jumio.com
-//	implementation "com.jumio.android:docfinder:${SDK_VERSION}"
+	implementation "com.jumio.android:docfinder:${SDK_VERSION}"
 	implementation "com.jumio.android:mrz:${SDK_VERSION}"
 	implementation "com.jumio.android:nfc:${SDK_VERSION}"
 	implementation "com.jumio.android:barcode:${SDK_VERSION}"
@@ -60,14 +59,14 @@ dependencies {
 }
 
 android {
-	compileSdkVersion 31
+	compileSdkVersion 32
 	buildToolsVersion "32.0.0"
 
 	defaultConfig {
 		versionCode 1
 		versionName "Jumio Sample"
-		minSdkVersion 19
-		targetSdkVersion 31
+		minSdkVersion 21
+		targetSdkVersion 32
 		multiDexEnabled true
 		vectorDrawables.useSupportLibrary true
 	}

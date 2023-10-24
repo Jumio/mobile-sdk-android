@@ -6,8 +6,25 @@ This section only covers the breaking technical changes that should be considere
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
-## 4.2.1
+## 4.3.1
 No backward incompatible changes
+
+## 4.3.0
+
+#### Minimum SDK Version Changes
+* minSdkVersion has been increased to 21. The SDK can still be integrated in Apps that support lower minSdkVersions - check if the [platform is supported](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk/-jumio-s-d-k/-companion/is-supported-platform.html) before initializing the JumioSDK, otherwise it will throw a [PlatformNotSupportedException](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.exceptions/-platform-not-supported-exception/index.html).
+
+#### Dependency Updates
+* IProov update: ~~`"com.iproov.sdk:iproov:7.2.0"`~~ is replaced by `"com.iproov.sdk:iproov:7.5.0"`
+
+#### API Changes
+* Document Verification is now supported. Please check the [Integration Guide](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#jumio-document-credential) for more information.
+
+#### Public API Changes
+* ~~`JumioCameraPosition`~~ from package `com.jumio.sdk.enums` in `com.jumio.sdk:core` is replaced by `JumioCameraFacing`
+* `JumioAcquireMode` has been added to package `com.jumio.sdk.enums` in `com.jumio.sdk:core`, containing fields `FILE` and `CAMERA`
+* [`JumioDataCredential` class](integration_guide.md/#jumio-data-credential) has been added for handling of Device Fingerprinting
+* [`JumioDocumentCredential` class](integration_guide.md/#jumio-document-credential) has been added for Document Verification handling
 
 ## 4.2.0
 #### Public API Changes
@@ -16,7 +33,7 @@ No backward incompatible changes
 * `JumioScanSide` from package `com.jumio.sdk.enums` in `com.jumio.sdk:core` has been renamed to [JumioCredentialPart](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html)
 
 #### Dependency Updates
-* NEW Generic ID Scanning dependency (Beta): `implementation "com.jumio.android:docfinder:4.2.0"`
+* NEW Autocapture dependency (Beta): `implementation "com.jumio.android:docfinder:4.2.0"`
 
 #### Customization Updates
 * Boolean `iproov_floating_prompt_enabled` has been added to [`Iproov.Customization` theme](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/styles.xml#L84)
@@ -106,7 +123,6 @@ No backward incompatible changes
 
 ## 3.9.3
 No backward incompatible changes
-
 
 ## 3.9.2
 #### Dependency Changes

@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
@@ -31,6 +32,7 @@ import com.jumio.sdk.result.JumioResult
 import com.jumio.sdk.retry.JumioRetryReason
 import com.jumio.sdk.scanpart.JumioScanPart
 import com.jumio.sdk.views.JumioActivityAttacher
+import com.jumio.sdk.views.JumioFileAttacher
 import java.text.DecimalFormat
 
 /**
@@ -74,6 +76,24 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 
 	private var error: JumioError? = null
 	private var retryReason: JumioRetryReason? = null
+
+	private val fileAttacher = JumioFileAttacher()
+	private val filePickerLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+		if (result.resultCode == RESULT_OK) {
+			try {
+				scanPart?.let{fileAttacher.attach(it)}
+				result.data?.let {
+					val returnUri = it.data ?: throw Exception("Could not get Uri")
+					val fileDescriptor = contentResolver.openFileDescriptor(returnUri, "r") ?: throw Exception("Could not open file descriptor")
+					fileAttacher.setFileDescriptor(fileDescriptor)
+				}
+			} catch (e:Exception) {
+				e.message?.let {
+					showError(it)
+				}
+			}
+		}
+	}
 
 	/**
 	 * Create or restore the JumioSDK instance and set all the click listeners
@@ -144,6 +164,23 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 					(credential as JumioIDCredential).let {
 						it.setConfiguration(country, jumioDocument)
 						setupCredentialParts(it.credentialParts)
+					}
+				}
+			}
+		}
+		binding.btnSetAcquireMode.setOnClickListener {
+			if(credential is JumioDocumentCredential) {
+				try {
+					val acquireMode = when (binding.acquireModeGroup.checkedRadioButtonId) {
+						R.id.acquireModeCamera -> JumioAcquireMode.CAMERA
+						R.id.acquireModeFile -> JumioAcquireMode.FILE
+						else -> throw Exception("AcquireMode not supported")
+					}
+					(credential as JumioDocumentCredential).setConfiguration(acquireMode)
+					setupCredentialParts(credential!!.credentialParts)
+				} catch(e:Exception) {
+					e.message?.let {
+						showError(it)
 					}
 				}
 			}
@@ -393,7 +430,7 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 			}
 			JumioScanUpdate.FALLBACK -> {
 				scanPart?.let {
-					log("Start Fallback: ${it.scanMode}")
+					log("Fallback initiated due to: ${(data as? JumioFallbackReason)?.toString()}. Current scanMode: ${scanPart?.scanMode}")
 					binding.startFallback.isEnabled = it.hasFallback == true
 					binding.takePicture.isEnabled = binding.scanView.isShutterEnabled
 				}
@@ -422,9 +459,6 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 			JumioScanUpdate.TOO_CLOSE -> {
 				log("Too close")
 			}
-			JumioScanUpdate.FALLBACK_REQUIRED -> {
-				log("Fallback required")
-			}
 		}
 	}
 
@@ -444,6 +478,9 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 				hideView(binding.loadingIndicator)
 			}
 			JumioScanStep.SCAN_VIEW -> {
+				binding.toggleFlash.isEnabled = false
+				binding.switchCamera.isEnabled = false
+				binding.takePicture.isEnabled = false
 				showView(binding.inlineScanLayout)
 				binding.scanView.invalidate()
 				binding.scanView.requestLayout()
@@ -457,7 +494,7 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 				hideView(binding.inlineScanLayout, showLoading = true)
 			}
 			JumioScanStep.PROCESSING -> {
-				showView(binding.loadingIndicator)
+				showView(binding.loadingIndicator, hideLoading = false)
 			}
 			JumioScanStep.CONFIRMATION_VIEW -> {
 				showView(binding.inlineConfirmLayout)
@@ -496,6 +533,19 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 			JumioScanStep.ATTACH_ACTIVITY -> {
 				scanPart?.let {
 					JumioActivityAttacher(this).attach(it)
+				}
+			}
+			JumioScanStep.ATTACH_FILE -> {
+				val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+					addCategory(Intent.CATEGORY_OPENABLE)
+					type = "*/*"
+					putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("application/pdf"))
+				}
+				try {
+					filePickerLauncher.launch(intent)
+				} catch(e:Exception) {
+					e.printStackTrace()
+					log("Could not start file picker", Color.RED)
 				}
 			}
 			JumioScanStep.ADDON_SCAN_PART -> {
@@ -616,8 +666,18 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 					}
 				}
 			}
-			is JumioFaceCredential -> {
-				hideView(binding.countryDocumentLayout)
+			is JumioDocumentCredential -> {
+				(credential as JumioDocumentCredential).let {
+					binding.acquireModeCamera.visibility = if(it.availableAcquireModes.contains(JumioAcquireMode.CAMERA)) View.VISIBLE else View.GONE
+					binding.acquireModeFile.visibility = if(it.availableAcquireModes.contains(JumioAcquireMode.FILE)) View.VISIBLE else View.GONE
+					showView(binding.acquireModeLayout)
+					if (it.isConfigured) {
+						setupCredentialParts(it.credentialParts)
+					}
+				}
+			}
+			is JumioFaceCredential, is JumioDataCredential -> {
+				hideViewsAfter(binding.credentialControls)
 				credential?.let {
 					setupCredentialParts(it.credentialParts)
 				}
@@ -776,6 +836,7 @@ class CustomUiActivity : AppCompatActivity(), JumioControllerInterface, JumioSca
 			binding.credentialLayout,
 			binding.credentialControls,
 			binding.countryDocumentLayout,
+			binding.acquireModeLayout,
 			binding.scanSideLayout,
 			binding.topMarginSeekBarLayout,
 			binding.userConsentLayout,

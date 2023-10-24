@@ -145,6 +145,46 @@
 		</LinearLayout>
 
 		<LinearLayout
+			android:id="@+id/acquireModeLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/jumio_white"
+			android:orientation="vertical"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:visibility="gone">
+
+			<RadioGroup
+				android:id="@+id/acquireModeGroup"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:weightSum="1">
+				<RadioButton
+					android:id="@+id/acquireModeCamera"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.5"
+					android:checked="true"
+					style="@style/AppTheme.Widget.RadioButton"
+					android:text="Camera" />
+				<RadioButton
+					android:id="@+id/acquireModeFile"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.5"
+					style="@style/AppTheme.Widget.RadioButton"
+					android:text="File" />
+			</RadioGroup>
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/btnSetAcquireMode"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Set AcquireMode" />
+		</LinearLayout>
+
+		<LinearLayout
 			android:id="@+id/scanSideLayout"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
