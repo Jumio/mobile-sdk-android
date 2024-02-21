@@ -6,6 +6,43 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+
+## 4.9.0
+#### Public API Changes
+* Function `getHelpAnimation()` has been deprecated for all face help animation instances in [`JumioScanPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html)
+* Property `parts` has been added to [`JumioPhysicalDocument`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-physical-document/index.html)
+* Property `idSubType` has been added to [`JumioIDResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.result/-jumio-i-d-result/index.html)
+* Removed retry code `USER_BACK` from `JumioRetryReasonGeneric`.
+* Added `JumioRetryReasonFace` to represent new retry codes for face scanning:
+  * GENERIC = 3001
+  * TOO_MUCH_MOVEMENT = 3002
+  * LIGHTING_TOO_BRIGHT = 3003
+  * LIGHTING_TOO_DARK = 3004
+  * EYES_CLOSED = 3005
+  * OBSCURED_FACE = 3006
+  * MULTIPLE_FACES = 3007
+  * SUNGLASSES = 3008
+* Class `JumioDataCredential` has been removed
+* Property `DEVICE_RISK` has been removed from [`JumioScanMode`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html)
+* Property `DEVICE_RISK` has been removed from [`JumioCredentialPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html)
+
+
+#### Dependency Updates
+* Removed Devicerisk dependency: ~~`implementation "com.jumio.android:devicerisk:4.8.1"`~~
+* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:9.0.2"`. Please note that this update also includes a major UI/UX upgrade.
+
+
+#### Customization Changes
+* The following customization color attributes have been added: 
+  * `<item name="jumio_face_primary">`
+  * `<item name="jumio_face_secondary">`
+  * `<item name="jumio_face_outline">`
+  * `<item name="jumio_face_success">`
+  * `<item name="jumio_image_border">`
+  * `<item name="jumio_bubble_outline_selected">`
+
+* Customization attribute ~~`<item name="jumio_face_animation_customization">`~~ has been removed
+
 ## 4.8.1
 No backward incompatible changes
 
@@ -136,6 +173,9 @@ No backward incompatible changes
 #### Dependency Updates
 * IProov update: ~~`"com.iproov.sdk:iproov:7.5.0"`~~ is replaced by `"com.iproov.sdk:iproov:8.0.3"`
 
+## 4.3.1
+No backward incompatible changes
+
 ## 4.3.0
 #### Minimum SDK Version Changes
 * minSdkVersion has been increased to 21. The SDK can still be integrated in Apps that support lower minSdkVersions - check if the [platform is supported](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk/-jumio-s-d-k/-companion/is-supported-platform.html) before initializing the JumioSDK, otherwise it will throw a [PlatformNotSupportedException](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.exceptions/-platform-not-supported-exception/index.html).
@@ -151,6 +191,9 @@ No backward incompatible changes
 * `JumioAcquireMode` has been added to package `com.jumio.sdk.enums` in `com.jumio.sdk:core`, containing fields `FILE` and `CAMERA`
 * [`JumioDataCredential` class](integration_guide.md/#jumio-data-credential) has been added for handling of Device Fingerprinting
 * [`JumioDocumentCredential` class](integration_guide.md/#jumio-document-credential) has been added for Document Verification handling
+
+## 4.2.1
+No backward incompatible changes
 
 ## 4.2.0
 #### Public API Changes

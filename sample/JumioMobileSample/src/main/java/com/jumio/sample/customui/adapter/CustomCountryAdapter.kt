@@ -6,7 +6,7 @@ import android.widget.ArrayAdapter
 
 class CustomCountryAdapter(
 	context: Context,
-	countryList: List<String>
+	countryList: List<String>,
 ) : ArrayAdapter<String>(context, android.R.layout.simple_spinner_item) {
 
 	init {

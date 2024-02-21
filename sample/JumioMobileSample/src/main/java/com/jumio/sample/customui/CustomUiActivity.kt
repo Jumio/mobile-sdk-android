@@ -28,7 +28,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.jumio.commons.log.Log
-import com.jumio.commons.utils.ScreenUtil
+import com.jumio.commons.utils.dpToPx
 import com.jumio.core.views.CameraScanView
 import com.jumio.defaultui.JumioActivity
 import com.jumio.sample.R
@@ -41,7 +41,6 @@ import com.jumio.sdk.consent.JumioConsentItem
 import com.jumio.sdk.controller.JumioController
 import com.jumio.sdk.credentials.JumioCredential
 import com.jumio.sdk.credentials.JumioCredentialInfo
-import com.jumio.sdk.credentials.JumioDataCredential
 import com.jumio.sdk.credentials.JumioDocumentCredential
 import com.jumio.sdk.credentials.JumioFaceCredential
 import com.jumio.sdk.credentials.JumioIDCredential
@@ -122,7 +121,7 @@ class CustomUiActivity :
 	override fun onRequestPermissionsResult(
 		requestCode: Int,
 		permissions: Array<String>,
-		grantResults: IntArray
+		grantResults: IntArray,
 	) {
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
@@ -214,8 +213,10 @@ class CustomUiActivity :
 		binding.errorRetryButton.setOnClickListener { _ ->
 			hideView(binding.errorRetryButton, showLoading = true)
 
-			error?.let {
-				jumioController.retry(it)
+			catchAndShow {
+				error?.let {
+					jumioController.retry(it)
+				}
 			}
 		}
 
@@ -587,8 +588,9 @@ class CustomUiActivity :
 			}
 			JumioScanUpdate.FALLBACK -> {
 				log(
-					"Fallback initiated due to: ${(data as? JumioFallbackReason)?.toString()}. Current scanMode: ${scanPart?.scanMode}"
-				) // ktlint-disable max-line-length
+					"Fallback initiated due to: ${(data as? JumioFallbackReason)?.toString()}." +
+						"Current scanMode: ${scanPart?.scanMode}"
+				)
 				binding.startFallback.isEnabled = scanPart?.hasFallback == true
 				binding.takePicture.isEnabled = scanView.isShutterEnabled
 			}
@@ -859,7 +861,7 @@ class CustomUiActivity :
 								parent: AdapterView<*>?,
 								view: View?,
 								bposition: Int,
-								id: Long
+								id: Long,
 							) {
 								binding.customDocumentSpinner.onItemSelectedListener = this@CustomUiActivity
 							}
@@ -898,7 +900,7 @@ class CustomUiActivity :
 					}
 				}
 			}
-			is JumioFaceCredential, is JumioDataCredential -> {
+			is JumioFaceCredential -> {
 				hideViewsAfter(binding.credentialControls)
 
 				credential?.let {
@@ -919,9 +921,7 @@ class CustomUiActivity :
 		if (activeScanPart.scanMode == JumioScanMode.WEB) {
 			hideView(binding.inlineScanLayout)
 			showView(binding.digitalIdentityView)
-		} else if (activeScanPart.scanMode != JumioScanMode.FACE_IPROOV &&
-			activeScanPart.scanMode != JumioScanMode.DEVICE_RISK
-		) {
+		} else if (activeScanPart.scanMode != JumioScanMode.FACE_IPROOV) {
 			hideView(binding.digitalIdentityView)
 			initScanView()
 		}
@@ -940,7 +940,7 @@ class CustomUiActivity :
 
 		val params = FrameLayout.LayoutParams(
 			if (isPortrait) FrameLayout.LayoutParams.MATCH_PARENT else FrameLayout.LayoutParams.WRAP_CONTENT,
-			if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else ScreenUtil.dpToPx(this, 300)
+			if (isPortrait) FrameLayout.LayoutParams.WRAP_CONTENT else 300.dpToPx(this)
 		)
 		binding.scanView.layoutParams = params
 
@@ -1105,7 +1105,7 @@ class CustomUiActivity :
 		}
 	}
 
-	private fun catchAndShow(function: () -> Any) {
+	private fun catchAndShow(function: () -> Unit) {
 		try {
 			function()
 		} catch (e: Exception) {
@@ -1168,7 +1168,7 @@ class CustomUiActivity :
 			activityResultLauncher: ActivityResultLauncher<Intent>,
 			token: String,
 			dataCenter: JumioDataCenter,
-			customTheme: Int = 0
+			customTheme: Int = 0,
 		) {
 			require(token.isNotEmpty()) { "Token needs to be set" }
 

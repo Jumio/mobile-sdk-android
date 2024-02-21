@@ -10,16 +10,17 @@
 - [Reducing the Size of Your App](#reducing-the-size-of-your-app)
     - [Strip Unused Modules](#strip-unused-modules)
     - [App Bundles](#app-bundles)
-    - [Architectures, ABI Filters & Splitting](#architectures,-abi-filters-&-splitting)
+    - [Architectures, ABI Filters & Splitting](#architectures-abi-filters--splitting)
+    - [Code Shrinking, Obfuscation and Optimization](#code-shrinking-obfuscation-and-optimization)
 - [Jumio Authentication Workflow Integration](#jumio-authentication-workflow-integration)
 - [Fallback and Manual Capturing](#fallback-and-manual-capturing)
-- [Custom Theme](#custom-theme-issues)
+- [Custom Theme](#custom-theme)
   - [Custom Theme Is Not Working](#custom-theme-is-not-working)
   - [Scan Overlay Is Not Displayed](#scan-overlay-is-not-displayed)
 - [Language Localization](#language-localization)
     - [String Updates](#string-updates)
 - [Java 8 Compatibility](#Java-8-compatibility)
-- [Overview of Scanning Methods](overview-of-scanning-methods)
+- [Overview of Scanning Methods](#overview-of-scanning-methods)
 - [Glossary of Commonly Used Abbreviations](#glossary)
 - [Google Play Store Prominent Disclosure](#google-play-store-prominent-disclosure)
 - [Jumio Support](#jumio-support)
@@ -70,8 +71,8 @@ Possible reasons for this might be ad blockers on the device, network wide ad bl
 In these cases the SDK will return a specific error code: __A10900__ If this error is received, we suggest to add a screen where the user is advised to switch network and/or turn off possible ad blockers.
 
 ## Reducing the Size of Your App
-The Netverify SDK contains a wide range of different scanning methods. The SDK is able to capture identity documents and extract information on the device using enhanced machine learning and computer vision technologies.
-The current download size of the [sample application](../sample/JumioMobileSample/) containing all products is around **12.5 MB** as mentioned in the [ID Verification guide](integration_guide.md).
+The Jumio SDK contains a wide range of different scanning methods. The SDK is able to capture identity documents and extract information on the device using enhanced machine learning and computer vision technologies.
+The current download size of the [sample application](../sample/JumioMobileSample/) containing all products is around **12.98 MB** as mentioned in the [ID Verification guide](integration_guide.md).
 If you want to reduce the size of the SDK within your application, there are several ways to achieve this:
 
 ### Strip Unused Modules
@@ -81,17 +82,17 @@ The following table shows a range of different product configurations with the s
 
 | Product Configuration                        |   Size   |                                           Modules                                            |
 | :------------------------------------------- | :------: | :------------------------------------------------------------------------------------------: |
-| Base                                         | 2.67 MB  |                                             core                                             |
-| Base + iProov                                | 3.52 MB  |                                         core, iproov                                         |
-| Base + Autocapture                           | 4.21 MB  |                                       core, docfinder                                        |
-| Base + Autocapture, Barcode-Vision           | 4.51 MB  |                               core, docfinder, barcode-vision                                |
-| Base + Autocapture, Barcode-Vision, iProov   | 5.35 MB  |                               core, docfinder, barcode, iproov                               |
-| Base + Autocapture, Barcode-Vision, Liveness | 6.28 MB  |                              core, docfinder, barcode, liveness                              |
-| Base + Autocapture, Barcode-Vision, NFC      | 7.59 MB  |                                core, docfinder, barcode, nfc                                 |
-| All (Custom UI only)                         | 10.33 MB | core, docfinder, barcode-vision, iproov, nfc, devicerisk, digital-identity, camerax,liveness |
-| Base + Autocapture, Default UI               | 4.60 MB  |                                 core, docfinder, default-ui                                  |
-| Base + Autocapture, Default UI, Datadog      | 5.21 MB  |                             core, docfinder, default-ui, datadog                             |
-| All (with Default UI)                        | 11.17 MB |   core, docfinder, barcode-vision, iproov, nfc, devicerisk, default-ui, datadog, liveness    |
+| Base                                         | 1.92 MB  |                                             core                                             |
+| Base + iProov                                | 6.53 MB  |                                         core, iproov                                         |
+| Base + Autocapture                           | 3.44 MB  |                                       core, docfinder                                        |
+| Base + Autocapture, Barcode-Vision           | 3.72 MB  |                               core, docfinder, barcode-vision                                |
+| Base + Autocapture, Barcode-Vision, iProov   | 6.96 MB  |                               core, docfinder, barcode, iproov                               |
+| Base + Autocapture, Barcode-Vision, Liveness | 5.47 MB  |                              core, docfinder, barcode, liveness                              |
+| Base + Autocapture, Barcode-Vision, NFC      | 6.84 MB  |                                core, docfinder, barcode, nfc                                 |
+| All (Custom UI only)                         | 10.29 MB |      core, docfinder, barcode-vision, iproov, nfc, digital-identity, camerax, liveness       |
+| Base + Autocapture, Default UI               | 4.00 MB  |                                 core, docfinder, default-ui                                  |
+| Base + Autocapture, Default UI, Datadog      | 4.76 MB  |                             core, docfinder, default-ui, datadog                             |
+| All (with Default UI)                        | 11.39 MB |         core, docfinder, barcode-vision, iproov, nfc, default-ui, datadog, liveness          |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -115,6 +116,7 @@ defaultConfig {
 ```
 
 It's also possible to manually provide a split apk on Google Play. The apk can be split based on the architecture if multiple apks should be uploaded to the Google Play Store. Google Play Store manages to deliver the appropriate apk for the device.
+
 ```
 splits {
 	abi {
@@ -125,6 +127,28 @@ splits {
 	}
 }
 ```
+
+### Code Shrinking, Obfuscation and Optimization
+The Jumio Android SDK is optimized using Google's R8 code shrinking tool. When utilizing the SDK and its dependencies it is important to apply several keep-rules in your project's proguard file to ensure that dependencies are available and the SDK can function correctly. A list of all required rules can be found [here](../README.md#proguard) or [within our Sample application](../sample/JumioMobileSample/proguard-rules.pro).
+
+#### R8 Full Mode
+If using Gradle 8, `fullMode` is *enabled per default*. You may disable it and use compatibility mode instead by putting the following in your `gradle.properties` file:
+
+```text
+android.enableR8.fullMode=false
+```
+
+If you decide to use `fullMode` instead, the following rule needs to be applied to your application's `proguard-rules.pro` file, due to an issue with subclasses of `ConstraintLayout`'s `Key` class:
+
+```text
+# Enabling this rule is only needed if using fullMode for R8
+# https://github.com/androidx/constraintlayout/issues/428
+-keepclassmembers class * extends androidx.constraintlayout.motion.widget.Key {
+  public <init>();
+}
+```
+
+Enabling `fullMode` might help you further reduce your app's apk size.
 
 ## Jumio Authentication Workflow Integration
 Jumio Authentication can be used for any use case in which you want your end-users to confirm their identities. As a result of the Authentication journey you get a success or failed result back from the SDK or from our server (callback or retrieval).
@@ -197,6 +221,7 @@ For an overview of all updates and changes of SDK string keys please refer to [t
 
 ## Java 8 Compatibility
 Jumio SDK uses [Java 8 language.](https://developer.android.com/studio/write/java8-support.html) It is necessary to enable Java 8 source and target compatibility for in the `build.gradle` file using `compileOptions`:
+
 ```
 android {
 ...

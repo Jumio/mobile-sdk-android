@@ -9,7 +9,7 @@ import com.jumio.sdk.document.JumioPhysicalDocument
 
 class CustomDocumentAdapter(
 	context: Context,
-	private val documents: List<JumioDocument>
+	private val documents: List<JumioDocument>,
 ) : ArrayAdapter<String>(context, android.R.layout.simple_spinner_item) {
 
 	init {

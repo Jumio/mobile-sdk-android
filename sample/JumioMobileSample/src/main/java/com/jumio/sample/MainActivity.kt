@@ -23,6 +23,8 @@ import com.jumio.sample.customui.CustomUiActivity
 import com.jumio.sample.databinding.ActivityMainBinding
 import com.jumio.sdk.JumioSDK
 import com.jumio.sdk.enums.JumioDataCenter
+import com.jumio.sdk.preload.JumioPreloadCallback
+import com.jumio.sdk.preload.JumioPreloader
 import com.jumio.sdk.result.JumioFaceResult
 import com.jumio.sdk.result.JumioIDResult
 import com.jumio.sdk.result.JumioResult
@@ -33,7 +35,11 @@ private const val TAG = "MainActivity"
 /**
  * Sample activity that handles the whole jumio sdk workflow for the custom ui approach
  */
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+class MainActivity :
+	AppCompatActivity(),
+	NavigationView.OnNavigationItemSelectedListener,
+	View.OnClickListener,
+	JumioPreloadCallback {
 
 	private lateinit var binding: ActivityMainBinding
 
@@ -63,10 +69,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 		val menu = binding.navView.menu
 		menu.findItem(R.id.nav_sdk).title = JumioSDK.version
-		onNavigationItemSelected(menu.findItem(R.id.nav_products))
 
 		binding.navView.setNavigationItemSelectedListener(this)
 		binding.navView.itemIconTintList = null
+
+		initModelPreloading()
 	}
 
 	@Deprecated("Deprecated in Java")
@@ -78,55 +85,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 		}
 	}
 
-	/**
-	 * Check and request missing permissions for the SDK.
-	 *
-	 * @param requestCode the request code for the SDK
-	 */
-	private fun checkPermissions(requestCode: Int = PERMISSION_REQUEST_CODE) =
-		if (!JumioSDK.hasAllRequiredPermissions(this)) {
-			// Acquire missing permissions.
-			val mp = JumioSDK.getMissingPermissions(this)
-			ActivityCompat.requestPermissions(
-				this,
-				mp,
-				requestCode
-			) // The result is received in onRequestPermissionsResult.
-			false
-		} else {
-			true
-		}
-
 	override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
 		when (menuItem.itemId) {
 			R.id.nav_terms_of_use, R.id.nav_privacy_policy -> openLink(
 				"https://www.jumio.com/legal-information/privacy-policy/jumio-showcase-app-privacy-terms/"
 			)
 			R.id.nav_licenses -> openLink("https://github.com/Jumio/mobile-sdk-android/tree/master/licenses")
+			R.id.nav_sdk -> openLink("https://github.com/Jumio/mobile-sdk-android/releases/latest")
+			R.id.nav_advanced_clean_models -> with(JumioPreloader) {
+				init(this@MainActivity)
+				clean()
+				dispose()
+			}
 		}
+
 		binding.drawerLayout.closeDrawer(GravityCompat.START)
 		return true
-	}
-
-	private fun openLink(url: String) {
-		val intent = Intent(Intent.ACTION_VIEW).apply {
-			data = Uri.parse(url)
-		}
-		startActivity(intent)
-	}
-
-	private fun isSupportedPlatform() = if (!JumioSDK.isSupportedPlatform(this)) {
-		Snackbar.make(binding.root, "This device is not supported!", Snackbar.LENGTH_LONG).show()
-		false
-	} else {
-		true
-	}
-
-	private fun isTokenSet() = if (binding.tokenEditText.text.isNullOrBlank()) {
-		Snackbar.make(binding.root, "Token needs to be set", Snackbar.LENGTH_LONG).show()
-		false
-	} else {
-		true
 	}
 
 	override fun onClick(v: View?) {
@@ -160,6 +134,69 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 				}
 			}
 		}
+	}
+
+	/**
+	 * [JumioPreloadCallback.preloadFinished] will be called by the [JumioPreloader] once
+	 * preloading finished. You may want to start the jumio sdk at this point.
+	 */
+	override fun preloadFinished() {
+		Log.d(TAG, "Preloading finished")
+
+		// Once preloading is finished successfully we can dispose the preloader (optional)
+		JumioPreloader.dispose()
+	}
+
+	/**
+	 * This functions shows how to setup the [JumioPreloader] and initiate preloading.
+	 *
+	 * Preloading in this case means that the SDK checks which models are required, and downloads them in advance.
+	 */
+	private fun initModelPreloading() = with(JumioPreloader) {
+		init(this@MainActivity)
+		setCallback(this@MainActivity)
+		preloadIfNeeded()
+	}
+
+	/**
+	 * Check and request missing permissions for the SDK.
+	 *
+	 * @param requestCode the request code for the SDK
+	 */
+	private fun checkPermissions(
+		requestCode: Int = PERMISSION_REQUEST_CODE,
+	) = if (!JumioSDK.hasAllRequiredPermissions(this)) {
+		// Acquire missing permissions.
+		val mp = JumioSDK.getMissingPermissions(this)
+		ActivityCompat.requestPermissions(
+			this,
+			mp,
+			requestCode
+		) // The result is received in onRequestPermissionsResult.
+		false
+	} else {
+		true
+	}
+
+	private fun openLink(url: String) {
+		val intent = Intent(Intent.ACTION_VIEW).apply {
+			data = Uri.parse(url)
+		}
+		startActivity(intent)
+	}
+
+	private fun isSupportedPlatform() = if (!JumioSDK.isSupportedPlatform(this)) {
+		Snackbar.make(binding.root, "This device is not supported!", Snackbar.LENGTH_LONG).show()
+		false
+	} else {
+		true
+	}
+
+	private fun isTokenSet() = if (binding.tokenEditText.text.isNullOrBlank()) {
+		Snackbar.make(binding.root, "Token needs to be set", Snackbar.LENGTH_LONG).show()
+		false
+	} else {
+		true
 	}
 
 	private val sdkForResultLauncher: ActivityResultLauncher<Intent> =

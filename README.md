@@ -101,10 +101,6 @@ Once you start up the sample application, you'll be given the option of trying o
 # Basics
 
 ## General Requirements
-⚠️&nbsp;&nbsp;__Android Deprecation Notice__  
-Please be aware that the upcoming SDK 4.7.0 will be the last SDK version supporting Android 5.0 (API level 21).
-All subsequent SDK versions will require at least Android 6.0 "Marshmallow" (API level 23).
-
 The minimum requirements for the SDK are:
 * Android 5.0 "Lollipop" (API level 21) or higher
 * Internet connection
@@ -218,24 +214,25 @@ Check the Android Studio [sample projects](sample/JumioMobileSample/) to learn t
 ## Proguard
 
 ### Mandatory
-The following Proguard Keep rules have to be added to the Jumio Mobile SDK:
+The following Proguard Keep rules have to be added to the application hosting the Jumio Android SDK:
 
 ```text
+# Jumio
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
 ```
 
 ### Optional
-The following Proguard Keep rules have to be added to the Jumio Mobile SDK if the corresponding dependencies have been added:
+The following Proguard Keep rules have to be added to the application hosting the Jumio Android SDK if the corresponding dependencies have been added:
 
 ```text
-#Tensorflow
+# Tensorflow
 -keep class org.tensorflow.** { *; }
 -keep class org.tensorflow.**$* { *; }
 -dontwarn org.tensorflow.**
 
-#IProov
--keep public class com.iproov.sdk.IProov {public *; }
+# IProov
+-keep public class com.iproov.sdk.IProov { public *; }
 -keep class com.iproov.** { *; }
 -keep class com.iproov.**$* { *; }
 -keep class com.google.protobuf.** { *; }
@@ -245,15 +242,15 @@ The following Proguard Keep rules have to be added to the Jumio Mobile SDK if th
 -dontwarn okhttp3.**
 -dontwarn okio.**
 
-#Datadog
+# Datadog
 -keep class com.datadog.** { *; }
 -keep class com.datadog.**$* { *; }
 
-#JMRTD
+# JMRTD
 -keep class org.jmrtd.** { *; }
--keep class net.sf.scuba.** {*;}
--keep class org.bouncycastle.** {*;}
--keep class org.ejbca.** {*;}
+-keep class net.sf.scuba.** { *; }
+-keep class org.bouncycastle.** { *; }
+-keep class org.ejbca.** { *; }
 -dontwarn java.nio.**
 -dontwarn org.codehaus.**
 -dontwarn org.ejbca.**
@@ -263,6 +260,9 @@ The following Proguard Keep rules have to be added to the Jumio Mobile SDK if th
 
 Most of the Proguard settings are applied automatically, as they are defined as consumer Proguard rules within the SDK. The current rules can also be found in the [Sample app](sample/JumioMobileSample/proguard-rules.pro).
 
+### R8 Full Mode
+For information regarding R8 `fullMode`, please refer to our FAQ section [here](docs/integration_faq.md#r8-full-mode).
+
 ## Language Localization
 Our SDK supports [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages. All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable [within our Sample application](sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml).
 
@@ -271,6 +271,15 @@ Jumio SDK products support the following languages:
 _Afrikaans, Arabic, Bulgarian, Chinese(Simplified), Chinese(Traditional), Croatian, Czech, Danish, Dutch, Estonian, English, Finnish, French, German, Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Khmer, Korean, Latvian, Lithuanian, Maltese, Norwegian, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Vietnamese, Zulu_
 
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or increase the __text size__ on their device. The accessibility strings that are used by TalkBack contain *accessibility* in their key and can be also modified in `strings.xml`.
+
+# ML Models
+The Jumio SDK utilizes ML Models to enable client-/server-side verification.
+
+Required models can be provided by downloading and adding them manually to the bundle or preloading them. The SDK will load them on demand if none of the previous is applied.
+
+Loading the models in advance will improve startup time of the SDK.
+
+For more details, please refer to our [integration guide](docs/integration_guide.md#ml-models).
 
 # Document Verification
 As of Android SDK 4.3.0, Document Verification functionality is available.

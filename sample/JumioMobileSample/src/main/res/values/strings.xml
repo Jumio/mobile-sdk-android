@@ -12,6 +12,8 @@
 	<string name="menu_privacy_policy">Privacy Policy</string>
 	<string name="menu_licenses">Licenses</string>
 	<string name="menu_version">SDK Version</string>
+	<string name="menu_advanced">Advanced</string>
+	<string name="clean_models">Clean models</string>
 
 	<string-array name="datacenter">
 		<item>US</item>

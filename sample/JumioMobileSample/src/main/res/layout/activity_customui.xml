@@ -124,12 +124,12 @@
 			<Spinner
 				android:id="@+id/customCountrySpinner"
 				android:layout_width="match_parent"
-				android:layout_height="@dimen/jumio_button_height_max" />
+				android:layout_height="@dimen/jumio_button_height_default" />
 
 			<Spinner
 				android:id="@+id/customDocumentSpinner"
 				android:layout_width="match_parent"
-				android:layout_height="@dimen/jumio_button_height_max" />
+				android:layout_height="@dimen/jumio_button_height_default" />
 
 			<com.google.android.material.button.MaterialButton
 				android:id="@+id/btnSetCountryAndDocumentType"

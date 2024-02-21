@@ -1,12 +1,12 @@
 buildscript {
-	ext.kotlin_version = "1.8.22"
+	ext.kotlin_version = "1.9.10"
 	repositories {
 		google()
 		mavenCentral()
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath "com.android.tools.build:gradle:7.4.2"
+		classpath "com.android.tools.build:gradle:8.1.3"
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 	}
 }
@@ -31,16 +31,16 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "4.8.1"
+	SDK_VERSION = "4.9.0"
 }
 
 dependencies {
 	implementation fileTree(dir: 'libs', include: '*.jar')
 
 	// Kotlin
-	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22"
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10"
 	// only for the sample code
-	implementation "androidx.activity:activity-ktx:1.7.2"
+	implementation "androidx.activity:activity-ktx:1.8.0"
 	implementation "androidx.multidex:multidex:2.0.1"
 
 	// Jumio dependencies
@@ -51,22 +51,21 @@ dependencies {
 	implementation "com.jumio.android:iproov:${SDK_VERSION}"
 	implementation "com.jumio.android:defaultui:${SDK_VERSION}"
 	implementation "com.jumio.android:datadog:${SDK_VERSION}"
-	implementation "com.jumio.android:devicerisk:${SDK_VERSION}"
 	implementation "com.jumio.android:digital-identity:${SDK_VERSION}"
 	implementation "com.jumio.android:liveness:${SDK_VERSION}"
 	implementation "com.jumio.android:camerax:${SDK_VERSION}"
 }
 
 android {
-	compileSdkVersion 33
-	buildToolsVersion "33.0.1"
+	compileSdkVersion 34
+	buildToolsVersion "34.0.0"
 	namespace "com.jumio.sample"
 
 	defaultConfig {
 		versionCode 1
 		versionName "Jumio Sample"
 		minSdkVersion 21
-		targetSdkVersion 33
+		targetSdkVersion 34
 		multiDexEnabled true
 		vectorDrawables.useSupportLibrary true
 	}

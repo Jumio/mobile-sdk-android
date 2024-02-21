@@ -18,10 +18,13 @@ Jumio’s products allow businesses to establish the genuine identity of their u
   - [Root Detection](#root-detection)
   - [Device Supported Check](#device-supported-check)
   - [Privacy Notice](#privacy-notice)
-  - [Digital Identity (DID)](#digital-identity-did)
-  - [Risk Signal: Device Risk](#risk-signal-device-risk)
+  - [Digital Identity (DID)](#digital-identity--did-)
+  - [Risk Signal: Device Risk](#risk-signal--device-risk)
+- [ML Models](#ml-models)
+  - [Bundling models in the app](#bundling-models-in-the-app)
+  - [Preloading models](#preloading-models)
 - [Initialization](#initialization)
-  - [Requesting a Token (via OAuth2)](#requesting-a-token-via-oauth2)
+  - [Requesting a Token (via OAuth2)](#requesting-a-token--via-oauth2-)
   - [Initializing the Jumio SDK](#initializing-the-jumio-sdk)
 - [Configuration](#configuration)
   - [Worfklow Selection](#worfklow-selection)
@@ -44,7 +47,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.8.1**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.9.0**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -67,37 +70,36 @@ The [SDK Setup Tool](https://jumio.github.io/mobile-configuration-tool/out/) is 
 
 Below you can find a list of dependencies that can be added to your application to enable different functionality of the Jumio SDK. Some modules are mandatory, others are optional.
 
-If an optional module is **not linked**, some functionalities may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size is currently around **17 MB**.
+If an optional module is **not linked**, some functionalities may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size is currently around **12.98 MB**.
 
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.8.1"               
+	implementation "com.jumio.android:core:4.9.0"               
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.8.1"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.8.1"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.8.1"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:iproov:4.8.1"             // Face Liveness library
-	implementation "com.jumio.android:liveness:4.8.1"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.8.1"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.9.0"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.9.0"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.9.0"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:iproov:4.9.0"             // Face Liveness library
+	implementation "com.jumio.android:liveness:4.9.0"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.9.0"   // Digital Identity verification library
   	...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.8.1"
+	implementation "com.jumio.android:defaultui:4.9.0"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.8.1"         // CameraX library 
-	implementation "com.jumio.android:datadog:4.8.1"         // Analytics library
-	implementation "com.jumio.android:devicerisk:4.8.1"      // Device fingerprinting library
+	implementation "com.jumio.android:camerax:4.9.0"         // CameraX library 
+	implementation "com.jumio.android:datadog:4.9.0"         // Analytics library
   	...
 }
 ```
@@ -114,8 +116,8 @@ Jumio uses Certified Liveness technology to determine liveness. Link `com.jumio.
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 
 ```groovy
-implementation "com.jumio.android:iproov:4.8.1"
-implementation("com.iproov.sdk:iproov:8.3.1") {
+implementation "com.jumio.android:iproov:4.9.0"
+implementation("com.iproov.sdk:iproov:9.0.3") {
 	exclude group: 'org.json', module: 'json'
 }
 ```
@@ -157,17 +159,6 @@ JumioSDK.isSupportedPlatform(context: Context)
 ```
 
 ### Privacy Notice
-
-If the module `com.jumio.android:devicerisk` is linked we collect data depending on the permissions given for fraud detection on
-
-- Location
-- Battery Usage
-- Device Identifier
-- Device Storage
-- MAC Address
-- SIM information (MNC, MCC, IMEI, Phone Number, Phone Type (GSM/CDMA), SIM Number, etc.)
-- Google Services ID
-
 If you submit your app to the Google Play Store a [Prominent Disclosure](https://support.google.com/googleplay/android-developer/answer/11150561) explaining the collected [User Data](https://support.google.com/googleplay/android-developer/answer/10144311) is required. The collected user data also needs to be declared in your [Data Safety Form](https://play.google.com/console/developers/app/app-content/data-privacy-security) and the [Privacy Policy](https://play.google.com/console/developers/app/app-content/privacy-policy) related to your application.
 
 Other stores might require something similar - please check before submitting your app to the store.
@@ -240,6 +231,53 @@ To integrate the device risk vendor Iovation into your application, please follo
 #### API call
 To provide Jumio with the generated Device Risk blackbox, please follow the [Device Risk API guide](https://docs.jumio.com/production/Content/Integration/Integration%20Channels/REST%20APIs.htm).
 
+## ML Models
+By default, required models get downloaded by the SDK if not provided via the assets folder or preloaded.
+
+### Bundling models in the app
+You can download our encrypted models and add them to your assets folder for the following modules.
+
+⚠️&nbsp;&nbsp;__Note:__ Make sure not to alter the downloaded models (name or content) before adding them to your assets folder.
+
+#### DocFinder
+If you are using the `com.jumio.android:docfinder` module, find the required models [here](https://cdn.mobile.jumio.ai/android/model/normalized_ensemble_passports_v2_float16_quant.enc) and [here](https://cdn.mobile.jumio.ai/android/model/classifierOnDeviceV2.enc).
+
+#### Liveness
+If you are using the `com.jumio.android:liveness` module, find the required model [here](https://cdn.mobile.jumio.ai/android/model/liveness_sdk_assets_v_0_0_1.enc).
+
+### Preloading models
+In version `4.9.0` we introduced the [`JumioPreloader`][jumiopreloader]. It provides functionality to preload models without the JumioSDK being initialized. To do so call:
+
+```Kotlin
+with(JumioPreloader) {
+	init(<Your Context>) // init with Context
+	preloadIfNeeded()
+}
+```
+
+The [`JumioPreloader`][jumiopreloader] will identify which models are required based on your configuration.
+
+Preloaded models are cached so they will not be downloaded again. To clean the models call:
+
+```Kotlin
+with(JumioPreloader) {
+	init(<Your Context>) // init with Context
+	clean()
+}
+```
+
+⚠️&nbsp;&nbsp;__Note:__ `clean` should never be called while the SDK is running!
+
+To get notified that preloading has finished, you can implement [`JumioPreloadCallback`][jumiopreloadcallback] methods and set the callback as follows:
+
+```Kotlin
+with(JumioPreloader) {
+	init(<Your Context>) // init with Context
+	setCallback(<Your callback>)
+	...
+	// followed by preloadIfNeeded() for example
+}
+```
 
 ## Initialization
 
@@ -277,9 +315,9 @@ Every Jumio SDK instance is initialized using a specific [`sdk.token`][token]. T
 
 ### Worfklow Selection
 
-Use ID verification callback to receive a verification status and verified data positions (see [Callback section](https://jumio.github.io/kyx/integration-guide.html#callback)). Make sure that your customer account is enabled to use this feature. A callback URL can be specified for individual transactions (for URL constraints see chapter [Callback URL](https://jumio.github.io/kyx/integration-guide.html#jumio-callback-ip-addresses)). This setting overrides any callback URL you have set in the Jumio Customer Portal. Your callback URL must not contain sensitive data like PII (Personally Identifiable Information) or account login. Set your callback URL using the `callbackUrl` parameter.
+Use ID verification callback to receive a verification status and verified data positions (see [Callback section](https://docs.jumio.com/production/Content/Integration/Callback.htm)). Make sure that your customer account is enabled to use this feature. A callback URL can be specified for individual transactions (for URL constraints see chapter __Jumio Callback IP Addresses__). This setting overrides any callback URL you have set in the Jumio Customer Portal. Your callback URL must not contain sensitive data like PII (Personally Identifiable Information) or account login. Set your callback URL using the `callbackUrl` parameter.
 
-Use the correct [workflow definition key](https://jumio.github.io/kyx/integration-guide.html#workflow-definition-keys) in order to request a specific workflow. Set your key using the `workflowDefinition.key` parameter.
+Use the correct [workflow definition key](https://docs.jumio.com/production/Content/References/Workflows/Standard%20Services.htm) in order to request a specific workflow. Set your key using the `workflowDefinition.key` parameter.
 
 ```json
 {
@@ -299,7 +337,7 @@ For more details, please refer to our [Workflow Description Guide](https://suppo
 
 There are several options in order to uniquely identify specific transactions. `customerInternalReference` allows you to specify your own unique identifier for a certain scan (max. 100 characters). Use `reportingCriteria`, to identify the scan in your reports (max. 100 characters). You can also set a unique identifier for each user using `userReference` (max. 100 characters).
 
-For more details, please refer to our [API Guide](https://jumio.github.io/kyx/integration-guide.html#request-body).
+For more details, please refer to the __Account Request__ section in our [KYX Guide](https://docs.jumio.com/production/Content/Integration/Creating%20or%20Updatng%20Account/Creating%20or%20Updating%20Accounts.htm).
 
 ```json
 {
@@ -318,7 +356,7 @@ For more details, please refer to our [API Guide](https://jumio.github.io/kyx/in
 
 You can specify issuing country using [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country codes, as well as ID types to skip selection during the scanning process. In the example down below, Austria ("AUT") and the USA ("USA") have been preselected. PASSPORT and DRIVER_LICENSE have been chosen as preselected document types. If all parameters are preselected and valid and there is only one given combination (one country and one document type), the document selection screen in the SDK can be skipped entirely.
 
-For more details, please refer to our [API Guide](https://jumio.github.io/kyx/integration-guide.html#request-body).
+For more details, please refer to the __Account Request__ section in our [KYX Guide](https://docs.jumio.com/production/Content/Integration/Creating%20or%20Updatng%20Account/Creating%20or%20Updating%20Accounts.htm).
 
 ⚠️&nbsp;&nbsp;**Note:** "Digital Identity" document type can not be preselected!
 
@@ -372,16 +410,17 @@ The following tables give information on the specification of all data parameter
 #### Class **_JumioIDResult_**
 
 | Parameter        | Type           | Max. length | Description                                                                                                                                                            |
-| :--------------- | :------------- | :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:-----------------| :------------- | :---------- |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | issuingCountry   | String         | 3           | Country of issue as [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code                                                                |
 | idType           | String         |             | PASSPORT, DRIVER_LICENSE, IDENTITY_CARD or VISA as provided or selected                                                                                                |
+| idSubType        | String         |             | Sub type of the scanned ID                                                                                                                                             |
 | firstName        | String         | 100         | First name of the customer                                                                                                                                             |
 | lastName         | String         | 100         | Last name of the customer                                                                                                                                              |
 | dateOfBirth      | String         |             | Date of birth                                                                                                                                                          |
 | issuingDate      | String         |             | Date of issue                                                                                                                                                          |
 | expiryDate       | String         |             | Date of expiry                                                                                                                                                         |
 | documentNumber   | String         | 100         | Identification number of the document                                                                                                                                  |
-| personalNumber   | String         | 14          | Personal number of the document                                                                                                                                        |
+| personalNumber   | String         |             | Personal number of the document                                                                                                                                        |
 | gender           | String         |             | Gender M, F or X                                                                                                                                                       |
 | nationality      | String         |             | Nationality of the customer                                                                                                                                            |
 | placeOfBirth     | String         | 255         | Place of birth                                                                                                                                                         |
@@ -703,7 +742,7 @@ Start the scanning process by initializing the [`JumioScanPart`][jumioscanpart].
 
 `currentScanPart = currentCredential?.initScanPart(credentialPart, yourJumioScanPartInterface)`
 
-- [`JumioCredentialPart`][jumiocredentialpart] values: `FRONT`, `BACK`, `MULTIPART`, `FACE`, `DOCUMENT`, `NFC`, `DEVICE_RISK`
+- [`JumioCredentialPart`][jumiocredentialpart] values: `FRONT`, `BACK`, `MULTIPART`, `FACE`, `DOCUMENT`, `NFC`
 
 `MULTIPART` handles the scanning of multiple sides in one seamless capture experience. When a [`MULTIPART`][jumiomultipart] scan part is started, an additional [`NEXT_PART`][nextpart] step is sent after [`IMAGE_TAKEN`][imagetaken]. This signals that another side of the document should be scanned now. The step returns the [`JumioCredentialPart`][jumiocredentialpart] that should be scanned next. We suggest to actively guide the user to move to the next part, e.g. by showing an animation and by disabling the extraction during the animation. Please also check the new [`NEXT_PART`][nextpart] scan step for this [`JumioCredentialPart`][jumiocredentialpart]
 
@@ -1033,3 +1072,5 @@ In any case, your use of this Software is subject to the terms and conditions th
 [credentialpartslist]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-credential/credential-parts.html
 [proguardrules]: https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/proguard-rules.pro
 [jumiodiview]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-digital-identity-view/index.html
+[jumiopreloader]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.preload/-jumio-preloader/index.html
+[jumiopreloadcallback]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.preload/-jumio-preload-callback/index.html

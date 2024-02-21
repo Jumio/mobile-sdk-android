@@ -14,7 +14,7 @@ import com.jumio.sdk.consent.JumioConsentItem
 import com.jumio.sdk.enums.JumioConsentType
 
 class CustomConsentAdapter(
-	private val consentItems: List<JumioConsentItem>
+	private val consentItems: List<JumioConsentItem>,
 ) : RecyclerView.Adapter<CustomConsentAdapter.ConsentViewHolder>() {
 
 	private val activeConsentItems: List<JumioConsentItem>
@@ -65,7 +65,7 @@ class CustomConsentAdapter(
 		private fun showConsent(
 			textView: TextView,
 			switch: SwitchCompat,
-			consentItem: JumioConsentItem?
+			consentItem: JumioConsentItem?,
 		) {
 			val linkColor = MaterialColors.getColor(itemView, com.jumio.defaultui.R.attr.colorPrimary)
 			val spannedText = consentItem?.spannedTextWithLinkColor(linkColor)
