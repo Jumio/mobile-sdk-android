@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>JumioPreloader</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>Android SDK 4.9.0 (1)</span>            </a>    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":jumio-core:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="Core::com.jumio.sdk.preload/JumioPreloader///PointingToDeclaration//316989039">
+  <div class="breadcrumbs"><a href="../../index.html">Core</a><span class="delimiter">/</span><a href="../index.html">com.jumio.sdk.preload</a><span class="delimiter">/</span><span class="current">JumioPreloader</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Jumio</span><wbr><span><span>Preloader</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">JumioPreloader</a></div><p class="paragraph">A preloader that can be used to preload artifacts.</p><p class="paragraph">Which artefacts are preloaded is determined by the preloader itself. E.g. if docfinder is used, the preloader will download all required models for it to work.</p><p class="paragraph">The <a href="index.html">JumioPreloader</a> might be used BEFORE the <a href="../../com.jumio.sdk/-jumio-s-d-k/index.html">com.jumio.sdk.JumioSDK</a> is instantiated to prevent long-running model download at SDK start. A good point to use the preloader (if applicable) might be right after your application has started.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-473914097%2FFunctions%2F316989039" anchor-label="cancel" id="-473914097%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cancel.html"><span><span>cancel</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-473914097%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="cancel.html"><span class="token function">cancel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Cancels any ongoing preloading session.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1840713096%2FFunctions%2F316989039" anchor-label="clean" id="1840713096%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="clean.html"><span><span>clean</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1840713096%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="clean.html"><span class="token function">clean</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Cleans all downloaded artifacts.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="487771506%2FFunctions%2F316989039" anchor-label="dispose" id="487771506%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="dispose.html"><span><span>dispose</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="487771506%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="dispose.html"><span class="token function">dispose</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Disposes the <a href="index.html">JumioPreloader</a>. <a href="init.html">init</a> needs to be called afterwards in case the preloader needs to be used again.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="339357422%2FFunctions%2F316989039" anchor-label="init" id="339357422%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="init.html"><span><span>init</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="339357422%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="init.html"><span class="token function">init</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Initializes the <a href="index.html">JumioPreloader</a> with the given <a href="init.html">context</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="100797110%2FFunctions%2F316989039" anchor-label="preloadIfNeeded" id="100797110%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="preload-if-needed.html"><span>preload</span><wbr><span>If</span><wbr><span><span>Needed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="100797110%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="preload-if-needed.html"><span class="token function">preloadIfNeeded</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Preloads artifact, if needed. If a required artifact is already available (e.g. via the assets of your application or it has been downloaded previously) it will not be preloaded again.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1544153096%2FFunctions%2F316989039" anchor-label="setCallback" id="-1544153096%2FFunctions%2F316989039" data-filterable-set=":jumio-core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":jumio-core:dokkaHtmlPartial/release" data-filterable-set=":jumio-core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-callback.html"><span>set</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1544153096%2FFunctions%2F316989039"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":jumio-core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-callback.html"><span class="token function">setCallback</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">callback<span class="token operator">: </span><a href="../-jumio-preload-callback/index.html">JumioPreloadCallback</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sets an optional <a href="set-callback.html">callback</a> for the <a href="index.html">JumioPreloader</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span><div><br>© Jumio Corporation, 100 Mathilda Place Suite 100 Sunnyvale, CA 94086<br><br>The source code and software available on this website (“Software”) is provided by Jumio Corp. or its affiliated group companies (“Jumio”) ”as is” and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall Jumio be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to procurement of substitute goods or services, loss of use, data, profits, or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this Software, even if advised of the possibility of such damage. In any case, your use of this Software is subject to the terms and conditions that apply to your contractual relationship with Jumio. As regards Jumio’s privacy practices, please see our privacy notice available here: <a href="https://www.jumio.com/privacy-center/privacy-notices/online-services-notice/" target="blank" rel="nofollow">Privacy Policy</a>.<br><br></div></span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
+
