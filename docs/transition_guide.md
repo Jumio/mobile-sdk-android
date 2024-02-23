@@ -29,7 +29,7 @@ __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the cha
 
 #### Dependency Updates
 * Removed Devicerisk dependency: ~~`implementation "com.jumio.android:devicerisk:4.8.1"`~~
-* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:9.0.2"`. Please note that this update also includes a major UI/UX upgrade.
+* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:9.0.3"`. Please note that this update also includes a major UI/UX upgrade.
 
 
 #### Customization Changes

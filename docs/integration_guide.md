@@ -668,6 +668,8 @@ fileAttacher.setFile(file)
 
 #### Jumio Data Credential
 
+⚠️&nbsp;&nbsp;__Note:__ `JumioDataCredential` is only available from SDK version `4.2.0` to `4.8.1` (inclusively).
+
 [`JumioDataCredential`][jumiodatacredential] is used for the device fingerprinting. There are some optional configurations you can do to enhance it's behavior.
 
 1. Add the following Android permissions to your `AndroidManifest.xml`, if not already added:

@@ -23,6 +23,8 @@ Please refer to our [SDK maintenance and support policy](maintenance_policy.md) 
 ## SDK Version: __4.9.0__
 ![Improvement] Automated document and country selection, powered by classifer ML model [ID Verification]
 
+![Improvement] Added possibility to pre-load required ML models. For more information checkout the according section in the [README](../README.md#ml-models) [ID Verification, Identity Verification]
+
 ![Improvement] Major UI Redesign [ID Verification, Identity Verification, Document Verification]
 
 ![Improvement] Improved Liveness retry logic. Prepared for granular instant feedback, if configured accordingly [Identity Verification]
@@ -51,11 +53,11 @@ Please refer to our [SDK maintenance and support policy](maintenance_policy.md) 
 
 ![Change] Updated Jumio Liveness module [Identity Verification]
 
-![Change] Removed previous scanning functionalities, now all included in Autocatpure functionality [ID Verification]
+![Change] Removed previous scanning functionalities, now all included in Autocapture functionality [ID Verification]
 
 ![Change] Removed Microblink barcode scanning, switched to MLkit [ID Verification]
 
-![Fix] Fixed Liveness customizaton bug [Identity Verification]
+![Fix] Fixed Liveness customization bug [Identity Verification]
 
 ## SDK Version: __4.6.1__
 ![Fix] Removed Location handling to fix potential Google Play Store rejections
