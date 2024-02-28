@@ -38,7 +38,7 @@ The Jumio Software Development Kit (SDK) provides you with a set of tools and UI
 
 Onboard new users and easily verify their digital identities by making sure the IDs they provide are valid and authentic. Extract data from ID documents completely automatically and within seconds. Confirm that users really are who they say they are by having them take a quick selfie and match it to their respective documents. Jumio uses cutting-edge biometric technology to make sure there is an actual, real-life person in front of the screen.
 
-![SDK Overview](docs/images/images_overview/overview_android_4.7.0.png)
+![SDK Overview](docs/images/images_overview/overview_android_4.9.0.png)
 
 Using the Jumio SDK will allow you to create the best possible solution for your individual needs, providing you with a range of different services to choose from.
 
@@ -105,6 +105,8 @@ The minimum requirements for the SDK are:
 * Android 5.0 "Lollipop" (API level 21) or higher
 * Internet connection
 * Jumio KYX
+
+ℹ️&nbsp;&nbsp;__Note:__ Starting with SDK 4.9.0 the minimum required compile SDK version is 34. Also Gradle 8 is __required__ to build the SDK!
 
 The following architectures are supported in the SDK:
 *	ARMv7 processor with Neon
