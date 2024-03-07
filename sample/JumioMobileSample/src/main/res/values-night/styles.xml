@@ -7,6 +7,7 @@
 		<item name="jumio_background">#1C2229</item>
 		<item name="jumio_text_foreground">#E0E0E0</item>
 		<item name="jumio_navigation_icon">#EC407A</item>
+		<item name="jumio_navigation_icon_dark">#EC407A</item>
 
 		<item name="jumio_bubble_background">#333D47</item>
 		<item name="jumio_bubble_background_selected">#57ffc7</item>
@@ -36,6 +37,8 @@
 
 		<item name="jumio_scanview_shutter">#AC3D9A</item>
 		<item name="jumio_scanview_shutter_pressed">#E0E011</item>
+		<item name="jumio_scanview_shutter_dark">#AC3D9A</item>
+		<item name="jumio_scanview_shutter_dark_pressed">#E0E011</item>
 
 		<item name="jumio_loading_circle_plain">#FFCA28</item>
 		<item name="jumio_loading_circle_gradient_start">#04A7F3</item>
@@ -45,9 +48,15 @@
 		<item name="jumio_loading_circle_icon">#FFCA28</item>
 
 		<!-- scan-overlay, iproov & nfc colors -->
+		<item name="jumio_face_animation_customization">@style/CustomFaceHelp</item>
 		<item name="jumio_overlay_customization">@style/CustomOverlay</item>
 		<item name="iproov_customization">@style/CustomIproov</item>
 		<item name="nfc_customization">@style/CustomNfc</item>
+	</style>
+
+	<style name="CustomFaceHelp" parent="Jumio.Face.Animation.Customization">
+		<!--Help screen colors-->
+		<item name="jumio_face_animation_foreground">#033598</item>
 	</style>
 
 	<style name="CustomOverlay" parent="Jumio.Overlay.Customization">
@@ -55,6 +64,10 @@
 		<item name="jumio_scanOverlayFill">#60EDED3B</item>
 		<item name="jumio_scanOverlayTransparent">#ff0000ff</item>
 		<item name="jumio_scanBackground">#333D47</item>
+
+		<item name="jumio_scanOverlay_livenessStroke">#EDED3B</item>
+		<item name="jumio_scanOverlay_livenessStrokeAnimation">#FF5722</item>
+		<item name="jumio_scanOverlay_livenessStrokeAnimationCompleted">#C31322</item>
 	</style>
 
 	<style name="CustomNfc" parent="Nfc.Customization">
@@ -66,9 +79,6 @@
 	</style>
 
 	<style name="CustomIproov" parent="Iproov.Customization">
-		<!--Help screen colors-->
-		<item name="iproov_animation_foreground">#FF5722</item>
-		<item name="iproov_animation_background">#060668</item>
 		<!--Animation colors-->
 		<item name="iproov_filterForegroundColor">#3032b4</item>
 		<item name="iproov_filterBackgroundColor">#B6FFFFFF</item>

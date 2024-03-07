@@ -1,12 +1,12 @@
 buildscript {
-	ext.kotlin_version = "1.7.10"
+	ext.kotlin_version = "1.8.21"
 	repositories {
 		google()
 		mavenCentral()
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath "com.android.tools.build:gradle:7.3.0"
+		classpath "com.android.tools.build:gradle:7.4.2"
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 	}
 }
@@ -31,37 +31,36 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "4.5.2"
+	SDK_VERSION = "4.7.2"
 }
 
 dependencies {
+	implementation fileTree(dir: 'libs', include: '*.jar')
+
+	// Kotlin
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
+	// only for the sample code
+	implementation "androidx.activity:activity-ktx:1.7.2"
+	implementation "androidx.multidex:multidex:2.0.1"
+
 	// Jumio dependencies
 	implementation "com.jumio.android:core:${SDK_VERSION}"
-	implementation "com.jumio.android:linefinder:${SDK_VERSION}"
 	implementation "com.jumio.android:docfinder:${SDK_VERSION}"
-	implementation "com.jumio.android:mrz:${SDK_VERSION}"
 	implementation "com.jumio.android:nfc:${SDK_VERSION}"
-	implementation "com.jumio.android:barcode:${SDK_VERSION}"
 	implementation "com.jumio.android:barcode-mlkit:${SDK_VERSION}"
 	implementation "com.jumio.android:iproov:${SDK_VERSION}"
 	implementation "com.jumio.android:defaultui:${SDK_VERSION}"
 	implementation "com.jumio.android:datadog:${SDK_VERSION}"
 	implementation "com.jumio.android:devicerisk:${SDK_VERSION}"
 	implementation "com.jumio.android:digital-identity:${SDK_VERSION}"
-
-	//only for the sample code
-	implementation "androidx.activity:activity-ktx:1.5.1"
-
-	//Kotlin
-	implementation "androidx.multidex:multidex:2.0.1"
-	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-
-	implementation fileTree(dir: 'libs', include: '*.jar')
+	implementation "com.jumio.android:liveness:${SDK_VERSION}"
+	implementation "com.jumio.android:camerax:${SDK_VERSION}"
 }
 
 android {
 	compileSdkVersion 33
 	buildToolsVersion "33.0.0"
+	namespace "com.jumio.sample"
 
 	defaultConfig {
 		versionCode 1
