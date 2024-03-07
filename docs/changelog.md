@@ -16,26 +16,59 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 For detailed technical changes please refer to our [Transition Guide](transition_guide.md).
 
 ## Support Period
-Current SDK version: __4.6.2__
+Current SDK version: __4.9.0__
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
 
-## SDK Version: __4.6.2__
-![Improvement] iProov SDK version update to 8.5.2 [Identity Verification]
+## SDK Version: __4.9.0__
+![Improvement] Automated document and country selection, powered by classifer ML model [ID Verification]
+
+![Improvement] Added possibility to pre-load required ML models. For more information checkout the according section in the [README](../README.md#ml-models) [ID Verification, Identity Verification]
+
+![Improvement] Major UI Redesign [ID Verification, Identity Verification, Document Verification]
+
+![Improvement] Improved Liveness retry logic. Prepared for granular instant feedback, if configured accordingly [Identity Verification]
+
+![Improvement] iProov SDK version update to 9.0.3 [Identity Verification] 
+
+![Improvement] Added support for R8's `fullMode` for code shrinking and obfuscation
+
+![Change] Removed Device Risk module from SDK [Identity Verification]
+
+## SDK Version: __4.8.1__
+![Fix] Removed Location handling to fix potential Google Play Store rejections
+
+## SDK Version: __4.8.0__
+![Improvement] Managing Liveness dependencies to help better conversion [Identity Verification]
+
+## SDK Version: __4.7.1__
+![Fix] Removed Location handling to fix potential Google Play Store rejections
+
+## SDK Version: __4.7.0__
+![Improvement] Added support for [CameraX](https://developer.android.com/training/camerax)
+
+![Improvement] Datadog SDK version update to 2.0: Added possibility to have a dedicated Jumio Datadog instance
+
+![Improvement] Improved Jumio Liveness capturing experience [Identity Verification]
+
+![Change] Updated Jumio Liveness module [Identity Verification]
+
+![Change] Removed previous scanning functionalities, now all included in Autocapture functionality [ID Verification]
+
+![Change] Removed Microblink barcode scanning, switched to MLkit [ID Verification]
+
+![Fix] Fixed Liveness customization bug [Identity Verification]
 
 ## SDK Version: __4.6.1__
-![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
+![Fix] Removed Location handling to fix potential Google Play Store rejections
 
 ## SDK Version: __4.6.0__
 ![Improvement] Added Jumio Liveness module to enhance the Liveness user experience and interface (Identity Verification)
 
 ![Improvement] Improved Liveness customization options (Identity Verification)
 
-## SDK Version: __4.5.2__
-![Improvement] iProov SDK version update to 8.5.2 [Identity Verification]
-
 ## SDK Version: __4.5.1__
-![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
+![Fix] Removed Location handling to fix potential Google Play Store rejections
 
 ## SDK Version: __4.5.0__
 ![Improvement] Added possibility for users to verify their identity using [Digital Identity](../README.md#digital-identity) [ID Verification, Identity Verification]
@@ -53,7 +86,7 @@ User consent is now acquired for all users to ensure the accordance with biometr
 ![Fix] Bug fixes: UI bugs, passport scanning issue for certain countries [ID Verification]
 
 ## SDK Version: __4.4.2__
-![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
+![Fix] Removed Location handling to fix potential Google Play Store rejections
 
 ## SDK Version: __4.4.1__
 
@@ -69,6 +102,9 @@ User consent is now acquired for all users to ensure the accordance with biometr
 
 ![Fix] Bug fixes: UI bugs, internal crashes
 
+## SDK Version: __4.3.1__
+![Fix] Removed Location handling to fix potential Google Play Store rejections
+
 ## SDK Version: __4.3.0__
 
 ![Improvement] Autocapture functionality (introduced in SDK 4.2.0) is no longer in beta stage [ID Verification]
@@ -83,6 +119,9 @@ User consent is now acquired for all users to ensure the accordance with biometr
 
 ![Fix] UI bugs, internal crashes [Identity Verification]
 
+## SDK Version: __4.2.1__
+![Fix] Removed Location handling to fix potential Google Play Store rejections
+
 ## SDK Version: __4.2.0__
 ![Improvement] Alignment of previously existing scanning method and improved user experience through addition of Autocapture module (Beta) [ID Verification]
 
@@ -95,7 +134,7 @@ User consent is now acquired for all users to ensure the accordance with biometr
 ![Fix] Bug fixes: UI bugs, internal crashes
 
 ## SDK Version: __4.1.1__
-![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
+![Fix] Removed Location handling to fix potential Google Play Store rejections
 
 ## SDK Version: __4.1.0__
 ![Improvement] Improved, granular user feedback for improved user experience and workflow through addition of Instant Feedback [ID Verification, Identity Verification]
@@ -122,7 +161,7 @@ This is a complete rewrite of our SDK. The SDK was built with CustomUI as a basi
 ![Improvement] Manual capture is now available as a fallback option for all other capture methods
 
 ## SDK Version: __3.9.5__
-![Fixes](https://img.shields.io/badge/Fix-success) Removed Location handling to fix potential Google Play Store rejections
+![Fix] Removed Location handling to fix potential Google Play Store rejections
 
 ## SDK Version: __3.9.4__
 ![Changes](https://img.shields.io/badge/Improvement-green) iProov SDK version update to 6.4.3 [Identity Verification]

@@ -21,6 +21,7 @@
   - [Static Interface Methods Are only Supported with Android N](#Static-interface-methods-are-only-supported-with-Android-N)
   - [SDK Crashes Trying to Display Animations (Android Version 5 and Lower)](#sdk-crashes-trying-to-display-animations-(android-version-4-and-lower))
   - [Country Missing from the Country List](#country-missing-from-the-country-list)
+  - [Datadog in Dynamic feature modules](#datadog-in-dynamic-feature-modules)
 
 # SDK Version 4.0.0 and Above
 
@@ -30,7 +31,7 @@
 
 If build fails with error message:
 
-_2 files found with path 'lib/arm6-v8a/libc++\_shared.so' from inputs ..._
+_2 files found with path 'lib/arm64-v8a/libc++\_shared.so' from inputs ..._
 
 Please add the following `packagingOptions` to the configuration in your `build.gradle` file:
 
@@ -138,4 +139,11 @@ implementation "com.jumio.android:nv-barcode:3.9.0@aar"
 ```
 A complete list of all dependencies [can be found here.](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#dependencies)
 
+__Note:__ Version numbers may vary.
+
+## Datadog in Dynamic feature modules
+Datadog registers a Content Receiver through its AndroidManifest. Therefore Datadog needs to be linked in the base app, otherwise the app will crash during start.
+```
+api "com.datadoghq:dd-sdk-android-rum:2.0.0"
+```
 __Note:__ Version numbers may vary.

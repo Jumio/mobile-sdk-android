@@ -10,16 +10,17 @@
 - [Reducing the Size of Your App](#reducing-the-size-of-your-app)
     - [Strip Unused Modules](#strip-unused-modules)
     - [App Bundles](#app-bundles)
-    - [Architectures, ABI Filters & Splitting](#architectures,-abi-filters-&-splitting)
+    - [Architectures, ABI Filters & Splitting](#architectures-abi-filters--splitting)
+    - [Code Shrinking, Obfuscation and Optimization](#code-shrinking-obfuscation-and-optimization)
 - [Jumio Authentication Workflow Integration](#jumio-authentication-workflow-integration)
 - [Fallback and Manual Capturing](#fallback-and-manual-capturing)
-- [Custom Theme](#custom-theme-issues)
+- [Custom Theme](#custom-theme)
   - [Custom Theme Is Not Working](#custom-theme-is-not-working)
   - [Scan Overlay Is Not Displayed](#scan-overlay-is-not-displayed)
 - [Language Localization](#language-localization)
     - [String Updates](#string-updates)
 - [Java 8 Compatibility](#Java-8-compatibility)
-- [Overview of Scanning Methods](overview-of-scanning-methods)
+- [Overview of Scanning Methods](#overview-of-scanning-methods)
 - [Glossary of Commonly Used Abbreviations](#glossary)
 - [Google Play Store Prominent Disclosure](#google-play-store-prominent-disclosure)
 - [Jumio Support](#jumio-support)
@@ -29,9 +30,11 @@ User consent is now acquired for all users to ensure the accordance with biometr
 
 For __active__ consent instances, the user needs to accept the consent items explicitly, e.g. by enabling a UI switch or checking a checkbox for each consent item. For __passive__ consent instances, it is enough to present the consent text and URL to the user. The user implicitly accepts the passive consent items by continuing with the journey.
 
-<img src="images/consent/consent_passive.jpg" alt="Acquiring passive user consent">
-<img src="images/consent/consent_active_unchecked.jpg" alt="Acquiring active user consent">
-<img src="images/consent/consent_active_checked.jpg" alt="Acquired active user consent">
+<div style="display: flex;">
+    <img src="images/consent/consent_passive.jpg" alt="Acquiring passive user consent" style="border: 1px solid black; padding: 5px;">
+    <img src="images/consent/consent_active_unchecked.jpg" alt="Acquiring active user consent" style="border: 1px solid black; padding: 5px;">
+    <img src="images/consent/consent_active_checked.jpg" alt="Acquired active user consent" style="border: 1px solid black; padding: 5px;">
+</div>
 
 ## Improve User Experience and Reduce Drop-off Rate
 When evaluating user flows, one of the most commonly used metrics is the rate of drop-offs. At Jumio, we see considerable variance in drop-off rates across industries and customer implementations. For some implementations and industries, we see a higher rate of drop-offs on the first screens when compared with the average.
@@ -70,8 +73,8 @@ Possible reasons for this might be ad blockers on the device, network wide ad bl
 In these cases the SDK will return a specific error code: __A10900__ If this error is received, we suggest to add a screen where the user is advised to switch network and/or turn off possible ad blockers.
 
 ## Reducing the Size of Your App
-The Netverify SDK contains a wide range of different scanning methods. The SDK is able to capture identity documents and extract information on the device using enhanced machine learning and computer vision technologies.
-The current download size of the [sample application](../sample/JumioMobileSample/) containing all products is around **12.5 MB** as mentioned in the [ID Verification guide](integration_guide.md).
+The Jumio SDK contains a wide range of different scanning methods. The SDK is able to capture identity documents and extract information on the device using enhanced machine learning and computer vision technologies.
+The current download size of the [sample application](../sample/JumioMobileSample/) containing all products is around **12.98 MB** as mentioned in the [ID Verification guide](integration_guide.md).
 If you want to reduce the size of the SDK within your application, there are several ways to achieve this:
 
 ### Strip Unused Modules
@@ -79,21 +82,19 @@ Depending on your specific needs, you may want to strip out unused functionality
 
 The following table shows a range of different product configurations with the size and modules that are linked for it. These measurements reflect the extra size that Jumio components add to your app download size and are based on our [sample application](../sample/JumioMobileSample/).
 
-| Product Configuration                       |   Size   |                                                      Modules                                                      |
-|:--------------------------------------------|:--------:|:-----------------------------------------------------------------------------------------------------------------:|
-| Base                                        | 2.68 MB  |                                                       core                                                        |
-| Base + iProov                               | 3.51 MB  |                                                   core, iproov                                                    |
-| Base + MRZ                                  | 4.19 MB  |                                                     core, mrz                                                     |
-| Base + MRZ, Linefinder                      | 4.57 MB  |                                               core, mrz, linefinder                                               |
-| Base + MRZ, Linefinder, Barcode             | 5.62 MB  |                                          core, mrz, linefinder, barcode                                           |
-| Base + MRZ, Linefinder, Barcode-Vision      | 4.89 MB  |                                       core, mrz, linefinder, barcode-vision                                       |
-| Base + MRZ, Linefinder, Barcode, iProov     | 6.45 MB  |                                      core, mrz, linefinder, barcode, iproov                                       |
-| Base + MRZ, Linefinder, Barcode, Liveness   | 8.93 MB  |                                     core, mrz, linefinder, barcode, liveness                                      |
-| Base + MRZ, Linefinder, Barcode, NFC        | 7.26 MB  |                                        core, mrz, linefinder, barcode, nfc                                        |
-| All (Custom UI only)                        | 13.07 MB |           core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, liveness            |
-| Base + MRZ, Linefinder, Default UI          | 4.92 MB  |                                         core, mrz, linefinder, default-ui                                         |
-| Base + MRZ, Linefinder, Default UI, DataDog | 5.09 MB  |                                    core, mrz, linefinder, default-ui, datadog                                     |
-| All (with Default UI)                       | 13.58 MB | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, default-ui, datadog, liveness |
+| Product Configuration                        |   Size   |                                           Modules                                            |
+| :------------------------------------------- | :------: | :------------------------------------------------------------------------------------------: |
+| Base                                         | 1.92 MB  |                                             core                                             |
+| Base + iProov                                | 6.53 MB  |                                         core, iproov                                         |
+| Base + Autocapture                           | 3.44 MB  |                                       core, docfinder                                        |
+| Base + Autocapture, Barcode-Vision           | 3.72 MB  |                               core, docfinder, barcode-vision                                |
+| Base + Autocapture, Barcode-Vision, iProov   | 6.96 MB  |                               core, docfinder, barcode, iproov                               |
+| Base + Autocapture, Barcode-Vision, Liveness | 5.47 MB  |                              core, docfinder, barcode, liveness                              |
+| Base + Autocapture, Barcode-Vision, NFC      | 6.84 MB  |                                core, docfinder, barcode, nfc                                 |
+| All (Custom UI only)                         | 10.29 MB |      core, docfinder, barcode-vision, iproov, nfc, digital-identity, camerax, liveness       |
+| Base + Autocapture, Default UI               | 4.00 MB  |                                 core, docfinder, default-ui                                  |
+| Base + Autocapture, Default UI, Datadog      | 4.76 MB  |                             core, docfinder, default-ui, datadog                             |
+| All (with Default UI)                        | 11.39 MB |         core, docfinder, barcode-vision, iproov, nfc, default-ui, datadog, liveness          |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -117,6 +118,7 @@ defaultConfig {
 ```
 
 It's also possible to manually provide a split apk on Google Play. The apk can be split based on the architecture if multiple apks should be uploaded to the Google Play Store. Google Play Store manages to deliver the appropriate apk for the device.
+
 ```
 splits {
 	abi {
@@ -127,6 +129,28 @@ splits {
 	}
 }
 ```
+
+### Code Shrinking, Obfuscation and Optimization
+The Jumio Android SDK is optimized using Google's R8 code shrinking tool. When utilizing the SDK and its dependencies it is important to apply several keep-rules in your project's proguard file to ensure that dependencies are available and the SDK can function correctly. A list of all required rules can be found [here](../README.md#proguard) or [within our Sample application](../sample/JumioMobileSample/proguard-rules.pro).
+
+#### R8 Full Mode
+If using Gradle 8, `fullMode` is *enabled per default*. You may disable it and use compatibility mode instead by putting the following in your `gradle.properties` file:
+
+```text
+android.enableR8.fullMode=false
+```
+
+If you decide to use `fullMode` instead, the following rule needs to be applied to your application's `proguard-rules.pro` file, due to an issue with subclasses of `ConstraintLayout`'s `Key` class:
+
+```text
+# Enabling this rule is only needed if using fullMode for R8
+# https://github.com/androidx/constraintlayout/issues/428
+-keepclassmembers class * extends androidx.constraintlayout.motion.widget.Key {
+  public <init>();
+}
+```
+
+Enabling `fullMode` might help you further reduce your app's apk size.
 
 ## Jumio Authentication Workflow Integration
 Jumio Authentication can be used for any use case in which you want your end-users to confirm their identities. As a result of the Authentication journey you get a success or failed result back from the SDK or from our server (callback or retrieval).
@@ -199,6 +223,7 @@ For an overview of all updates and changes of SDK string keys please refer to [t
 
 ## Java 8 Compatibility
 Jumio SDK uses [Java 8 language.](https://developer.android.com/studio/write/java8-support.html) It is necessary to enable Java 8 source and target compatibility for in the `build.gradle` file using `compileOptions`:
+
 ```
 android {
 ...
@@ -214,22 +239,15 @@ android {
 #### Autocapture
 Combines all previously existing scanning methods into one automatic, seamless experience.
 
-![Autocapture Success](images/capturing_methods/autocapture_01.jpg)  ![Autocapture Scanning](images/capturing_methods/autocapture_02.jpg)
+<div style="display: flex;">
+    <img src="images/capturing_methods/autocapture_01.jpg" alt="Autocapture Start">
+    <img src="images/capturing_methods/autocapture_02.jpg" alt="Autocapture Center Document">
+</div>
 
-#### Linefinder
-Scanning using edge detection.
-
-![Linefinder Empty](images/capturing_methods/linefinder_scanning_01.jpg)  ![Linefinder Document](images/capturing_methods/linefinder_scanning_02.jpg) ![Linefinder Processing](images/capturing_methods/linefinder_scanning_03.jpg)
-
-#### MRZ
-Data extraction from passports, some identity cards and some visas.
-
-![MRZ Empty](images/capturing_methods/mrz_scanning_01.jpg)  ![MRZ Document](images/capturing_methods/mrz_scanning_02.jpg)
-
-#### Barcode
-PDF417 barcode data extraction, for example from US and Canadian driver licenses.
-
-![Barcode Empty](images/capturing_methods/barcode_scanning_01.jpg)  ![Barcode Document](images/capturing_methods/barcode_scanning_02.jpg)
+<div style="display: flex;">
+    <img src="images/capturing_methods/autocapture_03.jpg" alt="Autocapture Hold Still">
+    <img src="images/capturing_methods/autocapture_04.jpg" alt="Autocapture Checking Image">
+</div>
 
 #### Manual Capture
 Manual scanning (taking a picture) using the shutterbutton, fallback option in case user is having trouble.
@@ -239,7 +257,28 @@ Manual scanning (taking a picture) using the shutterbutton, fallback option in c
 #### NFC
 Data extraction from eMRTD documents, for example passports.
 
-![NFC Start](images/capturing_methods/nfc_scanning_01.jpg)  ![NFC Scanning](images/capturing_methods/nfc_scanning_02.jpg)
+![NFC Help](images/capturing_methods/nfc_scanning_01.jpg)  ![NFC Scanning](images/capturing_methods/nfc_scanning_02.jpg)
+
+#### Linefinder (deprecated)
+***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
+instead.***
+Scanning using edge detection.
+
+![Linefinder Empty](images/capturing_methods/linefinder_scanning_01.jpg)  ![Linefinder Document](images/capturing_methods/linefinder_scanning_02.jpg) ![Linefinder Processing](images/capturing_methods/linefinder_scanning_03.jpg)
+
+#### MRZ (deprecated)
+***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
+instead.***
+Data extraction from passports, some identity cards and some visas.
+
+![MRZ Empty](images/capturing_methods/mrz_scanning_01.jpg)  ![MRZ Document](images/capturing_methods/mrz_scanning_02.jpg)
+
+#### Barcode (deprecated)
+***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
+instead.***
+PDF417 barcode data extraction, for example from US and Canadian driver licenses.
+
+![Barcode Empty](images/capturing_methods/barcode_scanning_01.jpg)  ![Barcode Document](images/capturing_methods/barcode_scanning_02.jpg)
 
 ## Glossary
 A [quick guide to commonly used abbreviations](integration_glossary.md) throughout the documentation which may not be all that familiar.
