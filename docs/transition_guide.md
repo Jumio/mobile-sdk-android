@@ -6,6 +6,16 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.8.2
+#### Dependency Updates
+* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:8.5.2"`
+
+## 4.8.1
+No backward incompatible changes
+
+## 4.8.0
+No backward incompatible changes
+
 ## 4.7.2
 #### Dependency Updates
 * IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:8.5.2"`
