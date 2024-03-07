@@ -31,25 +31,19 @@ The life-cycle for SDK versions consists of these phases, which are outlined bel
 
 The following table is a visual representation of the SDK 4.x.x version life-cycle. SDK 3.x.x End-of-Life is set to December 31, 2023.
 
-| Version |      Release      |  End of Support   |    End of Life    |
-|:-------:|:-----------------:|:-----------------:|:-----------------:|
-|  4.8.2  |   7 March 2024    |  7 December 2024  |   7 March 2026    |
-|  4.8.1  |  23 October 2023  |   17 July 2024    |  17 October 2025  |
-|  4.8.0  |  17 October 2023  |   17 July 2024    |  17 October 2025  |
-|  4.7.2  |   7 March 2024    |  7 December 2024  |   7 March 2026    |
-|  4.7.1  |  23 October 2023  |   27 June 2024    | 27 September 2025 |
-|  4.7.0  | 27 September 2023 |   27 June 2024    | 27 September 2025 |
-|  4.6.2  |   7 March 2024    |  7 December 2024  |   7 March 2026    |
-|  4.6.1  |  23 October 2023  |   5 March 2024    |    5 June 2025    |
-|  4.6.0  |    5 June 2023    |   5 March 2024    |    5 June 2025    |
-|  4.5.2  |   7 March 2024    |  7 December 2024  |   7 March 2026    |
-|  4.5.1  |  23 October 2023  |  14 January 2024  |   14 April 2025   |
-|  4.5.0  |   14 April 2023   |  14 January 2024  |   14 April 2025   |
-|  4.4.2  |  23 October 2023  |  18 October 2023  |  18 January 2025  |
-|  4.4.1  |  18 January 2023  |  18 October 2023  |  18 January 2025  |
-|  4.4.0  | 20 December 2022  | 20 September 2023 | 20 December 2024  |
-|  4.3.0  |  30 August 2022   |    30 May 2023    |  30 August 2024   |
-|  4.2.0  |    25 May 2022    | 25 February 2023  |    25 May 2024    |
-|  4.1.1  |  23 October 2023  | 28 November 2022  | 28 February 2024  |
-|  4.1.0  | 28 February 2022  | 28 November 2022  | 28 February 2024  |
-|  4.0.0  | 16 November 2021  |  16 August 2022   | 16 November 2023  |
+| Version |     Release      |  End of Support   |   End of Life    |
+|:-------:|:----------------:|:-----------------:|:----------------:|
+|  4.6.2  |   7 March 2024   |  7 December 2024  |   7 March 2026   |
+|  4.6.1  | 23 October 2023  |   5 March 2024    |   5 June 2025    |
+|  4.6.0  |   5 June 2023    |   5 March 2024    |   5 June 2025    |
+|  4.5.2  |   7 March 2024   |  7 December 2024  |   7 March 2026   |
+|  4.5.1  | 23 October 2023  |  14 January 2024  |  14 April 2025   |
+|  4.5.0  |  14 April 2023   |  14 January 2024  |  14 April 2025   |
+|  4.4.2  | 23 October 2023  |  18 October 2023  | 18 January 2025  |
+|  4.4.1  | 18 January 2023  |  18 October 2023  | 18 January 2025  |
+|  4.4.0  | 20 December 2022 | 20 September 2023 | 20 December 2024 |
+|  4.3.0  |  30 August 2022  |    30 May 2023    |  30 August 2024  |
+|  4.2.0  |   25 May 2022    | 25 February 2023  |   25 May 2024    |
+|  4.1.1  | 23 October 2023  | 28 November 2022  | 28 February 2024 |
+|  4.1.0  | 28 February 2022 | 28 November 2022  | 28 February 2024 |
+|  4.0.0  | 16 November 2021 |  16 August 2022   | 16 November 2023 |

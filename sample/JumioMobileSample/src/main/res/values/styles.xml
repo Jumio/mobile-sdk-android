@@ -84,6 +84,7 @@
 	<style name="CustomFaceHelp" parent="Jumio.Face.Animation.Customization">
 		<!--Help screen colors-->
 		<item name="jumio_face_animation_foreground">#C31322</item>
+		<item name="jumio_face_animation_background">#EDED3B</item>
 	</style>
 
 	<style name="CustomOverlay" parent="Jumio.Overlay.Customization">

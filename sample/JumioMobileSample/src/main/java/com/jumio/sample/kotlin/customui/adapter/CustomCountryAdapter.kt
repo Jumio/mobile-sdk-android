@@ -1,5 +1,4 @@
-// Copyright 2023 Jumio Corporation, all rights reserved.
-package com.jumio.sample.customui.adapter
+package com.jumio.sample.kotlin.customui.adapter
 
 import android.content.Context
 import android.widget.ArrayAdapter

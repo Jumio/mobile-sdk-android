@@ -10,16 +10,14 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 - [Code Documentation](#code-documentation)
 - [Setup](#setup)
   - [Dependencies](#dependencies)
-  	- [Autocapture](#autocapture)
-  	- [Certified Face Liveness](#certified-face-liveness)
-  	- [Barcode Scanning](#barcode-scanning)
-  	- [NFC Scanning](#nfc-scanning)
   - [SDK Version Check](#sdk-version-check)
   - [Root Detection](#root-detection)
   - [Device Supported Check](#device-supported-check)
+  - [Autocapture](#autocapture)
+  - [Certified Face Liveness](#certified-face-liveness)
+  - [Barcode Scanning Alternative](#barcode-scanning-alternative)
   - [Privacy Notice](#privacy-notice)
   - [Digital Identity (DID)](#digital-identity-did)
-  - [Risk Signal: Device Risk](#risk-signal-device-risk)
 - [Initialization](#initialization)
   - [Requesting a Token (via OAuth2)](#requesting-a-token-via-oauth2)
   - [Initializing the Jumio SDK](#initializing-the-jumio-sdk)
@@ -44,7 +42,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.8.2**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.6.2**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -56,8 +54,8 @@ Full API documentation for the Jumio Android SDK can be found [here](https://jum
 
 The [basic setup](../README.md#basics) is required before continuing with the following setup for the Jumio SDK. If you are updating your SDK to a newer version, please also refer to:
 
-:arrow_right:&nbsp;&nbsp;[Changelog](changelog.md)  
-:arrow_right:&nbsp;&nbsp;[Transition Guide](transition_guide.md)
+:arrow_right:&nbsp;&nbsp;[Changelog](docs/changelog.md)  
+:arrow_right:&nbsp;&nbsp;[Transition Guide](docs/transition_guide.md)
 
 ### Dependencies
 
@@ -72,68 +70,42 @@ If an optional module is **not linked**, some functionalities may not be availab
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.8.2"               
+	implementation "com.jumio.android:core:4.6.2"               
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.8.2"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.8.2"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.8.2"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:iproov:4.8.2"             // Face Liveness library
-	implementation "com.jumio.android:liveness:4.8.2"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.8.2"   // Digital Identity verification library
+	implementation "com.jumio.android:mrz:4.6.2"                // MRZ scanning
+	implementation "com.jumio.android:nfc:4.6.2"                // NFC scanning
+	implementation "com.jumio.android:linefinder:4.6.2"         // Linefinder scanning
+	implementation "com.jumio.android:docfinder:4.6.2"          // Autocapture library
+	implementation "com.jumio.android:barcode:4.6.2"            // Barcode scanning
+	implementation "com.jumio.android:iproov:4.6.2"             // Face Liveness library
+  	implementation "com.jumio.android:liveness:4.6.2"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.6.2"   // Digital Identity verification library
   	...
+}
+
+// [Optional] Extraction methods alternatives
+dependencies {
+  implementation "com.jumio.android:barcode-mlkit:4.6.2"      // Barcode scanning alternative
+  ...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.8.2"
+	implementation "com.jumio.android:defaultui:4.6.2"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.8.2"         // CameraX library 
-	implementation "com.jumio.android:datadog:4.8.2"         // Analytics library
-	implementation "com.jumio.android:devicerisk:4.8.2"      // Device fingerprinting library
+	implementation "com.jumio.android:datadog:4.6.2"            // Analytics library
+	implementation "com.jumio.android:devicerisk:4.6.2"         // Device fingerprinting library
   	...
 }
 ```
-
-#### Autocapture
-
-The module `com.jumio.android:docfinder` offers one generic scanning method across all ID documents, providing a more seamless capture experience for the end user. The SDK will automatically detect which type of ID document is presented by the user and guide them through the capturing process with live feedback.
-The models can be bundled with the app directly to save time on the download during the SDK runtime. Therefore download the following files from [here](https://cdn.mobile.jumio.ai/model/classifier_on_device_ep_99_float16_quant.enc) and [here](https://cdn.mobile.jumio.ai/model/normalized_ensemble_passports_v2_float16_quant.enc) and add it to the app assets folder.
-
-#### Certified Face Liveness
-
-Jumio uses Certified Liveness technology to determine liveness. Link `com.jumio.android:liveness` and  `com.jumio.android:iproov` modules in order to use Jumio Liveness.
-
-If necessary, the iProov SDK version can be overwritten with a more recent one:
-
-```groovy
-implementation "com.jumio.android:iproov:4.8.2"
-implementation("com.iproov.sdk:iproov:8.5.1") {
-	exclude group: 'org.json', module: 'json'
-}
-```
-
-#### Barcode Scanning
-In order to benefit from barcode scanning functionality included in the `com.jumio.android:docfinder` dependency, please add `com.jumio.android:barcode-mlkit` to your `build-gradle` file. 
-
-This dependency includes `com.google.android.gms:play-services-mlkit-barcode-scanning` library - if your application includes **other Google ML-kit libraries**, it might be necessary to override meta-data specified in the application tag of the `play-services-mlkit-barcode-scanning` manifest by [merging multiple manifests](https://developer.android.com/studio/build/manage-manifests#merge-manifests):
-
-```xml
-<meta-data
-  android:name="com.google.android.gms.vision.DEPENDENCIES"
-  android:value="barcode"
-  tools:replace="android:value" />
-```
-
-#### NFC Scanning
-In order to benefit from NFC scanning functionality included in the `com.jumio.android:docfinder` dependency, please add `com.jumio.android:nfc` to your `build-gradle` file. 
 
 ### SDK Version Check
 
@@ -154,6 +126,35 @@ Use the method below to check if the current device platform is supported by the
 
 ```
 JumioSDK.isSupportedPlatform(context: Context)
+```
+
+### Autocapture
+
+The module `com.jumio.android:docfinder` offers one generic scanning method across all ID documents, providing a more seamless capture experience for the end user. The SDK will automatically detect which type of ID document is presented by the user and guide them through the capturing process with live feedback.
+The models can be bundled with the app directly to save time on the download during the SDK runtime. Therefore download the following files from [here](https://cdn.mobile.jumio.ai/model/classifier_on_device_ep_99_float16_quant.enc) and [here](https://cdn.mobile.jumio.ai/model/normalized_ensemble_passports_v2_float16_quant.enc) and add it to the app assets folder.
+
+### Certified Face Liveness
+
+Jumio uses Certified Liveness technology to determine liveness. Link `com.jumio.android:liveness` and  `com.jumio.android:iproov` modules in order to use Jumio Liveness.
+
+If necessary, the iProov SDK version can be overwritten with a more recent one:
+
+```groovy
+implementation "com.jumio.android:iproov:4.6.2"
+implementation("com.iproov.sdk:iproov:8.5.1") {
+	exclude group: 'org.json', module: 'json'
+}
+```
+
+### Barcode Scanning Alternative
+
+As an alternative to the `com.jumio.android:barcode` dependency, you can substitute `com.jumio.android:barcode-mlkit`. This dependency includes `com.google.android.gms:play-services-mlkit-barcode-scanning` library - if your application includes **other Google ML-kit libraries**, it might be necessary to override meta-data specified in the application tag of the `play-services-mlkit-barcode-scanning` manifest by [merging multiple manifests](https://developer.android.com/studio/build/manage-manifests#merge-manifests):
+
+```xml
+<meta-data
+  android:name="com.google.android.gms.vision.DEPENDENCIES"
+  android:value="barcode"
+  tools:replace="android:value" />
 ```
 
 ### Privacy Notice
@@ -179,7 +180,7 @@ In case Digital Identity verification has been enabled for your account you can 
 
 Over the course of DID verification the SDK will launch an according third party application representing your Digital Identity. Communication between both applications (your integrating application and the Digital Identity application) is done via a so-called "deep link". For more information on deep link handling on Android please check out their [official guide](https://developer.android.com/training/app-links).
 
-#### Deep Link Setup
+#### Deep link setup
 To enable your app specific deep link, our support team has to setup an according scheme of your choice for you. This scheme will be used by the SDK to identify your application while returning from the DID provider's application. For the scheme basically any string can be used, however it is recommended that it is unique to your application in some way. A suggestion would be your company name.
 
 Following snippet shows how the deep link needs to be setup in your application's `AndroidManifest.xml` file:
@@ -230,16 +231,6 @@ override fun onNewIntent(intent: Intent) {
 	}
 }
 ```
-
-### Risk Signal: Device Risk
-If you want to include risk signals into your application, please check our [Risk Signal guide](https://docs.jumio.com/production/Content/References/Risk%20Signals/Device%20Risk.htm).
-
-#### Iovation setup
-To integrate the device risk vendor Iovation into your application, please follow the [Iovation integration guide](https://github.com/iovation/deviceprint-SDK-android).
-
-#### API call
-To provide Jumio with the generated Device Risk blackbox, please follow the [Device Risk API guide](https://docs.jumio.com/production/Content/Integration/Integration%20Channels/REST%20APIs.htm).
-
 
 ## Initialization
 
@@ -393,6 +384,7 @@ The following tables give information on the specification of all data parameter
 | mrzLine1         | String         | 50          | MRZ line 1                                                                                                                                                             |
 | mrzLine2         | String         | 50          | MRZ line 2                                                                                                                                                             |
 | mrzLine3         | String         | 50          | MRZ line 3                                                                                                                                                             |
+| rawBarcodeData   | String         | 50          | Extracted barcode data                                                                                                                                                 |
 | extractionMethod | JumioScanMode  |             | Extraction method used during scanning (MRZ, BARCODE, MANUAL, OCR_CARD, NFC)                                                                                           |
 | imageData        | JumioImageData |             | Wrapper class for accessing image data of all credential parts from an ID verification session. This feature has to be enabled by your account manager.                |
 
@@ -499,7 +491,7 @@ Each consent item can be one of two types:
 * [`JumioConsentType.ACTIVE`][jumioconsenttype]
 * [`JumioConsentType.PASSIVE`][jumioconsenttype]
 
-For `ACTIVE` types, the user needs to accept the consent items explicitly, e.g. by enabling a UI switch or checking a checkbox for each consent item. For `PASSIVE` types, it is enough to present the consent text and URL to the user. The user implicitly accepts the passive consent items by continuing with the journey. For details please check out consent handling [(1)](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/customui/CustomUiActivity.kt#L218-L234) [(2)](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/customui/CustomUiActivity.kt#L252-L260) and [consent adapter](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/customui/adapter/CustomConsentAdapter.kt) in our sample app.
+For `ACTIVE` types, the user needs to accept the consent items explicitly, e.g. by enabling a UI switch or checking a checkbox for each consent item. For `PASSIVE` types, it is enough to present the consent text and URL to the user. The user implicitly accepts the passive consent items by continuing with the journey. For details please check out consent handling [(1)](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/customui/CustomUiActivity.kt#L218-L234) [(2)](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/customui/CustomUiActivity.kt#L252-L260) and [consent adapter](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/kotlin/customui/adapter/CustomConsentAdapter.kt) in our sample app.
 
 The user can open and continue to the provided consent link if they choose to do so. If the user consents to Jumio's policy, [`jumioController.userConsented(consentItem: JumioConsentItem, userConsent: Boolean)`][userconsented] is required to be called internally before any credential can be initialized and the user journey can continue. If no consent is required, the list of [`JumioConsentItems`][jumioconsentitem] will be `null`. If the user does not consent or if [`jumioController.userConsented(consentItem: JumioConsentItem, userConsent: Boolean)`][userconsented] is not called for all the items inside the `consentItems` list, the user will not be able to continue the user journey.
 
@@ -853,7 +845,7 @@ When an add-on to the current scan part is available, [`JumioScanStep.ADDON_SCAN
 
 Apart from the scan steps, there are also scan updates distributed the `scanPart` method [`onUpdate()`][onupdate]. They cover additional scan information that is relevant and might need to be displayed during scanning. The parameters are [`JumioScanUpdate`][jumioscanupdate] and an optional value `data` of type `Any` that can contain additional information for each scan update as described.
 
-[`JumioScanUpdate`][jumioscanupdate] values: `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`
+[`JumioScanUpdate`][jumioscanupdate] values: `LEGAL_HINT`, `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`
 
 For `FALLBACK`, there are 2 possible [`JumioFallbackReason`][fallbackreason]'s sent in the optional `data` value to indicate the reason of the fallback.
 

@@ -79,19 +79,21 @@ Depending on your specific needs, you may want to strip out unused functionality
 
 The following table shows a range of different product configurations with the size and modules that are linked for it. These measurements reflect the extra size that Jumio components add to your app download size and are based on our [sample application](../sample/JumioMobileSample/).
 
-| Product Configuration                        |   Size   |                                           Modules                                            |
-| :------------------------------------------- | :------: | :------------------------------------------------------------------------------------------: |
-| Base                                         | 2.67 MB  |                                             core                                             |
-| Base + iProov                                | 3.52 MB  |                                         core, iproov                                         |
-| Base + Autocapture                           | 4.21 MB  |                                       core, docfinder                                        |
-| Base + Autocapture, Barcode-Vision           | 4.51 MB  |                               core, docfinder, barcode-vision                                |
-| Base + Autocapture, Barcode-Vision, iProov   | 5.35 MB  |                               core, docfinder, barcode, iproov                               |
-| Base + Autocapture, Barcode-Vision, Liveness | 6.28 MB  |                              core, docfinder, barcode, liveness                              |
-| Base + Autocapture, Barcode-Vision, NFC      | 7.59 MB  |                                core, docfinder, barcode, nfc                                 |
-| All (Custom UI only)                         | 10.33 MB | core, docfinder, barcode-vision, iproov, nfc, devicerisk, digital-identity, camerax,liveness |
-| Base + Autocapture, Default UI               | 4.60 MB  |                                 core, docfinder, default-ui                                  |
-| Base + Autocapture, Default UI, Datadog      | 5.21 MB  |                             core, docfinder, default-ui, datadog                             |
-| All (with Default UI)                        | 11.17 MB |   core, docfinder, barcode-vision, iproov, nfc, devicerisk, default-ui, datadog, liveness    |
+| Product Configuration                       |   Size   |                                                      Modules                                                      |
+|:--------------------------------------------|:--------:|:-----------------------------------------------------------------------------------------------------------------:|
+| Base                                        | 2.68 MB  |                                                       core                                                        |
+| Base + iProov                               | 3.51 MB  |                                                   core, iproov                                                    |
+| Base + MRZ                                  | 4.19 MB  |                                                     core, mrz                                                     |
+| Base + MRZ, Linefinder                      | 4.57 MB  |                                               core, mrz, linefinder                                               |
+| Base + MRZ, Linefinder, Barcode             | 5.62 MB  |                                          core, mrz, linefinder, barcode                                           |
+| Base + MRZ, Linefinder, Barcode-Vision      | 4.89 MB  |                                       core, mrz, linefinder, barcode-vision                                       |
+| Base + MRZ, Linefinder, Barcode, iProov     | 6.45 MB  |                                      core, mrz, linefinder, barcode, iproov                                       |
+| Base + MRZ, Linefinder, Barcode, Liveness   | 8.93 MB  |                                     core, mrz, linefinder, barcode, liveness                                      |
+| Base + MRZ, Linefinder, Barcode, NFC        | 7.26 MB  |                                        core, mrz, linefinder, barcode, nfc                                        |
+| All (Custom UI only)                        | 13.07 MB |           core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, liveness            |
+| Base + MRZ, Linefinder, Default UI          | 4.92 MB  |                                         core, mrz, linefinder, default-ui                                         |
+| Base + MRZ, Linefinder, Default UI, DataDog | 5.09 MB  |                                    core, mrz, linefinder, default-ui, datadog                                     |
+| All (with Default UI)                       | 13.58 MB | core, mrz, linefinder, barcode, barcode-vision, iproov, nfc, docfinder, devicerisk, default-ui, datadog, liveness |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -214,23 +216,17 @@ Combines all previously existing scanning methods into one automatic, seamless e
 
 ![Autocapture Success](images/capturing_methods/autocapture_01.jpg)  ![Autocapture Scanning](images/capturing_methods/autocapture_02.jpg)
 
-#### Linefinder (deprecated)
-***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
-instead.***
+#### Linefinder
 Scanning using edge detection.
 
 ![Linefinder Empty](images/capturing_methods/linefinder_scanning_01.jpg)  ![Linefinder Document](images/capturing_methods/linefinder_scanning_02.jpg) ![Linefinder Processing](images/capturing_methods/linefinder_scanning_03.jpg)
 
-#### MRZ (deprecated)
-***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
-instead.***
+#### MRZ
 Data extraction from passports, some identity cards and some visas.
 
 ![MRZ Empty](images/capturing_methods/mrz_scanning_01.jpg)  ![MRZ Document](images/capturing_methods/mrz_scanning_02.jpg)
 
-#### Barcode (deprecated)
-***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
-instead.***
+#### Barcode
 PDF417 barcode data extraction, for example from US and Canadian driver licenses.
 
 ![Barcode Empty](images/capturing_methods/barcode_scanning_01.jpg)  ![Barcode Document](images/capturing_methods/barcode_scanning_02.jpg)

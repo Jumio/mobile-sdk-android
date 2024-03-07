@@ -1,5 +1,5 @@
-// Copyright 2023 Jumio Corporation, all rights reserved.
-package com.jumio.sample
+// Copyright 2022 Jumio Corporation, all rights reserved.
+package com.jumio.sample.kotlin
 
 import android.content.Intent
 import android.net.Uri
@@ -19,8 +19,9 @@ import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.jumio.defaultui.JumioActivity
-import com.jumio.sample.customui.CustomUiActivity
+import com.jumio.sample.R
 import com.jumio.sample.databinding.ActivityMainBinding
+import com.jumio.sample.kotlin.customui.CustomUiActivity
 import com.jumio.sdk.JumioSDK
 import com.jumio.sdk.enums.JumioDataCenter
 import com.jumio.sdk.result.JumioFaceResult
@@ -28,7 +29,7 @@ import com.jumio.sdk.result.JumioIDResult
 import com.jumio.sdk.result.JumioResult
 
 private const val PERMISSION_REQUEST_CODE: Int = 303
-private const val TAG = "MainActivity"
+private val TAG = MainActivity::class.java.simpleName
 
 /**
  * Sample activity that handles the whole jumio sdk workflow for the custom ui approach
@@ -84,8 +85,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 	 * @param requestCode the request code for the SDK
 	 */
 	private fun checkPermissions(requestCode: Int = PERMISSION_REQUEST_CODE) =
-		if (!JumioSDK.hasAllRequiredPermissions(this)) {
-			// Acquire missing permissions.
+		if (!JumioSDK.hasAllRequiredPermissions(this)) { // Acquire missing permissions.
 			val mp = JumioSDK.getMissingPermissions(this)
 			ActivityCompat.requestPermissions(
 				this,
@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 		when (menuItem.itemId) {
 			R.id.nav_terms_of_use, R.id.nav_privacy_policy -> openLink(
 				"https://www.jumio.com/legal-information/privacy-policy/jumio-showcase-app-privacy-terms/"
-			)
+			) // ktlint-disable max-line-length
 			R.id.nav_licenses -> openLink("https://github.com/Jumio/mobile-sdk-android/tree/master/licenses")
 		}
 		binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -171,18 +171,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 				@Suppress("DEPRECATION")
 				result.data?.getSerializableExtra(JumioActivity.EXTRA_RESULT) as JumioResult?
 			}
-
 			Log.d(TAG, "AccountId: ${jumioResult?.accountId}")
 			Log.d(TAG, "WorkflowExecutionId: ${jumioResult?.workflowExecutionId}")
 
 			if (jumioResult?.isSuccess == true) {
 				jumioResult.credentialInfos?.forEach {
 					when (jumioResult.getResult(it)) {
-						is JumioIDResult -> {
-							// check your id result here
+						is JumioIDResult -> { // check your id result here
 						}
-						is JumioFaceResult -> {
-							// check your face result here
+						is JumioFaceResult -> { // check your face result here
 						}
 					}
 				}
