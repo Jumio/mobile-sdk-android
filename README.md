@@ -36,9 +36,9 @@
 # Overview
 The Jumio Software Development Kit (SDK) provides you with a set of tools and UIs (default or custom) to develop an Android application perfectly fitted to your specific needs.
 
-Onboard new users and easily verify their digital identities by making sure the IDs they provide are valid and authentic. Extract data from ID documents completely automatically and within seconds. Confirm that users really are who they say they are by having them take a quick selfie and match it to their respective documents. Jumio uses cutting-edge biometric technology to make sure there is an actual, real-life person in front of the screen.
+Onboard new users and easily verify their digital identities by making sure the IDs they provide are valid and authentic. Extract data from ID documents completely automatically and within seconds. Confirm that users really are who they say they are by having them take a quick selfie and match it to their respective documents. Jumio uses cutting-edge biometric technology such as 3D face mapping to make sure there is an actual, real-life person in front of the screen.
 
-![SDK Overview](docs/images/images_overview/overview_android_4.9.0.png)
+![SDK Overview](docs/images/images_overview/images_overview.png)
 
 Using the Jumio SDK will allow you to create the best possible solution for your individual needs, providing you with a range of different services to choose from.
 
@@ -61,10 +61,10 @@ If you need information on older SDK versions, please refer to:
 - [3.9.0](https://github.com/Jumio/mobile-sdk-android/tree/v3.9.0)
 
 ## Code Documentation
-Full API documentation for the Jumio Android SDK can be found [here](https://jumio.github.io/mobile-sdk-android).
+Full API documentation for the Jumio iOS SDK can be found [here](https://jumio.github.io/mobile-sdk-ios/Jumio).
 
 ## FAQ
-Link to Jumio Android SDK FAQ can be found [here](docs/integration_faq.md).
+Link to Jumio iOS SDK FAQ can be found [here](docs/integration_faq.md).
 
 ## Known Issues
 List of known issues can be found [here](docs/known_issues.md).
@@ -80,33 +80,37 @@ Once you’ve got the sample application downloaded and unzipped, open Android S
 
 Android Studio will now start to import the project. This might take a bit of time. Make sure to wait until the Gradle Build has finished and the application is properly installed!
 
-The Android sample application contains the package `com.jumio.sample`, which consists of:
-* `MainActivity.kt`
-* `customui/`
-  * `CustomUIActivity.kt`
-  * `adapter/`
-    * `CustomConsentAdapter.kt`
-    * `CustomCountryAdapter.kt`
-    * `CustomDocumentAdapter.kt`
+The Android sample application contains the package `com.jumio.sample.kotlin`, which consists of:
+* `MainActivity`
+* `customui`
+  * `CustomUIActivity`
+  * `CustomCountryAdapter`
+  * `CustomDocumentAdapter`
+  * `CustomVariantAdapter`
 
-To use the Jumio Sample Application you need an SDK Token. If you haven't done so already, please refer to the [Authentication and Encryption section](#authentication-and-encryption) for more details on how to obtain your SDK token.
-To add your individual SDK token to the application copy/paste it to the token input field once the application is started.
+Right at the top of the `CustomUiActivity` you’ll find a `companion object` with the following empty parameters:
+
+`const val EXTRA_TOKEN="sdk_token"`     
+`const val EXTRA_DATACENTER="datacenter"`
+
+If you haven't done so already, please refer to the [Authentication and Encryption section](#authentication-and-encryption) for more details on how to obtain your SDK token. Add your individual SDK token instead of the placeholder. The default setting for the data center is `JumioDataCenter.US`.
 
 ⚠️&nbsp;&nbsp;__Note:__ We strongly recommend not storing any credentials inside your app! We suggest loading them during runtime from your server-side implementation.
 
-Once you start up the sample application, you'll be given the option of trying out the Jumio SDK. The sample application needs camera permissions, which will be prompted for automatically once you try to start the SDK via one of the buttons. If you deny camera permissions, you won't be able to use the SDK.
+Once you start up the sample application, you'll be given the option of trying out the Jumio SDK. Click the hamburger menu in the top left corner to choose a service. Your application will also need camera permissions, which will be prompted for automatically once you try to start any of the services. If you deny camera permissions, you won't be able to use any of the services.
 
 -----
 
 # Basics
 
 ## General Requirements
+⚠️&nbsp;&nbsp;__Android Deprecation Notice__  
+Please be aware that SDK 4.3.0 does not support Android 4.4 (API level 19) anymore.
+
 The minimum requirements for the SDK are:
 * Android 5.0 "Lollipop" (API level 21) or higher
 * Internet connection
 * Jumio KYX
-
-ℹ️&nbsp;&nbsp;__Note:__ Starting with SDK 4.9.0 the minimum required compile SDK version is 34. Also Gradle 8 is __required__ to build the SDK!
 
 The following architectures are supported in the SDK:
 *	ARMv7 processor with Neon
@@ -119,9 +123,9 @@ You will need a __commercial Jumio License__ to run any of our examples. For det
 ## Authentication and Encryption
 ℹ️&nbsp;&nbsp;__As of version 4.0.0 and onward, the SDK can only be used in combination with Jumio KYX. API v2 as well as using API token and secret to authenticate against the SDK will no longer be compatible.__
 
-Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://docs.jumio.com/production/Content/Integration/Integration%20Guide.htm) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Customer Portal.
+Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://jumio.github.io/kyx/integration-guide.html) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Customer Portal.
 
-Within the response of the [Account Creation or Account Update](https://docs.jumio.com/production/Content/Integration/Creating%20or%20Updatng%20Account/Creating%20or%20Updating%20Accounts.htm) API, a SDK token is returned, which needs to be applied to initiate the mobile SDK.
+Within the response of the [Account Creation](https://jumio.github.io/kyx/integration-guide.html#account-creation) or [Account Update](https://jumio.github.io/kyx/integration-guide.html#account-update) API, a SDK token is returned, which needs to be applied to initiate the mobile SDK.
 
 ### Basic Authentication (Deprecated)
 Previously, Basic Auth credentials were constructed using your API token as the User ID and your API secret as the password. You still can manage API token and secret in the Customer Portal under:
@@ -138,7 +142,7 @@ Client ID and Client secret are used to generate an OAuth2 access token. OAuth2 
 * EU: `https://auth.emea-1.jumio.ai/oauth2/token`
 * SG: `https://auth.apac-1.jumio.ai/oauth2/token`
 
-The [TLS Protocol](https://tools.ietf.org/html/rfc5246) is required to securely transmit your data, and we strongly recommend using the latest version. For information on cipher suites supported by Jumio during the TLS handshake see [supported cipher suites](https://docs.jumio.com/production/Content/Integration/API%20Authorization/Supported%20Cipher%20Suites.htm?Highlight=cipher).
+The [TLS Protocol](https://tools.ietf.org/html/rfc5246) is required to securely transmit your data, and we strongly recommend using the latest version. For information on cipher suites supported by Jumio during the TLS handshake see [supported cipher suites](https://github.com/Jumio/implementation-guides/blob/master/netverify/supported-cipher-suites.md).
 
 ℹ️&nbsp;&nbsp;__Note:__ Calls with missing, incorrect or suspicious headers or parameter values will result in HTTP status code __400 Bad Request Error__ or __403 Forbidden__.
 
@@ -166,7 +170,7 @@ curl --request POST --location 'https://auth.amer-1.jumio.ai/oauth2/token' \
 Your OAuth2 access token is valid for 60 minutes. After the token lifetime is expired, it is necessary to generate a new access token.
 
 ### Workflow Transaction Token Timeout
-The token lifetime is set to 30 minutes per default. It can be configured via the [Jumio Customer Portal](https://docs.jumio.com/production/Content/Settings/Identity%20Verification/Application%20Settings.htm) and can be overwritten using the API call (`tokenLifetime`). Within this token lifetime the token can be used to initialize the SDK.
+The token lifetime is set to 30 minutes per default. It can be configured via the [Jumio Customer Portal](https://github.com/Jumio/implementation-guides/blob/master/netverify/portal-settings.md) and can be overwritten using the API call (`tokenLifetime`). Within this token lifetime the token can be used to initialize the SDK.
 
 As soon as the workflow (transaction) starts, a 15 minutes session timeout is triggered. For each action performed (capture image, upload image) the session timeout will reset, and the 15 minutes will start again.
 
@@ -216,25 +220,24 @@ Check the Android Studio [sample projects](sample/JumioMobileSample/) to learn t
 ## Proguard
 
 ### Mandatory
-The following Proguard Keep rules have to be added to the application hosting the Jumio Android SDK:
+The following Proguard Keep rules have to be added to the Jumio Mobile SDK:
 
 ```text
-# Jumio
 -keep class com.jumio.** { *; }
 -keep class jumio.** { *; }
 ```
 
 ### Optional
-The following Proguard Keep rules have to be added to the application hosting the Jumio Android SDK if the corresponding dependencies have been added:
+The following Proguard Keep rules have to be added to the Jumio Mobile SDK if the corresponding dependencies have been added:
 
 ```text
-# Tensorflow
--keep class org.tensorflow.** { *; }
--keep class org.tensorflow.**$* { *; }
--dontwarn org.tensorflow.**
+#Microblink
+-keep class com.microblink.** { *; }
+-keep class com.microblink.**$* { *; }
+-dontwarn com.microblink.**
 
-# IProov
--keep public class com.iproov.sdk.IProov { public *; }
+#IProov
+-keep public class com.iproov.sdk.IProov {public *; }
 -keep class com.iproov.** { *; }
 -keep class com.iproov.**$* { *; }
 -keep class com.google.protobuf.** { *; }
@@ -244,15 +247,11 @@ The following Proguard Keep rules have to be added to the application hosting th
 -dontwarn okhttp3.**
 -dontwarn okio.**
 
-# Datadog
--keep class com.datadog.** { *; }
--keep class com.datadog.**$* { *; }
-
-# JMRTD
+#JMRTD
 -keep class org.jmrtd.** { *; }
--keep class net.sf.scuba.** { *; }
--keep class org.bouncycastle.** { *; }
--keep class org.ejbca.** { *; }
+-keep class net.sf.scuba.** {*;}
+-keep class org.bouncycastle.** {*;}
+-keep class org.ejbca.** {*;}
 -dontwarn java.nio.**
 -dontwarn org.codehaus.**
 -dontwarn org.ejbca.**
@@ -262,9 +261,6 @@ The following Proguard Keep rules have to be added to the application hosting th
 
 Most of the Proguard settings are applied automatically, as they are defined as consumer Proguard rules within the SDK. The current rules can also be found in the [Sample app](sample/JumioMobileSample/proguard-rules.pro).
 
-### R8 Full Mode
-For information regarding R8 `fullMode`, please refer to our FAQ section [here](docs/integration_faq.md#r8-full-mode).
-
 ## Language Localization
 Our SDK supports [default Android localization features](https://developer.android.com/training/basics/supporting-devices/languages.html) for different languages. All label texts and button titles in the SDK can be changed and localized by adding the required Strings you want to change in a `strings.xml` file in a `values` directory for the language and culture preference that you want to support. You can check out strings that are modifiable [within our Sample application](sample/JumioMobileSample/src/main/res/values/strings-jumio-sdk.xml).
 
@@ -273,15 +269,6 @@ Jumio SDK products support the following languages:
 _Afrikaans, Arabic, Bulgarian, Chinese(Simplified), Chinese(Traditional), Croatian, Czech, Danish, Dutch, Estonian, English, Finnish, French, German, Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Khmer, Korean, Latvian, Lithuanian, Maltese, Norwegian, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Vietnamese, Zulu_
 
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or increase the __text size__ on their device. The accessibility strings that are used by TalkBack contain *accessibility* in their key and can be also modified in `strings.xml`.
-
-# ML Models
-The Jumio SDK utilizes ML Models to enable client-/server-side verification.
-
-Required models can be provided by downloading and adding them manually to the bundle or preloading them. The SDK will load them on demand if none of the previous is applied.
-
-Loading the models in advance will improve startup time of the SDK.
-
-For more details, please refer to our [integration guide](docs/integration_guide.md#ml-models).
 
 # Document Verification
 As of Android SDK 4.3.0, Document Verification functionality is available.
@@ -336,6 +323,10 @@ To benefit from Datadog, add the following dependency to your `build.gradle` fil
 implementation "com.jumio.android:datadog:${SDK_VERSION}"
 ```
 
+To grant or revoke user consent, please use `JumioSDK.giveDataDogConsent(boolean)` method.
+
+⚠️&nbsp;&nbsp;__Note:__ The use of the Datadog module is only possible if it is not already included in your application.
+
 ----
 
 # Security
@@ -361,7 +352,7 @@ This software is based in part on the work of the Independent JPEG Group.
 If you have any questions regarding our implementation guide please contact Jumio Customer Service at support@jumio.com. The [Jumio online helpdesk](https://support.jumio.com) contains a wealth of information regarding our services including demo videos, product descriptions, FAQs, and other resources that can help to get you started with Jumio.
 
 ## Copyright
-&copy; Jumio Corporation, 100 Mathilda Place Suite 100 Sunnyvale, CA 94086
+&copy; Jumio Corporation, 395 Page Mill Road, Suite 150, Palo Alto, CA 94306
 
 The source code and software available on this website (“Software”) is provided by Jumio Corp. or its affiliated group companies (“Jumio”) "as is” and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall Jumio be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to procurement of substitute goods or services, loss of use, data, profits, or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this Software, even if advised of the possibility of such damage.
-In any case, your use of this Software is subject to the terms and conditions that apply to your contractual relationship with Jumio. As regards Jumio’s privacy practices, please see our privacy notice available here: [Privacy Policy](https://www.jumio.com/privacy-center/privacy-notices/online-services-notice/).
+In any case, your use of this Software is subject to the terms and conditions that apply to your contractual relationship with Jumio. As regards Jumio’s privacy practices, please see our privacy notice available here: [Privacy Policy](https://www.jumio.com/legal-information/privacy-policy/).

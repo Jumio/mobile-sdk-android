@@ -6,112 +6,9 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
-
-## 4.9.0
-#### Compile SDK Version Changes
-- __⚠️&nbsp;&nbsp;The minimum required compile SDK version for SDK `4.9.0` is `34`.__
-- With these changes also Gradle 8 is __required__ to build your application successfully. The [Android Gradle plugin Upgrade Assistant](https://developer.android.com/build/agp-upgrade-assistant) can be helpful conducting the upgrade.
-- Troubleshooting: 
-  - In case you are experiencing some errors when trying to build your release application, make sure to replace all occurrences of `tasks.whenTaskAdded` with `tasks.configureEach`
-
-#### Public API Changes
-* Function `getHelpAnimation()` has been deprecated for all face help animation instances in [`JumioScanPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html)
-* Property `parts` has been added to [`JumioPhysicalDocument`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-physical-document/index.html)
-* Property `idSubType` has been added to [`JumioIDResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.result/-jumio-i-d-result/index.html)
-* Removed retry code `USER_BACK` from `JumioRetryReasonGeneric`.
-* Added `JumioRetryReasonFace` to represent new retry codes for face scanning:
-  * GENERIC = 3001
-  * TOO_MUCH_MOVEMENT = 3002
-  * LIGHTING_TOO_BRIGHT = 3003
-  * LIGHTING_TOO_DARK = 3004
-  * EYES_CLOSED = 3005
-  * OBSCURED_FACE = 3006
-  * MULTIPLE_FACES = 3007
-  * SUNGLASSES = 3008
-* Class `JumioDataCredential` has been removed
-* Property `DEVICE_RISK` has been removed from [`JumioScanMode`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html)
-* Property `DEVICE_RISK` has been removed from [`JumioCredentialPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html)
-
-
+## 4.5.2
 #### Dependency Updates
-* Removed Devicerisk dependency: ~~`implementation "com.jumio.android:devicerisk:4.8.1"`~~
-* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:9.0.3"`. Please note that this update also includes a major UI/UX upgrade.
-
-
-#### Customization Changes
-* The following customization color attributes have been added: 
-  * `<item name="jumio_face_primary">`
-  * `<item name="jumio_face_secondary">`
-  * `<item name="jumio_face_outline">`
-  * `<item name="jumio_face_success">`
-  * `<item name="jumio_image_border">`
-  * `<item name="jumio_bubble_outline_selected">`
-
-* Customization attribute ~~`<item name="jumio_face_animation_customization">`~~ has been removed
-
-## 4.8.1
-No backward incompatible changes
-
-## 4.8.0
-No backward incompatible changes
-
-## 4.7.1
-No backward incompatible changes
-
-## 4.7.0
-#### Public API Changes
-* `rawBarcodeData` has been removed from [`JumioIDResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.result/-jumio-i-d-result/index.html)
-* `LEGAL_HINT` has been removed from [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html)
-* `giveDataDogConsent` has been removed from [`JumioSDK`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk/-jumio-s-d-k/-companion/index.html)
-
-#### Dependency Updates
-* Removed MRZ dependency: ~~`implementation "com.jumio.android:mrz:4.6.0"`~~
-* Removed Linefinder dependency: ~~`implementation "com.jumio.android:linefinder:4.6.0"`~~
-* Removed Barcode dependency: ~~`implementation "com.jumio.android:barcode:4.6.0"`~~
-* Datadog update: ~~`"com.datadoghq:dd-sdk-android:1.19.3"`~~ is replaced by `"com.datadoghq:dd-sdk-android-rum:2.0.0"` - If Datadog is used in a dynamic feature module please have a look at [this known issue](known_issues.md#datadog-in-dynamic-feature-modules).
-
-#### Custom UI Changes
-* The platform check has been moved from the [`JumioSDK`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk/-jumio-s-d-k/-companion/index.html) constructor to the [`JumioController`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.controller/-jumio-controller/index.html) constructor. In case the platform is not supported there will be a non-retryable F000001 [`JumioError`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.error/-jumio-error/index.html) delivered in [`JumioControllerInterface$onError`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-error.html) instead of a [`PlatformNotSupportedException`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.exceptions/-platform-not-supported-exception/index.html) being thrown. Please also make sure to check [`isSupportedPlatform`](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#device-supported-check) before using the SDK.
-
-#### Localization Changes
-* SDK string translations for Brazilian Portuguese (pt-rBR) have been added
-
-#### Customization Changes
-* Customization attribute ~~`<item name="jumio_face_animation_background">`~~ has been removed
-
-#### Documentation Changes
-* Functions `persist` and `stop` in [`JumioController`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.controller/-jumio-controller/index.html) need to be called independently from `isComplete` as long as the workflow is not yet finished or canceled.
-
-## 4.6.1
-No backward incompatible changes
-
-## 4.6.0
-#### Public API Changes
-* `JUMIO_LIVENESS` has been added to [`JumioScanMode`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html)
-* `MOVE_FACE_CLOSER` has been added to [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html)
-* `FACE_TOO_CLOSE` has been added to [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html)
-
-#### Customization Changes
-* A new customization theme `<item name="jumio_face_animation_customization">@style/CustomFaceHelp</item>` has been added to help customize the newly added Jumio Liveness solution. This style includes the following attributes:
-  * `<item name="jumio_face_animation_foreground">`
-  * `<item name="jumio_face_animation_background">`
-
-
-* The following customization attributes have been added to `@style/CustomOverlay` theme:
-  * `<item name="jumio_scanOverlay">`
-  * `<item name="jumio_scanOverlay_livenessStrokeAnimation">`
-  * `<item name="jumio_scanOverlay_livenessStrokeAnimationCompleted>`      
-
-
-* The following customization attributes have been removed from `@style/CustomIproov` theme:
-  * ~~`<item name="iproov_animation_foreground">`~~
-  * ~~`<item name="iproov_animation_background">`~~
-
-
-* See also: [Jumio sample `styles.xml`](../sample/JumioMobileSample/src/main/res/values/styles.xml)
-
-#### Dependency Updates
-* NEW Liveness dependency: `implementation "com.jumio.android:liveness:4.6.0"`
+* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:8.5.2"`
 
 ## 4.5.1
 No backward incompatible changes
@@ -123,9 +20,10 @@ No backward incompatible changes
 * [`JumioError.code`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.error/-jumio-error/index.html) format updated from `[A][x][yyyy]` to `[A][xx][yyyy]`
 
 * Property [`countries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/countries.html) of `JumioIDCredential` has been deprecated. Instead the following new property and functions have been added:
-    * [`JumioIDCredential.supportedCountries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/supported-countries.html)
+    * [`JumioIDCredential.supportedCountries`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/supportedCountries.html)
     * [`JumioIDCredential.getPhysicalDocumentsForCountry(countryCode:)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/get-physical-documents-for-country.html)
     * [`JumioIDCredential.getDigitalDocumentsForCountry(countryCode:)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/get-digital-documents-for-country.html)
+
 
 * [`JumioDeepLinkHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.util/-jumio-deep-link-handler/index.html) has been added
 
@@ -139,7 +37,7 @@ No backward incompatible changes
 
 * [`JumioRetryReasonDigitalIdentity`](https://jumio.github.io/mobile-sdk-android/jumio-digital-identity/com.jumio.sdk.retry/-jumio-retry-reason-digital-identity/index.html) has been added
 
-* [`JumioConsentItem`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-consent-item/index.html) class and [`JumioConsentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-consent-type/index.html) enum have been added
+* [`JumioConsentItem`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent.jumio-consent-item/index.html) class and [`JumioConsentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-consent-type/index.html) enum have been added
 
 * [`onInitialized()`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-initialized.html) callback has been changed from ~~`onInitialized(credentials: List<JumioCredentialInfo>, policyUrl: String?)`~~ to [`onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItems>?)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-initialized.html)
   * Please refer to the [Consent Handling section](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#consent-handling) in our integration guide for more details.
@@ -157,7 +55,7 @@ The following keys have been added to `strings.xml`:
 #### Dependency Updates
 * IProov update: ~~`"com.iproov.sdk:iproov:8.0.3"`~~ is replaced by `"com.iproov.sdk:iproov:8.3.1"`
 
-## 4.4.2
+## 4.4.1
 No backward incompatible changes
 
 ## 4.4.1
@@ -169,18 +67,15 @@ No backward incompatible changes
 * [`JumioConfirmationHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-confirmation-handler/index.html) has been added. Attach a [JumioScanPart](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html) to this class to retrieve all accepted images and render them to [`JumioConfirmationView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-confirmation-view/index.html) objects for confirmation.
 * [`JumioRejectHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-reject-handler/index.html) has been added. Attach a [JumioScanPart](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html) to this class to retrieve all rejected images and render them to [`JumioRejectView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-reject-view/index.html) objects for retaking.
 * Functions in [`JumioConfirmationView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-confirmation-view/index.html) have been moved to [`JumioConfirmationHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-confirmation-handler/index.html).
-* Functions in [`JumioRejectView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-reject-view/index.html) have been moved to [`JumioRejectHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-reject-handler/index.html)
-* `MULTIPART` has been added in [`JumioCredentialPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html) as a new Autocapture scan part: Instead of having a single scan part for all parts of a document (front, back), there is now a single `MULTIPART` scan part that combines the two. Within this scan part all needed parts of a document are captured at once.
-* `NEXT_PART` has been added in [`JumioScanStep`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/index.html): This scan step shows that the previous part has been captured and the next one can be started (e.g. frontside has been captured, now switch to the backside of the document)
+* Functions in [`JumioRejectView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-reject-view/index.html) have been moved to [`JumioRejectHandler`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.handler/-jumio-reject-handler/index.html).
+* `NEXT_PART` has been added in [`JumioScanStep`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/index.html)
+* `MULTIPART` has been added in [`JumioCredentialPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html)
 
 #### Customization Updates
 * Attributes changed and added to [`Iproov.Customization` theme](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/res/values/styles.xml#L95)
 
 #### Dependency Updates
 * IProov update: ~~`"com.iproov.sdk:iproov:7.5.0"`~~ is replaced by `"com.iproov.sdk:iproov:8.0.3"`
-
-## 4.3.1
-No backward incompatible changes
 
 ## 4.3.0
 #### Minimum SDK Version Changes
@@ -191,13 +86,12 @@ No backward incompatible changes
 
 #### Public API Changes
 * Document Verification is now supported. Please check the [Integration Guide](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#jumio-document-credential) for more information.
+
+#### Public API Changes
 * ~~`JumioCameraPosition`~~ from package `com.jumio.sdk.enums` in `com.jumio.sdk:core` is replaced by `JumioCameraFacing`
 * `JumioAcquireMode` has been added to package `com.jumio.sdk.enums` in `com.jumio.sdk:core`, containing fields `FILE` and `CAMERA`
 * [`JumioDataCredential` class](integration_guide.md/#jumio-data-credential) has been added for handling of Device Fingerprinting
 * [`JumioDocumentCredential` class](integration_guide.md/#jumio-document-credential) has been added for Document Verification handling
-
-## 4.2.1
-No backward incompatible changes
 
 ## 4.2.0
 #### Public API Changes
