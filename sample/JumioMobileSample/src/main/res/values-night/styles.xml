@@ -8,10 +8,13 @@
 		<item name="jumio_text_foreground">#E0E0E0</item>
 		<item name="jumio_navigation_icon">#EC407A</item>
 		<item name="jumio_navigation_icon_dark">#EC407A</item>
+		<item name="jumio_image_border">#F2F233</item>
 
 		<item name="jumio_bubble_background">#333D47</item>
 		<item name="jumio_bubble_background_selected">#57ffc7</item>
 		<item name="jumio_bubble_foreground">#FF5722</item>
+		<item name="jumio_bubble_outline">#F2F233</item>
+		<item name="jumio_bubble_outline_selected">#D900ff</item>
 
 		<item name="jumio_primary_button_background">#333D47</item>
 		<item name="jumio_primary_button_background_pressed">#00B0FF</item>
@@ -21,9 +24,13 @@
 		<item name="jumio_secondary_button_background_pressed">#D900ff00</item>
 		<item name="jumio_secondary_button_background_disabled">#E35252</item>
 		<item name="jumio_secondary_button_foreground">#E0E0E0</item>
+		<item name="jumio_secondary_button_foreground_pressed">#000000</item>
+		<item name="jumio_secondary_button_foreground_disabled">#57ffc7</item>
+		<item name="jumio_secondary_button_outline">#333D47</item>
 
 		<item name="jumio_circle_item_background">#00B0FF</item>
 		<item name="jumio_circle_item_foreground">#E0E011</item>
+		<item name="jumio_doc_type_icon_foreground">#E0E011</item>
 
 		<item name="jumio_selection_icon_foreground">#E0E0E0</item>
 
@@ -47,17 +54,16 @@
 		<item name="jumio_error_circle_gradient_end">#C31322</item>
 		<item name="jumio_loading_circle_icon">#FFCA28</item>
 
+		<!--Help screen colors-->
+		<item name="jumio_face_primary">#C31322</item>
+		<item name="jumio_face_secondary">#60EDED3B</item>
+		<item name="jumio_face_outline">#ff0000ff</item>
+		<item name="jumio_face_success">@color/jumio_primary</item>
+
 		<!-- scan-overlay, iproov & nfc colors -->
-		<item name="jumio_face_animation_customization">@style/CustomFaceHelp</item>
 		<item name="jumio_overlay_customization">@style/CustomOverlay</item>
 		<item name="iproov_customization">@style/CustomIproov</item>
 		<item name="nfc_customization">@style/CustomNfc</item>
-	</style>
-
-	<style name="CustomFaceHelp" parent="Jumio.Face.Animation.Customization">
-		<!--Help screen colors-->
-		<item name="jumio_face_animation_foreground">#033598</item>
-		<item name="jumio_face_animation_background">#FFCA28</item>
 	</style>
 
 	<style name="CustomOverlay" parent="Jumio.Overlay.Customization">
