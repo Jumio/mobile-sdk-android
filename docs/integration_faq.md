@@ -30,11 +30,9 @@ User consent is now acquired for all users to ensure the accordance with biometr
 
 For __active__ consent instances, the user needs to accept the consent items explicitly, e.g. by enabling a UI switch or checking a checkbox for each consent item. For __passive__ consent instances, it is enough to present the consent text and URL to the user. The user implicitly accepts the passive consent items by continuing with the journey.
 
-<div style="display: flex;">
-    <img src="images/consent/consent_passive.jpg" alt="Acquiring passive user consent" style="border: 1px solid black; padding: 5px;">
-    <img src="images/consent/consent_active_unchecked.jpg" alt="Acquiring active user consent" style="border: 1px solid black; padding: 5px;">
-    <img src="images/consent/consent_active_checked.jpg" alt="Acquired active user consent" style="border: 1px solid black; padding: 5px;">
-</div>
+<img src="images/consent/consent_passive.jpg" alt="Acquiring passive user consent">
+<img src="images/consent/consent_active_unchecked.jpg" alt="Acquiring active user consent">
+<img src="images/consent/consent_active_checked.jpg" alt="Acquired active user consent">
 
 ## Improve User Experience and Reduce Drop-off Rate
 When evaluating user flows, one of the most commonly used metrics is the rate of drop-offs. At Jumio, we see considerable variance in drop-off rates across industries and customer implementations. For some implementations and industries, we see a higher rate of drop-offs on the first screens when compared with the average.
@@ -239,25 +237,7 @@ android {
 #### Autocapture
 Combines all previously existing scanning methods into one automatic, seamless experience.
 
-<div style="display: flex;">
-    <img src="images/capturing_methods/autocapture_01.jpg" alt="Autocapture Start">
-    <img src="images/capturing_methods/autocapture_02.jpg" alt="Autocapture Center Document">
-</div>
-
-<div style="display: flex;">
-    <img src="images/capturing_methods/autocapture_03.jpg" alt="Autocapture Hold Still">
-    <img src="images/capturing_methods/autocapture_04.jpg" alt="Autocapture Checking Image">
-</div>
-
-#### Manual Capture
-Manual scanning (taking a picture) using the shutterbutton, fallback option in case user is having trouble.
-
-![Manual Capture Empty](images/capturing_methods/manual_capturing_01.jpg) ![Manual Capture Document](images/capturing_methods/manual_capturing_02.jpg)
-
-#### NFC
-Data extraction from eMRTD documents, for example passports.
-
-![NFC Help](images/capturing_methods/nfc_scanning_01.jpg)  ![NFC Scanning](images/capturing_methods/nfc_scanning_02.jpg)
+![Autocapture Success](images/capturing_methods/autocapture_01.jpg)  ![Autocapture Scanning](images/capturing_methods/autocapture_02.jpg)
 
 #### Linefinder (deprecated)
 ***As of SDK version 4.7.0 this module has been deprecated. Please use [Autocapture](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_faq.md#autocapture)
@@ -279,6 +259,16 @@ instead.***
 PDF417 barcode data extraction, for example from US and Canadian driver licenses.
 
 ![Barcode Empty](images/capturing_methods/barcode_scanning_01.jpg)  ![Barcode Document](images/capturing_methods/barcode_scanning_02.jpg)
+
+#### Manual Capture
+Manual scanning (taking a picture) using the shutterbutton, fallback option in case user is having trouble.
+
+![Manual Capture Empty](images/capturing_methods/manual_capturing_01.jpg) ![Manual Capture Document](images/capturing_methods/manual_capturing_02.jpg)
+
+#### NFC
+Data extraction from eMRTD documents, for example passports.
+
+![NFC Start](images/capturing_methods/nfc_scanning_01.jpg)  ![NFC Scanning](images/capturing_methods/nfc_scanning_02.jpg)
 
 ## Glossary
 A [quick guide to commonly used abbreviations](integration_glossary.md) throughout the documentation which may not be all that familiar.

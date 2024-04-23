@@ -7,13 +7,10 @@ This section covers all technical changes that should be considered when updatin
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
 
-## 4.9.0
-#### Compile SDK Version Changes
-- __⚠️&nbsp;&nbsp;The minimum required compile SDK version for SDK `4.9.0` is `34`.__
-- With these changes also Gradle 8 is __required__ to build your application successfully. The [Android Gradle plugin Upgrade Assistant](https://developer.android.com/build/agp-upgrade-assistant) can be helpful conducting the upgrade.
-- Troubleshooting: 
-  - In case you are experiencing some errors when trying to build your release application, make sure to replace all occurrences of `tasks.whenTaskAdded` with `tasks.configureEach`
+## 4.9.1
+No backward incompatible changes
 
+## 4.9.0
 #### Public API Changes
 * Function `getHelpAnimation()` has been deprecated for all face help animation instances in [`JumioScanPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html)
 * Property `parts` has been added to [`JumioPhysicalDocument`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-physical-document/index.html)
@@ -35,7 +32,7 @@ __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the cha
 
 #### Dependency Updates
 * Removed Devicerisk dependency: ~~`implementation "com.jumio.android:devicerisk:4.8.1"`~~
-* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:9.0.3"`. Please note that this update also includes a major UI/UX upgrade.
+* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:9.0.2"`. Please note that this update also includes a major UI/UX upgrade.
 
 
 #### Customization Changes
@@ -191,6 +188,8 @@ No backward incompatible changes
 
 #### Public API Changes
 * Document Verification is now supported. Please check the [Integration Guide](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#jumio-document-credential) for more information.
+
+#### Public API Changes
 * ~~`JumioCameraPosition`~~ from package `com.jumio.sdk.enums` in `com.jumio.sdk:core` is replaced by `JumioCameraFacing`
 * `JumioAcquireMode` has been added to package `com.jumio.sdk.enums` in `com.jumio.sdk:core`, containing fields `FILE` and `CAMERA`
 * [`JumioDataCredential` class](integration_guide.md/#jumio-data-credential) has been added for handling of Device Fingerprinting

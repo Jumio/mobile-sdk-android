@@ -47,7 +47,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.9.0**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.9.1**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -75,31 +75,31 @@ If an optional module is **not linked**, some functionalities may not be availab
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.9.0"               
+	implementation "com.jumio.android:core:4.9.1"               
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.9.0"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.9.0"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.9.0"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:iproov:4.9.0"             // Face Liveness library
-	implementation "com.jumio.android:liveness:4.9.0"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.9.0"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.9.1"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.9.1"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.9.1"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:iproov:4.9.1"             // Face Liveness library
+	implementation "com.jumio.android:liveness:4.9.1"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.9.1"   // Digital Identity verification library
   	...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.9.0"
+	implementation "com.jumio.android:defaultui:4.9.1"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.9.0"         // CameraX library 
-	implementation "com.jumio.android:datadog:4.9.0"         // Analytics library
+	implementation "com.jumio.android:camerax:4.9.1"         // CameraX library 
+	implementation "com.jumio.android:datadog:4.9.1"         // Analytics library
   	...
 }
 ```
@@ -116,7 +116,7 @@ Jumio uses Certified Liveness technology to determine liveness. Link `com.jumio.
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 
 ```groovy
-implementation "com.jumio.android:iproov:4.9.0"
+implementation "com.jumio.android:iproov:4.9.1"
 implementation("com.iproov.sdk:iproov:9.0.3") {
 	exclude group: 'org.json', module: 'json'
 }
@@ -667,8 +667,6 @@ fileAttacher.setFile(file)
 ```
 
 #### Jumio Data Credential
-
-⚠️&nbsp;&nbsp;__Note:__ `JumioDataCredential` is only available from SDK version `4.2.0` to `4.8.1` (inclusively).
 
 [`JumioDataCredential`][jumiodatacredential] is used for the device fingerprinting. There are some optional configurations you can do to enhance it's behavior.
 
