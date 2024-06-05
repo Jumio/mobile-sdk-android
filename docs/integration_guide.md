@@ -47,7 +47,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.9.1**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.10.0**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -70,36 +70,36 @@ The [SDK Setup Tool](https://jumio.github.io/mobile-configuration-tool/out/) is 
 
 Below you can find a list of dependencies that can be added to your application to enable different functionality of the Jumio SDK. Some modules are mandatory, others are optional.
 
-If an optional module is **not linked**, some functionalities may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size is currently around **12.98 MB**.
+If an optional module is **not linked**, some functionalities may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size is currently around **12.47 MB**.
 
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.9.1"               
+	implementation "com.jumio.android:core:4.10.0"               
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.9.1"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.9.1"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.9.1"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:iproov:4.9.1"             // Face Liveness library
-	implementation "com.jumio.android:liveness:4.9.1"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.9.1"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.10.0"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.10.0"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.10.0"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:iproov:4.10.0"             // Face Liveness library
+	implementation "com.jumio.android:liveness:4.10.0"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.10.0"   // Digital Identity verification library
   	...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.9.1"
+	implementation "com.jumio.android:defaultui:4.10.0"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.9.1"         // CameraX library 
-	implementation "com.jumio.android:datadog:4.9.1"         // Analytics library
+	implementation "com.jumio.android:camerax:4.10.0"         // CameraX library 
+	implementation "com.jumio.android:datadog:4.10.0"         // Analytics library
   	...
 }
 ```
@@ -112,12 +112,12 @@ The models can be bundled with the app directly to save time on the download dur
 #### Certified Face Liveness
 
 Jumio uses Certified Liveness technology to determine liveness. Link `com.jumio.android:liveness` and  `com.jumio.android:iproov` modules in order to use Jumio Liveness.
-
+Please note: `com.jumio.android:camerax` will be linked transitively when `com.jumio.android:liveness` is linked.
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 
 ```groovy
-implementation "com.jumio.android:iproov:4.9.1"
-implementation("com.iproov.sdk:iproov:9.0.3") {
+implementation "com.jumio.android:iproov:4.10.0"
+implementation("com.iproov.sdk:iproov:9.0.4") {
 	exclude group: 'org.json', module: 'json'
 }
 ```
@@ -668,6 +668,8 @@ fileAttacher.setFile(file)
 
 #### Jumio Data Credential
 
+⚠️&nbsp;&nbsp;__Note:__ `JumioDataCredential` is only available from SDK version `4.2.0` to `4.8.1` (inclusively).
+
 [`JumioDataCredential`][jumiodatacredential] is used for the device fingerprinting. There are some optional configurations you can do to enhance it's behavior.
 
 1. Add the following Android permissions to your `AndroidManifest.xml`, if not already added:
@@ -821,11 +823,11 @@ JumioScanStep.SCAN_VIEW -> {
 }
 ```
 
-[`IMAGE_TAKEN`][imagetaken] is triggered as soon as the image is taken and has been uploaded to the Jumio server. The camera preview is stopped during that step if no additional part needs to be scanned. Otherwise [`NEXT_PART`][nextpart] will be triggered with additional information on which part has to be scanned next.
+[`IMAGE_TAKEN`][imagetaken] is triggered as soon as an image is taken and uploaded to the Jumio server. The camera preview might be stopped during that step if no additional images or parts needs to be scanned. Once all images for the current side/part are recorded, [`NEXT_PART`][nextpart] will be triggered with additional information on which part has to be scanned next (if any).
 
-When background processing is executed, [`JumioScanStep.PROCESSING`][processing] is triggered.
+When all parts are done and background processing is executed, [`JumioScanStep.PROCESSING`][processing] is triggered.
 
-If images for confirmation or rejection need to be displayed then [`JumioScanStep.CONFIRMATION_VIEW`][confirmationview] or [`JumioScanStep.REJECT_VIEW`][rejectview] is triggered. Simply attach the [`JumioConfirmationHandler`][jumioconfirmationhandler] or [`JumioRejectHandler`][jumiorejecthandler] once the steps are triggered and render the available [`JumioCredentialParts`][jumiocredentialpart] in [`JumioConfirmationView`][jumioconfirmationview] or [`JumioRejectView`][jumiorejectview] objects:
+If images for confirmation or rejection need to be displayed then [`JumioScanStep.CONFIRMATION_VIEW`][confirmationview] or [`JumioScanStep.REJECT_VIEW`][rejectview] is triggered. Attach the [`JumioConfirmationHandler`][jumioconfirmationhandler] or [`JumioRejectHandler`][jumiorejecthandler] once the steps are triggered and render the available [`JumioCredentialParts`][jumiocredentialpart] in [`JumioConfirmationView`][jumioconfirmationview] or [`JumioRejectView`][jumiorejectview] objects:
 
 ```kotlin
 JumioScanStep.CONFIRMATION_VIEW -> {
@@ -890,11 +892,22 @@ When an add-on to the current scan part is available, [`JumioScanStep.ADDON_SCAN
 
 #### Scan Updates
 
-Apart from the scan steps, there are also scan updates distributed the `scanPart` method [`onUpdate()`][onupdate]. They cover additional scan information that is relevant and might need to be displayed during scanning. The parameters are [`JumioScanUpdate`][jumioscanupdate] and an optional value `data` of type `Any` that can contain additional information for each scan update as described.
+Apart from the scan steps, there are also scan updates distributed via the `scanPart` method [`onUpdate()`][onupdate]. They cover additional scan information that is relevant and might need to be displayed during scanning. The parameters are [`JumioScanUpdate`][jumioscanupdate] and an optional value `data` of type `Any` that can contain additional information for each scan update as described.
 
-[`JumioScanUpdate`][jumioscanupdate] values: `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`
+[`JumioScanUpdate`][jumioscanupdate] values: `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`, `FLASH`
 
 For `FALLBACK`, there are 2 possible [`JumioFallbackReason`][fallbackreason]'s sent in the optional `data` value to indicate the reason of the fallback.
+The scan update `FLASH` indicates that the camera's flash should be turned `ON` or `OFF`. The according [`JumioFlashState`][jumioflashstate] is transmitted via the `data` parameter.
+
+```kotlin
+override fun onUpdate(jumioScanUpdate: JumioScanUpdate, data: Any?) {
+	when(jumioScanUpdate) {
+		JumioScanUpdate.FALLBACK -> handleFallback(data as JumioFallbackReason)
+		JumioScanUpdate.FLASH -> handleFlash(data as JumioFlashState)
+		... // handle other scan updates
+	}
+}
+```
 
 ### Result and Error Handling
 
@@ -1074,3 +1087,4 @@ In any case, your use of this Software is subject to the terms and conditions th
 [jumiodiview]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-digital-identity-view/index.html
 [jumiopreloader]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.preload/-jumio-preloader/index.html
 [jumiopreloadcallback]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.preload/-jumio-preload-callback/index.html
+[jumioflashstate]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-flash-state/index.html

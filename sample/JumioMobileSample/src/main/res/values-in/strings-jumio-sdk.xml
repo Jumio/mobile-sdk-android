@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Pemindaian dioptimalkan untuk menghasilkan performa perangkat yang lebih baik</string>
 	<string name="jumio_id_scan_manual">Ambil foto dokumen Anda</string>
 	<string name="jumio_id_scan_manual_tips">Pastikan menangkap seluruh dokumen</string>
-	<string name="jumio_id_scan_prompt_back_captured">Sisi BELAKANG difoto</string>
 	<string name="jumio_id_scan_prompt_capture_success">Oke!</string>
+	<string name="jumio_id_scan_prompt_captured">Ditangkap</string>
 	<string name="jumio_id_scan_prompt_center_id">Posisikan dokumen Anda di tengah</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Balik ke sisi BELAKANG</string>
-	<string name="jumio_id_scan_prompt_front_captured">Sisi DEPAN difoto</string>
 	<string name="jumio_id_scan_prompt_hold_still">Tahan terus…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Tegakkan badan</string>
 	<string name="jumio_id_scan_prompt_move_closer">Merapat</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Bersiaplah untuk selfie</string>
 	<string name="jumio_start_instructions_03">Gunakan dokumen yang valid</string>
 	<string name="jumio_start_instructions_04">Gunakan dokumen ID resmi yang berlaku</string>
+	<string name="jumio_start_instructions_07">Flash mungkin digunakan</string>
 	<string name="jumio_start_verification">Mulai verifikasi</string>
 	<string name="jumio_start_verification_subtitle">Proses ini dirancang untuk memverifikasi identitas dan melindungi Anda dari pencurian identitas</string>
 	<string name="jumio_uploading_success">Pengunggahan berhasil</string>

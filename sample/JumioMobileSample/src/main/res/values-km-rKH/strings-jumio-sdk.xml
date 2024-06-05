@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">ការស្កេនត្រូវបានបង្កើនប្រសិទ្ធភាពដើម្បីឲ្យឧបករណ៍ដំណើរការបានកាន់តែប្រសើរ</string>
 	<string name="jumio_id_scan_manual">ថតរូបឯកសាររបស់អ្នក</string>
 	<string name="jumio_id_scan_manual_tips">ត្រូវប្រាកដថាថតឯកសារទាំងមូល</string>
-	<string name="jumio_id_scan_prompt_back_captured">បានថតខាងក្រោយ</string>
 	<string name="jumio_id_scan_prompt_capture_success">យល់ហើយ!</string>
+	<string name="jumio_id_scan_prompt_captured">បានថតរូប</string>
 	<string name="jumio_id_scan_prompt_center_id">ដាក់ឯកសារចំកណ្ដាល</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">ត្រឡប់ទៅខាងក្រោយ</string>
-	<string name="jumio_id_scan_prompt_front_captured">បានថតខាងមុខ</string>
 	<string name="jumio_id_scan_prompt_hold_still">កាន់ឲ្យនឹង…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">កាន់ឲ្យត្រង់</string>
 	<string name="jumio_id_scan_prompt_move_closer">ខិតឲ្យជិតជាងនេះ</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">សូមត្រៀមឲ្យរួចរាល់ដើម្បីថតសែលហ្វី</string>
 	<string name="jumio_start_instructions_03">ប្រើឯកសារត្រឹមត្រូវ</string>
 	<string name="jumio_start_instructions_04">ប្រើអត្តសញ្ញាណប័ណ្ណមានសុពលភាពដែលចេញដោយរដ្ឋ</string>
+	<string name="jumio_start_instructions_07">Flash អាចត្រូវបានប្រើ</string>
 	<string name="jumio_start_verification">ចាប់ផ្តើមការផ្ទៀងផ្ទាត់</string>
 	<string name="jumio_start_verification_subtitle">ដំណើរការនេះត្រូវបានរៀបចំឡើង ដើម្បីផ្ទៀងផ្ទាត់អត្តសញ្ញាណរបស់អ្នក និងការពារអ្នកពីចោរលួចអត្តសញ្ញាណ</string>
 	<string name="jumio_uploading_success">ការផ្ទុកឡើងបានជោគជ័យ</string>

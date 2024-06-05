@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Nuskaitymas optimizuotas siekiant pagreitinti procedūrą</string>
 	<string name="jumio_id_scan_manual">Nufotografuokite savo asmens dokumentą</string>
 	<string name="jumio_id_scan_manual_tips">Nufotografuokite visą dokumentą</string>
-	<string name="jumio_id_scan_prompt_back_captured">GALINĖ pusė nufotografuota</string>
 	<string name="jumio_id_scan_prompt_capture_success">Pavyko!</string>
+	<string name="jumio_id_scan_prompt_captured">Užfiksuota</string>
 	<string name="jumio_id_scan_prompt_center_id">Lygiuokite savo dokumentą centre</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Atverskite GALINĘ pusę</string>
-	<string name="jumio_id_scan_prompt_front_captured">PRIEKINĖ pusė nufotografuota</string>
 	<string name="jumio_id_scan_prompt_hold_still">Nejudėkite…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Stovėkite tiesiai</string>
 	<string name="jumio_id_scan_prompt_move_closer">Prieikite arčiau</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Būkite pasiruošę pasidaryti asmenukę</string>
 	<string name="jumio_start_instructions_03">Naudokite galiojantį dokumentą</string>
 	<string name="jumio_start_instructions_04">Fotografuokite galiojantį asmens dokumentą</string>
+	<string name="jumio_start_instructions_07">Gali būti naudojamas blykstė</string>
 	<string name="jumio_start_verification">Pradėkite patvirtinimą</string>
 	<string name="jumio_start_verification_subtitle">Šio proceso tikslas – patvirtinti jūsų tapatybę ir užtikrinti apsaugą nuo tapatybės vagystės</string>
 	<string name="jumio_uploading_success">Įkėlimas sėkmingas</string>

@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Оптимизирано сканиране за по-добра производителност на устройството</string>
 	<string name="jumio_id_scan_manual">Снимайте документа</string>
 	<string name="jumio_id_scan_manual_tips">Снимката трябва да обхваща целия документ</string>
-	<string name="jumio_id_scan_prompt_back_captured">ЗАДНА страна уловена</string>
 	<string name="jumio_id_scan_prompt_capture_success">Готово!</string>
+	<string name="jumio_id_scan_prompt_captured">Заснет</string>
 	<string name="jumio_id_scan_prompt_center_id">Центрирайте документа</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Обърнете на ЗАДНАТА страна</string>
-	<string name="jumio_id_scan_prompt_front_captured">ПРЕДНА страна заснета</string>
 	<string name="jumio_id_scan_prompt_hold_still">Останете неподвижно…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Дръжте изправено</string>
 	<string name="jumio_id_scan_prompt_move_closer">Приближете се по-близо</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Подготви се за селфи</string>
 	<string name="jumio_start_instructions_03">Използвай валиден документ</string>
 	<string name="jumio_start_instructions_04">Използвайте валиден документ за самоличност, издаден от държавна институция</string>
+	<string name="jumio_start_instructions_07">Може да бъде използвана светкавица</string>
 	<string name="jumio_start_verification">Начало на удостоверяването</string>
 	<string name="jumio_start_verification_subtitle">Целта на процеса е да потвърди самоличността ти и да те защити от кражба на самоличност</string>
 	<string name="jumio_uploading_success">Качването е успешно</string>

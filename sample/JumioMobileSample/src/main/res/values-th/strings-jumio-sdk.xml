@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">การสแกนได้รับการปรับปรุงเพื่อให้อุปกรณ์มีประสิทธิภาพดีขึ้น</string>
 	<string name="jumio_id_scan_manual">ถ่ายภาพเอกสารของคุณ</string>
 	<string name="jumio_id_scan_manual_tips">ดูให้แน่ใจว่าถ่ายภาพเอกสารทั้งฉบับ</string>
-	<string name="jumio_id_scan_prompt_back_captured">จับภาพด้านหลังแล้ว</string>
 	<string name="jumio_id_scan_prompt_capture_success">เข้าใจแล้ว</string>
+	<string name="jumio_id_scan_prompt_captured">ถูกจับภาพ</string>
 	<string name="jumio_id_scan_prompt_center_id">จัดเอกสารให้อยู่กึ่งกลาง</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">พลิกไปด้านหลัง</string>
-	<string name="jumio_id_scan_prompt_front_captured">จับภาพด้านหน้าแล้ว</string>
 	<string name="jumio_id_scan_prompt_hold_still">ถือนิ่ง ๆ…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">ถือตรง ๆ</string>
 	<string name="jumio_id_scan_prompt_move_closer">เข้ามาใกล้</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">เตรียมพร้อมถ่ายภาพเซลฟี่</string>
 	<string name="jumio_start_instructions_03">ใช้เอกสารที่ถูกต้อง</string>
 	<string name="jumio_start_instructions_04">ใช้เอกสารประจำตัวที่ออกโดยรัฐบาลอย่างถูกต้อง</string>
+	<string name="jumio_start_instructions_07">อาจใช้แฟลช</string>
 	<string name="jumio_start_verification">เริ่มการตรวจสอบ</string>
 	<string name="jumio_start_verification_subtitle">ขั้นตอนการตรวจสอบนี้ออกแบบมาเพื่อยืนยันตัวตนของคุณและปกป้องคุณจากการขโมยอัตลักษณ์</string>
 	<string name="jumio_uploading_success">อัปโหลดสำเร็จ</string>

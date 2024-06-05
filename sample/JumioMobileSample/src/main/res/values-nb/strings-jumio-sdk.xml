@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Skanningen er justert for å sikre at enheten fungerer optimalt</string>
 	<string name="jumio_id_scan_manual">Ta et bilde av dokumentet ditt</string>
 	<string name="jumio_id_scan_manual_tips">Sørg for å få med hele dokumentet</string>
-	<string name="jumio_id_scan_prompt_back_captured">Baksiden er registrert</string>
 	<string name="jumio_id_scan_prompt_capture_success">Ferdig!</string>
+	<string name="jumio_id_scan_prompt_captured">Fanget</string>
 	<string name="jumio_id_scan_prompt_center_id">Midtstill dokumentet</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Snu til baksiden</string>
-	<string name="jumio_id_scan_prompt_front_captured">Forsiden er registrert</string>
 	<string name="jumio_id_scan_prompt_hold_still">Hold i ro…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Hold rett</string>
 	<string name="jumio_id_scan_prompt_move_closer">Flytt nærmere</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Gjør deg klar til å ta en selfie</string>
 	<string name="jumio_start_instructions_03">Bruk et gyldig dokument</string>
 	<string name="jumio_start_instructions_04">Bruk en gyldig offentlig utstedt ID</string>
+	<string name="jumio_start_instructions_07">Flash kan bli brukt</string>
 	<string name="jumio_start_verification">Start bekreftelse</string>
 	<string name="jumio_start_verification_subtitle">Prosessen er utformet for å bekrefte identiteten din og beskytte deg mot identitetstyveri</string>
 	<string name="jumio_uploading_success">Opplasting vellykket</string>

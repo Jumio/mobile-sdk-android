@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Optimiertes Scannen für bessere Geräteleistung</string>
 	<string name="jumio_id_scan_manual">Machen Sie ein Foto Ihres Dokuments</string>
 	<string name="jumio_id_scan_manual_tips">Stellen Sie sicher, dass Sie das gesamte Dokument erfassen</string>
-	<string name="jumio_id_scan_prompt_back_captured">RÜCKSEITE erfasst</string>
 	<string name="jumio_id_scan_prompt_capture_success">Abgeschlossen!</string>
+	<string name="jumio_id_scan_prompt_captured">Erfasst</string>
 	<string name="jumio_id_scan_prompt_center_id">Zentrieren Sie Ihr Dokument</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Auf die RÜCKSEITE wechseln</string>
-	<string name="jumio_id_scan_prompt_front_captured">VORDERSEITE erfasst</string>
 	<string name="jumio_id_scan_prompt_hold_still">Bitte ruhig halten …</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Bitte gerade halten …</string>
 	<string name="jumio_id_scan_prompt_move_closer">Bitte näher an die Kamera bewegen</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Machen Sie sich bereit für ein Selfie.</string>
 	<string name="jumio_start_instructions_03">Verwenden Sie ein gültiges Dokument.</string>
 	<string name="jumio_start_instructions_04">Verwenden Sie einen gültigen, amtlichen Ausweis.</string>
+	<string name="jumio_start_instructions_07">Blitz könnte verwendet werden</string>
 	<string name="jumio_start_verification">Ausweisprüfung starten</string>
 	<string name="jumio_start_verification_subtitle">Dieser Prozess dient dazu, Ihre Identität zu bestätigen und Sie vor Identitätsdiebstahl zu schützen</string>
 	<string name="jumio_uploading_success">Upload erfolgreich</string>

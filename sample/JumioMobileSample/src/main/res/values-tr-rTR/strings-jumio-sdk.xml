@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Daha iyi cihaz performansı elde etmek için optimize edilmiş tarama</string>
 	<string name="jumio_id_scan_manual">Belgenizin fotoğrafını çekin</string>
 	<string name="jumio_id_scan_manual_tips">Belgenin tamamını çektiğinizden emin olun</string>
-	<string name="jumio_id_scan_prompt_back_captured">ARKA tarafın görüntüsü alındı</string>
 	<string name="jumio_id_scan_prompt_capture_success">Tamamdır!</string>
+	<string name="jumio_id_scan_prompt_captured">Yakalandı</string>
 	<string name="jumio_id_scan_prompt_center_id">Belgenizi ortalayın</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">ARKA tarafa çevirin</string>
-	<string name="jumio_id_scan_prompt_front_captured">ÖN tarafın görüntüsü alındı</string>
 	<string name="jumio_id_scan_prompt_hold_still">Sabit durun…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Dik durun</string>
 	<string name="jumio_id_scan_prompt_move_closer">Yaklaşın</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Selfie çekmeye hazır olun</string>
 	<string name="jumio_start_instructions_03">Geçerli bir belge kullanın</string>
 	<string name="jumio_start_instructions_04">Devlet tarafından verilmiş geçerli bir kimlik belgesi kullanın</string>
+	<string name="jumio_start_instructions_07">Flaş kullanılabilir</string>
 	<string name="jumio_start_verification">Doğrulamayı başlat</string>
 	<string name="jumio_start_verification_subtitle">Bu süreç, kimliğinizi doğrulamak ve sizi kimlik hırsızlığına karşı korumak için tasarlanmıştır</string>
 	<string name="jumio_uploading_success">Yükleme başarılı</string>

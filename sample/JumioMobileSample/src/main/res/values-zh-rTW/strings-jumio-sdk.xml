@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">掃描最佳化以獲得更好的裝置效能</string>
 	<string name="jumio_id_scan_manual">拍一張文件相片</string>
 	<string name="jumio_id_scan_manual_tips">確保擷取完整文件</string>
-	<string name="jumio_id_scan_prompt_back_captured">背面截圖</string>
 	<string name="jumio_id_scan_prompt_capture_success">瞭解！</string>
+	<string name="jumio_id_scan_prompt_captured">被捕獲</string>
 	<string name="jumio_id_scan_prompt_center_id">文件置中</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">翻到背面</string>
-	<string name="jumio_id_scan_prompt_front_captured">正面截圖</string>
 	<string name="jumio_id_scan_prompt_hold_still">保持不動…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">站直</string>
 	<string name="jumio_id_scan_prompt_move_closer">靠近一點</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">準備自拍</string>
 	<string name="jumio_start_instructions_03">使用有效證件</string>
 	<string name="jumio_start_instructions_04">使用政府簽發的有效身分證件</string>
+	<string name="jumio_start_instructions_07">可能會使用閃光燈</string>
 	<string name="jumio_start_verification">開始驗證</string>
 	<string name="jumio_start_verification_subtitle">此程序旨在驗證您的身分並保護您免遭身分盜用</string>
 	<string name="jumio_uploading_success">上傳成功</string>

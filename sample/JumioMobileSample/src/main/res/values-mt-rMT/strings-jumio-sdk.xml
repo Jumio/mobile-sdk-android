@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">L-iskennjar ġiet ottimizzat għal prestazzjoni aħjar tal-apparat</string>
 	<string name="jumio_id_scan_manual">Ħu ritratt tad-dokument tiegħek</string>
 	<string name="jumio_id_scan_manual_tips">Aċċerta li tieħu ritratt tad-dokument kollu</string>
-	<string name="jumio_id_scan_prompt_back_captured">Ir-ritratt ta\' WARA ġie meħud</string>
 	<string name="jumio_id_scan_prompt_capture_success">Irċivejnih(a)!</string>
+	<string name="jumio_id_scan_prompt_captured">Maħżuna</string>
 	<string name="jumio_id_scan_prompt_center_id">Poġġi d-dokument tiegħek fin-nofs</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Dawwar għal fuq in-naħa ta\' WARA</string>
-	<string name="jumio_id_scan_prompt_front_captured">Ir-ritratt ta\' QUDDIEM ġie meħud</string>
 	<string name="jumio_id_scan_prompt_hold_still">TIċċaqlaqx…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Oqgħod dritt</string>
 	<string name="jumio_id_scan_prompt_move_closer">Ersaq aktar viċin</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Lesti ruħek biex tieħu stessu</string>
 	<string name="jumio_start_instructions_03">Uża dokument validu</string>
 	<string name="jumio_start_instructions_04">Uża ID valida maħruġa mill-gvern</string>
+	<string name="jumio_start_instructions_07">Il-Flash jista\' jintuża</string>
 	<string name="jumio_start_verification">Ibda l-verifika</string>
 	<string name="jumio_start_verification_subtitle">Dan il-proċess hu ddisinjat biex jivverifika l-identità tiegħek u jipproteġik mis-serq tal-identità</string>
 	<string name="jumio_uploading_success">Telgħu b\'suċċess</string>

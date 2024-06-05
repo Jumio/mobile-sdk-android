@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Optimalizace skenování pro zajištění lepšího výkonu zařízení</string>
 	<string name="jumio_id_scan_manual">Pořiďte snímek svého dokumentu</string>
 	<string name="jumio_id_scan_manual_tips">Ujistěte se, že jste zachytili celý dokument</string>
-	<string name="jumio_id_scan_prompt_back_captured">Pořízení ZADNÍ STRANY</string>
 	<string name="jumio_id_scan_prompt_capture_success">Mám to!</string>
+	<string name="jumio_id_scan_prompt_captured">Zachyceno</string>
 	<string name="jumio_id_scan_prompt_center_id">Umístěte svůj dokument do středu</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Překlopení na ZADNÍ STRANU</string>
-	<string name="jumio_id_scan_prompt_front_captured">Pořízení PŘEDNÍ STRANY</string>
 	<string name="jumio_id_scan_prompt_hold_still">Nehýbejte se…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Držte se rovně</string>
 	<string name="jumio_id_scan_prompt_move_closer">Pojďte blíže</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Připravte se na pořízení selfie</string>
 	<string name="jumio_start_instructions_03">Použijte platný dokument</string>
 	<string name="jumio_start_instructions_04">Použijte platný doklad totožnosti</string>
+	<string name="jumio_start_instructions_07">Může být použit blesk</string>
 	<string name="jumio_start_verification">Zahájit ověřování</string>
 	<string name="jumio_start_verification_subtitle">Tento proces je navržen tak, aby bylo možné ověřit vaši totožnost a ochránit vás před krádeží identity</string>
 	<string name="jumio_uploading_success">Nahrání proběhlo úspěšně.</string>

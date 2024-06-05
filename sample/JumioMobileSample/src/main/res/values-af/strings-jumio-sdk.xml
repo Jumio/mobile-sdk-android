@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Skandering geoptimaliseer vir beter prestasie van toestel</string>
 	<string name="jumio_id_scan_manual">Neem ’n foto van u dokument</string>
 	<string name="jumio_id_scan_manual_tips">Sorg dat die hele dokument vasgelê word</string>
-	<string name="jumio_id_scan_prompt_back_captured">AGTERKANT vasgelê</string>
 	<string name="jumio_id_scan_prompt_capture_success">Het dit!</string>
+	<string name="jumio_id_scan_prompt_captured">Gevang</string>
 	<string name="jumio_id_scan_prompt_center_id">Sit u dokument in die middel</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Draai om na die AGTERKANT</string>
-	<string name="jumio_id_scan_prompt_front_captured">VOORKANT vasgelê</string>
 	<string name="jumio_id_scan_prompt_hold_still">Hou u stil…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Hou u reguit</string>
 	<string name="jumio_id_scan_prompt_move_closer">Kom nader</string>
@@ -162,7 +161,8 @@
 	<string name="jumio_start_instructions_02">Wees gereed om \'n selfie te neem</string>
 	<string name="jumio_start_instructions_03">Gebruik \'n geldige dokument</string>
 	<string name="jumio_start_instructions_04">Gebruik ’n geldige ID wat deur die regering uitgereik is</string>
-	<string name="jumio_start_verification">Begin verifiëring</string>
+	<string name="jumio_start_instructions_07">Flits kan moontlik gebruik word</string>
+	<string name="jumio_start_verification">Begin Verifiëring</string>
 	<string name="jumio_start_verification_subtitle">Hierdie proses is ontwerp om jou identiteit te verifieer en jou teen identiteitsdiefstal te beskerm</string>
 	<string name="jumio_uploading_success">Oplaai was suksesvol</string>
 	<string name="jumio_uploading_title">Besig om op te laai</string>

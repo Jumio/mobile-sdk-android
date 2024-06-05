@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">تم تحسين المسح الضوئي للحصول على أداء أفضل للجهاز</string>
 	<string name="jumio_id_scan_manual">التقط صورة لمستندك</string>
 	<string name="jumio_id_scan_manual_tips">تأكد من التقاط المستند بأكمله</string>
-	<string name="jumio_id_scan_prompt_back_captured">تم التقاط الجزء الخلفي</string>
 	<string name="jumio_id_scan_prompt_capture_success">حسنًا!</string>
+	<string name="jumio_id_scan_prompt_captured">تم التقاطه</string>
 	<string name="jumio_id_scan_prompt_center_id">اجعل المستند في الوسط</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">اقلبه إلى الجانب الخلفي</string>
-	<string name="jumio_id_scan_prompt_front_captured">تم التقاط الجزء الأمامي</string>
 	<string name="jumio_id_scan_prompt_hold_still">اثبت في مكانك…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">حافظ على استقامتك</string>
 	<string name="jumio_id_scan_prompt_move_closer">اقترب</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">استعد لالتقاط صورة ذاتية</string>
 	<string name="jumio_start_instructions_03">استخدم مستند صالح</string>
 	<string name="jumio_start_instructions_04">استخدم مستند هوية صالح صادر عن الحكومة</string>
+	<string name="jumio_start_instructions_07">قد يتم استخدام الفلاش</string>
 	<string name="jumio_start_verification">ابدأ التحقق</string>
 	<string name="jumio_start_verification_subtitle">تم تصميم هذه العملية للتحقق من هويتك وحمايتك من سرقة الهوية</string>
 	<string name="jumio_uploading_success">تحميل ناجح</string>

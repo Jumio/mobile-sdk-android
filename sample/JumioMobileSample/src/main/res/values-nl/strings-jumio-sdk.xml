@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Geoptimaliseerd scannen voor betere apparaatprestaties</string>
 	<string name="jumio_id_scan_manual">Maak een foto van uw document</string>
 	<string name="jumio_id_scan_manual_tips">Zorg ervoor dat u het hele document vastlegt</string>
-	<string name="jumio_id_scan_prompt_back_captured">ACHTERKANT genomen</string>
 	<string name="jumio_id_scan_prompt_capture_success">Hebbes!</string>
+	<string name="jumio_id_scan_prompt_captured">Gevangen genomen</string>
 	<string name="jumio_id_scan_prompt_center_id">Centreer uw document</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Draai naar de ACHTERKANT</string>
-	<string name="jumio_id_scan_prompt_front_captured">VOORKANT genomen</string>
 	<string name="jumio_id_scan_prompt_hold_still">Niet bewegen…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Recht houden</string>
 	<string name="jumio_id_scan_prompt_move_closer">Kom dichterbij</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Maak je klaar om een selfie te maken</string>
 	<string name="jumio_start_instructions_03">Gebruik een geldig document</string>
 	<string name="jumio_start_instructions_04">Gebruik een geldig door de overheid uitgegeven identiteitsbewijs</string>
+	<string name="jumio_start_instructions_07">Flash kan worden gebruikt</string>
 	<string name="jumio_start_verification">Verificatie starten</string>
 	<string name="jumio_start_verification_subtitle">Dit proces is ontworpen om je identiteit te bevestigen en je te beschermen tegen identiteitsdiefstal</string>
 	<string name="jumio_uploading_success">Uploaden succesvol</string>

@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">A szkennelés optimalizálása az eszköz jobb teljesítménye érdekében</string>
 	<string name="jumio_id_scan_manual">Készítsen fényképet a dokumentumról</string>
 	<string name="jumio_id_scan_manual_tips">Ügyeljen arra, hogy a teljes dokumentumot rögzítse</string>
-	<string name="jumio_id_scan_prompt_back_captured">HÁTULSÓ oldal rögzítve</string>
 	<string name="jumio_id_scan_prompt_capture_success">Megvan!</string>
+	<string name="jumio_id_scan_prompt_captured">Lefényképezve</string>
 	<string name="jumio_id_scan_prompt_center_id">Igazítsa középre a dokumentumot</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Fordítsa át a HÁTULSÓ oldalára</string>
-	<string name="jumio_id_scan_prompt_front_captured">ELÜLSŐ oldal rögzítve</string>
 	<string name="jumio_id_scan_prompt_hold_still">Tartsa mozdulatanul…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Tartsa egyenesen</string>
 	<string name="jumio_id_scan_prompt_move_closer">Mozgassa közelebb</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Készüljön fel a szelfi elkészítésére</string>
 	<string name="jumio_start_instructions_03">Érvényes okmányt használjon</string>
 	<string name="jumio_start_instructions_04">Használjon kormány által kiadott érvényes igazolványt</string>
+	<string name="jumio_start_instructions_07">Flash használható</string>
 	<string name="jumio_start_verification">Ellenőrzés indítása</string>
 	<string name="jumio_start_verification_subtitle">Ez a folyamat segít ellenőrizni a személyazonosságát, és védelmet nyújt a személyazonosság-lopással szemben</string>
 	<string name="jumio_uploading_success">Feltöltés sikeres</string>

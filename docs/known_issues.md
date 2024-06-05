@@ -4,13 +4,14 @@
 
 ## Table of Contents
 - [SDK Version 4.0.0 and Above](#sdk-version-400-and-above)
-  - [Duplicate Files for 'libc++_shared.so' Library](#duplicate-lib-c)
+  - [Duplicate Files for 'libc++_shared.so' Library](#duplicate-files-for-libc_sharedso-library)
+  - [Picking a file does not work on some Xiaomi devices](#picking-a-file-does-not-work-on-some-xiaomi-devices-xiaomi-file-picker)
 - [SDK Version 3.9.2 and 4.0.0](#sdk-version-392-and-400)
   - [Face Scan Crash at Start](#face-scan-crash-at-start)
 - [SDK Version 3.9.0](#sdk-version-390)
   - [Custom UI](#custom-ui)
 - [SDK Version 3.8.0 and Newer](#sdk-version-380-and-newer)
-  - [Stuck on 'Processing Documents' Screen ](#stuck-on-'processing-documents'-screen)
+  - [Stuck on 'Processing Documents' Screen ](#stuck-on-processing-documents-screen)
   - [Issues with okhttp3 Dependency Using iProov](#Issues-with-okhttp3-dependency-using-iproov)
   - [Jetifier Issues](#jetifier-issues)
   - [Fallback to Manual Capturing Using iProov](#fallback-to-manual-capturing-using-iProov)
@@ -19,15 +20,13 @@
   - [Kotlin Integration](#kotlin-integration)
 - [Miscellaneous](#miscellaneous)
   - [Static Interface Methods Are only Supported with Android N](#Static-interface-methods-are-only-supported-with-Android-N)
-  - [SDK Crashes Trying to Display Animations (Android Version 5 and Lower)](#sdk-crashes-trying-to-display-animations-(android-version-4-and-lower))
+  - [SDK Crashes Trying to Display Animations (Android Version 5 and Lower)](#sdk-crashes-trying-to-display-animations-android-version-5-and-lower)
   - [Country Missing from the Country List](#country-missing-from-the-country-list)
   - [Datadog in Dynamic feature modules](#datadog-in-dynamic-feature-modules)
 
 # SDK Version 4.0.0 and Above
 
-<div id="duplicate-lib-c">
-<h2>Duplicate Files for 'libc++_shared.so' Library</h2>
-</div>
+## Duplicate Files for 'libc++_shared.so' Library
 
 If build fails with error message:
 
@@ -44,6 +43,10 @@ android{
 }
 
 ```
+
+## Picking a file does not work on some Xiaomi devices {#xiaomi-file-picker}
+On some Xiaomi devices (e.g. Redmi Note 4) it can happen that picking a file from local storage for document verification fails. This boils down to a problem with Xiaomi's default file manager.
+To fix this, please install and use a different file manager on those devices when loading a file for document verification.
 
 # SDK Version 3.9.2 and 4.0.0
 
@@ -106,7 +109,7 @@ On using iProov in CustomUI, in case `NetverifySDKController$retry` function is 
 
 # SDK Version 3.7.x
 
-## Kotlin Integration  
+## Kotlin Integration
 Since the Jumio SDK is partly written in Kotlin, it is necessary to add the Kotlin standard library dependency to your project, even if the project itself if written in Java.
 
 # Miscellaneous

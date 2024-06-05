@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Quy trình quét được tối ưu hóa để thiết bị đạt hiệu suất tốt hơn</string>
 	<string name="jumio_id_scan_manual">Chụp ảnh tài liệu của bạn</string>
 	<string name="jumio_id_scan_manual_tips">Đảm bảo chụp toàn bộ tài liệu</string>
-	<string name="jumio_id_scan_prompt_back_captured">Đã chụp MẶT SAU</string>
 	<string name="jumio_id_scan_prompt_capture_success">Đã hiểu!</string>
+	<string name="jumio_id_scan_prompt_captured">Đã chụp</string>
 	<string name="jumio_id_scan_prompt_center_id">Căn giữa tài liệu của bạn</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Lật sang MẶT SAU</string>
-	<string name="jumio_id_scan_prompt_front_captured">Đã chụp MẶT TRƯỚC</string>
 	<string name="jumio_id_scan_prompt_hold_still">Giữ yên…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Giữ thẳng</string>
 	<string name="jumio_id_scan_prompt_move_closer">Tiến lại gần</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Hãy sẵn sàng để chụp ảnh selfie</string>
 	<string name="jumio_start_instructions_03">Hãy sử dụng tài liệu hợp lệ</string>
 	<string name="jumio_start_instructions_04">Sử dụng ID hợp lệ do chính phủ cấp</string>
+	<string name="jumio_start_instructions_07">Flash có thể được sử dụng</string>
 	<string name="jumio_start_verification">Bắt đầu xác minh</string>
 	<string name="jumio_start_verification_subtitle">Quy trình này được thiết kế để xác minh danh tính của bạn và giúp bạn không bị đánh cắp danh tính</string>
 	<string name="jumio_uploading_success">Tải lên thành công</string>

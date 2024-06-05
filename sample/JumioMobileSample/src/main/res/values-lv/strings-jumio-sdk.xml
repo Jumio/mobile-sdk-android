@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Skenēšana optimizēta, lai uzlabotu ierīces veiktspēju</string>
 	<string name="jumio_id_scan_manual">Nofotografējiet savu dokumentu</string>
 	<string name="jumio_id_scan_manual_tips">Pārliecinieties, ka nofotogrāfēts viss dokuments</string>
-	<string name="jumio_id_scan_prompt_back_captured">AIZMUGURE nofotografēta</string>
 	<string name="jumio_id_scan_prompt_capture_success">Izdevās!</string>
+	<string name="jumio_id_scan_prompt_captured">Fotografēts</string>
 	<string name="jumio_id_scan_prompt_center_id">Centrējiet savu dokumentu</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Pagrieziet AIZMUGURI</string>
-	<string name="jumio_id_scan_prompt_front_captured">PRIEKŠPUSE nofotografēta</string>
 	<string name="jumio_id_scan_prompt_hold_still">Turiet nekustīgi…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Turiet taisni</string>
 	<string name="jumio_id_scan_prompt_move_closer">Pietuviniet</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Sagatavojieties pašportreta uzņemšanai</string>
 	<string name="jumio_start_instructions_03">Izmantojiet derīgu dokumentu</string>
 	<string name="jumio_start_instructions_04">Izmantojiet derīgu valsts izdotu personu apliecinošu dokumentu</string>
+	<string name="jumio_start_instructions_07">Var tikt izmantots zibspuldze</string>
 	<string name="jumio_start_verification">Sākt verifikāciju</string>
 	<string name="jumio_start_verification_subtitle">Process paredzēts jūsu identitātes verificēšanai un aizsardzībai pret identitātes zādzību</string>
 	<string name="jumio_uploading_success">Augšupielāde veiksmīga</string>

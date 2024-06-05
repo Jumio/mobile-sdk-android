@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">डिवाइस के बेहतर प्रदर्शन के लिए आप्टमाइज़ स्कैनिंग</string>
 	<string name="jumio_id_scan_manual">अपने दस्तावेज़ की फ़ोटो लें</string>
 	<string name="jumio_id_scan_manual_tips">पूरे दस्तावेज़ को कैप्चर करना सुनिश्चित करें</string>
-	<string name="jumio_id_scan_prompt_back_captured">पीछे के हिस्से को केप्चर किया</string>
 	<string name="jumio_id_scan_prompt_capture_success">हो गया!</string>
+	<string name="jumio_id_scan_prompt_captured">कैप्चर किया गया</string>
 	<string name="jumio_id_scan_prompt_center_id">अपने दस्तावेज़ को बीच में रखें</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">पीछे की ओर पलटें</string>
-	<string name="jumio_id_scan_prompt_front_captured">आगे के हिस्से को केप्चर किया</string>
 	<string name="jumio_id_scan_prompt_hold_still">स्थिर पकड़ें…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">सीधे पकड़ें</string>
 	<string name="jumio_id_scan_prompt_move_closer">पास ले जाएँ</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">सेल्फी लेने के लिए तैयार हो जाएं</string>
 	<string name="jumio_start_instructions_03">एक मान्य दस्तावेज़ का इस्तेमाल करें</string>
 	<string name="jumio_start_instructions_04">सरकार द्वारा जारी वैध आईडी का उपयोग करें</string>
+	<string name="jumio_start_instructions_07">कैमरा फ्लैश का प्रयोग किया जा सकता है</string>
 	<string name="jumio_start_verification">वेरिफिकेशन शुरू करें</string>
 	<string name="jumio_start_verification_subtitle">यह प्रक्रिया आपकी पहचान वेरिफ़ाई करने और आपको पहचान की चोरी से बचाने के लिए डिज़ाइन की गई है</string>
 	<string name="jumio_uploading_success">अपलोड सफल</string>

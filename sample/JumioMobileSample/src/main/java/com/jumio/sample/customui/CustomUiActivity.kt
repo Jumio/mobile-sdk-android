@@ -29,7 +29,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.jumio.commons.log.Log
 import com.jumio.commons.utils.dpToPx
-import com.jumio.core.views.CameraScanView
 import com.jumio.defaultui.JumioActivity
 import com.jumio.sample.R
 import com.jumio.sample.customui.adapter.CustomConsentAdapter
@@ -66,9 +65,10 @@ import com.jumio.sdk.views.JumioActivityAttacher
 import com.jumio.sdk.views.JumioConfirmationView
 import com.jumio.sdk.views.JumioFileAttacher
 import com.jumio.sdk.views.JumioRejectView
+import com.jumio.sdk.views.JumioScanView
 import java.text.DecimalFormat
 
-private const val TAG = "UI-Less"
+private const val TAG = "CustomUiActivity"
 private const val PERMISSION_REQUEST_CODE = 100
 private const val EXTRA_TOKEN = "token"
 private const val EXTRA_DATACENTER = "datacenter"
@@ -104,7 +104,7 @@ class CustomUiActivity :
 	private var error: JumioError? = null
 	private var retryReason: JumioRetryReason? = null
 
-	private val scanView: CameraScanView
+	private val scanView: JumioScanView
 		get() = binding.scanView
 
 	private fun validatePermissions(): Boolean {
@@ -118,11 +118,7 @@ class CustomUiActivity :
 		return false
 	}
 
-	override fun onRequestPermissionsResult(
-		requestCode: Int,
-		permissions: Array<String>,
-		grantResults: IntArray,
-	) {
+	override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
 		if (requestCode != PERMISSION_REQUEST_CODE ||
@@ -594,42 +590,19 @@ class CustomUiActivity :
 				binding.startFallback.isEnabled = scanPart?.hasFallback == true
 				binding.takePicture.isEnabled = scanView.isShutterEnabled
 			}
-			JumioScanUpdate.NFC_EXTRACTION_STARTED -> {
-				log("NFC Extraction started")
-			}
-			JumioScanUpdate.NFC_EXTRACTION_PROGRESS -> {
-				log("NFC Extraction progress $data")
-			}
-			JumioScanUpdate.NFC_EXTRACTION_FINISHED -> {
-				log("NFC Extraction finished")
-			}
-			JumioScanUpdate.CENTER_ID -> {
-				log("Center your ID")
-			}
-			JumioScanUpdate.CENTER_FACE -> {
-				log("Center your face")
-			}
-			JumioScanUpdate.LEVEL_EYES_AND_DEVICE -> {
-				log("Hold your device at eye level")
-			}
-			JumioScanUpdate.HOLD_STILL -> {
-				log("Hold still...")
-			}
-			JumioScanUpdate.HOLD_STRAIGHT -> {
-				log("Hold straight")
-			}
-			JumioScanUpdate.MOVE_CLOSER -> {
-				log("Move closer")
-			}
-			JumioScanUpdate.TOO_CLOSE -> {
-				log("Too close")
-			}
-			JumioScanUpdate.MOVE_FACE_CLOSER -> {
-				log("Move face closer")
-			}
-			JumioScanUpdate.FACE_TOO_CLOSE -> {
-				log("Face too close")
-			}
+			JumioScanUpdate.NFC_EXTRACTION_STARTED -> log("NFC Extraction started")
+			JumioScanUpdate.NFC_EXTRACTION_PROGRESS -> log("NFC Extraction progress $data")
+			JumioScanUpdate.NFC_EXTRACTION_FINISHED -> log("NFC Extraction finished")
+			JumioScanUpdate.CENTER_ID -> log("Center your ID")
+			JumioScanUpdate.CENTER_FACE -> log("Center your face")
+			JumioScanUpdate.LEVEL_EYES_AND_DEVICE -> log("Hold your device at eye level")
+			JumioScanUpdate.HOLD_STILL -> log("Hold still...")
+			JumioScanUpdate.HOLD_STRAIGHT -> log("Hold straight")
+			JumioScanUpdate.MOVE_CLOSER -> log("Move closer")
+			JumioScanUpdate.TOO_CLOSE -> log("Too close")
+			JumioScanUpdate.MOVE_FACE_CLOSER -> log("Move face closer")
+			JumioScanUpdate.FACE_TOO_CLOSE -> log("Face too close")
+			JumioScanUpdate.FLASH -> log("Flash state changing to $data")
 		}
 	}
 
@@ -699,14 +672,14 @@ class CustomUiActivity :
 				rejectMap?.forEach {
 					logText += ": ${it.key.name} -> ${it.value}"
 				}
-				/**
-				 * To display granular feedback, check against the values provided in [com.jumio.sdk.reject.JumioRejectReason]
-				 */
-// 				when(data) {
-// 					JumioRejectReason.BLURRY -> ...
-// 					JumioRejectReason.DIGITAL_COPY -> ...
-// 					...
-// 				}
+
+				// To display granular feedback, check against the values provided in [com.jumio.sdk.reject.JumioRejectReason]
+				//
+				// when(data) {
+				//   JumioRejectReason.BLURRY -> ...
+				//   JumioRejectReason.DIGITAL_COPY -> ...
+				//   ...
+				// }
 				showView(binding.inlineRejectLayout)
 				scanPart?.let { jumioScanPart ->
 					binding.rejectViewList.removeAllViews()
@@ -774,11 +747,9 @@ class CustomUiActivity :
 				scanPart?.let { fileAttacher.attach(it) }
 				result.data?.let {
 					val returnUri = it.data ?: throw Exception("Could not get Uri")
-					val fileDescriptor = contentResolver.openFileDescriptor(returnUri, "r") ?: throw Exception(
-						"Could not open file descriptor"
-					)
-
-					fileAttacher.setFileDescriptor(fileDescriptor)
+					contentResolver.openFileDescriptor(returnUri, "r")?.use { fileDescriptor ->
+						fileAttacher.setFileDescriptor(fileDescriptor)
+					} ?: throw Exception("Could not open file descriptor")
 				}
 			} catch (e: Exception) {
 				showError(e.message)
@@ -857,12 +828,7 @@ class CustomUiActivity :
 					binding.customDocumentSpinner.adapter = customDocumentAdapter
 					binding.customDocumentSpinner.onItemSelectedListener =
 						object : AdapterView.OnItemSelectedListener {
-							override fun onItemSelected(
-								parent: AdapterView<*>?,
-								view: View?,
-								bposition: Int,
-								id: Long,
-							) {
+							override fun onItemSelected(parent: AdapterView<*>?, view: View?, bposition: Int, id: Long) {
 								binding.customDocumentSpinner.onItemSelectedListener = this@CustomUiActivity
 							}
 

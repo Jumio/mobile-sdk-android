@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">スキャニングの最適化により、デバイスのパフォーマンスが向上</string>
 	<string name="jumio_id_scan_manual">ドキュメントの写真を撮影してください</string>
 	<string name="jumio_id_scan_manual_tips">ドキュメント全体がキャプチャされていることを確認してください</string>
-	<string name="jumio_id_scan_prompt_back_captured">裏面をキャプチャしました</string>
 	<string name="jumio_id_scan_prompt_capture_success">了解！</string>
+	<string name="jumio_id_scan_prompt_captured">キャプチャされました</string>
 	<string name="jumio_id_scan_prompt_center_id">ドキュメントを中央に置いてください</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">裏面にしてください</string>
-	<string name="jumio_id_scan_prompt_front_captured">表面をキャプチャしました</string>
 	<string name="jumio_id_scan_prompt_hold_still">静止したまま…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">真っ直ぐそのまま</string>
 	<string name="jumio_id_scan_prompt_move_closer">近くに移動します</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">自撮りの準備をしてください</string>
 	<string name="jumio_start_instructions_03">有効な身分証明書を使用してください</string>
 	<string name="jumio_start_instructions_04">政府発行の有効な身分証明書を使用してください</string>
+	<string name="jumio_start_instructions_07">フラッシュが使用される可能性があります</string>
 	<string name="jumio_start_verification">認証を開始</string>
 	<string name="jumio_start_verification_subtitle">このプロセスは、本人確認を行い、個人情報の盗難から保護することを目的としています</string>
 	<string name="jumio_uploading_success">正常にアップロードされました</string>

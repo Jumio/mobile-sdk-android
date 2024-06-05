@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Сканування оптимізовано для кращої продуктивності пристрою</string>
 	<string name="jumio_id_scan_manual">Сфотографуйте ваш документ</string>
 	<string name="jumio_id_scan_manual_tips">Переконайтеся, що ви захопили весь документ</string>
-	<string name="jumio_id_scan_prompt_back_captured">ЗВОРОТНИЙ БІК знято</string>
 	<string name="jumio_id_scan_prompt_capture_success">Готово!</string>
+	<string name="jumio_id_scan_prompt_captured">Знято</string>
 	<string name="jumio_id_scan_prompt_center_id">Розташуйте документ по центру</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Повернути ЗВОРОТНИМ боком</string>
-	<string name="jumio_id_scan_prompt_front_captured">ЛИЦЕВИЙ БІК знято</string>
 	<string name="jumio_id_scan_prompt_hold_still">Не рухайтесь…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Тримайтесь рівно</string>
 	<string name="jumio_id_scan_prompt_move_closer">Підсуньтесь ближче</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Приготуйтеся зробити селфі</string>
 	<string name="jumio_start_instructions_03">Використовуйте дійсний документ</string>
 	<string name="jumio_start_instructions_04">Використовуйте дійсний документ, виданий державним органом</string>
+	<string name="jumio_start_instructions_07">Можливо використання спалаху</string>
 	<string name="jumio_start_verification">Почніть перевірку</string>
 	<string name="jumio_start_verification_subtitle">Цей процес призначений для перевірки вашої особи та захисту від крадіжки персональних даних</string>
 	<string name="jumio_uploading_success">Вивантаження успішно виконано</string>

@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Ukuskena kuthuthukisiwe ukuze idivayisi isebenze kangcono</string>
 	<string name="jumio_id_scan_manual">Thatha isithombe sedokhumenti yakho</string>
 	<string name="jumio_id_scan_manual_tips">Qiniseka ukuthi uthwebula isithombe sayo yonke incwadi</string>
-	<string name="jumio_id_scan_prompt_back_captured">INGEMUVA ithathiwe</string>
 	<string name="jumio_id_scan_prompt_capture_success">Ngiyitholile!</string>
+	<string name="jumio_id_scan_prompt_captured">Kuthunjiwe</string>
 	<string name="jumio_id_scan_prompt_center_id">Beka idokhumenti phakathi nendawo</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Shintshela ohlangothini OLUNGEMUVA</string>
-	<string name="jumio_id_scan_prompt_front_captured">INGAPHAMBILI ithathiwe</string>
 	<string name="jumio_id_scan_prompt_hold_still">Yibambe unganyakazi…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Yibambe iqonde</string>
 	<string name="jumio_id_scan_prompt_move_closer">Sondeza eduzane</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Lungela ukuzithatha isithombe</string>
 	<string name="jumio_start_instructions_03">Sebenzisa idokhumenti elivumelekile/elisemthethweni</string>
 	<string name="jumio_start_instructions_04">Sebenzisa umazisi osemthethweni okhishwa uhulumeni</string>
+	<string name="jumio_start_instructions_07">Kungase kusetshenziswe i-Flash</string>
 	<string name="jumio_start_verification">Qala ukuqinisekisa</string>
 	<string name="jumio_start_verification_subtitle">Le nqubo iklanyelwe ukuqinisekisa ubuwena futhi ikuvikele ekwebiweni komazisi wakho</string>
 	<string name="jumio_uploading_success">Ukufaka kuphumelele</string>

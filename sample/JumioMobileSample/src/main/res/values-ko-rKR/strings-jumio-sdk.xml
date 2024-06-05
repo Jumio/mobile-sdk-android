@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">더 나은 장치 성능을 위해 최적화된 스캔</string>
 	<string name="jumio_id_scan_manual">문서 사진 찍기</string>
 	<string name="jumio_id_scan_manual_tips">전체 서류를 캡처해야 합니다</string>
-	<string name="jumio_id_scan_prompt_back_captured">뒷면이 촬영되었습니다</string>
 	<string name="jumio_id_scan_prompt_capture_success">끝났습니다!</string>
+	<string name="jumio_id_scan_prompt_captured">캡처됨</string>
 	<string name="jumio_id_scan_prompt_center_id">문서를 중앙에 놓아주세요</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">뒷면으로 뒤집으세요</string>
-	<string name="jumio_id_scan_prompt_front_captured">앞면이 촬영되었습니다</string>
 	<string name="jumio_id_scan_prompt_hold_still">가만히 계세요…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">정면 응시 후 정지</string>
 	<string name="jumio_id_scan_prompt_move_closer">가까이 이동</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">셀카를 찍을 준비를 하세요</string>
 	<string name="jumio_start_instructions_03">유효한 문서를 사용하세요</string>
 	<string name="jumio_start_instructions_04">유효한 정부 발급 신분증을 사용하세요</string>
+	<string name="jumio_start_instructions_07">플래시가 사용될 수 있습니다</string>
 	<string name="jumio_start_verification">확인 시작</string>
 	<string name="jumio_start_verification_subtitle">이 절차는 신원을 확인하고 신원 도용으로부터 귀하를 보호하기 위해 고안되었습니다</string>
 	<string name="jumio_uploading_success">업로드 성공</string>

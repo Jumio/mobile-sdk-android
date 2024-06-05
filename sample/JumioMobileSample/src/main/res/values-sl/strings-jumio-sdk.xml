@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Skeniranje je optimizirano za boljše delovanje naprave</string>
 	<string name="jumio_id_scan_manual">Fotografirajte svoj dokument</string>
 	<string name="jumio_id_scan_manual_tips">Poskrbite, da zajamete celoten dokument</string>
-	<string name="jumio_id_scan_prompt_back_captured">Hrbtno posneto</string>
 	<string name="jumio_id_scan_prompt_capture_success">Tako je!</string>
+	<string name="jumio_id_scan_prompt_captured">Posneto</string>
 	<string name="jumio_id_scan_prompt_center_id">Dajte svoj dokument na sredino</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Obrnite se na HRBTNO stran</string>
-	<string name="jumio_id_scan_prompt_front_captured">SPREDAJ posneto</string>
 	<string name="jumio_id_scan_prompt_hold_still">Ne premikajte se…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Držite naravnost</string>
 	<string name="jumio_id_scan_prompt_move_closer">Pridite bližje</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Pripravite se na selfi</string>
 	<string name="jumio_start_instructions_03">Uporabite veljaven dokument</string>
 	<string name="jumio_start_instructions_04">Uporabite veljaven identifikacijski dokument, izdan s strani države</string>
+	<string name="jumio_start_instructions_07">Morda je uporabljena bliskavica</string>
 	<string name="jumio_start_verification">Začetek preverjanja</string>
 	<string name="jumio_start_verification_subtitle">Ta postopek je namenjen preverjanju vaše identitete in zaščiti pred krajo identitete</string>
 	<string name="jumio_uploading_success">Nalaganje uspešno</string>

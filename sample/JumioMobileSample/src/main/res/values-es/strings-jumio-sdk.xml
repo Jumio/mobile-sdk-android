@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Escaneo optimizado para un mejor rendimiento del dispositivo</string>
 	<string name="jumio_id_scan_manual">Tome una foto del documento</string>
 	<string name="jumio_id_scan_manual_tips">Asegúrese de capturar todo el documento</string>
-	<string name="jumio_id_scan_prompt_back_captured">PARTE TRASERA capturada</string>
 	<string name="jumio_id_scan_prompt_capture_success">¡Entendido!</string>
+	<string name="jumio_id_scan_prompt_captured">Capturado</string>
 	<string name="jumio_id_scan_prompt_center_id">Centre su documento</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Dar la vuelta a la PARTE TRASERA</string>
-	<string name="jumio_id_scan_prompt_front_captured">PARTE DELANTERA capturada</string>
 	<string name="jumio_id_scan_prompt_hold_still">No se mueva…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Mantenga una postura recta</string>
 	<string name="jumio_id_scan_prompt_move_closer">Acérquese</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Prepárese para tomarse una selfi</string>
 	<string name="jumio_start_instructions_03">Utilice un documento válido</string>
 	<string name="jumio_start_instructions_04">Utilice una identificación con fotografía válida emitida por el gobierno</string>
+	<string name="jumio_start_instructions_07">Puede utilizarse flash</string>
 	<string name="jumio_start_verification">Iniciar verificación</string>
 	<string name="jumio_start_verification_subtitle">Este proceso está diseñado para verificar su identidad y protegerlo del robo de identidad</string>
 	<string name="jumio_uploading_success">Carga correcta</string>

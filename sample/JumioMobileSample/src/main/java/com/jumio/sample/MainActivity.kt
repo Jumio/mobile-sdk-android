@@ -163,20 +163,19 @@ class MainActivity :
 	 *
 	 * @param requestCode the request code for the SDK
 	 */
-	private fun checkPermissions(
-		requestCode: Int = PERMISSION_REQUEST_CODE,
-	) = if (!JumioSDK.hasAllRequiredPermissions(this)) {
-		// Acquire missing permissions.
-		val mp = JumioSDK.getMissingPermissions(this)
-		ActivityCompat.requestPermissions(
-			this,
-			mp,
-			requestCode
-		) // The result is received in onRequestPermissionsResult.
-		false
-	} else {
-		true
-	}
+	private fun checkPermissions(requestCode: Int = PERMISSION_REQUEST_CODE) =
+		if (!JumioSDK.hasAllRequiredPermissions(this)) {
+			// Acquire missing permissions.
+			val mp = JumioSDK.getMissingPermissions(this)
+			ActivityCompat.requestPermissions(
+				this,
+				mp,
+				requestCode
+			) // The result is received in onRequestPermissionsResult.
+			false
+		} else {
+			true
+		}
 
 	private fun openLink(url: String) {
 		val intent = Intent(Intent.ACTION_VIEW).apply {

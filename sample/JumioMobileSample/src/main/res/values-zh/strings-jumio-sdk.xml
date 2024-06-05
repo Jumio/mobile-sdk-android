@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">扫描已优化，可提高设备性能</string>
 	<string name="jumio_id_scan_manual">拍摄您的证件照片</string>
 	<string name="jumio_id_scan_manual_tips">请确保已拍下完整的文件</string>
-	<string name="jumio_id_scan_prompt_back_captured">背面已捕获</string>
 	<string name="jumio_id_scan_prompt_capture_success">成功了！</string>
+	<string name="jumio_id_scan_prompt_captured">被捕获</string>
 	<string name="jumio_id_scan_prompt_center_id">将您的证件居中</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">翻到背面</string>
-	<string name="jumio_id_scan_prompt_front_captured">正面已捕获</string>
 	<string name="jumio_id_scan_prompt_hold_still">保持不动…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">保持笔直</string>
 	<string name="jumio_id_scan_prompt_move_closer">靠近一点</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">准备好自拍</string>
 	<string name="jumio_start_instructions_03">使用有效证件</string>
 	<string name="jumio_start_instructions_04">使用政府颁发的有效身份证件</string>
+	<string name="jumio_start_instructions_07">可能会使用闪光灯</string>
 	<string name="jumio_start_verification">开始身份认证</string>
 	<string name="jumio_start_verification_subtitle">此认证过程旨在确认您的身份并保护您免遭身份盗用</string>
 	<string name="jumio_uploading_success">上传成功</string>

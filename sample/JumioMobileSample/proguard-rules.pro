@@ -42,8 +42,6 @@
 -keep class com.iproov.**$* { *; }
 -keep class com.google.protobuf.** { *; }
 -keep class com.google.protobuf.**$* { *; }
--keep class kotlin.** { *; }
--keep class kotlinx.** { *; }
 -dontwarn com.google.protobuf.**
 -dontwarn com.tinder.**
 -dontwarn okhttp3.**
@@ -63,3 +61,12 @@
 -dontwarn org.ejbca.**
 -dontwarn org.bouncycastle.**
 -dontwarn module-info
+
+#Dynamic Delivery Module
+-keepclassmembers class com.google.android.play.core.splitinstall.SplitInstallHelper {
+*** loadLibrary(android.content.Context,java.lang.String);
+}
+
+-keep,includedescriptorclasses class com.jumio.ale.swig.** {
+*** swigDirectorDisconnect();
+}

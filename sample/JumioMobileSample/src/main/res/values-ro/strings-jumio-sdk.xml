@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Scanare optimizată pentru o performanță mai bună a dispozitivului</string>
 	<string name="jumio_id_scan_manual">Faceți o poză documentului</string>
 	<string name="jumio_id_scan_manual_tips">Asigurați-vă că ați capturat întregul document</string>
-	<string name="jumio_id_scan_prompt_back_captured">PARTEA SPATE capturată</string>
 	<string name="jumio_id_scan_prompt_capture_success">Realizat!</string>
+	<string name="jumio_id_scan_prompt_captured">Capturat</string>
 	<string name="jumio_id_scan_prompt_center_id">Încadrați-vă documentul</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Întoarceți pe PARTEA SPATE</string>
-	<string name="jumio_id_scan_prompt_front_captured">PARTE FAȚĂ capturată</string>
 	<string name="jumio_id_scan_prompt_hold_still">Țineți nemișcat…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Țineți drept</string>
 	<string name="jumio_id_scan_prompt_move_closer">Apropiați</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Pregătiți-vă pentru selfie-ul dvs.</string>
 	<string name="jumio_start_instructions_03">Folosiți un document valid</string>
 	<string name="jumio_start_instructions_04">Utilizați un act de identitate valabil emis de autorități</string>
+	<string name="jumio_start_instructions_07">Flash ar putea fi utilizat</string>
 	<string name="jumio_start_verification">Începeți verificarea identității</string>
 	<string name="jumio_start_verification_subtitle">Acest proces de verificare are rolul de a vă confirma identitatea și a vă proteja de furtul de identitate</string>
 	<string name="jumio_uploading_success">Încărcare reușită</string>

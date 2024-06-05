@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Seadme parema jõudluse saavutamiseks on skannimist optimeeritud</string>
 	<string name="jumio_id_scan_manual">Tehke foto oma dokumendist</string>
 	<string name="jumio_id_scan_manual_tips">Kontrollige, et kogu dokument oleks pildil nähtav</string>
-	<string name="jumio_id_scan_prompt_back_captured">TAGAKÜLG jäädvustatud</string>
 	<string name="jumio_id_scan_prompt_capture_success">Sain aru!</string>
+	<string name="jumio_id_scan_prompt_captured">Jäädvustatud</string>
 	<string name="jumio_id_scan_prompt_center_id">Tsentreerige oma dokument</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Pöörake TAGUMINE külg</string>
-	<string name="jumio_id_scan_prompt_front_captured">ESIKÜLG jäädvustatud</string>
 	<string name="jumio_id_scan_prompt_hold_still">Olge paigal…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Selg sirgu</string>
 	<string name="jumio_id_scan_prompt_move_closer">Liikuge lähemale</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Olge valmis selfit tegema</string>
 	<string name="jumio_start_instructions_03">Kasutage kehtivat dokumenti</string>
 	<string name="jumio_start_instructions_04">Kasutage riigiasutuse väljastatud dokumenti</string>
+	<string name="jumio_start_instructions_07">Võib kasutada välku</string>
 	<string name="jumio_start_verification">Alustage kinnitamist</string>
 	<string name="jumio_start_verification_subtitle">Selle protsessi eesmärk on teie isiku kinnitamine ja teie identiteedivarguse eest kaitsmine</string>
 	<string name="jumio_uploading_success">Üleslaadimine õnnestus</string>

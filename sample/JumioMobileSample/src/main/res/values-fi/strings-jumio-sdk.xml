@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Skannaus optimoitu laitteen parempaa suorituskykyä varten</string>
 	<string name="jumio_id_scan_manual">Ota valokuva asiakirjastasi</string>
 	<string name="jumio_id_scan_manual_tips">Varmista, että asiakirja näkyy kokonaisuudessaan</string>
-	<string name="jumio_id_scan_prompt_back_captured">KÄÄNTÖPUOLI kuvattu</string>
 	<string name="jumio_id_scan_prompt_capture_success">Selvä!</string>
+	<string name="jumio_id_scan_prompt_captured">Tallennettu</string>
 	<string name="jumio_id_scan_prompt_center_id">Keskitä asiakirjasi</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Käännä KÄÄNTÖPUOLELLE</string>
-	<string name="jumio_id_scan_prompt_front_captured">ETUPUOLI kuvattu</string>
 	<string name="jumio_id_scan_prompt_hold_still">Pitele paikoillaan…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Pitele suorassa</string>
 	<string name="jumio_id_scan_prompt_move_closer">Siirrä lähemmäksi</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Valmistaudu ottamaan selfie</string>
 	<string name="jumio_start_instructions_03">Käytä voimassa olevaa asiakirjaa</string>
 	<string name="jumio_start_instructions_04">Käytä voimassa olevaa virallista henkilöllisyystodistusta</string>
+	<string name="jumio_start_instructions_07">Salamavaloa saatetaan käyttää</string>
 	<string name="jumio_start_verification">Aloita vahvistus</string>
 	<string name="jumio_start_verification_subtitle">Tämän prosessin tarkoituksena on vahvistaa henkilöllisyytesi ja suojata sinua identiteettivarkauksilta</string>
 	<string name="jumio_uploading_success">Lataaminen onnistui</string>

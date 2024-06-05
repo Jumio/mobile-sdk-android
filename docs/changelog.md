@@ -16,15 +16,24 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 For detailed technical changes please refer to our [Transition Guide](transition_guide.md).
 
 ## Support Period
-Current SDK version: __4.9.1__
+Current SDK version: __4.10.0__
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+
+## SDK Version: __4.10.0__
+![Improvement] Support for 4k Image capture. Improved ML model input, enhanced image and fraud checks [ID Verification]
+
+![Improvement] Added flash capture for frontside of ID documents. Enhanced checks of certain document security features [ID Verification]
+
+![Improvement] Support for Serbian language, for both Cyrillic and Latin [ID Verification, Identity Verification, Document Verification]
 
 ## SDK Version: __4.9.1__
 ![Fix] Fixed a rare issue that could lead to a crash when the SDK is recreated
 
 ## SDK Version: __4.9.0__
 ![Improvement] Automated document and country selection, powered by classifer ML model [ID Verification]
+
+![Improvement] Added possibility to pre-load required ML models. For more information checkout the according section in the [README](../README.md#ml-models) [ID Verification, Identity Verification]
 
 ![Improvement] Major UI Redesign [ID Verification, Identity Verification, Document Verification]
 
@@ -36,11 +45,17 @@ Please refer to our [SDK maintenance and support policy](maintenance_policy.md) 
 
 ![Change] Removed Device Risk module from SDK [Identity Verification]
 
+## SDK Version: __4.8.2__
+![Improvement] iProov SDK version update to 8.5.2 [Identity Verification]
+
 ## SDK Version: __4.8.1__
 ![Fix] Removed Location handling to fix potential Google Play Store rejections
 
 ## SDK Version: __4.8.0__
 ![Improvement] Managing Liveness dependencies to help better conversion [Identity Verification]
+
+## SDK Version: __4.7.2__
+![Improvement] iProov SDK version update to 8.5.2 [Identity Verification]
 
 ## SDK Version: __4.7.1__
 ![Fix] Removed Location handling to fix potential Google Play Store rejections
@@ -54,11 +69,14 @@ Please refer to our [SDK maintenance and support policy](maintenance_policy.md) 
 
 ![Change] Updated Jumio Liveness module [Identity Verification]
 
-![Change] Removed previous scanning functionalities, now all included in Autocatpure functionality [ID Verification]
+![Change] Removed previous scanning functionalities, now all included in Autocapture functionality [ID Verification]
 
 ![Change] Removed Microblink barcode scanning, switched to MLkit [ID Verification]
 
-![Fix] Fixed Liveness customizaton bug [Identity Verification]
+![Fix] Fixed Liveness customization bug [Identity Verification]
+
+## SDK Version: __4.6.2__
+![Improvement] iProov SDK version update to 8.5.2 [Identity Verification]
 
 ## SDK Version: __4.6.1__
 ![Fix] Removed Location handling to fix potential Google Play Store rejections
@@ -67,6 +85,9 @@ Please refer to our [SDK maintenance and support policy](maintenance_policy.md) 
 ![Improvement] Added Jumio Liveness module to enhance the Liveness user experience and interface (Identity Verification)
 
 ![Improvement] Improved Liveness customization options (Identity Verification)
+
+## SDK Version: __4.5.2__
+![Improvement] iProov SDK version update to 8.5.2 [Identity Verification]
 
 ## SDK Version: __4.5.1__
 ![Fix] Removed Location handling to fix potential Google Play Store rejections

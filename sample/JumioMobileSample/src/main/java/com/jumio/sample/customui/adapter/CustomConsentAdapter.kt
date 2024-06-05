@@ -62,11 +62,7 @@ class CustomConsentAdapter(
 			showConsent(consentText, consentSwitch, consentItem)
 		}
 
-		private fun showConsent(
-			textView: TextView,
-			switch: SwitchCompat,
-			consentItem: JumioConsentItem?,
-		) {
+		private fun showConsent(textView: TextView, switch: SwitchCompat, consentItem: JumioConsentItem?) {
 			val linkColor = MaterialColors.getColor(itemView, com.jumio.defaultui.R.attr.colorPrimary)
 			val spannedText = consentItem?.spannedTextWithLinkColor(linkColor)
 			if (spannedText.isNullOrEmpty()) {

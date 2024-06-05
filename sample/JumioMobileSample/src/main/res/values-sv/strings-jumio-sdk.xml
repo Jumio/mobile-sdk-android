@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Skanning optimerad för bättre enhetsprestanda</string>
 	<string name="jumio_id_scan_manual">Ta en bild av ditt dokument</string>
 	<string name="jumio_id_scan_manual_tips">Se till att hela dokumentet inkluderas</string>
-	<string name="jumio_id_scan_prompt_back_captured">Bild tagen av BAKSIDAN</string>
 	<string name="jumio_id_scan_prompt_capture_success">Jag förstår!</string>
+	<string name="jumio_id_scan_prompt_captured">Fångad</string>
 	<string name="jumio_id_scan_prompt_center_id">Centrera ditt dokument</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Vänd till BAKSIDAN</string>
-	<string name="jumio_id_scan_prompt_front_captured">Bild tagen av FRAMSIDAN</string>
 	<string name="jumio_id_scan_prompt_hold_still">Håll stadigt …</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Håll rakt</string>
 	<string name="jumio_id_scan_prompt_move_closer">Flytta närmare</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Gör dig redo att ta en selfie</string>
 	<string name="jumio_start_instructions_03">Använd ett giltigt dokument</string>
 	<string name="jumio_start_instructions_04">Använd ett  gilgt ID utfärdat av statlig myndighet</string>
+	<string name="jumio_start_instructions_07">Blixt kan användas</string>
 	<string name="jumio_start_verification">Starta verifiering</string>
 	<string name="jumio_start_verification_subtitle">Den här processen är till för att bekräfta din identitet och skydda dig mot identitetsstöld</string>
 	<string name="jumio_uploading_success">Uppladdning klar</string>

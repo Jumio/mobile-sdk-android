@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Skanowanie zoptymalizowane pod kątem lepszej wydajności urządzenia</string>
 	<string name="jumio_id_scan_manual">Zrób zdjęcie swojego dokumentu</string>
 	<string name="jumio_id_scan_manual_tips">Upewnij się, że uchwycono cały dokument</string>
-	<string name="jumio_id_scan_prompt_back_captured">TYŁ uchwycony</string>
 	<string name="jumio_id_scan_prompt_capture_success">Mamy to!</string>
+	<string name="jumio_id_scan_prompt_captured">Uchwycono</string>
 	<string name="jumio_id_scan_prompt_center_id">Wyśrodkuj swój dokument tożsamości</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Odwróć na TYŁ</string>
-	<string name="jumio_id_scan_prompt_front_captured">PRZÓD uchwycony</string>
 	<string name="jumio_id_scan_prompt_hold_still">Nie ruszaj kamerą…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Wyrównaj</string>
 	<string name="jumio_id_scan_prompt_move_closer">Przybliż</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Przygotuj się do zrobienia selfie</string>
 	<string name="jumio_start_instructions_03">Wybierz ważny dokument</string>
 	<string name="jumio_start_instructions_04">Użyj ważnego dokumentu tożsamości wydanego przez organ państwowy</string>
+	<string name="jumio_start_instructions_07">Może zostać użyta lampa błyskowa</string>
 	<string name="jumio_start_verification">Rozpocznij weryfikację</string>
 	<string name="jumio_start_verification_subtitle">Celem tej procedury jest sprawdzenie Twojej tożsamości i ochrona przed jej kradzieżą</string>
 	<string name="jumio_uploading_success">Przesyłanie zakończone pomyślnie</string>

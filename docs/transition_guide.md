@@ -6,11 +6,28 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.10.0
+#### Public API Changes
+* `IMAGE_TAKEN` [`JumioScanStep`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/index.html) is now sent for each image required for a specified side. This is different to previous behavior where `IMAGE_TAKEN` was sent only when the side/part was completed. Please make sure to align any logic based on `IMAGE_TAKEN` to the new behavior. `NEXT_PART` or `PROCESSING` might be used to identify when a side/part has been finished.
+* `FLASH` has been added to [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html)
+
+#### New SDK Localizations Added
+SDK Translations for the languages Serbian (Cyrillic) and Serbian (Latin) have been added.
+
+#### Dependency Updates
+* Tensorflow lite update: ~~`"org.tensorflow:tensorflow-lite:2.10.0"`~~ is replaced by `"org.tensorflow:tensorflow-lite:2.16.1"`.
+* `"com.jumio.android:camerax"` is added as a transitive dependency to `"com.jumio.android:liveness"`
 
 ## 4.9.1
 No backward incompatible changes
 
 ## 4.9.0
+#### Compile SDK Version Changes
+- __⚠️&nbsp;&nbsp;The minimum required compile SDK version for SDK `4.9.0` is `34`.__
+- With these changes also Gradle 8 is __required__ to build your application successfully. The [Android Gradle plugin Upgrade Assistant](https://developer.android.com/build/agp-upgrade-assistant) can be helpful conducting the upgrade.
+- Troubleshooting: 
+  - In case you are experiencing some errors when trying to build your release application, make sure to replace all occurrences of `tasks.whenTaskAdded` with `tasks.configureEach`
+
 #### Public API Changes
 * Function `getHelpAnimation()` has been deprecated for all face help animation instances in [`JumioScanPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html)
 * Property `parts` has been added to [`JumioPhysicalDocument`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-physical-document/index.html)
@@ -32,7 +49,7 @@ No backward incompatible changes
 
 #### Dependency Updates
 * Removed Devicerisk dependency: ~~`implementation "com.jumio.android:devicerisk:4.8.1"`~~
-* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:9.0.2"`. Please note that this update also includes a major UI/UX upgrade.
+* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:9.0.3"`. Please note that this update also includes a major UI/UX upgrade.
 
 
 #### Customization Changes
@@ -46,11 +63,19 @@ No backward incompatible changes
 
 * Customization attribute ~~`<item name="jumio_face_animation_customization">`~~ has been removed
 
+## 4.8.2
+#### Dependency Updates
+* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:8.5.2"`
+
 ## 4.8.1
 No backward incompatible changes
 
 ## 4.8.0
 No backward incompatible changes
+
+## 4.7.2
+#### Dependency Updates
+* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:8.5.2"`
 
 ## 4.7.1
 No backward incompatible changes
@@ -78,6 +103,10 @@ No backward incompatible changes
 
 #### Documentation Changes
 * Functions `persist` and `stop` in [`JumioController`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.controller/-jumio-controller/index.html) need to be called independently from `isComplete` as long as the workflow is not yet finished or canceled.
+
+## 4.6.2
+#### Dependency Updates
+* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:8.5.2"`
 
 ## 4.6.1
 No backward incompatible changes
@@ -109,6 +138,10 @@ No backward incompatible changes
 
 #### Dependency Updates
 * NEW Liveness dependency: `implementation "com.jumio.android:liveness:4.6.0"`
+
+## 4.5.2
+#### Dependency Updates
+* IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:8.5.2"`
 
 ## 4.5.1
 No backward incompatible changes
@@ -188,8 +221,6 @@ No backward incompatible changes
 
 #### Public API Changes
 * Document Verification is now supported. Please check the [Integration Guide](https://github.com/Jumio/mobile-sdk-android/blob/master/docs/integration_guide.md#jumio-document-credential) for more information.
-
-#### Public API Changes
 * ~~`JumioCameraPosition`~~ from package `com.jumio.sdk.enums` in `com.jumio.sdk:core` is replaced by `JumioCameraFacing`
 * `JumioAcquireMode` has been added to package `com.jumio.sdk.enums` in `com.jumio.sdk:core`, containing fields `FILE` and `CAMERA`
 * [`JumioDataCredential` class](integration_guide.md/#jumio-data-credential) has been added for handling of Device Fingerprinting

@@ -111,11 +111,10 @@
 	<string name="jumio_id_scan_hint_performance_fallback">Βελτιστοποιημένη σάρωση για καλύτερη απόδοση της συσκευής</string>
 	<string name="jumio_id_scan_manual">Βγάλτε μια φωτογραφία το έγγραφό σας</string>
 	<string name="jumio_id_scan_manual_tips">Φροντίστε να αποτυπώσετε ολόκληρο το έγγραφο</string>
-	<string name="jumio_id_scan_prompt_back_captured">Αποτυπώθηκε η ΠΙΣΩ όψη</string>
 	<string name="jumio_id_scan_prompt_capture_success">Το κατάλαβα!</string>
+	<string name="jumio_id_scan_prompt_captured">Καταγράφηκε</string>
 	<string name="jumio_id_scan_prompt_center_id">Κεντράρετε το έγγραφό σας</string>
 	<string name="jumio_id_scan_prompt_flip_to_back">Γυρίστε στην ΠΙΣΩ όψη</string>
-	<string name="jumio_id_scan_prompt_front_captured">Αποτυπώθηκε η ΜΠΡΟΣΤΙΝΗ όψη</string>
 	<string name="jumio_id_scan_prompt_hold_still">Μείνετε ακίνητοι…</string>
 	<string name="jumio_id_scan_prompt_hold_straight">Κρατήστε ίσιο τον κορμό σας</string>
 	<string name="jumio_id_scan_prompt_move_closer">Ελάτε πιο κοντά</string>
@@ -162,6 +161,7 @@
 	<string name="jumio_start_instructions_02">Ετοιμαστείτε να βγάλετε μια selfie</string>
 	<string name="jumio_start_instructions_03">Χρησιμοποιήστε ένα έγκυρο έγγραφο</string>
 	<string name="jumio_start_instructions_04">Χρησιμοποιήστε μια έγκυρη ταυτότητα από κρατική αρχή έκδοσης</string>
+	<string name="jumio_start_instructions_07">Ίσως χρησιμοποιηθεί το flash</string>
 	<string name="jumio_start_verification">Έναρξη επαλήθευσης</string>
 	<string name="jumio_start_verification_subtitle">Αυτή η διαδικασία έχει σχεδιαστεί για την επιβεβαίωση της ταυτότητάς σας και την προστασία σας από πλαστοπροσωπία</string>
 	<string name="jumio_uploading_success">Η φόρτωση ήταν επιτυχής</string>
