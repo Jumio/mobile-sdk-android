@@ -6,6 +6,7 @@ com.jumio.sdk
 com.jumio.sdk.consent
 com.jumio.sdk.controller
 com.jumio.sdk.credentials
+com.jumio.sdk.data
 com.jumio.sdk.document
 com.jumio.sdk.enums
 com.jumio.sdk.error
