@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">A kép nem érvényes azonosító</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">A képminőség nem elég jó az ellenőrzéshez</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">A kép készítését meg kell ismételni</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">A támogatott dokumentumok listája</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">A dokumentum nem támogatott</string>
 	<string name="jumio_face_help_eyes_closed">Tartsa nyitva a szemét</string>
 	<string name="jumio_face_help_generic_angle">Tartsa a készüléket szemmagasságban</string>
 	<string name="jumio_face_help_generic_center">Helyezze az arcát a keret közepébe, és kövesse a képernyőn megjelenő utasításokat</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Rögzítse manuálisan a HÁTULSÓ oldalt</string>
 	<string name="jumio_id_scan_guide_photo_side">Rögzítse a FOTÓS oldalt</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Rögzítse manuálisan a FOTÓS oldalt</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Döntés úgy, hogy az alsó szél látható legyen, majd igazítás a kerethez</string>
 	<string name="jumio_id_scan_hint_performance_fallback">A szkennelés optimalizálása az eszköz jobb teljesítménye érdekében</string>
 	<string name="jumio_id_scan_manual">Készítsen fényképet a dokumentumról</string>
 	<string name="jumio_id_scan_manual_tips">Ügyeljen arra, hogy a teljes dokumentumot rögzítse</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Tartsa egyenesen</string>
 	<string name="jumio_id_scan_prompt_move_closer">Mozgassa közelebb</string>
 	<string name="jumio_id_scan_prompt_processing">Kép ellenőrzése folyamatban…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Kisebb mértékű döntés</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Nagyobb mértékű döntés</string>
 	<string name="jumio_id_scan_prompt_too_close">Túl közel</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Olvassa be a vonalkódját</string>
 	<string name="jumio_id_scan_tips_button_fallback">Fénykép készítése manuálisan</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Fényképes oldal</string>
 	<string name="jumio_idtype_subtitle_country">Ellenőrizze a kiállító országot</string>
 	<string name="jumio_idtype_subtitle_id">Válassza ki az igazolvány típusát</string>
+	<string name="jumio_list_supported_document_title">Támogatott dokumentumok</string>
 	<string name="jumio_liveness_prompt_no_target">Igazítsa az arcát a keretbe</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Értem! Készítsünk egy másik fényképet</string>
 	<string name="jumio_liveness_prompt_too_close">Túl közel</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Készüljön fel a szelfi elkészítésére</string>
 	<string name="jumio_start_instructions_03">Érvényes okmányt használjon</string>
 	<string name="jumio_start_instructions_04">Használjon kormány által kiadott érvényes igazolványt</string>
-	<string name="jumio_start_instructions_07">Flash használható</string>
+	<string name="jumio_start_instructions_07">Az alkalmazás a kamera vakuját használhatja</string>
 	<string name="jumio_start_verification">Ellenőrzés indítása</string>
 	<string name="jumio_start_verification_subtitle">Ez a folyamat segít ellenőrizni a személyazonosságát, és védelmet nyújt a személyazonosság-lopással szemben</string>
 	<string name="jumio_uploading_success">Feltöltés sikeres</string>

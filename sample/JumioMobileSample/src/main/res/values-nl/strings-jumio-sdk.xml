@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">De afbeelding is een ongeldig identiteitsbewijs.</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">De beeldkwaliteit is niet goed genoeg om te worden geverifieerd</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Foto moet opnieuw worden genomen</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Lijst met ondersteunde documenten</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Het vastgelegde document wordt niet ondersteund</string>
 	<string name="jumio_face_help_eyes_closed">Houd uw ogen open</string>
 	<string name="jumio_face_help_generic_angle">Houd apparaat op ooghoogte</string>
 	<string name="jumio_face_help_generic_center">Plaats je gezicht in het frame en volg de instructies op het scherm</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Handmatig de ACHTERKANT vastleggen</string>
 	<string name="jumio_id_scan_guide_photo_side">De FOTOKANT vastleggen</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Handmatig de FOTOKANT vastleggen</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Kantel, zodat de onderrand zichtbaar is en lijn vervolgens uit met het kader</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Geoptimaliseerd scannen voor betere apparaatprestaties</string>
 	<string name="jumio_id_scan_manual">Maak een foto van uw document</string>
 	<string name="jumio_id_scan_manual_tips">Zorg ervoor dat u het hele document vastlegt</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Recht houden</string>
 	<string name="jumio_id_scan_prompt_move_closer">Kom dichterbij</string>
 	<string name="jumio_id_scan_prompt_processing">De afbeelding controleren…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Kantel minder</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Kantel meer</string>
 	<string name="jumio_id_scan_prompt_too_close">Te dichtbij</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Zoom in op je streepjescode</string>
 	<string name="jumio_id_scan_tips_button_fallback">Foto handmatig maken</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Fotopagina</string>
 	<string name="jumio_idtype_subtitle_country">Controleer het land van afgifte</string>
 	<string name="jumio_idtype_subtitle_id">Selecteer type identiteitsbewijs</string>
+	<string name="jumio_list_supported_document_title">Ondersteunde documenten</string>
 	<string name="jumio_liveness_prompt_no_target">Plaats je gezicht in het frame</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Gelukt! Laten we nog een foto nemen</string>
 	<string name="jumio_liveness_prompt_too_close">Te dichtbij</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Maak je klaar om een selfie te maken</string>
 	<string name="jumio_start_instructions_03">Gebruik een geldig document</string>
 	<string name="jumio_start_instructions_04">Gebruik een geldig door de overheid uitgegeven identiteitsbewijs</string>
-	<string name="jumio_start_instructions_07">Flash kan worden gebruikt</string>
+	<string name="jumio_start_instructions_07">De app kan de cameraflits gebruiken</string>
 	<string name="jumio_start_verification">Verificatie starten</string>
 	<string name="jumio_start_verification_subtitle">Dit proces is ontworpen om je identiteit te bevestigen en je te beschermen tegen identiteitsdiefstal</string>
 	<string name="jumio_uploading_success">Uploaden succesvol</string>

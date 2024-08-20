@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Das Bild ist keine gültige Identifizierung</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Die Bildqualität ist nicht gut genug, um überprüft zu werden</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Bild muss erneut aufgenommen werden</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Liste der unterstützten Dokumente</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Das erfasste Dokument wird nicht unterstützt</string>
 	<string name="jumio_face_help_eyes_closed">Halten Sie die Augen offen</string>
 	<string name="jumio_face_help_generic_angle">Kamera auf Augenhöhe halten</string>
 	<string name="jumio_face_help_generic_center">Zentrieren Sie Ihr Gesicht im Rahmen und befolgen Sie die Anweisungen auf dem Bildschirm</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Nehmen Sie die RÜCKSEITE manuell auf</string>
 	<string name="jumio_id_scan_guide_photo_side">Nehmen Sie die FOTO-SEITE auf</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Nehmen Sie die FOTO-SEITE manuell auf</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">So kippen, dass die Unterkante sichtbar ist, und dann am Rahmen ausrichten</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Optimiertes Scannen für bessere Geräteleistung</string>
 	<string name="jumio_id_scan_manual">Machen Sie ein Foto Ihres Dokuments</string>
 	<string name="jumio_id_scan_manual_tips">Stellen Sie sicher, dass Sie das gesamte Dokument erfassen</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Bitte gerade halten …</string>
 	<string name="jumio_id_scan_prompt_move_closer">Bitte näher an die Kamera bewegen</string>
 	<string name="jumio_id_scan_prompt_processing">Bild überprüfen…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Weniger neigen</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Mehr neigen</string>
 	<string name="jumio_id_scan_prompt_too_close">Zu nahe</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Vergrößern Sie Ihren Barcode</string>
 	<string name="jumio_id_scan_tips_button_fallback">Nehmen Sie ein manuelles Foto auf</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Fotoseite</string>
 	<string name="jumio_idtype_subtitle_country">Ausstellungsland prüfen</string>
 	<string name="jumio_idtype_subtitle_id">Dokumenttyp auswählen</string>
+	<string name="jumio_list_supported_document_title">Unterstützte Dokumente</string>
 	<string name="jumio_liveness_prompt_no_target">Bewegen Sie Ihr Gesicht in den Rahmen</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Geschafft! Machen wir ein weiteres Foto</string>
 	<string name="jumio_liveness_prompt_too_close">Zu nahe</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Machen Sie sich bereit für ein Selfie.</string>
 	<string name="jumio_start_instructions_03">Verwenden Sie ein gültiges Dokument.</string>
 	<string name="jumio_start_instructions_04">Verwenden Sie einen gültigen, amtlichen Ausweis.</string>
-	<string name="jumio_start_instructions_07">Blitz könnte verwendet werden</string>
+	<string name="jumio_start_instructions_07">Die App verwendet möglicherweise den Kamerablitz</string>
 	<string name="jumio_start_verification">Ausweisprüfung starten</string>
 	<string name="jumio_start_verification_subtitle">Dieser Prozess dient dazu, Ihre Identität zu bestätigen und Sie vor Identitätsdiebstahl zu schützen</string>
 	<string name="jumio_uploading_success">Upload erfolgreich</string>

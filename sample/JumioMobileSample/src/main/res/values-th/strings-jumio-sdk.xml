@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">รูปภาพไม่ใช่เอกสารประจำตัวที่ถูกต้อง</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">คุณภาพของภาพไม่ดีพอที่จะตรวจสอบ</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">ต้องถ่ายรูปใหม่</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">รายการเอกสารที่รองรับ</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">เอกสารไม่ได้รับการสนับสนุน</string>
 	<string name="jumio_face_help_eyes_closed">ลืมตาไว้</string>
 	<string name="jumio_face_help_generic_angle">ถืออุปกรณ์ในระดับสายตา</string>
 	<string name="jumio_face_help_generic_center">วางใบหน้าให้อยู่กลางกรอบและทำตามคำแนะนำบนหน้าจอ</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">ถ่ายภาพด้านหลังด้วยตัวเอง</string>
 	<string name="jumio_id_scan_guide_photo_side">ถ่ายภาพด้านรูปภาพ</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">ถ่ายภาพด้านรูปภาพด้วยตัวเอง</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">เอียงเพื่อให้มองเห็นขอบด้านล่าง จากนั้นจัดแนวให้เข้ากับกรอบ</string>
 	<string name="jumio_id_scan_hint_performance_fallback">การสแกนได้รับการปรับปรุงเพื่อให้อุปกรณ์มีประสิทธิภาพดีขึ้น</string>
 	<string name="jumio_id_scan_manual">ถ่ายภาพเอกสารของคุณ</string>
 	<string name="jumio_id_scan_manual_tips">ดูให้แน่ใจว่าถ่ายภาพเอกสารทั้งฉบับ</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">ถือตรง ๆ</string>
 	<string name="jumio_id_scan_prompt_move_closer">เข้ามาใกล้</string>
 	<string name="jumio_id_scan_prompt_processing">กำลังตรวจสอบภาพ…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">เอียงน้อยลง</string>
+	<string name="jumio_id_scan_prompt_tilt_more">เอียงมากขึ้น</string>
 	<string name="jumio_id_scan_prompt_too_close">ใกล้เกินไป</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">ซูมไปที่บาร์โค้ดของคุณ</string>
 	<string name="jumio_id_scan_tips_button_fallback">ถ่ายภาพด้วยตนเอง</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">หน้ารูปภาพ</string>
 	<string name="jumio_idtype_subtitle_country">ตรวจสอบประเทศที่ออกเอกสาร</string>
 	<string name="jumio_idtype_subtitle_id">เลือกประเภทเอกสาร</string>
+	<string name="jumio_list_supported_document_title">เอกสารที่รองรับ</string>
 	<string name="jumio_liveness_prompt_no_target">วางให้ใบหน้าอยู่ในกรอบ</string>
 	<string name="jumio_liveness_prompt_success_another_shot">เข้าใจแล้ว! มาถ่ายรูปกันอีกสักรอบเถอะนะ</string>
 	<string name="jumio_liveness_prompt_too_close">ใกล้เกินไป</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">เตรียมพร้อมถ่ายภาพเซลฟี่</string>
 	<string name="jumio_start_instructions_03">ใช้เอกสารที่ถูกต้อง</string>
 	<string name="jumio_start_instructions_04">ใช้เอกสารประจำตัวที่ออกโดยรัฐบาลอย่างถูกต้อง</string>
-	<string name="jumio_start_instructions_07">อาจใช้แฟลช</string>
+	<string name="jumio_start_instructions_07">แอปอาจใช้แฟลชกล้อง</string>
 	<string name="jumio_start_verification">เริ่มการตรวจสอบ</string>
 	<string name="jumio_start_verification_subtitle">ขั้นตอนการตรวจสอบนี้ออกแบบมาเพื่อยืนยันตัวตนของคุณและปกป้องคุณจากการขโมยอัตลักษณ์</string>
 	<string name="jumio_uploading_success">อัปโหลดสำเร็จ</string>

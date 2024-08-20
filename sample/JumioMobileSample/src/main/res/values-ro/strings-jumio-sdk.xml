@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Imaginea nu este o formă validă de identificare</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Calitatea imaginii nu este suficient de bună pentru a fi verificată</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">O nouă poză a imaginii trebuie făcută</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Lista documentelor susținute</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Documentul nu este suportat</string>
 	<string name="jumio_face_help_eyes_closed">Țineți ochii deschiși</string>
 	<string name="jumio_face_help_generic_angle">Țineți dispozitivul la nivelul ochilor</string>
 	<string name="jumio_face_help_generic_center">Centrați-vă fața și urmăriți instrucțiunile de pe ecran</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Captură manuală a părții VERSO</string>
 	<string name="jumio_id_scan_guide_photo_side">Captură a părții FOTO</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Captură manuală a părții FOTO</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Înclinați astfel încât marginea inferioară să fie vizibilă și apoi aliniați-o în cadru</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Scanare optimizată pentru o performanță mai bună a dispozitivului</string>
 	<string name="jumio_id_scan_manual">Faceți o poză documentului</string>
 	<string name="jumio_id_scan_manual_tips">Asigurați-vă că ați capturat întregul document</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Țineți drept</string>
 	<string name="jumio_id_scan_prompt_move_closer">Apropiați</string>
 	<string name="jumio_id_scan_prompt_processing">Verificarea imaginii…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Înclinați mai puțin</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Înclinați mai mult</string>
 	<string name="jumio_id_scan_prompt_too_close">Prea aproape</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Măriți în zona codului de bare</string>
 	<string name="jumio_id_scan_tips_button_fallback">Faceți fotografia manual</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Pagina cu poză</string>
 	<string name="jumio_idtype_subtitle_country">Verificați țara emitentă</string>
 	<string name="jumio_idtype_subtitle_id">Selectați tipul de document</string>
+	<string name="jumio_list_supported_document_title">Documente acceptate</string>
 	<string name="jumio_liveness_prompt_no_target">Încadrați-vă fața</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Perfect! Să mai facem o poză</string>
 	<string name="jumio_liveness_prompt_too_close">Prea aproape</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Pregătiți-vă pentru selfie-ul dvs.</string>
 	<string name="jumio_start_instructions_03">Folosiți un document valid</string>
 	<string name="jumio_start_instructions_04">Utilizați un act de identitate valabil emis de autorități</string>
-	<string name="jumio_start_instructions_07">Flash ar putea fi utilizat</string>
+	<string name="jumio_start_instructions_07">Aplicația poate utiliza blițul camerei</string>
 	<string name="jumio_start_verification">Începeți verificarea identității</string>
 	<string name="jumio_start_verification_subtitle">Acest proces de verificare are rolul de a vă confirma identitatea și a vă proteja de furtul de identitate</string>
 	<string name="jumio_uploading_success">Încărcare reușită</string>

@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">올바른 신분증 이미지가 아닙니다</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">이미지 화질이 좋지 않아서 확인할 수 없습니다</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">이미지를 다시 찍어야 합니다</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">지원되는 문서 목록</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">캡처된 문서는 지원되지 않습니다</string>
 	<string name="jumio_face_help_eyes_closed">눈을 뜨고 계세요</string>
 	<string name="jumio_face_help_generic_angle">기기를 눈높이에서 들고 계세요</string>
 	<string name="jumio_face_help_generic_center">프레임 중앙에 얼굴을 놓고 화면에 뜨는 설명을 따라 해주세요</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">수동으로 뒷면을 캡처합니다</string>
 	<string name="jumio_id_scan_guide_photo_side">사진 측면을 캡처합니다</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">수동으로 사진 측면을 캡처합니다</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">하단 가장자리가 보이도록 기울인 다음 프레임에 맞춥니다</string>
 	<string name="jumio_id_scan_hint_performance_fallback">더 나은 장치 성능을 위해 최적화된 스캔</string>
 	<string name="jumio_id_scan_manual">문서 사진 찍기</string>
 	<string name="jumio_id_scan_manual_tips">전체 서류를 캡처해야 합니다</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">정면 응시 후 정지</string>
 	<string name="jumio_id_scan_prompt_move_closer">가까이 이동</string>
 	<string name="jumio_id_scan_prompt_processing">이미지 확인 중…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">덜 기울이기</string>
+	<string name="jumio_id_scan_prompt_tilt_more">더 기울이기</string>
 	<string name="jumio_id_scan_prompt_too_close">너무 가까움</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">바코드를 확대하세요</string>
 	<string name="jumio_id_scan_tips_button_fallback">직접 사진 촬영하기</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">사진 페이지</string>
 	<string name="jumio_idtype_subtitle_country">발급 국가 확인</string>
 	<string name="jumio_idtype_subtitle_id">서류 유형 선택</string>
+	<string name="jumio_list_supported_document_title">지원되는 문서</string>
 	<string name="jumio_liveness_prompt_no_target">프레임에 얼굴을 놓아주세요</string>
 	<string name="jumio_liveness_prompt_success_another_shot">좋아요! 한 번 더 촬영해 봅시다</string>
 	<string name="jumio_liveness_prompt_too_close">너무 가까움</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">셀카를 찍을 준비를 하세요</string>
 	<string name="jumio_start_instructions_03">유효한 문서를 사용하세요</string>
 	<string name="jumio_start_instructions_04">유효한 정부 발급 신분증을 사용하세요</string>
-	<string name="jumio_start_instructions_07">플래시가 사용될 수 있습니다</string>
+	<string name="jumio_start_instructions_07">앱에서 카메라 플래시를 사용할 수 있습니다</string>
 	<string name="jumio_start_verification">확인 시작</string>
 	<string name="jumio_start_verification_subtitle">이 절차는 신원을 확인하고 신원 도용으로부터 귀하를 보호하기 위해 고안되었습니다</string>
 	<string name="jumio_uploading_success">업로드 성공</string>

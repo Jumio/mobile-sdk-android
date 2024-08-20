@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Attēlā nav redzams derīgs personu apliecinošs dokuments</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Attēlam ir pārāk zema kvalitāte, lai to pārbaudītu</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Fotoattēls jāuzņem vēlreiz</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Atbalstīto dokumentu saraksts</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Dokuments netiek atbalstīts</string>
 	<string name="jumio_face_help_eyes_closed">Acīm jābūt atvērtām</string>
 	<string name="jumio_face_help_generic_angle">Turiet ierīci acu līmenī</string>
 	<string name="jumio_face_help_generic_center">Iecentrējiet seju rāmītī un sekojiet norādījumiem uz ekrāna</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Manuāli nofotogrāfējiet AIZMUGURI</string>
 	<string name="jumio_id_scan_guide_photo_side">Nofotogrāfējiet ATTĒLA pusi</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Manuāli nofotogrāfējiet ATTĒLA pusi</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Noliekt tā, lai būtu redzama apakšējā mala, un pēc tam izlīdzināt to pret rāmi</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skenēšana optimizēta, lai uzlabotu ierīces veiktspēju</string>
 	<string name="jumio_id_scan_manual">Nofotografējiet savu dokumentu</string>
 	<string name="jumio_id_scan_manual_tips">Pārliecinieties, ka nofotogrāfēts viss dokuments</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Turiet taisni</string>
 	<string name="jumio_id_scan_prompt_move_closer">Pietuviniet</string>
 	<string name="jumio_id_scan_prompt_processing">Notiek attēla pārbaude …</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Noliekt mazāk</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Noliekt vairāk</string>
 	<string name="jumio_id_scan_prompt_too_close">Pārāk tuvu</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Pietuviniet svītrkodu</string>
 	<string name="jumio_id_scan_tips_button_fallback">Nofotografējiet manuāli</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Fotoattēla lapa</string>
 	<string name="jumio_idtype_subtitle_country">Pārbaudiet izdevējvalsti</string>
 	<string name="jumio_idtype_subtitle_id">Izvēlieties dokumenta veidu</string>
+	<string name="jumio_list_supported_document_title">Atbalstītie dokumenti</string>
 	<string name="jumio_liveness_prompt_no_target">Ievietojiet seju rāmītī</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Sapratu! Pamēģināsim vēlreiz</string>
 	<string name="jumio_liveness_prompt_too_close">Pārāk tuvu</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Sagatavojieties pašportreta uzņemšanai</string>
 	<string name="jumio_start_instructions_03">Izmantojiet derīgu dokumentu</string>
 	<string name="jumio_start_instructions_04">Izmantojiet derīgu valsts izdotu personu apliecinošu dokumentu</string>
-	<string name="jumio_start_instructions_07">Var tikt izmantots zibspuldze</string>
+	<string name="jumio_start_instructions_07">Lietotne var izmantot kameras zibspuldzi</string>
 	<string name="jumio_start_verification">Sākt verifikāciju</string>
 	<string name="jumio_start_verification_subtitle">Process paredzēts jūsu identitātes verificēšanai un aizsardzībai pret identitātes zādzību</string>
 	<string name="jumio_uploading_success">Augšupielāde veiksmīga</string>

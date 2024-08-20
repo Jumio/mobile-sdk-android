@@ -6,7 +6,6 @@
 
 	<string name="navigation_drawer_open">Open navigation drawer</string>
 	<string name="navigation_drawer_close">Close navigation drawer</string>
-	<string name="menu_products">Products</string>
 	<string name="menu_legal_information">Legal Information</string>
 	<string name="menu_terms_of_use">Terms of Use</string>
 	<string name="menu_privacy_policy">Privacy Policy</string>

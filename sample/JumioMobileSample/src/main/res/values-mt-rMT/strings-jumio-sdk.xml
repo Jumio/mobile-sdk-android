@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">L-immaġni mhijiex forma ta\' identifikazzjoni valida</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Il-kwalità tar-ritratt mhijiex tajba biżżejjed biex jiġi vverifikat</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Ir-ritratt għandu bżonn jittieħed mill-ġdid</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Lista ta\' dokumenti appoġġati</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Id-dokument ma jinxtegħax</string>
 	<string name="jumio_face_help_eyes_closed">Żomm għajnejk miftuħin</string>
 	<string name="jumio_face_help_generic_angle">Żomm it-tagħmir f\'livell mal-għajnejn</string>
 	<string name="jumio_face_help_generic_center">Poġġi wiċċek fil-frejm u imxi mal-istruzzjonijiet li tara fuq l-iskrin</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Iġbed ritratt manwalment tan-naħa ta\' WARA</string>
 	<string name="jumio_id_scan_guide_photo_side">Iġbed ritratt tan-naħa fejn hemm ir-RITRATT</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Iġbed ritratt manwalment tan-naħa fejn hemm ir-RITRATT</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Mejjel sabiex it-tarf t\'isfel ikun viżibbli u mbagħad allinja mal-inkwadratura</string>
 	<string name="jumio_id_scan_hint_performance_fallback">L-iskennjar ġiet ottimizzat għal prestazzjoni aħjar tal-apparat</string>
 	<string name="jumio_id_scan_manual">Ħu ritratt tad-dokument tiegħek</string>
 	<string name="jumio_id_scan_manual_tips">Aċċerta li tieħu ritratt tad-dokument kollu</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Oqgħod dritt</string>
 	<string name="jumio_id_scan_prompt_move_closer">Ersaq aktar viċin</string>
 	<string name="jumio_id_scan_prompt_processing">Qed niċċekkjaw l-immaġni…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Mejjel inqas</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Mejjel iktar</string>
 	<string name="jumio_id_scan_prompt_too_close">Qiegħed wisq qrib</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Iżżumja fuq il-barcode tiegħek</string>
 	<string name="jumio_id_scan_tips_button_fallback">Ħu r-ritratt b\'mod manwali</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Il-paġna fejn hemm ir-ritratt</string>
 	<string name="jumio_idtype_subtitle_country">Iċċekkja l-pajjiż tal-ħruġ</string>
 	<string name="jumio_idtype_subtitle_id">Agħżel it-tip ta\' dokument</string>
+	<string name="jumio_list_supported_document_title">Dokumenti appoġġjati</string>
 	<string name="jumio_liveness_prompt_no_target">Poġġi wiċċek fil-frejm</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Ħadnih! Ejja nieħdu ieħor</string>
 	<string name="jumio_liveness_prompt_too_close">Qiegħed wisq qrib</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Lesti ruħek biex tieħu stessu</string>
 	<string name="jumio_start_instructions_03">Uża dokument validu</string>
 	<string name="jumio_start_instructions_04">Uża ID valida maħruġa mill-gvern</string>
-	<string name="jumio_start_instructions_07">Il-Flash jista\' jintuża</string>
+	<string name="jumio_start_instructions_07">L-app tista\' tuża l-flash tal-kamera</string>
 	<string name="jumio_start_verification">Ibda l-verifika</string>
 	<string name="jumio_start_verification_subtitle">Dan il-proċess hu ddisinjat biex jivverifika l-identità tiegħek u jipproteġik mis-serq tal-identità</string>
 	<string name="jumio_uploading_success">Telgħu b\'suċċess</string>

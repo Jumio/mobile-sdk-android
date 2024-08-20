@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Η εικόνα δεν έχει έγκυρη μορφή εγγράφου ταυτοποίησης.</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Η ποιότητα της εικόνας δεν είναι αρκετά καλή για επαλήθευση</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Απαιτείται επανάληψη λήψης της εικόνας</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Λίστα υποστηριζόμενων εγγράφων</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Το έγγραφο που καταγράφηκε δεν υποστηρίζεται</string>
 	<string name="jumio_face_help_eyes_closed">Κρατήστε τα μάτια σας ανοιχτά</string>
 	<string name="jumio_face_help_generic_angle">Κρατήστε τη συσκευή στο επίπεδο των ματιών</string>
 	<string name="jumio_face_help_generic_center">Κεντράρετε το πρόσωπό σας στο πλαίσιο και ακολουθήστε τις οδηγίες που εμφανίζονται στην οθόνη</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Πάρτε μια φωτογραφία την ΠΙΣΩ όψη με μη αυτόματο τρόπο</string>
 	<string name="jumio_id_scan_guide_photo_side">Πάρτε μια φωτογραφία την όψη με τη ΦΩΤΟΓΡΑΦΙΑ</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Πάρτε μια φωτογραφία την όψη με τη ΦΩΤΟΓΡΑΦΙΑ με μη αυτόματο τρόπο</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Δώστε κλίση ώστε η κάτω πλευρά να είναι ορατή και, στη συνέχεια, ευθυγραμμίστε με το πλαίσιο</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Βελτιστοποιημένη σάρωση για καλύτερη απόδοση της συσκευής</string>
 	<string name="jumio_id_scan_manual">Βγάλτε μια φωτογραφία το έγγραφό σας</string>
 	<string name="jumio_id_scan_manual_tips">Φροντίστε να αποτυπώσετε ολόκληρο το έγγραφο</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Κρατήστε ίσιο τον κορμό σας</string>
 	<string name="jumio_id_scan_prompt_move_closer">Ελάτε πιο κοντά</string>
 	<string name="jumio_id_scan_prompt_processing">Γίνεται έλεγχος της εικόνας…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Μικρότερη κλίση</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Μεγαλύτερη κλίση</string>
 	<string name="jumio_id_scan_prompt_too_close">Πολύ κοντά</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Εστιάστε στον γραμμικό κώδικά σας</string>
 	<string name="jumio_id_scan_tips_button_fallback">Λήψη φωτογραφίας μη αυτόματα</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Σελίδα φωτογραφίας</string>
 	<string name="jumio_idtype_subtitle_country">Ελέγξτε τη χώρα έκδοσης</string>
 	<string name="jumio_idtype_subtitle_id">Επιλέξτε τύπο εγγράφου</string>
+	<string name="jumio_list_supported_document_title">Υποστηριζόμενα έγγραφα</string>
 	<string name="jumio_liveness_prompt_no_target">Τοποθετήστε το πρόσωπό σας στο πλαίσιο</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Εντάξει! Ας τραβήξουμε άλλη μια φωτογραφία</string>
 	<string name="jumio_liveness_prompt_too_close">Πολύ κοντά</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Ετοιμαστείτε να βγάλετε μια selfie</string>
 	<string name="jumio_start_instructions_03">Χρησιμοποιήστε ένα έγκυρο έγγραφο</string>
 	<string name="jumio_start_instructions_04">Χρησιμοποιήστε μια έγκυρη ταυτότητα από κρατική αρχή έκδοσης</string>
-	<string name="jumio_start_instructions_07">Ίσως χρησιμοποιηθεί το flash</string>
+	<string name="jumio_start_instructions_07">Η εφαρμογή ενδέχεται να χρησιμοποιήσει το φλας της κάμερας</string>
 	<string name="jumio_start_verification">Έναρξη επαλήθευσης</string>
 	<string name="jumio_start_verification_subtitle">Αυτή η διαδικασία έχει σχεδιαστεί για την επιβεβαίωση της ταυτότητάς σας και την προστασία σας από πλαστοπροσωπία</string>
 	<string name="jumio_uploading_success">Η φόρτωση ήταν επιτυχής</string>

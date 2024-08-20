@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Hình ảnh không phải là hình thức nhận dạng hợp lệ</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Chất lượng hình ảnh không đủ tốt để được xác minh</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Hình ảnh phải được chụp lại</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Danh sách các tài liệu được hỗ trợ</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Tài liệu không được hỗ trợ</string>
 	<string name="jumio_face_help_eyes_closed">Giữ cho đôi mắt của bạn mở</string>
 	<string name="jumio_face_help_generic_angle">Giữ thiết bị ngang tầm mắt</string>
 	<string name="jumio_face_help_generic_center">Căn giữa khuôn mặt của bạn trong khung và làm theo hướng dẫn trên màn hình</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Chụp mặt SAU của giấy tờ theo cách thủ công</string>
 	<string name="jumio_id_scan_guide_photo_side">Chụp mặt TRƯỚC của giấy tờ</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Chụp mặt TRƯỚC của giấy tờ theo cách thủ công</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Nghiêng sao cho có thể nhìn thấy cạnh dưới rồi căn chỉnh cho phù hợp với khung</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Quy trình quét được tối ưu hóa để thiết bị đạt hiệu suất tốt hơn</string>
 	<string name="jumio_id_scan_manual">Chụp ảnh tài liệu của bạn</string>
 	<string name="jumio_id_scan_manual_tips">Đảm bảo chụp toàn bộ tài liệu</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Giữ thẳng</string>
 	<string name="jumio_id_scan_prompt_move_closer">Tiến lại gần</string>
 	<string name="jumio_id_scan_prompt_processing">Đang kiểm tra hình ảnh…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Bớt nghiêng</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Nghiêng thêm</string>
 	<string name="jumio_id_scan_prompt_too_close">Quá gần</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Phóng to mã vạch của bạn</string>
 	<string name="jumio_id_scan_tips_button_fallback">Chụp ảnh thủ công</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Trang ảnh</string>
 	<string name="jumio_idtype_subtitle_country">Đang kiểm tra quốc gia phát hành</string>
 	<string name="jumio_idtype_subtitle_id">Chọn loại ID</string>
+	<string name="jumio_list_supported_document_title">Tài liệu được hỗ trợ</string>
 	<string name="jumio_liveness_prompt_no_target">Kéo mặt bạn vào khung</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Đã hiểu! Hãy chụp một bức ảnh khác</string>
 	<string name="jumio_liveness_prompt_too_close">Quá gần</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Hãy sẵn sàng để chụp ảnh selfie</string>
 	<string name="jumio_start_instructions_03">Hãy sử dụng tài liệu hợp lệ</string>
 	<string name="jumio_start_instructions_04">Sử dụng ID hợp lệ do chính phủ cấp</string>
-	<string name="jumio_start_instructions_07">Flash có thể được sử dụng</string>
+	<string name="jumio_start_instructions_07">Ứng dụng có thể sử dụng đèn flash của camera</string>
 	<string name="jumio_start_verification">Bắt đầu xác minh</string>
 	<string name="jumio_start_verification_subtitle">Quy trình này được thiết kế để xác minh danh tính của bạn và giúp bạn không bị đánh cắp danh tính</string>
 	<string name="jumio_uploading_success">Tải lên thành công</string>

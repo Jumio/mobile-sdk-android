@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Obrázok nezodpovedá platnému druhu preukazu totožnosti</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Kvalita fotografie nie je dostatočne dobrá na overenie</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Fotografiu je potrebné urobiť znovu</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Zoznam podporovaných dokumentov</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Dokument nie je podporovaný</string>
 	<string name="jumio_face_help_eyes_closed">Majte oči otvorené</string>
 	<string name="jumio_face_help_generic_angle">Zariadenie držte na úrovni očí</string>
 	<string name="jumio_face_help_generic_center">Umiestnite tvár do stredu rámika a postupuje podľa inštrukcií na obrazovke</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Mnauálne nasnímajte ZADNÚ stranu</string>
 	<string name="jumio_id_scan_guide_photo_side">Nasnímajte stranu s FOTKOU</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Mnauálne nasnímajte stranu s FOTKOU</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Nakloňte tak, aby bol viditeľný spodný okraj, a potom zarovnajte s rámikom</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skenovanie je optimalizované pre lepší výkon zariadenia</string>
 	<string name="jumio_id_scan_manual">Odfoťte dokument</string>
 	<string name="jumio_id_scan_manual_tips">Musíte zachytiť celý dokument</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Držte sa vzpriamene</string>
 	<string name="jumio_id_scan_prompt_move_closer">Pristúpte bližšie</string>
 	<string name="jumio_id_scan_prompt_processing">Kontroluje sa obrázok…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Nakloňte menej</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Nakloňte viac</string>
 	<string name="jumio_id_scan_prompt_too_close">Príliš blízko</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Priblížte si čiarový kód</string>
 	<string name="jumio_id_scan_tips_button_fallback">Urobiť fotografiu manuálne</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Strana s fotografiou</string>
 	<string name="jumio_idtype_subtitle_country">Skontrolujte vydávajúcu krajinu</string>
 	<string name="jumio_idtype_subtitle_id">Vyberte typ preukazu</string>
+	<string name="jumio_list_supported_document_title">Podporované dokumenty</string>
 	<string name="jumio_liveness_prompt_no_target">Umiestnite tvár do rámika</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Hotovo! Zhotovte ešte jednu snímku</string>
 	<string name="jumio_liveness_prompt_too_close">Príliš blízko</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Pripravte sa na nasnímanie selfie</string>
 	<string name="jumio_start_instructions_03">Použiť platný dokument</string>
 	<string name="jumio_start_instructions_04">Použite platný preukaz totožnosti vydaný štátom</string>
-	<string name="jumio_start_instructions_07">Možno použiť blesk</string>
+	<string name="jumio_start_instructions_07">Aplikácia môže používať blesk</string>
 	<string name="jumio_start_verification">Začať s overovaním</string>
 	<string name="jumio_start_verification_subtitle">Tento proces je určený na potvrdenie vašej totožnosti a na vašu ochranu pred krádežou totožnosti</string>
 	<string name="jumio_uploading_success">Nahrávanie úspešné</string>

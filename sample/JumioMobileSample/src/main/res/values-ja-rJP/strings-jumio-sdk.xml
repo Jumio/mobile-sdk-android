@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">画像は有効な身分証明書ではありません</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">画質が十分でないため認証できません</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">画像は撮り直す必要があります</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">サポートされるドキュメントのリスト</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">キャプチャされたドキュメントはサポートされていません</string>
 	<string name="jumio_face_help_eyes_closed">目を開けた状態を保ってください</string>
 	<string name="jumio_face_help_generic_angle">デバイスを目の高さでしっかりと持ちます</string>
 	<string name="jumio_face_help_generic_center">顔がフレームの中央になるようにして、画面の指示に従います。</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">裏面を手動でキャプチャします</string>
 	<string name="jumio_id_scan_guide_photo_side">写真面をキャプチャします</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">写真面を手動でキャプチャします</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">下端が見えるように傾け、フレームに合わせてください</string>
 	<string name="jumio_id_scan_hint_performance_fallback">スキャニングの最適化により、デバイスのパフォーマンスが向上</string>
 	<string name="jumio_id_scan_manual">ドキュメントの写真を撮影してください</string>
 	<string name="jumio_id_scan_manual_tips">ドキュメント全体がキャプチャされていることを確認してください</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">真っ直ぐそのまま</string>
 	<string name="jumio_id_scan_prompt_move_closer">近くに移動します</string>
 	<string name="jumio_id_scan_prompt_processing">画像を確認しています…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">もう少し垂直にしてください</string>
+	<string name="jumio_id_scan_prompt_tilt_more">もう少し傾けてください</string>
 	<string name="jumio_id_scan_prompt_too_close">近すぎます</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">バーコードを拡大してください</string>
 	<string name="jumio_id_scan_tips_button_fallback">写真を手動で撮影</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">写真のページ</string>
 	<string name="jumio_idtype_subtitle_country">発行国を確認</string>
 	<string name="jumio_idtype_subtitle_id">ドキュメントのタイプを選択</string>
+	<string name="jumio_list_supported_document_title">サポートされるドキュメント</string>
 	<string name="jumio_liveness_prompt_no_target">顔をフレームの中に入れます</string>
 	<string name="jumio_liveness_prompt_success_another_shot">了解！もう一枚撮りましょう</string>
 	<string name="jumio_liveness_prompt_too_close">近すぎます</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">自撮りの準備をしてください</string>
 	<string name="jumio_start_instructions_03">有効な身分証明書を使用してください</string>
 	<string name="jumio_start_instructions_04">政府発行の有効な身分証明書を使用してください</string>
-	<string name="jumio_start_instructions_07">フラッシュが使用される可能性があります</string>
+	<string name="jumio_start_instructions_07">アプリがカメラのフラッシュをオンにする場合があります</string>
 	<string name="jumio_start_verification">認証を開始</string>
 	<string name="jumio_start_verification_subtitle">このプロセスは、本人確認を行い、個人情報の盗難から保護することを目的としています</string>
 	<string name="jumio_uploading_success">正常にアップロードされました</string>

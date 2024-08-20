@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Изображение не является допустимой формой идентификации</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Качество изображения недостаточно хорошее для проверки</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Изображение необходимо переснять</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Список поддерживаемых документов</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Документ не поддерживается</string>
 	<string name="jumio_face_help_eyes_closed">Держите глаза открытыми</string>
 	<string name="jumio_face_help_generic_angle">Держите устройство на уровне глаз</string>
 	<string name="jumio_face_help_generic_center">Поместите лицо в рамку и следуйте инструкциям на экране</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Сделать снимок ОБРАТНОЙ стороны вручную</string>
 	<string name="jumio_id_scan_guide_photo_side">Сделать снимок стороны с ФОТО</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Сделать снимок стороны с ФОТО вручную</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Отклоните так, чтобы был виден нижний край, а затем совместите с рамкой</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Сканирование оптимизировано для повышения производительности устройства</string>
 	<string name="jumio_id_scan_manual">Сфотографируйте свой документ</string>
 	<string name="jumio_id_scan_manual_tips">Убедитесь, что вы сфотографировали весь документ</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Держите прямо</string>
 	<string name="jumio_id_scan_prompt_move_closer">Приблизьте</string>
 	<string name="jumio_id_scan_prompt_processing">Проверка изображения…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Отклонить меньше</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Отклонить больше</string>
 	<string name="jumio_id_scan_prompt_too_close">Слишком близко</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Увеличение масштаба штрих-кода</string>
 	<string name="jumio_id_scan_tips_button_fallback">Сфотографировать вручную</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Страница с фотографией</string>
 	<string name="jumio_idtype_subtitle_country">Проверьте страну выдачи</string>
 	<string name="jumio_idtype_subtitle_id">Выберите тип удостоверения</string>
+	<string name="jumio_list_supported_document_title">Поддерживаемые документы</string>
 	<string name="jumio_liveness_prompt_no_target">Поместите лицо в рамку</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Понятно! Сделаем еще одну попытку</string>
 	<string name="jumio_liveness_prompt_too_close">Слишком близко</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Будьте готовы сделать селфи</string>
 	<string name="jumio_start_instructions_03">Используйте действительный документ</string>
 	<string name="jumio_start_instructions_04">Используйте действительный документ государственного образца</string>
-	<string name="jumio_start_instructions_07">Возможно использование вспышки</string>
+	<string name="jumio_start_instructions_07">Приложение может использовать вспышку камеры</string>
 	<string name="jumio_start_verification">Начать проверку</string>
 	<string name="jumio_start_verification_subtitle">Этот процесс предназначен для проверки вашей личности и защиты от кражи персональных данных</string>
 	<string name="jumio_uploading_success">Загрузка успешно завершена</string>

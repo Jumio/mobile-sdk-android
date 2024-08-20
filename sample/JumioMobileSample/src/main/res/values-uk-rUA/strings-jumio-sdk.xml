@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Зображення не є дійсною формою ідентифікації</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Якість зображення недостатньо хороша для перевірки</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Зображення необхідно перезняти</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Список підтримуваних документів</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Документ не підтримується</string>
 	<string name="jumio_face_help_eyes_closed">Тримайте очі відкритими</string>
 	<string name="jumio_face_help_generic_angle">Тримайте пристрій на рівні очей</string>
 	<string name="jumio_face_help_generic_center">Розташуйте ваше обличчя в центрі рамки та дотримуйтесь інструкцій на екрані</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Зняти ЗВОРОТНУ сторону вручну</string>
 	<string name="jumio_id_scan_guide_photo_side">Зняти сторону з ФОТО</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Зняти сторону з ФОТО вручну</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Нахиліть так, щоб було видно нижній край, а потім поєднайте з рамкою</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Сканування оптимізовано для кращої продуктивності пристрою</string>
 	<string name="jumio_id_scan_manual">Сфотографуйте ваш документ</string>
 	<string name="jumio_id_scan_manual_tips">Переконайтеся, що ви захопили весь документ</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Тримайтесь рівно</string>
 	<string name="jumio_id_scan_prompt_move_closer">Підсуньтесь ближче</string>
 	<string name="jumio_id_scan_prompt_processing">Перевірка зображення…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Нахиліть менше</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Нахиліть більше</string>
 	<string name="jumio_id_scan_prompt_too_close">Надто близько</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Збільшення масштабу штрих-коду</string>
 	<string name="jumio_id_scan_tips_button_fallback">Зробити фото вручну</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Сторінка з фотографією</string>
 	<string name="jumio_idtype_subtitle_country">Перевірте країну, де був виданий документ</string>
 	<string name="jumio_idtype_subtitle_id">Виберіть тип документа</string>
+	<string name="jumio_list_supported_document_title">Підтримувані документи</string>
 	<string name="jumio_liveness_prompt_no_target">Розташуйте обличчя у рамці</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Зрозуміло! Зробимо ще раз</string>
 	<string name="jumio_liveness_prompt_too_close">Надто близько</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Приготуйтеся зробити селфі</string>
 	<string name="jumio_start_instructions_03">Використовуйте дійсний документ</string>
 	<string name="jumio_start_instructions_04">Використовуйте дійсний документ, виданий державним органом</string>
-	<string name="jumio_start_instructions_07">Можливо використання спалаху</string>
+	<string name="jumio_start_instructions_07">Застосунок може використовувати спалах камери</string>
 	<string name="jumio_start_verification">Почніть перевірку</string>
 	<string name="jumio_start_verification_subtitle">Цей процес призначений для перевірки вашої особи та захисту від крадіжки персональних даних</string>
 	<string name="jumio_uploading_success">Вивантаження успішно виконано</string>

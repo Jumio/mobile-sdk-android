@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Bilden är ingen giltig ID-handling</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Bildkvaliteten är inte tillräckligt bra för att kunna verifieras</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Bilden måste tas om</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Lista över stödda dokument</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Dokumentet stöds inte</string>
 	<string name="jumio_face_help_eyes_closed">Håll ögonen öppna</string>
 	<string name="jumio_face_help_generic_angle">Håll enheten i ögonhöjd</string>
 	<string name="jumio_face_help_generic_center">Se till att ansiktet är i mitten av ramen och följ instruktionerna på skärmen</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Ta en bild av BAKSIDAN manuellt</string>
 	<string name="jumio_id_scan_guide_photo_side">Ta en bild av FOTO-sidan</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Ta en bild av FOTO-sidan manuellt</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Luta så att den nedre kanten syns och passa sedan in i ramen</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skanning optimerad för bättre enhetsprestanda</string>
 	<string name="jumio_id_scan_manual">Ta en bild av ditt dokument</string>
 	<string name="jumio_id_scan_manual_tips">Se till att hela dokumentet inkluderas</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Håll rakt</string>
 	<string name="jumio_id_scan_prompt_move_closer">Flytta närmare</string>
 	<string name="jumio_id_scan_prompt_processing">Kontrollerar bilden…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Luta mindre</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Luta mer</string>
 	<string name="jumio_id_scan_prompt_too_close">För nära</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Zooma in på din streckkod</string>
 	<string name="jumio_id_scan_tips_button_fallback">Ta en bild manuellt</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Fotosida</string>
 	<string name="jumio_idtype_subtitle_country">Kontrollera utfärdande land</string>
 	<string name="jumio_idtype_subtitle_id">Välj typ av ID-handling</string>
+	<string name="jumio_list_supported_document_title">Stödda dokument</string>
 	<string name="jumio_liveness_prompt_no_target">Rama in ansiktet</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Okej! Gör ett nytt försök</string>
 	<string name="jumio_liveness_prompt_too_close">För nära</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Gör dig redo att ta en selfie</string>
 	<string name="jumio_start_instructions_03">Använd ett giltigt dokument</string>
 	<string name="jumio_start_instructions_04">Använd ett  gilgt ID utfärdat av statlig myndighet</string>
-	<string name="jumio_start_instructions_07">Blixt kan användas</string>
+	<string name="jumio_start_instructions_07">Appen kan använda kamerablixten</string>
 	<string name="jumio_start_verification">Starta verifiering</string>
 	<string name="jumio_start_verification_subtitle">Den här processen är till för att bekräfta din identitet och skydda dig mot identitetsstöld</string>
 	<string name="jumio_uploading_success">Uppladdning klar</string>

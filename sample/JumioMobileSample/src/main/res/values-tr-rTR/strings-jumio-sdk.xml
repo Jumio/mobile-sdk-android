@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Bu görüntü, geçerli bir kimlik saptama biçimi değil</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Görüntü kalitesi doğrulanabilecek kadar iyi değil</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Görüntü yeniden çekilmelidir</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Desteklenen belgelerin listesi</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Belge desteklenmiyor</string>
 	<string name="jumio_face_help_eyes_closed">Gözlerinizi açık tutun</string>
 	<string name="jumio_face_help_generic_angle">Cihazı göz hizasında tutun</string>
 	<string name="jumio_face_help_generic_center">Yüzünüzü çerçevenin içinde ortalayın ve ekrandaki talimatları izleyin</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">ARKA tarafı manuel çek</string>
 	<string name="jumio_id_scan_guide_photo_side">FOTOĞRAFLI tarafı çek</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">FOTOĞRAFLI tarafı manuel çek</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Alt kenar görünecek şekilde eğip çerçeveye hizalayın</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Daha iyi cihaz performansı elde etmek için optimize edilmiş tarama</string>
 	<string name="jumio_id_scan_manual">Belgenizin fotoğrafını çekin</string>
 	<string name="jumio_id_scan_manual_tips">Belgenin tamamını çektiğinizden emin olun</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Dik durun</string>
 	<string name="jumio_id_scan_prompt_move_closer">Yaklaşın</string>
 	<string name="jumio_id_scan_prompt_processing">Görüntü kontrol ediliyor…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Daha az eğ</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Daha fazla eğ</string>
 	<string name="jumio_id_scan_prompt_too_close">Çok yakın</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Barkodunuzu yakınlaştırın</string>
 	<string name="jumio_id_scan_tips_button_fallback">Fotoğrafı manuel olarak çekin</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Fotoğraflı sayfa</string>
 	<string name="jumio_idtype_subtitle_country">Belgeyi veren ülkeyi kontrol edin</string>
 	<string name="jumio_idtype_subtitle_id">Belge türünü seçin</string>
+	<string name="jumio_list_supported_document_title">Desteklenen belgeler</string>
 	<string name="jumio_liveness_prompt_no_target">Yüzünüzü çerçeveye ortalayın</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Anladım! Bir tane daha çekelim</string>
 	<string name="jumio_liveness_prompt_too_close">Çok yakın</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Selfie çekmeye hazır olun</string>
 	<string name="jumio_start_instructions_03">Geçerli bir belge kullanın</string>
 	<string name="jumio_start_instructions_04">Devlet tarafından verilmiş geçerli bir kimlik belgesi kullanın</string>
-	<string name="jumio_start_instructions_07">Flaş kullanılabilir</string>
+	<string name="jumio_start_instructions_07">Uygulama kamera flaşını kullanabilir</string>
 	<string name="jumio_start_verification">Doğrulamayı başlat</string>
 	<string name="jumio_start_verification_subtitle">Bu süreç, kimliğinizi doğrulamak ve sizi kimlik hırsızlığına karşı korumak için tasarlanmıştır</string>
 	<string name="jumio_uploading_success">Yükleme başarılı</string>

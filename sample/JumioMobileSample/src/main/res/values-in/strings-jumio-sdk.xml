@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Gambar bukan bukti identifikasi yang valid</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Kualitas gambar tidak cukup bagus untuk diverifikasi</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Gambar harus diambil ulang</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Daftar dokumen yang didukung</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Dokumen yang diambil tidak didukung</string>
 	<string name="jumio_face_help_eyes_closed">Jangan pejamkan mata</string>
 	<string name="jumio_face_help_generic_angle">Pegang perangkat setinggi mata</string>
 	<string name="jumio_face_help_generic_center">Pusatkan wajah Anda di tengah bingkai dan ikuti petunjuk di layar</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Potret sisi BELAKANG secara manual</string>
 	<string name="jumio_id_scan_guide_photo_side">Potret sisi samping FOTO</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Potret sisi samping FOTO secara manual</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Miringkan agar tepi bawah terlihat lalu sejajarkan dengan bingkai</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Pemindaian dioptimalkan untuk menghasilkan performa perangkat yang lebih baik</string>
 	<string name="jumio_id_scan_manual">Ambil foto dokumen Anda</string>
 	<string name="jumio_id_scan_manual_tips">Pastikan menangkap seluruh dokumen</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Tegakkan badan</string>
 	<string name="jumio_id_scan_prompt_move_closer">Merapat</string>
 	<string name="jumio_id_scan_prompt_processing">Memeriksa gambar…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Kurangi miring</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Tambah miring</string>
 	<string name="jumio_id_scan_prompt_too_close">Terlalu dekat</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Perbesar kode batang Anda</string>
 	<string name="jumio_id_scan_tips_button_fallback">Ambil foto secara manual</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Halaman foto</string>
 	<string name="jumio_idtype_subtitle_country">Periksa negara penerbit</string>
 	<string name="jumio_idtype_subtitle_id">Pilih jenis dokumen</string>
+	<string name="jumio_list_supported_document_title">Dokumen yang didukung</string>
 	<string name="jumio_liveness_prompt_no_target">Letakkan wajah Anda di bingkai</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Oke! Ayo ambil gambar lain.</string>
 	<string name="jumio_liveness_prompt_too_close">Terlalu dekat</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Bersiaplah untuk selfie</string>
 	<string name="jumio_start_instructions_03">Gunakan dokumen yang valid</string>
 	<string name="jumio_start_instructions_04">Gunakan dokumen ID resmi yang berlaku</string>
-	<string name="jumio_start_instructions_07">Flash mungkin digunakan</string>
+	<string name="jumio_start_instructions_07">Aplikasi mungkin menggunakan blitz kamera</string>
 	<string name="jumio_start_verification">Mulai verifikasi</string>
 	<string name="jumio_start_verification_subtitle">Proses ini dirancang untuk memverifikasi identitas dan melindungi Anda dari pencurian identitas</string>
 	<string name="jumio_uploading_success">Pengunggahan berhasil</string>

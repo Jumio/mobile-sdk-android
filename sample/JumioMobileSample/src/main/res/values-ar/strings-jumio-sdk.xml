@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">لا تقدم الصورة نموذجًا صالحًا لتحديد الهوية</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">جودة الصورة ليست جيدة بما يكفي ليتم التحقق منها</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">يجب إعادة التقاط الصورة</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">قائمة الوثائق المدعومة</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">الوثيقة الملتقطة غير مدعومة</string>
 	<string name="jumio_face_help_eyes_closed">أبقِ عينيك مفتوحتين</string>
 	<string name="jumio_face_help_generic_angle">أمسك الجهاز على مستوى العين</string>
 	<string name="jumio_face_help_generic_center">اجعل وجهك في وسط الإطار واتبع التعليمات التي تظهر على الشاشة.</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">التقط صورة للجانب \"الخلفي\" يدويًا</string>
 	<string name="jumio_id_scan_guide_photo_side">التقط جانب \"الصورة\"</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">التقط يدويًا جانب \"الصورة\"</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">عليك بإمالتها حتى تكون الحافة السفلية مرئية، ثم عليك بمحاذاتها مع الإطار</string>
 	<string name="jumio_id_scan_hint_performance_fallback">تم تحسين المسح الضوئي للحصول على أداء أفضل للجهاز</string>
 	<string name="jumio_id_scan_manual">التقط صورة لمستندك</string>
 	<string name="jumio_id_scan_manual_tips">تأكد من التقاط المستند بأكمله</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">حافظ على استقامتك</string>
 	<string name="jumio_id_scan_prompt_move_closer">اقترب</string>
 	<string name="jumio_id_scan_prompt_processing">جارٍ التحقق من الصورة…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">إمالة أقل</string>
+	<string name="jumio_id_scan_prompt_tilt_more">إمالة أكثر</string>
 	<string name="jumio_id_scan_prompt_too_close">قريب جدًا</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">قم بتكبير الرمز الشريطي الخاص بك</string>
 	<string name="jumio_id_scan_tips_button_fallback">التقط صورة يدويًا</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">صفحة الصورة</string>
 	<string name="jumio_idtype_subtitle_country">تحقق من بلد الإصدار</string>
 	<string name="jumio_idtype_subtitle_id">تحديد نوع المستند</string>
+	<string name="jumio_list_supported_document_title">الوثائق المدعومة</string>
 	<string name="jumio_liveness_prompt_no_target">ضع وجهك في الإطار</string>
 	<string name="jumio_liveness_prompt_success_another_shot">فهمت! فلنحاول مرة أخرى</string>
 	<string name="jumio_liveness_prompt_too_close">قريب جدًا</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">استعد لالتقاط صورة ذاتية</string>
 	<string name="jumio_start_instructions_03">استخدم مستند صالح</string>
 	<string name="jumio_start_instructions_04">استخدم مستند هوية صالح صادر عن الحكومة</string>
-	<string name="jumio_start_instructions_07">قد يتم استخدام الفلاش</string>
+	<string name="jumio_start_instructions_07">قد يستخدم التطبيق فلاش الكاميرا</string>
 	<string name="jumio_start_verification">ابدأ التحقق</string>
 	<string name="jumio_start_verification_subtitle">تم تصميم هذه العملية للتحقق من هويتك وحمايتك من سرقة الهوية</string>
 	<string name="jumio_uploading_success">تحميل ناجح</string>

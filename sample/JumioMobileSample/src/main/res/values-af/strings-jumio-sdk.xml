@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Die beeld is nie ’n geldige vorm van identifikasie nie</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Die beeldgehalte is te swak om dit te verifieer</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Beeld moet weer geneem word</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Lys van ondersteunde dokumente</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Die vasgelê dokument word nie ondersteun nie</string>
 	<string name="jumio_face_help_eyes_closed">Hou jou oë oop</string>
 	<string name="jumio_face_help_generic_angle">Hou toestel op ooghoogte</string>
 	<string name="jumio_face_help_generic_center">Sit u gesig in die middel van die raam en volg die instruksies op die skerm</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Neem die AGTERKANT handmatig af</string>
 	<string name="jumio_id_scan_guide_photo_side">Neem die FOTOKANT af</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Neem die FOTOKANT handmatig af</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Kantel sodat die onderste rand sigbaar is en belyn dan met die raam</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skandering geoptimaliseer vir beter prestasie van toestel</string>
 	<string name="jumio_id_scan_manual">Neem ’n foto van u dokument</string>
 	<string name="jumio_id_scan_manual_tips">Sorg dat die hele dokument vasgelê word</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Hou u reguit</string>
 	<string name="jumio_id_scan_prompt_move_closer">Kom nader</string>
 	<string name="jumio_id_scan_prompt_processing">Besig om beeld te kontroleer …</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Kantel minder</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Kantel meer</string>
 	<string name="jumio_id_scan_prompt_too_close">Te naby</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Zoem in op u strepieskode</string>
 	<string name="jumio_id_scan_tips_button_fallback">Neem foto handmatig</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Fotobladsy</string>
 	<string name="jumio_idtype_subtitle_country">Kontroleer land van uitreiking</string>
 	<string name="jumio_idtype_subtitle_id">Kies die soort dokument</string>
+	<string name="jumio_list_supported_document_title">Ondersteunde dokumente</string>
 	<string name="jumio_liveness_prompt_no_target">Sit u gesig in die raam</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Daarsy! Kom ons neem nog ’n skoot</string>
 	<string name="jumio_liveness_prompt_too_close">Te naby</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Wees gereed om \'n selfie te neem</string>
 	<string name="jumio_start_instructions_03">Gebruik \'n geldige dokument</string>
 	<string name="jumio_start_instructions_04">Gebruik ’n geldige ID wat deur die regering uitgereik is</string>
-	<string name="jumio_start_instructions_07">Flits kan moontlik gebruik word</string>
+	<string name="jumio_start_instructions_07">Die app kan dalk die kamera se flits gebruik</string>
 	<string name="jumio_start_verification">Begin Verifiëring</string>
 	<string name="jumio_start_verification_subtitle">Hierdie proses is ontwerp om jou identiteit te verifieer en jou teen identiteitsdiefstal te beskerm</string>
 	<string name="jumio_uploading_success">Oplaai was suksesvol</string>

@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Kuva ei ole kelvollinen tunnistamiseen</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Kuvanlaatu ei ole riittävän hyvä vahvistamista varten</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Ota kuva uudelleen</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Luettelo tuetuista asiakirjoista</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Kaapattua asiakirjaa ei tueta</string>
 	<string name="jumio_face_help_eyes_closed">Pidä silmät auki</string>
 	<string name="jumio_face_help_generic_angle">Pidä laitetta silmien tasolla</string>
 	<string name="jumio_face_help_generic_center">Kohdista kasvosi kehyksen keskelle ja noudata näytöllä näkyviä ohjeita</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Kuvaa TAKAPUOLI manuaalisesti</string>
 	<string name="jumio_id_scan_guide_photo_side">Kuvaa VALOKUVAPUOLI</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Kuvaa VALOKUVAPUOLI manuaalisesti</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Kallista siten, että alareuna on näkyvissä, ja sovita sitten kehykseen</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skannaus optimoitu laitteen parempaa suorituskykyä varten</string>
 	<string name="jumio_id_scan_manual">Ota valokuva asiakirjastasi</string>
 	<string name="jumio_id_scan_manual_tips">Varmista, että asiakirja näkyy kokonaisuudessaan</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Pitele suorassa</string>
 	<string name="jumio_id_scan_prompt_move_closer">Siirrä lähemmäksi</string>
 	<string name="jumio_id_scan_prompt_processing">Kuvaa tarkistetaan…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Kallista vähemmän</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Kallista enemmän</string>
 	<string name="jumio_id_scan_prompt_too_close">Liian lähellä</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Lähennä viivakoodiin</string>
 	<string name="jumio_id_scan_tips_button_fallback">Ota valokuva manuaalisesti</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Valokuvasivu</string>
 	<string name="jumio_idtype_subtitle_country">Tarkista myöntäjämaa</string>
 	<string name="jumio_idtype_subtitle_id">Valitse asiakirjan tyyppi</string>
+	<string name="jumio_list_supported_document_title">Tuetut dokumentit</string>
 	<string name="jumio_liveness_prompt_no_target">Sovita kasvosi kehykseen</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Selvä! Otetaanpa toinen kuva</string>
 	<string name="jumio_liveness_prompt_too_close">Liian lähellä</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Valmistaudu ottamaan selfie</string>
 	<string name="jumio_start_instructions_03">Käytä voimassa olevaa asiakirjaa</string>
 	<string name="jumio_start_instructions_04">Käytä voimassa olevaa virallista henkilöllisyystodistusta</string>
-	<string name="jumio_start_instructions_07">Salamavaloa saatetaan käyttää</string>
+	<string name="jumio_start_instructions_07">Sovellus saattaa käyttää kameran salamaa</string>
 	<string name="jumio_start_verification">Aloita vahvistus</string>
 	<string name="jumio_start_verification_subtitle">Tämän prosessin tarkoituksena on vahvistaa henkilöllisyytesi ja suojata sinua identiteettivarkauksilta</string>
 	<string name="jumio_uploading_success">Lataaminen onnistui</string>

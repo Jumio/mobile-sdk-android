@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">La imagen no es una forma de identificación válida</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">La calidad de la imagen no es lo suficientemente buena para ser verificada</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">La imagen se debe volver a tomar</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Lista de documentos admitidos</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">El documento no es compatible</string>
 	<string name="jumio_face_help_eyes_closed">Mantenga los ojos abiertos</string>
 	<string name="jumio_face_help_generic_angle">Mantenga el dispositivo al nivel de los ojos</string>
 	<string name="jumio_face_help_generic_center">Centre el rostro en el marco y siga las instrucciones en pantalla</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Capture manualmente la parte TRASERA</string>
 	<string name="jumio_id_scan_guide_photo_side">Capture el lado de la FOTO</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Capture manualmente el lado de la FOTO</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Inclínelo para que se vea el borde inferior y, después, alinéelo con el marco</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Escaneo optimizado para un mejor rendimiento del dispositivo</string>
 	<string name="jumio_id_scan_manual">Tome una foto del documento</string>
 	<string name="jumio_id_scan_manual_tips">Asegúrese de capturar todo el documento</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Mantenga una postura recta</string>
 	<string name="jumio_id_scan_prompt_move_closer">Acérquese</string>
 	<string name="jumio_id_scan_prompt_processing">Comprobando la imagen…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Inclinar menos</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Inclinar más</string>
 	<string name="jumio_id_scan_prompt_too_close">Demasiado cerca</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Amplíe su código de barras</string>
 	<string name="jumio_id_scan_tips_button_fallback">Tome una foto de forma manual</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Página de la foto</string>
 	<string name="jumio_idtype_subtitle_country">Compruebe el país de expedición</string>
 	<string name="jumio_idtype_subtitle_id">Seleccione el tipo de documento</string>
+	<string name="jumio_list_supported_document_title">Documentos admitidos</string>
 	<string name="jumio_liveness_prompt_no_target">Ubique la cara dentro del marco</string>
 	<string name="jumio_liveness_prompt_success_another_shot">¡Entendido! Intentémoslo de nuevo.</string>
 	<string name="jumio_liveness_prompt_too_close">Demasiado cerca</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Prepárese para tomarse una selfi</string>
 	<string name="jumio_start_instructions_03">Utilice un documento válido</string>
 	<string name="jumio_start_instructions_04">Utilice una identificación con fotografía válida emitida por el gobierno</string>
-	<string name="jumio_start_instructions_07">Puede utilizarse flash</string>
+	<string name="jumio_start_instructions_07">La aplicación puede utilizar el flash de la cámara</string>
 	<string name="jumio_start_verification">Iniciar verificación</string>
 	<string name="jumio_start_verification_subtitle">Este proceso está diseñado para verificar su identidad y protegerlo del robo de identidad</string>
 	<string name="jumio_uploading_success">Carga correcta</string>

@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Slika nije valjan oblik identifikacije</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Kvaliteta slike nije dovoljno dobra za provjeru</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Morate ponovno snimiti sliku</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Popis podržanih dokumenata</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Snimljeni dokument nije podržan</string>
 	<string name="jumio_face_help_eyes_closed">Držite oči otvorenima</string>
 	<string name="jumio_face_help_generic_angle">Držite uređaj u razini očiju</string>
 	<string name="jumio_face_help_generic_center">Centrirajte lice u okviru i pratite upute na zaslonu</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Ručno snimite POLEĐINU</string>
 	<string name="jumio_id_scan_guide_photo_side">Snimite stranu na kojoj se nalazi FOTOGRAFIJA</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Ručno snimite stranu na kojoj se nalazi FOTOGRAFIJA</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Nakosite tako da se vidi donji rub, a zatim poravnajte s okvirom</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skeniranje optimizirano za bolje performanse uređaja</string>
 	<string name="jumio_id_scan_manual">Fotografirajte dokument</string>
 	<string name="jumio_id_scan_manual_tips">Make sure to capture the whole document</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Držite se uspravno</string>
 	<string name="jumio_id_scan_prompt_move_closer">Priđite bliže</string>
 	<string name="jumio_id_scan_prompt_processing">Provjera slike…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Manje nakosi</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Više nakosi</string>
 	<string name="jumio_id_scan_prompt_too_close">Preblizu</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Povećajte crtični kod</string>
 	<string name="jumio_id_scan_tips_button_fallback">Fotografiraj manualno</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Stranica s fotografijom</string>
 	<string name="jumio_idtype_subtitle_country">Provjerite državu izdavanja</string>
 	<string name="jumio_idtype_subtitle_id">Odaberite vrstu dokumenta</string>
+	<string name="jumio_list_supported_document_title">Podržani dokumenti</string>
 	<string name="jumio_liveness_prompt_no_target">Stavite svoje lice u okvir</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Razumijem! Pokušajmo još jedanput</string>
 	<string name="jumio_liveness_prompt_too_close">Preblizu</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Pripremite se za snimanje selfija</string>
 	<string name="jumio_start_instructions_03">Upotrijebite valjan dokument</string>
 	<string name="jumio_start_instructions_04">Koristite zakonski izdan identifikacijski dokument</string>
-	<string name="jumio_start_instructions_07">Bljeskalica bi mogla biti upotrebljena</string>
+	<string name="jumio_start_instructions_07">Aplikacija može koristiti bljeskalicu kamere</string>
 	<string name="jumio_start_verification">Započni provjeru</string>
 	<string name="jumio_start_verification_subtitle">Ovaj je postupak osmišljen radi provjere vašeg identiteta i zaštite od krađe identiteta</string>
 	<string name="jumio_uploading_success">Prijenos je uspio</string>

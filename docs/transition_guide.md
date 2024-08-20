@@ -6,6 +6,40 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.11.0
+#### Public API Changes
+* `TILT` has been added to [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html) alongside with [`JumioTiltState`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.core/-jumio-tilt-state/index.html)
+* `NEXT_POSITION` has been added to [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html)
+* `IMAGE_TAKEN` [`JumioScanStep`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/index.html) is again sent only when the side/part is completed. If you have logic based on `NEXT_PART` or `PROCESSING`, it is not affected by this change.
+* 'UNSUPPORTED_DOCUMENT' has been added to [`JumioRejectReason`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.reject/-jumio-reject-reason/index.html)
+
+#### Dependency Updates
+| Name                 | Jumio Module | Dependency                                            | old version | new version |
+|----------------------|--------------|-------------------------------------------------------|-------------|-------------|
+| Annotation           | core         | `"androidx.annotation:annotation-jvm"`                | 1.7.1       | 1.8.0       |
+| Appcompat            | core         | `"androidx.appcompat:appcompat"`                      | 1.6.1       | 1.7.0       |
+| Material             | core         | `"com.google.android.material:material"`              | 1.11.0      | 1.12.0      |
+| Coroutines           | core         | `"org.jetbrains.kotlinx:kotlinx-coroutines-android"`  | 1.8.0       | 1.8.1       |
+| LibYUV               | core         | `"io.github.crow-misia.libyuv:libyuv-android"`        | 0.33.0      | 0.34.0      |
+| CameraX Core         | camerax      | `"androidx.camera:camera-core"`                       | 1.3.1       | 1.3.3       |
+| CameraX Lifecycle    | camerax      | `"androidx.camera:camera-lifecycle"`                  | 1.3.1       | 1.3.3       |
+| CameraX View         | camerax      | `"androidx.camera:camera-view"`                       | 1.3.1       | 1.3.3       |
+| CameraX Camera2      | camerax      | `"androidx.camera:camera-camera2"`                    | 1.3.1       | 1.3.3       |
+| Lifecycle Viewmodel  | defaultui    | `"androidx.lifecycle:lifecycle-viewmodel-ktx"`        | 2.7.0       | 2.8.1       |
+| Lifecycle Savedstate | defaultui    | `"androidx.lifecycle:lifecycle-viewmodel-savedstate"` | 2.7.0       | 2.8.1       |
+| Lifecycle Livedata   | defaultui    | `"androidx.lifecycle:lifecycle-livedata-ktx"`         | 2.7.0       | 2.8.1       |
+| iProov               | iproov       | `"com.iproov.sdk:iproov"`                             | 9.0.4       | 9.1.1        |
+
+#### Customization Changes
+* `jumio_divider_color` has been added to customize the color of list dividers
+* See also: [Jumio sample `styles.xml`](../sample/JumioMobileSample/src/main/res/values/styles.xml)
+
+#### New SDK Localizations Added
+The following keys have been added:
+* `jumio_id_scan_guide_photo_side_tilt`
+* `jumio_id_scan_prompt_tilt_less`
+* `jumio_id_scan_prompt_tilt_more`
+
 ## 4.10.0
 #### Public API Changes
 * `IMAGE_TAKEN` [`JumioScanStep`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/index.html) is now sent for each image required for a specified side. This is different to previous behavior where `IMAGE_TAKEN` was sent only when the side/part was completed. Please make sure to align any logic based on `IMAGE_TAKEN` to the new behavior. `NEXT_PART` or `PROCESSING` might be used to identify when a side/part has been finished.

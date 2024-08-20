@@ -85,16 +85,16 @@ The following table shows a range of different product configurations with the s
 | Product Configuration                        |   Size   |                                           Modules                                                     |
 | :------------------------------------------- | :------: | :---------------------------------------------------------------------------------------------------: |
 | Base                                         | 1.27 MB  |                                             core                                                      |
-| Base + iProov                                | 6.17 MB  |                                         core, iproov                                                  |
-| Base + Autocapture                           | 2.83 MB  |                                       core, docfinder                                                 |
-| Base + Autocapture, Barcode-Vision           | 3.13 MB  |                               core, docfinder, barcode-mlkit                                          |
-| Base + Autocapture, Barcode-Vision, iProov   | 6.68 MB  |                               core, docfinder, barcode, iproov                                        |
+| Base + iProov                                | 6.28 MB  |                                         core, iproov                                                  |
+| Base + Autocapture                           | 2.82 MB  |                                       core, docfinder                                                 |
+| Base + Autocapture, Barcode-Vision           | 3.12 MB  |                               core, docfinder, barcode-mlkit                                          |
+| Base + Autocapture, Barcode-Vision, iProov   | 6.79 MB  |                               core, docfinder, barcode, iproov                                        |
 | Base + Autocapture, Barcode-Vision, Liveness | 5.15 MB  |                              core, docfinder, barcode, liveness                                       |
-| Base + Autocapture, Barcode-Vision, NFC      | 6.25 MB  |                                core, docfinder, barcode, nfc                                          |
-| All (Custom UI only)                         | 9.85 MB  |      core, docfinder, barcode-mlkit, iproov, nfc, digital-identity, camerax, liveness                 |
-| Base + Autocapture, Default UI               | 3.41 MB  |                                 core, docfinder, defaultui                                            |
-| Base + Autocapture, Default UI, Datadog      | 4.10 MB  |                             core, docfinder, defaultui, datadog                                       |
-| All (with Default UI)                        | 10.87 MB | core, docfinder, barcode-mlkit, iproov, nfc, digital-identtity, camerax, defaultui, datadog, liveness |
+| Base + Autocapture, Barcode-Vision, NFC      | 6.24 MB  |                                core, docfinder, barcode, nfc                                          |
+| All (Custom UI only)                         | 9.95 MB  |      core, docfinder, barcode-mlkit, iproov, nfc, digital-identity, camerax, liveness                 |
+| Base + Autocapture, Default UI               | 3.43 MB  |                                 core, docfinder, defaultui                                            |
+| Base + Autocapture, Default UI, Datadog      | 4.11 MB  |                             core, docfinder, defaultui, datadog                                       |
+| All (with Default UI)                        | 11.03 MB | core, docfinder, barcode-mlkit, iproov, nfc, digital-identtity, camerax, defaultui, datadog, liveness |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 

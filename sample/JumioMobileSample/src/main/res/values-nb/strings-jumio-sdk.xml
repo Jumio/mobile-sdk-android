@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Bildet er ikke en gyldig form for identifikasjon</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Bildekvaliteten er ikke god nok til å bli bekreftet</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Bildet må tas på nytt</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Liste over dokumenter som støttes</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Dokumentet støttes ikke</string>
 	<string name="jumio_face_help_eyes_closed">Hold øynene åpne</string>
 	<string name="jumio_face_help_generic_angle">Hold enheten i øyehøyde</string>
 	<string name="jumio_face_help_generic_center">Sentrer ansiktet ditt i rammen og følg instruksjonene på skjermen</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Ta bilde av BAKSIDEN manuelt</string>
 	<string name="jumio_id_scan_guide_photo_side">Ta bilde av FOTOSIDEN</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Ta bilde av FOTOSIDEN manuelt</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Vipp slik at den nederste kanten er synlig, og juster til det passer i rammen</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skanningen er justert for å sikre at enheten fungerer optimalt</string>
 	<string name="jumio_id_scan_manual">Ta et bilde av dokumentet ditt</string>
 	<string name="jumio_id_scan_manual_tips">Sørg for å få med hele dokumentet</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Hold rett</string>
 	<string name="jumio_id_scan_prompt_move_closer">Flytt nærmere</string>
 	<string name="jumio_id_scan_prompt_processing">Kontrollerer bildet …</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Vipp mindre</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Vipp mer</string>
 	<string name="jumio_id_scan_prompt_too_close">For nært</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Zoom inn på strekkoden</string>
 	<string name="jumio_id_scan_tips_button_fallback">Take photo manually</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Fotoside</string>
 	<string name="jumio_idtype_subtitle_country">Sjekk utstedelsesland</string>
 	<string name="jumio_idtype_subtitle_id">Velg dokumenttype</string>
+	<string name="jumio_list_supported_document_title">Støttede dokumenter</string>
 	<string name="jumio_liveness_prompt_no_target">Plasser ansiktet ditt i rammen</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Flott! La oss ta enda et bilde.</string>
 	<string name="jumio_liveness_prompt_too_close">For nært</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Gjør deg klar til å ta en selfie</string>
 	<string name="jumio_start_instructions_03">Bruk et gyldig dokument</string>
 	<string name="jumio_start_instructions_04">Bruk en gyldig offentlig utstedt ID</string>
-	<string name="jumio_start_instructions_07">Flash kan bli brukt</string>
+	<string name="jumio_start_instructions_07">Appen kan bruke kamerablitsen</string>
 	<string name="jumio_start_verification">Start bekreftelse</string>
 	<string name="jumio_start_verification_subtitle">Prosessen er utformet for å bekrefte identiteten din og beskytte deg mot identitetstyveri</string>
 	<string name="jumio_uploading_success">Opplasting vellykket</string>

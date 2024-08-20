@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Isithombe asilona uhlobo oluvumelekile lukamazisi</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Izinga lesithombe alikho lihle ngokwanele ukuthi siqinisekiswe</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Isithombe kumelwe sithathwe kabusha</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Uhlu lwamadokhumenti asekelwayo</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">I dokhumenti ayixhaswa</string>
 	<string name="jumio_face_help_eyes_closed">Gcina amehlo akho evuliwe</string>
 	<string name="jumio_face_help_generic_angle">Bamba idivayisi yakho iqondane namehlo</string>
 	<string name="jumio_face_help_generic_center">Beka ubuso bakho phakathi nendawo ohlakeni futhi ulandele iziqondiso ezisesikrinini</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Thwebula ngokwakho uhlangothi OLUNGEMUVA</string>
 	<string name="jumio_id_scan_guide_photo_side">Thwebula uhlangothi LWESITHOMBE</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Thwebula ngokwakho uhlangothi LWESITHOMBE</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Tshekisa ukuze kubonakale unqenqema olungezansi bese uqondanisa nohlaka</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Ukuskena kuthuthukisiwe ukuze idivayisi isebenze kangcono</string>
 	<string name="jumio_id_scan_manual">Thatha isithombe sedokhumenti yakho</string>
 	<string name="jumio_id_scan_manual_tips">Qiniseka ukuthi uthwebula isithombe sayo yonke incwadi</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Yibambe iqonde</string>
 	<string name="jumio_id_scan_prompt_move_closer">Sondeza eduzane</string>
 	<string name="jumio_id_scan_prompt_processing">Ihlola isithombe…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Tshekisa kancane</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Tshekisa kakhulu</string>
 	<string name="jumio_id_scan_prompt_too_close">Useduze kakhulu</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Sondeza ibhakhodi yakho</string>
 	<string name="jumio_id_scan_tips_button_fallback">Thatha isithombe ngendlela evamile</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Ikhasi lesithombe</string>
 	<string name="jumio_idtype_subtitle_country">Hlola izwe elikhiphile</string>
 	<string name="jumio_idtype_subtitle_id">Khetha uhlobo lwedokhumenti</string>
+	<string name="jumio_list_supported_document_title">Ama-dokhumenti akhokhelwayo</string>
 	<string name="jumio_liveness_prompt_no_target">Beka ubuso bakho ohlakeni</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Ngiyaqonda! Masithathe esinye isithombe</string>
 	<string name="jumio_liveness_prompt_too_close">Useduze kakhulu</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Lungela ukuzithatha isithombe</string>
 	<string name="jumio_start_instructions_03">Sebenzisa idokhumenti elivumelekile/elisemthethweni</string>
 	<string name="jumio_start_instructions_04">Sebenzisa umazisi osemthethweni okhishwa uhulumeni</string>
-	<string name="jumio_start_instructions_07">Kungase kusetshenziswe i-Flash</string>
+	<string name="jumio_start_instructions_07">I-app ingase isebenzise i-flash yekhamera</string>
 	<string name="jumio_start_verification">Qala ukuqinisekisa</string>
 	<string name="jumio_start_verification_subtitle">Le nqubo iklanyelwe ukuqinisekisa ubuwena futhi ikuvikele ekwebiweni komazisi wakho</string>
 	<string name="jumio_uploading_success">Ukufaka kuphumelele</string>

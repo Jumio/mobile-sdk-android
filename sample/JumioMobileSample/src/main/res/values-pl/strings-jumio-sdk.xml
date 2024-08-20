@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Obraz nie jest prawidłową formą identyfikacji</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Jakość obrazu nie jest wystarczająco dobra, aby ją zweryfikować</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Zdjęcie musi zostać zrobione ponownie</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Lista wspieranych dokumentów</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Uchwycony dokument nie jest wspierany</string>
 	<string name="jumio_face_help_eyes_closed">Miej otwarte oczy</string>
 	<string name="jumio_face_help_generic_angle">Trzymaj urządzenie na wysokości oczu</string>
 	<string name="jumio_face_help_generic_center">Wyśrodkuj twarz w owalnej ramce i postępuj zgodnie z instrukcjami wyświetlanymi na ekranie</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Ręcznie uchwyć TYLNĄ stronę</string>
 	<string name="jumio_id_scan_guide_photo_side">Uchwyć stronę ze ZDJĘCIEM</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Ręcznie uchwyć stronę ze ZDJĘCIEM</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Pochyl tak, aby dolna krawędź była widoczna, a następnie wyrównaj do ramki</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skanowanie zoptymalizowane pod kątem lepszej wydajności urządzenia</string>
 	<string name="jumio_id_scan_manual">Zrób zdjęcie swojego dokumentu</string>
 	<string name="jumio_id_scan_manual_tips">Upewnij się, że uchwycono cały dokument</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Wyrównaj</string>
 	<string name="jumio_id_scan_prompt_move_closer">Przybliż</string>
 	<string name="jumio_id_scan_prompt_processing">Sprawdzanie obrazu…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Pochyl mniej</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Pochyl bardziej</string>
 	<string name="jumio_id_scan_prompt_too_close">Zbyt blisko</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Zrób zbliżenie na swój kod kreskowy</string>
 	<string name="jumio_id_scan_tips_button_fallback">Zrób zdjęcie ręcznie</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Strona ze zdjęciem</string>
 	<string name="jumio_idtype_subtitle_country">Wybierz kraj wydania</string>
 	<string name="jumio_idtype_subtitle_id">Wybierz typ dokumentu tożsamości</string>
+	<string name="jumio_list_supported_document_title">Obsługiwane dokumenty</string>
 	<string name="jumio_liveness_prompt_no_target">Umieść twarz w ramce</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Mamy to! Zróbmy jeszcze jedno ujęcie</string>
 	<string name="jumio_liveness_prompt_too_close">Zbyt blisko</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Przygotuj się do zrobienia selfie</string>
 	<string name="jumio_start_instructions_03">Wybierz ważny dokument</string>
 	<string name="jumio_start_instructions_04">Użyj ważnego dokumentu tożsamości wydanego przez organ państwowy</string>
-	<string name="jumio_start_instructions_07">Może zostać użyta lampa błyskowa</string>
+	<string name="jumio_start_instructions_07">Aplikacja może korzystać z lampy błyskowej aparatu</string>
 	<string name="jumio_start_verification">Rozpocznij weryfikację</string>
 	<string name="jumio_start_verification_subtitle">Celem tej procedury jest sprawdzenie Twojej tożsamości i ochrona przed jej kradzieżą</string>
 	<string name="jumio_uploading_success">Przesyłanie zakończone pomyślnie</string>

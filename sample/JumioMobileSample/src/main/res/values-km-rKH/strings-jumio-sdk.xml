@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">រូបភាពមិនមែនជាទម្រង់អត្តសញ្ញាណត្រឹមត្រូវទេ</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">គុណភាពរូបភាពមិនសូវល្អសម្រាប់ផ្ទៀងផ្ទាត់ទេ</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">រូបភាពត្រូវតែថតម្ដងទៀត</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">បញ្ជីឯកសារដែលបានគាំទ្រ</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">ឯកសារ ដែល បាន ចាប់ យក មិន ត្រូវ បាន គាំទ្រ ឡើយ</string>
 	<string name="jumio_face_help_eyes_closed">សូមកុំបិទភ្នែក</string>
 	<string name="jumio_face_help_generic_angle">ដាក់ឧបករណ៍នៅកម្ពស់ត្រឹមភ្នែក</string>
 	<string name="jumio_face_help_generic_center">ដាក់មុខរបស់អ្នកឲ្យចំពាក់កណ្ដាលស៊ុម ហើយអនុវត្តតាមការណែនាំនៅលើអេក្រង់។</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">ថតយកខាងក្រោយដោយដៃ</string>
 	<string name="jumio_id_scan_guide_photo_side">ថតយកម្ខាងនៃរូបថត</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">ថតយកម្ខាងនៃរូបថតដោយដៃ</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">សូមផ្អៀងដើម្បីឲ្យមើលឃើញគែមខាងក្រោម​ ហើយបន្ទាប់មកតម្រឹមស៊ុម</string>
 	<string name="jumio_id_scan_hint_performance_fallback">ការស្កេនត្រូវបានបង្កើនប្រសិទ្ធភាពដើម្បីឲ្យឧបករណ៍ដំណើរការបានកាន់តែប្រសើរ</string>
 	<string name="jumio_id_scan_manual">ថតរូបឯកសាររបស់អ្នក</string>
 	<string name="jumio_id_scan_manual_tips">ត្រូវប្រាកដថាថតឯកសារទាំងមូល</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">កាន់ឲ្យត្រង់</string>
 	<string name="jumio_id_scan_prompt_move_closer">ខិតឲ្យជិតជាងនេះ</string>
 	<string name="jumio_id_scan_prompt_processing">កំពុងពិនិត្យរូបភាព…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">ផ្អៀងតិចជាងនេះ</string>
+	<string name="jumio_id_scan_prompt_tilt_more">ផ្អៀងខ្លាំងជាងនេះ</string>
 	<string name="jumio_id_scan_prompt_too_close">ជិតពេក</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">ពង្រីកនៅលើបារកូដរបស់អ្នក</string>
 	<string name="jumio_id_scan_tips_button_fallback">ថតរូបដោយប្រើដៃ</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">ទំព័ររូបថត</string>
 	<string name="jumio_idtype_subtitle_country">ពិនិត្យប្រទេសដែលចេញប័ណ្ណ</string>
 	<string name="jumio_idtype_subtitle_id">ជ្រើសរើសប្រភេទឯកសារ</string>
+	<string name="jumio_list_supported_document_title">ឯកសារដែលគាំទ្រ</string>
 	<string name="jumio_liveness_prompt_no_target">ដាក់មុខរបស់អ្នកនៅក្នុងស៊ុម</string>
 	<string name="jumio_liveness_prompt_success_another_shot">យល់ហើយ! អញ្ចឹងថតមួយទៀត</string>
 	<string name="jumio_liveness_prompt_too_close">ជិតពេក</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">សូមត្រៀមឲ្យរួចរាល់ដើម្បីថតសែលហ្វី</string>
 	<string name="jumio_start_instructions_03">ប្រើឯកសារត្រឹមត្រូវ</string>
 	<string name="jumio_start_instructions_04">ប្រើអត្តសញ្ញាណប័ណ្ណមានសុពលភាពដែលចេញដោយរដ្ឋ</string>
-	<string name="jumio_start_instructions_07">Flash អាចត្រូវបានប្រើ</string>
+	<string name="jumio_start_instructions_07">កម្មវិធីនេះអាចនឹងប្រើផ្លាសរបស់កាមេរ៉ា</string>
 	<string name="jumio_start_verification">ចាប់ផ្តើមការផ្ទៀងផ្ទាត់</string>
 	<string name="jumio_start_verification_subtitle">ដំណើរការនេះត្រូវបានរៀបចំឡើង ដើម្បីផ្ទៀងផ្ទាត់អត្តសញ្ញាណរបស់អ្នក និងការពារអ្នកពីចោរលួចអត្តសញ្ញាណ</string>
 	<string name="jumio_uploading_success">ការផ្ទុកឡើងបានជោគជ័យ</string>

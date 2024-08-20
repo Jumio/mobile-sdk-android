@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">图像不是有效的身份证明</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">照片质量不够高，无法验证</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">照片必须重拍</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">支持的文档列表</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">捕获的文档不受支持</string>
 	<string name="jumio_face_help_eyes_closed">眼睛保持睁开</string>
 	<string name="jumio_face_help_generic_angle">保持设备和眼睛在同一高度</string>
 	<string name="jumio_face_help_generic_center">将您的面部置于框中并按照屏幕上的指示</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">手动拍摄背面</string>
 	<string name="jumio_id_scan_guide_photo_side">拍摄照片面</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">手动拍摄照片面</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">倾斜使底部边缘可见，然后与框架对齐</string>
 	<string name="jumio_id_scan_hint_performance_fallback">扫描已优化，可提高设备性能</string>
 	<string name="jumio_id_scan_manual">拍摄您的证件照片</string>
 	<string name="jumio_id_scan_manual_tips">请确保已拍下完整的文件</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">保持笔直</string>
 	<string name="jumio_id_scan_prompt_move_closer">靠近一点</string>
 	<string name="jumio_id_scan_prompt_processing">正在检查图像…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">倾斜更少</string>
+	<string name="jumio_id_scan_prompt_tilt_more">倾斜更多</string>
 	<string name="jumio_id_scan_prompt_too_close">太近了</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">放大您的条形码</string>
 	<string name="jumio_id_scan_tips_button_fallback">手动拍摄照片</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">照片页</string>
 	<string name="jumio_idtype_subtitle_country">检查签发国家</string>
 	<string name="jumio_idtype_subtitle_id">选择证件类型</string>
+	<string name="jumio_list_supported_document_title">支持的文档</string>
 	<string name="jumio_liveness_prompt_no_target">将面部放在框中</string>
 	<string name="jumio_liveness_prompt_success_another_shot">明白！再试一次吧</string>
 	<string name="jumio_liveness_prompt_too_close">太近了</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">准备好自拍</string>
 	<string name="jumio_start_instructions_03">使用有效证件</string>
 	<string name="jumio_start_instructions_04">使用政府颁发的有效身份证件</string>
-	<string name="jumio_start_instructions_07">可能会使用闪光灯</string>
+	<string name="jumio_start_instructions_07">应用可能会使用相机闪光灯</string>
 	<string name="jumio_start_verification">开始身份认证</string>
 	<string name="jumio_start_verification_subtitle">此认证过程旨在确认您的身份并保护您免遭身份盗用</string>
 	<string name="jumio_uploading_success">上传成功</string>

@@ -47,7 +47,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.10.0**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.11.0**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -70,36 +70,36 @@ The [SDK Setup Tool](https://jumio.github.io/mobile-configuration-tool/out/) is 
 
 Below you can find a list of dependencies that can be added to your application to enable different functionality of the Jumio SDK. Some modules are mandatory, others are optional.
 
-If an optional module is **not linked**, some functionalities may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size is currently around **12.47 MB**.
+If an optional module is **not linked**, some functionalities may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size is currently around **12.66 MB**.
 
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.10.0"               
+	implementation "com.jumio.android:core:4.11.0"               
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.10.0"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.10.0"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.10.0"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:iproov:4.10.0"             // Face Liveness library
-	implementation "com.jumio.android:liveness:4.10.0"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.10.0"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.11.0"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.11.0"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.11.0"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:iproov:4.11.0"             // Face Liveness library
+	implementation "com.jumio.android:liveness:4.11.0"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.11.0"   // Digital Identity verification library
   	...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.10.0"
+	implementation "com.jumio.android:defaultui:4.11.0"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.10.0"         // CameraX library 
-	implementation "com.jumio.android:datadog:4.10.0"         // Analytics library
+	implementation "com.jumio.android:camerax:4.11.0"         // CameraX library 
+	implementation "com.jumio.android:datadog:4.11.0"         // Analytics library
   	...
 }
 ```
@@ -116,8 +116,8 @@ Please note: `com.jumio.android:camerax` will be linked transitively when `com.j
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 
 ```groovy
-implementation "com.jumio.android:iproov:4.10.0"
-implementation("com.iproov.sdk:iproov:9.0.4") {
+implementation "com.jumio.android:iproov:4.11.0"
+implementation("com.iproov.sdk:iproov:9.1.1") {
 	exclude group: 'org.json', module: 'json'
 }
 ```
@@ -447,20 +447,21 @@ The following tables give information on the specification of all data parameter
 
 List of all possible reject reasons returned if Instant Feedback is used:
 
-| Code | Message          | Description                                        | Check enabled server-side (2022-05-25) |
-|:-----|:-----------------|:---------------------------------------------------|:--------------------------------------:|
-| 102  | BLACK_WHITE_COPY | Document appears to be a black and white photocopy |                   x                    |
-| 103  | COLOR_PHOTOCOPY  | Document appears to be a colored photocopy         |                                        |
-| 104  | DIGITAL_COPY     | Document appears to be a digital copy              |                   x                    |
-| 200  | NOT_READABLE     | Document is not readable                           |                                        |
-| 201  | NO_DOC           | No document could be detected                      |                   x                    |
-| 206  | MISSING_BACK     | Backside of the document is missing                |                   x                    |
-| 214  | MISSING_FRONT    | Frontside of the document is missing               |                   x                    |
-| 2001 | BLURRY           | Document image is unusable because it is blurry    |                   x                    |
-| 2003 | MISSING_PART_DOC | Part of the document is missing                    |                   x                    |
-| 2004 | HIDDEN_PART_DOC  | Part of the document is hidden                     |                                        |
-| 2005 | DAMAGED_DOCUMENT | Document appears to be damaged                     |                                        |
-| 2006 | GLARE            | Document image is unusable because of glare        |                   x                    |
+| Code | Message              | Description                                        | Check enabled server-side (2022-05-25) |
+|:-----|:---------------------|:---------------------------------------------------|:--------------------------------------:|
+| 102  | BLACK_WHITE_COPY     | Document appears to be a black and white photocopy |                   x                    |
+| 103  | COLOR_PHOTOCOPY      | Document appears to be a colored photocopy         |                                        |
+| 104  | DIGITAL_COPY         | Document appears to be a digital copy              |                   x                    |
+| 200  | NOT_READABLE         | Document is not readable                           |                                        |
+| 201  | NO_DOC               | No document could be detected                      |                   x                    |
+| 206  | MISSING_BACK         | Backside of the document is missing                |                   x                    |
+| 214  | MISSING_FRONT        | Frontside of the document is missing               |                   x                    |
+| 401  | UNSUPPORTED_DOCUMENT | Document is not supported                          |                   x                    |
+| 2001 | BLURRY               | Document image is unusable because it is blurry    |                   x                    |
+| 2003 | MISSING_PART_DOC     | Part of the document is missing                    |                   x                    |
+| 2004 | HIDDEN_PART_DOC      | Part of the document is hidden                     |                                        |
+| 2005 | DAMAGED_DOCUMENT     | Document appears to be damaged                     |                                        |
+| 2006 | GLARE                | Document image is unusable because of glare        |                   x                    |
 
 #### Error Codes
 
@@ -813,7 +814,7 @@ JumioScanStep.ATTACH_FILE -> {
 }
 ```
 
-[`SCAN_VIEW`][scanview] points out that a [`JumioScanView`][jumioscanview] needs to be attached to the [`JumioScanPart`][jumioscanpart]. The [`JumioScanView`][jumioscanview] is a custom view that can be placed in your layout. During runtime it just needs to be attached to the [`JumioScanPart`][jumioscanpart].
+[`SCAN_VIEW`][scanview] points out that a [`JumioScanView`][jumioscanview] needs to be attached to the [`JumioScanPart`][jumioscanpart]. The [`JumioScanView`][jumioscanview] is a custom view that can be placed in your layout. During runtime it just needs to be attached to the [`JumioScanPart`][jumioscanpart]. Make sure to re-attach the scanview from scan steps [`STARTED`][started] or [`NEXT_PART`][nextpart] in case the activity gets recreated and the scanview was attached before.
 
 ```kotlin
 JumioScanStep.SCAN_VIEW -> {
@@ -823,9 +824,9 @@ JumioScanStep.SCAN_VIEW -> {
 }
 ```
 
-[`IMAGE_TAKEN`][imagetaken] is triggered as soon as an image is taken and uploaded to the Jumio server. The camera preview might be stopped during that step if no additional images or parts needs to be scanned. Once all images for the current side/part are recorded, [`NEXT_PART`][nextpart] will be triggered with additional information on which part has to be scanned next (if any).
+[`IMAGE_TAKEN`][imagetaken] is triggered as soon as all required images for the current part are captured and uploaded to the Jumio server. This event might be followed by a [`NEXT_PART`][nextpart] event with additional information on which part has to be scanned next (if any).
 
-When all parts are done and background processing is executed, [`JumioScanStep.PROCESSING`][processing] is triggered.
+When all parts are done and background processing is executed, [`JumioScanStep.PROCESSING`][processing] is triggered. The camera preview might be stopped during that step.
 
 If images for confirmation or rejection need to be displayed then [`JumioScanStep.CONFIRMATION_VIEW`][confirmationview] or [`JumioScanStep.REJECT_VIEW`][rejectview] is triggered. Attach the [`JumioConfirmationHandler`][jumioconfirmationhandler] or [`JumioRejectHandler`][jumiorejecthandler] once the steps are triggered and render the available [`JumioCredentialParts`][jumiocredentialpart] in [`JumioConfirmationView`][jumioconfirmationview] or [`JumioRejectView`][jumiorejectview] objects:
 
@@ -894,16 +895,19 @@ When an add-on to the current scan part is available, [`JumioScanStep.ADDON_SCAN
 
 Apart from the scan steps, there are also scan updates distributed via the `scanPart` method [`onUpdate()`][onupdate]. They cover additional scan information that is relevant and might need to be displayed during scanning. The parameters are [`JumioScanUpdate`][jumioscanupdate] and an optional value `data` of type `Any` that can contain additional information for each scan update as described.
 
-[`JumioScanUpdate`][jumioscanupdate] values: `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`, `FLASH`
+[`JumioScanUpdate`][jumioscanupdate] values: `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`, `FLASH`, `TILT`
 
 For `FALLBACK`, there are 2 possible [`JumioFallbackReason`][fallbackreason]'s sent in the optional `data` value to indicate the reason of the fallback.
 The scan update `FLASH` indicates that the camera's flash should be turned `ON` or `OFF`. The according [`JumioFlashState`][jumioflashstate] is transmitted via the `data` parameter.
+In case the scan update `TILT` is received, this means that the document in front of the camera needs to be tilted. The current angle as well as the target angle are transmitted as [`JumioTiltState`][jumiotiltstate] via the `data` parameter.
+A negative current angle indicates that the document needs to be tilted in the other direction!
 
 ```kotlin
 override fun onUpdate(jumioScanUpdate: JumioScanUpdate, data: Any?) {
 	when(jumioScanUpdate) {
 		JumioScanUpdate.FALLBACK -> handleFallback(data as JumioFallbackReason)
 		JumioScanUpdate.FLASH -> handleFlash(data as JumioFlashState)
+		JumioScanUpdate.TILT -> handleTilt(data as JumioTiltState)
 		... // handle other scan updates
 	}
 }
@@ -1088,3 +1092,4 @@ In any case, your use of this Software is subject to the terms and conditions th
 [jumiopreloader]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.preload/-jumio-preloader/index.html
 [jumiopreloadcallback]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.preload/-jumio-preload-callback/index.html
 [jumioflashstate]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-flash-state/index.html
+[jumiotiltstate]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.data/-jumio-tilt-state/index.html

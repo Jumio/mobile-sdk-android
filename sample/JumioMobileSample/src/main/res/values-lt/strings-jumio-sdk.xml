@@ -82,6 +82,8 @@
 	<string name="jumio_error_instant_feedback_no_doc_title">Nuotrauka netinkama atpažinimui</string>
 	<string name="jumio_error_instant_feedback_not_readable_title">Nuotraukos kokybė netinkama, todėl neįmanoma patvirtinti</string>
 	<string name="jumio_error_instant_feedback_one_image_retaken">Nuotrauką būtina pakartoti</string>
+	<string name="jumio_error_instant_feedback_supported_document_button">Palaikomų dokumentų sąrašas</string>
+	<string name="jumio_error_instant_feedback_unsupported_document_title">Dokumentas nepalaikomas</string>
 	<string name="jumio_face_help_eyes_closed">Nemirksėkite</string>
 	<string name="jumio_face_help_generic_angle">Laikykite įrenginį akių lygyje</string>
 	<string name="jumio_face_help_generic_center">Išlaikykite veidą rėmelio centre ir vadovaukitės ekrane pateikiamais nurodymais</string>
@@ -108,6 +110,7 @@
 	<string name="jumio_id_scan_guide_back_side_manually">Nufotografuokite GALINĘ dokumento pusę</string>
 	<string name="jumio_id_scan_guide_photo_side">Nufotografuokite pusę su NUOTRAUKA</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Nufotografuokite dokumento pusę su NUOTRAUKA</string>
+	<string name="jumio_id_scan_guide_photo_side_tilt">Pasukite, kad matytųsi apatinis kraštas, ir sulygiuokite su rėmeliu</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Nuskaitymas optimizuotas siekiant pagreitinti procedūrą</string>
 	<string name="jumio_id_scan_manual">Nufotografuokite savo asmens dokumentą</string>
 	<string name="jumio_id_scan_manual_tips">Nufotografuokite visą dokumentą</string>
@@ -119,6 +122,8 @@
 	<string name="jumio_id_scan_prompt_hold_straight">Stovėkite tiesiai</string>
 	<string name="jumio_id_scan_prompt_move_closer">Prieikite arčiau</string>
 	<string name="jumio_id_scan_prompt_processing">Nuotrauka tikrinama…</string>
+	<string name="jumio_id_scan_prompt_tilt_less">Mažiau pasukite</string>
+	<string name="jumio_id_scan_prompt_tilt_more">Daugiau pasukite</string>
 	<string name="jumio_id_scan_prompt_too_close">Per arti</string>
 	<string name="jumio_id_scan_prompt_zoom_barcode">Priartinkite brūkšninį kodą</string>
 	<string name="jumio_id_scan_tips_button_fallback">Fotografuoti rankiniu būdu</string>
@@ -142,6 +147,7 @@
 	<string name="jumio_idtype_photo_page">Nuotraukos puslapis</string>
 	<string name="jumio_idtype_subtitle_country">Patikrinkite išdavimo šalį</string>
 	<string name="jumio_idtype_subtitle_id">Pasirinkite dokumento tipą</string>
+	<string name="jumio_list_supported_document_title">Palaikomi dokumentai</string>
 	<string name="jumio_liveness_prompt_no_target">Patalpinkite savo veidą rėmelyje</string>
 	<string name="jumio_liveness_prompt_success_another_shot">Supratau! Pabandom iš naujo</string>
 	<string name="jumio_liveness_prompt_too_close">Per arti</string>
@@ -161,7 +167,7 @@
 	<string name="jumio_start_instructions_02">Būkite pasiruošę pasidaryti asmenukę</string>
 	<string name="jumio_start_instructions_03">Naudokite galiojantį dokumentą</string>
 	<string name="jumio_start_instructions_04">Fotografuokite galiojantį asmens dokumentą</string>
-	<string name="jumio_start_instructions_07">Gali būti naudojamas blykstė</string>
+	<string name="jumio_start_instructions_07">Programėlė gali pasinaudoti fotoaparato blykste</string>
 	<string name="jumio_start_verification">Pradėkite patvirtinimą</string>
 	<string name="jumio_start_verification_subtitle">Šio proceso tikslas – patvirtinti jūsų tapatybę ir užtikrinti apsaugą nuo tapatybės vagystės</string>
 	<string name="jumio_uploading_success">Įkėlimas sėkmingas</string>

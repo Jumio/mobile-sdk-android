@@ -43,11 +43,13 @@ import com.jumio.sdk.credentials.JumioCredentialInfo
 import com.jumio.sdk.credentials.JumioDocumentCredential
 import com.jumio.sdk.credentials.JumioFaceCredential
 import com.jumio.sdk.credentials.JumioIDCredential
+import com.jumio.sdk.data.JumioTiltState
 import com.jumio.sdk.enums.JumioAcquireMode
 import com.jumio.sdk.enums.JumioConsentType
 import com.jumio.sdk.enums.JumioCredentialPart
 import com.jumio.sdk.enums.JumioDataCenter
 import com.jumio.sdk.enums.JumioFallbackReason
+import com.jumio.sdk.enums.JumioFlashState
 import com.jumio.sdk.enums.JumioScanMode
 import com.jumio.sdk.enums.JumioScanStep
 import com.jumio.sdk.enums.JumioScanUpdate
@@ -575,6 +577,8 @@ class CustomUiActivity :
 	 * @param data optional
 	 */
 	override fun onUpdate(jumioScanUpdate: JumioScanUpdate, data: Any?) {
+		Log.v(TAG, "ScanUpdate $jumioScanUpdate received with data: $data")
+
 		when (jumioScanUpdate) {
 			JumioScanUpdate.CAMERA_AVAILABLE -> {
 				log("CAMERA_AVAILABLE")
@@ -602,7 +606,15 @@ class CustomUiActivity :
 			JumioScanUpdate.TOO_CLOSE -> log("Too close")
 			JumioScanUpdate.MOVE_FACE_CLOSER -> log("Move face closer")
 			JumioScanUpdate.FACE_TOO_CLOSE -> log("Face too close")
-			JumioScanUpdate.FLASH -> log("Flash state changing to $data")
+			JumioScanUpdate.NEXT_POSITION -> log("Move face to next position")
+			JumioScanUpdate.FLASH -> log("Flash state changing to ${data as JumioFlashState}")
+			/**
+			 * Whenever [JumioScanUpdate.TILT] is received, this means users must tilt their document vertically to a
+			 * certain angle. The current and target angles are defined in [JumioTiltState], received via the [data]
+			 * parameter of this function. A negative angle indicates that the document must be tilted in the
+			 * opposite direction.
+			 */
+			JumioScanUpdate.TILT -> log("Tilt your document, ${data as JumioTiltState}")
 		}
 	}
 
@@ -671,15 +683,15 @@ class CustomUiActivity :
 				val rejectMap = data as? Map<JumioCredentialPart, String>
 				rejectMap?.forEach {
 					logText += ": ${it.key.name} -> ${it.value}"
-				}
 
-				// To display granular feedback, check against the values provided in [com.jumio.sdk.reject.JumioRejectReason]
-				//
-				// when(data) {
-				//   JumioRejectReason.BLURRY -> ...
-				//   JumioRejectReason.DIGITAL_COPY -> ...
-				//   ...
-				// }
+					// To display granular feedback, check against the values provided in [com.jumio.sdk.reject.JumioRejectReason]
+					//
+					// when(it.value) {
+					//   JumioRejectReason.BLURRY -> ...
+					//   JumioRejectReason.DIGITAL_COPY -> ...
+					//   ...
+					// }
+				}
 				showView(binding.inlineRejectLayout)
 				scanPart?.let { jumioScanPart ->
 					binding.rejectViewList.removeAllViews()
