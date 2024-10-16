@@ -990,7 +990,7 @@ All SDK related traffic is sent over HTTPS using TLS and public key pinning. Add
 
 ## Licenses
 
-The software contains third-party open source software. For more information, see [licenses](licenses).
+The software contains third-party open source software. For more information, see [licenses](../licenses).
 
 This software is based in part on the work of the Independent JPEG Group.
 
