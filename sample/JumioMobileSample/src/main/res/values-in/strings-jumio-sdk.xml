@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Periksa apakah Anda sedang online</string>
 	<string name="jumio_error_case_network_problems">Kami mengalami masalah komunikasi jaringan</string>
 	<string name="jumio_error_case_no_camera_connection">Akses kamera dinonaktifkan</string>
-	<string name="jumio_error_case_ocr_failed">Pemindaian tidak tersedia saat ini, hubungi tim dukungan</string>
+	<string name="jumio_error_case_scanning_not_possible">Pemindaian tidak tersedia saat ini, hubungi tim dukungan</string>
 	<string name="jumio_error_case_session_expired">Sesi Berakhir</string>
 	<string name="jumio_idtype_di">ID digital</string>
 	<string name="jumio_idtype_dl">SIM</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Ambil foto</string>
 	<string name="jumio_accessibility_scan_switch_camera">Alihkan kamera</string>
 	<string name="jumio_analyzing_biometric">Menganalisis data biometrik</string>
+	<string name="jumio_brazil_cnh_subtitle">Untuk melanjutkan pengunggahan, pastikan Anda telah mengunduh PDF lisensi driver digital dari aplikasi resmi pemerintah [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">Unggah PDF CNH Digital</string>
 	<string name="jumio_button_cancel">Batal</string>
 	<string name="jumio_button_retry">Coba lagi</string>
 	<string name="jumio_di_back_to_document_selection">Anda akan diarahkan kembali ke pemilihan dokumen.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Pastikan semua detail pada dokumen Anda terbaca</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Gambar terlalu buram untuk diverifikasi</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Gambar harus diambil ulang</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Pastikan Anda telah mengunduh PDF lisensi driver Digital dari aplikasi resmi pemerintah [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Harap coba lagi dengan gambar berwarna</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Gambar fotokopi hitam putih</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Gambar tampak seperti fotokopi berwarna</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Ambil selfie</string>
 	<string name="jumio_identity_scan_tips_placing">Luruskan wajah Anda dalam bingkai oval lalu tekan tombol shutter</string>
 	<string name="jumio_identity_title">Verifikasi Wajah</string>
+	<string name="jumio_idtype_brazil_cnh">CNH Digital Brasil PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Cari Negara</string>
 	<string name="jumio_idtype_countrysearch_title">Pilih negara penerbit</string>
 	<string name="jumio_idtype_format_option_other">Format lainnya</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Periksa negara penerbit</string>
 	<string name="jumio_idtype_subtitle_id">Pilih jenis dokumen</string>
 	<string name="jumio_list_supported_document_title">Dokumen yang didukung</string>
+	<string name="jumio_liveness_prompt_keep_centered">Tetap di tengah</string>
+	<string name="jumio_liveness_prompt_keep_still">Tahan</string>
+	<string name="jumio_liveness_prompt_keep_upright">Tetap tegak</string>
+	<string name="jumio_liveness_prompt_move_away">Menjauh</string>
 	<string name="jumio_liveness_prompt_no_target">Letakkan wajah Anda di bingkai</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Oke! Ayo ambil gambar lain.</string>
-	<string name="jumio_liveness_prompt_too_close">Terlalu dekat</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Ambil pindaian lain</string>
+	<string name="jumio_liveness_prompt_tilt_down">Geser ke bawah</string>
+	<string name="jumio_liveness_prompt_tilt_left">Miring kiri</string>
+	<string name="jumio_liveness_prompt_tilt_right">Miring kanan</string>
+	<string name="jumio_liveness_prompt_tilt_up">Geser ke atas</string>
 	<string name="jumio_liveness_prompt_too_far">Merapat</string>
+	<string name="jumio_liveness_scanning_completed">Pemindaian selesai</string>
 	<string name="jumio_liveness_upfront_intro">Kami perlu memindai wajah Anda untuk memverifikasi bahwa Anda benar-benar orang.</string>
 	<string name="jumio_loading_title">Memuat</string>
 	<string name="jumio_nfc_button_skip">Melewatkan</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">Aplikasi mungkin menggunakan blitz kamera</string>
 	<string name="jumio_start_verification">Mulai verifikasi</string>
 	<string name="jumio_start_verification_subtitle">Proses ini dirancang untuk memverifikasi identitas dan melindungi Anda dari pencurian identitas</string>
+	<string name="jumio_try_again">Harap coba lagi</string>
 	<string name="jumio_uploading_success">Pengunggahan berhasil</string>
 	<string name="jumio_uploading_title">Mengunggah</string>
 	-->

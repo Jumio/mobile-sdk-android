@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Jekk jogħġbok iċċekkja li qiegħed online</string>
 	<string name="jumio_error_case_network_problems">Iltqajna ma\' problema fil-komunikazzjoni tan-netwerk</string>
 	<string name="jumio_error_case_no_camera_connection">L-aċċess għall-kamera huwa ddiżattivat</string>
-	<string name="jumio_error_case_ocr_failed">Bħalissa ma tistax tiskennja, jekk jogħġbok ikkuntattja lit-tim tal-appoġġ</string>
+	<string name="jumio_error_case_scanning_not_possible">Bħalissa ma tistax tiskennja, jekk jogħġbok ikkuntattja lit-tim tal-appoġġ</string>
 	<string name="jumio_error_case_session_expired">Is-sessjoni Skadiet</string>
 	<string name="jumio_idtype_di">ID diġitali</string>
 	<string name="jumio_idtype_dl">Liċenzja tas-Sewqan</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Ħu ritratt</string>
 	<string name="jumio_accessibility_scan_switch_camera">Eqleb għall-kamera l-oħra</string>
 	<string name="jumio_analyzing_biometric">Qed janalizza d-dejta bijometrika</string>
+	<string name="jumio_brazil_cnh_subtitle">Biex ittella\' l-PDF, aċċerta li niżżilt PDF tal-liċenzja tas-sewqan diġitali mill-applikazzjoni uffiċjali tal-gvern [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">Tella\' PDF ta\' CNH Digital</string>
 	<string name="jumio_button_cancel">Ikkanċella</string>
 	<string name="jumio_button_retry">Erġa\' pprova</string>
 	<string name="jumio_di_back_to_document_selection">Se tittieħed lura fis-selezzjoni tad-dokumenti.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Kun żgur li d-dettalji kollha fuq id-dokument tiegħek jistgħu jinqraw</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Ir-ritratt mhux ċar biżżejjed biex jiġi vverifikat</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Ir-ritratti għandhom bżonn jittieħdu mill-ġdid</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Aċċerta li niżżilt PDF tal-liċenzja tas-sewqan Diġitali mill-applikazzjoni uffiċjali tal-gvern [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Jekk jogħġbok erġa\' pprova b\'immaġni tal-kulur</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">L-immaġni hija fotokopja bl-abjad u bl-iswed</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">L-immaġni tidher li hija fotokopja bil-kulur</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Ħu stessu</string>
 	<string name="jumio_identity_scan_tips_placing">Poġġi wiċċek fil-frejm ovali u agħfas il-buttuna biex tieħu r-ritratt</string>
 	<string name="jumio_identity_title">Verifika tal-Wiċċ</string>
+	<string name="jumio_idtype_brazil_cnh">Brażil CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Fittex il-Pajjiż</string>
 	<string name="jumio_idtype_countrysearch_title">Agħżel il-pajjiż tal-ħruġ</string>
 	<string name="jumio_idtype_format_option_other">Format Ieħor</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Iċċekkja l-pajjiż tal-ħruġ</string>
 	<string name="jumio_idtype_subtitle_id">Agħżel it-tip ta\' dokument</string>
 	<string name="jumio_list_supported_document_title">Dokumenti appoġġjati</string>
+	<string name="jumio_liveness_prompt_keep_centered">Żomm fin-nofs</string>
+	<string name="jumio_liveness_prompt_keep_still">Tiċċaqlaqx</string>
+	<string name="jumio_liveness_prompt_keep_upright">Oqgħod dritt</string>
+	<string name="jumio_liveness_prompt_move_away">Ersaq lura</string>
 	<string name="jumio_liveness_prompt_no_target">Poġġi wiċċek fil-frejm</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Ħadnih! Ejja nieħdu ieħor</string>
-	<string name="jumio_liveness_prompt_too_close">Qiegħed wisq qrib</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Ejja nieħdu scan ieħor</string>
+	<string name="jumio_liveness_prompt_tilt_down">Mejjel \'l isfel</string>
+	<string name="jumio_liveness_prompt_tilt_left">Mejjel lejn ix-xellug</string>
+	<string name="jumio_liveness_prompt_tilt_right">Mejjel lejn il-lemin</string>
+	<string name="jumio_liveness_prompt_tilt_up">Mejjel \'il fuq</string>
 	<string name="jumio_liveness_prompt_too_far">Ersaq aktar viċin</string>
+	<string name="jumio_liveness_scanning_completed">L-iskennjar lest</string>
 	<string name="jumio_liveness_upfront_intro">Irridu nieħdu niskennjaw wiċċek biex nivverifikaw li int persuna reali.</string>
 	<string name="jumio_loading_title">Qed jillowdja</string>
 	<string name="jumio_nfc_button_skip">Aqbeż</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">L-app tista\' tuża l-flash tal-kamera</string>
 	<string name="jumio_start_verification">Ibda l-verifika</string>
 	<string name="jumio_start_verification_subtitle">Dan il-proċess hu ddisinjat biex jivverifika l-identità tiegħek u jipproteġik mis-serq tal-identità</string>
+	<string name="jumio_try_again">Erġa\' pprova</string>
 	<string name="jumio_uploading_success">Telgħu b\'suċċess</string>
 	<string name="jumio_uploading_title">Qed itella\'</string>
 	-->

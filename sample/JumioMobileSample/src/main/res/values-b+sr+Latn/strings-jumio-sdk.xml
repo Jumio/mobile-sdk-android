@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Proverite da li ste na mreži</string>
 	<string name="jumio_error_case_network_problems">Naišli smo na problem mrežne komunikacije</string>
 	<string name="jumio_error_case_no_camera_connection">Pristup kameri onemogućen</string>
-	<string name="jumio_error_case_ocr_failed">Skeniranje trenutno nije dostupno, obratite se timu za podršku</string>
+	<string name="jumio_error_case_scanning_not_possible">Skeniranje trenutno nije dostupno, obratite se timu za podršku</string>
 	<string name="jumio_error_case_session_expired">Sesija je istekla</string>
 	<string name="jumio_idtype_di">Digitalni ID</string>
 	<string name="jumio_idtype_dl">Vozačka dozvola</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Fotofrafiši</string>
 	<string name="jumio_accessibility_scan_switch_camera">Prebaci kameru</string>
 	<string name="jumio_analyzing_biometric">Analiziranje biometrijskih podataka</string>
+	<string name="jumio_brazil_cnh_subtitle">Da biste nastavili sa otpremanjem, uverite se da ste preuzeli digitalnu vozačku dozvolu u PDF-u sa zvanične vladine aplikacije [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">Otpremite CNH Digital PDF</string>
 	<string name="jumio_button_cancel">Otkaži</string>
 	<string name="jumio_button_retry">Pokušaj ponovo</string>
 	<string name="jumio_di_back_to_document_selection">Bićete vraćeni na izbor dokumenata.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Uverite se da su svi detalji u vašem dokumentu čitljivi</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Slika je previše mutna za verifikaciju</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Slike moraju biti pono fotografisane</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Uverite se da ste preuzeli digitalnu vozačku dozvolu u PDF-u sa zvanične vladine aplikacije [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Pokušajte ponovo sa slikom u boji</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Slika je crno-bela fotokopija</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Izgleda da je slika fotokopija u boji</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Snimite selfi</string>
 	<string name="jumio_identity_scan_tips_placing">Poravnajte lice u ovalnom okviru i pritisnite okidač</string>
 	<string name="jumio_identity_title">Verifikacija lica</string>
+	<string name="jumio_idtype_brazil_cnh">Brazil CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Pretraži zemlju</string>
 	<string name="jumio_idtype_countrysearch_title">Izaberite zemlju izdavanja</string>
 	<string name="jumio_idtype_format_option_other">Drugi format</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Proverite zemlju izdavanja</string>
 	<string name="jumio_idtype_subtitle_id">Izaberite tip dokumenta</string>
 	<string name="jumio_list_supported_document_title">Podržani dokumenti</string>
+	<string name="jumio_liveness_prompt_keep_centered">Držite se u sredini</string>
+	<string name="jumio_liveness_prompt_keep_still">Budite mirni</string>
+	<string name="jumio_liveness_prompt_keep_upright">Držite glavu uspravno</string>
+	<string name="jumio_liveness_prompt_move_away">Sklonite se</string>
 	<string name="jumio_liveness_prompt_no_target">Stavite svoje lice u okvir</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Razumem! Napravimo još jedan snimak</string>
-	<string name="jumio_liveness_prompt_too_close">Preblizu</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Napravimo još jedan snimak</string>
+	<string name="jumio_liveness_prompt_tilt_down">Pomerite se nadole</string>
+	<string name="jumio_liveness_prompt_tilt_left">Okrenite se ulevo</string>
+	<string name="jumio_liveness_prompt_tilt_right">Okrenite se udesno</string>
+	<string name="jumio_liveness_prompt_tilt_up">Pomerite se nagore</string>
 	<string name="jumio_liveness_prompt_too_far">Približite se</string>
+	<string name="jumio_liveness_scanning_completed">Skeniranje je završeno</string>
 	<string name="jumio_liveness_upfront_intro">Moramo da vam skeniramo lice da bismo potvrdili da ste stvarna osoba.</string>
 	<string name="jumio_loading_title">Učitavanje</string>
 	<string name="jumio_nfc_button_skip">Preskoči</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">Aplikacija može da koristi blic kamere</string>
 	<string name="jumio_start_verification">Počni verifikaciju</string>
 	<string name="jumio_start_verification_subtitle">Ovaj proces je dizajniran da potvrdi vaš identitet i zaštiti vas od krađe identiteta</string>
+	<string name="jumio_try_again">Pokušajte ponovo</string>
 	<string name="jumio_uploading_success">Otpremanje je uspešno</string>
 	<string name="jumio_uploading_title">Otpremanje</string>
 	-->

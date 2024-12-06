@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">សូមពិនិត្យមើលថាអ្នកកំពុងអនឡាញ</string>
 	<string name="jumio_error_case_network_problems">យើងបានជួបបញ្ហាទំនាក់ទំនងបណ្តាញ</string>
 	<string name="jumio_error_case_no_camera_connection">ការចូលប្រើកាមេរ៉ាត្រូវបានបិទ</string>
-	<string name="jumio_error_case_ocr_failed">ការស្កេនមិនមាននៅពេលនេះទេ សូមទាក់ទងក្រុមផ្ដល់ជំនួយ</string>
+	<string name="jumio_error_case_scanning_not_possible">ការស្កេនមិនមាននៅពេលនេះទេ សូមទាក់ទងក្រុមផ្ដល់ជំនួយ</string>
 	<string name="jumio_error_case_session_expired">រយៈពេលបានផុតកំណត់</string>
 	<string name="jumio_idtype_di">អត្តសញ្ញាណបណ្ណឌីជីថល</string>
 	<string name="jumio_idtype_dl">បណ្ណបើកបរ</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">ថតរូប</string>
 	<string name="jumio_accessibility_scan_switch_camera">ប្តូរកាមេរ៉ា</string>
 	<string name="jumio_analyzing_biometric">កំពុងវិភាគទិន្នន័យជីវមាត្រ</string>
+	<string name="jumio_brazil_cnh_subtitle">ដើម្បីបន្តអាប់ឡូដ ត្រូវប្រាកដថា អ្នកបានទាញយកប័ណ្ណបើកបរឌីជីថលជាទម្រង់ PDF ពីកម្មវិធីផ្លូវការរបស់រដ្ឋាភិបាល [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">អាប់ឡូដ CNH Digital PDF</string>
 	<string name="jumio_button_cancel">បោះបង់</string>
 	<string name="jumio_button_retry">សូមព្យាយាមម្ដងទៀត</string>
 	<string name="jumio_di_back_to_document_selection">អ្នកនឹងរុករកត្រលប់មកកាន់ការជ្រើសរើសឯកសារវិញ។</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">ត្រូវប្រាកដថាព័ត៌មានលម្អិតទាំងអស់នៅលើឯកសាររបស់អ្នកអាចអានដាច់</string>
 	<string name="jumio_error_instant_feedback_blurry_title">រូបភាពព្រិលពេកមិនអាចផ្ទៀងផ្ទាត់បានទេ</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">រូបភាពត្រូវតែថតម្ដងទៀត</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">ត្រូវប្រាកដថា អ្នកបានទាញយកប័ណ្ណបើកបរឌីជីថលជាទម្រង់ PDF ពីកម្មវិធីផ្លូវការរបស់រដ្ឋាភិបាល [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">សូមព្យាយាមម្តងទៀតជាមួយនឹងរូបភាពពណ៌</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">រូបភាពគឺជារូបថតចម្លងសខ្មៅ</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">រូបភាពហាក់ដូចជារូបថតចម្លងពណ៌</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">ថតរូបសែលហ្វី</string>
 	<string name="jumio_identity_scan_tips_placing">តម្រង់មុខរបស់អ្នកក្នុងស៊ុមរាងពងក្រពើ ហើយចុចប៊ូតុងបិទបើកកាមេរ៉ា</string>
 	<string name="jumio_identity_title">ការផ្ទៀងផ្ទាត់ទម្រង់មុខ</string>
+	<string name="jumio_idtype_brazil_cnh">CNH Digital PDF ពីប្រាហ៊ីល</string>
 	<string name="jumio_idtype_countrysearch_search">ស្វែងរកប្រទេស</string>
 	<string name="jumio_idtype_countrysearch_title">ជ្រើសរើសប្រទេសដែលចេញប័ណ្ណ</string>
 	<string name="jumio_idtype_format_option_other">ទម្រង់ផ្សេងទៀត</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">ពិនិត្យប្រទេសដែលចេញប័ណ្ណ</string>
 	<string name="jumio_idtype_subtitle_id">ជ្រើសរើសប្រភេទឯកសារ</string>
 	<string name="jumio_list_supported_document_title">ឯកសារដែលគាំទ្រ</string>
+	<string name="jumio_liveness_prompt_keep_centered">រក្សានៅកណ្ដាល</string>
+	<string name="jumio_liveness_prompt_keep_still">កាន់ឲ្យនឹង</string>
+	<string name="jumio_liveness_prompt_keep_upright">រក្សាឲ្យត្រង់</string>
+	<string name="jumio_liveness_prompt_move_away">ខិតទៅឲ្យឆ្ងាយ</string>
 	<string name="jumio_liveness_prompt_no_target">ដាក់មុខរបស់អ្នកនៅក្នុងស៊ុម</string>
-	<string name="jumio_liveness_prompt_success_another_shot">យល់ហើយ! អញ្ចឹងថតមួយទៀត</string>
-	<string name="jumio_liveness_prompt_too_close">ជិតពេក</string>
+	<string name="jumio_liveness_prompt_success_another_scan">តោះថតការស្កេនមួយទៀត</string>
+	<string name="jumio_liveness_prompt_tilt_down">ផ្អៀងចុះក្រោម</string>
+	<string name="jumio_liveness_prompt_tilt_left">ផ្អៀងទៅឆ្វេង</string>
+	<string name="jumio_liveness_prompt_tilt_right">ផ្អៀងទៅស្ដាំ</string>
+	<string name="jumio_liveness_prompt_tilt_up">ផ្ទៀងឡើងលើ</string>
 	<string name="jumio_liveness_prompt_too_far">ខិតមកជិតជាងមុន</string>
+	<string name="jumio_liveness_scanning_completed">បានបញ្ចប់ការស្កេន</string>
 	<string name="jumio_liveness_upfront_intro">យើងត្រូវថតការស្កេនមុខរបស់អ្នក ដើម្បីផ្ទៀងផ្ទាត់ថា អ្នកជាមនុស្សពិត។</string>
 	<string name="jumio_loading_title">កំពុងផ្ទុក</string>
 	<string name="jumio_nfc_button_skip">រំលង</string>
@@ -168,8 +180,9 @@
 	<string name="jumio_start_instructions_03">ប្រើឯកសារត្រឹមត្រូវ</string>
 	<string name="jumio_start_instructions_04">ប្រើអត្តសញ្ញាណប័ណ្ណមានសុពលភាពដែលចេញដោយរដ្ឋ</string>
 	<string name="jumio_start_instructions_07">កម្មវិធីនេះអាចនឹងប្រើផ្លាសរបស់កាមេរ៉ា</string>
-	<string name="jumio_start_verification">ចាប់ផ្តើមការផ្ទៀងផ្ទាត់</string>
+	<string name="jumio_start_verification">ចាប់ផ្ដើមផ្ទៀងផ្ទាត់</string>
 	<string name="jumio_start_verification_subtitle">ដំណើរការនេះត្រូវបានរៀបចំឡើង ដើម្បីផ្ទៀងផ្ទាត់អត្តសញ្ញាណរបស់អ្នក និងការពារអ្នកពីចោរលួចអត្តសញ្ញាណ</string>
+	<string name="jumio_try_again">សូមព្យាយាមម្តងទៀត</string>
 	<string name="jumio_uploading_success">ការផ្ទុកឡើងបានជោគជ័យ</string>
 	<string name="jumio_uploading_title">កំពុងផ្ទុកឡើង</string>
 	-->

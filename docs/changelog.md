@@ -16,16 +16,26 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 For detailed technical changes please refer to our [Transition Guide](transition_guide.md).
 
 ## Support Period
-Current SDK version: __4.11.0__
+Current SDK version: __4.12.0__
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+
+## SDK Version: __4.12.0__
+
+![Improvement] Added support for Jumio Liveness Premium with enhanced deepfake detection [Selfie Verification]
+
+![Improvement] Added support for Brazilian Digital Driver's License [ID Verification]
+
+![Fix] Multiple bug fixes and improvements
+
+![Change] Updated Android sample application UI, transitioning from XML-based layouts to using Jetpack Compose 
 
 ## SDK Version: __4.11.0__
 ![Improvement] Added tilted image capture for frontside of ID documents. Enhanced checks of certain document security features [ID Verification]
 
 ![Improvement] Added unsupported documents check to improve quality of extracted data and improve user experience [ID Verification]
 
-![Improvement] Added an updated Authentication Service [Identity Verification]
+![Improvement] Added an updated Authentication Service [Selfie Verification]
 
 ![Fix] Fixed issues with code obfuscation
 
@@ -34,7 +44,7 @@ Please refer to our [SDK maintenance and support policy](maintenance_policy.md) 
 
 ![Improvement] Added flash capture for frontside of ID documents. Enhanced checks of certain document security features [ID Verification]
 
-![Improvement] Support for Serbian language, for both Cyrillic and Latin [ID Verification, Identity Verification, Document Verification]
+![Improvement] Support for Serbian language, for both Cyrillic and Latin [ID Verification, Selfie Verification, Document Verification]
 
 ## SDK Version: __4.9.1__
 ![Fix] Fixed a rare issue that could lead to a crash when the SDK is recreated
@@ -42,29 +52,29 @@ Please refer to our [SDK maintenance and support policy](maintenance_policy.md) 
 ## SDK Version: __4.9.0__
 ![Improvement] Automated document and country selection, powered by classifer ML model [ID Verification]
 
-![Improvement] Added possibility to pre-load required ML models. For more information checkout the according section in the [README](../README.md#ml-models) [ID Verification, Identity Verification]
+![Improvement] Added possibility to pre-load required ML models. For more information checkout the according section in the [README](../README.md#ml-models) [ID Verification, Selfie Verification]
 
-![Improvement] Major UI Redesign [ID Verification, Identity Verification, Document Verification]
+![Improvement] Major UI Redesign [ID Verification, Selfie Verification, Document Verification]
 
-![Improvement] Improved Liveness retry logic. Prepared for granular instant feedback, if configured accordingly [Identity Verification]
+![Improvement] Improved Liveness retry logic. Prepared for granular instant feedback, if configured accordingly [Selfie Verification]
 
-![Improvement] iProov SDK version update to 9.0.3 [Identity Verification] 
+![Improvement] iProov SDK version update to 9.0.3 [Selfie Verification] 
 
 ![Improvement] Added support for R8's `fullMode` for code shrinking and obfuscation
 
-![Change] Removed Device Risk module from SDK [Identity Verification]
+![Change] Removed Device Risk module from SDK [Selfie Verification]
 
 ## SDK Version: __4.8.2__
-![Improvement] iProov SDK version update to 8.5.2 [Identity Verification]
+![Improvement] iProov SDK version update to 8.5.2 [Selfie Verification]
 
 ## SDK Version: __4.8.1__
 ![Fix] Removed Location handling to fix potential Google Play Store rejections
 
 ## SDK Version: __4.8.0__
-![Improvement] Managing Liveness dependencies to help better conversion [Identity Verification]
+![Improvement] Managing Liveness dependencies to help better conversion [Selfie Verification]
 
 ## SDK Version: __4.7.2__
-![Improvement] iProov SDK version update to 8.5.2 [Identity Verification]
+![Improvement] iProov SDK version update to 8.5.2 [Selfie Verification]
 
 ## SDK Version: __4.7.1__
 ![Fix] Removed Location handling to fix potential Google Play Store rejections
@@ -74,39 +84,39 @@ Please refer to our [SDK maintenance and support policy](maintenance_policy.md) 
 
 ![Improvement] Datadog SDK version update to 2.0: Added possibility to have a dedicated Jumio Datadog instance
 
-![Improvement] Improved Jumio Liveness capturing experience [Identity Verification]
+![Improvement] Improved Jumio Liveness capturing experience [Selfie Verification]
 
-![Change] Updated Jumio Liveness module [Identity Verification]
+![Change] Updated Jumio Liveness module [Selfie Verification]
 
 ![Change] Removed previous scanning functionalities, now all included in Autocapture functionality [ID Verification]
 
 ![Change] Removed Microblink barcode scanning, switched to MLkit [ID Verification]
 
-![Fix] Fixed Liveness customization bug [Identity Verification]
+![Fix] Fixed Liveness customization bug [Selfie Verification]
 
 ## SDK Version: __4.6.2__
-![Improvement] iProov SDK version update to 8.5.2 [Identity Verification]
+![Improvement] iProov SDK version update to 8.5.2 [Selfie Verification]
 
 ## SDK Version: __4.6.1__
 ![Fix] Removed Location handling to fix potential Google Play Store rejections
 
 ## SDK Version: __4.6.0__
-![Improvement] Added Jumio Liveness module to enhance the Liveness user experience and interface (Identity Verification)
+![Improvement] Added Jumio Liveness module to enhance the Liveness user experience and interface (Selfie Verification)
 
-![Improvement] Improved Liveness customization options (Identity Verification)
+![Improvement] Improved Liveness customization options (Selfie Verification)
 
 ## SDK Version: __4.5.2__
-![Improvement] iProov SDK version update to 8.5.2 [Identity Verification]
+![Improvement] iProov SDK version update to 8.5.2 [Selfie Verification]
 
 ## SDK Version: __4.5.1__
 ![Fix] Removed Location handling to fix potential Google Play Store rejections
 
 ## SDK Version: __4.5.0__
-![Improvement] Added possibility for users to verify their identity using [Digital Identity](../README.md#digital-identity) [ID Verification, Identity Verification]
+![Improvement] Added possibility for users to verify their identity using [Digital Identity](../README.md#digital-identity) [ID Verification, Selfie Verification]
 
-![Improvement] iProov SDK version update to 8.3.1 [Identity Verification]
+![Improvement] iProov SDK version update to 8.3.1 [Selfie Verification]
 
-![Improvement] Improved user consent handling [ID Verification, Identity Verification]
+![Improvement] Improved user consent handling [ID Verification, Selfie Verification]
 <details>     
 <summary>More details</summary>       
 
@@ -127,7 +137,7 @@ User consent is now acquired for all users to ensure the accordance with biometr
 
 ![Improvement] Fully redesigned ID Autocapture experience - seamless capturing, precise guidance and faster user journey [ID Verification]
 
-![Improvement] Major iProov SDK version update to 8.0.3 - no more face scanning filter, improved UI and more customization options [Identity Verification]
+![Improvement] Major iProov SDK version update to 8.0.3 - no more face scanning filter, improved UI and more customization options [Selfie Verification]
 
 ![Improvement] Mandatory NFC scanning option [ID Verification]
 
@@ -144,11 +154,11 @@ User consent is now acquired for all users to ensure the accordance with biometr
 
 ![Improvement] Improved user guidance: Clear distinction between scanning frontside or backside of ID document [ID Verification]
 
-![Change] iProov SDK version update to 7.5.0 [Identity Verification]
+![Change] iProov SDK version update to 7.5.0 [Selfie Verification]
 
 ![Change] The SDK's minSdkVersion has been increased to 21 (Lollipop). Please check the [Transition Guide](transition_guide.md) for details.
 
-![Fix] UI bugs, internal crashes [Identity Verification]
+![Fix] UI bugs, internal crashes [Selfie Verification]
 
 ## SDK Version: __4.2.1__
 ![Fix] Removed Location handling to fix potential Google Play Store rejections
@@ -156,11 +166,11 @@ User consent is now acquired for all users to ensure the accordance with biometr
 ## SDK Version: __4.2.0__
 ![Improvement] Alignment of previously existing scanning method and improved user experience through addition of Autocapture module (Beta) [ID Verification]
 
-![Improvement] Support for device fingerprint capability [ID Verification, Identity Verification]
+![Improvement] Support for device fingerprint capability [ID Verification, Selfie Verification]
 
 ![Improvement] Addition of NFC image extraction for similarity check [ID Verification]
 
-![Improvement] Improved liveness customization: Centered Floating prompt for better user guidance during face scanning [Identity Verification]
+![Improvement] Improved liveness customization: Centered Floating prompt for better user guidance during face scanning [Selfie Verification]
 
 ![Fix] Bug fixes: UI bugs, internal crashes
 
@@ -168,13 +178,13 @@ User consent is now acquired for all users to ensure the accordance with biometr
 ![Fix] Removed Location handling to fix potential Google Play Store rejections
 
 ## SDK Version: __4.1.0__
-![Improvement] Improved, granular user feedback for improved user experience and workflow through addition of Instant Feedback [ID Verification, Identity Verification]
+![Improvement] Improved, granular user feedback for improved user experience and workflow through addition of Instant Feedback [ID Verification, Selfie Verification]
 
-![Improvement] Support for Dark Mode for DefaultUI and CustomUI [ID Verification, Identity Verification]
+![Improvement] Support for Dark Mode for DefaultUI and CustomUI [ID Verification, Selfie Verification]
 
 ![Improvement] Addition of optional Datadog diagnostics module for monitoring SDK behavior and performance, as well as more efficient troubleshooting
 
-![Change] iProov SDK version update to 7.2.0 [Identity Verification]
+![Change] iProov SDK version update to 7.2.0 [Selfie Verification]
 
 ![Fix] Bug fixes: UI bugs, security improvements, internal crashes
 
@@ -195,46 +205,46 @@ This is a complete rewrite of our SDK. The SDK was built with CustomUI as a basi
 ![Fix] Removed Location handling to fix potential Google Play Store rejections
 
 ## SDK Version: __3.9.4__
-![Changes](https://img.shields.io/badge/Improvement-green) iProov SDK version update to 6.4.3 [Identity Verification]
+![Changes](https://img.shields.io/badge/Improvement-green) iProov SDK version update to 6.4.3 [Selfie Verification]
 
 ## SDK Version: __3.9.3__
-![Changes](https://img.shields.io/badge/Improvement-green) Internal dependency update [Identity Verification]
+![Changes](https://img.shields.io/badge/Improvement-green) Internal dependency update [Selfie Verification]
 
 ## SDK Version: __3.9.2__
-![Change] iProov SDK version update to 6.4.1, which improves performance and offers additional customization options  [Identity Verification]
+![Change] iProov SDK version update to 6.4.1, which improves performance and offers additional customization options  [Selfie Verification]
 
 ## SDK Version: __3.9.1__
-![Change] iProov SDK version update to 6.3.1, which fixes cross-dependency problems with OkHttp 4.x versions [Identity Verification]
+![Change] iProov SDK version update to 6.3.1, which fixes cross-dependency problems with OkHttp 4.x versions [Selfie Verification]
 
-![Improvement] Improved customization options [Identity Verification]
+![Improvement] Improved customization options [Selfie Verification]
 
 ## SDK Version: __3.9.0__
-![Improvement] Improved SDK lifecycle and state handling to reduce specific scenarios in which SDK crashes could have happened [Identity Verification]
+![Improvement] Improved SDK lifecycle and state handling to reduce specific scenarios in which SDK crashes could have happened [Selfie Verification]
 
-![Improvement] Improved retry guidance for Identity Verification [Identity Verification]
+![Improvement] Improved retry guidance for Selfie Verification [Selfie Verification]
 
-![Improvement] Improved customization options [Identity Verification]
+![Improvement] Improved customization options [Selfie Verification]
 
-![Improvement] Added more granular differentiations for `ScanMode` in CustomUI [Identity Verification]
+![Improvement] Added more granular differentiations for `ScanMode` in CustomUI [Selfie Verification]
 
-![Fix] Fixed rare issue that caused "Blur Hint" toast being displayed multiple times on certain devices [Identity Verification]
+![Fix] Fixed rare issue that caused "Blur Hint" toast being displayed multiple times on certain devices [Selfie Verification]
 
-![Fix] Fixed possible Camera Exception using CustomUI [ID Verification/Fastfill, Identity Verification, Authentication]
+![Fix] Fixed possible Camera Exception using CustomUI [ID Verification/Fastfill, Selfie Verification, Authentication]
 
-![Fix] Fixed possible app crash when calling `NetverifyCustomSDKController.retry()` [ID Verification/Fastfill, Identity Verification]
+![Fix] Fixed possible app crash when calling `NetverifyCustomSDKController.retry()` [ID Verification/Fastfill, Selfie Verification]
 
-![Fix] Fixed Zoom Authentication 412 error handling, preventing user from getting stuck in certain scenarios [Identity Verification]
+![Fix] Fixed Zoom Authentication 412 error handling, preventing user from getting stuck in certain scenarios [Selfie Verification]
 
-![Change] Removed deprecated Android Kotlin plugins [ID Verification/Fastfill, Identity Verification, Authentication, Document Verification]
+![Change] Removed deprecated Android Kotlin plugins [ID Verification/Fastfill, Selfie Verification, Authentication, Document Verification]
 
-![Change] iProov SDK version update to 6.3.0, which includes accuracy improvements using Liveness Assurance [Identity Verification]
+![Change] iProov SDK version update to 6.3.0, which includes accuracy improvements using Liveness Assurance [Selfie Verification]
 
 ## SDK Version: __3.8.0__
 ![Improvement] Added better guidance for devices with a fixed focal distance [ID Verification/Fastfill, Document Verification]
 
 ![Fix] Fixed crashes that could occur in edge cases [ID-Verification, Identity-Verification]
 
-![Change] Added iProov as an additional liveness vendor to the [Jumio KYX platform](https://www.jumio.com/kyx/) [Identity Verification]
+![Change] Added iProov as an additional liveness vendor to the [Jumio KYX platform](https://www.jumio.com/kyx/) [Selfie Verification]
 
 ## SDK Version: __3.7.3__
 ![Improvement] New error code is returned in case an ad blocker or a firewall is detected [ID Verification/Fastfill, Authentication, Document Verification]

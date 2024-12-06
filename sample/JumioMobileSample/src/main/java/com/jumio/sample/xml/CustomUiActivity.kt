@@ -1,5 +1,5 @@
 // Copyright 2023 Jumio Corporation, all rights reserved.
-package com.jumio.sample.customui
+package com.jumio.sample.xml
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -31,10 +31,10 @@ import com.jumio.commons.log.Log
 import com.jumio.commons.utils.dpToPx
 import com.jumio.defaultui.JumioActivity
 import com.jumio.sample.R
-import com.jumio.sample.customui.adapter.CustomConsentAdapter
-import com.jumio.sample.customui.adapter.CustomCountryAdapter
-import com.jumio.sample.customui.adapter.CustomDocumentAdapter
 import com.jumio.sample.databinding.ActivityCustomuiBinding
+import com.jumio.sample.xml.adapter.CustomConsentAdapter
+import com.jumio.sample.xml.adapter.CustomCountryAdapter
+import com.jumio.sample.xml.adapter.CustomDocumentAdapter
 import com.jumio.sdk.JumioSDK
 import com.jumio.sdk.consent.JumioConsentItem
 import com.jumio.sdk.controller.JumioController
@@ -318,11 +318,13 @@ class CustomUiActivity :
 		}
 
 		binding.credentialCancel.setOnClickListener {
-			credential?.cancel()
-			updateIcon(binding.credentialLayout, credential?.isComplete == true)
-			credential = null
-			hideView(binding.credentialControls)
-			hideViewsAfter(binding.credentialControls)
+			catchAndShow {
+				credential?.cancel()
+				updateIcon(binding.credentialLayout, credential?.isComplete == true)
+				credential = null
+				hideView(binding.credentialControls)
+				hideViewsAfter(binding.credentialControls)
+			}
 		}
 	}
 
@@ -365,9 +367,11 @@ class CustomUiActivity :
 
 	private fun initControllerUi() {
 		binding.controllerCancel.setOnClickListener {
-			jumioController.cancel()
-			hideViewsAfter(binding.controllerControls)
-			showView(binding.loadingIndicator)
+			catchAndShow {
+				jumioController.cancel()
+				hideViewsAfter(binding.controllerControls)
+				showView(binding.loadingIndicator)
+			}
 		}
 
 		binding.controllerFinish.setOnClickListener {
@@ -453,7 +457,9 @@ class CustomUiActivity :
 			if (jumioController.isComplete) {
 				jumioController.finish()
 			} else {
-				jumioController.cancel()
+				catchAndShow {
+					jumioController.cancel()
+				}
 			}
 		} else {
 			super.onBackPressed()
@@ -598,12 +604,17 @@ class CustomUiActivity :
 			JumioScanUpdate.NFC_EXTRACTION_PROGRESS -> log("NFC Extraction progress $data")
 			JumioScanUpdate.NFC_EXTRACTION_FINISHED -> log("NFC Extraction finished")
 			JumioScanUpdate.CENTER_ID -> log("Center your ID")
-			JumioScanUpdate.CENTER_FACE -> log("Center your face")
-			JumioScanUpdate.LEVEL_EYES_AND_DEVICE -> log("Hold your device at eye level")
 			JumioScanUpdate.HOLD_STILL -> log("Hold still...")
 			JumioScanUpdate.HOLD_STRAIGHT -> log("Hold straight")
 			JumioScanUpdate.MOVE_CLOSER -> log("Move closer")
 			JumioScanUpdate.TOO_CLOSE -> log("Too close")
+			JumioScanUpdate.MOVE_FACE_INTO_FRAME -> log("Put your face in the frame")
+			JumioScanUpdate.CENTER_FACE -> log("Center your face")
+			JumioScanUpdate.LEVEL_EYES_AND_DEVICE -> log("Hold your device at eye level")
+			JumioScanUpdate.TILT_FACE_UP -> log("Tilt your face up")
+			JumioScanUpdate.TILT_FACE_DOWN -> log("Tilt your face down")
+			JumioScanUpdate.TILT_FACE_LEFT -> log("Tilt your face left")
+			JumioScanUpdate.TILT_FACE_RIGHT -> log("Tilt your face right")
 			JumioScanUpdate.MOVE_FACE_CLOSER -> log("Move face closer")
 			JumioScanUpdate.FACE_TOO_CLOSE -> log("Face too close")
 			JumioScanUpdate.NEXT_POSITION -> log("Move face to next position")
@@ -895,7 +906,6 @@ class CustomUiActivity :
 		showView(binding.scanPartControls)
 
 		val activeScanPart = scanPart ?: return
-
 		if (activeScanPart.scanMode == JumioScanMode.WEB) {
 			hideView(binding.inlineScanLayout)
 			showView(binding.digitalIdentityView)

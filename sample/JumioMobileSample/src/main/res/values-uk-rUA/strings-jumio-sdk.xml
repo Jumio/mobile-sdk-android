@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Переконайтеся, що ви в мережі</string>
 	<string name="jumio_error_case_network_problems">Ми зіткнулися з проблемою мережевого зв\'язку</string>
 	<string name="jumio_error_case_no_camera_connection">Доступ до камери деактивовано</string>
-	<string name="jumio_error_case_ocr_failed">Сканування наразі недоступне, зверніться до служби підтримки</string>
+	<string name="jumio_error_case_scanning_not_possible">Сканування наразі недоступне, зверніться до служби підтримки</string>
 	<string name="jumio_error_case_session_expired">Сеанс закінчився</string>
 	<string name="jumio_idtype_di">Цифровий документ, що посвідчує особу</string>
 	<string name="jumio_idtype_dl">Посвідчення водія</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Зробити фото</string>
 	<string name="jumio_accessibility_scan_switch_camera">Перемкнути камеру</string>
 	<string name="jumio_analyzing_biometric">Триває аналіз біометричних даних</string>
+	<string name="jumio_brazil_cnh_subtitle">Щоб продовжити завантаження, переконайтеся, що ви завантажили PDF-файл цифрових водійських прав з офіційного урядового застосунку [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">Завантажити CNH Digital PDF</string>
 	<string name="jumio_button_cancel">Скасувати</string>
 	<string name="jumio_button_retry">Повторити спробу</string>
 	<string name="jumio_di_back_to_document_selection">Ви повернетеся до вибору документу.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Переконайтеся, що всі деталі вашого документа розбірливі</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Зображення надто розмите для перевірки</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Зображення необхідно перезняти</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Переконайтеся, що ви завантажили PDF-файл цифрових водійських прав з офіційного державного застосунку [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Будь ласка, повторіть спробу з кольоровим зображенням</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Зображення є чорно-білою фотокопією</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Зображення схоже на кольорову фотокопію</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Зробіть селфі</string>
 	<string name="jumio_identity_scan_tips_placing">Вирівняйте обличчя в овальній рамці та натисніть кнопку затвора</string>
 	<string name="jumio_identity_title">Перевірка обличчя</string>
+	<string name="jumio_idtype_brazil_cnh">Бразильський CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Пошук країни</string>
 	<string name="jumio_idtype_countrysearch_title">Виберіть країну, де був виданий документ</string>
 	<string name="jumio_idtype_format_option_other">Інший формат</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Перевірте країну, де був виданий документ</string>
 	<string name="jumio_idtype_subtitle_id">Виберіть тип документа</string>
 	<string name="jumio_list_supported_document_title">Підтримувані документи</string>
+	<string name="jumio_liveness_prompt_keep_centered">Тримайте у центрі</string>
+	<string name="jumio_liveness_prompt_keep_still">Не рухайтесь</string>
+	<string name="jumio_liveness_prompt_keep_upright">Тримайте вертикально</string>
+	<string name="jumio_liveness_prompt_move_away">Відсуньтеся</string>
 	<string name="jumio_liveness_prompt_no_target">Розташуйте обличчя у рамці</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Зрозуміло! Зробимо ще раз</string>
-	<string name="jumio_liveness_prompt_too_close">Надто близько</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Зробімо ще одне сканування</string>
+	<string name="jumio_liveness_prompt_tilt_down">Нахиліть униз</string>
+	<string name="jumio_liveness_prompt_tilt_left">Нахиліть ліворуч</string>
+	<string name="jumio_liveness_prompt_tilt_right">Нахиліть праворуч</string>
+	<string name="jumio_liveness_prompt_tilt_up">Нахиліть угору</string>
 	<string name="jumio_liveness_prompt_too_far">Підсуньтесь ближче</string>
+	<string name="jumio_liveness_scanning_completed">Сканування завершено</string>
 	<string name="jumio_liveness_upfront_intro">Нам потрібно просканувати ваше обличчя, щоб переконатися, що ви реальна людина.</string>
 	<string name="jumio_loading_title">Завантаження</string>
 	<string name="jumio_nfc_button_skip">Пропустити</string>
@@ -168,8 +180,9 @@
 	<string name="jumio_start_instructions_03">Використовуйте дійсний документ</string>
 	<string name="jumio_start_instructions_04">Використовуйте дійсний документ, виданий державним органом</string>
 	<string name="jumio_start_instructions_07">Застосунок може використовувати спалах камери</string>
-	<string name="jumio_start_verification">Почніть перевірку</string>
+	<string name="jumio_start_verification">Почати перевірку</string>
 	<string name="jumio_start_verification_subtitle">Цей процес призначений для перевірки вашої особи та захисту від крадіжки персональних даних</string>
+	<string name="jumio_try_again">Повторіть спробу</string>
 	<string name="jumio_uploading_success">Вивантаження успішно виконано</string>
 	<string name="jumio_uploading_title">Вивантаження</string>
 	-->

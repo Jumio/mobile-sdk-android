@@ -9,6 +9,7 @@
 		<item name="jumio_navigation_icon">#EC407A</item>
 		<item name="jumio_navigation_icon_dark">#EC407A</item>
 		<item name="jumio_image_border">#F2F233</item>
+		<item name="jumio_divider_color">#00B0FF</item>
 
 		<item name="jumio_bubble_background">#333D47</item>
 		<item name="jumio_bubble_background_selected">#57ffc7</item>

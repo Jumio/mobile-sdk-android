@@ -103,6 +103,8 @@ Once you start up the sample application, you'll be given the option of trying o
 ## General Requirements
 The minimum requirements for the SDK are:
 * Android 5.0 "Lollipop" (API level 21) or higher
+* APG version 8.5 or higher
+* Gradle version 8.7 or higher
 * Internet connection
 * Jumio KYX
 
@@ -122,10 +124,6 @@ You will need a __commercial Jumio License__ to run any of our examples. For det
 Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://docs.jumio.com/production/Content/Integration/Integration%20Guide.htm) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Customer Portal.
 
 Within the response of the [Account Creation or Account Update](https://docs.jumio.com/production/Content/Integration/Creating%20or%20Updatng%20Account/Creating%20or%20Updating%20Accounts.htm) API, a SDK token is returned, which needs to be applied to initiate the mobile SDK.
-
-### Basic Authentication (Deprecated)
-Previously, Basic Auth credentials were constructed using your API token as the User ID and your API secret as the password. You still can manage API token and secret in the Customer Portal under:
-* __Settings > API credentials > API Users__
 
 ### Authentication with OAuth2
 Your OAuth2 credentials are constructed using your API token as the Client ID and your API secret as the Client secret. You can view and manage your API token and secret in the Customer Portal under:

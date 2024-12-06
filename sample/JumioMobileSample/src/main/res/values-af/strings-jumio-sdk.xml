@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Maak asseblief seker u is aanlyn</string>
 	<string name="jumio_error_case_network_problems">Daar was \'n netwerkkommunikasieprobleem</string>
 	<string name="jumio_error_case_no_camera_connection">Toegang tot kamera is gedeaktiveer</string>
-	<string name="jumio_error_case_ocr_failed">Skandering is tans nie beskikbaar nie; kontak asseblief die bystandspan</string>
+	<string name="jumio_error_case_scanning_not_possible">Skandering is tans nie beskikbaar nie; kontak asseblief die bystandspan</string>
 	<string name="jumio_error_case_session_expired">Sessie het verstryk</string>
 	<string name="jumio_idtype_di">Digitale ID</string>
 	<string name="jumio_idtype_dl">Bestuurderslisensie</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Neem \'n foto</string>
 	<string name="jumio_accessibility_scan_switch_camera">Verander van kamera</string>
 	<string name="jumio_analyzing_biometric">Besig om biometriese data te ontleed</string>
+	<string name="jumio_brazil_cnh_subtitle">Om met die oplaai voort te gaan, maak seker dat jy ’n digitale bestuurslisensie-PDF van die amptelike regeringstoepassing afgelaai het [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">Laai ’n CNH Digital PDF op</string>
 	<string name="jumio_button_cancel">Kanselleer</string>
 	<string name="jumio_button_retry">Probeer weer</string>
 	<string name="jumio_di_back_to_document_selection">Ons sal jou na dokumentseleksie terughelp.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Maak seker dat alle besonderhede op u dokument leesbaar is</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Die beeld is te onduidelik om te verifieer</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Beelde moet weer geneem word</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Maak seker jy het ’n digitale bestuurslisensie-PDF van die amptelike regeringstoepassing afgelaai [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Probeer asseblief weer met ’n beeld in kleur</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Die beeld is ’n swart-en-wit-fotokopie</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Die beeld is blykbaar ’n kleurfotokopie</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Neem \'n selfie</string>
 	<string name="jumio_identity_scan_tips_placing">Plaas u gesig in die ovaal raam en druk die sluiterknoppie</string>
 	<string name="jumio_identity_title">Gesigverifiëring</string>
+	<string name="jumio_idtype_brazil_cnh">Brasilië CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Deursoek land</string>
 	<string name="jumio_idtype_countrysearch_title">Kies land van uitreiking</string>
 	<string name="jumio_idtype_format_option_other">Ander formaat</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Kontroleer land van uitreiking</string>
 	<string name="jumio_idtype_subtitle_id">Kies die soort dokument</string>
 	<string name="jumio_list_supported_document_title">Ondersteunde dokumente</string>
+	<string name="jumio_liveness_prompt_keep_centered">Bly in die middel</string>
+	<string name="jumio_liveness_prompt_keep_still">Hou stil</string>
+	<string name="jumio_liveness_prompt_keep_upright">Hou regop</string>
+	<string name="jumio_liveness_prompt_move_away">Beweeg terug</string>
 	<string name="jumio_liveness_prompt_no_target">Sit u gesig in die raam</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Daarsy! Kom ons neem nog ’n skoot</string>
-	<string name="jumio_liveness_prompt_too_close">Te naby</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Kom ons doen nog een</string>
+	<string name="jumio_liveness_prompt_tilt_down">Laat sak</string>
+	<string name="jumio_liveness_prompt_tilt_left">Kantel links</string>
+	<string name="jumio_liveness_prompt_tilt_right">Kantel regs</string>
+	<string name="jumio_liveness_prompt_tilt_up">Lig op</string>
 	<string name="jumio_liveness_prompt_too_far">Kom nader</string>
+	<string name="jumio_liveness_scanning_completed">Skandering voltooi</string>
 	<string name="jumio_liveness_upfront_intro">Ons moet jou gesig skandeer om te bevestig dat jy ’n regte persoon is.</string>
 	<string name="jumio_loading_title">Besig om te laai</string>
 	<string name="jumio_nfc_button_skip">Huppel</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">Die app kan dalk die kamera se flits gebruik</string>
 	<string name="jumio_start_verification">Begin Verifiëring</string>
 	<string name="jumio_start_verification_subtitle">Hierdie proses is ontwerp om jou identiteit te verifieer en jou teen identiteitsdiefstal te beskerm</string>
+	<string name="jumio_try_again">Probeer asb. weer</string>
 	<string name="jumio_uploading_success">Oplaai was suksesvol</string>
 	<string name="jumio_uploading_title">Besig om op te laai</string>
 	-->

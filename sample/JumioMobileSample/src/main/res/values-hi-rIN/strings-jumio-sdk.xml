@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">कृपया जांचें कि आप ऑनलाइन हैं</string>
 	<string name="jumio_error_case_network_problems">हमें एक नेटवर्क संचार समस्या का सामना करना पड़ा है</string>
 	<string name="jumio_error_case_no_camera_connection">कैमरा एक्सेस अक्षम किया गया है</string>
-	<string name="jumio_error_case_ocr_failed">इस समय स्कैनिंग उपलब्ध नहीं है, कृपया सहायता टीम से संपर्क करें</string>
+	<string name="jumio_error_case_scanning_not_possible">इस समय स्कैनिंग उपलब्ध नहीं है, कृपया सहायता टीम से संपर्क करें</string>
 	<string name="jumio_error_case_session_expired">सत्र समाप्त हो गया है</string>
 	<string name="jumio_idtype_di">डिजिटल आईडी</string>
 	<string name="jumio_idtype_dl">ड्राइवर लाइसेंस</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">एक तस्वीर लें</string>
 	<string name="jumio_accessibility_scan_switch_camera">कैमरा स्विच करें</string>
 	<string name="jumio_analyzing_biometric">बायोमेट्रिक डेटा का विश्लेषण किया जा रहा है</string>
+	<string name="jumio_brazil_cnh_subtitle">अपलोड जारी रखने के लिए, सुनिश्चित करें कि आपने ऑफिशियल सरकारी एप्लिकेशन [({Carteira Digital de Trânsito})] से डिजिटल ड्राइविंग लाइसेंस की PDF डाउनलोड की है</string>
+	<string name="jumio_brazil_cnh_upload_button">CNH Digital PDF अपलोड करें</string>
 	<string name="jumio_button_cancel">रद्द करें</string>
 	<string name="jumio_button_retry">पुन: प्रयास करें</string>
 	<string name="jumio_di_back_to_document_selection">आपको दस्तावेज़ चयन पर वापस नेविगेट किया जाएगा।</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">सुनिश्चित करें कि आपके दस्तावेज़ पर सभी विवरण पढ़ने योग्य हैं</string>
 	<string name="jumio_error_instant_feedback_blurry_title">छवि सत्यापित होने के लिए बहुत धुंधली है</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">इमेजों को फिर से लेना आवश्यक हैं</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">सुनिश्चित करें कि आपने ऑफिशियल सरकारी एप्लिकेशन [({Carteira Digital de Trânsito})] से डिजिटल ड्राइविंग लाइसेंस की PDF डाउनलोड की है</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">कृपया रंगीन छवि के साथ पुन: प्रयास करें</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">छवि एक ब्लैक एंड व्हाइट फोटोकॉपी है</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">छवि एक रंगीन फोटोकॉपी प्रतीत होती है</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">एक सेल्फी लें</string>
 	<string name="jumio_identity_scan_tips_placing">अंडाकार फ्रेम में अपना चेहरा संरेखित करें और शटर बटन दबाएं</string>
 	<string name="jumio_identity_title">चेहरे का सत्यापन</string>
+	<string name="jumio_idtype_brazil_cnh">ब्राज़िल CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">देश खोजें</string>
 	<string name="jumio_idtype_countrysearch_title">जारी करने वाले देश का चयन करें</string>
 	<string name="jumio_idtype_format_option_other">अन्य फॉर्मेट</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">जारी करने वाले देश को चेक करें</string>
 	<string name="jumio_idtype_subtitle_id">दस्तावेज़ के प्रकार का चयन करें</string>
 	<string name="jumio_list_supported_document_title">समर्थित दस्तावेज</string>
+	<string name="jumio_liveness_prompt_keep_centered">बीच में रखें</string>
+	<string name="jumio_liveness_prompt_keep_still">हिले नहीं</string>
+	<string name="jumio_liveness_prompt_keep_upright">सीधा रखें</string>
+	<string name="jumio_liveness_prompt_move_away">पीछे हटें</string>
 	<string name="jumio_liveness_prompt_no_target">अपने चेहरे को फ्रेम में रखें</string>
-	<string name="jumio_liveness_prompt_success_another_shot">अब समझा! एक और शॉट लेते हैं</string>
-	<string name="jumio_liveness_prompt_too_close">बहुत पास</string>
+	<string name="jumio_liveness_prompt_success_another_scan">आइए एक और स्कैन करें</string>
+	<string name="jumio_liveness_prompt_tilt_down">नीचे झुकाएं</string>
+	<string name="jumio_liveness_prompt_tilt_left">बाईं ओर झुकाएं</string>
+	<string name="jumio_liveness_prompt_tilt_right">दाईं ओर झुकाएं</string>
+	<string name="jumio_liveness_prompt_tilt_up">ऊपर झुकाएं</string>
 	<string name="jumio_liveness_prompt_too_far">थोड़ा और पास आएं</string>
+	<string name="jumio_liveness_scanning_completed">स्कैनिंग पूरी हुई</string>
 	<string name="jumio_liveness_upfront_intro">यह वेरीफाई करने के लिए कि आप एक वास्तविक व्यक्ति हैं, हमें आपके चेहरे को स्कैन करने की आवश्यकता है।</string>
 	<string name="jumio_loading_title">लोड हो रहा है</string>
 	<string name="jumio_nfc_button_skip">छोड़ें</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">ऐप कैमरा फ्लैश का इस्तेमाल कर सकता है</string>
 	<string name="jumio_start_verification">वेरिफिकेशन शुरू करें</string>
 	<string name="jumio_start_verification_subtitle">यह प्रक्रिया आपकी पहचान वेरिफ़ाई करने और आपको पहचान की चोरी से बचाने के लिए डिज़ाइन की गई है</string>
+	<string name="jumio_try_again">पुन: प्रयास करें</string>
 	<string name="jumio_uploading_success">अपलोड सफल</string>
 	<string name="jumio_uploading_title">अपलोड किया जा रहा है</string>
 	-->

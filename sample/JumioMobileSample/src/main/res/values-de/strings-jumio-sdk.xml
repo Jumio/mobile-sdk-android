@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Bitte prüfen Sie, ob Sie online sind</string>
 	<string name="jumio_error_case_network_problems">Es ist ein Verbindungsproblem aufgetreten</string>
 	<string name="jumio_error_case_no_camera_connection">Kamerazugriff ist deaktiviert</string>
-	<string name="jumio_error_case_ocr_failed">Scannen derzeit nicht verfügbar, bitte kontaktieren Sie das Support-Team</string>
+	<string name="jumio_error_case_scanning_not_possible">Scannen derzeit nicht verfügbar, bitte kontaktieren Sie das Support-Team</string>
 	<string name="jumio_error_case_session_expired">Sitzung abgelaufen</string>
 	<string name="jumio_idtype_di">Digitale ID</string>
 	<string name="jumio_idtype_dl">Führerschein</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Foto aufnehmen</string>
 	<string name="jumio_accessibility_scan_switch_camera">Kamera wechseln</string>
 	<string name="jumio_analyzing_biometric">Biometrie-Daten werden analysiert</string>
+	<string name="jumio_brazil_cnh_subtitle">Um mit dem Hochladen fortzufahren, achten Sie darauf, dass Sie ein PDF des digitalen Führerscheins aus der offiziellen Regierungsanwendung [({Carteira Digital de Trânsito})] heruntergeladen haben.</string>
+	<string name="jumio_brazil_cnh_upload_button">Eine CNH Digital-PDF hochladen</string>
 	<string name="jumio_button_cancel">Beenden</string>
 	<string name="jumio_button_retry">Erneut versuchen</string>
 	<string name="jumio_di_back_to_document_selection">Sie kehren zur Dokumentauswahl zurück.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Stellen Sie sicher, dass alle Informationen auf Ihrem Dokument lesbar sind.</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Das Bild ist zu verschwommen, um überprüft zu werden</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Bilder müssen erneut aufgenommen werden</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Achten Sie darauf, dass Sie ein PDF des digitalen Führerscheins aus der offiziellen Regierungsanwendung [({Carteira Digital de Trânsito})] heruntergeladen haben.</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Versuchen Sie es bitte noch einmal mit einem Farbfoto</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Bei dem Bild handelt es sich um eine Schwarz-Weiß-Fotokopie</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Bei dem Bild scheint es sich um eine Farbfotokopie zu handeln</string>
@@ -76,7 +79,7 @@
 	<string name="jumio_error_instant_feedback_missing_front_tip_front_side_doc">Machen Sie ein Foto von der Vorderseite Ihres Dokuments</string>
 	<string name="jumio_error_instant_feedback_missing_front_title">Die Vorderseite Ihres Dokuments fehlt</string>
 	<string name="jumio_error_instant_feedback_missing_part_doc_title">Das Bild Ihres Dokuments zeigt nicht die für die Verifizierung erforderlichen Informationen an</string>
-	<string name="jumio_error_instant_feedback_no_doc_tip_gov_id">Verwenden Sie einen gültigen, amtlichen Ausweis.</string>
+	<string name="jumio_error_instant_feedback_no_doc_tip_gov_id">Verwenden Sie einen gültigen, amtlichen Ausweis</string>
 	<string name="jumio_error_instant_feedback_no_doc_tip_hand">Decken Sie den Ausweis nicht mit Ihrer Hand ab</string>
 	<string name="jumio_error_instant_feedback_no_doc_tip_whole_document">Stellen Sie sicher, dass Sie das gesamte Dokument erfassen</string>
 	<string name="jumio_error_instant_feedback_no_doc_title">Das Bild ist keine gültige Identifizierung</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Selfie aufnehmen</string>
 	<string name="jumio_identity_scan_tips_placing">Richten Sie Ihr Gesicht im ovalen Rahmen aus und drücken Sie dann auf den Auslöser</string>
 	<string name="jumio_identity_title">Gesichtserkennung</string>
+	<string name="jumio_idtype_brazil_cnh">Brasilien CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Land suchen</string>
 	<string name="jumio_idtype_countrysearch_title">Ausstellungsland auswählen</string>
 	<string name="jumio_idtype_format_option_other">Anderes Format</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Ausstellungsland prüfen</string>
 	<string name="jumio_idtype_subtitle_id">Dokumenttyp auswählen</string>
 	<string name="jumio_list_supported_document_title">Unterstützte Dokumente</string>
+	<string name="jumio_liveness_prompt_keep_centered">Mittig bleiben</string>
+	<string name="jumio_liveness_prompt_keep_still">Halten Sie still</string>
+	<string name="jumio_liveness_prompt_keep_upright">Gerade bleiben</string>
+	<string name="jumio_liveness_prompt_move_away">Etwas weiter weg</string>
 	<string name="jumio_liveness_prompt_no_target">Bewegen Sie Ihr Gesicht in den Rahmen</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Geschafft! Machen wir ein weiteres Foto</string>
-	<string name="jumio_liveness_prompt_too_close">Zu nahe</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Scannen wir noch einmal</string>
+	<string name="jumio_liveness_prompt_tilt_down">Nach unten neigen</string>
+	<string name="jumio_liveness_prompt_tilt_left">Nach links neigen</string>
+	<string name="jumio_liveness_prompt_tilt_right">Nach rechts neigen</string>
+	<string name="jumio_liveness_prompt_tilt_up">Nach oben neigen</string>
 	<string name="jumio_liveness_prompt_too_far">Näher kommen</string>
+	<string name="jumio_liveness_scanning_completed">Scannen abgeschlossen</string>
 	<string name="jumio_liveness_upfront_intro">Wir müssen Ihr Gesicht scannen, um zu verifizieren, dass Sie wirklich eine Person sind.</string>
 	<string name="jumio_loading_title">Lädt</string>
 	<string name="jumio_nfc_button_skip">Überspringen</string>
@@ -163,13 +175,14 @@
 	<string name="jumio_nfc_header_start">Reisepass positionieren</string>
 	<string name="jumio_processing_title">Ergebnis wird überprüft</string>
 	<string name="jumio_start_button">Starten</string>
-	<string name="jumio_start_instructions_01">Suchen Sie eine gut beleuchtete Oberfläche.</string>
+	<string name="jumio_start_instructions_01">Suchen Sie eine gut beleuchtete Oberfläche</string>
 	<string name="jumio_start_instructions_02">Machen Sie sich bereit für ein Selfie.</string>
 	<string name="jumio_start_instructions_03">Verwenden Sie ein gültiges Dokument.</string>
-	<string name="jumio_start_instructions_04">Verwenden Sie einen gültigen, amtlichen Ausweis.</string>
+	<string name="jumio_start_instructions_04">Verwenden Sie einen gültigen, amtlichen Ausweis</string>
 	<string name="jumio_start_instructions_07">Die App verwendet möglicherweise den Kamerablitz</string>
-	<string name="jumio_start_verification">Ausweisprüfung starten</string>
+	<string name="jumio_start_verification">Start der Verifizierung</string>
 	<string name="jumio_start_verification_subtitle">Dieser Prozess dient dazu, Ihre Identität zu bestätigen und Sie vor Identitätsdiebstahl zu schützen</string>
+	<string name="jumio_try_again">Erneut versuchen</string>
 	<string name="jumio_uploading_success">Upload erfolgreich</string>
 	<string name="jumio_uploading_title">Hochladen</string>
 	-->

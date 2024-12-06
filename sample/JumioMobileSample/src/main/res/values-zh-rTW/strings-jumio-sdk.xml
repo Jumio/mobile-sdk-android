@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">請檢查您是否處於線上狀態</string>
 	<string name="jumio_error_case_network_problems">我們遇到了網路通訊問題</string>
 	<string name="jumio_error_case_no_camera_connection">相機存取權限已停用</string>
-	<string name="jumio_error_case_ocr_failed">目前無法掃描，請聯絡支援團隊</string>
+	<string name="jumio_error_case_scanning_not_possible">目前無法掃描，請聯絡支援團隊</string>
 	<string name="jumio_error_case_session_expired">工作階段已過期</string>
 	<string name="jumio_idtype_di">數位 ID</string>
 	<string name="jumio_idtype_dl">駕駛執照</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">拍照</string>
 	<string name="jumio_accessibility_scan_switch_camera">切換相機</string>
 	<string name="jumio_analyzing_biometric">正在分析生物特徵資料</string>
+	<string name="jumio_brazil_cnh_subtitle">若要繼續上傳，請確保您已從官方政府應用程式 [({Carteira Digital de Trânsito})] 下載數位駕照 PDF</string>
+	<string name="jumio_brazil_cnh_upload_button">上傳 CNH Digital PDF</string>
 	<string name="jumio_button_cancel">取消</string>
 	<string name="jumio_button_retry">再試一次</string>
 	<string name="jumio_di_back_to_document_selection">您將導覽回文件選擇。</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">確保文件的所有詳細資料均可讀取</string>
 	<string name="jumio_error_instant_feedback_blurry_title">圖像過於模糊，無法進行驗證</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">必須重新拍攝圖像</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">確保您已從官方政府應用程式 [({Carteira Digital de Trânsito})] 下載數位駕照 PDF</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">請使用彩色圖片重試</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">圖片為黑白影印</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">圖片似乎是彩色影印件</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">自拍</string>
 	<string name="jumio_identity_scan_tips_placing">將您的臉部對準橢圓形框，然後按下快門按鈕</string>
 	<string name="jumio_identity_title">面部驗證</string>
+	<string name="jumio_idtype_brazil_cnh">巴西CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">搜尋國家/地區</string>
 	<string name="jumio_idtype_countrysearch_title">選擇簽發的國家/地區</string>
 	<string name="jumio_idtype_format_option_other">其他格式</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">檢查簽發的國家/地區</string>
 	<string name="jumio_idtype_subtitle_id">選擇文件類型</string>
 	<string name="jumio_list_supported_document_title">支援的文件</string>
+	<string name="jumio_liveness_prompt_keep_centered">保持居中</string>
+	<string name="jumio_liveness_prompt_keep_still">保持不動</string>
+	<string name="jumio_liveness_prompt_keep_upright">保持直立</string>
+	<string name="jumio_liveness_prompt_move_away">跑出框外了</string>
 	<string name="jumio_liveness_prompt_no_target">將您的面部置於框內</string>
-	<string name="jumio_liveness_prompt_success_another_shot">瞭解！讓我們再拍一張</string>
-	<string name="jumio_liveness_prompt_too_close">太近</string>
+	<string name="jumio_liveness_prompt_success_another_scan">請再拍一張</string>
+	<string name="jumio_liveness_prompt_tilt_down">向下低頭</string>
+	<string name="jumio_liveness_prompt_tilt_left">向左邊一點</string>
+	<string name="jumio_liveness_prompt_tilt_right">向右邊一點</string>
+	<string name="jumio_liveness_prompt_tilt_up">向上抬頭</string>
 	<string name="jumio_liveness_prompt_too_far">靠近一點</string>
+	<string name="jumio_liveness_scanning_completed">掃描完成</string>
 	<string name="jumio_liveness_upfront_intro">我們需要掃描您的臉部，以驗證您是真人。</string>
 	<string name="jumio_loading_title">載入中</string>
 	<string name="jumio_nfc_button_skip">跳躍</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">該應用程式可能需要使用相機閃光燈</string>
 	<string name="jumio_start_verification">開始驗證</string>
 	<string name="jumio_start_verification_subtitle">此程序旨在驗證您的身分並保護您免遭身分盜用</string>
+	<string name="jumio_try_again">請再試一次</string>
 	<string name="jumio_uploading_success">上傳成功</string>
 	<string name="jumio_uploading_title">上傳中</string>
 	-->

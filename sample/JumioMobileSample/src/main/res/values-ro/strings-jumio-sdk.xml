@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Vă rugăm să vă asigurați că sunteți online</string>
 	<string name="jumio_error_case_network_problems">Am întâmpinat o problemă la comunicare în rețea</string>
 	<string name="jumio_error_case_no_camera_connection">Accesul la cameră dezactivat</string>
-	<string name="jumio_error_case_ocr_failed">Procesul de scanare nu este disponibil momentan, vă rugăm să contactați echipa de asistență</string>
+	<string name="jumio_error_case_scanning_not_possible">Procesul de scanare nu este disponibil momentan, vă rugăm să contactați echipa de asistență</string>
 	<string name="jumio_error_case_session_expired">Sesiunea a expirat</string>
 	<string name="jumio_idtype_di">ID digital</string>
 	<string name="jumio_idtype_dl">Permis de conducere</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Faceți o fotografie</string>
 	<string name="jumio_accessibility_scan_switch_camera">Comutați camera</string>
 	<string name="jumio_analyzing_biometric">Sunt analizate datele biometrice</string>
+	<string name="jumio_brazil_cnh_subtitle">Pentru a continua cu încărcarea, asigurați-vă că ați descărcat un permis de conducere digital în format PDF din aplicația oficială a guvernului [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">Încărcați CNH Digital în format PDF</string>
 	<string name="jumio_button_cancel">Anulare</string>
 	<string name="jumio_button_retry">Încercați din nou</string>
 	<string name="jumio_di_back_to_document_selection">Veți naviga înapoi la selecția documentului.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Asigurați-vă că toate detaliile de pe documentul dvs. sunt lizibile</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Imaginea este prea încețoșată pentru a fi verificată</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">O nouă poză a imaginilor trebuie făcută</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Asigurați-vă că ați descărcat un permis de conducere digital în format PDF din aplicația oficială a guvernului [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Vă rugăm să încercați din nou cu o imagine color</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Imaginea este o copie alb-negru</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Imaginea pare să fie o copie color</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Faceți o fotografie a feței</string>
 	<string name="jumio_identity_scan_tips_placing">Încadrați-vă fața în forma ovală și apăsați pe butonul declanșatorului</string>
 	<string name="jumio_identity_title">Verificarea feței</string>
+	<string name="jumio_idtype_brazil_cnh">CNH Digital Brazil PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Căutați țara</string>
 	<string name="jumio_idtype_countrysearch_title">Selectați țara emitentă</string>
 	<string name="jumio_idtype_format_option_other">Alt format</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Verificați țara emitentă</string>
 	<string name="jumio_idtype_subtitle_id">Selectați tipul de document</string>
 	<string name="jumio_list_supported_document_title">Documente acceptate</string>
+	<string name="jumio_liveness_prompt_keep_centered">Mențineți pe centru</string>
+	<string name="jumio_liveness_prompt_keep_still">Nu vă mișcați</string>
+	<string name="jumio_liveness_prompt_keep_upright">Mențineți drept</string>
+	<string name="jumio_liveness_prompt_move_away">Îndepărtați-vă</string>
 	<string name="jumio_liveness_prompt_no_target">Încadrați-vă fața</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Perfect! Să mai facem o poză</string>
-	<string name="jumio_liveness_prompt_too_close">Prea aproape</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Haideți să mai scanăm o dată</string>
+	<string name="jumio_liveness_prompt_tilt_down">Înclinați în jos</string>
+	<string name="jumio_liveness_prompt_tilt_left">Înclinați la stânga</string>
+	<string name="jumio_liveness_prompt_tilt_right">Înclinați la dreapta</string>
+	<string name="jumio_liveness_prompt_tilt_up">Înclinați în sus</string>
 	<string name="jumio_liveness_prompt_too_far">Apropiați-vă</string>
+	<string name="jumio_liveness_scanning_completed">Scanare finalizată</string>
 	<string name="jumio_liveness_upfront_intro">Trebuie să vă scanăm fața pentru a verifica dacă sunteți o persoană reală.</string>
 	<string name="jumio_loading_title">Se încarcă</string>
 	<string name="jumio_nfc_button_skip">Ocolire</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">Aplicația poate utiliza blițul camerei</string>
 	<string name="jumio_start_verification">Începeți verificarea identității</string>
 	<string name="jumio_start_verification_subtitle">Acest proces de verificare are rolul de a vă confirma identitatea și a vă proteja de furtul de identitate</string>
+	<string name="jumio_try_again">Încercați din nou</string>
 	<string name="jumio_uploading_success">Încărcare reușită</string>
 	<string name="jumio_uploading_title">Încărcare</string>
 	-->

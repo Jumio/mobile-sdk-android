@@ -2,52 +2,52 @@
 
 # Integration Guide for Android SDK
 
-Jumio’s products allow businesses to establish the genuine identity of their users by verifying government-issued IDs in real-time. ID Verification, Identity Verification and other services are used by financial service organizations and other leading brands to create trust for safe onboarding, money transfers and user authentication.
+Jumio’s products allow businesses to establish the genuine identity of their users by verifying government-issued IDs in real-time. ID Verification, Selfie Verification and other services are used by financial service organizations and other leading brands to create trust for safe onboarding, money transfers and user authentication.
 
 ## Table of Contents
 
 - [Release Notes](#release-notes)
 - [Code Documentation](#code-documentation)
 - [Setup](#setup)
-  - [Dependencies](#dependencies)
-  	- [Autocapture](#autocapture)
-  	- [Certified Face Liveness](#certified-face-liveness)
-  	- [Barcode Scanning](#barcode-scanning)
-  	- [NFC Scanning](#nfc-scanning)
-  - [SDK Version Check](#sdk-version-check)
-  - [Root Detection](#root-detection)
-  - [Device Supported Check](#device-supported-check)
-  - [Privacy Notice](#privacy-notice)
-  - [Digital Identity (DID)](#digital-identity--did-)
-  - [Risk Signal: Device Risk](#risk-signal--device-risk)
+	- [Dependencies](#dependencies)
+		- [Autocapture](#autocapture)
+		- [Certified Face Liveness](#certified-face-liveness)
+		- [Barcode Scanning](#barcode-scanning)
+		- [NFC Scanning](#nfc-scanning)
+	- [SDK Version Check](#sdk-version-check)
+	- [Root Detection](#root-detection)
+	- [Device Supported Check](#device-supported-check)
+	- [Privacy Notice](#privacy-notice)
+	- [Digital Identity (DID)](#digital-identity--did-)
+	- [Risk Signal: Device Risk](#risk-signal--device-risk)
 - [ML Models](#ml-models)
-  - [Bundling models in the app](#bundling-models-in-the-app)
-  - [Preloading models](#preloading-models)
+	- [Bundling models in the app](#bundling-models-in-the-app)
+	- [Preloading models](#preloading-models)
 - [Initialization](#initialization)
-  - [Requesting a Token (via OAuth2)](#requesting-a-token--via-oauth2-)
-  - [Initializing the Jumio SDK](#initializing-the-jumio-sdk)
+	- [Requesting a Token (via OAuth2)](#requesting-a-token--via-oauth2-)
+	- [Initializing the Jumio SDK](#initializing-the-jumio-sdk)
 - [Configuration](#configuration)
-  - [Worfklow Selection](#worfklow-selection)
-  - [Transaction Identifiers](#transaction-identifiers)
-  - [Preselection](#preselection)
-  - [Miscellaneous](#miscellaneous)
+	- [Worfklow Selection](#worfklow-selection)
+	- [Transaction Identifiers](#transaction-identifiers)
+	- [Preselection](#preselection)
+	- [Miscellaneous](#miscellaneous)
 - [SDK Workflow](#sdk-workflow)
-  - [Retrieving Information](#retrieving-information)
+	- [Retrieving Information](#retrieving-information)
 - [Default UI](#default-ui)
 - [Custom UI](#custom-ui)
-  - [Controller Handling](#controller-handling)
-  - [Credential Handling](#credential-handling)
-  - [ScanPart Handling](#scanpart-handling)
-  - [Result and Error Handling](#result-and-error-handling)
-  - [Instant Feedback](#instant-feedback)
+	- [Controller Handling](#controller-handling)
+	- [Credential Handling](#credential-handling)
+	- [ScanPart Handling](#scanpart-handling)
+	- [Result and Error Handling](#result-and-error-handling)
+	- [Instant Feedback](#instant-feedback)
 - [Customization](#customization)
-  - [Customization Tool](#customization-tool)
-  - [Default UI customization](#default-ui-customization)
-  - [Custom UI customization](#custom-ui-customization)
+	- [Customization Tool](#customization-tool)
+	- [Default UI customization](#default-ui-customization)
+	- [Custom UI customization](#custom-ui-customization)
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.11.0**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.12.0**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -70,36 +70,36 @@ The [SDK Setup Tool](https://jumio.github.io/mobile-configuration-tool/out/) is 
 
 Below you can find a list of dependencies that can be added to your application to enable different functionality of the Jumio SDK. Some modules are mandatory, others are optional.
 
-If an optional module is **not linked**, some functionalities may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size is currently around **12.66 MB**.
+If an optional module is **not linked**, some functionalities may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size is currently around **13.63 MB**.
 
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.11.0"               
+	implementation "com.jumio.android:core:4.12.0"               
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.11.0"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.11.0"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.11.0"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:iproov:4.11.0"             // Face Liveness library
-	implementation "com.jumio.android:liveness:4.11.0"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.11.0"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.12.0"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.12.0"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.12.0"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:iproov:4.12.0"             // Face Liveness library
+	implementation "com.jumio.android:liveness:4.12.0"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.12.0"   // Digital Identity verification library
   	...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.11.0"
+	implementation "com.jumio.android:defaultui:4.12.0"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.11.0"         // CameraX library 
-	implementation "com.jumio.android:datadog:4.11.0"         // Analytics library
+	implementation "com.jumio.android:camerax:4.12.0"         // CameraX library 
+	implementation "com.jumio.android:datadog:4.12.0"         // Analytics library
   	...
 }
 ```
@@ -116,14 +116,14 @@ Please note: `com.jumio.android:camerax` will be linked transitively when `com.j
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 
 ```groovy
-implementation "com.jumio.android:iproov:4.11.0"
-implementation("com.iproov.sdk:iproov:9.1.1") {
+implementation "com.jumio.android:iproov:4.12.0"
+implementation("com.iproov.sdk:iproov:9.1.2") {
 	exclude group: 'org.json', module: 'json'
 }
 ```
 
 #### Barcode Scanning
-In order to benefit from barcode scanning functionality included in the `com.jumio.android:docfinder` dependency, please add `com.jumio.android:barcode-mlkit` to your `build-gradle` file. 
+In order to benefit from barcode scanning functionality included in the `com.jumio.android:docfinder` dependency, please add `com.jumio.android:barcode-mlkit` to your `build-gradle` file.
 
 This dependency includes `com.google.android.gms:play-services-mlkit-barcode-scanning` library - if your application includes **other Google ML-kit libraries**, it might be necessary to override meta-data specified in the application tag of the `play-services-mlkit-barcode-scanning` manifest by [merging multiple manifests](https://developer.android.com/studio/build/manage-manifests#merge-manifests):
 
@@ -135,7 +135,7 @@ This dependency includes `com.google.android.gms:play-services-mlkit-barcode-sca
 ```
 
 #### NFC Scanning
-In order to benefit from NFC scanning functionality included in the `com.jumio.android:docfinder` dependency, please add `com.jumio.android:nfc` to your `build-gradle` file. 
+In order to benefit from NFC scanning functionality included in the `com.jumio.android:docfinder` dependency, please add `com.jumio.android:nfc` to your `build-gradle` file.
 
 ### SDK Version Check
 
@@ -166,7 +166,7 @@ Other stores might require something similar - please check before submitting yo
 Please see the [Jumio Privacy Policy for Online Services](https://www.jumio.com/legal-information/privacy-notices/jumio-corp-privacy-policy-for-online-services/) for further information.
 
 ### Digital Identity (DID)
-In case Digital Identity verification has been enabled for your account you can add the `com.jumio.android:digital-identity` dependency to your application. This will enable you to make use of DID verification within the SDK.
+In case Digital Identity Verification has been enabled for your account you can add the `com.jumio.android:digital-identity` dependency to your application. This will enable you to make use of DID verification within the SDK.
 
 Over the course of DID verification the SDK will launch an according third party application representing your Digital Identity. Communication between both applications (your integrating application and the Digital Identity application) is done via a so-called "deep link". For more information on deep link handling on Android please check out their [official guide](https://developer.android.com/training/app-links).
 
@@ -331,7 +331,7 @@ Use the correct [workflow definition key](https://docs.jumio.com/production/Cont
 
 For more details, please refer to our [Workflow Description Guide](https://support.jumio.com/hc/en-us/articles/4408958923803-KYX-Workflows-User-Guide).
 
-ℹ️&nbsp;&nbsp;**Note:** Identity Verification requires portrait orientation in your app.
+ℹ️&nbsp;&nbsp;**Note:** Selfie Verification requires portrait orientation in your app.
 
 ### Transaction Identifiers
 
@@ -409,59 +409,62 @@ The following tables give information on the specification of all data parameter
 
 #### Class **_JumioIDResult_**
 
-| Parameter        | Type           | Max. length | Description                                                                                                                                                            |
-|:-----------------| :------------- | :---------- |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| issuingCountry   | String         | 3           | Country of issue as [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code                                                                |
-| idType           | String         |             | PASSPORT, DRIVER_LICENSE, IDENTITY_CARD or VISA as provided or selected                                                                                                |
-| idSubType        | String         |             | Sub type of the scanned ID                                                                                                                                             |
-| firstName        | String         | 100         | First name of the customer                                                                                                                                             |
-| lastName         | String         | 100         | Last name of the customer                                                                                                                                              |
-| dateOfBirth      | String         |             | Date of birth                                                                                                                                                          |
-| issuingDate      | String         |             | Date of issue                                                                                                                                                          |
-| expiryDate       | String         |             | Date of expiry                                                                                                                                                         |
-| documentNumber   | String         | 100         | Identification number of the document                                                                                                                                  |
-| personalNumber   | String         |             | Personal number of the document                                                                                                                                        |
-| gender           | String         |             | Gender M, F or X                                                                                                                                                       |
-| nationality      | String         |             | Nationality of the customer                                                                                                                                            |
-| placeOfBirth     | String         | 255         | Place of birth                                                                                                                                                         |
-| country          | String         |             | Country of residence                                                                                                                                                   |
-| address          | String         | 64          | Street name of residence                                                                                                                                               |
-| city             | String         | 64          | City of residence                                                                                                                                                      |
-| subdivision      | String         | 3           | Last three characters of [ISO 3166-2:US](https://en.wikipedia.org/wiki/ISO_3166-2:US) or [ISO 3166-2:CA](https://en.wikipedia.org/wiki/ISO_3166-2:CA) subdivision code |
-| postalCode       | String         | 15          | Postal code of residence                                                                                                                                               |
-| mrzLine1         | String         | 50          | MRZ line 1                                                                                                                                                             |
-| mrzLine2         | String         | 50          | MRZ line 2                                                                                                                                                             |
-| mrzLine3         | String         | 50          | MRZ line 3                                                                                                                                                             |
-| extractionMethod | JumioScanMode  |             | Extraction method used during scanning (MRZ, BARCODE, MANUAL, OCR_CARD, NFC)                                                                                           |
-| imageData        | JumioImageData |             | Wrapper class for accessing image data of all credential parts from an ID verification session. This feature has to be enabled by your account manager.                |
+| Parameter        | Type                         | Max. length | Description                                                                                                                                                            |
+|:-----------------|:-----------------------------| :---------- |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| issuingCountry   | String                       | 3           | Country of issue as [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code                                                                |
+| idType           | String                       |             | PASSPORT, DRIVER_LICENSE, IDENTITY_CARD or VISA as provided or selected                                                                                                |
+| idSubType        | String                       |             | Sub type of the scanned ID                                                                                                                                             |
+| firstName        | String                       | 100         | First name of the customer                                                                                                                                             |
+| lastName         | String                       | 100         | Last name of the customer                                                                                                                                              |
+| dateOfBirth      | String                       |             | Date of birth                                                                                                                                                          |
+| issuingDate      | String                       |             | Date of issue                                                                                                                                                          |
+| expiryDate       | String                       |             | Date of expiry                                                                                                                                                         |
+| documentNumber   | String                       | 100         | Identification number of the document                                                                                                                                  |
+| personalNumber   | String                       |             | Personal number of the document                                                                                                                                        |
+| gender           | String                       |             | Gender M, F or X                                                                                                                                                       |
+| nationality      | String                       |             | Nationality of the customer                                                                                                                                            |
+| placeOfBirth     | String                       | 255         | Place of birth                                                                                                                                                         |
+| country          | String                       |             | Country of residence                                                                                                                                                   |
+| address          | String                       | 64          | Street name of residence                                                                                                                                               |
+| city             | String                       | 64          | City of residence                                                                                                                                                      |
+| subdivision      | String                       | 3           | Last three characters of [ISO 3166-2:US](https://en.wikipedia.org/wiki/ISO_3166-2:US) or [ISO 3166-2:CA](https://en.wikipedia.org/wiki/ISO_3166-2:CA) subdivision code |
+| postalCode       | String                       | 15          | Postal code of residence                                                                                                                                               |
+| mrzLine1         | String                       | 50          | MRZ line 1                                                                                                                                                             |
+| mrzLine2         | String                       | 50          | MRZ line 2                                                                                                                                                             |
+| mrzLine3         | String                       | 50          | MRZ line 3                                                                                                                                                             |
+| curp             | String                       |             | The Clave Única de Registro de Población (CURP) identity code for Mexican documents.                                                                                   |
+| extractionMethod | JumioScanMode[jumioscanmode] |             | Extraction method used during scanning                                                                                                                                 |
+| imageData        | JumioImageData               |             | Wrapper class for accessing image data of all credential parts from an ID verification session. This feature has to be enabled by your account manager.                |
 
 #### Class **_JumioFaceResult_**
 
-| Parameter        | Type           | Max. length | Description                                                                                                                                             |
-| :--------------- | :------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| passed           | Boolean        |             |
-| extractionMethod | JumioScanMode  |             | Extraction method used during scanning (FACE_MANUAL, FACE_IPROOV)                                                                                       |
-| imageData        | JumioImageData |             | Wrapper class for accessing image data of all credential parts from an ID verification session. This feature has to be enabled by your account manager. |
+| Parameter        | Type                         | Max. length | Description                                                                                                                                             |
+| :--------------- |:-----------------------------| :---------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| passed           | Boolean                      |             |
+| extractionMethod | JumioScanMode[jumioscanmode] |             | Extraction method used during scanning (FACE_MANUAL, FACE_IPROOV, JUMIO_LIVENESS)                                                                       |
+| imageData        | JumioImageData               |             | Wrapper class for accessing image data of all credential parts from an ID verification session. This feature has to be enabled by your account manager. |
 
 #### Class **_JumioRejectReason_**
 
-List of all possible reject reasons returned if Instant Feedback is used:
+List of all possible **_reject reasons_** the SDK could return if Instant Feedback is used:
+⚠️&nbsp;&nbsp;**Note:** Please be aware that the list of reject reasons that get returned depends on server-side configuration for every individual merchant.
 
-| Code | Message              | Description                                        | Check enabled server-side (2022-05-25) |
-|:-----|:---------------------|:---------------------------------------------------|:--------------------------------------:|
-| 102  | BLACK_WHITE_COPY     | Document appears to be a black and white photocopy |                   x                    |
-| 103  | COLOR_PHOTOCOPY      | Document appears to be a colored photocopy         |                                        |
-| 104  | DIGITAL_COPY         | Document appears to be a digital copy              |                   x                    |
-| 200  | NOT_READABLE         | Document is not readable                           |                                        |
-| 201  | NO_DOC               | No document could be detected                      |                   x                    |
-| 206  | MISSING_BACK         | Backside of the document is missing                |                   x                    |
-| 214  | MISSING_FRONT        | Frontside of the document is missing               |                   x                    |
-| 401  | UNSUPPORTED_DOCUMENT | Document is not supported                          |                   x                    |
-| 2001 | BLURRY               | Document image is unusable because it is blurry    |                   x                    |
-| 2003 | MISSING_PART_DOC     | Part of the document is missing                    |                   x                    |
-| 2004 | HIDDEN_PART_DOC      | Part of the document is hidden                     |                                        |
-| 2005 | DAMAGED_DOCUMENT     | Document appears to be damaged                     |                                        |
-| 2006 | GLARE                | Document image is unusable because of glare        |                   x                    |
+| Code | Message              | Description                                        | 
+|:-----|:---------------------|:---------------------------------------------------|
+| 102  | BLACK_WHITE_COPY     | Document appears to be a black and white photocopy |
+| 103  | COLOR_PHOTOCOPY      | Document appears to be a colored photocopy         |
+| 104  | DIGITAL_COPY         | Document appears to be a digital copy              |
+| 200  | NOT_READABLE         | Document is not readable                           |
+| 201  | NO_DOC               | No document could be detected                      |
+| 206  | MISSING_BACK         | Backside of the document is missing                |
+| 214  | MISSING_FRONT        | Frontside of the document is missing               |
+| 401  | UNSUPPORTED_DOCUMENT | Document is not supported                          |
+| 501  | INVALID_CERTIFICATE  | Document certificate could not be validated        |
+| 2001 | BLURRY               | Document image is unusable because it is blurry    |
+| 2003 | MISSING_PART_DOC     | Part of the document is missing                    |
+| 2004 | HIDDEN_PART_DOC      | Part of the document is hidden                     |
+| 2005 | DAMAGED_DOCUMENT     | Document appears to be damaged                     |
+| 2006 | GLARE                | Document image is unusable because of glare        |
 
 #### Error Codes
 
@@ -503,7 +506,7 @@ The following sequence diagram outlines components, callbacks and methods for a 
 
 ![Custom UI Happy Path Diagram](images/happy_paths/custom_ui_happy_path_diagram.png)
 
-⚠️&nbsp;&nbsp;**Note:** The new 3D face liveness capturing technology is not optimized for tablets. When using Identity Verification, the face scanner will fallback to a simple face capturing functionality instead. Portrait orientation support is required in your app.
+⚠️&nbsp;&nbsp;**Note:** The new 3D face liveness capturing technology is not optimized for tablets. When using Selfie Verification, the face scanner will fallback to a simple face capturing functionality instead. Portrait orientation support is required in your app.
 
 CustomUI enables you to use a custom scan view with a plain scanning user interface. Initialize the Jumio SDK and set [`token`][token] and [`datacenter`][datacenter].
 
@@ -549,7 +552,7 @@ The user can open and continue to the provided consent link if they choose to do
 
 Obtain an instance of [`JumioCredential`][jumiocredential] which will contain all necessary information about the verification process by calling `start` on the `JumioController`.
 
-For ID verification you will receive a [`JumioIDCredential`][jumioidcredential], for Identity Verification a [`JumioFaceCredential`][jumiofacecredential], and so on. Call [`isConfigured`][isconfigured] to check if the credential is already pre-configured. If so, it can be started right away.
+For ID verification you will receive a [`JumioIDCredential`][jumioidcredential], for Selfie Verification a [`JumioFaceCredential`][jumiofacecredential], and so on. Call [`isConfigured`][isconfigured] to check if the credential is already pre-configured. If so, it can be started right away.
 
 ```kotlin
 val currentCredentialInfo = ...
@@ -562,7 +565,7 @@ if (currentCredential?.isConfigured == true) {
 
 If the credential is not configured yet, it needs some more configuration before scan parts can be initialized. Details on how to configure each credential and retrieve the first [scan part][jumioscanpart] can be found below.
 
-- [`JumioCredentialCategory`][jumiocredentialcategory] values = `ID`, `FACE`, `DOCUMENT`, `DATA`
+- [`JumioCredentialCategory`][jumiocredentialcategory] values: `ID`, `FACE`, `DOCUMENT`, `DATA`
 
 #### Jumio ID Credential
 
@@ -601,9 +604,9 @@ idCredential.setConfiguration(country, document)
 
 - [`JumioPhysicalDocument`][jumiophysicaldocument] represents a single `JumioDocumentType` and `JumioDocumentVariant` combination
 
-  - [`JumioDocumentType`][jumiodocumenttype] values: `PASSPORT`, `VISA`, `DRIVING_LICENSE`, `ID_CARD`
+	- [`JumioDocumentType`][jumiodocumenttype] values: `PASSPORT`, `VISA`, `DRIVING_LICENSE`, `ID_CARD`
 
-  - [`JumioDocumentVariant`][jumiodocumentvariant] values: `PAPER`, `PLASTIC`
+	- [`JumioDocumentVariant`][jumiodocumentvariant] values: `PAPER`, `PLASTIC`
 
 - [`JumioDigitalDocument`][jumiodigitaldocument] represents a digital document ("Digital Identity")
 
@@ -616,7 +619,7 @@ idCredential.initScanPart(credentialPart, yourScanPartInterface)
 
 #### Jumio Face Credential
 
-In case of [`JumioFaceCredential`][jumiofacecredential], depending of the configuration the SDK uses the Certified Liveness technology from iProov to determine liveness or the manual face detection. The mode can be detected by checking the [`JumioScanMode`][jumioscanmode] of the [`JumioScanPart`][jumioscanpart]. Make sure to also implement `FACE_MANUAL` as a fallback, in case `FACE_IPROOV` is not available.
+In case of [`JumioFaceCredential`][jumiofacecredential], Jumio uses Certified Liveness technology to determine liveness. The mode can be detected by checking the [`JumioScanMode`][jumioscanmode] of the [`JumioScanPart`][jumioscanpart]. Make sure to also implement `FACE_MANUAL` as a fallback, in case `JUMIO_LIVENESS` or `FACE_IPROOV` is not available.
 
 Retrieve the credential part of the credential to start the scanning process by calling:
 
@@ -745,7 +748,18 @@ Start the scanning process by initializing the [`JumioScanPart`][jumioscanpart].
 
 `currentScanPart = currentCredential?.initScanPart(credentialPart, yourJumioScanPartInterface)`
 
-- [`JumioCredentialPart`][jumiocredentialpart] values: `FRONT`, `BACK`, `MULTIPART`, `FACE`, `DOCUMENT`, `NFC`
+- [`JumioCredentialPart`][jumiocredentialpart] values: `FRONT`, `BACK`, `MULTIPART`, `FACE`, `DOCUMENT`, `NFC`, `DIGITAL`
+
+Each [`jumioScanPart`][jumioScanPart] has an associated `scanMode`. Depending on the scan mode, you need to provide a different user guidance. The following scan modes are available for the different `JumioCredentialPart`s:
+
+* [`JumioScanMode`][jumioScanMode] values:
+	* `FRONT`, `BACK`, `MULTIPART`: `MANUAL`, `BARCODE`, `DOCFINDER`
+	* `DIGITAL`: `WEB`, `FILE`
+	* `NFC`: `NFC`
+	* `FACE`: `FACE_MANUAL`, `FACE_IPROOV`, `JUMIO_LIVENESS`, `JUMIO_PREMIUM`
+	* `DOCUMENT`: `MANUAL`, `FILE`
+
+During the scanning process, use the `onUpdate` function of the `JumioScanPartInterface` to check on the scanning progress and update your user guidance accordingly.
 
 `MULTIPART` handles the scanning of multiple sides in one seamless capture experience. When a [`MULTIPART`][jumiomultipart] scan part is started, an additional [`NEXT_PART`][nextpart] step is sent after [`IMAGE_TAKEN`][imagetaken]. This signals that another side of the document should be scanned now. The step returns the [`JumioCredentialPart`][jumiocredentialpart] that should be scanned next. We suggest to actively guide the user to move to the next part, e.g. by showing an animation and by disabling the extraction during the animation. Please also check the new [`NEXT_PART`][nextpart] scan step for this [`JumioCredentialPart`][jumiocredentialpart]
 
@@ -766,11 +780,11 @@ override fun onFinished(result: JumioResult) {
 }
 ```
 
-#### Scan steps
+#### Scan Steps
 
 During the scanning process [`onScanStep()`][onscanstep] will be called as soon as the [`JumioScanPart`][jumioscanpart] needs additional input to continue the scanning journey. The provided [`JumioScanStep`][jumioscanstep] indicates what needs to be done next.
 
-[`JumioScanStep`][jumioscanstep] covers lifecycle events which require action from the customer to continue the process.
+[`JumioScanStep`][jumioscanstep]s cover lifecycle events which require action from the customer to continue the process.
 
 [`JumioScanStep`][jumioscanstep] values: `PREPARE`, `STARTED`, `ATTACH_ACTIVITY`, `ATTACH_FILE`, `SCAN_VIEW`, `NEXT_PART`, `IMAGE_TAKEN`, `PROCESSING`, `CONFIRMATION_VIEW`, `REJECT_VIEW`, `RETRY`, `CAN_FINISH`, `ADDON_SCAN_PART`, `DIGITAL_IDENTITY_VIEW`, `THIRD_PARTY_VERIFICATION`
 
@@ -790,6 +804,24 @@ JumioScanStep.STARTED -> {
 }
 ```
 
+[`DIGITAL_IDENTITY_VIEW`][digitalidentityview] points out that the current [`JumioScanPart`][jumioscanpart] needs to be attached to a [`JumioDigitalIdentityView`][jumiodiview]. The [`JumioDigitalIdentityView`][jumiodiview] is a custom view that can be placed in your layout.
+
+```kotlin
+JumioScanStep.DIGITAL_IDENTITY_VIEW -> {
+	currentScanPart?.let {
+		jumioDigitalIdentityView.attach(it)
+	}
+}
+```
+
+[`THIRD_PARTY_VERIFICATION`][thirdpartyverification] is triggered in case the current [`JumioScanPart`][jumioscanpart] will switch to a third party's application to continue the verification process (e.g. for Digital Identity verification). As this might take some time, showing a loading indicator is recommended.
+
+```kotlin
+JumioScanStep.THIRD_PARTY_VERIFICATION -> {
+	showLoadingView()
+}
+```
+
 [`ATTACH_ACTIVITY`][attachactivity] indicates that an Activity Context is needed. Please see [`JumioActivityAttacher`][jumioactivityattacher] for more information.
 
 ```kotlin
@@ -800,7 +832,8 @@ JumioScanStep.ATTACH_ACTIVITY -> {
 }
 ```
 
-[`ATTACH_FILE`][attachfile] is called when a File through the [`JumioFileAttacher`][jumiofileattacher] can be added to the [`JumioScanPart`][jumioscanpart].
+[`ATTACH_FILE`][attachfile] is sent when the user needs to select and upload a file. For this, you should create a [`JumioFileAttacher`][jumiofileattacher], add it to your [`JumioScanPart`][jumioscanpart] and provide the document.
+This  step is only sent, when the scan method is `FILE`.
 
 ```kotlin
 JumioScanStep.ATTACH_FILE -> {
@@ -814,7 +847,9 @@ JumioScanStep.ATTACH_FILE -> {
 }
 ```
 
-[`SCAN_VIEW`][scanview] points out that a [`JumioScanView`][jumioscanview] needs to be attached to the [`JumioScanPart`][jumioscanpart]. The [`JumioScanView`][jumioscanview] is a custom view that can be placed in your layout. During runtime it just needs to be attached to the [`JumioScanPart`][jumioscanpart]. Make sure to re-attach the scanview from scan steps [`STARTED`][started] or [`NEXT_PART`][nextpart] in case the activity gets recreated and the scanview was attached before.
+[`SCAN_VIEW`][scanview] is sent, when the scan view should be displayed. On this view, the user will capture a photo or a sequence of photos of a document or of a face with the camera.
+[`JumioScanView`][jumioscanview] needs to be attached to the [`JumioScanPart`][jumioscanpart]. The [`JumioScanView`][jumioscanview] is a custom view that can be placed in your layout. 
+During runtime it just needs to be attached to the [`JumioScanPart`][jumioscanpart]. Make sure to re-attach the scanview from scan steps [`STARTED`][started] or [`NEXT_PART`][nextpart] in case the activity gets recreated and the scanview was attached before.
 
 ```kotlin
 JumioScanStep.SCAN_VIEW -> {
@@ -832,22 +867,22 @@ If images for confirmation or rejection need to be displayed then [`JumioScanSte
 
 ```kotlin
 JumioScanStep.CONFIRMATION_VIEW -> {
-    val confirmationHandler = ConfirmationHandler()
+	val confirmationHandler = ConfirmationHandler()
 	confirmationHandler.attach(scanPart)
 	confirmationHandler.parts.forEach {
-        val confirmationView = JumioConfirmationView(context)
-        confirmationHandler.renderPart(it, confirmationView)
-        ...
-    }
+		val confirmationView = JumioConfirmationView(context)
+		confirmationHandler.renderPart(it, confirmationView)
+		...
+	}
 }
 JumioScanStep.REJECT_VIEW -> {
-  val rejectHandler = RejectHandler()
-  rejectHandler.attach(scanPart)
-  rejectHandler.parts.forEach {
-      val rejectView = JumioRejectView(context)
-      rejectHandler.renderPart(it, rejectView)
-      ...
-  }
+	val rejectHandler = RejectHandler()
+	rejectHandler.attach(scanPart)
+	rejectHandler.parts.forEach {
+		val rejectView = JumioRejectView(context)
+		rejectHandler.renderPart(it, rejectView)
+		...
+	}
 }
 ```
 
@@ -869,38 +904,40 @@ JumioScanStep.RETRY -> {
 
 For possible retry codes please checkout [`JumioRetryReasonGeneric`][jumioretrygeneric], [`JumioRetryReasonDocumentVerification`][jumioretrydv], [`JumioRetryReasonNfc`][jumioretrynfc], [`JumioRetryReasonIproov`][jumioretryiproov] and [`JumioRetryReasonDigitalIdentity`][jumioretrydi].
 
-[`DIGITAL_IDENTITY_VIEW`][digitalidentityview] points out that the current [`JumioScanPart`][jumioscanpart] needs to be attached to a [`JumioDigitalIdentityView`][jumiodiview]. The [`JumioDigitalIdentityView`][jumiodiview] is a custom view that can be placed in your layout.
-
-```kotlin
-JumioScanStep.DIGITAL_IDENTITY_VIEW -> {
-	currentScanPart?.let {
-		jumioDigitalIdentityView.attach(it)
-	}
-}
-```
-
-[`THIRD_PARTY_VERIFICATION`][thirdpartyverification] is triggered in case the current [`JumioScanPart`][jumioscanpart] will switch to a third party's application to continue the verification process (e.g. for Digital Identity verification). As this might take some time, showing a loading indicator is recommended.
-
-```kotlin
-JumioScanStep.THIRD_PARTY_VERIFICATION -> {
-	showLoadingView()
-}
-```
-
-As soon as the scan part has been confirmed and all processing has been completed [`CAN_FINISH`][canfinish] is triggered. [`scanPart.finish()`][finishscanpart] can now be called. During the finish routine the SDK checks if there is an add-on functionality for this part available, e.g. possible NFC scanning after an MRZ scan part. In this case [`ADDON_SCAN_PART`][addonscanpart] will be called
+As soon as the scan part has been confirmed and all processing has been completed [`CAN_FINISH`][canfinish] is triggered. [`scanPart.finish()`][finishscanpart] can now be called. During the finish routine the SDK checks if there is an add-on functionality for this part available, e.g. possible NFC scanning after an MRZ scan part. In this case [`ADDON_SCAN_PART`][addonscanpart] will be called.
 
 When an add-on to the current scan part is available, [`JumioScanStep.ADDON_SCAN_PART`][addonscanpart] is sent. The add-on scan part can be retrieved using the method `addonScanPart = currentCredential?.getAddonPart()`.
 
+To see if the finished credential part was the last one of the credential, check `currentCredentialPart == currentCredential?.credentialPart?.last()`. Check if the credential is complete by calling [`currentCredential?.isComplete`][isComplete] and finish the current credential by calling [`currentCredential?.finish()`][credentialFinish].
+
+Continue that procedure until all necessary credentials (e.g. `ID`, `FACE`, `DOCUMENT`, `DATA`) are finished. Check if the last credential is finished, then call [`controller?.finish()`][controllerFinish] to end the user journey.
+
 #### Scan Updates
 
-Apart from the scan steps, there are also scan updates distributed via the `scanPart` method [`onUpdate()`][onupdate]. They cover additional scan information that is relevant and might need to be displayed during scanning. The parameters are [`JumioScanUpdate`][jumioscanupdate] and an optional value `data` of type `Any` that can contain additional information for each scan update as described.
+[`JumioScanUpdates`][jumioscanupdate]s are distributed via the `JumioScanPartInterface` method [`onUpdate()`][onupdate] and cover scan information that is relevant and might need to be displayed during scanning process.     
+An optional value `data` of type `Any` can contain additional information for each scan update as described.
 
-[`JumioScanUpdate`][jumioscanupdate] values: `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`, `FLASH`, `TILT`
+[`JumioScanUpdate`][jumioscanupdate] values: `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`, `NEXT_POSITION`, `FLASH`, `TILT`
 
-For `FALLBACK`, there are 2 possible [`JumioFallbackReason`][fallbackreason]'s sent in the optional `data` value to indicate the reason of the fallback.
-The scan update `FLASH` indicates that the camera's flash should be turned `ON` or `OFF`. The according [`JumioFlashState`][jumioflashstate] is transmitted via the `data` parameter.
-In case the scan update `TILT` is received, this means that the document in front of the camera needs to be tilted. The current angle as well as the target angle are transmitted as [`JumioTiltState`][jumiotiltstate] via the `data` parameter.
-A negative current angle indicates that the document needs to be tilted in the other direction!
+In case of `FALLBACK`, the `scanMode` has changed and you should adapt the user interface to reflect the new scan mode. Check the `JumioScanView`[jumioscanview] method `isShutterEnabled`[isshutterenabled] and see if it returns `true`.
+If this is the case, a manual shutter button needs to be displayed for the end user to capture an image.
+
+All possible [`JumioFallbackReason`][fallbackreason] values are sent in the optional `data` value to indicate the reason of the fallback.
+
+`NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, and `NFC_EXTRACTION_FINISHED` make it possible to track the progress of an NFC scan. `NFC_EXTRACTION_PROGRESS` additionally delivers an integer in the data parameter in the range of 0-100 to signal the progress in the current data group.
+
+`NEXT_POSITION` signals that the user needs to take a second image, e.g., needs to move the face in a liveness scan.
+
+For the scanMode `DOCFINDER`, the following scan updates are sent: `CENTER_ID`, `TOO_CLOSE`, `MOVE_CLOSER`, `HOLD_STRAIGHT`, `TILT`, `FLASH`
+
+FOR `ID` scans, a Long representing the time for which the user needs to hold still is sent in the data parameter of `JumioScanPartInterface.onUpdate`, when the extraction state `HOLD_STILL` is returned.
+
+`TILT` signals that during an `ID` scan, the document in front of the camera needs to be tilted. The current angle as well as the target angle are transmitted as [`JumioTiltState`][jumiotiltstate] via the `data` parameter.
+A negative current angle indicates that the document needs to be tilted in the other direction. When a tilt update is sent, advise the user to tilt the identity document by e.g. showing an animation or an overlay.
+
+`FLASH` signals the enabling or disabling of the camera flash.
+
+We send the following extraction states for the scan modes `JUMIO_LIVENESS` and `JUMIO_PREMIUM`: `CENTER_FACE`, `FACE_TOO_CLOSE`, `MOVE_FACE_CLOSER`, `MOVE_FACE_INTO_FRAME`, `LEVEL_EYES_AND_DEVICE`, `HOLD_STILL`, `TILT_FACE_UP`, `TILT_FACE_DOWN`, `TILT_FACE_LEFT`, `TILT_FACE_RIGHT`
 
 ```kotlin
 override fun onUpdate(jumioScanUpdate: JumioScanUpdate, data: Any?) {
@@ -908,7 +945,7 @@ override fun onUpdate(jumioScanUpdate: JumioScanUpdate, data: Any?) {
 		JumioScanUpdate.FALLBACK -> handleFallback(data as JumioFallbackReason)
 		JumioScanUpdate.FLASH -> handleFlash(data as JumioFlashState)
 		JumioScanUpdate.TILT -> handleTilt(data as JumioTiltState)
-		... // handle other scan updates
+			... // handle other scan updates
 	}
 }
 ```
@@ -935,7 +972,7 @@ override fun onError(error: JumioError) {
 		// retry scan attempt
 	} else {
 		// handle error case
-    }
+	}
 	log(String.format("onError: %s, %s, %s", error.code, error.message, if (error.isRetryable) "true" else "false"))
 }
 ```
@@ -966,8 +1003,8 @@ Apply your custom theme that you defined before by replacing `Theme.Jumio` in th
 
 ```xml
 <activity
-  android:name="com.jumio.defaultui.JumioAcitivty"
-  android:theme="@style/AppThemeCustomJumio">
+	android:name="com.jumio.defaultui.JumioAcitivty"
+	android:theme="@style/AppThemeCustomJumio">
 	...
 </activity>
 ```
@@ -1024,6 +1061,7 @@ In any case, your use of this Software is subject to the terms and conditions th
 [finishscanpart]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/finish.html
 [finishcredential]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-credential/finish.html
 [finishcontroller]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.controller/-jumio-controller/finish.html
+[isshutterenabled]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-scan-view/is-shutter-enabled.html
 [isretryable]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.error/-jumio-error/is-retryable.html
 [confirm]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-confirmation-view/confirm.html
 [retakeconfirmation]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-confirmation-view/retake.html

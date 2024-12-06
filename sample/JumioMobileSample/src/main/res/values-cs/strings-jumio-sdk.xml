@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Zkontrolujte, jestli jste online</string>
 	<string name="jumio_error_case_network_problems">Při síťové komunikaci došlo k problému.</string>
 	<string name="jumio_error_case_no_camera_connection">Přístup ke kameře zamítnut</string>
-	<string name="jumio_error_case_ocr_failed">Skenování není v tuto chvíli k dispozici, obraťte se na tým podpory</string>
+	<string name="jumio_error_case_scanning_not_possible">Skenování není v tuto chvíli k dispozici, obraťte se na tým podpory</string>
 	<string name="jumio_error_case_session_expired">Relace vypršela</string>
 	<string name="jumio_idtype_di">Digitální ID</string>
 	<string name="jumio_idtype_dl">Řidičský průkaz</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Pořídit fotografii</string>
 	<string name="jumio_accessibility_scan_switch_camera">Přepnout fotoaparát</string>
 	<string name="jumio_analyzing_biometric">Analyzují se biometrické údaje…</string>
+	<string name="jumio_brazil_cnh_subtitle">Pokud chcete pokračovat v nahrávání, ujistěte se, že jste si stáhli digitální řidičský průkaz ve formátu PDF z oficiální vládní aplikace [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">Nahrát digitální soubor PDF společnosti CNH</string>
 	<string name="jumio_button_cancel">Zrušit</string>
 	<string name="jumio_button_retry">Zkusit znovu</string>
 	<string name="jumio_di_back_to_document_selection">Budete přesměrováni zpět k výběru dokumentu.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Zkontrolujte, zda jsou veškeré detaily ve vašem dokumentu čitelné</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Obrázek je příliš rozmazaný, než aby mohl být ověřen</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Snímky musí být pořízeny znovu</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Ujistěte se, že jste si stáhli digitální řidičský průkaz ve formátu PDF z oficiální vládní aplikace [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Zkuste to znovu s barevným obrázkem</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Obrázek je černobílá fotokopie</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Obrázek vypadá jako barevná fotokopie</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Pořiďte selfie</string>
 	<string name="jumio_identity_scan_tips_placing">Zarovnejte svou tvář s oválným rámečkem a stiskněte tlačítko závěrky</string>
 	<string name="jumio_identity_title">Ověření pomocí obličeje</string>
+	<string name="jumio_idtype_brazil_cnh">Brazilské CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Hledat stát</string>
 	<string name="jumio_idtype_countrysearch_title">Vyberte zemi vydání</string>
 	<string name="jumio_idtype_format_option_other">Jiný formát</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Zkontrolujte zemi vydání</string>
 	<string name="jumio_idtype_subtitle_id">Vyberte typ dokumentu</string>
 	<string name="jumio_list_supported_document_title">Podporované dokumenty</string>
+	<string name="jumio_liveness_prompt_keep_centered">Držte se uprostřed</string>
+	<string name="jumio_liveness_prompt_keep_still">Zůstaňte v klidu</string>
+	<string name="jumio_liveness_prompt_keep_upright">Držte vzpřímeně</string>
+	<string name="jumio_liveness_prompt_move_away">Vzdalte se</string>
 	<string name="jumio_liveness_prompt_no_target">Umístěte obličej do rámečku</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Mám to! Proveďme nyní další pokus</string>
-	<string name="jumio_liveness_prompt_too_close">Příliš blízko</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Pojďme udělat další fotku</string>
+	<string name="jumio_liveness_prompt_tilt_down">Nakloňte dolů</string>
+	<string name="jumio_liveness_prompt_tilt_left">Nakloňte doleva</string>
+	<string name="jumio_liveness_prompt_tilt_right">Nakloňte doprava</string>
+	<string name="jumio_liveness_prompt_tilt_up">Nakloňte nahoru</string>
 	<string name="jumio_liveness_prompt_too_far">Pojďte blíž</string>
+	<string name="jumio_liveness_scanning_completed">Skenování dokončeno</string>
 	<string name="jumio_liveness_upfront_intro">Musíme pořídit sken vašeho obličeje, abychom si mohli ověřit, že jste skutečná osoba.</string>
 	<string name="jumio_loading_title">Načítá se…</string>
 	<string name="jumio_nfc_button_skip">Přeskočit</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">Aplikace může používat blesk fotoaparátu</string>
 	<string name="jumio_start_verification">Zahájit ověřování</string>
 	<string name="jumio_start_verification_subtitle">Tento proces je navržen tak, aby bylo možné ověřit vaši totožnost a ochránit vás před krádeží identity</string>
+	<string name="jumio_try_again">Zkuste to znovu</string>
 	<string name="jumio_uploading_success">Nahrání proběhlo úspěšně.</string>
 	<string name="jumio_uploading_title">Nahrávání</string>
 	-->

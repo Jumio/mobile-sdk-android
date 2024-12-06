@@ -23,6 +23,7 @@
 - [Overview of Scanning Methods](#overview-of-scanning-methods)
 - [Glossary of Commonly Used Abbreviations](#glossary)
 - [Google Play Store Prominent Disclosure](#google-play-store-prominent-disclosure)
+- [Packaging Options](#packaging-options)
 - [Jumio Support](#jumio-support)
 
 ## User Consent
@@ -74,7 +75,7 @@ In these cases the SDK will return a specific error code: __A10900__ If this err
 
 ## Reducing the Size of Your App
 The Jumio SDK contains a wide range of different scanning methods. The SDK is able to capture identity documents and extract information on the device using enhanced machine learning and computer vision technologies.
-The current download size of the [sample application](../sample/JumioMobileSample/) containing all products is around **12.98 MB** as mentioned in the [ID Verification guide](integration_guide.md).
+The current download size of the [sample application](../sample/JumioMobileSample/) containing all products is around **13.63 MB** as mentioned in the [ID Verification guide](integration_guide.md).
 If you want to reduce the size of the SDK within your application, there are several ways to achieve this:
 
 ### Strip Unused Modules
@@ -84,17 +85,17 @@ The following table shows a range of different product configurations with the s
 
 | Product Configuration                        |   Size   |                                           Modules                                                     |
 | :------------------------------------------- | :------: | :---------------------------------------------------------------------------------------------------: |
-| Base                                         | 1.27 MB  |                                             core                                                      |
-| Base + iProov                                | 6.28 MB  |                                         core, iproov                                                  |
-| Base + Autocapture                           | 2.82 MB  |                                       core, docfinder                                                 |
-| Base + Autocapture, Barcode-Vision           | 3.12 MB  |                               core, docfinder, barcode-mlkit                                          |
-| Base + Autocapture, Barcode-Vision, iProov   | 6.79 MB  |                               core, docfinder, barcode, iproov                                        |
-| Base + Autocapture, Barcode-Vision, Liveness | 5.15 MB  |                              core, docfinder, barcode, liveness                                       |
-| Base + Autocapture, Barcode-Vision, NFC      | 6.24 MB  |                                core, docfinder, barcode, nfc                                          |
-| All (Custom UI only)                         | 9.95 MB  |      core, docfinder, barcode-mlkit, iproov, nfc, digital-identity, camerax, liveness                 |
-| Base + Autocapture, Default UI               | 3.43 MB  |                                 core, docfinder, defaultui                                            |
-| Base + Autocapture, Default UI, Datadog      | 4.11 MB  |                             core, docfinder, defaultui, datadog                                       |
-| All (with Default UI)                        | 11.03 MB | core, docfinder, barcode-mlkit, iproov, nfc, digital-identtity, camerax, defaultui, datadog, liveness |
+| Base                                         |  1.13 MB |                                             core                                                      |
+| Base + iProov                                |  6.63 MB |                                         core, iproov                                                  |
+| Base + Autocapture                           |  2.75 MB |                                       core, docfinder                                                 |
+| Base + Autocapture, Barcode-Vision           |  3.05 MB |                               core, docfinder, barcode-mlkit                                          |
+| Base + Autocapture, Barcode-Vision, iProov   |  7.14 MB |                               core, docfinder, barcode, iproov                                        |
+| Base + Autocapture, Barcode-Vision, Liveness |  5.49 MB |                              core, docfinder, barcode, liveness                                       |
+| Base + Autocapture, Barcode-Vision, NFC      |  6.24 MB |                                core, docfinder, barcode, nfc                                          |
+| All (Custom UI only)                         | 10.37 MB |      core, docfinder, barcode-mlkit, iproov, nfc, digital-identity, camerax, liveness                 |
+| Base + Autocapture, Default UI               |  3.92 MB |                                 core, docfinder, defaultui                                            |
+| Base + Autocapture, Default UI, Datadog      |  4.60 MB |                             core, docfinder, defaultui, datadog                                       |
+| All (with Default UI)                        | 12.00 MB | core, docfinder, barcode-mlkit, iproov, nfc, digital-identtity, camerax, defaultui, datadog, liveness |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -227,7 +228,7 @@ Jumio SDK uses [Java 8 language.](https://developer.android.com/studio/write/jav
 ```
 android {
 ...
-  compileOptions {
+    compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -285,6 +286,32 @@ A [quick guide to commonly used abbreviations](integration_glossary.md) througho
 
 ## Google Play Store Prominent Disclosure
 Some parts of the SDK might require prominent disclosure - please see the [Privacy Notice](integration_guide.md#privacy-notice) section in the Integration Guide for further details
+
+## Packaging Options
+Multiple third party android libraries include the same meta files which will result in duplicates files during the build.
+To get rid of them the following packagingOptions can be added to the build.gradle file:
+
+```
+android {
+...
+    packagingOptions {
+        resources.excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
+        resources.excludes.add("META-INF/kotlin-project-structure-metadata.json")
+        resources.excludes.add("META-INF/kotlinx_coroutines_core.version")
+        resources.excludes.add("META-INF/LICENSE.md")
+        resources.excludes.add("META-INF/LICENSE-notice.md")
+        resources.excludes.add("commonMain/default/manifest")
+        resources.excludes.add("commonMain/default/linkdata/module")
+        resources.excludes.add("commonMain/default/linkdata/**/*.knm")
+        resources.excludes.add("nativeMain/default/manifest")
+        resources.excludes.add("nativeMain/default/linkdata/module")
+        resources.excludes.add("nativeMain/default/linkdata/**/*.knm")
+        resources.excludes.add("nonJvmMain/default/manifest")
+        resources.excludes.add("nonJvmMain/default/linkdata/module")
+        resources.excludes.add("nonJvmMain/default/linkdata/**/*.knm")
+    }
+}
+```
 
 ## Jumio Support
 The Jumio development team is constantly striving to optimize the size of our frameworks while increasing functionality, to improve your KYC and to fight fraud. If you have any further questions, please reach out to our [support team](mailto:support@jumio.com).

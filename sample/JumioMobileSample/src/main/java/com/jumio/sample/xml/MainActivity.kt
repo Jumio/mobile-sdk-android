@@ -1,5 +1,5 @@
 // Copyright 2023 Jumio Corporation, all rights reserved.
-package com.jumio.sample
+package com.jumio.sample.xml
 
 import android.content.Intent
 import android.net.Uri
@@ -19,7 +19,7 @@ import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.jumio.defaultui.JumioActivity
-import com.jumio.sample.customui.CustomUiActivity
+import com.jumio.sample.R
 import com.jumio.sample.databinding.ActivityMainBinding
 import com.jumio.sdk.JumioSDK
 import com.jumio.sdk.enums.JumioDataCenter

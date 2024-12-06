@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Ellenőrizze, hogy kapcsolódik-e az internethez.</string>
 	<string name="jumio_error_case_network_problems">Hálózati kommunikációs problémába ütköztünk</string>
 	<string name="jumio_error_case_no_camera_connection">A kamera hozzáférése letiltva</string>
-	<string name="jumio_error_case_ocr_failed">A beolvasás jelenleg nem érhető el, vegye fel a kapcsolatot a témogatási csapattal</string>
+	<string name="jumio_error_case_scanning_not_possible">A beolvasás jelenleg nem érhető el, vegye fel a kapcsolatot a témogatási csapattal</string>
 	<string name="jumio_error_case_session_expired">A munkamenet lejárt</string>
 	<string name="jumio_idtype_di">Digitális azonosító</string>
 	<string name="jumio_idtype_dl">Vezetői engedély</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Fénykép készítése</string>
 	<string name="jumio_accessibility_scan_switch_camera">Kamera váltása</string>
 	<string name="jumio_analyzing_biometric">Biometrikus adatok elemzése</string>
+	<string name="jumio_brazil_cnh_subtitle">A feltöltés folytatásához feltétlenül töltsön le egy PDF-formátumú digitális járművezetői engedélyt a hivatalos kormányzati alkalmazásból [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">CNH Digital PDF feltöltése</string>
 	<string name="jumio_button_cancel">Mégse</string>
 	<string name="jumio_button_retry">Újra próbálkozás</string>
 	<string name="jumio_di_back_to_document_selection">Vissza fog térni a dokumentum kiválasztásához.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Győződjön meg arról, hogy a dokumentum minden adata olvasható.</string>
 	<string name="jumio_error_instant_feedback_blurry_title">A kép túl homályos az ellenőrzéshez</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">A képek készítését meg kell ismételni</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Feltétlenül töltsön le egy PDF-formátumú digitális járművezetői engedélyt a hivatalos kormányzati alkalmazásból [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Kérjük, próbálkozzon újra egy színes képpel</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">A kép fekete-fehér fénymásolat</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">A kép színes fénymásolatnak tűnik</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Készítsen egy szelfit</string>
 	<string name="jumio_identity_scan_tips_placing">Arcát helyezze az ovális keretbe, majd nyomja meg az exponáló gombot.</string>
 	<string name="jumio_identity_title">Arcellenőrzés</string>
+	<string name="jumio_idtype_brazil_cnh">Brazil CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Ország keresése</string>
 	<string name="jumio_idtype_countrysearch_title">Válasszon kiállító országot</string>
 	<string name="jumio_idtype_format_option_other">Egyéb formátum</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Ellenőrizze a kiállító országot</string>
 	<string name="jumio_idtype_subtitle_id">Válassza ki az igazolvány típusát</string>
 	<string name="jumio_list_supported_document_title">Támogatott dokumentumok</string>
+	<string name="jumio_liveness_prompt_keep_centered">Helyezkedjen középre</string>
+	<string name="jumio_liveness_prompt_keep_still">Maradjon mozdulatlan</string>
+	<string name="jumio_liveness_prompt_keep_upright">Tartsa egyenesen</string>
+	<string name="jumio_liveness_prompt_move_away">Menjen távolabb</string>
 	<string name="jumio_liveness_prompt_no_target">Igazítsa az arcát a keretbe</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Értem! Készítsünk egy másik fényképet</string>
-	<string name="jumio_liveness_prompt_too_close">Túl közel</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Végezzünk még egy beolvasást</string>
+	<string name="jumio_liveness_prompt_tilt_down">Döntse előre</string>
+	<string name="jumio_liveness_prompt_tilt_left">Döntse balra</string>
+	<string name="jumio_liveness_prompt_tilt_right">Döntse jobbra</string>
+	<string name="jumio_liveness_prompt_tilt_up">Döntse hátra</string>
 	<string name="jumio_liveness_prompt_too_far">Mozgassa közelebb</string>
+	<string name="jumio_liveness_scanning_completed">A szkennelés befejeződött</string>
 	<string name="jumio_liveness_upfront_intro">Be kell szkennelnünk az arcát, hogy meggyőződjünk róla, valódi személyről van szó.</string>
 	<string name="jumio_loading_title">Betöltés</string>
 	<string name="jumio_nfc_button_skip">Kihagyás</string>
@@ -168,8 +180,9 @@
 	<string name="jumio_start_instructions_03">Érvényes okmányt használjon</string>
 	<string name="jumio_start_instructions_04">Használjon kormány által kiadott érvényes igazolványt</string>
 	<string name="jumio_start_instructions_07">Az alkalmazás a kamera vakuját használhatja</string>
-	<string name="jumio_start_verification">Ellenőrzés indítása</string>
+	<string name="jumio_start_verification">Kezdje meg az ellenőrzést</string>
 	<string name="jumio_start_verification_subtitle">Ez a folyamat segít ellenőrizni a személyazonosságát, és védelmet nyújt a személyazonosság-lopással szemben</string>
+	<string name="jumio_try_again">Próbálja meg újra</string>
 	<string name="jumio_uploading_success">Feltöltés sikeres</string>
 	<string name="jumio_uploading_title">Feltöltés</string>
 	-->

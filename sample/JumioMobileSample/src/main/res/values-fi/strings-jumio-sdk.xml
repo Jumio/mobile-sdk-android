@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Varmista, että olet yhteydessä internetiin</string>
 	<string name="jumio_error_case_network_problems">Verkkoyhteyden toiminnassa on jokin ongelma</string>
 	<string name="jumio_error_case_no_camera_connection">Kamera on poistettu käytöstä</string>
-	<string name="jumio_error_case_ocr_failed">Skannaus ei ole tällä hetkellä käytettävissä. Ota yhteyttä tukeen</string>
+	<string name="jumio_error_case_scanning_not_possible">Skannaus ei ole tällä hetkellä käytettävissä. Ota yhteyttä tukeen</string>
 	<string name="jumio_error_case_session_expired">Istunto vanhentunut</string>
 	<string name="jumio_idtype_di">Digitaalinen henkilöllisyystodistus</string>
 	<string name="jumio_idtype_dl">Ajokortti</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Ota kuva</string>
 	<string name="jumio_accessibility_scan_switch_camera">Vaihda kameraa</string>
 	<string name="jumio_analyzing_biometric">Biometrisia tietoja analysoidaan</string>
+	<string name="jumio_brazil_cnh_subtitle">Varmista, että olet ladannut digitaalisen ajokortin PDF-tiedoston valtion virallisesta sovelluksesta [({Carteira Digital de Trânsito})], jotta voit jatkaa lähettämistä</string>
+	<string name="jumio_brazil_cnh_upload_button">Lähetä CNH Digital -PDF</string>
 	<string name="jumio_button_cancel">Peruuta</string>
 	<string name="jumio_button_retry">Yritä uudelleen</string>
 	<string name="jumio_di_back_to_document_selection">Sinut siiretään takaisin asiakirjan valintaan.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Varmista, että kaikki asiakirjan tiedot ovat luettavissa.</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Kuva on liian epäselvä vahvistamista varten</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Ota kuvat uudelleen</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Varmista, että olet ladannut digitaalisen ajokortin PDF-tiedoston valtion virallisesta sovelluksesta [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Yritä uudelleen värikuvalla.</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Kuva on mustavalkoinen valokopio</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Kuva näyttää olevan värillinen valokopio</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Ota selfie</string>
 	<string name="jumio_identity_scan_tips_placing">Kehystä kasvosi ensin soikeaan kehykseen ja paina sitten laukaisinpainiketta</string>
 	<string name="jumio_identity_title">Kasvotunnistus</string>
+	<string name="jumio_idtype_brazil_cnh">Brasilian CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Hae maa</string>
 	<string name="jumio_idtype_countrysearch_title">Valitse myöntäjämaa</string>
 	<string name="jumio_idtype_format_option_other">Muu muoto</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Tarkista myöntäjämaa</string>
 	<string name="jumio_idtype_subtitle_id">Valitse asiakirjan tyyppi</string>
 	<string name="jumio_list_supported_document_title">Tuetut dokumentit</string>
+	<string name="jumio_liveness_prompt_keep_centered">Pysy keskellä</string>
+	<string name="jumio_liveness_prompt_keep_still">Ole liikkumatta</string>
+	<string name="jumio_liveness_prompt_keep_upright">Pysy suorassa</string>
+	<string name="jumio_liveness_prompt_move_away">Siirry poispäin</string>
 	<string name="jumio_liveness_prompt_no_target">Sovita kasvosi kehykseen</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Selvä! Otetaanpa toinen kuva</string>
-	<string name="jumio_liveness_prompt_too_close">Liian lähellä</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Skannataan vielä kerran</string>
+	<string name="jumio_liveness_prompt_tilt_down">Kallista alas</string>
+	<string name="jumio_liveness_prompt_tilt_left">Kallista vasemmalle</string>
+	<string name="jumio_liveness_prompt_tilt_right">Kallista oikealle</string>
+	<string name="jumio_liveness_prompt_tilt_up">Kallista ylös</string>
 	<string name="jumio_liveness_prompt_too_far">Siirry lähemmäs</string>
+	<string name="jumio_liveness_scanning_completed">Skannaus valmis</string>
 	<string name="jumio_liveness_upfront_intro">Meidän täytyy skannata kasvosi vahvistaaksemme, että olet oikea henkilö.</string>
 	<string name="jumio_loading_title">Ladataan</string>
 	<string name="jumio_nfc_button_skip">Ohita</string>
@@ -168,8 +180,9 @@
 	<string name="jumio_start_instructions_03">Käytä voimassa olevaa asiakirjaa</string>
 	<string name="jumio_start_instructions_04">Käytä voimassa olevaa virallista henkilöllisyystodistusta</string>
 	<string name="jumio_start_instructions_07">Sovellus saattaa käyttää kameran salamaa</string>
-	<string name="jumio_start_verification">Aloita vahvistus</string>
+	<string name="jumio_start_verification">Aloita varmennus</string>
 	<string name="jumio_start_verification_subtitle">Tämän prosessin tarkoituksena on vahvistaa henkilöllisyytesi ja suojata sinua identiteettivarkauksilta</string>
+	<string name="jumio_try_again">Yritä uudelleen</string>
 	<string name="jumio_uploading_success">Lataaminen onnistui</string>
 	<string name="jumio_uploading_title">Ladataan</string>
 	-->

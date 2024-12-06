@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Sprawdź, czy jesteś online</string>
 	<string name="jumio_error_case_network_problems">Napotkaliśmy problem z komunikacją sieciową</string>
 	<string name="jumio_error_case_no_camera_connection">Dostęp do aparatu wyłączony</string>
-	<string name="jumio_error_case_ocr_failed">Skanowanie jest obecnie niedostępne, skontaktuj się z zespołem pomocy technicznej</string>
+	<string name="jumio_error_case_scanning_not_possible">Skanowanie jest obecnie niedostępne, skontaktuj się z zespołem pomocy technicznej</string>
 	<string name="jumio_error_case_session_expired">Sesja wygasła</string>
 	<string name="jumio_idtype_di">Identyfikator cyfrowy</string>
 	<string name="jumio_idtype_dl">Prawo jazdy</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Zrób zdjęcie</string>
 	<string name="jumio_accessibility_scan_switch_camera">Przełącz aparat</string>
 	<string name="jumio_analyzing_biometric">Analiza danych biometrycznych</string>
+	<string name="jumio_brazil_cnh_subtitle">Przed przesłaniem dokumentu upewnij się, że plik PDF cyfrowego prawa jazdy został pobrany z oficjalnej aplikacji rządowej [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">Załaduj profil cyfrowy CNH w pliku PDF</string>
 	<string name="jumio_button_cancel">Anuluj</string>
 	<string name="jumio_button_retry">Spróbuj ponownie</string>
 	<string name="jumio_di_back_to_document_selection">Nastąpi powrót do wyboru dokumentów.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Upewnij się, że wszystkie szczegóły na dokumencie są czytelne</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Obraz jest zbyt rozmazany, aby można go było zweryfikować</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Zdjęcia muszą zostać zrobione ponownie</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Upewnij się, że cyfrowe prawo jazdy w pliku PDF zostało pobrane z oficjalnej aplikacji rządowej [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Spróbuj ponownie z kolorowym obrazem</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Obraz jest czarno-białą fotokopią</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Obraz wydaje się być kolorową fotokopią</string>
@@ -138,20 +141,29 @@
 	<string name="jumio_identity_scan_prompt_initial">Zrób zdjęcie swojej twarzy</string>
 	<string name="jumio_identity_scan_tips_placing">Umieść twarz w owalnej ramce i zrób zdjęcie ręcznie</string>
 	<string name="jumio_identity_title">Weryfikacja twarzy</string>
+	<string name="jumio_idtype_brazil_cnh">Brazylijskie CNH Digital w PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Wyszukaj kraj</string>
 	<string name="jumio_idtype_countrysearch_title">Wybierz kraj wydania</string>
 	<string name="jumio_idtype_format_option_other">Inny format</string>
 	<string name="jumio_idtype_format_option_plastic">Plastikowa karta</string>
 	<string name="jumio_idtype_format_title">Jaki to format?</string>
-	<string name="jumio_idtype_front_back">Przód i tył dokumentu</string>
+	<string name="jumio_idtype_front_back">Przód i tył</string>
 	<string name="jumio_idtype_photo_page">Strona ze zdjęciem</string>
 	<string name="jumio_idtype_subtitle_country">Wybierz kraj wydania</string>
 	<string name="jumio_idtype_subtitle_id">Wybierz typ dokumentu tożsamości</string>
 	<string name="jumio_list_supported_document_title">Obsługiwane dokumenty</string>
+	<string name="jumio_liveness_prompt_keep_centered">Zachowaj wyśrodkowanie</string>
+	<string name="jumio_liveness_prompt_keep_still">Nie ruszaj się.</string>
+	<string name="jumio_liveness_prompt_keep_upright">Utrzymuj pozycję pionową</string>
+	<string name="jumio_liveness_prompt_move_away">Odsuń się</string>
 	<string name="jumio_liveness_prompt_no_target">Umieść twarz w ramce</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Mamy to! Zróbmy jeszcze jedno ujęcie</string>
-	<string name="jumio_liveness_prompt_too_close">Zbyt blisko</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Zrób kolejny skan</string>
+	<string name="jumio_liveness_prompt_tilt_down">Pochyl się w dół</string>
+	<string name="jumio_liveness_prompt_tilt_left">Pochyl się w lewo</string>
+	<string name="jumio_liveness_prompt_tilt_right">Pochyl się w prawo</string>
+	<string name="jumio_liveness_prompt_tilt_up">Odchyl się w górę</string>
 	<string name="jumio_liveness_prompt_too_far">Przybliż twarz</string>
+	<string name="jumio_liveness_scanning_completed">Skanowanie zakończone</string>
 	<string name="jumio_liveness_upfront_intro">Musimy wykonać skan Twojej twarzy, aby sprawdzić, czy jesteś prawdziwą osobą.</string>
 	<string name="jumio_loading_title">Ładowanie</string>
 	<string name="jumio_nfc_button_skip">Pomiń</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">Aplikacja może korzystać z lampy błyskowej aparatu</string>
 	<string name="jumio_start_verification">Rozpocznij weryfikację</string>
 	<string name="jumio_start_verification_subtitle">Celem tej procedury jest sprawdzenie Twojej tożsamości i ochrona przed jej kradzieżą</string>
+	<string name="jumio_try_again">Spróbuj ponownie</string>
 	<string name="jumio_uploading_success">Przesyłanie zakończone pomyślnie</string>
 	<string name="jumio_uploading_title">Przesyłanie</string>
 	-->

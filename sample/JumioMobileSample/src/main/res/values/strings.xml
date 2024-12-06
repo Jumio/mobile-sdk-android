@@ -19,4 +19,41 @@
 		<item>EU</item>
 		<item>SG</item>
 	</string-array>
+
+	<string name="start_custom_ui_title">Start Custom UI</string>
+	<string name="start_default_ui_title">Start Default UI</string>
+	<string name="app_bar_title">Jumio Sample App</string>
+	<string name="token">Token</string>
+	<string name="enter_token">Enter your token</string>
+	<string name="workflow_consists">This workflow consists of:</string>
+	<string name="loading">Loading…</string>
+	<string name="uploading">Uploading…</string>
+	<string name="verifying">Verifying…</string>
+	<string name="start">START</string>
+	<string name="close">Close</string>
+	<string name="back">back</string>
+	<string name="select_country">Select Country</string>
+	<string name="select_document">Select Document</string>
+	<string name="fallback">Fallback</string>
+	<string name="camera">Camera</string>
+	<string name="flash">Flash</string>
+	<string name="take">Take</string>
+	<string name="select_acquire_mode">Select acquire mode</string>
+	<string name="retake">RETAKE</string>
+	<string name="confirm">CONFIRM</string>
+	<string name="reject">Reject</string>
+	<string name="scan_finish_msg">Thanks for scanning!</string>
+	<string name="done">Done</string>
+	<string name="id">ID</string>
+	<string name="face">FACE</string>
+	<string name="document">DOCUMENT</string>
+	<string name="processing">Processing…</string>
+	<string name="retry">Retry</string>
+	<string name="credentials">Credentials</string>
+	<string name="flip_document">FLIP DOCUMENT</string>
+	<string name="requirement">Requirements</string>
+	<string name="select_file">Select a file</string>
+	<string name="nfc_scan_finished">NFC Scan Finished</string>
+	<string name="error">ERROR</string>
+	<string name="cancel">Cancel</string>
 </resources>

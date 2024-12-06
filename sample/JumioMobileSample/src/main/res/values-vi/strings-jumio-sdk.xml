@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Vui lòng kiểm tra xem bạn có trực tuyến không</string>
 	<string name="jumio_error_case_network_problems">Chúng tôi đã gặp sự cố về giao tiếp mạng</string>
 	<string name="jumio_error_case_no_camera_connection">Quyền truy cập máy ảnh bị vô hiệu hóa</string>
-	<string name="jumio_error_case_ocr_failed">Tính năng quét không khả dụng vào lúc này, vui lòng liên hệ với nhóm hỗ trợ</string>
+	<string name="jumio_error_case_scanning_not_possible">Tính năng quét không khả dụng vào lúc này, vui lòng liên hệ với nhóm hỗ trợ</string>
 	<string name="jumio_error_case_session_expired">Phiên hết hạn</string>
 	<string name="jumio_idtype_di">ID kỹ thuật số</string>
 	<string name="jumio_idtype_dl">Giấy phép lái xe</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Chụp ảnh</string>
 	<string name="jumio_accessibility_scan_switch_camera">Chuyển đổi máy ảnh</string>
 	<string name="jumio_analyzing_biometric">Đang phân tích dữ liệu sinh trắc học</string>
+	<string name="jumio_brazil_cnh_subtitle">Để tiếp tục tải lên, vui lòng đảm bảo rằng bạn đã tải xuống Giấy phép lái xe kỹ thuật số ở định dạng PDF từ ứng dụng chính thức của chính phủ [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">Tải lên bản PDF của CNH Digital</string>
 	<string name="jumio_button_cancel">Hủy</string>
 	<string name="jumio_button_retry">Thử lại</string>
 	<string name="jumio_di_back_to_document_selection">Bạn sẽ được điều hướng trở lại lựa chọn tài liệu.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Đảm bảo rằng tất cả các chi tiết trên tài liệu của bạn đều có thể đọc được</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Hình ảnh quá mờ để có thể xác minh</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Hình ảnh phải được chụp lại</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Vui lòng đảm bảo rằng bạn đã tải xuống Giấy phép lái xe kỹ thuật số định dạng PDF từ ứng dụng chính thức của chính phủ [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Vui lòng thử lại với một hình ảnh màu</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Hình ảnh là một bản photocopy đen trắng</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Hình ảnh có vẻ là một bản photocopy màu</string>
@@ -93,7 +96,7 @@
 	<string name="jumio_face_help_sunglasses">Tháo kính râm</string>
 	<string name="jumio_face_help_too_bright">Di chuyển đến một nơi tối hơn</string>
 	<string name="jumio_face_help_too_dark">Di chuyển đến một nơi sáng hơn</string>
-	<string name="jumio_face_help_too_much_movement">Giữ khuôn mặt không di chuyển</string>
+	<string name="jumio_face_help_too_much_movement">Giữ yên</string>
 	<string name="jumio_face_reject_title_eyes_closed">Mắt bị nhắm lại</string>
 	<string name="jumio_face_reject_title_generic">Xác minh khuôn mặt không thành công</string>
 	<string name="jumio_face_reject_title_multiple_people">Đã phát hiện nhiều người</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Chụp ảnh tự chụp</string>
 	<string name="jumio_identity_scan_tips_placing">Căn chỉnh khuôn mặt của bạn trong khung hình bầu dục và nhấn nút chụp</string>
 	<string name="jumio_identity_title">Xác minh khuôn mặt</string>
+	<string name="jumio_idtype_brazil_cnh">PDF CNH Digital Brazil</string>
 	<string name="jumio_idtype_countrysearch_search">Tìm kiếm quốc gia</string>
 	<string name="jumio_idtype_countrysearch_title">Chọn quốc gia phát hành</string>
 	<string name="jumio_idtype_format_option_other">Định dạng khác</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Đang kiểm tra quốc gia phát hành</string>
 	<string name="jumio_idtype_subtitle_id">Chọn loại ID</string>
 	<string name="jumio_list_supported_document_title">Tài liệu được hỗ trợ</string>
+	<string name="jumio_liveness_prompt_keep_centered">Giữ ở vị trí trung tâm</string>
+	<string name="jumio_liveness_prompt_keep_still">Giữ yên</string>
+	<string name="jumio_liveness_prompt_keep_upright">Giữ thẳng</string>
+	<string name="jumio_liveness_prompt_move_away">Di chuyển ra xa</string>
 	<string name="jumio_liveness_prompt_no_target">Kéo mặt bạn vào khung</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Đã hiểu! Hãy chụp một bức ảnh khác</string>
-	<string name="jumio_liveness_prompt_too_close">Quá gần</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Hãy quét lần nữa</string>
+	<string name="jumio_liveness_prompt_tilt_down">Nghiêng xuống</string>
+	<string name="jumio_liveness_prompt_tilt_left">Nghiêng trái</string>
+	<string name="jumio_liveness_prompt_tilt_right">Nghiêng phải</string>
+	<string name="jumio_liveness_prompt_tilt_up">Nghiêng lên</string>
 	<string name="jumio_liveness_prompt_too_far">Di chuyển lại gần hơn</string>
+	<string name="jumio_liveness_scanning_completed">Đã quét xong</string>
 	<string name="jumio_liveness_upfront_intro">Chúng tôi cần quét khuôn mặt bạn để xác minh rằng bạn là người thật.</string>
 	<string name="jumio_loading_title">Đang tải</string>
 	<string name="jumio_nfc_button_skip">Nhảy</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">Ứng dụng có thể sử dụng đèn flash của camera</string>
 	<string name="jumio_start_verification">Bắt đầu xác minh</string>
 	<string name="jumio_start_verification_subtitle">Quy trình này được thiết kế để xác minh danh tính của bạn và giúp bạn không bị đánh cắp danh tính</string>
+	<string name="jumio_try_again">Vui lòng thử lại</string>
 	<string name="jumio_uploading_success">Tải lên thành công</string>
 	<string name="jumio_uploading_title">Đang tải lên</string>
 	-->
@@ -196,7 +209,7 @@
 	<string name="iproov__failure_sunglasses">Tháo kính râm</string>
 	<string name="iproov__failure_too_bright">Di chuyển đến một nơi tối hơn</string>
 	<string name="iproov__failure_too_dark">Di chuyển đến một nơi sáng hơn</string>
-	<string name="iproov__failure_too_much_movement">Giữ khuôn mặt không di chuyển</string>
+	<string name="iproov__failure_too_much_movement">Giữ yên</string>
 	<string name="iproov__failure_unknown">Thử lại</string>
 	<string name="iproov__failure_user_timeout">Phiên của bạn đã hết hạn</string>
 	<string name="iproov__progress_assessing_genuine_presence">Đánh giá sự hiện diện thực sự…</string>

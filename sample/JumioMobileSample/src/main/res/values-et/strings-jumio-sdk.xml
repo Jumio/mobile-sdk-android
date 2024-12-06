@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Kontrollige, et teil oleks võrguühendus</string>
 	<string name="jumio_error_case_network_problems">Meil on tekkinud võrgusuhtluse probleem</string>
 	<string name="jumio_error_case_no_camera_connection">Juurdepääs kaamerale on keelatud</string>
-	<string name="jumio_error_case_ocr_failed">Skannimine pole praegu saadaval, võtke ühendust kasutajatoega</string>
+	<string name="jumio_error_case_scanning_not_possible">Skannimine pole praegu saadaval, võtke ühendust kasutajatoega</string>
 	<string name="jumio_error_case_session_expired">Sessioon on aegunud</string>
 	<string name="jumio_idtype_di">Digi-ID</string>
 	<string name="jumio_idtype_dl">Juhiluba</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Pildista</string>
 	<string name="jumio_accessibility_scan_switch_camera">Lülituge teisele kaamerale</string>
 	<string name="jumio_analyzing_biometric">Biomeetriliste andmete analüüsimine</string>
+	<string name="jumio_brazil_cnh_subtitle">Üleslaadimisega jätkamiseks veenduge, et olete ametlikust riiklikust rakendusest alla laadinud digitaalse juhiloa [({Carteira Digital de Trânsito})] PDF-i.</string>
+	<string name="jumio_brazil_cnh_upload_button">Laadige üles PDF-vormingus CNH Digital</string>
 	<string name="jumio_button_cancel">Tühista</string>
 	<string name="jumio_button_retry">Proovige uuesti</string>
 	<string name="jumio_di_back_to_document_selection">Teid suunatakse tagasi dokumendi valimisse.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Veenduge, et kõik doumendil olevad andmed oleksid loetavad</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Foto on tuvastamiseks liiga hägune</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Pildid tuleb uuesti teha</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Veenduge, et olete ametlikust valitsuse rakendusest alla laadinud PDF-vormingus digitaalse juhiloa [({Carteira Digital de Trânsito})].</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Palun proovige uuesti värvipildiga</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Pilt on mustvalge fotokoopia</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Näib, et pilt on värviline fotokoopia</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Tehke selfie</string>
 	<string name="jumio_identity_scan_tips_placing">Kontrollige, et teie nägu oleks ovaalses raamis ja vajutage pildistamisnuppu</string>
 	<string name="jumio_identity_title">Näotuvastus</string>
+	<string name="jumio_idtype_brazil_cnh">Brasiilia CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Riigi otsing</string>
 	<string name="jumio_idtype_countrysearch_title">Valige dokumendi väljastanud riik</string>
 	<string name="jumio_idtype_format_option_other">Muu vorming</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Valige dokumendi väljastanud riik</string>
 	<string name="jumio_idtype_subtitle_id">Valige dokumendi tüüp</string>
 	<string name="jumio_list_supported_document_title">Toetatud dokumendid</string>
+	<string name="jumio_liveness_prompt_keep_centered">Hoia nägu keskel</string>
+	<string name="jumio_liveness_prompt_keep_still">Olge paigal</string>
+	<string name="jumio_liveness_prompt_keep_upright">Hoia pea sirgelt</string>
+	<string name="jumio_liveness_prompt_move_away">Liigu kaugemale</string>
 	<string name="jumio_liveness_prompt_no_target">Asetage oma nägu raami sisse</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Sain aru! Teeme veel ühe võtte</string>
-	<string name="jumio_liveness_prompt_too_close">Liiga lähedal</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Teeme veel ühe võtte</string>
+	<string name="jumio_liveness_prompt_tilt_down">Kalluta alla</string>
+	<string name="jumio_liveness_prompt_tilt_left">Kalluta vasakule</string>
+	<string name="jumio_liveness_prompt_tilt_right">Kalluta paremale</string>
+	<string name="jumio_liveness_prompt_tilt_up">Kalluta üles</string>
 	<string name="jumio_liveness_prompt_too_far">Liigutage lähemale</string>
+	<string name="jumio_liveness_scanning_completed">Skannimine on lõpetatud</string>
 	<string name="jumio_liveness_upfront_intro">Peame skannima Sinu näo kinnitamaks, et oled inimene, mitte robot.</string>
 	<string name="jumio_loading_title">Laadimine</string>
 	<string name="jumio_nfc_button_skip">Vahele jätma</string>
@@ -168,8 +180,9 @@
 	<string name="jumio_start_instructions_03">Kasutage kehtivat dokumenti</string>
 	<string name="jumio_start_instructions_04">Kasutage riigiasutuse väljastatud dokumenti</string>
 	<string name="jumio_start_instructions_07">Rakendus võib kasutada kaamera välku</string>
-	<string name="jumio_start_verification">Alustage kinnitamist</string>
+	<string name="jumio_start_verification">Alusta kontrollimist</string>
 	<string name="jumio_start_verification_subtitle">Selle protsessi eesmärk on teie isiku kinnitamine ja teie identiteedivarguse eest kaitsmine</string>
+	<string name="jumio_try_again">Palun proovi uuesti</string>
 	<string name="jumio_uploading_success">Üleslaadimine õnnestus</string>
 	<string name="jumio_uploading_title">Üleslaadimine</string>
 	-->

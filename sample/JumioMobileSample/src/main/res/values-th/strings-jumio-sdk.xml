@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">โปรดตรวจสอบว่าคุณออนไลน์อยู่</string>
 	<string name="jumio_error_case_network_problems">เราพบปัญหาการสื่อสารเครือข่าย</string>
 	<string name="jumio_error_case_no_camera_connection">การเข้าถึงกล้องถูกปิดใช้งาน</string>
-	<string name="jumio_error_case_ocr_failed">ไม่สามารถสแกนได้ในขณะนี้ โปรดติดต่อทีมสนับสนุน</string>
+	<string name="jumio_error_case_scanning_not_possible">ไม่สามารถสแกนได้ในขณะนี้ โปรดติดต่อทีมสนับสนุน</string>
 	<string name="jumio_error_case_session_expired">เซสชันหมดอายุ</string>
 	<string name="jumio_idtype_di">เอกสารประจำตัวดิจิทัล</string>
 	<string name="jumio_idtype_dl">ใบขับขี่</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">ถ่ายรูป</string>
 	<string name="jumio_accessibility_scan_switch_camera">สลับกล้อง</string>
 	<string name="jumio_analyzing_biometric">กำลังวิเคราะห์ข้อมูลชีวมิติ</string>
+	<string name="jumio_brazil_cnh_subtitle">หากต้องการดำเนินการอัปโหลด ตรวจสอบให้แน่ใจว่าคุณได้ดาวน์โหลดใบอนุญาตขับขี่ดิจิทัล PDF จากแอปพลิเคชันของรัฐบาลอย่างเป็นทางการแล้ว [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">อัปโหลดไฟล์ PDF ของ CNH Digital</string>
 	<string name="jumio_button_cancel">ยกเลิก</string>
 	<string name="jumio_button_retry">ลองอีกครั้ง</string>
 	<string name="jumio_di_back_to_document_selection">เราจะพาคุณกลับไปเลือกเอกสาร</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">ตรวจสอบให้แน่ใจว่ารายละเอียดทั้งหมดในเอกสารของคุณนั้นอ่านออก</string>
 	<string name="jumio_error_instant_feedback_blurry_title">ภาพพร่ามัวเกินกว่าที่จะตรวจสอบได้</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">ต้องถ่ายรูปใหม่</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">ตรวจสอบให้แน่ใจว่าคุณได้ดาวน์โหลดใบอนุญาตขับขี่ดิจิทัลในรูปแบบ PDF จากแอปพลิเคชันของรัฐบาลอย่างเป็นทางการแล้ว [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">โปรดลองอีกครั้งด้วยภาพสี</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">รูปภาพเป็นสำเนาสีขาวดำ</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">รูปภาพดูเหมือนจะเป็นสำเนาสี</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">ถ่ายภาพตัวเอง</string>
 	<string name="jumio_identity_scan_tips_placing">จัดใบหน้าของคุณในกรอบวงรีแล้วกดปุ่มชัตเตอร์</string>
 	<string name="jumio_identity_title">การตรวจสอบใบหน้า</string>
+	<string name="jumio_idtype_brazil_cnh">CNH Digital บราซิล PDF</string>
 	<string name="jumio_idtype_countrysearch_search">ค้นหาประเทศ</string>
 	<string name="jumio_idtype_countrysearch_title">เลือกประเทศที่ออกเอกสาร</string>
 	<string name="jumio_idtype_format_option_other">รูปแบบอื่น ๆ</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">ตรวจสอบประเทศที่ออกเอกสาร</string>
 	<string name="jumio_idtype_subtitle_id">เลือกประเภทเอกสาร</string>
 	<string name="jumio_list_supported_document_title">เอกสารที่รองรับ</string>
+	<string name="jumio_liveness_prompt_keep_centered">จัดตำแหน่งให้อยู่ตรงกลาง</string>
+	<string name="jumio_liveness_prompt_keep_still">อยู่นิ่งๆ</string>
+	<string name="jumio_liveness_prompt_keep_upright">จัดตำแหน่งให้ตั้งตรง</string>
+	<string name="jumio_liveness_prompt_move_away">ขยับออก</string>
 	<string name="jumio_liveness_prompt_no_target">วางให้ใบหน้าอยู่ในกรอบ</string>
-	<string name="jumio_liveness_prompt_success_another_shot">เข้าใจแล้ว! มาถ่ายรูปกันอีกสักรอบเถอะนะ</string>
-	<string name="jumio_liveness_prompt_too_close">ใกล้เกินไป</string>
+	<string name="jumio_liveness_prompt_success_another_scan">ลองสแกนอีกครั้ง</string>
+	<string name="jumio_liveness_prompt_tilt_down">ก้มลง</string>
+	<string name="jumio_liveness_prompt_tilt_left">เอียงซ้าย</string>
+	<string name="jumio_liveness_prompt_tilt_right">เอียงขวา</string>
+	<string name="jumio_liveness_prompt_tilt_up">เงยขึ้น</string>
 	<string name="jumio_liveness_prompt_too_far">เข้ามาใกล้</string>
+	<string name="jumio_liveness_scanning_completed">การสแกนเสร็จสมบูรณ์</string>
 	<string name="jumio_liveness_upfront_intro">คุณจะต้องสแกนใบหน้าของคุณเพื่อยืนยันว่าคุณเป็นคนจริงๆ</string>
 	<string name="jumio_loading_title">กำลังโหลด</string>
 	<string name="jumio_nfc_button_skip">ข้าม</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">แอปอาจใช้แฟลชกล้อง</string>
 	<string name="jumio_start_verification">เริ่มการตรวจสอบ</string>
 	<string name="jumio_start_verification_subtitle">ขั้นตอนการตรวจสอบนี้ออกแบบมาเพื่อยืนยันตัวตนของคุณและปกป้องคุณจากการขโมยอัตลักษณ์</string>
+	<string name="jumio_try_again">โปรดลองอีกครั้ง</string>
 	<string name="jumio_uploading_success">อัปโหลดสำเร็จ</string>
 	<string name="jumio_uploading_title">กำลังอัปโหลด</string>
 	-->

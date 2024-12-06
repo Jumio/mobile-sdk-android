@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">온라인 상태인지 확인해 주세요</string>
 	<string name="jumio_error_case_network_problems">네트워크 통신 문제가 발생했습니다</string>
 	<string name="jumio_error_case_no_camera_connection">카메라 액세스 비활성화</string>
-	<string name="jumio_error_case_ocr_failed">현재 스캔을 사용할 수 없습니다. 지원팀에 문의하시기 바랍니다.</string>
+	<string name="jumio_error_case_scanning_not_possible">현재 스캔을 사용할 수 없습니다. 지원팀에 문의하시기 바랍니다.</string>
 	<string name="jumio_error_case_session_expired">세션 만료</string>
 	<string name="jumio_idtype_di">디지털 ID</string>
 	<string name="jumio_idtype_dl">운전 면허증</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">사진 촬영</string>
 	<string name="jumio_accessibility_scan_switch_camera">카메라 전환</string>
 	<string name="jumio_analyzing_biometric">생체 데이터 분석</string>
+	<string name="jumio_brazil_cnh_subtitle">업로드하려면 정부 공식 신청서 [({Carteira Digital de Trânsito})]에서 디지털 운전면허증 PDF를 다운로드했는지 확인하세요</string>
+	<string name="jumio_brazil_cnh_upload_button">CNH Digital PDF 업로드</string>
 	<string name="jumio_button_cancel">취소</string>
 	<string name="jumio_button_retry">다시 시도</string>
 	<string name="jumio_di_back_to_document_selection">문서 선택으로 돌아갑니다.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">문서의 모든 세부 정보를 읽을 수 있는지 확인하세요</string>
 	<string name="jumio_error_instant_feedback_blurry_title">이미지가 너무 흐려서 확인할 수 없습니다</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">이미지를 다시 찍어야 합니다</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">정부 공식 신청서 [({Carteira Digital de Trânsito})]에서 디지털 운전면허증 PDF를 다운로드했는지 확인하세요</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">컬러 이미지로 다시 시도하세요</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">이미지가 흑백 사본입니다</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">이미지가 컬러 사본인 것 같습니다</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">셀카 찍기</string>
 	<string name="jumio_identity_scan_tips_placing">타원형 프레임 안에 얼굴을 놓고 촬영 버튼을 누르세요</string>
 	<string name="jumio_identity_title">얼굴 인증</string>
+	<string name="jumio_idtype_brazil_cnh">브라질 CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">국가 검색</string>
 	<string name="jumio_idtype_countrysearch_title">발급 국가 선택</string>
 	<string name="jumio_idtype_format_option_other">기타 형식</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">발급 국가 확인</string>
 	<string name="jumio_idtype_subtitle_id">서류 유형 선택</string>
 	<string name="jumio_list_supported_document_title">지원되는 문서</string>
+	<string name="jumio_liveness_prompt_keep_centered">중앙에 유지하세요</string>
+	<string name="jumio_liveness_prompt_keep_still">가만히 계세요</string>
+	<string name="jumio_liveness_prompt_keep_upright">똑바로 들어주세요</string>
+	<string name="jumio_liveness_prompt_move_away">뒤로 물러나세요</string>
 	<string name="jumio_liveness_prompt_no_target">프레임에 얼굴을 놓아주세요</string>
-	<string name="jumio_liveness_prompt_success_another_shot">좋아요! 한 번 더 촬영해 봅시다</string>
-	<string name="jumio_liveness_prompt_too_close">너무 가까움</string>
+	<string name="jumio_liveness_prompt_success_another_scan">한 번 더 스캔하겠습니다</string>
+	<string name="jumio_liveness_prompt_tilt_down">아래로 기울이세요</string>
+	<string name="jumio_liveness_prompt_tilt_left">왼쪽으로 기울이세요</string>
+	<string name="jumio_liveness_prompt_tilt_right">오른쪽으로 기울이세요</string>
+	<string name="jumio_liveness_prompt_tilt_up">위로 기울이세요</string>
 	<string name="jumio_liveness_prompt_too_far">가까이 와주세요</string>
+	<string name="jumio_liveness_scanning_completed">스캔 완료</string>
 	<string name="jumio_liveness_upfront_intro">실제 사람인지 확인하기 위해 얼굴을 스캔해야 합니다.</string>
 	<string name="jumio_loading_title">불러오는 중</string>
 	<string name="jumio_nfc_button_skip">건너 뛰기</string>
@@ -168,8 +180,9 @@
 	<string name="jumio_start_instructions_03">유효한 문서를 사용하세요</string>
 	<string name="jumio_start_instructions_04">유효한 정부 발급 신분증을 사용하세요</string>
 	<string name="jumio_start_instructions_07">앱에서 카메라 플래시를 사용할 수 있습니다</string>
-	<string name="jumio_start_verification">확인 시작</string>
+	<string name="jumio_start_verification">인증 시작</string>
 	<string name="jumio_start_verification_subtitle">이 절차는 신원을 확인하고 신원 도용으로부터 귀하를 보호하기 위해 고안되었습니다</string>
+	<string name="jumio_try_again">다시 시도하세요</string>
 	<string name="jumio_uploading_success">업로드 성공</string>
 	<string name="jumio_uploading_title">업로드 중</string>
 	-->

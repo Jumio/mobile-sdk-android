@@ -1,5 +1,5 @@
 // Copyright 2023 Jumio Corporation, all rights reserved.
-package com.jumio.sample.customui.adapter
+package com.jumio.sample.xml.adapter
 
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater

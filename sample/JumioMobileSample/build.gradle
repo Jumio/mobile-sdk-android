@@ -1,17 +1,23 @@
 buildscript {
-	ext.kotlin_version = "1.9.24"
+	ext.kotlin_version = "2.0.0"
 	repositories {
 		google()
 		mavenCentral()
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath "com.android.tools.build:gradle:8.2.2"
+		classpath "com.android.tools.build:gradle:8.6.1"
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+		classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+		classpath "org.jetbrains.kotlin:compose-compiler-gradle-plugin:$kotlin_version"
 	}
 }
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'org.jetbrains.kotlin.plugin.serialization'
+apply plugin: 'org.jetbrains.kotlin.plugin.parcelize'
+apply plugin: 'org.jetbrains.kotlin.plugin.compose'
 
 repositories {
 	google()
@@ -31,17 +37,26 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "4.11.0"
+	SDK_VERSION = "4.12.0"
 }
 
 dependencies {
 	implementation fileTree(dir: 'libs', include: '*.jar')
 
 	// Kotlin
-	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24"
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.0"
 	// only for the sample code
-	implementation "androidx.activity:activity-ktx:1.9.0"
+	implementation "androidx.activity:activity-ktx:1.9.2"
 	implementation "androidx.multidex:multidex:2.0.1"
+	implementation platform("androidx.compose:compose-bom:2024.09.03")
+	implementation "androidx.compose.material3:material3"
+	implementation "androidx.compose.ui:ui"
+	implementation "androidx.compose.ui:ui-tooling-preview"
+	implementation "androidx.activity:activity-compose:1.9.2"
+	implementation "androidx.compose.compiler:compiler:1.5.15"
+	implementation "androidx.navigation:navigation-compose:2.8.2"
+	implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3"
+	implementation "androidx.lifecycle:lifecycle-runtime-compose:2.8.6"
 
 	// Jumio dependencies
 	implementation "com.jumio.android:core:${SDK_VERSION}"
@@ -57,15 +72,15 @@ dependencies {
 }
 
 android {
-	compileSdkVersion 34
-	buildToolsVersion "34.0.0"
+	compileSdkVersion 35
+	buildToolsVersion "35.0.0"
 	namespace "com.jumio.sample"
 
 	defaultConfig {
 		versionCode 1
 		versionName "Jumio Sample"
 		minSdkVersion 21
-		targetSdkVersion 34
+		targetSdkVersion 35
 		multiDexEnabled true
 		vectorDrawables.useSupportLibrary true
 	}
@@ -75,15 +90,17 @@ android {
 		viewBinding true
 		// Determines whether to support Data Binding.
 		dataBinding false
+		// Determines whether to support Jetpack Compose.
+		compose true
 	}
 
 	compileOptions {
-		sourceCompatibility 11
-		targetCompatibility 11
+		sourceCompatibility 17
+		targetCompatibility 17
 	}
 
 	kotlinOptions {
-		jvmTarget = 11
+		jvmTarget = 17
 	}
 
 	lint {
@@ -97,5 +114,18 @@ android {
 			minifyEnabled true
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
+	}
+
+	packagingOptions {
+		resources.excludes.add("META-INF/kotlin-project-structure-metadata.json")
+		resources.excludes.add("META-INF/kotlinx_coroutines_core.version")
+		resources.excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
+		resources.excludes.add("commonMain/default/manifest")
+	}
+
+	composeOptions {
+		// compose version must be compatible with kotlin version (version of org.jetbrains.kotlin:kotlin-gradle-plugin)
+		// Refer to https://developer.android.com/jetpack/androidx/releases/compose-kotlin
+		kotlinCompilerExtensionVersion = "1.5.15"
 	}
 }

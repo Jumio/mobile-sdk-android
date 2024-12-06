@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Lütfen çevrimiçi olduğunuzu kontrol edin</string>
 	<string name="jumio_error_case_network_problems">Bir ağ iletişimi sorunuyla karşılaştık</string>
 	<string name="jumio_error_case_no_camera_connection">Kamera erişimi devre dışı</string>
-	<string name="jumio_error_case_ocr_failed">Tarama şu anda kullanılamıyor, lütfen destek ekibi ile iletişime geçin.</string>
+	<string name="jumio_error_case_scanning_not_possible">Tarama şu anda kullanılamıyor, lütfen destek ekibi ile iletişime geçin.</string>
 	<string name="jumio_error_case_session_expired">Oturum Sona Erdi.</string>
 	<string name="jumio_idtype_di">Dijital kimlik</string>
 	<string name="jumio_idtype_dl">Sürücü Belgesi</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Fotoğraf çek</string>
 	<string name="jumio_accessibility_scan_switch_camera">Kamerayı değiştir</string>
 	<string name="jumio_analyzing_biometric">Biyometrik veriler inceleniyor</string>
+	<string name="jumio_brazil_cnh_subtitle">Yükleme işlemine devam etmek için resmi devlet uygulaması üzerinden dijital ehliyet PDF\'sini [({Carteira Digital de Trânsito})] indirmiş olmanız gerekmektedir</string>
+	<string name="jumio_brazil_cnh_upload_button">CNH Digital PDF\'sini yükleyin</string>
 	<string name="jumio_button_cancel">İptal</string>
 	<string name="jumio_button_retry">Tekrar deneyin</string>
 	<string name="jumio_di_back_to_document_selection">Belge seçme ekranına geri döndürüleceksiniz.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Belgenizdeki tüm ayrıntıların okunabilir olduğuna emin olun</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Görüntü doğrulanamayacak kadar bulanık</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Görüntüler yeniden çekilmelidir</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Resmi devlet uygulaması üzerinden Dijital ehliyet PDF\'sini [({Carteira Digital de Trânsito})] indirmeyi unutmayın</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Lütfen renkli bir görüntüyle tekrar deneyin</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Bu görüntü siyah beyaz bir fotokopi</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Bu görüntü renkli bir fotokopi gibi görünüyor</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Selfie çekin</string>
 	<string name="jumio_identity_scan_tips_placing">Yüzünüzü oval çerçeveye hizalayın ve fotoğraf çekme düğmesine basın</string>
 	<string name="jumio_identity_title">Yüz Doğrulama</string>
+	<string name="jumio_idtype_brazil_cnh">Brezilya CNH Digital PDF\'si</string>
 	<string name="jumio_idtype_countrysearch_search">Ülke Arayın</string>
 	<string name="jumio_idtype_countrysearch_title">Belgeyi veren ülkeyi seçin</string>
 	<string name="jumio_idtype_format_option_other">Diğer biçim</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Belgeyi veren ülkeyi kontrol edin</string>
 	<string name="jumio_idtype_subtitle_id">Belge türünü seçin</string>
 	<string name="jumio_list_supported_document_title">Desteklenen belgeler</string>
+	<string name="jumio_liveness_prompt_keep_centered">Ortalayın</string>
+	<string name="jumio_liveness_prompt_keep_still">Sabit durun</string>
+	<string name="jumio_liveness_prompt_keep_upright">Dik tutun</string>
+	<string name="jumio_liveness_prompt_move_away">Uzaklaşın</string>
 	<string name="jumio_liveness_prompt_no_target">Yüzünüzü çerçeveye ortalayın</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Anladım! Bir tane daha çekelim</string>
-	<string name="jumio_liveness_prompt_too_close">Çok yakın</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Bir tarama daha yapalım</string>
+	<string name="jumio_liveness_prompt_tilt_down">Aşağı eğin</string>
+	<string name="jumio_liveness_prompt_tilt_left">Sola eğin</string>
+	<string name="jumio_liveness_prompt_tilt_right">Sağa eğin</string>
+	<string name="jumio_liveness_prompt_tilt_up">Yukarı kaldırın</string>
 	<string name="jumio_liveness_prompt_too_far">Yaklaşın</string>
+	<string name="jumio_liveness_scanning_completed">Tarama tamamlandı</string>
 	<string name="jumio_liveness_upfront_intro">Gerçek bir insan olduğunuzu doğrulamak için yüzünüzü taramamız gerekiyor.</string>
 	<string name="jumio_loading_title">Yükleniyor</string>
 	<string name="jumio_nfc_button_skip">Atla</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">Uygulama kamera flaşını kullanabilir</string>
 	<string name="jumio_start_verification">Doğrulamayı başlat</string>
 	<string name="jumio_start_verification_subtitle">Bu süreç, kimliğinizi doğrulamak ve sizi kimlik hırsızlığına karşı korumak için tasarlanmıştır</string>
+	<string name="jumio_try_again">Tekrar deneyin</string>
 	<string name="jumio_uploading_success">Yükleme başarılı</string>
 	<string name="jumio_uploading_title">Yükleniyor</string>
 	-->

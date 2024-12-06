@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Kontrollera att du är online</string>
 	<string name="jumio_error_case_network_problems">Nätverket har stött på ett kommunikationsproblem</string>
 	<string name="jumio_error_case_no_camera_connection">Kameraåtkomst inaktiverad</string>
-	<string name="jumio_error_case_ocr_failed">Skanning är inte tillgänglig just nu. Kontakta supportteamet</string>
+	<string name="jumio_error_case_scanning_not_possible">Skanning är inte tillgänglig just nu. Kontakta supportteamet</string>
 	<string name="jumio_error_case_session_expired">Sessionen har löpt ut</string>
 	<string name="jumio_idtype_di">Digitalt ID</string>
 	<string name="jumio_idtype_dl">Körkort</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Ta ett foto</string>
 	<string name="jumio_accessibility_scan_switch_camera">Växla kamera</string>
 	<string name="jumio_analyzing_biometric">Analyserar biometriska data</string>
+	<string name="jumio_brazil_cnh_subtitle">För att fortsätta med uppladdningen, se till att du har laddat ner ett digitalt körkort i PDF-format från den officiella myndighetsapplikationen [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">Ladda upp CNH Digital (PDF)</string>
 	<string name="jumio_button_cancel">Avbryt</string>
 	<string name="jumio_button_retry">Försök igen</string>
 	<string name="jumio_di_back_to_document_selection">Du kommer att återvända till dokumentval.</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Kontrollera att alla uppgifter på ditt dokument är läsbara</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Bilden är för oskarp för att verifieras</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Bilder måste tas om</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Se till att du har laddat ner ett digitalt körkort i PDF-format från den officiella myndighetsapplikationen [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Försök igen med en färgbild</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Bilden är en svartvit kopia</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Bilden verkar vara en färgkopia</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Ta en selfie</string>
 	<string name="jumio_identity_scan_tips_placing">Rama in ditt ansikte i den ovala ramen och tryck på slutarknappen</string>
 	<string name="jumio_identity_title">Ansiktsverifiering</string>
+	<string name="jumio_idtype_brazil_cnh">Brasilien CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Sök land</string>
 	<string name="jumio_idtype_countrysearch_title">Välj utfärdande land</string>
 	<string name="jumio_idtype_format_option_other">Annat format</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Kontrollera utfärdande land</string>
 	<string name="jumio_idtype_subtitle_id">Välj typ av ID-handling</string>
 	<string name="jumio_list_supported_document_title">Stödda dokument</string>
+	<string name="jumio_liveness_prompt_keep_centered">Håll dig centrerad</string>
+	<string name="jumio_liveness_prompt_keep_still">Håll stadigt</string>
+	<string name="jumio_liveness_prompt_keep_upright">Håll dig upprätt</string>
+	<string name="jumio_liveness_prompt_move_away">Flytta dig bakåt</string>
 	<string name="jumio_liveness_prompt_no_target">Rama in ansiktet</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Okej! Gör ett nytt försök</string>
-	<string name="jumio_liveness_prompt_too_close">För nära</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Låt oss göra en ny skanning</string>
+	<string name="jumio_liveness_prompt_tilt_down">Luta nedåt</string>
+	<string name="jumio_liveness_prompt_tilt_left">Luta åt vänster</string>
+	<string name="jumio_liveness_prompt_tilt_right">Luta åt höger</string>
+	<string name="jumio_liveness_prompt_tilt_up">Luta uppåt</string>
 	<string name="jumio_liveness_prompt_too_far">Flytta närmare</string>
+	<string name="jumio_liveness_scanning_completed">Skanningen är klar</string>
 	<string name="jumio_liveness_upfront_intro">Vi måste skanna ditt ansikte för att verifiera att du är en riktig person.</string>
 	<string name="jumio_loading_title">Laddar</string>
 	<string name="jumio_nfc_button_skip">Hoppa</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">Appen kan använda kamerablixten</string>
 	<string name="jumio_start_verification">Starta verifiering</string>
 	<string name="jumio_start_verification_subtitle">Den här processen är till för att bekräfta din identitet och skydda dig mot identitetsstöld</string>
+	<string name="jumio_try_again">Försök igen</string>
 	<string name="jumio_uploading_success">Uppladdning klar</string>
 	<string name="jumio_uploading_title">Laddar upp</string>
 	-->

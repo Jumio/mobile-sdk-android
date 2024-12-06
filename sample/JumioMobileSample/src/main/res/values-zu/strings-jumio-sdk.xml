@@ -13,7 +13,7 @@
 	<string name="jumio_error_case_device_is_offline">Sicela uhlole ukuthi uxhumile yini ku-inthanethi</string>
 	<string name="jumio_error_case_network_problems">Sithole inkinga yokuxhumana kwenethiwekhi</string>
 	<string name="jumio_error_case_no_camera_connection">Ukusebenzisa ikhamera kuvaliwe</string>
-	<string name="jumio_error_case_ocr_failed">Ukuskena akukho okwamanje, sicela uxhumane nethimba losizo</string>
+	<string name="jumio_error_case_scanning_not_possible">Ukuskena akukho okwamanje, sicela uxhumane nethimba losizo</string>
 	<string name="jumio_error_case_session_expired">Isikhathi Siphelile</string>
 	<string name="jumio_idtype_di">I-ID Eyidijithali</string>
 	<string name="jumio_idtype_dl">Ilayisensi Yokushayela</string>
@@ -33,6 +33,8 @@
 	<string name="jumio_accessibility_scan_shutter_button">Thatha isithombe</string>
 	<string name="jumio_accessibility_scan_switch_camera">Shintsha ikhamera yakho</string>
 	<string name="jumio_analyzing_biometric">Ihlaziya idatha ye-biometric</string>
+	<string name="jumio_brazil_cnh_subtitle">Ukuze uqhubeke nokulayisha, qinisekisa ukuthi udawunilode i-PDF yelayisensi yokushayela eyidijithali ku-aplikheshini esemthethweni kahulumeni [({Carteira Digital de Trânsito})]</string>
+	<string name="jumio_brazil_cnh_upload_button">Layisha i-PDF ye-CNH Eyidijithali</string>
 	<string name="jumio_button_cancel">Khansela</string>
 	<string name="jumio_button_retry">Zama futhi</string>
 	<string name="jumio_di_back_to_document_selection">Uzozulazula ubuyele ekukhethweni kwedokhumenti</string>
@@ -59,6 +61,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Qinisekisa ukuthi yonke imininingwane ekudokhumenti lakho iyafundeka</string>
 	<string name="jumio_error_instant_feedback_blurry_title">Isithombe siluvindo kakhulu ukuthi siqinisekiswe</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Izithombe kumelwe zithathwe kabusha</string>
+	<string name="jumio_error_instant_feedback_brazil_cnh">Qinisekisa ukuthi udawunilode i-PDF yelayisensi yokushayela Eyidijithali ku-aplikheshini esemthethweni kahulumeni  [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Sicela uphinde uzame ngesithombe esinombala</string>
 	<string name="jumio_error_instant_feedback_bw_copy_title">Isithombe siyikhophi engenawo umbala</string>
 	<string name="jumio_error_instant_feedback_color_photocopy_title">Isithombe sibonakala siyikhophi enombala</string>
@@ -138,6 +141,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Thatha i-selfie</string>
 	<string name="jumio_identity_scan_tips_placing">Qondanisa ubuso bakho bungene endilingeni esaqanda bese ucindezela inkinobho yokuthwebula</string>
 	<string name="jumio_identity_title">Ukuqinisekisa Ubuso</string>
+	<string name="jumio_idtype_brazil_cnh">I-Brazil CNH Digital PDF</string>
 	<string name="jumio_idtype_countrysearch_search">Funa Izwe</string>
 	<string name="jumio_idtype_countrysearch_title">Khetha izwe elikhiphile</string>
 	<string name="jumio_idtype_format_option_other">Enye ifomethi</string>
@@ -148,10 +152,18 @@
 	<string name="jumio_idtype_subtitle_country">Hlola izwe elikhiphile</string>
 	<string name="jumio_idtype_subtitle_id">Khetha uhlobo lwedokhumenti</string>
 	<string name="jumio_list_supported_document_title">Ama-dokhumenti akhokhelwayo</string>
+	<string name="jumio_liveness_prompt_keep_centered">Bugcine bumaphakathi</string>
+	<string name="jumio_liveness_prompt_keep_still">Yima unganyakazi</string>
+	<string name="jumio_liveness_prompt_keep_upright">Bugcine buqondile</string>
+	<string name="jumio_liveness_prompt_move_away">Hlehlela Emuva</string>
 	<string name="jumio_liveness_prompt_no_target">Beka ubuso bakho ohlakeni</string>
-	<string name="jumio_liveness_prompt_success_another_shot">Ngiyaqonda! Masithathe esinye isithombe</string>
-	<string name="jumio_liveness_prompt_too_close">Useduze kakhulu</string>
+	<string name="jumio_liveness_prompt_success_another_scan">Masithathe esinye iskeni</string>
+	<string name="jumio_liveness_prompt_tilt_down">Butshekisele ezansi</string>
+	<string name="jumio_liveness_prompt_tilt_left">Butshekisele kwesokunxele</string>
+	<string name="jumio_liveness_prompt_tilt_right">Butshekisele kwesokudla</string>
+	<string name="jumio_liveness_prompt_tilt_up">Butshekisele phezulu</string>
 	<string name="jumio_liveness_prompt_too_far">Sondela</string>
+	<string name="jumio_liveness_scanning_completed">Ukuskena kuphelile</string>
 	<string name="jumio_liveness_upfront_intro">Kudingeka siskene ubuso bakho ukuze siqinisekise ukuthi ungumuntu ongokoqobo.</string>
 	<string name="jumio_loading_title">Iyaloda</string>
 	<string name="jumio_nfc_button_skip">Yeqa</string>
@@ -170,6 +182,7 @@
 	<string name="jumio_start_instructions_07">I-app ingase isebenzise i-flash yekhamera</string>
 	<string name="jumio_start_verification">Qala ukuqinisekisa</string>
 	<string name="jumio_start_verification_subtitle">Le nqubo iklanyelwe ukuqinisekisa ubuwena futhi ikuvikele ekwebiweni komazisi wakho</string>
+	<string name="jumio_try_again">Sicela uphinde uzame</string>
 	<string name="jumio_uploading_success">Ukufaka kuphumelele</string>
 	<string name="jumio_uploading_title">Iyafaka</string>
 	-->

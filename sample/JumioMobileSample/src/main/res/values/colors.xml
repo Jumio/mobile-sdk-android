@@ -6,4 +6,5 @@
 
 	<color name="logText">#1C2229</color>
 	<color name="spinnerBackground">#FFFFFF</color>
+	<color name="label">#000000</color>
 </resources>

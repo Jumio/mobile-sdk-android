@@ -26,9 +26,10 @@
 
 		<!-- KOTLIN -->
 		<activity
-			android:name="com.jumio.sample.MainActivity"
+			android:name="com.jumio.sample.compose.activities.MainActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
 			android:exported="true"
+			android:screenOrientation="portrait"
 			android:icon="@drawable/ic_launcher_kotlin"
 			android:theme="@style/AppTheme">
 			<intent-filter>
@@ -37,7 +38,35 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="com.jumio.sample.customui.CustomUiActivity"
+			android:name="com.jumio.sample.compose.activities.CustomUIActivity"
+			android:exported="true"
+			android:screenOrientation="portrait"
+			android:launchMode="singleTask"
+			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
+			android:theme="@style/AppTheme"
+			android:label="Jumio Sample Custom UI">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data
+					android:host="jumio-di-redirect"
+					android:scheme="app" />
+			</intent-filter>
+		</activity>
+
+		<activity
+			android:name="com.jumio.sample.xml.MainActivity"
+			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
+			android:exported="true"
+			android:screenOrientation="portrait"
+			android:icon="@drawable/ic_launcher_kotlin"
+			android:theme="@style/AppTheme">
+		</activity>
+		<activity
+			android:name="com.jumio.sample.xml.CustomUiActivity"
 			android:exported="true"
 			android:screenOrientation="portrait"
 			android:launchMode="singleTask"
@@ -59,6 +88,7 @@
 		<activity
 			android:name="com.jumio.defaultui.JumioActivity"
 			android:exported="true"
+			android:screenOrientation="portrait"
 			android:launchMode="singleTask"
 			tools:replace="android:exported">
 			<intent-filter>

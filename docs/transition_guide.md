@@ -6,6 +6,71 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.12.0
+This version adds support for Android 15 and 16KB page size for native libraries.
+
+#### Public API Changes
+* Property `LINEFINDER` was unused and has been removed from [`JumioScanMode`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html)
+* Property `JUMIO_PREMIUM` has been added to [`JumioScanMode`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html)
+* Optional parameter `url` has been added to [`JumioDigitalDocument`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-digital-document/index.html)
+* `INVALID_CERTIFICATE` has been added to [`JumioRejectReason`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.reject/-jumio-reject-reason/index.html)
+* Function `detach()` has been added to [`JumioScanView`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-scan-view/index.html)
+
+#### Dependency Updates
+* Tensorflow Lite dependencies have been updated to LiteRT - see https://developers.googleblog.com/en/tensorflow-lite-is-now-litert/ for more infos.
+
+| Name                     | Jumio Module        | Dependency                                                      | old version | new version |
+|--------------------------|---------------------|-----------------------------------------------------------------|-------------|-------------|
+| Android Gradle Plugin    | all                 | `"com.android.library"`                                         | 8.2.2       | 8.6.1       |
+| Kotlin Plugin            | all                 | `"org.jetbrains.kotlin.android"`                                | 1.9.24      | 2.0.0       |
+| Kotlin Stdlib            | all                 | `"org.jetbrains.kotlin:kotlin-stdlib-jdk8"`                     | 1.9.24      | 2.0.0       |
+| Annotation               | core                | `"androidx.annotation:annotation-jvm"`                          | 1.8.0       | 1.8.2       |
+| Navigation UI            | core                | `"androidx.navigation:navigation-ui-ktx"`                       | 2.7.7       | 2.8.1       |
+| Navigation Fragment      | core                | `"androidx.navigation:navigation-fragment-ktx"`                 | 2.7.7       | 2.8.1       |
+| LibYUV                   | core                | `"io.github.crow-misia.libyuv:libyuv-android"`                  | 0.34.0      | 0.36.0      |
+| CameraX Core             | camerax             | `"androidx.camera:camera-core"`                                 | 1.3.3       | 1.3.4       |
+| CameraX Lifecycle        | camerax             | `"androidx.camera:camera-lifecycle"`                            | 1.3.3       | 1.3.4       |
+| CameraX View             | camerax             | `"androidx.camera:camera-view"`                                 | 1.3.3       | 1.3.4       |
+| CameraX Camera2          | camerax             | `"androidx.camera:camera-camera2"`                              | 1.3.3       | 1.3.4       |
+| Lifecycle Viewmodel      | defaultui           | `"androidx.lifecycle:lifecycle-viewmodel-ktx"`                  | 2.8.1       | 2.8.6       |
+| Lifecycle Savedstate     | defaultui           | `"androidx.lifecycle:lifecycle-viewmodel-savedstate"`           | 2.8.1       | 2.8.6       |
+| Lifecycle Livedata       | defaultui           | `"androidx.lifecycle:lifecycle-livedata-ktx"`                   | 2.8.1       | 2.8.6       |
+| Tensorflow Lite          | docfinder, liveness | `"org.tensorflow:tensorflow-lite"`                              | 2.16.1      | REMOVED     |
+| LiteRT                   | docfinder, liveness | `"com.google.ai.edge.litert:litert"`                            | ADDED       | 1.0.1       |
+| Tensorflow Lite Metadata | docfinder           | `"org.tensorflow:tensorflow-lite-metadata"`                     | 0.4.4       | REMOVED     |
+| LiteRT Metadata          | docfinder           | `"com.google.ai.edge.litert:litert-metadata"`                   | ADDED       | 1.0.1       |
+| IProov                   | iproov              | `"com.iproov.sdk:iproov"`                                       | 9.1.1       | 9.1.2       |
+| JMRTD                    | nfc                 | `"org.jmrtd:jmrtd"`                                             | 0.7.41      | 0.7.42      |
+| Scube                    | nfc                 | `"net.sf.scuba:scuba-sc-android"`                               | 0.0.25      | 0.0.26      |
+| BouncyCastle             | nfc                 | `"org.bouncycastle:bcprov-jdk18on"`                             | 1.77        | 1.78.1      |
+| MLKit Barcode            | barcode-mlkit       | `"com.google.android.gms:play-services-mlkit-barcode-scanning"` | 18.3.0      | 18.3.1      |
+
+#### Packaging Options
+Multiple third party android libraries include the same meta files which will result in duplicates files during the build. 
+Please see the [FAQ](integration_faq.md#packaging-options) section for that.
+
+#### SDK Localizations Changes
+
+##### New strings
+| new                                   |
+|---------------------------------------|
+| `jumio_liveness_prompt_keep_centered` |
+| `jumio_liveness_prompt_keep_still`    |
+| `jumio_liveness_prompt_keep_upright`  |
+| `jumio_liveness_prompt_tilt_down`     |
+| `jumio_liveness_prompt_tilt_left`     |
+| `jumio_liveness_prompt_tilt_right`    |
+| `jumio_liveness_prompt_tilt_up`       |
+| `jumio_liveness_scanning_completed`   |
+
+##### Renamed strings
+| old                                          | new                                          |
+|----------------------------------------------|----------------------------------------------|
+| `jumio_liveness_prompt_success_another_shot` | `jumio_liveness_prompt_success_another_scan` |
+| `jumio_liveness_prompt_too_close`            | `jumio_liveness_prompt_move_away`            |
+| `jumio_error_case_ocr_failed`                | `jumio_error_case_scanning_not_possible`     |
+
+
 ## 4.11.0
 #### Public API Changes
 * `TILT` has been added to [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html) alongside with [`JumioTiltState`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.core/-jumio-tilt-state/index.html)
@@ -28,7 +93,7 @@ __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the cha
 | Lifecycle Viewmodel  | defaultui    | `"androidx.lifecycle:lifecycle-viewmodel-ktx"`        | 2.7.0       | 2.8.1       |
 | Lifecycle Savedstate | defaultui    | `"androidx.lifecycle:lifecycle-viewmodel-savedstate"` | 2.7.0       | 2.8.1       |
 | Lifecycle Livedata   | defaultui    | `"androidx.lifecycle:lifecycle-livedata-ktx"`         | 2.7.0       | 2.8.1       |
-| iProov               | iproov       | `"com.iproov.sdk:iproov"`                             | 9.0.4       | 9.1.1        |
+| IProov               | iproov       | `"com.iproov.sdk:iproov"`                             | 9.0.4       | 9.1.1       |
 
 #### Customization Changes
 * `jumio_divider_color` has been added to customize the color of list dividers
@@ -80,11 +145,9 @@ No backward incompatible changes
 * Property `DEVICE_RISK` has been removed from [`JumioScanMode`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html)
 * Property `DEVICE_RISK` has been removed from [`JumioCredentialPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html)
 
-
 #### Dependency Updates
 * Removed Devicerisk dependency: ~~`implementation "com.jumio.android:devicerisk:4.8.1"`~~
 * IProov update: ~~`"com.iproov.sdk:iproov:8.3.1"`~~ is replaced by `"com.iproov.sdk:iproov:9.0.3"`. Please note that this update also includes a major UI/UX upgrade.
-
 
 #### Customization Changes
 * The following customization color attributes have been added: 
@@ -156,17 +219,14 @@ No backward incompatible changes
   * `<item name="jumio_face_animation_foreground">`
   * `<item name="jumio_face_animation_background">`
 
-
 * The following customization attributes have been added to `@style/CustomOverlay` theme:
   * `<item name="jumio_scanOverlay">`
   * `<item name="jumio_scanOverlay_livenessStrokeAnimation">`
   * `<item name="jumio_scanOverlay_livenessStrokeAnimationCompleted>`      
 
-
 * The following customization attributes have been removed from `@style/CustomIproov` theme:
   * ~~`<item name="iproov_animation_foreground">`~~
   * ~~`<item name="iproov_animation_background">`~~
-
 
 * See also: [Jumio sample `styles.xml`](../sample/JumioMobileSample/src/main/res/values/styles.xml)
 
@@ -343,7 +403,7 @@ As of SDK version 4.0.0, a lot of SDK parameters that previously could be set in
 
 Please refer to the [Configuration section](integration_guide.md#configuration) of our integration guides for a detailed description of all Default UI changes and updates.
 
-Information about which user journey (ID Verification, Identity Verification, Authentication, ...) the SDK is going to provide now also has to be specified during the API call that request the `sdk.token`.
+Information about which user journey (ID Verification, Selfie Verification, Authentication, ...) the SDK is going to provide now also has to be specified during the API call that request the `sdk.token`.
 
 For more details on individual Jumio workflows, please refer to [Workflow Descriptions](https://github.com/Jumio/implementation-guides/blob/master/api-guide/workflow_descriptions.md) in our guides.
 
@@ -373,7 +433,6 @@ No backward incompatible changes
   * `iproov_footerBackgroundColor`
   * `iproov_livenessScanningTintColor`
   * `iproov_progressBarColor`
-
 
 ## 3.9.1
 #### Dependency Changes
@@ -408,7 +467,6 @@ No backward incompatible changes
  * [`EXTRA_SCAN_REFERENCE`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#EXTRA_SCAN_REFERENCE)
  * [`EXTRA_ACCOUNT_ID`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#EXTRA_ACCOUNT_ID)
  * [`EXTRA_SCAN_DATA`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/NetverifySDK.html#EXTRA_SCAN_DATA)
-
 
 * [`NetverifyCustomSDKInterface$onNetverifyError`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomSDKInterface.html#onNetverifyError-java.lang.String-java.lang.String-boolean-java.lang.String-java.lang.String-) added an optional parameter `accountId`
 
@@ -460,7 +518,6 @@ Please note that the naming of this will change with the Android Gradle Plugin 4
   * `"com.jumio.android:iproov:3.8.0@aar"` and `implementation ("com.iproov.sdk:iproov:6.1.0"){ exclude group: 'org.json', module:'json' }`
   __or__
   * `"com.jumio.android:zoom:3.8.0@aar"` and `"com.facetec:zoom-authentication:8.12.1@aar"`
-
 
 * AndroidX ConstraintLayout update: ~~`"androidx.constraintlayout:constraintlayout:2.0.1"`~~ is replaced by `"androidx.constraintlayout:constraintlayout:2.0.4"`
 
@@ -682,7 +739,6 @@ The following methods and the related parameters have been renamed to ensure con
 #### Additional Property in NetverifyCustomScanView
 `setMode(..)` must be called before the view is used. Possible values: NetverifyCustomScanView.MODE_ID or NetverifyCustomScanView.MODE_FACE
 
-
 ## 2.15.0
 #### Added Room
 Dependencies that have been added to the SDK:
@@ -857,7 +913,6 @@ Name matching by comparing a provided name with the extracted name from a docume
 ## 2.3.0
 #### Changes in Customization
 Additions for the customization options to support the configuration of all scan overlays.
-
 
 ## Copyright
 
