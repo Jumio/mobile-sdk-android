@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Tapatybės kortelė</string>
 	<string name="jumio_idtype_pp">Pasas</string>
 	<string name="jumio_idtype_visa">Viza</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Kai aptinkama ID kortelė, laikykite ją nejudindami</string>
 	<string name="jumio_nfc_retry_enable_capability">Norėdami gauti daugiau naudos iš savo paso, įjunkite telefono NFC funkciją</string>
 	<string name="jumio_nfc_retry_error_general">Bandykite dar kartą ir vykdykite instrukcijas, kaip nurodyta</string>
 	<string name="jumio_nfc_retry_tag_lost">Nejudėkite, kol pasas bus surastas</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Pereikite į šviesesnę vietą</string>
 	<string name="jumio_face_help_too_much_movement">Nejudėkite</string>
 	<string name="jumio_face_reject_title_eyes_closed">Užmerktos akys</string>
-	<string name="jumio_face_reject_title_generic">Veido patvirtinimas nepavyko</string>
+	<string name="jumio_face_reject_title_generic">Bandykite dar kartą</string>
 	<string name="jumio_face_reject_title_multiple_people">Aptikti keli asmenys</string>
 	<string name="jumio_face_reject_title_obscured_face">Nesimato veido</string>
 	<string name="jumio_face_reject_title_sunglasses">Aptikti akiniai nuo saulės</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Nuskaitymas nebaigta</string>
 	<string name="jumio_nfc_header_extracting">Iškeliami duomenys</string>
 	<string name="jumio_nfc_header_start">Padėkite savo pasą</string>
+	<string name="jumio_nfc_id_description">Slinkite tapatybės kortelę palei telefono galinę pusę, kol ji bus automatiškai aptikta.</string>
+	<string name="jumio_nfc_id_header_start">Tinkamai laikykite tapatybės kortelę</string>
 	<string name="jumio_processing_title">Rezultatas tikrinamas</string>
 	<string name="jumio_start_button">Pradėti</string>
 	<string name="jumio_start_instructions_01">Raskite gerai apšviestą paviršių</string>

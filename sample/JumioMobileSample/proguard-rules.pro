@@ -47,10 +47,6 @@
 -dontwarn okhttp3.**
 -dontwarn okio.**
 
-# Datadog
--keep class com.datadog.** { *; }
--keep class com.datadog.**$* { *; }
-
 # JMRTD
 -keep class org.jmrtd.** { *; }
 -keep class net.sf.scuba.** { *;}

@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">ID-kort</string>
 	<string name="jumio_idtype_pp">Pass</string>
 	<string name="jumio_idtype_visa">Visum</string>
+	<string name="jumio_nfc_id_retry_tag_lost">När ID-kortet har identifierats, håll det stilla</string>
 	<string name="jumio_nfc_retry_enable_capability">För att få ut mer av ditt pass, vänligen aktivera telefonens NFC -kapacitet</string>
 	<string name="jumio_nfc_retry_error_general">Försök igen och följ instruktionerna enligt bilden</string>
 	<string name="jumio_nfc_retry_tag_lost">Håll stilla när passet har detekterats</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Gå till en ljusare plats</string>
 	<string name="jumio_face_help_too_much_movement">Håll stadigt</string>
 	<string name="jumio_face_reject_title_eyes_closed">Ögonen är slutna</string>
-	<string name="jumio_face_reject_title_generic">Ansiktsverifieringen misslyckades</string>
+	<string name="jumio_face_reject_title_generic">Försök igen</string>
 	<string name="jumio_face_reject_title_multiple_people">Flera personer har detekterats</string>
 	<string name="jumio_face_reject_title_obscured_face">Ansiktet är dolt</string>
 	<string name="jumio_face_reject_title_sunglasses">Solglasögon upptäckta</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Skanning avbruten</string>
 	<string name="jumio_nfc_header_extracting">Hämtar uppgifter</string>
 	<string name="jumio_nfc_header_start">Placera ditt pass</string>
+	<string name="jumio_nfc_id_description">Svep ID-kortet längs med baksidan av din telefon tills det detekteras automatiskt</string>
+	<string name="jumio_nfc_id_header_start">Placera ditt ID-kort</string>
 	<string name="jumio_processing_title">Kontrollerar resultat</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Hitta en yta med god belysning</string>

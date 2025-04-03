@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Dowód osobisty</string>
 	<string name="jumio_idtype_pp">Paszport</string>
 	<string name="jumio_idtype_visa">Wiza</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Gdy karta identyfikacyjna zostanie wykryta, nie ruszaj się</string>
 	<string name="jumio_nfc_retry_enable_capability">Aby uzyskać więcej z paszportu, włącz funkcję NFC w telefonie</string>
 	<string name="jumio_nfc_retry_error_general">Spróbuj ponownie i postępuj zgodnie z instrukcjami</string>
 	<string name="jumio_nfc_retry_tag_lost">Nie ruszaj urządzenia po wykryciu paszportu</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Przenieś się w lepiej doświetlone miejsce</string>
 	<string name="jumio_face_help_too_much_movement">Nie ruszaj się.</string>
 	<string name="jumio_face_reject_title_eyes_closed">Oczy są zamknięte</string>
-	<string name="jumio_face_reject_title_generic">Nie udało się zweryfikować twarzy</string>
+	<string name="jumio_face_reject_title_generic">Spróbuj ponownie</string>
 	<string name="jumio_face_reject_title_multiple_people">Wykryto więcej niż jedną osobę</string>
 	<string name="jumio_face_reject_title_obscured_face">Twarz jest przysłonięta</string>
 	<string name="jumio_face_reject_title_sunglasses">Wykryto okulary przeciwsłoneczne</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Skan niekompletny</string>
 	<string name="jumio_nfc_header_extracting">Wyodrębnianie danych</string>
 	<string name="jumio_nfc_header_start">Ustaw swój paszport</string>
+	<string name="jumio_nfc_id_description">Przesuwaj dokument tożsamości wzdłuż tyłu telefonu, aż zostanie automatycznie wykryty</string>
+	<string name="jumio_nfc_id_header_start">Ustaw dokument tożsamości</string>
 	<string name="jumio_processing_title">Sprawdzanie wyniku</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Znajdź dobrze oświetloną powierzchnię</string>

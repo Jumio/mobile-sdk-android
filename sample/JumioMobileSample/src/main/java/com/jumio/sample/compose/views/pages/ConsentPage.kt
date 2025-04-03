@@ -22,6 +22,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -47,6 +48,8 @@ import com.jumio.sdk.enums.JumioConsentType
 @Composable
 fun ConsentPage(viewModel: CustomUIViewModel, modifier: Modifier = Modifier, onClose: () -> Unit) {
 	val loaderState by viewModel.consentPageLoaderState.collectAsStateWithLifecycle()
+	val credentialInfoList by viewModel.credentialInfoList.collectAsState()
+	val consentItems by viewModel.consentItems.collectAsState()
 	Column(modifier = modifier.fillMaxSize()) {
 		IconButton(onClick = {
 			onClose()
@@ -79,7 +82,7 @@ fun ConsentPage(viewModel: CustomUIViewModel, modifier: Modifier = Modifier, onC
 		}
 
 		LazyColumn {
-			items(viewModel.credentialInfoList) { info ->
+			items(credentialInfoList) { info ->
 				Text(
 					text = "• capture your " + info.category.name,
 					style = Typography.titleMedium,
@@ -94,7 +97,7 @@ fun ConsentPage(viewModel: CustomUIViewModel, modifier: Modifier = Modifier, onC
 		Spacer(modifier = Modifier.weight(1f))
 
 		LazyColumn {
-			items(viewModel.consentItems) { consentItem ->
+			items(consentItems) { consentItem ->
 				val checked = remember { mutableStateOf(false) }
 				Row(
 					verticalAlignment = Alignment.CenterVertically,

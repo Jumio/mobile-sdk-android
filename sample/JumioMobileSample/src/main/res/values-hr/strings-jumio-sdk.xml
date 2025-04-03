@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Osobna iskaznica</string>
 	<string name="jumio_idtype_pp">Putovnica</string>
 	<string name="jumio_idtype_visa">Visa</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Nakon što se otkrije osobna iskaznica, držite mirno</string>
 	<string name="jumio_nfc_retry_enable_capability">Da biste bolje iskoristili svoju putovnicu, omogućite NFC na svom telefonu</string>
 	<string name="jumio_nfc_retry_error_general">Pokušajte ponovo i slijedite upute kako su prikazane</string>
 	<string name="jumio_nfc_retry_tag_lost">Budite mirni nakon što se otkrije putovnica</string>
@@ -59,7 +60,7 @@
 	<string name="jumio_error_instant_feedback_blurry_tip_focus">Provjerite je li fotografija u fokusu</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_hold_steady">Mirno držite dokument prilikom fotografiranja</string>
 	<string name="jumio_error_instant_feedback_blurry_tip_readable">Pobrinite se da su sve pojedinosti na vašem dokumentu čitljive</string>
-	<string name="jumio_error_instant_feedback_blurry_title">Slika je previše mutna da bi se potvrdila</string>
+	<string name="jumio_error_instant_feedback_blurry_title">Slika je mutna. Pokušaj s jednom od drugih ponuđenih kamera</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Morate ponovno snimiti slike</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Provjerite jeste li preuzeli PDF digitalne vozačke dozvole iz službene državne aplikacije [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Pokušajte ponovno sa slikom u boji</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Premjestite se na svjetlije mjesto</string>
 	<string name="jumio_face_help_too_much_movement">Budite mirni</string>
 	<string name="jumio_face_reject_title_eyes_closed">Oči su zatvorene</string>
-	<string name="jumio_face_reject_title_generic">Neuspjela provjera lica</string>
+	<string name="jumio_face_reject_title_generic">Pokušajte ponovno</string>
 	<string name="jumio_face_reject_title_multiple_people">U kadru je više osoba</string>
 	<string name="jumio_face_reject_title_obscured_face">Lice nije vidljivo</string>
 	<string name="jumio_face_reject_title_sunglasses">Otkrivene su sunčane naočale</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Skeniranje nepotpuno</string>
 	<string name="jumio_nfc_header_extracting">Vađenje podataka</string>
 	<string name="jumio_nfc_header_start">Postavite putovnicu</string>
+	<string name="jumio_nfc_id_description">Pomičite osobnu iskaznicu duž stražnje strane telefona dok ne bude automatski otkrivena</string>
+	<string name="jumio_nfc_id_header_start">Postavite osobnu iskaznicu</string>
 	<string name="jumio_processing_title">Provjera rezultata</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Pronađite dobro osvijetljenu površinu</string>

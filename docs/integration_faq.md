@@ -84,18 +84,17 @@ Depending on your specific needs, you may want to strip out unused functionality
 The following table shows a range of different product configurations with the size and modules that are linked for it. These measurements reflect the extra size that Jumio components add to your app download size and are based on our [sample application](../sample/JumioMobileSample/).
 
 | Product Configuration                        |   Size   |                                           Modules                                                     |
-| :------------------------------------------- | :------: | :---------------------------------------------------------------------------------------------------: |
-| Base                                         |  1.13 MB |                                             core                                                      |
-| Base + iProov                                |  6.63 MB |                                         core, iproov                                                  |
-| Base + Autocapture                           |  2.75 MB |                                       core, docfinder                                                 |
-| Base + Autocapture, Barcode-Vision           |  3.05 MB |                               core, docfinder, barcode-mlkit                                          |
-| Base + Autocapture, Barcode-Vision, iProov   |  7.14 MB |                               core, docfinder, barcode, iproov                                        |
-| Base + Autocapture, Barcode-Vision, Liveness |  5.49 MB |                              core, docfinder, barcode, liveness                                       |
-| Base + Autocapture, Barcode-Vision, NFC      |  6.24 MB |                                core, docfinder, barcode, nfc                                          |
-| All (Custom UI only)                         | 10.37 MB |      core, docfinder, barcode-mlkit, iproov, nfc, digital-identity, camerax, liveness                 |
-| Base + Autocapture, Default UI               |  3.92 MB |                                 core, docfinder, defaultui                                            |
-| Base + Autocapture, Default UI, Datadog      |  4.60 MB |                             core, docfinder, defaultui, datadog                                       |
-| All (with Default UI)                        | 12.00 MB | core, docfinder, barcode-mlkit, iproov, nfc, digital-identtity, camerax, defaultui, datadog, liveness |
+| :------------------------------------------- |:--------:| :---------------------------------------------------------------------------------------------------: |
+| Base                                         | 1.14 MB  |                                             core                                                      |
+| Base + iProov                                | 6.69 MB  |                                         core, iproov                                                  |
+| Base + Autocapture                           | 2.75 MB  |                                       core, docfinder                                                 |
+| Base + Autocapture, Barcode-Vision           | 3.06 MB  |                               core, docfinder, barcode-mlkit                                          |
+| Base + Autocapture, Barcode-Vision, iProov   | 7.20 MB  |                               core, docfinder, barcode, iproov                                        |
+| Base + Autocapture, Barcode-Vision, Liveness | 5.55 MB  |                              core, docfinder, barcode, liveness                                       |
+| Base + Autocapture, Barcode-Vision, NFC      | 6.23 MB  |                                core, docfinder, barcode, nfc                                          |
+| All (Custom UI only)                         | 10.40 MB |      core, docfinder, barcode-mlkit, iproov, nfc, digital-identity, camerax, liveness                 |
+| Base + Autocapture, Default UI               | 3.95 MB  |                                 core, docfinder, defaultui                                            |
+| All (with Default UI)                        | 11.50 MB |     core, docfinder, barcode-mlkit, iproov, nfc, digital-identtity, camerax, defaultui, liveness      |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -303,6 +302,9 @@ android {
         resources.excludes.add("commonMain/default/manifest")
         resources.excludes.add("commonMain/default/linkdata/module")
         resources.excludes.add("commonMain/default/linkdata/**/*.knm")
+		resources.excludes.add("linuxMain/default/manifest")
+		resources.excludes.add("linuxMain/default/linkdata/module")
+		resources.excludes.add("linuxMain/default/linkdata/**/*.knm")
         resources.excludes.add("nativeMain/default/manifest")
         resources.excludes.add("nativeMain/default/linkdata/module")
         resources.excludes.add("nativeMain/default/linkdata/**/*.knm")

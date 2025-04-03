@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Identifikācijas karte</string>
 	<string name="jumio_idtype_pp">Pase</string>
 	<string name="jumio_idtype_visa">Vīza</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Kad ID karte ir atpazīta, turiet to nekustīgi</string>
 	<string name="jumio_nfc_retry_enable_capability">Lai iegūtu vairāk no pases, lūdzu, iespējojiet tālruņa NFC iespējas</string>
 	<string name="jumio_nfc_retry_error_general">Mēģiniet vēlreiz un izpildiet parādītās instrukcijas</string>
 	<string name="jumio_nfc_retry_tag_lost">Kad pase ir uzņemta, nekustieties</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Dodieties uz labāk apgaismotu vietu</string>
 	<string name="jumio_face_help_too_much_movement">Nekustieties</string>
 	<string name="jumio_face_reject_title_eyes_closed">Aizvērtas acis</string>
-	<string name="jumio_face_reject_title_generic">Neizdevās verificēt seju</string>
+	<string name="jumio_face_reject_title_generic">Mēģiniet vēlreiz</string>
 	<string name="jumio_face_reject_title_multiple_people">Katrā redzamas vairākas personas</string>
 	<string name="jumio_face_reject_title_obscured_face">Daļēji aizsegta seja</string>
 	<string name="jumio_face_reject_title_sunglasses">Saulesbrilles ir konstatētas</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Skenēšana nepabeigta</string>
 	<string name="jumio_nfc_header_extracting">Iegūst datus</string>
 	<string name="jumio_nfc_header_start">Novietojiet pasi</string>
+	<string name="jumio_nfc_id_description">Bīdiet ID karti gar tālruņa aizmuguri, līdz tā tiek automātiski detektēta</string>
+	<string name="jumio_nfc_id_header_start">Novietojiet savu ID karti</string>
 	<string name="jumio_processing_title">Pārbauda rezultātus</string>
 	<string name="jumio_start_button">Sākt</string>
 	<string name="jumio_start_instructions_01">Atrodiet labi apgaismotu virsmu</string>

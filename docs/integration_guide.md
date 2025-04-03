@@ -47,7 +47,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.12.1**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.13.0**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -75,39 +75,55 @@ If an optional module is **not linked**, some functionalities may not be availab
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.12.1"               
+	implementation "com.jumio.android:core:4.13.0"               
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.12.1"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.12.1"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.12.1"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:iproov:4.12.1"             // Face Liveness library
-	implementation "com.jumio.android:liveness:4.12.1"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.12.1"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.13.0"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.13.0"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.13.0"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:iproov:4.13.0"             // Face Liveness library
+	implementation "com.jumio.android:liveness:4.13.0"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.13.0"   // Digital Identity verification library
   	...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.12.1"
+	implementation "com.jumio.android:defaultui:4.13.0"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.12.1"         // CameraX library 
-	implementation "com.jumio.android:datadog:4.12.1"         // Analytics library
+	implementation "com.jumio.android:camerax:4.13.0"         // CameraX library 
   	...
+}
+```
+
+In addition to specifying individual dependencies, you can also use a BOM (Bill of Materials) to manage all the dependency versions at once. By using BOM, you ensure that all the dependencies are automatically aligned to the correct versions, reducing the need to manually update version numbers across your dependencies.
+
+```groovy
+dependencies {
+		implementation platform("com.jumio.android:bom:4.13.0")
+		implementation "com.jumio.android:core"
+		implementation "com.jumio.android:barcode-mlkit"
+		implementation "com.jumio.android:camerax"
+		implementation "com.jumio.android:defaultui"
+		implementation "com.jumio.android:digital-identity"
+		implementation "com.jumio.android:docfinder"
+		implementation "com.jumio.android:iproov"
+		implementation "com.jumio.android:liveness"
+		implementation "com.jumio.android:nfc"
 }
 ```
 
 #### Autocapture
 
 The module `com.jumio.android:docfinder` offers one generic scanning method across all ID documents, providing a more seamless capture experience for the end user. The SDK will automatically detect which type of ID document is presented by the user and guide them through the capturing process with live feedback.
-The models can be bundled with the app directly to save time on the download during the SDK runtime. Therefore download the following files from [here](https://cdn.mobile.jumio.ai/model/classifier_on_device_ep_99_float16_quant.enc) and [here](https://cdn.mobile.jumio.ai/model/normalized_ensemble_passports_v2_float16_quant.enc) and add it to the app assets folder.
+The models can be bundled with the app directly to save time on the download during the SDK runtime. Please see section [ML Models](#ml-models) for more information.
 
 #### Certified Face Liveness
 
@@ -116,7 +132,7 @@ Please note: `com.jumio.android:camerax` will be linked transitively when `com.j
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 
 ```groovy
-implementation "com.jumio.android:iproov:4.12.1"
+implementation "com.jumio.android:iproov:4.13.0"
 implementation("com.iproov.sdk:iproov:9.1.2") {
 	exclude group: 'org.json', module: 'json'
 }
@@ -243,7 +259,7 @@ You can download our encrypted models and add them to your assets folder for the
 If you are using the `com.jumio.android:docfinder` module, find the required models [here](https://cdn.mobile.jumio.ai/android/model/normalized_ensemble_passports_v2_float16_quant.enc) and [here](https://cdn.mobile.jumio.ai/android/model/classifierOnDeviceV2.enc).
 
 #### Liveness
-If you are using the `com.jumio.android:liveness` module, find the required model [here](https://cdn.mobile.jumio.ai/android/model/liveness_sdk_assets_v_0_0_1.enc).
+If you are using the `com.jumio.android:liveness` module, find the required model [here](https://cdn.mobile.jumio.ai/android/model/liveness_sdk_assets_v_1_1_5.enc).
 
 ### Preloading models
 In version `4.9.0` we introduced the [`JumioPreloader`][jumiopreloader]. It provides functionality to preload models without the JumioSDK being initialized. To do so call:

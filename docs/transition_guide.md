@@ -6,6 +6,61 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.13.0
+
+#### Public API Changes
+* The data parameter of [`JumioScanStep.ADDON_SCAN_PART`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-a-d-d-o-n_-s-c-a-n_-p-a-r-t/index.html) now contains [`JumioDocumentInfo`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-info/index.html) 
+* [`JumioDocumentInfo`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-info/index.html) contains the issuing country and the [`JumioDocumentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-type/index.html) of the initially scanned document 
+* Function `getHelpAnimation()` has been deprecated in [`JumioScanPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html)
+
+#### Dependency Updates
+| Name                  | Jumio Module    | Dependency                                            | old version | new version |
+|-----------------------|-----------------|-------------------------------------------------------|-------------|-------------|
+| Gradle Wrapper        | all             |                                                       | 8.7         | 8.9         |
+| Android Gradle Plugin | all             | `"com.android.library"`                               | 8.6.1       | 8.7.3       |
+| Kotlin Plugin         | all             | `"org.jetbrains.kotlin.android"`                      | 2.0.0       | 2.1.0       |
+| Kotlin Stdlib         | all             | `"org.jetbrains.kotlin:kotlin-stdlib-jdk8"`           | 2.0.0       | 2.1.0       |
+| Annotation            | core            | `"androidx.annotation:annotation-jvm"`                | 1.8.2       | 1.9.1       |
+| Navigation UI         | core            | `"androidx.navigation:navigation-ui-ktx"`             | 2.8.1       | 2.8.5       |
+| Navigation Fragment   | core            | `"androidx.navigation:navigation-fragment-ktx"`       | 2.8.1       | 2.8.5       |
+| Constraint Layout     | core, defaultui | `"androidx.constraintlayout:constraintlayout"`        | 2.1.4       | 2.2.0       |
+| CameraX Core          | camerax         | `"androidx.camera:camera-core"`                       | 1.3.4       | 1.4.1       |
+| CameraX Lifecycle     | camerax         | `"androidx.camera:camera-lifecycle"`                  | 1.3.4       | 1.4.1       |
+| CameraX View          | camerax         | `"androidx.camera:camera-view"`                       | 1.3.4       | 1.4.1       |
+| AndroidX Core KTX     | docfinder       | `"androidx.core:core-ktx"`                            | 1.13.1      | 1.15.0      |
+| CameraX Camera2       | camerax         | `"androidx.camera:camera-camera2"`                    | 1.3.4       | 1.4.1       |
+| Lifecycle Viewmodel   | defaultui       | `"androidx.lifecycle:lifecycle-viewmodel-ktx"`        | 2.8.6       | 2.8.7       |
+| Lifecycle Savedstate  | defaultui       | `"androidx.lifecycle:lifecycle-viewmodel-savedstate"` | 2.8.6       | 2.8.7       |
+| Lifecycle Livedata    | defaultui       | `"androidx.lifecycle:lifecycle-livedata-ktx"`         | 2.8.6       | 2.8.7       |
+| Datadog               | datadog         | `"com.jumio.android:datadog"`                         | 4.12.1      | REMOVED     |
+
+#### Dependency Management
+* Bill of Material (BOM) support for simplified dependency management and versioning has been added.
+
+```groovy
+dependencies {
+		implementation platform("com.jumio.android:bom:4.13.0")
+		implementation "com.jumio.android:core"
+		implementation "com.jumio.android:barcode-mlkit"
+		implementation "com.jumio.android:camerax"
+		implementation "com.jumio.android:defaultui"
+		implementation "com.jumio.android:digital-identity"
+		implementation "com.jumio.android:docfinder"
+		implementation "com.jumio.android:iproov"
+		implementation "com.jumio.android:liveness"
+		implementation "com.jumio.android:nfc"
+}
+```
+
+#### Customization Changes
+* Custom NFC parent theme has been renamed from ~~`Nfc.Customization`~~ to `Jumio.Nfc.Customization`
+* The following customization color attributes have been renamed:
+  * ~~`<item name="nfc_passport_cover">`~~ to `<item name="jumio_nfc_passport_cover">`
+  * ~~`<item name="nfc_passport_page_dark">`~~ to `<item name="jumio_nfc_passport_page_dark">`
+  * ~~`<item name="nfc_passport_page_light">`~~ to `<item name="jumio_nfc_passport_page_light">` 
+  * ~~`<item name="nfc_passport_foreground">`~~ to `<item name="jumio_nfc_passport_foreground">`
+  * ~~`<item name="nfc_phone_background">`~~ to `<item name="jumio_nfc_phone_background">`
+
 ## 4.12.1
 No backward incompatible changes
 

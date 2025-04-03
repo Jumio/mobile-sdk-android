@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">بطاقة الهوية</string>
 	<string name="jumio_idtype_pp">جواز السفر</string>
 	<string name="jumio_idtype_visa">التأشيرة</string>
+	<string name="jumio_nfc_id_retry_tag_lost">بمجرد الكشف عن بطاقة الهوية، اثبت في مكانك</string>
 	<string name="jumio_nfc_retry_enable_capability">للاستفادة بشكل أكبر من جواز سفرك ، يرجى تمكين إمكانية NFC بهاتفك</string>
 	<string name="jumio_nfc_retry_error_general">حاول مرة أخرى واتبع التعليمات كما هو موضح</string>
 	<string name="jumio_nfc_retry_tag_lost">انتظر حتى يتم اكتشاف جواز السفر</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">انتقل إلى مكان ذو إضاءة أسطع</string>
 	<string name="jumio_face_help_too_much_movement">حافظ على ثباتك</string>
 	<string name="jumio_face_reject_title_eyes_closed">الأعين مغلقة</string>
-	<string name="jumio_face_reject_title_generic">فشل التحقق من الوجه</string>
+	<string name="jumio_face_reject_title_generic">حاول مرة اخرى</string>
 	<string name="jumio_face_reject_title_multiple_people">جرى اكتشاف أشخاص متعددين</string>
 	<string name="jumio_face_reject_title_obscured_face">الوجه مشوش</string>
 	<string name="jumio_face_reject_title_sunglasses">تم اكتشاف النظارات الشمسية</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">المسح غير مكتمل</string>
 	<string name="jumio_nfc_header_extracting">استخراج البيانات</string>
 	<string name="jumio_nfc_header_start">ضع جواز سفرك</string>
+	<string name="jumio_nfc_id_description">مرر بطاقة الهوية على امتداد الجزء الخلفي لهاتفك حتى يتم اكتشافها تلقائيًا</string>
+	<string name="jumio_nfc_id_header_start">ضع بطاقة هويتك</string>
 	<string name="jumio_processing_title">جارٍ التحقق من النتيجة</string>
 	<string name="jumio_start_button">بدء</string>
 	<string name="jumio_start_instructions_01">ابحث عن سطح جيد الإضاءة</string>

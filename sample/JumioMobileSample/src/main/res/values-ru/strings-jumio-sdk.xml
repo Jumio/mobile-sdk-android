@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Удостоверение личности</string>
 	<string name="jumio_idtype_pp">Паспорт</string>
 	<string name="jumio_idtype_visa">Виза</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Когда ID карта обнаружена, держите неподвижно</string>
 	<string name="jumio_nfc_retry_enable_capability">Чтобы получить больше от вашего паспорта, пожалуйста, включите функцию NFC вашего телефона.</string>
 	<string name="jumio_nfc_retry_error_general">Попробуйте еще раз и следуйте инструкциям, как на рисунке</string>
 	<string name="jumio_nfc_retry_tag_lost">Когда паспорт обнаружен, держите неподвижно</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Перейдите в более светлое место</string>
 	<string name="jumio_face_help_too_much_movement">Не двигайтесь</string>
 	<string name="jumio_face_reject_title_eyes_closed">Глаза закрыты</string>
-	<string name="jumio_face_reject_title_generic">Проверка лица не пройдена</string>
+	<string name="jumio_face_reject_title_generic">Попробуйте еще раз</string>
 	<string name="jumio_face_reject_title_multiple_people">Обнаружено несколько человек</string>
 	<string name="jumio_face_reject_title_obscured_face">Лицо скрыто</string>
 	<string name="jumio_face_reject_title_sunglasses">Обнаружены солнечные очки</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Скан не полный</string>
 	<string name="jumio_nfc_header_extracting">Получение данных</string>
 	<string name="jumio_nfc_header_start">Разместите паспорт</string>
+	<string name="jumio_nfc_id_description">Проведите идентификационной картой по задней панели телефона до ее автоматического обнаружения</string>
+	<string name="jumio_nfc_id_header_start">Разместите идентификационную карту</string>
 	<string name="jumio_processing_title">Проверка результата</string>
 	<string name="jumio_start_button">Начать</string>
 	<string name="jumio_start_instructions_01">Найдите хорошо освещенную поверхность</string>

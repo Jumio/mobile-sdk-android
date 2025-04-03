@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Thẻ căn cước</string>
 	<string name="jumio_idtype_pp">Hộ chiếu</string>
 	<string name="jumio_idtype_visa">Thị thực</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Khi thẻ ID được phát hiện, hãy giữ yên</string>
 	<string name="jumio_nfc_retry_enable_capability">Để khai thác nhiều hơn hộ chiếu của bạn, vui lòng kích hoạt khả năng NFC của điện thoại</string>
 	<string name="jumio_nfc_retry_error_general">Hãy thử lại và làm theo hướng dẫn như hình minh họa</string>
 	<string name="jumio_nfc_retry_tag_lost">Giữ yên sau khi phát hiện thấy hộ chiếu</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Di chuyển đến một nơi sáng hơn</string>
 	<string name="jumio_face_help_too_much_movement">Giữ yên</string>
 	<string name="jumio_face_reject_title_eyes_closed">Mắt bị nhắm lại</string>
-	<string name="jumio_face_reject_title_generic">Xác minh khuôn mặt không thành công</string>
+	<string name="jumio_face_reject_title_generic">Vui lòng thử lại</string>
 	<string name="jumio_face_reject_title_multiple_people">Đã phát hiện nhiều người</string>
 	<string name="jumio_face_reject_title_obscured_face">Khuôn mặt đã bị che khuất</string>
 	<string name="jumio_face_reject_title_sunglasses">Đã phát hiện kính râm</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Quét chưa hoàn tất</string>
 	<string name="jumio_nfc_header_extracting">Trích xuất dữ liệu</string>
 	<string name="jumio_nfc_header_start">Định vị hộ chiếu</string>
+	<string name="jumio_nfc_id_description">Trượt thẻ ID dọc theo mặt sau của điện thoại cho đến khi thẻ được tự động phát hiện</string>
+	<string name="jumio_nfc_id_header_start">Định vị thẻ ID của bạn</string>
 	<string name="jumio_processing_title">Đang kiểm tra kết quả</string>
 	<string name="jumio_start_button">Bắt đầu</string>
 	<string name="jumio_start_instructions_01">Tìm bề mặt có đủ ánh sáng</string>

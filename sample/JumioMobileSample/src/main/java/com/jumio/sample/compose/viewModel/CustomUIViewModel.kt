@@ -20,6 +20,7 @@ import com.jumio.sdk.credentials.JumioFaceCredential
 import com.jumio.sdk.credentials.JumioIDCredential
 import com.jumio.sdk.data.JumioTiltState
 import com.jumio.sdk.document.JumioDocument
+import com.jumio.sdk.document.JumioDocumentInfo
 import com.jumio.sdk.enums.JumioConsentType
 import com.jumio.sdk.enums.JumioCredentialPart
 import com.jumio.sdk.enums.JumioDataCenter
@@ -53,8 +54,7 @@ class CustomUIViewModel(
 ) : AndroidViewModel(application), JumioControllerInterface, JumioScanPartInterface {
 
 	val consentPageLoaderState = MutableStateFlow(false)
-	var navigationState = MutableStateFlow<AppNavigation?>(null)
-		private set
+	val navigationState = MutableStateFlow<AppNavigation?>(null)
 
 	val confirmationHandler: JumioConfirmationHandler = JumioConfirmationHandler()
 	val rejectHandler: JumioRejectHandler = JumioRejectHandler()
@@ -64,8 +64,7 @@ class CustomUIViewModel(
 
 	private var jumioController: JumioController? = null
 
-	var credentialInfoList: List<JumioCredentialInfo> = emptyList()
-		private set
+	val credentialInfoList = MutableStateFlow<List<JumioCredentialInfo>>(emptyList())
 	var currentCredential: JumioCredential? = null
 		private set
 
@@ -73,11 +72,10 @@ class CustomUIViewModel(
 	var currentScanPart: JumioScanPart? = null
 	var countryList: List<String> = listOf()
 		private set
-	var documentList = MutableStateFlow<List<JumioDocument>>(listOf())
-		private set
+	val documentList = MutableStateFlow<List<JumioDocument>>(listOf())
 
-	var scanStepEvent = MutableStateFlow<JumioScanStep?>(null)
-	var scanUpdateEvent = MutableStateFlow<Pair<JumioScanUpdate, Any?>?>(null)
+	val scanStepEvent = MutableStateFlow<JumioScanStep?>(null)
+	val scanUpdateEvent = MutableStateFlow<Pair<JumioScanUpdate, Any?>?>(null)
 
 	private var currentCredentialInfo: JumioCredentialInfo?
 		get() = savedStateHandle["currentCredentialInfo"]
@@ -86,15 +84,13 @@ class CustomUIViewModel(
 	var selectedCountry: String
 		get() = savedStateHandle["selectedCountry"] ?: ""
 		private set(value) = savedStateHandle.set("selectedCountry", value)
-	var consentItems: List<JumioConsentItem>
-		get() = savedStateHandle["consentItems"] ?: emptyList()
-		private set(value) = savedStateHandle.set("consentItems", value)
-	var scanAlignmentState = MutableStateFlow("")
-		private set
-	var flipDocument = MutableStateFlow("")
-		private set
+	val consentItems = MutableStateFlow<List<JumioConsentItem>>(emptyList())
+	val scanAlignmentState = MutableStateFlow("")
+	val flipDocument = MutableStateFlow("")
 	val workflowResult = MutableStateFlow<JumioResult?>(null)
 	var isNewCredentialStarted = false
+	var scannedDocumentInfo: JumioDocumentInfo? = null
+		private set
 
 	init {
 		val jumioSDKHandle = savedStateHandle.get<Bundle>("jumioSDK")
@@ -121,7 +117,7 @@ class CustomUIViewModel(
 				this
 			) { controller, credentials, activeCredential, activeScanPart ->
 				jumioController = controller
-				credentialInfoList = credentials
+				credentialInfoList.value = credentials
 				currentCredential = activeCredential
 				currentScanPart = activeScanPart
 				onInitialized(credentials, controller.getUnconsentedItems())
@@ -131,8 +127,8 @@ class CustomUIViewModel(
 	}
 
 	override fun onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItem>?) {
-		credentialInfoList = credentials
-		this.consentItems = consentItems ?: listOf()
+		credentialInfoList.value = credentials
+		this.consentItems.value = consentItems ?: listOf()
 		consentItems?.forEach { consentItem ->
 			if (consentItem.type == JumioConsentType.PASSIVE) {
 				jumioController?.userConsented(consentItem, true)
@@ -264,8 +260,7 @@ class CustomUIViewModel(
 			}
 
 			JumioScanStep.ADDON_SCAN_PART -> {
-				currentScanPart = currentCredential?.getAddonPart()
-				setUpScanView()
+				scannedDocumentInfo = data as? JumioDocumentInfo
 			}
 
 			JumioScanStep.DIGITAL_IDENTITY_VIEW -> {
@@ -335,7 +330,7 @@ class CustomUIViewModel(
 				// Current credential cannot be cancelled, ignore the error
 				Log.e(TAG, e.message ?: "credential cancel failed")
 			}
-			currentCredentialInfo = credentialInfoList.firstOrNull()
+			currentCredentialInfo = credentialInfoList.value.firstOrNull()
 			currentCredential = currentCredentialInfo?.let { jumioController?.start(it) }
 			setUpCredential()
 		} catch (e: IllegalArgumentException) {
@@ -406,6 +401,7 @@ class CustomUIViewModel(
 			if (currentScanPart == null) {
 				continueWithNextPart()
 			} else {
+				navigationState.value = AppNavigation.NfcScan
 				currentScanPart?.start()
 			}
 		} catch (exception: SDKNotConfiguredException) {
@@ -437,15 +433,15 @@ class CustomUIViewModel(
 	}
 
 	private fun continueWithNextCredential() {
-		if (currentCredentialInfo?.id == credentialInfoList.last().id) {
+		if (currentCredentialInfo?.id == credentialInfoList.value.last().id) {
 			// Finish the controller and continue with upload view
 			currentCredential = null
 			navigationState.value =
 				AppNavigation.Loader(title = getApplication<Application>().applicationContext.getString(R.string.uploading))
 			jumioController?.finish()
 		} else {
-			val nextIndex = (credentialInfoList.indexOfFirst { it.id == currentCredentialInfo?.id }).plus(1)
-			currentCredentialInfo = credentialInfoList[nextIndex]
+			val nextIndex = (credentialInfoList.value.indexOfFirst { it.id == currentCredentialInfo?.id }).plus(1)
+			currentCredentialInfo = credentialInfoList.value[nextIndex]
 			currentCredential = currentCredentialInfo?.let { jumioController?.start(it) }
 			setUpCredential()
 		}
@@ -471,6 +467,10 @@ class CustomUIViewModel(
 			retryReason?.let {
 				currentScanPart?.retry(it)
 				retryReason = null
+				scanUpdateEvent.value = null
+				if (currentScanPart?.scanMode == JumioScanMode.NFC) {
+					navigationState.value = AppNavigation.NfcScan
+				}
 			}
 		} else {
 			jumioError?.let {

@@ -16,9 +16,14 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 For detailed technical changes please refer to our [Transition Guide](transition_guide.md).
 
 ## Support Period
-Current SDK version: __4.12.1__
+Current SDK version: __4.13.0__
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+
+## SDK Version: __4.13.0__
+![Improvement] Added support for NFC Extraction of IDs
+
+![Fix] Various bug fixes and improvements
 
 ## SDK Version: __4.12.1__
 ![Fix] Rare crashes in Jumio Liveness

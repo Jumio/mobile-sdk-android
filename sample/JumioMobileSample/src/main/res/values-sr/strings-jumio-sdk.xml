@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Лична карта</string>
 	<string name="jumio_idtype_pp">Пасош</string>
 	<string name="jumio_idtype_visa">Виза</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Када се лична карта открије, држите се мирно</string>
 	<string name="jumio_nfc_retry_enable_capability">Да бисте боље искористили свој пасош, омогућите NFC могућност вашег телефона</string>
 	<string name="jumio_nfc_retry_error_general">Покушајте поново и пратите упутства као што је приказано</string>
 	<string name="jumio_nfc_retry_tag_lost">Будите мирни када се пасош открије</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Померите се на светлије место</string>
 	<string name="jumio_face_help_too_much_movement">Не померајте се</string>
 	<string name="jumio_face_reject_title_eyes_closed">Очи су затворене</string>
-	<string name="jumio_face_reject_title_generic">Верификација лица није успела</string>
+	<string name="jumio_face_reject_title_generic">Покушајте поново</string>
 	<string name="jumio_face_reject_title_multiple_people">Откривено је више људи</string>
 	<string name="jumio_face_reject_title_obscured_face">Лице је сакривено</string>
 	<string name="jumio_face_reject_title_sunglasses">Откривене су сунчане наочаре</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Непотпуно скенирање</string>
 	<string name="jumio_nfc_header_extracting">Издвајање података</string>
 	<string name="jumio_nfc_header_start">Поставите пасош</string>
+	<string name="jumio_nfc_id_description">Померајте личну карту преко задње стране телефона док не буде аутоматски препозната</string>
+	<string name="jumio_nfc_id_header_start">Поставите личну карту</string>
 	<string name="jumio_processing_title">Провера резултата</string>
 	<string name="jumio_start_button">Започни</string>
 	<string name="jumio_start_instructions_01">Пронађите добро осветљену површину</string>

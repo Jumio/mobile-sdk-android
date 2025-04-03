@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Carte d\'identité</string>
 	<string name="jumio_idtype_pp">Passeport</string>
 	<string name="jumio_idtype_visa">Visa</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Une fois la carte d’identité détectée, restez immobile</string>
 	<string name="jumio_nfc_retry_enable_capability">Pour tirer le meilleur parti de votre passeport, veuillez activer la capacité NFC de votre téléphone</string>
 	<string name="jumio_nfc_retry_error_general">Réessayez et suivez les instructions comme illustré</string>
 	<string name="jumio_nfc_retry_tag_lost">Restez immobile une fois le passeport détecté</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Déplacez-vous dans un lieu plus lumineux</string>
 	<string name="jumio_face_help_too_much_movement">Restez immobile</string>
 	<string name="jumio_face_reject_title_eyes_closed">Les yeux sont fermés</string>
-	<string name="jumio_face_reject_title_generic">Échec de la vérification du visage</string>
+	<string name="jumio_face_reject_title_generic">Veuillez réessayer</string>
 	<string name="jumio_face_reject_title_multiple_people">Plusieurs personnes détectées</string>
 	<string name="jumio_face_reject_title_obscured_face">Le visage est assombri</string>
 	<string name="jumio_face_reject_title_sunglasses">Les lunettes de soleil sont détectées</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Numérisation incomp.</string>
 	<string name="jumio_nfc_header_extracting">Données extraites</string>
 	<string name="jumio_nfc_header_start">Placez votre passeport</string>
+	<string name="jumio_nfc_id_description">Faites glisser la carte d\'identité le long de la face arrière de votre téléphone jusqu\'à ce qu\'elle soit détectée automatiquement</string>
+	<string name="jumio_nfc_id_header_start">Placez votre carte d\'identité</string>
 	<string name="jumio_processing_title">Vérification du résultat</string>
 	<string name="jumio_start_button">Commencer</string>
 	<string name="jumio_start_instructions_01">Trouvez une surface bien éclairée</string>

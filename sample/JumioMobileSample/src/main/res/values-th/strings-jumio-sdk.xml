@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">บัตรประชาชน</string>
 	<string name="jumio_idtype_pp">หนังสือเดินทาง</string>
 	<string name="jumio_idtype_visa">วีซ่า</string>
+	<string name="jumio_nfc_id_retry_tag_lost">เมื่อตรวจพบบัตรประจําตัวประชาชนแล้ว ให้กดค้างไว้</string>
 	<string name="jumio_nfc_retry_enable_capability">หากต้องการใช้หนังสือเดินทางให้มากขึ้น โปรดเปิดใช้งานความสามารถ NFC ของโทรศัพท์</string>
 	<string name="jumio_nfc_retry_error_general">ลองอีกครั้งและทำตามคำแนะนำดังที่แสดง</string>
 	<string name="jumio_nfc_retry_tag_lost">ถือนิ่ง ๆ เมื่อตรวจพบหนังสือเดินทางแล้ว</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">ย้ายไปที่สว่างขึ้น</string>
 	<string name="jumio_face_help_too_much_movement">อยู่นิ่งๆ</string>
 	<string name="jumio_face_reject_title_eyes_closed">ตาปิดอยู่</string>
-	<string name="jumio_face_reject_title_generic">การตรวจสอบใบหน้าล้มเหลว</string>
+	<string name="jumio_face_reject_title_generic">โปรดลองอีกครั้ง</string>
 	<string name="jumio_face_reject_title_multiple_people">ตรวจพบหลายคน</string>
 	<string name="jumio_face_reject_title_obscured_face">ใบหน้าถูกบดบัง</string>
 	<string name="jumio_face_reject_title_sunglasses">ตรวจพบแว่นกันแดด</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">สแกนไม่เสร็จสมบูรณ์</string>
 	<string name="jumio_nfc_header_extracting">กำลังแยกข้อมูล</string>
 	<string name="jumio_nfc_header_start">วางหนังสือเดินทาง</string>
+	<string name="jumio_nfc_id_description">เลื่อนบัตรประจำตัวไปตามด้านหลังโทรศัพท์ของคุณจนกว่าจะตรวจจับโดยอัตโนมัติ</string>
+	<string name="jumio_nfc_id_header_start">จัดตำแหน่งบัตรประจำตัวของคุณ</string>
 	<string name="jumio_processing_title">กำลังตรวจสอบผลลัพธ์</string>
 	<string name="jumio_start_button">เริ่ม</string>
 	<string name="jumio_start_instructions_01">ค้นหาพื้นผิวที่มีแสงสว่างเพียงพอ</string>

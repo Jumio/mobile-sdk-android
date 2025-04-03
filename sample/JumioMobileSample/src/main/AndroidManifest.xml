@@ -55,6 +55,16 @@
 					android:host="jumio-di-redirect"
 					android:scheme="app" />
 			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data
+					android:host="jumio-digital-identity"
+					android:scheme="eidas" />
+			</intent-filter>
 		</activity>
 
 		<activity
@@ -83,6 +93,16 @@
 					android:host="jumio-di-redirect"
 					android:scheme="app" />
 			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data
+					android:host="jumio-digital-identity"
+					android:scheme="eidas" />
+			</intent-filter>
 		</activity>
 
 		<activity
@@ -100,6 +120,16 @@
 				<data
 					android:host="jumio-di-redirect"
 					android:scheme="app" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data
+					android:host="jumio-digital-identity"
+					android:scheme="eidas" />
 			</intent-filter>
 		</activity>
 

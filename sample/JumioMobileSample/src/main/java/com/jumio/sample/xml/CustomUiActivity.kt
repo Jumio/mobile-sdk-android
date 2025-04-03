@@ -19,6 +19,7 @@ import android.widget.FrameLayout
 import android.widget.SeekBar
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -44,7 +45,9 @@ import com.jumio.sdk.credentials.JumioDocumentCredential
 import com.jumio.sdk.credentials.JumioFaceCredential
 import com.jumio.sdk.credentials.JumioIDCredential
 import com.jumio.sdk.data.JumioTiltState
+import com.jumio.sdk.document.JumioDocumentInfo
 import com.jumio.sdk.enums.JumioAcquireMode
+import com.jumio.sdk.enums.JumioCameraFacing
 import com.jumio.sdk.enums.JumioConsentType
 import com.jumio.sdk.enums.JumioCredentialPart
 import com.jumio.sdk.enums.JumioDataCenter
@@ -88,6 +91,7 @@ class CustomUiActivity :
 	private lateinit var sdk: JumioSDK
 	private lateinit var binding: ActivityCustomuiBinding
 	private lateinit var jumioController: JumioController
+	private lateinit var backPressCallback: OnBackPressedCallback
 
 	private var consentItems: List<JumioConsentItem> = emptyList()
 	private var credential: JumioCredential? = null
@@ -108,6 +112,8 @@ class CustomUiActivity :
 
 	private val scanView: JumioScanView
 		get() = binding.scanView
+
+	private var cameraFacing: JumioCameraFacing? = null
 
 	private fun validatePermissions(): Boolean {
 		if (JumioSDK.hasAllRequiredPermissions(this)) {
@@ -131,7 +137,6 @@ class CustomUiActivity :
 		}
 	}
 
-	@Suppress("DEPRECATION")
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 
@@ -164,6 +169,7 @@ class CustomUiActivity :
 		initDocumentSelectionUi()
 		initCredentialUi()
 		initScanPartUi()
+		initBackPressDispatcher()
 
 		binding.extraction.setOnCheckedChangeListener { _, isChecked ->
 			scanView.extraction = isChecked
@@ -383,6 +389,31 @@ class CustomUiActivity :
 		}
 	}
 
+	/**
+	 * Handle back button accordingly - finish the SDK when it is complete, otherwise just cancel it
+	 */
+	private fun initBackPressDispatcher() {
+		if (::backPressCallback.isInitialized) {
+			return
+		}
+		backPressCallback = object : OnBackPressedCallback(true) {
+			override fun handleOnBackPressed() {
+				if (::jumioController.isInitialized) {
+					if (jumioController.isComplete) {
+						jumioController.finish()
+					} else {
+						catchAndShow {
+							jumioController.cancel()
+						}
+					}
+				} else {
+					onBackPressedDispatcher.onBackPressed()
+				}
+			}
+		}
+		onBackPressedDispatcher.addCallback(this, backPressCallback)
+	}
+
 	private fun restoreJumioSdk(savedInstanceState: Bundle) {
 		sdk.restore(
 			applicationContext,
@@ -399,6 +430,10 @@ class CustomUiActivity :
 			credential?.let {
 				val country = savedInstanceState.getString("selectedCountry")
 				val document = savedInstanceState.getString("selectedDocument")
+				val cameraFacing = savedInstanceState.getString("cameraFacing")
+				if (cameraFacing == JumioCameraFacing.FRONT.name) {
+					this.cameraFacing = JumioCameraFacing.FRONT
+				}
 				setupCredential(country, document)
 
 				restoreIconState(binding.credentialLayout, savedInstanceState, "credentials")
@@ -417,6 +452,9 @@ class CustomUiActivity :
 
 		outState.putString("selectedCountry", binding.customCountrySpinner.selectedItem as? String)
 		outState.putString("selectedDocument", binding.customDocumentSpinner.selectedItem as? String)
+		if (scanView.hasMultipleCameras && scanView.cameraFacing == JumioCameraFacing.FRONT) {
+			outState.putString("cameraFacing", scanView.cameraFacing.name)
+		}
 
 		// save views:
 		saveIconState(binding.credentialLayout, outState, "credentials")
@@ -429,12 +467,16 @@ class CustomUiActivity :
 	}
 
 	/**
-	 * In case the activity is destroyed and the workflow has not been finished already (indicated by [JumioController.isComplete]),
-	 * make sure to call [JumioController.stop]
+	 * Functions [JumioController.persist] and [JumioController.stop] need to be called independently from
+	 * [JumioController.isComplete] as long as the workflow has not yet been finished or canceled.
 	 */
 	override fun onDestroy() {
 		if (this::jumioController.isInitialized) {
 			jumioController.stop()
+		}
+
+		if (::backPressCallback.isInitialized) {
+			backPressCallback.remove()
 		}
 
 		try {
@@ -445,25 +487,6 @@ class CustomUiActivity :
 		}
 
 		super.onDestroy()
-	}
-
-	/**
-	 * Handle back button accordingly - finish the SDK when it is complete, otherwise just cancel it
-	 */
-	@Suppress("DEPRECATION")
-	@Deprecated("Deprecated in Java")
-	override fun onBackPressed() {
-		if (this::jumioController.isInitialized) {
-			if (jumioController.isComplete) {
-				jumioController.finish()
-			} else {
-				catchAndShow {
-					jumioController.cancel()
-				}
-			}
-		} else {
-			super.onBackPressed()
-		}
 	}
 
 	private fun saveIconState(group: ViewGroup, outState: Bundle, prefix: String) {
@@ -497,6 +520,13 @@ class CustomUiActivity :
 					null
 				)
 			}
+		}
+	}
+
+	private fun restoreCameraFacing() {
+		if (cameraFacing == JumioCameraFacing.FRONT) {
+			scanView.cameraFacing = cameraFacing as JumioCameraFacing
+			cameraFacing = null
 		}
 	}
 
@@ -663,6 +693,7 @@ class CustomUiActivity :
 				lifecycle.addObserver(scanView)
 
 				binding.startFallback.isEnabled = scanPart?.hasFallback == true
+				restoreCameraFacing()
 			}
 			JumioScanStep.IMAGE_TAKEN -> {
 				// Nothing to do in the custom ui implementation
@@ -747,6 +778,9 @@ class CustomUiActivity :
 				}
 			}
 			JumioScanStep.ADDON_SCAN_PART -> {
+				if (data is JumioDocumentInfo) {
+					logText += ": scanned document $data"
+				}
 				showView(binding.addonControls)
 			}
 			JumioScanStep.DIGITAL_IDENTITY_VIEW -> {

@@ -64,7 +64,7 @@
 		<!-- scan-overlay, iproov & nfc colors -->
 		<item name="jumio_overlay_customization">@style/CustomOverlay</item>
 		<item name="iproov_customization">@style/CustomIproov</item>
-		<item name="nfc_customization">@style/CustomNfc</item>
+		<item name="jumio_nfc_customization">@style/CustomNfc</item>
 	</style>
 
 	<style name="CustomOverlay" parent="Jumio.Overlay.Customization">
@@ -78,12 +78,12 @@
 		<item name="jumio_scanOverlay_livenessStrokeAnimationCompleted">#C31322</item>
 	</style>
 
-	<style name="CustomNfc" parent="Nfc.Customization">
-		<item name="nfc_passport_cover">#3032b4</item>
-		<item name="nfc_passport_page_dark">#0558ff</item>
-		<item name="nfc_passport_page_light">#31bce1</item>
-		<item name="nfc_passport_foreground">@color/jumio_white</item>
-		<item name="nfc_phone_background">#333D47</item>
+	<style name="CustomNfc" parent="Jumio.Nfc.Customization">
+		<item name="jumio_nfc_passport_cover">#3032b4</item>
+		<item name="jumio_nfc_passport_page_dark">#0558ff</item>
+		<item name="jumio_nfc_passport_page_light">#31bce1</item>
+		<item name="jumio_nfc_passport_foreground">@color/jumio_white</item>
+		<item name="jumio_nfc_phone_background">#333D47</item>
 	</style>
 
 	<style name="CustomIproov" parent="Iproov.Customization">

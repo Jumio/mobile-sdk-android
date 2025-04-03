@@ -1,12 +1,12 @@
 buildscript {
-	ext.kotlin_version = "2.0.0"
+	ext.kotlin_version = "2.1.0"
 	repositories {
 		google()
 		mavenCentral()
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath "com.android.tools.build:gradle:8.6.1"
+		classpath "com.android.tools.build:gradle:8.7.3"
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 		classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
 		classpath "org.jetbrains.kotlin:compose-compiler-gradle-plugin:$kotlin_version"
@@ -37,38 +37,38 @@ repositories {
 }
 
 ext {
-	SDK_VERSION = "4.12.1"
+	SDK_VERSION = "4.13.0"
 }
 
 dependencies {
 	implementation fileTree(dir: 'libs', include: '*.jar')
 
 	// Kotlin
-	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.0"
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.0"
 	// only for the sample code
-	implementation "androidx.activity:activity-ktx:1.9.2"
+	implementation "androidx.activity:activity-ktx:1.9.3"
 	implementation "androidx.multidex:multidex:2.0.1"
-	implementation platform("androidx.compose:compose-bom:2024.09.03")
+	implementation platform("androidx.compose:compose-bom:2024.12.01")
 	implementation "androidx.compose.material3:material3"
 	implementation "androidx.compose.ui:ui"
 	implementation "androidx.compose.ui:ui-tooling-preview"
-	implementation "androidx.activity:activity-compose:1.9.2"
+	implementation "androidx.activity:activity-compose:1.9.3"
 	implementation "androidx.compose.compiler:compiler:1.5.15"
-	implementation "androidx.navigation:navigation-compose:2.8.2"
+	implementation "androidx.navigation:navigation-compose:2.8.5"
 	implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3"
-	implementation "androidx.lifecycle:lifecycle-runtime-compose:2.8.6"
+	implementation "androidx.lifecycle:lifecycle-runtime-compose:2.8.7"
 
 	// Jumio dependencies
-	implementation "com.jumio.android:core:${SDK_VERSION}"
-	implementation "com.jumio.android:docfinder:${SDK_VERSION}"
-	implementation "com.jumio.android:nfc:${SDK_VERSION}"
-	implementation "com.jumio.android:barcode-mlkit:${SDK_VERSION}"
-	implementation "com.jumio.android:iproov:${SDK_VERSION}"
-	implementation "com.jumio.android:defaultui:${SDK_VERSION}"
-	implementation "com.jumio.android:datadog:${SDK_VERSION}"
-	implementation "com.jumio.android:digital-identity:${SDK_VERSION}"
-	implementation "com.jumio.android:liveness:${SDK_VERSION}"
-	implementation "com.jumio.android:camerax:${SDK_VERSION}"
+	implementation platform("com.jumio.android:bom:${SDK_VERSION}")
+	implementation "com.jumio.android:core"
+	implementation "com.jumio.android:docfinder"
+	implementation "com.jumio.android:nfc"
+	implementation "com.jumio.android:barcode-mlkit"
+	implementation "com.jumio.android:iproov"
+	implementation "com.jumio.android:defaultui"
+	implementation "com.jumio.android:digital-identity"
+	implementation "com.jumio.android:liveness"
+	implementation "com.jumio.android:camerax"
 }
 
 android {
@@ -120,7 +120,20 @@ android {
 		resources.excludes.add("META-INF/kotlin-project-structure-metadata.json")
 		resources.excludes.add("META-INF/kotlinx_coroutines_core.version")
 		resources.excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
+		resources.excludes.add("META-INF/LICENSE.md")
+		resources.excludes.add("META-INF/LICENSE-notice.md")
 		resources.excludes.add("commonMain/default/manifest")
+		resources.excludes.add("commonMain/default/linkdata/module")
+		resources.excludes.add("commonMain/default/linkdata/**/*.knm")
+		resources.excludes.add("linuxMain/default/manifest")
+		resources.excludes.add("linuxMain/default/linkdata/module")
+		resources.excludes.add("linuxMain/default/linkdata/**/*.knm")
+		resources.excludes.add("nativeMain/default/manifest")
+		resources.excludes.add("nativeMain/default/linkdata/module")
+		resources.excludes.add("nativeMain/default/linkdata/**/*.knm")
+		resources.excludes.add("nonJvmMain/default/manifest")
+		resources.excludes.add("nonJvmMain/default/linkdata/module")
+		resources.excludes.add("nonJvmMain/default/linkdata/**/*.knm")
 	}
 
 	composeOptions {

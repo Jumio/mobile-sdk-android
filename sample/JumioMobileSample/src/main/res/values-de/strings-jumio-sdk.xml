@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Personalausweis</string>
 	<string name="jumio_idtype_pp">Reisepass</string>
 	<string name="jumio_idtype_visa">Visum</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Sobald der Ausweis erkannt wurde, halten Sie ihn still</string>
 	<string name="jumio_nfc_retry_enable_capability">Um mehr aus Ihrem Reisepass herauszuholen, aktivieren Sie bitte die NFC-Funktion Ihres Telefons</string>
 	<string name="jumio_nfc_retry_error_general">Erneut versuchen u. Anweisungen wie illustriert befolgen</string>
 	<string name="jumio_nfc_retry_tag_lost">Stillhalten, sobald Reisepass erkannt wurde</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Gehen Sie an einen helleren Ort</string>
 	<string name="jumio_face_help_too_much_movement">Halten Sie still</string>
 	<string name="jumio_face_reject_title_eyes_closed">Die Augen sind geschlossen</string>
-	<string name="jumio_face_reject_title_generic">Gesichtserkennung fehlgeschlagen</string>
+	<string name="jumio_face_reject_title_generic">Erneut versuchen</string>
 	<string name="jumio_face_reject_title_multiple_people">Mehrere Personen erkannt</string>
 	<string name="jumio_face_reject_title_obscured_face">Das Gesicht ist verdeckt</string>
 	<string name="jumio_face_reject_title_sunglasses">Sonnenbrillen werden erkannt</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Scan unvollständig</string>
 	<string name="jumio_nfc_header_extracting">Daten extrahieren</string>
 	<string name="jumio_nfc_header_start">Reisepass positionieren</string>
+	<string name="jumio_nfc_id_description">Bewegen Sie den Ausweis auf der Rückseite Ihres Telefons entlang, bis er automatisch erkannt wird.</string>
+	<string name="jumio_nfc_id_header_start">Ausweis positionieren</string>
 	<string name="jumio_processing_title">Ergebnis wird überprüft</string>
 	<string name="jumio_start_button">Starten</string>
 	<string name="jumio_start_instructions_01">Suchen Sie eine gut beleuchtete Oberfläche</string>

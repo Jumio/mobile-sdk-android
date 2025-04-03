@@ -149,4 +149,4 @@ Datadog registers a Content Receiver through its AndroidManifest. Therefore Data
 ```
 api "com.datadoghq:dd-sdk-android-rum:2.0.0"
 ```
-__Note:__ Version numbers may vary.
+__Note:__ Datadog was removed in SDK version 4.13.0

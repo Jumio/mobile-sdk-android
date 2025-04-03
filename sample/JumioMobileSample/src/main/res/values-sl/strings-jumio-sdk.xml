@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Osebna izkaznica</string>
 	<string name="jumio_idtype_pp">Potni list</string>
 	<string name="jumio_idtype_visa">Vizum</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Ko je osebna izkaznica zaznana, držite pri miru</string>
 	<string name="jumio_nfc_retry_enable_capability">Če želite iz potnega lista pridobiti več, omogočite v telefonu NFC</string>
 	<string name="jumio_nfc_retry_error_general">Poskusite znova in sledite prikazanim navodilom</string>
 	<string name="jumio_nfc_retry_tag_lost">Ko je potni list zaznan, držite pri miru</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Premaknite se na svetlejše mesto</string>
 	<string name="jumio_face_help_too_much_movement">Stojte pri miru</string>
 	<string name="jumio_face_reject_title_eyes_closed">Oči so zaprte</string>
-	<string name="jumio_face_reject_title_generic">Preverjanje obraza ni uspelo</string>
+	<string name="jumio_face_reject_title_generic">Poskusite znova</string>
 	<string name="jumio_face_reject_title_multiple_people">Zaznanih je več ljudi</string>
 	<string name="jumio_face_reject_title_obscured_face">Obraz je zakrit</string>
 	<string name="jumio_face_reject_title_sunglasses">Zaznane sončne očala</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Nedokončano branje</string>
 	<string name="jumio_nfc_header_extracting">Pridobiv. podatkov</string>
 	<string name="jumio_nfc_header_start">Namestite potni list</string>
+	<string name="jumio_nfc_id_description">Osebno izkaznico premikajte vodoravno za telefonom, dokler je samodejno ne zazna.</string>
+	<string name="jumio_nfc_id_header_start">Pokažite osebno izkaznico.</string>
 	<string name="jumio_processing_title">Preverjanje rezultata</string>
 	<string name="jumio_start_button">Začni</string>
 	<string name="jumio_start_instructions_01">Poiščite dobro osvetljeno površino</string>

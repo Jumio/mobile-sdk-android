@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Bilhete de Identidade</string>
 	<string name="jumio_idtype_pp">Passaporte</string>
 	<string name="jumio_idtype_visa">Visa</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Uma vez que o cartão de identificação é detectado, mantenha-o imóvel</string>
 	<string name="jumio_nfc_retry_enable_capability">Para obter mais do seu passaporte, ative o recurso NFC do seu telefone</string>
 	<string name="jumio_nfc_retry_error_general">Tente novamente e siga as instruções conforme ilustrado</string>
 	<string name="jumio_nfc_retry_tag_lost">Pare quando o passaporte for detectado</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Vá para um local mais luminoso</string>
 	<string name="jumio_face_help_too_much_movement">Fique imóvel</string>
 	<string name="jumio_face_reject_title_eyes_closed">Os olhos estão fechados</string>
-	<string name="jumio_face_reject_title_generic">A verificação facial falhou</string>
+	<string name="jumio_face_reject_title_generic">Tente novamente</string>
 	<string name="jumio_face_reject_title_multiple_people">Várias pessoas detetadas</string>
 	<string name="jumio_face_reject_title_obscured_face">O rosto está obscurecido</string>
 	<string name="jumio_face_reject_title_sunglasses">Óculos de sol foram detectados</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Digitalização incomp</string>
 	<string name="jumio_nfc_header_extracting">A extrair dados</string>
 	<string name="jumio_nfc_header_start">Posicione o passaporte</string>
+	<string name="jumio_nfc_id_description">Deslize o cartão de identificação junto à traseira do seu telefone até que seja detetado automaticamente</string>
+	<string name="jumio_nfc_id_header_start">Posicione o seu cartão de identificação</string>
 	<string name="jumio_processing_title">A verificar o resultado</string>
 	<string name="jumio_start_button">Começar</string>
 	<string name="jumio_start_instructions_01">Encontre uma superfície bem iluminada</string>

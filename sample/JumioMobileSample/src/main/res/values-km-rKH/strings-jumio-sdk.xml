@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">អត្តសញ្ញាណបណ្ណ</string>
 	<string name="jumio_idtype_pp">លិខិតឆ្លងដែន</string>
 	<string name="jumio_idtype_visa">ទិដ្ឋាការ</string>
+	<string name="jumio_nfc_id_retry_tag_lost">នៅពេលដែលអត្តសញ្ញាណប័ណ្ណត្រូវបានរកឃើញ សូមសង្កត់នៅស្ងៀម</string>
 	<string name="jumio_nfc_retry_enable_capability">ដើម្បីទទួលបានលិខិតឆ្លងដែនរបស់អ្នកកាន់តែច្រើនសូមបើកសមត្ថភាព NFC របស់ទូរស័ព្ទអ្នក</string>
 	<string name="jumio_nfc_retry_error_general">ព្យាយាមម្តងទៀត ហើយធ្វើតាមការណែនាំដូចដែលបានបង្ហាញ</string>
 	<string name="jumio_nfc_retry_tag_lost">កាន់ឱ្យនឹងនៅពេលដែលលិខិតឆ្លងដែនត្រូវបានរកឃើញ</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">ទៅកន្លែងណាដែលភ្លឺជាងនេះ</string>
 	<string name="jumio_face_help_too_much_movement">កាន់ឲ្យនឹង</string>
 	<string name="jumio_face_reject_title_eyes_closed">ភ្នែកបិទ</string>
-	<string name="jumio_face_reject_title_generic">ការផ្ទៀងផ្ទាត់មុខបានបរាជ័យ</string>
+	<string name="jumio_face_reject_title_generic">សូមព្យាយាមម្តងទៀត</string>
 	<string name="jumio_face_reject_title_multiple_people">បានរកឃើញមនុស្សច្រើន</string>
 	<string name="jumio_face_reject_title_obscured_face">បាំងមុខ</string>
 	<string name="jumio_face_reject_title_sunglasses">បានរកឃើញវ៉ិបសត្វ</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">ការស្កេនមិនទាន់ចប់</string>
 	<string name="jumio_nfc_header_extracting">កំពុងទាញទិន្នន័យចេញ</string>
 	<string name="jumio_nfc_header_start">កំណត់ទីតាំងលិខិតឆ្លងដែន</string>
+	<string name="jumio_nfc_id_description">រុញអត្តសញ្ញាណប័ណ្ណតាមបណ្ដោយខ្នងទូរសព្ទរបស់អ្នក រហូតដល់វាត្រូវបានរកឃើញដោយស្វ័យប្រវត្តិ</string>
+	<string name="jumio_nfc_id_header_start">ដាក់ទីតាំងអត្តសញ្ញាណប័ណ្ណរបស់អ្នក</string>
 	<string name="jumio_processing_title">កំពុងពិនិត្យលទ្ធផល</string>
 	<string name="jumio_start_button">ចាប់ផ្តើម</string>
 	<string name="jumio_start_instructions_01">រកមើលផ្ទៃដែលមានពន្លឺល្អ</string>

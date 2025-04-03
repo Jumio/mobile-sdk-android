@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Identity Card</string>
 	<string name="jumio_idtype_pp">Passport</string>
 	<string name="jumio_idtype_visa">Visa</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Once the ID card is detected, hold still</string>
 	<string name="jumio_nfc_retry_enable_capability">To get more out of your passport, please enable your phone\'s NFC capability</string>
 	<string name="jumio_nfc_retry_error_general">Try again and follow the instructions as illustrated</string>
 	<string name="jumio_nfc_retry_tag_lost">Hold still once the passport is detected</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Move somewhere brighter</string>
 	<string name="jumio_face_help_too_much_movement">Keep still</string>
 	<string name="jumio_face_reject_title_eyes_closed">Eyes are closed</string>
-	<string name="jumio_face_reject_title_generic">Face verification failed</string>
+	<string name="jumio_face_reject_title_generic">Please try again</string>
 	<string name="jumio_face_reject_title_multiple_people">Multiple people detected</string>
 	<string name="jumio_face_reject_title_obscured_face">Face is obscured</string>
 	<string name="jumio_face_reject_title_sunglasses">Sunglasses detected</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Scan incomplete</string>
 	<string name="jumio_nfc_header_extracting">Extracting data</string>
 	<string name="jumio_nfc_header_start">Position your passport</string>
+	<string name="jumio_nfc_id_description">Slide the ID card along the back of your phone until it’s detected automatically</string>
+	<string name="jumio_nfc_id_header_start">Position your ID card</string>
 	<string name="jumio_processing_title">Checking result</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Find a well-lit surface</string>

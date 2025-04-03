@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Identiteitskaart</string>
 	<string name="jumio_idtype_pp">Paspoort</string>
 	<string name="jumio_idtype_visa">Visum</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Sodra die ID-kaart opgespoor is, hou stil</string>
 	<string name="jumio_nfc_retry_enable_capability">Aktiveer die telefoon se NFC -funksie om meer uit u paspoort te put</string>
 	<string name="jumio_nfc_retry_error_general">Probeer weer en volg die instruksies soos geïllustreer</string>
 	<string name="jumio_nfc_retry_tag_lost">Hou stil sodra die paspoort bespeur is</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Skuif iewers heen waar daar meer lig is</string>
 	<string name="jumio_face_help_too_much_movement">Hou stil</string>
 	<string name="jumio_face_reject_title_eyes_closed">Oë is toe</string>
-	<string name="jumio_face_reject_title_generic">Gesigverifiëring het misluk</string>
+	<string name="jumio_face_reject_title_generic">Probeer asb. weer</string>
 	<string name="jumio_face_reject_title_multiple_people">Veelvuldige mense waargeneem</string>
 	<string name="jumio_face_reject_title_obscured_face">Gesig is bedek</string>
 	<string name="jumio_face_reject_title_sunglasses">Sonbril waargeneem</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Skandering onvoltooi</string>
 	<string name="jumio_nfc_header_extracting">Data word onttrek</string>
 	<string name="jumio_nfc_header_start">Posisioneer u paspoort</string>
+	<string name="jumio_nfc_id_description">Skuif die ID-kaart langs die agterkant van jou foon tot dit outomaties bespeur word</string>
+	<string name="jumio_nfc_id_header_start">Posisioneer jou ID-kaart</string>
 	<string name="jumio_processing_title">Besig om resultaat te kontroleer</string>
 	<string name="jumio_start_button">Begin</string>
 	<string name="jumio_start_instructions_01">Kry \'n goedverligte oppervlak</string>

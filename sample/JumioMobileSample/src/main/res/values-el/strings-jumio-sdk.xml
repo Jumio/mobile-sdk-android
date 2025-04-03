@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Δελτίο ταυτότητας</string>
 	<string name="jumio_idtype_pp">Διαβατήριο</string>
 	<string name="jumio_idtype_visa">Visa</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Μόλις εντοπιστεί η ταυτότητα, κρατήστε την ακίνητη</string>
 	<string name="jumio_nfc_retry_enable_capability">Για να αξιοποιήσετε περισσότερο το διαβατήριό σας, ενεργοποιήστε τη δυνατότητα NFC του τηλεφώνου σας</string>
 	<string name="jumio_nfc_retry_error_general">Δοκιμάστε ξανά και ακολουθήστε τις οδηγίες που εμφανίζονται</string>
 	<string name="jumio_nfc_retry_tag_lost">Κρατήστε το ακίνητο όταν εντοπ. το διαβατήριο</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Μετακινηθείτε σε ένα πιο φωτεινό σημείο</string>
 	<string name="jumio_face_help_too_much_movement">Μείνετε ακίνητοι</string>
 	<string name="jumio_face_reject_title_eyes_closed">Τα μάτια είναι κλειστά</string>
-	<string name="jumio_face_reject_title_generic">Η επαλήθευση προσώπου απέτυχε</string>
+	<string name="jumio_face_reject_title_generic">Δοκιμάστε ξανά</string>
 	<string name="jumio_face_reject_title_multiple_people">Εντοπίστηκαν πολλά άτομα</string>
 	<string name="jumio_face_reject_title_obscured_face">Το πρόσωπο είναι δυσδιάκριτο</string>
 	<string name="jumio_face_reject_title_sunglasses">Ανιχνεύονται γυαλιά ηλίου</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Μη ολοκληρωμ. σάρωση</string>
 	<string name="jumio_nfc_header_extracting">Εξαγωγή δεδομένων</string>
 	<string name="jumio_nfc_header_start">Τοποθετήστε το διαβατήριο</string>
+	<string name="jumio_nfc_id_description">Σύρετε την ταυτότητα κατά μήκος του πίσω μέρους του κινητού, μέχρι να εντοπιστεί αυτόματα</string>
+	<string name="jumio_nfc_id_header_start">Τοποθετήστε την ταυτότητά σας</string>
 	<string name="jumio_processing_title">Έλεγχος αποτελέσματος</string>
 	<string name="jumio_start_button">Έναρξη</string>
 	<string name="jumio_start_instructions_01">Βρείτε μια καλά φωτισμένη επιφάνεια</string>

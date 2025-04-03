@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -42,6 +43,7 @@ class MainActivity :
 	JumioPreloadCallback {
 
 	private lateinit var binding: ActivityMainBinding
+	private lateinit var backPressCallback: OnBackPressedCallback
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -74,15 +76,7 @@ class MainActivity :
 		binding.navView.itemIconTintList = null
 
 		initModelPreloading()
-	}
-
-	@Deprecated("Deprecated in Java")
-	override fun onBackPressed() {
-		if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
-			binding.drawerLayout.closeDrawer(GravityCompat.START)
-		} else {
-			onBackPressedDispatcher.onBackPressed()
-		}
+		initBackPressDispatcher()
 	}
 
 	override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
@@ -156,6 +150,25 @@ class MainActivity :
 		init(this@MainActivity)
 		setCallback(this@MainActivity)
 		preloadIfNeeded()
+	}
+
+	/**
+	 * Handle back button press accordingly
+	 */
+	private fun initBackPressDispatcher() {
+		if (::backPressCallback.isInitialized) {
+			return
+		}
+		backPressCallback = object : OnBackPressedCallback(true) {
+			override fun handleOnBackPressed() {
+				if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+					binding.drawerLayout.closeDrawer(GravityCompat.START)
+				} else {
+					onBackPressedDispatcher.onBackPressed()
+				}
+			}
+		}
+		onBackPressedDispatcher.addCallback(this, backPressCallback)
 	}
 
 	/**

@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Isikutunnistus</string>
 	<string name="jumio_idtype_pp">Pass</string>
 	<string name="jumio_idtype_visa">Viisa</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Kui ID-kaart on tuvastatud, hoidke paigal</string>
 	<string name="jumio_nfc_retry_enable_capability">Kui soovite oma passist rohkem kasu saada, lubage oma telefoni NFC -funktsioon</string>
 	<string name="jumio_nfc_retry_error_general">Proovige uuesti ja järgige joonisel toodud juhiseid</string>
 	<string name="jumio_nfc_retry_tag_lost">Kui pass on tuvastatud, hoidke seda paigal</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Liikuge mõnda valgusrikkamasse kohta</string>
 	<string name="jumio_face_help_too_much_movement">Olge paigal</string>
 	<string name="jumio_face_reject_title_eyes_closed">Silmad on suletud</string>
-	<string name="jumio_face_reject_title_generic">Näotuvastus nurjus</string>
+	<string name="jumio_face_reject_title_generic">Palun proovi uuesti</string>
 	<string name="jumio_face_reject_title_multiple_people">Tuvastati mitu inimest</string>
 	<string name="jumio_face_reject_title_obscured_face">Nägu on hägune</string>
 	<string name="jumio_face_reject_title_sunglasses">Tuvastatakse päikeseprillid</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Skannimine puudulik</string>
 	<string name="jumio_nfc_header_extracting">Andmete väljavõtmine</string>
 	<string name="jumio_nfc_header_start">Paigutage oma pass</string>
+	<string name="jumio_nfc_id_description">Libistage ID-kaarti mööda telefoni tagaosa, kuni selle automaatse tuvastamiseni</string>
+	<string name="jumio_nfc_id_header_start">Paigutage oma ID-kaart</string>
 	<string name="jumio_processing_title">Tulemuse kontrollimine</string>
 	<string name="jumio_start_button">Alusta</string>
 	<string name="jumio_start_instructions_01">Kasutage hästi valgustatud pinda</string>

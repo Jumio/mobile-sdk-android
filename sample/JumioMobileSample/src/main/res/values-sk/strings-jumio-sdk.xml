@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">Občiansky preukaz</string>
 	<string name="jumio_idtype_pp">Cestovný pas</string>
 	<string name="jumio_idtype_visa">Vízum</string>
+	<string name="jumio_nfc_id_retry_tag_lost">Po rozpoznaní ID karty nehýbte</string>
 	<string name="jumio_nfc_retry_enable_capability">Ak chcete z pasu vyťažiť viac, povoľte v telefóne funkciu NFC</string>
 	<string name="jumio_nfc_retry_error_general">Postup zopakujte a pokračujte podľa pokynov na obrázku</string>
 	<string name="jumio_nfc_retry_tag_lost">Ani po zistení pasu sa nehýbte</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">Presuňte sa na svetlejšie miesto</string>
 	<string name="jumio_face_help_too_much_movement">Nehýbte sa</string>
 	<string name="jumio_face_reject_title_eyes_closed">Oči sú zatvorené</string>
-	<string name="jumio_face_reject_title_generic">Overenie tváre zlyhalo</string>
+	<string name="jumio_face_reject_title_generic">Skúste to znova</string>
 	<string name="jumio_face_reject_title_multiple_people">Bolo zistených viacero ľudí</string>
 	<string name="jumio_face_reject_title_obscured_face">Tvár je zakrytá</string>
 	<string name="jumio_face_reject_title_sunglasses">Okuliare na slnko detekované</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">Skenovanie neúplné</string>
 	<string name="jumio_nfc_header_extracting">Sťahovanie údajov</string>
 	<string name="jumio_nfc_header_start">Umiestnite svoj pas</string>
+	<string name="jumio_nfc_id_description">Posúvajte doklad totožnosti pozdĺž zadnej strany telefónu, kým sa nerozpozná automaticky</string>
+	<string name="jumio_nfc_id_header_start">Umiestnite svoj doklad totožnosti</string>
 	<string name="jumio_processing_title">Kontroluje sa výsledok</string>
 	<string name="jumio_start_button">Začať</string>
 	<string name="jumio_start_instructions_01">Nájdite dobre osvetlený povrch</string>

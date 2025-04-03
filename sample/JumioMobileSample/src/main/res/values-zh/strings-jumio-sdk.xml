@@ -20,6 +20,7 @@
 	<string name="jumio_idtype_id">身份证</string>
 	<string name="jumio_idtype_pp">护照</string>
 	<string name="jumio_idtype_visa">签证</string>
+	<string name="jumio_nfc_id_retry_tag_lost">检测到身份证后，保持静止</string>
 	<string name="jumio_nfc_retry_enable_capability">为了更好地利用您的护照，请启用您手机的 NFC 功能</string>
 	<string name="jumio_nfc_retry_error_general">重试并按照说明进行操作</string>
 	<string name="jumio_nfc_retry_tag_lost">一旦检测到护照，请保持不动</string>
@@ -98,7 +99,7 @@
 	<string name="jumio_face_help_too_dark">去更明亮的地方</string>
 	<string name="jumio_face_help_too_much_movement">保持不动</string>
 	<string name="jumio_face_reject_title_eyes_closed">眼睛闭着</string>
-	<string name="jumio_face_reject_title_generic">面部验证失败</string>
+	<string name="jumio_face_reject_title_generic">请重试</string>
 	<string name="jumio_face_reject_title_multiple_people">检测到多个人</string>
 	<string name="jumio_face_reject_title_obscured_face">脸部模糊</string>
 	<string name="jumio_face_reject_title_sunglasses">检测到太阳镜</string>
@@ -173,6 +174,8 @@
 	<string name="jumio_nfc_general_error_dialog_title">扫描未完成</string>
 	<string name="jumio_nfc_header_extracting">正在提取数据</string>
 	<string name="jumio_nfc_header_start">放置护照</string>
+	<string name="jumio_nfc_id_description">在手机背面滑动身份识别卡，直到自动检测到该卡片</string>
+	<string name="jumio_nfc_id_header_start">摆放好您的身份识别卡</string>
 	<string name="jumio_processing_title">检查结果</string>
 	<string name="jumio_start_button">开始</string>
 	<string name="jumio_start_instructions_01">找到光线充足的表面</string>

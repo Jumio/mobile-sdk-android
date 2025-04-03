@@ -103,8 +103,8 @@ Once you start up the sample application, you'll be given the option of trying o
 ## General Requirements
 The minimum requirements for the SDK are:
 * Android 5.0 "Lollipop" (API level 21) or higher
-* APG version 8.5 or higher
-* Gradle version 8.7 or higher
+* AGP version 8.7.3 or higher
+* Gradle version 8.9 or higher
 * Internet connection
 * Jumio KYX
 
@@ -244,10 +244,6 @@ The following Proguard Keep rules have to be added to the application hosting th
 -dontwarn okhttp3.**
 -dontwarn okio.**
 
-# Datadog
--keep class com.datadog.** { *; }
--keep class com.datadog.**$* { *; }
-
 # JMRTD
 -keep class org.jmrtd.** { *; }
 -keep class net.sf.scuba.** { *; }
@@ -357,6 +353,7 @@ To benefit from Datadog, add the following dependency to your `build.gradle` fil
 ```groovy
 implementation "com.jumio.android:datadog:${SDK_VERSION}"
 ```
+ℹ️&nbsp;&nbsp;__Note:__ Datadog has been removed in SDK 4.13.0.
 
 ----
 
