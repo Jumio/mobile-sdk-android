@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">签证</string>
 	<string name="jumio_nfc_id_retry_tag_lost">检测到身份证后，保持静止</string>
 	<string name="jumio_nfc_retry_enable_capability">为了更好地利用您的护照，请启用您手机的 NFC 功能</string>
-	<string name="jumio_nfc_retry_error_general">重试并按照说明进行操作</string>
 	<string name="jumio_nfc_retry_tag_lost">一旦检测到护照，请保持不动</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">切换为后置摄像头</string>
+	<string name="jumio_accessibility_camera_switch_to_front">切换为前置摄像头</string>
 	<string name="jumio_accessibility_nfc_description_start">请检查您的证件是否有芯片。如果有的话,请把手机放在证件上,如图所示。</string>
 	<string name="jumio_accessibility_quit_scan">退出扫描</string>
+	<string name="jumio_accessibility_scan_back">返回</string>
 	<string name="jumio_accessibility_scan_help">帮助菜单</string>
 	<string name="jumio_accessibility_scan_shutter_button">拍一张照片</string>
 	<string name="jumio_accessibility_scan_switch_camera">开启摄像头</string>
 	<string name="jumio_analyzing_biometric">正在分析生物计量数据</string>
 	<string name="jumio_brazil_cnh_subtitle">要继续上传，请确保您已从政府官方应用程序下载数字驾照 PDF [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">上传 CNH Digital PDF</string>
+	<string name="jumio_button">按钮</string>
 	<string name="jumio_button_cancel">取消</string>
+	<string name="jumio_button_continue">继续</string>
 	<string name="jumio_button_retry">重试</string>
+	<string name="jumio_change_issuing_country">更改签发国家/地区</string>
+	<string name="jumio_clear_search">清除搜索</string>
+	<string name="jumio_current_issuing_country">当前签发国家/地区: %s</string>
 	<string name="jumio_di_back_to_document_selection">您将导航回文档选择。</string>
 	<string name="jumio_di_vendor_selection_title">选择数字身份提供商</string>
 	<string name="jumio_di_verification_prompt_processing">请完成 %s 应用上的流程。</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">最大文件大小：%1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">最大页数：%1$d</string>
 	<string name="jumio_dv_upload_tips_protected">证件不应受密码保护</string>
+	<string name="jumio_eidas_description">点击“继续”开始登录流程。\n接下来，在出现的页面选择 “eIDAS 登录” ，并选择您所在国家的国旗以继续。\n使用 eIDAS 登录进行安全、符合欧盟标准的验证。</string>
+	<string name="jumio_eidas_login_header">eIDAS 登录</string>
 	<string name="jumio_error_button_retake_both">重拍两者</string>
 	<string name="jumio_error_button_retake_one">重拍</string>
 	<string name="jumio_error_button_retry">重试</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">照片必须重拍</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">支持的文档列表</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">捕获的文档不受支持</string>
+	<string name="jumio_european_did_login_header">欧洲数字身份证</string>
 	<string name="jumio_face_help_eyes_closed">眼睛保持睁开</string>
 	<string name="jumio_face_help_generic_angle">保持设备和眼睛在同一高度</string>
 	<string name="jumio_face_help_generic_center">将您的面部置于框中并按照屏幕上的指示</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">拍摄照片面</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">手动拍摄照片面</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">倾斜使底部边缘可见，然后与框架对齐</string>
+	<string name="jumio_id_scan_hint_error_fallback">因发生错误，扫描方法已调整。</string>
 	<string name="jumio_id_scan_hint_performance_fallback">扫描已优化，可提高设备性能</string>
 	<string name="jumio_id_scan_manual">拍摄您的证件照片</string>
 	<string name="jumio_id_scan_manual_tips">请确保已拍下完整的文件</string>
+	<string name="jumio_id_scan_prompt_analyzing">分析图像…</string>
 	<string name="jumio_id_scan_prompt_capture_success">成功了！</string>
 	<string name="jumio_id_scan_prompt_captured">被捕获</string>
 	<string name="jumio_id_scan_prompt_center_id">将您的证件居中</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">放置护照</string>
 	<string name="jumio_nfc_id_description">在手机背面滑动身份识别卡，直到自动检测到该卡片</string>
 	<string name="jumio_nfc_id_header_start">摆放好您的身份识别卡</string>
+	<string name="jumio_no_results_found">未找到结果</string>
 	<string name="jumio_processing_title">检查结果</string>
+	<string name="jumio_search_bar">搜索栏</string>
+	<string name="jumio_search_completed_for_country">已完成搜索國家</string>
+	<string name="jumio_select">选择</string>
 	<string name="jumio_start_button">开始</string>
 	<string name="jumio_start_instructions_01">找到光线充足的表面</string>
 	<string name="jumio_start_instructions_02">准备好自拍</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">应用可能会使用相机闪光灯</string>
 	<string name="jumio_start_verification">开始身份认证</string>
 	<string name="jumio_start_verification_subtitle">此认证过程旨在确认您的身份并保护您免遭身份盗用</string>
+	<string name="jumio_switched_to_back_camera">已切换到后置摄像头</string>
+	<string name="jumio_switched_to_front_camera">已切换到前置摄像头</string>
 	<string name="jumio_try_again">请重试</string>
 	<string name="jumio_uploading_success">上传成功</string>
 	<string name="jumio_uploading_title">正在上传</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">将面部放在椭圆形内</string>
 	<string name="iproov__prompt_get_ready">准备就绪…</string>
 	<string name="iproov__prompt_liveness_scan_completed">扫描完成</string>
-	<string name="iproov__prompt_pitch_too_high">保持设备和眼睛在同一高度</string>
-	<string name="iproov__prompt_pitch_too_low">保持设备和眼睛在同一高度</string>
-	<string name="iproov__prompt_roll_too_high">请勿转头</string>
-	<string name="iproov__prompt_roll_too_low">请勿转头</string>
 	<string name="iproov__prompt_too_bright">请前往较暗的地方</string>
 	<string name="iproov__prompt_too_close">太近了</string>
 	<string name="iproov__prompt_too_far">靠近一点</string>
-	<string name="iproov__prompt_yaw_too_high">请稍微转向左侧</string>
-	<string name="iproov__prompt_yaw_too_low">请稍微转向右侧</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

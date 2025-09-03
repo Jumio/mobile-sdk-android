@@ -66,24 +66,19 @@ fun NfcScanPage(
 		onBackPress()
 	}
 	val context = LocalContext.current
-	val title = remember {
-		mutableStateOf(
-			if (viewModel.scannedDocumentInfo?.documentType == JumioDocumentType.PASSPORT) {
-				context.getString(com.jumio.defaultui.R.string.jumio_nfc_header_start)
-			} else {
-				context.getString(com.jumio.defaultui.R.string.jumio_nfc_id_header_start)
-			}
-		)
+	val (titleInfo, descriptionInfo) = if (viewModel.scannedDocumentInfo?.documentType == JumioDocumentType.PASSPORT) {
+		val description = if (viewModel.isUsa) {
+			context.getString(com.jumio.defaultui.R.string.jumio_nfc_description_start_us)
+		} else {
+			context.getString(com.jumio.defaultui.R.string.jumio_nfc_description_start_other)
+		}
+		context.getString(com.jumio.defaultui.R.string.jumio_nfc_header_start) to description
+	} else {
+		context.getString(com.jumio.defaultui.R.string.jumio_nfc_id_header_start) to
+			context.getString(com.jumio.defaultui.R.string.jumio_nfc_id_description)
 	}
-	val description = remember {
-		mutableStateOf(
-			if (viewModel.scannedDocumentInfo?.documentType == JumioDocumentType.PASSPORT) {
-				context.getString(com.jumio.defaultui.R.string.jumio_nfc_description_start_other)
-			} else {
-				context.getString(com.jumio.defaultui.R.string.jumio_nfc_id_description)
-			}
-		)
-	}
+	val title = remember { mutableStateOf(titleInfo) }
+	val description = remember { mutableStateOf(descriptionInfo) }
 	val progress = remember { mutableIntStateOf(0) }
 	val showProgress = remember { mutableStateOf(false) }
 	val showIvStatus = remember { mutableStateOf(false) }
@@ -127,18 +122,16 @@ fun NfcScanPage(
 		val scanStepJob = scope.launch {
 			viewModel.scanStepEvent.collectLatest { scanStep ->
 				when (scanStep) {
+					JumioScanStep.ATTACH_ACTIVITY -> {
+						nfcHelpAnimation?.resume()
+					}
 					JumioScanStep.RETRY -> {
 						nfcHelpAnimation?.resume()
 						showSkipButton.value = true
 						showProgress.value = false
 						showIvStatus.value = false
-						if (viewModel.scannedDocumentInfo?.documentType == JumioDocumentType.PASSPORT) {
-							title.value = context.getString(com.jumio.defaultui.R.string.jumio_nfc_header_start)
-							description.value = context.getString(com.jumio.defaultui.R.string.jumio_nfc_description_start_other)
-						} else {
-							title.value = context.getString(com.jumio.defaultui.R.string.jumio_nfc_id_header_start)
-							description.value = context.getString(com.jumio.defaultui.R.string.jumio_nfc_id_description)
-						}
+						title.value = titleInfo
+						description.value = descriptionInfo
 					}
 					else -> {}
 				}
@@ -195,14 +188,7 @@ fun NfcScanPage(
 						) as RelativeLayout
 						addView(animationLayout)
 
-						val isUsa = viewModel.scannedDocumentInfo?.issuingCountry.equals(
-							"USA",
-							ignoreCase = true
-						) || viewModel.scannedDocumentInfo?.issuingCountry.equals(
-							"CAN",
-							ignoreCase = true
-						)
-						nfcAnimation.configure(this, isUsa)
+						nfcAnimation.configure(this, viewModel.isUsa)
 						nfcAnimation.start()
 						tag = nfcAnimation
 						nfcHelpAnimation = nfcAnimation

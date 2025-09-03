@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Thị thực</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Khi thẻ ID được phát hiện, hãy giữ yên</string>
 	<string name="jumio_nfc_retry_enable_capability">Để khai thác nhiều hơn hộ chiếu của bạn, vui lòng kích hoạt khả năng NFC của điện thoại</string>
-	<string name="jumio_nfc_retry_error_general">Hãy thử lại và làm theo hướng dẫn như hình minh họa</string>
 	<string name="jumio_nfc_retry_tag_lost">Giữ yên sau khi phát hiện thấy hộ chiếu</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Chuyển sang máy ảnh sau</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Chuyển sang máy ảnh trước</string>
 	<string name="jumio_accessibility_nfc_description_start">Vui lòng kiểm tra xem ID của bạn có chip không. Nếu có, hãy đặt điện thoại của bạn trên ID như minh họa.</string>
 	<string name="jumio_accessibility_quit_scan">Thoát khỏi quét</string>
+	<string name="jumio_accessibility_scan_back">Trở lại</string>
 	<string name="jumio_accessibility_scan_help">Menu trợ giúp</string>
 	<string name="jumio_accessibility_scan_shutter_button">Chụp ảnh</string>
 	<string name="jumio_accessibility_scan_switch_camera">Chuyển đổi máy ảnh</string>
 	<string name="jumio_analyzing_biometric">Đang phân tích dữ liệu sinh trắc học</string>
 	<string name="jumio_brazil_cnh_subtitle">Để tiếp tục tải lên, vui lòng đảm bảo rằng bạn đã tải xuống Giấy phép lái xe kỹ thuật số ở định dạng PDF từ ứng dụng chính thức của chính phủ [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Tải lên bản PDF của CNH Digital</string>
+	<string name="jumio_button">Nút</string>
 	<string name="jumio_button_cancel">Hủy</string>
+	<string name="jumio_button_continue">Tiếp tục</string>
 	<string name="jumio_button_retry">Thử lại</string>
+	<string name="jumio_change_issuing_country">Thay đổi quốc gia cấp</string>
+	<string name="jumio_clear_search">Xóa tìm kiếm</string>
+	<string name="jumio_current_issuing_country">Quốc gia cấp hiện tại: %s</string>
 	<string name="jumio_di_back_to_document_selection">Bạn sẽ được điều hướng trở lại lựa chọn tài liệu.</string>
 	<string name="jumio_di_vendor_selection_title">Chọn nhà cung cấp ID kỹ thuật số</string>
 	<string name="jumio_di_verification_prompt_processing">Vui lòng hoàn tất quy trình trên ứng dụng %s.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Kích thước tệp tối đa: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Số trang tối đa: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Tài liệu không được bảo vệ bằng mật khẩu</string>
+	<string name="jumio_eidas_description">Nhấn \'Tiếp tục\' để bắt đầu quá trình đăng nhập.\nTiếp theo, chọn \'Đăng nhập eIDAS\' trên trang tiếp theo và chọn quốc kỳ của quốc gia bạn để tiếp tục.\nSử dụng Đăng nhập eIDAS để xác minh an toàn, tuân thủ quy định của Liên minh Châu Âu.</string>
+	<string name="jumio_eidas_login_header">Đăng nhập eIDAS</string>
 	<string name="jumio_error_button_retake_both">Chụp lại cả hai</string>
 	<string name="jumio_error_button_retake_one">Chụp lại</string>
 	<string name="jumio_error_button_retry">Thử lại</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Hình ảnh phải được chụp lại</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Danh sách các tài liệu được hỗ trợ</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Tài liệu không được hỗ trợ</string>
+	<string name="jumio_european_did_login_header">ID kỹ thuật số Châu Âu</string>
 	<string name="jumio_face_help_eyes_closed">Giữ cho đôi mắt của bạn mở</string>
 	<string name="jumio_face_help_generic_angle">Giữ thiết bị ngang tầm mắt</string>
 	<string name="jumio_face_help_generic_center">Căn giữa khuôn mặt của bạn trong khung và làm theo hướng dẫn trên màn hình</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Chụp mặt TRƯỚC của giấy tờ</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Chụp mặt TRƯỚC của giấy tờ theo cách thủ công</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Nghiêng sao cho có thể nhìn thấy cạnh dưới rồi căn chỉnh cho phù hợp với khung</string>
+	<string name="jumio_id_scan_hint_error_fallback">Phương thức quét thay đổi do đã xảy ra lỗi.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Quy trình quét được tối ưu hóa để thiết bị đạt hiệu suất tốt hơn</string>
 	<string name="jumio_id_scan_manual">Chụp ảnh tài liệu của bạn</string>
 	<string name="jumio_id_scan_manual_tips">Đảm bảo chụp toàn bộ tài liệu</string>
+	<string name="jumio_id_scan_prompt_analyzing">Đang phân tích hình ảnh…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Đã hiểu!</string>
 	<string name="jumio_id_scan_prompt_captured">Đã chụp</string>
 	<string name="jumio_id_scan_prompt_center_id">Căn giữa tài liệu của bạn</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Định vị hộ chiếu</string>
 	<string name="jumio_nfc_id_description">Trượt thẻ ID dọc theo mặt sau của điện thoại cho đến khi thẻ được tự động phát hiện</string>
 	<string name="jumio_nfc_id_header_start">Định vị thẻ ID của bạn</string>
+	<string name="jumio_no_results_found">Không tìm thấy kết quả nào</string>
 	<string name="jumio_processing_title">Đang kiểm tra kết quả</string>
+	<string name="jumio_search_bar">Thanh tìm kiếm</string>
+	<string name="jumio_search_completed_for_country">Đã hoàn tất tìm kiếm cho quốc gia</string>
+	<string name="jumio_select">Chọn</string>
 	<string name="jumio_start_button">Bắt đầu</string>
 	<string name="jumio_start_instructions_01">Tìm bề mặt có đủ ánh sáng</string>
 	<string name="jumio_start_instructions_02">Hãy sẵn sàng để chụp ảnh selfie</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">Ứng dụng có thể sử dụng đèn flash của camera</string>
 	<string name="jumio_start_verification">Bắt đầu xác minh</string>
 	<string name="jumio_start_verification_subtitle">Quy trình này được thiết kế để xác minh danh tính của bạn và giúp bạn không bị đánh cắp danh tính</string>
+	<string name="jumio_switched_to_back_camera">Đã chuyển sang camera sau</string>
+	<string name="jumio_switched_to_front_camera">Đã chuyển sang camera trước</string>
 	<string name="jumio_try_again">Vui lòng thử lại</string>
 	<string name="jumio_uploading_success">Tải lên thành công</string>
 	<string name="jumio_uploading_title">Đang tải lên</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Đặt khuôn mặt của bạn trong hình bầu dục</string>
 	<string name="iproov__prompt_get_ready">Chuẩn bị…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Đã quét xong</string>
-	<string name="iproov__prompt_pitch_too_high">Giữ thiết bị ngang tầm mắt</string>
-	<string name="iproov__prompt_pitch_too_low">Giữ thiết bị ngang tầm mắt</string>
-	<string name="iproov__prompt_roll_too_high">Tránh nghiêng đầu</string>
-	<string name="iproov__prompt_roll_too_low">Tránh nghiêng đầu</string>
 	<string name="iproov__prompt_too_bright">Đi đến nơi tối hơn</string>
 	<string name="iproov__prompt_too_close">Quá gần</string>
 	<string name="iproov__prompt_too_far">Di chuyển lại gần hơn</string>
-	<string name="iproov__prompt_yaw_too_high">Xoay nhẹ sang bên trái của bạn</string>
-	<string name="iproov__prompt_yaw_too_low">Xoay nhẹ sang bên phải của bạn</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">ビザ</string>
 	<string name="jumio_nfc_id_retry_tag_lost">IDカードが検出されたら、そのまま静止</string>
 	<string name="jumio_nfc_retry_enable_capability">パスポートをさらに活用するには、携帯電話のNFC機能を有効にしてください</string>
-	<string name="jumio_nfc_retry_error_general">もう一度やり直して、図のように指示に従ってください</string>
 	<string name="jumio_nfc_retry_tag_lost">パスポートが検出されても静止したまま</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">バックカメラに切り替える</string>
+	<string name="jumio_accessibility_camera_switch_to_front">フロントカメラに切り替える</string>
 	<string name="jumio_accessibility_nfc_description_start">IDにチップがあるかどうかを確認してください。ある場合は、図のようにスマートフォンをIDに置いてください。</string>
 	<string name="jumio_accessibility_quit_scan">スキャンを終了</string>
+	<string name="jumio_accessibility_scan_back">戻る</string>
 	<string name="jumio_accessibility_scan_help">ヘルプメニュー</string>
 	<string name="jumio_accessibility_scan_shutter_button">写真を撮る</string>
 	<string name="jumio_accessibility_scan_switch_camera">カメラを切り替える</string>
 	<string name="jumio_analyzing_biometric">生体認証データを分析しています</string>
 	<string name="jumio_brazil_cnh_subtitle">アップロードを続けるには、政府の公式アプリ[({Carteira Digital de Trânsito})]からデジタル運転免許証のPDFをダウンロードしていることを確認してください。</string>
 	<string name="jumio_brazil_cnh_upload_button">CNH Digital PDFをアップロード</string>
+	<string name="jumio_button">ボタン</string>
 	<string name="jumio_button_cancel">キャンセル</string>
+	<string name="jumio_button_continue">続行</string>
 	<string name="jumio_button_retry">もう一度やり直してください</string>
+	<string name="jumio_change_issuing_country">発行国を変更</string>
+	<string name="jumio_clear_search">検索をクリア</string>
+	<string name="jumio_current_issuing_country">現在の発行国: %s</string>
 	<string name="jumio_di_back_to_document_selection">ドキュメント選択画面に戻ります。</string>
 	<string name="jumio_di_vendor_selection_title">デジタルIDプロバイダーを選択</string>
 	<string name="jumio_di_verification_prompt_processing">%sアプリでフローを完了してください。</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">最大ファイルサイズ：%1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">最大ページ数：%1$d</string>
 	<string name="jumio_dv_upload_tips_protected">ドキュメントはパスワードで保護しないでください</string>
+	<string name="jumio_eidas_description">ログインプロセス開始のために[続行]をタップします\n次に、[eIDASログイン]を選択し、続行するためにご自身の国旗を選択します。\n\neIDAS ログインを使用し、安全な EU準拠の検証を行います。</string>
+	<string name="jumio_eidas_login_header">eIDASログイン</string>
 	<string name="jumio_error_button_retake_both">両方とも撮り直す</string>
 	<string name="jumio_error_button_retake_one">撮り直す</string>
 	<string name="jumio_error_button_retry">もう一度やり直してください</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">画像は撮り直す必要があります</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">サポートされるドキュメントのリスト</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">キャプチャされたドキュメントはサポートされていません</string>
+	<string name="jumio_european_did_login_header">欧州デジタルID</string>
 	<string name="jumio_face_help_eyes_closed">目を開けた状態を保ってください</string>
 	<string name="jumio_face_help_generic_angle">デバイスを目の高さでしっかりと持ちます</string>
 	<string name="jumio_face_help_generic_center">顔がフレームの中央になるようにして、画面の指示に従います。</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">写真面をキャプチャします</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">写真面を手動でキャプチャします</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">下端が見えるように傾け、フレームに合わせてください</string>
+	<string name="jumio_id_scan_hint_error_fallback">エラーのためスキャン方法が変更されました。</string>
 	<string name="jumio_id_scan_hint_performance_fallback">スキャニングの最適化により、デバイスのパフォーマンスが向上</string>
 	<string name="jumio_id_scan_manual">ドキュメントの写真を撮影してください</string>
 	<string name="jumio_id_scan_manual_tips">ドキュメント全体がキャプチャされていることを確認してください</string>
+	<string name="jumio_id_scan_prompt_analyzing">画像を分析しています…</string>
 	<string name="jumio_id_scan_prompt_capture_success">了解！</string>
 	<string name="jumio_id_scan_prompt_captured">キャプチャされました</string>
 	<string name="jumio_id_scan_prompt_center_id">ドキュメントを中央に置いてください</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">パスポートの位置を決める</string>
 	<string name="jumio_nfc_id_description">IDカードが自動的に検出されるまで、携帯電話の背面に沿ってスライドさせます</string>
 	<string name="jumio_nfc_id_header_start">IDカードを置きます</string>
+	<string name="jumio_no_results_found">結果が見つかりませんでした</string>
 	<string name="jumio_processing_title">結果を確認しています</string>
+	<string name="jumio_search_bar">検索バー</string>
+	<string name="jumio_search_completed_for_country">国の検索が完了しました</string>
+	<string name="jumio_select">選択</string>
 	<string name="jumio_start_button">開始</string>
 	<string name="jumio_start_instructions_01">明るい場所を見つけてください</string>
 	<string name="jumio_start_instructions_02">自撮りの準備をしてください</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">アプリがカメラのフラッシュをオンにする場合があります</string>
 	<string name="jumio_start_verification">認証を開始</string>
 	<string name="jumio_start_verification_subtitle">このプロセスは、本人確認を行い、個人情報の盗難から保護することを目的としています</string>
+	<string name="jumio_switched_to_back_camera">背面カメラに切り替えました</string>
+	<string name="jumio_switched_to_front_camera">前面カメラに切り替えました</string>
 	<string name="jumio_try_again">もう一度やり直してください</string>
 	<string name="jumio_uploading_success">正常にアップロードされました</string>
 	<string name="jumio_uploading_title">アップロード中</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">顔を楕円形のフレームに入れてください</string>
 	<string name="iproov__prompt_get_ready">準備をしてください…</string>
 	<string name="iproov__prompt_liveness_scan_completed">スキャンが完了しました</string>
-	<string name="iproov__prompt_pitch_too_high">デバイスを目の高さでしっかりと持ちます</string>
-	<string name="iproov__prompt_pitch_too_low">デバイスを目の高さでしっかりと持ちます</string>
-	<string name="iproov__prompt_roll_too_high">頭を傾けないでください</string>
-	<string name="iproov__prompt_roll_too_low">頭を傾けないでください</string>
 	<string name="iproov__prompt_too_bright">日陰に移動してください</string>
 	<string name="iproov__prompt_too_close">近すぎます</string>
 	<string name="iproov__prompt_too_far">近くに移動します。</string>
-	<string name="iproov__prompt_yaw_too_high">少し左を向いてください</string>
-	<string name="iproov__prompt_yaw_too_low">少し右を向いてください</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

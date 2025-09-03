@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Visto</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Uma vez que o cartão de identificação for detectado, mantenha-o imóvel</string>
 	<string name="jumio_nfc_retry_enable_capability">Para aproveitar melhor o seu passaporte, ative o recurso NFC do seu celular</string>
-	<string name="jumio_nfc_retry_error_general">Tente novamente e siga as instruções conforme ilustrado</string>
 	<string name="jumio_nfc_retry_tag_lost">Não se mexa quando o passaporte for detectado</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Alternar para a câmera traseira</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Alternar para a câmera frontal</string>
 	<string name="jumio_accessibility_nfc_description_start">Verifique se a sua identidade tem um chip. Se tiver, coloque seu telefone sobre a identidade, conforme ilustrado.</string>
 	<string name="jumio_accessibility_quit_scan">Sair da varredura</string>
+	<string name="jumio_accessibility_scan_back">Voltar</string>
 	<string name="jumio_accessibility_scan_help">Menu de ajuda</string>
 	<string name="jumio_accessibility_scan_shutter_button">Tirar uma foto</string>
 	<string name="jumio_accessibility_scan_switch_camera">Alternar câmera</string>
 	<string name="jumio_analyzing_biometric">Analisando dados biométricos</string>
 	<string name="jumio_brazil_cnh_subtitle">Para prosseguir com o envio, baixe a versão PDF da carteira de motorista digital do aplicativo oficial do governo [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Enviar arquivo PDF da CNH Digital</string>
+	<string name="jumio_button">Botão</string>
 	<string name="jumio_button_cancel">Cancelar</string>
+	<string name="jumio_button_continue">Continuar</string>
 	<string name="jumio_button_retry">Tente novamente</string>
+	<string name="jumio_change_issuing_country">Alterar país emissor</string>
+	<string name="jumio_clear_search">Limpar pesquisa</string>
+	<string name="jumio_current_issuing_country">País emissor atual: %s</string>
 	<string name="jumio_di_back_to_document_selection">Você retornará à seleção de documentos.</string>
 	<string name="jumio_di_vendor_selection_title">Selecione o provedor de identidade digital</string>
 	<string name="jumio_di_verification_prompt_processing">Complete o fluxo no app %s.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Tamanho máximo do arquivo: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Número máximo de páginas: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">O documento não deve ser protegido por senha</string>
+	<string name="jumio_eidas_description">Toque em Continuar para iniciar o processo de login. \nEm seguida, selecione Login eIDAS na próxima página e escolha a bandeira que representa o seu país para continuar.\nUse login eIDAS para garantir uma verificação segura e em conformidade com a UE.</string>
+	<string name="jumio_eidas_login_header">Login eIDAS</string>
 	<string name="jumio_error_button_retake_both">Refazer ambos</string>
 	<string name="jumio_error_button_retake_one">Refazer</string>
 	<string name="jumio_error_button_retry">Tente novamente</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">A imagem deve ser refeita</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Lista de documentos suportados</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">O documento não é compatível</string>
+	<string name="jumio_european_did_login_header">ID digital europeia</string>
 	<string name="jumio_face_help_eyes_closed">Mantenha seus olhos abertos</string>
 	<string name="jumio_face_help_generic_angle">Segure o dispositivo na altura dos olhos</string>
 	<string name="jumio_face_help_generic_center">Centralize seu rosto na moldura e siga as instruções na tela</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Capture o lado da FOTO</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Capture manualmente o lado da FOTO</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Incline para que a borda inferior fique visível e depois alinhe com a moldura</string>
+	<string name="jumio_id_scan_hint_error_fallback">Método de digitalização alterado devido a um erro.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Varredura otimizada para um melhor desempenho do dispositivo</string>
 	<string name="jumio_id_scan_manual">Tire uma foto do seu documento</string>
 	<string name="jumio_id_scan_manual_tips">Certifique-se de capturar todo o documento</string>
+	<string name="jumio_id_scan_prompt_analyzing">Analisando a imagem…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Entendi!</string>
 	<string name="jumio_id_scan_prompt_captured">Capturado</string>
 	<string name="jumio_id_scan_prompt_center_id">Centralize o seu documento</string>
@@ -142,7 +154,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Tire uma selfie</string>
 	<string name="jumio_identity_scan_tips_placing">Alinhe seu rosto na moldura oval e pressione o botão do obturador</string>
 	<string name="jumio_identity_title">Verificação facial</string>
-	<string name="jumio_idtype_brazil_cnh">PDF do CNH Digital do Brasil</string>
+	<string name="jumio_idtype_brazil_cnh">Carteira de motorista digital</string>
 	<string name="jumio_idtype_countrysearch_search">Pesquisar país</string>
 	<string name="jumio_idtype_countrysearch_title">Selecione o país emissor</string>
 	<string name="jumio_idtype_format_option_other">Outro formato</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Posicione seu passaporte</string>
 	<string name="jumio_nfc_id_description">Até que seu documento de identidade seja detectado automaticamente, deslize-o pela parte de trás do seu celular</string>
 	<string name="jumio_nfc_id_header_start">Posicione seu documento de identidade</string>
+	<string name="jumio_no_results_found">Nenhum resultado encontrado</string>
 	<string name="jumio_processing_title">Verificando o resultado</string>
+	<string name="jumio_search_bar">Barra de pesquisa</string>
+	<string name="jumio_search_completed_for_country">Pesquisa concluída por país</string>
+	<string name="jumio_select">Selecionar</string>
 	<string name="jumio_start_button">Iniciar</string>
 	<string name="jumio_start_instructions_01">Encontre uma superfície bem iluminada</string>
 	<string name="jumio_start_instructions_02">Prepare-se para tirar a selfie</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">O aplicativo pode usar o flash da câmera</string>
 	<string name="jumio_start_verification">Iniciar a verificação</string>
 	<string name="jumio_start_verification_subtitle">Este processo foi criado para verificar se é realmente você e para te proteger contra roubo de identidade</string>
+	<string name="jumio_switched_to_back_camera">Alternado para a câmera traseira</string>
+	<string name="jumio_switched_to_front_camera">Alternado para a câmera frontal</string>
 	<string name="jumio_try_again">Tente novamente</string>
 	<string name="jumio_uploading_success">Upload bem-sucedido</string>
 	<string name="jumio_uploading_title">Enviando</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Posicione seu rosto no círculo oval</string>
 	<string name="iproov__prompt_get_ready">Prepare-se…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Varredura concluída</string>
-	<string name="iproov__prompt_pitch_too_high">Segure o dispositivo na altura dos olhos</string>
-	<string name="iproov__prompt_pitch_too_low">Segure o dispositivo na altura dos olhos</string>
-	<string name="iproov__prompt_roll_too_high">Evite inclinar a cabeça</string>
-	<string name="iproov__prompt_roll_too_low">Evite inclinar a cabeça</string>
 	<string name="iproov__prompt_too_bright">Vá para um lugar com mais sombra</string>
 	<string name="iproov__prompt_too_close">Muito próximo</string>
 	<string name="iproov__prompt_too_far">Aproxime-se mais</string>
-	<string name="iproov__prompt_yaw_too_high">Vire ligeiramente para a esquerda</string>
-	<string name="iproov__prompt_yaw_too_low">Vire ligeiramente para a direita</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

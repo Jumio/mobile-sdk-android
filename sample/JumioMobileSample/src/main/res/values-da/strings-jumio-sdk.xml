@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Visum</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Når ID-kortet er registreret, skal du holde stille</string>
 	<string name="jumio_nfc_retry_enable_capability">For at få mere ud af dit pas skal du aktivere din telefons NFC -kapacitet</string>
-	<string name="jumio_nfc_retry_error_general">Prøv igen, og følg instruktionerne som vist</string>
 	<string name="jumio_nfc_retry_tag_lost">Hold stille, når passet er registreret</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Skift til kamera på bagsiden</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Skift til frontkamera</string>
 	<string name="jumio_accessibility_nfc_description_start">Tjek, om dit id har en chip. Hvis det er tilfældet, skal du placere telefonen på id\'et som vist.</string>
 	<string name="jumio_accessibility_quit_scan">Afslut scanning</string>
+	<string name="jumio_accessibility_scan_back">Tilbage</string>
 	<string name="jumio_accessibility_scan_help">Hjælpemenu</string>
 	<string name="jumio_accessibility_scan_shutter_button">Tag et billede</string>
 	<string name="jumio_accessibility_scan_switch_camera">Skift kamera</string>
 	<string name="jumio_analyzing_biometric">Analyserer biometriske data</string>
 	<string name="jumio_brazil_cnh_subtitle">For at fortsætte med din upload skal du have downloadet et digitalt kørekort i PDF-format fra myndighedernes officielle program [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Upload CNH Digital som PDF</string>
+	<string name="jumio_button">Knap</string>
 	<string name="jumio_button_cancel">Annuller</string>
+	<string name="jumio_button_continue">Fortsæt</string>
 	<string name="jumio_button_retry">Prøv igen</string>
+	<string name="jumio_change_issuing_country">Skift udstedelsesland</string>
+	<string name="jumio_clear_search">Ryd søgning</string>
+	<string name="jumio_current_issuing_country">Nuværende udstedelsesland: %s</string>
 	<string name="jumio_di_back_to_document_selection">Du bliver sendt tilbage til valg af dokument.</string>
 	<string name="jumio_di_vendor_selection_title">Vælg udbyder af digital ID</string>
 	<string name="jumio_di_verification_prompt_processing">Færdiggør processen i %s-appen.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maksimal filstørrelse: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimalt antal sider: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokumentet bør ikke være adgangskodebeskyttet</string>
+	<string name="jumio_eidas_description">Tryk på \"Fortsæt\" for at starte loginprocessen. \nVælg derefter \"eIDAS Login\" på den kommende side, og vælg dit lands flag for at fortsætte. \nBrug eIDAS Login til sikker, EU-kompatibel verifikation.</string>
+	<string name="jumio_eidas_login_header">eIDAS Login</string>
 	<string name="jumio_error_button_retake_both">Tag begge billeder igen</string>
 	<string name="jumio_error_button_retake_one">Tag billede igen</string>
 	<string name="jumio_error_button_retry">Prøv igen</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Billedet skal tages igen</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Liste over understøttede dokumenter</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Det optagne dokument understøttes ikke</string>
+	<string name="jumio_european_did_login_header">Europæisk digitalt ID</string>
 	<string name="jumio_face_help_eyes_closed">Hold øjnene åbne</string>
 	<string name="jumio_face_help_generic_angle">Hold enheden i øjenhøjde</string>
 	<string name="jumio_face_help_generic_center">Centrer dit ansigt i rammen, og og følg vejledningen på skærmen</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Fang BILLEDSIDEN</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Fang BILLEDSIDEN manuelt</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Hæld, så den nederste kant er synlig, og juster dernæst efter rammen</string>
+	<string name="jumio_id_scan_hint_error_fallback">Scanningsmetoden er ændret på grund af en fejl.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Scanning optimeret til bedre enhedsydelse</string>
 	<string name="jumio_id_scan_manual">Tag et billede af dit dokument</string>
 	<string name="jumio_id_scan_manual_tips">Sørg for, at hele dokumentet er med på billedet</string>
+	<string name="jumio_id_scan_prompt_analyzing">Analyserer billedet…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Forstået!</string>
 	<string name="jumio_id_scan_prompt_captured">Indfanget</string>
 	<string name="jumio_id_scan_prompt_center_id">Centrer dit dokument</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Placer dit pas</string>
 	<string name="jumio_nfc_id_description">Skub ID-kortet langs bagsiden af din telefon, indtil det registreres automatisk</string>
 	<string name="jumio_nfc_id_header_start">Placer dit ID-kort</string>
+	<string name="jumio_no_results_found">Der blev ikke fundet nogen resultater</string>
 	<string name="jumio_processing_title">Kontrollerer resultatet</string>
+	<string name="jumio_search_bar">Søgefelt</string>
+	<string name="jumio_search_completed_for_country">Søgning efter land afsluttet</string>
+	<string name="jumio_select">Vælg</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Find en belyst flade</string>
 	<string name="jumio_start_instructions_02">Gør dig klar til at tage et selfie</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">Appen bruger muligvis kameraets blitz</string>
 	<string name="jumio_start_verification">Start bekræftelse</string>
 	<string name="jumio_start_verification_subtitle">Denne proces er designet til at bekræfte din identitet og beskytte dig mod identitetstyveri</string>
+	<string name="jumio_switched_to_back_camera">Skiftet til bagsidekameraet</string>
+	<string name="jumio_switched_to_front_camera">Skiftet til frontkameraet</string>
 	<string name="jumio_try_again">Prøv venligst igen</string>
 	<string name="jumio_uploading_success">Upload gennemført</string>
 	<string name="jumio_uploading_title">Uploader</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Flyt ansigtet til ovalen</string>
 	<string name="iproov__prompt_get_ready">Gør dig klar…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Scanning afsluttet</string>
-	<string name="iproov__prompt_pitch_too_high">Hold enheden i øjenhøjde</string>
-	<string name="iproov__prompt_pitch_too_low">Hold enheden i øjenhøjde</string>
-	<string name="iproov__prompt_roll_too_high">Undgå at vippe hovedet</string>
-	<string name="iproov__prompt_roll_too_low">Undgå at vippe hovedet</string>
 	<string name="iproov__prompt_too_bright">Gå til et sted med mere skygge</string>
 	<string name="iproov__prompt_too_close">For tæt på</string>
 	<string name="iproov__prompt_too_far">Ryk tættere på</string>
-	<string name="iproov__prompt_yaw_too_high">Drej langsomt til venstre</string>
-	<string name="iproov__prompt_yaw_too_low">Drej langsomt til højre</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

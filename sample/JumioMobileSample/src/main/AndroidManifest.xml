@@ -15,6 +15,7 @@
 
 	<!-- optional start -->
 	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
 	<!-- optional end -->
 
 	<application
@@ -26,7 +27,7 @@
 
 		<!-- KOTLIN -->
 		<activity
-			android:name="com.jumio.sample.compose.activities.MainActivity"
+			android:name="com.jumio.sample.MainActivity"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
 			android:exported="true"
 			android:screenOrientation="portrait"
@@ -38,13 +39,20 @@
 			</intent-filter>
 		</activity>
 		<activity
+			android:name="com.jumio.sample.compose.activities.MainActivity"
+			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
+			android:exported="true"
+			android:screenOrientation="portrait"
+			android:icon="@drawable/ic_launcher_kotlin"
+			android:theme="@style/AppTheme" />
+		<activity
 			android:name="com.jumio.sample.compose.activities.CustomUIActivity"
 			android:exported="true"
 			android:screenOrientation="portrait"
 			android:launchMode="singleTask"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
 			android:theme="@style/AppTheme"
-			android:label="Jumio Sample Custom UI">
+			android:label="Jumio Sample Compose Custom UI">
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
 
@@ -73,8 +81,7 @@
 			android:exported="true"
 			android:screenOrientation="portrait"
 			android:icon="@drawable/ic_launcher_kotlin"
-			android:theme="@style/AppTheme">
-		</activity>
+			android:theme="@style/AppTheme" />
 		<activity
 			android:name="com.jumio.sample.xml.CustomUiActivity"
 			android:exported="true"
@@ -82,7 +89,7 @@
 			android:launchMode="singleTask"
 			android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|layoutDirection"
 			android:theme="@style/Theme.Jumio"
-			android:label="Jumio Sample Custom UI">
+			android:label="Jumio Sample XML Custom UI">
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
 

@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Vize</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Kimlik kartı algılandığında, hareketsiz tutun</string>
 	<string name="jumio_nfc_retry_enable_capability">Pasaportunuzdan daha fazlasını elde etmek için lütfen telefonunuzun NFC özelliğini etkinleştirin</string>
-	<string name="jumio_nfc_retry_error_general">Tekrar deneyin ve talimatları gösterildiği gibi uygulayın</string>
 	<string name="jumio_nfc_retry_tag_lost">Pasaport algılandıktan sonra sabit durun</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Arka kameraya geç</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Ön kameraya geç</string>
 	<string name="jumio_accessibility_nfc_description_start">Lütfen kimliğinizde çip olup olmadığını kontrol edin. Çip varsa telefonunuzu gösterildiği şekilde kimliğin üzerinde tutun.</string>
 	<string name="jumio_accessibility_quit_scan">Taramadan çık</string>
+	<string name="jumio_accessibility_scan_back">Geri Dön</string>
 	<string name="jumio_accessibility_scan_help">Yardım menüsü</string>
 	<string name="jumio_accessibility_scan_shutter_button">Fotoğraf çek</string>
 	<string name="jumio_accessibility_scan_switch_camera">Kamerayı değiştir</string>
 	<string name="jumio_analyzing_biometric">Biyometrik veriler inceleniyor</string>
 	<string name="jumio_brazil_cnh_subtitle">Yükleme işlemine devam etmek için resmi devlet uygulaması üzerinden dijital ehliyet PDF\'sini [({Carteira Digital de Trânsito})] indirmiş olmanız gerekmektedir</string>
 	<string name="jumio_brazil_cnh_upload_button">CNH Digital PDF\'sini yükleyin</string>
+	<string name="jumio_button">Düğme</string>
 	<string name="jumio_button_cancel">İptal</string>
+	<string name="jumio_button_continue">Devam et</string>
 	<string name="jumio_button_retry">Tekrar deneyin</string>
+	<string name="jumio_change_issuing_country">Düzenleyen Ülkeyi Değiştir</string>
+	<string name="jumio_clear_search">Aramayı temizle</string>
+	<string name="jumio_current_issuing_country">Mevcut Düzenleyen Ülke: %s</string>
 	<string name="jumio_di_back_to_document_selection">Belge seçme ekranına geri döndürüleceksiniz.</string>
 	<string name="jumio_di_vendor_selection_title">Dijital kimlik sağlayıcı seçin</string>
 	<string name="jumio_di_verification_prompt_processing">Lütfen %s uygulamasından akışı tamamlayın.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maksimum dosya boyutu: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimum sayfa sayısı: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Belge şifre korumalı olmamalıdır</string>
+	<string name="jumio_eidas_description">Oturum açma işlemini başlatmak için \'Devam\'a dokunun. \nArdından bir sonraki sayfada \'eIDAS Oturumu Açma\'yı seçin ve devam etmek için ülkenizin bayrağını seçin. \nGüvenli, AB uyumlu doğrulama için eIDAS Oturumu Açma\'yı kullanın.</string>
+	<string name="jumio_eidas_login_header">eIDAS Oturumu Açma</string>
 	<string name="jumio_error_button_retake_both">İkisini de yeniden çek</string>
 	<string name="jumio_error_button_retake_one">Yeniden çek</string>
 	<string name="jumio_error_button_retry">Tekrar deneyin</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Görüntü yeniden çekilmelidir</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Desteklenen belgelerin listesi</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Belge desteklenmiyor</string>
+	<string name="jumio_european_did_login_header">Avrupa dijital kimliği</string>
 	<string name="jumio_face_help_eyes_closed">Gözlerinizi açık tutun</string>
 	<string name="jumio_face_help_generic_angle">Cihazı göz hizasında tutun</string>
 	<string name="jumio_face_help_generic_center">Yüzünüzü çerçevenin içinde ortalayın ve ekrandaki talimatları izleyin</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">FOTOĞRAFLI tarafı çek</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">FOTOĞRAFLI tarafı manuel çek</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Alt kenar görünecek şekilde eğip çerçeveye hizalayın</string>
+	<string name="jumio_id_scan_hint_error_fallback">Bir hata nedeniyle tarama yöntemi değişti.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Daha iyi cihaz performansı elde etmek için optimize edilmiş tarama</string>
 	<string name="jumio_id_scan_manual">Belgenizin fotoğrafını çekin</string>
 	<string name="jumio_id_scan_manual_tips">Belgenin tamamını çektiğinizden emin olun</string>
+	<string name="jumio_id_scan_prompt_analyzing">Görüntü analiz ediliyor…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Tamamdır!</string>
 	<string name="jumio_id_scan_prompt_captured">Yakalandı</string>
 	<string name="jumio_id_scan_prompt_center_id">Belgenizi ortalayın</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Pasaportunuzu yerleştirin</string>
 	<string name="jumio_nfc_id_description">Kimlik kartını otomatik olarak algılanana kadar telefonunuzun arka yüzeyinde kaydırın</string>
 	<string name="jumio_nfc_id_header_start">Kimlik kartınızı konumlandırın</string>
+	<string name="jumio_no_results_found">Sonuç bulunamadı</string>
 	<string name="jumio_processing_title">Sonuç kontrol ediliyor</string>
+	<string name="jumio_search_bar">Arama çubuğu</string>
+	<string name="jumio_search_completed_for_country">Şu ülke için arama tamamlandı:</string>
+	<string name="jumio_select">Seçin</string>
 	<string name="jumio_start_button">Başla</string>
 	<string name="jumio_start_instructions_01">İyi aydınlatılmış bir yüzey bulun</string>
 	<string name="jumio_start_instructions_02">Selfie çekmeye hazır olun</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">Uygulama kamera flaşını kullanabilir</string>
 	<string name="jumio_start_verification">Doğrulamayı başlat</string>
 	<string name="jumio_start_verification_subtitle">Bu süreç, kimliğinizi doğrulamak ve sizi kimlik hırsızlığına karşı korumak için tasarlanmıştır</string>
+	<string name="jumio_switched_to_back_camera">Arka kameraya geçildi</string>
+	<string name="jumio_switched_to_front_camera">Ön kameraya geçildi</string>
 	<string name="jumio_try_again">Tekrar deneyin</string>
 	<string name="jumio_uploading_success">Yükleme başarılı</string>
 	<string name="jumio_uploading_title">Yükleniyor</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Yüzünüzü oval alana oturtun</string>
 	<string name="iproov__prompt_get_ready">Hazır olun…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Tarama tamamlandı</string>
-	<string name="iproov__prompt_pitch_too_high">Cihazı göz hizasında tutun</string>
-	<string name="iproov__prompt_pitch_too_low">Cihazı göz hizasında tutun</string>
-	<string name="iproov__prompt_roll_too_high">Başınızı eğmekten kaçının</string>
-	<string name="iproov__prompt_roll_too_low">Başınızı eğmekten kaçının</string>
 	<string name="iproov__prompt_too_bright">Daha gölgeli bir yere gidin</string>
 	<string name="iproov__prompt_too_close">Çok yakın</string>
 	<string name="iproov__prompt_too_far">Yaklaşın</string>
-	<string name="iproov__prompt_yaw_too_high">Hafifçe sola dönün</string>
-	<string name="iproov__prompt_yaw_too_low">Hafifçe sağa dönün</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

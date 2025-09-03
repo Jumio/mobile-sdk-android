@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Visum</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Sodra die ID-kaart opgespoor is, hou stil</string>
 	<string name="jumio_nfc_retry_enable_capability">Aktiveer die telefoon se NFC -funksie om meer uit u paspoort te put</string>
-	<string name="jumio_nfc_retry_error_general">Probeer weer en volg die instruksies soos geïllustreer</string>
 	<string name="jumio_nfc_retry_tag_lost">Hou stil sodra die paspoort bespeur is</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Skakel oor na agterste kamera</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Skakel oor na voorste kamera</string>
 	<string name="jumio_accessibility_nfc_description_start">Kyk asseblief of u ID \'n skyfie het. Indien wel, plaas u foon op die ID soos geïllustreer.</string>
 	<string name="jumio_accessibility_quit_scan">Verlaat skandering</string>
+	<string name="jumio_accessibility_scan_back">Terug</string>
 	<string name="jumio_accessibility_scan_help">Hulpkieslys</string>
 	<string name="jumio_accessibility_scan_shutter_button">Neem \'n foto</string>
 	<string name="jumio_accessibility_scan_switch_camera">Verander van kamera</string>
 	<string name="jumio_analyzing_biometric">Besig om biometriese data te ontleed</string>
 	<string name="jumio_brazil_cnh_subtitle">Om met die oplaai voort te gaan, maak seker dat jy ’n digitale bestuurslisensie-PDF van die amptelike regeringstoepassing afgelaai het [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Laai ’n CNH Digital PDF op</string>
+	<string name="jumio_button">Knoppie</string>
 	<string name="jumio_button_cancel">Kanselleer</string>
+	<string name="jumio_button_continue">Gaan voort</string>
 	<string name="jumio_button_retry">Probeer weer</string>
+	<string name="jumio_change_issuing_country">Verander uitreikingsland</string>
+	<string name="jumio_clear_search">Vee soektog uit</string>
+	<string name="jumio_current_issuing_country">Huidige Uitreikingsland: %s</string>
 	<string name="jumio_di_back_to_document_selection">Ons sal jou na dokumentseleksie terughelp.</string>
 	<string name="jumio_di_vendor_selection_title">Kies digitale-ID-verskaffer</string>
 	<string name="jumio_di_verification_prompt_processing">Voltooi asseblief die vloei op %s-app.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maksimum lêergrootte: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimum aantal bladsye: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument moenie met ‘n wagwoord beveilig wees nie</string>
+	<string name="jumio_eidas_description">Tik op “Gaan voort” om die aanmeldproses te begin. \nKies dan “eIDAS-aanmelding” op die volgende bladsy en kies jou land se vlag om voort te gaan. \nGebruik eIDAS-aanmelding vir veilige, EU-voldoenende verifikasie.</string>
+	<string name="jumio_eidas_login_header">eIDAS-aanmelding</string>
 	<string name="jumio_error_button_retake_both">Neem albei weer</string>
 	<string name="jumio_error_button_retake_one">Neem weer</string>
 	<string name="jumio_error_button_retry">Probeer weer</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Beeld moet weer geneem word</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Lys van ondersteunde dokumente</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Die vasgelê dokument word nie ondersteun nie</string>
+	<string name="jumio_european_did_login_header">Europese digitale ID</string>
 	<string name="jumio_face_help_eyes_closed">Hou jou oë oop</string>
 	<string name="jumio_face_help_generic_angle">Hou toestel op ooghoogte</string>
 	<string name="jumio_face_help_generic_center">Sit u gesig in die middel van die raam en volg die instruksies op die skerm</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Neem die FOTOKANT af</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Neem die FOTOKANT handmatig af</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Kantel sodat die onderste rand sigbaar is en belyn dan met die raam</string>
+	<string name="jumio_id_scan_hint_error_fallback">Skandeermetode is verander weens ’n fout.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skandering geoptimaliseer vir beter prestasie van toestel</string>
 	<string name="jumio_id_scan_manual">Neem ’n foto van u dokument</string>
 	<string name="jumio_id_scan_manual_tips">Sorg dat die hele dokument vasgelê word</string>
+	<string name="jumio_id_scan_prompt_analyzing">Analiseer die beeld…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Het dit!</string>
 	<string name="jumio_id_scan_prompt_captured">Gevang</string>
 	<string name="jumio_id_scan_prompt_center_id">Sit u dokument in die middel</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Posisioneer u paspoort</string>
 	<string name="jumio_nfc_id_description">Skuif die ID-kaart langs die agterkant van jou foon tot dit outomaties bespeur word</string>
 	<string name="jumio_nfc_id_header_start">Posisioneer jou ID-kaart</string>
+	<string name="jumio_no_results_found">Geen resultate gekry nie</string>
 	<string name="jumio_processing_title">Besig om resultaat te kontroleer</string>
+	<string name="jumio_search_bar">Soekbalk</string>
+	<string name="jumio_search_completed_for_country">Soektog is voltooi vir die land</string>
+	<string name="jumio_select">Kies</string>
 	<string name="jumio_start_button">Begin</string>
 	<string name="jumio_start_instructions_01">Kry \'n goedverligte oppervlak</string>
 	<string name="jumio_start_instructions_02">Wees gereed om \'n selfie te neem</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">Die app kan dalk die kamera se flits gebruik</string>
 	<string name="jumio_start_verification">Begin Verifiëring</string>
 	<string name="jumio_start_verification_subtitle">Hierdie proses is ontwerp om jou identiteit te verifieer en jou teen identiteitsdiefstal te beskerm</string>
+	<string name="jumio_switched_to_back_camera">Oorgeskakel na die agterste kamera</string>
+	<string name="jumio_switched_to_front_camera">Oorgeskakel na die voorste kamera</string>
 	<string name="jumio_try_again">Probeer asb. weer</string>
 	<string name="jumio_uploading_success">Oplaai was suksesvol</string>
 	<string name="jumio_uploading_title">Besig om op te laai</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Sit jou gesig in die ovaal</string>
 	<string name="iproov__prompt_get_ready">Maak gereed …</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skandering voltooi</string>
-	<string name="iproov__prompt_pitch_too_high">Hou toestel op ooghoogte</string>
-	<string name="iproov__prompt_pitch_too_low">Hou toestel op ooghoogte</string>
-	<string name="iproov__prompt_roll_too_high">Moenie u kop skuins hou nie</string>
-	<string name="iproov__prompt_roll_too_low">Moenie u kop skuins hou nie</string>
 	<string name="iproov__prompt_too_bright">Gaan staan iewers met meer skaduwee</string>
 	<string name="iproov__prompt_too_close">Te naby</string>
 	<string name="iproov__prompt_too_far">Kom nader</string>
-	<string name="iproov__prompt_yaw_too_high">Draai effens na u linkerkant</string>
-	<string name="iproov__prompt_yaw_too_low">Draai effens na u regterkant</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Viză</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Odată ce cardul de identitate este detectat, țineți-l nemișcat</string>
 	<string name="jumio_nfc_retry_enable_capability">Pentru a obține mai mult din pașaport, vă rugăm să activați capacitatea NFC a telefonului</string>
-	<string name="jumio_nfc_retry_error_general">Încercați din nou și urmați instrucțiunile ilustrate</string>
 	<string name="jumio_nfc_retry_tag_lost">Stați nemișcat la detectarea pașaportului</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Comutați la camera din spate</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Comutați la camera frontală</string>
 	<string name="jumio_accessibility_nfc_description_start">Vă rugăm să verificați dacă actul dumneavoastră de identitare are cip. Dacă da, amplasați telefonul pe ID așa cum este ilustrat.</string>
 	<string name="jumio_accessibility_quit_scan">Renunțați la scanare</string>
+	<string name="jumio_accessibility_scan_back">Înapoi</string>
 	<string name="jumio_accessibility_scan_help">Meniu Ajutor</string>
 	<string name="jumio_accessibility_scan_shutter_button">Faceți o fotografie</string>
 	<string name="jumio_accessibility_scan_switch_camera">Comutați camera</string>
 	<string name="jumio_analyzing_biometric">Sunt analizate datele biometrice</string>
 	<string name="jumio_brazil_cnh_subtitle">Pentru a continua cu încărcarea, asigurați-vă că ați descărcat un permis de conducere digital în format PDF din aplicația oficială a guvernului [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Încărcați CNH Digital în format PDF</string>
+	<string name="jumio_button">Buton</string>
 	<string name="jumio_button_cancel">Anulare</string>
+	<string name="jumio_button_continue">Continuare</string>
 	<string name="jumio_button_retry">Încercați din nou</string>
+	<string name="jumio_change_issuing_country">Schimbați țara emitentă</string>
+	<string name="jumio_clear_search">Ștergeți căutarea</string>
+	<string name="jumio_current_issuing_country">Țara emitentă actuală: %s</string>
 	<string name="jumio_di_back_to_document_selection">Veți naviga înapoi la selecția documentului.</string>
 	<string name="jumio_di_vendor_selection_title">Selectați furnizorul de ID digital</string>
 	<string name="jumio_di_verification_prompt_processing">Vă rugăm să încheiați fluxul în aplicația %s.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Dimensiune maximă fișier: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Număr maxim de pagini: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Documentul nu trebuie să fie protejat prin parolă</string>
+	<string name="jumio_eidas_description">Apăsați pe \'Continuare\' pentru a începe procesul de conectare.\nApoi, selectați \'Conectare eIDAS\' pe pagina următoare și alegeți steagul țării dvs. pentru a continua.\nUtilizați Conectarea eIDAS pentru o verificare sigură, conformă cu normele UE.</string>
+	<string name="jumio_eidas_login_header">Conectare eIDAS</string>
 	<string name="jumio_error_button_retake_both">Faceți o nouă poză pentru ambele</string>
 	<string name="jumio_error_button_retake_one">Faceți o nouă poză</string>
 	<string name="jumio_error_button_retry">Încercați din nou</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">O nouă poză a imaginii trebuie făcută</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Lista documentelor susținute</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Documentul nu este suportat</string>
+	<string name="jumio_european_did_login_header">ID digital european</string>
 	<string name="jumio_face_help_eyes_closed">Țineți ochii deschiși</string>
 	<string name="jumio_face_help_generic_angle">Țineți dispozitivul la nivelul ochilor</string>
 	<string name="jumio_face_help_generic_center">Centrați-vă fața și urmăriți instrucțiunile de pe ecran</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Captură a părții FOTO</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Captură manuală a părții FOTO</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Înclinați astfel încât marginea inferioară să fie vizibilă și apoi aliniați-o în cadru</string>
+	<string name="jumio_id_scan_hint_error_fallback">Metoda de scanare s-a schimbat din cauza unei erori.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Scanare optimizată pentru o performanță mai bună a dispozitivului</string>
 	<string name="jumio_id_scan_manual">Faceți o poză documentului</string>
 	<string name="jumio_id_scan_manual_tips">Asigurați-vă că ați capturat întregul document</string>
+	<string name="jumio_id_scan_prompt_analyzing">Analizând imaginea…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Realizat!</string>
 	<string name="jumio_id_scan_prompt_captured">Capturat</string>
 	<string name="jumio_id_scan_prompt_center_id">Încadrați-vă documentul</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Poziționați-vă pașaportul</string>
 	<string name="jumio_nfc_id_description">Glisați cartea de identitate de-a lungul părții din spate a telefonului până când este detectată automat</string>
 	<string name="jumio_nfc_id_header_start">Poziționați cartea de identitate</string>
+	<string name="jumio_no_results_found">Nu s-au găsit rezultate</string>
 	<string name="jumio_processing_title">Se verifică rezultatul</string>
+	<string name="jumio_search_bar">Bară de căutare</string>
+	<string name="jumio_search_completed_for_country">Căutare finalizată pentru țara</string>
+	<string name="jumio_select">Selectați</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Găsiți o suprafață bine iluminată</string>
 	<string name="jumio_start_instructions_02">Pregătiți-vă pentru selfie-ul dvs.</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">Aplicația poate utiliza blițul camerei</string>
 	<string name="jumio_start_verification">Începeți verificarea identității</string>
 	<string name="jumio_start_verification_subtitle">Acest proces de verificare are rolul de a vă confirma identitatea și a vă proteja de furtul de identitate</string>
+	<string name="jumio_switched_to_back_camera">S-a comutat la camera din spate</string>
+	<string name="jumio_switched_to_front_camera">S-a comutat la camera frontală</string>
 	<string name="jumio_try_again">Încercați din nou</string>
 	<string name="jumio_uploading_success">Încărcare reușită</string>
 	<string name="jumio_uploading_title">Încărcare</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Aduceți fața în cadrul oval</string>
 	<string name="iproov__prompt_get_ready">Pregătiți-vă…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Scanare finalizată</string>
-	<string name="iproov__prompt_pitch_too_high">Țineți dispozitivul la nivelul ochilor</string>
-	<string name="iproov__prompt_pitch_too_low">Țineți dispozitivul la nivelul ochilor</string>
-	<string name="iproov__prompt_roll_too_high">Evitați să vă înclinați capul</string>
-	<string name="iproov__prompt_roll_too_low">Evitați să vă înclinați capul</string>
 	<string name="iproov__prompt_too_bright">Mergeți într-un loc mai umbrit</string>
 	<string name="iproov__prompt_too_close">Prea aproape</string>
 	<string name="iproov__prompt_too_far">Apropiați-vă</string>
-	<string name="iproov__prompt_yaw_too_high">Întoarceți-vă ușor spre stânga</string>
-	<string name="iproov__prompt_yaw_too_low">Întoarceți-vă ușor spre dreapta</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

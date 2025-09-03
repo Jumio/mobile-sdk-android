@@ -56,4 +56,6 @@
 	<string name="nfc_scan_finished">NFC Scan Finished</string>
 	<string name="error">ERROR</string>
 	<string name="cancel">Cancel</string>
+	<string name="compose">Compose</string>
+	<string name="xml">XML</string>
 </resources>

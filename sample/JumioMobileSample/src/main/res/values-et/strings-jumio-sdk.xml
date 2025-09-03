@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Viisa</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Kui ID-kaart on tuvastatud, hoidke paigal</string>
 	<string name="jumio_nfc_retry_enable_capability">Kui soovite oma passist rohkem kasu saada, lubage oma telefoni NFC -funktsioon</string>
-	<string name="jumio_nfc_retry_error_general">Proovige uuesti ja järgige joonisel toodud juhiseid</string>
 	<string name="jumio_nfc_retry_tag_lost">Kui pass on tuvastatud, hoidke seda paigal</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Lülitu tagakaamerale</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Lülitu esikaamerale</string>
 	<string name="jumio_accessibility_nfc_description_start">Kontrollige, kas teie isikutunnistusel on kiip. Kui jah, asetage oma telefon ID-le nagu näidatud.</string>
 	<string name="jumio_accessibility_quit_scan">Lõpeta skannimine</string>
+	<string name="jumio_accessibility_scan_back">Tagasi</string>
 	<string name="jumio_accessibility_scan_help">Abimenüü</string>
 	<string name="jumio_accessibility_scan_shutter_button">Pildista</string>
 	<string name="jumio_accessibility_scan_switch_camera">Lülituge teisele kaamerale</string>
 	<string name="jumio_analyzing_biometric">Biomeetriliste andmete analüüsimine</string>
 	<string name="jumio_brazil_cnh_subtitle">Üleslaadimisega jätkamiseks veenduge, et olete ametlikust riiklikust rakendusest alla laadinud digitaalse juhiloa [({Carteira Digital de Trânsito})] PDF-i.</string>
 	<string name="jumio_brazil_cnh_upload_button">Laadige üles PDF-vormingus CNH Digital</string>
+	<string name="jumio_button">Nupp</string>
 	<string name="jumio_button_cancel">Tühista</string>
+	<string name="jumio_button_continue">Jätka</string>
 	<string name="jumio_button_retry">Proovige uuesti</string>
+	<string name="jumio_change_issuing_country">Muuda väljastanud riiki</string>
+	<string name="jumio_clear_search">Tühjenda otsing</string>
+	<string name="jumio_current_issuing_country">Praegune väljastajariik: %s</string>
 	<string name="jumio_di_back_to_document_selection">Teid suunatakse tagasi dokumendi valimisse.</string>
 	<string name="jumio_di_vendor_selection_title">Valige digi-ID pakkuja</string>
 	<string name="jumio_di_verification_prompt_processing">Palun lõpetage toiming rakenduses %s.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maksimaalne faili suurus: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimaalne lehekülgede arv: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument ei tohi olla parooliga kaitstud</string>
+	<string name="jumio_eidas_description">Sisselogimisprotsessi alustamiseks puudutage valikut „Jätka“\nJärgmisel lehel valige \'eIDASe sisselogimine\' ja seejärel valige jätkamiseks oma riigi lipp.\nKasutage eIDASe sisselogimist turvaliseks EL-i nõuetele vastavaks kinnitamiseks.</string>
+	<string name="jumio_eidas_login_header">eIDASe sisselogimine</string>
 	<string name="jumio_error_button_retake_both">Mõlemad uuesti</string>
 	<string name="jumio_error_button_retake_one">Uuesti</string>
 	<string name="jumio_error_button_retry">Proovige uuesti</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Pilt tuleb uuesti teha</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Toetatud dokumentide loetelu</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Jäädvustatud dokumenti ei toetata</string>
+	<string name="jumio_european_did_login_header">Euroopa digitaalne isikutunnistus</string>
 	<string name="jumio_face_help_eyes_closed">Hoidke oma silmad lahti</string>
 	<string name="jumio_face_help_generic_angle">Hoidke seadet silmade kõrgusel</string>
 	<string name="jumio_face_help_generic_center">Asetage nägu raami keskele ja järgige ekraanil kuvatud juhiseid</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Jäädvusta FOTO pool.</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Jäädvusta käsitsi FOTO pool.</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Kallutage nii, et alumine serv oleks nähtav ja joondage seejärel raamiga</string>
+	<string name="jumio_id_scan_hint_error_fallback">Skannimismeetod muutus vea tõttu.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Seadme parema jõudluse saavutamiseks on skannimist optimeeritud</string>
 	<string name="jumio_id_scan_manual">Tehke foto oma dokumendist</string>
 	<string name="jumio_id_scan_manual_tips">Kontrollige, et kogu dokument oleks pildil nähtav</string>
+	<string name="jumio_id_scan_prompt_analyzing">Pildi analüüsimine…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Sain aru!</string>
 	<string name="jumio_id_scan_prompt_captured">Jäädvustatud</string>
 	<string name="jumio_id_scan_prompt_center_id">Tsentreerige oma dokument</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Paigutage oma pass</string>
 	<string name="jumio_nfc_id_description">Libistage ID-kaarti mööda telefoni tagaosa, kuni selle automaatse tuvastamiseni</string>
 	<string name="jumio_nfc_id_header_start">Paigutage oma ID-kaart</string>
+	<string name="jumio_no_results_found">Tulemusi ei leitud</string>
 	<string name="jumio_processing_title">Tulemuse kontrollimine</string>
+	<string name="jumio_search_bar">Otsinguriba</string>
+	<string name="jumio_search_completed_for_country">Riigiotsing on lõpetatud</string>
+	<string name="jumio_select">Vali</string>
 	<string name="jumio_start_button">Alusta</string>
 	<string name="jumio_start_instructions_01">Kasutage hästi valgustatud pinda</string>
 	<string name="jumio_start_instructions_02">Olge valmis selfit tegema</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">Rakendus võib kasutada kaamera välku</string>
 	<string name="jumio_start_verification">Alusta kontrollimist</string>
 	<string name="jumio_start_verification_subtitle">Selle protsessi eesmärk on teie isiku kinnitamine ja teie identiteedivarguse eest kaitsmine</string>
+	<string name="jumio_switched_to_back_camera">Lülitati tagakaamerale</string>
+	<string name="jumio_switched_to_front_camera">Lülituti esikaamerale</string>
 	<string name="jumio_try_again">Palun proovi uuesti</string>
 	<string name="jumio_uploading_success">Üleslaadimine õnnestus</string>
 	<string name="jumio_uploading_title">Üleslaadimine</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Asetage oma nägu ovaali sisse</string>
 	<string name="iproov__prompt_get_ready">Seadke end valmis…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skannimine on lõpetatud</string>
-	<string name="iproov__prompt_pitch_too_high">Hoidke seadet silmade kõrgusel</string>
-	<string name="iproov__prompt_pitch_too_low">Hoidke seadet silmade kõrgusel</string>
-	<string name="iproov__prompt_roll_too_high">Vältige pea kallutamist</string>
-	<string name="iproov__prompt_roll_too_low">Vältige pea kallutamist</string>
 	<string name="iproov__prompt_too_bright">Minge mõnda varjulisemasse kohta</string>
 	<string name="iproov__prompt_too_close">Liiga lähedal</string>
 	<string name="iproov__prompt_too_far">Liigutage lähemale</string>
-	<string name="iproov__prompt_yaw_too_high">Pöörake veidi vasakule</string>
-	<string name="iproov__prompt_yaw_too_low">Pöörake veidi paremale</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

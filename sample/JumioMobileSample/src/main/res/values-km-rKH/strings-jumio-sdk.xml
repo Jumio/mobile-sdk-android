@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">ទិដ្ឋាការ</string>
 	<string name="jumio_nfc_id_retry_tag_lost">នៅពេលដែលអត្តសញ្ញាណប័ណ្ណត្រូវបានរកឃើញ សូមសង្កត់នៅស្ងៀម</string>
 	<string name="jumio_nfc_retry_enable_capability">ដើម្បីទទួលបានលិខិតឆ្លងដែនរបស់អ្នកកាន់តែច្រើនសូមបើកសមត្ថភាព NFC របស់ទូរស័ព្ទអ្នក</string>
-	<string name="jumio_nfc_retry_error_general">ព្យាយាមម្តងទៀត ហើយធ្វើតាមការណែនាំដូចដែលបានបង្ហាញ</string>
 	<string name="jumio_nfc_retry_tag_lost">កាន់ឱ្យនឹងនៅពេលដែលលិខិតឆ្លងដែនត្រូវបានរកឃើញ</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">ប្តូរទៅកាមេរ៉ាក្រោយ</string>
+	<string name="jumio_accessibility_camera_switch_to_front">ប្តូរទៅកាមេរ៉ាមុខ</string>
 	<string name="jumio_accessibility_nfc_description_start">សូមពិនិត្យមើលថាតើអត្តសញ្ញាណបណ្ណរបស់អ្នកមានឈីបដែរឬទេ។ ប្រសិនបើមាន សូមដាក់ទូរស័ព្ទរបស់អ្នកនៅលើអត្តសញ្ញាណបណ្ណដូចរូបបង្ហាញ។</string>
 	<string name="jumio_accessibility_quit_scan">ឈប់ស្កេន</string>
+	<string name="jumio_accessibility_scan_back">ថយក្រោយ</string>
 	<string name="jumio_accessibility_scan_help">ម៉ឺនុយជំនួយ</string>
 	<string name="jumio_accessibility_scan_shutter_button">ថតរូប</string>
 	<string name="jumio_accessibility_scan_switch_camera">ប្តូរកាមេរ៉ា</string>
 	<string name="jumio_analyzing_biometric">កំពុងវិភាគទិន្នន័យជីវមាត្រ</string>
 	<string name="jumio_brazil_cnh_subtitle">ដើម្បីបន្តអាប់ឡូដ ត្រូវប្រាកដថា អ្នកបានទាញយកប័ណ្ណបើកបរឌីជីថលជាទម្រង់ PDF ពីកម្មវិធីផ្លូវការរបស់រដ្ឋាភិបាល [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">អាប់ឡូដ CNH Digital PDF</string>
+	<string name="jumio_button">ប៊ូតុង</string>
 	<string name="jumio_button_cancel">បោះបង់</string>
+	<string name="jumio_button_continue">បន្ត</string>
 	<string name="jumio_button_retry">សូមព្យាយាមម្ដងទៀត</string>
+	<string name="jumio_change_issuing_country">ប្តូរប្រទេសដែលចេញអោយ</string>
+	<string name="jumio_clear_search">ជម្រះការស្វែងរក</string>
+	<string name="jumio_current_issuing_country">ប្រទេស​ចេញ​ប័ណ្ណ​បច្ចុប្បន្ន៖ %s</string>
 	<string name="jumio_di_back_to_document_selection">អ្នកនឹងរុករកត្រលប់មកកាន់ការជ្រើសរើសឯកសារវិញ។</string>
 	<string name="jumio_di_vendor_selection_title">ជ្រើសរើសអ្នកផ្ដល់សេវាកម្មអត្តសញ្ញាណបណ្ណឌីជីថល</string>
 	<string name="jumio_di_verification_prompt_processing">សូមបំពេញលំហូរការងារនៅលើកម្មវិធី %s។</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">ទំហំឯកសារអតិបរមា៖ %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">ចំនួនទំព័រអតិបរមា៖ %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">ឯកសារមិនគួរការពារដោយពាក្យសម្ងាត់ឡើយ</string>
+	<string name="jumio_eidas_description">ចុច \'បន្ត\' ដើម្បីចាប់ផ្ដើមដំណើរការចូល។ \nបន្ទប់មក ជ្រើសរើស \'eIDAS Login\' នៅលើទំព័រមកដល់ខាងមុខ ហើយជ្រើសរើសទង់ជាតិនៃប្រទេសរបស់អ្នកដើម្បីបន្ត។ \nប្រើ eIDAS Login ដើម្បីការផ្ទៀងផ្ទាត់មានសុវត្ថិភាព និងអនុលោមតាមច្បាប់អឺរ៉ុប។</string>
+	<string name="jumio_eidas_login_header">eIDAS Login</string>
 	<string name="jumio_error_button_retake_both">ថតទាំងសងខាងម្ដងទៀត</string>
 	<string name="jumio_error_button_retake_one">ថតម្ដងទៀត</string>
 	<string name="jumio_error_button_retry">សូមព្យាយាមម្ដងទៀត</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">រូបភាពត្រូវតែថតម្ដងទៀត</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">បញ្ជីឯកសារដែលបានគាំទ្រ</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">ឯកសារ ដែល បាន ចាប់ យក មិន ត្រូវ បាន គាំទ្រ ឡើយ</string>
+	<string name="jumio_european_did_login_header">លេខសម្គាល់ឌីជីថលអឺរ៉ុប</string>
 	<string name="jumio_face_help_eyes_closed">សូមកុំបិទភ្នែក</string>
 	<string name="jumio_face_help_generic_angle">ដាក់ឧបករណ៍នៅកម្ពស់ត្រឹមភ្នែក</string>
 	<string name="jumio_face_help_generic_center">ដាក់មុខរបស់អ្នកឲ្យចំពាក់កណ្ដាលស៊ុម ហើយអនុវត្តតាមការណែនាំនៅលើអេក្រង់។</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">ថតយកម្ខាងនៃរូបថត</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">ថតយកម្ខាងនៃរូបថតដោយដៃ</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">សូមផ្អៀងដើម្បីឲ្យមើលឃើញគែមខាងក្រោម​ ហើយបន្ទាប់មកតម្រឹមស៊ុម</string>
+	<string name="jumio_id_scan_hint_error_fallback">វិធីសាស្ត្រស្គែនបានផ្លាស់ប្ដូរដោយសារមានកំហុស។</string>
 	<string name="jumio_id_scan_hint_performance_fallback">ការស្កេនត្រូវបានបង្កើនប្រសិទ្ធភាពដើម្បីឲ្យឧបករណ៍ដំណើរការបានកាន់តែប្រសើរ</string>
 	<string name="jumio_id_scan_manual">ថតរូបឯកសាររបស់អ្នក</string>
 	<string name="jumio_id_scan_manual_tips">ត្រូវប្រាកដថាថតឯកសារទាំងមូល</string>
+	<string name="jumio_id_scan_prompt_analyzing">វិភាគរូបភាព…</string>
 	<string name="jumio_id_scan_prompt_capture_success">យល់ហើយ!</string>
 	<string name="jumio_id_scan_prompt_captured">បានថតរូប</string>
 	<string name="jumio_id_scan_prompt_center_id">ដាក់ឯកសារចំកណ្ដាល</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">កំណត់ទីតាំងលិខិតឆ្លងដែន</string>
 	<string name="jumio_nfc_id_description">រុញអត្តសញ្ញាណប័ណ្ណតាមបណ្ដោយខ្នងទូរសព្ទរបស់អ្នក រហូតដល់វាត្រូវបានរកឃើញដោយស្វ័យប្រវត្តិ</string>
 	<string name="jumio_nfc_id_header_start">ដាក់ទីតាំងអត្តសញ្ញាណប័ណ្ណរបស់អ្នក</string>
+	<string name="jumio_no_results_found">រកមិនលទ្ធផលអ្វីទេ</string>
 	<string name="jumio_processing_title">កំពុងពិនិត្យលទ្ធផល</string>
+	<string name="jumio_search_bar">របារស្វែងរក</string>
+	<string name="jumio_search_completed_for_country">ការស្វែងរកបានបញ្ចប់សម្រាប់ប្រទេស</string>
+	<string name="jumio_select">ជ្រើសរើស</string>
 	<string name="jumio_start_button">ចាប់ផ្តើម</string>
 	<string name="jumio_start_instructions_01">រកមើលផ្ទៃដែលមានពន្លឺល្អ</string>
 	<string name="jumio_start_instructions_02">សូមត្រៀមឲ្យរួចរាល់ដើម្បីថតសែលហ្វី</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">កម្មវិធីនេះអាចនឹងប្រើផ្លាសរបស់កាមេរ៉ា</string>
 	<string name="jumio_start_verification">ចាប់ផ្ដើមផ្ទៀងផ្ទាត់</string>
 	<string name="jumio_start_verification_subtitle">ដំណើរការនេះត្រូវបានរៀបចំឡើង ដើម្បីផ្ទៀងផ្ទាត់អត្តសញ្ញាណរបស់អ្នក និងការពារអ្នកពីចោរលួចអត្តសញ្ញាណ</string>
+	<string name="jumio_switched_to_back_camera">បាន​ប្ដូរ​ទៅ​កាមេរ៉ា​ក្រោយ</string>
+	<string name="jumio_switched_to_front_camera">បាន​ប្ដូរ​ទៅ​កាមេរ៉ា​មុខ</string>
 	<string name="jumio_try_again">សូមព្យាយាមម្តងទៀត</string>
 	<string name="jumio_uploading_success">ការផ្ទុកឡើងបានជោគជ័យ</string>
 	<string name="jumio_uploading_title">កំពុងផ្ទុកឡើង</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">ដាក់មុខរបស់អ្នកនៅក្នុងរង្វង់ពងក្រពើ</string>
 	<string name="iproov__prompt_get_ready">ត្រៀម…</string>
 	<string name="iproov__prompt_liveness_scan_completed">បានបញ្ចប់ការស្កេន</string>
-	<string name="iproov__prompt_pitch_too_high">ដាក់ឧបករណ៍នៅកម្ពស់ត្រឹមភ្នែក</string>
-	<string name="iproov__prompt_pitch_too_low">ដាក់ឧបករណ៍នៅកម្ពស់ត្រឹមភ្នែក</string>
-	<string name="iproov__prompt_roll_too_high">កុំផ្អៀងក្បាលរបស់អ្នក</string>
-	<string name="iproov__prompt_roll_too_low">កុំផ្អៀងក្បាលរបស់អ្នក</string>
 	<string name="iproov__prompt_too_bright">ទៅកន្លែងណាដែលមានស្រមោលជាងនេះ</string>
 	<string name="iproov__prompt_too_close">ជិតពេក</string>
 	<string name="iproov__prompt_too_far">ខិតមកជិតជាងមុន</string>
-	<string name="iproov__prompt_yaw_too_high">ងាកទៅខាងឆ្វេងតិចៗ</string>
-	<string name="iproov__prompt_yaw_too_low">ងាកទៅខាងស្ដាំតិចៗ</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

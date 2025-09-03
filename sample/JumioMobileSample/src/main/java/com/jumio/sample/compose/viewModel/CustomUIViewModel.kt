@@ -44,6 +44,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 private const val TAG = "CustomUIViewModel"
+private val USA_COUNTRY_CODES = listOf("USA", "CAN")
 
 class CustomUIViewModel(
 	val savedStateHandle: SavedStateHandle,
@@ -91,6 +92,10 @@ class CustomUIViewModel(
 	var isNewCredentialStarted = false
 	var scannedDocumentInfo: JumioDocumentInfo? = null
 		private set
+	var currentDocument: JumioDocument? = null
+		private set
+	val isUsa: Boolean
+		get() = scannedDocumentInfo?.issuingCountry?.uppercase() in USA_COUNTRY_CODES
 
 	init {
 		val jumioSDKHandle = savedStateHandle.get<Bundle>("jumioSDK")
@@ -169,6 +174,7 @@ class CustomUIViewModel(
 			JumioScanUpdate.TILT_FACE_DOWN,
 			JumioScanUpdate.TILT_FACE_LEFT,
 			JumioScanUpdate.TILT_FACE_RIGHT,
+			JumioScanUpdate.IMAGE_ANALYSIS,
 			-> {
 				scanAlignmentState.value = jumioScanUpdate.name
 			}
@@ -302,6 +308,7 @@ class CustomUIViewModel(
 				}
 			}
 			is CustomUIEvent.DocumentSelected -> {
+				currentDocument = uiEvent.document
 				(currentCredential as? JumioIDCredential)?.let {
 					it.setConfiguration(selectedCountry, uiEvent.document)
 					startScanPartWith(it.credentialParts.first())

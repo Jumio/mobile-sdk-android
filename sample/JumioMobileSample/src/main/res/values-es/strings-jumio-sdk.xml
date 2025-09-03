@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Visa</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Una vez detectada la tarjeta de identificación, manténgala quieta</string>
 	<string name="jumio_nfc_retry_enable_capability">Para sacar más provecho de su pasaporte, habilite la capacidad NFC de su teléfono</string>
-	<string name="jumio_nfc_retry_error_general">Inténtelo de nuevo y siga las instrucciones como se ilustra</string>
 	<string name="jumio_nfc_retry_tag_lost">Quédese quieto tras detectarse el pasaporte</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Cambiar a la cámara trasera</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Cambiar a la cámara frontal</string>
 	<string name="jumio_accessibility_nfc_description_start">Por favor, compruebe si su identificación tiene un chip. Si es así, coloque su teléfono en la DNI como se muestra en la ilustración.</string>
 	<string name="jumio_accessibility_quit_scan">Salir del escáner</string>
+	<string name="jumio_accessibility_scan_back">Atrás</string>
 	<string name="jumio_accessibility_scan_help">Menú Ayuda</string>
 	<string name="jumio_accessibility_scan_shutter_button">Hacer una foto</string>
 	<string name="jumio_accessibility_scan_switch_camera">Cambiar cámara</string>
 	<string name="jumio_analyzing_biometric">Analizando datos biométricos</string>
 	<string name="jumio_brazil_cnh_subtitle">Para continuar con el proceso, asegurate de haber descargado el PDF de la licencia de conducir digital de la aplicación oficial del gobierno [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Subir el PDF de CNH Digital</string>
+	<string name="jumio_button">Botón</string>
 	<string name="jumio_button_cancel">Cancelar</string>
+	<string name="jumio_button_continue">Continuar</string>
 	<string name="jumio_button_retry">Volver a intentarlo</string>
+	<string name="jumio_change_issuing_country">Cambiar país de emisión</string>
+	<string name="jumio_clear_search">Borrar búsqueda</string>
+	<string name="jumio_current_issuing_country">País de emisión actual: %s</string>
 	<string name="jumio_di_back_to_document_selection">Se le conducirá de nuevo a la selección de documentos.</string>
 	<string name="jumio_di_vendor_selection_title">Seleccione el proveedor de la identificación digital</string>
 	<string name="jumio_di_verification_prompt_processing">Complete el flujo en la aplicación %s.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Tamaño máximo de archivo: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Número máximo de páginas: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">El documento no debe estar protegido con contraseña</string>
+	<string name="jumio_eidas_description">Pulse \"Continuar\" para iniciar el proceso de inicio de sesión. \nA continuación, seleccione \"Inicio de sesión eIDAS\" en la página siguiente y elija la bandera de su país para continuar. \nUtilice Inicio de sesión eIDAS para realizar una verificación segura y conforme a la UE.</string>
+	<string name="jumio_eidas_login_header">Inicio de sesión eIDAS</string>
 	<string name="jumio_error_button_retake_both">Volver a tomar ambas</string>
 	<string name="jumio_error_button_retake_one">Volver a tomar</string>
 	<string name="jumio_error_button_retry">Volver a intentarlo</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">La imagen se debe volver a tomar</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Lista de documentos admitidos</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">El documento no es compatible</string>
+	<string name="jumio_european_did_login_header">Identificación digital europea</string>
 	<string name="jumio_face_help_eyes_closed">Mantenga los ojos abiertos</string>
 	<string name="jumio_face_help_generic_angle">Mantenga el dispositivo al nivel de los ojos</string>
 	<string name="jumio_face_help_generic_center">Centre el rostro en el marco y siga las instrucciones en pantalla</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Capture el lado de la FOTO</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Capture manualmente el lado de la FOTO</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Inclínelo para que se vea el borde inferior y, después, alinéelo con el marco</string>
+	<string name="jumio_id_scan_hint_error_fallback">El método de escaneo ha cambiado debido a un error.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Escaneo optimizado para un mejor rendimiento del dispositivo</string>
 	<string name="jumio_id_scan_manual">Tome una foto del documento</string>
 	<string name="jumio_id_scan_manual_tips">Asegúrese de capturar todo el documento</string>
+	<string name="jumio_id_scan_prompt_analyzing">Analizando la imagen…</string>
 	<string name="jumio_id_scan_prompt_capture_success">¡Entendido!</string>
 	<string name="jumio_id_scan_prompt_captured">Capturado</string>
 	<string name="jumio_id_scan_prompt_center_id">Centre su documento</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Coloque su pasaporte</string>
 	<string name="jumio_nfc_id_description">Deslice la tarjeta de identificación por la parte posterior del teléfono hasta que se detecte automáticamente.</string>
 	<string name="jumio_nfc_id_header_start">Coloque su tarjeta de identificación</string>
+	<string name="jumio_no_results_found">No se han encontrado resultados</string>
 	<string name="jumio_processing_title">Comprobando el resultado</string>
+	<string name="jumio_search_bar">Barra de búsqueda</string>
+	<string name="jumio_search_completed_for_country">Búsqueda completada para el país</string>
+	<string name="jumio_select">Seleccionar</string>
 	<string name="jumio_start_button">Empezar</string>
 	<string name="jumio_start_instructions_01">Busque una superficie bien iluminada</string>
 	<string name="jumio_start_instructions_02">Prepárese para tomarse una selfi</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">La aplicación puede utilizar el flash de la cámara</string>
 	<string name="jumio_start_verification">Iniciar verificación</string>
 	<string name="jumio_start_verification_subtitle">Este proceso está diseñado para verificar su identidad y protegerlo del robo de identidad</string>
+	<string name="jumio_switched_to_back_camera">Se ha cambiado a la cámara trasera</string>
+	<string name="jumio_switched_to_front_camera">Se ha cambiado a la cámara frontal</string>
 	<string name="jumio_try_again">Inténtelo de nuevo</string>
 	<string name="jumio_uploading_success">Carga correcta</string>
 	<string name="jumio_uploading_title">Cargando</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Ponga la cara en el óvalo</string>
 	<string name="iproov__prompt_get_ready">Prepárese…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Escaneo completado</string>
-	<string name="iproov__prompt_pitch_too_high">Mantenga el dispositivo al nivel de los ojos</string>
-	<string name="iproov__prompt_pitch_too_low">Mantenga el dispositivo al nivel de los ojos</string>
-	<string name="iproov__prompt_roll_too_high">Evite inclinar la cabeza</string>
-	<string name="iproov__prompt_roll_too_low">Evite inclinar la cabeza</string>
 	<string name="iproov__prompt_too_bright">Vaya a un lugar más sombrío</string>
 	<string name="iproov__prompt_too_close">Demasiado cerca</string>
 	<string name="iproov__prompt_too_far">Acérquese</string>
-	<string name="iproov__prompt_yaw_too_high">Gire levemente a su izquierda</string>
-	<string name="iproov__prompt_yaw_too_low">Gire levemente a su derecha</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

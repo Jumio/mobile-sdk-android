@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Visa</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Ladarba l-karta tal-ID tiġi skoperta, żommha f\'postha</string>
 	<string name="jumio_nfc_retry_enable_capability">Biex tikseb aktar mill-passaport tiegħek, jekk jogħġbok ibiddel il-kapaċità NFC tat-telefon tiegħek</string>
-	<string name="jumio_nfc_retry_error_general">Erġa\' pprova u segwi l-istruzzjonijiet kif qed jintwera</string>
 	<string name="jumio_nfc_retry_tag_lost">Meta jiġi identifiakt il-passaport, tiċċaqlax</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Eqleb għall-kamera tan-naħa ta\' wara</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Eqleb għall-kamera ta\' quddiem</string>
 	<string name="jumio_accessibility_nfc_description_start">Jekk jogħġbok iċċekkja jekk l-ID tiegħek għandhiex ċippa. Jekk iva, poġġi l-mowbajl tiegħek fuq l-ID kif inhu muri fl-istampa.</string>
 	<string name="jumio_accessibility_quit_scan">Waqqaf l-iskenn</string>
+	<string name="jumio_accessibility_scan_back">Lura</string>
 	<string name="jumio_accessibility_scan_help">Menù tal-għajnuna</string>
 	<string name="jumio_accessibility_scan_shutter_button">Ħu ritratt</string>
 	<string name="jumio_accessibility_scan_switch_camera">Eqleb għall-kamera l-oħra</string>
 	<string name="jumio_analyzing_biometric">Qed janalizza d-dejta bijometrika</string>
 	<string name="jumio_brazil_cnh_subtitle">Biex ittella\' l-PDF, aċċerta li niżżilt PDF tal-liċenzja tas-sewqan diġitali mill-applikazzjoni uffiċjali tal-gvern [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Tella\' PDF ta\' CNH Digital</string>
+	<string name="jumio_button">Buttuna</string>
 	<string name="jumio_button_cancel">Ikkanċella</string>
+	<string name="jumio_button_continue">Kompli</string>
 	<string name="jumio_button_retry">Erġa\' pprova</string>
+	<string name="jumio_change_issuing_country">Biddel il-Pajjiż tal-Ħruġ</string>
+	<string name="jumio_clear_search">Ħassar it-tiftixa</string>
+	<string name="jumio_current_issuing_country">Pajjiż tal-Ħruġ Attwali: %s</string>
 	<string name="jumio_di_back_to_document_selection">Se tittieħed lura fis-selezzjoni tad-dokumenti.</string>
 	<string name="jumio_di_vendor_selection_title">Agħżel il-fornitur tal-ID diġitali</string>
 	<string name="jumio_di_verification_prompt_processing">Jekk jogħġbok lesti l-fluss fuq l-app ta\' %s.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Daqs massimu tal-fajl: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Numru massimu ta\' paġni: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Id-dokument m\'għandux ikun protett b\'password</string>
+	<string name="jumio_eidas_description">Taptap fuq \"Kompli\" biex tibda l-proċess tal-login.\nImbagħad, agħżel \"Login ta\' eIDAS\" fuq il-paġna li jmiss u agħżel il-bandiera tal-pajjiż tiegħek biex tkompli.\nUża l-\"Login ta\' eIDAS\" għal verifika sikura u konformi mal-UE.</string>
+	<string name="jumio_eidas_login_header">Login ta\' eIDAS</string>
 	<string name="jumio_error_button_retake_both">Erġa\' ħu t-tnejn li huma mill-ġdid</string>
 	<string name="jumio_error_button_retake_one">Erġa\' ħu mill-ġdid</string>
 	<string name="jumio_error_button_retry">Erġa\' pprova</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Ir-ritratt għandu bżonn jittieħed mill-ġdid</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Lista ta\' dokumenti appoġġati</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Id-dokument ma jinxtegħax</string>
+	<string name="jumio_european_did_login_header">ID diġitali Ewropea</string>
 	<string name="jumio_face_help_eyes_closed">Żomm għajnejk miftuħin</string>
 	<string name="jumio_face_help_generic_angle">Żomm it-tagħmir f\'livell mal-għajnejn</string>
 	<string name="jumio_face_help_generic_center">Poġġi wiċċek fil-frejm u imxi mal-istruzzjonijiet li tara fuq l-iskrin</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Iġbed ritratt tan-naħa fejn hemm ir-RITRATT</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Iġbed ritratt manwalment tan-naħa fejn hemm ir-RITRATT</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Mejjel sabiex it-tarf t\'isfel ikun viżibbli u mbagħad allinja mal-inkwadratura</string>
+	<string name="jumio_id_scan_hint_error_fallback">Il-metodu tal-iskennjar inbidel minħabba żball.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">L-iskennjar ġiet ottimizzat għal prestazzjoni aħjar tal-apparat</string>
 	<string name="jumio_id_scan_manual">Ħu ritratt tad-dokument tiegħek</string>
 	<string name="jumio_id_scan_manual_tips">Aċċerta li tieħu ritratt tad-dokument kollu</string>
+	<string name="jumio_id_scan_prompt_analyzing">Nanalizzaw l-immaġni…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Irċivejnih(a)!</string>
 	<string name="jumio_id_scan_prompt_captured">Maħżuna</string>
 	<string name="jumio_id_scan_prompt_center_id">Poġġi d-dokument tiegħek fin-nofs</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Ippożizzjona l-passaport</string>
 	<string name="jumio_nfc_id_description">Mexxi l-karta tal-identità tiegħek man-naħa ta\' wara tal-mobile tiegħek sakemm tiġi identifikata awtomatikament</string>
 	<string name="jumio_nfc_id_header_start">Ippożizzjona l-karta tal-identità tiegħek</string>
+	<string name="jumio_no_results_found">Ma nstab l-ebda riżultat</string>
 	<string name="jumio_processing_title">Qed jiċċekkja r-riżultat</string>
+	<string name="jumio_search_bar">Strixxa tat-tiftix</string>
+	<string name="jumio_search_completed_for_country">It-tiftix għall-pajjiż huwa lest</string>
+	<string name="jumio_select">Agħżel</string>
 	<string name="jumio_start_button">Ibda</string>
 	<string name="jumio_start_instructions_01">Sib wiċċ imdawwal sew</string>
 	<string name="jumio_start_instructions_02">Lesti ruħek biex tieħu stessu</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">L-app tista\' tuża l-flash tal-kamera</string>
 	<string name="jumio_start_verification">Ibda l-verifika</string>
 	<string name="jumio_start_verification_subtitle">Dan il-proċess hu ddisinjat biex jivverifika l-identità tiegħek u jipproteġik mis-serq tal-identità</string>
+	<string name="jumio_switched_to_back_camera">Inqaleb għall-kamera ta\' wara</string>
+	<string name="jumio_switched_to_front_camera">Inqaleb għall-kamera ta\' quddiem</string>
 	<string name="jumio_try_again">Erġa\' pprova</string>
 	<string name="jumio_uploading_success">Telgħu b\'suċċess</string>
 	<string name="jumio_uploading_title">Qed itella\'</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Poġġi wiċċek fl-ovali</string>
 	<string name="iproov__prompt_get_ready">Lesti…</string>
 	<string name="iproov__prompt_liveness_scan_completed">L-iskennjar lest</string>
-	<string name="iproov__prompt_pitch_too_high">Żomm it-tagħmir f\'livell mal-għajnejn</string>
-	<string name="iproov__prompt_pitch_too_low">Żomm it-tagħmir f\'livell mal-għajnejn</string>
-	<string name="iproov__prompt_roll_too_high">Evita li tmejjel rasek</string>
-	<string name="iproov__prompt_roll_too_low">Evita li tmejjel rasek</string>
 	<string name="iproov__prompt_too_bright">Mur x\'imkien fejn hemm iktar dell</string>
 	<string name="iproov__prompt_too_close">Qiegħed wisq qrib</string>
 	<string name="iproov__prompt_too_far">Ersaq aktar viċin</string>
-	<string name="iproov__prompt_yaw_too_high">Dur ftit lejn ix-xellug</string>
-	<string name="iproov__prompt_yaw_too_low">Dur ftit lejn il-lemin</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

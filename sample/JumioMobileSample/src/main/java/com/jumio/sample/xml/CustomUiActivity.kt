@@ -7,7 +7,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.graphics.Color
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
@@ -25,6 +24,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.IntentCompat
+import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
@@ -147,7 +148,7 @@ class CustomUiActivity :
 
 		sdk = JumioSDK(this).apply {
 			token = intent.getStringExtra(EXTRA_TOKEN) as String
-			dataCenter = intent.getSerializableExtra(EXTRA_DATACENTER) as JumioDataCenter
+			dataCenter = IntentCompat.getSerializableExtra(intent, EXTRA_DATACENTER, JumioDataCenter::class.java)
 			intent.getIntExtra(EXTRA_CUSTOMTHEME, 0).let {
 				if (it != 0) {
 					customThemeId = it
@@ -155,8 +156,8 @@ class CustomUiActivity :
 			}
 		}
 
-		successDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.jumio_success))
-		errorDrawable = BitmapDrawable(resources, BitmapFactory.decodeResource(resources, R.drawable.jumio_error))
+		successDrawable = BitmapFactory.decodeResource(resources, R.drawable.jumio_success).toDrawable(resources)
+		errorDrawable = BitmapFactory.decodeResource(resources, R.drawable.jumio_error).toDrawable(resources)
 
 		if (savedInstanceState == null) {
 			showView(binding.loadingIndicator, binding.controllerControls, hideLoading = false)
@@ -656,6 +657,7 @@ class CustomUiActivity :
 			 * opposite direction.
 			 */
 			JumioScanUpdate.TILT -> log("Tilt your document, ${data as JumioTiltState}")
+			JumioScanUpdate.IMAGE_ANALYSIS -> log("Analyzing your image. Hold still.")
 		}
 	}
 

@@ -43,6 +43,7 @@ import com.jumio.sample.compose.views.pages.UploadFileHelpPage
 import com.jumio.sdk.JumioSDK
 import com.jumio.sdk.enums.JumioDataCenter
 import com.jumio.sdk.enums.JumioScanStep
+import com.jumio.sdk.util.JumioDeepLinkHandler
 import com.jumio.sdk.views.JumioActivityAttacher
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -121,6 +122,15 @@ class CustomUIActivity : ComponentActivity() {
 		validatePermissions()
 	}
 
+	override fun onNewIntent(intent: Intent) {
+		super.onNewIntent(intent)
+
+		intent.data?.let { deepLink ->
+			val activeScanPart = viewModel.currentScanPart ?: return
+			JumioDeepLinkHandler.consumeForScanPart(deepLink, activeScanPart)
+		}
+	}
+
 	@Composable
 	fun SetContent(modifier: Modifier) {
 		val navController = rememberNavController()
@@ -195,9 +205,7 @@ class CustomUIActivity : ComponentActivity() {
 				ErrorPage(
 					message = args.message,
 					isRetryable = args.isRetryable,
-					onRetryClick = {
-						viewModel.onRetry()
-					},
+					onRetryClick = { viewModel.onRetry() },
 					onClose = ::closeAndFinish,
 					modifier = modifier
 				)

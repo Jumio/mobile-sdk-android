@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Vizum</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Ko je osebna izkaznica zaznana, držite pri miru</string>
 	<string name="jumio_nfc_retry_enable_capability">Če želite iz potnega lista pridobiti več, omogočite v telefonu NFC</string>
-	<string name="jumio_nfc_retry_error_general">Poskusite znova in sledite prikazanim navodilom</string>
 	<string name="jumio_nfc_retry_tag_lost">Ko je potni list zaznan, držite pri miru</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Preklopi na zadnjo kamero</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Preklopi na sprednjo kamero</string>
 	<string name="jumio_accessibility_nfc_description_start">Preverite, ali ima vaš osebni dokument čip. Če ga ima, postavite telefon na osebni dokument, kot prikazuje slika.</string>
 	<string name="jumio_accessibility_quit_scan">Prekliči optično branje</string>
+	<string name="jumio_accessibility_scan_back">Nazaj</string>
 	<string name="jumio_accessibility_scan_help">Meni s pomočjo</string>
 	<string name="jumio_accessibility_scan_shutter_button">Posnemi fotografijo</string>
 	<string name="jumio_accessibility_scan_switch_camera">Preklopi kamero</string>
 	<string name="jumio_analyzing_biometric">Analiziranje biometričnih podatkov</string>
 	<string name="jumio_brazil_cnh_subtitle">Za nadaljevanje z nalaganjem se prepričajte, da ste datoteko PDF z elektronskim vozniškim dovoljenjem prenesli iz uradne državne aplikacije [({Carteira Digital de Trânsito})].</string>
 	<string name="jumio_brazil_cnh_upload_button">Naloži PDF CNH Digital</string>
+	<string name="jumio_button">Gumb</string>
 	<string name="jumio_button_cancel">Prekliči</string>
+	<string name="jumio_button_continue">Naprej</string>
 	<string name="jumio_button_retry">Poskusite znova</string>
+	<string name="jumio_change_issuing_country">Spremeni državo izdaje</string>
+	<string name="jumio_clear_search">Počisti iskanje</string>
+	<string name="jumio_current_issuing_country">Trenutna država izdaje: %s</string>
 	<string name="jumio_di_back_to_document_selection">Preusmerjeni boste nazaj na izbiro dokumenta.</string>
 	<string name="jumio_di_vendor_selection_title">Izberite ponudnika digitalne identitete</string>
 	<string name="jumio_di_verification_prompt_processing">Izpolnite tok v aplikaciji %s.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Največja velikost datoteke: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Največje število strani: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument ne sme biti zaščiten z geslom</string>
+	<string name="jumio_eidas_description">Za začetek postopka prijave pritisnite na „Nadaljuj“.\nNato za nadaljevanje na naslednji strani izberite „Prijava eIDAS“ in izberite zastavo svoje države.\nUporabite prijavo eIDAS za varno preverjanje v skladu z zahtevami EU.</string>
+	<string name="jumio_eidas_login_header">Prijava eIDAS</string>
 	<string name="jumio_error_button_retake_both">Ponovite oboje</string>
 	<string name="jumio_error_button_retake_one">Ponovite</string>
 	<string name="jumio_error_button_retry">Poskusite znova</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Slika mora biti ponovno posneta</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Seznam podprtih dokumentov</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Dokument ni podprt</string>
+	<string name="jumio_european_did_login_header">Evropska digitalna identifikacija</string>
 	<string name="jumio_face_help_eyes_closed">Oči imejte odprte</string>
 	<string name="jumio_face_help_generic_angle">Napravo držite na višini oči.</string>
 	<string name="jumio_face_help_generic_center">Obraz postavite na sredino okvirja in sledite navodilom na zaslonu</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Zajemanje strani s FOTOGRAFIJO</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Ročno zajemanje strani s FOTOGRAFIJO</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Nagnite ga tako, da je viden spodnji rob, in ga poravnajte z okvirjem</string>
+	<string name="jumio_id_scan_hint_error_fallback">Metoda skeniranja je bila spremenjena zaradi napake.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skeniranje je optimizirano za boljše delovanje naprave</string>
 	<string name="jumio_id_scan_manual">Fotografirajte svoj dokument</string>
 	<string name="jumio_id_scan_manual_tips">Poskrbite, da zajamete celoten dokument</string>
+	<string name="jumio_id_scan_prompt_analyzing">Analiziranje slike …</string>
 	<string name="jumio_id_scan_prompt_capture_success">Tako je!</string>
 	<string name="jumio_id_scan_prompt_captured">Posneto</string>
 	<string name="jumio_id_scan_prompt_center_id">Dajte svoj dokument na sredino</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Namestite potni list</string>
 	<string name="jumio_nfc_id_description">Osebno izkaznico premikajte vodoravno za telefonom, dokler je samodejno ne zazna.</string>
 	<string name="jumio_nfc_id_header_start">Pokažite osebno izkaznico.</string>
+	<string name="jumio_no_results_found">Ni najdenih rezultatov</string>
 	<string name="jumio_processing_title">Preverjanje rezultata</string>
+	<string name="jumio_search_bar">Iskalna vrstica</string>
+	<string name="jumio_search_completed_for_country">Iskanje končano za državo</string>
+	<string name="jumio_select">Izbira</string>
 	<string name="jumio_start_button">Začni</string>
 	<string name="jumio_start_instructions_01">Poiščite dobro osvetljeno površino</string>
 	<string name="jumio_start_instructions_02">Pripravite se na selfi</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">Aplikacija lahko uporablja bliskavico fotoaparata</string>
 	<string name="jumio_start_verification">Začetek preverjanja</string>
 	<string name="jumio_start_verification_subtitle">Ta postopek je namenjen preverjanju vaše identitete in zaščiti pred krajo identitete</string>
+	<string name="jumio_switched_to_back_camera">Preklopljeno na zadnjo kamero</string>
+	<string name="jumio_switched_to_front_camera">Preklopljeno na sprednjo kamero</string>
 	<string name="jumio_try_again">Poskusite znova</string>
 	<string name="jumio_uploading_success">Nalaganje uspešno</string>
 	<string name="jumio_uploading_title">Nalaganje</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Postavite obraz v oval</string>
 	<string name="iproov__prompt_get_ready">Pripravite se …</string>
 	<string name="iproov__prompt_liveness_scan_completed">Optično branje končano</string>
-	<string name="iproov__prompt_pitch_too_high">Napravo držite na višini oči.</string>
-	<string name="iproov__prompt_pitch_too_low">Napravo držite na višini oči.</string>
-	<string name="iproov__prompt_roll_too_high">Ne nagibajte glave</string>
-	<string name="iproov__prompt_roll_too_low">Ne nagibajte glave</string>
 	<string name="iproov__prompt_too_bright">Pojdite v senco</string>
 	<string name="iproov__prompt_too_close">Preblizu</string>
 	<string name="iproov__prompt_too_far">Približajte se</string>
-	<string name="iproov__prompt_yaw_too_high">Obrnite se malo v levo</string>
-	<string name="iproov__prompt_yaw_too_low">Obrnite se malo v desno</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

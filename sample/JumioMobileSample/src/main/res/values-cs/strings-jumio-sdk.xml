@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Vízum</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Jakmile je průkaz totožnosti rozpoznán, držte v klidu</string>
 	<string name="jumio_nfc_retry_enable_capability">Chcete -li ze svého pasu vytěžit více, povolte v telefonu funkci NFC</string>
-	<string name="jumio_nfc_retry_error_general">Zkuste to znovu a postupujte podle uvedených pokynů</string>
 	<string name="jumio_nfc_retry_tag_lost">Po detekování s cestovním pasem nehýbejte</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Přepnout na zadní kameru</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Přepnout na přední kameru</string>
 	<string name="jumio_accessibility_nfc_description_start">Zkontrolujte prosím, zda má váš průkaz čip. Pokud ano, umístěte telefon na průkaz podle instrukcí v obrázku.</string>
 	<string name="jumio_accessibility_quit_scan">Ukončit skenování</string>
+	<string name="jumio_accessibility_scan_back">Zpět</string>
 	<string name="jumio_accessibility_scan_help">Nabídka nápovědy</string>
 	<string name="jumio_accessibility_scan_shutter_button">Pořídit fotografii</string>
 	<string name="jumio_accessibility_scan_switch_camera">Přepnout fotoaparát</string>
 	<string name="jumio_analyzing_biometric">Analyzují se biometrické údaje…</string>
 	<string name="jumio_brazil_cnh_subtitle">Pokud chcete pokračovat v nahrávání, ujistěte se, že jste si stáhli digitální řidičský průkaz ve formátu PDF z oficiální vládní aplikace [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Nahrát digitální soubor PDF společnosti CNH</string>
+	<string name="jumio_button">Tlačítko</string>
 	<string name="jumio_button_cancel">Zrušit</string>
+	<string name="jumio_button_continue">Pokračovat</string>
 	<string name="jumio_button_retry">Zkusit znovu</string>
+	<string name="jumio_change_issuing_country">Změnit zemi vydání</string>
+	<string name="jumio_clear_search">Vymazat hledání</string>
+	<string name="jumio_current_issuing_country">Aktuální země vydání: %s</string>
 	<string name="jumio_di_back_to_document_selection">Budete přesměrováni zpět k výběru dokumentu.</string>
 	<string name="jumio_di_vendor_selection_title">Vybrat poskytovatele digitálního ID</string>
 	<string name="jumio_di_verification_prompt_processing">Vyplňte postup v aplikaci %s.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maximální velikost souboru: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maximální počet stránek: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument nemůže být chráněn heslem</string>
+	<string name="jumio_eidas_description">Klepněte na Pokračovat pro zahájení procesu přihlašování. \nNa následující stránce vyberte eIDAS Login a zvolte vlajku vaší země, poté pokračujte. \nPoužijte eIDAS Login pro bezpečné, kompatibilní ověřování v EU.</string>
+	<string name="jumio_eidas_login_header">Přihlašování eIDAS Login</string>
 	<string name="jumio_error_button_retake_both">Vyfoťte znovu obojí</string>
 	<string name="jumio_error_button_retake_one">Vyfoťte znovu</string>
 	<string name="jumio_error_button_retry">Zkusit znovu</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Snímek musí být pořízen znovu</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Seznam podporovaných dokumentů</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Zachycený dokument není podporován</string>
+	<string name="jumio_european_did_login_header">Evropský digitální identifikační číslo</string>
 	<string name="jumio_face_help_eyes_closed">Mějte otevřené oči</string>
 	<string name="jumio_face_help_generic_angle">Držte fotoaparát v úrovni očí.</string>
 	<string name="jumio_face_help_generic_center">Obličej nasměrujte do středu rámečku a postupujte dle pokynů na obrazovce</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Vyfoťte stranu s FOTOGRAFIÍ</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Ručně vyfoťte stranu s FOTOGRAFIÍ</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Zkoste ho tak, aby byl viditelný spodní okraj, a poté ho zarovnejte k rámu</string>
+	<string name="jumio_id_scan_hint_error_fallback">Metoda skenování se změnila kvůli chybě.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Optimalizace skenování pro zajištění lepšího výkonu zařízení</string>
 	<string name="jumio_id_scan_manual">Pořiďte snímek svého dokumentu</string>
 	<string name="jumio_id_scan_manual_tips">Ujistěte se, že jste zachytili celý dokument</string>
+	<string name="jumio_id_scan_prompt_analyzing">Analýza obrázku…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Mám to!</string>
 	<string name="jumio_id_scan_prompt_captured">Zachyceno</string>
 	<string name="jumio_id_scan_prompt_center_id">Umístěte svůj dokument do středu</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Položte svůj cestovní pas</string>
 	<string name="jumio_nfc_id_description">Posunujte identifikační kartu podél zadní strany telefonu, dokud nebude automaticky detekována.</string>
 	<string name="jumio_nfc_id_header_start">Umístěte svou identifikační kartu</string>
+	<string name="jumio_no_results_found">Nenalezli jsme žádné výsledky</string>
 	<string name="jumio_processing_title">Kontrola výsledku</string>
+	<string name="jumio_search_bar">Vyhledávací panel</string>
+	<string name="jumio_search_completed_for_country">Vyhledávání dokončeno pro zemi</string>
+	<string name="jumio_select">Zvolit</string>
 	<string name="jumio_start_button">Spustit</string>
 	<string name="jumio_start_instructions_01">Najděte si dobře osvětlenou plochu</string>
 	<string name="jumio_start_instructions_02">Připravte se na pořízení selfie</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">Aplikace může používat blesk fotoaparátu</string>
 	<string name="jumio_start_verification">Zahájit ověřování</string>
 	<string name="jumio_start_verification_subtitle">Tento proces je navržen tak, aby bylo možné ověřit vaši totožnost a ochránit vás před krádeží identity</string>
+	<string name="jumio_switched_to_back_camera">Přepnuto na zadní fotoaparát</string>
+	<string name="jumio_switched_to_front_camera">Přepnuto na přední fotoaparát</string>
 	<string name="jumio_try_again">Zkuste to znovu</string>
 	<string name="jumio_uploading_success">Nahrání proběhlo úspěšně.</string>
 	<string name="jumio_uploading_title">Nahrávání</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Dejte obličej do oválu</string>
 	<string name="iproov__prompt_get_ready">Připravte se…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skenování dokončeno</string>
-	<string name="iproov__prompt_pitch_too_high">Držte fotoaparát v úrovni očí.</string>
-	<string name="iproov__prompt_pitch_too_low">Držte fotoaparát v úrovni očí.</string>
-	<string name="iproov__prompt_roll_too_high">Nenaklánějte hlavu</string>
-	<string name="iproov__prompt_roll_too_low">Nenaklánějte hlavu</string>
 	<string name="iproov__prompt_too_bright">Jděte do temnějšího prostředí</string>
 	<string name="iproov__prompt_too_close">Příliš blízko</string>
 	<string name="iproov__prompt_too_far">Pojďte blíž</string>
-	<string name="iproov__prompt_yaw_too_high">Natočte se mírně doleva</string>
-	<string name="iproov__prompt_yaw_too_low">Natočte se mírně doprava</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

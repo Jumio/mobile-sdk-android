@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Vīza</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Kad ID karte ir atpazīta, turiet to nekustīgi</string>
 	<string name="jumio_nfc_retry_enable_capability">Lai iegūtu vairāk no pases, lūdzu, iespējojiet tālruņa NFC iespējas</string>
-	<string name="jumio_nfc_retry_error_general">Mēģiniet vēlreiz un izpildiet parādītās instrukcijas</string>
 	<string name="jumio_nfc_retry_tag_lost">Kad pase ir uzņemta, nekustieties</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Pārslēgties uz aizmugurējo kameru</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Pārslēgties uz priekšējo kameru</string>
 	<string name="jumio_accessibility_nfc_description_start">Lūdzu, pārbaudiet, vai jūsu ID ir mikroshēma. Ja ir, novietojiet tālruni virs ID, kā tas parādīts.</string>
 	<string name="jumio_accessibility_quit_scan">Pārtraukt seknēšanu</string>
+	<string name="jumio_accessibility_scan_back">Atpakaļ</string>
 	<string name="jumio_accessibility_scan_help">Palīdzība</string>
 	<string name="jumio_accessibility_scan_shutter_button">Uzņemt fotoattēlu</string>
 	<string name="jumio_accessibility_scan_switch_camera">Pārslēgt kameru</string>
 	<string name="jumio_analyzing_biometric">Analizē biometriskos datus</string>
 	<string name="jumio_brazil_cnh_subtitle">Lai turpinātu augšupielādi, pārbaudiet, vai esat lejupielādējis digitālās autovadītāja apliecības PDF no valdības oficiālās lietotnes [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Augšupielādēt CNH Digital PDF</string>
+	<string name="jumio_button">Poga</string>
 	<string name="jumio_button_cancel">Atcelt</string>
+	<string name="jumio_button_continue">Turpināt</string>
 	<string name="jumio_button_retry">Mēģiniet vēlreiz</string>
+	<string name="jumio_change_issuing_country">Mainīt izdevējvalsti</string>
+	<string name="jumio_clear_search">Notīrīt meklēšanu</string>
+	<string name="jumio_current_issuing_country">Pašreizējā izdevējvalsts: %s</string>
 	<string name="jumio_di_back_to_document_selection">Jūs atgriezīsieties dokumentu atlases sadaļā.</string>
 	<string name="jumio_di_vendor_selection_title">Izvēlieties digitālā ID pakalpojuma sniedzēju</string>
 	<string name="jumio_di_verification_prompt_processing">Veiciet nepieciešamās darbības %s  lietotnē.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maksimālais datnes izmērs: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimālais lapu skaits: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokuments nedrīkst būt aizsargāts ar paroli</string>
+	<string name="jumio_eidas_description">Pieskarieties \"Turpināt\", lai sāktu ielogošanās procesu.\nPēc tam nākamajā lapā atlasiet “eIDAS Login” un izvēlieties savas valsts karogu, lai turpinātu.\nIzmantojiet eIDAS Login drošai, ar ES saderīgai verifikācijai.</string>
+	<string name="jumio_eidas_login_header">eIDAS Login</string>
 	<string name="jumio_error_button_retake_both">Uzņemt vēlreiz abas</string>
 	<string name="jumio_error_button_retake_one">Uzņemt vēlreiz</string>
 	<string name="jumio_error_button_retry">Mēģiniet vēlreiz</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Fotoattēls jāuzņem vēlreiz</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Atbalstīto dokumentu saraksts</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Dokuments netiek atbalstīts</string>
+	<string name="jumio_european_did_login_header">Eiropas digitālā identifikācija</string>
 	<string name="jumio_face_help_eyes_closed">Acīm jābūt atvērtām</string>
 	<string name="jumio_face_help_generic_angle">Turiet ierīci acu līmenī</string>
 	<string name="jumio_face_help_generic_center">Iecentrējiet seju rāmītī un sekojiet norādījumiem uz ekrāna</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Nofotogrāfējiet ATTĒLA pusi</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Manuāli nofotogrāfējiet ATTĒLA pusi</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Noliekt tā, lai būtu redzama apakšējā mala, un pēc tam izlīdzināt to pret rāmi</string>
+	<string name="jumio_id_scan_hint_error_fallback">Skenēšanas metode ir mainīta kļūdas dēļ.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Skenēšana optimizēta, lai uzlabotu ierīces veiktspēju</string>
 	<string name="jumio_id_scan_manual">Nofotografējiet savu dokumentu</string>
 	<string name="jumio_id_scan_manual_tips">Pārliecinieties, ka nofotogrāfēts viss dokuments</string>
+	<string name="jumio_id_scan_prompt_analyzing">Analizējot attēlu…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Izdevās!</string>
 	<string name="jumio_id_scan_prompt_captured">Fotografēts</string>
 	<string name="jumio_id_scan_prompt_center_id">Centrējiet savu dokumentu</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Novietojiet pasi</string>
 	<string name="jumio_nfc_id_description">Bīdiet ID karti gar tālruņa aizmuguri, līdz tā tiek automātiski detektēta</string>
 	<string name="jumio_nfc_id_header_start">Novietojiet savu ID karti</string>
+	<string name="jumio_no_results_found">Nav atrasts neviens rezultāts</string>
 	<string name="jumio_processing_title">Pārbauda rezultātus</string>
+	<string name="jumio_search_bar">Meklēšanas josla</string>
+	<string name="jumio_search_completed_for_country">Meklēšana valstij ir pabeigta</string>
+	<string name="jumio_select">Atlasīt</string>
 	<string name="jumio_start_button">Sākt</string>
 	<string name="jumio_start_instructions_01">Atrodiet labi apgaismotu virsmu</string>
 	<string name="jumio_start_instructions_02">Sagatavojieties pašportreta uzņemšanai</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">Lietotne var izmantot kameras zibspuldzi</string>
 	<string name="jumio_start_verification">Sākt verifikāciju</string>
 	<string name="jumio_start_verification_subtitle">Process paredzēts jūsu identitātes verificēšanai un aizsardzībai pret identitātes zādzību</string>
+	<string name="jumio_switched_to_back_camera">Pārslēgts uz aizmugurējo kameru</string>
+	<string name="jumio_switched_to_front_camera">Pārslēgts uz priekšējo kameru</string>
 	<string name="jumio_try_again">Mēģiniet vēlreiz</string>
 	<string name="jumio_uploading_success">Augšupielāde veiksmīga</string>
 	<string name="jumio_uploading_title">Augšupielādē</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Salāgojiet sejas kontrūru ar ovālu</string>
 	<string name="iproov__prompt_get_ready">Sagatavojieties…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skenēšana pabeigta</string>
-	<string name="iproov__prompt_pitch_too_high">Turiet ierīci acu līmenī</string>
-	<string name="iproov__prompt_pitch_too_low">Turiet ierīci acu līmenī</string>
-	<string name="iproov__prompt_roll_too_high">Izvairieties no galvas atliekšanas</string>
-	<string name="iproov__prompt_roll_too_low">Izvairieties no galvas atliekšanas</string>
 	<string name="iproov__prompt_too_bright">Dodieties uz ēnaināku vietu</string>
 	<string name="iproov__prompt_too_close">Pārāk tuvu</string>
 	<string name="iproov__prompt_too_far">Panāciet tuvāk</string>
-	<string name="iproov__prompt_yaw_too_high">Nedaudz pagriezieties pa kreisi</string>
-	<string name="iproov__prompt_yaw_too_low">Nedaudz pagriezieties pa labi</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

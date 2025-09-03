@@ -6,12 +6,100 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.14.0
+
+#### Deprecation Notice
+⚠️&nbsp;&nbsp;SDK 4.14.0 will be the last SDK version supporting Android 5 (API level 21). All subsequent SDK versions will require at least Android 6.0 "Marshmallow" (API level 23).
+
+#### General
+* Added support for Android 16
+
+#### LiteRT Notice
+JumioSDK bundles LiteRT Version 1.0.1 which supports 16kb page size for ARM64-v8 but not x86_64. This is fine for the JumioSDK as only ARM cpus are supported. An update to 1.4.0 is currently not possible because the min API level of LiteRT 1.4.0 (25) exceeds the min API level of the Jumio SDK (21).
+If you don't use LiteRT elsewhere in the code you can remove the x86 and x86_64 libraries by excluding them in the packagingOptions:
+```gradle
+android {
+	...
+	packagingOptions {
+		...
+		it.excludes.add("lib/x86_64/libtensorflowlite_jni.so")
+		it.excludes.add("lib/x86/libtensorflowlite_jni.so")
+	}
+}
+```
+If your apps min API level is at least 25 then the LiteRT dependency can be overridden:
+```gradle
+implementation ("com.jumio.android:docfinder:4.14.0") {
+	exclude group: 'com.google.ai.edge.litert', module: 'litert'
+	exclude group: 'com.google.ai.edge.litert', module: 'litert-metadata'
+}
+implementation ("com.jumio.android:liveness:4.14.0") {
+	exclude group: 'com.google.ai.edge.litert', module: 'litert'
+}
+implementation 'com.google.ai.edge.litert:litert:1.4.0'
+implementation 'com.google.ai.edge.litert:litert-support:1.4.0'
+```
+
+#### Public API Changes
+* Unused [`JumioFallbackReason.NO_DETECTION`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-fallback-reason/index.html) has been removed.
+* `IMAGE_ANALYSIS` has been added to [`JumioScanUpdate`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/index.html) 
+* Property `SCANNING_ERROR` has been added to [`JumioFallbackReason`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-fallback-reason/index.html).
+* The data parameter of [`JumioScanStep.ADDON_SCAN_PART`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-a-d-d-o-n_-s-c-a-n_-p-a-r-t/index.html) has been changed from [`JumioDocumentInfo`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-info/index.html) to  [`JumioAddonScanPartConfiguration`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-addon-scan-part-configuration/index.html).
+
+#### Android Manifest Changes
+The following optional permission can be declared in the `AndroidManifest.xml` file, in order to improve fraud prevention:
+`<uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />`
+
+#### New SDK Localizations Added
+The following keys have been added:
+* `jumio_id_scan_hint_error_fallback`
+* `jumio_eidas_description`
+* `jumio_eidas_login_header`
+* `jumio_button_continue`
+* `jumio_switched_to_back_camera`
+* `jumio_switched_to_front_camera`
+* `jumio_search_completed_for_country`
+* `jumio_search_bar`
+* `jumio_no_results_found`
+* `jumio_clear_search`
+* `jumio_current_issuing_country`
+* `jumio_button`
+* `jumio_accessibility_camera_switch_to_back`
+* `jumio_accessibility_camera_switch_to_front`
+* `jumio_select`
+* `jumio_change_issuing_country`
+* `jumio_current_issuing_country`
+* `jumio_accessibility_scan_back`
+
+The following keys have been removed:
+* `jumio_nfc_retry_error_general`
+* `iproov__prompt_pitch_too_high` 
+* `iproov__prompt_pitch_too_low`
+* `iproov__prompt_roll_too_high` 
+* `iproov__prompt_roll_too_low` 
+* `iproov__prompt_yaw_too_high` 
+* `iproov__prompt_yaw_too_low`
+
+#### Dependency Updates
+| Name              | Jumio Module        | Dependency                                    | old version | new version |
+|-------------------|---------------------|-----------------------------------------------|-------------|-------------|
+| Concurrent        | core                | `"androidx.concurrent:concurrent-futures"`    | ADDED       | 1.2.0       |
+| CameraX Core      | camerax             | `"androidx.camera:camera-core"`               | 1.4.1       | 1.4.2       |
+| CameraX Lifecycle | camerax             | `"androidx.camera:camera-lifecycle"`          | 1.4.1       | 1.4.2       |
+| CameraX View      | camerax             | `"androidx.camera:camera-view"`               | 1.4.1       | 1.4.2       |
+
 ## 4.13.0
 
 #### Public API Changes
 * The data parameter of [`JumioScanStep.ADDON_SCAN_PART`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-a-d-d-o-n_-s-c-a-n_-p-a-r-t/index.html) now contains [`JumioDocumentInfo`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-info/index.html) 
 * [`JumioDocumentInfo`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-info/index.html) contains the issuing country and the [`JumioDocumentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-type/index.html) of the initially scanned document 
 * Function `getHelpAnimation()` has been deprecated in [`JumioScanPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html)
+
+#### New SDK Localizations Added
+The following keys have been added:
+* `jumio_nfc_id_retry_tag_lost`
+* `jumio_nfc_id_description`
+* `jumio_nfc_id_header_start`
 
 #### Dependency Updates
 | Name                  | Jumio Module    | Dependency                                            | old version | new version |

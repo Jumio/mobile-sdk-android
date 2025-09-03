@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">I-Visa</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Uma ikhadi le-ID selitholakele, yibambe unganyakazi</string>
 	<string name="jumio_nfc_retry_enable_capability">Ukuthola okuningi kupasipoti yakho, sicela unike amandla amandla we-NFC yefoni yakho</string>
-	<string name="jumio_nfc_retry_error_general">Zama futhi ulandele iziqondiso njengoba kubonisiwe</string>
 	<string name="jumio_nfc_retry_tag_lost">Bamba kunganyakazi lapho kutholwa ipasipoti</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Shintshela kukhamera yangemuva</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Shintshela kwikhamera yaphambili</string>
 	<string name="jumio_accessibility_nfc_description_start">Sicela ubheke ukuthi i-ID yakho ine-chip yini. Uma kunjalo, beka ifoni yakho ku-ID njengoba kukhonjisiwe.</string>
 	<string name="jumio_accessibility_quit_scan">Yeka ukuskena</string>
+	<string name="jumio_accessibility_scan_back">Emuva</string>
 	<string name="jumio_accessibility_scan_help">Imenu yosizo</string>
 	<string name="jumio_accessibility_scan_shutter_button">Thatha isithombe</string>
 	<string name="jumio_accessibility_scan_switch_camera">Shintsha ikhamera yakho</string>
 	<string name="jumio_analyzing_biometric">Ihlaziya idatha ye-biometric</string>
 	<string name="jumio_brazil_cnh_subtitle">Ukuze uqhubeke nokulayisha, qinisekisa ukuthi udawunilode i-PDF yelayisensi yokushayela eyidijithali ku-aplikheshini esemthethweni kahulumeni [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Layisha i-PDF ye-CNH Eyidijithali</string>
+	<string name="jumio_button">Inkinobho</string>
 	<string name="jumio_button_cancel">Khansela</string>
+	<string name="jumio_button_continue">Qhubeka</string>
 	<string name="jumio_button_retry">Zama futhi</string>
+	<string name="jumio_change_issuing_country">Shintsha Izwe Elikhiphayo</string>
+	<string name="jumio_clear_search">Sula usesho</string>
+	<string name="jumio_current_issuing_country">Izwe Elikhiphayo Lamanje: %s</string>
 	<string name="jumio_di_back_to_document_selection">Uzozulazula ubuyele ekukhethweni kwedokhumenti</string>
 	<string name="jumio_di_vendor_selection_title">Khetha umhlinzeki we-ID eyidijithali</string>
 	<string name="jumio_di_verification_prompt_processing">Sicela ugcwalisa ukulandelelana ku-%s app.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Usayizi ophezulu wefayela: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Inani eliphezulu lamakhasi: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Idokhumenti akufanele livikelwe ngephasiwedi</string>
+	<string name="jumio_eidas_description">Thepha okuthi \'Qhubeka\' ukuze uqalise inqubo yokungena ngemvume. \nOkulandelayo, khetha okuthi \'Ukungena Ngemvume Kwe-eIDAS\' ekhasini elilandelayo bese ukhetha ifulegi lezwe lakini ukuze uqhubeke. \nSebenzisa Ukungena Ngemvume Kwe-eIDAS ukuze uthole ukuqinisekisa okuvikelekile, okuhambisana nomthetho wase-EU.</string>
+	<string name="jumio_eidas_login_header">Ukungena Ngemvume Kwe-eIDAS</string>
 	<string name="jumio_error_button_retake_both">Kuthathe kabusha kokubili</string>
 	<string name="jumio_error_button_retake_one">Thatha kabusha</string>
 	<string name="jumio_error_button_retry">Zama futhi</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Isithombe kumelwe sithathwe kabusha</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Uhlu lwamadokhumenti asekelwayo</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">I dokhumenti ayixhaswa</string>
+	<string name="jumio_european_did_login_header">I-ID yedijithali yaseYurophu</string>
 	<string name="jumio_face_help_eyes_closed">Gcina amehlo akho evuliwe</string>
 	<string name="jumio_face_help_generic_angle">Bamba idivayisi yakho iqondane namehlo</string>
 	<string name="jumio_face_help_generic_center">Beka ubuso bakho phakathi nendawo ohlakeni futhi ulandele iziqondiso ezisesikrinini</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Thwebula uhlangothi LWESITHOMBE</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Thwebula ngokwakho uhlangothi LWESITHOMBE</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Tshekisa ukuze kubonakale unqenqema olungezansi bese uqondanisa nohlaka</string>
+	<string name="jumio_id_scan_hint_error_fallback">Indlela yokuskena ishintshile ngenxa yephutha.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Ukuskena kuthuthukisiwe ukuze idivayisi isebenze kangcono</string>
 	<string name="jumio_id_scan_manual">Thatha isithombe sedokhumenti yakho</string>
 	<string name="jumio_id_scan_manual_tips">Qiniseka ukuthi uthwebula isithombe sayo yonke incwadi</string>
+	<string name="jumio_id_scan_prompt_analyzing">Ihlaziya isithombe…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Ngiyitholile!</string>
 	<string name="jumio_id_scan_prompt_captured">Kuthunjiwe</string>
 	<string name="jumio_id_scan_prompt_center_id">Beka idokhumenti phakathi nendawo</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Beka kahle ipasipoti</string>
 	<string name="jumio_nfc_id_description">Slayida ikhadi le-ID kungemuva lefoni yakho kuze kube yilapho litholwa ngokuzenzekelayo</string>
 	<string name="jumio_nfc_id_header_start">Beka ikhadi lakho le-ID</string>
+	<string name="jumio_no_results_found">Ayikho imiphumela etholiwe</string>
 	<string name="jumio_processing_title">Ihlola umphumela</string>
+	<string name="jumio_search_bar">Ibha yosesho</string>
+	<string name="jumio_search_completed_for_country">Usesho luqediwe ezweni</string>
+	<string name="jumio_select">Khetha</string>
 	<string name="jumio_start_button">Qala</string>
 	<string name="jumio_start_instructions_01">Thola indawo ekhanya kahle</string>
 	<string name="jumio_start_instructions_02">Lungela ukuzithatha isithombe</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">I-app ingase isebenzise i-flash yekhamera</string>
 	<string name="jumio_start_verification">Qala ukuqinisekisa</string>
 	<string name="jumio_start_verification_subtitle">Le nqubo iklanyelwe ukuqinisekisa ubuwena futhi ikuvikele ekwebiweni komazisi wakho</string>
+	<string name="jumio_switched_to_back_camera">Kushintshelwe kukhamera engemuva</string>
+	<string name="jumio_switched_to_front_camera">Kushintshelwe kukhamera engaphambili</string>
 	<string name="jumio_try_again">Sicela uphinde uzame</string>
 	<string name="jumio_uploading_success">Ukufaka kuphumelele</string>
 	<string name="jumio_uploading_title">Iyafaka</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Gcina amehlo akho endilingeni</string>
 	<string name="iproov__prompt_get_ready">Yima ngomumo…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Ukuskena kuphelile</string>
-	<string name="iproov__prompt_pitch_too_high">Bamba idivayisi yakho iqondane namehlo</string>
-	<string name="iproov__prompt_pitch_too_low">Bamba idivayisi yakho iqondane namehlo</string>
-	<string name="iproov__prompt_roll_too_high">Gwema ukutshekisa ikhanda lakho</string>
-	<string name="iproov__prompt_roll_too_low">Gwema ukutshekisa ikhanda lakho</string>
 	<string name="iproov__prompt_too_bright">Yiya endaweni enethunzi</string>
 	<string name="iproov__prompt_too_close">Useduze kakhulu</string>
 	<string name="iproov__prompt_too_far">Sondela</string>
-	<string name="iproov__prompt_yaw_too_high">Phendukela kancane kwesobunxele</string>
-	<string name="iproov__prompt_yaw_too_low">Phendukela kancane kwesokudla</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

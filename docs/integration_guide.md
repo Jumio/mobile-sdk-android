@@ -47,7 +47,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.13.0**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.14.0**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -75,30 +75,30 @@ If an optional module is **not linked**, some functionalities may not be availab
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.13.0"               
+	implementation "com.jumio.android:core:4.14.0"               
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.13.0"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.13.0"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.13.0"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:iproov:4.13.0"             // Face Liveness library
-	implementation "com.jumio.android:liveness:4.13.0"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.13.0"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.14.0"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.14.0"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.14.0"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:iproov:4.14.0"             // Face Liveness library
+	implementation "com.jumio.android:liveness:4.14.0"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.14.0"   // Digital Identity verification library
   	...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.13.0"
+	implementation "com.jumio.android:defaultui:4.14.0"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.13.0"         // CameraX library 
+	implementation "com.jumio.android:camerax:4.14.0"         // CameraX library 
   	...
 }
 ```
@@ -107,7 +107,7 @@ In addition to specifying individual dependencies, you can also use a BOM (Bill 
 
 ```groovy
 dependencies {
-		implementation platform("com.jumio.android:bom:4.13.0")
+		implementation platform("com.jumio.android:bom:4.14.0")
 		implementation "com.jumio.android:core"
 		implementation "com.jumio.android:barcode-mlkit"
 		implementation "com.jumio.android:camerax"
@@ -132,7 +132,7 @@ Please note: `com.jumio.android:camerax` will be linked transitively when `com.j
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 
 ```groovy
-implementation "com.jumio.android:iproov:4.13.0"
+implementation "com.jumio.android:iproov:4.14.0"
 implementation("com.iproov.sdk:iproov:9.1.2") {
 	exclude group: 'org.json', module: 'json'
 }
@@ -327,11 +327,11 @@ Data center is set to `"US"` by default. If your customer account is in the EU d
 
 ## Configuration
 
-Every Jumio SDK instance is initialized using a specific [`sdk.token`][token]. This token contains information about the workflow, credentials, transaction identifiers and other parameters. Configuration of this token allows you to provide your own internal tracking information for the user and their transaction, specify what user information is captured and by which method, as well as preset options to enhance the user journey. Values configured within the [`sdk.token`][token] during your API request will override any corresponding settings configured in the Customer Portal.
+Every Jumio SDK instance is initialized using a specific [`sdk.token`][token]. This token contains information about the workflow, credentials, transaction identifiers and other parameters. Configuration of this token allows you to provide your own internal tracking information for the user and their transaction, specify what user information is captured and by which method, as well as preset options to enhance the user journey. Values configured within the [`sdk.token`][token] during your API request will override any corresponding settings configured in the Jumio Portal.
 
 ### Worfklow Selection
 
-Use ID verification callback to receive a verification status and verified data positions (see [Callback section](https://docs.jumio.com/production/Content/Integration/Callback.htm)). Make sure that your customer account is enabled to use this feature. A callback URL can be specified for individual transactions (for URL constraints see chapter __Jumio Callback IP Addresses__). This setting overrides any callback URL you have set in the Jumio Customer Portal. Your callback URL must not contain sensitive data like PII (Personally Identifiable Information) or account login. Set your callback URL using the `callbackUrl` parameter.
+Use ID verification callback to receive a verification status and verified data positions (see [Callback section](https://docs.jumio.com/production/Content/Integration/Callback.htm)). Make sure that your customer account is enabled to use this feature. A callback URL can be specified for individual transactions (for URL constraints see chapter __Jumio Callback IP Addresses__). This setting overrides any callback URL you have set in the Jumio Portal. Your callback URL must not contain sensitive data like PII (Personally Identifiable Information) or account login. Set your callback URL using the `callbackUrl` parameter.
 
 Use the correct [workflow definition key](https://docs.jumio.com/production/Content/References/Workflows/Standard%20Services.htm) in order to request a specific workflow. Set your key using the `workflowDefinition.key` parameter.
 
@@ -933,7 +933,7 @@ Continue that procedure until all necessary credentials (e.g. `ID`, `FACE`, `DOC
 [`JumioScanUpdates`][jumioscanupdate]s are distributed via the `JumioScanPartInterface` method [`onUpdate()`][onupdate] and cover scan information that is relevant and might need to be displayed during scanning process.     
 An optional value `data` of type `Any` can contain additional information for each scan update as described.
 
-[`JumioScanUpdate`][jumioscanupdate] values: `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`, `NEXT_POSITION`, `FLASH`, `TILT`
+[`JumioScanUpdate`][jumioscanupdate] values: `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`, `NEXT_POSITION`, `FLASH`, `TILT`, `IMAGE_ANALYSIS`
 
 In case of `FALLBACK`, the `scanMode` has changed and you should adapt the user interface to reflect the new scan mode. Check the `JumioScanView`[jumioscanview] method `isShutterEnabled`[isshutterenabled] and see if it returns `true`.
 If this is the case, a manual shutter button needs to be displayed for the end user to capture an image.
@@ -952,6 +952,10 @@ FOR `ID` scans, a Long representing the time for which the user needs to hold st
 A negative current angle indicates that the document needs to be tilted in the other direction. When a tilt update is sent, advise the user to tilt the identity document by e.g. showing an animation or an overlay.
 
 `FLASH` signals the enabling or disabling of the camera flash.
+
+`IMAGE_ANALYSIS` signals that the image is being analyzed.
+
+We suggest to disable orientation changes during the states `FLASH` and `IMAGE_ANALYSIS`. Please note - fallback and camera switch will also not be available during these stages.
 
 We send the following extraction states for the scan modes `JUMIO_LIVENESS` and `JUMIO_PREMIUM`: `CENTER_FACE`, `FACE_TOO_CLOSE`, `MOVE_FACE_CLOSER`, `MOVE_FACE_INTO_FRAME`, `LEVEL_EYES_AND_DEVICE`, `HOLD_STILL`, `TILT_FACE_UP`, `TILT_FACE_DOWN`, `TILT_FACE_LEFT`, `TILT_FACE_RIGHT`
 

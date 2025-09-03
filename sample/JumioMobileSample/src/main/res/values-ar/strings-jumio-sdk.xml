@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">التأشيرة</string>
 	<string name="jumio_nfc_id_retry_tag_lost">بمجرد الكشف عن بطاقة الهوية، اثبت في مكانك</string>
 	<string name="jumio_nfc_retry_enable_capability">للاستفادة بشكل أكبر من جواز سفرك ، يرجى تمكين إمكانية NFC بهاتفك</string>
-	<string name="jumio_nfc_retry_error_general">حاول مرة أخرى واتبع التعليمات كما هو موضح</string>
 	<string name="jumio_nfc_retry_tag_lost">انتظر حتى يتم اكتشاف جواز السفر</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">التبديل إلى الكاميرا الخلفية</string>
+	<string name="jumio_accessibility_camera_switch_to_front">التبديل إلى الكاميرا الأمامية</string>
 	<string name="jumio_accessibility_nfc_description_start">يُرجى التحقق مما إذا كانت هويتك تحتوي على شريحة. إذا كان الأمر كذلك، فضع هاتفك على الهوية كما هو موضح.</string>
 	<string name="jumio_accessibility_quit_scan">إنهاء المسح</string>
+	<string name="jumio_accessibility_scan_back">رجوع</string>
 	<string name="jumio_accessibility_scan_help">قائمة التعليمات</string>
 	<string name="jumio_accessibility_scan_shutter_button">التقاط صورة</string>
 	<string name="jumio_accessibility_scan_switch_camera">تبديل الكاميرا</string>
 	<string name="jumio_analyzing_biometric">تحليل البيانات البيومترية</string>
 	<string name="jumio_brazil_cnh_subtitle">للمتابعة في التحميل، تأكد من تنزيل نسخة PDF من رخصة القيادة الرقمية من تطبيق الحكومة الرسمي [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">تحميل ملف CNH Digital بتنسيق PDF</string>
+	<string name="jumio_button">زر</string>
 	<string name="jumio_button_cancel">إلغاء</string>
+	<string name="jumio_button_continue">متابعة</string>
 	<string name="jumio_button_retry">حاول مجددًا</string>
+	<string name="jumio_change_issuing_country">تغيير بلد الإصدار</string>
+	<string name="jumio_clear_search">مسح البحث</string>
+	<string name="jumio_current_issuing_country">بلد الإصدار الحالي: %s</string>
 	<string name="jumio_di_back_to_document_selection">ستتم إعادتك إلى تحديد المستندات.</string>
 	<string name="jumio_di_vendor_selection_title">حدد مزود الهوية الرقمية</string>
 	<string name="jumio_di_verification_prompt_processing">يرجى استكمال سير العمل في تطبيق %s.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">الحد الأقصى لحجم الملف: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">الحد الأقصى لعدد الصفحات: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">يجب ألا يكون المستند محميًا بكلمة مرور</string>
+	<string name="jumio_eidas_description">اضغط على \"متابعة\" لبدء تسجيل الدخول. \nبعد ذلك، حدد \"تسجيل الدخول إلى eIDAS\" في الصفحة القادمة واختر علم بلدك للمتابعة. \nاستخدم تسجيل الدخول إلى eIDAS للتحقق الآمن والمتوافق مع متطلبات الاتحاد الأوروبي.</string>
+	<string name="jumio_eidas_login_header">تسجيل الدخول إلى eIDAS</string>
 	<string name="jumio_error_button_retake_both">أعد التقاط كليهما</string>
 	<string name="jumio_error_button_retake_one">إعادة الالتقاط</string>
 	<string name="jumio_error_button_retry">حاول مجددًا</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">يجب إعادة التقاط الصورة</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">قائمة الوثائق المدعومة</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">الوثيقة الملتقطة غير مدعومة</string>
+	<string name="jumio_european_did_login_header">الهوية الرقمية الأوروبية</string>
 	<string name="jumio_face_help_eyes_closed">أبقِ عينيك مفتوحتين</string>
 	<string name="jumio_face_help_generic_angle">أمسك الجهاز على مستوى العين</string>
 	<string name="jumio_face_help_generic_center">اجعل وجهك في وسط الإطار واتبع التعليمات التي تظهر على الشاشة.</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">التقط جانب \"الصورة\"</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">التقط يدويًا جانب \"الصورة\"</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">عليك بإمالتها حتى تكون الحافة السفلية مرئية، ثم عليك بمحاذاتها مع الإطار</string>
+	<string name="jumio_id_scan_hint_error_fallback">تغيرت طريقة المسح بسبب خطأ.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">تم تحسين المسح الضوئي للحصول على أداء أفضل للجهاز</string>
 	<string name="jumio_id_scan_manual">التقط صورة لمستندك</string>
 	<string name="jumio_id_scan_manual_tips">تأكد من التقاط المستند بأكمله</string>
+	<string name="jumio_id_scan_prompt_analyzing">تحليل الصورة…</string>
 	<string name="jumio_id_scan_prompt_capture_success">حسنًا!</string>
 	<string name="jumio_id_scan_prompt_captured">تم التقاطه</string>
 	<string name="jumio_id_scan_prompt_center_id">اجعل المستند في الوسط</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">ضع جواز سفرك</string>
 	<string name="jumio_nfc_id_description">مرر بطاقة الهوية على امتداد الجزء الخلفي لهاتفك حتى يتم اكتشافها تلقائيًا</string>
 	<string name="jumio_nfc_id_header_start">ضع بطاقة هويتك</string>
+	<string name="jumio_no_results_found">لم يتم العثور على نتائج</string>
 	<string name="jumio_processing_title">جارٍ التحقق من النتيجة</string>
+	<string name="jumio_search_bar">شريط البحث</string>
+	<string name="jumio_search_completed_for_country">اكتمل البحث للبلد</string>
+	<string name="jumio_select">تحديد</string>
 	<string name="jumio_start_button">بدء</string>
 	<string name="jumio_start_instructions_01">ابحث عن سطح جيد الإضاءة</string>
 	<string name="jumio_start_instructions_02">استعد لالتقاط صورة ذاتية</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">قد يستخدم التطبيق فلاش الكاميرا</string>
 	<string name="jumio_start_verification">ابدأ التحقق</string>
 	<string name="jumio_start_verification_subtitle">تم تصميم هذه العملية للتحقق من هويتك وحمايتك من سرقة الهوية</string>
+	<string name="jumio_switched_to_back_camera">تم التبديل إلى الكاميرا الخلفية</string>
+	<string name="jumio_switched_to_front_camera">تم التبديل إلى الكاميرا الأمامية</string>
 	<string name="jumio_try_again">حاول مرة اخرى</string>
 	<string name="jumio_uploading_success">تحميل ناجح</string>
 	<string name="jumio_uploading_title">تحميل</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">اجعل حدود وجهك في الإطار البيضاوي</string>
 	<string name="iproov__prompt_get_ready">استعد…</string>
 	<string name="iproov__prompt_liveness_scan_completed">اكتمل المسح</string>
-	<string name="iproov__prompt_pitch_too_high">أمسك الجهاز على مستوى العين</string>
-	<string name="iproov__prompt_pitch_too_low">أمسك الجهاز على مستوى العين</string>
-	<string name="iproov__prompt_roll_too_high">تجنب إمالة رأسك</string>
-	<string name="iproov__prompt_roll_too_low">تجنب إمالة رأسك</string>
 	<string name="iproov__prompt_too_bright">اذهب إلى مكان أكثر ظلًا</string>
 	<string name="iproov__prompt_too_close">قريب جدًا</string>
 	<string name="iproov__prompt_too_far">اقترب</string>
-	<string name="iproov__prompt_yaw_too_high">انعطف ببطء إلى يسارك</string>
-	<string name="iproov__prompt_yaw_too_low">انعطف ببطء إلى يمينك</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

@@ -85,16 +85,16 @@ The following table shows a range of different product configurations with the s
 
 | Product Configuration                        |   Size   |                                           Modules                                                     |
 | :------------------------------------------- |:--------:| :---------------------------------------------------------------------------------------------------: |
-| Base                                         | 1.14 MB  |                                             core                                                      |
-| Base + iProov                                | 6.69 MB  |                                         core, iproov                                                  |
-| Base + Autocapture                           | 2.75 MB  |                                       core, docfinder                                                 |
-| Base + Autocapture, Barcode-Vision           | 3.06 MB  |                               core, docfinder, barcode-mlkit                                          |
-| Base + Autocapture, Barcode-Vision, iProov   | 7.20 MB  |                               core, docfinder, barcode, iproov                                        |
-| Base + Autocapture, Barcode-Vision, Liveness | 5.55 MB  |                              core, docfinder, barcode, liveness                                       |
-| Base + Autocapture, Barcode-Vision, NFC      | 6.23 MB  |                                core, docfinder, barcode, nfc                                          |
-| All (Custom UI only)                         | 10.40 MB |      core, docfinder, barcode-mlkit, iproov, nfc, digital-identity, camerax, liveness                 |
-| Base + Autocapture, Default UI               | 3.95 MB  |                                 core, docfinder, defaultui                                            |
-| All (with Default UI)                        | 11.50 MB |     core, docfinder, barcode-mlkit, iproov, nfc, digital-identtity, camerax, defaultui, liveness      |
+| Base                                         | 1.37 MB  |                                             core                                                      |
+| Base + iProov                                | 6.94 MB  |                                         core, iproov                                                  |
+| Base + Autocapture                           | 2.98 MB  |                                       core, docfinder                                                 |
+| Base + Autocapture, Barcode-Vision           | 3.28 MB  |                               core, docfinder, barcode-mlkit                                          |
+| Base + Autocapture, Barcode-Vision, iProov   | 7.44 MB  |                               core, docfinder, barcode, iproov                                        |
+| Base + Autocapture, Barcode-Vision, Liveness | 5.79 MB  |                              core, docfinder, barcode, liveness                                       |
+| Base + Autocapture, Barcode-Vision, NFC      | 6.45 MB  |                                core, docfinder, barcode, nfc                                          |
+| All (Custom UI only)                         | 10.65 MB |      core, docfinder, barcode-mlkit, iproov, nfc, digital-identity, camerax, liveness                 |
+| Base + Autocapture, Default UI               | 4.24 MB  |                                 core, docfinder, defaultui                                            |
+| All (with Default UI)                        | 11.81 MB |     core, docfinder, barcode-mlkit, iproov, nfc, digital-identtity, camerax, defaultui, liveness      |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -169,11 +169,9 @@ In case of a __successful result__ you can grant the user access to your service
 In case an Authentication fail is returned, we recommend to allow the user between 3-5 Authentication attempts to prove their identity, before you lock the user from performing the action. This approach makes the most sense, as you don't want to lock out possible valid users who might not have completed the face capture task successfully for a legitimate reason. Don't worry about offering a potential fraudster more attempts to gain access to your system - our bullet proof liveness check does not allow them to get a successful result.
 
 ## Fallback and Manual Capturing
-The method [`isFallbackAvailable()`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#isFallbackAvailable--) determines if a fallback for the current scan mode is available and returns a boolean. If the method returns true, the available fallback scan mode will have to be started with the method [`startFallback()`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#startFallback--).
+The property [`hasFallback`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/has-fallback.html) determines if a fallback for the current scan mode is available. If the property is true, the available fallback scan mode can be started with the method [`fallback()`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/fallback.html).
 
-The method [`showShutterButton()`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#showShutterButton--) determines if a shutter button needs to be shown because the image has to be taken manually and returns a boolean. If the method returns true, you will have to display your own shutter button and call the method [`takePicture()`](https://jumio.github.io/mobile-sdk-android/com/jumio/nv/custom/NetverifyCustomScanPresenter.html#takePicture--) once it is clicked.
-
-__Note:__ Please note that the method `showShutterButton()` does neither create nor display the actual shutter button!
+The property [`isShutterEnabled`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-scan-view/is-shutter-enabled.html) determines if a shutter button needs to be shown if the image has to be taken manually. If the property is true, you will have to display your own shutter button and call the method [`takePicture()`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-scan-view/take-picture.html) to take a picture.
 
 "Manual capturing" simply refers to the user being able to manually take a picture. "Fallback" refers to an alternative scan mode the SDK can resort to if possible, in case there is an issue during the original scanning process. The fallback scan mode might be manual capturing in some cases, but not all.
 

@@ -108,6 +108,8 @@ The minimum requirements for the SDK are:
 * Internet connection
 * Jumio KYX
 
+⚠️&nbsp;&nbsp;SDK 4.14.0 will be the last SDK version supporting Android 5 (API level 21). All subsequent SDK versions will require at least Android 6.0 "Marshmallow" (API level 23).
+
 ℹ️&nbsp;&nbsp;__Note:__ Starting with SDK 4.9.0 the minimum required compile SDK version is 34. Also Gradle 8 is __required__ to build the SDK!
 
 The following architectures are supported in the SDK:
@@ -121,12 +123,12 @@ You will need a __commercial Jumio License__ to run any of our examples. For det
 ## Authentication and Encryption
 ℹ️&nbsp;&nbsp;__As of version 4.0.0 and onward, the SDK can only be used in combination with Jumio KYX. API v2 as well as using API token and secret to authenticate against the SDK will no longer be compatible.__
 
-Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://docs.jumio.com/production/Content/Integration/Integration%20Guide.htm) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Customer Portal.
+Before starting a session in our SDK, an SDK token has to be obtained. Please refer to out [API Guide](https://docs.jumio.com/production/Content/Integration/Integration%20Guide.htm) for further details. To authenticate against the API calls, an OAuth2 access token needs to be retrieved from the Jumio Portal.
 
 Within the response of the [Account Creation or Account Update](https://docs.jumio.com/production/Content/Integration/Creating%20or%20Updatng%20Account/Creating%20or%20Updating%20Accounts.htm) API, a SDK token is returned, which needs to be applied to initiate the mobile SDK.
 
 ### Authentication with OAuth2
-Your OAuth2 credentials are constructed using your API token as the Client ID and your API secret as the Client secret. You can view and manage your API token and secret in the Customer Portal under:
+Your OAuth2 credentials are constructed using your API token as the Client ID and your API secret as the Client secret. You can view and manage your API token and secret in the Jumio Portal under:
 * __Settings > API credentials > OAuth2 Clients__
 
 Client ID and Client secret are used to generate an OAuth2 access token. OAuth2 has to be activated for your account. Contact your Jumio Account Manager for activation.
@@ -164,7 +166,7 @@ curl --request POST --location 'https://auth.amer-1.jumio.ai/oauth2/token' \
 Your OAuth2 access token is valid for 60 minutes. After the token lifetime is expired, it is necessary to generate a new access token.
 
 ### Workflow Transaction Token Timeout
-The token lifetime is set to 30 minutes per default. It can be configured via the [Jumio Customer Portal](https://docs.jumio.com/production/Content/Settings/Identity%20Verification/Application%20Settings.htm) and can be overwritten using the API call (`tokenLifetime`). Within this token lifetime the token can be used to initialize the SDK.
+The token lifetime is set to 30 minutes per default. It can be configured via the [Jumio Portal](https://docs.jumio.com/production/Content/Settings/Identity%20Verification/Application%20Settings.htm) and can be overwritten using the API call (`tokenLifetime`). Within this token lifetime the token can be used to initialize the SDK.
 
 As soon as the workflow (transaction) starts, a 15 minutes session timeout is triggered. For each action performed (capture image, upload image) the session timeout will reset, and the 15 minutes will start again.
 
@@ -288,7 +290,7 @@ Our SDK supports [default Android localization features](https://developer.andro
 
 Jumio SDK products support the following languages:
 
-_Afrikaans, Arabic, Bulgarian, Chinese(Simplified), Chinese(Traditional), Croatian, Czech, Danish, Dutch, Estonian, English, Finnish, French, German, Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Khmer, Korean, Latvian, Lithuanian, Maltese, Norwegian, Polish, Portuguese, Romanian, Russian, Serbian (Cyrillic), Serbian (Latin), Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Vietnamese, Zulu_
+_Afrikaans, Arabic, Bulgarian, Burmese, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, Estonian, English, Finnish, French, German, Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Khmer, Korean, Latvian, Lithuanian, Maltese, Norwegian, Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian (Cyrillic), Serbian (Latin), Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian, Vietnamese, Zulu_
 
 Our SDK supports accessibility features. Visually impaired users can now enable __TalkBack__ or increase the __text size__ on their device. The accessibility strings that are used by TalkBack contain *accessibility* in their key and can be also modified in `strings.xml`.
 
@@ -369,7 +371,7 @@ See our [Change Log](docs/changelog.md) for more information about our current S
 Please refer to our [SDK maintenance and support policy](docs/maintenance_policy.md) for more information about Mobile SDK maintenance and support.
 
 ## Two-factor Authentication
-If you want to enable two-factor authentication for your Jumio Customer Portal, [contact us](https://support.jumio.com). Once enabled, users will be guided through the setup upon their first login to obtain a security code using the Google Authenticator app.
+If you want to enable two-factor authentication for your Jumio Portal, [contact us](https://support.jumio.com). Once enabled, users will be guided through the setup upon their first login to obtain a security code using the Google Authenticator app.
 
 ## Licenses
 The source code and software available on this website (“Software”) is provided by Jumio Corp. or its affiliated group companies (“Jumio”) "as is” and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall Jumio be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to procurement of substitute goods or services, loss of use, data, profits, or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this Software, even if advised of the possibility of such damage.

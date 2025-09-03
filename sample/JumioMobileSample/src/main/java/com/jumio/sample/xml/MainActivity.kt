@@ -164,6 +164,7 @@ class MainActivity :
 				if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
 					binding.drawerLayout.closeDrawer(GravityCompat.START)
 				} else {
+					isEnabled = false
 					onBackPressedDispatcher.onBackPressed()
 				}
 			}

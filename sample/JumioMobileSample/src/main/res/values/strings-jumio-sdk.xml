@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Visa</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Once the ID card is detected, hold still</string>
 	<string name="jumio_nfc_retry_enable_capability">To get more out of your passport, please enable your phone\'s NFC capability</string>
-	<string name="jumio_nfc_retry_error_general">Try again and follow the instructions as illustrated</string>
 	<string name="jumio_nfc_retry_tag_lost">Hold still once the passport is detected</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Switch to back camera</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Switch to front camera</string>
 	<string name="jumio_accessibility_nfc_description_start">Please check if your ID has a chip. If so, place your phone on the ID as illustrated.</string>
 	<string name="jumio_accessibility_quit_scan">Quit scan</string>
+	<string name="jumio_accessibility_scan_back">Back</string>
 	<string name="jumio_accessibility_scan_help">Help menu</string>
 	<string name="jumio_accessibility_scan_shutter_button">Take a photo</string>
 	<string name="jumio_accessibility_scan_switch_camera">Switch camera</string>
 	<string name="jumio_analyzing_biometric">Analyzing biometric data</string>
 	<string name="jumio_brazil_cnh_subtitle">To proceed with the upload, make sure you have downloaded a digital driver’s license PDF from the official government application [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Upload a CNH Digital PDF</string>
+	<string name="jumio_button">Button</string>
 	<string name="jumio_button_cancel">Cancel</string>
+	<string name="jumio_button_continue">Continue</string>
 	<string name="jumio_button_retry">Try again</string>
+	<string name="jumio_change_issuing_country">Change Issuing Country</string>
+	<string name="jumio_clear_search">Clear search</string>
+	<string name="jumio_current_issuing_country">Current Issuing Country: %s</string>
 	<string name="jumio_di_back_to_document_selection">You will be returned to document selection.</string>
 	<string name="jumio_di_vendor_selection_title">Select digital ID provider</string>
 	<string name="jumio_di_verification_prompt_processing">Please complete the flow on %s app.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Maximum file size: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maximum number of pages: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Document should not be password protected</string>
+	<string name="jumio_eidas_description">Tap \'Continue\' to start the login process. \nNext, select \'eIDAS Login\' on the upcoming page and choose your country\'s flag to continue. \nUse eIDAS Login for secure, EU-compliant verification.</string>
+	<string name="jumio_eidas_login_header">eIDAS Login</string>
 	<string name="jumio_error_button_retake_both">Retake both</string>
 	<string name="jumio_error_button_retake_one">Retake</string>
 	<string name="jumio_error_button_retry">Try again</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Image must be retaken</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">List of supported documents</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">The captured document is not supported</string>
+	<string name="jumio_european_did_login_header">European digital ID</string>
 	<string name="jumio_face_help_eyes_closed">Keep your eyes open</string>
 	<string name="jumio_face_help_generic_angle">Hold device at eye level</string>
 	<string name="jumio_face_help_generic_center">Center your face in the frame and follow the on-screen instructions</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Capture the PHOTO side</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Manually capture the PHOTO side</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Tilt so that the bottom edge is visible and then align to the frame</string>
+	<string name="jumio_id_scan_hint_error_fallback">Scan method changed due to an error.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Scanning optimized for better device performance</string>
 	<string name="jumio_id_scan_manual">Take a photo of your document</string>
 	<string name="jumio_id_scan_manual_tips">Make sure to capture the whole document</string>
+	<string name="jumio_id_scan_prompt_analyzing">Analyzing the image…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Got it!</string>
 	<string name="jumio_id_scan_prompt_captured">Captured</string>
 	<string name="jumio_id_scan_prompt_center_id">Center your document</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Position your passport</string>
 	<string name="jumio_nfc_id_description">Slide the ID card along the back of your phone until it’s detected automatically</string>
 	<string name="jumio_nfc_id_header_start">Position your ID card</string>
+	<string name="jumio_no_results_found">No results found</string>
 	<string name="jumio_processing_title">Checking result</string>
+	<string name="jumio_search_bar">Search bar</string>
+	<string name="jumio_search_completed_for_country">Search completed for country</string>
+	<string name="jumio_select">Select</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Find a well-lit surface</string>
 	<string name="jumio_start_instructions_02">Be ready to take a selfie</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">The app may use the camera flash</string>
 	<string name="jumio_start_verification">Start Verification</string>
 	<string name="jumio_start_verification_subtitle">This process is designed to verify your identity and protect you from identity theft</string>
+	<string name="jumio_switched_to_back_camera">Switched to the back camera</string>
+	<string name="jumio_switched_to_front_camera">Switched to the front camera</string>
 	<string name="jumio_try_again">Please try again</string>
 	<string name="jumio_uploading_success">Upload successful</string>
 	<string name="jumio_uploading_title">Uploading</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Put your face in the oval</string>
 	<string name="iproov__prompt_get_ready">Get ready…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Scanning completed</string>
-	<string name="iproov__prompt_pitch_too_high">Hold device at eye level</string>
-	<string name="iproov__prompt_pitch_too_low">Hold device at eye level</string>
-	<string name="iproov__prompt_roll_too_high">Avoid tilting your head</string>
-	<string name="iproov__prompt_roll_too_low">Avoid tilting your head</string>
 	<string name="iproov__prompt_too_bright">Go somewhere shadier</string>
 	<string name="iproov__prompt_too_close">Too close</string>
 	<string name="iproov__prompt_too_far">Move closer</string>
-	<string name="iproov__prompt_yaw_too_high">Turn slightly to your left</string>
-	<string name="iproov__prompt_yaw_too_low">Turn slightly to your right</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

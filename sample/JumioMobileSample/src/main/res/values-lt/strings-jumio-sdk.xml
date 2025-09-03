@@ -22,22 +22,29 @@
 	<string name="jumio_idtype_visa">Viza</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Kai aptinkama ID kortelė, laikykite ją nejudindami</string>
 	<string name="jumio_nfc_retry_enable_capability">Norėdami gauti daugiau naudos iš savo paso, įjunkite telefono NFC funkciją</string>
-	<string name="jumio_nfc_retry_error_general">Bandykite dar kartą ir vykdykite instrukcijas, kaip nurodyta</string>
 	<string name="jumio_nfc_retry_tag_lost">Nejudėkite, kol pasas bus surastas</string>
 	-->
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_camera_switch_to_back">Perjungti į gale esančią kamerą</string>
+	<string name="jumio_accessibility_camera_switch_to_front">Perjungti į priekyje esančią kamerą</string>
 	<string name="jumio_accessibility_nfc_description_start">Patikrinkite, ar jūsų ID turi lustą. Jei taip, padėkite telefoną ant ID, kaip parodyta.</string>
 	<string name="jumio_accessibility_quit_scan">Nutraukti skenavimą</string>
+	<string name="jumio_accessibility_scan_back">Atgal</string>
 	<string name="jumio_accessibility_scan_help">Pagalbos meniu</string>
 	<string name="jumio_accessibility_scan_shutter_button">Nufotografuokite</string>
 	<string name="jumio_accessibility_scan_switch_camera">Perjungti kamerą</string>
 	<string name="jumio_analyzing_biometric">Analizuojami biometriniai duomenys</string>
 	<string name="jumio_brazil_cnh_subtitle">Norėdami tęsti įkėlimą įsitikinkite, kad atsisiuntėte skaitmeninio vairuotojo pažymėjimo PDF failą iš oficialios vyriausybės programėlės [({Carteira Digital de Trânsito})]</string>
 	<string name="jumio_brazil_cnh_upload_button">Įkelti „CNH Digital PDF“</string>
+	<string name="jumio_button">Mygtukas</string>
 	<string name="jumio_button_cancel">Atšaukti</string>
+	<string name="jumio_button_continue">Tęsti</string>
 	<string name="jumio_button_retry">Bandykite dar kartą</string>
+	<string name="jumio_change_issuing_country">Pakeisti išdavusią šalį</string>
+	<string name="jumio_clear_search">Išvalyti paiešką</string>
+	<string name="jumio_current_issuing_country">Dabartinė išdavimo šalis: %s</string>
 	<string name="jumio_di_back_to_document_selection">Būsite nukreipti atgal į dokumentų pasirinkimą.</string>
 	<string name="jumio_di_vendor_selection_title">Pasirinkti skaitmeninės tapatybės paslaugų teikėją</string>
 	<string name="jumio_di_verification_prompt_processing">Užbaikite veiksmų seką „%s“ programėlėje.</string>
@@ -53,6 +60,8 @@
 	<string name="jumio_dv_upload_tips_file_size">Didžiausias failo dydis: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimalus puslapių skaičius: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokumentas neturi būti apsaugotas slaptažodžiu</string>
+	<string name="jumio_eidas_description">Bakstelėkite „Tęsti“, kad pradėtumėte prisijungimo procesą. \nTada kitame puslapyje pasirinkite „eIDAS prisijungimas“ ir norėdami tęsti pasirinkite savo šalies vėliavą. \nNaudokitės eIDAS prisijungimu, kad saugiai patvirtintumėte tapatybę pagal ES reikalavimus.</string>
+	<string name="jumio_eidas_login_header">eIDAS prisijungimas</string>
 	<string name="jumio_error_button_retake_both">Pakartoti abi</string>
 	<string name="jumio_error_button_retake_one">Pakartoti</string>
 	<string name="jumio_error_button_retry">Bandykite dar kartą</string>
@@ -88,6 +97,7 @@
 	<string name="jumio_error_instant_feedback_one_image_retaken">Nuotrauką būtina pakartoti</string>
 	<string name="jumio_error_instant_feedback_supported_document_button">Palaikomų dokumentų sąrašas</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Dokumentas nepalaikomas</string>
+	<string name="jumio_european_did_login_header">Europos skaitmeninė tapatybė</string>
 	<string name="jumio_face_help_eyes_closed">Nemirksėkite</string>
 	<string name="jumio_face_help_generic_angle">Laikykite įrenginį akių lygyje</string>
 	<string name="jumio_face_help_generic_center">Išlaikykite veidą rėmelio centre ir vadovaukitės ekrane pateikiamais nurodymais</string>
@@ -115,9 +125,11 @@
 	<string name="jumio_id_scan_guide_photo_side">Nufotografuokite pusę su NUOTRAUKA</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Nufotografuokite dokumento pusę su NUOTRAUKA</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Pasukite, kad matytųsi apatinis kraštas, ir sulygiuokite su rėmeliu</string>
+	<string name="jumio_id_scan_hint_error_fallback">Nuskaitymo būdas pakeistas dėl klaidos.</string>
 	<string name="jumio_id_scan_hint_performance_fallback">Nuskaitymas optimizuotas siekiant pagreitinti procedūrą</string>
 	<string name="jumio_id_scan_manual">Nufotografuokite savo asmens dokumentą</string>
 	<string name="jumio_id_scan_manual_tips">Nufotografuokite visą dokumentą</string>
+	<string name="jumio_id_scan_prompt_analyzing">Analizuojamas vaizdas…</string>
 	<string name="jumio_id_scan_prompt_capture_success">Pavyko!</string>
 	<string name="jumio_id_scan_prompt_captured">Užfiksuota</string>
 	<string name="jumio_id_scan_prompt_center_id">Lygiuokite savo dokumentą centre</string>
@@ -176,7 +188,11 @@
 	<string name="jumio_nfc_header_start">Padėkite savo pasą</string>
 	<string name="jumio_nfc_id_description">Slinkite tapatybės kortelę palei telefono galinę pusę, kol ji bus automatiškai aptikta.</string>
 	<string name="jumio_nfc_id_header_start">Tinkamai laikykite tapatybės kortelę</string>
+	<string name="jumio_no_results_found">Rezultatų nerasta</string>
 	<string name="jumio_processing_title">Rezultatas tikrinamas</string>
+	<string name="jumio_search_bar">Paieškos juosta</string>
+	<string name="jumio_search_completed_for_country">Baigta paieška pagal šalį</string>
+	<string name="jumio_select">Pasirinkti</string>
 	<string name="jumio_start_button">Pradėti</string>
 	<string name="jumio_start_instructions_01">Raskite gerai apšviestą paviršių</string>
 	<string name="jumio_start_instructions_02">Būkite pasiruošę pasidaryti asmenukę</string>
@@ -185,6 +201,8 @@
 	<string name="jumio_start_instructions_07">Programėlė gali pasinaudoti fotoaparato blykste</string>
 	<string name="jumio_start_verification">Pradėkite patvirtinimą</string>
 	<string name="jumio_start_verification_subtitle">Šio proceso tikslas – patvirtinti jūsų tapatybę ir užtikrinti apsaugą nuo tapatybės vagystės</string>
+	<string name="jumio_switched_to_back_camera">Perjungta į galinę kamerą</string>
+	<string name="jumio_switched_to_front_camera">Perjungta į priekinę kamerą</string>
 	<string name="jumio_try_again">Bandykite dar kartą</string>
 	<string name="jumio_uploading_success">Įkėlimas sėkmingas</string>
 	<string name="jumio_uploading_title">Įkeliama</string>
@@ -226,15 +244,9 @@
 	<string name="iproov__prompt_align_face">Sulyginkite veidą su ovaliu rėmeliu</string>
 	<string name="iproov__prompt_get_ready">Pasiruoškite…</string>
 	<string name="iproov__prompt_liveness_scan_completed">Skenavimas baigtas</string>
-	<string name="iproov__prompt_pitch_too_high">Laikykite įrenginį akių lygyje</string>
-	<string name="iproov__prompt_pitch_too_low">Laikykite įrenginį akių lygyje</string>
-	<string name="iproov__prompt_roll_too_high">Stenkitės nekelti galvos</string>
-	<string name="iproov__prompt_roll_too_low">Stenkitės nekelti galvos</string>
 	<string name="iproov__prompt_too_bright">Eikite į mažiau apšviestą vietą</string>
 	<string name="iproov__prompt_too_close">Per arti</string>
 	<string name="iproov__prompt_too_far">Prieikite arčiau</string>
-	<string name="iproov__prompt_yaw_too_high">Šiek tiek pasisukite į kairę</string>
-	<string name="iproov__prompt_yaw_too_low">Šiek tiek pasisukite į dešinę</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

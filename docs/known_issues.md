@@ -3,6 +3,8 @@
 # Known Issues
 
 ## Table of Contents
+- [SDK Version 4.14.0 and Above)(#sdk-version-4140-and-above)
+  - [LiteRT Version override](#litert-version-override
 - [SDK Version 4.0.0 and Above](#sdk-version-400-and-above)
   - [Duplicate Files for 'libc++_shared.so' Library](#duplicate-files-for-libc_sharedso-library)
   - [Picking a file does not work on some Xiaomi devices](#picking-a-file-does-not-work-on-some-xiaomi-devices-xiaomi-file-picker)
@@ -23,6 +25,34 @@
   - [SDK Crashes Trying to Display Animations (Android Version 5 and Lower)](#sdk-crashes-trying-to-display-animations-android-version-5-and-lower)
   - [Country Missing from the Country List](#country-missing-from-the-country-list)
   - [Datadog in Dynamic feature modules](#datadog-in-dynamic-feature-modules)
+
+# SDK Version 4.14.0 and Above
+
+## LiteRT Version override
+JumioSDK bundles LiteRT Version 1.0.1 which supports 16kb page size for ARM64-v8 but not x86_64. This is fine for the JumioSDK as only ARM cpus are supported. An update to 1.4.0 is currently not possible because the min API level of LiteRT 1.4.0 (25) exceeds the min API level of the Jumio SDK (21).
+If you don't use LiteRT elsewhere in the code you can remove the x86 and x86_64 libraries by excluding them in the packagingOptions:
+```gradle
+android {
+	...
+	packagingOptions {
+		...
+		it.excludes.add("lib/x86_64/libtensorflowlite_jni.so")
+		it.excludes.add("lib/x86/libtensorflowlite_jni.so")
+	}
+}
+```
+If your apps min API level is at least 25 then the LiteRT dependency can be overridden:
+```gradle
+implementation ("com.jumio.android:docfinder:4.14.0") {
+	exclude group: 'com.google.ai.edge.litert', module: 'litert'
+	exclude group: 'com.google.ai.edge.litert', module: 'litert-metadata'
+}
+implementation ("com.jumio.android:liveness:4.14.0") {
+	exclude group: 'com.google.ai.edge.litert', module: 'litert'
+}
+implementation 'com.google.ai.edge.litert:litert:1.4.0'
+implementation 'com.google.ai.edge.litert:litert-support:1.4.0'
+```
 
 # SDK Version 4.0.0 and Above
 
