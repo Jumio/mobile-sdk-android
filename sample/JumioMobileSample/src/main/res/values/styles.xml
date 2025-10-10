@@ -111,6 +111,12 @@
 		<item name="jumio_nfc_passport_page_light">#31bce1</item>
 		<item name="jumio_nfc_passport_foreground">@color/jumio_white</item>
 		<item name="jumio_nfc_phone_background">#cc00cc</item>
+		<item name="jumio_nfc_phone_screen">@color/jumio_gray_6b</item>
+		<item name="jumio_nfc_phone_notch">@color/jumio_black</item>
+		<item name="jumio_nfc_chip_primary">@color/jumio_green_3c</item>
+		<item name="jumio_nfc_chip_secondary">@color/jumio_green_3b</item>
+		<item name="jumio_nfc_chip_glow">@color/jumio_green_3</item>
+		<item name="jumio_nfc_pulse">@color/jumio_green_4b</item>
 	</style>
 
 	<style name="CustomIproov" parent="Iproov.Customization">

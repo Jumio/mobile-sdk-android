@@ -35,6 +35,7 @@ import com.jumio.sdk.interfaces.JumioControllerInterface
 import com.jumio.sdk.interfaces.JumioScanPartInterface
 import com.jumio.sdk.result.JumioResult
 import com.jumio.sdk.retry.JumioRetryReason
+import com.jumio.sdk.scanpart.JumioAddonScanPartConfiguration
 import com.jumio.sdk.scanpart.JumioScanPart
 import com.jumio.sdk.views.JumioFileAttacher
 import kotlinx.coroutines.Dispatchers
@@ -96,6 +97,8 @@ class CustomUIViewModel(
 		private set
 	val isUsa: Boolean
 		get() = scannedDocumentInfo?.issuingCountry?.uppercase() in USA_COUNTRY_CODES
+	var isNfcSkippable: Boolean = false
+		private set
 
 	init {
 		val jumioSDKHandle = savedStateHandle.get<Bundle>("jumioSDK")
@@ -266,7 +269,10 @@ class CustomUIViewModel(
 			}
 
 			JumioScanStep.ADDON_SCAN_PART -> {
-				scannedDocumentInfo = data as? JumioDocumentInfo
+				(data as? JumioAddonScanPartConfiguration)?.let {
+					scannedDocumentInfo = it.documentInfo
+					isNfcSkippable = it.skippable
+				}
 			}
 
 			JumioScanStep.DIGITAL_IDENTITY_VIEW -> {

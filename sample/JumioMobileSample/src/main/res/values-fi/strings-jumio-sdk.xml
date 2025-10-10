@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Henkilökortti</string>
 	<string name="jumio_idtype_pp">Passi</string>
 	<string name="jumio_idtype_visa">Viisumi</string>
+	<string name="jumio_nfc_error_description_id">Yritä uudelleen! Aseta puhelin asiakirjan päälle ja pidä se vakaana, kunnes skannaus on valmis.</string>
+	<string name="jumio_nfc_error_description_other">Yritä uudelleen! Aseta puhelin passin etukanteen, kunnes skannaus on valmis.</string>
+	<string name="jumio_nfc_error_description_us">Yritä uudelleen! Aseta puhelin passin takakannen sisäpuolelle, kunnes skannaus on valmis.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Kun henkilökortti on tunnistettu, pidä paikallaan</string>
 	<string name="jumio_nfc_retry_enable_capability">Jotta saat enemmän irti passistasi, ota käyttöön puhelimesi NFC -ominaisuus</string>
 	<string name="jumio_nfc_retry_tag_lost">Pysy paikoillasi, kun passi on tunnistettu</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Ladataan</string>
 	<string name="jumio_nfc_button_skip">Ohita</string>
 	<string name="jumio_nfc_description_extracting">Pidä paikoillasi skannauksen aikana</string>
-	<string name="jumio_nfc_description_start_other">Liu\'uta puhelinta etukannella, kunnes passi tunnistetaan automaattisesti</string>
-	<string name="jumio_nfc_description_start_us">Liu\'uta puhelinta takakannen sisäpuolella, kunnes passi tunnistetaan automaattisesti</string>
+	<string name="jumio_nfc_description_start_other">Aseta puhelin passin etukanteen, kunnes skannaus on valmis</string>
+	<string name="jumio_nfc_description_start_us">Aseta puhelin passisi takakannen sisäpuolelle, kunnes skannaus on valmis</string>
 	<string name="jumio_nfc_general_error_dialog_title">Skannaus ei riitä</string>
 	<string name="jumio_nfc_header_extracting">Tietoja poimitaan</string>
 	<string name="jumio_nfc_header_start">Aseta passi</string>
-	<string name="jumio_nfc_id_description">Liu\'uta henkilökorttia puhelimen takakantta pitkin, kunnes se tunnistetaan automaattisesti</string>
+	<string name="jumio_nfc_id_description">Aseta puhelin asiakirjan päälle ja pidä se paikallaan, kunnes skannaus on valmis.</string>
 	<string name="jumio_nfc_id_header_start">Aseta henkilökorttisi</string>
 	<string name="jumio_no_results_found">Tuloksia ei löytynyt</string>
 	<string name="jumio_processing_title">Tulosta tarkistetaan</string>

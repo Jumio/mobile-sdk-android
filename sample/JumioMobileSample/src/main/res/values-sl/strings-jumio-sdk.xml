@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Osebna izkaznica</string>
 	<string name="jumio_idtype_pp">Potni list</string>
 	<string name="jumio_idtype_visa">Vizum</string>
+	<string name="jumio_nfc_error_description_id">Poskusite znova! Telefon položite na dokument in ga držite pri miru, dokler optično branje ni končano.</string>
+	<string name="jumio_nfc_error_description_other">Poskusite znova! Telefon položite na sprednjo stran potnega lista in počakajte, da se skeniranje konča.</string>
+	<string name="jumio_nfc_error_description_us">Poskusite znova! Telefon položite na notranjo stran zadnje platnice potnega lista, dokler skeniranje ni končano.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Ko je osebna izkaznica zaznana, držite pri miru</string>
 	<string name="jumio_nfc_retry_enable_capability">Če želite iz potnega lista pridobiti več, omogočite v telefonu NFC</string>
 	<string name="jumio_nfc_retry_tag_lost">Ko je potni list zaznan, držite pri miru</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Nalaganje</string>
 	<string name="jumio_nfc_button_skip">Preskoči</string>
 	<string name="jumio_nfc_description_extracting">Med optičnim branjem držite pri miru</string>
-	<string name="jumio_nfc_description_start_other">Telefon pomaknite prek sprednje platnice, da se potni list samodejno zazna</string>
-	<string name="jumio_nfc_description_start_us">Telefon pomaknite prek notranje zadnje platnice, da se potni list samodejno zazna</string>
+	<string name="jumio_nfc_description_start_other">Telefon položite na sprednjo stran potnega lista, dokler skeniranje ni končano</string>
+	<string name="jumio_nfc_description_start_us">Telefon položite na notranjo stran zadnje platnice potnega lista, dokler skeniranje ni končano</string>
 	<string name="jumio_nfc_general_error_dialog_title">Nedokončano branje</string>
 	<string name="jumio_nfc_header_extracting">Pridobiv. podatkov</string>
 	<string name="jumio_nfc_header_start">Namestite potni list</string>
-	<string name="jumio_nfc_id_description">Osebno izkaznico premikajte vodoravno za telefonom, dokler je samodejno ne zazna.</string>
+	<string name="jumio_nfc_id_description">Telefon položite na dokument in ga držite pri miru, dokler skeniranje ni končano.</string>
 	<string name="jumio_nfc_id_header_start">Pokažite osebno izkaznico.</string>
 	<string name="jumio_no_results_found">Ni najdenih rezultatov</string>
 	<string name="jumio_processing_title">Preverjanje rezultata</string>

@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Identity Card</string>
 	<string name="jumio_idtype_pp">Passport</string>
 	<string name="jumio_idtype_visa">Visa</string>
+	<string name="jumio_nfc_error_description_id">Try again! Place your phone on top of the document and keep it steady until the scan is complete.</string>
+	<string name="jumio_nfc_error_description_other">Try again! Place your phone on the passport\'s front cover until the scan is completed.</string>
+	<string name="jumio_nfc_error_description_us">Try again! Place your phone on the inside of your passport\'s back cover until the scan is completed.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Once the ID card is detected, hold still</string>
 	<string name="jumio_nfc_retry_enable_capability">To get more out of your passport, please enable your phone\'s NFC capability</string>
 	<string name="jumio_nfc_retry_tag_lost">Hold still once the passport is detected</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Loading</string>
 	<string name="jumio_nfc_button_skip">Skip</string>
 	<string name="jumio_nfc_description_extracting">Hold still while scanning</string>
-	<string name="jumio_nfc_description_start_other">Slide phone across the front cover until your passport is automatically detected</string>
-	<string name="jumio_nfc_description_start_us">Slide phone across the inside of the back cover until your passport is automatically detected</string>
+	<string name="jumio_nfc_description_start_other">Place your phone on the passport\'s front cover until the scan is completed</string>
+	<string name="jumio_nfc_description_start_us">Place your phone on the inside of your passport\'s back cover until the scan is completed</string>
 	<string name="jumio_nfc_general_error_dialog_title">Scan incomplete</string>
 	<string name="jumio_nfc_header_extracting">Extracting data</string>
 	<string name="jumio_nfc_header_start">Position your passport</string>
-	<string name="jumio_nfc_id_description">Slide the ID card along the back of your phone until it’s detected automatically</string>
+	<string name="jumio_nfc_id_description">Place your phone on top of the document and keep it steady until the scan is complete</string>
 	<string name="jumio_nfc_id_header_start">Position your ID card</string>
 	<string name="jumio_no_results_found">No results found</string>
 	<string name="jumio_processing_title">Checking result</string>

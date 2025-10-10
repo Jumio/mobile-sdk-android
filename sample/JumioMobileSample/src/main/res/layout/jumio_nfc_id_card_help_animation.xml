@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/animation_container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:adjustViewBounds="true">
+
+	<androidx.appcompat.widget.AppCompatImageView
+		android:id="@+id/iv_scan_indicator"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:adjustViewBounds="true"
+		android:layout_centerInParent="true"
+		app:srcCompat="@drawable/jumio_nfc_scan_indicator" />
+
+	<FrameLayout
+		android:id="@+id/iv_id_card_container"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
+		android:layout_centerInParent="true">
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/iv_id_card"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:adjustViewBounds="true"
+			app:srcCompat="@drawable/jumio_nfc_id_card" />
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/iv_id_chip_indicator"
+			android:layout_width="@dimen/jumio_chip_indicator"
+			android:layout_height="@dimen/jumio_chip_indicator"
+			android:adjustViewBounds="true"
+			android:layout_gravity="center"
+			app:srcCompat="@drawable/jumio_nfc_id_chip_indicator" />
+	</FrameLayout>
+
+	<FrameLayout
+		android:id="@+id/iv_phone_container"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true">
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/iv_phone"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:adjustViewBounds="true"
+			app:srcCompat="@drawable/jumio_nfc_device" />
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/iv_checkmark"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:adjustViewBounds="true"
+			android:layout_gravity="center"
+			app:srcCompat="@drawable/jumio_nfc_check_white" />
+
+		<com.jumio.sample.compose.views.nfcanimation.DeviceNfcChipIndicator
+			android:id="@+id/iv_device_chip_indicator"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:adjustViewBounds="true"
+			android:layout_gravity="center" />
+	</FrameLayout>
+</RelativeLayout>

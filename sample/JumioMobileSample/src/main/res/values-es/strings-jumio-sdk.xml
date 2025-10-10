@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Documento de identidad</string>
 	<string name="jumio_idtype_pp">Pasaporte</string>
 	<string name="jumio_idtype_visa">Visa</string>
+	<string name="jumio_nfc_error_description_id">¡Inténtalo de nuevo! Coloca el teléfono sobre el documento y mantenlo quieto hasta que se complete el escaneo.</string>
+	<string name="jumio_nfc_error_description_other">¡Inténtalo de nuevo! Coloca el teléfono sobre la portada del pasaporte hasta que se complete el escaneo.</string>
+	<string name="jumio_nfc_error_description_us">¡Inténtalo de nuevo! Coloca el teléfono en el interior de la contraportada de tu pasaporte hasta que se complete el escaneo.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Una vez detectada la tarjeta de identificación, manténgala quieta</string>
 	<string name="jumio_nfc_retry_enable_capability">Para sacar más provecho de su pasaporte, habilite la capacidad NFC de su teléfono</string>
 	<string name="jumio_nfc_retry_tag_lost">Quédese quieto tras detectarse el pasaporte</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Cargando</string>
 	<string name="jumio_nfc_button_skip">Omitir</string>
 	<string name="jumio_nfc_description_extracting">Quédese quieto durante el escaneo</string>
-	<string name="jumio_nfc_description_start_other">Deslice el teléfono por la cubierta frontal hasta que su pasaporte sea detectado automáticamente</string>
-	<string name="jumio_nfc_description_start_us">Deslice el teléfono por el interior de la contraportada hasta que su pasaporte sea detectado</string>
+	<string name="jumio_nfc_description_start_other">Coloca el teléfono sobre la portada del pasaporte hasta que se complete el escaneo</string>
+	<string name="jumio_nfc_description_start_us">Coloque el teléfono en el interior de la contraportada del pasaporte hasta que finalice el escaneo</string>
 	<string name="jumio_nfc_general_error_dialog_title">Escaneo incompleto</string>
 	<string name="jumio_nfc_header_extracting">Extrayendo datos</string>
 	<string name="jumio_nfc_header_start">Coloque su pasaporte</string>
-	<string name="jumio_nfc_id_description">Deslice la tarjeta de identificación por la parte posterior del teléfono hasta que se detecte automáticamente.</string>
+	<string name="jumio_nfc_id_description">Coloque el teléfono encima del documento y manténgalo quieto hasta que se complete el escaneo.</string>
 	<string name="jumio_nfc_id_header_start">Coloque su tarjeta de identificación</string>
 	<string name="jumio_no_results_found">No se han encontrado resultados</string>
 	<string name="jumio_processing_title">Comprobando el resultado</string>

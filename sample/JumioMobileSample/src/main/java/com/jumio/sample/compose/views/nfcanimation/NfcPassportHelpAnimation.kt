@@ -1,59 +1,91 @@
+/*
+ * Copyright 2025 Jumio Corporation, all rights reserved.
+ */
 package com.jumio.sample.compose.views.nfcanimation
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.animation.TimeInterpolator
 import android.animation.ValueAnimator
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.os.SystemClock
-import android.util.TypedValue
+import android.view.Gravity
 import android.view.View
-import android.view.animation.AnticipateInterpolator
+import android.view.View.ALPHA
+import android.view.View.ROTATION_X
+import android.view.View.SCALE_X
+import android.view.View.SCALE_Y
+import android.view.View.TRANSLATION_X
+import android.view.View.TRANSLATION_Y
+import android.view.ViewTreeObserver
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AnticipateOvershootInterpolator
 import android.view.animation.PathInterpolator
-import android.widget.ImageView
+import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.view.ContextThemeWrapper
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.res.ResourcesCompat
-import com.jumio.commons.utils.dpToPx
 import com.jumio.defaultui.R
-import java.util.Collections
+import com.jumio.sample.compose.extension.dpToPx
+import com.jumio.sample.compose.extension.safeLet
 import kotlin.math.abs
+import kotlin.math.min
 
-class NfcPassportHelpAnimation(private val context: Context) : NfcHelpAnimationInterface {
+private val NFC_SCAN_INDICATOR_SCALE_KEYFRAMES = floatArrayOf(
+	0.41f,
+	0.54f,
+	0.68f,
+	0.75f,
+	0.83f,
+	0.92f,
+	1.0f
+)
+private val PP_CHIP_PULSE_SCALE_KEYFRAMES = floatArrayOf(
+	1.0f,
+	1.8f,
+	1.0f
+)
 
-	private var isActive = false
-	private var isConfigured = false
-	private var passportCoverFlipped = false
+internal open class NfcPassportHelpAnimation(protected val context: Context) : NfcHelpAnimationInterface {
 
-	private var coverOnlyDrawable: Drawable? = null
+	protected var isActive = false
+	protected var isConfigured = false
+
 	private var passportCoverDrawable: Drawable? = null
-	private var passportPageDrawable: Drawable? = null
-	private var ivPassportOpened: AppCompatImageView? = null
-	private var ivPassportCover: AppCompatImageView? = null
-	private var ivPhone: AppCompatImageView? = null
+	protected var ivPassportCover: AppCompatImageView? = null
+	protected var ivPhone: AppCompatImageView? = null
 	private var ivCheckmark: AppCompatImageView? = null
-	private var animationContainer: RelativeLayout? = null
+	protected var ivPPChipIndicator: AppCompatImageView? = null
+	private var ivNfcScanIndicator: AppCompatImageView? = null
+	protected var ivPhoneChipIndicator: DeviceNfcChipIndicator? = null
+	protected var animationContainer: RelativeLayout? = null
+	protected var phoneContainer: FrameLayout? = null
+	protected var ppCoverContainer: FrameLayout? = null
 	private var globalAnimatorSet: AnimatorSet = AnimatorSet()
-	private var bezierInterpolator: TimeInterpolator? = null
-	private val passportHeightTotal = 144.dpToPx(context)
-	private var passportMargin = 0f
-	private var passportAnimWidthHalf = 0f
-	private var isPassportUsa = false
+	protected var bezierInterpolator: TimeInterpolator? = null
 	private var startTime = 0L
+	protected var nfcChipLocation: NfcChipLocation? = null
+	protected val containerMargin = 50.dpToPx(context)
+	protected val springAnimationOvershoot = 2.dpToPx(context)
+	private val phoneWidth = 79.dpToPx(context)
+	private val phoneHeight = 167.dpToPx(context)
+	private var isPauseRequested = false
 
 	override fun destroy() {
 		stop()
-		ivPassportOpened = null
 		ivPassportCover = null
 		ivPhone = null
 		ivCheckmark = null
+		ivPPChipIndicator = null
+		ivNfcScanIndicator = null
+		ivPhoneChipIndicator?.destroy()
+		ivPhoneChipIndicator = null
+		phoneContainer = null
+		ppCoverContainer = null
 		animationContainer = null
 	}
 
@@ -64,7 +96,9 @@ class NfcPassportHelpAnimation(private val context: Context) : NfcHelpAnimationI
 		if (!isConfigured) return
 		if (!isActive) {
 			isActive = true
-			startAnimation()
+			animationContainer?.post {
+				resizeLayoutAndAnimate()
+			}
 		}
 	}
 
@@ -75,410 +109,340 @@ class NfcPassportHelpAnimation(private val context: Context) : NfcHelpAnimationI
 	}
 
 	@Synchronized
-	override fun configure(rootView: View, isUsa: Boolean) {
+	override fun configure(rootView: View) {
 		if (isActive) {
 			stop()
-		}
-
-		isPassportUsa = isUsa
-
-		// Width of the passport cover (EU) and the opened passport (US) for correct centering
-
-		if (isPassportUsa) {
-			passportAnimWidthHalf = 100.dpToPx(context).toFloat()
-			passportMargin = 4.dpToPx(context).toFloat()
-		} else {
-			passportAnimWidthHalf = 48.dpToPx(context).toFloat()
-			passportMargin = 8.dpToPx(context).toFloat()
 		}
 
 		bezierInterpolator = PathInterpolator(0.25f, 0f, 0.25f, 1f)
 
 		animationContainer = rootView.findViewById<View>(R.id.animation_container) as RelativeLayout
-		animationContainer?.alpha = 1f
-		ivPassportCover = rootView.findViewById(R.id.iv_pp_cover)
-		ivPassportOpened = rootView.findViewById(R.id.iv_pp_opened)
+		phoneContainer = rootView.findViewById<View>(R.id.iv_phone_container) as FrameLayout
+		ppCoverContainer = rootView.findViewById<View>(R.id.iv_pp_cover_container) as FrameLayout
 
+		ivPassportCover = rootView.findViewById(R.id.iv_pp_cover)
 		ivPhone = rootView.findViewById(R.id.iv_phone)
 		ivCheckmark = rootView.findViewById(R.id.iv_checkmark)
+		ivPPChipIndicator = rootView.findViewById(R.id.iv_pp_chip_indicator)
+		ivPhoneChipIndicator = rootView.findViewById(R.id.iv_phone_chip_indicator)
+		ivNfcScanIndicator = rootView.findViewById(R.id.iv_scan_indicator)
 
 		applyCustomizations(rootView.context.resources)
-
-		ivPassportCover?.reset()
-		ivPassportOpened?.reset()
-		ivPhone?.reset()
-		ivCheckmark?.reset()
+		reset()
 		isConfigured = true
 	}
 
 	override fun pause() {
 		if (globalAnimatorSet.isRunning) {
-			globalAnimatorSet.pause()
-			ivCheckmark?.alpha = 0f
-			if (isPassportUsa) {
-				ivPassportCover?.alpha = 0f
-				ivPassportOpened?.alpha = 1f
-			} else {
-				ivPassportCover?.alpha = 1f
-				ivPassportOpened?.alpha = 0f
-			}
-			ivPhone?.let {
-				it.animate()
-					.alpha(1f)
-					.translationX(
-						passportAnimWidthHalf + (
-							(abs(passportAnimWidthHalf - it.width)).div(2f)
-							) - (passportMargin.div(2f))
-					)
-					.translationY(passportHeightTotal * 0.65f)
-			}
+			isPauseRequested = true
 		}
 	}
 
 	override fun resume() {
+		isPauseRequested = false
 		if (globalAnimatorSet.isPaused) {
 			globalAnimatorSet.cancel()
-			ivPassportCover?.reset()
-			ivPassportOpened?.reset()
-			ivPhone?.reset()
-			ivCheckmark?.reset()
 			start()
 		}
 	}
 
-	private fun applyCustomizations(resources: Resources) {
-		val theme: Resources.Theme = context.theme
-		val typedValue = TypedValue()
-		var resourceId: Int = R.style.Jumio_Nfc_Customization
-		if (theme.resolveAttribute(R.attr.jumio_nfc_customization, typedValue, true)) {
-			resourceId = typedValue.data
+	protected open fun reset() {
+		ivPassportCover?.reset()
+		ivPhone?.reset()
+		ivCheckmark?.reset()
+		ivPPChipIndicator?.reset()
+		ivPhoneChipIndicator?.reset()
+		ivNfcScanIndicator?.reset()
+		phoneContainer?.reset(1f)
+		ppCoverContainer?.reset(1f)
+	}
+
+	protected fun resizeLayoutAndAnimate() {
+		nfcChipLocation = NfcLocationHelper.getNFCLocation(context)
+		val params = FrameLayout.LayoutParams(
+			FrameLayout.LayoutParams.WRAP_CONTENT,
+			FrameLayout.LayoutParams.WRAP_CONTENT
+		).apply {
+			gravity = when (nfcChipLocation) {
+				NfcChipLocation.TOP -> Gravity.TOP or Gravity.CENTER_HORIZONTAL
+				NfcChipLocation.BOTTOM -> Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
+				else -> Gravity.CENTER
+			}
 		}
-		val wrapper = ContextThemeWrapper(context, resourceId)
+		ivPhoneChipIndicator?.viewTreeObserver?.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+			override fun onGlobalLayout() {
+				ivPhoneChipIndicator?.viewTreeObserver?.removeOnGlobalLayoutListener(this)
+				resizePhoneContainer()
+			}
+		})
+		ivPhoneChipIndicator?.layoutParams = params
+	}
+
+	private fun resizePhoneContainer() {
+		safeLet(animationContainer, phoneContainer, ivPhoneChipIndicator) { parent, phoneContainer, ivPhoneChipIndicator ->
+			if (nfcChipLocation == NfcChipLocation.TOP || nfcChipLocation == NfcChipLocation.BOTTOM) {
+				val ivPhoneChipCenterY = ivPhoneChipIndicator.y + ivPhoneChipIndicator.height.div(2f)
+				val parentHeightHalf = parent.height.div(2f)
+				val areaBelowChipCenter = phoneContainer.height - ivPhoneChipCenterY
+
+				var scaleTop = 1.0f
+				if (ivPhoneChipCenterY > parentHeightHalf) {
+					scaleTop = parentHeightHalf / ivPhoneChipCenterY
+				}
+
+				var scaleBottom = 1.0f
+				if (areaBelowChipCenter > parentHeightHalf) {
+					scaleBottom = parentHeightHalf / areaBelowChipCenter
+				}
+
+				val scaleFactor = min(scaleTop, scaleBottom).coerceIn(0.1f, 1.0f)
+				if (abs(scaleFactor - 1f) > 0) {
+					phoneContainer.viewTreeObserver?.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+						override fun onGlobalLayout() {
+							phoneContainer.viewTreeObserver?.removeOnGlobalLayoutListener(this)
+							startAnimation()
+						}
+					})
+					val params = phoneContainer.layoutParams
+					params.width = (phoneWidth * scaleFactor).toInt()
+					params.height = (phoneHeight * scaleFactor).toInt()
+					phoneContainer.layoutParams = params
+					return
+				}
+			}
+			startAnimation()
+		}
+	}
+
+	protected open fun applyCustomizations(resources: Resources) {
+		val style = context.theme.resolveNfcStyle()
+		val wrapper = ContextThemeWrapper(context, style)
+
 		passportCoverDrawable = ResourcesCompat.getDrawable(resources, R.drawable.jumio_nfc_pp_cover, wrapper.theme)
-		passportPageDrawable = ResourcesCompat.getDrawable(resources, R.drawable.jumio_nfc_pp_page, wrapper.theme)
-		coverOnlyDrawable = ResourcesCompat.getDrawable(resources, R.drawable.jumio_nfc_pp_cover_only, wrapper.theme)
+		ivPhone?.setDrawable(resources, R.drawable.jumio_nfc_device, wrapper.theme)
+		ivPPChipIndicator?.setDrawable(resources, R.drawable.jumio_nfc_id_chip_indicator, wrapper.theme)
+		ivNfcScanIndicator?.setDrawable(resources, R.drawable.jumio_nfc_scan_indicator, wrapper.theme)
+		ivCheckmark?.setDrawable(resources, R.drawable.jumio_nfc_check_white, wrapper.theme)
+		ivPhoneChipIndicator?.setDrawableWithGlowEffect(resources, R.drawable.jumio_nfc_device_chip_indicator, wrapper)
+	}
 
-		val passportOpened = ResourcesCompat.getDrawable(resources, R.drawable.jumio_nfc_pp_open, wrapper.theme)
-		ivPassportOpened?.setImageDrawable(passportOpened)
-
-		val device = ResourcesCompat.getDrawable(resources, R.drawable.jumio_nfc_device, wrapper.theme)
-		ivPhone?.setImageDrawable(device)
-
-		val checkWhite = ResourcesCompat.getDrawable(resources, R.drawable.jumio_nfc_check_white, wrapper.theme)
-		ivCheckmark?.setImageDrawable(checkWhite)
+	protected open fun setContainersPosition() {
+		safeLet(animationContainer, phoneContainer, ppCoverContainer) {
+				parent,
+				phoneContainer,
+				ppCoverContainer,
+			->
+			phoneContainer.translationX = phoneContainer.width.div(2f) + containerMargin.div(2f)
+			ppCoverContainer.translationX = -ppCoverContainer.width.div(2f) - containerMargin.div(2f)
+			ppCoverContainer.translationY = parent.height.div(2f) - ppCoverContainer.height.div(2f) - ppCoverContainer.y
+		}
 	}
 
 	@Synchronized
-	private fun startAnimation() {
+	protected fun startAnimation() {
 		try {
 			if (!isActive) return
-			globalAnimatorSet = AnimatorSet()
-			startTime = SystemClock.uptimeMillis()
-			if (isPassportUsa) {
-				globalAnimatorSet.playSequentially(
-					fadeInPassportCover(),
-					unfoldPassport(),
-					appearPhone(),
-					slidePhoneOverPassport(),
-					displayCheckmark(),
-					wait(1000),
-					fadeOutAll()
-				)
-			} else {
-				globalAnimatorSet.playSequentially(
-					fadeInPassportCover(),
-					wait(500),
-					appearPhone(),
-					slidePhoneOverPassport(),
-					displayCheckmark(),
-					wait(1000),
-					fadeOutAll()
-				)
-			}
-			globalAnimatorSet.addListener(
-				object : AnimatorListenerAdapter() {
-					override fun onAnimationCancel(animation: Animator) {
-						super.onAnimationCancel(animation)
-						isActive = false
-					}
+			reset()
+			animationContainer?.alpha = 1f
+			setContainersPosition()
 
-					override fun onAnimationEnd(animation: Animator) {
-						super.onAnimationEnd(animation)
-						if (isActive) {
-							ivPassportCover?.reset()
-							ivPassportOpened?.reset()
-							ivPhone?.reset()
-							ivCheckmark?.reset()
+			globalAnimatorSet = AnimatorSet().apply {
+				startTime = SystemClock.uptimeMillis()
+				playSequentially(animators)
+				addListener(
+					object : AnimatorListenerAdapter() {
+						override fun onAnimationCancel(animation: Animator) {
+							super.onAnimationCancel(animation)
+							isActive = false
+							isPauseRequested = false
+						}
 
-							startAnimation()
+						override fun onAnimationEnd(animation: Animator) {
+							super.onAnimationEnd(animation)
+							if (isActive) {
+								startAnimation()
+							}
 						}
 					}
-				}
-			)
-			globalAnimatorSet.start()
-		} catch (ex: Exception) {
+				)
+				start()
+			}
+		} catch (_: Exception) {
 			isActive = false
 		}
 	}
 
-	private fun createFlipViewAnimation(
-		viewToFlip: View?,
-		animDuration: Long,
-		animStartDelay: Long = 0,
-		isCover: Boolean = false,
-	): ObjectAnimator? {
-		if (viewToFlip == null) return null
+	protected open val animators get() = listOf(
+		fadeInPassportAndPhone(),
+		glowPPAndPhoneChipIndicator(),
+		alignPPAndPhoneToSettle(),
+		pulseNfcScanIndicator(),
+		fadeInCheckmark(),
+		fadeOutAll(),
+		wait(1000)
+	)
 
-		viewToFlip.rotationY = 0f
-		if (!isCover) {
-			viewToFlip.pivotX = viewToFlip.left.toFloat()
-		} else {
-			viewToFlip.pivotX = 0.0f
-		}
-
-		val flipViewAnimator = ObjectAnimator.ofFloat(viewToFlip, "rotationY", 0f, -180f).apply {
-			duration = animDuration
-			startDelay = animStartDelay
-			interpolator = bezierInterpolator
-		}
-
-		val updateListener = ValueAnimator.AnimatorUpdateListener {
-			if (it.animatedFraction >= 0.01) {
-				viewToFlip.alpha = 1f
-			}
-
-			if (it.animatedFraction >= 0.5 && !passportCoverFlipped) {
-				ivPassportCover?.setImageDrawable(coverOnlyDrawable)
-				passportCoverFlipped = true
-			}
-		}
-		flipViewAnimator.addUpdateListener(updateListener)
-
-		return flipViewAnimator
-	}
-
-	private fun fadeInPassportCover(): AnimatorSet {
-		val animatorSet = AnimatorSet()
+	protected fun fadeInPassportAndPhone() = AnimatorSet().apply {
+		val duration = 800L
+		this.startDelay = 100
+		this.duration = duration
 		ivPassportCover?.setImageDrawable(passportCoverDrawable)
-		ivPassportCover?.translationX = passportAnimWidthHalf
+		val phone = ivPhone?.animFloat(ALPHA, bezierInterpolator, duration, 0f, 1f)
+		val phoneChipIndicator = ivPhoneChipIndicator?.animFloat(ALPHA, bezierInterpolator, duration, 0f, 1f)
+		val ppCover = ivPassportCover?.animFloat(ALPHA, bezierInterpolator, duration, 0f, 1f)
+		val ppChipIndicator = ivPPChipIndicator?.animFloat(ALPHA, bezierInterpolator, duration, 0f, 1f)
 
-		val fadeInPPCover = ivPassportCover?.let {
-			ObjectAnimator.ofFloat(it, "alpha", 0.0f, 1.0f).apply {
-				startDelay = 200
-				duration = 200
-				interpolator = AnticipateInterpolator()
-			}
-		}
-
-		animatorSet.play(fadeInPPCover)
-		return animatorSet
-	}
-
-	private fun unfoldPassport(): AnimatorSet {
-		val animatorSet = AnimatorSet()
-		val scale = context.resources.displayMetrics.density
-		val screenHeight = context.resources.displayMetrics.heightPixels * 2
-
-		val imageViewArray = arrayListOf<ImageView>()
-		repeat((0..3).count()) {
-			val ivTemp = ImageView(context)
-			val passportSheetParams =
-				RelativeLayout.LayoutParams(
-					RelativeLayout.LayoutParams.WRAP_CONTENT,
-					RelativeLayout.LayoutParams.WRAP_CONTENT
-				)
-			ivTemp.layoutParams = passportSheetParams
-			ivTemp.setImageDrawable(passportPageDrawable)
-			ivTemp.alpha = 0f
-			ivTemp.translationX = passportAnimWidthHalf
-			ivTemp.translationY = passportMargin
-			ivTemp.cameraDistance = scale * screenHeight
-			imageViewArray.add(ivTemp)
-		}
-
-		imageViewArray.forEach {
-			animationContainer?.addView(it)
-		}
-
-		animatorSet.addListener(
-			object : AnimatorListenerAdapter() {
-				override fun onAnimationStart(animation: Animator) {
-					ivPassportOpened?.alpha = 0.0f
-					ivPassportOpened?.cameraDistance = screenHeight * scale
-					ivPassportCover?.cameraDistance = screenHeight * scale
-
-					passportCoverFlipped = false
-					super.onAnimationStart(animation)
-				}
-
-				override fun onAnimationEnd(animation: Animator) {
-					ivPassportCover?.alpha = 0f
-					imageViewArray.forEach { animationContainer?.removeView(it) }
-					super.onAnimationEnd(animation)
-				}
-			}
+		playTogether(
+			phone,
+			phoneChipIndicator,
+			ppCover,
+			ppChipIndicator
 		)
-
-		val fadeInPPOpened = ivPassportOpened?.let {
-			ObjectAnimator.ofFloat(it, "alpha", 0.0f, 1.0f).apply {
-				startDelay = 199
-				duration = 1
-			}
-		}
-
-		val passportCoverAnimation = createFlipViewAnimation(ivPassportCover, animDuration = 400, isCover = true)
-
-		val passportCoverUpdateListener = ValueAnimator.AnimatorUpdateListener {
-			if (it.animatedFraction >= 0.45) {
-				imageViewArray[0].alpha = 1f
-			}
-		}
-		passportCoverAnimation?.addUpdateListener(passportCoverUpdateListener)
-
-		animatorSet.startDelay = 1000
-		animatorSet.playTogether(
-			passportCoverAnimation,
-			fadeInPPOpened,
-			createFlipViewAnimation(imageViewArray[0], 800, 200),
-			createFlipViewAnimation(imageViewArray[1], 800, 300),
-			createFlipViewAnimation(imageViewArray[2], 1000, 400),
-			createFlipViewAnimation(imageViewArray[3], 1200, 600)
-		)
-		return animatorSet
 	}
 
-	@SuppressLint("ObjectAnimatorBinding")
-	private fun appearPhone(): AnimatorSet {
-		val animatorSet = AnimatorSet()
-		animatorSet.addListener(
-			object : AnimatorListenerAdapter() {
-				override fun onAnimationStart(animation: Animator) {
-					ivPhone?.let {
-						it.translationX = (
-							passportAnimWidthHalf + (
-								(abs(passportAnimWidthHalf - it.width)).div(2f)
-								) - (passportMargin.div(2f))
-							)
-					}
-					ivPhone?.translationY = passportHeightTotal * 0.15f
+	protected fun glowPPAndPhoneChipIndicator() = AnimatorSet().apply {
+		playTogether(ivPhoneChipIndicator?.glowDeviceChipIndicator(1, 100), pulsePPChipIndicator(1, 100))
+	}
 
-					ivPhone?.scaleX = 1.1f
-					ivPhone?.scaleY = 1.1f
+	protected open fun alignPPAndPhoneToSettle() = AnimatorSet().apply {
+		val duration = 1800L
+		this.startDelay = 100
+		this.duration = duration
 
-					super.onAnimationStart(animation)
+		safeLet(animationContainer, ppCoverContainer, phoneContainer, ivPhoneChipIndicator) {
+				parent,
+				ppCoverContainer,
+				phoneContainer,
+				ivPhoneChipIndicator,
+			->
+			val centerX = parent.width.div(2f)
+			val centerY = parent.height.div(2f)
+
+			val ppX = centerX - ppCoverContainer.width.div(2f) - ppCoverContainer.left
+			val phoneX = centerX - phoneContainer.width.div(2f) - phoneContainer.left
+			val phoneY = when (nfcChipLocation) {
+				NfcChipLocation.TOP, NfcChipLocation.BOTTOM ->
+					centerY - phoneContainer.y - ivPhoneChipIndicator.y -
+						ivPhoneChipIndicator.height.div(2f)
+				else -> centerY - phoneContainer.height.div(2f) - phoneContainer.y
+			}
+
+			val ppTranslationX = ppCoverContainer.animFloat(
+				TRANSLATION_X,
+				bezierInterpolator,
+				duration,
+				ppX + springAnimationOvershoot
+			)
+			val phoneTranslationX = phoneContainer.animFloat(
+				TRANSLATION_X,
+				bezierInterpolator,
+				duration,
+				phoneX - springAnimationOvershoot
+			)
+			val phoneTranslationY = phoneContainer.animFloat(TRANSLATION_Y, bezierInterpolator, duration, phoneY)
+
+			val ppUpdateListener = ValueAnimator.AnimatorUpdateListener {
+				if (it.animatedFraction == 1f) {
+					ppCoverContainer.springAnimation(ppX)
 				}
 			}
-		)
+			ppTranslationX.addUpdateListener(ppUpdateListener)
 
-		animatorSet.startDelay = 200
-		animatorSet.duration = 600
-
-		if (ivPhone != null) {
-			val appearPhone = ObjectAnimator.ofFloat(ivPhone, "alpha", 0f, 1f).apply {
-				duration = 600
-				interpolator = bezierInterpolator
-			}
-			val scaleXPhone = ObjectAnimator.ofFloat(ivPhone, "scaleX", 1.1f, 1f).apply {
-				duration = 600
-				interpolator = bezierInterpolator
-			}
-			val scaleYPhone = ObjectAnimator.ofFloat(ivPhone, "scaleY", 1.1f, 1f).apply {
-				duration = 600
-				interpolator = bezierInterpolator
-			}
-			animatorSet.playTogether(appearPhone, scaleXPhone, scaleYPhone)
-		}
-
-		return animatorSet
-	}
-
-	@SuppressLint("ObjectAnimatorBinding")
-	private fun slidePhoneOverPassport(): AnimatorSet {
-		val animatorSet = AnimatorSet()
-
-		if (ivPhone != null) {
-			val movePhoneDown1 = ObjectAnimator.ofFloat(
-				ivPhone,
-				"translationY",
-				passportHeightTotal * 0.40f
-			).apply {
-				startDelay = 600
-				duration = 600
-				interpolator = bezierInterpolator
-			}
-
-			val movePhoneDown2 = ObjectAnimator.ofFloat(
-				ivPhone,
-				"translationY",
-				passportHeightTotal * 0.65f
-			).apply {
-				startDelay = 600
-				duration = 600
-				interpolator = bezierInterpolator
-			}
-
-			animatorSet.playSequentially(movePhoneDown1, movePhoneDown2)
-		}
-		return animatorSet
-	}
-
-	private fun displayCheckmark(): AnimatorSet {
-		val animatorSet = AnimatorSet()
-		animatorSet.addListener(
-			object : AnimatorListenerAdapter() {
-				override fun onAnimationStart(animation: Animator) {
-					val centerXPhone = ivPhone?.let { it.translationX + it.width.div(2f) }
-					val centerYPhone = ivPhone?.let { it.translationY + it.height.div(2f) }
-					if (centerXPhone != null && centerYPhone != null && ivCheckmark != null) {
-						ivCheckmark?.translationX = centerXPhone.minus(ivCheckmark?.width?.div(2f)!!)
-						ivCheckmark?.translationY = centerYPhone.minus(ivCheckmark?.height?.div(2f)!!)
-					}
-					super.onAnimationStart(animation)
+			val phoneUpdateListener = ValueAnimator.AnimatorUpdateListener {
+				if (it.animatedFraction == 1f) {
+					phoneContainer.springAnimation(phoneX)
 				}
 			}
-		)
-		val appearCheckmark = ivCheckmark?.let {
-			ObjectAnimator.ofFloat(it, "alpha", 0f, 1f).apply {
-				duration = 400
-				interpolator = AnticipateOvershootInterpolator()
-			}
-		}
+			phoneTranslationX.addUpdateListener(phoneUpdateListener)
 
-		animatorSet.play(appearCheckmark)
-		return animatorSet
+			playTogether(ppTranslationX, phoneTranslationX, phoneTranslationY)
+		}
 	}
 
-	private fun wait(time: Long): AnimatorSet {
-		val animatorSet = AnimatorSet()
-		val placeholder = ivCheckmark?.let {
-			ObjectAnimator.ofFloat(it, "rotationX", 0f, 0f).apply {
-				duration = time
-				interpolator = AnticipateOvershootInterpolator()
-			}
-		}
-		animatorSet.play(placeholder)
-		return animatorSet
-	}
+	protected fun pulseNfcScanIndicator() = AnimatorSet().apply {
+		val duration = 1200L
+		startDelay = 900
+		this.duration = duration
 
-	private fun fadeOutAll(): AnimatorSet {
-		val animatorSet = AnimatorSet()
+		safeLet(ivNfcScanIndicator, ivPhoneChipIndicator) { ivNfcScanIndicator, ivDeviceNfcChipIndicator ->
+			val scaleX = ivNfcScanIndicator.animFloat(
+				SCALE_X,
+				bezierInterpolator,
+				duration,
+				*NFC_SCAN_INDICATOR_SCALE_KEYFRAMES,
+				repeat = 2
+			)
 
-		ivPassportCover?.alpha = 0f
-		val viewList: List<View?> = if (isPassportUsa) {
-			listOf<View?>(ivPassportOpened, ivPhone, ivCheckmark)
-		} else {
-			listOf<View?>(ivPhone, ivCheckmark)
-		}
-		val animatorList = mutableListOf<ObjectAnimator>()
-		viewList.forEach {
-			animatorList.add(
-				ObjectAnimator.ofFloat(it, "alpha", 1f, 0f).apply {
-					duration = 200
-				}
+			val scaleY = ivNfcScanIndicator.animFloat(
+				SCALE_Y,
+				bezierInterpolator,
+				duration,
+				*NFC_SCAN_INDICATOR_SCALE_KEYFRAMES,
+				repeat = 2
+			)
+
+			val alpha = ivNfcScanIndicator.animFloat(
+				ALPHA,
+				bezierInterpolator,
+				duration,
+				0f,
+				1f,
+				0f,
+				repeat = 2
+			)
+
+			playTogether(
+				scaleX,
+				scaleY,
+				alpha,
+				ivDeviceNfcChipIndicator.glowDeviceChipIndicator(2, 0),
+				pulsePPChipIndicator(2, 0)
 			)
 		}
-		val immutable: Collection<Animator> = Collections.unmodifiableList(animatorList)
-		animatorSet.playTogether(immutable)
-		return animatorSet
+	}
+
+	protected fun pulsePPChipIndicator(repeat: Int, startDelay: Long) = AnimatorSet().apply {
+		val duration = 1200L
+		this.startDelay = startDelay
+		this.duration = duration
+		ivPPChipIndicator?.let {
+			val alpha = it.animFloat(ALPHA, bezierInterpolator, duration, 1f, repeat = repeat)
+			val scaleX = it.animFloat(SCALE_X, bezierInterpolator, duration, *PP_CHIP_PULSE_SCALE_KEYFRAMES, repeat = repeat)
+			val scaleY = it.animFloat(SCALE_Y, bezierInterpolator, duration, *PP_CHIP_PULSE_SCALE_KEYFRAMES, repeat = repeat)
+			playTogether(alpha, scaleX, scaleY)
+		}
+	}
+
+	protected fun fadeInCheckmark() = AnimatorSet().apply {
+		val duration = 300L
+		this.startDelay = 800
+		this.duration = duration
+		safeLet(ivCheckmark, ivPhoneChipIndicator) { ivCheckmark, ivPhoneChipIndicator ->
+			val phoneChipAlpha = ivPhoneChipIndicator.animFloat(ALPHA, bezierInterpolator, duration, 1f, 0f)
+			val alpha = ivCheckmark.animFloat(ALPHA, bezierInterpolator, duration, 0f, 1f)
+			val scaleX = ivCheckmark.animFloat(SCALE_X, bezierInterpolator, duration, 0.8f, 1f)
+			val scaleY = ivCheckmark.animFloat(SCALE_Y, bezierInterpolator, duration, 0.8f, 1f)
+			val animatorSet = AnimatorSet().apply {
+				playTogether(phoneChipAlpha, alpha, scaleX, scaleY)
+			}
+			playSequentially(animatorSet, wait(1500))
+			addListener(object : AnimatorListenerAdapter() {
+				override fun onAnimationEnd(animation: Animator) {
+					super.onAnimationEnd(animation)
+					if (isPauseRequested) {
+						isPauseRequested = false
+						globalAnimatorSet.pause()
+					}
+				}
+			})
+		}
+	}
+
+	protected fun wait(time: Long) = AnimatorSet().apply {
+		play(animationContainer?.animFloat(ROTATION_X, AnticipateOvershootInterpolator(), time, 0f, 0f))
+	}
+
+	protected fun fadeOutAll() = AnimatorSet().apply {
+		play(animationContainer?.animFloat(ALPHA, AccelerateDecelerateInterpolator(), 200, 1f, 0f))
 	}
 }

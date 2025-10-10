@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">ID-kort</string>
 	<string name="jumio_idtype_pp">Pass</string>
 	<string name="jumio_idtype_visa">Visum</string>
+	<string name="jumio_nfc_error_description_id">Försök igen! Placera telefonen ovanpå dokumentet och håll den stadigt tills skanningen är klar.</string>
+	<string name="jumio_nfc_error_description_other">Försök igen! Placera telefonen på passets framsida tills skanningen är klar.</string>
+	<string name="jumio_nfc_error_description_us">Försök igen! Placera telefonen på insidan av passets bakre pärm tills skanningen är klar.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">När ID-kortet har identifierats, håll det stilla</string>
 	<string name="jumio_nfc_retry_enable_capability">För att få ut mer av ditt pass, vänligen aktivera telefonens NFC -kapacitet</string>
 	<string name="jumio_nfc_retry_tag_lost">Håll stilla när passet har detekterats</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Laddar</string>
 	<string name="jumio_nfc_button_skip">Hoppa</string>
 	<string name="jumio_nfc_description_extracting">Håll stilla under skanning</string>
-	<string name="jumio_nfc_description_start_other">Låt telefonen glida över framsidan tills ditt pass har detekterats automatiskt</string>
-	<string name="jumio_nfc_description_start_us">Låt telefonen glida över baksidans insida tills ditt pass har detekterats automatiskt</string>
+	<string name="jumio_nfc_description_start_other">Placera telefonen på passets framsida tills skanningen är klar</string>
+	<string name="jumio_nfc_description_start_us">Placera telefonen på insidan av passets bakre pärm tills skanningen är klar</string>
 	<string name="jumio_nfc_general_error_dialog_title">Skanning avbruten</string>
 	<string name="jumio_nfc_header_extracting">Hämtar uppgifter</string>
 	<string name="jumio_nfc_header_start">Placera ditt pass</string>
-	<string name="jumio_nfc_id_description">Svep ID-kortet längs med baksidan av din telefon tills det detekteras automatiskt</string>
+	<string name="jumio_nfc_id_description">Placera telefonen ovanpå dokumentet och håll den stilla tills skanningen är klar.</string>
 	<string name="jumio_nfc_id_header_start">Placera ditt ID-kort</string>
 	<string name="jumio_no_results_found">Inga resultat hittades</string>
 	<string name="jumio_processing_title">Kontrollerar resultat</string>

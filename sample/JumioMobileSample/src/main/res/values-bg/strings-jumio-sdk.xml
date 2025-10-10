@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Лична карта</string>
 	<string name="jumio_idtype_pp">Паспорт</string>
 	<string name="jumio_idtype_visa">Виза</string>
+	<string name="jumio_nfc_error_description_id">Опитайте отново! Поставете телефона си върху документа и го дръжте неподвижно, докато сканирането приключи.</string>
+	<string name="jumio_nfc_error_description_other">Опитайте отново! Поставете телефона си върху предната корица на паспорта, докато сканирането приключи.</string>
+	<string name="jumio_nfc_error_description_us">Опитайте отново! Поставете телефона си от вътрешната страна на задната корица на паспорта си, докато сканирането приключи.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">След като личната карта бъде засечена, задръжте неподвижно</string>
 	<string name="jumio_nfc_retry_enable_capability">За да извлечете повече от паспорта си, моля, активирайте NFC възможностите на телефона си</string>
 	<string name="jumio_nfc_retry_tag_lost">Щом паспортът бъде засечен, стойте неподвижни</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Зареждане</string>
 	<string name="jumio_nfc_button_skip">Пропуснете</string>
 	<string name="jumio_nfc_description_extracting">Стойте неподвижни по време на сканиране</string>
-	<string name="jumio_nfc_description_start_other">Плъзнете телефона през предния капак, докато паспортът автоматично бъде засечен</string>
-	<string name="jumio_nfc_description_start_us">Плъзнете телефона през вътрешната част на задния капак, докато паспортът автоматично бъде засечен</string>
+	<string name="jumio_nfc_description_start_other">Поставете телефона си върху предната корица на паспорта, докато сканирането приключи</string>
+	<string name="jumio_nfc_description_start_us">Поставете телефона си от вътрешната страна на задната корица на паспорта си, докато сканирането приключи</string>
 	<string name="jumio_nfc_general_error_dialog_title">Незавършено сканир.</string>
 	<string name="jumio_nfc_header_extracting">Извличане на данните</string>
 	<string name="jumio_nfc_header_start">Позиционирайте паспорта</string>
-	<string name="jumio_nfc_id_description">Плъзнете личната си карта по гърба на телефона, докато бъде автоматично засечена</string>
+	<string name="jumio_nfc_id_description">Поставете телефона си върху документа и го дръжте неподвижно, докато сканирането приключи.</string>
 	<string name="jumio_nfc_id_header_start">Позиционирайте личната си карта</string>
 	<string name="jumio_no_results_found">Не са открити резултати</string>
 	<string name="jumio_processing_title">Проверка на резултата</string>

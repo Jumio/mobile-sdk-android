@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Kard tal-Identità</string>
 	<string name="jumio_idtype_pp">Passaport</string>
 	<string name="jumio_idtype_visa">Visa</string>
+	<string name="jumio_nfc_error_description_id">Erġa\' pprova! Poġġi t-telefon tiegħek fuq id-dokument u żommu fiss sakemm l-iskennjar jitlesta.</string>
+	<string name="jumio_nfc_error_description_other">Erġa\' pprova! Poġġi t-telefon tiegħek fuq il-qoxra ta\' quddiem tal-passaport sakemm jitlesta l-iskan.</string>
+	<string name="jumio_nfc_error_description_us">Erġa\' pprova! Poġġi t-telefon tiegħek fuq in-naħa ta\' ġewwa tal-qoxra ta\' wara tal-passaport tiegħek sakemm jitlesta l-iskan.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Ladarba l-karta tal-ID tiġi skoperta, żommha f\'postha</string>
 	<string name="jumio_nfc_retry_enable_capability">Biex tikseb aktar mill-passaport tiegħek, jekk jogħġbok ibiddel il-kapaċità NFC tat-telefon tiegħek</string>
 	<string name="jumio_nfc_retry_tag_lost">Meta jiġi identifiakt il-passaport, tiċċaqlax</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Qed jillowdja</string>
 	<string name="jumio_nfc_button_skip">Aqbeż</string>
 	<string name="jumio_nfc_description_extracting">Tiċċaqlaqx waqt li tkun qed tiskennja</string>
-	<string name="jumio_nfc_description_start_other">Għaddi l-mowbajl minn fuq il-cover ta\' quddiem sakemm jiġi identifikat awtomatikament il-passaport</string>
-	<string name="jumio_nfc_description_start_us">Għaddi l-mowbajl minn fuq il-cover ta\' wara sakemm jiġi identifikat awtomatikament il-passaport</string>
+	<string name="jumio_nfc_description_start_other">Poġġi t-telefon tiegħek fuq il-qoxra ta’ quddiem tal-passaport sakemm jitlesta l-iskan</string>
+	<string name="jumio_nfc_description_start_us">Poġġi t-telefon tiegħek fuq in-naħa ta\' ġewwa tal-qoxra ta\' wara tal-passaport tiegħek sakemm l-iskan jitlesta</string>
 	<string name="jumio_nfc_general_error_dialog_title">L-iskenn mhux lest</string>
 	<string name="jumio_nfc_header_extracting">Qed jestratta d-data</string>
 	<string name="jumio_nfc_header_start">Ippożizzjona l-passaport</string>
-	<string name="jumio_nfc_id_description">Mexxi l-karta tal-identità tiegħek man-naħa ta\' wara tal-mobile tiegħek sakemm tiġi identifikata awtomatikament</string>
+	<string name="jumio_nfc_id_description">Poġġi t-telefon tiegħek fuq id-dokument u żommu fiss sakemm l-iskan ikun komplut.</string>
 	<string name="jumio_nfc_id_header_start">Ippożizzjona l-karta tal-identità tiegħek</string>
 	<string name="jumio_no_results_found">Ma nstab l-ebda riżultat</string>
 	<string name="jumio_processing_title">Qed jiċċekkja r-riżultat</string>

@@ -160,6 +160,7 @@ android {
 Running the SDK on API Level 21/Android Version 5 ("Lollipop") or lower, the application might crash when trying to display Jumio animations. In this case it is necessary to add the line `AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)` to the `onCreate()` method of your application or `Activity`, ideally before `setContentView()` is called.
 
 __Note:__ Refer to [required for vector drawable compat handling](https://stackoverflow.com/a/37864531/1297835) for further information.
+__Note:__ This is not needed anymore for SDK 4.14.0 and up as the minimum API Level was raised to 23.
 
 ## Country Missing from the Country List
 Countries with documents that are [MRZ](integration_glossary.md)-capable (which is the case for most passports) might not be available if the necessary MRZ dependency is missing. The dependency in question is:

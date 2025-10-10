@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Průkaz totožnosti</string>
 	<string name="jumio_idtype_pp">Cestovní pas</string>
 	<string name="jumio_idtype_visa">Vízum</string>
+	<string name="jumio_nfc_error_description_id">Zkuste to znovu! Položte telefon na doklad a držte jej bez pohybu, dokud nebude skenování dokončeno.</string>
+	<string name="jumio_nfc_error_description_other">Zkuste to znovu! Položte telefon na přední stranu pasu a nechte ho tam, dokud se skenování nedokončí.</string>
+	<string name="jumio_nfc_error_description_us">Zkuste to znovu! Umístěte telefon na vnitřní stranu zadních desek pasu a držte jej tam, dokud se skenování nedokončí.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Jakmile je průkaz totožnosti rozpoznán, držte v klidu</string>
 	<string name="jumio_nfc_retry_enable_capability">Chcete -li ze svého pasu vytěžit více, povolte v telefonu funkci NFC</string>
 	<string name="jumio_nfc_retry_tag_lost">Po detekování s cestovním pasem nehýbejte</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Načítá se…</string>
 	<string name="jumio_nfc_button_skip">Přeskočit</string>
 	<string name="jumio_nfc_description_extracting">Během skenování se nehýbejte</string>
-	<string name="jumio_nfc_description_start_other">Přejíždějte telefonem přes titulní stranu, dokud se cestovní pas automaticky nedetekuje</string>
-	<string name="jumio_nfc_description_start_us">Přijíždějte telefonem přes vnitřek zadní strany, dokud se cestovní pas automaticky nedetekuje</string>
+	<string name="jumio_nfc_description_start_other">Položte telefon na přední stranu pasu a počkejte, dokud se skenování nedokončí</string>
+	<string name="jumio_nfc_description_start_us">Přiložte telefon na vnitřní stranu zadních desek pasu a držte ho tam, dokud se skenování nedokončí</string>
 	<string name="jumio_nfc_general_error_dialog_title">Skenování neúplné</string>
 	<string name="jumio_nfc_header_extracting">Extrahování dat</string>
 	<string name="jumio_nfc_header_start">Položte svůj cestovní pas</string>
-	<string name="jumio_nfc_id_description">Posunujte identifikační kartu podél zadní strany telefonu, dokud nebude automaticky detekována.</string>
+	<string name="jumio_nfc_id_description">Položte telefon na doklad a nehýbejte s ním, dokud se skenování nedokončí.</string>
 	<string name="jumio_nfc_id_header_start">Umístěte svou identifikační kartu</string>
 	<string name="jumio_no_results_found">Nenalezli jsme žádné výsledky</string>
 	<string name="jumio_processing_title">Kontrola výsledku</string>

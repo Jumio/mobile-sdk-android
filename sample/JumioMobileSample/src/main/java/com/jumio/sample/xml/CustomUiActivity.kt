@@ -3,12 +3,15 @@ package com.jumio.sample.xml
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
@@ -26,11 +29,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat
 import androidx.core.graphics.drawable.toDrawable
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import com.jumio.commons.log.Log
-import com.jumio.commons.utils.dpToPx
 import com.jumio.defaultui.JumioActivity
 import com.jumio.sample.R
 import com.jumio.sample.databinding.ActivityCustomuiBinding
@@ -46,7 +49,6 @@ import com.jumio.sdk.credentials.JumioDocumentCredential
 import com.jumio.sdk.credentials.JumioFaceCredential
 import com.jumio.sdk.credentials.JumioIDCredential
 import com.jumio.sdk.data.JumioTiltState
-import com.jumio.sdk.document.JumioDocumentInfo
 import com.jumio.sdk.enums.JumioAcquireMode
 import com.jumio.sdk.enums.JumioCameraFacing
 import com.jumio.sdk.enums.JumioConsentType
@@ -65,6 +67,7 @@ import com.jumio.sdk.interfaces.JumioControllerInterface
 import com.jumio.sdk.interfaces.JumioScanPartInterface
 import com.jumio.sdk.result.JumioResult
 import com.jumio.sdk.retry.JumioRetryReason
+import com.jumio.sdk.scanpart.JumioAddonScanPartConfiguration
 import com.jumio.sdk.scanpart.JumioScanPart
 import com.jumio.sdk.util.JumioDeepLinkHandler
 import com.jumio.sdk.views.JumioActivityAttacher
@@ -73,6 +76,7 @@ import com.jumio.sdk.views.JumioFileAttacher
 import com.jumio.sdk.views.JumioRejectView
 import com.jumio.sdk.views.JumioScanView
 import java.text.DecimalFormat
+import kotlin.math.roundToInt
 
 private const val TAG = "CustomUiActivity"
 private const val PERMISSION_REQUEST_CODE = 100
@@ -145,6 +149,12 @@ class CustomUiActivity :
 
 		binding = ActivityCustomuiBinding.inflate(layoutInflater)
 		setContentView(binding.root)
+
+		ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+			val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+			v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+			insets
+		}
 
 		sdk = JumioSDK(this).apply {
 			token = intent.getStringExtra(EXTRA_TOKEN) as String
@@ -780,8 +790,9 @@ class CustomUiActivity :
 				}
 			}
 			JumioScanStep.ADDON_SCAN_PART -> {
-				if (data is JumioDocumentInfo) {
-					logText += ": scanned document $data"
+				if (data is JumioAddonScanPartConfiguration) {
+					logText += ": scanned document ${data.documentInfo}"
+					logText += ": is skippable: ${data.skippable}"
 				}
 				showView(binding.addonControls)
 			}
@@ -1206,3 +1217,6 @@ class CustomUiActivity :
 		}
 	}
 }
+
+fun Int.dpToPx(c: Context): Int =
+	TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this.toFloat(), c.resources.displayMetrics).roundToInt()

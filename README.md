@@ -4,7 +4,7 @@
 [![API Doc](https://img.shields.io/github/v/release/Jumio/mobile-sdk-android?label=API%20doc&color=green&style=flat)](https://jumio.github.io/mobile-sdk-android/)
 [![License](https://img.shields.io/badge/license-commercial-3D3D3D?style=flat)](#copyright)
 [![Platform](https://img.shields.io/badge/platform-Android-lightgrey?style=flat)](#general-requirements)
-[![API Level](https://img.shields.io/badge/API%20level-21+-orange?style=flat)](#general-requirements)
+[![API Level](https://img.shields.io/badge/API%20level-23+-orange?style=flat)](#general-requirements)
 [![Maven](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo.mobile.jumio.ai%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat)](#integration)
 
 # Table of Contents
@@ -82,7 +82,7 @@ Android Studio will now start to import the project. This might take a bit of ti
 
 The Android sample application contains the package `com.jumio.sample`, which consists of:
 * `MainActivity.kt`
-* `customui/`
+* `xml/`
   * `CustomUIActivity.kt`
   * `adapter/`
     * `CustomConsentAdapter.kt`
@@ -102,7 +102,7 @@ Once you start up the sample application, you'll be given the option of trying o
 
 ## General Requirements
 The minimum requirements for the SDK are:
-* Android 5.0 "Lollipop" (API level 21) or higher
+* Android 6.0 "Marshmallow" (API level 23) or higher
 * AGP version 8.7.3 or higher
 * Gradle version 8.9 or higher
 * Internet connection

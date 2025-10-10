@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Identiteitskaart</string>
 	<string name="jumio_idtype_pp">Paspoort</string>
 	<string name="jumio_idtype_visa">Visa</string>
+	<string name="jumio_nfc_error_description_id">Probeer het opnieuw! Plaats uw telefoon op het document en houd deze stil totdat de scan is voltooid.</string>
+	<string name="jumio_nfc_error_description_other">Probeer het opnieuw! Plaats uw telefoon op de voorkant van het paspoort totdat de scan is voltooid.</string>
+	<string name="jumio_nfc_error_description_us">Probeer het opnieuw! Plaats uw telefoon aan de binnenkant van de achterkaft van uw paspoort totdat de scan is voltooid.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Zodra de ID-kaart is gedetecteerd, stilhouden</string>
 	<string name="jumio_nfc_retry_enable_capability">Schakel de NFC-functie van uw telefoon in om meer uit uw paspoort te halen</string>
 	<string name="jumio_nfc_retry_tag_lost">Houd stil zodra het paspoort is gedetecteerd</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Aan het laden</string>
 	<string name="jumio_nfc_button_skip">Overspringen</string>
 	<string name="jumio_nfc_description_extracting">Stilhouden tijdens het scannen</string>
-	<string name="jumio_nfc_description_start_other">Schuif de telefoon over de voorkant totdat je paspoort automatisch wordt gedetecteerd</string>
-	<string name="jumio_nfc_description_start_us">Schuif telefoon over de binnenkant van achtercover totdat je paspoort automatisch wordt gedetecteerd</string>
+	<string name="jumio_nfc_description_start_other">Leg uw telefoon op de voorkant van het paspoort totdat de scan is voltooid</string>
+	<string name="jumio_nfc_description_start_us">Plaats uw telefoon aan de binnenkant van de achteromslag van uw paspoort totdat de scan is voltooid</string>
 	<string name="jumio_nfc_general_error_dialog_title">Scan onvolledig</string>
 	<string name="jumio_nfc_header_extracting">Data aan het uithalen</string>
 	<string name="jumio_nfc_header_start">Plaats je paspoort</string>
-	<string name="jumio_nfc_id_description">Schuif de identiteitskaart langs de achterkant van uw telefoon totdat deze automatisch wordt gedetecteerd</string>
+	<string name="jumio_nfc_id_description">Leg uw telefoon op het document en houd deze stil totdat de scan is voltooid.</string>
 	<string name="jumio_nfc_id_header_start">Plaats uw identiteitskaart</string>
 	<string name="jumio_no_results_found">Geen resultaten gevonden</string>
 	<string name="jumio_processing_title">Resultaat controleren</string>

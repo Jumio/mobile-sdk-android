@@ -47,7 +47,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.14.0**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.15.0**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -75,30 +75,30 @@ If an optional module is **not linked**, some functionalities may not be availab
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.14.0"               
+	implementation "com.jumio.android:core:4.15.0"               
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.14.0"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.14.0"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.14.0"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:iproov:4.14.0"             // Face Liveness library
-	implementation "com.jumio.android:liveness:4.14.0"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.14.0"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.15.0"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.15.0"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.15.0"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:iproov:4.15.0"             // Face Liveness library
+	implementation "com.jumio.android:liveness:4.15.0"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.15.0"   // Digital Identity verification library
   	...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.14.0"
+	implementation "com.jumio.android:defaultui:4.15.0"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.14.0"         // CameraX library 
+	implementation "com.jumio.android:camerax:4.15.0"         // CameraX library 
   	...
 }
 ```
@@ -107,7 +107,7 @@ In addition to specifying individual dependencies, you can also use a BOM (Bill 
 
 ```groovy
 dependencies {
-		implementation platform("com.jumio.android:bom:4.14.0")
+		implementation platform("com.jumio.android:bom:4.15.0")
 		implementation "com.jumio.android:core"
 		implementation "com.jumio.android:barcode-mlkit"
 		implementation "com.jumio.android:camerax"
@@ -132,7 +132,7 @@ Please note: `com.jumio.android:camerax` will be linked transitively when `com.j
 If necessary, the iProov SDK version can be overwritten with a more recent one:
 
 ```groovy
-implementation "com.jumio.android:iproov:4.14.0"
+implementation "com.jumio.android:iproov:4.15.0"
 implementation("com.iproov.sdk:iproov:9.1.2") {
 	exclude group: 'org.json', module: 'json'
 }

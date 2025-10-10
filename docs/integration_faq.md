@@ -24,6 +24,7 @@
 - [Glossary of Commonly Used Abbreviations](#glossary)
 - [Google Play Store Prominent Disclosure](#google-play-store-prominent-disclosure)
 - [Packaging Options](#packaging-options)
+- [minSdkVersion 23 increases APK Size](#minsdkversion-23-increases-apk-size)
 - [Jumio Support](#jumio-support)
 
 ## User Consent
@@ -86,15 +87,15 @@ The following table shows a range of different product configurations with the s
 | Product Configuration                        |   Size   |                                           Modules                                                     |
 | :------------------------------------------- |:--------:| :---------------------------------------------------------------------------------------------------: |
 | Base                                         | 1.37 MB  |                                             core                                                      |
-| Base + iProov                                | 6.94 MB  |                                         core, iproov                                                  |
-| Base + Autocapture                           | 2.98 MB  |                                       core, docfinder                                                 |
-| Base + Autocapture, Barcode-Vision           | 3.28 MB  |                               core, docfinder, barcode-mlkit                                          |
-| Base + Autocapture, Barcode-Vision, iProov   | 7.44 MB  |                               core, docfinder, barcode, iproov                                        |
-| Base + Autocapture, Barcode-Vision, Liveness | 5.79 MB  |                              core, docfinder, barcode, liveness                                       |
-| Base + Autocapture, Barcode-Vision, NFC      | 6.45 MB  |                                core, docfinder, barcode, nfc                                          |
-| All (Custom UI only)                         | 10.65 MB |      core, docfinder, barcode-mlkit, iproov, nfc, digital-identity, camerax, liveness                 |
-| Base + Autocapture, Default UI               | 4.24 MB  |                                 core, docfinder, defaultui                                            |
-| All (with Default UI)                        | 11.81 MB |     core, docfinder, barcode-mlkit, iproov, nfc, digital-identtity, camerax, defaultui, liveness      |
+| Base + iProov                                | 6.95 MB  |                                         core, iproov                                                  |
+| Base + Autocapture                           | 2.99 MB  |                                       core, docfinder                                                 |
+| Base + Autocapture, Barcode-Vision           | 3.30 MB  |                               core, docfinder, barcode-mlkit                                          |
+| Base + Autocapture, Barcode-Vision, iProov   | 7.48 MB  |                               core, docfinder, barcode, iproov                                        |
+| Base + Autocapture, Barcode-Vision, Liveness | 5.83 MB  |                              core, docfinder, barcode, liveness                                       |
+| Base + Autocapture, Barcode-Vision, NFC      | 6.61 MB  |                                core, docfinder, barcode, nfc                                          |
+| All (Custom UI only)                         | 10.79 MB |      core, docfinder, barcode-mlkit, iproov, nfc, digital-identity, camerax, liveness                 |
+| Base + Autocapture, Default UI               | 4.25 MB  |                                 core, docfinder, defaultui                                            |
+| All (with Default UI)                        | 11.97 MB |     core, docfinder, barcode-mlkit, iproov, nfc, digital-identtity, camerax, defaultui, liveness      |
 
 __Note:__  The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 
@@ -252,6 +253,14 @@ Manual scanning (taking a picture) using the shutterbutton, fallback option in c
 
 ![Manual Capture Empty](images/capturing_methods/manual_capturing_01.jpg) ![Manual Capture Document](images/capturing_methods/manual_capturing_02.jpg)
 
+#### Enhanced Injection Detection
+You may see additional detection screens during the ID Scan process. This is expected behavior and is part of Jumio’s enhanced fraud protection measures.
+
+<div style="display: flex;">
+  <img src="images/enhanced_injection_detection/enhanced_injection_detection_white_balance.jpg" width="30%" />
+  <img src="images/enhanced_injection_detection/enhanced_injection_detection_focus.jpg" width="30%" />
+</div>
+
 #### NFC
 Data extraction from eMRTD documents, for example passports.
 
@@ -292,23 +301,33 @@ To get rid of them the following packagingOptions can be added to the build.grad
 android {
 ...
     packagingOptions {
-        resources.excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
-        resources.excludes.add("META-INF/kotlin-project-structure-metadata.json")
-        resources.excludes.add("META-INF/kotlinx_coroutines_core.version")
-        resources.excludes.add("META-INF/LICENSE.md")
-        resources.excludes.add("META-INF/LICENSE-notice.md")
-        resources.excludes.add("commonMain/default/manifest")
-        resources.excludes.add("commonMain/default/linkdata/module")
-        resources.excludes.add("commonMain/default/linkdata/**/*.knm")
-		resources.excludes.add("linuxMain/default/manifest")
-		resources.excludes.add("linuxMain/default/linkdata/module")
-		resources.excludes.add("linuxMain/default/linkdata/**/*.knm")
-        resources.excludes.add("nativeMain/default/manifest")
-        resources.excludes.add("nativeMain/default/linkdata/module")
-        resources.excludes.add("nativeMain/default/linkdata/**/*.knm")
-        resources.excludes.add("nonJvmMain/default/manifest")
-        resources.excludes.add("nonJvmMain/default/linkdata/module")
-        resources.excludes.add("nonJvmMain/default/linkdata/**/*.knm")
+    	...
+		resources.pickFirsts.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
+		resources.pickFirsts.add("META-INF/kotlin-project-structure-metadata.json")
+		resources.pickFirsts.add("META-INF/kotlinx_coroutines_core.version")
+		resources.excludes.add("META-INF/androidx/**/LICENSE.txt")
+		resources.excludes.add("META-INF/LICENSE.md")
+		resources.excludes.add("META-INF/LICENSE-notice.md")
+		resources.excludes.add("commonMain/**/*")
+		resources.excludes.add("linuxMain/**/*")
+		resources.excludes.add("nativeMain/**/*")
+		resources.excludes.add("nonJvmMain/**/*")
+    	...
+    }
+}
+```
+
+## minSdkVersion 23 increases APK Size
+Starting with API level 23, the Android platform can read native libraries directly from the APK without extracting them to save storage space.
+Therefore native libraries are uncompressed when the minSdkVersion is 23 or up resulting in a much bigger apk size.
+To get the same behaviour as with minSdkVersion 21 builds you can add the following packagingOptions
+```
+android {
+...
+    packagingOptions {
+    	...
+		jniLibs.useLegacyPackaging true
+    	...
     }
 }
 ```

@@ -6,13 +6,62 @@ This section covers all technical changes that should be considered when updatin
 ⚠️&nbsp;&nbsp;When updating your SDK version, __all__ changes/updates made in in the meantime have to be taken into account and applied if necessary.     
 __Example:__ If you're updating from SDK version __3.7.2__ to __3.9.2__, the changes outlined in __3.8.0, 3.9.0__ and __3.9.1__ are __still relevant__.
 
+## 4.15.0
+
+#### Deprecation Notice
+⚠️&nbsp;&nbsp;The iProov dependency `com.jumio.android:iproov` is deprecated and will be removed in SDK v4.16.0.
+
+#### Minimum SDK Version Changes
+* minSdkVersion has been increased to 23. The SDK can still be integrated in Apps that support lower minSdkVersions - check if the [platform is supported](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk/-jumio-s-d-k/-companion/is-supported-platform.html) before initializing the JumioSDK, otherwise it will throw a [PlatformNotSupportedException](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.exceptions/-platform-not-supported-exception/index.html). The minSdkVersion change also internally changes how the apk is compressed which results in bigger apk files. Please see the [FAQ](integration_faq.md#minsdkversion-23-increases-apk-size) for that.
+
+#### New SDK Localizations Added
+The following keys have been added:
+* `jumio_nfc_error_description_id`
+* `jumio_nfc_error_description_other`
+* `jumio_nfc_error_description_us`
+
+#### Customization Changes
+* The following customization color attributes have been added:
+	* `<item name="jumio_nfc_phone_screen">`
+	* `<item name="jumio_nfc_phone_notch">`
+	* `<item name="jumio_nfc_chip_primary">`
+	* `<item name="jumio_nfc_chip_secondary">`
+	* `<item name="jumio_nfc_chip_glow">`
+    * `<item name="jumio_nfc_pulse">`
+* `jumio_nfc_id_foreground` customization color attribute has been removed.
+
+#### Dependency Updates
+⚠️&nbsp;&nbsp; Please note that the Android Gradle Plugin update is [officially recommended to fully support Android 16](https://developer.android.com/build/releases/gradle-plugin#api-level-support).
+
+| Name                      | Jumio Module     | Dependency                                            | old version | new version |
+|---------------------------|------------------|-------------------------------------------------------|-------------|-------------|
+| Gradle Wrapper            | all              |                                                       | 8.9         | 8.11.1      |
+| Android Gradle Plugin     | all              | `"com.android.library"`                               | 8.7.3       | 8.9.3       |
+| Appcompat                 | all              | `"androidx.appcompat:appcompat"`                      | 1.7.0       | 1.7.1       |
+| Coroutines                | core             | `"org.jetbrains.kotlinx:kotlinx-coroutines-android"`  | 1.8.1       | 1.10.2      |
+| Concurrent                | core             | `"androidx.concurrent:concurrent-futures"`            | 1.2.0       | 1.3.0       |
+| Material                  | core             | `"com.google.android.material:material"`              | 1.12.0      | 1.13.0      |
+| LibYUV                    | core             | `"io.github.crow-misia.libyuv:libyuv-android"`        | 0.36.0      | 0.43.2      |
+| Constraint Layout         | core, defaultui  | `"androidx.constraintlayout:constraintlayout"`        | 2.2.0       | 2.2.1       |
+| Lifecycle Viewmodel       | defaultui        | `"androidx.lifecycle:lifecycle-viewmodel-ktx"`        | 2.8.7       | 2.9.3       |
+| Lifecycle Savedstate      | defaultui        | `"androidx.lifecycle:lifecycle-viewmodel-savedstate"` | 2.8.7       | 2.9.3       |
+| Lifecycle Livedata        | defaultui        | `"androidx.lifecycle:lifecycle-livedata-ktx"`         | 2.8.7       | 2.9.3       |
+| Lifecycle Runtime Android | defaultui        | `"androidx.lifecycle:lifecycle-runtime-android"`      | ADDED       | 2.9.3       |
+| Lifecycle Runtime Ktx     | defaultui        | `"androidx.lifecycle:lifecycle-runtime-Ktx"`          | ADDED       | 2.9.3       |
+| Navigation UI             | defaultui        | `"androidx.navigation:navigation-ui-ktx"`             | 2.8.5       | 2.9.3       |
+| Navigation Fragment       | defaultui        | `"androidx.navigation:navigation-fragment-ktx"`       | 2.8.5       | 2.9.3       |
+| Browser                   | digital-identity | `"androidx.browser:browser"`                          | 1.8.0       | 1.9.0       |
+| AndroidX Core KTX         | docfinder        | `"androidx.core:core-ktx"`                            | 1.15.0      | 1.17.0      |
+| JMRTD                     | nfc              | `"org.jmrtd:jmrtd"`                                   | 0.7.42      | 0.8.2       |
+| BouncyCastle              | nfc              | `"org.bouncycastle:bcprov-jdk18on"`                   | 1.78.1      | 1.81        |
+
 ## 4.14.0
 
 #### Deprecation Notice
 ⚠️&nbsp;&nbsp;SDK 4.14.0 will be the last SDK version supporting Android 5 (API level 21). All subsequent SDK versions will require at least Android 6.0 "Marshmallow" (API level 23).
 
 #### General
-* Added support for Android 16
+* Added support for Android 16.
 
 #### LiteRT Notice
 JumioSDK bundles LiteRT Version 1.0.1 which supports 16kb page size for ARM64-v8 but not x86_64. This is fine for the JumioSDK as only ARM cpus are supported. An update to 1.4.0 is currently not possible because the min API level of LiteRT 1.4.0 (25) exceeds the min API level of the Jumio SDK (21).
@@ -91,9 +140,9 @@ The following keys have been removed:
 ## 4.13.0
 
 #### Public API Changes
-* The data parameter of [`JumioScanStep.ADDON_SCAN_PART`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-a-d-d-o-n_-s-c-a-n_-p-a-r-t/index.html) now contains [`JumioDocumentInfo`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-info/index.html) 
-* [`JumioDocumentInfo`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-info/index.html) contains the issuing country and the [`JumioDocumentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-type/index.html) of the initially scanned document 
-* Function `getHelpAnimation()` has been deprecated in [`JumioScanPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html)
+* The data parameter of [`JumioScanStep.ADDON_SCAN_PART`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-a-d-d-o-n_-s-c-a-n_-p-a-r-t/index.html) now contains [`JumioDocumentInfo`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-info/index.html).
+* [`JumioDocumentInfo`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-info/index.html) contains the issuing country and the [`JumioDocumentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-type/index.html) of the initially scanned document .
+* Function `getHelpAnimation()` has been deprecated in [`JumioScanPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.scanpart/-jumio-scan-part/index.html).
 
 #### New SDK Localizations Added
 The following keys have been added:

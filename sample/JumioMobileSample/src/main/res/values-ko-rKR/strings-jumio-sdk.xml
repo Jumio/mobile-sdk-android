@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">신분증</string>
 	<string name="jumio_idtype_pp">여권</string>
 	<string name="jumio_idtype_visa">비자</string>
+	<string name="jumio_nfc_error_description_id">다시 시도하세요! 휴대폰을 문서 위에 놓고 스캔이 완료될 때까지 움직이지 않게 유지하세요.</string>
+	<string name="jumio_nfc_error_description_other">다시 시도하세요! 스캔이 완료될 때까지 휴대폰을 여권 앞면에 대고 있으세요.</string>
+	<string name="jumio_nfc_error_description_us">다시 시도하세요! 스캔이 완료될 때까지 휴대폰을 여권 뒷면 덮개 안쪽에 놓으세요.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">신분증이 감지되면 가만히 기다리세요</string>
 	<string name="jumio_nfc_retry_enable_capability">여권을 최대한 활용하려면 휴대전화의 NFC 기능을 활성화하세요.</string>
 	<string name="jumio_nfc_retry_tag_lost">여권이 감지되면 움직임을 멈추세요</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">불러오는 중</string>
 	<string name="jumio_nfc_button_skip">건너 뛰기</string>
 	<string name="jumio_nfc_description_extracting">스캔하는 동안 가만히 계세요</string>
-	<string name="jumio_nfc_description_start_other">여권이 자동으로 감지될 때까지 전면 커버를 따라 휴대폰을 천천히 움직이세요</string>
-	<string name="jumio_nfc_description_start_us">여권이 자동으로 감지될 때까지 뒷면 커버 안쪽으로 휴대폰을 천천히 움직이세요</string>
+	<string name="jumio_nfc_description_start_other">스캔이 완료될 때까지 휴대폰을 여권 앞 표지에 놓으세요</string>
+	<string name="jumio_nfc_description_start_us">스캔이 완료될 때까지 휴대폰을 여권 뒷면 커버 안쪽에 놓으세요</string>
 	<string name="jumio_nfc_general_error_dialog_title">스캔 미완료</string>
 	<string name="jumio_nfc_header_extracting">데이터 추출</string>
 	<string name="jumio_nfc_header_start">여권 배치</string>
-	<string name="jumio_nfc_id_description">ID카드가 자동으로 감지될 때까지 휴대폰 뒷면에 밀어 넣으</string>
+	<string name="jumio_nfc_id_description">휴대폰을 문서 위에 놓고 스캔이 완료될 때까지 움직이지 마세요.</string>
 	<string name="jumio_nfc_id_header_start">ID 카드 놓기</string>
 	<string name="jumio_no_results_found">검색 결과 없음</string>
 	<string name="jumio_processing_title">결과 확인</string>

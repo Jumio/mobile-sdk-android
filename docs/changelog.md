@@ -4,7 +4,7 @@
 [![API Doc](https://img.shields.io/github/v/release/Jumio/mobile-sdk-android?label=API%20doc&color=green&style=flat)](https://jumio.github.io/mobile-sdk-android/)
 [![License](https://img.shields.io/badge/license-commercial-3D3D3D?style=flat)](../README.md#copyright)
 [![Platform](https://img.shields.io/badge/platform-Android-lightgrey?style=flat)](../README.md#general-requirements)
-[![API Level](https://img.shields.io/badge/API%20level-21+-orange?style=flat)](../README.md#general-requirements)
+[![API Level](https://img.shields.io/badge/API%20level-23+-orange?style=flat)](../README.md#general-requirements)
 [![Maven](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo.mobile.jumio.ai%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat)](../README.md#integration)
 
 [Improvement]: https://img.shields.io/badge/Improvement-green "Improvement shield"
@@ -16,13 +16,24 @@ All notable changes, such as SDK releases, updates and fixes, are documented in 
 For detailed technical changes please refer to our [Transition Guide](transition_guide.md).
 
 ## Support Period
-Current SDK version: __4.14.0__
+Current SDK version: __4.15.0__
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+
+## SDK Version: __4.15.0__
+![Improvement] Added support for NFC read-only scanning
+
+![Improvement] Introduced a configurable max retry count for NFC scanning
+
+![Improvement] Included NFC scanning result status in transaction details via the Retrieval API
+
+![Improvement] Enhanced user experience for NFC scanning with automatic NFC chip location detection
 
 ## SDK Version: __4.14.0__
 
 ![Improvement] Added enhanced virtual camera injection detection [ID Verification, Selfie Verification]
+
+![Improvement] Added support for Digital Identity using eIDAS for selected countries [ID Verification]
 
 ![Improvement] Accessibility updates for compliance with WCAG 2.2 AA and EAA
 

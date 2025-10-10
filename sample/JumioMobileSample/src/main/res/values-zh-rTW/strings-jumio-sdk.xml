@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">身份證</string>
 	<string name="jumio_idtype_pp">護照</string>
 	<string name="jumio_idtype_visa">簽證</string>
+	<string name="jumio_nfc_error_description_id">請再試一次！將手機放在證件上方並保持不動，直到掃描完成。</string>
+	<string name="jumio_nfc_error_description_other">請再試一次！將手機放在護照封面上，直到掃描完成為止。</string>
+	<string name="jumio_nfc_error_description_us">請再試一次！將手機放在護照封底內側，直到掃描完成。</string>
 	<string name="jumio_nfc_id_retry_tag_lost">一旦偵測到身份證，請保持不動</string>
 	<string name="jumio_nfc_retry_enable_capability">為了更好地利用您的護照，請啟用您手機的 NFC 功能</string>
 	<string name="jumio_nfc_retry_tag_lost">偵測到護照後保持不動</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">載入中</string>
 	<string name="jumio_nfc_button_skip">跳躍</string>
 	<string name="jumio_nfc_description_extracting">掃描時保持不動</string>
-	<string name="jumio_nfc_description_start_other">將手機滑過前蓋，直到自動偵測到您的護照為止</string>
-	<string name="jumio_nfc_description_start_us">將手機滑過後蓋內側，直到自動偵測到您的護照為止</string>
+	<string name="jumio_nfc_description_start_other">將手機放在護照封面上，直到掃描完成</string>
+	<string name="jumio_nfc_description_start_us">將手機放在護照封底內側，直到掃描完成為止</string>
 	<string name="jumio_nfc_general_error_dialog_title">掃描不完整</string>
 	<string name="jumio_nfc_header_extracting">提取資料</string>
 	<string name="jumio_nfc_header_start">放置護照</string>
-	<string name="jumio_nfc_id_description">將身分證沿著手機背面滑動，直到手機完成自動偵測</string>
+	<string name="jumio_nfc_id_description">將手機放在證件上方，並保持不動，直到掃描完成。</string>
 	<string name="jumio_nfc_id_header_start">放置您的身分證</string>
 	<string name="jumio_no_results_found">找不到結果</string>
 	<string name="jumio_processing_title">正在檢查結果</string>

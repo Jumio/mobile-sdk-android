@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">पहचान कार्ड</string>
 	<string name="jumio_idtype_pp">पासपोर्ट</string>
 	<string name="jumio_idtype_visa">वीज़ा</string>
+	<string name="jumio_nfc_error_description_id">फिर से कोशिश करें! अपने फ़ोन को दस्तावेज़ के ऊपर रखें और स्कैन पूरा होने तक उसे स्थिर रखें।</string>
+	<string name="jumio_nfc_error_description_other">फिर से कोशिश करें! स्कैन पूरा होने तक अपना फ़ोन पासपोर्ट के फ़्रंट कवर पर रखें।</string>
+	<string name="jumio_nfc_error_description_us">फिर से कोशिश करें! स्कैन पूरा होने तक अपना फ़ोन अपने पासपोर्ट के पिछले कवर के अंदर रखें।</string>
 	<string name="jumio_nfc_id_retry_tag_lost">एक बार आईडी कार्ड का पता चलने के बाद, स्थिर रहें</string>
 	<string name="jumio_nfc_retry_enable_capability">अपने पासपोर्ट का अधिक लाभ उठाने के लिए, कृपया अपने फ़ोन की NFC क्षमता को सक्षम करें</string>
 	<string name="jumio_nfc_retry_tag_lost">पासपोर्ट का पता लगने के बाद स्थिर पकड़े रखें</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">लोड हो रहा है</string>
 	<string name="jumio_nfc_button_skip">छोड़ें</string>
 	<string name="jumio_nfc_description_extracting">स्कैन करते समय स्थिर पकड़े रखें</string>
-	<string name="jumio_nfc_description_start_other">जब तक आपका पासपोर्ट स्वचालित रूप से पता नहीं चल जाता तब तक फ्रंट कवर पर फोन स्लाइड करें</string>
-	<string name="jumio_nfc_description_start_us">जब तक आपका पासपोर्ट अपने आप पता नहीं लग जाता है, तब तक बैक कवर के अंदर फोन स्लाइड करें</string>
+	<string name="jumio_nfc_description_start_other">स्कैन पूरा होने तक अपना फ़ोन पासपोर्ट के सामने वाले कवर पर रखें।</string>
+	<string name="jumio_nfc_description_start_us">स्कैन पूरा होने तक अपना फ़ोन अपने पासपोर्ट के पिछले कवर के अंदर रखें</string>
 	<string name="jumio_nfc_general_error_dialog_title">स्कैन अधूरा</string>
 	<string name="jumio_nfc_header_extracting">डेटा निकालना</string>
 	<string name="jumio_nfc_header_start">अपना पासपोर्ट रखें</string>
-	<string name="jumio_nfc_id_description">आईडी कार्ड को अपने फ़ोन के पीछे तब तक स्लाइड करें जब तक कि यह अपने आप पहचान न लिया जाए</string>
+	<string name="jumio_nfc_id_description">अपने फ़ोन को दस्तावेज़ के ऊपर रखें और स्कैन पूरा होने तक उसे स्थिर रखें।</string>
 	<string name="jumio_nfc_id_header_start">अपनी आईडी रखें</string>
 	<string name="jumio_no_results_found">कोई परिणाम नहीं मिला</string>
 	<string name="jumio_processing_title">रिजल्ट चेक कर रहे हैं</string>

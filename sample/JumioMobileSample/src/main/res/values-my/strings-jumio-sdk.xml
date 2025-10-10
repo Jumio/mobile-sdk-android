@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">အိုင်ဒီကတ်</string>
 	<string name="jumio_idtype_pp">ပတ်စ်ပို့</string>
 	<string name="jumio_idtype_visa">ဗီဇာ</string>
+	<string name="jumio_nfc_error_description_id">ထပ်ကြိုးစားပါ! သင့်ဖုန်းကို စာရွက်စာတမ်းပေါ်တွင်တင်ပြီး စကင်န်ဖတ်ခြင်းမပြီးမချင်း ငြိမ်အောင်ထားပါ။</string>
+	<string name="jumio_nfc_error_description_other">ထပ်ကြိုးစားပါ! စကန်ဖတ်ပြီးသည်အထိ သင့်ဖုန်းကို ပတ်စ်ပို့၏အရှေ့မျက်နှาဖုံးပေါ်တွင် တင်ထားပါ။</string>
+	<string name="jumio_nfc_error_description_us">ထပ်ကြိုးစားကြည့်ပါ! စကင်န်ဖတ်ခြင်းပြီးဆုံးသည်အထိ သင့်ဖုန်းကို ပတ်စ်ပို့၏ နောက်ကျောဖုံးအတွင်းဘက်တွင် ထားပါ။</string>
 	<string name="jumio_nfc_id_retry_tag_lost">ID ကတ်ကို ရှာတွေ့သည်နှင့် ငြိမ်ငြိမ်ကိုင်ထားပါ</string>
 	<string name="jumio_nfc_retry_enable_capability">သင့်နိုင်ငံကူးလက်မှတ်၏ အခြားအရာများကို သုံးနိုင်ရန် သင့်ဖုန်း၏ NFC စွမ်းရည်ကို ဖွင့်ပါ</string>
 	<string name="jumio_nfc_retry_tag_lost">ပတ်စ်ပို့ကို တွေ့သည်နှင့် ငြိမ်ငြိမ်နေပါ</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">တင်နေသည်</string>
 	<string name="jumio_nfc_button_skip">ကျော်ရန်</string>
 	<string name="jumio_nfc_description_extracting">စကန်ဖတ်နေစဉ် ငြိမ်ငြိမ်နေပါ</string>
-	<string name="jumio_nfc_description_start_other">သင့်ပတ်စ်ပို့ကို အလိုအလျောက်အာရုံခံမိသည်အထိ ဖုန်းကို ပတ်စ်ပို့၏ရှေ့ဖုံးတလျှောက် ရွှေ့ပါ</string>
-	<string name="jumio_nfc_description_start_us">သင့်ပတ်စ်ပို့ကို အလိုအလျောက်အာရုံခံမိသည်အထိ ဖုန်းကို ပတ်စ်ပို့၏နောက်ဖုံးအတွင်းဘက်တလျှောက် ရွှေ့ပါ</string>
+	<string name="jumio_nfc_description_start_other">စကင်န်ဖတ်ခြင်းပြီးဆုံးသည်အထိ သင့်ဖုန်းကို ပတ်စ်ပို့၏အရှေ့မျက်နှာဖုံးပေါ်တွင် တင်ထားပါ</string>
+	<string name="jumio_nfc_description_start_us">စကန်ဖတ်ခြင်း မပြီးမချင်း သင့်ဖုန်းကို ပတ်စပို့၏ နောက်ကျောဖုံး အတွင်းဘက်တွင် ထားပါ</string>
 	<string name="jumio_nfc_general_error_dialog_title">စကန်ဖတ်၍မပြီးပါ</string>
 	<string name="jumio_nfc_header_extracting">ဒေတာထုတ်ယူနေသည်</string>
 	<string name="jumio_nfc_header_start">ပတ်စ်ပို့ကို နေရာချပါ</string>
-	<string name="jumio_nfc_id_description">အလိုအလျောက် ရှာမတွေ့မချင်း ID ကတ်ကို သင့်ဖုန်း၏ ကျောဘက်တစ်လျှောက် ပွတ်ဆွဲပါ</string>
+	<string name="jumio_nfc_id_description">သင့်ဖုန်းကို စာရွက်စာတမ်းပေါ်တွင်တင်ပြီး စကန်ဖတ်ခြင်းပြီးဆုံးသည်အထိ ငြိမ်ငြိမ်ထားပါ။</string>
 	<string name="jumio_nfc_id_header_start">သင့် ID ကတ်ကို နေရာချပါ</string>
 	<string name="jumio_no_results_found">ဘာမှ မတွေ့ပါ</string>
 	<string name="jumio_processing_title">ရလဒ်ကို စစ်ဆေးနေသည်</string>

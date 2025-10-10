@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Carteira de identidade</string>
 	<string name="jumio_idtype_pp">Passaporte</string>
 	<string name="jumio_idtype_visa">Visto</string>
+	<string name="jumio_nfc_error_description_id">Tente novamente! Coloque o celular em cima do documento e mantenha-o firme até a digitalização ser concluída.</string>
+	<string name="jumio_nfc_error_description_other">Tente novamente! Coloque seu celular na capa do passaporte até que a leitura seja concluída.</string>
+	<string name="jumio_nfc_error_description_us">Tente novamente! Coloque seu celular na parte de dentro da capa traseira do seu passaporte até que a leitura seja concluída.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Uma vez que o cartão de identificação for detectado, mantenha-o imóvel</string>
 	<string name="jumio_nfc_retry_enable_capability">Para aproveitar melhor o seu passaporte, ative o recurso NFC do seu celular</string>
 	<string name="jumio_nfc_retry_tag_lost">Não se mexa quando o passaporte for detectado</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Carregando</string>
 	<string name="jumio_nfc_button_skip">Ignorar</string>
 	<string name="jumio_nfc_description_extracting">Mantenha-se imóvel durante a varredura</string>
-	<string name="jumio_nfc_description_start_other">Deslize o celular pela capa frontal até o passaporte ser detectado automaticamente</string>
-	<string name="jumio_nfc_description_start_us">Deslize o celular pela parte interna da capa traseira até o passaporte ser detectado automaticamente</string>
+	<string name="jumio_nfc_description_start_other">Coloque seu celular na capa do passaporte até a digitalização ser concluída</string>
+	<string name="jumio_nfc_description_start_us">Posicione seu celular na parte interna da contracapa do passaporte até que a leitura seja concluída</string>
 	<string name="jumio_nfc_general_error_dialog_title">Varredura incompleta</string>
 	<string name="jumio_nfc_header_extracting">Extraindo dados</string>
 	<string name="jumio_nfc_header_start">Posicione seu passaporte</string>
-	<string name="jumio_nfc_id_description">Até que seu documento de identidade seja detectado automaticamente, deslize-o pela parte de trás do seu celular</string>
+	<string name="jumio_nfc_id_description">Coloque seu celular sobre o documento e mantenha-o parado até que a leitura seja concluída.</string>
 	<string name="jumio_nfc_id_header_start">Posicione seu documento de identidade</string>
 	<string name="jumio_no_results_found">Nenhum resultado encontrado</string>
 	<string name="jumio_processing_title">Verificando o resultado</string>

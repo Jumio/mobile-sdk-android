@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Thẻ căn cước</string>
 	<string name="jumio_idtype_pp">Hộ chiếu</string>
 	<string name="jumio_idtype_visa">Thị thực</string>
+	<string name="jumio_nfc_error_description_id">Thử lại! Đặt điện thoại của bạn lên trên tài liệu và giữ yên cho đến khi quá trình quét hoàn tất.</string>
+	<string name="jumio_nfc_error_description_other">Hãy thử lại! Đặt điện thoại của bạn lên bìa trước của hộ chiếu cho đến khi quá trình quét hoàn tất.</string>
+	<string name="jumio_nfc_error_description_us">Thử lại! Đặt điện thoại của bạn vào bên trong bìa sau của hộ chiếu cho đến khi quá trình quét hoàn tất.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Khi thẻ ID được phát hiện, hãy giữ yên</string>
 	<string name="jumio_nfc_retry_enable_capability">Để khai thác nhiều hơn hộ chiếu của bạn, vui lòng kích hoạt khả năng NFC của điện thoại</string>
 	<string name="jumio_nfc_retry_tag_lost">Giữ yên sau khi phát hiện thấy hộ chiếu</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Đang tải</string>
 	<string name="jumio_nfc_button_skip">Nhảy</string>
 	<string name="jumio_nfc_description_extracting">Giữ yên trong khi quét</string>
-	<string name="jumio_nfc_description_start_other">Trượt điện thoại qua bìa trước đến khi hộ chiếu của bạn được tự động phát hiện</string>
-	<string name="jumio_nfc_description_start_us">Trượt điện thoại qua mặt trong của bìa sau đến khi hộ chiếu của bạn được tự động phát hiện</string>
+	<string name="jumio_nfc_description_start_other">Đặt điện thoại của bạn lên bìa trước của hộ chiếu cho đến khi quá trình quét hoàn tất</string>
+	<string name="jumio_nfc_description_start_us">Đặt điện thoại của bạn vào mặt trong của bìa sau hộ chiếu cho đến khi quá trình quét hoàn tất</string>
 	<string name="jumio_nfc_general_error_dialog_title">Quét chưa hoàn tất</string>
 	<string name="jumio_nfc_header_extracting">Trích xuất dữ liệu</string>
 	<string name="jumio_nfc_header_start">Định vị hộ chiếu</string>
-	<string name="jumio_nfc_id_description">Trượt thẻ ID dọc theo mặt sau của điện thoại cho đến khi thẻ được tự động phát hiện</string>
+	<string name="jumio_nfc_id_description">Đặt điện thoại của bạn lên trên tài liệu và giữ yên cho đến khi quá trình quét hoàn tất.</string>
 	<string name="jumio_nfc_id_header_start">Định vị thẻ ID của bạn</string>
 	<string name="jumio_no_results_found">Không tìm thấy kết quả nào</string>
 	<string name="jumio_processing_title">Đang kiểm tra kết quả</string>

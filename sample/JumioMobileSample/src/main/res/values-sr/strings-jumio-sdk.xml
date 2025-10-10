@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Лична карта</string>
 	<string name="jumio_idtype_pp">Пасош</string>
 	<string name="jumio_idtype_visa">Виза</string>
+	<string name="jumio_nfc_error_description_id">Покушајте поново! Поставите телефон преко документа и држите га мирно док се скенирање не заврши.</string>
+	<string name="jumio_nfc_error_description_other">Покушајте поново! Поставите телефон на предњу корицу пасоша и држите га ту док се скенирање не заврши.</string>
+	<string name="jumio_nfc_error_description_us">Покушајте поново! Поставите телефон на унутрашњу страну задње корице пасоша док се скенирање не заврши.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Када се лична карта открије, држите се мирно</string>
 	<string name="jumio_nfc_retry_enable_capability">Да бисте боље искористили свој пасош, омогућите NFC могућност вашег телефона</string>
 	<string name="jumio_nfc_retry_tag_lost">Будите мирни када се пасош открије</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Учитавање</string>
 	<string name="jumio_nfc_button_skip">Прескочи</string>
 	<string name="jumio_nfc_description_extracting">Немојте се померати током скенирања</string>
-	<string name="jumio_nfc_description_start_other">Превуците телефон преко предње корице док се пасош аутоматски не открије</string>
-	<string name="jumio_nfc_description_start_us">Превуците телефон преко унутрашње стране задње корице док се пасош аутоматски не открије</string>
+	<string name="jumio_nfc_description_start_other">Поставите телефон на предњу корицу пасоша док се скенирање не заврши</string>
+	<string name="jumio_nfc_description_start_us">Поставите телефон на унутрашњу страну задње корице пасоша док се скенирање не заврши</string>
 	<string name="jumio_nfc_general_error_dialog_title">Непотпуно скенирање</string>
 	<string name="jumio_nfc_header_extracting">Издвајање података</string>
 	<string name="jumio_nfc_header_start">Поставите пасош</string>
-	<string name="jumio_nfc_id_description">Померајте личну карту преко задње стране телефона док не буде аутоматски препозната</string>
+	<string name="jumio_nfc_id_description">Поставите телефон на документ и држите га мирно док се скенирање не заврши.</string>
 	<string name="jumio_nfc_id_header_start">Поставите личну карту</string>
 	<string name="jumio_no_results_found">Није пронађен ниједан резултат</string>
 	<string name="jumio_processing_title">Провера резултата</string>

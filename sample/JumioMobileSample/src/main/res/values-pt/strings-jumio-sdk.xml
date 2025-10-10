@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Bilhete de Identidade</string>
 	<string name="jumio_idtype_pp">Passaporte</string>
 	<string name="jumio_idtype_visa">Visa</string>
+	<string name="jumio_nfc_error_description_id">Tente novamente! Coloque o seu telemóvel em cima do documento e mantenha-o estável até a digitalização estar concluída.</string>
+	<string name="jumio_nfc_error_description_other">Tente novamente! Coloque o seu telemóvel na capa do passaporte até a leitura ser concluída.</string>
+	<string name="jumio_nfc_error_description_us">Tente novamente! Coloque o seu telemóvel no interior da contracapa do seu passaporte até a leitura estar concluída.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Uma vez que o cartão de identificação é detectado, mantenha-o imóvel</string>
 	<string name="jumio_nfc_retry_enable_capability">Para obter mais do seu passaporte, ative o recurso NFC do seu telefone</string>
 	<string name="jumio_nfc_retry_tag_lost">Pare quando o passaporte for detectado</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">A carregar</string>
 	<string name="jumio_nfc_button_skip">Pular</string>
 	<string name="jumio_nfc_description_extracting">Fique parado enquanto digitaliza</string>
-	<string name="jumio_nfc_description_start_other">Deslize o telefone pela capa até o seu passaporte ser detectado automaticamente</string>
-	<string name="jumio_nfc_description_start_us">Deslize o telefone pela parte interna da contracapa até o passaporte ser detetado automaticamente</string>
+	<string name="jumio_nfc_description_start_other">Coloque o seu telemóvel na capa do passaporte até a leitura estar concluída</string>
+	<string name="jumio_nfc_description_start_us">Coloque o seu telemóvel na parte interior da contracapa do seu passaporte até a leitura estar concluída</string>
 	<string name="jumio_nfc_general_error_dialog_title">Digitalização incomp</string>
 	<string name="jumio_nfc_header_extracting">A extrair dados</string>
 	<string name="jumio_nfc_header_start">Posicione o passaporte</string>
-	<string name="jumio_nfc_id_description">Deslize o cartão de identificação junto à traseira do seu telefone até que seja detetado automaticamente</string>
+	<string name="jumio_nfc_id_description">Coloque o telemóvel em cima do documento e mantenha-o imóvel até a digitalização estar concluída.</string>
 	<string name="jumio_nfc_id_header_start">Posicione o seu cartão de identificação</string>
 	<string name="jumio_no_results_found">Nenhum resultado encontrado</string>
 	<string name="jumio_processing_title">A verificar o resultado</string>

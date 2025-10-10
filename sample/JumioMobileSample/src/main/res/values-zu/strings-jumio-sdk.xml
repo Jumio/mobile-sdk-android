@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Ikhadi Likamazisi</string>
 	<string name="jumio_idtype_pp">Ipasipoti</string>
 	<string name="jumio_idtype_visa">I-Visa</string>
+	<string name="jumio_nfc_error_description_id">Zama futhi! Beka ifoni yakho phezu kwedokhumenti futhi uyibambe inganyakazi kuze kuphothulwe ukuskena.</string>
+	<string name="jumio_nfc_error_description_other">Zama futhi! Beka ifoni yakho kukhava engaphambili yepasipoti kuze kuphothulwe ukuskena.</string>
+	<string name="jumio_nfc_error_description_us">Zama futhi! Beka ifoni yakho ngaphakathi kukhava engemuva yepasipoti yakho kuze kuphothulwe ukuskena.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Uma ikhadi le-ID selitholakele, yibambe unganyakazi</string>
 	<string name="jumio_nfc_retry_enable_capability">Ukuthola okuningi kupasipoti yakho, sicela unike amandla amandla we-NFC yefoni yakho</string>
 	<string name="jumio_nfc_retry_tag_lost">Bamba kunganyakazi lapho kutholwa ipasipoti</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Iyaloda</string>
 	<string name="jumio_nfc_button_skip">Yeqa</string>
 	<string name="jumio_nfc_description_extracting">Bamba inganyakazi uma isaskena</string>
-	<string name="jumio_nfc_description_start_other">Hambisa ifoni phezu kwesembozo esiphambili kuze kutholakale ipasipoti yakho ngokuzenzakalelayo</string>
-	<string name="jumio_nfc_description_start_us">Hambisa ifoni phezu kwesembozo sangaphakathi esingemuva kuze kutholakale ipasipoti ngokuzenzakalelay</string>
+	<string name="jumio_nfc_description_start_other">Beka ifoni yakho kukhava engaphambili yepasipoti kuze kuqedwe ukuskena</string>
+	<string name="jumio_nfc_description_start_us">Beka ifoni yakho ngaphakathi kukhava engemuva yepasipoti yakho kuze kuphothulwe ukuskena</string>
 	<string name="jumio_nfc_general_error_dialog_title">Ukuskena akuphelele</string>
 	<string name="jumio_nfc_header_extracting">Ikhipha imininigwane</string>
 	<string name="jumio_nfc_header_start">Beka kahle ipasipoti</string>
-	<string name="jumio_nfc_id_description">Slayida ikhadi le-ID kungemuva lefoni yakho kuze kube yilapho litholwa ngokuzenzekelayo</string>
+	<string name="jumio_nfc_id_description">Beka ifoni yakho phezu kwedokhumenti futhi uyibambe inganyakazi kuze kuphothulwe ukuskena.</string>
 	<string name="jumio_nfc_id_header_start">Beka ikhadi lakho le-ID</string>
 	<string name="jumio_no_results_found">Ayikho imiphumela etholiwe</string>
 	<string name="jumio_processing_title">Ihlola umphumela</string>

@@ -24,12 +24,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.viewinterop.AndroidView
-import com.jumio.commons.utils.dpToPx
 import com.jumio.sample.R
 import com.jumio.sample.compose.theme.colors
 import com.jumio.sample.compose.theme.spacing
 import com.jumio.sample.compose.viewModel.CustomUIViewModel
 import com.jumio.sample.compose.views.atoms.PrimaryButton
+import com.jumio.sample.compose.views.dpToPx
 import com.jumio.sdk.views.JumioRejectView
 
 /**

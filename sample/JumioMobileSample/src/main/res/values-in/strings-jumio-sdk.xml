@@ -20,6 +20,9 @@
 	<string name="jumio_idtype_id">Kartu Identitas</string>
 	<string name="jumio_idtype_pp">Paspor</string>
 	<string name="jumio_idtype_visa">Visa</string>
+	<string name="jumio_nfc_error_description_id">Coba lagi! Letakkan ponsel Anda di atas dokumen dan tahan agar tidak bergerak hingga pemindaian selesai.</string>
+	<string name="jumio_nfc_error_description_other">Coba lagi! Letakkan ponsel Anda di sampul depan paspor hingga pemindaian selesai.</string>
+	<string name="jumio_nfc_error_description_us">Coba lagi! Letakkan ponsel Anda di bagian dalam sampul belakang paspor Anda hingga pemindaian selesai.</string>
 	<string name="jumio_nfc_id_retry_tag_lost">Setelah kartu ID terdeteksi, tahan tetap</string>
 	<string name="jumio_nfc_retry_enable_capability">Untuk memaksimalkan paspor Anda, harap aktifkan kemampuan NFC ponsel Anda</string>
 	<string name="jumio_nfc_retry_tag_lost">Tahan terus setelah paspor terdeteksi</string>
@@ -181,12 +184,12 @@
 	<string name="jumio_loading_title">Memuat</string>
 	<string name="jumio_nfc_button_skip">Melewatkan</string>
 	<string name="jumio_nfc_description_extracting">Tahan terus sambil memindai</string>
-	<string name="jumio_nfc_description_start_other">Geser ponsel di penutup depan sampai paspor Anda terdeteksi secara otomatis</string>
-	<string name="jumio_nfc_description_start_us">Geser ponsel di bagian dalam penutup belakang sampai paspor Anda terdeteksi secara otomatis</string>
+	<string name="jumio_nfc_description_start_other">Letakkan ponsel Anda di sampul depan paspor hingga pemindaian selesai</string>
+	<string name="jumio_nfc_description_start_us">Letakkan ponsel Anda di bagian dalam sampul belakang paspor Anda hingga pemindaian selesai</string>
 	<string name="jumio_nfc_general_error_dialog_title">Pindai tidak selesai</string>
 	<string name="jumio_nfc_header_extracting">Mengekstrak data</string>
 	<string name="jumio_nfc_header_start">Posisikan paspor Anda</string>
-	<string name="jumio_nfc_id_description">Geser kartu ID di bagian belakang ponsel Anda hingga terdeteksi secara otomatis</string>
+	<string name="jumio_nfc_id_description">Letakkan ponsel Anda di atas dokumen dan jangan digerakkan hingga pemindaian selesai.</string>
 	<string name="jumio_nfc_id_header_start">Posisikan kartu ID Anda</string>
 	<string name="jumio_no_results_found">Tidak ditemukan hasil</string>
 	<string name="jumio_processing_title">Memeriksa hasil</string>
