@@ -1,4 +1,4 @@
-// Copyright 2024 Jumio Corporation, all rights reserved.
+// (c) 2026 Jumio All rights reserved. US Patent App.
 package com.jumio.sample.compose.activities
 
 import android.content.Intent
@@ -214,7 +214,7 @@ class CustomUIActivity : ComponentActivity() {
 				UploadFileHelpPage(
 					requirements = viewModel.fileAttacher.requirements,
 					onSelectFile = {
-						openDocument()
+						openDocument(it)
 					},
 					onBack = {
 						navController.popBackStack()
@@ -236,12 +236,7 @@ class CustomUIActivity : ComponentActivity() {
 		}
 	}
 
-	private fun openDocument() {
-		val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
-			addCategory(Intent.CATEGORY_OPENABLE)
-			type = "*/*"
-			putExtra(Intent.EXTRA_MIME_TYPES, viewModel.fileAttacher.requirements.mimeTypes.toTypedArray())
-		}
+	private fun openDocument(intent: Intent) {
 		try {
 			launcher.launch(intent)
 		} catch (exception: Exception) {

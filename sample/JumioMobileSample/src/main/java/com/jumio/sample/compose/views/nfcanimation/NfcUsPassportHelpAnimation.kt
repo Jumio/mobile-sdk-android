@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Jumio Corporation, all rights reserved.
+ * (c) 2026 Jumio All rights reserved. US Patent App.
  */
 package com.jumio.sample.compose.views.nfcanimation
 

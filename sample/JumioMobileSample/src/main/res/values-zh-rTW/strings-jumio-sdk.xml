@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">所選 PDF 檔案受密碼保護</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">已超出大小上限</string>
 	<string name="jumio_dv_retry_not_readable">無法處理所選 PDF 檔案</string>
 	<string name="jumio_dv_retry_page_limit">超出 PDF 頁面最大限制</string>
-	<string name="jumio_dv_retry_size_limit">超出 PDF 最大限制</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">無法處理所選檔案</string>
 	<string name="jumio_error_case_auth_failed">驗證失敗</string>
 	<string name="jumio_error_case_cancelled">取消</string>
 	<string name="jumio_error_case_cancelled_by_user">最終使用者已取消</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">繼續</string>
 	<string name="jumio_button_retry">再試一次</string>
 	<string name="jumio_change_issuing_country">變更簽發國家/地區</string>
+	<string name="jumio_choose_file_location">選擇檔案位置</string>
 	<string name="jumio_clear_search">清除搜尋</string>
 	<string name="jumio_current_issuing_country">目前核發國家/地區: %s</string>
 	<string name="jumio_di_back_to_document_selection">您將導覽回文件選擇。</string>
 	<string name="jumio_di_vendor_selection_title">選擇數位 ID 提供者</string>
 	<string name="jumio_di_verification_prompt_processing">請在%s應用程式完成流程。</string>
+	<string name="jumio_dv_clear_or_unedited">影像應清晰且未經編輯</string>
 	<string name="jumio_dv_confirm_button_reselect">重新選擇</string>
-	<string name="jumio_dv_confirm_file_info">確保您選擇正確的 PDF 檔案</string>
 	<string name="jumio_dv_confirm_file_title">確認檔案</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">圖片應為 JPG、PNG 或 WEBP 格式</string>
 	<string name="jumio_dv_method_description">為您的文件拍照或上傳 PDF 版本</string>
 	<string name="jumio_dv_method_photo_button">拍照</string>
 	<string name="jumio_dv_method_title">選擇方法</string>
 	<string name="jumio_dv_method_upload_pdf_button">上傳 PDF 檔案</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">圖片不應包含透明部分或浮水印</string>
+	<string name="jumio_dv_selected_the_right_file">請確定您已選取正確的檔案</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">拍攝您的證件相片或上傳檔案</string>
+	<string name="jumio_dv_upload_an_image">上傳圖片</string>
 	<string name="jumio_dv_upload_choose_button">選擇檔案</string>
+	<string name="jumio_dv_upload_from_photo_library">從相簿上傳</string>
 	<string name="jumio_dv_upload_header">上傳檔案</string>
 	<string name="jumio_dv_upload_tips_file_size">最大檔案：%1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">最大頁數：%1$d</string>
 	<string name="jumio_dv_upload_tips_protected">文件不應受密碼保護</string>
-	<string name="jumio_eidas_description">輕觸「繼續」開始登入程序。\n然後，在接下來的頁面上選擇「eIDAS 登入」並選擇您所在國家的國旗後繼續。\n使用 eIDAS 登入進行安全、符合歐盟標準的驗證。</string>
-	<string name="jumio_eidas_login_header">eIDAS 登入</string>
+	<string name="jumio_eidas_description">輕觸「繼續」以開始登入程序。\n接著，在下一頁選取「EU-Login」，並選擇您所在國家/地區的國旗以繼續。\n使用 EU-Login 進行安全且符合歐盟規範的驗證。</string>
+	<string name="jumio_eidas_login_header">歐盟登入</string>
 	<string name="jumio_error_button_retake_both">兩個都需重新拍攝</string>
 	<string name="jumio_error_button_retake_one">重新拍攝</string>
 	<string name="jumio_error_button_retry">再試一次</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">確認相片</string>
 	<string name="jumio_id_scan_guide_back_side">捕捉背面</string>
 	<string name="jumio_id_scan_guide_back_side_manually">手動捕捉背面</string>
+	<string name="jumio_id_scan_guide_initial">請依照螢幕上的指示拍攝身分證件</string>
 	<string name="jumio_id_scan_guide_photo_side">捕捉照片面</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">手動捕捉照片面</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">傾斜以看見底部邊緣，然後對齊邊框</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">請再試一次</string>
 	<string name="jumio_uploading_success">上傳成功</string>
 	<string name="jumio_uploading_title">上傳中</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">將裝置放在臉前並注視螢幕</string>
-	<string name="iproov__accessibility_prompt_scanning">掃描中…</string>
-	<string name="iproov__error_camera">相機存取權限已停用</string>
-	<string name="iproov__error_camera_permission_denied">相機存取權限已停用</string>
-	<string name="iproov__error_capture_already_active">已有捕捉處理中</string>
-	<string name="iproov__error_device_not_supported">不支援裝置</string>
-	<string name="iproov__error_face_detector">臉部無法識別</string>
-	<string name="iproov__error_multi_window_mode_unsupported">應用程式處於多視窗模式</string>
-	<string name="iproov__error_network">請檢查您是否處於線上狀態</string>
-	<string name="iproov__error_server">請檢查您是否處於線上狀態</string>
-	<string name="iproov__error_unexpected_error">發生未預期錯誤</string>
-	<string name="iproov__failure_eyes_closed">保持眼睛睜開</string>
-	<string name="iproov__failure_face_too_close">將臉遠離螢幕</string>
-	<string name="iproov__failure_face_too_far">將臉靠近螢幕</string>
-	<string name="iproov__failure_misaligned_face">您的臉保持在橢圓形內</string>
-	<string name="iproov__failure_not_supported">不支援裝置</string>
-	<string name="iproov__failure_obscured_face">取下任何面罩</string>
-	<string name="iproov__failure_sunglasses">取下太陽鏡</string>
-	<string name="iproov__failure_too_bright">移動到較暗的位置</string>
-	<string name="iproov__failure_too_dark">移動到較明亮的位置</string>
-	<string name="iproov__failure_too_much_movement">保持不動</string>
-	<string name="iproov__failure_unknown">再試一次</string>
-	<string name="iproov__failure_user_timeout">您的工作階段已過期</string>
-	<string name="iproov__progress_assessing_genuine_presence">正在評估實際存在…</string>
-	<string name="iproov__progress_assessing_liveness">正在評估活性…</string>
-	<string name="iproov__progress_confirming_identity">正在確認身份…</string>
-	<string name="iproov__progress_creating_identity">正在建立身份…</string>
-	<string name="iproov__progress_finding_face">正在查找臉部…</string>
-	<string name="iproov__progress_identifying_face">正在識別臉部…</string>
-	<string name="iproov__progress_loading">載入中…</string>
-	<string name="iproov__progress_streaming">串流中…</string>
-	<string name="iproov__prompt_align_face">將臉放在橢圓形內</string>
-	<string name="iproov__prompt_get_ready">準備好…</string>
-	<string name="iproov__prompt_liveness_scan_completed">掃描完成</string>
-	<string name="iproov__prompt_too_bright">請到較暗處</string>
-	<string name="iproov__prompt_too_close">太近</string>
-	<string name="iproov__prompt_too_far">靠近一點</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

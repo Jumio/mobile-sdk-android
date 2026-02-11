@@ -58,4 +58,30 @@
 	<string name="cancel">Cancel</string>
 	<string name="compose">Compose</string>
 	<string name="xml">XML</string>
+	<string name="pdf_file">PDF File</string>
+	<string name="image_file">Image File</string>
+
+	<string name="custom_controller" translatable="false">Controller</string>
+	<string name="custom_credential" translatable="false">Credential</string>
+	<string name="custom_scan_part" translatable="false">Scan Part</string>
+	<string name="custom_start" translatable="false">Start</string>
+	<string name="custom_cancel" translatable="false">Cancel</string>
+	<string name="custom_finish" translatable="false">Finish</string>
+	<string name="custom_take" translatable="false">Take</string>
+	<string name="custom_retry" translatable="false">Retry</string>
+	<string name="custom_confirm" translatable="false">Confirm</string>
+	<string name="custom_reject" translatable="false">Reject</string>
+	<string name="custom_flash" translatable="false">Flash</string>
+	<string name="custom_country_and_doc_type" translatable="false">Set Country and Document</string>
+	<string name="custom_camera" translatable="false">Camera</string>
+	<string name="file_source_file_system" translatable="false">File System</string>
+	<string name="file_source_photo_library" translatable="false">Photo Library</string>
+	<string name="file_source_selection_label" translatable="false">Where do you want to select your file from?</string>
+	<string name="custom_file" translatable="false">File</string>
+	<string name="custom_acquire_mode" translatable="false">Set AcquireMode</string>
+	<string name="custom_consented" translatable="false">Consented</string>
+	<string name="custom_addon_scan_part" translatable="false">Addon Scan Part</string>
+	<string name="custom_addon_init" translatable="false">Init</string>
+	<string name="custom_extraction" translatable="false">Extraction</string>
+	<string name="custom_fallback" translatable="false">Fallback</string>
 </resources>

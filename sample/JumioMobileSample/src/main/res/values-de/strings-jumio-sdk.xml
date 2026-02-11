@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Ausgewählte PDF-Datei ist passwortgeschützt</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Maximale Größenbeschränkung überschritten</string>
 	<string name="jumio_dv_retry_not_readable">Ausgewählte PDF-Datei kann nicht verarbeitet werden</string>
 	<string name="jumio_dv_retry_page_limit">Max. Seitenanzahl der PDF-Datei überschritten</string>
-	<string name="jumio_dv_retry_size_limit">Max. Größe der PDF-Datei überschritten</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Die ausgewählte Datei kann nicht verarbeitet werden</string>
 	<string name="jumio_error_case_auth_failed">Authentifizierung fehlgeschlagen</string>
 	<string name="jumio_error_case_cancelled">Abgebrochen</string>
 	<string name="jumio_error_case_cancelled_by_user">Beendet durch Benutzer</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Weiter</string>
 	<string name="jumio_button_retry">Erneut versuchen</string>
 	<string name="jumio_change_issuing_country">Ausstellungsland ändern</string>
+	<string name="jumio_choose_file_location">Dateispeicherort auswählen</string>
 	<string name="jumio_clear_search">Suche löschen</string>
 	<string name="jumio_current_issuing_country">Aktuelles Ausstellungsland: %s</string>
 	<string name="jumio_di_back_to_document_selection">Sie kehren zur Dokumentauswahl zurück.</string>
 	<string name="jumio_di_vendor_selection_title">Digitaler ID-Anbieter</string>
 	<string name="jumio_di_verification_prompt_processing">Bitte vervollständigen Sie den Ablauf auf der %s-App.</string>
+	<string name="jumio_dv_clear_or_unedited">Das Bild muss scharf und unbearbeitet sein</string>
 	<string name="jumio_dv_confirm_button_reselect">Neu auswählen</string>
-	<string name="jumio_dv_confirm_file_info">Stellen Sie sicher, dass Sie die richtige PDF-Datei ausgewählt haben</string>
 	<string name="jumio_dv_confirm_file_title">Bestätigen Sie Ihre Datei</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Das Bild muss im JPG-, PNG- oder WEBP-Format sein</string>
 	<string name="jumio_dv_method_description">Foto von Ihrem Dokument oder eine PDF-Version hochladen</string>
 	<string name="jumio_dv_method_photo_button">Foto aufnehmen</string>
 	<string name="jumio_dv_method_title">Methode auswählen</string>
 	<string name="jumio_dv_method_upload_pdf_button">PDF-Datei hochladen</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Das Bild darf keine Transparenz oder Wasserzeichen aufweisen</string>
+	<string name="jumio_dv_selected_the_right_file">Stellen Sie sicher, dass Sie die richtige Datei ausgewählt haben</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Machen Sie ein Foto von Ihrem Dokument oder laden Sie eine Datei hoch</string>
+	<string name="jumio_dv_upload_an_image">Bild hochladen</string>
 	<string name="jumio_dv_upload_choose_button">Datei auswählen</string>
+	<string name="jumio_dv_upload_from_photo_library">Aus Fotomediathek hochladen</string>
 	<string name="jumio_dv_upload_header">Dokument hochladen</string>
 	<string name="jumio_dv_upload_tips_file_size">Max. Dateigröße: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Max. Seitenanzahl: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument darf nicht passwortgeschützt sein</string>
-	<string name="jumio_eidas_description">Tippen Sie auf ‚Weiter‘, um den Anmeldevorgang zu starten. \nWählen Sie dann auf der nächsten Seite ‚eIDAS-Anmeldung‘ und dann die Flagge Ihres Landes aus, um fortzufahren. \nMit der eIDAS-Anmeldung können Sie sich sicher und EU-konform verifizieren.</string>
-	<string name="jumio_eidas_login_header">eIDAS-Anmeldung</string>
+	<string name="jumio_eidas_description">Tippen Sie auf „Weiter“, um den Anmeldevorgang zu starten. \nWählen Sie als Nächstes auf der kommenden Seite „EU-Login“ und dann die Flagge Ihres Landes aus, um fortzufahren. \nVerwenden Sie EU-Login für eine sichere, EU-konforme Verifizierung.</string>
+	<string name="jumio_eidas_login_header">EU-Login</string>
 	<string name="jumio_error_button_retake_both">Beides erneut aufnehmen</string>
 	<string name="jumio_error_button_retake_one">Erneut aufnehmen</string>
 	<string name="jumio_error_button_retry">Erneut versuchen</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Bestätigen Sie Ihr Foto</string>
 	<string name="jumio_id_scan_guide_back_side">Nehmen Sie die RÜCKSEITE auf</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Nehmen Sie die RÜCKSEITE manuell auf</string>
+	<string name="jumio_id_scan_guide_initial">Befolgen Sie die Anweisungen auf dem Bildschirm, um das Ausweisdokument zu erfassen</string>
 	<string name="jumio_id_scan_guide_photo_side">Nehmen Sie die FOTO-SEITE auf</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Nehmen Sie die FOTO-SEITE manuell auf</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">So kippen, dass die Unterkante sichtbar ist, und dann am Rahmen ausrichten</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Erneut versuchen</string>
 	<string name="jumio_uploading_success">Upload erfolgreich</string>
 	<string name="jumio_uploading_title">Hochladen</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Halten Sie das Gerät vor Ihr Gesicht und blicken Sie auf den Bildschirm</string>
-	<string name="iproov__accessibility_prompt_scanning">Wird gescannt</string>
-	<string name="iproov__error_camera">Kamerazugriff ist deaktiviert</string>
-	<string name="iproov__error_camera_permission_denied">Kamerazugriff ist deaktiviert</string>
-	<string name="iproov__error_capture_already_active">Eine bestehende Erfassung ist bereits in Gang</string>
-	<string name="iproov__error_device_not_supported">Gerät wird nicht unterstützt</string>
-	<string name="iproov__error_face_detector">Gesicht nicht erkannt</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Die Anwendung ist im Mehrfenstermodus</string>
-	<string name="iproov__error_network">Bitte prüfen Sie, ob Sie online sind</string>
-	<string name="iproov__error_server">Bitte prüfen Sie, ob Sie online sind</string>
-	<string name="iproov__error_unexpected_error">Ein unerwarteter Fehler ist aufgetreten</string>
-	<string name="iproov__failure_eyes_closed">Halten Sie die Augen offen</string>
-	<string name="iproov__failure_face_too_close">Bewegen Sie Ihr Gesicht weiter vom Bildschirm weg</string>
-	<string name="iproov__failure_face_too_far">Bewegen Sie Ihr Gesicht näher an den Bildschirm</string>
-	<string name="iproov__failure_misaligned_face">Halten Sie Ihr Gesicht im Oval</string>
-	<string name="iproov__failure_not_supported">Gerät wird nicht unterstützt</string>
-	<string name="iproov__failure_obscured_face">Entfernen Sie alle Gesichtsbedeckungen</string>
-	<string name="iproov__failure_sunglasses">Nehmen Sie Sonnenbrillen ab</string>
-	<string name="iproov__failure_too_bright">Gehen Sie an einen dunkleren Ort</string>
-	<string name="iproov__failure_too_dark">Gehen Sie an einen helleren Ort</string>
-	<string name="iproov__failure_too_much_movement">Halten Sie still</string>
-	<string name="iproov__failure_unknown">Erneut versuchen</string>
-	<string name="iproov__failure_user_timeout">Ihre Sitzung ist abgelaufen</string>
-	<string name="iproov__progress_assessing_genuine_presence">Tatsächliche Anwesenheit wird überprüft …</string>
-	<string name="iproov__progress_assessing_liveness">Live-Übertragung wird überprüft …</string>
-	<string name="iproov__progress_confirming_identity">Identität wird überprüft …</string>
-	<string name="iproov__progress_creating_identity">Identität wird erstellt …</string>
-	<string name="iproov__progress_finding_face">Gesicht wird gesucht …</string>
-	<string name="iproov__progress_identifying_face">Gesicht wird identifiziert …</string>
-	<string name="iproov__progress_loading">Ladevorgang läuft …</string>
-	<string name="iproov__progress_streaming">Streaming läuft …</string>
-	<string name="iproov__prompt_align_face">Platzieren Sie Ihr Gesicht im Oval</string>
-	<string name="iproov__prompt_get_ready">Machen Sie sich bereit …</string>
-	<string name="iproov__prompt_liveness_scan_completed">Scannen abgeschlossen</string>
-	<string name="iproov__prompt_too_bright">Gehen Sie in den Schatten</string>
-	<string name="iproov__prompt_too_close">Zu nahe</string>
-	<string name="iproov__prompt_too_far">Näher kommen</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

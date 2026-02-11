@@ -70,12 +70,12 @@ The [SDK Setup Tool](https://jumio.github.io/mobile-configuration-tool/out/) is 
 
 Below you can find a list of dependencies that can be added to your application to enable different functionality of the Jumio SDK. Some modules are mandatory, others are optional.
 
-If an optional module is **not linked**, some functionalities may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size is currently around **13.63 MB**.
+If an optional module is **not linked**, some functionalities may not be available, but the library size will be reduced. The [Sample app](../sample/JumioMobileSample/) apk size is currently around **12.21 MB**.
 
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.15.0"               
+	implementation "com.jumio.android:core:4.15.0"
 	...
 }
 
@@ -84,7 +84,6 @@ dependencies {
 	implementation "com.jumio.android:docfinder:4.15.0"          // Autocapture library, includes all previous scanning methods
 	implementation "com.jumio.android:barcode-mlkit:4.15.0"      // Barcode scanning library, assists Autocapture
 	implementation "com.jumio.android:nfc:4.15.0"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:iproov:4.15.0"             // Face Liveness library
 	implementation "com.jumio.android:liveness:4.15.0"           // Face Liveness library
 	implementation "com.jumio.android:digital-identity:4.15.0"   // Digital Identity verification library
   	...
@@ -98,7 +97,7 @@ dependencies {
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.15.0"         // CameraX library 
+	implementation "com.jumio.android:camerax:4.15.0"         // CameraX library
   	...
 }
 ```
@@ -114,7 +113,6 @@ dependencies {
 		implementation "com.jumio.android:defaultui"
 		implementation "com.jumio.android:digital-identity"
 		implementation "com.jumio.android:docfinder"
-		implementation "com.jumio.android:iproov"
 		implementation "com.jumio.android:liveness"
 		implementation "com.jumio.android:nfc"
 }
@@ -127,18 +125,11 @@ The models can be bundled with the app directly to save time on the download dur
 
 #### Certified Face Liveness
 
-Jumio uses Certified Liveness technology to determine liveness. Link `com.jumio.android:liveness` and  `com.jumio.android:iproov` modules in order to use Jumio Liveness.
+Jumio uses Certified Liveness technology to determine liveness. Link `com.jumio.android:liveness` module in order to use Jumio Liveness.
 Please note: `com.jumio.android:camerax` will be linked transitively when `com.jumio.android:liveness` is linked.
-If necessary, the iProov SDK version can be overwritten with a more recent one:
-
-```groovy
-implementation "com.jumio.android:iproov:4.15.0"
-implementation("com.iproov.sdk:iproov:9.1.2") {
-	exclude group: 'org.json', module: 'json'
-}
-```
 
 #### Barcode Scanning
+
 In order to benefit from barcode scanning functionality included in the `com.jumio.android:docfinder` dependency, please add `com.jumio.android:barcode-mlkit` to your `build-gradle` file.
 
 This dependency includes `com.google.android.gms:play-services-mlkit-barcode-scanning` library - if your application includes **other Google ML-kit libraries**, it might be necessary to override meta-data specified in the application tag of the `play-services-mlkit-barcode-scanning` manifest by [merging multiple manifests](https://developer.android.com/studio/build/manage-manifests#merge-manifests):
@@ -151,6 +142,7 @@ This dependency includes `com.google.android.gms:play-services-mlkit-barcode-sca
 ```
 
 #### NFC Scanning
+
 In order to benefit from NFC scanning functionality included in the `com.jumio.android:docfinder` dependency, please add `com.jumio.android:nfc` to your `build-gradle` file.
 
 ### SDK Version Check
@@ -160,11 +152,12 @@ Use `JumioSDK.sdkVersion` to check which SDK version is being used.
 ### Root Detection
 
 For security reasons, applications implementing the SDK should not run on rooted devices. Use either the below method or a self-devised check to prevent usage of SDK scanning functionality on rooted devices.
+
 ```
 JumioSDK.isRooted(context: Context)
 ```
 
-⚠️&nbsp;&nbsp;__Note:__ Please be aware that the JumioSDK root check uses various mechanisms for detection, but doesn't guarantee to detect 100% of all rooted devices.
+⚠️&nbsp;__Note:__ Please be aware that the JumioSDK root check uses various mechanisms for detection, but doesn't guarantee to detect 100% of all rooted devices.
 
 ### Device Supported Check
 
@@ -175,6 +168,7 @@ JumioSDK.isSupportedPlatform(context: Context)
 ```
 
 ### Privacy Notice
+
 If you submit your app to the Google Play Store a [Prominent Disclosure](https://support.google.com/googleplay/android-developer/answer/11150561) explaining the collected [User Data](https://support.google.com/googleplay/android-developer/answer/10144311) is required. The collected user data also needs to be declared in your [Data Safety Form](https://play.google.com/console/developers/app/app-content/data-privacy-security) and the [Privacy Policy](https://play.google.com/console/developers/app/app-content/privacy-policy) related to your application.
 
 Other stores might require something similar - please check before submitting your app to the store.
@@ -182,11 +176,13 @@ Other stores might require something similar - please check before submitting yo
 Please see the [Jumio Privacy Policy for Online Services](https://www.jumio.com/legal-information/privacy-notices/jumio-corp-privacy-policy-for-online-services/) for further information.
 
 ### Digital Identity (DID)
+
 In case Digital Identity Verification has been enabled for your account you can add the `com.jumio.android:digital-identity` dependency to your application. This will enable you to make use of DID verification within the SDK.
 
 Over the course of DID verification the SDK will launch an according third party application representing your Digital Identity. Communication between both applications (your integrating application and the Digital Identity application) is done via a so-called "deep link". For more information on deep link handling on Android please check out their [official guide](https://developer.android.com/training/app-links).
 
 #### Deep Link Setup
+
 To enable your app specific deep link, our support team has to setup an according scheme of your choice for you. This scheme will be used by the SDK to identify your application while returning from the DID provider's application. For the scheme basically any string can be used, however it is recommended that it is unique to your application in some way. A suggestion would be your company name.
 
 Following snippet shows how the deep link needs to be setup in your application's `AndroidManifest.xml` file:
@@ -203,7 +199,7 @@ Following snippet shows how the deep link needs to be setup in your application'
 		<category android:name="android.intent.category.DEFAULT" />
 		<category android:name="android.intent.category.BROWSABLE" />
 
-		<data android:scheme="<your-app-scheme>" />
+		<data android:scheme="&lt;your-app-scheme&gt;" />
 	</intent-filter>
 </activity>
 ```
@@ -239,34 +235,42 @@ override fun onNewIntent(intent: Intent) {
 ```
 
 ### Risk Signal: Device Risk
-If you want to include risk signals into your application, please check our [Risk Signal guide](https://docs.jumio.com/production/Content/References/Risk%20Signals/Device%20Risk.htm).
+
+If you want to include risk signals into your application, please check our [Risk Signal guide](https://documentation.jumio.ai/docs/references/riskSignals/deviceRiskCheck/deviceRisk).
 
 #### Iovation setup
+
 To integrate the device risk vendor Iovation into your application, please follow the [Iovation integration guide](https://github.com/iovation/deviceprint-SDK-android).
 
 #### API call
-To provide Jumio with the generated Device Risk blackbox, please follow the [Device Risk API guide](https://docs.jumio.com/production/Content/Integration/Integration%20Channels/REST%20APIs.htm).
+
+To provide Jumio with the generated Device Risk blackbox, please follow the [Device Risk API guide](https://documentation.jumio.ai/docs/references/riskSignals/deviceRiskCheck/deviceRiskwithRestAPI).
 
 ## ML Models
+
 By default, required models get downloaded by the SDK if not provided via the assets folder or preloaded.
 
 ### Bundling models in the app
+
 You can download our encrypted models and add them to your assets folder for the following modules.
 
-⚠️&nbsp;&nbsp;__Note:__ Make sure not to alter the downloaded models (name or content) before adding them to your assets folder.
+⚠️&nbsp;__Warning:__ Make sure not to alter the downloaded models (name or content) before adding them to your assets folder.
 
 #### DocFinder
+
 If you are using the `com.jumio.android:docfinder` module, find the required models [here](https://cdn.mobile.jumio.ai/android/model/normalized_ensemble_passports_v2_float16_quant.enc) and [here](https://cdn.mobile.jumio.ai/android/model/classifierOnDeviceV2.enc).
 
 #### Liveness
+
 If you are using the `com.jumio.android:liveness` module, find the required model [here](https://cdn.mobile.jumio.ai/android/model/liveness_sdk_assets_v_1_1_5.enc).
 
 ### Preloading models
+
 In version `4.9.0` we introduced the [`JumioPreloader`][jumiopreloader]. It provides functionality to preload models without the JumioSDK being initialized. To do so call:
 
-```Kotlin
+```kotlin
 with(JumioPreloader) {
-	init(<Your Context>) // init with Context
+	init(`<Your Context>`) // init with Context
 	preloadIfNeeded()
 }
 ```
@@ -275,21 +279,21 @@ The [`JumioPreloader`][jumiopreloader] will identify which models are required b
 
 Preloaded models are cached so they will not be downloaded again. To clean the models call:
 
-```Kotlin
+```kotlin
 with(JumioPreloader) {
-	init(<Your Context>) // init with Context
+	init(`<Your Context>`) // init with Context
 	clean()
 }
 ```
 
-⚠️&nbsp;&nbsp;__Note:__ `clean` should never be called while the SDK is running!
+⚠️&nbsp;__Warning:__ `clean` should never be called while the SDK is running!
 
 To get notified that preloading has finished, you can implement [`JumioPreloadCallback`][jumiopreloadcallback] methods and set the callback as follows:
 
-```Kotlin
+```kotlin
 with(JumioPreloader) {
-	init(<Your Context>) // init with Context
-	setCallback(<Your callback>)
+	init(`<Your Context>`) // init with Context
+	setCallback(`<Your callback>`)
 	...
 	// followed by preloadIfNeeded() for example
 }
@@ -299,9 +303,9 @@ with(JumioPreloader) {
 
 ### Requesting a Token (via OAuth2)
 
-Your OAuth2 credentials are constructed using your API token as the Client ID and your API secret as the Client secret. You can view and manage your Client ID and secret in the Customer Portal under:
+Your OAuth2 credentials are constructed using your API token as the Client ID and your API secret as the Client secret. You can view and manage your Client ID and secret in the Jumio Portal under:
 
-- **Settings > API credentials > OAuth2 Clients**
+- **Settings &lt; API credentials &lt; OAuth2 Clients**
 
 Client ID and Client secret are used to generate an OAuth2 access token. Send a workflow request using the acquired OAuth2 access token to receive the SDK token necessary to initialize the Jumio SDK.
 
@@ -323,7 +327,7 @@ sdk = JumioSDK(context: Context).apply {
 
 Data center is set to `"US"` by default. If your customer account is in the EU data center, use `"EU"` instead. Alternatively, use `"SG"` for Singapore.
 
-⚠️&nbsp;&nbsp;**Note:** We strongly recommend storing all credentials outside of your app! We suggest loading them during runtime from your server-side implementation.
+⚠️&nbsp;__Tip:__ We strongly recommend storing all credentials outside of your app! We suggest loading them during runtime from your server-side implementation.
 
 ## Configuration
 
@@ -331,15 +335,15 @@ Every Jumio SDK instance is initialized using a specific [`sdk.token`][token]. T
 
 ### Worfklow Selection
 
-Use ID verification callback to receive a verification status and verified data positions (see [Callback section](https://docs.jumio.com/production/Content/Integration/Callback.htm)). Make sure that your customer account is enabled to use this feature. A callback URL can be specified for individual transactions (for URL constraints see chapter __Jumio Callback IP Addresses__). This setting overrides any callback URL you have set in the Jumio Portal. Your callback URL must not contain sensitive data like PII (Personally Identifiable Information) or account login. Set your callback URL using the `callbackUrl` parameter.
+Use ID verification callback to receive a verification status and verified data positions (see [Callback section](https://documentation.jumio.ai/docs/developer-resources/callback)). Make sure that your customer account is enabled to use this feature. A callback URL can be specified for individual transactions (for URL constraints see chapter **Jumio Callback IP Addresses**). This setting overrides any callback URL you have set in the Jumio Portal. Your callback URL must not contain sensitive data like PII (Personally Identifiable Information) or account login. Set your callback URL using the `callbackUrl` parameter.
 
-Use the correct [workflow definition key](https://docs.jumio.com/production/Content/References/Workflows/Standard%20Services.htm) in order to request a specific workflow. Set your key using the `workflowDefinition.key` parameter.
+Use the correct [workflow definition key](https://documentation.jumio.ai/docs/references/servicesAndworkflow/standardService/standardServices) in order to request a specific workflow. Set your key using the `workflowDefinition.key` parameter.
 
 ```json
 {
   "customerInternalReference": "CUSTOMER_REFERENCE",
   "workflowDefinition": {
-	"key": "X"
+    "key": "X"
   },
   "callbackUrl": "YOUR_CALLBACK_URL"
 }
@@ -347,34 +351,34 @@ Use the correct [workflow definition key](https://docs.jumio.com/production/Cont
 
 For more details, please refer to our [Workflow Description Guide](https://support.jumio.com/hc/en-us/articles/4408958923803-KYX-Workflows-User-Guide).
 
-ℹ️&nbsp;&nbsp;**Note:** Selfie Verification requires portrait orientation in your app.
+⚠️&nbsp;__Note:__ Selfie Verification requires portrait orientation in your app.
 
 ### Transaction Identifiers
 
 There are several options in order to uniquely identify specific transactions. `customerInternalReference` allows you to specify your own unique identifier for a certain scan (max. 100 characters). Use `reportingCriteria`, to identify the scan in your reports (max. 100 characters). You can also set a unique identifier for each user using `userReference` (max. 100 characters).
 
-For more details, please refer to the __Account Request__ section in our [KYX Guide](https://docs.jumio.com/production/Content/Integration/Creating%20or%20Updatng%20Account/Creating%20or%20Updating%20Accounts.htm).
+For more details, please refer to the **Account Request** section in our [KYX Guide](https://documentation.jumio.ai/docs/developer-resources/API/CreateUpdateAccounts/creating-and-updating-accounts).
 
 ```json
 {
   "customerInternalReference": "CUSTOMER_REFERENCE",
   "workflowDefinition": {
-	"key": "X"
+    "key": "X"
   },
   "reportingCriteria": "YOUR_REPORTING_CRITERIA",
   "userReference": "YOUR_USER_REFERENCE"
 }
 ```
 
-⚠️&nbsp;&nbsp;**Note:** Transaction identifiers must not contain sensitive data like PII (Personally Identifiable Information) or account login.
+⚠️&nbsp;__Note:__ Transaction identifiers must not contain sensitive data like PII (Personally Identifiable Information) or account login.
 
 ### Preselection
 
 You can specify issuing country using [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country codes, as well as ID types to skip selection during the scanning process. In the example down below, Austria ("AUT") and the USA ("USA") have been preselected. PASSPORT and DRIVER_LICENSE have been chosen as preselected document types. If all parameters are preselected and valid and there is only one given combination (one country and one document type), the document selection screen in the SDK can be skipped entirely.
 
-For more details, please refer to the __Account Request__ section in our [KYX Guide](https://docs.jumio.com/production/Content/Integration/Creating%20or%20Updatng%20Account/Creating%20or%20Updating%20Accounts.htm).
+For more details, please refer to the **Account Request** section in our [KYX Guide](https://documentation.jumio.ai/docs/developer-resources/API/CreateUpdateAccounts/creating-and-updating-accounts).
 
-⚠️&nbsp;&nbsp;**Note:** "Digital Identity" document type can not be preselected!
+⚠️&nbsp;__Note:__ "Digital Identity" document type can not be preselected!
 
 ```json
 {
@@ -426,7 +430,7 @@ The following tables give information on the specification of all data parameter
 #### Class **_JumioIDResult_**
 
 | Parameter        | Type                         | Max. length | Description                                                                                                                                                            |
-|:-----------------|:-----------------------------| :---------- |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :--------------- | :--------------------------- | :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | issuingCountry   | String                       | 3           | Country of issue as [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code                                                                |
 | idType           | String                       |             | PASSPORT, DRIVER_LICENSE, IDENTITY_CARD or VISA as provided or selected                                                                                                |
 | idSubType        | String                       |             | Sub type of the scanned ID                                                                                                                                             |
@@ -455,18 +459,19 @@ The following tables give information on the specification of all data parameter
 #### Class **_JumioFaceResult_**
 
 | Parameter        | Type                         | Max. length | Description                                                                                                                                             |
-| :--------------- |:-----------------------------| :---------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :--------------- | :--------------------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | passed           | Boolean                      |             |
-| extractionMethod | JumioScanMode[jumioscanmode] |             | Extraction method used during scanning (FACE_MANUAL, FACE_IPROOV, JUMIO_LIVENESS)                                                                       |
+| extractionMethod | JumioScanMode[jumioscanmode] |             | Extraction method used during scanning (FACE_MANUAL, JUMIO_LIVENESS)                                                                                    |
 | imageData        | JumioImageData               |             | Wrapper class for accessing image data of all credential parts from an ID verification session. This feature has to be enabled by your account manager. |
 
 #### Class **_JumioRejectReason_**
 
 List of all possible **_reject reasons_** the SDK could return if Instant Feedback is used:
-⚠️&nbsp;&nbsp;**Note:** Please be aware that the list of reject reasons that get returned depends on server-side configuration for every individual merchant.
 
-| Code | Message              | Description                                        | 
-|:-----|:---------------------|:---------------------------------------------------|
+ℹ️&nbsp;__Info:__ Please be aware that the list of reject reasons that get returned depends on server-side configuration for every individual merchant.
+
+| Code | Message              | Description                                        |
+| :--- | :------------------- | :------------------------------------------------- |
 | 102  | BLACK_WHITE_COPY     | Document appears to be a black and white photocopy |
 | 103  | COLOR_PHOTOCOPY      | Document appears to be a colored photocopy         |
 | 104  | DIGITAL_COPY         | Document appears to be a digital copy              |
@@ -487,7 +492,7 @@ List of all possible **_reject reasons_** the SDK could return if Instant Feedba
 List of all **_error codes_** that are available via the `code` and `message` properties of the [`JumioError`][jumioerror] object. The first letter (A-J) represents the error case. The remaining characters are represented by numbers that contain information helping us understand the problem situation (format: [xx][yyyy]).
 
 |    Code     | Message                                                            | Description                                                   |
-|:-----------:|:-------------------------------------------------------------------|:--------------------------------------------------------------|
+| :---------: | :----------------------------------------------------------------- | :------------------------------------------------------------ |
 | A[xx][yyyy] | We have encountered a network communication problem                | Retry possible, user decided to cancel                        |
 | B[xx][yyyy] | Authentication failed                                              | Secure connection could not be established, retry impossible  |
 |  C[xx]0401  | Authentication failed                                              | API credentials invalid, retry impossible                     |
@@ -499,7 +504,14 @@ List of all **_error codes_** that are available via the `code` and `message` pr
 |  J[xx]0000  | Transaction already finished                                       | User did not complete SDK journey within session lifetime     |
 |  N[xx]0000  | Scanning not available at this time, please contact the app vendor | Required images are missing to finalize the acquisition       |
 
-⚠️&nbsp;&nbsp;**Note:** Please always include error code and message when filing an error related issue to our support team.
+⚠️&nbsp;__Tip:__ Please always include error code and message when filing an error related issue to our support team.
+
+### Session Initialization Best Practices
+
+- Generate SDK tokens just-in-time before SDK launch.
+- Implement backend-controlled retry logic.
+- Use reportingCriteria and Customer Internal Reference for tracking.
+- Ensure runtime permissions are granted before launch.
 
 ## Default UI
 
@@ -522,7 +534,7 @@ The following sequence diagram outlines components, callbacks and methods for a 
 
 ![Custom UI Happy Path Diagram](images/happy_paths/custom_ui_happy_path_diagram.png)
 
-⚠️&nbsp;&nbsp;**Note:** The new 3D face liveness capturing technology is not optimized for tablets. When using Selfie Verification, the face scanner will fallback to a simple face capturing functionality instead. Portrait orientation support is required in your app.
+⚠️&nbsp;__Note:__ The new 3D face liveness capturing technology is not optimized for tablets. When using Selfie Verification, the face scanner will fallback to a simple face capturing functionality instead. Portrait orientation support is required in your app.
 
 CustomUI enables you to use a custom scan view with a plain scanning user interface. Initialize the Jumio SDK and set [`token`][token] and [`datacenter`][datacenter].
 
@@ -534,6 +546,14 @@ sdk = JumioSDK(context: Context).apply {
 ```
 
 - [`JumioDataCenter`][datacenter] values: `US`, `EU`, `SG`
+
+### UI/UX Best Practices
+
+- Launch SDK only after explicit user consent.
+- Show pre-permission screens explaining camera use.
+- Prompt better lighting for retries.
+- Avoid flashlight use by default.
+- Use SDK localization.
 
 ### Controller Handling
 
@@ -550,19 +570,21 @@ onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioCo
 ```
 
 #### Consent Handling
+
 To support compliance with various data protection laws, if a user’s consent is required the parameter `consentItems` will provide a list of [`JumioConsentItems`][jumioconsentitem]. Each consent item contains a text, a consent type and an URL that will redirect the user to Jumio’s consent details. Each [`JumioConsentItem`][jumioconsentitem] also provides a method `spannedTextWithLinkColor(color: Int)` that will return a spanned string containing the consent text and the link holder. If no color is specified, the link portion of the spanned string will only be underlined.
 
 If no consent is required, the parameter `consentItems` will be `null`.
 
 Each consent item can be one of two types:
-* [`JumioConsentType.ACTIVE`][jumioconsenttype]
-* [`JumioConsentType.PASSIVE`][jumioconsenttype]
+
+- [`JumioConsentType.ACTIVE`][jumioconsenttype]
+- [`JumioConsentType.PASSIVE`][jumioconsenttype]
 
 For `ACTIVE` types, the user needs to accept the consent items explicitly, e.g. by enabling a UI switch or checking a checkbox for each consent item. For `PASSIVE` types, it is enough to present the consent text and URL to the user. The user implicitly accepts the passive consent items by continuing with the journey. For details please check out consent handling [(1)](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/customui/CustomUiActivity.kt#L218-L234) [(2)](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/customui/CustomUiActivity.kt#L252-L260) and [consent adapter](https://github.com/Jumio/mobile-sdk-android/blob/master/sample/JumioMobileSample/src/main/java/com/jumio/sample/customui/adapter/CustomConsentAdapter.kt) in our sample app.
 
 The user can open and continue to the provided consent link if they choose to do so. If the user consents to Jumio's policy, [`jumioController.userConsented(consentItem: JumioConsentItem, userConsent: Boolean)`][userconsented] is required to be called internally before any credential can be initialized and the user journey can continue. If no consent is required, the list of [`JumioConsentItems`][jumioconsentitem] will be `null`. If the user does not consent or if [`jumioController.userConsented(consentItem: JumioConsentItem, userConsent: Boolean)`][userconsented] is not called for all the items inside the `consentItems` list, the user will not be able to continue the user journey.
 
-⚠️&nbsp;&nbsp;**Note:** Please be aware that in cases where the list of `consentItems` is not `null`, the user **must consent** to Jumio's processing of personal information, including biometric data, and be provided a link to Jumio's Privacy Notice. Do not accept automatically without showing the user any terms.
+⚠️&nbsp;__Note:__ Please be aware that in cases where the list of `consentItems` is not `null`, the user **must consent** to Jumio's processing of personal information, including biometric data, and be provided a link to Jumio's Privacy Notice. Do not accept automatically without showing the user any terms.
 
 ### Credential Handling
 
@@ -588,6 +610,7 @@ If the credential is not configured yet, it needs some more configuration before
 In case of [`JumioIDCredential`][jumioidcredential], you can retrieve all available countries from [`supportedCountries`][supportedcountries]. After selecting a specific country from that list, you can query available documents for that country by either calling [`getPhysicalDocumentsForCountry`][getphysicaldocuments] or [`getDigitalDocumentsForCountry`][getdigitaldocuments]. To configure the [`JumioIDCredential`][jumioidcredential], pass your desired document as well as the country to [`setConfiguration()`][setidconfiguration].
 
 Retrieve the supported countries:
+
 ```kotlin
 idCredential = ... // Credential received via jumioController.start
 
@@ -620,9 +643,9 @@ idCredential.setConfiguration(country, document)
 
 - [`JumioPhysicalDocument`][jumiophysicaldocument] represents a single `JumioDocumentType` and `JumioDocumentVariant` combination
 
-	- [`JumioDocumentType`][jumiodocumenttype] values: `PASSPORT`, `VISA`, `DRIVING_LICENSE`, `ID_CARD`
+  - [`JumioDocumentType`][jumiodocumenttype] values: `PASSPORT`, `VISA`, `DRIVING_LICENSE`, `ID_CARD`
 
-	- [`JumioDocumentVariant`][jumiodocumentvariant] values: `PAPER`, `PLASTIC`
+  - [`JumioDocumentVariant`][jumiodocumentvariant] values: `PAPER`, `PLASTIC`
 
 - [`JumioDigitalDocument`][jumiodigitaldocument] represents a digital document ("Digital Identity")
 
@@ -635,7 +658,7 @@ idCredential.initScanPart(credentialPart, yourScanPartInterface)
 
 #### Jumio Face Credential
 
-In case of [`JumioFaceCredential`][jumiofacecredential], Jumio uses Certified Liveness technology to determine liveness. The mode can be detected by checking the [`JumioScanMode`][jumioscanmode] of the [`JumioScanPart`][jumioscanpart]. Make sure to also implement `FACE_MANUAL` as a fallback, in case `JUMIO_LIVENESS` or `FACE_IPROOV` is not available.
+In case of [`JumioFaceCredential`][jumiofacecredential], Jumio uses Certified Liveness technology to determine liveness. The mode can be detected by checking the [`JumioScanMode`][jumioscanmode] of the [`JumioScanPart`][jumioscanpart]. Make sure to also implement `FACE_MANUAL` as a fallback, in case `JUMIO_LIVENESS` is not available.
 
 Retrieve the credential part of the credential to start the scanning process by calling:
 
@@ -688,7 +711,7 @@ fileAttacher.setFile(file)
 
 #### Jumio Data Credential
 
-⚠️&nbsp;&nbsp;__Note:__ `JumioDataCredential` is only available from SDK version `4.2.0` to `4.8.1` (inclusively).
+⚠️&nbsp;__Note:__ `JumioDataCredential` is only available from SDK version `4.2.0` to `4.8.1` (inclusively).
 
 [`JumioDataCredential`][jumiodatacredential] is used for the device fingerprinting. There are some optional configurations you can do to enhance it's behavior.
 
@@ -726,8 +749,7 @@ fileAttacher.setFile(file)
 </manifest>
 ```
 
-ℹ️&nbsp;&nbsp;**Note:**
-
+⚠️&nbsp;__Note:__
 - The reason for the requirement of the given permission is added as inline comment.
 - Some of them are `dangerous` permissions, and you have to ask for the permission from the user. More information about permissions can be found in the official [Android documentation](https://developer.android.com/guide/topics/permissions/overview)
 - The above permissions imply to add some features to your manifest file:
@@ -768,12 +790,12 @@ Start the scanning process by initializing the [`JumioScanPart`][jumioscanpart].
 
 Each [`jumioScanPart`][jumioScanPart] has an associated `scanMode`. Depending on the scan mode, you need to provide a different user guidance. The following scan modes are available for the different `JumioCredentialPart`s:
 
-* [`JumioScanMode`][jumioScanMode] values:
-	* `FRONT`, `BACK`, `MULTIPART`: `MANUAL`, `BARCODE`, `DOCFINDER`
-	* `DIGITAL`: `WEB`, `FILE`
-	* `NFC`: `NFC`
-	* `FACE`: `FACE_MANUAL`, `FACE_IPROOV`, `JUMIO_LIVENESS`, `JUMIO_PREMIUM`
-	* `DOCUMENT`: `MANUAL`, `FILE`
+- [`JumioScanMode`][jumioScanMode] values:
+  - `FRONT`, `BACK`, `MULTIPART`: `MANUAL`, `BARCODE`, `DOCFINDER`
+  - `DIGITAL`: `WEB`, `FILE`
+  - `NFC`: `NFC`
+  - `FACE`: `FACE_MANUAL`, `JUMIO_LIVENESS`, `JUMIO_PREMIUM`
+  - `DOCUMENT`: `MANUAL`, `FILE`
 
 During the scanning process, use the `onUpdate` function of the `JumioScanPartInterface` to check on the scanning progress and update your user guidance accordingly.
 
@@ -849,7 +871,7 @@ JumioScanStep.ATTACH_ACTIVITY -> {
 ```
 
 [`ATTACH_FILE`][attachfile] is sent when the user needs to select and upload a file. For this, you should create a [`JumioFileAttacher`][jumiofileattacher], add it to your [`JumioScanPart`][jumioscanpart] and provide the document.
-This  step is only sent, when the scan method is `FILE`.
+This step is only sent, when the scan method is `FILE`.
 
 ```kotlin
 JumioScanStep.ATTACH_FILE -> {
@@ -864,7 +886,7 @@ JumioScanStep.ATTACH_FILE -> {
 ```
 
 [`SCAN_VIEW`][scanview] is sent, when the scan view should be displayed. On this view, the user will capture a photo or a sequence of photos of a document or of a face with the camera.
-[`JumioScanView`][jumioscanview] needs to be attached to the [`JumioScanPart`][jumioscanpart]. The [`JumioScanView`][jumioscanview] is a custom view that can be placed in your layout. 
+[`JumioScanView`][jumioscanview] needs to be attached to the [`JumioScanPart`][jumioscanpart]. The [`JumioScanView`][jumioscanview] is a custom view that can be placed in your layout.
 During runtime it just needs to be attached to the [`JumioScanPart`][jumioscanpart]. Make sure to re-attach the scanview from scan steps [`STARTED`][started] or [`NEXT_PART`][nextpart] in case the activity gets recreated and the scanview was attached before.
 
 ```kotlin
@@ -918,7 +940,7 @@ JumioScanStep.RETRY -> {
 }
 ```
 
-For possible retry codes please checkout [`JumioRetryReasonGeneric`][jumioretrygeneric], [`JumioRetryReasonDocumentVerification`][jumioretrydv], [`JumioRetryReasonNfc`][jumioretrynfc], [`JumioRetryReasonIproov`][jumioretryiproov] and [`JumioRetryReasonDigitalIdentity`][jumioretrydi].
+For possible retry codes please checkout [`JumioRetryReasonGeneric`][jumioretrygeneric], [`JumioRetryReasonDocumentVerification`][jumioretrydv], [`JumioRetryReasonNfc`][jumioretrynfc], and [`JumioRetryReasonDigitalIdentity`][jumioretrydi].
 
 As soon as the scan part has been confirmed and all processing has been completed [`CAN_FINISH`][canfinish] is triggered. [`scanPart.finish()`][finishscanpart] can now be called. During the finish routine the SDK checks if there is an add-on functionality for this part available, e.g. possible NFC scanning after an MRZ scan part. In this case [`ADDON_SCAN_PART`][addonscanpart] will be called.
 
@@ -930,7 +952,7 @@ Continue that procedure until all necessary credentials (e.g. `ID`, `FACE`, `DOC
 
 #### Scan Updates
 
-[`JumioScanUpdates`][jumioscanupdate]s are distributed via the `JumioScanPartInterface` method [`onUpdate()`][onupdate] and cover scan information that is relevant and might need to be displayed during scanning process.     
+[`JumioScanUpdates`][jumioscanupdate]s are distributed via the `JumioScanPartInterface` method [`onUpdate()`][onupdate] and cover scan information that is relevant and might need to be displayed during scanning process.
 An optional value `data` of type `Any` can contain additional information for each scan update as described.
 
 [`JumioScanUpdate`][jumioscanupdate] values: `CAMERA_AVAILABLE`, `FALLBACK`, `NFC_EXTRACTION_STARTED`, `NFC_EXTRACTION_PROGRESS`, `NFC_EXTRACTION_FINISHED`, `CENTER_ID`, `HOLD_STRAIGHT`, `MOVE_CLOSER`, `TOO_CLOSE`, `HOLD_STILL`, `MOVE_FACE_CLOSER`, `FACE_TOO_CLOSE`, `NEXT_POSITION`, `FLASH`, `TILT`, `IMAGE_ANALYSIS`
@@ -999,9 +1021,16 @@ override fun onError(error: JumioError) {
 
 If an error is retryable, [`jumioController.retry()`][retrycontroller] should be called to execute a retry.
 
+## Error Handling & Retry Strategy
+
+- Categorize errors: soft (retry allowed) vs hard (exit flow).
+- On failure: create new account ID or reuse existing account ID with new session.
+- Redirect to retry/support screen instead of immediate SDK relaunch.
+- Log errors without storing PII.
+
 ### Instant Feedback
 
-The use of Instant Feedback provides immediate end user feedback by performing a usability check on any image the user took and prompting them to provide a new image immediately if this image is not usable, for example because it is too blurry. Please refer to the [JumioRejectReason table](#class-jumiorejectreason) for a list of all reject possibilities.
+The use of Instant Feedback provides immediate end user feedback by performing a usability check on any image the user took and prompting them to provide a new image immediately if this image is not usable, for example because it is too blurry. Please refer to the [JumioRejectReason table](#retrieving-information) for a list of all reject possibilities.
 
 ## Customization
 
@@ -1035,13 +1064,27 @@ Apply your custom theme that you defined before by replacing `Theme.Jumio` in th
 
 ### Custom UI customization
 
-If you implement your own UI, you can still customize how some views provided by the SDK look. In particular this means you can customize Jumio's **scan overlay**, **NFC scanning** and **iProov Face liveness** views at the moment.
+If you implement your own UI, you can still customize how some views provided by the SDK look. In particular this means you can customize Jumio's **scan overlay** and **NFC scanning** views at the moment.
 
 By following the steps explained in [Default UI customization](#default-ui-customization) you can see potential attributes to override in the generated XML file.
+
+## Testing & Validation
+
+- Use Jumio official sample apps to validate flows.
+- Test on varied device tiers and OS versions.
+- Test multiple ID types and lighting conditions.
 
 # Security
 
 All SDK related traffic is sent over HTTPS using TLS and public key pinning. Additionally, the information itself within the transmission is also encrypted utilizing **Application Layer Encryption** (ALE). ALE is a Jumio custom-designed security protocol that utilizes RSA-OAEP and AES-256 to ensure that the data cannot be read or manipulated even if the traffic was captured.
+
+## Token Management & Session Security
+
+- Always create SDK tokens server-side.
+- Auth Tokens are valid for 60 Mins. Kindly reuse it
+- Pass Auth tokens securely using HTTPS only and store in-memory only.
+- Never hard-code or store tokens creation mechanism on devices.
+- Always log Account ID and workflowExecutionId.
 
 # Support
 
@@ -1131,7 +1174,6 @@ In any case, your use of this Software is subject to the terms and conditions th
 [jumioretrygeneric]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.retry/-jumio-retry-reason-generic/index.html
 [jumioretrydv]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.retry/-jumio-retry-reason-document-verification/index.html
 [jumioretrynfc]: https://jumio.github.io/mobile-sdk-android/jumio-nfc/com.jumio.sdk.retry/-jumio-retry-reason-nfc/index.html
-[jumioretryiproov]: https://jumio.github.io/mobile-sdk-android/jumio-iproov/com.jumio.sdk.retry/-jumio-retry-reason-iproov/index.html
 [jumioretrydi]: https://jumio.github.io/mobile-sdk-android/jumio-digital-identity/com.jumio.sdk.retry/-jumio-retry-reason-digital-identity/index.html
 [jumioconfirmationview]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-confirmation-view/index.html
 [jumiorejectview]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.views/-jumio-reject-view/index.html

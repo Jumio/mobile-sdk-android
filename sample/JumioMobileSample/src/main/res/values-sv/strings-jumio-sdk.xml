@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Vald PDF-fil är lösenordsskyddad</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Maximal storleksgräns har överskridits</string>
 	<string name="jumio_dv_retry_not_readable">Vald PDF-fil kan inte bearbetas</string>
 	<string name="jumio_dv_retry_page_limit">Max. antal PDF-sidor har överskridits</string>
-	<string name="jumio_dv_retry_size_limit">Maxstorleken för PDF-filer har överskridits</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Den valda filen kan inte bearbetas</string>
 	<string name="jumio_error_case_auth_failed">Autentisering misslyckades</string>
 	<string name="jumio_error_case_cancelled">Annullerat</string>
 	<string name="jumio_error_case_cancelled_by_user">Avbruten av slutanvändaren</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Fortsätt</string>
 	<string name="jumio_button_retry">Försök igen</string>
 	<string name="jumio_change_issuing_country">Byt utfärdandeland</string>
+	<string name="jumio_choose_file_location">Välj filplats</string>
 	<string name="jumio_clear_search">Rensa sökning</string>
 	<string name="jumio_current_issuing_country">Nuvarande utfärdandeland: %s</string>
 	<string name="jumio_di_back_to_document_selection">Du kommer att återvända till dokumentval.</string>
 	<string name="jumio_di_vendor_selection_title">Välj digital ID-leverantör</string>
 	<string name="jumio_di_verification_prompt_processing">Slutför flödet i %s-appen</string>
+	<string name="jumio_dv_clear_or_unedited">Bilden ska vara tydlig och oredigerad</string>
 	<string name="jumio_dv_confirm_button_reselect">Välj igen</string>
-	<string name="jumio_dv_confirm_file_info">Kontrollera att du har valt rätt PDF-fil</string>
 	<string name="jumio_dv_confirm_file_title">Bekräfta din fil</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Bilden ska vara i JPG-, PNG- eller WEBP-format</string>
 	<string name="jumio_dv_method_description">Ta en bild av din ID-handling eller ladda upp en PDF-version</string>
 	<string name="jumio_dv_method_photo_button">Ta en bild</string>
 	<string name="jumio_dv_method_title">Välj metod</string>
 	<string name="jumio_dv_method_upload_pdf_button">Ladda upp PDF-fil</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Bilden ska inte ha någon transparens eller vattenstämplar</string>
+	<string name="jumio_dv_selected_the_right_file">Se till att du har valt rätt fil</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Ta ett foto av ditt dokument eller ladda upp en fil</string>
+	<string name="jumio_dv_upload_an_image">Ladda upp en bild</string>
 	<string name="jumio_dv_upload_choose_button">Välj fil</string>
+	<string name="jumio_dv_upload_from_photo_library">Ladda upp från bildbiblioteket</string>
 	<string name="jumio_dv_upload_header">Ladda upp ID-handling</string>
 	<string name="jumio_dv_upload_tips_file_size">Max. filstorlek: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Max. antal sidor: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">ID-handlingen ska inte vara lösenordsskyddad</string>
-	<string name="jumio_eidas_description">Tryck på \"Fortsätt\" för att starta inloggningsprocessen. \nVälj sedan \"eIDAS-inloggning\" på den kommande sidan och välj ditt lands flagga för att fortsätta. \nAnvänd eIDAS-inloggning för säker verifiering i enlighet med EU:s regler.</string>
-	<string name="jumio_eidas_login_header">eIDAS-inloggning</string>
+	<string name="jumio_eidas_description">Tryck på \"Fortsätt\" för att starta inloggningsprocessen. \nVälj sedan \"EU-Login\" på nästa sida och välj ditt lands flagga för att fortsätta. \nAnvänd EU-Login för säker verifiering i enlighet med EU:s regler.</string>
+	<string name="jumio_eidas_login_header">EU-inloggning</string>
 	<string name="jumio_error_button_retake_both">Ta om båda</string>
 	<string name="jumio_error_button_retake_one">Ta om</string>
 	<string name="jumio_error_button_retry">Försök igen</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Bekräfta din bild</string>
 	<string name="jumio_id_scan_guide_back_side">Ta en bild av BAKSIDAN</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Ta en bild av BAKSIDAN manuellt</string>
+	<string name="jumio_id_scan_guide_initial">Följ anvisningarna på skärmen för att ta en bild av ID-handlingen</string>
 	<string name="jumio_id_scan_guide_photo_side">Ta en bild av FOTO-sidan</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Ta en bild av FOTO-sidan manuellt</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Luta så att den nedre kanten syns och passa sedan in i ramen</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Försök igen</string>
 	<string name="jumio_uploading_success">Uppladdning klar</string>
 	<string name="jumio_uploading_title">Laddar upp</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Håll enheten framför ditt ansikte och titta på skärmen</string>
-	<string name="iproov__accessibility_prompt_scanning">Skannar</string>
-	<string name="iproov__error_camera">Kameraåtkomst inaktiverad</string>
-	<string name="iproov__error_camera_permission_denied">Kameraåtkomst inaktiverad</string>
-	<string name="iproov__error_capture_already_active">En redan befintlig bildfångst pågår</string>
-	<string name="iproov__error_device_not_supported">Enheten stöds inte</string>
-	<string name="iproov__error_face_detector">Ansiktet känns inte igen</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Applikationen är i multifönsterläge</string>
-	<string name="iproov__error_network">Kontrollera att du är online</string>
-	<string name="iproov__error_server">Kontrollera att du är online</string>
-	<string name="iproov__error_unexpected_error">Det uppstod ett oväntat fel</string>
-	<string name="iproov__failure_eyes_closed">Håll ögonen öppna</string>
-	<string name="iproov__failure_face_too_close">Håll skärmen längre från ansiktet</string>
-	<string name="iproov__failure_face_too_far">Håll skärmen närmare ansiktet</string>
-	<string name="iproov__failure_misaligned_face">Håll ditt ansikte i ovalen</string>
-	<string name="iproov__failure_not_supported">Enheten stöds inte</string>
-	<string name="iproov__failure_obscured_face">Ta bort allt som täcker ansiktet</string>
-	<string name="iproov__failure_sunglasses">Ta bort solglasögon</string>
-	<string name="iproov__failure_too_bright">Gå till en mörkare plats</string>
-	<string name="iproov__failure_too_dark">Gå till en ljusare plats</string>
-	<string name="iproov__failure_too_much_movement">Håll stadigt</string>
-	<string name="iproov__failure_unknown">Försök igen</string>
-	<string name="iproov__failure_user_timeout">Din session har löpt ut</string>
-	<string name="iproov__progress_assessing_genuine_presence">Bedömer faktisk närvaro …</string>
-	<string name="iproov__progress_assessing_liveness">Bedömer livlighet …</string>
-	<string name="iproov__progress_confirming_identity">Bekräftar identitet …</string>
-	<string name="iproov__progress_creating_identity">Skapar identitet …</string>
-	<string name="iproov__progress_finding_face">Söker ansikte …</string>
-	<string name="iproov__progress_identifying_face">Identifierar ansikte …</string>
-	<string name="iproov__progress_loading">Laddar …</string>
-	<string name="iproov__progress_streaming">Strömmar …</string>
-	<string name="iproov__prompt_align_face">Placera ditt ansikte i ovalen</string>
-	<string name="iproov__prompt_get_ready">Gör dig redo …</string>
-	<string name="iproov__prompt_liveness_scan_completed">Skanningen är klar</string>
-	<string name="iproov__prompt_too_bright">Gå till en skuggigare plats</string>
-	<string name="iproov__prompt_too_close">För nära</string>
-	<string name="iproov__prompt_too_far">Flytta närmare</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

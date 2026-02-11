@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Izabrana PDF datoteka je zaštićena lozinkom</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Prekoračeno je ograničenje maksimalne veličine</string>
 	<string name="jumio_dv_retry_not_readable">Izabrana PDF datoteka ne može da se obradi</string>
 	<string name="jumio_dv_retry_page_limit">Prekoračeno je ograničenje maksimalnog broja stranica PDF-a</string>
-	<string name="jumio_dv_retry_size_limit">Prekoračeno je ograničenje maksimalne veličine PDF-a</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Izabrana datoteka ne može biti obrađena</string>
 	<string name="jumio_error_case_auth_failed">Autentifikacija nije uspela</string>
 	<string name="jumio_error_case_cancelled">Otkazano</string>
 	<string name="jumio_error_case_cancelled_by_user">Otkazao krajnji korisnik</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Nastavi</string>
 	<string name="jumio_button_retry">Pokušaj ponovo</string>
 	<string name="jumio_change_issuing_country">Promeni zemlju izdavanja</string>
+	<string name="jumio_choose_file_location">Izaberite lokaciju datoteke</string>
 	<string name="jumio_clear_search">Obriši pretragu</string>
 	<string name="jumio_current_issuing_country">Trenutna zemlja izdavanja: %s</string>
 	<string name="jumio_di_back_to_document_selection">Bićete vraćeni na izbor dokumenata.</string>
 	<string name="jumio_di_vendor_selection_title">Izaberite dobavljača digitalnog ID-a</string>
 	<string name="jumio_di_verification_prompt_processing">Završite tok u aplikaciji %s.</string>
+	<string name="jumio_dv_clear_or_unedited">Slika treba da bude jasna i da nije uređivana</string>
 	<string name="jumio_dv_confirm_button_reselect">Ponovo izaberi</string>
-	<string name="jumio_dv_confirm_file_info">Uverite se da ste izabrali pravu PDF datoteku</string>
 	<string name="jumio_dv_confirm_file_title">Potvrdite svoju datoteku</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Slika mora biti u JPG, PNG ili WEBP formatu</string>
 	<string name="jumio_dv_method_description">Fotografišite svoj dokument ili otpremite PDF verziju</string>
 	<string name="jumio_dv_method_photo_button">Fotografiši</string>
 	<string name="jumio_dv_method_title">Izaberite metod</string>
 	<string name="jumio_dv_method_upload_pdf_button">Otpremi PDF datoteku</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Slika ne bi trebalo da ima providnost ili vodene žigove</string>
+	<string name="jumio_dv_selected_the_right_file">Uverite se da ste izabrali ispravnu datoteku</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Fotografišite svoj dokument ili otpremite datoteku</string>
+	<string name="jumio_dv_upload_an_image">Otpremi sliku</string>
 	<string name="jumio_dv_upload_choose_button">Izaberite datoteku</string>
+	<string name="jumio_dv_upload_from_photo_library">Otpremi iz foto-biblioteke</string>
 	<string name="jumio_dv_upload_header">Otpremanje dokumenta</string>
 	<string name="jumio_dv_upload_tips_file_size">Maksimalna veličina datoteke: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimalan broj stranica: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument ne treba da bude zaštićen lozinkom</string>
-	<string name="jumio_eidas_description">Dodirnite „Nastavi“ da biste započeli proces prijavljivanja. \nZatim izaberite „eIDAS prijavljivanje“ na sledećoj stranici, pa odaberite zastavu svoje zemlje da biste nastavili. \nKoristite eIDAS prijavljivanje za bezbednu verifikaciju u skladu sa pravilima EU.</string>
-	<string name="jumio_eidas_login_header">eIDAS prijavljivanje</string>
+	<string name="jumio_eidas_description">Dodirnite „Nastavi“ da biste započeli proces prijavljivanja. \nZatim izaberite „EU-Login“ na sledećoj stranici, pa odaberite zastavu svoje zemlje da biste nastavili. \nKoristite EU-Login za bezbednu verifikaciju u skladu sa pravilima EU.</string>
+	<string name="jumio_eidas_login_header">Prijava za EU</string>
 	<string name="jumio_error_button_retake_both">Fotografiši ponovo obe strane</string>
 	<string name="jumio_error_button_retake_one">Ponovo fotografiši</string>
 	<string name="jumio_error_button_retry">Pokušaj ponovo</string>
@@ -101,16 +109,16 @@
 	<string name="jumio_error_instant_feedback_supported_document_button">Lista podržanih dokumenata</string>
 	<string name="jumio_error_instant_feedback_unsupported_document_title">Dokument nije podržan</string>
 	<string name="jumio_european_did_login_header">Evropski digitalni ID</string>
-	<string name="jumio_face_help_eyes_closed">Držite oči otvorene</string>
+	<string name="jumio_face_help_eyes_closed">Drži oči otvorene</string>
 	<string name="jumio_face_help_generic_angle">Držite uređaj u visini očiju</string>
 	<string name="jumio_face_help_generic_center">Centrirajte svoje lice u okviru i pratite uputstva na ekranu</string>
 	<string name="jumio_face_help_lighting">Vaše lice mora da bude ravnomerno osvetljeno i da se izdvaja od pozadine</string>
 	<string name="jumio_face_help_multiple_people">Budite jedina osoba u kadru</string>
 	<string name="jumio_face_help_obscured_face">Uklonite bilo kakve prekrivače lica</string>
 	<string name="jumio_face_help_sunglasses">Skinite sunčane naočare</string>
-	<string name="jumio_face_help_too_bright">Pomerite se na tamnije mesto</string>
-	<string name="jumio_face_help_too_dark">Pomerite se na svetlije mesto</string>
-	<string name="jumio_face_help_too_much_movement">Ne pomerajte se</string>
+	<string name="jumio_face_help_too_bright">Premestite se na tamnije mesto</string>
+	<string name="jumio_face_help_too_dark">Premestite se na svetlije mesto</string>
+	<string name="jumio_face_help_too_much_movement">Budite mirni</string>
 	<string name="jumio_face_reject_title_eyes_closed">Oči su zatvorene</string>
 	<string name="jumio_face_reject_title_generic">Pokušajte ponovo</string>
 	<string name="jumio_face_reject_title_multiple_people">Otkriveno je više ljudi</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Potvrdite svoju fotografiju</string>
 	<string name="jumio_id_scan_guide_back_side">Snimite ZADNЈU stranu</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Ručno snimite ZADNJU stranu</string>
+	<string name="jumio_id_scan_guide_initial">Pratite uputstva na ekranu da biste snimili identifikacioni dokument</string>
 	<string name="jumio_id_scan_guide_photo_side">Snimite stranu sa FOTOGRAFIJOM</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Ručno snimite stranu sa FOTOGRAFIJOM</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Nagnite tako da donja ivica bude vidljiva, a zatim poravnajte sa okvirom</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Pokušajte ponovo</string>
 	<string name="jumio_uploading_success">Otpremanje je uspešno</string>
 	<string name="jumio_uploading_title">Otpremanje</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Držite uređaj ispred svog lica i gledajte u ekran</string>
-	<string name="iproov__accessibility_prompt_scanning">Skeniranje</string>
-	<string name="iproov__error_camera">Pristup kameri onemogućen</string>
-	<string name="iproov__error_camera_permission_denied">Pristup kameri onemogućen</string>
-	<string name="iproov__error_capture_already_active">Postojeći snimak se već obrađuje</string>
-	<string name="iproov__error_device_not_supported">Uređaj nije podržan</string>
-	<string name="iproov__error_face_detector">Lice nije prepoznato</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Aplikacija je u režimu više prozora</string>
-	<string name="iproov__error_network">Proverite da li ste na mreži</string>
-	<string name="iproov__error_server">Proverite da li ste na mreži</string>
-	<string name="iproov__error_unexpected_error">Došlo je do neočekivane greške</string>
-	<string name="iproov__failure_eyes_closed">Drži oči otvorene</string>
-	<string name="iproov__failure_face_too_close">Udaljite lice od ekrana</string>
-	<string name="iproov__failure_face_too_far">Približite lice ekranu</string>
-	<string name="iproov__failure_misaligned_face">Držite lice u okviru</string>
-	<string name="iproov__failure_not_supported">Uređaj nije podržan</string>
-	<string name="iproov__failure_obscured_face">Uklonite bilo kakve prekrivače lica</string>
-	<string name="iproov__failure_sunglasses">Skinite sunčane naočare</string>
-	<string name="iproov__failure_too_bright">Premestite se na tamnije mesto</string>
-	<string name="iproov__failure_too_dark">Premestite se na svetlije mesto</string>
-	<string name="iproov__failure_too_much_movement">Budite mirni</string>
-	<string name="iproov__failure_unknown">Pokušaj ponovo</string>
-	<string name="iproov__failure_user_timeout">Sesija je istekla</string>
-	<string name="iproov__progress_assessing_genuine_presence">Procena stvarnog prisustva…</string>
-	<string name="iproov__progress_assessing_liveness">Procena životnosti…</string>
-	<string name="iproov__progress_confirming_identity">Potvrđivanje identiteta…</string>
-	<string name="iproov__progress_creating_identity">Kreiranje identiteta…</string>
-	<string name="iproov__progress_finding_face">Pronalaženje lica…</string>
-	<string name="iproov__progress_identifying_face">Prepoznavanje lica…</string>
-	<string name="iproov__progress_loading">Učitavanje…</string>
-	<string name="iproov__progress_streaming">Strimovanje…</string>
-	<string name="iproov__prompt_align_face">Stavite lice u okvir</string>
-	<string name="iproov__prompt_get_ready">Pripremite se…</string>
-	<string name="iproov__prompt_liveness_scan_completed">Skeniranje je završeno</string>
-	<string name="iproov__prompt_too_bright">Premestite se na tamnije mesto</string>
-	<string name="iproov__prompt_too_close">Preblizu</string>
-	<string name="iproov__prompt_too_far">Približite se</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

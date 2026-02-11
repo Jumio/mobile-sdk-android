@@ -1,4 +1,4 @@
-// Copyright 2024 Jumio Corporation, all rights reserved.
+// (c) 2026 Jumio All rights reserved. US Patent App.
 package com.jumio.sample.compose.views.pages
 
 import androidx.compose.foundation.clickable
@@ -56,7 +56,7 @@ fun AcquireModeSelectionPage(viewModel: CustomUIViewModel, modifier: Modifier = 
 			)
 			(viewModel.currentCredential as? JumioDocumentCredential)?.let {
 				LazyColumn(modifier = Modifier.padding(start = MaterialTheme.spacing.large)) {
-					items(it.availableAcquireModes) {
+					items(it.availableAcquireModes) { acquireMode ->
 						Column {
 							Row(
 								verticalAlignment = Alignment.CenterVertically,
@@ -67,11 +67,11 @@ fun AcquireModeSelectionPage(viewModel: CustomUIViewModel, modifier: Modifier = 
 										end = MaterialTheme.spacing.medium
 									)
 									.clickable {
-										viewModel.onUiEvent(CustomUIEvent.AcquireModeClicked(it))
+										viewModel.onUiEvent(CustomUIEvent.AcquireModeClicked(acquireMode))
 									}
 							) {
 								Text(
-									text = it.name,
+									text = acquireMode.name,
 									color = MaterialTheme.colors.label,
 									modifier = Modifier.weight(1f)
 								)

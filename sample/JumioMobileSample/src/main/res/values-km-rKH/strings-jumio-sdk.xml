@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">ឯកសារ PDF ដែលបានជ្រើសត្រូវបានការពារដោយពាក្យសម្ងាត់</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">ទំហំអតិបរមាបានលើសកំណត់</string>
 	<string name="jumio_dv_retry_not_readable">មិនអាចដំណើរការឯកសារ PDF ដែលជ្រើសបានទេ</string>
 	<string name="jumio_dv_retry_page_limit">បានលើសទំព័រកំណត់នៃឯកសារ PDF អតិបរមាហើយ</string>
-	<string name="jumio_dv_retry_size_limit">បានលើសទំហំកំណត់នៃឯកសា PDF អតិបរមាហើយ</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">ឯកសារ​ដែល​បាន​ជ្រើសរើស​មិន​អាច​ដំណើរការ​បាន​ទេ</string>
 	<string name="jumio_error_case_auth_failed">ការផ្ទៀងផ្ទាត់បានបរាជ័យ</string>
 	<string name="jumio_error_case_cancelled">លុបចោល</string>
 	<string name="jumio_error_case_cancelled_by_user">ត្រូវបានបោះបង់ដោយអ្នកប្រើចុងក្រោយ</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">បន្ត</string>
 	<string name="jumio_button_retry">សូមព្យាយាមម្ដងទៀត</string>
 	<string name="jumio_change_issuing_country">ប្តូរប្រទេសដែលចេញអោយ</string>
+	<string name="jumio_choose_file_location">ជ្រើសរើស​ទីតាំង​ឯកសារ</string>
 	<string name="jumio_clear_search">ជម្រះការស្វែងរក</string>
 	<string name="jumio_current_issuing_country">ប្រទេស​ចេញ​ប័ណ្ណ​បច្ចុប្បន្ន៖ %s</string>
 	<string name="jumio_di_back_to_document_selection">អ្នកនឹងរុករកត្រលប់មកកាន់ការជ្រើសរើសឯកសារវិញ។</string>
 	<string name="jumio_di_vendor_selection_title">ជ្រើសរើសអ្នកផ្ដល់សេវាកម្មអត្តសញ្ញាណបណ្ណឌីជីថល</string>
 	<string name="jumio_di_verification_prompt_processing">សូមបំពេញលំហូរការងារនៅលើកម្មវិធី %s។</string>
+	<string name="jumio_dv_clear_or_unedited">រូបភាព​គួរតែ​ច្បាស់ និង​មិន​ត្រូវ​បាន​កែសម្រួល</string>
 	<string name="jumio_dv_confirm_button_reselect">ជ្រើសឡើងវិញ</string>
-	<string name="jumio_dv_confirm_file_info">ត្រូវប្រាកដថា អ្នកបានជ្រើសរើសឯកសារ PDF ត្រឹមត្រូវ</string>
 	<string name="jumio_dv_confirm_file_title">បញ្ជាក់ឯកសាររបស់អ្នក</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">រូបភាពគួរតែជាទម្រង់ JPG, PNG ឬ WEBP</string>
 	<string name="jumio_dv_method_description">ថតរូបឯកសាររបស់អ្នក ឬផ្ទុកឡើងជាកំណែ PDF</string>
 	<string name="jumio_dv_method_photo_button">ថតរូប</string>
 	<string name="jumio_dv_method_title">ជ្រើសវិធីសាស្ត្រ</string>
 	<string name="jumio_dv_method_upload_pdf_button">ផ្ទុកឡើងឯកសារ PDF</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">រូបភាពមិនគួរមានតម្លាភាព ឬស្នាមទឹកឡើយ</string>
+	<string name="jumio_dv_selected_the_right_file">សូម​ប្រាកដ​ថា​អ្នក​បាន​ជ្រើសរើស​ឯកសារ​ត្រឹមត្រូវ</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">ថតរូបឯកសាររបស់អ្នក ឬបង្ហោះឯកសារ</string>
+	<string name="jumio_dv_upload_an_image">បង្ហោះ​រូបភាព</string>
 	<string name="jumio_dv_upload_choose_button">ជ្រើសឯកសារ</string>
+	<string name="jumio_dv_upload_from_photo_library">ផ្ទុក​ឡើង​ពី​បណ្ណាល័យ​រូបថត</string>
 	<string name="jumio_dv_upload_header">ផ្ទុកឡើងឯកសារ</string>
 	<string name="jumio_dv_upload_tips_file_size">ទំហំឯកសារអតិបរមា៖ %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">ចំនួនទំព័រអតិបរមា៖ %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">ឯកសារមិនគួរការពារដោយពាក្យសម្ងាត់ឡើយ</string>
-	<string name="jumio_eidas_description">ចុច \'បន្ត\' ដើម្បីចាប់ផ្ដើមដំណើរការចូល។ \nបន្ទប់មក ជ្រើសរើស \'eIDAS Login\' នៅលើទំព័រមកដល់ខាងមុខ ហើយជ្រើសរើសទង់ជាតិនៃប្រទេសរបស់អ្នកដើម្បីបន្ត។ \nប្រើ eIDAS Login ដើម្បីការផ្ទៀងផ្ទាត់មានសុវត្ថិភាព និងអនុលោមតាមច្បាប់អឺរ៉ុប។</string>
-	<string name="jumio_eidas_login_header">eIDAS Login</string>
+	<string name="jumio_eidas_description">ចុច \'បន្ត\' ដើម្បីចាប់ផ្ដើមដំណើរការចូល។ \nបន្ទាប់មក ជ្រើសរើស \'EU-Login\' នៅលើទំព័របន្ទាប់ ហើយជ្រើសរើសទង់ជាតិនៃប្រទេសរបស់អ្នកដើម្បីបន្ត។ \nប្រើ EU-Login សម្រាប់ការផ្ទៀងផ្ទាត់ប្រកបដោយសុវត្ថិភាព និងអនុលោមតាមបទដ្ឋានសហភាពអឺរ៉ុប។</string>
+	<string name="jumio_eidas_login_header">ការចូលគណនី EU</string>
 	<string name="jumio_error_button_retake_both">ថតទាំងសងខាងម្ដងទៀត</string>
 	<string name="jumio_error_button_retake_one">ថតម្ដងទៀត</string>
 	<string name="jumio_error_button_retry">សូមព្យាយាមម្ដងទៀត</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">បញ្ជាក់រូបថតរបស់អ្នក</string>
 	<string name="jumio_id_scan_guide_back_side">ថតយកខាងក្រោយ</string>
 	<string name="jumio_id_scan_guide_back_side_manually">ថតយកខាងក្រោយដោយដៃ</string>
+	<string name="jumio_id_scan_guide_initial">អនុវត្តតាមការណែនាំនៅលើអេក្រង់ ដើម្បីថតឯកសារសម្គាល់ខ្លួន</string>
 	<string name="jumio_id_scan_guide_photo_side">ថតយកម្ខាងនៃរូបថត</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">ថតយកម្ខាងនៃរូបថតដោយដៃ</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">សូមផ្អៀងដើម្បីឲ្យមើលឃើញគែមខាងក្រោម​ ហើយបន្ទាប់មកតម្រឹមស៊ុម</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">សូមព្យាយាមម្តងទៀត</string>
 	<string name="jumio_uploading_success">ការផ្ទុកឡើងបានជោគជ័យ</string>
 	<string name="jumio_uploading_title">កំពុងផ្ទុកឡើង</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">កាន់ឧបករណ៍នៅចំពីមុខអ្នក ហើយមើលទៅអេក្រង់</string>
-	<string name="iproov__accessibility_prompt_scanning">កំពុងស្កេន</string>
-	<string name="iproov__error_camera">ការចូលប្រើកាមេរ៉ាត្រូវបានបិទ</string>
-	<string name="iproov__error_camera_permission_denied">ការចូលប្រើកាមេរ៉ាត្រូវបានបិទ</string>
-	<string name="iproov__error_capture_already_active">ការថតដែលមានស្រាប់កំពុងតែដំណើរការហើយ</string>
-	<string name="iproov__error_device_not_supported">មិនស្គាល់ឧបករណ៍នេះទេ</string>
-	<string name="iproov__error_face_detector">មិនស្គាល់មុខទេ</string>
-	<string name="iproov__error_multi_window_mode_unsupported">កម្មវិធីគឺនៅក្នុងម៉ូដមានផ្ទាំងវីនដូច្រើន</string>
-	<string name="iproov__error_network">សូមពិនិត្យមើលថាអ្នកកំពុងអនឡាញ</string>
-	<string name="iproov__error_server">សូមពិនិត្យមើលថាអ្នកកំពុងអនឡាញ</string>
-	<string name="iproov__error_unexpected_error">មានកំហុសដែលមិនបានរំពឹងទុកកើតឡើង</string>
-	<string name="iproov__failure_eyes_closed">សូមកុំបិទភ្នែក</string>
-	<string name="iproov__failure_face_too_close">ខិតមុខរបស់អ្នកឲ្យឆ្ងាយពីអេក្រង់បន្តិច</string>
-	<string name="iproov__failure_face_too_far">ខិតមុខរបស់អ្នកឲ្យមកជិតអេក្រង់បន្តិច</string>
-	<string name="iproov__failure_misaligned_face">រក្សាមុខរបស់អ្នកឲ្យនៅក្នុងរង្វង់ពងក្រពើ</string>
-	<string name="iproov__failure_not_supported">មិនស្គាល់ឧបករណ៍នេះទេ</string>
-	<string name="iproov__failure_obscured_face">ដោះរបាំងមុខចេញ</string>
-	<string name="iproov__failure_sunglasses">ដោះវែនតាចេញ</string>
-	<string name="iproov__failure_too_bright">ទៅកន្លែងណាដែលងងឹតជាងនេះ</string>
-	<string name="iproov__failure_too_dark">ទៅកន្លែងណាដែលភ្លឺជាងនេះ</string>
-	<string name="iproov__failure_too_much_movement">កាន់ឲ្យនឹង</string>
-	<string name="iproov__failure_unknown">សូមព្យាយាមម្ដងទៀត</string>
-	<string name="iproov__failure_user_timeout">រយៈពេលរបស់អ្នកបានផុតកំណត់ហើយ</string>
-	<string name="iproov__progress_assessing_genuine_presence">កំពុងវាយតម្លៃវត្តមានជាពិសេស…</string>
-	<string name="iproov__progress_assessing_liveness">កំពុងវាយតម្លៃភាពរស់រវើក…</string>
-	<string name="iproov__progress_confirming_identity">កំពុងបញ្ជាក់អត្តសញ្ញាណ…</string>
-	<string name="iproov__progress_creating_identity">កំពុងបង្កើតអត្តសញ្ញាណ…</string>
-	<string name="iproov__progress_finding_face">កំពុងរកមើលមុខ…</string>
-	<string name="iproov__progress_identifying_face">កំពុងកំណត់អត្តសញ្ញាណមុខ…</string>
-	<string name="iproov__progress_loading">កំពុងផ្ទុក…</string>
-	<string name="iproov__progress_streaming">កំពុងស្ទ្រីម…</string>
-	<string name="iproov__prompt_align_face">ដាក់មុខរបស់អ្នកនៅក្នុងរង្វង់ពងក្រពើ</string>
-	<string name="iproov__prompt_get_ready">ត្រៀម…</string>
-	<string name="iproov__prompt_liveness_scan_completed">បានបញ្ចប់ការស្កេន</string>
-	<string name="iproov__prompt_too_bright">ទៅកន្លែងណាដែលមានស្រមោលជាងនេះ</string>
-	<string name="iproov__prompt_too_close">ជិតពេក</string>
-	<string name="iproov__prompt_too_far">ខិតមកជិតជាងមុន</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

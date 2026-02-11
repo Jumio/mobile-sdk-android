@@ -1,4 +1,4 @@
-// Copyright 2023 Jumio Corporation, all rights reserved.
+// (c) 2026 Jumio All rights reserved. US Patent App.
 package com.jumio.sample.xml.adapter
 
 import android.text.method.LinkMovementMethod

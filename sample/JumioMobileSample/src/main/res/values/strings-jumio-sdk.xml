@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Selected PDF file is password protected</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Maximum size limit exceeded</string>
 	<string name="jumio_dv_retry_not_readable">Selected PDF file cannot be processed</string>
 	<string name="jumio_dv_retry_page_limit">Maximum PDF page limit exceeded</string>
-	<string name="jumio_dv_retry_size_limit">Maximum PDF size limit exceeded</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Selected file cannot be processed</string>
 	<string name="jumio_error_case_auth_failed">Authentication failed</string>
 	<string name="jumio_error_case_cancelled">Cancelled</string>
 	<string name="jumio_error_case_cancelled_by_user">Cancelled by end-user</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Continue</string>
 	<string name="jumio_button_retry">Try again</string>
 	<string name="jumio_change_issuing_country">Change Issuing Country</string>
+	<string name="jumio_choose_file_location">Choose file location</string>
 	<string name="jumio_clear_search">Clear search</string>
 	<string name="jumio_current_issuing_country">Current Issuing Country: %s</string>
 	<string name="jumio_di_back_to_document_selection">You will be returned to document selection.</string>
 	<string name="jumio_di_vendor_selection_title">Select digital ID provider</string>
 	<string name="jumio_di_verification_prompt_processing">Please complete the flow on %s app.</string>
+	<string name="jumio_dv_clear_or_unedited">Image should be clear and unedited</string>
 	<string name="jumio_dv_confirm_button_reselect">Reselect</string>
-	<string name="jumio_dv_confirm_file_info">Make sure you selected the right PDF file</string>
 	<string name="jumio_dv_confirm_file_title">Confirm your file</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Image should be JPG, PNG, or WEBP format</string>
 	<string name="jumio_dv_method_description">Either take a photo of your document or upload PDF version</string>
 	<string name="jumio_dv_method_photo_button">Take a photo</string>
 	<string name="jumio_dv_method_title">Select Method</string>
 	<string name="jumio_dv_method_upload_pdf_button">Upload a PDF File</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Image should have no transparency or watermarks</string>
+	<string name="jumio_dv_selected_the_right_file">Make sure you selected the right file</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Take a photo of your document or upload a file</string>
+	<string name="jumio_dv_upload_an_image">Upload an image</string>
 	<string name="jumio_dv_upload_choose_button">Choose a File</string>
+	<string name="jumio_dv_upload_from_photo_library">Upload from photo library</string>
 	<string name="jumio_dv_upload_header">Upload document</string>
 	<string name="jumio_dv_upload_tips_file_size">Maximum file size: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maximum number of pages: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Document should not be password protected</string>
-	<string name="jumio_eidas_description">Tap \'Continue\' to start the login process. \nNext, select \'eIDAS Login\' on the upcoming page and choose your country\'s flag to continue. \nUse eIDAS Login for secure, EU-compliant verification.</string>
-	<string name="jumio_eidas_login_header">eIDAS Login</string>
+	<string name="jumio_eidas_description">Tap \'Continue\' to start the login process. \nNext, select \'EU-Login\' on the upcoming page and choose your country\'s flag to continue. \nUse EU-Login for secure, EU-compliant verification.</string>
+	<string name="jumio_eidas_login_header">EU-Login</string>
 	<string name="jumio_error_button_retake_both">Retake both</string>
 	<string name="jumio_error_button_retake_one">Retake</string>
 	<string name="jumio_error_button_retry">Try again</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Confirm your photo</string>
 	<string name="jumio_id_scan_guide_back_side">Capture the BACK side</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Manually capture the BACK side</string>
+	<string name="jumio_id_scan_guide_initial">Follow the on-screen instructions to capture the ID</string>
 	<string name="jumio_id_scan_guide_photo_side">Capture the PHOTO side</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Manually capture the PHOTO side</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Tilt so that the bottom edge is visible and then align to the frame</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Please try again</string>
 	<string name="jumio_uploading_success">Upload successful</string>
 	<string name="jumio_uploading_title">Uploading</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Hold the device in front of your face and look at the screen</string>
-	<string name="iproov__accessibility_prompt_scanning">Scanning</string>
-	<string name="iproov__error_camera">Camera access disabled</string>
-	<string name="iproov__error_camera_permission_denied">Camera access disabled</string>
-	<string name="iproov__error_capture_already_active">An existing capture is already in progress</string>
-	<string name="iproov__error_device_not_supported">Device is not supported</string>
-	<string name="iproov__error_face_detector">Face not recognized</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Application is in multi-window mode</string>
-	<string name="iproov__error_network">Please check that you are online</string>
-	<string name="iproov__error_server">Please check that you are online</string>
-	<string name="iproov__error_unexpected_error">There was an unexpected error</string>
-	<string name="iproov__failure_eyes_closed">Keep your eyes open</string>
-	<string name="iproov__failure_face_too_close">Move your face farther from the screen</string>
-	<string name="iproov__failure_face_too_far">Move your face closer to the screen</string>
-	<string name="iproov__failure_misaligned_face">Keep your face in the oval</string>
-	<string name="iproov__failure_not_supported">Device is not supported</string>
-	<string name="iproov__failure_obscured_face">Remove any face coverings</string>
-	<string name="iproov__failure_sunglasses">Remove sunglasses</string>
-	<string name="iproov__failure_too_bright">Move somewhere darker</string>
-	<string name="iproov__failure_too_dark">Move somewhere brighter</string>
-	<string name="iproov__failure_too_much_movement">Keep still</string>
-	<string name="iproov__failure_unknown">Try again</string>
-	<string name="iproov__failure_user_timeout">Your session has expired</string>
-	<string name="iproov__progress_assessing_genuine_presence">Assessing genuine presence…</string>
-	<string name="iproov__progress_assessing_liveness">Assessing liveness…</string>
-	<string name="iproov__progress_confirming_identity">Confirming identity…</string>
-	<string name="iproov__progress_creating_identity">Creating identity…</string>
-	<string name="iproov__progress_finding_face">Finding face…</string>
-	<string name="iproov__progress_identifying_face">Identifying face…</string>
-	<string name="iproov__progress_loading">Loading…</string>
-	<string name="iproov__progress_streaming">Streaming…</string>
-	<string name="iproov__prompt_align_face">Put your face in the oval</string>
-	<string name="iproov__prompt_get_ready">Get ready…</string>
-	<string name="iproov__prompt_liveness_scan_completed">Scanning completed</string>
-	<string name="iproov__prompt_too_bright">Go somewhere shadier</string>
-	<string name="iproov__prompt_too_close">Too close</string>
-	<string name="iproov__prompt_too_far">Move closer</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

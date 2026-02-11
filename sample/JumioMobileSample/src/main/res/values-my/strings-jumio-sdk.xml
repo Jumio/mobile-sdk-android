@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">ရွေးချယ်ထားသော PDF ဖိုင်ကို စကားဝှက်ဖြင့် ကာကွယ်ထားသည်</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">အများဆုံး အရွယ်အစား ကန့်သတ်ချက်ကို ကျော်လွန်သွားပါသည်</string>
 	<string name="jumio_dv_retry_not_readable">ရွေးချယ်ထားသော PDF ဖိုင်ကို စီမံဆောင်ရွက်၍မရပါ</string>
 	<string name="jumio_dv_retry_page_limit">အများဆုံး PDF စာမျက်နှာကန့်သတ်ချက်ကို ကျော်သွားပါပြီ</string>
-	<string name="jumio_dv_retry_size_limit">အများဆုံး PDF အရွယ်အစားကန့်သတ်ချက်ကို ကျော်သွားပါပြီ</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">ရွေးချယ်ထားသောဖိုင်ကို လုပ်ဆောင်၍မရပါ</string>
 	<string name="jumio_error_case_auth_failed">အတည်ပြုခြင်း မအောင်မြင်ပါ</string>
 	<string name="jumio_error_case_cancelled">ပယ်ဖျက်ထားသည်</string>
 	<string name="jumio_error_case_cancelled_by_user">အသုံးပြုသူက ပယ်ဖျက်လိုက်သည်</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">ရှေ့ဆက်မည်</string>
 	<string name="jumio_button_retry">ထပ်မံ ကြိုးစားကြည့်ပါ</string>
 	<string name="jumio_change_issuing_country">ထုတ်ပေးသည့်နိုင်ငံကို ပြောင်းပါ</string>
+	<string name="jumio_choose_file_location">ဖိုင်တည်နေရာကို ရွေးပါ</string>
 	<string name="jumio_clear_search">ရှာဖွေမှုကို ရှင်းလင်းရန်</string>
 	<string name="jumio_current_issuing_country">လက်ရှိထုတ်ပေးသည့်နိုင်ငံ: %s</string>
 	<string name="jumio_di_back_to_document_selection">သင့်ကို စာရွက်စာတမ်း ရွေးချယ်ရာနေရာသို့ ပြန်ပို့ပါမည်။</string>
 	<string name="jumio_di_vendor_selection_title">ဒစ်ဂျစ်တယ် ID ပံ့ပိုးသူကို ရွေးချယ်ပါ</string>
 	<string name="jumio_di_verification_prompt_processing">%s အက်ပ်တွင် လုပ်ငန်းစဉ်ကို အပြီးသတ်ပါ။</string>
+	<string name="jumio_dv_clear_or_unedited">ပုံသည် ကြည်လင်ပြတ်သားပြီး တည်းဖြတ်မထားရပါ။</string>
 	<string name="jumio_dv_confirm_button_reselect">ပြန်လည်ရွေးချယ်ပါ</string>
-	<string name="jumio_dv_confirm_file_info">မှန်ကန်သော PDF ဖိုင်ကို ရွေးချယ်ထားကြောင်း သေချာပါစေ</string>
 	<string name="jumio_dv_confirm_file_title">သင့်ဖိုင်ကို အတည်ပြုပါ</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">ပုံသည် JPG, PNG သို့မဟုတ် WEBP ဖော်မတ်ဖြစ်သင့်သည်</string>
 	<string name="jumio_dv_method_description">သင့်စာရွက်စာတမ်းကို ဓာတ်ပုံရိုက်ပါ သို့မဟုတ် PDF ဗားရှင်းကို အပ်လုဒ်တင်ပါ</string>
 	<string name="jumio_dv_method_photo_button">ဓာတ်ပုံရိုက်ပါ</string>
 	<string name="jumio_dv_method_title">နည်းလမ်း ရွေးချယ်ပါ</string>
 	<string name="jumio_dv_method_upload_pdf_button">PDF ဖိုင်ကို အပ်လုဒ်တင်ပါ</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">ပုံတွင် ကြည်လင်မှု သို့မဟုတ် ရေစာများ မပါဝင်သင့်ပါ</string>
+	<string name="jumio_dv_selected_the_right_file">ဖိုင်အမှန်ကို ရွေးချယ်ထားကြောင်း သေချာပါစေ</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">သင်၏စာရွက်စာတမ်းကို ဓာတ်ပုံရိုက်ပါ သို့မဟုတ် ဖိုင်တစ်ခုကို အပ်လုဒ်လုပ်ပါ</string>
+	<string name="jumio_dv_upload_an_image">ပုံတစ်ပုံတင်ပါ</string>
 	<string name="jumio_dv_upload_choose_button">ဖိုင်တစ်ဖိုင် ရွေးပါ</string>
+	<string name="jumio_dv_upload_from_photo_library">ဓာတ်ပုံစာကြည့်တိုက်မှ အပ်လုဒ်လုပ်ပါ</string>
 	<string name="jumio_dv_upload_header">စာရွက်စာတမ်းကို အပ်လုဒ်တင်ပါ</string>
 	<string name="jumio_dv_upload_tips_file_size">အများဆုံးဖိုင်အရွယ်အစား- %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">အများဆုံး စာမျက်နှာအရေအတွက်- %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">စာရွက်စာတမ်းကို စကားဝှက်ဖြင့် မကာကွယ်ထားသင့်ပါ</string>
-	<string name="jumio_eidas_description">လော့ဂ်အင်စဝင်ရန် \'ဆက်လုပ်မည်\' ကို နှိပ်ပါ။\nထို့နောက် နောက်စာမျက်နှာတွင် \'eIDAS လော့ဂ်အင်\' ကို ရွေးချယ်ပြီး ဆက်လုပ်ရန် သင့်နိုင်ငံအလံကို ရွေးပါ။\nလုံခြုံပြီး EU နှင့်ကိုက်ညီစွာ အတည်ပြုရန် eIDAS လော့ဂ်အင်ကို သုံးပါ။</string>
-	<string name="jumio_eidas_login_header">eIDAS လော့ဂ်အင်</string>
+	<string name="jumio_eidas_description">လော့ဂ်အင်ဝင်ခြင်းလုပ်ငန်းစဉ်ကို စတင်ရန် \'ဆက်လုပ်ရန်\' ကိုနှိပ်ပါ။\nထို့နောက်၊ လာမည့်စာမျက်နှာတွင် \'EU-Login\' ကိုရွေးချယ်ပြီး ဆက်လက်လုပ်ဆောင်ရန် သင့်နိုင်ငံ၏အလံကို ရွေးချယ်ပါ။\nလုံခြုံပြီး EU-လိုက်နာမှုရှိသော အတည်ပြုခြင်းအတွက် EU-Login ကို အသုံးပြုပါ။</string>
+	<string name="jumio_eidas_login_header">EU လော့ဂ်အင်</string>
 	<string name="jumio_error_button_retake_both">နှစ်ဖက်စလုံးကို ပြန်ရိုက်ရန်</string>
 	<string name="jumio_error_button_retake_one">ပြန်ရိုက်ရန်</string>
 	<string name="jumio_error_button_retry">ထပ်မံ ကြိုးစားကြည့်ပါ</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">သင့်ဓာတ်ပုံကို အတည်ပြုပါ</string>
 	<string name="jumio_id_scan_guide_back_side">နောက်ဘက်ခြမ်းကို ရိုက်ကူးပါ</string>
 	<string name="jumio_id_scan_guide_back_side_manually">နောက်ဘက်ခြမ်းကို ကိုယ်တိုင်ရိုက်ကူးပါ</string>
+	<string name="jumio_id_scan_guide_initial">ID ကို ရိုက်ကူးရန် မျက်နှာပြင်ပေါ်ရှိ ညွှန်ကြားချက်များကို လိုက်နာပါ</string>
 	<string name="jumio_id_scan_guide_photo_side">ဓာတ်ပုံဘက်ခြမ်းကို ရိုက်ကူးပါ</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">ဓာတ်ပုံဘက်ခြမ်းကို ကိုယ်တိုင်ရိုက်ကူးပါ</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">အောက်ခြေအစွန်းကို မြင်ရစေရန် စောင်းပြီးနောက် ဘောင်ထဲဝင်အောင် ချိန်ညှိပါ</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">ထပ်ကြိုးစားကြည့်ပါ</string>
 	<string name="jumio_uploading_success">အပ်လုဒ်တင်ခြင်း အောင်မြင်ပါသည်</string>
 	<string name="jumio_uploading_title">အပ်လုဒ်တင်နေသည်</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">စက်ကို သင့်မျက်နှာ ရှေ့ တည့်တည့်တွင် ကိုင်ထားပြီး စခရင်ကို ကြည့်ပါ</string>
-	<string name="iproov__accessibility_prompt_scanning">စကန်ဖတ်နေသည်</string>
-	<string name="iproov__error_camera">ကင်မရာ ဝင်သုံးခွင့်ကို ပိတ်ထားသည်</string>
-	<string name="iproov__error_camera_permission_denied">ကင်မရာ ဝင်သုံးခွင့်ကို ပိတ်ထားသည်</string>
-	<string name="iproov__error_capture_already_active">လက်ရှိ ရိုက်ကူးမှုကို လုပ်ဆောင်နေပါသည်</string>
-	<string name="iproov__error_device_not_supported">စက်ကို မပံ့ပိုးပါ</string>
-	<string name="iproov__error_face_detector">မျက်နှာကို မမှတ်မိပါ</string>
-	<string name="iproov__error_multi_window_mode_unsupported">အပလီကေးရှင်းသည် ဝင်းဒိုးများစွာ မုဒ်တွင် ရှိနေသည်</string>
-	<string name="iproov__error_network">အင်တာနက်ချိတ်ဆက်ထားကြောင်း စစ်ဆေးပါ</string>
-	<string name="iproov__error_server">အင်တာနက်ချိတ်ဆက်ထားကြောင်း စစ်ဆေးပါ</string>
-	<string name="iproov__error_unexpected_error">မျှော်လင့်မထားသော ချွတ်ယွင်းချက်တစ်ခုရှိခဲ့သည်</string>
-	<string name="iproov__failure_eyes_closed">မျက်လုံးများ ဖွင့်ထားပါ</string>
-	<string name="iproov__failure_face_too_close">သင့်မျက်နှာကို စခရင်နှင့်ဝေးရာသို့ ရွှေ့ပါ</string>
-	<string name="iproov__failure_face_too_far">သင့်မျက်နှာကို စခရင်နှင့်နီးရာသို့ ရွှေ့ပါ</string>
-	<string name="iproov__failure_misaligned_face">သင့်မျက်နှာကို ဘဲဥပုံထဲဝင်အောင်ထားပါ</string>
-	<string name="iproov__failure_not_supported">စက်ကို မပံ့ပိုးပါ</string>
-	<string name="iproov__failure_obscured_face">မျက်နှာဖုံးမှန်သမျှကို ဖယ်ရှားပါ</string>
-	<string name="iproov__failure_sunglasses">မျက်မှန် ချွတ်ပါ</string>
-	<string name="iproov__failure_too_bright">ပိုမှောင်သော တစ်နေရာရာသို့ ရွှေ့ပါ</string>
-	<string name="iproov__failure_too_dark">အလင်းရောင်ပိုရသော တစ်နေရာရာသို့ ရွှေ့ပါ</string>
-	<string name="iproov__failure_too_much_movement">ငြိမ်ငြိမ်ထားပါ</string>
-	<string name="iproov__failure_unknown">ထပ်မံ ကြိုးစားကြည့်ပါ</string>
-	<string name="iproov__failure_user_timeout">ဆက်ရှင် အချိန်ကုန်သွားပါပြီ</string>
-	<string name="iproov__progress_assessing_genuine_presence">စစ်မှန်သောတည်ရှိမှုဟုတ်မဟုတ် အကဲဖြတ်နေသည်…</string>
-	<string name="iproov__progress_assessing_liveness">အသက်ဝင်မှုရှိမရှိ အကဲဖြတ်နေသည်…</string>
-	<string name="iproov__progress_confirming_identity">အထောက်အထားကို အတည်ပြုနေသည်…</string>
-	<string name="iproov__progress_creating_identity">အထောက်အထားကို ဖန်တီးနေသည်…</string>
-	<string name="iproov__progress_finding_face">မျက်နှာကို ရှာနေသည်…</string>
-	<string name="iproov__progress_identifying_face">မျက်နှာကို ခွဲခြားဖော်ထုတ်နေသည်…</string>
-	<string name="iproov__progress_loading">လုပ်ဆောင်နေသည်…</string>
-	<string name="iproov__progress_streaming">ထုတ်လွှင့်နေသည်…</string>
-	<string name="iproov__prompt_align_face">သင့်မျက်နှာကို ဘဲဥပုံထဲဝင်အောင်လုပ်ပါ</string>
-	<string name="iproov__prompt_get_ready">အသင့်ပြင်ပါ…</string>
-	<string name="iproov__prompt_liveness_scan_completed">စကန်ဖတ်ပြီးပါပြီ</string>
-	<string name="iproov__prompt_too_bright">အရိပ်ပိုရသော တစ်နေရာရာသို့ သွားပါ</string>
-	<string name="iproov__prompt_too_close">နီးလွန်းသည်</string>
-	<string name="iproov__prompt_too_far">ပိုနီးရာသို့ ရွှေ့ပါ</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

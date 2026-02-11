@@ -1,4 +1,4 @@
-// Copyright 2023 Jumio Corporation, all rights reserved.
+// (c) 2026 Jumio All rights reserved. US Patent App.
 package com.jumio.sample.xml
 
 import android.annotation.SuppressLint
@@ -366,11 +366,7 @@ class CustomUiActivity :
 		binding.btnSetAcquireMode.setOnClickListener {
 			if (credential is JumioDocumentCredential) {
 				try {
-					val acquireMode = when (binding.acquireModeGroup.checkedRadioButtonId) {
-						R.id.acquireModeCamera -> JumioAcquireMode.CAMERA
-						R.id.acquireModeFile -> JumioAcquireMode.FILE
-						else -> throw Exception("AcquireMode not supported")
-					}
+					val acquireMode = getFileAcquireMode()
 
 					(credential as JumioDocumentCredential).setConfiguration(acquireMode)
 
@@ -668,6 +664,7 @@ class CustomUiActivity :
 			 */
 			JumioScanUpdate.TILT -> log("Tilt your document, ${data as JumioTiltState}")
 			JumioScanUpdate.IMAGE_ANALYSIS -> log("Analyzing your image. Hold still.")
+			JumioScanUpdate.ROTATE -> log("Rotate")
 		}
 	}
 
@@ -777,11 +774,9 @@ class CustomUiActivity :
 				scanPart?.let { JumioActivityAttacher(this).attach(it) }
 			}
 			JumioScanStep.ATTACH_FILE -> {
-				val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
-					addCategory(Intent.CATEGORY_OPENABLE)
-					type = "*/*"
-					putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("application/pdf"))
-				}
+				val fileAttacher = JumioFileAttacher()
+				scanPart?.let { fileAttacher.attach(it) }
+				val intent = getFileSelectionIntentFromFileSource(fileAttacher)
 				try {
 					launcher.launch(intent)
 				} catch (e: Exception) {
@@ -952,11 +947,17 @@ class CustomUiActivity :
 	private fun setupScanPart() {
 		showView(binding.scanPartControls)
 
+		if (credential is JumioDocumentCredential && getFileAcquireMode() == JumioAcquireMode.FILE) {
+			showView(binding.fileSourceLayout)
+		} else {
+			hideView(binding.fileSourceLayout)
+		}
+
 		val activeScanPart = scanPart ?: return
 		if (activeScanPart.scanMode == JumioScanMode.WEB) {
 			hideView(binding.inlineScanLayout)
 			showView(binding.digitalIdentityView)
-		} else if (activeScanPart.scanMode != JumioScanMode.FACE_IPROOV) {
+		} else {
 			hideView(binding.digitalIdentityView)
 			initScanView()
 		}
@@ -1214,6 +1215,42 @@ class CustomUiActivity :
 			}
 
 			activityResultLauncher.launch(intent)
+		}
+	}
+
+	fun getFileAcquireMode(): JumioAcquireMode {
+		return when (binding.acquireModeGroup.checkedRadioButtonId) {
+			R.id.acquireModeCamera -> JumioAcquireMode.CAMERA
+			R.id.acquireModeFile -> JumioAcquireMode.FILE
+			else -> throw Exception("AcquireMode not supported")
+		}
+	}
+
+	fun getFileSelectionIntentFromFileSource(fileAttacher: JumioFileAttacher): Intent {
+		val mimeTypes = fileAttacher.requirements.mimeTypes.filter { type -> type != MIME_TYPE_PDF }.toTypedArray()
+		when (getFileSource()) {
+			FILE_SOURCE_FILE_SYSTEM -> {
+				return Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+					addCategory(Intent.CATEGORY_OPENABLE)
+					putExtra(Intent.EXTRA_MIME_TYPES, fileAttacher.requirements.mimeTypes.toTypedArray())
+					type = MIME_TYPE_ALL
+				}
+			}
+			FILE_SOURCE_PHOTO_LIBRARY -> {
+				return Intent(Intent.ACTION_PICK).apply {
+					putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes)
+					type = MIME_TYPE_IMAGE
+				}
+			}
+			else -> throw Exception("File Source not supported")
+		}
+	}
+
+	fun getFileSource(): String {
+		return when (binding.fileSourceGroup.checkedRadioButtonId) {
+			R.id.fileSourceFileSystem -> FILE_SOURCE_FILE_SYSTEM
+			R.id.fileSourcePhotoLibrary -> FILE_SOURCE_PHOTO_LIBRARY
+			else -> throw Exception("File Source not supported")
 		}
 	}
 }

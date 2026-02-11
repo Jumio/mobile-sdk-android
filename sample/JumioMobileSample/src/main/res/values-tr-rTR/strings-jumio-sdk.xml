@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Seçilen PDF dosyası şifre korumalı</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Maksimum boyut sınırı aşıldı</string>
 	<string name="jumio_dv_retry_not_readable">Seçilen PDF dosyası işlenemiyor</string>
 	<string name="jumio_dv_retry_page_limit">Maksimum PDF sayfa sınırı aşıldı</string>
-	<string name="jumio_dv_retry_size_limit">Maksimum PDF boyutu sınırı aşıldı</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Seçilen dosya işlenemiyor</string>
 	<string name="jumio_error_case_auth_failed">Kimlik doğrulama başarısız oldu</string>
 	<string name="jumio_error_case_cancelled">Iptal</string>
 	<string name="jumio_error_case_cancelled_by_user">Son kullanıcı tarafından iptal edildi</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Devam et</string>
 	<string name="jumio_button_retry">Tekrar deneyin</string>
 	<string name="jumio_change_issuing_country">Düzenleyen Ülkeyi Değiştir</string>
+	<string name="jumio_choose_file_location">Dosya konumunu seçin</string>
 	<string name="jumio_clear_search">Aramayı temizle</string>
 	<string name="jumio_current_issuing_country">Mevcut Düzenleyen Ülke: %s</string>
 	<string name="jumio_di_back_to_document_selection">Belge seçme ekranına geri döndürüleceksiniz.</string>
 	<string name="jumio_di_vendor_selection_title">Dijital kimlik sağlayıcı seçin</string>
 	<string name="jumio_di_verification_prompt_processing">Lütfen %s uygulamasından akışı tamamlayın.</string>
+	<string name="jumio_dv_clear_or_unedited">Görüntü net ve düzenlenmemiş olmalıdır</string>
 	<string name="jumio_dv_confirm_button_reselect">Yeniden seçin</string>
-	<string name="jumio_dv_confirm_file_info">Doğru PDF dosyasını seçtiğinizden emin olun</string>
 	<string name="jumio_dv_confirm_file_title">Dosyanızı onaylayın</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Resim JPG, PNG veya WEBP biçiminde olmalıdır</string>
 	<string name="jumio_dv_method_description">Belgenizin fotoğrafını çekin veya PDF versiyonunu yükleyin</string>
 	<string name="jumio_dv_method_photo_button">Fotoğraf çekin</string>
 	<string name="jumio_dv_method_title">Yöntem seçin</string>
 	<string name="jumio_dv_method_upload_pdf_button">PDF Dosyası yükleyin</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Görüntüde şeffaflık veya filigran olmamalıdır</string>
+	<string name="jumio_dv_selected_the_right_file">Doğru dosyayı seçtiğinizden emin olun</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Belgenizin fotoğrafını çekin veya bir dosya yükleyin</string>
+	<string name="jumio_dv_upload_an_image">Bir resim yükleyin</string>
 	<string name="jumio_dv_upload_choose_button">Dosya seçin</string>
+	<string name="jumio_dv_upload_from_photo_library">Fotoğraf arşivinden yükle</string>
 	<string name="jumio_dv_upload_header">Belge yükleyin</string>
 	<string name="jumio_dv_upload_tips_file_size">Maksimum dosya boyutu: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimum sayfa sayısı: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Belge şifre korumalı olmamalıdır</string>
-	<string name="jumio_eidas_description">Oturum açma işlemini başlatmak için \'Devam\'a dokunun. \nArdından bir sonraki sayfada \'eIDAS Oturumu Açma\'yı seçin ve devam etmek için ülkenizin bayrağını seçin. \nGüvenli, AB uyumlu doğrulama için eIDAS Oturumu Açma\'yı kullanın.</string>
-	<string name="jumio_eidas_login_header">eIDAS Oturumu Açma</string>
+	<string name="jumio_eidas_description">Oturum açma işlemini başlatmak için \'Devam\'a dokunun. \nArdından bir sonraki sayfada \'EU-Login\'i seçin ve devam etmek için ülkenizin bayrağını seçin. \nGüvenli, AB uyumlu doğrulama için EU-Login\'i kullanın.</string>
+	<string name="jumio_eidas_login_header">AB Oturum Açma</string>
 	<string name="jumio_error_button_retake_both">İkisini de yeniden çek</string>
 	<string name="jumio_error_button_retake_one">Yeniden çek</string>
 	<string name="jumio_error_button_retry">Tekrar deneyin</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Fotoğrafınızı onaylayın</string>
 	<string name="jumio_id_scan_guide_back_side">ARKA tarafı çek</string>
 	<string name="jumio_id_scan_guide_back_side_manually">ARKA tarafı manuel çek</string>
+	<string name="jumio_id_scan_guide_initial">Kimlik belgenizin fotoğrafını çekmek için ekrandaki talimatları uygulayın</string>
 	<string name="jumio_id_scan_guide_photo_side">FOTOĞRAFLI tarafı çek</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">FOTOĞRAFLI tarafı manuel çek</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Alt kenar görünecek şekilde eğip çerçeveye hizalayın</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Tekrar deneyin</string>
 	<string name="jumio_uploading_success">Yükleme başarılı</string>
 	<string name="jumio_uploading_title">Yükleniyor</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Cihazı yüzünüzün önünde tutun ve ekrana bakın</string>
-	<string name="iproov__accessibility_prompt_scanning">Tarama</string>
-	<string name="iproov__error_camera">Kamera erişimi devre dışı</string>
-	<string name="iproov__error_camera_permission_denied">Kamera erişimi devre dışı</string>
-	<string name="iproov__error_capture_already_active">Geçerli çekim zaten devam ediyor</string>
-	<string name="iproov__error_device_not_supported">Cihaz desteklenmiyor</string>
-	<string name="iproov__error_face_detector">Yüz tanınmadı</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Uygulama çoklu pencere modunda</string>
-	<string name="iproov__error_network">Lütfen çevrimiçi olduğunuzu kontrol edin</string>
-	<string name="iproov__error_server">Lütfen çevrimiçi olduğunuzu kontrol edin</string>
-	<string name="iproov__error_unexpected_error">Beklenmeyen bir hata oluştu</string>
-	<string name="iproov__failure_eyes_closed">Gözlerinizi açık tutun</string>
-	<string name="iproov__failure_face_too_close">Yüzünüzü ekrandan uzaklaştırın</string>
-	<string name="iproov__failure_face_too_far">Yüzünüzü ekrana yaklaştırın</string>
-	<string name="iproov__failure_misaligned_face">Yüzünüzü oval alanda tutun</string>
-	<string name="iproov__failure_not_supported">Cihaz desteklenmiyor</string>
-	<string name="iproov__failure_obscured_face">Yüzünüzü kapatan her şeyi çıkarın</string>
-	<string name="iproov__failure_sunglasses">Güneş gözlüklerini çıkarın</string>
-	<string name="iproov__failure_too_bright">Daha karanlık bir yere geçin</string>
-	<string name="iproov__failure_too_dark">Daha aydınlık bir yere geçin</string>
-	<string name="iproov__failure_too_much_movement">Sabit durun</string>
-	<string name="iproov__failure_unknown">Tekrar deneyin</string>
-	<string name="iproov__failure_user_timeout">Oturumunuzun süresi doldu</string>
-	<string name="iproov__progress_assessing_genuine_presence">Mevcudiyetin gerçek olup olmadığı değerlendiriliyor…</string>
-	<string name="iproov__progress_assessing_liveness">Taramanın gerçek bir kişiye ait olup olmadığı değerlendiriliyor…</string>
-	<string name="iproov__progress_confirming_identity">Kimlik doğrulanıyor…</string>
-	<string name="iproov__progress_creating_identity">Kimlik oluşturuluyor…</string>
-	<string name="iproov__progress_finding_face">Yüz bulunuyor…</string>
-	<string name="iproov__progress_identifying_face">Yüz tanımlanıyor…</string>
-	<string name="iproov__progress_loading">Yükleniyor…</string>
-	<string name="iproov__progress_streaming">Veri akışı gerçekleşiyor…</string>
-	<string name="iproov__prompt_align_face">Yüzünüzü oval alana oturtun</string>
-	<string name="iproov__prompt_get_ready">Hazır olun…</string>
-	<string name="iproov__prompt_liveness_scan_completed">Tarama tamamlandı</string>
-	<string name="iproov__prompt_too_bright">Daha gölgeli bir yere gidin</string>
-	<string name="iproov__prompt_too_close">Çok yakın</string>
-	<string name="iproov__prompt_too_far">Yaklaşın</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

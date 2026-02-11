@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Valittu PDF-tiedosto on salasanasuojattu</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Suurin sallittu kokoraja ylitetty</string>
 	<string name="jumio_dv_retry_not_readable">Valittua PDF-tiedostoa ei voida käsitellä</string>
 	<string name="jumio_dv_retry_page_limit">PDF-tiedosto ylittää sivujen enimmäismäärän</string>
-	<string name="jumio_dv_retry_size_limit">PDF-tiedosto ylittää enimmäiskoon</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Valittua tiedostoa ei voi käsitellä</string>
 	<string name="jumio_error_case_auth_failed">Todennus epäonnistui</string>
 	<string name="jumio_error_case_cancelled">Peruttu</string>
 	<string name="jumio_error_case_cancelled_by_user">Loppukäyttäjän peruuttama</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Jatka</string>
 	<string name="jumio_button_retry">Yritä uudelleen</string>
 	<string name="jumio_change_issuing_country">Vaihda myöntäjämaa</string>
+	<string name="jumio_choose_file_location">Valitse tiedoston sijainti</string>
 	<string name="jumio_clear_search">Tyhjennä haku</string>
 	<string name="jumio_current_issuing_country">Nykyinen myöntäjämaa: %s</string>
 	<string name="jumio_di_back_to_document_selection">Sinut siiretään takaisin asiakirjan valintaan.</string>
 	<string name="jumio_di_vendor_selection_title">Valitse digitaalisen henkilöllisyystodistuksen tarjoaja</string>
 	<string name="jumio_di_verification_prompt_processing">Suorita prosessi %s-sovelluksessa.</string>
+	<string name="jumio_dv_clear_or_unedited">Kuvan on oltava selkeä ja muokkaamaton</string>
 	<string name="jumio_dv_confirm_button_reselect">Valitse uudelleen</string>
-	<string name="jumio_dv_confirm_file_info">Varmista, että olet valinnut oikean PDF-tiedoston</string>
 	<string name="jumio_dv_confirm_file_title">Vahvista tiedostosi</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Kuvan on oltava JPG-, PNG- tai WEBP-muodossa</string>
 	<string name="jumio_dv_method_description">Ota valokuva asiakirjastasi tai lataa PDF-versio</string>
 	<string name="jumio_dv_method_photo_button">Ota valokuva</string>
 	<string name="jumio_dv_method_title">Valitse tapa</string>
 	<string name="jumio_dv_method_upload_pdf_button">Lataa PDF-tiedosto</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Kuvassa ei saa olla läpinäkyvyyttä tai vesileimoja</string>
+	<string name="jumio_dv_selected_the_right_file">Varmista, että valitsit oikean tiedoston</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Ota valokuva asiakirjastasi tai lataa tiedosto</string>
+	<string name="jumio_dv_upload_an_image">Lataa kuva</string>
 	<string name="jumio_dv_upload_choose_button">Valitse tiedosto</string>
+	<string name="jumio_dv_upload_from_photo_library">Lataa kuvakirjastosta</string>
 	<string name="jumio_dv_upload_header">Lataa asiakirja</string>
 	<string name="jumio_dv_upload_tips_file_size">Tiedoston enimmäiskoko: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Sivujen enimmäismäärä: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Asiakirjan ei tulisi olla salasanasuojattu</string>
-	<string name="jumio_eidas_description">Aloita sisäänkirjautumisprosessi napauttamalla \"Jatka\". \nJatka valitsemalla seuraavalla sivulla \"eIDAS-kirjautuminen\" ja valitsemalla sitten maasi lippu. \nKäytä eIDAS-kirjautumista suojattuun ja EU-vaatimusten mukaiseen vahvistukseen.</string>
-	<string name="jumio_eidas_login_header">eIDAS-kirjautuminen</string>
+	<string name="jumio_eidas_description">Aloita sisäänkirjautumisprosessi napauttamalla \"Jatka\". \nValitse seuraavalla sivulla \"EU-Login\" ja jatka valitsemalla maasi lippu. \nKäytä EU-Login-palvelua turvalliseen, EU-säädösten mukaiseen vahvistukseen.</string>
+	<string name="jumio_eidas_login_header">EU-kirjautuminen</string>
 	<string name="jumio_error_button_retake_both">Ota molemmat uudelleen</string>
 	<string name="jumio_error_button_retake_one">Ota uudelleen</string>
 	<string name="jumio_error_button_retry">Yritä uudelleen</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Vahvista valokuvasi</string>
 	<string name="jumio_id_scan_guide_back_side">Kuvaa TAKAPUOLI</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Kuvaa TAKAPUOLI manuaalisesti</string>
+	<string name="jumio_id_scan_guide_initial">Ota kuva henkilöllisyystodistuksesta noudattamalla näytön ohjeita</string>
 	<string name="jumio_id_scan_guide_photo_side">Kuvaa VALOKUVAPUOLI</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Kuvaa VALOKUVAPUOLI manuaalisesti</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Kallista siten, että alareuna on näkyvissä, ja sovita sitten kehykseen</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Yritä uudelleen</string>
 	<string name="jumio_uploading_success">Lataaminen onnistui</string>
 	<string name="jumio_uploading_title">Ladataan</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Pitele laitetta kasvojesi edessä ja katso näyttöä kohti</string>
-	<string name="iproov__accessibility_prompt_scanning">Skannataan</string>
-	<string name="iproov__error_camera">Kamera on poistettu käytöstä</string>
-	<string name="iproov__error_camera_permission_denied">Kamera on poistettu käytöstä</string>
-	<string name="iproov__error_capture_already_active">Tallennus on jo käynnissä</string>
-	<string name="iproov__error_device_not_supported">Laitetta ei tueta</string>
-	<string name="iproov__error_face_detector">Kasvojentunnistus epäonnistui</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Sovellus on moni-ikkunatilassa</string>
-	<string name="iproov__error_network">Varmista, että olet yhteydessä internetiin</string>
-	<string name="iproov__error_server">Varmista, että olet yhteydessä internetiin</string>
-	<string name="iproov__error_unexpected_error">Tapahtui jokin odottamaton virhe</string>
-	<string name="iproov__failure_eyes_closed">Pidä silmät auki</string>
-	<string name="iproov__failure_face_too_close">Vie kasvosi kauemmas näytöstä</string>
-	<string name="iproov__failure_face_too_far">Tuo kasvosi lähemmäs näyttöä</string>
-	<string name="iproov__failure_misaligned_face">Pidä kasvosi soikion sisällä</string>
-	<string name="iproov__failure_not_supported">Laitetta ei tueta</string>
-	<string name="iproov__failure_obscured_face">Riisu kaikki, mikä peittää kasvot</string>
-	<string name="iproov__failure_sunglasses">Ota aurinkolasit pois</string>
-	<string name="iproov__failure_too_bright">Siirry vähemmän valoisaan paikkaan</string>
-	<string name="iproov__failure_too_dark">Siirry valoisampaan paikkaan</string>
-	<string name="iproov__failure_too_much_movement">Ole liikkumatta</string>
-	<string name="iproov__failure_unknown">Yritä uudelleen</string>
-	<string name="iproov__failure_user_timeout">Istuntosi on vanhentunut</string>
-	<string name="iproov__progress_assessing_genuine_presence">Arvioidaan oikeaa läsnäoloa…</string>
-	<string name="iproov__progress_assessing_liveness">Arvioidaan elävyyttä…</string>
-	<string name="iproov__progress_confirming_identity">Vahvistetaan henkilöllisyyttä…</string>
-	<string name="iproov__progress_creating_identity">Luodaan henkilöllisyyttä…</string>
-	<string name="iproov__progress_finding_face">Etsitään kasvoja…</string>
-	<string name="iproov__progress_identifying_face">Tunnistetaan kasvoja…</string>
-	<string name="iproov__progress_loading">Ladataan…</string>
-	<string name="iproov__progress_streaming">Suoratoistetaan…</string>
-	<string name="iproov__prompt_align_face">Sijoita kasvosi soikion sisälle</string>
-	<string name="iproov__prompt_get_ready">Valmistaudu…</string>
-	<string name="iproov__prompt_liveness_scan_completed">Skannaus valmis</string>
-	<string name="iproov__prompt_too_bright">Siirry varjoisampaan paikkaan</string>
-	<string name="iproov__prompt_too_close">Liian lähellä</string>
-	<string name="iproov__prompt_too_far">Siirry lähemmäs</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

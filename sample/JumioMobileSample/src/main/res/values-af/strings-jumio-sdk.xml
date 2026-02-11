@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Geselekteerde PDF-lêer is met ‘n wagwoord beveilig</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Maksimum grootte limiet oorskry</string>
 	<string name="jumio_dv_retry_not_readable">Geselekteerde PDF-lêer kan nie verwerk word nie</string>
 	<string name="jumio_dv_retry_page_limit">Perk vir maksimum aantal PDF-bladsye oorskry</string>
-	<string name="jumio_dv_retry_size_limit">Perk vir maksimum PDF-grootte oorskry</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Geselekteerde lêer kan nie verwerk word nie</string>
 	<string name="jumio_error_case_auth_failed">Verifikasie het misluk</string>
 	<string name="jumio_error_case_cancelled">Gekanselleer</string>
 	<string name="jumio_error_case_cancelled_by_user">Gekanselleer deur eindgebruiker</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Gaan voort</string>
 	<string name="jumio_button_retry">Probeer weer</string>
 	<string name="jumio_change_issuing_country">Verander Uitreikingsland</string>
+	<string name="jumio_choose_file_location">Kies lêerligging</string>
 	<string name="jumio_clear_search">Vee soektog uit</string>
 	<string name="jumio_current_issuing_country">Huidige Uitreikingsland: %s</string>
 	<string name="jumio_di_back_to_document_selection">Ons sal jou na dokumentseleksie terughelp.</string>
 	<string name="jumio_di_vendor_selection_title">Kies digitale-ID-verskaffer</string>
 	<string name="jumio_di_verification_prompt_processing">Voltooi asseblief die vloei op %s-app.</string>
+	<string name="jumio_dv_clear_or_unedited">Die beeld moet duidelik en ongeredigeer wees</string>
 	<string name="jumio_dv_confirm_button_reselect">Herselekteer</string>
-	<string name="jumio_dv_confirm_file_info">Sorg dat u die regte PDF-lêer gekies het</string>
 	<string name="jumio_dv_confirm_file_title">Bevestig u lêer</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Die prent moet in JPG-, PNG- of WEBP-formaat wees</string>
 	<string name="jumio_dv_method_description">Neem ‘n foto van u dokument of laai ‘n PDF-weergawe op</string>
 	<string name="jumio_dv_method_photo_button">Neem ‘n foto</string>
 	<string name="jumio_dv_method_title">Selekteer metode</string>
 	<string name="jumio_dv_method_upload_pdf_button">Laai PDF-lêer op</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Die beeld moet geen deursigtigheid of watermerke hê nie.</string>
+	<string name="jumio_dv_selected_the_right_file">Maak seker jy het die regte lêer gekies</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Neem \'n foto van jou dokument of laai \'n lêer op</string>
+	<string name="jumio_dv_upload_an_image">Laai ’n prent op</string>
 	<string name="jumio_dv_upload_choose_button">Kies lêer</string>
+	<string name="jumio_dv_upload_from_photo_library">Laai op vanaf fotobiblioteek</string>
 	<string name="jumio_dv_upload_header">Laai dokument op</string>
 	<string name="jumio_dv_upload_tips_file_size">Maksimum lêergrootte: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimum aantal bladsye: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument moenie met ‘n wagwoord beveilig wees nie</string>
-	<string name="jumio_eidas_description">Tik op “Gaan voort” om die aanmeldproses te begin. \nKies dan “eIDAS-aanmelding” op die volgende bladsy en kies jou land se vlag om voort te gaan. \nGebruik eIDAS-aanmelding vir veilige, EU-voldoenende verifikasie.</string>
-	<string name="jumio_eidas_login_header">eIDAS-aanmelding</string>
+	<string name="jumio_eidas_description">Tik op “Gaan voort” om die aanmeldproses te begin. \nKies dan “EU-Login” op die volgende bladsy en kies jou land se vlag om voort te gaan. \nGebruik EU-Login vir veilige, EU-voldoenende verifikasie.</string>
+	<string name="jumio_eidas_login_header">EU-Login</string>
 	<string name="jumio_error_button_retake_both">Neem albei weer</string>
 	<string name="jumio_error_button_retake_one">Neem weer</string>
 	<string name="jumio_error_button_retry">Probeer weer</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Bevestig u foto</string>
 	<string name="jumio_id_scan_guide_back_side">Neem die AGTERKANT af</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Neem die AGTERKANT handmatig af</string>
+	<string name="jumio_id_scan_guide_initial">Volg die instruksies op die skerm om die ID-dokument vas te lê</string>
 	<string name="jumio_id_scan_guide_photo_side">Neem die FOTOKANT af</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Neem die FOTOKANT handmatig af</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Kantel sodat die onderste rand sigbaar is en belyn dan met die raam</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Probeer asb. weer</string>
 	<string name="jumio_uploading_success">Oplaai was suksesvol</string>
 	<string name="jumio_uploading_title">Besig om op te laai</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Hou die toesstel voor jou gesig en kyk na die skerm</string>
-	<string name="iproov__accessibility_prompt_scanning">Skandeer tans</string>
-	<string name="iproov__error_camera">Toegang tot kamera is gedeaktiveer</string>
-	<string name="iproov__error_camera_permission_denied">Toegang tot kamera is gedeaktiveer</string>
-	<string name="iproov__error_capture_already_active">’n Bestaande vaslegging is reeds aan die gang</string>
-	<string name="iproov__error_device_not_supported">Toestel word nie ondersteun nie</string>
-	<string name="iproov__error_face_detector">Gesig nie herken nie</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Toepassing is in multivenstermodus</string>
-	<string name="iproov__error_network">Maak asseblief seker u is aanlyn</string>
-	<string name="iproov__error_server">Maak asseblief seker u is aanlyn</string>
-	<string name="iproov__error_unexpected_error">Daar was ’n onverwagse fout</string>
-	<string name="iproov__failure_eyes_closed">Hou jou oë oop</string>
-	<string name="iproov__failure_face_too_close">Skuif jou gesig verder van die skerm</string>
-	<string name="iproov__failure_face_too_far">Skuif jou gesig nader aan die skerm</string>
-	<string name="iproov__failure_misaligned_face">Hou jou gesig in die ovaal</string>
-	<string name="iproov__failure_not_supported">Toestel word nie ondersteun nie</string>
-	<string name="iproov__failure_obscured_face">Verwyder enige gesigbedekkings</string>
-	<string name="iproov__failure_sunglasses">Verwyder sonbril</string>
-	<string name="iproov__failure_too_bright">Skuif iewers heen waar dit donkerder is</string>
-	<string name="iproov__failure_too_dark">Skuif iewers heen waar daar meer lig is</string>
-	<string name="iproov__failure_too_much_movement">Hou stil</string>
-	<string name="iproov__failure_unknown">Probeer weer</string>
-	<string name="iproov__failure_user_timeout">U sessie het verstryk</string>
-	<string name="iproov__progress_assessing_genuine_presence">Bepaal werlike teenwoordigheid…</string>
-	<string name="iproov__progress_assessing_liveness">Bepaal lewendigheid…</string>
-	<string name="iproov__progress_confirming_identity">Bevestig identiteit…</string>
-	<string name="iproov__progress_creating_identity">Skep identiteit</string>
-	<string name="iproov__progress_finding_face">Vind gesig</string>
-	<string name="iproov__progress_identifying_face">Identifiseer gesig…</string>
-	<string name="iproov__progress_loading">Laai</string>
-	<string name="iproov__progress_streaming">Stroom…</string>
-	<string name="iproov__prompt_align_face">Sit jou gesig in die ovaal</string>
-	<string name="iproov__prompt_get_ready">Maak gereed …</string>
-	<string name="iproov__prompt_liveness_scan_completed">Skandering voltooi</string>
-	<string name="iproov__prompt_too_bright">Gaan staan iewers met meer skaduwee</string>
-	<string name="iproov__prompt_too_close">Te naby</string>
-	<string name="iproov__prompt_too_far">Kom nader</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

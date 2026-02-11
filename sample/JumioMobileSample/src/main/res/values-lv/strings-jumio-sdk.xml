@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Atlasītā PDF datne ir aizsargāta ar paroli</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Pārsniegts maksimālais lieluma ierobežojums</string>
 	<string name="jumio_dv_retry_not_readable">Atlasīto PDF datni nevar apstrādāt</string>
 	<string name="jumio_dv_retry_page_limit">Pārsniegts maksimālais PDF lapas izmēra ierobežojums</string>
-	<string name="jumio_dv_retry_size_limit">Pārsniegts maksimālais PDF izmēra ierobežojums</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Atlasīto failu nevar apstrādāt</string>
 	<string name="jumio_error_case_auth_failed">Autentifikācija neizdevās</string>
 	<string name="jumio_error_case_cancelled">Atcelta</string>
 	<string name="jumio_error_case_cancelled_by_user">Gala lietotājs atcēla procesu</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Turpināt</string>
 	<string name="jumio_button_retry">Mēģiniet vēlreiz</string>
 	<string name="jumio_change_issuing_country">Mainīt izdevējvalsti</string>
+	<string name="jumio_choose_file_location">Izvēlēties faila atrašanās vietu</string>
 	<string name="jumio_clear_search">Notīrīt meklēšanu</string>
 	<string name="jumio_current_issuing_country">Pašreizējā izdevējvalsts: %s</string>
 	<string name="jumio_di_back_to_document_selection">Jūs atgriezīsieties dokumentu atlases sadaļā.</string>
 	<string name="jumio_di_vendor_selection_title">Izvēlieties digitālā ID pakalpojuma sniedzēju</string>
 	<string name="jumio_di_verification_prompt_processing">Veiciet nepieciešamās darbības %s  lietotnē.</string>
+	<string name="jumio_dv_clear_or_unedited">Attēlam jābūt skaidram un nerediģētam</string>
 	<string name="jumio_dv_confirm_button_reselect">Atlasīt vēlreiz</string>
-	<string name="jumio_dv_confirm_file_info">Pārliecinieties, ka atlasījāt īsto PDF failu</string>
 	<string name="jumio_dv_confirm_file_title">Apstiprināt datni</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Attēlam jābūt JPG, PNG vai WEBP formātā</string>
 	<string name="jumio_dv_method_description">Uzņemiet dokumenta fotoattēlu vai augšupielādējiet tā PDF versiju</string>
 	<string name="jumio_dv_method_photo_button">Uzņemt fotoattēlu</string>
 	<string name="jumio_dv_method_title">Atlasīt metodi</string>
 	<string name="jumio_dv_method_upload_pdf_button">Augšupielādēt PDF datni</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Attēlā nedrīkst būt caurspīdīgums vai ūdenszīmes</string>
+	<string name="jumio_dv_selected_the_right_file">Pārliecinieties, vai esat atlasījis pareizo failu</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Nofotografējiet savu dokumentu vai augšupielādējiet failu</string>
+	<string name="jumio_dv_upload_an_image">Augšupielādēt attēlu</string>
 	<string name="jumio_dv_upload_choose_button">Atlasīt datni</string>
+	<string name="jumio_dv_upload_from_photo_library">Augšupielādēt no fotoattēlu bibliotēkas</string>
 	<string name="jumio_dv_upload_header">Augšupielādēt dokumentu</string>
 	<string name="jumio_dv_upload_tips_file_size">Maksimālais datnes izmērs: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimālais lapu skaits: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokuments nedrīkst būt aizsargāts ar paroli</string>
-	<string name="jumio_eidas_description">Pieskarieties \"Turpināt\", lai sāktu ielogošanās procesu.\nPēc tam nākamajā lapā atlasiet “eIDAS Login” un izvēlieties savas valsts karogu, lai turpinātu.\nIzmantojiet eIDAS Login drošai, ar ES saderīgai verifikācijai.</string>
-	<string name="jumio_eidas_login_header">eIDAS Login</string>
+	<string name="jumio_eidas_description">Pieskarieties pogai “Turpināt”, lai sāktu pieteikšanās procesu.\nNākamajā lapā atlasiet “EU-Login” un izvēlieties savas valsts karogu, lai turpinātu.\nIzmantojiet “EU-Login” drošai, ES prasībām atbilstošai verifikācijai.</string>
+	<string name="jumio_eidas_login_header">ES pieteikšanās</string>
 	<string name="jumio_error_button_retake_both">Uzņemt vēlreiz abas</string>
 	<string name="jumio_error_button_retake_one">Uzņemt vēlreiz</string>
 	<string name="jumio_error_button_retry">Mēģiniet vēlreiz</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Apstipriniet savu fotoattēlu</string>
 	<string name="jumio_id_scan_guide_back_side">Nofotogrāfējiet AIZMUGURI</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Manuāli nofotogrāfējiet AIZMUGURI</string>
+	<string name="jumio_id_scan_guide_initial">Izpildiet ekrānā redzamos norādījumus, lai uzņemtu personu apliecinoša dokumenta attēlu</string>
 	<string name="jumio_id_scan_guide_photo_side">Nofotogrāfējiet ATTĒLA pusi</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Manuāli nofotogrāfējiet ATTĒLA pusi</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Noliekt tā, lai būtu redzama apakšējā mala, un pēc tam izlīdzināt to pret rāmi</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Mēģiniet vēlreiz</string>
 	<string name="jumio_uploading_success">Augšupielāde veiksmīga</string>
 	<string name="jumio_uploading_title">Augšupielādē</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Turiet ierīci pret seju un skatieties ekrānā</string>
-	<string name="iproov__accessibility_prompt_scanning">Skenē</string>
-	<string name="iproov__error_camera">Piekļuve kamerai ir atspējota</string>
-	<string name="iproov__error_camera_permission_denied">Piekļuve kamerai ir atspējota</string>
-	<string name="iproov__error_capture_already_active">Tiek apstrādāts jau esošs attēls</string>
-	<string name="iproov__error_device_not_supported">Ierīce netiek atbalstīta</string>
-	<string name="iproov__error_face_detector">Seja nav atpazīta</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Lietotne ir vairāku logu režīmā</string>
-	<string name="iproov__error_network">Lūdzu, pārbaudiet, vai esat tiešsaistē</string>
-	<string name="iproov__error_server">Lūdzu, pārbaudiet, vai esat tiešsaistē</string>
-	<string name="iproov__error_unexpected_error">Radās negaidīta kļūda</string>
-	<string name="iproov__failure_eyes_closed">Acīm jābūt atvērtām</string>
-	<string name="iproov__failure_face_too_close">Attāliniet seju no ekrāna</string>
-	<string name="iproov__failure_face_too_far">Pietuviniet seju ekrānam</string>
-	<string name="iproov__failure_misaligned_face">Sejai jāatrodas ovālā</string>
-	<string name="iproov__failure_not_supported">Ierīce netiek atbalstīta</string>
-	<string name="iproov__failure_obscured_face">Noņemiet visu, kas aizsedz seju</string>
-	<string name="iproov__failure_sunglasses">Noņemiet saulesbrilles</string>
-	<string name="iproov__failure_too_bright">Dodieties uz tumšāku vietu</string>
-	<string name="iproov__failure_too_dark">Dodieties uz labāk apgaismotu vietu</string>
-	<string name="iproov__failure_too_much_movement">Nekustieties</string>
-	<string name="iproov__failure_unknown">Mēģiniet vēlreiz</string>
-	<string name="iproov__failure_user_timeout">Jūsu sesija ir beigusies</string>
-	<string name="iproov__progress_assessing_genuine_presence">Novērtē personas klātbūtni…</string>
-	<string name="iproov__progress_assessing_liveness">Novērtē, vai reāla persona…</string>
-	<string name="iproov__progress_confirming_identity">Apstiprina identitāti…</string>
-	<string name="iproov__progress_creating_identity">Veido identitāti…</string>
-	<string name="iproov__progress_finding_face">Meklē seju…</string>
-	<string name="iproov__progress_identifying_face">Identificē seju…</string>
-	<string name="iproov__progress_loading">Ielādē…</string>
-	<string name="iproov__progress_streaming">Straumē…</string>
-	<string name="iproov__prompt_align_face">Salāgojiet sejas kontrūru ar ovālu</string>
-	<string name="iproov__prompt_get_ready">Sagatavojieties…</string>
-	<string name="iproov__prompt_liveness_scan_completed">Skenēšana pabeigta</string>
-	<string name="iproov__prompt_too_bright">Dodieties uz ēnaināku vietu</string>
-	<string name="iproov__prompt_too_close">Pārāk tuvu</string>
-	<string name="iproov__prompt_too_far">Panāciet tuvāk</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

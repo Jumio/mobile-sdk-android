@@ -36,17 +36,6 @@
 -keep class org.tensorflow.**$* { *; }
 -dontwarn org.tensorflow.**
 
-# IProov
--keep public class com.iproov.sdk.IProov { public *; }
--keep class com.iproov.** { *; }
--keep class com.iproov.**$* { *; }
--keep class com.google.protobuf.** { *; }
--keep class com.google.protobuf.**$* { *; }
--dontwarn com.google.protobuf.**
--dontwarn com.tinder.**
--dontwarn okhttp3.**
--dontwarn okio.**
-
 # JMRTD
 -keep class org.jmrtd.** { *; }
 -keep class net.sf.scuba.** { *;}

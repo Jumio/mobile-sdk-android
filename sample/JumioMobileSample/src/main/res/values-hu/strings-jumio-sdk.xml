@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">A kiválasztott PDF-fájl jelszóval védett</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">A maximális méretkorlát túllépve</string>
 	<string name="jumio_dv_retry_not_readable">A kiválasztott PDF-fájl nem dolgozható fel</string>
 	<string name="jumio_dv_retry_page_limit">A PDF maximális oldalszámának korlátja túl lett lépve</string>
-	<string name="jumio_dv_retry_size_limit">A PDF maximális méretének korlátja túl lett lépve</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">A kiválasztott fájlt nem lehet feldolgozni</string>
 	<string name="jumio_error_case_auth_failed">A hitelesítés sikertelen</string>
 	<string name="jumio_error_case_cancelled">Törölt</string>
 	<string name="jumio_error_case_cancelled_by_user">Végfelhasználó által megszakítva</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Tovább</string>
 	<string name="jumio_button_retry">Újra próbálkozás</string>
 	<string name="jumio_change_issuing_country">Kiállító ország módosítása</string>
+	<string name="jumio_choose_file_location">Fájl helyének kiválasztása</string>
 	<string name="jumio_clear_search">Keresés törlése</string>
 	<string name="jumio_current_issuing_country">Jelenlegi kibocsátó ország: %s</string>
 	<string name="jumio_di_back_to_document_selection">Vissza fog térni a dokumentum kiválasztásához.</string>
 	<string name="jumio_di_vendor_selection_title">Digitális identitásszolgáltató kiválasztása</string>
 	<string name="jumio_di_verification_prompt_processing">Kérjük, menjen végig a folyamaton a(z) %s alkalmazásban.</string>
+	<string name="jumio_dv_clear_or_unedited">A képnek élesnek és szerkesztetlennek kell lennie</string>
 	<string name="jumio_dv_confirm_button_reselect">Ismételt kiválasztás</string>
-	<string name="jumio_dv_confirm_file_info">Győződjön meg arról, hogy a megfelelő PDF-fájlt választotta ki</string>
 	<string name="jumio_dv_confirm_file_title">Erősítse meg a fájlt</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">A kép formátuma JPG, PNG vagy WEBP legyen</string>
 	<string name="jumio_dv_method_description">Készítsen fényképet az igazolványról vagy töltsön fel PDF verziót</string>
 	<string name="jumio_dv_method_photo_button">Fénykép készítése</string>
 	<string name="jumio_dv_method_title">Válasszon módszert</string>
 	<string name="jumio_dv_method_upload_pdf_button">PDF-fájl feltöltése</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">A kép nem tartalmazhat áttetszőséget vagy vízjelet</string>
+	<string name="jumio_dv_selected_the_right_file">Győződjön meg róla, hogy a megfelelő fájlt választotta ki</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Fényképezze le a dokumentumát, vagy töltsön fel egy fájlt</string>
+	<string name="jumio_dv_upload_an_image">Kép feltöltése</string>
 	<string name="jumio_dv_upload_choose_button">Válasszon fájlt</string>
+	<string name="jumio_dv_upload_from_photo_library">Feltöltés a fotókönyvtárból</string>
 	<string name="jumio_dv_upload_header">Dokumentum feltöltése</string>
 	<string name="jumio_dv_upload_tips_file_size">Fájl maximális mérete: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Oldalak maximális száma: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">A dokumentum nem lehet jelszóval védett</string>
-	<string name="jumio_eidas_description">Koppintson a „Tovább” gombra a bejelentkezési folyamat megkezdéséhez. \nEzután válassza ki az „eIDAS bejelentkezés” lehetőséget a megjelenő oldalon, majd a folytatáshoz válassza ki az országa zászlaját. \nHasználja az eIDAS bejelentkezést az uniós előírásoknak megfelelő, biztonságos ellenőrzéshez.</string>
-	<string name="jumio_eidas_login_header">eIDAS bejelentkezés</string>
+	<string name="jumio_eidas_description">Koppintson a „Tovább” gombra a bejelentkezési folyamat megkezdéséhez. \nEzután válassza ki az „EU-Login” lehetőséget a következő oldalon, majd a folytatáshoz válassza ki az országa zászlaját. \nHasználja az EU-Logint a biztonságos, uniós előírásoknak megfelelő ellenőrzéshez.</string>
+	<string name="jumio_eidas_login_header">EU-bejelentkezés</string>
 	<string name="jumio_error_button_retake_both">Mindkettő megismétlése</string>
 	<string name="jumio_error_button_retake_one">Megismétlés</string>
 	<string name="jumio_error_button_retry">Újra próbálkozás</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Erősítse meg a fényképet</string>
 	<string name="jumio_id_scan_guide_back_side">Rögzítse a HÁTULSÓ oldalt</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Rögzítse manuálisan a HÁTULSÓ oldalt</string>
+	<string name="jumio_id_scan_guide_initial">Kövesse a képernyőn megjelenő utasításokat az igazolvány rögzítéséhez</string>
 	<string name="jumio_id_scan_guide_photo_side">Rögzítse a FOTÓS oldalt</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Rögzítse manuálisan a FOTÓS oldalt</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Döntés úgy, hogy az alsó szél látható legyen, majd igazítás a kerethez</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Próbálja meg újra</string>
 	<string name="jumio_uploading_success">Feltöltés sikeres</string>
 	<string name="jumio_uploading_title">Feltöltés</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Tartsa az eszközt az arca elé, és nézzen a képernyőre</string>
-	<string name="iproov__accessibility_prompt_scanning">Szkennelés</string>
-	<string name="iproov__error_camera">A kamera hozzáférése letiltva</string>
-	<string name="iproov__error_camera_permission_denied">A kamera hozzáférése letiltva</string>
-	<string name="iproov__error_capture_already_active">Egy meglévő rögzítés már folyamatban van</string>
-	<string name="iproov__error_device_not_supported">Az eszköz nem támogatott</string>
-	<string name="iproov__error_face_detector">Az arc nem ismerhető fel</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Az alkalmazás többablakos módban van</string>
-	<string name="iproov__error_network">Ellenőrizze, hogy kapcsolódik-e az internethez.</string>
-	<string name="iproov__error_server">Ellenőrizze, hogy kapcsolódik-e az internethez.</string>
-	<string name="iproov__error_unexpected_error">Váratlan hiba történt</string>
-	<string name="iproov__failure_eyes_closed">Tartsa nyitva a szemét</string>
-	<string name="iproov__failure_face_too_close">Vigye távolabb az arcát a képernyőtől</string>
-	<string name="iproov__failure_face_too_far">Vigye közelebb az arcát a képernyőhöz</string>
-	<string name="iproov__failure_misaligned_face">Tartsa az arcát az ovális keretben</string>
-	<string name="iproov__failure_not_supported">Az eszköz nem támogatott</string>
-	<string name="iproov__failure_obscured_face">Vegye le az arcát takaró tárgyakat</string>
-	<string name="iproov__failure_sunglasses">Vegye le a napszemüveget</string>
-	<string name="iproov__failure_too_bright">Menjen sötétebb helyre</string>
-	<string name="iproov__failure_too_dark">Menjen világosabb helyre</string>
-	<string name="iproov__failure_too_much_movement">Maradjon mozdulatlan</string>
-	<string name="iproov__failure_unknown">Újra próbálkozás</string>
-	<string name="iproov__failure_user_timeout">A munkamenete lejárt</string>
-	<string name="iproov__progress_assessing_genuine_presence">Valós jelenlét értékelése…</string>
-	<string name="iproov__progress_assessing_liveness">Élő személy értékelése…</string>
-	<string name="iproov__progress_confirming_identity">Személyazonosság megerősítése…</string>
-	<string name="iproov__progress_creating_identity">Személyazonosság létrehozása…</string>
-	<string name="iproov__progress_finding_face">Arc keresése…</string>
-	<string name="iproov__progress_identifying_face">Arc azonosítása…</string>
-	<string name="iproov__progress_loading">Töltés…</string>
-	<string name="iproov__progress_streaming">Közvetítés…</string>
-	<string name="iproov__prompt_align_face">Igazítsa az arcát az ovális keretbe</string>
-	<string name="iproov__prompt_get_ready">Készüljön fel…</string>
-	<string name="iproov__prompt_liveness_scan_completed">A szkennelés befejeződött</string>
-	<string name="iproov__prompt_too_bright">Menj árnyékosabb helyre</string>
-	<string name="iproov__prompt_too_close">Túl közel</string>
-	<string name="iproov__prompt_too_far">Mozgassa közelebb</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

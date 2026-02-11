@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Tệp PDF đã chọn được bảo vệ bằng mật khẩu</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Đã vượt quá giới hạn kích thước tối đa</string>
 	<string name="jumio_dv_retry_not_readable">Không thể xử lý tệp PDF đã chọn</string>
 	<string name="jumio_dv_retry_page_limit">Đã vượt quá giới hạn trang PDF tối đa</string>
-	<string name="jumio_dv_retry_size_limit">Đã vượt quá giới hạn kích thước tối đa của tệp PDF</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Không thể xử lý tệp đã chọn</string>
 	<string name="jumio_error_case_auth_failed">Xác thực thất bại</string>
 	<string name="jumio_error_case_cancelled">Bị hủy bỏ</string>
 	<string name="jumio_error_case_cancelled_by_user">Đã hủy bởi người dùng cuối</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Tiếp tục</string>
 	<string name="jumio_button_retry">Thử lại</string>
 	<string name="jumio_change_issuing_country">Thay đổi quốc gia cấp</string>
+	<string name="jumio_choose_file_location">Chọn vị trí tệp</string>
 	<string name="jumio_clear_search">Xóa tìm kiếm</string>
 	<string name="jumio_current_issuing_country">Quốc gia cấp hiện tại: %s</string>
 	<string name="jumio_di_back_to_document_selection">Bạn sẽ được điều hướng trở lại lựa chọn tài liệu.</string>
 	<string name="jumio_di_vendor_selection_title">Chọn nhà cung cấp ID kỹ thuật số</string>
 	<string name="jumio_di_verification_prompt_processing">Vui lòng hoàn tất quy trình trên ứng dụng %s.</string>
+	<string name="jumio_dv_clear_or_unedited">Hình ảnh phải rõ ràng và chưa qua chỉnh sửa</string>
 	<string name="jumio_dv_confirm_button_reselect">Chọn lại</string>
-	<string name="jumio_dv_confirm_file_info">Đảm bảo rằng bạn đã chọn đúng tệp PDF</string>
 	<string name="jumio_dv_confirm_file_title">Xác nhận tệp của bạn</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Hình ảnh phải ở định dạng JPG, PNG hoặc WEBP</string>
 	<string name="jumio_dv_method_description">Chụp ảnh tài liệu của bạn hoặc tải lên phiên bản PDF</string>
 	<string name="jumio_dv_method_photo_button">Chụp ảnh</string>
 	<string name="jumio_dv_method_title">Chọn phương pháp</string>
 	<string name="jumio_dv_method_upload_pdf_button">Tải lên tệp PDF</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Hình ảnh không được có độ trong suốt hoặc hình mờ</string>
+	<string name="jumio_dv_selected_the_right_file">Hãy chắc chắn rằng bạn đã chọn đúng tệp</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Chụp ảnh tài liệu của bạn hoặc tải lên một tệp</string>
+	<string name="jumio_dv_upload_an_image">Tải lên một hình ảnh</string>
 	<string name="jumio_dv_upload_choose_button">Chọn tệp</string>
+	<string name="jumio_dv_upload_from_photo_library">Tải lên từ thư viện ảnh</string>
 	<string name="jumio_dv_upload_header">Tải lên tài liệu</string>
 	<string name="jumio_dv_upload_tips_file_size">Kích thước tệp tối đa: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Số trang tối đa: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Tài liệu không được bảo vệ bằng mật khẩu</string>
-	<string name="jumio_eidas_description">Nhấn \'Tiếp tục\' để bắt đầu quá trình đăng nhập.\nTiếp theo, chọn \'Đăng nhập eIDAS\' trên trang tiếp theo và chọn quốc kỳ của quốc gia bạn để tiếp tục.\nSử dụng Đăng nhập eIDAS để xác minh an toàn, tuân thủ quy định của Liên minh Châu Âu.</string>
-	<string name="jumio_eidas_login_header">Đăng nhập eIDAS</string>
+	<string name="jumio_eidas_description">Nhấn \'Tiếp tục\' để bắt đầu quá trình đăng nhập.\nTiếp theo, chọn \'EU-Login\' trên trang sau và chọn quốc kỳ của bạn để tiếp tục.\nSử dụng EU-Login để xác minh an toàn, tuân thủ quy định của EU.</string>
+	<string name="jumio_eidas_login_header">Đăng nhập EU</string>
 	<string name="jumio_error_button_retake_both">Chụp lại cả hai</string>
 	<string name="jumio_error_button_retake_one">Chụp lại</string>
 	<string name="jumio_error_button_retry">Thử lại</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Xác nhận ảnh của bạn</string>
 	<string name="jumio_id_scan_guide_back_side">Chụp mặt SAU của giấy tờ</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Chụp mặt SAU của giấy tờ theo cách thủ công</string>
+	<string name="jumio_id_scan_guide_initial">Làm theo hướng dẫn trên màn hình để chụp giấy tờ tùy thân</string>
 	<string name="jumio_id_scan_guide_photo_side">Chụp mặt TRƯỚC của giấy tờ</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Chụp mặt TRƯỚC của giấy tờ theo cách thủ công</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Nghiêng sao cho có thể nhìn thấy cạnh dưới rồi căn chỉnh cho phù hợp với khung</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Vui lòng thử lại</string>
 	<string name="jumio_uploading_success">Tải lên thành công</string>
 	<string name="jumio_uploading_title">Đang tải lên</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Giữ thiết bị trước mặt và nhìn vào màn hình</string>
-	<string name="iproov__accessibility_prompt_scanning">Đang quét</string>
-	<string name="iproov__error_camera">Quyền truy cập máy ảnh bị vô hiệu hóa</string>
-	<string name="iproov__error_camera_permission_denied">Quyền truy cập máy ảnh bị vô hiệu hóa</string>
-	<string name="iproov__error_capture_already_active">Quá trình chụp hiện có đang diễn ra</string>
-	<string name="iproov__error_device_not_supported">Thiết bị không được hỗ trợ</string>
-	<string name="iproov__error_face_detector">Không nhận dạng được khuôn mặt</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Ứng dụng đang ở chế độ nhiều cửa sổ</string>
-	<string name="iproov__error_network">Vui lòng kiểm tra xem bạn có trực tuyến không</string>
-	<string name="iproov__error_server">Vui lòng kiểm tra xem bạn có trực tuyến không</string>
-	<string name="iproov__error_unexpected_error">Đã xảy ra lỗi không mong muốn</string>
-	<string name="iproov__failure_eyes_closed">Giữ cho đôi mắt của bạn mở</string>
-	<string name="iproov__failure_face_too_close">Di chuyển khuôn mặt của bạn ra xa màn hình hơn</string>
-	<string name="iproov__failure_face_too_far">Di chuyển khuôn mặt của bạn đến gần màn hình hơn</string>
-	<string name="iproov__failure_misaligned_face">Giữ khuôn mặt của bạn trong hình bầu dục</string>
-	<string name="iproov__failure_not_supported">Thiết bị không được hỗ trợ</string>
-	<string name="iproov__failure_obscured_face">Tháo khẩu trang</string>
-	<string name="iproov__failure_sunglasses">Tháo kính râm</string>
-	<string name="iproov__failure_too_bright">Di chuyển đến một nơi tối hơn</string>
-	<string name="iproov__failure_too_dark">Di chuyển đến một nơi sáng hơn</string>
-	<string name="iproov__failure_too_much_movement">Giữ yên</string>
-	<string name="iproov__failure_unknown">Thử lại</string>
-	<string name="iproov__failure_user_timeout">Phiên của bạn đã hết hạn</string>
-	<string name="iproov__progress_assessing_genuine_presence">Đánh giá sự hiện diện thực sự…</string>
-	<string name="iproov__progress_assessing_liveness">Đang đánh giá thực thể sống…</string>
-	<string name="iproov__progress_confirming_identity">Đang xác nhận danh tính…</string>
-	<string name="iproov__progress_creating_identity">Đang tạo nhận dạng…</string>
-	<string name="iproov__progress_finding_face">Đang tìm khuôn mặt…</string>
-	<string name="iproov__progress_identifying_face">Đang nhận dạng khuôn mặt…</string>
-	<string name="iproov__progress_loading">Đang tải…</string>
-	<string name="iproov__progress_streaming">Đang phát trực tiếp</string>
-	<string name="iproov__prompt_align_face">Đặt khuôn mặt của bạn trong hình bầu dục</string>
-	<string name="iproov__prompt_get_ready">Chuẩn bị…</string>
-	<string name="iproov__prompt_liveness_scan_completed">Đã quét xong</string>
-	<string name="iproov__prompt_too_bright">Đi đến nơi tối hơn</string>
-	<string name="iproov__prompt_too_close">Quá gần</string>
-	<string name="iproov__prompt_too_far">Di chuyển lại gần hơn</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

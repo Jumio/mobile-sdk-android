@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Pasirinktas PDF failas yra apsaugotas slaptažodžiu</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Viršytas didžiausias dydžio apribojimas</string>
 	<string name="jumio_dv_retry_not_readable">Pasirinkto PDF failo apdoroti negalima</string>
 	<string name="jumio_dv_retry_page_limit">Viršytas maksimalus PDF puslapių limitas</string>
-	<string name="jumio_dv_retry_size_limit">Viršytas maksimalus PDF dydžio limitas</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Pasirinkto failo apdoroti negalima</string>
 	<string name="jumio_error_case_auth_failed">Autentifikavimas nepavyko</string>
 	<string name="jumio_error_case_cancelled">Atšauktas</string>
 	<string name="jumio_error_case_cancelled_by_user">Atšaukė galutinis naudotojas</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Tęsti</string>
 	<string name="jumio_button_retry">Bandykite dar kartą</string>
 	<string name="jumio_change_issuing_country">Pakeisti išdavusią šalį</string>
+	<string name="jumio_choose_file_location">Pasirinkite failo vietą</string>
 	<string name="jumio_clear_search">Išvalyti paiešką</string>
 	<string name="jumio_current_issuing_country">Dabartinė išdavimo šalis: %s</string>
 	<string name="jumio_di_back_to_document_selection">Būsite nukreipti atgal į dokumentų pasirinkimą.</string>
 	<string name="jumio_di_vendor_selection_title">Pasirinkti skaitmeninės tapatybės paslaugų teikėją</string>
 	<string name="jumio_di_verification_prompt_processing">Užbaikite veiksmų seką „%s“ programėlėje.</string>
+	<string name="jumio_dv_clear_or_unedited">Nuotrauka turi būti aiški ir neredaguota</string>
 	<string name="jumio_dv_confirm_button_reselect">Pasirinkti iš naujo</string>
-	<string name="jumio_dv_confirm_file_info">Įsitikinkite, kad pasirinkote reikiamą PDF failą</string>
 	<string name="jumio_dv_confirm_file_title">Patvirtinkite failą</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Paveikslėlis turi būti JPG, PNG arba WEBP formato</string>
 	<string name="jumio_dv_method_description">Nufotografuokite dokumentą arba įkelkite PDF versiją</string>
 	<string name="jumio_dv_method_photo_button">Nufotografuoti</string>
 	<string name="jumio_dv_method_title">Pasirinkite būdą</string>
 	<string name="jumio_dv_method_upload_pdf_button">Įkelti PDF failą</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Paveikslėlyje neturi būti skaidrumo ar vandenženklių</string>
+	<string name="jumio_dv_selected_the_right_file">Įsitikinkite, kad pasirinkote tinkamą failą</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Nufotografuokite savo dokumentą arba įkelkite failą</string>
+	<string name="jumio_dv_upload_an_image">Įkelti vaizdą</string>
 	<string name="jumio_dv_upload_choose_button">Pasirinkti failą</string>
+	<string name="jumio_dv_upload_from_photo_library">Nusiųsti iš nuotraukų bibliotekos</string>
 	<string name="jumio_dv_upload_header">Įkelti dokumentą</string>
 	<string name="jumio_dv_upload_tips_file_size">Didžiausias failo dydis: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maksimalus puslapių skaičius: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokumentas neturi būti apsaugotas slaptažodžiu</string>
-	<string name="jumio_eidas_description">Bakstelėkite „Tęsti“, kad pradėtumėte prisijungimo procesą. \nTada kitame puslapyje pasirinkite „eIDAS prisijungimas“ ir norėdami tęsti pasirinkite savo šalies vėliavą. \nNaudokitės eIDAS prisijungimu, kad saugiai patvirtintumėte tapatybę pagal ES reikalavimus.</string>
-	<string name="jumio_eidas_login_header">eIDAS prisijungimas</string>
+	<string name="jumio_eidas_description">Bakstelėkite „Tęsti“, kad pradėtumėte prisijungimo procesą. \nTada kitame puslapyje pasirinkite „EU-Login“ ir, norėdami tęsti, pasirinkite savo šalies vėliavą. \nNaudokitės „EU-Login“, kad saugiai patvirtintumėte tapatybę pagal ES reikalavimus.</string>
+	<string name="jumio_eidas_login_header">ES prisijungimas</string>
 	<string name="jumio_error_button_retake_both">Pakartoti abi</string>
 	<string name="jumio_error_button_retake_one">Pakartoti</string>
 	<string name="jumio_error_button_retry">Bandykite dar kartą</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Patvirtinkite nuotrauką</string>
 	<string name="jumio_id_scan_guide_back_side">Nufotografuokite GALINĘ pusę</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Nufotografuokite GALINĘ dokumento pusę</string>
+	<string name="jumio_id_scan_guide_initial">Norėdami nufotografuoti asmens dokumentą, vadovaukitės ekrane pateikiamais nurodymais</string>
 	<string name="jumio_id_scan_guide_photo_side">Nufotografuokite pusę su NUOTRAUKA</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Nufotografuokite dokumento pusę su NUOTRAUKA</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Pasukite, kad matytųsi apatinis kraštas, ir sulygiuokite su rėmeliu</string>
@@ -154,7 +163,7 @@
 	<string name="jumio_id_scan_tips_title">Patarimai</string>
 	<string name="jumio_id_scan_tooltip">Reikia pagalbos?</string>
 	<string name="jumio_id_title">Tapatybės patvirtinimas</string>
-	<string name="jumio_identity_scan_prompt_initial">Pasidarykite asmenukę</string>
+	<string name="jumio_identity_scan_prompt_initial">Nufotografuokite asmenukę</string>
 	<string name="jumio_identity_scan_tips_placing">Sutalpinkite savo veidą į ovalų rėmelį ir fotografuokite</string>
 	<string name="jumio_identity_title">Veido atpažinimas</string>
 	<string name="jumio_idtype_brazil_cnh">Brazilijos CNH Digital PDF</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Bandykite dar kartą</string>
 	<string name="jumio_uploading_success">Įkėlimas sėkmingas</string>
 	<string name="jumio_uploading_title">Įkeliama</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Laikykite įrenginį priešais veidą ir žiūrėkite į ekraną</string>
-	<string name="iproov__accessibility_prompt_scanning">Nuskaitoma</string>
-	<string name="iproov__error_camera">Prieiga prie fotoaparato išjungta</string>
-	<string name="iproov__error_camera_permission_denied">Prieiga prie fotoaparato išjungta</string>
-	<string name="iproov__error_capture_already_active">Jau apdorojamas įkeltas vaizdas</string>
-	<string name="iproov__error_device_not_supported">Įrenginys nepalaikomas</string>
-	<string name="iproov__error_face_detector">Veidas neatpažintas</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Programa veikia kelių langų režimu</string>
-	<string name="iproov__error_network">Patikrinkite, ar esate prisijungę prie interneto</string>
-	<string name="iproov__error_server">Patikrinkite, ar esate prisijungę prie interneto</string>
-	<string name="iproov__error_unexpected_error">Įvyko netikėta klaida</string>
-	<string name="iproov__failure_eyes_closed">Nemirksėkite</string>
-	<string name="iproov__failure_face_too_close">Atitraukite veidą nuo ekrano</string>
-	<string name="iproov__failure_face_too_far">Priartinkite veidą prie ekrano</string>
-	<string name="iproov__failure_misaligned_face">Išlaikykite veidą ovaliame rėmelyje</string>
-	<string name="iproov__failure_not_supported">Įrenginys nepalaikomas</string>
-	<string name="iproov__failure_obscured_face">Nusiimkite veido apdangalus</string>
-	<string name="iproov__failure_sunglasses">Nusiimkite akinius nuo saulės</string>
-	<string name="iproov__failure_too_bright">Pereikite į tamsesnę vietą</string>
-	<string name="iproov__failure_too_dark">Pereikite į šviesesnę vietą</string>
-	<string name="iproov__failure_too_much_movement">Nejudėkite</string>
-	<string name="iproov__failure_unknown">Bandykite dar kartą</string>
-	<string name="iproov__failure_user_timeout">Jūsų seanso laikas baigėsi</string>
-	<string name="iproov__progress_assessing_genuine_presence">Vertinamas asmens buvimas…</string>
-	<string name="iproov__progress_assessing_liveness">Vertinamas tikrumas…</string>
-	<string name="iproov__progress_confirming_identity">Tikrinama tapatybė…</string>
-	<string name="iproov__progress_creating_identity">Kuriama tapatybė…</string>
-	<string name="iproov__progress_finding_face">Aptinkamas veidas…</string>
-	<string name="iproov__progress_identifying_face">Identifikuojamas veidas…</string>
-	<string name="iproov__progress_loading">Įkeliama…</string>
-	<string name="iproov__progress_streaming">Srautinis siuntimas…</string>
-	<string name="iproov__prompt_align_face">Sulyginkite veidą su ovaliu rėmeliu</string>
-	<string name="iproov__prompt_get_ready">Pasiruoškite…</string>
-	<string name="iproov__prompt_liveness_scan_completed">Skenavimas baigtas</string>
-	<string name="iproov__prompt_too_bright">Eikite į mažiau apšviestą vietą</string>
-	<string name="iproov__prompt_too_close">Per arti</string>
-	<string name="iproov__prompt_too_far">Prieikite arčiau</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

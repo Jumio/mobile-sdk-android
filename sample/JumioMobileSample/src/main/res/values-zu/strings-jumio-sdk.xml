@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Ifayela le-PDF elikhethiwe livikelwe ngephasiwedi</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Umkhawulo wobukhulu obukhulu wedluliwe</string>
 	<string name="jumio_dv_retry_not_readable">I-PDF ekhethiwe ayikwazi ukuphroseswa</string>
 	<string name="jumio_dv_retry_page_limit">Umkhawulo wamakhasi aphezulu e-PDF udluliwe</string>
-	<string name="jumio_dv_retry_size_limit">Usayizi ophezulu womkhawulo we-PDF udluliwe</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Ifayela elikhethiwe alikwazi ukucutshungulwa</string>
 	<string name="jumio_error_case_auth_failed">Ukuqinisekisa kuhlulekile</string>
 	<string name="jumio_error_case_cancelled">Kukhanseliwe</string>
 	<string name="jumio_error_case_cancelled_by_user">Ikhanselwe ngumsebenzisi</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Qhubeka</string>
 	<string name="jumio_button_retry">Zama futhi</string>
 	<string name="jumio_change_issuing_country">Shintsha Izwe Elikhiphayo</string>
+	<string name="jumio_choose_file_location">Khetha indawo yefayela</string>
 	<string name="jumio_clear_search">Sula usesho</string>
 	<string name="jumio_current_issuing_country">Izwe Elikhiphayo Lamanje: %s</string>
 	<string name="jumio_di_back_to_document_selection">Uzozulazula ubuyele ekukhethweni kwedokhumenti</string>
 	<string name="jumio_di_vendor_selection_title">Khetha umhlinzeki we-ID eyidijithali</string>
 	<string name="jumio_di_verification_prompt_processing">Sicela ugcwalisa ukulandelelana ku-%s app.</string>
+	<string name="jumio_dv_clear_or_unedited">Isithombe kumele sicace futhi singahleliwe</string>
 	<string name="jumio_dv_confirm_button_reselect">Khetha kabusha</string>
-	<string name="jumio_dv_confirm_file_info">Qinisekisa ukuthi ukhethe ifayela le-PDF elinembile</string>
 	<string name="jumio_dv_confirm_file_title">Qinisekisa ifayela lakho</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Isithombe kumele sibe ngefomethi ye-JPG, PNG, noma ye-WEBP</string>
 	<string name="jumio_dv_method_description">Ungathatha isithombe sedokhumenti yakho noma ufake uhlobo oluyi-PDF</string>
 	<string name="jumio_dv_method_photo_button">Thatha isithombe</string>
 	<string name="jumio_dv_method_title">Khetha Indlela</string>
 	<string name="jumio_dv_method_upload_pdf_button">Faka Ifayela Eliyi-PDF</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Isithombe akufanele sibe sobala noma sibe nama-watermark</string>
+	<string name="jumio_dv_selected_the_right_file">Qiniseka ukuthi ukhethe ifayela elifanele</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Thatha isithombe sedokhumenti yakho noma ulayishe ifayela</string>
+	<string name="jumio_dv_upload_an_image">Layisha isithombe</string>
 	<string name="jumio_dv_upload_choose_button">Khetha Ifayela</string>
+	<string name="jumio_dv_upload_from_photo_library">Layisha kusuka kulabhulali yezithombe</string>
 	<string name="jumio_dv_upload_header">Faka idokhumenti</string>
 	<string name="jumio_dv_upload_tips_file_size">Usayizi ophezulu wefayela: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Inani eliphezulu lamakhasi: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Idokhumenti akufanele livikelwe ngephasiwedi</string>
-	<string name="jumio_eidas_description">Thepha okuthi \'Qhubeka\' ukuze uqalise inqubo yokungena ngemvume. \nOkulandelayo, khetha okuthi \'Ukungena Ngemvume Kwe-eIDAS\' ekhasini elilandelayo bese ukhetha ifulegi lezwe lakini ukuze uqhubeke. \nSebenzisa Ukungena Ngemvume Kwe-eIDAS ukuze uthole ukuqinisekisa okuvikelekile, okuhambisana nomthetho wase-EU.</string>
-	<string name="jumio_eidas_login_header">Ukungena Ngemvume Kwe-eIDAS</string>
+	<string name="jumio_eidas_description">Thepha okuthi \'Qhubeka\' ukuze uqalise inqubo yokungena ngemvume. \nOkulandelayo, khetha okuthi \'EU-Login\' ekhasini elilandelayo bese ukhetha ifulegi lezwe lakini ukuze uqhubeke. \nSebenzisa i-EU-Login ukuze uthole ukuqinisekisa okuvikelekile, okuhambisana nomthetho we-EU.</string>
+	<string name="jumio_eidas_login_header">Ukungena ngemvume kwe-EU</string>
 	<string name="jumio_error_button_retake_both">Kuthathe kabusha kokubili</string>
 	<string name="jumio_error_button_retake_one">Thatha kabusha</string>
 	<string name="jumio_error_button_retry">Zama futhi</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Qinisekisa isithombe sakho</string>
 	<string name="jumio_id_scan_guide_back_side">Thwebula uhlangothi OLUNGEMUVA</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Thwebula ngokwakho uhlangothi OLUNGEMUVA</string>
+	<string name="jumio_id_scan_guide_initial">Landela imiyalelo esesikrinini ukuze uthwebule umazisi</string>
 	<string name="jumio_id_scan_guide_photo_side">Thwebula uhlangothi LWESITHOMBE</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Thwebula ngokwakho uhlangothi LWESITHOMBE</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Tshekisa ukuze kubonakale unqenqema olungezansi bese uqondanisa nohlaka</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Sicela uphinde uzame</string>
 	<string name="jumio_uploading_success">Ukufaka kuphumelele</string>
 	<string name="jumio_uploading_title">Iyafaka</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Bamba ubuso bakho phambi kobuso bakho futhi ubheke isikrini</string>
-	<string name="iproov__accessibility_prompt_scanning">Iyaskena</string>
-	<string name="iproov__error_camera">Ukusebenzisa ikhamera kuvaliwe</string>
-	<string name="iproov__error_camera_permission_denied">Ukusebenzisa ikhamera kuvaliwe</string>
-	<string name="iproov__error_capture_already_active">Isithombe esithathiwe siyaqhubeka kakade</string>
-	<string name="iproov__error_device_not_supported">Idivayisi ayisekelwa</string>
-	<string name="iproov__error_face_detector">Ubuso abuqashelwa</string>
-	<string name="iproov__error_multi_window_mode_unsupported">I-aplikheshini ikwimodi yamawindi amaningi</string>
-	<string name="iproov__error_network">Sicela uhlole ukuthi uxhumile yini ku-inthanethi</string>
-	<string name="iproov__error_server">Sicela uhlole ukuthi uxhumile yini ku-inthanethi</string>
-	<string name="iproov__error_unexpected_error">Kube nephutha elingalindelekile</string>
-	<string name="iproov__failure_eyes_closed">Gcina amehlo akho evuliwe</string>
-	<string name="iproov__failure_face_too_close">Hlehlisa ubuso bakho esikrinini</string>
-	<string name="iproov__failure_face_too_far">Sondeza ubuso bakho eduze kwesikrini</string>
-	<string name="iproov__failure_misaligned_face">Gcina ubuso bakho endilingeni</string>
-	<string name="iproov__failure_not_supported">Idivayisi ayisekelwa</string>
-	<string name="iproov__failure_obscured_face">Susa noma yimi emboze ubuso</string>
-	<string name="iproov__failure_sunglasses">Susa izibuko</string>
-	<string name="iproov__failure_too_bright">Yiya endaweni emnyama</string>
-	<string name="iproov__failure_too_dark">Yiya endaweni egqamile</string>
-	<string name="iproov__failure_too_much_movement">Yima unganyakazi</string>
-	<string name="iproov__failure_unknown">Zama futhi</string>
-	<string name="iproov__failure_user_timeout">Iseshini yakho isiphelelwe yisikhathi</string>
-	<string name="iproov__progress_assessing_genuine_presence">Ukuhlola ukuba khona ngempela…</string>
-	<string name="iproov__progress_assessing_liveness">Ukuhlola ukuphila…</string>
-	<string name="iproov__progress_confirming_identity">Ukuqinisekisa umazisi…</string>
-	<string name="iproov__progress_creating_identity">Ukwenza umazisi…</string>
-	<string name="iproov__progress_finding_face">Ukuthola ubuso…</string>
-	<string name="iproov__progress_identifying_face">Ukubona ubuso…</string>
-	<string name="iproov__progress_loading">Iyalowuda…</string>
-	<string name="iproov__progress_streaming">Ukusakaza…</string>
-	<string name="iproov__prompt_align_face">Gcina amehlo akho endilingeni</string>
-	<string name="iproov__prompt_get_ready">Yima ngomumo…</string>
-	<string name="iproov__prompt_liveness_scan_completed">Ukuskena kuphelile</string>
-	<string name="iproov__prompt_too_bright">Yiya endaweni enethunzi</string>
-	<string name="iproov__prompt_too_close">Useduze kakhulu</string>
-	<string name="iproov__prompt_too_far">Sondela</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

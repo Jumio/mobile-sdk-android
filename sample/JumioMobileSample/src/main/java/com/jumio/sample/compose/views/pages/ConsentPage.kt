@@ -1,4 +1,4 @@
-// Copyright 2024 Jumio Corporation, all rights reserved.
+// (c) 2026 Jumio All rights reserved. US Patent App.
 package com.jumio.sample.compose.views.pages
 
 import android.graphics.Color

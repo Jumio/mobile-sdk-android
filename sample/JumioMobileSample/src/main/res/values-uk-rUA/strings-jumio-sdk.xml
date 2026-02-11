@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Вибраний PDF-файл захищено паролем</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Перевищено максимальний розмір</string>
 	<string name="jumio_dv_retry_not_readable">Не вдалося обробити вибраний PDF-файл</string>
 	<string name="jumio_dv_retry_page_limit">Перевищено максимальну кількість сторінок у PDF-файлі</string>
-	<string name="jumio_dv_retry_size_limit">Перевищено максимальний розмір PDF-файлу</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Вибраний файл неможливо обробити</string>
 	<string name="jumio_error_case_auth_failed">Помилка автентифікації</string>
 	<string name="jumio_error_case_cancelled">Скасовано</string>
 	<string name="jumio_error_case_cancelled_by_user">Скасовано кінцевим користувачем</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Продовжити</string>
 	<string name="jumio_button_retry">Повторити спробу</string>
 	<string name="jumio_change_issuing_country">Змінити країну видачі</string>
+	<string name="jumio_choose_file_location">Виберіть розташування файлу</string>
 	<string name="jumio_clear_search">Очистити пошук</string>
 	<string name="jumio_current_issuing_country">Поточна країна видачі: %s</string>
 	<string name="jumio_di_back_to_document_selection">Ви повернетеся до вибору документу.</string>
 	<string name="jumio_di_vendor_selection_title">Виберіть постачальника цифрових документів, що посвідчують особу</string>
 	<string name="jumio_di_verification_prompt_processing">Виконайте процедуру в застосунку %s.</string>
+	<string name="jumio_dv_clear_or_unedited">Зображення має бути чітким і невідредагованим</string>
 	<string name="jumio_dv_confirm_button_reselect">Змінити вибір</string>
-	<string name="jumio_dv_confirm_file_info">Переконайтесь, що ви вибрали потрібний PDF-файл</string>
 	<string name="jumio_dv_confirm_file_title">Підтвердити ваш файл</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Зображення має бути у форматі JPG, PNG або WEBP</string>
 	<string name="jumio_dv_method_description">Зробіть фото свого документу або завантажте версію PDF</string>
 	<string name="jumio_dv_method_photo_button">Зробити фото</string>
 	<string name="jumio_dv_method_title">Виберіть метод</string>
 	<string name="jumio_dv_method_upload_pdf_button">Завантажити PDF-файл</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Зображення не повинно мати прозорості або водяних знаків</string>
+	<string name="jumio_dv_selected_the_right_file">Переконайтеся, що ви вибрали правильний файл</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Сфотографуйте свій документ або завантажте файл</string>
+	<string name="jumio_dv_upload_an_image">Завантажити зображення</string>
 	<string name="jumio_dv_upload_choose_button">Вибрати файл</string>
+	<string name="jumio_dv_upload_from_photo_library">Завантажити з фотогалереї</string>
 	<string name="jumio_dv_upload_header">Завантажити документ</string>
 	<string name="jumio_dv_upload_tips_file_size">Максимальний розмір файлу: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Максимальна кількість сторінок: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Документ не має бути захищено паролем</string>
-	<string name="jumio_eidas_description">Щоб розпочати процес входу в систему, натисніть «Продовжити».\nЩоб продовжити, на наступній сторінці виберіть «Вхід за допомогою eIDAS» та виберіть прапор вашої країни, .\nВикористовуйте «Вхід за допомогою eIDAS» для безпечної перевірки, що відповідає вимогам ЄС.</string>
-	<string name="jumio_eidas_login_header">«Вхід за допомогою eIDAS»</string>
+	<string name="jumio_eidas_description">Щоб розпочати процес входу, натисніть «Продовжити».\nДалі на наступній сторінці виберіть «EU-Login» і прапор вашої країни, щоб продовжити.\nВикористовуйте EU-Login для безпечної перевірки, що відповідає вимогам ЄС.</string>
+	<string name="jumio_eidas_login_header">Вхід до ЄС</string>
 	<string name="jumio_error_button_retake_both">Перезняти обидва боки</string>
 	<string name="jumio_error_button_retake_one">Перезняти</string>
 	<string name="jumio_error_button_retry">Повторити спробу</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Підтвердьте ваше фото</string>
 	<string name="jumio_id_scan_guide_back_side">Зняти ЗВОРОТНУ сторону</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Зняти ЗВОРОТНУ сторону вручну</string>
+	<string name="jumio_id_scan_guide_initial">Дотримуйтесь інструкцій на екрані, щоб сфотографувати документ, що посвідчує особу</string>
 	<string name="jumio_id_scan_guide_photo_side">Зняти сторону з ФОТО</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Зняти сторону з ФОТО вручну</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Нахиліть так, щоб було видно нижній край, а потім поєднайте з рамкою</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Повторіть спробу</string>
 	<string name="jumio_uploading_success">Вивантаження успішно виконано</string>
 	<string name="jumio_uploading_title">Вивантаження</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Тримайте пристрій перед обличчям і дивіться на екран</string>
-	<string name="iproov__accessibility_prompt_scanning">Сканування</string>
-	<string name="iproov__error_camera">Доступ до камери деактивовано</string>
-	<string name="iproov__error_camera_permission_denied">Доступ до камери деактивовано</string>
-	<string name="iproov__error_capture_already_active">Захоплення, що існує, вже виконується</string>
-	<string name="iproov__error_device_not_supported">Пристрій не підтримується</string>
-	<string name="iproov__error_face_detector">Обличчя не впізнано</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Застосунок працює в багатовіконному режимі</string>
-	<string name="iproov__error_network">Переконайтеся, що ви в мережі</string>
-	<string name="iproov__error_server">Переконайтеся, що ви в мережі</string>
-	<string name="iproov__error_unexpected_error">Виникла неочікувана помилка</string>
-	<string name="iproov__failure_eyes_closed">Тримайте очі відкритими</string>
-	<string name="iproov__failure_face_too_close">Відсуньте обличчя далі від екрана</string>
-	<string name="iproov__failure_face_too_far">Наблизите своє обличчя до екрана</string>
-	<string name="iproov__failure_misaligned_face">Тримайте обличчя в овалі</string>
-	<string name="iproov__failure_not_supported">Пристрій не підтримується</string>
-	<string name="iproov__failure_obscured_face">Зніміть будь-яке покриття з обличчя</string>
-	<string name="iproov__failure_sunglasses">Зніміть сонцезахисні окуляри</string>
-	<string name="iproov__failure_too_bright">Перемістіться в темніше місце</string>
-	<string name="iproov__failure_too_dark">Перемістіться у світліше місце</string>
-	<string name="iproov__failure_too_much_movement">Не рухайтесь</string>
-	<string name="iproov__failure_unknown">Повторити спробу</string>
-	<string name="iproov__failure_user_timeout">Ваш сеанс закінчився</string>
-	<string name="iproov__progress_assessing_genuine_presence">Оцінка справжньої присутності…</string>
-	<string name="iproov__progress_assessing_liveness">Оцінка наявності живого користувача…</string>
-	<string name="iproov__progress_confirming_identity">Підтвердження особи…</string>
-	<string name="iproov__progress_creating_identity">Перевірка особи…</string>
-	<string name="iproov__progress_finding_face">Пошук обличчя…</string>
-	<string name="iproov__progress_identifying_face">Ідентифікація обличчя…</string>
-	<string name="iproov__progress_loading">Завантаження…</string>
-	<string name="iproov__progress_streaming">Потокова передача…</string>
-	<string name="iproov__prompt_align_face">Помістіть своє обличчя в овал</string>
-	<string name="iproov__prompt_get_ready">Приготуйтеся…</string>
-	<string name="iproov__prompt_liveness_scan_completed">Сканування завершено</string>
-	<string name="iproov__prompt_too_bright">Зайдіть у темніше місце</string>
-	<string name="iproov__prompt_too_close">Надто близько</string>
-	<string name="iproov__prompt_too_far">Підсуньтесь ближче</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

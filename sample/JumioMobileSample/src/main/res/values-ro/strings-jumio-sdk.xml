@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Fișierul PDF selectat este protejat prin parolă</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Limita maximă de dimensiune a fost depășită</string>
 	<string name="jumio_dv_retry_not_readable">Fișierul PDF selectat nu poate fi prelucrat</string>
 	<string name="jumio_dv_retry_page_limit">Limita maximă de pagini PDF depășită</string>
-	<string name="jumio_dv_retry_size_limit">Limita maximă de dimensiune PDF depășită</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Fișierul selectat nu poate fi procesat</string>
 	<string name="jumio_error_case_auth_failed">Autentificarea a eșuat</string>
 	<string name="jumio_error_case_cancelled">Anulat</string>
 	<string name="jumio_error_case_cancelled_by_user">Anulat de utilizatorul final</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Continuare</string>
 	<string name="jumio_button_retry">Încercați din nou</string>
 	<string name="jumio_change_issuing_country">Schimbați țara emitentă</string>
+	<string name="jumio_choose_file_location">Alegeți locația fișierului</string>
 	<string name="jumio_clear_search">Ștergeți căutarea</string>
 	<string name="jumio_current_issuing_country">Țara emitentă actuală: %s</string>
 	<string name="jumio_di_back_to_document_selection">Veți naviga înapoi la selecția documentului.</string>
 	<string name="jumio_di_vendor_selection_title">Selectați furnizorul de ID digital</string>
 	<string name="jumio_di_verification_prompt_processing">Vă rugăm să încheiați fluxul în aplicația %s.</string>
+	<string name="jumio_dv_clear_or_unedited">Imaginea trebuie să fie clară și needitată</string>
 	<string name="jumio_dv_confirm_button_reselect">Selectați din nou</string>
-	<string name="jumio_dv_confirm_file_info">Asigurați-vă că ați selectat fișierul PDF corect</string>
 	<string name="jumio_dv_confirm_file_title">Confirmați fișierul dvs.</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Imaginea trebuie să fie în format JPG, PNG sau WEBP</string>
 	<string name="jumio_dv_method_description">Fie faceți o fotografie a documentului dvs., fie încărcați o versiune PDF</string>
 	<string name="jumio_dv_method_photo_button">Faceți o fotografie</string>
 	<string name="jumio_dv_method_title">Selectați metoda</string>
 	<string name="jumio_dv_method_upload_pdf_button">Încărcați fișierul PDF</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Imaginea nu trebuie să aibă transparență sau filigrane</string>
+	<string name="jumio_dv_selected_the_right_file">Asigurați-vă că ați selectat fișierul corect</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Faceți o fotografie a documentului dumneavoastră sau încărcați un fișier</string>
+	<string name="jumio_dv_upload_an_image">Încărcați o imagine</string>
 	<string name="jumio_dv_upload_choose_button">Alegeți fișierul</string>
+	<string name="jumio_dv_upload_from_photo_library">Încărcați din biblioteca foto</string>
 	<string name="jumio_dv_upload_header">Încărcați documentul</string>
 	<string name="jumio_dv_upload_tips_file_size">Dimensiune maximă fișier: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Număr maxim de pagini: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Documentul nu trebuie să fie protejat prin parolă</string>
-	<string name="jumio_eidas_description">Apăsați pe \'Continuare\' pentru a începe procesul de conectare.\nApoi, selectați \'Conectare eIDAS\' pe pagina următoare și alegeți steagul țării dvs. pentru a continua.\nUtilizați Conectarea eIDAS pentru o verificare sigură, conformă cu normele UE.</string>
-	<string name="jumio_eidas_login_header">Conectare eIDAS</string>
+	<string name="jumio_eidas_description">Apăsați pe „Continuare” pentru a începe procesul de conectare.\nApoi, selectați „EU-Login” pe pagina următoare și alegeți steagul țării dvs. pentru a continua.\nUtilizați EU-Login pentru o verificare sigură, conformă cu normele UE.</string>
+	<string name="jumio_eidas_login_header">Autentificare UE</string>
 	<string name="jumio_error_button_retake_both">Faceți o nouă poză pentru ambele</string>
 	<string name="jumio_error_button_retake_one">Faceți o nouă poză</string>
 	<string name="jumio_error_button_retry">Încercați din nou</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Confirmați fotografia</string>
 	<string name="jumio_id_scan_guide_back_side">Captură a părții VERSO</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Captură manuală a părții VERSO</string>
+	<string name="jumio_id_scan_guide_initial">Urmați instrucțiunile de pe ecran pentru a captura documentul de identitate</string>
 	<string name="jumio_id_scan_guide_photo_side">Captură a părții FOTO</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Captură manuală a părții FOTO</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Înclinați astfel încât marginea inferioară să fie vizibilă și apoi aliniați-o în cadru</string>
@@ -157,7 +166,7 @@
 	<string name="jumio_identity_scan_prompt_initial">Faceți o fotografie a feței</string>
 	<string name="jumio_identity_scan_tips_placing">Încadrați-vă fața în forma ovală și apăsați pe butonul declanșatorului</string>
 	<string name="jumio_identity_title">Verificarea feței</string>
-	<string name="jumio_idtype_brazil_cnh">CNH Digital Brazil PDF</string>
+	<string name="jumio_idtype_brazil_cnh">Permisul de conducere digital din Brazilia</string>
 	<string name="jumio_idtype_countrysearch_search">Căutați țara</string>
 	<string name="jumio_idtype_countrysearch_title">Selectați țara emitentă</string>
 	<string name="jumio_idtype_format_option_other">Alt format</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Încercați din nou</string>
 	<string name="jumio_uploading_success">Încărcare reușită</string>
 	<string name="jumio_uploading_title">Încărcare</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Țineți dispozitivul în dreptul feței dvs. și priviți spre ecran</string>
-	<string name="iproov__accessibility_prompt_scanning">Se scanează</string>
-	<string name="iproov__error_camera">Accesul la cameră dezactivat</string>
-	<string name="iproov__error_camera_permission_denied">Accesul la cameră dezactivat</string>
-	<string name="iproov__error_capture_already_active">O captură existentă este deja în desfășurare</string>
-	<string name="iproov__error_device_not_supported">Dispozitivul nu este acceptat</string>
-	<string name="iproov__error_face_detector">Fața nu a fost recunoscută</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Aplicația este in modul multi-ferestre</string>
-	<string name="iproov__error_network">Vă rugăm să vă asigurați că sunteți online</string>
-	<string name="iproov__error_server">Vă rugăm să vă asigurați că sunteți online</string>
-	<string name="iproov__error_unexpected_error">A apărut o eroare neașteptată.</string>
-	<string name="iproov__failure_eyes_closed">Țineți ochii deschiși</string>
-	<string name="iproov__failure_face_too_close">Distanțați fața de ecran</string>
-	<string name="iproov__failure_face_too_far">Apropiați fața de ecran</string>
-	<string name="iproov__failure_misaligned_face">Țineți fața în cadrul oval</string>
-	<string name="iproov__failure_not_supported">Dispozitivul nu este acceptat</string>
-	<string name="iproov__failure_obscured_face">Scoateți obiectele care vă acoperă fața</string>
-	<string name="iproov__failure_sunglasses">Scoateți-vă ochelarii</string>
-	<string name="iproov__failure_too_bright">Mergeți într-un loc mai întunecat</string>
-	<string name="iproov__failure_too_dark">Mergeți într-un loc mai luminos</string>
-	<string name="iproov__failure_too_much_movement">Nu vă mișcați</string>
-	<string name="iproov__failure_unknown">Încercați din nou</string>
-	<string name="iproov__failure_user_timeout">Sesiunea dumneavoastră a expirat</string>
-	<string name="iproov__progress_assessing_genuine_presence">Evaluarea prezenței efective…</string>
-	<string name="iproov__progress_assessing_liveness">Evaluarea vitalității…</string>
-	<string name="iproov__progress_confirming_identity">Confirmarea identității…</string>
-	<string name="iproov__progress_creating_identity">Crearea identității…</string>
-	<string name="iproov__progress_finding_face">Căutare facială…</string>
-	<string name="iproov__progress_identifying_face">Identificare facială…</string>
-	<string name="iproov__progress_loading">Încărcare…</string>
-	<string name="iproov__progress_streaming">Redare în flux…</string>
-	<string name="iproov__prompt_align_face">Aduceți fața în cadrul oval</string>
-	<string name="iproov__prompt_get_ready">Pregătiți-vă…</string>
-	<string name="iproov__prompt_liveness_scan_completed">Scanare finalizată</string>
-	<string name="iproov__prompt_too_bright">Mergeți într-un loc mai umbrit</string>
-	<string name="iproov__prompt_too_close">Prea aproape</string>
-	<string name="iproov__prompt_too_far">Apropiați-vă</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

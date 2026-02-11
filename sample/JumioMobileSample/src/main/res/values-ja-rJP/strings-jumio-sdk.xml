@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">選択したPDFファイルはパスワードで保護されています</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">最大サイズ制限を超えました</string>
 	<string name="jumio_dv_retry_not_readable">選択したPDFファイルを処理できません</string>
 	<string name="jumio_dv_retry_page_limit">PDFの最大ページ数制限を超えました</string>
-	<string name="jumio_dv_retry_size_limit">PDFの最大サイズ制限を超えました</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">選択したファイルは処理できません</string>
 	<string name="jumio_error_case_auth_failed">認証に失敗しました</string>
 	<string name="jumio_error_case_cancelled">キャンセル</string>
 	<string name="jumio_error_case_cancelled_by_user">エンドユーザーによりキャンセルされました</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">続行</string>
 	<string name="jumio_button_retry">もう一度やり直してください</string>
 	<string name="jumio_change_issuing_country">発行国を変更</string>
+	<string name="jumio_choose_file_location">ファイルの場所を選択</string>
 	<string name="jumio_clear_search">検索をクリア</string>
 	<string name="jumio_current_issuing_country">現在の発行国: %s</string>
 	<string name="jumio_di_back_to_document_selection">ドキュメント選択画面に戻ります。</string>
 	<string name="jumio_di_vendor_selection_title">デジタルIDプロバイダーを選択</string>
 	<string name="jumio_di_verification_prompt_processing">%sアプリでフローを完了してください。</string>
+	<string name="jumio_dv_clear_or_unedited">画像は鮮明で、編集されていないものを使用してください</string>
 	<string name="jumio_dv_confirm_button_reselect">再選択</string>
-	<string name="jumio_dv_confirm_file_info">正しいPDFファイルが選択されていることを確認してください</string>
 	<string name="jumio_dv_confirm_file_title">ファイルを確認</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">画像はJPG、PNG、またはWEBP形式である必要があります</string>
 	<string name="jumio_dv_method_description">ドキュメントの写真を撮るか、PDF版をアップロードしてください</string>
 	<string name="jumio_dv_method_photo_button">写真を撮る</string>
 	<string name="jumio_dv_method_title">方法を選択</string>
 	<string name="jumio_dv_method_upload_pdf_button">PDFファイルをアップロード</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">画像に透明部分や透かしがあってはなりません</string>
+	<string name="jumio_dv_selected_the_right_file">正しいファイルを選択したことを確認してください</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">書類の写真を撮るか、ファイルをアップロードしてください</string>
+	<string name="jumio_dv_upload_an_image">画像をアップロード</string>
 	<string name="jumio_dv_upload_choose_button">ファイルを選択</string>
+	<string name="jumio_dv_upload_from_photo_library">フォトライブラリからアップロード</string>
 	<string name="jumio_dv_upload_header">ドキュメントをアップロード</string>
 	<string name="jumio_dv_upload_tips_file_size">最大ファイルサイズ：%1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">最大ページ数：%1$d</string>
 	<string name="jumio_dv_upload_tips_protected">ドキュメントはパスワードで保護しないでください</string>
-	<string name="jumio_eidas_description">ログインプロセス開始のために[続行]をタップします\n次に、[eIDASログイン]を選択し、続行するためにご自身の国旗を選択します。\n\neIDAS ログインを使用し、安全な EU準拠の検証を行います。</string>
-	<string name="jumio_eidas_login_header">eIDASログイン</string>
+	<string name="jumio_eidas_description">「続行」をタップしてログインプロセスを開始します。\n次に、次のページで「EU-Login」を選択し、お客様の国の国旗を選択して続行します。\n安全でEU準拠の認証には、EU-Loginをご利用ください。</string>
+	<string name="jumio_eidas_login_header">EUログイン</string>
 	<string name="jumio_error_button_retake_both">両方とも撮り直す</string>
 	<string name="jumio_error_button_retake_one">撮り直す</string>
 	<string name="jumio_error_button_retry">もう一度やり直してください</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">写真を確認</string>
 	<string name="jumio_id_scan_guide_back_side">裏面をキャプチャします</string>
 	<string name="jumio_id_scan_guide_back_side_manually">裏面を手動でキャプチャします</string>
+	<string name="jumio_id_scan_guide_initial">画面の指示に従って本人確認書類を撮影してください</string>
 	<string name="jumio_id_scan_guide_photo_side">写真面をキャプチャします</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">写真面を手動でキャプチャします</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">下端が見えるように傾け、フレームに合わせてください</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">もう一度やり直してください</string>
 	<string name="jumio_uploading_success">正常にアップロードされました</string>
 	<string name="jumio_uploading_title">アップロード中</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">デバイスを顔の前にしっかりと持って、画面を見てください</string>
-	<string name="iproov__accessibility_prompt_scanning">スキャンしています</string>
-	<string name="iproov__error_camera">カメラへのアクセスが無効になっています</string>
-	<string name="iproov__error_camera_permission_denied">カメラへのアクセスが無効になっています</string>
-	<string name="iproov__error_capture_already_active">既存のキャプチャはすでに進行中です</string>
-	<string name="iproov__error_device_not_supported">デバイスが対応していません</string>
-	<string name="iproov__error_face_detector">顔が認識されません</string>
-	<string name="iproov__error_multi_window_mode_unsupported">アプリケーションがマルチウィンドウモードになっています</string>
-	<string name="iproov__error_network">オンラインであることを確認してください</string>
-	<string name="iproov__error_server">オンラインであることを確認してください</string>
-	<string name="iproov__error_unexpected_error">予期しないエラーが発生しました</string>
-	<string name="iproov__failure_eyes_closed">目を開けた状態を保ってください</string>
-	<string name="iproov__failure_face_too_close">画面から顔を遠ざけてください</string>
-	<string name="iproov__failure_face_too_far">画面に顔を近づけてください</string>
-	<string name="iproov__failure_misaligned_face">顔を楕円形のフレームに入れた状態を保ってください</string>
-	<string name="iproov__failure_not_supported">デバイスが対応していません</string>
-	<string name="iproov__failure_obscured_face">顔を覆っているものを取り外してください</string>
-	<string name="iproov__failure_sunglasses">サングラスを取り外してください</string>
-	<string name="iproov__failure_too_bright">もっと暗い場所に移動</string>
-	<string name="iproov__failure_too_dark">もっと明るい場所に移動</string>
-	<string name="iproov__failure_too_much_movement">静止したまま</string>
-	<string name="iproov__failure_unknown">もう一度やり直してください</string>
-	<string name="iproov__failure_user_timeout">セッションの有効期限が切れました</string>
-	<string name="iproov__progress_assessing_genuine_presence">本人確認をしています…</string>
-	<string name="iproov__progress_assessing_liveness">生体判定をしています…</string>
-	<string name="iproov__progress_confirming_identity">IDを確認しています…</string>
-	<string name="iproov__progress_creating_identity">IDを作成しています…</string>
-	<string name="iproov__progress_finding_face">顔を検出しています…</string>
-	<string name="iproov__progress_identifying_face">顔認証中です…</string>
-	<string name="iproov__progress_loading">読み込み中…</string>
-	<string name="iproov__progress_streaming">ストリーミング…</string>
-	<string name="iproov__prompt_align_face">顔を楕円形のフレームに入れてください</string>
-	<string name="iproov__prompt_get_ready">準備をしてください…</string>
-	<string name="iproov__prompt_liveness_scan_completed">スキャンが完了しました</string>
-	<string name="iproov__prompt_too_bright">日陰に移動してください</string>
-	<string name="iproov__prompt_too_close">近すぎます</string>
-	<string name="iproov__prompt_too_far">近くに移動します。</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

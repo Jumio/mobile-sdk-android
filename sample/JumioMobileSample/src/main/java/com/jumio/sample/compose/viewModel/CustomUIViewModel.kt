@@ -1,4 +1,4 @@
-// Copyright 2024 Jumio Corporation, all rights reserved.
+// (c) 2026 Jumio All rights reserved. US Patent App.
 package com.jumio.sample.compose.viewModel
 
 import android.app.Application
@@ -170,6 +170,7 @@ class CustomUIViewModel(
 			JumioScanUpdate.MOVE_CLOSER,
 			JumioScanUpdate.TOO_CLOSE,
 			JumioScanUpdate.HOLD_STILL,
+			JumioScanUpdate.ROTATE,
 			JumioScanUpdate.MOVE_FACE_CLOSER,
 			JumioScanUpdate.FACE_TOO_CLOSE,
 			JumioScanUpdate.MOVE_FACE_INTO_FRAME,
@@ -463,9 +464,6 @@ class CustomUIViewModel(
 	private fun setUpScanView() = when (currentScanPart?.scanMode) {
 		JumioScanMode.WEB -> {
 			navigationState.value = AppNavigation.DigitalIdentity
-		}
-		JumioScanMode.FACE_IPROOV -> {
-			/*Not needed*/
 		}
 		JumioScanMode.NFC -> {
 			navigationState.value = AppNavigation.NfcScan

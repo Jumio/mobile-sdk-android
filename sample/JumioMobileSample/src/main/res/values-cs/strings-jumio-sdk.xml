@@ -3,9 +3,10 @@
 	<!-- POSSIBLE JUMIO SDK STRINGS TO OVERRIDE-->
 	<!--
 	<string name="jumio_dv_retry_encrypted">Vybraný soubor PDF je chráněn heslem</string>
+	<string name="jumio_dv_retry_maximum_size_limit_exceeded">Byl překročen maximální limit velikosti</string>
 	<string name="jumio_dv_retry_not_readable">Vybraný soubor PDF nelze zpracovat</string>
 	<string name="jumio_dv_retry_page_limit">Překročení maximálního limitu stránek PDF</string>
-	<string name="jumio_dv_retry_size_limit">Překročení limitu maximální velikosti PDF</string>
+	<string name="jumio_dv_retry_selected_file_cannot_be_processed">Vybraný soubor nelze zpracovat</string>
 	<string name="jumio_error_case_auth_failed">Ověření selhalo.</string>
 	<string name="jumio_error_case_cancelled">Odvolaný</string>
 	<string name="jumio_error_case_cancelled_by_user">Zrušeno koncovým uživatelem</string>
@@ -46,25 +47,32 @@
 	<string name="jumio_button_continue">Pokračovat</string>
 	<string name="jumio_button_retry">Zkusit znovu</string>
 	<string name="jumio_change_issuing_country">Změnit zemi vydání</string>
+	<string name="jumio_choose_file_location">Zvolit umístění souboru</string>
 	<string name="jumio_clear_search">Vymazat hledání</string>
 	<string name="jumio_current_issuing_country">Aktuální země vydání: %s</string>
 	<string name="jumio_di_back_to_document_selection">Budete přesměrováni zpět k výběru dokumentu.</string>
 	<string name="jumio_di_vendor_selection_title">Vybrat poskytovatele digitálního ID</string>
 	<string name="jumio_di_verification_prompt_processing">Vyplňte postup v aplikaci %s.</string>
+	<string name="jumio_dv_clear_or_unedited">Obrázek musí být zřetelný a neupravený</string>
 	<string name="jumio_dv_confirm_button_reselect">Znovu vybrat</string>
-	<string name="jumio_dv_confirm_file_info">Zkontrolujte, zda jste vybrali správný soubor PDF</string>
 	<string name="jumio_dv_confirm_file_title">Potvrdit soubor</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Obrázek musí být ve formátu JPG, PNG nebo WEBP</string>
 	<string name="jumio_dv_method_description">Vyfoťte svůj dokument nebo nahrajte jeho verzi ve formátu PDF</string>
 	<string name="jumio_dv_method_photo_button">Pořídit fotografii</string>
 	<string name="jumio_dv_method_title">Vybrat metodu</string>
 	<string name="jumio_dv_method_upload_pdf_button">Nahrát soubor PDF</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Obrázek by neměl mít průhlednost ani vodoznaky</string>
+	<string name="jumio_dv_selected_the_right_file">Ujistěte se, že jste vybrali správný soubor</string>
+	<string name="jumio_dv_take_a_photo_or_upload_a_file">Vyfoťte svůj doklad nebo nahrajte soubor</string>
+	<string name="jumio_dv_upload_an_image">Nahrát obrázek</string>
 	<string name="jumio_dv_upload_choose_button">Vybrat soubor</string>
+	<string name="jumio_dv_upload_from_photo_library">Nahrát z knihovny fotografií</string>
 	<string name="jumio_dv_upload_header">Nahrát dokument</string>
 	<string name="jumio_dv_upload_tips_file_size">Maximální velikost souboru: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maximální počet stránek: %1$d</string>
 	<string name="jumio_dv_upload_tips_protected">Dokument nemůže být chráněn heslem</string>
-	<string name="jumio_eidas_description">Klepněte na Pokračovat pro zahájení procesu přihlašování. \nNa následující stránce vyberte eIDAS Login a zvolte vlajku vaší země, poté pokračujte. \nPoužijte eIDAS Login pro bezpečné, kompatibilní ověřování v EU.</string>
-	<string name="jumio_eidas_login_header">Přihlašování eIDAS Login</string>
+	<string name="jumio_eidas_description">Klepnutím na „Pokračovat“ zahájíte proces přihlášení. \nNa další stránce vyberte „EU-Login“ a pokračujte výběrem vlajky své země. \nPro bezpečné ověření v souladu s předpisy EU použijte EU-Login.</string>
+	<string name="jumio_eidas_login_header">EU Login</string>
 	<string name="jumio_error_button_retake_both">Vyfoťte znovu obojí</string>
 	<string name="jumio_error_button_retake_one">Vyfoťte znovu</string>
 	<string name="jumio_error_button_retry">Zkusit znovu</string>
@@ -125,6 +133,7 @@
 	<string name="jumio_id_confirm_title">Potvrďte svou fotografii</string>
 	<string name="jumio_id_scan_guide_back_side">Vyfoťte ZADNÍ stranu</string>
 	<string name="jumio_id_scan_guide_back_side_manually">Ručně vyfoťte ZADNÍ stranu</string>
+	<string name="jumio_id_scan_guide_initial">Postupujte podle pokynů na obrazovce a vyfoťte doklad totožnosti</string>
 	<string name="jumio_id_scan_guide_photo_side">Vyfoťte stranu s FOTOGRAFIÍ</string>
 	<string name="jumio_id_scan_guide_photo_side_manually">Ručně vyfoťte stranu s FOTOGRAFIÍ</string>
 	<string name="jumio_id_scan_guide_photo_side_tilt">Zkoste ho tak, aby byl viditelný spodní okraj, a poté ho zarovnejte k rámu</string>
@@ -209,47 +218,6 @@
 	<string name="jumio_try_again">Zkuste to znovu</string>
 	<string name="jumio_uploading_success">Nahrání proběhlo úspěšně.</string>
 	<string name="jumio_uploading_title">Nahrávání</string>
-	-->
-
-	<!-- POSSIBLE IPROOV STRINGS TO OVERRIDE-->
-	<!--
-	<string name="iproov__accessibility_prompt_align_face">Držte zařízení před obličejem a dívejte se na obrazovku</string>
-	<string name="iproov__accessibility_prompt_scanning">Skenování</string>
-	<string name="iproov__error_camera">Přístup ke kameře zamítnut</string>
-	<string name="iproov__error_camera_permission_denied">Přístup ke kameře zamítnut</string>
-	<string name="iproov__error_capture_already_active">Snímání už probíhá</string>
-	<string name="iproov__error_device_not_supported">Zařízení není podporováno</string>
-	<string name="iproov__error_face_detector">Tvář nerozpoznána.</string>
-	<string name="iproov__error_multi_window_mode_unsupported">Aplikace je otevřená v režimu více oken</string>
-	<string name="iproov__error_network">Zkontrolujte, jestli jste online</string>
-	<string name="iproov__error_server">Zkontrolujte, jestli jste online</string>
-	<string name="iproov__error_unexpected_error">Došlo k neočekávané chybě</string>
-	<string name="iproov__failure_eyes_closed">Mějte otevřené oči</string>
-	<string name="iproov__failure_face_too_close">Posuňte obličej dál od obrazovky</string>
-	<string name="iproov__failure_face_too_far">Přibližte obličej k obrazovce</string>
-	<string name="iproov__failure_misaligned_face">Ponechte obličej v oválu</string>
-	<string name="iproov__failure_not_supported">Zařízení není podporováno</string>
-	<string name="iproov__failure_obscured_face">Sundejte si veškeré pokrývky obličeje</string>
-	<string name="iproov__failure_sunglasses">Sundejte si sluneční brýle</string>
-	<string name="iproov__failure_too_bright">Přesuňte se na tmavší místo</string>
-	<string name="iproov__failure_too_dark">Přesuňte se na světlejší místo</string>
-	<string name="iproov__failure_too_much_movement">Zůstaňte v klidu</string>
-	<string name="iproov__failure_unknown">Zkuste to znovu</string>
-	<string name="iproov__failure_user_timeout">Platno relace vypršela</string>
-	<string name="iproov__progress_assessing_genuine_presence">Kontrola přítomnosti…</string>
-	<string name="iproov__progress_assessing_liveness">Kontrola živé osoby…</string>
-	<string name="iproov__progress_confirming_identity">Potvrzení identity…</string>
-	<string name="iproov__progress_creating_identity">Vytváření identity…</string>
-	<string name="iproov__progress_finding_face">Hledání obličeje…</string>
-	<string name="iproov__progress_identifying_face">Identifikace obličeje…</string>
-	<string name="iproov__progress_loading">Načítání…</string>
-	<string name="iproov__progress_streaming">Streamování…</string>
-	<string name="iproov__prompt_align_face">Dejte obličej do oválu</string>
-	<string name="iproov__prompt_get_ready">Připravte se…</string>
-	<string name="iproov__prompt_liveness_scan_completed">Skenování dokončeno</string>
-	<string name="iproov__prompt_too_bright">Jděte do temnějšího prostředí</string>
-	<string name="iproov__prompt_too_close">Příliš blízko</string>
-	<string name="iproov__prompt_too_far">Pojďte blíž</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
