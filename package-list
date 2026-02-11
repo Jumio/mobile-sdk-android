@@ -22,7 +22,5 @@ com.jumio.sdk.util
 com.jumio.sdk.views
 module:Digital Identity
 com.jumio.sdk.retry
-module:IProov
-com.jumio.sdk.retry
 module:NFC
 com.jumio.sdk.retry
