@@ -18,6 +18,7 @@ com.jumio.sdk.reject
 com.jumio.sdk.result
 com.jumio.sdk.retry
 com.jumio.sdk.scanpart
+com.jumio.sdk.termsofuse
 com.jumio.sdk.util
 com.jumio.sdk.views
 module:Digital Identity
