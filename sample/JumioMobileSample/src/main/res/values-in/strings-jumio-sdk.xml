@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Gambar terlalu buram untuk diverifikasi</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Gambar harus diambil ulang</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Pastikan Anda telah mengunduh PDF lisensi driver Digital dari aplikasi resmi pemerintah [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Harap coba lagi dengan gambar berwarna</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Gambar fotokopi hitam putih</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Gambar tampak seperti fotokopi berwarna</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Harap coba lagi dengan dokumen berbeda</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Dokumen tampak rusak</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Ambil gambar dari dokumen asli Anda</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Miring kanan</string>
 	<string name="jumio_liveness_prompt_tilt_up">Geser ke atas</string>
 	<string name="jumio_liveness_prompt_too_far">Merapat</string>
-	<string name="jumio_liveness_scanning_completed">Pemindaian selesai</string>
 	<string name="jumio_liveness_upfront_intro">Kami perlu memindai wajah Anda untuk memverifikasi bahwa Anda benar-benar orang.</string>
+	<string name="jumio_loaders_almost_there">Hampir selesai…</string>
+	<string name="jumio_loaders_finishing_up">Menyelesaikan…</string>
+	<string name="jumio_loaders_success">Berhasil</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Ini akan memakan waktu sebentar</string>
+	<string name="jumio_loaders_working_on_it">Sedang diproses…</string>
 	<string name="jumio_loading_title">Memuat</string>
 	<string name="jumio_nfc_button_skip">Melewatkan</string>
 	<string name="jumio_nfc_description_extracting">Tahan terus sambil memindai</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Bilah pencarian</string>
 	<string name="jumio_search_completed_for_country">Pencarian selesai untuk negara</string>
 	<string name="jumio_select">Pilih</string>
+	<string name="jumio_selfiedone_ID_Found">ID ditemukan</string>
+	<string name="jumio_selfiedone_continue">Lanjutkan</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Pindai ID Secara Manual</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Kami menemukan salah satu dokumen identifikasi Anda</string>
 	<string name="jumio_start_button">Mulai</string>
 	<string name="jumio_start_instructions_01">Cari permukaan yang cukup terang</string>
 	<string name="jumio_start_instructions_02">Bersiaplah untuk selfie</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Beralih ke kamera belakang</string>
 	<string name="jumio_switched_to_front_camera">Beralih ke kamera depan</string>
 	<string name="jumio_try_again">Harap coba lagi</string>
-	<string name="jumio_uploading_success">Pengunggahan berhasil</string>
 	<string name="jumio_uploading_title">Mengunggah</string>
 	-->
 

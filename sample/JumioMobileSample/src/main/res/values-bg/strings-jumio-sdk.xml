@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Изображението е твърде неясно</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Изображенията трябва да се заснемат отново</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Уверете се, че сте свалили дигиталната шофьорска книжа в PDF формат от официалния сайт на правителството [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Опитайте отново с цветно изображение</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Изображението е черно-бяло фотокопие</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Изображението изглежда е цветно фотокопие</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Моля, опитайте отново с друг документ</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Изглежда, че документът е повреден</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Заснемете изображение на оригиналния документ</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Наклонете надясно</string>
 	<string name="jumio_liveness_prompt_tilt_up">Повдигнете нагоре</string>
 	<string name="jumio_liveness_prompt_too_far">Приближете се</string>
-	<string name="jumio_liveness_scanning_completed">Сканирането завърши</string>
 	<string name="jumio_liveness_upfront_intro">Трябва да направим снимка на лицето ви, за да потвърдим, че сте истински човек.</string>
+	<string name="jumio_loaders_almost_there">Почти готово…</string>
+	<string name="jumio_loaders_finishing_up">Приключване…</string>
+	<string name="jumio_loaders_success">Успех</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Това ще отнеме малко време</string>
+	<string name="jumio_loaders_working_on_it">Обработване…</string>
 	<string name="jumio_loading_title">Зареждане</string>
 	<string name="jumio_nfc_button_skip">Пропуснете</string>
 	<string name="jumio_nfc_description_extracting">Стойте неподвижни по време на сканиране</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Лента за търсене</string>
 	<string name="jumio_search_completed_for_country">Завършено търсене за страна:</string>
 	<string name="jumio_select">Избор</string>
+	<string name="jumio_selfiedone_ID_Found">Документ за самоличност е намерен</string>
+	<string name="jumio_selfiedone_continue">Продължи</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Ръчно сканиране на документ</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Намерихме един от вашите документи за самоличност</string>
 	<string name="jumio_start_button">Старт</string>
 	<string name="jumio_start_instructions_01">Намери добре осветена повърхност</string>
 	<string name="jumio_start_instructions_02">Подготви се за селфи</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Превключено към задната камера</string>
 	<string name="jumio_switched_to_front_camera">Преминахте към предната камера</string>
 	<string name="jumio_try_again">Опитайте отново</string>
-	<string name="jumio_uploading_success">Качването е успешно</string>
 	<string name="jumio_uploading_title">Качване</string>
 	-->
 

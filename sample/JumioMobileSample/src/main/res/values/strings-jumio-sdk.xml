@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">The image is too blurry to be verified</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Images must be retaken</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Make sure you have downloaded a digital driver’s license PDF from the official government application [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Please try again with a color image</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">The image is a black and white photocopy</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">The image appears to be a color photocopy</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Please try again with a different document</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">The document appears to be damaged</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Capture an image of your original document</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Tilt right</string>
 	<string name="jumio_liveness_prompt_tilt_up">Tilt up</string>
 	<string name="jumio_liveness_prompt_too_far">Move closer</string>
-	<string name="jumio_liveness_scanning_completed">Scanning completed</string>
 	<string name="jumio_liveness_upfront_intro">We need to take a scan of your face to verify that you are a real person.</string>
+	<string name="jumio_loaders_almost_there">Almost there…</string>
+	<string name="jumio_loaders_finishing_up">Finishing up…</string>
+	<string name="jumio_loaders_success">Success</string>
+	<string name="jumio_loaders_this_will_take_a_moment">This will take a moment</string>
+	<string name="jumio_loaders_working_on_it">Working on it…</string>
 	<string name="jumio_loading_title">Loading</string>
 	<string name="jumio_nfc_button_skip">Skip</string>
 	<string name="jumio_nfc_description_extracting">Hold still while scanning</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Search bar</string>
 	<string name="jumio_search_completed_for_country">Search completed for country</string>
 	<string name="jumio_select">Select</string>
+	<string name="jumio_selfiedone_ID_Found">ID Found</string>
+	<string name="jumio_selfiedone_continue">Continue</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Scan ID Manually</string>
+	<string name="jumio_selfiedone_we_found_your_ID">We found one of your identification documents</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Find a well-lit surface</string>
 	<string name="jumio_start_instructions_02">Be ready to take a selfie</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Switched to the back camera</string>
 	<string name="jumio_switched_to_front_camera">Switched to the front camera</string>
 	<string name="jumio_try_again">Please try again</string>
-	<string name="jumio_uploading_success">Upload successful</string>
 	<string name="jumio_uploading_title">Uploading</string>
 	-->
 

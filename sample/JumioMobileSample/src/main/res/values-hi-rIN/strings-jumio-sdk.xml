@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">छवि सत्यापित होने के लिए बहुत धुंधली है</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">इमेजों को फिर से लेना आवश्यक हैं</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">सुनिश्चित करें कि आपने ऑफिशियल सरकारी एप्लिकेशन [({Carteira Digital de Trânsito})] से डिजिटल ड्राइविंग लाइसेंस की PDF डाउनलोड की है</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">कृपया रंगीन छवि के साथ पुन: प्रयास करें</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">छवि एक ब्लैक एंड व्हाइट फोटोकॉपी है</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">छवि एक रंगीन फोटोकॉपी प्रतीत होती है</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">कृपया किसी अन्य दस्तावेज़ के साथ पुनः प्रयास करें</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">ऐसा लगता है कि दस्तावेज़ क्षतिग्रस्त हो गया है</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">अपने मूल दस्तावेज़ की एक छवि कैप्चर करें</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">दाईं ओर झुकाएं</string>
 	<string name="jumio_liveness_prompt_tilt_up">ऊपर झुकाएं</string>
 	<string name="jumio_liveness_prompt_too_far">थोड़ा और पास आएं</string>
-	<string name="jumio_liveness_scanning_completed">स्कैनिंग पूरी हुई</string>
 	<string name="jumio_liveness_upfront_intro">यह वेरीफाई करने के लिए कि आप एक वास्तविक व्यक्ति हैं, हमें आपके चेहरे को स्कैन करने की आवश्यकता है।</string>
+	<string name="jumio_loaders_almost_there">बस होने ही वाला है…</string>
+	<string name="jumio_loaders_finishing_up">समाप्त हो रहा है…</string>
+	<string name="jumio_loaders_success">सफल</string>
+	<string name="jumio_loaders_this_will_take_a_moment">इसमें थोड़ा समय लगेगा</string>
+	<string name="jumio_loaders_working_on_it">इस पर काम कर रहे हैं…</string>
 	<string name="jumio_loading_title">लोड हो रहा है</string>
 	<string name="jumio_nfc_button_skip">छोड़ें</string>
 	<string name="jumio_nfc_description_extracting">स्कैन करते समय स्थिर पकड़े रखें</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">खोज बार</string>
 	<string name="jumio_search_completed_for_country">देश के लिए खोज पूरी हुई</string>
 	<string name="jumio_select">चुनें</string>
+	<string name="jumio_selfiedone_ID_Found">आईडी मिल गया</string>
+	<string name="jumio_selfiedone_continue">जारी रखें</string>
+	<string name="jumio_selfiedone_scan_ID_manually">आईडी को मैनुअली स्कैन करें</string>
+	<string name="jumio_selfiedone_we_found_your_ID">हमें आपका एक पहचान दस्तावेज़ मिला है</string>
 	<string name="jumio_start_button">शुरू करें</string>
 	<string name="jumio_start_instructions_01">एक अच्छी रोशनी वाली सतह ढूंढें</string>
 	<string name="jumio_start_instructions_02">सेल्फी लेने के लिए तैयार हो जाएं</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">बैक कैमरे पर स्विच किया गया</string>
 	<string name="jumio_switched_to_front_camera">फ़्रंट कैमरे पर स्विच किया गया</string>
 	<string name="jumio_try_again">पुन: प्रयास करें</string>
-	<string name="jumio_uploading_success">अपलोड सफल</string>
 	<string name="jumio_uploading_title">अपलोड किया जा रहा है</string>
 	-->
 

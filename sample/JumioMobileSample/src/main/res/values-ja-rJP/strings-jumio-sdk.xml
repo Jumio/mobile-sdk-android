@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">画像がぼやけすぎているため認証できません</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">画像は撮り直す必要があります</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">政府の公式アプリ[({Carteira Digital de Trânsito})]からデジタル運転免許証のPDFをダウンロードしていることを確認してください。</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">カラー画像でもう一度やり直してください</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">画像は白黒コピーです</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">画像はカラーコピーと思われます</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">別のドキュメントでもう一度やり直してください</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">ドキュメントが破損しているようです</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">ドキュメントの原本の画像をキャプチャします</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">右に傾けてください</string>
 	<string name="jumio_liveness_prompt_tilt_up">上に傾けてください</string>
 	<string name="jumio_liveness_prompt_too_far">近くに移動します。</string>
-	<string name="jumio_liveness_scanning_completed">スキャンが完了しました</string>
 	<string name="jumio_liveness_upfront_intro">あなたが実在の人物であることを確認するため、顔をスキャンする必要があります。</string>
+	<string name="jumio_loaders_almost_there">もうすぐ完了です…</string>
+	<string name="jumio_loaders_finishing_up">最終処理中です…</string>
+	<string name="jumio_loaders_success">成功</string>
+	<string name="jumio_loaders_this_will_take_a_moment">少々お待ちください</string>
+	<string name="jumio_loaders_working_on_it">処理中です…</string>
 	<string name="jumio_loading_title">読み込み中</string>
 	<string name="jumio_nfc_button_skip">スキップ</string>
 	<string name="jumio_nfc_description_extracting">スキャン中は静止したまま</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">検索バー</string>
 	<string name="jumio_search_completed_for_country">国の検索が完了しました</string>
 	<string name="jumio_select">選択</string>
+	<string name="jumio_selfiedone_ID_Found">本人確認書類を検出しました</string>
+	<string name="jumio_selfiedone_continue">続行</string>
+	<string name="jumio_selfiedone_scan_ID_manually">手動でIDをスキャン</string>
+	<string name="jumio_selfiedone_we_found_your_ID">お客様の本人確認書類が1点見つかりました</string>
 	<string name="jumio_start_button">開始</string>
 	<string name="jumio_start_instructions_01">明るい場所を見つけてください</string>
 	<string name="jumio_start_instructions_02">自撮りの準備をしてください</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">背面カメラに切り替えました</string>
 	<string name="jumio_switched_to_front_camera">前面カメラに切り替えました</string>
 	<string name="jumio_try_again">もう一度やり直してください</string>
-	<string name="jumio_uploading_success">正常にアップロードされました</string>
 	<string name="jumio_uploading_title">アップロード中</string>
 	-->
 

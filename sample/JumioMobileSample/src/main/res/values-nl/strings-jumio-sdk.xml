@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">De afbeelding is te wazig om te worden geverifieerd</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Foto\'s moeten opnieuw worden genomen</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Zorg ervoor dat je een pdf van het digitale rijbewijs hebt gedownload van de officiële overheidsapplicatie [({Carteira Digital de Trânsito})].</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Probeer het opnieuw met een foto in kleur.</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">De afbeelding is een zwart-wit foto</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">De afbeelding lijkt een kleurenkopie te zijn</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Probeer het opnieuw met een ander document</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Het document lijkt te zijn beschadigd</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Een foto van uw originele document maken</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Rechts kantelen</string>
 	<string name="jumio_liveness_prompt_tilt_up">Omhoog kantelen</string>
 	<string name="jumio_liveness_prompt_too_far">Kom dichterbij</string>
-	<string name="jumio_liveness_scanning_completed">Scannen voltooid</string>
 	<string name="jumio_liveness_upfront_intro">We moeten een scan van je gezicht maken om te controleren of je een echt persoon bent.</string>
+	<string name="jumio_loaders_almost_there">Bijna klaar…</string>
+	<string name="jumio_loaders_finishing_up">Aan het afronden…</string>
+	<string name="jumio_loaders_success">Geslaagd</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Dit duurt een ogenblik</string>
+	<string name="jumio_loaders_working_on_it">Bezig met verwerken…</string>
 	<string name="jumio_loading_title">Aan het laden</string>
 	<string name="jumio_nfc_button_skip">Overspringen</string>
 	<string name="jumio_nfc_description_extracting">Stilhouden tijdens het scannen</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Zoekbalk</string>
 	<string name="jumio_search_completed_for_country">Zoeken voltooid voor land</string>
 	<string name="jumio_select">Selecteer</string>
+	<string name="jumio_selfiedone_ID_Found">ID-bewijs gevonden</string>
+	<string name="jumio_selfiedone_continue">Doorgaan</string>
+	<string name="jumio_selfiedone_scan_ID_manually">ID handmatig scannen</string>
+	<string name="jumio_selfiedone_we_found_your_ID">We hebben een van uw identificatiedocumenten gevonden</string>
 	<string name="jumio_start_button">Beginnen</string>
 	<string name="jumio_start_instructions_01">Zoek een goed verlichte ondergrond</string>
 	<string name="jumio_start_instructions_02">Maak je klaar om een selfie te maken</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Overgeschakeld naar de camera aan de achterkant</string>
 	<string name="jumio_switched_to_front_camera">Overgeschakeld naar de camera aan de voorzijde</string>
 	<string name="jumio_try_again">Probeer het nog eens</string>
-	<string name="jumio_uploading_success">Uploaden succesvol</string>
 	<string name="jumio_uploading_title">Uploaden</string>
 	-->
 

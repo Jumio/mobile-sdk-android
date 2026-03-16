@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">ရုပ်ပုံသည် အတည်ပြု၍မရလောက်အောင် မှုန်ဝါးလွန်းသည်</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">ဓာတ်ပုံများကို ပြန်ရိုက်ရမည်</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">သင်သည် တရားဝင်အစိုးရအပလီကေးရှင်းမှ ဒစ်ဂျစ်တယ်ယာဉ်မောင်းလိုင်စင် PDF ကို ဒေါင်းလုဒ်လုပ်ထားကြောင်း သေချာပါစေ [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">အရောင်ပါသောဓာတ်ပုံဖြင့် ထပ်စမ်းကြည့်ပါ</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">ရုပ်ပုံသည် အဖြူအမည်း ဓာတ်ပုံမိတ္တူ ဖြစ်နေသည်</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">ဓာတ်က ကာလာဓာတ်ပုံမိတ္တူ ဖြစ်ပုံရသည်</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">အခြားစာရွက်စာတမ်းဖြင့် ထပ်မံကြိုးစားပါ</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">စာရွက်စာတမ်းသည် ပျက်စီးနေပုံရသည်</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">မူရင်းစာရွက်စာတမ်းကို ဓာတ်ပုံရိုက်ပါ</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">ညာဘက်စောင်းပါ</string>
 	<string name="jumio_liveness_prompt_tilt_up">အပေါ်မော့ပါ</string>
 	<string name="jumio_liveness_prompt_too_far">ပိုနီးရာသို့ ရွှေ့ပါ</string>
-	<string name="jumio_liveness_scanning_completed">စကန်ဖတ်ပြီးပါပြီ</string>
 	<string name="jumio_liveness_upfront_intro">သင် လူအစစ်ဖြစ်ကြောင်း အတည်ပြုရန် သင့်မျက်နှာကို စကန်ဖတ်ရန် လိုအပ်သည်။</string>
+	<string name="jumio_loaders_almost_there">ပြီးခါနီးပါပြီ…</string>
+	<string name="jumio_loaders_finishing_up">ပြီးဆုံးနေပါပြီ…</string>
+	<string name="jumio_loaders_success">အောင်မြင်သည်</string>
+	<string name="jumio_loaders_this_will_take_a_moment">ခဏကြာပါမည်</string>
+	<string name="jumio_loaders_working_on_it">လုပ်ဆောင်နေသည်…</string>
 	<string name="jumio_loading_title">တင်နေသည်</string>
 	<string name="jumio_nfc_button_skip">ကျော်ရန်</string>
 	<string name="jumio_nfc_description_extracting">စကန်ဖတ်နေစဉ် ငြိမ်ငြိမ်နေပါ</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">ရှာဖွေမှုဘား</string>
 	<string name="jumio_search_completed_for_country">နိုင်ငံ ရှာဖွေမှုပြီးပါပြီ</string>
 	<string name="jumio_select">ရွေးချယ်ရန်</string>
+	<string name="jumio_selfiedone_ID_Found">အိုင်ဒီကို တွေ့ရှိပါသည်</string>
+	<string name="jumio_selfiedone_continue">ဆက်လုပ်ရန်</string>
+	<string name="jumio_selfiedone_scan_ID_manually">အိုင်ဒီကို ကိုယ်တိုင်စကန်ဖတ်ပါ</string>
+	<string name="jumio_selfiedone_we_found_your_ID">သင်၏ သက်သေခံစာရွက်စာတမ်းများထဲမှ တစ်ခုကို ကျွန်ုပ်တို့ တွေ့ရှိခဲ့သည်</string>
 	<string name="jumio_start_button">စတင်ရန်</string>
 	<string name="jumio_start_instructions_01">အလင်းရောင်ကောင်းကောင်းရသော မျက်နှာပြင်ကို ရှာပါ</string>
 	<string name="jumio_start_instructions_02">ဆဲလ်ဖီရိုက်ရန် အသင့်ပြင်ပါ</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">နောက်ကင်မရာသို့ ပြောင်းလိုက်သည်</string>
 	<string name="jumio_switched_to_front_camera">ရှေ့ကင်မရာသို့ ပြောင်းထားသည်</string>
 	<string name="jumio_try_again">ထပ်ကြိုးစားကြည့်ပါ</string>
-	<string name="jumio_uploading_success">အပ်လုဒ်တင်ခြင်း အောင်မြင်ပါသည်</string>
 	<string name="jumio_uploading_title">အပ်လုဒ်တင်နေသည်</string>
 	-->
 

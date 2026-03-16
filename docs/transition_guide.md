@@ -8,6 +8,39 @@ This section covers all technical changes that should be considered when updatin
 - When updating your SDK version, **all** changes/updates made in in the meantime have to be taken into account and applied if necessary.
 - **Example:** If you're updating from SDK version **3.7.2** to **3.9.2**, the changes outlined in **3.8.0, 3.9.0** and **3.9.1** are **still relevant**.
 
+## 4.17.0
+
+#### Public API Changes
+- [`JumioTermsOfUse`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.termsofuse/-jumio-terms-of-use/index.html), [`JumioLookupResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-lookup-result/index.html), [`JumioLegalStatement`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-legal-statement/index.html) classes have been added
+- Optional property `order` has been added to [`JumioCredentialInfo`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-credential-info/index.html)
+- Property `lookupResult` of type [`JumioLookupResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-lookup-result/index.html) has been added to [`JumioIDCredential`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/index.html)
+- Method [`userConsented(JumioLookupResult.JumioLegalStatement, Boolean)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-id-credential/user-consented.html) has been added to [`JumioIDCredential`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/index.html)
+- [`onInitialized()`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-initialized.html) callback has been changed from ~~`onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItem>?)`~~ to [`onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItems>?, termsOfUse: JumioTermsOfUse?)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.interfaces/-jumio-controller-interface/on-initialized.html)
+
+#### Instant Feedback Reject Reasons
+
+The following reject reasons have been removed:
+
+- BLACK_WHITE_COPY
+- COLOR_PHOTOCOPY
+
+#### Localizations Changes
+
+The following keys have been added:
+- `jumio_selfiedone_ID_Found`
+- `jumio_loaders_almost_there`
+- `jumio_selfiedone_continue`
+- `jumio_loaders_finishing_up`
+- `jumio_selfiedone_scan_ID_manually`
+- `jumio_loaders_success`
+- `jumio_loaders_this_will_take_a_moment`
+- `jumio_selfiedone_we_found_your_ID`
+- `jumio_loaders_working_on_it`
+
+The following keys have been removed:
+- `jumio_liveness_scanning_completed`
+- `jumio_uploading_success`
+
 ## 4.16.0
 
 #### Localizations Changes

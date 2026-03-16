@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Изображение слишком размытое для проверки</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Изображения необходимо переснять</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Убедитесь, что вы скачали Цифровое водительское удостоверение PDF из официального государственного приложения [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Попробуйте еще раз с цветным изображением</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Изображение является черно-белой ксерокопией</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Изображение похоже на цветную ксерокопию</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Попробуйте еще раз с другим документом</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Документ кажется поврежденным</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Сфотографируйте оригинал документа</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Наклоните вправо</string>
 	<string name="jumio_liveness_prompt_tilt_up">Поднимите вверх</string>
 	<string name="jumio_liveness_prompt_too_far">Подойдите ближе</string>
-	<string name="jumio_liveness_scanning_completed">Сканирование завершено</string>
 	<string name="jumio_liveness_upfront_intro">Нам нужно отсканировать ваше лицо, чтобы убедиться, что вы реальный человек.</string>
+	<string name="jumio_loaders_almost_there">Почти готово…</string>
+	<string name="jumio_loaders_finishing_up">Завершение…</string>
+	<string name="jumio_loaders_success">Успешно</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Это займет некоторое время</string>
+	<string name="jumio_loaders_working_on_it">Обрабатываем…</string>
 	<string name="jumio_loading_title">Загрузка</string>
 	<string name="jumio_nfc_button_skip">Пропускать</string>
 	<string name="jumio_nfc_description_extracting">Во время сканирования держите неподвижно</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Строка поиска</string>
 	<string name="jumio_search_completed_for_country">Завершен поиск по стране</string>
 	<string name="jumio_select">Выбрать</string>
+	<string name="jumio_selfiedone_ID_Found">Документ найден</string>
+	<string name="jumio_selfiedone_continue">Продолжить</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Сканировать документ вручную</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Мы нашли один из ваших документов, удостоверяющих личность</string>
 	<string name="jumio_start_button">Начать</string>
 	<string name="jumio_start_instructions_01">Найдите хорошо освещенную поверхность</string>
 	<string name="jumio_start_instructions_02">Будьте готовы сделать селфи</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Переключено на заднюю камеру</string>
 	<string name="jumio_switched_to_front_camera">Переключено на фронтальную камеру</string>
 	<string name="jumio_try_again">Попробуйте еще раз</string>
-	<string name="jumio_uploading_success">Загрузка успешно завершена</string>
 	<string name="jumio_uploading_title">Загрузка</string>
 	-->
 

@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Ir-ritratt mhux ċar biżżejjed biex jiġi vverifikat</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Ir-ritratti għandhom bżonn jittieħdu mill-ġdid</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Aċċerta li niżżilt PDF tal-liċenzja tas-sewqan Diġitali mill-applikazzjoni uffiċjali tal-gvern [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Jekk jogħġbok erġa\' pprova b\'immaġni tal-kulur</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">L-immaġni hija fotokopja bl-abjad u bl-iswed</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">L-immaġni tidher li hija fotokopja bil-kulur</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Jekk jogħġbok erġa\' pprova b\'dokument differenti</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Id-dokument jidher li għandu l-ħsara</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Ħu ritratt tad-dokument oriġinali tiegħek</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Mejjel lejn il-lemin</string>
 	<string name="jumio_liveness_prompt_tilt_up">Mejjel \'il fuq</string>
 	<string name="jumio_liveness_prompt_too_far">Ersaq aktar viċin</string>
-	<string name="jumio_liveness_scanning_completed">L-iskennjar lest</string>
 	<string name="jumio_liveness_upfront_intro">Irridu nieħdu niskennjaw wiċċek biex nivverifikaw li int persuna reali.</string>
+	<string name="jumio_loaders_almost_there">Kważi lest…</string>
+	<string name="jumio_loaders_finishing_up">Qed jitlesta…</string>
+	<string name="jumio_loaders_success">Suċċess</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Dan se jieħu ftit</string>
+	<string name="jumio_loaders_working_on_it">Qed nipproċessaw…</string>
 	<string name="jumio_loading_title">Qed jillowdja</string>
 	<string name="jumio_nfc_button_skip">Aqbeż</string>
 	<string name="jumio_nfc_description_extracting">Tiċċaqlaqx waqt li tkun qed tiskennja</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Strixxa tat-tiftix</string>
 	<string name="jumio_search_completed_for_country">It-tiftix għall-pajjiż huwa lest</string>
 	<string name="jumio_select">Agħżel</string>
+	<string name="jumio_selfiedone_ID_Found">ID Instab</string>
+	<string name="jumio_selfiedone_continue">Kompli</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Skennja l-ID Manwalment</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Sibna wieħed mid-dokumenti ta\' identifikazzjoni tiegħek</string>
 	<string name="jumio_start_button">Ibda</string>
 	<string name="jumio_start_instructions_01">Sib wiċċ imdawwal sew</string>
 	<string name="jumio_start_instructions_02">Lesti ruħek biex tieħu stessu</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Inqaleb għall-kamera ta\' wara</string>
 	<string name="jumio_switched_to_front_camera">Inqaleb għall-kamera ta\' quddiem</string>
 	<string name="jumio_try_again">Erġa\' pprova</string>
-	<string name="jumio_uploading_success">Telgħu b\'suċċess</string>
 	<string name="jumio_uploading_title">Qed itella\'</string>
 	-->
 

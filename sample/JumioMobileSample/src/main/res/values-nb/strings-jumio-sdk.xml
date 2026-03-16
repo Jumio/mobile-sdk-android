@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Bildet er for uskarpt til å bli bekreftet</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Bildene må tas på nytt</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Sørg for at du har lastet ned et digitalt førerkort som PDF fra den offisielle appen fra brasilianske myndigheter [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Prøv igjen med et fargebilde</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Bildet er en sort/hvit fotokopi</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Bildet ser ut til å være en fargefotokopi</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Prøv igjen med et annet dokument</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Dokumentet ser ut til å være skadet</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Ta et bilde av originaldokumentet ditt</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Vipp mot høyre</string>
 	<string name="jumio_liveness_prompt_tilt_up">Vipp oppover</string>
 	<string name="jumio_liveness_prompt_too_far">Kom nærmere</string>
-	<string name="jumio_liveness_scanning_completed">Skanningen er fullført</string>
 	<string name="jumio_liveness_upfront_intro">Vi må skanne ansiktet ditt for å bekrefte at du er en ekte person.</string>
+	<string name="jumio_loaders_almost_there">Nesten ferdig…</string>
+	<string name="jumio_loaders_finishing_up">Fullfører…</string>
+	<string name="jumio_loaders_success">Vellykket</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Dette tar et øyeblikk</string>
+	<string name="jumio_loaders_working_on_it">Behandler…</string>
 	<string name="jumio_loading_title">Laster</string>
 	<string name="jumio_nfc_button_skip">Hoppe over</string>
 	<string name="jumio_nfc_description_extracting">Hold stille mens du skanner</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Søkefelt</string>
 	<string name="jumio_search_completed_for_country">Følgende søk ble fullført:</string>
 	<string name="jumio_select">Velg</string>
+	<string name="jumio_selfiedone_ID_Found">ID funnet</string>
+	<string name="jumio_selfiedone_continue">Fortsett</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Skann ID manuelt</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Vi fant ett av identifikasjonsdokumentene dine</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Finn en overflate med godt lys</string>
 	<string name="jumio_start_instructions_02">Gjør deg klar til å ta en selfie</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Byttet til kameraet på baksiden</string>
 	<string name="jumio_switched_to_front_camera">Byttet til frontkamera</string>
 	<string name="jumio_try_again">Vennligst prøv igjen</string>
-	<string name="jumio_uploading_success">Opplasting vellykket</string>
 	<string name="jumio_uploading_title">Laster opp</string>
 	-->
 

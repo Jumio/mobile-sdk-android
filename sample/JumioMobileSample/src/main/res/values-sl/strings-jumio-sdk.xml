@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Slika ni dovolj ostra za preverjanje</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Slika mora biti ponovno posneta</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Prepričajte se, da ste datoteko PDF z elektronskim vozniškim dovoljenjem prenesli iz uradne državne aplikacije [({Carteira Digital de Trânsito})].</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Poskusite znova z barvno sliko</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Slika je črno-bela fotokopija</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Videti je, da je slika barvna fotokopija</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Poskusite znova z drugim dokumentom</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Dokument je videti poškodovan</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Zajemite sliko originalnega dokumenta</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Nagni v desno</string>
 	<string name="jumio_liveness_prompt_tilt_up">Nagni navzgor</string>
 	<string name="jumio_liveness_prompt_too_far">Približajte se</string>
-	<string name="jumio_liveness_scanning_completed">Optično branje končano</string>
 	<string name="jumio_liveness_upfront_intro">Da bi preverili, ali ste resnična oseba, moramo skenirati vaš obraz.</string>
+	<string name="jumio_loaders_almost_there">Skoraj končano…</string>
+	<string name="jumio_loaders_finishing_up">Zaključevanje…</string>
+	<string name="jumio_loaders_success">Uspeh</string>
+	<string name="jumio_loaders_this_will_take_a_moment">To bo trajalo trenutek</string>
+	<string name="jumio_loaders_working_on_it">Obdelovanje…</string>
 	<string name="jumio_loading_title">Nalaganje</string>
 	<string name="jumio_nfc_button_skip">Preskoči</string>
 	<string name="jumio_nfc_description_extracting">Med optičnim branjem držite pri miru</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Iskalna vrstica</string>
 	<string name="jumio_search_completed_for_country">Iskanje končano za državo</string>
 	<string name="jumio_select">Izbira</string>
+	<string name="jumio_selfiedone_ID_Found">Osebni dokument najden</string>
+	<string name="jumio_selfiedone_continue">Nadaljuj</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Ročno skeniraj osebni dokument</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Našli smo enega od vaših identifikacijskih dokumentov</string>
 	<string name="jumio_start_button">Začni</string>
 	<string name="jumio_start_instructions_01">Poiščite dobro osvetljeno površino</string>
 	<string name="jumio_start_instructions_02">Pripravite se na selfi</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Preklopljeno na zadnjo kamero</string>
 	<string name="jumio_switched_to_front_camera">Preklopljeno na sprednjo kamero</string>
 	<string name="jumio_try_again">Poskusite znova</string>
-	<string name="jumio_uploading_success">Nalaganje uspešno</string>
 	<string name="jumio_uploading_title">Nalaganje</string>
 	-->
 

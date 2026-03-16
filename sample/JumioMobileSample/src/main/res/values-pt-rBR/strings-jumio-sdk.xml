@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">A imagem está muito desfocada para ser verificada</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">As imagens devem ser refeitas</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Baixe a versão PDF da carteira de motorista digital do aplicativo oficial do governo [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Tente novamente com uma imagem colorida</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">A imagem é uma fotocópia em preto e branco</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">A imagem parece ser uma fotocópia colorida</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Tente novamente com um documento diferente</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">O documento parece estar danificado</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Capture uma imagem do seu documento original</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Incline para a direita</string>
 	<string name="jumio_liveness_prompt_tilt_up">Incline para cima</string>
 	<string name="jumio_liveness_prompt_too_far">Aproxime-se mais</string>
-	<string name="jumio_liveness_scanning_completed">Varredura concluída</string>
 	<string name="jumio_liveness_upfront_intro">Precisamos fazer uma varredura do seu rosto para verificar se você é uma pessoa real.</string>
+	<string name="jumio_loaders_almost_there">Quase lá…</string>
+	<string name="jumio_loaders_finishing_up">Finalizando…</string>
+	<string name="jumio_loaders_success">Sucesso</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Isso levará um momento</string>
+	<string name="jumio_loaders_working_on_it">Processando…</string>
 	<string name="jumio_loading_title">Carregando</string>
 	<string name="jumio_nfc_button_skip">Ignorar</string>
 	<string name="jumio_nfc_description_extracting">Mantenha-se imóvel durante a varredura</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Barra de pesquisa</string>
 	<string name="jumio_search_completed_for_country">Pesquisa concluída por país</string>
 	<string name="jumio_select">Selecionar</string>
+	<string name="jumio_selfiedone_ID_Found">Documento de identidade encontrado</string>
+	<string name="jumio_selfiedone_continue">Continuar</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Escanear ID manualmente</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Encontramos um dos seus documentos de identificação</string>
 	<string name="jumio_start_button">Iniciar</string>
 	<string name="jumio_start_instructions_01">Encontre uma superfície bem iluminada</string>
 	<string name="jumio_start_instructions_02">Prepare-se para tirar a selfie</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Alternado para a câmera traseira</string>
 	<string name="jumio_switched_to_front_camera">Alternado para a câmera frontal</string>
 	<string name="jumio_try_again">Tente novamente</string>
-	<string name="jumio_uploading_success">Upload bem-sucedido</string>
 	<string name="jumio_uploading_title">Enviando</string>
 	-->
 

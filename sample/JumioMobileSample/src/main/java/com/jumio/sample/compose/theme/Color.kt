@@ -21,6 +21,7 @@ data class CustomColors(
 	val background: Color = Color.Unspecified,
 	val checkBox: Color = Color.Unspecified,
 	val error: Color = Color.Unspecified,
+	val jumioSelfieDoneIdBackground: Color = Color.Unspecified,
 )
 
 val lightCustomColors = CustomColors(
@@ -32,7 +33,8 @@ val lightCustomColors = CustomColors(
 	unFocusedIndicator = Color(0xFF000000),
 	background = Color(0xFFFFFFFF),
 	checkBox = Color(0xFFFFFFFF),
-	error = Color(0xFFFF5722)
+	error = Color(0xFFFF5722),
+	jumioSelfieDoneIdBackground = Color(0xFFF5F7FA)
 )
 
 val darkCustomColors = CustomColors(
@@ -44,7 +46,8 @@ val darkCustomColors = CustomColors(
 	unFocusedIndicator = Color(0xFFFFFFFF),
 	background = Color(0xFF000000),
 	checkBox = Color(0xFF000000),
-	error = Color(0xFFFF5722)
+	error = Color(0xFFFF5722),
+	jumioSelfieDoneIdBackground = Color(0xFF222931)
 )
 
 val LocalCustomColors = compositionLocalOf { CustomColors() }

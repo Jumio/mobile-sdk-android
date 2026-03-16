@@ -47,7 +47,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.15.0**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.17.0**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -75,29 +75,29 @@ If an optional module is **not linked**, some functionalities may not be availab
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.15.0"
+	implementation "com.jumio.android:core:4.17.0"
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.15.0"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.15.0"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.15.0"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:liveness:4.15.0"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.15.0"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.17.0"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.17.0"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.17.0"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:liveness:4.17.0"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.17.0"   // Digital Identity verification library
   	...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.15.0"
+	implementation "com.jumio.android:defaultui:4.17.0"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.15.0"         // CameraX library
+	implementation "com.jumio.android:camerax:4.17.0"         // CameraX library
   	...
 }
 ```
@@ -106,7 +106,7 @@ In addition to specifying individual dependencies, you can also use a BOM (Bill 
 
 ```groovy
 dependencies {
-		implementation platform("com.jumio.android:bom:4.15.0")
+		implementation platform("com.jumio.android:bom:4.17.0")
 		implementation "com.jumio.android:core"
 		implementation "com.jumio.android:barcode-mlkit"
 		implementation "com.jumio.android:camerax"
@@ -472,8 +472,6 @@ List of all possible **_reject reasons_** the SDK could return if Instant Feedba
 
 | Code | Message              | Description                                        |
 | :--- | :------------------- | :------------------------------------------------- |
-| 102  | BLACK_WHITE_COPY     | Document appears to be a black and white photocopy |
-| 103  | COLOR_PHOTOCOPY      | Document appears to be a colored photocopy         |
 | 104  | DIGITAL_COPY         | Document appears to be a digital copy              |
 | 200  | NOT_READABLE         | Document is not readable                           |
 | 201  | NO_DOC               | No document could be detected                      |
@@ -566,7 +564,7 @@ val jumioController: JumioController = sdk.start(context, jumioControllerInterfa
 When the `jumioController` is initialized, the following callback will be triggered:
 
 ```kotlin
-onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItems>?)
+onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItems>?, termsOfUse: JumioTermsOfUse?)
 ```
 
 #### Consent Handling
@@ -585,6 +583,14 @@ For `ACTIVE` types, the user needs to accept the consent items explicitly, e.g. 
 The user can open and continue to the provided consent link if they choose to do so. If the user consents to Jumio's policy, [`jumioController.userConsented(consentItem: JumioConsentItem, userConsent: Boolean)`][userconsented] is required to be called internally before any credential can be initialized and the user journey can continue. If no consent is required, the list of [`JumioConsentItems`][jumioconsentitem] will be `null`. If the user does not consent or if [`jumioController.userConsented(consentItem: JumioConsentItem, userConsent: Boolean)`][userconsented] is not called for all the items inside the `consentItems` list, the user will not be able to continue the user journey.
 
 ⚠️&nbsp;__Note:__ Please be aware that in cases where the list of `consentItems` is not `null`, the user **must consent** to Jumio's processing of personal information, including biometric data, and be provided a link to Jumio's Privacy Notice. Do not accept automatically without showing the user any terms.
+
+#### Terms of Use Handling
+
+The `termsOfUse` parameter provides a [`JumioTermsOfUse`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.termsofuse/-jumio-terms-of-use/index.html) which contains:
+- `text`: The localized string containing the terms of use text.
+- `url`: The URL to redirect the user to Jumio’s terms of use details.
+
+If the `termsOfUse` parameter is `null`, then it should be ignored.
 
 ### Credential Handling
 
@@ -605,7 +611,16 @@ If the credential is not configured yet, it needs some more configuration before
 
 - [`JumioCredentialCategory`][jumiocredentialcategory] values: `ID`, `FACE`, `DOCUMENT`, `DATA`
 
+
+Credentials should be processed in ascending order based on the `order` property specified in [`JumioCredentialInfo`][jumiocredentialinfo]. Credentials with the same order value can be processed in any sequence.
+
+⚠️&nbsp;&nbsp;**Note:** Processing credentials according to order is necessary to continue the user journey.
+
 #### Jumio ID Credential
+
+The `lookupResult` property of type [`JumioLookupResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-lookup-result/index.html) is returned when a document is found during a Selfie.DONE workflow. If the `lookupResult` contains [`JumioDocumentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-document-type/index.html) and [`JumioLegalStatement`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-legal-statement/index.html), then you must call [`userConsented(JumioLookupResult.JumioLegalStatement, Boolean)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-id-credential/user-consented.html) using the `legalStatement` from the `lookupResult` to record the user's decision:
+- Calling `userConsented(JumioLookupResult.JumioLegalStatement, true)` indicates that consent has been given to use the data from the `lookupResult`. In this scenario, the [`JumioIDCredential`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/index.html) is considered complete, allowing you to immediately call `finish()` on the credential without requiring a new scan.
+- Calling `userConsented(JumioLookupResult.JumioLegalStatement, false)` indicates that consent has not been given to use the `lookupResult` data, and the workflow will proceed to scan a new document.
 
 In case of [`JumioIDCredential`][jumioidcredential], you can retrieve all available countries from [`supportedCountries`][supportedcountries]. After selecting a specific country from that list, you can query available documents for that country by either calling [`getPhysicalDocumentsForCountry`][getphysicaldocuments] or [`getDigitalDocumentsForCountry`][getdigitaldocuments]. To configure the [`JumioIDCredential`][jumioidcredential], pass your desired document as well as the country to [`setConfiguration()`][setidconfiguration].
 
@@ -1159,6 +1174,7 @@ In any case, your use of this Software is subject to the terms and conditions th
 [jumiorejectreason]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.reject/-jumio-reject-reason/index.html
 [jumioerror]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.error/-jumio-error/index.html
 [jumiocredential]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-credential/index.html
+[jumiocredentialinfo]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-credential-info/index.html
 [jumioidcredential]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/index.html
 [jumiodocumentcredential]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-document-credential/index.html
 [jumiofacecredential]: https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-face-credential/index.html

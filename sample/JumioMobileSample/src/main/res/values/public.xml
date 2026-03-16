@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<public name="app_name_kotlin" type="string"/>
+	<public name="navigation_drawer_open" type="string"/>
+	<public name="navigation_drawer_close" type="string"/>
+	<public name="menu_legal_information" type="string"/>
+	<public name="menu_terms_of_use" type="string"/>
+	<public name="menu_privacy_policy" type="string"/>
+	<public name="menu_licenses" type="string"/>
+	<public name="menu_version" type="string"/>
+	<public name="menu_advanced" type="string"/>
+	<public name="clean_models" type="string"/>
+	<public name="start_custom_ui_title" type="string"/>
+	<public name="start_default_ui_title" type="string"/>
+	<public name="app_bar_title" type="string"/>
+	<public name="token" type="string"/>
+	<public name="enter_token" type="string"/>
+	<public name="workflow_consists" type="string"/>
+	<public name="loading" type="string"/>
+	<public name="uploading" type="string"/>
+	<public name="verifying" type="string"/>
+	<public name="start" type="string"/>
+	<public name="close" type="string"/>
+	<public name="back" type="string"/>
+	<public name="select_country" type="string"/>
+	<public name="select_document" type="string"/>
+	<public name="fallback" type="string"/>
+	<public name="camera" type="string"/>
+	<public name="flash" type="string"/>
+	<public name="take" type="string"/>
+	<public name="select_acquire_mode" type="string"/>
+	<public name="retake" type="string"/>
+	<public name="confirm" type="string"/>
+	<public name="reject" type="string"/>
+	<public name="scan_finish_msg" type="string"/>
+	<public name="done" type="string"/>
+	<public name="id" type="string"/>
+	<public name="face" type="string"/>
+	<public name="document" type="string"/>
+	<public name="processing" type="string"/>
+	<public name="retry" type="string"/>
+	<public name="credentials" type="string"/>
+	<public name="flip_document" type="string"/>
+	<public name="requirement" type="string"/>
+	<public name="select_file" type="string"/>
+	<public name="nfc_scan_finished" type="string"/>
+	<public name="error" type="string"/>
+	<public name="cancel" type="string"/>
+	<public name="compose" type="string"/>
+	<public name="xml" type="string"/>
+	<public name="pdf_file" type="string"/>
+	<public name="image_file" type="string"/>
+	<public name="custom_controller" translatable="false" type="string"/>
+	<public name="custom_credential" translatable="false" type="string"/>
+	<public name="custom_scan_part" translatable="false" type="string"/>
+	<public name="custom_start" translatable="false" type="string"/>
+	<public name="custom_cancel" translatable="false" type="string"/>
+	<public name="custom_finish" translatable="false" type="string"/>
+	<public name="custom_take" translatable="false" type="string"/>
+	<public name="custom_retry" translatable="false" type="string"/>
+	<public name="custom_confirm" translatable="false" type="string"/>
+	<public name="custom_reject" translatable="false" type="string"/>
+	<public name="custom_flash" translatable="false" type="string"/>
+	<public name="custom_country_and_doc_type" translatable="false" type="string"/>
+	<public name="custom_camera" translatable="false" type="string"/>
+	<public name="file_source_file_system" translatable="false" type="string"/>
+	<public name="file_source_photo_library" translatable="false" type="string"/>
+	<public name="file_source_selection_label" translatable="false" type="string"/>
+	<public name="custom_file" translatable="false" type="string"/>
+	<public name="custom_acquire_mode" translatable="false" type="string"/>
+	<public name="custom_consented" translatable="false" type="string"/>
+	<public name="custom_addon_scan_part" translatable="false" type="string"/>
+	<public name="custom_addon_init" translatable="false" type="string"/>
+	<public name="custom_extraction" translatable="false" type="string"/>
+	<public name="custom_fallback" translatable="false" type="string"/>
+	<public name="jumio_selfiedone_ID_Found" type="string"/>
+	<public name="jumio_selfiedone_continue" type="string"/>
+	<public name="jumio_selfiedone_scan_ID_manually" type="string"/>
+	<public name="jumio_selfiedone_we_found_your_ID" type="string"/>
+	<public name="jumio_dv_upload_tips_file_size" type="string"/>
+	<public name="jumio_dv_upload_tips_page_size" type="string"/>
+	<public name="jumio_dv_upload_tips_protected" type="string"/>
+	<public name="jumio_dv_jpg_png_or_webp_format" type="string"/>
+	<public name="jumio_dv_clear_or_unedited" type="string"/>
+	<public name="jumio_dv_no_transparency_or_watermarks" type="string"/>
+	<public name="jumio_nfc_header_start" type="string"/>
+	<public name="jumio_nfc_description_start_us" type="string"/>
+	<public name="jumio_nfc_description_start_other" type="string"/>
+	<public name="jumio_nfc_id_header_start" type="string"/>
+	<public name="jumio_nfc_id_description" type="string"/>
+	<public name="jumio_nfc_header_extracting" type="string"/>
+	<public name="jumio_nfc_description_extracting" type="string"/>
+	<public name="jumio_nfc_button_skip" type="string"/>
+	<public name="colorPrimary" type="color"/>
+	<public name="colorPrimaryDark" type="color"/>
+	<public name="colorSecondary" type="color"/>
+	<public name="logText" type="color"/>
+	<public name="spinnerBackground" type="color"/>
+	<public name="label" type="color"/>
+	<public name="jumio_selfie_done_branding" type="color"/>
+</resources>

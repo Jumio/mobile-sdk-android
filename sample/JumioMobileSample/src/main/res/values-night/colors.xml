@@ -7,4 +7,6 @@
 	<color name="logText">#FFFFFF</color>
 	<color name="spinnerBackground">#1C2229</color>
 	<color name="label">#FFFFFF</color>
+
+	<color name="jumio_selfie_done_branding">@color/jumio_gray_5</color>
 </resources>

@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Bilden är för oskarp för att verifieras</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Bilder måste tas om</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Se till att du har laddat ner ett digitalt körkort i PDF-format från den officiella myndighetsapplikationen [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Försök igen med en färgbild</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Bilden är en svartvit kopia</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Bilden verkar vara en färgkopia</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Försök igen med ett annat dokument</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Dokumentet verkar vara skadat</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Ta en bild av ditt originaldokument</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Luta åt höger</string>
 	<string name="jumio_liveness_prompt_tilt_up">Luta uppåt</string>
 	<string name="jumio_liveness_prompt_too_far">Flytta närmare</string>
-	<string name="jumio_liveness_scanning_completed">Skanningen är klar</string>
 	<string name="jumio_liveness_upfront_intro">Vi måste skanna ditt ansikte för att verifiera att du är en riktig person.</string>
+	<string name="jumio_loaders_almost_there">Nästan klar…</string>
+	<string name="jumio_loaders_finishing_up">Slutför…</string>
+	<string name="jumio_loaders_success">Lyckades</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Det här tar ett ögonblick</string>
+	<string name="jumio_loaders_working_on_it">Bearbetar…</string>
 	<string name="jumio_loading_title">Laddar</string>
 	<string name="jumio_nfc_button_skip">Hoppa</string>
 	<string name="jumio_nfc_description_extracting">Håll stilla under skanning</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Sökfält</string>
 	<string name="jumio_search_completed_for_country">Sökning slutförd för land</string>
 	<string name="jumio_select">Välj</string>
+	<string name="jumio_selfiedone_ID_Found">ID-handling hittad</string>
+	<string name="jumio_selfiedone_continue">Fortsätt</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Skanna ID manuellt</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Vi hittade ett av dina identitetsdokument</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Hitta en yta med god belysning</string>
 	<string name="jumio_start_instructions_02">Gör dig redo att ta en selfie</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Växlat till den bakre kameran</string>
 	<string name="jumio_switched_to_front_camera">Växlat till den främre kameran</string>
 	<string name="jumio_try_again">Försök igen</string>
-	<string name="jumio_uploading_success">Uppladdning klar</string>
 	<string name="jumio_uploading_title">Laddar upp</string>
 	-->
 

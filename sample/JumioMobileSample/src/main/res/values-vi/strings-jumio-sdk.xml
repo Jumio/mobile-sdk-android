@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Hình ảnh quá mờ để có thể xác minh</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Hình ảnh phải được chụp lại</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Vui lòng đảm bảo rằng bạn đã tải xuống Giấy phép lái xe kỹ thuật số định dạng PDF từ ứng dụng chính thức của chính phủ [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Vui lòng thử lại với một hình ảnh màu</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Hình ảnh là một bản photocopy đen trắng</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Hình ảnh có vẻ là một bản photocopy màu</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Vui lòng thử lại với một tài liệu khác</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Tài liệu có vẻ bị hỏng</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Chụp ảnh tài liệu gốc của bạn</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Nghiêng phải</string>
 	<string name="jumio_liveness_prompt_tilt_up">Nghiêng lên</string>
 	<string name="jumio_liveness_prompt_too_far">Di chuyển lại gần hơn</string>
-	<string name="jumio_liveness_scanning_completed">Đã quét xong</string>
 	<string name="jumio_liveness_upfront_intro">Chúng tôi cần quét khuôn mặt bạn để xác minh rằng bạn là người thật.</string>
+	<string name="jumio_loaders_almost_there">Sắp xong rồi…</string>
+	<string name="jumio_loaders_finishing_up">Đang hoàn tất…</string>
+	<string name="jumio_loaders_success">Thành công</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Việc này sẽ mất một chút thời gian</string>
+	<string name="jumio_loaders_working_on_it">Đang xử lý…</string>
 	<string name="jumio_loading_title">Đang tải</string>
 	<string name="jumio_nfc_button_skip">Nhảy</string>
 	<string name="jumio_nfc_description_extracting">Giữ yên trong khi quét</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Thanh tìm kiếm</string>
 	<string name="jumio_search_completed_for_country">Đã hoàn tất tìm kiếm cho quốc gia</string>
 	<string name="jumio_select">Chọn</string>
+	<string name="jumio_selfiedone_ID_Found">Đã tìm thấy giấy tờ tùy thân</string>
+	<string name="jumio_selfiedone_continue">Tiếp tục</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Quét giấy tờ tùy thân thủ công</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Chúng tôi đã tìm thấy một trong các giấy tờ tùy thân của bạn</string>
 	<string name="jumio_start_button">Bắt đầu</string>
 	<string name="jumio_start_instructions_01">Tìm bề mặt có đủ ánh sáng</string>
 	<string name="jumio_start_instructions_02">Hãy sẵn sàng để chụp ảnh selfie</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Đã chuyển sang camera sau</string>
 	<string name="jumio_switched_to_front_camera">Đã chuyển sang camera trước</string>
 	<string name="jumio_try_again">Vui lòng thử lại</string>
-	<string name="jumio_uploading_success">Tải lên thành công</string>
 	<string name="jumio_uploading_title">Đang tải lên</string>
 	-->
 

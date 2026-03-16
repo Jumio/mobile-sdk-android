@@ -70,14 +70,14 @@ fun NfcScanPage(
 	val isPassportDocument: Boolean = viewModel.scannedDocumentInfo?.documentType == JumioDocumentType.PASSPORT
 	val (titleInfo, descriptionInfo) = when {
 		isPassportDocument && viewModel.isUsa ->
-			context.getString(com.jumio.defaultui.R.string.jumio_nfc_header_start) to
-				context.getString(com.jumio.defaultui.R.string.jumio_nfc_description_start_us)
+			context.getString(R.string.jumio_nfc_header_start) to
+				context.getString(R.string.jumio_nfc_description_start_us)
 		isPassportDocument ->
-			context.getString(com.jumio.defaultui.R.string.jumio_nfc_header_start) to
-				context.getString(com.jumio.defaultui.R.string.jumio_nfc_description_start_other)
+			context.getString(R.string.jumio_nfc_header_start) to
+				context.getString(R.string.jumio_nfc_description_start_other)
 		else ->
-			context.getString(com.jumio.defaultui.R.string.jumio_nfc_id_header_start) to
-				context.getString(com.jumio.defaultui.R.string.jumio_nfc_id_description)
+			context.getString(R.string.jumio_nfc_id_header_start) to
+				context.getString(R.string.jumio_nfc_id_description)
 	}
 	val title = remember { mutableStateOf(titleInfo) }
 	val description = remember { mutableStateOf(descriptionInfo) }
@@ -103,7 +103,7 @@ fun NfcScanPage(
 							showIvStatus.value = false
 							showSkipButton.value = false
 							showProgress.value = true
-							title.value = context.getString(com.jumio.defaultui.R.string.jumio_nfc_header_extracting)
+							title.value = context.getString(R.string.jumio_nfc_header_extracting)
 							description.value = ""
 							progress.intValue = 0
 							nfcHelpAnimation?.pause()
@@ -231,7 +231,7 @@ fun NfcScanPage(
 				}
 				Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
 				Text(
-					text = stringResource(id = com.jumio.defaultui.R.string.jumio_nfc_description_extracting),
+					text = stringResource(id = R.string.jumio_nfc_description_extracting),
 					style = Typography.titleMedium,
 					color = MaterialTheme.colors.label,
 					modifier = Modifier.fillMaxWidth(),
@@ -255,7 +255,7 @@ fun NfcScanPage(
 				horizontalArrangement = Arrangement.Center
 			) {
 				PrimaryButton(
-					title = stringResource(id = com.jumio.defaultui.R.string.jumio_nfc_button_skip),
+					title = stringResource(id = R.string.jumio_nfc_button_skip),
 					onClick = {
 						viewModel.skipAddonPart()
 					}

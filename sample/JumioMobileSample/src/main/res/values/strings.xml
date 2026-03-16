@@ -84,4 +84,25 @@
 	<string name="custom_addon_init" translatable="false">Init</string>
 	<string name="custom_extraction" translatable="false">Extraction</string>
 	<string name="custom_fallback" translatable="false">Fallback</string>
+
+	<string name="jumio_selfiedone_ID_Found">ID Found</string>
+	<string name="jumio_selfiedone_continue">Continue</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Scan ID Manually</string>
+	<string name="jumio_selfiedone_we_found_your_ID">We found one of your identification documents</string>
+
+	<string name="jumio_dv_upload_tips_file_size">Maximum file size: %1$s</string>
+	<string name="jumio_dv_upload_tips_page_size">Maximum number of pages: %1$d</string>
+	<string name="jumio_dv_upload_tips_protected">Document should not be password protected</string>
+	<string name="jumio_dv_jpg_png_or_webp_format">Image should be JPG, PNG, or WEBP format</string>
+	<string name="jumio_dv_clear_or_unedited">Image should be clear and unedited</string>
+	<string name="jumio_dv_no_transparency_or_watermarks">Image should have no transparency or watermarks</string>
+
+	<string name="jumio_nfc_header_start">Position your passport</string>
+	<string name="jumio_nfc_description_start_us">Place your phone on the inside of your passport\'s back cover until the scan is completed</string>
+	<string name="jumio_nfc_description_start_other">Place your phone on the passport\'s front cover until the scan is completed</string>
+	<string name="jumio_nfc_id_header_start">Position your ID card</string>
+	<string name="jumio_nfc_id_description">Place your phone on top of the document and keep it steady until the scan is complete</string>
+	<string name="jumio_nfc_header_extracting">Extracting data</string>
+	<string name="jumio_nfc_description_extracting">Hold still while scanning</string>
+	<string name="jumio_nfc_button_skip">Skip</string>
 </resources>

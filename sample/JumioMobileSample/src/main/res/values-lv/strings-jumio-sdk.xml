@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Attēls ir pārāk izplūdis, lai to varētu pārbaudīt</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Fotoattēli jāuzņem vēlreiz</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Pārbaudiet, vai esat lejupielādējis digitālās autovadītāja apliecības PDF no valdības oficiālās lietotnes [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Mēģiniet vēlreiz ar krāsainu attēlu</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Attēls ir melnbalta fotokopija</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Šķiet, ka attēls ir krāsaina fotokopija</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Mēģiniet vēlreiz ar citu dokumentu</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Šķiet, ka dokuments ir bojāts</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Nofotografējiet dokumenta oriģinālu</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Nolieciet pa labi</string>
 	<string name="jumio_liveness_prompt_tilt_up">Paceliet augstāk</string>
 	<string name="jumio_liveness_prompt_too_far">Panāciet tuvāk</string>
-	<string name="jumio_liveness_scanning_completed">Skenēšana pabeigta</string>
 	<string name="jumio_liveness_upfront_intro">Mums ir jānoskenē Jūsu seja, lai pārbaudītu, vai esat īsta persona.</string>
+	<string name="jumio_loaders_almost_there">Gandrīz gatavs…</string>
+	<string name="jumio_loaders_finishing_up">Pabeigšana…</string>
+	<string name="jumio_loaders_success">Veiksmīgi</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Tas aizņems brīdi</string>
+	<string name="jumio_loaders_working_on_it">Notiek apstrāde…</string>
 	<string name="jumio_loading_title">Ielādē</string>
 	<string name="jumio_nfc_button_skip">Izlaist</string>
 	<string name="jumio_nfc_description_extracting">Skenēšanas laikā nekustieties</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Meklēšanas josla</string>
 	<string name="jumio_search_completed_for_country">Meklēšana valstij ir pabeigta</string>
 	<string name="jumio_select">Atlasīt</string>
+	<string name="jumio_selfiedone_ID_Found">ID atrasts</string>
+	<string name="jumio_selfiedone_continue">Turpināt</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Skenēt ID manuāli</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Mēs atradām vienu no jūsu identifikācijas dokumentiem</string>
 	<string name="jumio_start_button">Sākt</string>
 	<string name="jumio_start_instructions_01">Atrodiet labi apgaismotu virsmu</string>
 	<string name="jumio_start_instructions_02">Sagatavojieties pašportreta uzņemšanai</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Pārslēgts uz aizmugurējo kameru</string>
 	<string name="jumio_switched_to_front_camera">Pārslēgts uz priekšējo kameru</string>
 	<string name="jumio_try_again">Mēģiniet vēlreiz</string>
-	<string name="jumio_uploading_success">Augšupielāde veiksmīga</string>
 	<string name="jumio_uploading_title">Augšupielādē</string>
 	-->
 

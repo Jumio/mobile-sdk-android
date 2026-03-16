@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Obrázek je příliš rozmazaný, než aby mohl být ověřen</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Snímky musí být pořízeny znovu</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Ujistěte se, že jste si stáhli digitální řidičský průkaz ve formátu PDF z oficiální vládní aplikace [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Zkuste to znovu s barevným obrázkem</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Obrázek je černobílá fotokopie</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Obrázek vypadá jako barevná fotokopie</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Zkuste to znovu s jiným dokumentem</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Vypadá to, že je dokument poškozen</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Pořiďte snímek svého původního dokumentu</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Nakloňte doprava</string>
 	<string name="jumio_liveness_prompt_tilt_up">Nakloňte nahoru</string>
 	<string name="jumio_liveness_prompt_too_far">Pojďte blíž</string>
-	<string name="jumio_liveness_scanning_completed">Skenování dokončeno</string>
 	<string name="jumio_liveness_upfront_intro">Musíme pořídit sken vašeho obličeje, abychom si mohli ověřit, že jste skutečná osoba.</string>
+	<string name="jumio_loaders_almost_there">Téměř hotovo…</string>
+	<string name="jumio_loaders_finishing_up">Dokončování…</string>
+	<string name="jumio_loaders_success">Úspěch</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Bude to chvilku trvat</string>
+	<string name="jumio_loaders_working_on_it">Pracujeme na tom…</string>
 	<string name="jumio_loading_title">Načítá se…</string>
 	<string name="jumio_nfc_button_skip">Přeskočit</string>
 	<string name="jumio_nfc_description_extracting">Během skenování se nehýbejte</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Vyhledávací panel</string>
 	<string name="jumio_search_completed_for_country">Vyhledávání dokončeno pro zemi</string>
 	<string name="jumio_select">Zvolit</string>
+	<string name="jumio_selfiedone_ID_Found">Doklad totožnosti nalezen</string>
+	<string name="jumio_selfiedone_continue">Pokračovat</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Naskenovat doklad ručně</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Našli jsme jeden z vašich dokladů totožnosti</string>
 	<string name="jumio_start_button">Spustit</string>
 	<string name="jumio_start_instructions_01">Najděte si dobře osvětlenou plochu</string>
 	<string name="jumio_start_instructions_02">Připravte se na pořízení selfie</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Přepnuto na zadní fotoaparát</string>
 	<string name="jumio_switched_to_front_camera">Přepnuto na přední fotoaparát</string>
 	<string name="jumio_try_again">Zkuste to znovu</string>
-	<string name="jumio_uploading_success">Nahrání proběhlo úspěšně.</string>
 	<string name="jumio_uploading_title">Nahrávání</string>
 	-->
 

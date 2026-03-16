@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">A kép túl homályos az ellenőrzéshez</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">A képek készítését meg kell ismételni</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Feltétlenül töltsön le egy PDF-formátumú digitális járművezetői engedélyt a hivatalos kormányzati alkalmazásból [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Kérjük, próbálkozzon újra egy színes képpel</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">A kép fekete-fehér fénymásolat</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">A kép színes fénymásolatnak tűnik</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Kérjük, próbálkozzon újra egy másik dokumentummal.</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">A dokumentum sérültnek tűnik</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Készítsen fényképet az eredeti dokumentumról</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Döntse jobbra</string>
 	<string name="jumio_liveness_prompt_tilt_up">Döntse hátra</string>
 	<string name="jumio_liveness_prompt_too_far">Mozgassa közelebb</string>
-	<string name="jumio_liveness_scanning_completed">A szkennelés befejeződött</string>
 	<string name="jumio_liveness_upfront_intro">Be kell szkennelnünk az arcát, hogy meggyőződjünk róla, valódi személyről van szó.</string>
+	<string name="jumio_loaders_almost_there">Majdnem kész…</string>
+	<string name="jumio_loaders_finishing_up">Befejezés…</string>
+	<string name="jumio_loaders_success">Sikeres</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Ez egy kis időbe telik</string>
+	<string name="jumio_loaders_working_on_it">Feldolgozás…</string>
 	<string name="jumio_loading_title">Betöltés</string>
 	<string name="jumio_nfc_button_skip">Kihagyás</string>
 	<string name="jumio_nfc_description_extracting">Szkennelés közben tartsa mozdulatanul</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Keresősáv</string>
 	<string name="jumio_search_completed_for_country">Keresés kész a következő országban:</string>
 	<string name="jumio_select">Kiválasztás</string>
+	<string name="jumio_selfiedone_ID_Found">Személyazonosító okmány megtalálva</string>
+	<string name="jumio_selfiedone_continue">Folytatás</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Igazolvány manuális beolvasása</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Megtaláltuk az egyik személyazonosító okmányát</string>
 	<string name="jumio_start_button">Indítás</string>
 	<string name="jumio_start_instructions_01">Keressen egy jól megvilágított felületet</string>
 	<string name="jumio_start_instructions_02">Készüljön fel a szelfi elkészítésére</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Váltás a hátlapi kamerára</string>
 	<string name="jumio_switched_to_front_camera">Elülső kamerára váltva</string>
 	<string name="jumio_try_again">Próbálja meg újra</string>
-	<string name="jumio_uploading_success">Feltöltés sikeres</string>
 	<string name="jumio_uploading_title">Feltöltés</string>
 	-->
 

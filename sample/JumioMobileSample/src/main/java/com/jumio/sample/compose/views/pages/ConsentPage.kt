@@ -38,6 +38,7 @@ import com.jumio.sample.compose.theme.colors
 import com.jumio.sample.compose.theme.spacing
 import com.jumio.sample.compose.viewModel.CustomUIEvent
 import com.jumio.sample.compose.viewModel.CustomUIViewModel
+import com.jumio.sample.compose.views.atoms.ClickableTextView
 import com.jumio.sample.compose.views.atoms.PrimaryButton
 import com.jumio.sdk.enums.JumioConsentType
 
@@ -50,6 +51,7 @@ fun ConsentPage(viewModel: CustomUIViewModel, modifier: Modifier = Modifier, onC
 	val loaderState by viewModel.consentPageLoaderState.collectAsStateWithLifecycle()
 	val credentialInfoList by viewModel.credentialInfoList.collectAsState()
 	val consentItems by viewModel.consentItems.collectAsState()
+	val termsOfUse by viewModel.termsOfUse.collectAsState()
 	Column(modifier = modifier.fillMaxSize()) {
 		IconButton(onClick = {
 			onClose()
@@ -60,16 +62,14 @@ fun ConsentPage(viewModel: CustomUIViewModel, modifier: Modifier = Modifier, onC
 				tint = MaterialTheme.colors.primary
 			)
 		}
-		Spacer(modifier = modifier.height(MaterialTheme.spacing.extraLarge))
 		Text(
 			text = stringResource(id = R.string.workflow_consists),
 			style = Typography.titleLarge,
 			color = MaterialTheme.colors.label,
 			modifier = Modifier
 				.fillMaxWidth()
-				.padding(horizontal = MaterialTheme.spacing.large)
+				.padding(horizontal = MaterialTheme.spacing.large, vertical = MaterialTheme.spacing.medium)
 		)
-		Spacer(modifier = modifier.height(MaterialTheme.spacing.medium))
 		if (loaderState) {
 			Text(
 				text = stringResource(id = R.string.loading),
@@ -77,7 +77,7 @@ fun ConsentPage(viewModel: CustomUIViewModel, modifier: Modifier = Modifier, onC
 				color = MaterialTheme.colors.label,
 				modifier = Modifier
 					.fillMaxWidth()
-					.padding(horizontal = MaterialTheme.spacing.superLarge)
+					.padding(horizontal = MaterialTheme.spacing.superLarge, vertical = MaterialTheme.spacing.medium)
 			)
 		}
 
@@ -103,7 +103,7 @@ fun ConsentPage(viewModel: CustomUIViewModel, modifier: Modifier = Modifier, onC
 					verticalAlignment = Alignment.CenterVertically,
 					modifier = Modifier
 						.fillMaxWidth()
-						.padding(horizontal = MaterialTheme.spacing.medium)
+						.padding(horizontal = MaterialTheme.spacing.medium, vertical = MaterialTheme.spacing.small)
 				) {
 					if (consentItem.type == JumioConsentType.ACTIVE) {
 						Checkbox(
@@ -133,8 +133,6 @@ fun ConsentPage(viewModel: CustomUIViewModel, modifier: Modifier = Modifier, onC
 			}
 		}
 
-		Spacer(modifier = modifier.height(MaterialTheme.spacing.superLarge))
-
 		val titleId = if (loaderState) {
 			R.string.loading
 		} else {
@@ -142,11 +140,17 @@ fun ConsentPage(viewModel: CustomUIViewModel, modifier: Modifier = Modifier, onC
 		}
 		PrimaryButton(
 			title = stringResource(id = titleId),
-			modifier = Modifier.fillMaxWidth().padding(horizontal = MaterialTheme.spacing.medium),
+			modifier = Modifier.fillMaxWidth().padding(
+				horizontal = MaterialTheme.spacing.medium,
+				vertical = MaterialTheme.spacing.medium
+			),
 			enabled = !loaderState
 		) {
 			viewModel.onUiEvent(CustomUIEvent.StartClicked)
 		}
-		Spacer(modifier = modifier.height(MaterialTheme.spacing.medium))
+
+		termsOfUse?.let {
+			ClickableTextView(text = it.text, url = it.url)
+		}
 	}
 }

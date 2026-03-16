@@ -115,7 +115,7 @@ fun UploadFileHelpPage(
 			)
 			Text(
 				text = stringResource(
-					com.jumio.defaultui.R.string.jumio_dv_upload_tips_file_size,
+					R.string.jumio_dv_upload_tips_file_size,
 					"%dMB".format(
 						requirements.maxFileSize / (1024 * 1024)
 					)
@@ -124,12 +124,12 @@ fun UploadFileHelpPage(
 				textAlign = TextAlign.Center
 			)
 			Text(
-				text = stringResource(com.jumio.defaultui.R.string.jumio_dv_upload_tips_page_size, requirements.pdfMaxPages),
+				text = stringResource(R.string.jumio_dv_upload_tips_page_size, requirements.pdfMaxPages),
 				color = MaterialTheme.colors.label,
 				textAlign = TextAlign.Center
 			)
 			Text(
-				text = stringResource(com.jumio.defaultui.R.string.jumio_dv_upload_tips_protected),
+				text = stringResource(R.string.jumio_dv_upload_tips_protected),
 				color = MaterialTheme.colors.label,
 				textAlign = TextAlign.Center
 			)
@@ -142,18 +142,18 @@ fun UploadFileHelpPage(
 				style = Typography.titleMedium
 			)
 			Text(
-				text = stringResource(com.jumio.defaultui.R.string.jumio_dv_jpg_png_or_webp_format, requirements.pdfMaxPages),
+				text = stringResource(R.string.jumio_dv_jpg_png_or_webp_format, requirements.pdfMaxPages),
 				color = MaterialTheme.colors.label,
 				textAlign = TextAlign.Center
 			)
 			Text(
-				text = stringResource(com.jumio.defaultui.R.string.jumio_dv_clear_or_unedited),
+				text = stringResource(R.string.jumio_dv_clear_or_unedited),
 				color = MaterialTheme.colors.label,
 				textAlign = TextAlign.Center
 			)
 			Text(
 				text = stringResource(
-					com.jumio.defaultui.R.string.jumio_dv_upload_tips_file_size,
+					R.string.jumio_dv_upload_tips_file_size,
 					"%dMB".format(
 						requirements.maxFileSize / (1024 * 1024)
 					)
@@ -163,7 +163,7 @@ fun UploadFileHelpPage(
 			)
 			Text(
 				text = stringResource(
-					com.jumio.defaultui.R.string.jumio_dv_no_transparency_or_watermarks,
+					R.string.jumio_dv_no_transparency_or_watermarks,
 					requirements.pdfMaxPages
 				),
 				color = MaterialTheme.colors.label,

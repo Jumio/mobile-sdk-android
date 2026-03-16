@@ -37,6 +37,7 @@ import com.jumio.sdk.result.JumioResult
 import com.jumio.sdk.retry.JumioRetryReason
 import com.jumio.sdk.scanpart.JumioAddonScanPartConfiguration
 import com.jumio.sdk.scanpart.JumioScanPart
+import com.jumio.sdk.termsofuse.JumioTermsOfUse
 import com.jumio.sdk.views.JumioFileAttacher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -87,6 +88,7 @@ class CustomUIViewModel(
 		get() = savedStateHandle["selectedCountry"] ?: ""
 		private set(value) = savedStateHandle.set("selectedCountry", value)
 	val consentItems = MutableStateFlow<List<JumioConsentItem>>(emptyList())
+	val termsOfUse = MutableStateFlow<JumioTermsOfUse?>(null)
 	val scanAlignmentState = MutableStateFlow("")
 	val flipDocument = MutableStateFlow("")
 	val workflowResult = MutableStateFlow<JumioResult?>(null)
@@ -99,6 +101,7 @@ class CustomUIViewModel(
 		get() = scannedDocumentInfo?.issuingCountry?.uppercase() in USA_COUNTRY_CODES
 	var isNfcSkippable: Boolean = false
 		private set
+	private var isCredentialConfigured: Boolean = false
 
 	init {
 		val jumioSDKHandle = savedStateHandle.get<Bundle>("jumioSDK")
@@ -123,20 +126,29 @@ class CustomUIViewModel(
 				jumioSDKHandle,
 				this,
 				this
-			) { controller, credentials, activeCredential, activeScanPart ->
+			) { controller, credentials, activeCredential, activeScanPart, termsOfUse ->
 				jumioController = controller
 				credentialInfoList.value = credentials
 				currentCredential = activeCredential
 				currentScanPart = activeScanPart
-				onInitialized(credentials, controller.getUnconsentedItems())
-				setUpCredential()
+				onInitialized(credentials, controller.getUnconsentedItems(), termsOfUse)
+				startCredential()
 			}
 		}
 	}
 
-	override fun onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItem>?) {
-		credentialInfoList.value = credentials
+	override fun onInitialized(
+		credentials: List<JumioCredentialInfo>,
+		consentItems: List<JumioConsentItem>?,
+		termsOfUse: JumioTermsOfUse?,
+	) {
+		this.credentialInfoList.value = if (credentials.distinctBy { it.order }.size == 1) {
+			credentials
+		} else {
+			credentials.sortedBy { it.order }
+		}
 		this.consentItems.value = consentItems ?: listOf()
+		this.termsOfUse.value = termsOfUse
 		consentItems?.forEach { consentItem ->
 			if (consentItem.type == JumioConsentType.PASSIVE) {
 				jumioController?.userConsented(consentItem, true)
@@ -300,6 +312,19 @@ class CustomUIViewModel(
 		}
 	}
 
+	fun userConsentedForLookupResult(userConsent: Boolean) {
+		(currentCredential as? JumioIDCredential)?.let { iDCredential ->
+			iDCredential.lookupResult?.legalStatement?.let { legalStatement ->
+				iDCredential.userConsented(legalStatement, userConsent)
+				if (userConsent) {
+					continueWithNextPart()
+					return
+				}
+			}
+		}
+		startCredential(true)
+	}
+
 	fun onUiEvent(uiEvent: CustomUIEvent) {
 		Log.d(TAG, "onUiEvent $uiEvent")
 		when (uiEvent) {
@@ -330,7 +355,7 @@ class CustomUIViewModel(
 		}
 	}
 
-	private fun startWithFirstCredential() {
+	fun startWithFirstCredential() {
 		if (jumioController?.getUnconsentedItems()?.isNotEmpty() == true) {
 			Log.d(TAG, "User consent is missing")
 			return
@@ -346,7 +371,8 @@ class CustomUIViewModel(
 			}
 			currentCredentialInfo = credentialInfoList.value.firstOrNull()
 			currentCredential = currentCredentialInfo?.let { jumioController?.start(it) }
-			setUpCredential()
+			isCredentialConfigured = currentCredential?.isConfigured ?: false
+			startCredential()
 		} catch (e: IllegalArgumentException) {
 			// Current credential could not be started
 			Log.e(TAG, e.message ?: "credential start failed")
@@ -355,37 +381,32 @@ class CustomUIViewModel(
 		}
 	}
 
-	private fun setUpCredential() {
-		currentCredential?.let {
-			if (it.isConfigured) {
-				isNewCredentialStarted = true
-				startScanPartWith(it.credentialParts.first())
-				return
-			}
-		}
+	fun startCredential(skipLookUpResult: Boolean = false) {
+		val currentCredential = currentCredential ?: return
 
-		when (currentCredential) {
-			is JumioIDCredential -> {
-				Log.d(TAG, "setUpCredential JumioIDCredential")
+		when {
+			(currentCredential as? JumioIDCredential)?.lookupResult?.documentType != null && !skipLookUpResult -> {
+				navigationState.value = AppNavigation.IDFound
+			}
+			isCredentialConfigured -> {
 				isNewCredentialStarted = true
-				val idCredential = currentCredential as JumioIDCredential
-				countryList = idCredential.supportedCountries.sorted()
-				selectedCountry = idCredential.suggestedCountry ?: ""
-				documentList.value = idCredential.getPhysicalDocumentsForCountry(selectedCountry) +
-					idCredential.getDigitalDocumentsForCountry(selectedCountry)
+				startScanPartWith(currentCredential.credentialParts.first())
+			}
+			currentCredential is JumioIDCredential -> {
+				isNewCredentialStarted = true
+				countryList = currentCredential.supportedCountries.sorted()
+				selectedCountry = currentCredential.suggestedCountry ?: ""
+				documentList.value = currentCredential.getPhysicalDocumentsForCountry(selectedCountry) +
+					currentCredential.getDigitalDocumentsForCountry(selectedCountry)
 				navigationState.value = AppNavigation.SelectCountryAndDocument
 			}
-			is JumioDocumentCredential -> {
-				Log.d(TAG, "setUpCredential JumioDocumentCredential")
+			currentCredential is JumioDocumentCredential -> {
 				isNewCredentialStarted = true
 				navigationState.update { AppNavigation.AcquireMode }
 			}
-			is JumioFaceCredential -> {
-				Log.d(TAG, "setUpCredential JumioFaceCredential")
+			currentCredential is JumioFaceCredential -> {
 				isNewCredentialStarted = true
-				currentCredential?.let {
-					startScanPartWith(it.credentialParts.first())
-				}
+				startScanPartWith(currentCredential.credentialParts.first())
 			}
 		}
 	}
@@ -425,7 +446,7 @@ class CustomUIViewModel(
 		}
 	}
 
-	private fun continueWithNextPart() {
+	fun continueWithNextPart() {
 		try {
 			if (currentCredential?.isComplete == true) {
 				currentCredential?.finish()
@@ -457,7 +478,8 @@ class CustomUIViewModel(
 			val nextIndex = (credentialInfoList.value.indexOfFirst { it.id == currentCredentialInfo?.id }).plus(1)
 			currentCredentialInfo = credentialInfoList.value[nextIndex]
 			currentCredential = currentCredentialInfo?.let { jumioController?.start(it) }
-			setUpCredential()
+			isCredentialConfigured = currentCredential?.isConfigured ?: false
+			startCredential()
 		}
 	}
 

@@ -4,6 +4,7 @@ package com.jumio.sample.compose.views.atoms
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -21,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jumio.sample.compose.theme.Primary
 import com.jumio.sample.compose.theme.colors
+import com.jumio.sample.compose.theme.dimensions
 import com.jumio.sample.compose.theme.spacing
 
 @Composable
@@ -29,7 +31,7 @@ fun PrimaryButton(title: String, modifier: Modifier = Modifier, enabled: Boolean
 		onClick = {
 			onClick()
 		},
-		modifier = modifier,
+		modifier = modifier.heightIn(min = MaterialTheme.dimensions.minButtonHeight),
 		colors = ButtonDefaults.buttonColors(containerColor = Primary, contentColor = Color.White),
 		enabled = enabled
 	) {

@@ -13,11 +13,17 @@ import androidx.compose.ui.unit.dp
 data class Dimensions(
 	val buttonSize: Dp = Dp.Unspecified,
 	val animationViewSize: Dp = Dp.Unspecified,
+	val minButtonHeight: Dp = Dp.Unspecified,
+	val selfieDoneIdRadius: Dp = Dp.Unspecified,
+	val selfieDoneIdHeight: Dp = Dp.Unspecified,
 )
 
 val customDimensions = Dimensions(
 	buttonSize = 56.dp,
-	animationViewSize = 340.dp
+	animationViewSize = 340.dp,
+	minButtonHeight = 48.dp,
+	selfieDoneIdRadius = 20.dp,
+	selfieDoneIdHeight = 200.dp
 )
 
 val LocalDimensions = compositionLocalOf { Dimensions() }

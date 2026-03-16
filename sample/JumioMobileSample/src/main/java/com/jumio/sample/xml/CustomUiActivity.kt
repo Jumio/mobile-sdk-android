@@ -29,6 +29,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat
 import androidx.core.graphics.drawable.toDrawable
+import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -69,6 +70,7 @@ import com.jumio.sdk.result.JumioResult
 import com.jumio.sdk.retry.JumioRetryReason
 import com.jumio.sdk.scanpart.JumioAddonScanPartConfiguration
 import com.jumio.sdk.scanpart.JumioScanPart
+import com.jumio.sdk.termsofuse.JumioTermsOfUse
 import com.jumio.sdk.util.JumioDeepLinkHandler
 import com.jumio.sdk.views.JumioActivityAttacher
 import com.jumio.sdk.views.JumioConfirmationView
@@ -326,6 +328,11 @@ class CustomUiActivity :
 	private fun initCredentialUi() {
 		binding.credentialFinish.setOnClickListener {
 			catchAndShow {
+				(credential as? JumioIDCredential)?.let { iDCredential ->
+					iDCredential.lookupResult?.legalStatement?.let { legalStatement ->
+						iDCredential.userConsented(legalStatement, true)
+					}
+				}
 				credential?.finish()
 				updateIcon(binding.credentialLayout, credential?.isComplete == true)
 				credential = null
@@ -427,13 +434,13 @@ class CustomUiActivity :
 			savedInstanceState,
 			this,
 			this
-		) { controller, credentials, activeCredential, activeScanPart ->
+		) { controller, credentials, activeCredential, activeScanPart, termsOfUse ->
 			jumioController = controller
 			credential = activeCredential
 			scanPart = activeScanPart
 
 			hideView(binding.loadingIndicator)
-			onInitialized(credentials, jumioController.getUnconsentedItems())
+			onInitialized(credentials, jumioController.getUnconsentedItems(), termsOfUse)
 			credential?.let {
 				val country = savedInstanceState.getString("selectedCountry")
 				val document = savedInstanceState.getString("selectedDocument")
@@ -550,12 +557,17 @@ class CustomUiActivity :
 	 * @param consentItems
 	 */
 	@SuppressLint("SetTextI18n")
-	override fun onInitialized(credentials: List<JumioCredentialInfo>, consentItems: List<JumioConsentItem>?) {
+	override fun onInitialized(
+		credentials: List<JumioCredentialInfo>,
+		consentItems: List<JumioConsentItem>?,
+		termsOfUse: JumioTermsOfUse?,
+	) {
 		this.consentItems = consentItems ?: emptyList()
 		consentItems?.let {
 			initConsentUi()
 			log("User consent required")
 		}
+		initTermsOfUse(termsOfUse)
 
 		binding.credentialLayout.removeAllViews()
 		credentials.forEach { credentialInfo ->
@@ -575,6 +587,22 @@ class CustomUiActivity :
 			binding.credentialLayout.addView(button)
 		}
 		showView(binding.credentialLayout)
+	}
+
+	private fun initTermsOfUse(termsOfUse: JumioTermsOfUse?) {
+		val termOfUSeView = findViewById<TextView>(R.id.termsOfUse)
+		termsOfUse?.let {
+			termOfUSeView.text = it.text
+			termOfUSeView.visibility = View.VISIBLE
+			termOfUSeView.setOnClickListener {
+				val intent = Intent(Intent.ACTION_VIEW).apply {
+					data = termsOfUse.url.toUri()
+				}
+				startActivity(intent)
+			}
+		} ?: run {
+			termOfUSeView.visibility = View.INVISIBLE
+		}
 	}
 
 	override fun onError(error: JumioError) {
@@ -960,6 +988,7 @@ class CustomUiActivity :
 		} else {
 			hideView(binding.digitalIdentityView)
 			initScanView()
+			showView(binding.seekBarLayout)
 		}
 	}
 
@@ -1054,6 +1083,11 @@ class CustomUiActivity :
 
 				setOnClickListener { view ->
 					try {
+						(credential as? JumioIDCredential)?.let { iDCredential ->
+							iDCredential.lookupResult?.legalStatement?.let { legalStatement ->
+								iDCredential.userConsented(legalStatement, false)
+							}
+						}
 						scanPart = credential?.initScanPart(part, this@CustomUiActivity)
 						view.tag = true
 						setupScanPart()

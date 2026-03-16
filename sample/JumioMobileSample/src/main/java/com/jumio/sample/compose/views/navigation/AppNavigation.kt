@@ -37,4 +37,7 @@ sealed class AppNavigation {
 
 	@Serializable
 	data object NfcScan : AppNavigation()
+
+	@Serializable
+	data object IDFound : AppNavigation()
 }

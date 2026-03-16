@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Imaginea este prea încețoșată pentru a fi verificată</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">O nouă poză a imaginilor trebuie făcută</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Asigurați-vă că ați descărcat un permis de conducere digital în format PDF din aplicația oficială a guvernului [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Vă rugăm să încercați din nou cu o imagine color</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Imaginea este o copie alb-negru</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Imaginea pare să fie o copie color</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Vă rugăm să încercați din nou cu un alt document</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Documentul pare să fie deteriorat</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Faceți o fotografie a documentului dumneavoastră original</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Înclinați la dreapta</string>
 	<string name="jumio_liveness_prompt_tilt_up">Înclinați în sus</string>
 	<string name="jumio_liveness_prompt_too_far">Apropiați-vă</string>
-	<string name="jumio_liveness_scanning_completed">Scanare finalizată</string>
 	<string name="jumio_liveness_upfront_intro">Trebuie să vă scanăm fața pentru a verifica dacă sunteți o persoană reală.</string>
+	<string name="jumio_loaders_almost_there">Aproape gata…</string>
+	<string name="jumio_loaders_finishing_up">Se finalizează…</string>
+	<string name="jumio_loaders_success">Succes</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Acest proces va dura un moment</string>
+	<string name="jumio_loaders_working_on_it">Se procesează…</string>
 	<string name="jumio_loading_title">Se încarcă</string>
 	<string name="jumio_nfc_button_skip">Ocolire</string>
 	<string name="jumio_nfc_description_extracting">Stați nemișcat în timpul scanării</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Bară de căutare</string>
 	<string name="jumio_search_completed_for_country">Căutare finalizată pentru țara</string>
 	<string name="jumio_select">Selectați</string>
+	<string name="jumio_selfiedone_ID_Found">Document de identitate găsit</string>
+	<string name="jumio_selfiedone_continue">Continuă</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Scanați actul de identitate manual</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Am găsit unul dintre documentele dvs. de identitate</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Găsiți o suprafață bine iluminată</string>
 	<string name="jumio_start_instructions_02">Pregătiți-vă pentru selfie-ul dvs.</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">S-a comutat la camera din spate</string>
 	<string name="jumio_switched_to_front_camera">S-a comutat la camera frontală</string>
 	<string name="jumio_try_again">Încercați din nou</string>
-	<string name="jumio_uploading_success">Încărcare reușită</string>
 	<string name="jumio_uploading_title">Încărcare</string>
 	-->
 

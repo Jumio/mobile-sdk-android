@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">圖像過於模糊，無法進行驗證</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">必須重新拍攝圖像</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">確保您已從官方政府應用程式 [({Carteira Digital de Trânsito})] 下載數位駕照 PDF</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">請使用彩色圖片重試</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">圖片為黑白影印</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">圖片似乎是彩色影印件</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">請使用其他文件重試</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">文件似乎已損壞。</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">擷取原始文件的圖片</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">向右邊一點</string>
 	<string name="jumio_liveness_prompt_tilt_up">向上抬頭</string>
 	<string name="jumio_liveness_prompt_too_far">靠近一點</string>
-	<string name="jumio_liveness_scanning_completed">掃描完成</string>
 	<string name="jumio_liveness_upfront_intro">我們需要掃描您的臉部，以驗證您是真人。</string>
+	<string name="jumio_loaders_almost_there">即將完成…</string>
+	<string name="jumio_loaders_finishing_up">正在完成…</string>
+	<string name="jumio_loaders_success">成功</string>
+	<string name="jumio_loaders_this_will_take_a_moment">請稍候</string>
+	<string name="jumio_loaders_working_on_it">正在處理…</string>
 	<string name="jumio_loading_title">載入中</string>
 	<string name="jumio_nfc_button_skip">跳躍</string>
 	<string name="jumio_nfc_description_extracting">掃描時保持不動</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">搜尋欄</string>
 	<string name="jumio_search_completed_for_country">已完成以下國家的搜尋</string>
 	<string name="jumio_select">選擇</string>
+	<string name="jumio_selfiedone_ID_Found">已找到身分證件</string>
+	<string name="jumio_selfiedone_continue">繼續</string>
+	<string name="jumio_selfiedone_scan_ID_manually">手動掃描身分證明文件</string>
+	<string name="jumio_selfiedone_we_found_your_ID">我們找到您的一份身分證明文件</string>
 	<string name="jumio_start_button">開始</string>
 	<string name="jumio_start_instructions_01">找到一個光線充足的表面</string>
 	<string name="jumio_start_instructions_02">準備自拍</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">已切換至後置鏡頭</string>
 	<string name="jumio_switched_to_front_camera">已切換至前置鏡頭</string>
 	<string name="jumio_try_again">請再試一次</string>
-	<string name="jumio_uploading_success">上傳成功</string>
 	<string name="jumio_uploading_title">上傳中</string>
 	-->
 

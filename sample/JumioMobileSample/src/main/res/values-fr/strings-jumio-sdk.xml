@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">L\'image est trop floue pour être vérifiée</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Les images doivent être reprises</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Assurez-vous d\'avoir téléchargé un permis de conduire numérique au format PDF à partir de l\'application officielle du gouvernement [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Veuillez réessayer avec une image en couleur</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">L\'image est une photocopie en noir et blanc</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">L\'image semble être une photocopie en couleur</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Veuillez réessayer avec une autre pièce d\'identité</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Le document semble être endommagé</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Capturez l\'image de votre pièce d\'identité originale</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Inclinez la tête à droite</string>
 	<string name="jumio_liveness_prompt_tilt_up">Levez la tête</string>
 	<string name="jumio_liveness_prompt_too_far">Se rapprocher</string>
-	<string name="jumio_liveness_scanning_completed">Numérisation terminée</string>
 	<string name="jumio_liveness_upfront_intro">Nous devons scanner votre visage pour vérifier que vous êtes une vraie personne.</string>
+	<string name="jumio_loaders_almost_there">On y est presque…</string>
+	<string name="jumio_loaders_finishing_up">Finalisation…</string>
+	<string name="jumio_loaders_success">Succès</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Cela va prendre un moment</string>
+	<string name="jumio_loaders_working_on_it">Traitement en cours…</string>
 	<string name="jumio_loading_title">Chargement en cours</string>
 	<string name="jumio_nfc_button_skip">Sauter</string>
 	<string name="jumio_nfc_description_extracting">Restez immobile pendant la numérisation</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Barre de recherche</string>
 	<string name="jumio_search_completed_for_country">Recherche effectuée pour le pays</string>
 	<string name="jumio_select">Sélectionnez</string>
+	<string name="jumio_selfiedone_ID_Found">Pièce d\'identité trouvée</string>
+	<string name="jumio_selfiedone_continue">Continuer</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Scanner la pièce d\'identité manuellement</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Nous avons trouvé l\'une de vos pièces d\'identité</string>
 	<string name="jumio_start_button">Commencer</string>
 	<string name="jumio_start_instructions_01">Trouvez une surface bien éclairée</string>
 	<string name="jumio_start_instructions_02">Préparez-vous à prendre un selfie</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Passage à la caméra arrière</string>
 	<string name="jumio_switched_to_front_camera">Passage à la caméra avant</string>
 	<string name="jumio_try_again">Veuillez réessayer</string>
-	<string name="jumio_uploading_success">Chargement réussi</string>
 	<string name="jumio_uploading_title">Envoi en cours</string>
 	-->
 

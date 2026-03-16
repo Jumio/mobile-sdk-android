@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Görüntü doğrulanamayacak kadar bulanık</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Görüntüler yeniden çekilmelidir</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Resmi devlet uygulaması üzerinden Dijital ehliyet PDF\'sini [({Carteira Digital de Trânsito})] indirmeyi unutmayın</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Lütfen renkli bir görüntüyle tekrar deneyin</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Bu görüntü siyah beyaz bir fotokopi</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Bu görüntü renkli bir fotokopi gibi görünüyor</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Lütfen farklı bir belgeyle tekrar deneyin</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Bu belge hasarlı görünüyor</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Orijinal belgenizin bir fotoğrafını çekin</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Sağa eğin</string>
 	<string name="jumio_liveness_prompt_tilt_up">Yukarı kaldırın</string>
 	<string name="jumio_liveness_prompt_too_far">Yaklaşın</string>
-	<string name="jumio_liveness_scanning_completed">Tarama tamamlandı</string>
 	<string name="jumio_liveness_upfront_intro">Gerçek bir insan olduğunuzu doğrulamak için yüzünüzü taramamız gerekiyor.</string>
+	<string name="jumio_loaders_almost_there">Neredeyse tamamlandı…</string>
+	<string name="jumio_loaders_finishing_up">Bitiriliyor…</string>
+	<string name="jumio_loaders_success">Başarılı</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Bu işlem biraz zaman alacak</string>
+	<string name="jumio_loaders_working_on_it">İşleniyor…</string>
 	<string name="jumio_loading_title">Yükleniyor</string>
 	<string name="jumio_nfc_button_skip">Atla</string>
 	<string name="jumio_nfc_description_extracting">Tarama sırasında sabit durun</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Arama çubuğu</string>
 	<string name="jumio_search_completed_for_country">Şu ülke için arama tamamlandı:</string>
 	<string name="jumio_select">Seçin</string>
+	<string name="jumio_selfiedone_ID_Found">Kimlik Bulundu</string>
+	<string name="jumio_selfiedone_continue">Devam Et</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Kimliği Manuel Olarak Tara</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Kimlik belgelerinizden birini bulduk</string>
 	<string name="jumio_start_button">Başla</string>
 	<string name="jumio_start_instructions_01">İyi aydınlatılmış bir yüzey bulun</string>
 	<string name="jumio_start_instructions_02">Selfie çekmeye hazır olun</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Arka kameraya geçildi</string>
 	<string name="jumio_switched_to_front_camera">Ön kameraya geçildi</string>
 	<string name="jumio_try_again">Tekrar deneyin</string>
-	<string name="jumio_uploading_success">Yükleme başarılı</string>
 	<string name="jumio_uploading_title">Yükleniyor</string>
 	-->
 

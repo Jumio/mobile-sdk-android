@@ -1,6 +1,7 @@
 // (c) 2026 Jumio All rights reserved. US Patent App.
 package com.jumio.sample.compose.activities
 
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.consumeWindowInsets
@@ -35,12 +37,14 @@ import com.jumio.sample.compose.views.pages.ConsentPage
 import com.jumio.sample.compose.views.pages.CountryAndDocumentSelectionPage
 import com.jumio.sample.compose.views.pages.DigitalIdentityPage
 import com.jumio.sample.compose.views.pages.ErrorPage
+import com.jumio.sample.compose.views.pages.IDFoundPage
 import com.jumio.sample.compose.views.pages.LoaderPage
 import com.jumio.sample.compose.views.pages.NfcScanPage
 import com.jumio.sample.compose.views.pages.RejectionPage
 import com.jumio.sample.compose.views.pages.ScanPage
 import com.jumio.sample.compose.views.pages.UploadFileHelpPage
 import com.jumio.sdk.JumioSDK
+import com.jumio.sdk.credentials.JumioIDCredential
 import com.jumio.sdk.enums.JumioDataCenter
 import com.jumio.sdk.enums.JumioScanStep
 import com.jumio.sdk.util.JumioDeepLinkHandler
@@ -50,7 +54,6 @@ import kotlinx.coroutines.launch
 
 private const val EXTRA_TOKEN = "token"
 private const val EXTRA_DATACENTER = "datacenter"
-private const val TAG = "CustomUIActivity"
 private const val PERMISSION_REQUEST_CODE = 100
 private const val EXTRA_CUSTOMTHEME = "customtheme"
 
@@ -233,6 +236,19 @@ class CustomUIActivity : ComponentActivity() {
 					modifier = modifier
 				)
 			}
+			composable<AppNavigation.IDFound> {
+				IDFoundPage(
+					modifier = modifier,
+					lookupResult = (viewModel.currentCredential as? JumioIDCredential)?.lookupResult ?: return@composable,
+					onContinue = { viewModel.userConsentedForLookupResult(true) },
+					onScanManually = { viewModel.userConsentedForLookupResult(false) },
+					onBackPress = {
+						navController.popBackStack(AppNavigation.Scan, true)
+						viewModel.currentCredential?.cancel()
+						viewModel.startWithFirstCredential()
+					}
+				)
+			}
 		}
 	}
 
@@ -278,5 +294,26 @@ class CustomUIActivity : ComponentActivity() {
 	override fun onDestroy() {
 		viewModel.finishController()
 		super.onDestroy()
+	}
+
+	companion object {
+		@JvmStatic
+		fun start(
+			activity: Activity,
+			activityResultLauncher: ActivityResultLauncher<Intent>,
+			token: String,
+			dataCenter: JumioDataCenter,
+			customTheme: Int,
+		) {
+			require(token.isNotEmpty()) { "Token needs to be set" }
+
+			val intent = Intent(activity, CustomUIActivity::class.java).apply {
+				putExtra(EXTRA_TOKEN, token)
+				putExtra(EXTRA_DATACENTER, dataCenter.toString())
+				putExtra(EXTRA_CUSTOMTHEME, customTheme)
+			}
+
+			activityResultLauncher.launch(intent)
+		}
 	}
 }

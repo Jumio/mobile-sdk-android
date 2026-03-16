@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">រូបភាពព្រិលពេកមិនអាចផ្ទៀងផ្ទាត់បានទេ</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">រូបភាពត្រូវតែថតម្ដងទៀត</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">ត្រូវប្រាកដថា អ្នកបានទាញយកប័ណ្ណបើកបរឌីជីថលជាទម្រង់ PDF ពីកម្មវិធីផ្លូវការរបស់រដ្ឋាភិបាល [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">សូមព្យាយាមម្តងទៀតជាមួយនឹងរូបភាពពណ៌</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">រូបភាពគឺជារូបថតចម្លងសខ្មៅ</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">រូបភាពហាក់ដូចជារូបថតចម្លងពណ៌</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">សូមព្យាយាមម្តងទៀតជាមួយនឹងឯកសារផ្សេង</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">ឯកសារហាក់ដូចជាខូច</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">ថតរូបថតនៃឯកសារដើមរបស់អ្នក</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">ផ្អៀងទៅស្ដាំ</string>
 	<string name="jumio_liveness_prompt_tilt_up">ផ្ទៀងឡើងលើ</string>
 	<string name="jumio_liveness_prompt_too_far">ខិតមកជិតជាងមុន</string>
-	<string name="jumio_liveness_scanning_completed">បានបញ្ចប់ការស្កេន</string>
 	<string name="jumio_liveness_upfront_intro">យើងត្រូវថតការស្កេនមុខរបស់អ្នក ដើម្បីផ្ទៀងផ្ទាត់ថា អ្នកជាមនុស្សពិត។</string>
+	<string name="jumio_loaders_almost_there">ជិតរួចរាល់ហើយ…</string>
+	<string name="jumio_loaders_finishing_up">កំពុងបញ្ចប់…</string>
+	<string name="jumio_loaders_success">ជោគជ័យ</string>
+	<string name="jumio_loaders_this_will_take_a_moment">ការ​នេះ​នឹង​ใช้​ពេល​មួយ​ភ្លែត</string>
+	<string name="jumio_loaders_working_on_it">កំពុងដំណើរការ…</string>
 	<string name="jumio_loading_title">កំពុងផ្ទុក</string>
 	<string name="jumio_nfc_button_skip">រំលង</string>
 	<string name="jumio_nfc_description_extracting">កាន់ឲ្យនឹងពេលកំពុងស្កេន</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">របារស្វែងរក</string>
 	<string name="jumio_search_completed_for_country">ការស្វែងរកបានបញ្ចប់សម្រាប់ប្រទេស</string>
 	<string name="jumio_select">ជ្រើសរើស</string>
+	<string name="jumio_selfiedone_ID_Found">រកឃើញអត្តសញ្ញាណប័ណ្ណ</string>
+	<string name="jumio_selfiedone_continue">បន្ត</string>
+	<string name="jumio_selfiedone_scan_ID_manually">ស្កេនអត្តសញ្ញាណប័ណ្ណដោយដៃ</string>
+	<string name="jumio_selfiedone_we_found_your_ID">យើង​បាន​រក​ឃើញ​ឯកសារ​សម្គាល់​អត្តសញ្ញាណ​មួយ​របស់​អ្នក</string>
 	<string name="jumio_start_button">ចាប់ផ្តើម</string>
 	<string name="jumio_start_instructions_01">រកមើលផ្ទៃដែលមានពន្លឺល្អ</string>
 	<string name="jumio_start_instructions_02">សូមត្រៀមឲ្យរួចរាល់ដើម្បីថតសែលហ្វី</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">បាន​ប្ដូរ​ទៅ​កាមេរ៉ា​ក្រោយ</string>
 	<string name="jumio_switched_to_front_camera">បាន​ប្ដូរ​ទៅ​កាមេរ៉ា​មុខ</string>
 	<string name="jumio_try_again">សូមព្យាយាមម្តងទៀត</string>
-	<string name="jumio_uploading_success">ការផ្ទុកឡើងបានជោគជ័យ</string>
 	<string name="jumio_uploading_title">កំពុងផ្ទុកឡើង</string>
 	-->
 

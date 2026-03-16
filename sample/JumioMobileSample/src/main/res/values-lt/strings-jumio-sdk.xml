@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Nuotrauka neryški, todėl neįmanoma patvirtinti</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Nuotraukas būtina pakartoti</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Įsitikinkite, kad atsisiuntėte skaitmeninio vairuotojo pažymėjimo PDF failą iš oficialios vyriausybės programėlės [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Pateikite spalvotą nuotrauką</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Nuotrauka yra nespalvota fotokopija</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Panašu, kad tai spalvota fotokopija</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Bandykite pateikti kitą dokumentą</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Panašu, kad dokumentas pažeistas</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Nufotografuokite savo dokumento originalą</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Pasisukite į dešinę</string>
 	<string name="jumio_liveness_prompt_tilt_up">Palenkite aukštyn</string>
 	<string name="jumio_liveness_prompt_too_far">Prieikite arčiau</string>
-	<string name="jumio_liveness_scanning_completed">Skenavimas baigtas</string>
 	<string name="jumio_liveness_upfront_intro">Norėdami įsitikinti, kad esate tikras asmuo, turėsime nuskaityti jūsų veidą.</string>
+	<string name="jumio_loaders_almost_there">Beveik baigta…</string>
+	<string name="jumio_loaders_finishing_up">Užbaigiama…</string>
+	<string name="jumio_loaders_success">Pavyko</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Tai užtruks akimirką</string>
+	<string name="jumio_loaders_working_on_it">Apdorojama…</string>
 	<string name="jumio_loading_title">Įkeliama</string>
 	<string name="jumio_nfc_button_skip">Praleisti</string>
 	<string name="jumio_nfc_description_extracting">Nejudėkite nuskaitymo metu</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Paieškos juosta</string>
 	<string name="jumio_search_completed_for_country">Baigta paieška pagal šalį</string>
 	<string name="jumio_select">Pasirinkti</string>
+	<string name="jumio_selfiedone_ID_Found">Asmens dokumentas rastas</string>
+	<string name="jumio_selfiedone_continue">Tęsti</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Nuskaityti asmens dokumentą rankiniu būdu</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Radome vieną iš jūsų tapatybės dokumentų</string>
 	<string name="jumio_start_button">Pradėti</string>
 	<string name="jumio_start_instructions_01">Raskite gerai apšviestą paviršių</string>
 	<string name="jumio_start_instructions_02">Būkite pasiruošę pasidaryti asmenukę</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Perjungta į galinę kamerą</string>
 	<string name="jumio_switched_to_front_camera">Perjungta į priekinę kamerą</string>
 	<string name="jumio_try_again">Bandykite dar kartą</string>
-	<string name="jumio_uploading_success">Įkėlimas sėkmingas</string>
 	<string name="jumio_uploading_title">Įkeliama</string>
 	-->
 

@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">이미지가 너무 흐려서 확인할 수 없습니다</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">이미지를 다시 찍어야 합니다</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">정부 공식 신청서 [({Carteira Digital de Trânsito})]에서 디지털 운전면허증 PDF를 다운로드했는지 확인하세요</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">컬러 이미지로 다시 시도하세요</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">이미지가 흑백 사본입니다</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">이미지가 컬러 사본인 것 같습니다</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">다른 문서로 다시 시도하세요</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">문서가 손상된 것 같습니다</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">원본 문서의 이미지를 캡처하세요</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">오른쪽으로 기울이세요</string>
 	<string name="jumio_liveness_prompt_tilt_up">위로 기울이세요</string>
 	<string name="jumio_liveness_prompt_too_far">가까이 와주세요</string>
-	<string name="jumio_liveness_scanning_completed">스캔 완료</string>
 	<string name="jumio_liveness_upfront_intro">실제 사람인지 확인하기 위해 얼굴을 스캔해야 합니다.</string>
+	<string name="jumio_loaders_almost_there">거의 다 됐습니다…</string>
+	<string name="jumio_loaders_finishing_up">마무리 중…</string>
+	<string name="jumio_loaders_success">성공</string>
+	<string name="jumio_loaders_this_will_take_a_moment">잠시만 기다려 주세요</string>
+	<string name="jumio_loaders_working_on_it">처리 중입니다…</string>
 	<string name="jumio_loading_title">불러오는 중</string>
 	<string name="jumio_nfc_button_skip">건너 뛰기</string>
 	<string name="jumio_nfc_description_extracting">스캔하는 동안 가만히 계세요</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">검색창</string>
 	<string name="jumio_search_completed_for_country">국가 검색 완료</string>
 	<string name="jumio_select">선택</string>
+	<string name="jumio_selfiedone_ID_Found">신분증이 인식되었습니다</string>
+	<string name="jumio_selfiedone_continue">계속</string>
+	<string name="jumio_selfiedone_scan_ID_manually">수동으로 ID 스캔</string>
+	<string name="jumio_selfiedone_we_found_your_ID">신분증 중 하나를 찾았습니다</string>
 	<string name="jumio_start_button">시작</string>
 	<string name="jumio_start_instructions_01">조명이 밝은 표면을 찾으세요</string>
 	<string name="jumio_start_instructions_02">셀카를 찍을 준비를 하세요</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">후면 카메라로 전환됨</string>
 	<string name="jumio_switched_to_front_camera">전면 카메라로 전환됨</string>
 	<string name="jumio_try_again">다시 시도하세요</string>
-	<string name="jumio_uploading_success">업로드 성공</string>
 	<string name="jumio_uploading_title">업로드 중</string>
 	-->
 

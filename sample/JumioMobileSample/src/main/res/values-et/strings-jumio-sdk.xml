@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Foto on tuvastamiseks liiga hägune</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Pildid tuleb uuesti teha</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Veenduge, et olete ametlikust valitsuse rakendusest alla laadinud PDF-vormingus digitaalse juhiloa [({Carteira Digital de Trânsito})].</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Palun proovige uuesti värvipildiga</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Pilt on mustvalge fotokoopia</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Näib, et pilt on värviline fotokoopia</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Palun proovige uuesti teise dokumendiga</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Näib, et dokument on rikutud</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Pildistage originaaldokumenti</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Kalluta paremale</string>
 	<string name="jumio_liveness_prompt_tilt_up">Kalluta üles</string>
 	<string name="jumio_liveness_prompt_too_far">Liigutage lähemale</string>
-	<string name="jumio_liveness_scanning_completed">Skannimine on lõpetatud</string>
 	<string name="jumio_liveness_upfront_intro">Peame skannima Sinu näo kinnitamaks, et oled inimene, mitte robot.</string>
+	<string name="jumio_loaders_almost_there">Peaaegu valmis…</string>
+	<string name="jumio_loaders_finishing_up">Lõpetamine…</string>
+	<string name="jumio_loaders_success">Õnnestus</string>
+	<string name="jumio_loaders_this_will_take_a_moment">See võtab hetke</string>
+	<string name="jumio_loaders_working_on_it">Töötlemine…</string>
 	<string name="jumio_loading_title">Laadimine</string>
 	<string name="jumio_nfc_button_skip">Vahele jätma</string>
 	<string name="jumio_nfc_description_extracting">Hoidke skannimise ajal paigal</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Otsinguriba</string>
 	<string name="jumio_search_completed_for_country">Riigiotsing on lõpetatud</string>
 	<string name="jumio_select">Vali</string>
+	<string name="jumio_selfiedone_ID_Found">ID leitud</string>
+	<string name="jumio_selfiedone_continue">Jätka</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Skanni ID käsitsi</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Leidsime ühe teie isikut tõendavatest dokumentidest</string>
 	<string name="jumio_start_button">Alusta</string>
 	<string name="jumio_start_instructions_01">Kasutage hästi valgustatud pinda</string>
 	<string name="jumio_start_instructions_02">Olge valmis selfit tegema</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Lülitati tagakaamerale</string>
 	<string name="jumio_switched_to_front_camera">Lülituti esikaamerale</string>
 	<string name="jumio_try_again">Palun proovi uuesti</string>
-	<string name="jumio_uploading_success">Üleslaadimine õnnestus</string>
 	<string name="jumio_uploading_title">Üleslaadimine</string>
 	-->
 

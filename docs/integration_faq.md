@@ -95,15 +95,15 @@ Depending on your specific needs, you may want to strip out unused functionality
 The following table shows a range of different product configurations with the size and modules that are linked for it. These measurements reflect the extra size that Jumio components add to your app download size and are based on our [sample application](../sample/JumioMobileSample/).
 
 | Product Configuration                        |   Size   |                                              Modules                                              |
-| :------------------------------------------- | :------: | :-----------------------------------------------------------------------------------------------: |
-| Base                                         | 1.40 MB  |                                               core                                                |
-| Base + Autocapture                           | 3.03 MB  |                                          core, docfinder                                          |
+| :------------------------------------------- |:--------:| :-----------------------------------------------------------------------------------------------: |
+| Base                                         | 1.41 MB  |                                               core                                                |
+| Base + Autocapture                           | 3.04 MB  |                                          core, docfinder                                          |
 | Base + Autocapture, Barcode-Vision           | 3.34 MB  |                                  core, docfinder, barcode-mlkit                                   |
-| Base + Autocapture, Barcode-Vision, Liveness | 5.91 MB  |                                core, docfinder, barcode, liveness                                 |
+| Base + Autocapture, Barcode-Vision, Liveness | 5.92 MB  |                                core, docfinder, barcode, liveness                                 |
 | Base + Autocapture, Barcode-Vision, NFC      | 6.65 MB  |                                   core, docfinder, barcode, nfc                                   |
 | All (Custom UI only)                         | 9.26 MB  |             core, docfinder, barcode-mlkit, nfc, digital-identity, camerax, liveness              |
-| Base + Autocapture, Default UI               | 4.27 MB  |                                    core, docfinder, defaultui                                     |
-| All (with Default UI)                        | 10.50 MB |       core, docfinder, barcode-mlkit, nfc, digital-identtity, camerax, defaultui, liveness        |
+| Base + Autocapture, Default UI               | 4.30 MB  |                                    core, docfinder, defaultui                                     |
+| All (with Default UI)                        | 10.53 MB |       core, docfinder, barcode-mlkit, nfc, digital-identtity, camerax, defaultui, liveness        |
 
 ⚠️&nbsp;__Note:__ The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 

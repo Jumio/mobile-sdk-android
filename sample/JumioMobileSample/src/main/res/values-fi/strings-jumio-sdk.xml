@@ -83,9 +83,6 @@
 	<string name="jumio_error_instant_feedback_blurry_title">Kuva on liian epäselvä vahvistamista varten</string>
 	<string name="jumio_error_instant_feedback_both_images_retaken">Ota kuvat uudelleen</string>
 	<string name="jumio_error_instant_feedback_brazil_cnh">Varmista, että olet ladannut digitaalisen ajokortin PDF-tiedoston valtion virallisesta sovelluksesta [({Carteira Digital de Trânsito})]</string>
-	<string name="jumio_error_instant_feedback_bw_copy_tip_color_image">Yritä uudelleen värikuvalla.</string>
-	<string name="jumio_error_instant_feedback_bw_copy_title">Kuva on mustavalkoinen valokopio</string>
-	<string name="jumio_error_instant_feedback_color_photocopy_title">Kuva näyttää olevan värillinen valokopio</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_tip_different_doc">Yritä uudelleen toisella asiakirjalla</string>
 	<string name="jumio_error_instant_feedback_damaged_doc_title">Vaikuttaa siltä, että asiakirja on vaurioitunut</string>
 	<string name="jumio_error_instant_feedback_digital_copy_tip">Ota kuva alkuperäisestä asiakirjasta</string>
@@ -188,8 +185,12 @@
 	<string name="jumio_liveness_prompt_tilt_right">Kallista oikealle</string>
 	<string name="jumio_liveness_prompt_tilt_up">Kallista ylös</string>
 	<string name="jumio_liveness_prompt_too_far">Siirry lähemmäs</string>
-	<string name="jumio_liveness_scanning_completed">Skannaus valmis</string>
 	<string name="jumio_liveness_upfront_intro">Meidän täytyy skannata kasvosi vahvistaaksemme, että olet oikea henkilö.</string>
+	<string name="jumio_loaders_almost_there">Melkein valmista…</string>
+	<string name="jumio_loaders_finishing_up">Viimeistellään…</string>
+	<string name="jumio_loaders_success">Onnistui</string>
+	<string name="jumio_loaders_this_will_take_a_moment">Tämä kestää hetken</string>
+	<string name="jumio_loaders_working_on_it">Käsitellään…</string>
 	<string name="jumio_loading_title">Ladataan</string>
 	<string name="jumio_nfc_button_skip">Ohita</string>
 	<string name="jumio_nfc_description_extracting">Pidä paikoillasi skannauksen aikana</string>
@@ -205,6 +206,10 @@
 	<string name="jumio_search_bar">Hakupalkki</string>
 	<string name="jumio_search_completed_for_country">Haku suoritettu maalle</string>
 	<string name="jumio_select">Valitse</string>
+	<string name="jumio_selfiedone_ID_Found">Henkilötodistus löytyi</string>
+	<string name="jumio_selfiedone_continue">Jatka</string>
+	<string name="jumio_selfiedone_scan_ID_manually">Skannaa henkilötodistus manuaalisesti</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Löysimme yhden henkilöllisyysasiakirjoistasi</string>
 	<string name="jumio_start_button">Aloita</string>
 	<string name="jumio_start_instructions_01">Etsi hyvin valaistu pinta</string>
 	<string name="jumio_start_instructions_02">Valmistaudu ottamaan selfie</string>
@@ -216,7 +221,6 @@
 	<string name="jumio_switched_to_back_camera">Vaihdettu takakameraan</string>
 	<string name="jumio_switched_to_front_camera">Vaihdettu etukameraan</string>
 	<string name="jumio_try_again">Yritä uudelleen</string>
-	<string name="jumio_uploading_success">Lataaminen onnistui</string>
 	<string name="jumio_uploading_title">Ladataan</string>
 	-->
 

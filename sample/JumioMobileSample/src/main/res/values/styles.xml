@@ -60,6 +60,8 @@
 		<item name="jumio_circle_item_foreground">#E0E011</item>
 		<item name="jumio_doc_type_icon_foreground">#E0E011</item>
 
+		<item name="jumio_terms_of_use_foreground">#E01164</item>
+
 		<item name="jumio_selection_icon_foreground">#123cff</item>
 
 		<item name="jumio_search_bubble_background">#AC3D9A</item>
