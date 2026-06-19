@@ -258,7 +258,7 @@ You can download our encrypted models and add them to your assets folder for the
 
 #### DocFinder
 
-If you are using the `com.jumio.android:docfinder` module, find the required models [here](https://cdn.mobile.jumio.ai/android/model/normalized_ensemble_passports_v2_float16_quant.enc) and [here](https://cdn.mobile.jumio.ai/android/model/classifierOnDeviceV2.enc).
+If you are using the `com.jumio.android:docfinder` module, find the required models [here](https://cdn.mobile.jumio.ai/android/model/normalized_ensemble_passports_v2_float16_quant.enc) and [here](https://cdn.mobile.jumio.ai/android/model/mobile-classifier-model-1.0.0.enc).
 
 #### Liveness
 
