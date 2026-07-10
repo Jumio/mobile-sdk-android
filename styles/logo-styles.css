@@ -1,16 +1,9 @@
-.library-name a {
-    position: relative;
-    --logo-width: 150px;
-    margin-left: calc(var(--logo-width) + 5px);
-}
+/*
+ * Copyright 2014-2024 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
+ */
 
-.library-name a::before {
-    content: '';
-    background: url('../images/logo.svg') center no-repeat;
-    background-size: contains;
-    position: absolute;
-    width: var(--logo-width);
-    height: 50px;
-    top: -18px;
-    left: calc(-1 * var(--logo-width) - 5px);
+:root {
+    --dokka-logo-image-url: url('../images/logo-icon.svg');
+    --dokka-logo-height: 28px;
+    --dokka-logo-width: 28px;
 }
