@@ -3,9 +3,8 @@ package com.jumio.sample.xml.adapter
 
 import android.content.Context
 import android.widget.ArrayAdapter
-import com.jumio.sdk.document.JumioDigitalDocument
+import com.jumio.sample.compose.extension.getName
 import com.jumio.sdk.document.JumioDocument
-import com.jumio.sdk.document.JumioPhysicalDocument
 
 class CustomDocumentAdapter(
 	context: Context,
@@ -14,11 +13,7 @@ class CustomDocumentAdapter(
 
 	init {
 		documents.forEach {
-			if (it is JumioPhysicalDocument) {
-				add("${it.type.name} - ${it.variant.name}")
-			} else if (it is JumioDigitalDocument) {
-				add(it.type)
-			}
+			add(it.getName())
 		}
 	}
 

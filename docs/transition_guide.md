@@ -8,9 +8,89 @@ This section covers all technical changes that should be considered when updatin
 - When updating your SDK version, **all** changes/updates made in in the meantime have to be taken into account and applied if necessary.
 - **Example:** If you're updating from SDK version **3.7.2** to **3.9.2**, the changes outlined in **3.8.0, 3.9.0** and **3.9.1** are **still relevant**.
 
+## 4.18.0
+
+#### Minimum Android SDK Version increase
+
+⚠️&nbsp;&nbsp;SDK 4.17.0 was the last SDK version supporting Android 6 (API level 23). Starting with this release the minimum Android SDK version is raised to Android 7.0 "Nougat" (API level 24).
+
+#### Public API Changes
+
+- [`JumioDigitalDocumentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-digital-document-type/index.html) enum has been added with the following supported values: `TRUST_CHECK`, `EIDAS`, `MASTERCARD`, `DIGITAL_DRIVING_LICENSE_PDF`
+- [`JumioDigitalDocument`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-digital-document/index.html) property `type` has changed from `String` to [`JumioDigitalDocumentType`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-digital-document-type/index.html).
+- Digital Identity documents can now be preselected via the account request. See the [Preselection](integration_guide.md#preselection) section in the integration guide for details.
+- The data parameter of [`JumioScanStep.IMAGE_TAKEN`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-i-m-a-g-e_-t-a-k-e-n/index.html) now contains a `Map` with the `scanPart` (a [`JumioCredentialPart`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-credential-part/index.html) value) and `scanMode` (a [`JumioScanMode`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-mode/index.html) value) of the captured image.
+
+#### Model updates
+
+If you are using the `com.jumio.android:docfinder` module and you bundle the required models in your app then please note that the classifierOnDeviceV2.enc model has been replaced by [mobile-classifier-model-1.0.0.enc](https://cdn.mobile.jumio.ai/android/model/mobile-classifier-model-1.0.0.enc).
+
+#### Localization Keys
+
+The following keys have been added
+- `jumio_di_continue_with_provider`
+- `jumio_di_doctype_digital_id_subheader`
+- `jumio_di_external_instructions_one`
+- `jumio_di_external_instructions_two`
+- `jumio_di_external_instructions_three`
+- `jumio_di_external_sub_header`
+- `jumio_physical_id`
+- `jumio_di_select_from_list_below`
+- `jumio_di_unexpected_error_description`
+- `jumio_di_unexpected_error_title`
+- `jumio_di_use_another_id`
+- `jumio_di_what_happens_next`
+- `jumio_accessibility_button_close`
+
+The following keys have been renamed:
+- `jumio_idtype_subtitle_id` to `jumio_select_id_type`
+- `jumio_di_vendor_selection_title` to `jumio_di_choose_digital_id`
+- `jumio_di_back_to_document_selection` to `jumio_di_back_to_previous_step`
+
+The following keys have been removed:
+- `jumio_uploading_title`
+
+#### Dependency Updates
+
+| Name                      | Jumio Module        | Dependency                                            | old version | new version |
+|---------------------------|---------------------|-------------------------------------------------------|-------------|-------------|
+| Android Gradle Plugin     | all                 | `"com.android.library"`                               | 8.9.3       | 8.10.1      |
+| CameraX Core              | camerax             | `"androidx.camera:camera-core"`                       | 1.4.2       | 1.5.3       |
+| CameraX Lifecycle         | camerax             | `"androidx.camera:camera-lifecycle"`                  | 1.4.2       | 1.5.3       |
+| CameraX View              | camerax             | `"androidx.camera:camera-view"`                       | 1.4.2       | 1.5.3       |
+| Lifecycle Viewmodel       | defaultui           | `"androidx.lifecycle:lifecycle-viewmodel-ktx"`        | 2.9.3       | 2.10.0      |
+| Lifecycle Savedstate      | defaultui           | `"androidx.lifecycle:lifecycle-viewmodel-savedstate"` | 2.9.3       | 2.10.0      |
+| Lifecycle Livedata        | defaultui           | `"androidx.lifecycle:lifecycle-livedata-ktx"`         | 2.9.3       | 2.10.0      |
+| Lifecycle Runtime Android | defaultui           | `"androidx.lifecycle:lifecycle-runtime-android"`      | 2.9.3       | 2.10.0      |
+| Lifecycle Runtime Ktx     | defaultui           | `"androidx.lifecycle:lifecycle-runtime-Ktx"`          | 2.9.3       | 2.10.0      |
+| Navigation UI             | defaultui           | `"androidx.navigation:navigation-ui-ktx"`             | 2.9.3       | 2.9.7       |
+| Navigation Fragment       | defaultui           | `"androidx.navigation:navigation-fragment-ktx"`       | 2.9.3       | 2.9.7       |
+| LiteRT                    | docfinder, liveness | `"com.google.ai.edge.litert:litert"`                  | 1.0.1       | 1.4.2       |
+| LiteRT Metadata           | docfinder           | `"com.google.ai.edge.litert:litert-metadata"`         | 1.0.1       | 1.4.2       |
+| JMRTD                     | nfc                 | `"org.jmrtd:jmrtd"`                                   | 0.8.2       | 0.8.5       |
+| BouncyCastle              | nfc                 | `"org.bouncycastle:bcprov-jdk18on"`                   | 1.81        | 1.83        |
+
+#### Jetifier and BouncyCastle 1.83 (NFC module)
+
+⚠️&nbsp;&nbsp;If you still have Jetifier enabled (`android.enableJetifier=true` in your `gradle.properties`) and use the `com.jumio.android:nfc` module, your build will fail. BouncyCastle `bcprov-jdk18on:1.83` is a multi-release jar containing Java 25 (class major version 69) bytecode, which Jetifier cannot scan:
+
+```
+Jetifier failed to transform … bcprov-jdk18on-1.83.jar
+java.lang.IllegalArgumentException - Unsupported class file major version 69
+```
+
+Add BouncyCastle to the Jetifier ignorelist in your `gradle.properties`:
+
+```
+android.jetifier.ignorelist=bcprov-jdk18on
+```
+
+This excludes the jar from Jetifier's transform step only - it stays on the classpath and ships in the APK unchanged, so NFC keeps working. The transform is a no-op anyway, since BouncyCastle does not reference any `android.support.*` APIs. See the [Jetifier Fails on BouncyCastle 1.83 (NFC module)](known_issues.md#jetifier-fails-on-bouncycastle-183-nfc-module) section in the known issues for details.
+
 ## 4.17.0
 
 #### Public API Changes
+
 - [`JumioTermsOfUse`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.termsofuse/-jumio-terms-of-use/index.html), [`JumioLookupResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-lookup-result/index.html), [`JumioLegalStatement`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-legal-statement/index.html) classes have been added
 - Optional property `order` has been added to [`JumioCredentialInfo`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-credential-info/index.html)
 - Property `lookupResult` of type [`JumioLookupResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-lookup-result/index.html) has been added to [`JumioIDCredential`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/index.html)

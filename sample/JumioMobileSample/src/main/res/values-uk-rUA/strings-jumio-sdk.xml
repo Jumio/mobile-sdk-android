@@ -31,6 +31,7 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_button_close">Закрити</string>
 	<string name="jumio_accessibility_camera_switch_to_back">Перемкнутися на задню камеру</string>
 	<string name="jumio_accessibility_camera_switch_to_front">Перемкнутися на передню камеру</string>
 	<string name="jumio_accessibility_nfc_description_start">Перевірте, чи є у вашому документі, що підтверджує особу, чип. Якщо так, покладіть телефон на документ, як показано на рисунку.</string>
@@ -50,9 +51,20 @@
 	<string name="jumio_choose_file_location">Виберіть розташування файлу</string>
 	<string name="jumio_clear_search">Очистити пошук</string>
 	<string name="jumio_current_issuing_country">Поточна країна видачі: %s</string>
-	<string name="jumio_di_back_to_document_selection">Ви повернетеся до вибору документу.</string>
-	<string name="jumio_di_vendor_selection_title">Виберіть постачальника цифрових документів, що посвідчують особу</string>
+	<string name="jumio_di_back_to_previous_step">Ви повернетеся до попереднього кроку</string>
+	<string name="jumio_di_choose_digital_id">Виберіть цифрове ID</string>
+	<string name="jumio_di_continue_with_provider">Продовжити з %s</string>
+	<string name="jumio_di_doctype_digital_id_subheader">Відкриває список усіх доступних цифрових ID</string>
+	<string name="jumio_di_external_instructions_one">Перейдіть до %s</string>
+	<string name="jumio_di_external_instructions_three">Автоматично поверніться сюди, щоб продовжити</string>
+	<string name="jumio_di_external_instructions_two">Виконайте кроки верифікації</string>
+	<string name="jumio_di_external_sub_header">Вас буде перенаправлено на %s для завершення перевірки вашої цифрової ідентичності.</string>
+	<string name="jumio_di_select_from_list_below">Виберіть зі списку нижче</string>
+	<string name="jumio_di_unexpected_error_description">На жаль, сталася непередбачена помилка. Будь ласка, спробуйте ще раз.</string>
+	<string name="jumio_di_unexpected_error_title">Ой…</string>
+	<string name="jumio_di_use_another_id">Використати інший документ</string>
 	<string name="jumio_di_verification_prompt_processing">Виконайте процедуру в застосунку %s.</string>
+	<string name="jumio_di_what_happens_next">Що буде далі:</string>
 	<string name="jumio_dv_clear_or_unedited">Зображення має бути чітким і невідредагованим</string>
 	<string name="jumio_dv_confirm_button_reselect">Змінити вибір</string>
 	<string name="jumio_dv_confirm_file_title">Підтвердити ваш файл</string>
@@ -172,7 +184,6 @@
 	<string name="jumio_idtype_front_back">Лицьова та зворотна сторона</string>
 	<string name="jumio_idtype_photo_page">Сторінка з фотографією</string>
 	<string name="jumio_idtype_subtitle_country">Перевірте країну, де був виданий документ</string>
-	<string name="jumio_idtype_subtitle_id">Виберіть тип документа</string>
 	<string name="jumio_list_supported_document_title">Підтримувані документи</string>
 	<string name="jumio_liveness_prompt_keep_centered">Тримайте у центрі</string>
 	<string name="jumio_liveness_prompt_keep_still">Не рухайтесь</string>
@@ -188,6 +199,7 @@
 	<string name="jumio_liveness_upfront_intro">Нам потрібно просканувати ваше обличчя, щоб переконатися, що ви реальна людина.</string>
 	<string name="jumio_loaders_almost_there">Майже готово…</string>
 	<string name="jumio_loaders_finishing_up">Завершення…</string>
+	<string name="jumio_loaders_starting_camera">Запуск камери…</string>
 	<string name="jumio_loaders_success">Успішно</string>
 	<string name="jumio_loaders_this_will_take_a_moment">Це займе деякий час</string>
 	<string name="jumio_loaders_working_on_it">Обробляємо…</string>
@@ -202,10 +214,12 @@
 	<string name="jumio_nfc_id_description">Розмістіть телефон на документі та не рухайте його, доки сканування не буде завершено.</string>
 	<string name="jumio_nfc_id_header_start">Розмістіть свою ідентифікаційну картку</string>
 	<string name="jumio_no_results_found">Не знайдено жодного результату</string>
+	<string name="jumio_physical_id">Фізичний документ</string>
 	<string name="jumio_processing_title">Перевірка результату</string>
 	<string name="jumio_search_bar">Рядок пошуку</string>
 	<string name="jumio_search_completed_for_country">Пошук завершено для країни</string>
 	<string name="jumio_select">Вибрати</string>
+	<string name="jumio_select_id_type">Виберіть тип посвідчення особи</string>
 	<string name="jumio_selfiedone_ID_Found">Документ знайдено</string>
 	<string name="jumio_selfiedone_continue">Продовжити</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Сканувати документ вручну</string>
@@ -221,7 +235,6 @@
 	<string name="jumio_switched_to_back_camera">Переключено на задню камеру</string>
 	<string name="jumio_switched_to_front_camera">Переключено на передню камеру</string>
 	<string name="jumio_try_again">Повторіть спробу</string>
-	<string name="jumio_uploading_title">Вивантаження</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

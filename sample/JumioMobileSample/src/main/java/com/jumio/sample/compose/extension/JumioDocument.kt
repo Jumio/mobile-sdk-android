@@ -7,10 +7,10 @@ import com.jumio.sdk.document.JumioPhysicalDocument
 
 fun JumioDocument.getName() = when (this) {
 	is JumioPhysicalDocument -> {
-		"${this.type.name} - ${this.variant.name}"
+		"${type.name} - ${variant.name}"
 	}
 	is JumioDigitalDocument -> {
-		this.type
+		"${type.name} - $title"
 	}
 	else -> {
 		""

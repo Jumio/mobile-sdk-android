@@ -47,7 +47,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.17.0**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.18.0**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -75,29 +75,29 @@ If an optional module is **not linked**, some functionalities may not be availab
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.17.0"
+	implementation "com.jumio.android:core:4.18.0"
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.17.0"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.17.0"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.17.0"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:liveness:4.17.0"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.17.0"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.18.0"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.18.0"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.18.0"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:liveness:4.18.0"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.18.0"   // Digital Identity verification library
   	...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.17.0"
+	implementation "com.jumio.android:defaultui:4.18.0"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.17.0"         // CameraX library
+	implementation "com.jumio.android:camerax:4.18.0"         // CameraX library
   	...
 }
 ```
@@ -106,7 +106,7 @@ In addition to specifying individual dependencies, you can also use a BOM (Bill 
 
 ```groovy
 dependencies {
-		implementation platform("com.jumio.android:bom:4.17.0")
+		implementation platform("com.jumio.android:bom:4.18.0")
 		implementation "com.jumio.android:core"
 		implementation "com.jumio.android:barcode-mlkit"
 		implementation "com.jumio.android:camerax"
@@ -378,8 +378,6 @@ You can specify issuing country using [ISO 3166-1 alpha-3](https://en.wikipedia.
 
 For more details, please refer to the **Account Request** section in our [KYX Guide](https://documentation.jumio.ai/docs/developer-resources/API/CreateUpdateAccounts/creating-and-updating-accounts).
 
-⚠️&nbsp;__Note:__ "Digital Identity" document type can not be preselected!
-
 ```json
 {
   "customerInternalReference": "CUSTOMER_REFERENCE",
@@ -398,6 +396,37 @@ For more details, please refer to the **Account Request** section in our [KYX Gu
 		  "values": [
 			"AUT",
 			"USA"
+		  ]
+		}
+	  }
+	]
+  }
+}
+```
+
+Digital Identity documents can also be preselected by specifying `"DIGITAL_IDENTITY"` as the type. To narrow down to a specific digital identity subtype, use the optional `"subType"` field with a single value. Supported subtypes are: `EIDAS`, `DIGITAL_DRIVING_LICENSE_PDF`. If only one digital identity type is available for the preselected country (and no physical documents), the document selection screen in the SDK can be skipped entirely.
+
+```json
+{
+  "customerInternalReference": "CUSTOMER_REFERENCE",
+  "workflowDefinition": {
+	"key": X,
+	"credentials": [
+	  {
+		"category": "ID",
+		"type": {
+		  "values": [
+			"DIGITAL_IDENTITY"
+		  ]
+		},
+		"subType": {
+		  "values": [
+			"EIDAS"
+		  ]
+		},
+		"country": {
+		  "values": [
+			"AUT"
 		  ]
 		}
 	  }
@@ -664,6 +693,8 @@ idCredential.setConfiguration(country, document)
 
 - [`JumioDigitalDocument`][jumiodigitaldocument] represents a digital document ("Digital Identity")
 
+  - [`JumioDigitalDocumentType`][jumiodigitaldocumenttype] values: `TRUST_CHECK`, `EIDAS`, `MASTERCARD`, `DIGITAL_DRIVING_LICENSE_PDF`
+
 Once the credential is configured, it is ready to initialize it's first scan part and start the verification process:
 
 ```kotlin
@@ -912,7 +943,7 @@ JumioScanStep.SCAN_VIEW -> {
 }
 ```
 
-[`IMAGE_TAKEN`][imagetaken] is triggered as soon as all required images for the current part are captured and uploaded to the Jumio server. This event might be followed by a [`NEXT_PART`][nextpart] event with additional information on which part has to be scanned next (if any).
+[`IMAGE_TAKEN`][imagetaken] is triggered as soon as all required images for the current part are captured and uploaded to the Jumio server. This event might be followed by a [`NEXT_PART`][nextpart] event with additional information on which part has to be scanned next (if any). The data parameter of [`onScanStep()`][onscanstep] contains a `Map` with the `scanPart` (a [`JumioCredentialPart`][jumiocredentialpart] value) and `scanMode` (a [`JumioScanMode`][jumioscanmode] value) of the captured image.
 
 When all parts are done and background processing is executed, [`JumioScanStep.PROCESSING`][processing] is triggered. The camera preview might be stopped during that step.
 

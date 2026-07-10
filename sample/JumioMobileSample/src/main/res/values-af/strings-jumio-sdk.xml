@@ -31,6 +31,7 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_button_close">Sluit</string>
 	<string name="jumio_accessibility_camera_switch_to_back">Skakel oor na agterste kamera</string>
 	<string name="jumio_accessibility_camera_switch_to_front">Skakel oor na voorste kamera</string>
 	<string name="jumio_accessibility_nfc_description_start">Kyk asseblief of u ID \'n skyfie het. Indien wel, plaas u foon op die ID soos geïllustreer.</string>
@@ -50,9 +51,20 @@
 	<string name="jumio_choose_file_location">Kies lêerligging</string>
 	<string name="jumio_clear_search">Vee soektog uit</string>
 	<string name="jumio_current_issuing_country">Huidige Uitreikingsland: %s</string>
-	<string name="jumio_di_back_to_document_selection">Ons sal jou na dokumentseleksie terughelp.</string>
-	<string name="jumio_di_vendor_selection_title">Kies digitale-ID-verskaffer</string>
+	<string name="jumio_di_back_to_previous_step">U sal na die vorige stap teruggeneem word</string>
+	<string name="jumio_di_choose_digital_id">Kies Digitale ID</string>
+	<string name="jumio_di_continue_with_provider">Gaan voort met %s</string>
+	<string name="jumio_di_doctype_digital_id_subheader">Maak die lys van alle beskikbare digitale ID\'s oop</string>
+	<string name="jumio_di_external_instructions_one">Gaan voort na %s</string>
+	<string name="jumio_di_external_instructions_three">Keer outomaties hierheen terug om voort te gaan</string>
+	<string name="jumio_di_external_instructions_two">Voltooi die verifikasiestappe</string>
+	<string name="jumio_di_external_sub_header">U sal na %s geneem word om u digitale identiteitsverifikasie te voltooi.</string>
+	<string name="jumio_di_select_from_list_below">Kies uit die lys hieronder</string>
+	<string name="jumio_di_unexpected_error_description">Jammer, daar was \'n onverwagte fout. Probeer asseblief weer.</string>
+	<string name="jumio_di_unexpected_error_title">Oeps…</string>
+	<string name="jumio_di_use_another_id">Gebruik eerder \'n ander ID</string>
 	<string name="jumio_di_verification_prompt_processing">Voltooi asseblief die vloei op %s-app.</string>
+	<string name="jumio_di_what_happens_next">Wat volgende gebeur:</string>
 	<string name="jumio_dv_clear_or_unedited">Die beeld moet duidelik en ongeredigeer wees</string>
 	<string name="jumio_dv_confirm_button_reselect">Herselekteer</string>
 	<string name="jumio_dv_confirm_file_title">Bevestig u lêer</string>
@@ -172,7 +184,6 @@
 	<string name="jumio_idtype_front_back">Voor en agter</string>
 	<string name="jumio_idtype_photo_page">Fotobladsy</string>
 	<string name="jumio_idtype_subtitle_country">Kontroleer land van uitreiking</string>
-	<string name="jumio_idtype_subtitle_id">Kies die soort dokument</string>
 	<string name="jumio_list_supported_document_title">Ondersteunde dokumente</string>
 	<string name="jumio_liveness_prompt_keep_centered">Bly in die middel</string>
 	<string name="jumio_liveness_prompt_keep_still">Hou stil</string>
@@ -188,6 +199,7 @@
 	<string name="jumio_liveness_upfront_intro">Ons moet jou gesig skandeer om te bevestig dat jy ’n regte persoon is.</string>
 	<string name="jumio_loaders_almost_there">Amper daar…</string>
 	<string name="jumio_loaders_finishing_up">Besig om af te handel…</string>
+	<string name="jumio_loaders_starting_camera">Kamera word gestart…</string>
 	<string name="jumio_loaders_success">Sukses</string>
 	<string name="jumio_loaders_this_will_take_a_moment">Dit sal \'n oomblik neem</string>
 	<string name="jumio_loaders_working_on_it">Besig daarmee…</string>
@@ -202,10 +214,12 @@
 	<string name="jumio_nfc_id_description">Plaas jou foon bo-op die dokument en hou dit stil totdat die skandering voltooi is.</string>
 	<string name="jumio_nfc_id_header_start">Posisioneer jou ID-kaart</string>
 	<string name="jumio_no_results_found">Geen resultate gekry nie</string>
+	<string name="jumio_physical_id">Fisiese ID</string>
 	<string name="jumio_processing_title">Besig om resultaat te kontroleer</string>
 	<string name="jumio_search_bar">Soekbalk</string>
 	<string name="jumio_search_completed_for_country">Soektog is voltooi vir die land</string>
 	<string name="jumio_select">Kies</string>
+	<string name="jumio_select_id_type">Kies ID-tipe</string>
 	<string name="jumio_selfiedone_ID_Found">ID gevind</string>
 	<string name="jumio_selfiedone_continue">Gaan voort</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Skandeer ID handmatig</string>
@@ -221,7 +235,6 @@
 	<string name="jumio_switched_to_back_camera">Oorgeskakel na die agterste kamera</string>
 	<string name="jumio_switched_to_front_camera">Oorgeskakel na die voorste kamera</string>
 	<string name="jumio_try_again">Probeer asb. weer</string>
-	<string name="jumio_uploading_title">Besig om op te laai</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

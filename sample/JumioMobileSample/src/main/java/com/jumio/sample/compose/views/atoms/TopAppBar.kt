@@ -1,8 +1,6 @@
 // (c) 2026 Jumio All rights reserved. US Patent App.
 package com.jumio.sample.compose.views.atoms
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -12,6 +10,8 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import com.jumio.sample.R
 import com.jumio.sample.compose.theme.Primary
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -25,7 +25,7 @@ fun AppBar(title: String, onNavigationIconClick: () -> Unit) {
 			IconButton(onClick = {
 				onNavigationIconClick()
 			}) {
-				Icon(imageVector = Icons.Filled.Menu, contentDescription = "Menu", tint = Color.White)
+				Icon(painter = painterResource(R.drawable.ic_menu), contentDescription = "Menu", tint = Color.White)
 			}
 		},
 		colors = TopAppBarDefaults.topAppBarColors(

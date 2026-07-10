@@ -14,7 +14,7 @@
     <img src="https://img.shields.io/badge/platform-Android-lightgrey?style=flat" alt="Platform" />
   </a>
   <a href="../README.md#general-requirements">
-    <img src="https://img.shields.io/badge/API%20level-23+-orange?style=flat" alt="API Level" />
+    <img src="https://img.shields.io/badge/API%20level-24+-orange?style=flat" alt="API Level" />
   </a>
   <a href="../README.md#integration">
     <img src="https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo.mobile.jumio.ai%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat" alt="Maven" />
@@ -32,9 +32,19 @@ For detailed technical changes please refer to our [Transition Guide](transition
 
 ## Support Period
 
-Current SDK version: 4.17.0
+Current SDK version: 4.18.0
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+
+## SDK Version: 4.18.0
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Added support for the Jumio Digital Identity Hub.
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Added controls for limiting and preventing Manual Capture (ID and Selfie).
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Added support for localized default consent links.
+
+![Change](https://img.shields.io/badge/Change-blue) The SDK's minSdkVersion has been increased to 24 (Nougat). Please check the [Transition Guide](transition_guide.md) for details.
 
 ## SDK Version: 4.17.0
 

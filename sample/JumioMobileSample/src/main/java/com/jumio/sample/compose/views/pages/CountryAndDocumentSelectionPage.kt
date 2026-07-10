@@ -10,10 +10,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -25,6 +21,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -49,7 +46,7 @@ fun CountryAndDocumentSelectionPage(viewModel: CustomUIViewModel, modifier: Modi
 			onClose()
 		}) {
 			Icon(
-				imageVector = Icons.Default.Clear,
+				painter = painterResource(R.drawable.ic_close),
 				contentDescription = stringResource(id = R.string.close),
 				tint = MaterialTheme.colors.primary
 			)
@@ -109,7 +106,7 @@ fun SelectCountry(
 						)
 						if (defaultCountry.value == it) {
 							Icon(
-								imageVector = Icons.Filled.Check,
+								painter = painterResource(R.drawable.ic_check),
 								contentDescription = stringResource(id = R.string.select_country),
 								tint = MaterialTheme.colors.primary
 							)
@@ -155,7 +152,7 @@ fun SelectDocument(
 							modifier = Modifier.weight(1f)
 						)
 						Icon(
-							imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+							painter = painterResource(R.drawable.ic_keyboard_arrow_right),
 							contentDescription = stringResource(id = R.string.select_document),
 							tint = MaterialTheme.colors.primary
 						)

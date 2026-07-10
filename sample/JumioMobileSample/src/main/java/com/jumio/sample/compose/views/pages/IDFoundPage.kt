@@ -13,9 +13,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
@@ -28,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -57,7 +55,7 @@ fun IDFoundPage(
 	Column(modifier = modifier.fillMaxSize().padding(all = MaterialTheme.spacing.medium)) {
 		IconButton(onClick = { onBackPress() }) {
 			Icon(
-				imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
+				painter = painterResource(R.drawable.ic_keyboard_arrow_left),
 				contentDescription = stringResource(id = R.string.back),
 				tint = MaterialTheme.colors.primary
 			)
@@ -102,7 +100,7 @@ fun IDFoundPage(
 					horizontalAlignment = Alignment.CenterHorizontally
 				) {
 					Icon(
-						imageVector = Icons.Default.Person,
+						painter = painterResource(R.drawable.ic_person),
 						contentDescription = null,
 						modifier = Modifier.size(MaterialTheme.dimensions.selfieDoneIdHeight)
 					)

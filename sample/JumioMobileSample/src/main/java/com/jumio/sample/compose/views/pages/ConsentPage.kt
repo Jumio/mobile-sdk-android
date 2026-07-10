@@ -13,8 +13,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.Icon
@@ -29,6 +27,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -57,7 +56,7 @@ fun ConsentPage(viewModel: CustomUIViewModel, modifier: Modifier = Modifier, onC
 			onClose()
 		}) {
 			Icon(
-				imageVector = Icons.Filled.Close,
+				painter = painterResource(R.drawable.ic_close),
 				contentDescription = stringResource(id = R.string.close),
 				tint = MaterialTheme.colors.primary
 			)

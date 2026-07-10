@@ -3,8 +3,10 @@
 # Known Issues
 
 ## Table of Contents
-- [SDK Version 4.14.0 and Above)(#sdk-version-4140-and-above)
-  - [LiteRT Version override](#litert-version-override
+- [SDK Version 4.18.0 and Above](#sdk-version-4180-and-above)
+  - [Jetifier Fails on BouncyCastle 1.83 (NFC module)](#jetifier-fails-on-bouncycastle-183-nfc-module)
+- [SDK Version 4.14.0 and Above](#sdk-version-4140-and-above)
+  - [LiteRT Version override](#litert-version-override)
 - [SDK Version 4.0.0 and Above](#sdk-version-400-and-above)
   - [Duplicate Files for 'libc++_shared.so' Library](#duplicate-files-for-libc_sharedso-library)
   - [Picking a file does not work on some Xiaomi devices](#picking-a-file-does-not-work-on-some-xiaomi-devices-xiaomi-file-picker)
@@ -25,6 +27,25 @@
   - [SDK Crashes Trying to Display Animations (Android Version 5 and Lower)](#sdk-crashes-trying-to-display-animations-android-version-5-and-lower)
   - [Country Missing from the Country List](#country-missing-from-the-country-list)
   - [Datadog in Dynamic feature modules](#datadog-in-dynamic-feature-modules)
+
+# SDK Version 4.18.0 and Above
+
+## Jetifier Fails on BouncyCastle 1.83 (NFC module)
+
+Starting with SDK 4.18.0 the `com.jumio.android:nfc` module pulls in `org.bouncycastle:bcprov-jdk18on:1.83`, a multi-release jar that contains Java 25 (class major version 69) bytecode. If you still have Jetifier enabled (`android.enableJetifier=true` in your `gradle.properties`), the build fails because Jetifier cannot scan that bytecode:
+
+```
+Jetifier failed to transform … bcprov-jdk18on-1.83.jar
+java.lang.IllegalArgumentException - Unsupported class file major version 69
+```
+
+Add BouncyCastle to the Jetifier ignorelist in your `gradle.properties`:
+
+```
+android.jetifier.ignorelist=bcprov-jdk18on
+```
+
+This excludes the jar from Jetifier's transform step only - it stays on the classpath and ships in the APK unchanged, so NFC keeps working. The transform is a no-op anyway, since BouncyCastle does not reference any `android.support.*` APIs; Jetifier crashes only because it eagerly scans the bytecode before discovering there is nothing to rewrite. See [Google issue tracker #184622491](https://issuetracker.google.com/issues/184622491) for background.
 
 # SDK Version 4.14.0 and Above
 

@@ -1,0 +1,51 @@
+[versions]
+jumioSDK="4.18.0"
+androidGradlePlugin = "8.10.1"
+kotlin = "2.1.0"
+kotlinStdlib = "2.1.0"
+
+activityKtx = "1.10.1"
+multidex = "2.0.1"
+compose = "1.5.15"
+composeBom = "2026.03.00"
+composeActivity = "1.13.0"
+composeNavigation = "2.9.7"
+composeLifecycleRuntime = "2.10.0"
+kotlinxSerializationJson = "1.8.1"
+kotlinCompose = "2.1.0"
+kotlinSerialization = "2.1.0"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinSerialization" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlinCompose" }
+
+[libraries]
+# Jumio SDK
+jumio-bom = { module = "com.jumio.android:bom", version.ref = "jumioSDK" }
+jumio-core = { module = "com.jumio.android:core" }
+jumio-barcode-mlkit = { module = "com.jumio.android:barcode-mlkit" }
+jumio-camerax = { module = "com.jumio.android:camerax" }
+jumio-defaultui = { module = "com.jumio.android:defaultui" }
+jumio-digital-identity = { module = "com.jumio.android:digital-identity" }
+jumio-docfinder = { module = "com.jumio.android:docfinder" }
+jumio-liveness = { module = "com.jumio.android:liveness" }
+jumio-nfc = { module = "com.jumio.android:nfc" }
+
+# Dependencies
+kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlinStdlib" }
+activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
+multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
+androidx-compose-ui = { module = "androidx.compose.ui:ui" }
+androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+androidx-compose-activity = { module = "androidx.activity:activity-compose", version.ref = "composeActivity" }
+androidx-compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "compose" }
+androidx-compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
+androidx-compose-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "composeLifecycleRuntime" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+

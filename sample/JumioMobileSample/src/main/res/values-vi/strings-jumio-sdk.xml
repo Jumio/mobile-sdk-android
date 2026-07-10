@@ -31,6 +31,7 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_button_close">Đóng</string>
 	<string name="jumio_accessibility_camera_switch_to_back">Chuyển sang máy ảnh sau</string>
 	<string name="jumio_accessibility_camera_switch_to_front">Chuyển sang máy ảnh trước</string>
 	<string name="jumio_accessibility_nfc_description_start">Vui lòng kiểm tra xem ID của bạn có chip không. Nếu có, hãy đặt điện thoại của bạn trên ID như minh họa.</string>
@@ -50,9 +51,20 @@
 	<string name="jumio_choose_file_location">Chọn vị trí tệp</string>
 	<string name="jumio_clear_search">Xóa tìm kiếm</string>
 	<string name="jumio_current_issuing_country">Quốc gia cấp hiện tại: %s</string>
-	<string name="jumio_di_back_to_document_selection">Bạn sẽ được điều hướng trở lại lựa chọn tài liệu.</string>
-	<string name="jumio_di_vendor_selection_title">Chọn nhà cung cấp ID kỹ thuật số</string>
+	<string name="jumio_di_back_to_previous_step">Bạn sẽ được đưa trở lại bước trước đó</string>
+	<string name="jumio_di_choose_digital_id">Chọn ID kỹ thuật số</string>
+	<string name="jumio_di_continue_with_provider">Tiếp tục với %s</string>
+	<string name="jumio_di_doctype_digital_id_subheader">Mở danh sách tất cả ID kỹ thuật số hiện có</string>
+	<string name="jumio_di_external_instructions_one">Tiếp tục đến %s</string>
+	<string name="jumio_di_external_instructions_three">Tự động quay lại đây để tiếp tục</string>
+	<string name="jumio_di_external_instructions_two">Hoàn tất các bước xác minh</string>
+	<string name="jumio_di_external_sub_header">Bạn sẽ được chuyển hướng đến %s để hoàn tất việc xác minh danh tính kỹ thuật số của mình.</string>
+	<string name="jumio_di_select_from_list_below">Chọn từ danh sách dưới đây</string>
+	<string name="jumio_di_unexpected_error_description">Rất tiếc, đã xảy ra lỗi không xác định. Vui lòng thử lại.</string>
+	<string name="jumio_di_unexpected_error_title">Rất tiếc…</string>
+	<string name="jumio_di_use_another_id">Sử dụng một ID khác</string>
 	<string name="jumio_di_verification_prompt_processing">Vui lòng hoàn tất quy trình trên ứng dụng %s.</string>
+	<string name="jumio_di_what_happens_next">Các bước tiếp theo:</string>
 	<string name="jumio_dv_clear_or_unedited">Hình ảnh phải rõ ràng và chưa qua chỉnh sửa</string>
 	<string name="jumio_dv_confirm_button_reselect">Chọn lại</string>
 	<string name="jumio_dv_confirm_file_title">Xác nhận tệp của bạn</string>
@@ -172,7 +184,6 @@
 	<string name="jumio_idtype_front_back">Mặt trước và mặt sau</string>
 	<string name="jumio_idtype_photo_page">Trang ảnh</string>
 	<string name="jumio_idtype_subtitle_country">Đang kiểm tra quốc gia phát hành</string>
-	<string name="jumio_idtype_subtitle_id">Chọn loại ID</string>
 	<string name="jumio_list_supported_document_title">Tài liệu được hỗ trợ</string>
 	<string name="jumio_liveness_prompt_keep_centered">Giữ ở vị trí trung tâm</string>
 	<string name="jumio_liveness_prompt_keep_still">Giữ yên</string>
@@ -188,6 +199,7 @@
 	<string name="jumio_liveness_upfront_intro">Chúng tôi cần quét khuôn mặt bạn để xác minh rằng bạn là người thật.</string>
 	<string name="jumio_loaders_almost_there">Sắp xong rồi…</string>
 	<string name="jumio_loaders_finishing_up">Đang hoàn tất…</string>
+	<string name="jumio_loaders_starting_camera">Đang khởi động máy ảnh…</string>
 	<string name="jumio_loaders_success">Thành công</string>
 	<string name="jumio_loaders_this_will_take_a_moment">Việc này sẽ mất một chút thời gian</string>
 	<string name="jumio_loaders_working_on_it">Đang xử lý…</string>
@@ -202,10 +214,12 @@
 	<string name="jumio_nfc_id_description">Đặt điện thoại của bạn lên trên tài liệu và giữ yên cho đến khi quá trình quét hoàn tất.</string>
 	<string name="jumio_nfc_id_header_start">Định vị thẻ ID của bạn</string>
 	<string name="jumio_no_results_found">Không tìm thấy kết quả nào</string>
+	<string name="jumio_physical_id">Giấy tờ tùy thân bản cứng</string>
 	<string name="jumio_processing_title">Đang kiểm tra kết quả</string>
 	<string name="jumio_search_bar">Thanh tìm kiếm</string>
 	<string name="jumio_search_completed_for_country">Đã hoàn tất tìm kiếm cho quốc gia</string>
 	<string name="jumio_select">Chọn</string>
+	<string name="jumio_select_id_type">Chọn loại giấy tờ tùy thân</string>
 	<string name="jumio_selfiedone_ID_Found">Đã tìm thấy giấy tờ tùy thân</string>
 	<string name="jumio_selfiedone_continue">Tiếp tục</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Quét giấy tờ tùy thân thủ công</string>
@@ -221,7 +235,6 @@
 	<string name="jumio_switched_to_back_camera">Đã chuyển sang camera sau</string>
 	<string name="jumio_switched_to_front_camera">Đã chuyển sang camera trước</string>
 	<string name="jumio_try_again">Vui lòng thử lại</string>
-	<string name="jumio_uploading_title">Đang tải lên</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

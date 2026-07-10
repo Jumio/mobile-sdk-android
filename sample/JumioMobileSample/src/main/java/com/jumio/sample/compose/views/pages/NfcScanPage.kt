@@ -15,9 +15,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -33,7 +30,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.viewinterop.AndroidView
@@ -66,19 +63,19 @@ fun NfcScanPage(
 	BackHandler {
 		onBackPress()
 	}
-	val context = LocalContext.current
 	val isPassportDocument: Boolean = viewModel.scannedDocumentInfo?.documentType == JumioDocumentType.PASSPORT
 	val (titleInfo, descriptionInfo) = when {
 		isPassportDocument && viewModel.isUsa ->
-			context.getString(R.string.jumio_nfc_header_start) to
-				context.getString(R.string.jumio_nfc_description_start_us)
+			stringResource(R.string.jumio_nfc_header_start) to
+				stringResource(R.string.jumio_nfc_description_start_us)
 		isPassportDocument ->
-			context.getString(R.string.jumio_nfc_header_start) to
-				context.getString(R.string.jumio_nfc_description_start_other)
+			stringResource(R.string.jumio_nfc_header_start) to
+				stringResource(R.string.jumio_nfc_description_start_other)
 		else ->
-			context.getString(R.string.jumio_nfc_id_header_start) to
-				context.getString(R.string.jumio_nfc_id_description)
+			stringResource(R.string.jumio_nfc_id_header_start) to
+				stringResource(R.string.jumio_nfc_id_description)
 	}
+	val nfcHeaderExtracting = stringResource(R.string.jumio_nfc_header_extracting)
 	val title = remember { mutableStateOf(titleInfo) }
 	val description = remember { mutableStateOf(descriptionInfo) }
 	val progress = remember { mutableIntStateOf(0) }
@@ -103,7 +100,7 @@ fun NfcScanPage(
 							showIvStatus.value = false
 							showSkipButton.value = false
 							showProgress.value = true
-							title.value = context.getString(R.string.jumio_nfc_header_extracting)
+							title.value = nfcHeaderExtracting
 							description.value = ""
 							progress.intValue = 0
 							nfcHelpAnimation?.pause()
@@ -157,7 +154,7 @@ fun NfcScanPage(
 			onClose()
 		}) {
 			Icon(
-				imageVector = Icons.Filled.Close,
+				painter = painterResource(R.drawable.ic_close),
 				contentDescription = stringResource(id = R.string.close),
 				tint = MaterialTheme.colors.primary
 			)
@@ -241,7 +238,7 @@ fun NfcScanPage(
 
 			if (showIvStatus.value) {
 				Icon(
-					imageVector = Icons.Filled.CheckCircle,
+					painter = painterResource(R.drawable.ic_check_circle),
 					contentDescription = stringResource(id = R.string.nfc_scan_finished),
 					tint = MaterialTheme.colors.primary
 				)

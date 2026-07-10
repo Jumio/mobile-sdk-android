@@ -31,6 +31,7 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_button_close">关闭</string>
 	<string name="jumio_accessibility_camera_switch_to_back">切换为后置摄像头</string>
 	<string name="jumio_accessibility_camera_switch_to_front">切换为前置摄像头</string>
 	<string name="jumio_accessibility_nfc_description_start">请检查您的证件是否有芯片。如果有的话,请把手机放在证件上,如图所示。</string>
@@ -50,9 +51,20 @@
 	<string name="jumio_choose_file_location">选择文件位置</string>
 	<string name="jumio_clear_search">清除搜索</string>
 	<string name="jumio_current_issuing_country">当前签发国家/地区: %s</string>
-	<string name="jumio_di_back_to_document_selection">您将导航回文档选择。</string>
-	<string name="jumio_di_vendor_selection_title">选择数字身份提供商</string>
+	<string name="jumio_di_back_to_previous_step">您将返回上一步</string>
+	<string name="jumio_di_choose_digital_id">选择数字 ID</string>
+	<string name="jumio_di_continue_with_provider">使用 %s 继续</string>
+	<string name="jumio_di_doctype_digital_id_subheader">打开所有可用数字 ID 的列表</string>
+	<string name="jumio_di_external_instructions_one">继续前往%s</string>
+	<string name="jumio_di_external_instructions_three">自动回到这里以继续</string>
+	<string name="jumio_di_external_instructions_two">完成验证步骤</string>
+	<string name="jumio_di_external_sub_header">您将被重定向至 %s 以完成您的数字身份验证。</string>
+	<string name="jumio_di_select_from_list_below">请从以下列表中选择</string>
+	<string name="jumio_di_unexpected_error_description">抱歉，出现了意外错误。请重试。</string>
+	<string name="jumio_di_unexpected_error_title">糟糕…</string>
+	<string name="jumio_di_use_another_id">改用其他身份证件</string>
 	<string name="jumio_di_verification_prompt_processing">请完成 %s 应用上的流程。</string>
+	<string name="jumio_di_what_happens_next">下一步：</string>
 	<string name="jumio_dv_clear_or_unedited">图像应清晰且未经编辑</string>
 	<string name="jumio_dv_confirm_button_reselect">重新选择</string>
 	<string name="jumio_dv_confirm_file_title">确认您的文件</string>
@@ -172,7 +184,6 @@
 	<string name="jumio_idtype_front_back">正面和背面</string>
 	<string name="jumio_idtype_photo_page">照片页</string>
 	<string name="jumio_idtype_subtitle_country">检查签发国家</string>
-	<string name="jumio_idtype_subtitle_id">选择证件类型</string>
 	<string name="jumio_list_supported_document_title">支持的文档</string>
 	<string name="jumio_liveness_prompt_keep_centered">保持居中</string>
 	<string name="jumio_liveness_prompt_keep_still">保持不动</string>
@@ -188,6 +199,7 @@
 	<string name="jumio_liveness_upfront_intro">我们需要扫描您的面部，验证您是否为真人。</string>
 	<string name="jumio_loaders_almost_there">即将完成…</string>
 	<string name="jumio_loaders_finishing_up">正在完成…</string>
+	<string name="jumio_loaders_starting_camera">正在启动摄像头…</string>
 	<string name="jumio_loaders_success">成功</string>
 	<string name="jumio_loaders_this_will_take_a_moment">请稍候</string>
 	<string name="jumio_loaders_working_on_it">正在处理…</string>
@@ -202,10 +214,12 @@
 	<string name="jumio_nfc_id_description">将手机放在证件上方，并保持不动，直到扫描完成。</string>
 	<string name="jumio_nfc_id_header_start">摆放好您的身份识别卡</string>
 	<string name="jumio_no_results_found">未找到结果</string>
+	<string name="jumio_physical_id">实体身份证件</string>
 	<string name="jumio_processing_title">检查结果</string>
 	<string name="jumio_search_bar">搜索栏</string>
 	<string name="jumio_search_completed_for_country">已完成搜索國家</string>
 	<string name="jumio_select">选择</string>
+	<string name="jumio_select_id_type">选择证件类型</string>
 	<string name="jumio_selfiedone_ID_Found">已找到身份证件</string>
 	<string name="jumio_selfiedone_continue">继续</string>
 	<string name="jumio_selfiedone_scan_ID_manually">手动扫描身份证件</string>
@@ -221,7 +235,6 @@
 	<string name="jumio_switched_to_back_camera">已切换到后置摄像头</string>
 	<string name="jumio_switched_to_front_camera">已切换到前置摄像头</string>
 	<string name="jumio_try_again">请重试</string>
-	<string name="jumio_uploading_title">正在上传</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

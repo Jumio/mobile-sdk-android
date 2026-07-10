@@ -31,6 +31,7 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_button_close">Luk</string>
 	<string name="jumio_accessibility_camera_switch_to_back">Skift til kamera på bagsiden</string>
 	<string name="jumio_accessibility_camera_switch_to_front">Skift til frontkamera</string>
 	<string name="jumio_accessibility_nfc_description_start">Tjek, om dit id har en chip. Hvis det er tilfældet, skal du placere telefonen på id\'et som vist.</string>
@@ -50,9 +51,20 @@
 	<string name="jumio_choose_file_location">Vælg filplacering</string>
 	<string name="jumio_clear_search">Ryd søgning</string>
 	<string name="jumio_current_issuing_country">Nuværende udstedelsesland: %s</string>
-	<string name="jumio_di_back_to_document_selection">Du bliver sendt tilbage til valg af dokument.</string>
-	<string name="jumio_di_vendor_selection_title">Vælg udbyder af digital ID</string>
+	<string name="jumio_di_back_to_previous_step">Du bliver sendt tilbage til forrige trin</string>
+	<string name="jumio_di_choose_digital_id">Vælg digitalt id</string>
+	<string name="jumio_di_continue_with_provider">Fortsæt med %s</string>
+	<string name="jumio_di_doctype_digital_id_subheader">Åbner listen over alle tilgængelige digitale id\'er</string>
+	<string name="jumio_di_external_instructions_one">Fortsæt til %s</string>
+	<string name="jumio_di_external_instructions_three">Vend automatisk tilbage hertil for at fortsætte</string>
+	<string name="jumio_di_external_instructions_two">Gennemfør bekræftelsestrinnene</string>
+	<string name="jumio_di_external_sub_header">Du vil blive videresendt til %s for at fuldføre bekræftelsen af din digitale identitet.</string>
+	<string name="jumio_di_select_from_list_below">Vælg fra listen nedenfor</string>
+	<string name="jumio_di_unexpected_error_description">Beklager, der opstod en uventet fejl. Prøv venligst igen.</string>
+	<string name="jumio_di_unexpected_error_title">Hovsa…</string>
+	<string name="jumio_di_use_another_id">Brug et andet id i stedet</string>
 	<string name="jumio_di_verification_prompt_processing">Færdiggør processen i %s-appen.</string>
+	<string name="jumio_di_what_happens_next">Hvad sker der nu:</string>
 	<string name="jumio_dv_clear_or_unedited">Billedet skal være tydeligt og uredigeret</string>
 	<string name="jumio_dv_confirm_button_reselect">Vælg igen</string>
 	<string name="jumio_dv_confirm_file_title">Bekræft din fil</string>
@@ -172,7 +184,6 @@
 	<string name="jumio_idtype_front_back">For- og bagside</string>
 	<string name="jumio_idtype_photo_page">Fotoside</string>
 	<string name="jumio_idtype_subtitle_country">Kontroller udstedelsesland</string>
-	<string name="jumio_idtype_subtitle_id">Vælg ID-type</string>
 	<string name="jumio_list_supported_document_title">Understøttede dokumenter</string>
 	<string name="jumio_liveness_prompt_keep_centered">Stå i midten</string>
 	<string name="jumio_liveness_prompt_keep_still">Stå helt stille</string>
@@ -188,6 +199,7 @@
 	<string name="jumio_liveness_upfront_intro">Vi er nødt til at scanne dit ansigt for at kunne bekræfte, at du er et menneske.</string>
 	<string name="jumio_loaders_almost_there">Næsten færdig…</string>
 	<string name="jumio_loaders_finishing_up">Afslutter…</string>
+	<string name="jumio_loaders_starting_camera">Starter kamera…</string>
 	<string name="jumio_loaders_success">Fuldført</string>
 	<string name="jumio_loaders_this_will_take_a_moment">Det tager et øjeblik</string>
 	<string name="jumio_loaders_working_on_it">Arbejder på det…</string>
@@ -202,10 +214,12 @@
 	<string name="jumio_nfc_id_description">Placer din telefon oven på dokumentet, og hold den stille, indtil scanningen er fuldført.</string>
 	<string name="jumio_nfc_id_header_start">Placer dit ID-kort</string>
 	<string name="jumio_no_results_found">Der blev ikke fundet nogen resultater</string>
+	<string name="jumio_physical_id">Fysisk id</string>
 	<string name="jumio_processing_title">Kontrollerer resultatet</string>
 	<string name="jumio_search_bar">Søgefelt</string>
 	<string name="jumio_search_completed_for_country">Søgning efter land afsluttet</string>
 	<string name="jumio_select">Vælg</string>
+	<string name="jumio_select_id_type">Vælg id-type</string>
 	<string name="jumio_selfiedone_ID_Found">ID fundet</string>
 	<string name="jumio_selfiedone_continue">Fortsæt</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Scan ID manuelt</string>
@@ -221,7 +235,6 @@
 	<string name="jumio_switched_to_back_camera">Skiftet til bagsidekameraet</string>
 	<string name="jumio_switched_to_front_camera">Skiftet til frontkameraet</string>
 	<string name="jumio_try_again">Prøv venligst igen</string>
-	<string name="jumio_uploading_title">Uploader</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

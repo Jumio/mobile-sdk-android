@@ -66,8 +66,8 @@
 				<category android:name="android.intent.category.BROWSABLE" />
 
 				<data
-					android:host="jumio-digital-identity"
-					android:scheme="eidas" />
+					android:host="eidas"
+					android:scheme="jumio-digital-identity" />
 			</intent-filter>
 		</activity>
 
@@ -102,15 +102,14 @@
 				<category android:name="android.intent.category.BROWSABLE" />
 
 				<data
-					android:host="jumio-digital-identity"
-					android:scheme="eidas" />
+					android:host="eidas"
+					android:scheme="jumio-digital-identity" />
 			</intent-filter>
 		</activity>
 
 		<activity
 			android:name="com.jumio.defaultui.JumioActivity"
 			android:exported="true"
-			android:screenOrientation="portrait"
 			android:launchMode="singleTask"
 			tools:replace="android:exported"
 			android:label="Jumio Sample XML Default UI">
@@ -131,8 +130,8 @@
 				<category android:name="android.intent.category.BROWSABLE" />
 
 				<data
-					android:host="jumio-digital-identity"
-					android:scheme="eidas" />
+					android:host="eidas"
+					android:scheme="jumio-digital-identity" />
 			</intent-filter>
 		</activity>
 

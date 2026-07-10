@@ -9,8 +9,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -25,6 +23,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import com.jumio.sample.R
@@ -90,7 +89,7 @@ fun UploadFileHelpPage(
 			onBack()
 		}) {
 			Icon(
-				imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
+				painter = painterResource(R.drawable.ic_keyboard_arrow_left),
 				contentDescription = stringResource(id = R.string.back),
 				tint = MaterialTheme.colors.primary
 			)

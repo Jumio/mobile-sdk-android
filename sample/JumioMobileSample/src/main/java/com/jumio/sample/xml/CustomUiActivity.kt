@@ -284,7 +284,9 @@ class CustomUiActivity :
 
 	private fun initScanPartUi() {
 		binding.scanPartStart.setOnClickListener {
-			scanPart?.start()
+			catchAndShow {
+				scanPart?.start()
+			}
 		}
 
 		binding.scanPartFinish.setOnClickListener {
@@ -364,8 +366,10 @@ class CustomUiActivity :
 				) ?: throw IllegalStateException("Document not available!")
 
 				(credential as JumioIDCredential).let {
-					it.setConfiguration(country, jumioDocument)
-					setupCredentialParts(it.credentialParts)
+					catchAndShow {
+						it.setConfiguration(country, jumioDocument)
+						setupCredentialParts(it.credentialParts)
+					}
 				}
 			}
 		}
@@ -734,6 +738,7 @@ class CustomUiActivity :
 			}
 			JumioScanStep.IMAGE_TAKEN -> {
 				// Nothing to do in the custom ui implementation
+				logText += ": $data"
 			}
 			JumioScanStep.NEXT_PART -> {
 				if (data is JumioCredentialPart) {

@@ -31,6 +31,7 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_button_close">Fechar</string>
 	<string name="jumio_accessibility_camera_switch_to_back">Mude para a câmara traseira</string>
 	<string name="jumio_accessibility_camera_switch_to_front">Mude para a câmara dianteira</string>
 	<string name="jumio_accessibility_nfc_description_start">Verifique se o seu Documento possui um chip. Se assim for, coloque o seu telefone sobre o Documento, tal como exemplificado.</string>
@@ -50,9 +51,20 @@
 	<string name="jumio_choose_file_location">Escolher a localização do ficheiro</string>
 	<string name="jumio_clear_search">Limpar pesquisa</string>
 	<string name="jumio_current_issuing_country">País emissor atual: %s</string>
-	<string name="jumio_di_back_to_document_selection">Será redirecionado para a seleção de documentos</string>
-	<string name="jumio_di_vendor_selection_title">Selecione o fornecedor de ID digital</string>
+	<string name="jumio_di_back_to_previous_step">Será redirecionado para o passo anterior</string>
+	<string name="jumio_di_choose_digital_id">Escolher ID digital</string>
+	<string name="jumio_di_continue_with_provider">Continuar com %s</string>
+	<string name="jumio_di_doctype_digital_id_subheader">Abre a lista de todas as IDs digitais disponíveis</string>
+	<string name="jumio_di_external_instructions_one">Continuar para %s</string>
+	<string name="jumio_di_external_instructions_three">Volte aqui automaticamente para continuar</string>
+	<string name="jumio_di_external_instructions_two">Conclua os passos de verificação</string>
+	<string name="jumio_di_external_sub_header">Será redirecionado para %s para concluir a verificação da sua identidade digital.</string>
+	<string name="jumio_di_select_from_list_below">Selecione na lista abaixo</string>
+	<string name="jumio_di_unexpected_error_description">Lamentamos, mas ocorreu um erro inesperado. Tente novamente.</string>
+	<string name="jumio_di_unexpected_error_title">Ups…</string>
+	<string name="jumio_di_use_another_id">Utilizar outro documento de identificação</string>
 	<string name="jumio_di_verification_prompt_processing">Complete o fluxo na aplicação %s.</string>
+	<string name="jumio_di_what_happens_next">O que acontece a seguir:</string>
 	<string name="jumio_dv_clear_or_unedited">A imagem deve ser nítida e não editada</string>
 	<string name="jumio_dv_confirm_button_reselect">Selecionar novamente</string>
 	<string name="jumio_dv_confirm_file_title">Confirme o seu ficheiro</string>
@@ -172,7 +184,6 @@
 	<string name="jumio_idtype_front_back">Frente e verso</string>
 	<string name="jumio_idtype_photo_page">Página de foto</string>
 	<string name="jumio_idtype_subtitle_country">País emissor do cheque</string>
-	<string name="jumio_idtype_subtitle_id">Selecione o tipo de documento</string>
 	<string name="jumio_list_supported_document_title">Documentos suportados</string>
 	<string name="jumio_liveness_prompt_keep_centered">Mantenha-se ao centro</string>
 	<string name="jumio_liveness_prompt_keep_still">Fique imóvel</string>
@@ -188,6 +199,7 @@
 	<string name="jumio_liveness_upfront_intro">Precisamos de fazer uma digitalização do seu rosto para verificar que é uma pessoa real.</string>
 	<string name="jumio_loaders_almost_there">Estamos quase lá…</string>
 	<string name="jumio_loaders_finishing_up">A finalizar…</string>
+	<string name="jumio_loaders_starting_camera">A iniciar a câmara…</string>
 	<string name="jumio_loaders_success">Sucesso</string>
 	<string name="jumio_loaders_this_will_take_a_moment">Isto vai demorar um momento</string>
 	<string name="jumio_loaders_working_on_it">A processar…</string>
@@ -202,10 +214,12 @@
 	<string name="jumio_nfc_id_description">Coloque o telemóvel em cima do documento e mantenha-o imóvel até a digitalização estar concluída.</string>
 	<string name="jumio_nfc_id_header_start">Posicione o seu cartão de identificação</string>
 	<string name="jumio_no_results_found">Nenhum resultado encontrado</string>
+	<string name="jumio_physical_id">Documento de identificação físico</string>
 	<string name="jumio_processing_title">A verificar o resultado</string>
 	<string name="jumio_search_bar">Barra de pesquisa</string>
 	<string name="jumio_search_completed_for_country">Pesquisa concluída para o país</string>
 	<string name="jumio_select">Selecionar</string>
+	<string name="jumio_select_id_type">Selecione o tipo de documento de identificação</string>
 	<string name="jumio_selfiedone_ID_Found">Documento de identificação encontrado</string>
 	<string name="jumio_selfiedone_continue">Continuar</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Digitalizar documento de identidade manualmente</string>
@@ -221,7 +235,6 @@
 	<string name="jumio_switched_to_back_camera">Mudei para a câmara traseira</string>
 	<string name="jumio_switched_to_front_camera">Mudou para a câmara frontal</string>
 	<string name="jumio_try_again">Tente novamente</string>
-	<string name="jumio_uploading_title">A carregar</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->

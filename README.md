@@ -14,7 +14,7 @@
     <img src="https://img.shields.io/badge/platform-Android-lightgrey?style=flat" alt="Platform" />
   </a>
   <a href="#general-requirements">
-    <img src="https://img.shields.io/badge/API%20level-23+-orange?style=flat" alt="API Level" />
+    <img src="https://img.shields.io/badge/API%20level-24+-orange?style=flat" alt="API Level" />
   </a>
   <a href="#integration">
     <img src="https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo.mobile.jumio.ai%2Fcom%2Fjumio%2Fandroid%2Fcore%2Fmaven-metadata.xml?style=flat" alt="Maven" />
@@ -128,13 +128,14 @@ Once you start up the sample application, you'll be given the option of trying o
 
 The minimum requirements for the SDK are:
 
-- Android 6.0 "Marshmallow" (API level 23) or higher
-- AGP version 8.7.3 or higher
-- Gradle version 8.9 or higher
+- Android 7.0 "Nougat" (API level 24) or higher
+- AGP version 8.10.1 or higher
+- Gradle version 8.11.1 or higher
 - Internet connection
 - Jumio KYX
 
 ⚠️&nbsp;__Note:__
+- SDK 4.17.0 will be the last SDK version supporting Android 6 (API level 23). All subsequent SDK versions will require at least Android 7.0 "Marshmallow" (API level 24).
 - SDK 4.14.0 will be the last SDK version supporting Android 5 (API level 21). All subsequent SDK versions will require at least Android 6.0 "Marshmallow" (API level 23).
 - Starting with SDK 4.9.0 the minimum required compile SDK version is 34. Also Gradle 8 is **required** to build the SDK!
 

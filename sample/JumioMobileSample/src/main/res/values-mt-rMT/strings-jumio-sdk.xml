@@ -31,6 +31,7 @@
 
 	<!-- POSSIBLE DEFAULT UI STRINGS TO OVERRIDE-->
 	<!--
+	<string name="jumio_accessibility_button_close">Agħlaq</string>
 	<string name="jumio_accessibility_camera_switch_to_back">Eqleb għall-kamera tan-naħa ta\' wara</string>
 	<string name="jumio_accessibility_camera_switch_to_front">Eqleb għall-kamera ta\' quddiem</string>
 	<string name="jumio_accessibility_nfc_description_start">Jekk jogħġbok iċċekkja jekk l-ID tiegħek għandhiex ċippa. Jekk iva, poġġi l-mowbajl tiegħek fuq l-ID kif inhu muri fl-istampa.</string>
@@ -50,9 +51,20 @@
 	<string name="jumio_choose_file_location">Agħżel il-post tal-fajl</string>
 	<string name="jumio_clear_search">Ħassar it-tiftixa</string>
 	<string name="jumio_current_issuing_country">Pajjiż tal-Ħruġ Attwali: %s</string>
-	<string name="jumio_di_back_to_document_selection">Se tittieħed lura fis-selezzjoni tad-dokumenti.</string>
-	<string name="jumio_di_vendor_selection_title">Agħżel il-fornitur tal-ID diġitali</string>
+	<string name="jumio_di_back_to_previous_step">Se tittieħed lura għall-pass preċedenti</string>
+	<string name="jumio_di_choose_digital_id">Agħżel ID Diġitali</string>
+	<string name="jumio_di_continue_with_provider">Kompli permezz ta\' %s</string>
+	<string name="jumio_di_doctype_digital_id_subheader">Jiftaħ il-lista tal-IDs diġitali disponibbli kollha</string>
+	<string name="jumio_di_external_instructions_one">Kompli għal %s</string>
+	<string name="jumio_di_external_instructions_three">Erġa\' lura hawn awtomatikament biex tkompli</string>
+	<string name="jumio_di_external_instructions_two">Lesti l-passi tal-verifika</string>
+	<string name="jumio_di_external_sub_header">Tiġi ridirett lejn %s biex tlesti l-verifika tal-identità diġitali tiegħek.</string>
+	<string name="jumio_di_select_from_list_below">Agħżel mil-lista hawn taħt</string>
+	<string name="jumio_di_unexpected_error_description">Jiddispjaċina, seħħ żball mhux mistenni. Jekk jogħġbok erġa\' pprova.</string>
+	<string name="jumio_di_unexpected_error_title">Oops…</string>
+	<string name="jumio_di_use_another_id">Uża ID oħra minflok</string>
 	<string name="jumio_di_verification_prompt_processing">Jekk jogħġbok lesti l-fluss fuq l-app ta\' %s.</string>
+	<string name="jumio_di_what_happens_next">X\'jiġri jmiss:</string>
 	<string name="jumio_dv_clear_or_unedited">L-immaġni għandha tkun ċara u mhux editjata</string>
 	<string name="jumio_dv_confirm_button_reselect">Agħżel mill-ġdid</string>
 	<string name="jumio_dv_confirm_file_title">Ikkonferma l-fajl tiegħek</string>
@@ -172,7 +184,6 @@
 	<string name="jumio_idtype_front_back">Quddiem u wara</string>
 	<string name="jumio_idtype_photo_page">Il-paġna fejn hemm ir-ritratt</string>
 	<string name="jumio_idtype_subtitle_country">Iċċekkja l-pajjiż tal-ħruġ</string>
-	<string name="jumio_idtype_subtitle_id">Agħżel it-tip ta\' dokument</string>
 	<string name="jumio_list_supported_document_title">Dokumenti appoġġjati</string>
 	<string name="jumio_liveness_prompt_keep_centered">Żomm fin-nofs</string>
 	<string name="jumio_liveness_prompt_keep_still">Tiċċaqlaqx</string>
@@ -188,6 +199,7 @@
 	<string name="jumio_liveness_upfront_intro">Irridu nieħdu niskennjaw wiċċek biex nivverifikaw li int persuna reali.</string>
 	<string name="jumio_loaders_almost_there">Kważi lest…</string>
 	<string name="jumio_loaders_finishing_up">Qed jitlesta…</string>
+	<string name="jumio_loaders_starting_camera">Qed tistartja l-kamera…</string>
 	<string name="jumio_loaders_success">Suċċess</string>
 	<string name="jumio_loaders_this_will_take_a_moment">Dan se jieħu ftit</string>
 	<string name="jumio_loaders_working_on_it">Qed nipproċessaw…</string>
@@ -202,10 +214,12 @@
 	<string name="jumio_nfc_id_description">Poġġi t-telefon tiegħek fuq id-dokument u żommu fiss sakemm l-iskan ikun komplut.</string>
 	<string name="jumio_nfc_id_header_start">Ippożizzjona l-karta tal-identità tiegħek</string>
 	<string name="jumio_no_results_found">Ma nstab l-ebda riżultat</string>
+	<string name="jumio_physical_id">Dokument tal-identità fiżiku</string>
 	<string name="jumio_processing_title">Qed jiċċekkja r-riżultat</string>
 	<string name="jumio_search_bar">Strixxa tat-tiftix</string>
 	<string name="jumio_search_completed_for_country">It-tiftix għall-pajjiż huwa lest</string>
 	<string name="jumio_select">Agħżel</string>
+	<string name="jumio_select_id_type">Agħżel it-tip ta\' dokument tal-identità</string>
 	<string name="jumio_selfiedone_ID_Found">ID Instab</string>
 	<string name="jumio_selfiedone_continue">Kompli</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Skennja l-ID Manwalment</string>
@@ -221,7 +235,6 @@
 	<string name="jumio_switched_to_back_camera">Inqaleb għall-kamera ta\' wara</string>
 	<string name="jumio_switched_to_front_camera">Inqaleb għall-kamera ta\' quddiem</string>
 	<string name="jumio_try_again">Erġa\' pprova</string>
-	<string name="jumio_uploading_title">Qed itella\'</string>
 	-->
 
 	<!-- POSSIBLE DIGITAL-IDENTITY STRINGS TO OVERRIDE-->
