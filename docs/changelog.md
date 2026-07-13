@@ -38,7 +38,7 @@ Please refer to our [SDK maintenance and support policy](maintenance_policy.md) 
 
 ## SDK Version: 4.18.0
 
-![Improvement](https://img.shields.io/badge/Improvement-green) Added support for the Jumio Digital Identity Hub.
+![Improvement](https://img.shields.io/badge/Improvement-green) Added support for Global Digital ID Acceptance.
 
 ![Improvement](https://img.shields.io/badge/Improvement-green) Added controls for limiting and preventing Manual Capture (ID and Selfie).
 
