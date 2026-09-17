@@ -4,9 +4,7 @@ package com.jumio.sample.compose.views.pages
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
 import androidx.activity.compose.BackHandler
-import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -19,12 +17,9 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.ProgressIndicatorDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -78,23 +73,17 @@ fun NfcScanPage(
 	val nfcHeaderExtracting = stringResource(R.string.jumio_nfc_header_extracting)
 	val title = remember { mutableStateOf(titleInfo) }
 	val description = remember { mutableStateOf(descriptionInfo) }
-	val progress = remember { mutableIntStateOf(0) }
 	val showProgress = remember { mutableStateOf(false) }
 	val showIvStatus = remember { mutableStateOf(false) }
 	val showSkipButton = remember { mutableStateOf(true) }
 	val lifecycleOwner = LocalLifecycleOwner.current
 	val scope = rememberCoroutineScope()
-	val animatedProgress by animateFloatAsState(
-		targetValue = progress.intValue / 100f,
-		animationSpec = ProgressIndicatorDefaults.ProgressAnimationSpec,
-		label = ""
-	)
 	var nfcHelpAnimation: NfcHelpAnimationInterface? = null
 
 	DisposableEffect(lifecycleOwner) {
 		val scanUpdateJob = scope.launch {
 			viewModel.scanUpdateEvent.collectLatest {
-				it?.let { (scanUpdate, data) ->
+				it?.let { (scanUpdate, _) ->
 					when (scanUpdate) {
 						JumioScanUpdate.NFC_EXTRACTION_STARTED -> {
 							showIvStatus.value = false
@@ -102,11 +91,7 @@ fun NfcScanPage(
 							showProgress.value = true
 							title.value = nfcHeaderExtracting
 							description.value = ""
-							progress.intValue = 0
 							nfcHelpAnimation?.pause()
-						}
-						JumioScanUpdate.NFC_EXTRACTION_PROGRESS -> {
-							progress.intValue = data as? Int ?: 0
 						}
 						JumioScanUpdate.NFC_EXTRACTION_FINISHED -> {
 							showIvStatus.value = true
@@ -209,23 +194,12 @@ fun NfcScanPage(
 			)
 
 			if (showProgress.value) {
-				Box(
-					modifier = Modifier.fillMaxWidth(),
-					contentAlignment = Alignment.Center
-				) {
-					CircularProgressIndicator(
-						progress = { animatedProgress },
-						modifier = Modifier.width(MaterialTheme.spacing.superLarge)
-							.height(MaterialTheme.spacing.superLarge),
-						color = MaterialTheme.colorScheme.secondary,
-						trackColor = MaterialTheme.colors.primary
-					)
-					Text(
-						text = "${progress.intValue}%",
-						color = MaterialTheme.colors.label,
-						modifier = Modifier.padding(MaterialTheme.spacing.medium)
-					)
-				}
+				CircularProgressIndicator(
+					modifier = Modifier.width(MaterialTheme.spacing.superLarge)
+						.height(MaterialTheme.spacing.superLarge),
+					color = MaterialTheme.colorScheme.secondary,
+					trackColor = MaterialTheme.colors.primary
+				)
 				Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
 				Text(
 					text = stringResource(id = R.string.jumio_nfc_description_extracting),

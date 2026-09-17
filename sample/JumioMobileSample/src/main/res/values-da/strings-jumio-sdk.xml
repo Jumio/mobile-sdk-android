@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Hæld mod højre</string>
 	<string name="jumio_liveness_prompt_tilt_up">Kig opad</string>
 	<string name="jumio_liveness_prompt_too_far">Ryk tættere på</string>
-	<string name="jumio_liveness_upfront_intro">Vi er nødt til at scanne dit ansigt for at kunne bekræfte, at du er et menneske.</string>
+	<string name="jumio_liveness_upfront_intro">Vi er nødt til at scanne dit ansigt for at bekræfte din identitet, og at du er en rigtig person.</string>
 	<string name="jumio_loaders_almost_there">Næsten færdig…</string>
 	<string name="jumio_loaders_finishing_up">Afslutter…</string>
 	<string name="jumio_loaders_starting_camera">Starter kamera…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Vælg id-type</string>
 	<string name="jumio_selfiedone_ID_Found">ID fundet</string>
 	<string name="jumio_selfiedone_continue">Fortsæt</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Hvis du allerede har bekræftet din identitet hos en af vores kunder, kan vi muligvis bruge et id-dokument, du tidligere har indsendt.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Vælg hurtigere verificering</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Nej, scan id manuelt</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Scan ID manuelt</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Vi fandt et af dine identifikationsdokumenter</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Du er blevet viderestillet hertil af en Jumio-kunde, der bruger vores tjenester til identitetsbekræftelse, forebyggelse af svindel og kontointegritet.</string>
+	<string name="jumio_selfiedone_submit_button">Indsend</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Vi fandt et id-dokument, som du tidligere har indsendt</string>
+	<string name="jumio_selfiedone_yes_continue_button">Ja, fortsæt</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Find en belyst flade</string>
 	<string name="jumio_start_instructions_02">Gør dig klar til at tage et selfie</string>

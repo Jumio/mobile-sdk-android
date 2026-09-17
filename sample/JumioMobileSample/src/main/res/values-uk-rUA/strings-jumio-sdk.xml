@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Нахиліть праворуч</string>
 	<string name="jumio_liveness_prompt_tilt_up">Нахиліть угору</string>
 	<string name="jumio_liveness_prompt_too_far">Підсуньтесь ближче</string>
-	<string name="jumio_liveness_upfront_intro">Нам потрібно просканувати ваше обличчя, щоб переконатися, що ви реальна людина.</string>
+	<string name="jumio_liveness_upfront_intro">Нам потрібно просканувати ваше обличчя, щоб підтвердити вашу особу та переконатися, що ви реальна людина.</string>
 	<string name="jumio_loaders_almost_there">Майже готово…</string>
 	<string name="jumio_loaders_finishing_up">Завершення…</string>
 	<string name="jumio_loaders_starting_camera">Запуск камери…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Виберіть тип посвідчення особи</string>
 	<string name="jumio_selfiedone_ID_Found">Документ знайдено</string>
 	<string name="jumio_selfiedone_continue">Продовжити</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Якщо ви вже підтвердили свою особу в одного з наших клієнтів, можливо, ми зможемо використати наданий вами раніше документ, що посвідчує особу.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Оберіть швидшу верифікацію</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Ні, відсканувати документ вручну</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Сканувати документ вручну</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Ми знайшли один із ваших документів, що посвідчують особу</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Вас сюди спрямував клієнт Jumio, який користується нашими послугами з перевірки особи, запобігання шахрайству та безпеки облікових записів.</string>
+	<string name="jumio_selfiedone_submit_button">Надіслати</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Ми знайшли документ, що посвідчує особу, який ви надали раніше</string>
+	<string name="jumio_selfiedone_yes_continue_button">Так, продовжити</string>
 	<string name="jumio_start_button">Почати</string>
 	<string name="jumio_start_instructions_01">Знайдіть добре освітлену поверхню</string>
 	<string name="jumio_start_instructions_02">Приготуйтеся зробити селфі</string>

@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Înclinați la dreapta</string>
 	<string name="jumio_liveness_prompt_tilt_up">Înclinați în sus</string>
 	<string name="jumio_liveness_prompt_too_far">Apropiați-vă</string>
-	<string name="jumio_liveness_upfront_intro">Trebuie să vă scanăm fața pentru a verifica dacă sunteți o persoană reală.</string>
+	<string name="jumio_liveness_upfront_intro">Trebuie să vă scanăm fața pentru a vă verifica identitatea și a ne asigura că sunteți o persoană reală.</string>
 	<string name="jumio_loaders_almost_there">Aproape gata…</string>
 	<string name="jumio_loaders_finishing_up">Se finalizează…</string>
 	<string name="jumio_loaders_starting_camera">Pornire cameră…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Selectați tipul actului de identitate</string>
 	<string name="jumio_selfiedone_ID_Found">Document de identitate găsit</string>
 	<string name="jumio_selfiedone_continue">Continuă</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Dacă v-ați verificat deja identitatea cu unul dintre clienții noștri, este posibil să putem utiliza un act de identitate pe care l-ați furnizat anterior.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Alegeți o verificare mai rapidă</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Nu, scanează documentul manual</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Scanați actul de identitate manual</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Am găsit unul dintre documentele dvs. de identitate</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Ați fost redirecționat aici de un client Jumio care folosește serviciile noastre de verificare a identității, de prevenire a fraudelor și de integritate a conturilor.</string>
+	<string name="jumio_selfiedone_submit_button">Trimite</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Am găsit un document de identitate pe care l-ați furnizat anterior</string>
+	<string name="jumio_selfiedone_yes_continue_button">Da, continuă</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Găsiți o suprafață bine iluminată</string>
 	<string name="jumio_start_instructions_02">Pregătiți-vă pentru selfie-ul dvs.</string>

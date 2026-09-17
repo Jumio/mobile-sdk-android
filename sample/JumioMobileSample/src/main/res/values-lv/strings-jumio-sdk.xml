@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Nolieciet pa labi</string>
 	<string name="jumio_liveness_prompt_tilt_up">Paceliet augstāk</string>
 	<string name="jumio_liveness_prompt_too_far">Panāciet tuvāk</string>
-	<string name="jumio_liveness_upfront_intro">Mums ir jānoskenē Jūsu seja, lai pārbaudītu, vai esat īsta persona.</string>
+	<string name="jumio_liveness_upfront_intro">Mums ir jānoskenē jūsu seja, lai pārbaudītu jūsu identitāti un pārliecinātos, ka esat īsta persona.</string>
 	<string name="jumio_loaders_almost_there">Gandrīz gatavs…</string>
 	<string name="jumio_loaders_finishing_up">Pabeigšana…</string>
 	<string name="jumio_loaders_starting_camera">Notiek kameras palaišana…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Izvēlieties personu apliecinoša dokumenta veidu</string>
 	<string name="jumio_selfiedone_ID_Found">ID atrasts</string>
 	<string name="jumio_selfiedone_continue">Turpināt</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Ja jūs jau esat verificējis savu identitāti pie kāda no mūsu klientiem, mēs, iespējams, varēsim izmantot jūsu iepriekš iesniegtu personu apliecinošu dokumentu.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Izvēlieties ātrāku verifikāciju</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Nē, skenēt ID manuāli</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Skenēt ID manuāli</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Mēs atradām vienu no jūsu identifikācijas dokumentiem</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Jūs uz šejieni novirzīja Jumio klients, kurš izmanto mūsu identitātes pārbaudes, krāpšanas novēršanas un konta integritātes pakalpojumus.</string>
+	<string name="jumio_selfiedone_submit_button">Iesniegt</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Mēs atradām personu apliecinošu dokumentu, ko iesniedzāt iepriekš</string>
+	<string name="jumio_selfiedone_yes_continue_button">Jā, turpināt</string>
 	<string name="jumio_start_button">Sākt</string>
 	<string name="jumio_start_instructions_01">Atrodiet labi apgaismotu virsmu</string>
 	<string name="jumio_start_instructions_02">Sagatavojieties pašportreta uzņemšanai</string>

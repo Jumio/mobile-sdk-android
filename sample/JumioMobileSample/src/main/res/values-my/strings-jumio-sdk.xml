@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">ညာဘက်စောင်းပါ</string>
 	<string name="jumio_liveness_prompt_tilt_up">အပေါ်မော့ပါ</string>
 	<string name="jumio_liveness_prompt_too_far">ပိုနီးရာသို့ ရွှေ့ပါ</string>
-	<string name="jumio_liveness_upfront_intro">သင် လူအစစ်ဖြစ်ကြောင်း အတည်ပြုရန် သင့်မျက်နှာကို စကန်ဖတ်ရန် လိုအပ်သည်။</string>
+	<string name="jumio_liveness_upfront_intro">သင့်အထောက်အထားကို စစ်ဆေးရန်နှင့် သင်သည် လူအစစ်ဖြစ်ကြောင်း အတည်ပြုရန် သင့်မျက်နှာကို စကန်ဖတ်ရန် လိုအပ်ပါသည်။</string>
 	<string name="jumio_loaders_almost_there">ပြီးခါနီးပါပြီ…</string>
 	<string name="jumio_loaders_finishing_up">ပြီးဆုံးနေပါပြီ…</string>
 	<string name="jumio_loaders_starting_camera">ကင်မရာ စတင်နေသည်…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">ID အမျိုးအစားကို ရွေးချယ်ပါ</string>
 	<string name="jumio_selfiedone_ID_Found">အိုင်ဒီကို တွေ့ရှိပါသည်</string>
 	<string name="jumio_selfiedone_continue">ဆက်လုပ်ရန်</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">သင်သည် ကျွန်ုပ်တို့၏ ဝယ်ယူသူများထဲမှ တစ်ဦးနှင့် သင့်အထောက်အထားကို အတည်ပြုပြီးပါက၊ သင်ယခင်က ပေးထားသည့် မှတ်ပုံတင်စာရွက်စာတမ်းကို ကျွန်ုပ်တို့ အသုံးပြုနိုင်ဖွယ်ရှိပါသည်။</string>
+	<string name="jumio_selfiedone_faster_verification_title">ပိုမိုမြန်ဆန်သော အတည်ပြုမှုကို ရွေးချယ်ပါ</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">မဟုတ်ပါ၊ ID ကို ကိုယ်တိုင်စကင်န်ဖတ်မည်</string>
 	<string name="jumio_selfiedone_scan_ID_manually">အိုင်ဒီကို ကိုယ်တိုင်စကန်ဖတ်ပါ</string>
-	<string name="jumio_selfiedone_we_found_your_ID">သင်၏ သက်သေခံစာရွက်စာတမ်းများထဲမှ တစ်ခုကို ကျွန်ုပ်တို့ တွေ့ရှိခဲ့သည်</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">ကျွန်ုပ်တို့၏ မည်သူမည်ဝါဖြစ်ကြောင်း အတည်ပြုခြင်း၊ လိမ်လည်မှု တားဆီးရေးနှင့် အကောင့် မှန်ကန်မှု ဝန်ဆောင်မှုများကို အသုံးပြုသော Jumio ဖောက်သည်တစ်ဦးက သင့်ကို ဤနေရာသို့ ညွှန်ကြားထားခြင်းဖြစ်ပါသည်။</string>
+	<string name="jumio_selfiedone_submit_button">တင်ပြရန်</string>
+	<string name="jumio_selfiedone_we_found_your_ID">ယခင်က သင်ပေးထားသော မှတ်ပုံတင်စာရွက်စာတမ်းတစ်ခုကို ကျွန်ုပ်တို့ တွေ့ရှိခဲ့ပါသည်</string>
+	<string name="jumio_selfiedone_yes_continue_button">ဟုတ်ကဲ့၊ ဆက်လုပ်မည်</string>
 	<string name="jumio_start_button">စတင်ရန်</string>
 	<string name="jumio_start_instructions_01">အလင်းရောင်ကောင်းကောင်းရသော မျက်နှာပြင်ကို ရှာပါ</string>
 	<string name="jumio_start_instructions_02">ဆဲလ်ဖီရိုက်ရန် အသင့်ပြင်ပါ</string>

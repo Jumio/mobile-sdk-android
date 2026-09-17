@@ -111,6 +111,7 @@ fun ScanPage(viewModel: CustomUIViewModel, modifier: Modifier = Modifier) {
 
 		onDispose {
 			scanView.value?.let { jumioScanView ->
+				jumioScanView.detach()
 				lifecycleOwner.lifecycle.removeObserver(jumioScanView)
 			}
 			scanStepJob.cancel()

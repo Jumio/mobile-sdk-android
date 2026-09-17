@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">दाईं ओर झुकाएं</string>
 	<string name="jumio_liveness_prompt_tilt_up">ऊपर झुकाएं</string>
 	<string name="jumio_liveness_prompt_too_far">थोड़ा और पास आएं</string>
-	<string name="jumio_liveness_upfront_intro">यह वेरीफाई करने के लिए कि आप एक वास्तविक व्यक्ति हैं, हमें आपके चेहरे को स्कैन करने की आवश्यकता है।</string>
+	<string name="jumio_liveness_upfront_intro">आपकी पहचान और आप एक वास्तविक व्यक्ति हैं, यह सत्यापित करने के लिए हमें आपके चेहरे को स्कैन करने की आवश्यकता है।</string>
 	<string name="jumio_loaders_almost_there">बस होने ही वाला है…</string>
 	<string name="jumio_loaders_finishing_up">समाप्त हो रहा है…</string>
 	<string name="jumio_loaders_starting_camera">कैमरा शुरू हो रहा है…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">आईडी का प्रकार चुनें</string>
 	<string name="jumio_selfiedone_ID_Found">आईडी मिल गया</string>
 	<string name="jumio_selfiedone_continue">जारी रखें</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">अगर आपने पहले ही हमारे किसी ग्राहक के साथ अपनी पहचान सत्यापित कर ली है, तो हम आपके द्वारा पहले प्रदान किए गए आईडी दस्तावेज़ का उपयोग करने में सक्षम हो सकते हैं।</string>
+	<string name="jumio_selfiedone_faster_verification_title">तेज़ सत्यापन चुनें</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">नहीं, आईडी मैन्युअल रूप से स्कैन करें</string>
 	<string name="jumio_selfiedone_scan_ID_manually">आईडी को मैनुअली स्कैन करें</string>
-	<string name="jumio_selfiedone_we_found_your_ID">हमें आपका एक पहचान दस्तावेज़ मिला है</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">आपको यहाँ एक Jumio ग्राहक द्वारा निर्देशित किया गया है जो हमारी पहचान सत्यापन, धोखाधड़ी निवारण और खाता सत्यनिष्ठा सेवाओं का उपयोग करता है।</string>
+	<string name="jumio_selfiedone_submit_button">सबमिट करें</string>
+	<string name="jumio_selfiedone_we_found_your_ID">हमें आपका पहले प्रदान किया गया एक पहचान दस्तावेज़ मिला है</string>
+	<string name="jumio_selfiedone_yes_continue_button">हां, जारी रखें</string>
 	<string name="jumio_start_button">शुरू करें</string>
 	<string name="jumio_start_instructions_01">एक अच्छी रोशनी वाली सतह ढूंढें</string>
 	<string name="jumio_start_instructions_02">सेल्फी लेने के लिए तैयार हो जाएं</string>

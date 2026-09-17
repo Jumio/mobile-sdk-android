@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">ផ្អៀងទៅស្ដាំ</string>
 	<string name="jumio_liveness_prompt_tilt_up">ផ្ទៀងឡើងលើ</string>
 	<string name="jumio_liveness_prompt_too_far">ខិតមកជិតជាងមុន</string>
-	<string name="jumio_liveness_upfront_intro">យើងត្រូវថតការស្កេនមុខរបស់អ្នក ដើម្បីផ្ទៀងផ្ទាត់ថា អ្នកជាមនុស្សពិត។</string>
+	<string name="jumio_liveness_upfront_intro">យើងត្រូវស្កេនមុខរបស់អ្នក ដើម្បីផ្ទៀងផ្ទាត់អត្តសញ្ញាណរបស់អ្នក និងបញ្ជាក់ថាអ្នកជាមនុស្សពិត។</string>
 	<string name="jumio_loaders_almost_there">ជិតរួចរាល់ហើយ…</string>
 	<string name="jumio_loaders_finishing_up">កំពុងបញ្ចប់…</string>
 	<string name="jumio_loaders_starting_camera">កំពុង​ចាប់ផ្តើម​កាមេរ៉ា…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">ជ្រើសរើសប្រភេទឯកសារសម្គាល់ខ្លួន</string>
 	<string name="jumio_selfiedone_ID_Found">រកឃើញអត្តសញ្ញាណប័ណ្ណ</string>
 	<string name="jumio_selfiedone_continue">បន្ត</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">ប្រសិនបើអ្នកបានផ្ទៀងផ្ទាត់អត្តសញ្ញាណរបស់អ្នកជាមួយអតិថិជនណាមួយរបស់យើងរួចហើយ នោះយើងប្រហែលជាអាចប្រើឯកសារអត្តសញ្ញាណប័ណ្ណដែលអ្នកបានផ្តល់ពីមុន។</string>
+	<string name="jumio_selfiedone_faster_verification_title">ជ្រើសរើសការផ្ទៀងផ្ទាត់រហ័សជាងមុន</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">ទេ ស្កេនអត្តសញ្ញាណប័ណ្ណដោយដៃ</string>
 	<string name="jumio_selfiedone_scan_ID_manually">ស្កេនអត្តសញ្ញាណប័ណ្ណដោយដៃ</string>
-	<string name="jumio_selfiedone_we_found_your_ID">យើង​បាន​រក​ឃើញ​ឯកសារ​សម្គាល់​អត្តសញ្ញាណ​មួយ​របស់​អ្នក</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">អ្នកត្រូវបានបញ្ជូនមកទីនេះដោយអតិថិជន Jumio ដែលប្រើប្រាស់សេវាកម្មផ្ទៀងផ្ទាត់អត្តសញ្ញាណ ការទប់ស្កាត់ការក្លែងបន្លំ និងសុចរិតភាពគណនីរបស់យើង។</string>
+	<string name="jumio_selfiedone_submit_button">បញ្ជូន</string>
+	<string name="jumio_selfiedone_we_found_your_ID">យើងបានរកឃើញឯកសារអត្តសញ្ញាណដែលអ្នកបានផ្ដល់ជូនពីមុន</string>
+	<string name="jumio_selfiedone_yes_continue_button">បាទ/ចាស បន្ត</string>
 	<string name="jumio_start_button">ចាប់ផ្តើម</string>
 	<string name="jumio_start_instructions_01">រកមើលផ្ទៃដែលមានពន្លឺល្អ</string>
 	<string name="jumio_start_instructions_02">សូមត្រៀមឲ្យរួចរាល់ដើម្បីថតសែលហ្វី</string>

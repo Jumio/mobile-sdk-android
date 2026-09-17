@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Luta åt höger</string>
 	<string name="jumio_liveness_prompt_tilt_up">Luta uppåt</string>
 	<string name="jumio_liveness_prompt_too_far">Flytta närmare</string>
-	<string name="jumio_liveness_upfront_intro">Vi måste skanna ditt ansikte för att verifiera att du är en riktig person.</string>
+	<string name="jumio_liveness_upfront_intro">Vi måste skanna ditt ansikte för att verifiera din identitet och bekräfta att du är en riktig person.</string>
 	<string name="jumio_loaders_almost_there">Nästan klar…</string>
 	<string name="jumio_loaders_finishing_up">Slutför…</string>
 	<string name="jumio_loaders_starting_camera">Startar kamera…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Välj typ av id-handling</string>
 	<string name="jumio_selfiedone_ID_Found">ID-handling hittad</string>
 	<string name="jumio_selfiedone_continue">Fortsätt</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Om du redan har bekräftat din identitet hos en av våra kunder kan vi eventuellt använda en id-handling som du tidigare har tillhandahållit.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Välj en snabbare verifiering</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Nej, skanna id manuellt</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Skanna ID manuellt</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Vi hittade ett av dina identitetsdokument</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Du har dirigerats hit av en Jumio-kund som använder våra tjänster för identitetsverifiering, bedrägeribekämpning och kontointegritet.</string>
+	<string name="jumio_selfiedone_submit_button">Skicka in</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Vi hittade en id-handling som du tidigare har skickat in</string>
+	<string name="jumio_selfiedone_yes_continue_button">Ja, fortsätt</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Hitta en yta med god belysning</string>
 	<string name="jumio_start_instructions_02">Gör dig redo att ta en selfie</string>

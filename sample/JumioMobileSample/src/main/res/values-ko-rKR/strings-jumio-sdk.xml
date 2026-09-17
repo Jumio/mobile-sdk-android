@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">오른쪽으로 기울이세요</string>
 	<string name="jumio_liveness_prompt_tilt_up">위로 기울이세요</string>
 	<string name="jumio_liveness_prompt_too_far">가까이 와주세요</string>
-	<string name="jumio_liveness_upfront_intro">실제 사람인지 확인하기 위해 얼굴을 스캔해야 합니다.</string>
+	<string name="jumio_liveness_upfront_intro">귀하의 신원을 확인하고 실제 사람인지 확인하기 위해 얼굴을 스캔해야 합니다.</string>
 	<string name="jumio_loaders_almost_there">거의 다 됐습니다…</string>
 	<string name="jumio_loaders_finishing_up">마무리 중…</string>
 	<string name="jumio_loaders_starting_camera">카메라 시작 중…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">신분증 유형 선택</string>
 	<string name="jumio_selfiedone_ID_Found">신분증이 인식되었습니다</string>
 	<string name="jumio_selfiedone_continue">계속</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">이미 당사 고객 중 한 곳을 통해 신원 확인을 완료하신 경우, 고객님이 이전에 제공하신 신분증을 사용할 수도 있습니다.</string>
+	<string name="jumio_selfiedone_faster_verification_title">더 빠른 인증 선택</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">아니요, 신분증 수동 스캔</string>
 	<string name="jumio_selfiedone_scan_ID_manually">수동으로 ID 스캔</string>
-	<string name="jumio_selfiedone_we_found_your_ID">신분증 중 하나를 찾았습니다</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">귀하는 당사의 신원 확인, 사기 방지 및 계정 무결성 서비스를 이용하는 Jumio 고객사에 의해 이곳으로 연결되었습니다.</string>
+	<string name="jumio_selfiedone_submit_button">제출</string>
+	<string name="jumio_selfiedone_we_found_your_ID">이전에 제출하신 신분증을 찾았습니다</string>
+	<string name="jumio_selfiedone_yes_continue_button">예, 계속하기</string>
 	<string name="jumio_start_button">시작</string>
 	<string name="jumio_start_instructions_01">조명이 밝은 표면을 찾으세요</string>
 	<string name="jumio_start_instructions_02">셀카를 찍을 준비를 하세요</string>

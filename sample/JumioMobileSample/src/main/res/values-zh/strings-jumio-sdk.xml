@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">向右倾斜</string>
 	<string name="jumio_liveness_prompt_tilt_up">向上倾斜</string>
 	<string name="jumio_liveness_prompt_too_far">靠近一点</string>
-	<string name="jumio_liveness_upfront_intro">我们需要扫描您的面部，验证您是否为真人。</string>
+	<string name="jumio_liveness_upfront_intro">我们需要扫描您的面部，以验证您的身份并确认您是真人。</string>
 	<string name="jumio_loaders_almost_there">即将完成…</string>
 	<string name="jumio_loaders_finishing_up">正在完成…</string>
 	<string name="jumio_loaders_starting_camera">正在启动摄像头…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">选择证件类型</string>
 	<string name="jumio_selfiedone_ID_Found">已找到身份证件</string>
 	<string name="jumio_selfiedone_continue">继续</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">如果您已经通过我们的任一客户验证了身份，我们也许能够使用您之前提供的身份证件。</string>
+	<string name="jumio_selfiedone_faster_verification_title">选择更快速的验证</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">不，手动扫描身份证件</string>
 	<string name="jumio_selfiedone_scan_ID_manually">手动扫描身份证件</string>
-	<string name="jumio_selfiedone_we_found_your_ID">我们已找到您的一份身份证明文件</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">您是由使用我们身份验证、欺诈防范和账户完整性服务的 Jumio 客户引导至此的。</string>
+	<string name="jumio_selfiedone_submit_button">提交</string>
+	<string name="jumio_selfiedone_we_found_your_ID">我们找到了您之前提供的身份证明文件</string>
+	<string name="jumio_selfiedone_yes_continue_button">是的，继续</string>
 	<string name="jumio_start_button">开始</string>
 	<string name="jumio_start_instructions_01">找到光线充足的表面</string>
 	<string name="jumio_start_instructions_02">准备好自拍</string>

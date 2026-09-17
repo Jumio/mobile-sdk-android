@@ -115,6 +115,105 @@
 					app:layout_constraintTop_toBottomOf="@+id/credentialHeader" />
 			</androidx.constraintlayout.widget.ConstraintLayout>
 
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/fasterVerificationLayout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/jumio_grey150"
+				android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+				android:paddingTop="@dimen/jumio_activity_vertical_margin"
+				android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
+				android:paddingBottom="@dimen/jumio_activity_vertical_margin"
+				android:visibility="gone">
+
+				<TextView
+					android:id="@+id/fasterVerificationText"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/colorPrimary"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/fasterVerificationScanManually"
+					style="?attr/materialButtonOutlinedStyle"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:text="@string/jumio_selfiedone_no_scan_id_manually_button"
+					app:layout_constraintEnd_toStartOf="@+id/fasterVerificationContinue"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@+id/fasterVerificationText" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/fasterVerificationContinue"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:text="@string/jumio_selfiedone_yes_continue_button"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toEndOf="@+id/fasterVerificationScanManually"
+					app:layout_constraintTop_toBottomOf="@+id/fasterVerificationText" />
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/lookupResultLayout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/jumio_grey150"
+				android:paddingStart="@dimen/jumio_activity_horizontal_margin"
+				android:paddingTop="@dimen/jumio_activity_vertical_margin"
+				android:paddingEnd="@dimen/jumio_activity_horizontal_margin"
+				android:paddingBottom="@dimen/jumio_activity_vertical_margin"
+				android:visibility="gone">
+
+				<TextView
+					android:id="@+id/lookupResultIdType"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/colorPrimary"
+					android:textStyle="bold"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+
+				<TextView
+					android:id="@+id/lookupResultCountry"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/colorPrimary"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@+id/lookupResultIdType" />
+
+				<TextView
+					android:id="@+id/lookupResultText"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/colorPrimary"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@+id/lookupResultCountry" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/lookupResultScanManually"
+					style="?attr/materialButtonOutlinedStyle"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:text="@string/jumio_selfiedone_scan_ID_manually"
+					app:layout_constraintEnd_toStartOf="@+id/lookupResultContinue"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@+id/lookupResultText" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/lookupResultContinue"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:text="@string/jumio_selfiedone_continue"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toEndOf="@+id/lookupResultScanManually"
+					app:layout_constraintTop_toBottomOf="@+id/lookupResultText" />
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
 			<LinearLayout
 				android:id="@+id/countryDocumentLayout"
 				android:layout_width="match_parent"

@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">إمالة إلى اليمين</string>
 	<string name="jumio_liveness_prompt_tilt_up">إمالة إلى الأعلى</string>
 	<string name="jumio_liveness_prompt_too_far">اقترب</string>
-	<string name="jumio_liveness_upfront_intro">نريد إجراء مسح لوجهك للتحقق من أنك شخص حقيقي.</string>
+	<string name="jumio_liveness_upfront_intro">نحتاج إلى إجراء مسح لوجهك للتحقق من هويتك والتأكد من أنك شخص حقيقي.</string>
 	<string name="jumio_loaders_almost_there">شارفنا على الانتهاء…</string>
 	<string name="jumio_loaders_finishing_up">جارٍ الإنهاء…</string>
 	<string name="jumio_loaders_starting_camera">جارٍ تشغيل الكاميرا…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">حدد نوع الهوية</string>
 	<string name="jumio_selfiedone_ID_Found">تم العثور على بطاقة الهوية</string>
 	<string name="jumio_selfiedone_continue">متابعة</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">إذا كنت قد تحققت بالفعل من هويتك لدى أحد عملائنا، فقد نتمكن من استخدام مستند هوية قدمته مسبقًا.</string>
+	<string name="jumio_selfiedone_faster_verification_title">اختر التحقق الأسرع</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">لا، امسح بطاقة الهوية يدويًا</string>
 	<string name="jumio_selfiedone_scan_ID_manually">مسح بطاقة الهوية يدويًا</string>
-	<string name="jumio_selfiedone_we_found_your_ID">لقد وجدنا أحد مستندات إثبات هويتك</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">تم توجيهك إلى هنا بواسطة أحد عملاء Jumio الذي يستخدم خدماتنا للتحقق من الهوية، ومنع الاحتيال، وسلامة الحسابات.</string>
+	<string name="jumio_selfiedone_submit_button">إرسال</string>
+	<string name="jumio_selfiedone_we_found_your_ID">لقد وجدنا مستند هوية قدمته سابقًا</string>
+	<string name="jumio_selfiedone_yes_continue_button">نعم، متابعة</string>
 	<string name="jumio_start_button">بدء</string>
 	<string name="jumio_start_instructions_01">ابحث عن سطح جيد الإضاءة</string>
 	<string name="jumio_start_instructions_02">استعد لالتقاط صورة ذاتية</string>

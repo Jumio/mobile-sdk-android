@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Kallista oikealle</string>
 	<string name="jumio_liveness_prompt_tilt_up">Kallista ylös</string>
 	<string name="jumio_liveness_prompt_too_far">Siirry lähemmäs</string>
-	<string name="jumio_liveness_upfront_intro">Meidän täytyy skannata kasvosi vahvistaaksemme, että olet oikea henkilö.</string>
+	<string name="jumio_liveness_upfront_intro">Meidän täytyy skannata kasvosi vahvistaaksemme henkilöllisyytesi ja sen, että olet oikea henkilö.</string>
 	<string name="jumio_loaders_almost_there">Melkein valmista…</string>
 	<string name="jumio_loaders_finishing_up">Viimeistellään…</string>
 	<string name="jumio_loaders_starting_camera">Käynnistetään kameraa…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Valitse henkilöllisyystodistuksen tyyppi</string>
 	<string name="jumio_selfiedone_ID_Found">Henkilötodistus löytyi</string>
 	<string name="jumio_selfiedone_continue">Jatka</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Jos olet jo vahvistanut henkilöllisyytesi jollakin asiakkaistamme, voimme ehkä käyttää aiemmin toimittamaasi henkilöllisyystodistusta.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Valitse nopeampi vahvistus</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Ei, skannaa henkilöllisyystodistus manuaalisesti</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Skannaa henkilötodistus manuaalisesti</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Löysimme yhden henkilöllisyysasiakirjoistasi</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Sinut ohjasi tänne Jumion asiakas, joka käyttää henkilöllisyyden todentamiseen, petostentorjuntaan ja tilien eheyteen liittyviä palveluitamme.</string>
+	<string name="jumio_selfiedone_submit_button">Lähetä</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Löysimme aiemmin toimittamasi henkilöllisyysasiakirjan</string>
+	<string name="jumio_selfiedone_yes_continue_button">Kyllä, jatka</string>
 	<string name="jumio_start_button">Aloita</string>
 	<string name="jumio_start_instructions_01">Etsi hyvin valaistu pinta</string>
 	<string name="jumio_start_instructions_02">Valmistaudu ottamaan selfie</string>

@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Γείρετε προς τα δεξιά</string>
 	<string name="jumio_liveness_prompt_tilt_up">Γείρετε προς τα πάνω</string>
 	<string name="jumio_liveness_prompt_too_far">Ελάτε πιο κοντά</string>
-	<string name="jumio_liveness_upfront_intro">Πρέπει να κάνουμε σάρωση του προσώπου σας για να επαληθεύσουμε ότι είστε πραγματικό άτομο.</string>
+	<string name="jumio_liveness_upfront_intro">Πρέπει να σαρώσουμε το πρόσωπό σας για να επαληθεύσουμε την ταυτότητά σας και να βεβαιωθούμε ότι είστε πραγματικό άτομο.</string>
 	<string name="jumio_loaders_almost_there">Σχεδόν έτοιμο…</string>
 	<string name="jumio_loaders_finishing_up">Ολοκλήρωση…</string>
 	<string name="jumio_loaders_starting_camera">Εκκίνηση κάμερας…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Επιλέξτε τύπο εγγράφου ταυτοποίησης</string>
 	<string name="jumio_selfiedone_ID_Found">Βρέθηκε έγγραφο ταυτοποίησης</string>
 	<string name="jumio_selfiedone_continue">Συνέχεια</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Εάν έχετε ήδη επαληθεύσει την ταυτότητά σας σε κάποιον από τους πελάτες μας, ενδέχεται να μπορέσουμε να χρησιμοποιήσουμε ένα έγγραφο ταυτοποίησης που έχετε παράσχει προηγουμένως.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Επιλέξτε ταχύτερη επαλήθευση</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Όχι, μη αυτόματη σάρωση ταυτότητας</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Σάρωση ταυτότητας με μη αυτόματο τρόπο</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Βρήκαμε ένα από τα έγγραφα ταυτοποίησής σας</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Οδηγηθήκατε εδώ από έναν πελάτη της Jumio που χρησιμοποιεί τις υπηρεσίες επαλήθευσης ταυτότητας, πρόληψης απάτης και ακεραιότητας λογαριασμών.</string>
+	<string name="jumio_selfiedone_submit_button">Υποβολή</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Βρήκαμε ένα έγγραφο ταυτοποίησης που είχατε υποβάλει προηγουμένως</string>
+	<string name="jumio_selfiedone_yes_continue_button">Ναι, συνεχίστε</string>
 	<string name="jumio_start_button">Έναρξη</string>
 	<string name="jumio_start_instructions_01">Βρείτε μια καλά φωτισμένη επιφάνεια</string>
 	<string name="jumio_start_instructions_02">Ετοιμαστείτε να βγάλετε μια selfie</string>

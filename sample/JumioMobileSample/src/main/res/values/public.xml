@@ -77,6 +77,10 @@
 	<public name="jumio_selfiedone_continue" type="string"/>
 	<public name="jumio_selfiedone_scan_ID_manually" type="string"/>
 	<public name="jumio_selfiedone_we_found_your_ID" type="string"/>
+	<public name="jumio_selfiedone_faster_verification_title" type="string"/>
+	<public name="jumio_selfiedone_yes_continue_button" type="string"/>
+	<public name="jumio_selfiedone_no_scan_id_manually_button" type="string"/>
+	<public name="jumio_selfiedone_submit_button" type="string"/>
 	<public name="jumio_dv_upload_tips_file_size" type="string"/>
 	<public name="jumio_dv_upload_tips_page_size" type="string"/>
 	<public name="jumio_dv_upload_tips_protected" type="string"/>
@@ -91,6 +95,7 @@
 	<public name="jumio_nfc_header_extracting" type="string"/>
 	<public name="jumio_nfc_description_extracting" type="string"/>
 	<public name="jumio_nfc_button_skip" type="string"/>
+	<public name="jumio_choose_faster_verification" type="string"/>
 	<public name="colorPrimary" type="color"/>
 	<public name="colorPrimaryDark" type="color"/>
 	<public name="colorSecondary" type="color"/>

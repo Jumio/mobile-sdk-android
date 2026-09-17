@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Nakloňte sa doprava</string>
 	<string name="jumio_liveness_prompt_tilt_up">Zdvihnite hlavu</string>
 	<string name="jumio_liveness_prompt_too_far">Pristúpte bližšie</string>
-	<string name="jumio_liveness_upfront_intro">Musíme naskenovať vašu tvár, aby sme si overili, že ste skutočná osoba.</string>
+	<string name="jumio_liveness_upfront_intro">Musíme naskenovať vašu tvár, aby sme si overili vašu totožnosť a to, že ste skutočná osoba.</string>
 	<string name="jumio_loaders_almost_there">Takmer hotovo…</string>
 	<string name="jumio_loaders_finishing_up">Dokončuje sa…</string>
 	<string name="jumio_loaders_starting_camera">Spúšťa sa fotoaparát…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Vyberte typ preukazu totožnosti</string>
 	<string name="jumio_selfiedone_ID_Found">Doklad totožnosti nájdený</string>
 	<string name="jumio_selfiedone_continue">Pokračovať</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Ak ste už overili svoju totožnosť u jedného z našich zákazníkov, možno budeme môcť použiť preukaz totožnosti, ktorý ste nám poskytli už predtým.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Vyberte si rýchlejšie overenie</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Nie, naskenovať preukaz manuálne</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Naskenovať doklad manuálne</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Našli sme jeden z vašich dokladov totožnosti</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Boli ste sem presmerovaní zákazníkom spoločnosti Jumio, ktorý využíva naše služby overovania totožnosti, prevencie podvodov a integrity účtov.</string>
+	<string name="jumio_selfiedone_submit_button">Odoslať</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Našli sme doklad totožnosti, ktorý ste predtým poskytli</string>
+	<string name="jumio_selfiedone_yes_continue_button">Áno, pokračovať</string>
 	<string name="jumio_start_button">Začať</string>
 	<string name="jumio_start_instructions_01">Nájdite dobre osvetlený povrch</string>
 	<string name="jumio_start_instructions_02">Pripravte sa na nasnímanie selfie</string>

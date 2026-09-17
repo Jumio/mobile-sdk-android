@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Sağa eğin</string>
 	<string name="jumio_liveness_prompt_tilt_up">Yukarı kaldırın</string>
 	<string name="jumio_liveness_prompt_too_far">Yaklaşın</string>
-	<string name="jumio_liveness_upfront_intro">Gerçek bir insan olduğunuzu doğrulamak için yüzünüzü taramamız gerekiyor.</string>
+	<string name="jumio_liveness_upfront_intro">Kimliğinizi doğrulamak ve gerçek bir insan olduğunuzdan emin olmak için yüzünüzü taramamız gerekiyor.</string>
 	<string name="jumio_loaders_almost_there">Neredeyse tamamlandı…</string>
 	<string name="jumio_loaders_finishing_up">Bitiriliyor…</string>
 	<string name="jumio_loaders_starting_camera">Kamera başlatılıyor…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Kimlik türünü seçin</string>
 	<string name="jumio_selfiedone_ID_Found">Kimlik Bulundu</string>
 	<string name="jumio_selfiedone_continue">Devam Et</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Kimliğinizi müşterilerimizden biri aracılığıyla zaten doğruladıysanız, daha önce sağlamış olduğunuz bir kimlik belgesini kullanmamız mümkün olabilir.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Daha Hızlı Doğrulamayı Seçin</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Hayır, Kimliği Manuel Olarak Tara</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Kimliği Manuel Olarak Tara</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Kimlik belgelerinizden birini bulduk</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Buraya, kimlik doğrulama, dolandırıcılığı önleme ve hesap bütünlüğü hizmetlerimizi kullanan bir Jumio müşterisi tarafından yönlendirildiniz.</string>
+	<string name="jumio_selfiedone_submit_button">Gönder</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Daha önce sağladığınız bir kimlik belgesini bulduk</string>
+	<string name="jumio_selfiedone_yes_continue_button">Evet, devam et</string>
 	<string name="jumio_start_button">Başla</string>
 	<string name="jumio_start_instructions_01">İyi aydınlatılmış bir yüzey bulun</string>
 	<string name="jumio_start_instructions_02">Selfie çekmeye hazır olun</string>

@@ -40,4 +40,7 @@ sealed class AppNavigation {
 
 	@Serializable
 	data object IDFound : AppNavigation()
+
+	@Serializable
+	data object FasterVerification : AppNavigation()
 }

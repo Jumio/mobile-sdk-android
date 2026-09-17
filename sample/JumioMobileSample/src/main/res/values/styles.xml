@@ -90,6 +90,19 @@
 		<item name="jumio_face_outline">#ff0000ff</item>
 		<item name="jumio_face_success">@color/jumio_primary</item>
 
+		<!--Faster verification illustration colors-->
+		<item name="jumio_faster_verification_back_card_background">#FFC107</item>
+		<item name="jumio_faster_verification_back_card_outline">#7B1FA2</item>
+		<item name="jumio_faster_verification_back_card_avatar">#0097A7</item>
+		<item name="jumio_faster_verification_back_card_detail_line">#C2185B</item>
+		<item name="jumio_faster_verification_front_card_background">#689F38</item>
+		<item name="jumio_faster_verification_front_card_outline">#303F9F</item>
+		<item name="jumio_faster_verification_front_card_photo_background">#E64A19</item>
+		<item name="jumio_faster_verification_front_card_photo_avatar">#4E342E</item>
+		<item name="jumio_faster_verification_front_card_detail_line">#AFB42B</item>
+		<item name="jumio_faster_verification_verified_accent">#D81B60</item>
+		<item name="jumio_faster_verification_verified_badge_background">#00897B</item>
+
 		<!-- scan-overlay & nfc colors -->
 		<item name="jumio_overlay_customization">@style/CustomOverlay</item>
 		<item name="jumio_nfc_customization">@style/CustomNfc</item>

@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Mejjel lejn il-lemin</string>
 	<string name="jumio_liveness_prompt_tilt_up">Mejjel \'il fuq</string>
 	<string name="jumio_liveness_prompt_too_far">Ersaq aktar viċin</string>
-	<string name="jumio_liveness_upfront_intro">Irridu nieħdu niskennjaw wiċċek biex nivverifikaw li int persuna reali.</string>
+	<string name="jumio_liveness_upfront_intro">Għandna bżonn niskennjaw wiċċek biex nivverifikaw l-identità tiegħek u li inti persuna reali.</string>
 	<string name="jumio_loaders_almost_there">Kważi lest…</string>
 	<string name="jumio_loaders_finishing_up">Qed jitlesta…</string>
 	<string name="jumio_loaders_starting_camera">Qed tistartja l-kamera…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Agħżel it-tip ta\' dokument tal-identità</string>
 	<string name="jumio_selfiedone_ID_Found">ID Instab</string>
 	<string name="jumio_selfiedone_continue">Kompli</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Jekk diġà vverifikajt l-identità tiegħek ma\' wieħed mill-klijenti tagħna, jista\' jkun li nkunu nistgħu nużaw dokument tal-ID li pprovdejt qabel.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Agħżel verifika aktar mgħaġġla</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Le, skennja l-ID manwalment</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Skennja l-ID Manwalment</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Sibna wieħed mid-dokumenti ta\' identifikazzjoni tiegħek</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Ġejt ridirett hawnhekk minn klijent ta\' Jumio li juża s-servizzi tagħna għall-verifika tal-identità, il-prevenzjoni tal-frodi, u l-integrità tal-kontijiet.</string>
+	<string name="jumio_selfiedone_submit_button">Ibgħat</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Sibna dokument tal-identità li pprovdejt qabel</string>
+	<string name="jumio_selfiedone_yes_continue_button">Iva, Kompli</string>
 	<string name="jumio_start_button">Ibda</string>
 	<string name="jumio_start_instructions_01">Sib wiċċ imdawwal sew</string>
 	<string name="jumio_start_instructions_02">Lesti ruħek biex tieħu stessu</string>

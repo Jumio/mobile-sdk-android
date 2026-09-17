@@ -123,6 +123,8 @@ android {
 		resources.excludes.add("linuxMain/**/*")
 		resources.excludes.add("nativeMain/**/*")
 		resources.excludes.add("nonJvmMain/**/*")
+		resources.excludes.add("concurrentMain/**/*")
+		resources.excludes.add("webMain/**/*")
 
 		[
 			"libsurface_util_jni.so",

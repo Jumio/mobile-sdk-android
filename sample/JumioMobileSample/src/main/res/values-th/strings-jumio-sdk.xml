@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">เอียงขวา</string>
 	<string name="jumio_liveness_prompt_tilt_up">เงยขึ้น</string>
 	<string name="jumio_liveness_prompt_too_far">เข้ามาใกล้</string>
-	<string name="jumio_liveness_upfront_intro">คุณจะต้องสแกนใบหน้าของคุณเพื่อยืนยันว่าคุณเป็นคนจริงๆ</string>
+	<string name="jumio_liveness_upfront_intro">เราจำเป็นต้องสแกนใบหน้าของคุณเพื่อยืนยันตัวตนของคุณและยืนยันว่าคุณเป็นบุคคลจริงๆ</string>
 	<string name="jumio_loaders_almost_there">ใกล้เสร็จแล้ว…</string>
 	<string name="jumio_loaders_finishing_up">กำลังจะเสร็จสิ้น…</string>
 	<string name="jumio_loaders_starting_camera">กำลังเริ่มการทำงานของกล้อง…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">เลือกประเภทเอกสารยืนยันตัวตน</string>
 	<string name="jumio_selfiedone_ID_Found">พบเอกสารประจำตัวแล้ว</string>
 	<string name="jumio_selfiedone_continue">ดำเนินการต่อ</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">หากคุณยืนยันตัวตนกับลูกค้าของเรารายใดรายหนึ่งแล้ว เราอาจสามารถใช้เอกสารยืนยันตัวตนที่คุณเคยให้ไว้ก่อนหน้านี้ได้</string>
+	<string name="jumio_selfiedone_faster_verification_title">เลือกการยืนยันตัวตนที่เร็วกว่า</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">ไม่ สแกน ID ด้วยตนเอง</string>
 	<string name="jumio_selfiedone_scan_ID_manually">สแกนบัตรประจำตัวด้วยตนเอง</string>
-	<string name="jumio_selfiedone_we_found_your_ID">เราพบเอกสารระบุตัวตนของคุณหนึ่งฉบับ</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">คุณถูกเปลี่ยนเส้นทางมาที่นี่โดยลูกค้ารายหนึ่งของ Jumio ที่ใช้บริการการยืนยันตัวตน การป้องกันการฉ้อโกง และความสมบูรณ์ของบัญชีของเรา</string>
+	<string name="jumio_selfiedone_submit_button">ส่ง</string>
+	<string name="jumio_selfiedone_we_found_your_ID">เราพบเอกสารระบุตัวตนที่คุณเคยให้ไว้ก่อนหน้านี้</string>
+	<string name="jumio_selfiedone_yes_continue_button">ใช่ ดำเนินการต่อ</string>
 	<string name="jumio_start_button">เริ่ม</string>
 	<string name="jumio_start_instructions_01">ค้นหาพื้นผิวที่มีแสงสว่างเพียงพอ</string>
 	<string name="jumio_start_instructions_02">เตรียมพร้อมถ่ายภาพเซลฟี่</string>

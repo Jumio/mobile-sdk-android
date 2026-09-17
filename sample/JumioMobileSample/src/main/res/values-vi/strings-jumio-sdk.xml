@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Nghiêng phải</string>
 	<string name="jumio_liveness_prompt_tilt_up">Nghiêng lên</string>
 	<string name="jumio_liveness_prompt_too_far">Di chuyển lại gần hơn</string>
-	<string name="jumio_liveness_upfront_intro">Chúng tôi cần quét khuôn mặt bạn để xác minh rằng bạn là người thật.</string>
+	<string name="jumio_liveness_upfront_intro">Chúng tôi cần quét khuôn mặt bạn để xác minh danh tính của bạn và chắc chắn rằng bạn là người thật.</string>
 	<string name="jumio_loaders_almost_there">Sắp xong rồi…</string>
 	<string name="jumio_loaders_finishing_up">Đang hoàn tất…</string>
 	<string name="jumio_loaders_starting_camera">Đang khởi động máy ảnh…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Chọn loại giấy tờ tùy thân</string>
 	<string name="jumio_selfiedone_ID_Found">Đã tìm thấy giấy tờ tùy thân</string>
 	<string name="jumio_selfiedone_continue">Tiếp tục</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Nếu bạn đã xác minh danh tính với một trong các khách hàng của chúng tôi, chúng tôi có thể sử dụng giấy tờ tùy thân mà bạn đã cung cấp trước đó.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Chọn xác minh nhanh hơn</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Không, Quét ID thủ công</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Quét giấy tờ tùy thân thủ công</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Chúng tôi đã tìm thấy một trong các giấy tờ tùy thân của bạn</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Bạn được chuyển hướng đến đây bởi một khách hàng của Jumio, đơn vị sử dụng các dịch vụ xác minh danh tính, phòng chống gian lận và bảo đảm tính toàn vẹn của tài khoản do chúng tôi cung cấp.</string>
+	<string name="jumio_selfiedone_submit_button">Gửi</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Chúng tôi đã tìm thấy giấy tờ tùy thân mà bạn đã cung cấp trước đó</string>
+	<string name="jumio_selfiedone_yes_continue_button">Có, Tiếp tục</string>
 	<string name="jumio_start_button">Bắt đầu</string>
 	<string name="jumio_start_instructions_01">Tìm bề mặt có đủ ánh sáng</string>
 	<string name="jumio_start_instructions_02">Hãy sẵn sàng để chụp ảnh selfie</string>

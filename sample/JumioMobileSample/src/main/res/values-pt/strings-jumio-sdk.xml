@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Incline para a direita</string>
 	<string name="jumio_liveness_prompt_tilt_up">Incline para cima</string>
 	<string name="jumio_liveness_prompt_too_far">Aproximar</string>
-	<string name="jumio_liveness_upfront_intro">Precisamos de fazer uma digitalização do seu rosto para verificar que é uma pessoa real.</string>
+	<string name="jumio_liveness_upfront_intro">Precisamos de digitalizar o seu rosto para verificar a sua identidade e confirmar que é uma pessoa real.</string>
 	<string name="jumio_loaders_almost_there">Estamos quase lá…</string>
 	<string name="jumio_loaders_finishing_up">A finalizar…</string>
 	<string name="jumio_loaders_starting_camera">A iniciar a câmara…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Selecione o tipo de documento de identificação</string>
 	<string name="jumio_selfiedone_ID_Found">Documento de identificação encontrado</string>
 	<string name="jumio_selfiedone_continue">Continuar</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Se já verificou a sua identidade junto de um dos nossos clientes, é possível que possamos utilizar um documento de identificação que tenha fornecido anteriormente.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Escolha uma verificação mais rápida</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Não, digitalizar o documento manualmente</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Digitalizar documento de identidade manualmente</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Encontrámos um dos seus documentos de identificação</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Foi redirecionado para aqui por um cliente da Jumio que utiliza os nossos serviços de verificação de identidade, prevenção de fraudes e integridade de contas.</string>
+	<string name="jumio_selfiedone_submit_button">Enviar</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Encontrámos um documento de identificação que forneceu anteriormente</string>
+	<string name="jumio_selfiedone_yes_continue_button">Sim, continuar</string>
 	<string name="jumio_start_button">Começar</string>
 	<string name="jumio_start_instructions_01">Encontre uma superfície bem iluminada</string>
 	<string name="jumio_start_instructions_02">Prepare-se para tirar uma selfie</string>

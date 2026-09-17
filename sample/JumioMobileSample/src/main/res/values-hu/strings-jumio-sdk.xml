@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Döntse jobbra</string>
 	<string name="jumio_liveness_prompt_tilt_up">Döntse hátra</string>
 	<string name="jumio_liveness_prompt_too_far">Mozgassa közelebb</string>
-	<string name="jumio_liveness_upfront_intro">Be kell szkennelnünk az arcát, hogy meggyőződjünk róla, valódi személyről van szó.</string>
+	<string name="jumio_liveness_upfront_intro">Be kell szkennelnünk az arcát a személyazonossága ellenőrzéséhez, illetve annak megerősítéséhez, hogy Ön valódi személy.</string>
 	<string name="jumio_loaders_almost_there">Majdnem kész…</string>
 	<string name="jumio_loaders_finishing_up">Befejezés…</string>
 	<string name="jumio_loaders_starting_camera">Kamera indítása…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Válassza ki a személyazonosító okmány típusát</string>
 	<string name="jumio_selfiedone_ID_Found">Személyazonosító okmány megtalálva</string>
 	<string name="jumio_selfiedone_continue">Folytatás</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Ha már igazolta személyazonosságát valamelyik ügyfelünknél, előfordulhat, hogy fel tudjuk használni egy korábban megadott azonosító okmányát.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Válasszon gyorsabb hitelesítést</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Nem, okmány beolvasása manuálisan</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Igazolvány manuális beolvasása</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Megtaláltuk az egyik személyazonosító okmányát</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Ide egy olyan Jumio-ügyfél irányította Önt, aki személyazonosság-ellenőrzési, csalásmegelőzési és fiókintegritási szolgáltatásainkat veszi igénybe.</string>
+	<string name="jumio_selfiedone_submit_button">Küldés</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Találtunk egy korábban megadott személyazonosító okmányt</string>
+	<string name="jumio_selfiedone_yes_continue_button">Igen, folytatás</string>
 	<string name="jumio_start_button">Indítás</string>
 	<string name="jumio_start_instructions_01">Keressen egy jól megvilágított felületet</string>
 	<string name="jumio_start_instructions_02">Készüljön fel a szelfi elkészítésére</string>

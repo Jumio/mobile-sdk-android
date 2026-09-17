@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Rechts kantelen</string>
 	<string name="jumio_liveness_prompt_tilt_up">Omhoog kantelen</string>
 	<string name="jumio_liveness_prompt_too_far">Kom dichterbij</string>
-	<string name="jumio_liveness_upfront_intro">We moeten een scan van je gezicht maken om te controleren of je een echt persoon bent.</string>
+	<string name="jumio_liveness_upfront_intro">We moeten een scan van je gezicht maken om je identiteit te verifiëren en om te controleren of je een echt persoon bent.</string>
 	<string name="jumio_loaders_almost_there">Bijna klaar…</string>
 	<string name="jumio_loaders_finishing_up">Aan het afronden…</string>
 	<string name="jumio_loaders_starting_camera">Camera starten…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Selecteer type identiteitsbewijs</string>
 	<string name="jumio_selfiedone_ID_Found">ID-bewijs gevonden</string>
 	<string name="jumio_selfiedone_continue">Doorgaan</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Als u uw identiteit al heeft geverifieerd bij een van onze klanten, kunnen we mogelijk een identiteitsbewijs gebruiken dat u eerder heeft verstrekt.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Kies voor een snellere verificatie</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Nee, scan ID handmatig</string>
 	<string name="jumio_selfiedone_scan_ID_manually">ID handmatig scannen</string>
-	<string name="jumio_selfiedone_we_found_your_ID">We hebben een van uw identificatiedocumenten gevonden</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">U bent hiernaartoe doorverwezen door een Jumio-klant die gebruikmaakt van onze diensten voor identiteitsverificatie, fraudepreventie en accountintegriteit.</string>
+	<string name="jumio_selfiedone_submit_button">Indienen</string>
+	<string name="jumio_selfiedone_we_found_your_ID">We hebben een identiteitsbewijs gevonden dat u eerder heeft verstrekt</string>
+	<string name="jumio_selfiedone_yes_continue_button">Ja, doorgaan</string>
 	<string name="jumio_start_button">Beginnen</string>
 	<string name="jumio_start_instructions_01">Zoek een goed verlichte ondergrond</string>
 	<string name="jumio_start_instructions_02">Maak je klaar om een selfie te maken</string>

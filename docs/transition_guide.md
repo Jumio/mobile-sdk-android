@@ -8,6 +8,46 @@ This section covers all technical changes that should be considered when updatin
 - When updating your SDK version, **all** changes/updates made in in the meantime have to be taken into account and applied if necessary.
 - **Example:** If you're updating from SDK version **3.7.2** to **3.9.2**, the changes outlined in **3.8.0, 3.9.0** and **3.9.1** are **still relevant**.
 
+## 4.19.0
+
+#### Public API Changes
+
+- [`JumioScanStep.PROCESSING](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-p-r-o-c-e-s-s-i-n-g/index.html) might be triggered before [`JumioScanStep.NEXT_PART](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-step/-n-e-x-t_-p-a-r-t/index.html). Make sure to restore the scan layout when `JumioScanStep.NEXT_PART` is received in case you show a loading indicator or hide the scan view when `JumioScanStep.PROCESSING` is triggered. 
+- [`JumioScanUpdate.NFC_EXTRACTION_PROGRESS`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/-n-f-c_-e-x-t-r-a-c-t-i-o-n_-p-r-o-g-r-e-s-s/index.html) is now deprecated and no longer emitted. Use [`NFC_EXTRACTION_STARTED`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/-n-f-c_-e-x-t-r-a-c-t-i-o-n_-s-t-a-r-t-e-d/index.html) and [`NFC_EXTRACTION_FINISHED`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.enums/-jumio-scan-update/-n-f-c_-e-x-t-r-a-c-t-i-o-n_-f-i-n-i-s-h-e-d/index.html) to show and hide an indeterminate progress indicator instead.
+- [`JumioLegalStatement`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-legal-statement/index.html) has moved from the nested class ~~`JumioLookupResult.JumioLegalStatement`~~ to a standalone class in the new `com.jumio.sdk.consent` package, shared by both [`JumioLookupResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-lookup-result/index.html) and the newly added [`JumioFasterVerification`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-faster-verification/index.html).
+- [`JumioLookupResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.document/-jumio-lookup-result/index.html) has a new `country` property, and its `legalStatement` property is now of type [`JumioLegalStatement`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-legal-statement/index.html) instead of ~~`JumioLookupResult.JumioLegalStatement`~~.
+- [`JumioFasterVerification`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-faster-verification/index.html) class has been added, exposing a `legalStatement` of type [`JumioLegalStatement`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-legal-statement/index.html).
+- Property `fasterVerification` of type [`JumioFasterVerification`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-faster-verification/index.html) has been added to [`JumioIDCredential`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/index.html). When non `null`, consent must be given for its `legalStatement` before [`lookupResult`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/lookup-result.html) becomes available.
+- Method [`userConsented(JumioLegalStatement, Boolean)`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/user-consented.html) on [`JumioIDCredential`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.credentials/-jumio-i-d-credential/index.html) has changed from ~~`userConsented(JumioLookupResult.JumioLegalStatement, Boolean)`~~ to accept the new standalone [`JumioLegalStatement`](https://jumio.github.io/mobile-sdk-android/jumio-core/com.jumio.sdk.consent/-jumio-legal-statement/index.html) type, and is now also used to record consent for `fasterVerification`.
+
+⚠️&nbsp;&nbsp;If you reference ~~`JumioLookupResult.JumioLegalStatement`~~ directly, update the import to `com.jumio.sdk.consent.JumioLegalStatement`. Always consent using the `legalStatement` instance returned by `lookupResult` or `fasterVerification`.
+
+#### Customization Changes
+
+- The following customization color attributes have been added to support the new **Faster Verification** screen:
+
+  - `<item name="jumio_faster_verification_back_card_background">`
+  - `<item name="jumio_faster_verification_back_card_outline">`
+  - `<item name="jumio_faster_verification_back_card_avatar">`
+  - `<item name="jumio_faster_verification_back_card_detail_line">`
+  - `<item name="jumio_faster_verification_front_card_background">`
+  - `<item name="jumio_faster_verification_front_card_outline">`
+  - `<item name="jumio_faster_verification_front_card_photo_background">`
+  - `<item name="jumio_faster_verification_front_card_photo_avatar">`
+  - `<item name="jumio_faster_verification_front_card_detail_line">`
+  - `<item name="jumio_faster_verification_verified_accent">`
+  - `<item name="jumio_faster_verification_verified_badge_background">`
+
+#### Localization Keys
+
+The following keys have been added
+- `jumio_selfiedone_faster_verification_title`
+- `jumio_selfiedone_faster_verification_subtitle`
+- `jumio_selfiedone_no_scan_id_manually_button`
+- `jumio_selfiedone_yes_continue_button`
+- `jumio_selfiedone_submit_button`
+- `jumio_selfiedone_start_verification_subtitle`
+
 ## 4.18.0
 
 #### Minimum Android SDK Version increase

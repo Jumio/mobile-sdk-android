@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Butshekisele kwesokudla</string>
 	<string name="jumio_liveness_prompt_tilt_up">Butshekisele phezulu</string>
 	<string name="jumio_liveness_prompt_too_far">Sondela</string>
-	<string name="jumio_liveness_upfront_intro">Kudingeka siskene ubuso bakho ukuze siqinisekise ukuthi ungumuntu ongokoqobo.</string>
+	<string name="jumio_liveness_upfront_intro">Sidinga ukuskena ubuso bakho ukuze siqinisekise ubuwena nokuthi ungumuntu wangempela.</string>
 	<string name="jumio_loaders_almost_there">Kucishe kwaphela…</string>
 	<string name="jumio_loaders_finishing_up">Iyaqedwa…</string>
 	<string name="jumio_loaders_starting_camera">Iqala ikhamera…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Khetha uhlobo lwe-ID</string>
 	<string name="jumio_selfiedone_ID_Found">I-ID itholakele</string>
 	<string name="jumio_selfiedone_continue">Qhubeka</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Uma ngabe usuyiqinisekisile kakade into ekuveza ukuthi ungubani kwenye yamakhasimende ethu, kungenzeka sikwazi ukusebenzisa idokhumenti ye-ID owake wayinikeza ngaphambilini.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Khetha Ukuqinisekisa Okusheshayo</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Cha, Skena i-ID Ngenqubo Yezandla</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Skena i-ID mathupha</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Sithole omunye wemibhalo yakho kamazisi</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Uqondiswe lapha ikhasimende le-Jumio elisebenzisa amasevisi ethu okuqinisekisa ubuwena, ukuvimbela ukukhwabanisa, nobuqotho be-akhawunti.</string>
+	<string name="jumio_selfiedone_submit_button">Hambisa</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Sithole umazisi owunikeze ngaphambilini</string>
+	<string name="jumio_selfiedone_yes_continue_button">Yebo, Qhubeka</string>
 	<string name="jumio_start_button">Qala</string>
 	<string name="jumio_start_instructions_01">Thola indawo ekhanya kahle</string>
 	<string name="jumio_start_instructions_02">Lungela ukuzithatha isithombe</string>

@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Miring kanan</string>
 	<string name="jumio_liveness_prompt_tilt_up">Geser ke atas</string>
 	<string name="jumio_liveness_prompt_too_far">Merapat</string>
-	<string name="jumio_liveness_upfront_intro">Kami perlu memindai wajah Anda untuk memverifikasi bahwa Anda benar-benar orang.</string>
+	<string name="jumio_liveness_upfront_intro">Kami perlu memindai wajah Anda untuk memverifikasi identitas Anda dan memastikan bahwa Anda adalah orang sungguhan.</string>
 	<string name="jumio_loaders_almost_there">Hampir selesai…</string>
 	<string name="jumio_loaders_finishing_up">Menyelesaikan…</string>
 	<string name="jumio_loaders_starting_camera">Memulai kamera…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Pilih jenis tanda pengenal</string>
 	<string name="jumio_selfiedone_ID_Found">ID ditemukan</string>
 	<string name="jumio_selfiedone_continue">Lanjutkan</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Jika Anda telah memverifikasi identitas Anda dengan salah satu pelanggan kami, kami mungkin dapat menggunakan dokumen tanda pengenal yang Anda berikan sebelumnya.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Pilih Verifikasi yang Lebih Cepat</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Tidak, Pindai ID Secara Manual</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Pindai ID Secara Manual</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Kami menemukan salah satu dokumen identifikasi Anda</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Anda diarahkan ke sini oleh pelanggan Jumio yang menggunakan layanan verifikasi identitas, pencegahan penipuan, dan integritas akun kami.</string>
+	<string name="jumio_selfiedone_submit_button">Kirim</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Kami menemukan dokumen identitas yang Anda berikan sebelumnya</string>
+	<string name="jumio_selfiedone_yes_continue_button">Ya, Lanjutkan</string>
 	<string name="jumio_start_button">Mulai</string>
 	<string name="jumio_start_instructions_01">Cari permukaan yang cukup terang</string>
 	<string name="jumio_start_instructions_02">Bersiaplah untuk selfie</string>

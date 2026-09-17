@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Pasisukite į dešinę</string>
 	<string name="jumio_liveness_prompt_tilt_up">Palenkite aukštyn</string>
 	<string name="jumio_liveness_prompt_too_far">Prieikite arčiau</string>
-	<string name="jumio_liveness_upfront_intro">Norėdami įsitikinti, kad esate tikras asmuo, turėsime nuskaityti jūsų veidą.</string>
+	<string name="jumio_liveness_upfront_intro">Norėdami patvirtinti jūsų tapatybę ir įsitikinti, kad esate tikras asmuo, turėsime nuskaityti jūsų veidą.</string>
 	<string name="jumio_loaders_almost_there">Beveik baigta…</string>
 	<string name="jumio_loaders_finishing_up">Užbaigiama…</string>
 	<string name="jumio_loaders_starting_camera">Paleidžiama kamera…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Pasirinkite asmens dokumento tipą</string>
 	<string name="jumio_selfiedone_ID_Found">Asmens dokumentas rastas</string>
 	<string name="jumio_selfiedone_continue">Tęsti</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Jei jau patvirtinote savo tapatybę vienam iš mūsų klientų, gali būti, kad galėsime panaudoti jūsų anksčiau pateiktą asmens dokumentą.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Pasirinkite greitesnį patvirtinimą</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Ne, nuskaityti asmens dokumentą rankiniu būdu</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Nuskaityti asmens dokumentą rankiniu būdu</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Radome vieną iš jūsų tapatybės dokumentų</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Jus čia nukreipė „Jumio“ klientas, kuris naudojasi mūsų tapatybės patvirtinimo, sukčiavimo prevencijos ir paskyros vientisumo paslaugomis.</string>
+	<string name="jumio_selfiedone_submit_button">Pateikti</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Radome jūsų anksčiau pateiktą asmens tapatybės dokumentą</string>
+	<string name="jumio_selfiedone_yes_continue_button">Taip, tęsti</string>
 	<string name="jumio_start_button">Pradėti</string>
 	<string name="jumio_start_instructions_01">Raskite gerai apšviestą paviršių</string>
 	<string name="jumio_start_instructions_02">Būkite pasiruošę pasidaryti asmenukę</string>

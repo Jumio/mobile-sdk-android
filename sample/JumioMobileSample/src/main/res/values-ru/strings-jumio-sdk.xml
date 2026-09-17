@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Наклоните вправо</string>
 	<string name="jumio_liveness_prompt_tilt_up">Поднимите вверх</string>
 	<string name="jumio_liveness_prompt_too_far">Подойдите ближе</string>
-	<string name="jumio_liveness_upfront_intro">Нам нужно отсканировать ваше лицо, чтобы убедиться, что вы реальный человек.</string>
+	<string name="jumio_liveness_upfront_intro">Нам нужно отсканировать ваше лицо, чтобы подтвердить вашу личность и убедиться, что вы реальный человек.</string>
 	<string name="jumio_loaders_almost_there">Почти готово…</string>
 	<string name="jumio_loaders_finishing_up">Завершение…</string>
 	<string name="jumio_loaders_starting_camera">Запуск камеры…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Выберите тип удостоверения личности</string>
 	<string name="jumio_selfiedone_ID_Found">Документ найден</string>
 	<string name="jumio_selfiedone_continue">Продолжить</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Если вы уже подтвердили свою личность у одного из наших клиентов, возможно, мы сможем использовать предоставленный вами ранее документ, удостоверяющий личность.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Выберите более быструю верификацию</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Нет, отсканировать документ вручную</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Сканировать документ вручную</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Мы нашли один из ваших документов, удостоверяющих личность</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Вы были перенаправлены сюда клиентом Jumio, который использует наши услуги по проверке личности, предотвращению мошенничества и защите аккаунтов.</string>
+	<string name="jumio_selfiedone_submit_button">Отправить</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Мы нашли документ, удостоверяющий личность, который вы предоставили ранее</string>
+	<string name="jumio_selfiedone_yes_continue_button">Да, продолжить</string>
 	<string name="jumio_start_button">Начать</string>
 	<string name="jumio_start_instructions_01">Найдите хорошо освещенную поверхность</string>
 	<string name="jumio_start_instructions_02">Будьте готовы сделать селфи</string>

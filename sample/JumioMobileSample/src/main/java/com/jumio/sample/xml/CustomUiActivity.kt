@@ -43,6 +43,7 @@ import com.jumio.sample.xml.adapter.CustomCountryAdapter
 import com.jumio.sample.xml.adapter.CustomDocumentAdapter
 import com.jumio.sdk.JumioSDK
 import com.jumio.sdk.consent.JumioConsentItem
+import com.jumio.sdk.consent.JumioLegalStatement
 import com.jumio.sdk.controller.JumioController
 import com.jumio.sdk.credentials.JumioCredential
 import com.jumio.sdk.credentials.JumioCredentialInfo
@@ -50,6 +51,7 @@ import com.jumio.sdk.credentials.JumioDocumentCredential
 import com.jumio.sdk.credentials.JumioFaceCredential
 import com.jumio.sdk.credentials.JumioIDCredential
 import com.jumio.sdk.data.JumioTiltState
+import com.jumio.sdk.document.JumioLookupResult
 import com.jumio.sdk.enums.JumioAcquireMode
 import com.jumio.sdk.enums.JumioCameraFacing
 import com.jumio.sdk.enums.JumioConsentType
@@ -296,6 +298,9 @@ class CustomUiActivity :
 				scanPart = null
 				hideView(binding.scanPartControls)
 				hideViewsAfter(binding.scanPartControls)
+				(credential as? JumioIDCredential)?.let { idCredential ->
+					setupLegalStatementConsent(idCredential)
+				}
 			}
 		}
 
@@ -306,6 +311,9 @@ class CustomUiActivity :
 				scanPart = null
 				hideView(binding.scanPartControls)
 				hideViewsAfter(binding.scanPartControls)
+				(credential as? JumioIDCredential)?.let { idCredential ->
+					setupLegalStatementConsent(idCredential)
+				}
 			}
 		}
 
@@ -330,11 +338,6 @@ class CustomUiActivity :
 	private fun initCredentialUi() {
 		binding.credentialFinish.setOnClickListener {
 			catchAndShow {
-				(credential as? JumioIDCredential)?.let { iDCredential ->
-					iDCredential.lookupResult?.legalStatement?.let { legalStatement ->
-						iDCredential.userConsented(legalStatement, true)
-					}
-				}
 				credential?.finish()
 				updateIcon(binding.credentialLayout, credential?.isComplete == true)
 				credential = null
@@ -352,6 +355,87 @@ class CustomUiActivity :
 				hideViewsAfter(binding.credentialControls)
 			}
 		}
+	}
+
+	/**
+	 * Shows the legal statement(s) that require consent for a Selfie.DONE workflow
+	 *
+	 * [JumioIDCredential.fasterVerification], when present and not yet consented, is shown in [fasterVerificationLayout].
+	 * Consenting to it may reveal [JumioIDCredential.lookupResult], which is shown separately in [lookupResultLayout] -
+	 * this can also appear directly, without a preceding [JumioIDCredential.fasterVerification] step.
+	 */
+	private fun setupLegalStatementConsent(idCredential: JumioIDCredential, showRequiredConsentLog: Boolean = false) {
+		idCredential.fasterVerification?.let {
+			showFasterVerificationConsent(idCredential, it.legalStatement)
+			if (showRequiredConsentLog) {
+				log("FasterVerification Consent Required")
+			}
+		} ?: run {
+			hideView(binding.fasterVerificationLayout)
+		}
+		idCredential.lookupResult?.let {
+			showLookupResultConsent(idCredential, it)
+			if (showRequiredConsentLog) {
+				log("Lookup Consent Required")
+			}
+		} ?: run {
+			hideView(binding.lookupResultLayout)
+		}
+	}
+
+	private fun showFasterVerificationConsent(idCredential: JumioIDCredential, legalStatement: JumioLegalStatement) {
+		binding.fasterVerificationText.text = legalStatement.text
+
+		binding.fasterVerificationContinue.setOnClickListener {
+			catchAndShow {
+				idCredential.userConsented(legalStatement, true)
+				log("FasterVerification Consent: true")
+				idCredential.lookupResult?.let {
+					log("Lookup Consent Required")
+					showLookupResultConsent(idCredential, it)
+				}
+			}
+		}
+
+		binding.fasterVerificationScanManually.setOnClickListener {
+			catchAndShow {
+				idCredential.userConsented(legalStatement, false)
+				log("FasterVerification Consent: false")
+				if (idCredential.lookupResult == null) {
+					hideView(binding.lookupResultLayout)
+				}
+			}
+		}
+
+		showView(binding.fasterVerificationLayout)
+	}
+
+	private fun showLookupResultConsent(idCredential: JumioIDCredential, lookupResult: JumioLookupResult) {
+		binding.lookupResultIdType.text = lookupResult.documentType.toString()
+		binding.lookupResultCountry.text = lookupResult.country
+		binding.lookupResultText.text = lookupResult.legalStatement.text
+
+		val resource = if (idCredential.fasterVerification != null) {
+			com.jumio.defaultui.R.string.jumio_selfiedone_submit_button
+		} else {
+			com.jumio.defaultui.R.string.jumio_selfiedone_continue
+		}
+		binding.lookupResultContinue.text = getString(resource)
+		binding.lookupResultContinue.setOnClickListener {
+			catchAndShow {
+				idCredential.userConsented(lookupResult.legalStatement, true)
+				log("Lookup Consent: true")
+			}
+		}
+
+		binding.lookupResultScanManually.setOnClickListener {
+			catchAndShow {
+				idCredential.userConsented(lookupResult.legalStatement, false)
+				log("Lookup Consent: false")
+			}
+		}
+
+		showView(binding.lookupResultLayout)
 	}
 
 	private fun initDocumentSelectionUi() {
@@ -670,7 +754,6 @@ class CustomUiActivity :
 				binding.takePicture.isEnabled = scanView.isShutterEnabled
 			}
 			JumioScanUpdate.NFC_EXTRACTION_STARTED -> log("NFC Extraction started")
-			JumioScanUpdate.NFC_EXTRACTION_PROGRESS -> log("NFC Extraction progress $data")
 			JumioScanUpdate.NFC_EXTRACTION_FINISHED -> log("NFC Extraction finished")
 			JumioScanUpdate.CENTER_ID -> log("Center your ID")
 			JumioScanUpdate.HOLD_STILL -> log("Hold still...")
@@ -697,6 +780,7 @@ class CustomUiActivity :
 			JumioScanUpdate.TILT -> log("Tilt your document, ${data as JumioTiltState}")
 			JumioScanUpdate.IMAGE_ANALYSIS -> log("Analyzing your image. Hold still.")
 			JumioScanUpdate.ROTATE -> log("Rotate")
+			else -> Unit
 		}
 	}
 
@@ -741,6 +825,7 @@ class CustomUiActivity :
 				logText += ": $data"
 			}
 			JumioScanStep.NEXT_PART -> {
+				binding.loadingIndicator.visibility = View.GONE
 				if (data is JumioCredentialPart) {
 					logText += ": $data\nExtraction Method: ${scanPart?.scanMode}"
 				}
@@ -748,7 +833,7 @@ class CustomUiActivity :
 				binding.takePicture.isEnabled = scanView.isShutterEnabled
 			}
 			JumioScanStep.PROCESSING -> {
-				hideView(binding.inlineScanLayout, showLoading = true)
+				binding.loadingIndicator.visibility = View.VISIBLE
 			}
 			JumioScanStep.CONFIRMATION_VIEW -> {
 				hideView(binding.inlineScanLayout)
@@ -776,6 +861,7 @@ class CustomUiActivity :
 					//   ...
 					// }
 				}
+				hideView(binding.inlineScanLayout)
 				showView(binding.inlineRejectLayout)
 				scanPart?.let { jumioScanPart ->
 					binding.rejectViewList.removeAllViews()
@@ -797,6 +883,7 @@ class CustomUiActivity :
 			JumioScanStep.CAN_FINISH -> {
 				lifecycle.removeObserver(scanView)
 				hideView(
+					binding.inlineScanLayout,
 					binding.inlineConfirmLayout,
 					binding.partRetryButton,
 					binding.loadingIndicator,
@@ -899,6 +986,10 @@ class CustomUiActivity :
 		when (credential) {
 			is JumioIDCredential -> {
 				(credential as JumioIDCredential).also { idCredential ->
+					if (jumioController.isReusableIdentity) {
+						setupLegalStatementConsent(idCredential, true)
+					}
+
 					showView(binding.countryDocumentLayout) // setup country/doctype/variant spinner
 					binding.customCountrySpinner.onItemSelectedListener = null
 					binding.customDocumentSpinner.onItemSelectedListener = null
@@ -1088,11 +1179,6 @@ class CustomUiActivity :
 
 				setOnClickListener { view ->
 					try {
-						(credential as? JumioIDCredential)?.let { iDCredential ->
-							iDCredential.lookupResult?.legalStatement?.let { legalStatement ->
-								iDCredential.userConsented(legalStatement, false)
-							}
-						}
 						scanPart = credential?.initScanPart(part, this@CustomUiActivity)
 						view.tag = true
 						setupScanPart()
@@ -1109,13 +1195,21 @@ class CustomUiActivity :
 	}
 
 	private fun showView(vararg views: View, hideLoading: Boolean = true) {
-		if (hideLoading) binding.loadingIndicator.visibility = View.GONE
-		for (view in views) view.visibility = View.VISIBLE
+		if (hideLoading) {
+			binding.loadingIndicator.visibility = View.GONE
+		}
+		for (view in views) {
+			view.visibility = View.VISIBLE
+		}
 	}
 
 	private fun hideView(vararg views: View, showLoading: Boolean = false) {
-		for (view in views) view.visibility = View.GONE
-		if (showLoading) binding.loadingIndicator.visibility = View.VISIBLE
+		for (view in views) {
+			view.visibility = View.GONE
+		}
+		if (showLoading) {
+			binding.loadingIndicator.visibility = View.VISIBLE
+		}
 	}
 
 	private fun hideViewsAfter(lastVisible: View) {
@@ -1128,6 +1222,8 @@ class CustomUiActivity :
 			binding.scanSideLayout,
 			binding.topMarginSeekBarLayout,
 			binding.userConsentLayout,
+			binding.fasterVerificationLayout,
+			binding.lookupResultLayout,
 			binding.scanPartControls,
 			binding.seekBarLayout,
 			binding.inlineScanLayout,

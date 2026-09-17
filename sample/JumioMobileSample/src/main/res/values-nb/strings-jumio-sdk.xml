@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Vipp mot høyre</string>
 	<string name="jumio_liveness_prompt_tilt_up">Vipp oppover</string>
 	<string name="jumio_liveness_prompt_too_far">Kom nærmere</string>
-	<string name="jumio_liveness_upfront_intro">Vi må skanne ansiktet ditt for å bekrefte at du er en ekte person.</string>
+	<string name="jumio_liveness_upfront_intro">Vi må skanne ansiktet ditt for å bekrefte identiteten din og at du er en ekte person.</string>
 	<string name="jumio_loaders_almost_there">Nesten ferdig…</string>
 	<string name="jumio_loaders_finishing_up">Fullfører…</string>
 	<string name="jumio_loaders_starting_camera">Starter kamera…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Velg ID-type</string>
 	<string name="jumio_selfiedone_ID_Found">ID funnet</string>
 	<string name="jumio_selfiedone_continue">Fortsett</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Hvis du allerede har bekreftet identiteten din hos en av kundene våre, kan vi kanskje bruke et ID-dokument du tidligere har sendt inn.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Velg raskere verifisering</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Nei, skann ID manuelt</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Skann ID manuelt</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Vi fant ett av identifikasjonsdokumentene dine</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Du ble henvist hit av en Jumio-kunde som benytter våre tjenester for identitetsbekreftelse, svindelforebygging og kontointegritet.</string>
+	<string name="jumio_selfiedone_submit_button">Send inn</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Vi fant et ID-dokument som du tidligere har sendt inn</string>
+	<string name="jumio_selfiedone_yes_continue_button">Ja, fortsett</string>
 	<string name="jumio_start_button">Start</string>
 	<string name="jumio_start_instructions_01">Finn en overflate med godt lys</string>
 	<string name="jumio_start_instructions_02">Gjør deg klar til å ta en selfie</string>

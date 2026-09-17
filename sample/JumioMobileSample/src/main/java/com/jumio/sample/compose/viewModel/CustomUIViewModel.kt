@@ -238,6 +238,7 @@ class CustomUIViewModel(
 			}
 
 			JumioScanStep.NEXT_PART -> {
+				navigationState.value = AppNavigation.Scan
 				flipDocument.value = context.getString(R.string.flip_document) + " $data"
 				viewModelScope.launch(Dispatchers.Main) {
 					delay(3000)
@@ -312,6 +313,19 @@ class CustomUIViewModel(
 		}
 	}
 
+	fun userConsentedForFasterVerification(userConsent: Boolean) {
+		(currentCredential as? JumioIDCredential)?.let { iDCredential ->
+			iDCredential.fasterVerification?.legalStatement?.let { legalStatement ->
+				iDCredential.userConsented(legalStatement, userConsent)
+				if (userConsent) {
+					navigationState.value = AppNavigation.IDFound
+					return
+				}
+			}
+		}
+		startCredential(true)
+	}
+
 	fun userConsentedForLookupResult(userConsent: Boolean) {
 		(currentCredential as? JumioIDCredential)?.let { iDCredential ->
 			iDCredential.lookupResult?.legalStatement?.let { legalStatement ->
@@ -383,9 +397,14 @@ class CustomUIViewModel(
 
 	fun startCredential(skipLookUpResult: Boolean = false) {
 		val currentCredential = currentCredential ?: return
+		val idCredential = currentCredential as? JumioIDCredential
+		val showsReusableIdentityStep = jumioController?.isReusableIdentity == true && !skipLookUpResult
 
 		when {
-			(currentCredential as? JumioIDCredential)?.lookupResult?.documentType != null && !skipLookUpResult -> {
+			showsReusableIdentityStep && idCredential?.fasterVerification != null -> {
+				navigationState.value = AppNavigation.FasterVerification
+			}
+			showsReusableIdentityStep && idCredential?.lookupResult != null -> {
 				navigationState.value = AppNavigation.IDFound
 			}
 			isCredentialConfigured -> {

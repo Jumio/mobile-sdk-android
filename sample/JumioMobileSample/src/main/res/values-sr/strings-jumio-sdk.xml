@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Окрените се удесно</string>
 	<string name="jumio_liveness_prompt_tilt_up">Померите се нагоре</string>
 	<string name="jumio_liveness_prompt_too_far">Приближите се</string>
-	<string name="jumio_liveness_upfront_intro">Морамо да вам скенирамо лице да бисмо потврдили да сте стварна особа.</string>
+	<string name="jumio_liveness_upfront_intro">Морамо да вам скенирамо лице да бисмо проверили ваш идентитет и потврдили да сте стварна особа.</string>
 	<string name="jumio_loaders_almost_there">Скоро готово…</string>
 	<string name="jumio_loaders_finishing_up">Завршавање…</string>
 	<string name="jumio_loaders_starting_camera">Покретање камере…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Изаберите врсту личног документа</string>
 	<string name="jumio_selfiedone_ID_Found">Пронађен је идентификациони документ</string>
 	<string name="jumio_selfiedone_continue">Настави</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Ако сте већ потврдили свој идентитет код једног од наших клијената, можда ћемо моћи да употребимо лични документ који сте претходно доставили.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Изаберите бржу верификацију</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Не, скенирај документ ручно</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Ручно скенирај лични документ</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Пронашли смо један од ваших идентификационих докумената</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Овде вас је преусмерио клијент компаније Jumio који користи наше услуге верификације идентитета, спречавања превара и интегритета налога.</string>
+	<string name="jumio_selfiedone_submit_button">Пошаљи</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Пронашли смо лични документ који сте претходно доставили</string>
+	<string name="jumio_selfiedone_yes_continue_button">Да, настави</string>
 	<string name="jumio_start_button">Започни</string>
 	<string name="jumio_start_instructions_01">Пронађите добро осветљену површину</string>
 	<string name="jumio_start_instructions_02">Будите спремни да направите селфи</string>

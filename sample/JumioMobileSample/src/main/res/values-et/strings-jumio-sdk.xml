@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Kalluta paremale</string>
 	<string name="jumio_liveness_prompt_tilt_up">Kalluta üles</string>
 	<string name="jumio_liveness_prompt_too_far">Liigutage lähemale</string>
-	<string name="jumio_liveness_upfront_intro">Peame skannima Sinu näo kinnitamaks, et oled inimene, mitte robot.</string>
+	<string name="jumio_liveness_upfront_intro">Peame skannima teie näo, et tuvastada teie isik ja veenduda, et olete päris inimene.</string>
 	<string name="jumio_loaders_almost_there">Peaaegu valmis…</string>
 	<string name="jumio_loaders_finishing_up">Lõpetamine…</string>
 	<string name="jumio_loaders_starting_camera">Kaamera käivitamine…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Valige isikut tõendava dokumendi tüüp</string>
 	<string name="jumio_selfiedone_ID_Found">ID leitud</string>
 	<string name="jumio_selfiedone_continue">Jätka</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Kui olete juba oma isikusamasust mõne meie kliendi juures kinnitanud, saame võib-olla kasutada teie poolt varem esitatud isikut tõendavat dokumenti.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Valige kiirem verifitseerimine</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Ei, skanni dokument käsitsi</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Skanni ID käsitsi</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Leidsime ühe teie isikut tõendavatest dokumentidest</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Teid suunas siia Jumio klient, kes kasutab meie isikusamasuse tuvastamise, pettuste ennetamise ja konto tervikluse teenuseid.</string>
+	<string name="jumio_selfiedone_submit_button">Esita</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Leidsime isikut tõendava dokumendi, mille te varem esitasite</string>
+	<string name="jumio_selfiedone_yes_continue_button">Jah, jätka</string>
 	<string name="jumio_start_button">Alusta</string>
 	<string name="jumio_start_instructions_01">Kasutage hästi valgustatud pinda</string>
 	<string name="jumio_start_instructions_02">Olge valmis selfit tegema</string>

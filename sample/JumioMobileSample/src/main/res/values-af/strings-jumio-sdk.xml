@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Kantel regs</string>
 	<string name="jumio_liveness_prompt_tilt_up">Lig op</string>
 	<string name="jumio_liveness_prompt_too_far">Kom nader</string>
-	<string name="jumio_liveness_upfront_intro">Ons moet jou gesig skandeer om te bevestig dat jy ’n regte persoon is.</string>
+	<string name="jumio_liveness_upfront_intro">Ons moet jou gesig skandeer om jou identiteit te verifieer en te bevestig dat jy ’n regte persoon is.</string>
 	<string name="jumio_loaders_almost_there">Amper daar…</string>
 	<string name="jumio_loaders_finishing_up">Besig om af te handel…</string>
 	<string name="jumio_loaders_starting_camera">Kamera word gestart…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Kies ID-tipe</string>
 	<string name="jumio_selfiedone_ID_Found">ID gevind</string>
 	<string name="jumio_selfiedone_continue">Gaan voort</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">As u reeds u identiteit by een van ons kliënte geverifieer het, kan ons moontlik \'n identiteitsdokument wat u voorheen verskaf het, gebruik.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Kies vinniger verifikasie</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Nee, skandeer ID handmatig</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Skandeer ID handmatig</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Ons het een van jou identifikasiedokumente gevind</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">U is hierheen gewys deur \'n Jumio-kliënt wat ons dienste vir identiteitsverifikasie, bedrogvoorkoming en rekeningintegriteit gebruik.</string>
+	<string name="jumio_selfiedone_submit_button">Dien in</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Ons het \'n ID-dokument gevind wat u voorheen verskaf het</string>
+	<string name="jumio_selfiedone_yes_continue_button">Ja, gaan voort</string>
 	<string name="jumio_start_button">Begin</string>
 	<string name="jumio_start_instructions_01">Kry \'n goedverligte oppervlak</string>
 	<string name="jumio_start_instructions_02">Wees gereed om \'n selfie te neem</string>

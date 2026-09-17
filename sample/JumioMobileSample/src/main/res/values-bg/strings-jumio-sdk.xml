@@ -196,7 +196,7 @@
 	<string name="jumio_liveness_prompt_tilt_right">Наклонете надясно</string>
 	<string name="jumio_liveness_prompt_tilt_up">Повдигнете нагоре</string>
 	<string name="jumio_liveness_prompt_too_far">Приближете се</string>
-	<string name="jumio_liveness_upfront_intro">Трябва да направим снимка на лицето ви, за да потвърдим, че сте истински човек.</string>
+	<string name="jumio_liveness_upfront_intro">Трябва да сканираме лицето ви, за да потвърдим самоличността ви и да се уверим, че сте истински човек.</string>
 	<string name="jumio_loaders_almost_there">Почти готово…</string>
 	<string name="jumio_loaders_finishing_up">Приключване…</string>
 	<string name="jumio_loaders_starting_camera">Стартиране на камерата…</string>
@@ -222,8 +222,14 @@
 	<string name="jumio_select_id_type">Изберете тип документ за самоличност</string>
 	<string name="jumio_selfiedone_ID_Found">Документ за самоличност е намерен</string>
 	<string name="jumio_selfiedone_continue">Продължи</string>
+	<string name="jumio_selfiedone_faster_verification_subtitle">Ако вече сте потвърдили самоличността си при някой от нашите клиенти, е възможно да използваме документ за самоличност, който сте предоставили преди това.</string>
+	<string name="jumio_selfiedone_faster_verification_title">Изберете по-бърза верификация</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">Не, сканирайте документа ръчно</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Ръчно сканиране на документ</string>
-	<string name="jumio_selfiedone_we_found_your_ID">Намерихме един от вашите документи за самоличност</string>
+	<string name="jumio_selfiedone_start_verification_subtitle">Бяхте пренасочени насам от клиент на Jumio, който използва нашите услуги за проверка на самоличността, предотвратяване на измами и защита на профилите.</string>
+	<string name="jumio_selfiedone_submit_button">Изпрати</string>
+	<string name="jumio_selfiedone_we_found_your_ID">Намерихме документ за самоличност, който сте предоставили преди това</string>
+	<string name="jumio_selfiedone_yes_continue_button">Да, продължете</string>
 	<string name="jumio_start_button">Старт</string>
 	<string name="jumio_start_instructions_01">Намери добре осветена повърхност</string>
 	<string name="jumio_start_instructions_02">Подготви се за селфи</string>

@@ -32,9 +32,21 @@ For detailed technical changes please refer to our [Transition Guide](transition
 
 ## Support Period
 
-Current SDK version: 4.18.0
+Current SDK version: 4.19.0
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+
+## SDK Version: 4.19.0
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Added Selfie.Done user flow to support Global availability.
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Added support for skipping backside capture for specific ID Cards (such as Philippine National ID).
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Added support for NFC address extraction whenever available.
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Improved NFC data capture reliability.
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Improved the UX of the enhanced virtual camera injection detection.
 
 ## SDK Version: 4.18.0
 

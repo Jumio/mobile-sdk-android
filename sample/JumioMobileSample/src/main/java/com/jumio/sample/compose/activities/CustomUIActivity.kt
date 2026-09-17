@@ -37,6 +37,7 @@ import com.jumio.sample.compose.views.pages.ConsentPage
 import com.jumio.sample.compose.views.pages.CountryAndDocumentSelectionPage
 import com.jumio.sample.compose.views.pages.DigitalIdentityPage
 import com.jumio.sample.compose.views.pages.ErrorPage
+import com.jumio.sample.compose.views.pages.FasterVerificationPage
 import com.jumio.sample.compose.views.pages.IDFoundPage
 import com.jumio.sample.compose.views.pages.LoaderPage
 import com.jumio.sample.compose.views.pages.NfcScanPage
@@ -157,7 +158,13 @@ class CustomUIActivity : ComponentActivity() {
 						}
 					}
 					navController.currentBackStackEntry?.destination?.let { destination ->
-						if (destination.hasRoute(AppNavigation.Loader::class) ||
+						if (
+							(destination.hasRoute<AppNavigation.Scan>() && navigationPage == AppNavigation.Scan) ||
+							(destination.hasRoute<AppNavigation.UploadFileHelp>() && navigationPage == AppNavigation.UploadFileHelp) ||
+							(destination.hasRoute<AppNavigation.NfcScan>() && navigationPage == AppNavigation.NfcScan)
+						) {
+							return@collectLatest
+						} else if (destination.hasRoute(AppNavigation.Loader::class) ||
 							destination.hasRoute(AppNavigation.Error::class) ||
 							destination.hasRoute(AppNavigation.Confirmation::class) ||
 							destination.hasRoute(AppNavigation.Rejection::class)
@@ -239,9 +246,29 @@ class CustomUIActivity : ComponentActivity() {
 			composable<AppNavigation.IDFound> {
 				IDFoundPage(
 					modifier = modifier,
-					lookupResult = (viewModel.currentCredential as? JumioIDCredential)?.lookupResult ?: return@composable,
+					lookupResult =
+						(viewModel.currentCredential as? JumioIDCredential)?.lookupResult ?: return@composable,
+					isFasterVerificationEnabled = (viewModel.currentCredential as? JumioIDCredential)?.fasterVerification != null,
 					onContinue = { viewModel.userConsentedForLookupResult(true) },
 					onScanManually = { viewModel.userConsentedForLookupResult(false) },
+					onBackPress = {
+						if ((viewModel.currentCredential as? JumioIDCredential)?.fasterVerification != null) {
+							navController.popBackStack()
+						} else {
+							navController.popBackStack(AppNavigation.Scan, true)
+							viewModel.currentCredential?.cancel()
+							viewModel.startWithFirstCredential()
+						}
+					}
+				)
+			}
+			composable<AppNavigation.FasterVerification> {
+				FasterVerificationPage(
+					modifier = modifier,
+					fasterVerification = (viewModel.currentCredential as? JumioIDCredential)?.fasterVerification
+						?: return@composable,
+					onContinue = { viewModel.userConsentedForFasterVerification(true) },
+					onScanManually = { viewModel.userConsentedForFasterVerification(false) },
 					onBackPress = {
 						navController.popBackStack(AppNavigation.Scan, true)
 						viewModel.currentCredential?.cancel()

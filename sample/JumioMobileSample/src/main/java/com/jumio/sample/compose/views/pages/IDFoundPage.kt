@@ -28,7 +28,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.jumio.core.views.BrandingView
@@ -38,13 +37,13 @@ import com.jumio.sample.compose.theme.colors
 import com.jumio.sample.compose.theme.dimensions
 import com.jumio.sample.compose.theme.spacing
 import com.jumio.sample.compose.views.atoms.PrimaryButton
-import com.jumio.sdk.document.JumioDocumentType
 import com.jumio.sdk.document.JumioLookupResult
 
 @Composable
 fun IDFoundPage(
 	modifier: Modifier = Modifier,
 	lookupResult: JumioLookupResult,
+	isFasterVerificationEnabled: Boolean,
 	onContinue: () -> Unit,
 	onScanManually: () -> Unit,
 	onBackPress: () -> Unit,
@@ -52,19 +51,20 @@ fun IDFoundPage(
 	BackHandler {
 		onBackPress()
 	}
-	Column(modifier = modifier.fillMaxSize().padding(all = MaterialTheme.spacing.medium)) {
+	Column(modifier = modifier.fillMaxSize()) {
 		IconButton(onClick = { onBackPress() }) {
 			Icon(
 				painter = painterResource(R.drawable.ic_keyboard_arrow_left),
 				contentDescription = stringResource(id = R.string.back),
-				tint = MaterialTheme.colors.primary
+				tint = MaterialTheme.colors.primary,
+				modifier = Modifier.size(MaterialTheme.spacing.superLarge)
 			)
 		}
 		Spacer(modifier = Modifier.height(MaterialTheme.spacing.compact))
 		Column(
 			modifier = Modifier
 				.weight(1f)
-				.padding(bottom = MaterialTheme.spacing.medium),
+				.padding(all = MaterialTheme.spacing.medium),
 			horizontalAlignment = Alignment.CenterHorizontally
 		) {
 			Text(
@@ -111,10 +111,16 @@ fun IDFoundPage(
 						textAlign = TextAlign.Center,
 						maxLines = 1
 					)
+					Text(
+						text = lookupResult.country,
+						style = MaterialTheme.typography.titleMedium,
+						textAlign = TextAlign.Center,
+						maxLines = 1
+					)
 				}
 			}
 
-			Spacer(modifier = Modifier.height(MaterialTheme.spacing.semiLarge))
+			Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
 
 			Divider(
 				modifier = Modifier.fillMaxWidth().height(1.dp),
@@ -131,12 +137,18 @@ fun IDFoundPage(
 			)
 
 			PrimaryButton(
-				title = stringResource(id = R.string.jumio_selfiedone_continue),
+				title = stringResource(
+					id = if (isFasterVerificationEnabled) {
+						R.string.jumio_selfiedone_submit_button
+					} else {
+						R.string.jumio_selfiedone_continue
+					}
+				),
 				onClick = onContinue,
 				modifier = Modifier.fillMaxWidth()
 			)
 
-			Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
+			Spacer(modifier = Modifier.height(MaterialTheme.spacing.compact))
 
 			PrimaryButton(
 				title = stringResource(id = R.string.jumio_selfiedone_scan_ID_manually),
@@ -148,7 +160,7 @@ fun IDFoundPage(
 		Column(
 			modifier = Modifier
 				.fillMaxWidth()
-				.padding(bottom = MaterialTheme.spacing.medium),
+				.padding(bottom = MaterialTheme.spacing.compact),
 			horizontalAlignment = Alignment.CenterHorizontally
 		) {
 			AndroidView(
@@ -181,16 +193,3 @@ private fun generateSelfieDoneLogo(context: Context): SelfieDoneBrandingView =
 			LinearLayout.LayoutParams.WRAP_CONTENT
 		)
 	}
-
-@Preview(showBackground = true)
-@Composable
-fun IDFoundPagePreview() {
-	MaterialTheme {
-		IDFoundPage(
-			lookupResult = JumioLookupResult(JumioDocumentType.DRIVING_LICENSE, JumioLookupResult.JumioLegalStatement("....")),
-			onBackPress = {},
-			onContinue = {},
-			onScanManually = {}
-		)
-	}
-}

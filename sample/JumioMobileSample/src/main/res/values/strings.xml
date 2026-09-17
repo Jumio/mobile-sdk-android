@@ -88,7 +88,11 @@
 	<string name="jumio_selfiedone_ID_Found">ID Found</string>
 	<string name="jumio_selfiedone_continue">Continue</string>
 	<string name="jumio_selfiedone_scan_ID_manually">Scan ID Manually</string>
-	<string name="jumio_selfiedone_we_found_your_ID">We found one of your identification documents</string>
+	<string name="jumio_selfiedone_we_found_your_ID">We found an ID document you previously provided</string>
+	<string name="jumio_selfiedone_faster_verification_title">Choose Faster Verification</string>
+	<string name="jumio_selfiedone_yes_continue_button">Yes, Continue</string>
+	<string name="jumio_selfiedone_no_scan_id_manually_button">No, Scan ID Manually</string>
+	<string name="jumio_selfiedone_submit_button">Submit</string>
 
 	<string name="jumio_dv_upload_tips_file_size">Maximum file size: %1$s</string>
 	<string name="jumio_dv_upload_tips_page_size">Maximum number of pages: %1$d</string>
@@ -105,4 +109,6 @@
 	<string name="jumio_nfc_header_extracting">Extracting data</string>
 	<string name="jumio_nfc_description_extracting">Hold still while scanning</string>
 	<string name="jumio_nfc_button_skip">Skip</string>
+
+	<string name="jumio_choose_faster_verification">Choose faster verification</string>
 </resources>
