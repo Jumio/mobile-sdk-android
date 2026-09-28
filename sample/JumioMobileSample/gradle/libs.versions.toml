@@ -1,5 +1,5 @@
 [versions]
-jumioSDK="4.19.0"
+jumioSDK="4.19.1"
 androidGradlePlugin = "8.10.1"
 kotlin = "2.1.0"
 kotlinStdlib = "2.1.0"

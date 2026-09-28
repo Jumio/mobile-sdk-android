@@ -47,7 +47,7 @@ Jumio’s products allow businesses to establish the genuine identity of their u
 
 ## Release Notes
 
-Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.19.0**
+Please refer to our [Change Log](changelog.md) for more information. Current SDK version: **4.19.1**
 
 For technical changes that should be considered when updating the SDK, please read our [Transition Guide](transition_guide.md).
 
@@ -75,29 +75,29 @@ If an optional module is **not linked**, some functionalities may not be availab
 ```groovy
 // [Mandatory] Jumio Core library
 dependencies {
-	implementation "com.jumio.android:core:4.19.0"
+	implementation "com.jumio.android:core:4.19.1"
 	...
 }
 
 // [Optional] Extraction methods
 dependencies {
-	implementation "com.jumio.android:docfinder:4.19.0"          // Autocapture library, includes all previous scanning methods
-	implementation "com.jumio.android:barcode-mlkit:4.19.0"      // Barcode scanning library, assists Autocapture
-	implementation "com.jumio.android:nfc:4.19.0"                // NFC scanning library, assists Autocapture
-	implementation "com.jumio.android:liveness:4.19.0"           // Face Liveness library
-	implementation "com.jumio.android:digital-identity:4.19.0"   // Digital Identity verification library
+	implementation "com.jumio.android:docfinder:4.19.1"          // Autocapture library, includes all previous scanning methods
+	implementation "com.jumio.android:barcode-mlkit:4.19.1"      // Barcode scanning library, assists Autocapture
+	implementation "com.jumio.android:nfc:4.19.1"                // NFC scanning library, assists Autocapture
+	implementation "com.jumio.android:liveness:4.19.1"           // Face Liveness library
+	implementation "com.jumio.android:digital-identity:4.19.1"   // Digital Identity verification library
   	...
 }
 
 // [Optional] Jumio Default UI
 dependencies {
-	implementation "com.jumio.android:defaultui:4.19.0"
+	implementation "com.jumio.android:defaultui:4.19.1"
 	...
 }
 
 // [Optional] Additional functionality
 dependencies {
-	implementation "com.jumio.android:camerax:4.19.0"         // CameraX library
+	implementation "com.jumio.android:camerax:4.19.1"         // CameraX library
   	...
 }
 ```
@@ -106,7 +106,7 @@ In addition to specifying individual dependencies, you can also use a BOM (Bill 
 
 ```groovy
 dependencies {
-		implementation platform("com.jumio.android:bom:4.19.0")
+		implementation platform("com.jumio.android:bom:4.19.1")
 		implementation "com.jumio.android:core"
 		implementation "com.jumio.android:barcode-mlkit"
 		implementation "com.jumio.android:camerax"
@@ -731,6 +731,16 @@ or use the convenience method
 
 ```kotlin
 val scanPart = currentCredential?.initScanPart(yourScanPartInterface)
+```
+
+It is recommended to increase the screen brightness while the scan part is active, and reset it once done:
+
+```kotlin
+// when the scan part starts
+activity.window.attributes.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_FULL
+
+// when the scan part finishes or is cancelled
+activity.window.attributes.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE
 ```
 
 #### Jumio Document Credential

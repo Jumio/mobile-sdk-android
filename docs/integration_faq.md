@@ -96,14 +96,14 @@ The following table shows a range of different product configurations with the s
 
 | Product Configuration                        |   Size   |                                              Modules                                              |
 | :------------------------------------------- |:--------:| :-----------------------------------------------------------------------------------------------: |
-| Base                                         | 1.44 MB  |                                               core                                                |
-| Base + Autocapture                           | 3.43 MB  |                                          core, docfinder                                          |
-| Base + Autocapture, Barcode-Vision           | 3.74 MB  |                                  core, docfinder, barcode-mlkit                                   |
-| Base + Autocapture, Barcode-Vision, Liveness | 6.40 MB  |                                core, docfinder, barcode, liveness                                 |
-| Base + Autocapture, Barcode-Vision, NFC      | 7.41 MB  |                                   core, docfinder, barcode, nfc                                   |
-| All (Custom UI only)                         | 10.74 MB |             core, docfinder, barcode-mlkit, nfc, digital-identity, camerax, liveness              |
-| Base + Autocapture, Default UI               | 4.70 MB  |                                    core, docfinder, defaultui                                     |
-| All (with Default UI)                        | 12.01 MB |       core, docfinder, barcode-mlkit, nfc, digital-identtity, camerax, defaultui, liveness        |
+| Base                                         | 1.39 MB  |                                               core                                                |
+| Base + Autocapture                           | 3.38 MB  |                                          core, docfinder                                          |
+| Base + Autocapture, Barcode-Vision           | 3.69 MB  |                                  core, docfinder, barcode-mlkit                                   |
+| Base + Autocapture, Barcode-Vision, Liveness | 6.32 MB  |                                core, docfinder, barcode, liveness                                 |
+| Base + Autocapture, Barcode-Vision, NFC      | 7.37 MB  |                                   core, docfinder, barcode, nfc                                   |
+| All (Custom UI only)                         | 10.17 MB |             core, docfinder, barcode-mlkit, nfc, digital-identity, camerax, liveness              |
+| Base + Autocapture, Default UI               | 4.63 MB  |                                    core, docfinder, defaultui                                     |
+| All (with Default UI)                        | 11.36 MB |       core, docfinder, barcode-mlkit, nfc, digital-identtity, camerax, defaultui, liveness        |
 
 ⚠️&nbsp;__Note:__ The size values in the table above depict the decompressed install size required on a device and are comparable to the estimated Play Store files size. The size value might vary by a few percent, depending on the actual device used. All sizes are calculated based on a build of our sample application using arm64 architecture, english translations and xxhdpi screen resolution.
 

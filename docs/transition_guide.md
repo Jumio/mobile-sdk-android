@@ -8,6 +8,12 @@ This section covers all technical changes that should be considered when updatin
 - When updating your SDK version, **all** changes/updates made in in the meantime have to be taken into account and applied if necessary.
 - **Example:** If you're updating from SDK version **3.7.2** to **3.9.2**, the changes outlined in **3.8.0, 3.9.0** and **3.9.1** are **still relevant**.
 
+## 4.19.1
+
+#### Proguard Changes
+
+Old versions of the SDK kept all classes with Companion objects - the consumer proguard rule for this has been narrowed down to com.jumio classes only.
+
 ## 4.19.0
 
 #### Public API Changes

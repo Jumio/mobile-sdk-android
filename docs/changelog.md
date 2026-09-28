@@ -32,9 +32,13 @@ For detailed technical changes please refer to our [Transition Guide](transition
 
 ## Support Period
 
-Current SDK version: 4.19.0
+Current SDK version: 4.19.1
 
 Please refer to our [SDK maintenance and support policy](maintenance_policy.md) for more information about Mobile SDK maintenance and support.
+
+## SDK Version: 4.19.1
+
+![Improvement](https://img.shields.io/badge/Improvement-green) Improved Jumio Liveness screen brightness handling
 
 ## SDK Version: 4.19.0
 
